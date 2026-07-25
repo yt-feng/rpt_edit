@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0001-26-GS-Digital Realty Trust Inc. -DLR.US-- 2Q26 review- Growing backlog and favorable pricing dynamics support beat - raise-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0002-27-GS-Energy- Utilities - Mining Pulse- Investors Asking- Where Do We See the Most Positive Negative 2027 Consensus Revisions--260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0003-28-GS-Global Markets Comment- Distinguishing AI Risks-Size of the Pie vs. Share of the Pie-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0004-29-GS-Intel Corp. -INTC.US-- Strong quarter across the board- with margin upside and positive process technology commentary-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0005-30-GS-Horizon Robotics -9660.HK-- HSD V2.0 launched with new models and enhanced experiences- 1H26 rev to up 25-35- YoY- Buy-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

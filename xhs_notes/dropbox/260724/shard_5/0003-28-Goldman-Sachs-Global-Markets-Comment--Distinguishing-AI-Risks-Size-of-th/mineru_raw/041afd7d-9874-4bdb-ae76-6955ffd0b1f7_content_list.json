@@ -1,0 +1,1870 @@
+[
+    {
+        "type": "text",
+        "text": "Global Markets Comment: Distinguishing AI Risks—Size of the Pie vs. Share of the Pie",
+        "text_level": 1,
+        "bbox": [
+            78,
+            93,
+            799,
+            143
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We showed recently that as the value built into AI-related equities has grown, more optimistic assumptions about the ultimate economic gains for US companies from AI are needed to justify it. This likely makes the market more vulnerable to challenges to the more optimistic story. Although robust earnings may dominate valuation concerns for now, we think investors should focus on the potential challenges to the theme and their consequences for portfolios.",
+        "bbox": [
+            78,
+            189,
+            697,
+            301
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In weighing those risks, a key distinction is whether a shock or risk shifts views on the likely aggregate value of AI-related innovation or on the distribution of that value (or both). Put simply, some worries are about the size of the pie and some are about how the pie is shared. We illustrate that this distinction is critical to understanding the impact of different challenges to the AI theme on markets and volatility.",
+        "bbox": [
+            78,
+            308,
+            697,
+            420
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Vickie Chang\n+1(212)902-6915 |\nvickie.chang@gs.com\nGS & Co. LLC",
+        "bbox": [
+            720,
+            236,
+            844,
+            277
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Dominic Wilson\n+1(212)902-5924 |\ndominic.wilson@gs.com\nGS & Co. LLC",
+        "bbox": [
+            720,
+            190,
+            844,
+            231
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Only aggregate shocks are likely to have reliable, broad cross-asset impacts. For those with broad exposure to US equities, these are the shocks that matter most and macro hedges are likely to be available to protect against them. For those with more specific AI-related exposures, hedging is more challenging, since distributional shocks may also affect portfolios but have less reliable impacts on macro assets.",
+        "bbox": [
+            78,
+            428,
+            692,
+            539
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "For aggregate shocks to AI exposures, equity indices and rates so far appear to show clearer responses than FX and commodities. Except when higher rates are themselves the source of the risk, worries about the aggregate gains from AI are likely to push US yields lower. Aggregate shocks also have more scope to push equity index volatility higher than distributional shocks.",
+        "bbox": [
+            78,
+            546,
+            689,
+            640
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Distinguishing AI Risks—Size of the Pie vs. Share of the Pie",
+        "text_level": 2,
+        "bbox": [
+            78,
+            670,
+            558,
+            691
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Pressure on semiconductor stocks over the last month has revived questions about the potential risks to AI-related equities and ways to hedge against those risks.",
+        "bbox": [
+            76,
+            717,
+            683,
+            752
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A month ago, we looked again at what a macro approach to valuing the gains from AI says about the value that the market has assigned to AI relative to what the economy can deliver. That exercise showed that the value that had been built into AI-related equities has continued to grow and that more optimistic assumptions about the Present Discounted Value (PDV) of economic gains from AI that will accrue to companies were now needed to justify it. We also highlighted how the market has disproportionately rewarded the companies supplying the AI investment boom over the last 6-9 months. So alongside the risks to the market view of the aggregate gains from AI, there might also be risks to the market's view of the distribution of winners and losers.",
+        "bbox": [
+            76,
+            763,
+            697,
+            887
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            23,
+            297,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Economics Research",
+        "bbox": [
+            761,
+            26,
+            916,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "23 July 2026 | 10:40AM EDT",
+        "bbox": [
+            707,
+            47,
+            916,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            924,
+            856,
+            970
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            59,
+            905,
+            111
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This set-up has, in our view, left the market vulnerable to any challenges to the more optimistic story. Robust earnings may dominate valuation concerns with the investment boom likely to continue to extend, but we still think investors should focus on the potential challenges to the theme and their consequences for portfolios. Our general view is that precision about the nature of any potential “shock” is key to understanding its cross-asset impact. The challenge is that there are a bewildering number of different possible narratives that could create risk to the current AI story. Although each may have its own specific characteristics, we think it useful to try to think of ways to organize and simplify these different kinds of worries.",
+        "bbox": [
+            267,
+            125,
+            916,
+            282
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Aggregate value or its distribution",
+        "text_level": 2,
+        "bbox": [
+            269,
+            306,
+            529,
+            321
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In weighing those risks, we think a key distinction is whether a shock/risk shifts views on the likely aggregate value of AI-related innovation or on the distribution of that value (or both). Put simply, some worries are about the size of the pie, and some are about how the pie is shared. We have already shown that this distinction is critical to understanding recent trends in equity volatility, but it is also critical to the cross-asset footprint.",
+        "bbox": [
+            269,
+            324,
+            915,
+            412
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This distinction is embedded in the macro approach we have taken to looking at the value that we expect from AI. Our global economics team has calculated the Present Discounted Value of the additional GDP from the productivity gains that they expect from AI under our baseline assumptions. This defines the expected aggregate value of AI gains measured from today. To derive the value that should accrue to equity holders, we then need expectations of how that value is distributed. As Exhibit 1 shows, some portion of that should accrue to US companies in the form of higher profits. Those higher profits in turn will ultimately be shared among different types of companies: hyperscalers; infrastructure providers, like semiconductor, memory and power producers; model builders and other AI companies; and non-AI companies. $^{1}$ Some portion of those gains will also accrue to US consumers and workers and the same potential corporate and consumer beneficiaries are represented on the non-US side too.",
+        "bbox": [
+            267,
+            422,
+            915,
+            635
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            745,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ These “gains” could be negative for some segments if, for instance, AI-focused companies reduced profits for non-AI companies.",
+        "bbox": [
+            269,
+            909,
+            916,
+            935
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/212834498e2943d397a5458661d51d0c1cb35541f3efbb41366e95831a7a93b5.jpg",
+        "image_caption": [
+            "Source: GS Global Investment Research"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            272,
+            69,
+            906,
+            386
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "So far, most of the AI-related value has accrued to US AI-focused companies and some key non-US companies, especially in Asia. The focus of our work so far has largely been on comparing estimates of the economic gains for US companies and the distribution of those gains across the major categories of US companies Exhibit 2. From that narrower perspective, anything that distributes value away from US companies—away from the top-left segment of Exhibit 1—including an increased share or AI gains going to consumers or non-US producers, is a shock to the “aggregate” value for the US equity market, even if the overall value of AI to the global economy does not change. We stick here to this narrower distinction between dynamics that affect the “aggregate” value of AI gains for the US corporate sector and those that affect its distribution across US companies. But it is easy to expand that view of what “aggregate” means through the lens of the framework that we set out here.",
+        "bbox": [
+            269,
+            422,
+            911,
+            635
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2: Our dominant focus has been on comparing value built into US companies and the potential capital revenues from AI",
+        "bbox": [
+            78,
+            71,
+            897,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Change in Market Cap/Valuation From Nov. 30 2022 to Jul. 22 2026 vs. GS Estimates of PDV of Potential AI Capital Revenues",
+        "bbox": [
+            261,
+            123,
+            736,
+            151
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/430643417e573db3ba23e060e163062d0da4d99c289f1752eaa3f4a775b9c674.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "\"Semiconductors\", \"hyperscalers\", and \"other AI-related\" are constituents of the GS TMT AI basket (developed by GS Global Banking & Markets)  \n\\*“US Combined Positive\" assumes high capital share, faster adoption, and higher productivity gains from AI",
+            "Source: Bloomberg, FactSet, GS FICC and Equities, GS Global Investment Research"
+        ],
+        "bbox": [
+            96,
+            119,
+            906,
+            463
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Different drivers of aggregate and distributional shocks",
+        "text_level": 2,
+        "bbox": [
+            269,
+            537,
+            687,
+            554
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The forces driving market views of the aggregate value of AI and its distribution are generally different. Perceptions of the aggregate value from AI are most likely to be affected by things that shift one or more of the five key parameters that underpin our global team's estimates of the value of future AI revenues to US companies (Exhibit 3):",
+        "bbox": [
+            269,
+            555,
+            897,
+            627
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Productivity growth: the overall value of the innovation in improving work practices.",
+        "bbox": [
+            269,
+            638,
+            846,
+            674
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Adoption rate: how quickly those productivity gains are being realized.",
+        "bbox": [
+            269,
+            681,
+            820,
+            699
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Capital share: how much of those gains accrue to companies, which depends in turn on the ability to monetize the innovations.",
+        "bbox": [
+            269,
+            705,
+            913,
+            741
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. International share: how much can US companies capture a share of non-US gains or vice versa.",
+        "bbox": [
+            269,
+            750,
+            903,
+            784
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Discount rate: the cost of capital for AI-related companies given financing needs and the uncertainty around potential revenues.",
+        "bbox": [
+            269,
+            792,
+            892,
+            829
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            745,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e03880dd95026bbbb7ca3a8713e8658b5d2c676a68efcc16977f619bd8a75d2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: Views on the value of AI will shift if investors adjust their views on the key parameters"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            285,
+            119,
+            898,
+            388
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Estimates of the PDV of AI revenues to US companies are sensitive to assumptions about each of these parameters, as we have illustrated. Macro shocks, which reduce the expected value for the entire corporate sector through assumptions about profits and the discount rate, even if the shock is not specifically related to AI. will also affect the aggregate value of US companies including AI-related companies.",
+        "bbox": [
+            269,
+            436,
+            915,
+            525
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For any given expectation of the aggregate value, the market can then make assumptions about who the winners and losers are likely to be, distributing that value across different parts of the corporate sector. Views on who will capture the benefits have shifted significantly over time. A prime example is the sharp increase in memory prices since late 2025, driven by shortages in the face of accelerating AI-related demand. That price increase is effectively a “terms of trade” shock that has helped producers and hurt consumers of chips. But beyond this dynamic, the market has also implicitly made judgments about the split between AI-related companies and the ultimate corporate users of AI products (assigning the bulk of AI-related value to the former) and about the capacity of AI disruption to shift profits away from incumbent firms in non-AI related industries (software, insurance, real estate). Shifts in views on issues that affect those divisions may not change expectations of aggregate profitability but will change how it is allocated.",
+        "bbox": [
+            269,
+            536,
+            915,
+            766
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Classifying AI concerns",
+        "text_level": 2,
+        "bbox": [
+            269,
+            789,
+            447,
+            804
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We think using this framework to specify how a particular risk reduces or distributes value is a helpful exercise. Classifying different concerns along this axis can still be challenging (and open to challenge!). Some shocks are more obviously aggregate shocks; some are more obviously distributional; and for some it is less clear:",
+        "bbox": [
+            267,
+            806,
+            915,
+            877
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Worries that focus on slower adoption or concern about the scope of use cases are likely to be aggregate shocks. They would lower estimates of some key parameters that drive aggregate value (lower productivity growth, lower adoption rates).",
+        "bbox": [
+            271,
+            888,
+            903,
+            925
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            745,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            297,
+            60,
+            857,
+            75
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Difficulties in monetizing AI-related products or competition in models or applications that lower the cost of the innovation (as opposed to pessimism about the innovation itself) could function as a shock to the aggregate value that will accrue to US companies by distributing the gains more to consumers (lower capital share). But US corporate consumers could also benefit, and lower-cost products could accelerate adoption, which could shift the potential distribution of value towards them and mitigate the aggregate impact. Innovations by non-US companies could also distribute value away from US companies even if the broad value of AI-related innovations remains high.",
+        "bbox": [
+            271,
+            84,
+            913,
+            252
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Reduced willingness from the market to finance the AI investment boom would also look more like an aggregate shock. But a decision to slow capital spending because infrastructure looks sufficient could have more of a distributional flavor, reallocating value to hyperscalers from suppliers of the investment boom.",
+        "bbox": [
+            271,
+            260,
+            906,
+            334
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ Capacity expansion or competition in the semis/memory space or model innovation to rely on fewer or cheaper chips could hurt semiconductor producers, but by alleviating shortages would benefit corporate consumers, so would potentially be a distributional impact. To the extent that those gains are passed through to final consumers too (instead of accruing to companies), it could also have some aggregate impact.",
+        "bbox": [
+            271,
+            340,
+            913,
+            453
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Displacement or disruption of incumbent companies through fear of AI are obviously distributional at some level but could also have aggregate implications for US public market profits if they result in increased gains to consumers or if the corporate winners are outside the US public markets.",
+        "bbox": [
+            271,
+            460,
+            916,
+            534
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "■ Macro shocks—tighter monetary policy, a renewed rise in oil prices or a weakening in the labor market (AI-related or otherwise)—would function more like aggregate shocks, affecting value in the overall space. Given the value that has been built into AI-related companies, heavy positioning in many of these areas, and the financing needs of the AI boom, macro shocks could disproportionately affect AI beneficiaries vs. the rest of the broader market. But the nature of the macro shock likely matters here too, given that some shocks (higher oil prices, for instance) may affect other market segments disproportionately.",
+        "bbox": [
+            271,
+            542,
+            916,
+            691
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Different drivers, different asset footprints",
+        "text_level": 2,
+        "bbox": [
+            269,
+            715,
+            594,
+            731
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The distinction between aggregate and distributional shock matters for two main reasons. It affects the cross-asset footprint; and it affects the volatility footprint.",
+        "bbox": [
+            269,
+            734,
+            862,
+            768
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For the cross-asset footprint, the main distinction is that aggregate shocks are likely to have much clearer impacts on the broad equity market and on a larger range of macro assets, especially interest rates, than distributional ones. We can illustrate this from the response to five market-moving events over the last 18 months.",
+        "bbox": [
+            269,
+            780,
+            903,
+            849
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "1. Deepseek (27 Jan 2025). Release of DeepSeek's R1 model raised fears that US AI producers and their suppliers would capture less of the gains from AI.",
+        "bbox": [
+            269,
+            862,
+            893,
+            898
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2. Broad AI worries (3 Feb-5 Feb 2026). Hyperscaler earnings fueled worry about the",
+        "bbox": [
+            269,
+            906,
+            908,
+            922
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ability to sustain capital spending at high rates.",
+        "bbox": [
+            297,
+            60,
+            643,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3. Payroll-driven rates spike (5 Jun 2026). Strong payrolls release led to increased expectations of Fed tightening and higher yields across the US curve.",
+        "bbox": [
+            269,
+            84,
+            888,
+            119
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4. Google issuance (2 Jun 2026). Google announces equity issuance to fund AI capex needs.",
+        "bbox": [
+            269,
+            127,
+            905,
+            162
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "5. Meta cloud business (1 Jul 2026). Meta announced that it would build out a new cloud business and sell excess compute.",
+        "bbox": [
+            269,
+            171,
+            893,
+            205
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/e12598637dd620992ee71d696d8d2946f0db84d857bcdea3677e6187e4bf2313.jpg",
+        "table_caption": [
+            "Exhibit 4: Recent events illustrate the differing cross-asset footprint to different kind of shocks"
+        ],
+        "table_footnote": [
+            "- Mainland China, EM, Korea, and Taiwan index returns are in USD terms",
+            "- FX changes are in XXX vs. USD terms. A positive change implies currency strength vs. USD, a negative change implies currency weakness vs. USD.",
+            "Source: Bloomberg, GS FICC and Equities, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">&quot;Aggregate&quot;/&quot;Macro&quot;</td><td colspan=\"2\">&quot;Distributional&quot;</td></tr><tr><td>DeepseekJan. 27 2025</td><td>Broad AI WorriesFeb. 3 - Feb. 5 2026</td><td>Payroll-DrivenRates SpikeJun. 5 2026</td><td>Google IssuanceJun. 2 2026</td><td>Meta CloudBusinessJul. 1 2026</td></tr><tr><td colspan=\"6\">Equities</td></tr><tr><td>S&amp;P 500</td><td>-1.5%</td><td>-1.7%</td><td>-2.6%</td><td>0.1%</td><td>-0.2%</td></tr><tr><td>Russell 2000</td><td>-1.0%</td><td>-2.7%</td><td>-3.5%</td><td>0.9%</td><td>-0.4%</td></tr><tr><td>Nasdaq 100</td><td>-3.0%</td><td>-3.1%</td><td>-4.8%</td><td>0.5%</td><td>-1.5%</td></tr><tr><td>Europe</td><td>-0.6%</td><td>-1.2%</td><td>-0.4%</td><td>1.4%</td><td>-0.6%</td></tr><tr><td>Japan</td><td>-3.5%</td><td>-0.4%</td><td>-5.5%</td><td>0.4%</td><td>-2.2%</td></tr><tr><td>Mainland China</td><td>0.9%</td><td>-1.3%</td><td>-2.0%</td><td>2.9%</td><td>1.2%</td></tr><tr><td>EM</td><td>-1.8%</td><td>-1.8%</td><td>-6.5%</td><td>1.0%</td><td>-2.8%</td></tr><tr><td>Korea</td><td>-2.4%</td><td>-3.3%</td><td>-14.1%</td><td>-1.0%</td><td>-8.1%</td></tr><tr><td>Taiwan</td><td>-5.6%</td><td>-1.4%</td><td>-7.3%</td><td>0.6%</td><td>-2.7%</td></tr><tr><td>VIX</td><td>20.5%</td><td>20.9%</td><td>39.7%</td><td>-1.7%</td><td>0.9%</td></tr><tr><td>GS US Cyclicals (GSXUCYCL)</td><td>-0.2%</td><td>0.5%</td><td>-1.5%</td><td>1.0%</td><td>0.3%</td></tr><tr><td>GS US Defensives (GSXUDEFS)</td><td>1.9%</td><td>1.3%</td><td>1.1%</td><td>0.2%</td><td>0.5%</td></tr><tr><td>SPX ex. AI (SPXXAI)</td><td>1.2%</td><td>0.0%</td><td>0.0%</td><td>-0.2%</td><td>0.8%</td></tr><tr><td>GS US Broad AI Basket (GSTMTAIP)</td><td>-9.5%</td><td>-6.0%</td><td>-6.8%</td><td>3.2%</td><td>-4.5%</td></tr><tr><td>Semiconductors (SOXX)</td><td>-7.8%</td><td>-4.3%</td><td>-10.4%</td><td>5.8%</td><td>-6.4%</td></tr><tr><td>GS Power Up America (GSENEPOW)</td><td>-13.7%</td><td>-4.9%</td><td>-3.5%</td><td>2.6%</td><td>-3.6%</td></tr><tr><td>GS US Hyperscalers (GSXUHYPR)</td><td>-2.8%</td><td>-5.2%</td><td>-4.3%</td><td>-2.4%</td><td>2.5%</td></tr><tr><td>S&amp;P 500 Software</td><td>-2.0%</td><td>-5.7%</td><td>-3.5%</td><td>-3.5%</td><td>3.1%</td></tr><tr><td>S&amp;P 500 3m Avg. Implied Single Stock Volatility</td><td>4.1%</td><td>3.6%</td><td>-1.2%</td><td>0.5%</td><td>-1.2%</td></tr><tr><td>S&amp;P 500 3m Implied Correlation</td><td>3bp</td><td>4bp</td><td>3bp</td><td>-0.1bp</td><td>0.4bp</td></tr><tr><td>S&amp;P 500 3m Index Implied Volatility</td><td>11.1%</td><td>12.5%</td><td>8.6%</td><td>0.1%</td><td>0.3%</td></tr><tr><td>GS US Financial Conditions Index</td><td>7bp</td><td>10bp</td><td>20bp</td><td>-1bp</td><td>4bp</td></tr><tr><td colspan=\"6\">FX</td></tr><tr><td>EUR/USD</td><td>0.0%</td><td>-0.2%</td><td>-0.8%</td><td>0.0%</td><td>-0.4%</td></tr><tr><td>AUD/USD</td><td>-0.5%</td><td>-0.7%</td><td>-1.3%</td><td>0.2%</td><td>-0.4%</td></tr><tr><td>JPY/USD</td><td>0.8%</td><td>-0.7%</td><td>-0.1%</td><td>-0.1%</td><td>0.1%</td></tr><tr><td>CAD/USD</td><td>-0.2%</td><td>-0.2%</td><td>-0.4%</td><td>0.1%</td><td>-0.1%</td></tr><tr><td>MXN/USD</td><td>-2.2%</td><td>-1.4%</td><td>-1.1%</td><td>0.4%</td><td>-0.3%</td></tr><tr><td>CNH/USD</td><td>-0.4%</td><td>-0.1%</td><td>0.0%</td><td>0.1%</td><td>-0.1%</td></tr><tr><td>TWD/USD</td><td>-0.5%</td><td>-0.3%</td><td>-0.4%</td><td>-0.4%</td><td>-0.2%</td></tr><tr><td>KRW/USD</td><td>-0.5%</td><td>-1.4%</td><td>-1.7%</td><td>-0.3%</td><td>-0.2%</td></tr><tr><td>ILS/USD</td><td>-1.0%</td><td>-1.5%</td><td>-1.1%</td><td>-1.1%</td><td>-0.4%</td></tr><tr><td>GS USD TWI</td><td>1.0%</td><td>0.5%</td><td>0.6%</td><td>0.0%</td><td>0.2%</td></tr><tr><td colspan=\"6\">Commodities</td></tr><tr><td>BTC/USD</td><td>-3.6%</td><td>-17.1%</td><td>-3.1%</td><td>-5.4%</td><td>2.4%</td></tr><tr><td>Gold</td><td>-1.5%</td><td>-0.9%</td><td>-3.1%</td><td>0.3%</td><td>1.1%</td></tr><tr><td>Oil</td><td>-2.0%</td><td>0.1%</td><td>-2.7%</td><td>1.7%</td><td>-1.3%</td></tr><tr><td>Copper</td><td>-2.0%</td><td>-4.4%</td><td>-3.1%</td><td>1.6%</td><td>-0.7%</td></tr><tr><td colspan=\"6\">Rates</td></tr><tr><td>UST 2y</td><td>-7bp</td><td>-12bp</td><td>10bp</td><td>1bp</td><td>0bp</td></tr><tr><td>UST 5y</td><td>-9bp</td><td>-11bp</td><td>8bp</td><td>0bp</td><td>1bp</td></tr><tr><td>UST 10y</td><td>-9bp</td><td>-9bp</td><td>6bp</td><td>-1bp</td><td>1bp</td></tr><tr><td>UST 30y</td><td>-8bp</td><td>-5bp</td><td>2bp</td><td>-1bp</td><td>2bp</td></tr><tr><td colspan=\"6\">Credit</td></tr><tr><td>CDX IG</td><td>1bp</td><td>2bp</td><td>2bp</td><td>0bp</td><td>0bp</td></tr><tr><td>CDX HY</td><td>5bp</td><td>13bp</td><td>9bp</td><td>-1bp</td><td>0bp</td></tr><tr><td colspan=\"6\">Macro Shocks</td></tr><tr><td>Growth shocks</td><td>-1.9</td><td>-2.2</td><td>-1.3</td><td>0.0</td><td>0.1</td></tr><tr><td>Policy shocks</td><td>-0.5</td><td>-0.2</td><td>2.8</td><td>-0.2</td><td>0.3</td></tr></table>",
+        "bbox": [
+            111,
+            98,
+            879,
+            748
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 4 shows the performance of a range of assets across these episodes, while Exhibit 5 summarizes the asset market performance across several key assets (hyperscaler equities, semiconductor equities, SPX and US 10 year Treasury yield). These episodes are clearly not comprehensive but illustrate some of the possible differences in market reactions.",
+        "bbox": [
+            269,
+            813,
+            915,
+            900
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The first three episodes functioned as aggregate shocks. $^{2}$ The broad US equity market declined in each case, and credit spreads widened. Equities of both hyperscalers and companies supplying the investment boom (semiconductors, power suppliers) also fell, meaningfully underperforming the S&P 500. Yields fell in the first two episodes but rose in the episode where higher yields were the driver of the shock. Our standard macro toolkit show that asset prices moved in these three episodes consistent with significant macro shocks—resembling a growth downgrade for the first two and a hawkish policy shock in the third.",
+        "bbox": [
+            267,
+            59,
+            910,
+            200
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The final two episodes look much more like distributional shocks. On Google's issuance announcement, hyperscaler equities fell while companies supplying the investment boom rose, as the market determined the news as positive for the suppliers of the investment boom, but not for those driving the investment. With Meta's cloud announcement, the reverse was true. In both cases, the impact both on the broad US equity market and on US rate markets was limited. Large shifts under the surface of the equity market essentially netted out at the index level and shifts in our growth and policy shock measures were small.",
+        "bbox": [
+            269,
+            212,
+            906,
+            354
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The moves in other markets were less clear though the USD TWI rose in the three aggregate shocks (particularly against more cyclical currencies), while gold, bitcoin and copper fell. US defensive equities also rose in the aggregate shocks, despite declines at the index level.",
+        "bbox": [
+            269,
+            364,
+            905,
+            434
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/b79613d79631a817ceb6240bd31d3565d22e8074d5eb847ac87f3991c0551c84.jpg",
+        "table_caption": [
+            "Exhibit 5: Aggregate shocks have clear impacts on macro assets, while distributional ones do not"
+        ],
+        "table_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">&quot;Aggregate&quot;/&quot;Macro&quot;</td><td colspan=\"2\">&quot;Distributional&quot;</td></tr><tr><td>Deepseek</td><td>Broad AI Worries</td><td>Payroll-Driven Rates Spike</td><td>Google Issuance</td><td>Meta Cloud Business</td></tr><tr><td>Hyperscaler Equities</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+</td></tr><tr><td>Semiconductor Equities</td><td>-</td><td>-</td><td>-</td><td>+</td><td>-</td></tr><tr><td>S&amp;P 500</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td></tr><tr><td>US 10y Yield</td><td>-</td><td>-</td><td>+</td><td>0</td><td>0</td></tr></table>",
+        "bbox": [
+            290,
+            483,
+            897,
+            643
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We have argued before that the shifts in equity volatility over the last 6-9 months can also be seen through the distinction of aggregate (“macro”) and distributional shocks. The rise in equity volatility and falls in implied correlations are an indication that so far it has been volatility around the distribution of AI gains that has dominated, except around key macro events like the onset of the Iran War (Exhibit 6 and Exhibit 7). The episodes in Exhibit 4 support the story that only aggregate/macro shocks have raised implied correlation and index volatility, supporting the idea that it is only worry about the aggregate value of AI gains that is likely to spill over into those broader measures.",
+        "bbox": [
+            269,
+            671,
+            916,
+            814
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            745,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ As discussed earlier, innovations like Deepseek which potentially lower the cost of the innovation may redistribute value to consumers, including corporate consumers, but likely reduce perceptions of the overall share of AI gains going to the US corporate sector as a whole.",
+        "bbox": [
+            269,
+            896,
+            887,
+            936
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/493af4d23f8fe9b6a45d80dfa82ff21adc5cb7676497302cd41deb2e4d20354f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: Single stock volatility has risen sharply over the last year while implied correlation has hit new lows"
+        ],
+        "chart_footnote": [
+            "Source: GS FICC and Equities, GS Global Investment Research"
+        ],
+        "bbox": [
+            84,
+            109,
+            483,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a6e8de4ea7d9f0cf8aa9be10376c46d47c453aabfa21f4f7530f9033c8f77a49.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: High single stock volatility, low implied correlation reflects a focus on distributional issues"
+        ],
+        "chart_footnote": [
+            "Source: GS FICC and Equities, GS Global Investment Research"
+        ],
+        "bbox": [
+            513,
+            109,
+            911,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Aggregate AI shocks more conducive to macro protection",
+        "text_level": 2,
+        "bbox": [
+            269,
+            348,
+            702,
+            364
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Although the distinction we have drawn here between aggregate and distributional shocks is blunt, we think it has some important implications:",
+        "bbox": [
+            269,
+            364,
+            877,
+            400
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The source of the shock to AI matters a lot to its cross-asset impact, so precision about the underlying drivers of the problem is essential. Slowing capex from the hyperscalers, for example, could come because of worries about the profitability of the innovations; from financing constraints; or from a realization that they are closer to what they need or have found more efficient ways to use existing investments than before. The impact of each version of that narrative will be different.",
+        "bbox": [
+            271,
+            412,
+            913,
+            523
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The distinction between aggregate shocks and distributional shocks is central to predicting the impact on markets and volatility. Only aggregate/macro shocks are likely to have broad cross-market impact. So for any risk scenario, it is helpful to try to pin down whether it is one that is likely to reduce the aggregate value of AI gains or redistribute them. Even when it is hard to be definitive, we think it is a valuable exercise.",
+        "bbox": [
+            269,
+            532,
+            906,
+            643
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For investors who are mostly dealing with broad-based US market exposures, macro assets are likely to be available as hedges. This is because distributional shocks are less likely to affect portfolio performance meaningfully. Diversification across countries and sectors also internalizes the volatility associated with shifts in views on who will win or lose from AI.",
+        "bbox": [
+            269,
+            651,
+            916,
+            744
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For those with more specific AI exposures (or overweight positions), the task of protecting against shocks is more challenging. Protecting against aggregate and macro risks to the AI thesis remains possible, but exposure to shifts in the perceived winners and losers from AI are not as easily protected with other assets unless they are closely linked to the underlying positions. This is because many assets may move less reliably in relation to the core exposure, as distributional shock generally have offsetting effects at the macro level.",
+        "bbox": [
+            269,
+            751,
+            913,
+            882
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For aggregate shocks, equity indices and rates appear to show clearer movements than FX and commodities. Except when higher rates are themselves the source of the risk, worries about the aggregate gains from AI are likely to push US yields lower.",
+        "bbox": [
+            271,
+            888,
+            897,
+            925
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            39
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            955,
+            918,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            297,
+            60,
+            911,
+            75
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Aggregate shocks should push implied correlation higher, while distributional shocks may not. This means that aggregate shocks have more scope to push index volatility up. The more distributional issues dominate, the more likely it is that pressure on index volatility will be muted. The impact on single stock volatility from either kind of shock may also be more limited given already high levels.",
+        "bbox": [
+            271,
+            85,
+            916,
+            178
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Dominic Wilson",
+        "bbox": [
+            271,
+            202,
+            393,
+            218
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Vickie Chang",
+        "bbox": [
+            269,
+            231,
+            374,
+            248
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            253,
+            80
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            101,
+            138,
+            116
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "We, Dominic Wilson and Vickie Chang, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            76,
+            123,
+            911,
+            147
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            151,
+            887,
+            165
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Dominic Wilson GS & Co. LLC, Vickie Chang GS & Co. LLC.",
+        "bbox": [
+            76,
+            169,
+            668,
+            183
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            186,
+            897,
+            210
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            223,
+            169,
+            237
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            242,
+            253,
+            257
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            260,
+            516,
+            273
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            76,
+            273,
+            908,
+            319
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            324,
+            913,
+            402
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            412,
+            875,
+            426
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            76,
+            422,
+            913,
+            733
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are",
+        "bbox": [
+            76,
+            731,
+            916,
+            929
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "available from GS International on request.",
+        "bbox": [
+            78,
+            60,
+            388,
+            74
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            76,
+            79,
+            910,
+            157
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            162,
+            915,
+            218
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            229,
+            352,
+            243
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            242,
+            916,
+            364
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            368,
+            880,
+            393
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            76,
+            397,
+            903,
+            443
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            455,
+            230,
+            468
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            76,
+            467,
+            915,
+            523
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            76,
+            529,
+            915,
+            563
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            76,
+            568,
+            916,
+            603
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            608,
+            890,
+            632
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            76,
+            637,
+            916,
+            661
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            76,
+            666,
+            913,
+            689
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            78,
+            694,
+            887,
+            719
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            76,
+            724,
+            867,
+            747
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            752,
+            916,
+            820
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            824,
+            906,
+            881
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.",
+        "bbox": [
+            76,
+            886,
+            905,
+            931
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            61,
+            900,
+            118
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            122,
+            897,
+            167
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            172,
+            888,
+            195
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            200,
+            220,
+            214
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            220,
+            911,
+            297
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Comment",
+        "bbox": [
+            746,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "23 July 2026",
+        "bbox": [
+            80,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 13
+    }
+]

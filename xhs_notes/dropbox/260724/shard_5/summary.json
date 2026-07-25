@@ -1,0 +1,557 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0001-26-GS-Digital Realty Trust Inc. -DLR.US-- 2Q26 review- Growing backlog and favorable pricing dynamics support beat - raise-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "数据中心REIT超预",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：其中，0-1MW租约价差为5%，而大于1MW的租约价差高达67%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-Digital Realty Trust Inc. -DLR.US-- 2Q26 review- Growing backlog and favorable pricing dynamics support beat - raise-260723.pdf",
+      "cleaned_source_title": "GS-Digital Realty Trust Inc. -DLR.US-- 2Q26 review- Growing backlog and favorable pricing dynamics support beat - raise",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：DigitalRealtyTrustInc.",
+      "raw_candidates": [
+        "GS：Digital Realty二季度核心FFO每股2.65美元超预期",
+        "GS：Digital Realty二季度续租价差达25%反映供需紧张",
+        "GS：Digital Realty上调全年核心FFO指引至8.15-8.20美元",
+        "GS：Digital Realty二季度业绩超预期与积压订单增长",
+        "GS：Digital Realty二季度核心FFO每股2.65美元超预期",
+        "GS：Digital Realty数据中心续租价差达25%"
+      ],
+      "cleaned_candidates": [
+        "GS：DigitalRealty二季度核心FFO每股2.65美元超预期",
+        "GS：DigitalRealty二季度续租价差达25%反映供需紧张",
+        "GS：DigitalRealty上调全年核心FFO指引至8.15",
+        "GS：DigitalRealty二季度业绩超预期与积压订单增长",
+        "GS：DigitalRealty数据中心续租价差达25%",
+        "GS：DigitalRealtyTrustInc.",
+        "GS：其中，0-1MW租约价差为5%，而大于1MW的租约价差高达67%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：DigitalRealty二季度核心FFO每股2.65美元超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：DigitalRealty二季度续租价差达25%反映供需紧张",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：DigitalRealty上调全年核心FFO指引至8.15",
+          "reasons": [
+            "long_untranslated_english",
+            "bare_trailing_number",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：DigitalRealty二季度业绩超预期与积压订单增长",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：DigitalRealty数据中心续租价差达25%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：DigitalRealtyTrustInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：其中，0-1MW租约价差为5%，而大于1MW的租约价差高达67%",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "0",
+          "1",
+          "5",
+          "67"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：其中，0-1MW租约价差为5%，而大于1MW的租约价差高达67%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：Digital Realty二季度核心FFO每股2.65美元超预期",
+        "GS：Digital Realty二季度续租价差达25%反映供需紧张",
+        "GS：Digital Realty上调全年核心FFO指引至8.15-8.20美元"
+      ],
+      "final_title_after_wording_guard": "GS：其中，0-1MW租约价差为5%，而大于1MW的租约价差高达67%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0002-27-GS-Energy- Utilities - Mining Pulse- Investors Asking- Where Do We See the Most Positive Negative 2027 Consensus Revisions--260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "2027共识修正：哪",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x2",
+      "股票|个股->公司 x4",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：2027年业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-GS-Energy- Utilities - Mining Pulse- Investors Asking- Where Do We See the Most Positive Negative 2027 Consensus Revisions--260723.pdf",
+      "cleaned_source_title": "GS-Energy- Utilities - Mining Pulse- Investors Asking- Where Do We See the Most Positive Negative 2027 Consensus Revisions",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：能源UtilitiesMiningPulseIn",
+      "raw_candidates": [
+        "GS：2027年盈利预期分歧最大的自然资源子板块",
+        "GS：2027年FactSet预期上修与下修空间公司梳理",
+        "GS：油气公用事业金属采矿板块预期分歧分析"
+      ],
+      "cleaned_candidates": [
+        "GS：2027年盈利预期分歧最大的自然资源子板块",
+        "GS：2027年FactSet预期上修与下修空间公司梳理",
+        "GS：油气公用事业金属采矿板块预期分歧分析",
+        "GS：能源UtilitiesMiningPulseIn"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：2027年FactSet预期上修与下修空间公司梳理",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：油气公用事业金属采矿板块预期分歧分析",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：能源UtilitiesMiningPulseIn",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：2027年业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：2027年盈利预期分歧最大的自然资源子板块",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：2027年业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0003-28-GS-Global Markets Comment- Distinguishing AI Risks-Size of the Pie vs. Share of the Pie-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI风险，分清“蛋糕",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资组合->组合观察 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-Global Markets Comment- Distinguishing AI Risks-Size of the Pie vs. Share of the Pie-260723.pdf",
+      "cleaned_source_title": "GS-Global Markets Comment- Distinguishing AI Risks-Size of the Pie vs. Share of the Pie",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AI全球MarketsComment",
+      "raw_candidates": [
+        "全球市场评论-区分AI不确定性-蛋糕大小与蛋糕分配",
+        "全球市场评论-区分AI不确定性-2025年1月至2026年7月事件验证",
+        "全球市场评论-区分AI不确定性-总价值冲击与分配冲击框架"
+      ],
+      "cleaned_candidates": [
+        "GS：全球市场评论-区分AI不确定性-蛋糕大小与蛋糕分配",
+        "GS：全球市场评论-区分AI不确定性",
+        "GS：全球市场评论-区分AI不确定性-总价值冲击与分配冲击框架",
+        "GS：AI全球MarketsComment",
+        "GS：区分AI不确定性——蛋糕大小与蛋糕分配"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：全球市场评论-区分AI不确定性",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：全球市场评论-区分AI不确定性-总价值冲击与分配冲击框架",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AI全球MarketsComment",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：区分AI不确定性——蛋糕大小与蛋糕分配",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：全球市场评论-区分AI不确定性-蛋糕大小与蛋糕分配",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0004-29-GS-Intel Corp. -INTC.US-- Strong quarter across the board- with margin upside and positive process technology commentary-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Intel交出这份成",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：英特尔业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-Intel Corp. -INTC.US-- Strong quarter across the board- with margin upside and positive process technology commentary-260723.pdf",
+      "cleaned_source_title": "GS-Intel Corp. -INTC.US-- Strong quarter across the board- with margin upside and positive process technology commentary",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：IntelCorp.",
+      "raw_candidates": [
+        "英特尔二季度营收与毛利率超预期",
+        "英特尔二季度营收161亿美元毛利率41.8%",
+        "英特尔数据中心CPU与制程进展驱动业绩"
+      ],
+      "cleaned_candidates": [
+        "GS：英特尔二季度营收与毛利率超预期",
+        "GS：英特尔二季度营收161亿美元毛利率41.8%",
+        "GS：英特尔数据中心CPU与制程进展驱动业绩",
+        "GS：IntelCorp.",
+        "GS：营收161亿美元，高于GS预测的143亿美元和市场的144亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：英特尔二季度营收161亿美元毛利率41.8%",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "GS：英特尔数据中心CPU与制程进展驱动业绩",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：IntelCorp.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：营收161亿美元，高于GS预测的143亿美元和市场的144亿美元",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：英特尔业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：英特尔二季度营收与毛利率超预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：英特尔业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_unucacc6/pdfs/0005-30-GS-Horizon Robotics -9660.HK-- HSD V2.0 launched with new models and enhanced experiences- 1H26 rev to up 25-35- YoY- Buy-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "HSD 2.0 上车",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：地平线HSDV2.0发布与1H26营收指引",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-Horizon Robotics -9660.HK-- HSD V2.0 launched with new models and enhanced experiences- 1H26 rev to up 25-35- YoY- Buy-260723.pdf",
+      "cleaned_source_title": "GS-Horizon Robotics -9660.HK-- HSD V2.0 launched with new models and enhanced experiences- 1H26 rev to up 25-35- YoY- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：HorizonRoboticsHSDV2.0la",
+      "raw_candidates": [
+        "地平线HSD V2.0发布与1H26营收指引",
+        "地平线HSD V2.0发布-1H26营收同比增长25%-35%",
+        "地平线HSD V2.0发布-全场景NOA方案与营收指引"
+      ],
+      "cleaned_candidates": [
+        "GS：地平线HSDV2.0发布与1H26营收指引",
+        "GS：地平线HSDV2.0发布-1H26营收同比增长25%-35%",
+        "GS：地平线HSDV2.0发布-全场景NOA方案与营收指引",
+        "GS：HorizonRoboticsHSDV2.0la",
+        "GS：地平线于2026年6月底推出HSDV2.0"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：地平线HSDV2.0发布-1H26营收同比增长25%-35%",
+          "reasons": [
+            "incomplete_last_segment"
+          ]
+        },
+        {
+          "title": "GS：地平线HSDV2.0发布-全场景NOA方案与营收指引",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "GS：HorizonRoboticsHSDV2.0la",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：地平线于2026年6月底推出HSDV2.0",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        }
+      ],
+      "selected_title": "GS：地平线HSDV2.0发布与1H26营收指引",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：地平线HSDV2.0发布与1H26营收指引"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
