@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0001-36-GS-LG Display -034220.KS- Earnings Review- 2Q26 miss- expect higher OLED shipment but stronger pricing pressure-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0002-37-GS-Mobileye Global Inc.-MBLY.US-Execution on robotaxi and robotics in focus-estimates moving higher from new government R-D incentive-2Q26 wrap-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0003-38-GS-OIL ANALYST New Upside Price Risks Amid Red Sea Tensions-260722.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0004-39-GS-Nestle -NESN.S- Soft US growth and caution on margin trajectory do not derail company turnaround- Reiterate Buy-260723.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0005-40-GS-SK Telecom -017670.KS-- Established SK Hyper as AIDC development vehicle-260723.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

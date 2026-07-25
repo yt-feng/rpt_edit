@@ -1,0 +1,545 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0001-36-GS-LG Display -034220.KS- Earnings Review- 2Q26 miss- expect higher OLED shipment but stronger pricing pressure-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "OLED出货量涨了，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：LGDisplay业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-GS-LG Display -034220.KS- Earnings Review- 2Q26 miss- expect higher OLED shipment but stronger pricing pressure-260723.pdf",
+      "cleaned_source_title": "GS-LG Display -034220.KS- Earnings Review- 2Q26 miss- expect higher OLED shipment but stronger pricing pressure",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LGDisplayEarningsReview2Q26",
+      "raw_candidates": [
+        "LG Display 2Q26业绩回顾：出货量增长与定价压力",
+        "LG Display 2Q26营收5.6万亿韩元，营业亏损1080亿",
+        "LG Display 2Q26智能手机OLED出货量上调至8600万片"
+      ],
+      "cleaned_candidates": [
+        "GS：LGDisplay2Q26业绩回顾，出货量增长与定价压力",
+        "GS：LGDisplay2Q26营收5.6万亿韩元，营业亏损1080亿",
+        "GS：LGDisplay2Q26智能手机OLED出货量上调至8600万",
+        "GS：LGDisplayEarningsReview2Q26",
+        "GS：3季度ASP指引暗示智能手机和平板OLED价格同比下滑5%至8%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：LGDisplay2Q26营收5.6万亿韩元，营业亏损1080亿",
+          "reasons": [
+            "anchor_coverage=0.46",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：LGDisplay2Q26智能手机OLED出货量上调至8600万",
+          "reasons": [
+            "anchor_coverage=0.54",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：LGDisplayEarningsReview2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：3季度ASP指引暗示智能手机和平板OLED价格同比下滑5%至8%",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：LGDisplay业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：LGDisplay2Q26业绩回顾，出货量增长与定价压力",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：LGDisplay业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0002-37-GS-Mobileye Global Inc.-MBLY.US-Execution on robotaxi and robotics in focus-estimates moving higher from new government R-D incentive-2Q26 wrap-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Mobileye 的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：Mobileye机器人出租车与机器人执行与研发激励影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-GS-Mobileye Global Inc.-MBLY.US-Execution on robotaxi and robotics in focus-estimates moving higher from new government R-D incentive-2Q26 wrap-260723.pdf",
+      "cleaned_source_title": "GS-Mobileye Global Inc.-MBLY.US-Execution on robotaxi and robotics in focus-estimates moving higher from new government R-D incentive-2Q26 wrap",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Mobileye全球Inc.",
+      "raw_candidates": [
+        "GS-Mobileye机器人出租车与机器人执行与研发激励影响",
+        "GS-Mobileye二季度营收5.08亿美元与研发激励9300万美元",
+        "GS-Mobileye机器人出租车与机器人业务与Stellantis订单"
+      ],
+      "cleaned_candidates": [
+        "GS：Mobileye机器人出租车与机器人执行与研发激励影响",
+        "GS：Mobileye二季度营收5.08亿美元与研发激励9300万美元",
+        "GS：Mobileye机器人出租车与机器人业务与Stellantis订",
+        "GS：Mobileye全球Inc.",
+        "GS：调整后毛利率同比下降约300个基点至65.6%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：Mobileye二季度营收5.08亿美元与研发激励9300万美元",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "GS：Mobileye机器人出租车与机器人业务与Stellantis订",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：Mobileye全球Inc.",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：调整后毛利率同比下降约300个基点至65.6%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：Mobileye机器人出租车与机器人执行与研发激励影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：Mobileye机器人出租车与机器人执行与研发激励影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0003-38-GS-OIL ANALYST New Upside Price Risks Amid Red Sea Tensions-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "红海闹剧还没完，油价",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x3",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-GS-OIL ANALYST New Upside Price Risks Amid Red Sea Tensions-260722.pdf",
+      "cleaned_source_title": "GS-OIL ANALYST New Upside Price Risks Amid Red Sea Tensions",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：NewUpsidePriceRisksAmidR",
+      "raw_candidates": [
+        "GS：红海紧张局势带来油价上行不确定性",
+        "GS：曼德海峡每日900万桶流量中近400万桶难绕行",
+        "GS：夏季库存收紧与三重航运咽喉推升油价不确定性"
+      ],
+      "cleaned_candidates": [
+        "GS：红海紧张局势带来油价上行不确定性",
+        "GS：曼德海峡每日900万桶流量中近400万桶难绕行",
+        "GS：夏季库存收紧与三重航运咽喉推升油价不确定性",
+        "GS：NewUpsidePriceRisksAmidR",
+        "GS：尽管沙特延布港的原油装载量在过去7天仍维持在每日约500万桶的高"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：曼德海峡每日900万桶流量中近400万桶难绕行",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：夏季库存收紧与三重航运咽喉推升油价不确定性",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：NewUpsidePriceRisksAmidR",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：尽管沙特延布港的原油装载量在过去7天仍维持在每日约500万桶的高",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：红海紧张局势带来油价上行不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0004-39-GS-Nestle -NESN.S- Soft US growth and caution on margin trajectory do not derail company turnaround- Reiterate Buy-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "雀巢Q2：增长放缓但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "拖累->影响 x2",
+      "sanitize_wechat_stock_line",
+      "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+      "sanitize_wechat_stock_line",
+      "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-GS-Nestle -NESN.S- Soft US growth and caution on margin trajectory do not derail company turnaround- Reiterate Buy-260723.pdf",
+      "cleaned_source_title": "GS-Nestle -NESN.S- Soft US growth and caution on margin trajectory do not derail company turnaround- Reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Nestle-SoftUS增长和谨慎onmarg",
+      "raw_candidates": [
+        "雀巢美国增长放缓与利润率路径谨慎",
+        "雀巢二季度内生增长1.8%北美去库存拖累",
+        "雀巢北美宠物护理去库存与成本节约计划"
+      ],
+      "cleaned_candidates": [
+        "GS：雀巢美国增长放缓与利润率路径谨慎",
+        "GS：雀巢二季度内生增长1.8%北美去库存拖累",
+        "GS：雀巢北美宠物护理去库存与成本节约计划",
+        "GS：Nestle-SoftUS增长和谨慎onmarg",
+        "GS：雀巢二季度有机销售增长3.7%，其中内生增长（RIG）为1.8%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：雀巢二季度内生增长1.8%北美去库存拖累",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：雀巢北美宠物护理去库存与成本节约计划",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Nestle-SoftUS增长和谨慎onmarg",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：雀巢二季度有机销售增长3.7%，其中内生增长（RIG）为1.8%",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：雀巢美国增长放缓与利润率路径谨慎",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__s_jmb9y/pdfs/0005-40-GS-SK Telecom -017670.KS-- Established SK Hyper as AIDC development vehicle-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "SK电讯的AI数据中",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：SKTelecom设立AI数据中心子公司SKHyper",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-GS-SK Telecom -017670.KS-- Established SK Hyper as AIDC development vehicle-260723.pdf",
+      "cleaned_source_title": "GS-SK Telecom -017670.KS-- Established SK Hyper as AIDC development vehicle",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SKTelecom",
+      "raw_candidates": [
+        "SK Telecom设立AI数据中心子公司SK Hyper",
+        "SK Telecom AI数据中心子公司SK Hyper-首期3300亿韩元",
+        "SK Telecom AI数据中心子公司SK Hyper-5GW产能计划"
+      ],
+      "cleaned_candidates": [
+        "GS：SKTelecom设立AI数据中心子公司SKHyper",
+        "GS：SKTelecomAI数据中心子公司SKHyper",
+        "GS：SKTelecom",
+        "GS：7月23日，SKTelecom（SKT）董事会批准设立全资AI数"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：SKTelecomAI数据中心子公司SKHyper",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment"
+          ]
+        },
+        {
+          "title": "GS：SKTelecom",
+          "reasons": [
+            "anchor_coverage=0.32"
+          ]
+        },
+        {
+          "title": "GS：7月23日，SKTelecom（SKT）董事会批准设立全资AI数",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        }
+      ],
+      "selected_title": "GS：SKTelecom设立AI数据中心子公司SKHyper",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：SKTelecom设立AI数据中心子公司SKHyper"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
