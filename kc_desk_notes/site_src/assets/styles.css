@@ -1925,6 +1925,17 @@ a.secondary-button {
   overflow-wrap: anywhere;
 }
 
+.vid2ppt-sponsor-link {
+  color: #0f766e;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.vid2ppt-sponsor-link:hover {
+  color: #0d9488;
+}
+
 .admin-close {
   position: absolute;
   top: 10px;

@@ -3,6 +3,7 @@
   const CONTACT_WECHAT = "MacroGate";
   const CONTACT_EMAIL = "econ.scroll@gmail.com";
   const VID2PPT_SPONSOR_URL = "https://vid2ppt.com/sponsor/?from=kcdesk";
+  const VID2PPT_SPONSOR_DISPLAY_URL = "https://vid2ppt.com/sponsor/";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
   const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
@@ -137,6 +138,14 @@
       .replace(/WeChat\s*:\s*MacroGate/gi, `email ${CONTACT_EMAIL}`)
       .replace(/联系微信号?\s*[:：]?\s*MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`)
       .replace(/联系\s+MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`);
+  }
+
+  function vid2pptSponsorLinkHtml(session = loadAuthSession()) {
+    return `<a class="vid2ppt-sponsor-link" href="${escapeHtml(vid2pptSponsorUrlForSession(session))}" target="_blank" rel="noopener">${escapeHtml(VID2PPT_SPONSOR_DISPLAY_URL)}</a>`;
+  }
+
+  function atlasSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
+    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 的 ATLAS 赞助恰好会赠送 KCdesk.com 对应时长会员权益`;
   }
 
   function normalize(value) {
@@ -538,7 +547,7 @@
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
-            <span>Vid2PPT 的 ATLAS 赞助恰好会赠送 KCdesk.com 对应时长会员权益；单篇报告或其它问题请联系${contactMethodHtml()}。</span>
+            <span>${atlasSponsorGuidanceHtml("", session)}；单篇报告或其它问题请联系${contactMethodHtml()}。</span>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -4165,7 +4174,7 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限；Vid2PPT 的 ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。</p>
+        <p class="subtle" id="accountAccessHint">${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；")}。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 ATLAS</a>
@@ -4195,6 +4204,12 @@
     if (!target) return;
     target.className = kind ? `status-line ${kind}` : "status-line";
     target.textContent = localizedContactText(text);
+  }
+
+  function setLineHtmlStatus(target, html, kind) {
+    if (!target) return;
+    target.className = kind ? `status-line ${kind}` : "status-line";
+    target.innerHTML = html || "";
   }
 
   async function fetchReportAccess(workerUrl, item, source) {
@@ -4261,6 +4276,10 @@
       setLineStatus(status, text, kind);
     }
 
+    function statusTargetHtml(html, kind) {
+      setLineHtmlStatus(status, html, kind);
+    }
+
     async function refresh() {
       const session = loadAuthSession();
       panel.hidden = false;
@@ -4269,8 +4288,8 @@
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
-        hint.textContent = "登录后可查看账号下载权限；Vid2PPT 的 ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。";
-        statusTarget(`未登录时可先注册或登录账号；需要会员权益请前往 Vid2PPT 赞助页选择 ATLAS。其它问题可联系 ${CONTACT_EMAIL}。`);
+        hint.innerHTML = `${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
+        statusTargetHtml(`未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 ATLAS。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -4285,9 +4304,9 @@
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          statusTarget(summary
-            ? `当前账号有${summary}，但不包含此报告。Vid2PPT ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。`
-            : "当前账号尚未解锁此报告。请前往 Vid2PPT 赞助页选择 ATLAS；支付完成后，会赠送 KCdesk.com 对应时长会员权益。");
+          statusTargetHtml(summary
+            ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${atlasSponsorGuidanceHtml("", session)}。`
+            : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 ATLAS；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;
