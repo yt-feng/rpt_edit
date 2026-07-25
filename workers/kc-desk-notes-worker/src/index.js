@@ -81,6 +81,7 @@ const VID2PPT_ATLAS_PLANS = {
   "ATLAS-M": { months: 1, label: "ATLAS monthly" },
   "ATLAS-Q": { months: 3, label: "ATLAS quarter" },
   "ATLAS-Y": { months: 12, label: "ATLAS year" },
+  "ATLAS-2Y": { months: 24, label: "ATLAS two years" },
 };
 const VID2PPT_REDEEM_URL = "https://vid2ppt.com/api/usage";
 const VID2PPT_CODE_PATTERN = /^[A-Z0-9][A-Z0-9-]{7,39}$/;

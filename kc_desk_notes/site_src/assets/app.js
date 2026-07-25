@@ -145,7 +145,7 @@
   }
 
   function atlasSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
-    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 的 ATLAS 赞助恰好会赠送 KCdesk.com 对应时长会员权益`;
+    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 的 NOVA 赞助恰好会赠送 KCdesk.com 对应时长会员权益`;
   }
 
   function normalize(value) {
@@ -970,11 +970,11 @@
     const entitlement = user && user.entitlement || {};
     if (access.source === "role") return "账号角色";
     if (access.source === "disabled") return "账号已禁用";
-    if (access.source === "vid2ppt_atlas") return `Vid2PPT ATLAS 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
+    if (access.source === "vid2ppt_atlas") return `Vid2PPT NOVA 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
     if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
     if (access.source === "entitlement") {
       return entitlement.grant_source === "vid2ppt_atlas"
-        ? `Vid2PPT ATLAS 赠送${entitlement.source_plan_code ? ` · ${entitlement.source_plan_code}` : ""}`
+        ? `Vid2PPT NOVA 赠送${entitlement.source_plan_code ? ` · ${entitlement.source_plan_code}` : ""}`
         : "会员权益";
     }
     if (access.source === "stored") return "后台授权";
@@ -4177,7 +4177,7 @@
         <p class="subtle" id="accountAccessHint">${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；")}。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
-          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 ATLAS</a>
+          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 NOVA</a>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
         </div>
         <div class="account-redeem-row">
@@ -4289,7 +4289,7 @@
       openAccount.hidden = Boolean(session);
       if (!session) {
         hint.innerHTML = `${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
-        statusTargetHtml(`未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 ATLAS。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
+        statusTargetHtml(`未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -4306,7 +4306,7 @@
           if (passwordForm) passwordForm.hidden = false;
           statusTargetHtml(summary
             ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${atlasSponsorGuidanceHtml("", session)}。`
-            : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 ATLAS；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
+            : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;
