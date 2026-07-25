@@ -1,0 +1,81 @@
+Found 59 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6nq6j6zx/pdfs/0001-11-CITI-Global Economic Outlook - Strategy-Renewed Uncertainties-But Continued Resilience-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6nq6j6zx/pdfs/0002-12-CITI-Digital Realty Trust Inc-DLR.US-Takeaways from DLR Earnings Call and Management Call-Back-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6nq6j6zx/pdfs/0003-13-Deutsche Bank-Intuitive Surgical-ISRG.OQ-Key takeaways from Society of Robotic Surgery investor summit-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6nq6j6zx/pdfs/0004-14-Deutsche Bank-KONE Corporation-KNEBV.HE-Good orders with cost inflation starting to feature- new TP -67- BUY-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6nq6j6zx/pdfs/0005-15-CITI-Hengli Hydraulic -601100-Ball Screw and Linear Guide Likely a Beat-Positive Humanoid Read Through from Seenpin-260723.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=b1f58cf4-844a-42f5-b786-c44018803bff
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, done, done, done, running
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 7b230bf423108fed9ae39424696ad4ccf3b9a8d775149fe4c93b9213e591021a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset ae261aaab88d55b09914fe9c263673eda70a189006f1834c69e4eeb64c705d31.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset e91602dd836194ca7b6ae4b4784dc56df0d8a977cf8e3f19785b76da27e70c67.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 3d11bbcc224aee062baa366f4109c933c82ce2d01961d0414595bbabeeec9ef4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 0809b464f907984c73ebe872c9d144edec71fc2486ed515b37d9a7e1dbb3314d.jpg: score=1;odd_ratio:5.35,edge:0.24,contrast,large
+Skip non-chart visual asset c036ab1d932dc066f8dcdc4c530abf2d40d5da59bf2e07eec784671cfe754934.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset f8787da8ed6ff516dc8988e0ce120ca19b2f3562bb5dad5b8b1f44e223058f92.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset 8480c420286810ea6709331129c5015f5d6fea35f61cbe82bff6564e739a83d3.jpg: score=-100;too_small:215x962
+Skip non-chart visual asset 4978176a32945281091600a288abaf23a04ab5f4d07c95c8fb53d60d99f2afd5.jpg: score=-1;odd_ratio:5.89,edge:0.27
+Skip non-chart visual asset 4b20f0445003433e4a0ff0f3995e13f77eb2b1e19237ceefa83b13819295da50.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 2670c2e4dc018eef50fd0030a7feb34a1a660aca22560b244b4016c2fa9441f6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset a70a030e5e1d0cb4c32ce5a065bf699da8f62dc671df0174bbb3f7ec44d24eb3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 87816f3b1c5b15deddd7f80ee1111bf6cd7cf2473e9faa142f1e32f3fb010f60.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset eaa51f023629f93cd9a4c63a6740854c3cdc650bd65f1e83ef81dc057b4c5981.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,contrast
+Skip non-chart visual asset ab06fc27178f881997ab3695a6756ff4f369375675607fbd2b657c816d4f2fa1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 3317c25d7fd7e34941b138de670220113716eab1614fd9cc1f5677f3098b19e3.jpg: score=-100;too_small:120x126
+Skip non-chart visual asset c7baa16f32fcc16ce50678b502fa097d7c4cb5789542827d3ee9280dd3250309.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 9c22a34aa6731c98b72948f1269ac00411658fc8d6043985c3fc4e5989d60517.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset f6687bec7a304869d9484a6da1896e39e6da623bd71bc7bc2e022ff30bad2d58.jpg: score=-100;too_small:223x959
+Skip non-chart visual asset a54c830a2cfc08a7069f82ad5d0c69bcba96659a55f805c7358f45ff40fd1c48.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 441e6ae7be905a847b165cac13cc0714bbde821c09ac857b17222edf00385dae.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Neutralized WeChat title while keeping the report: 花旗：全球宏观环境展望-策略-不确定性延续与韧性 -> 花旗：研究主题与行业变化观察
+Skip non-chart visual asset ba681462a6c6818eb0e9f8895ebd4ad3bce4a6e5e28f38b79c989c2d42c26256.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 7516531df9630447392aa554a3a6d37691d86b6303c0f4e57164a43f0b737b05.jpg: score=-100;too_small:1431x154
+Skip non-chart visual asset a5ff65ee49d13334fd20376efb903abc04a77ae898fdff733191ad5dfc593668.jpg: score=-100;too_small:362x101
+Skip non-chart visual asset 0ecdb9aec96e02e3fc65edffc32ec236500694e406ba8b2a421daf74c3b49e71.jpg: score=-100;too_small:359x154
+Skip non-chart visual asset 4c93281f605572884fb529852a07bae18ae54f70351cd9815e4f2bdebd85f262.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 23f19574da670aa01ecf4ebe3bd9b1753277fa8ea962ae025b0f5241608265f5.jpg: score=-100;too_small:365x101
+Skip non-chart visual asset 9844cd2e520dd24f1bc9484eb89b3211eeeb285f322091cbb4924576c2f62f98.jpg: score=-100;too_small:1307x103
+Skip non-chart visual asset 90f8776aaff11a5d0be9eb59291e92ae4773b3756cb03559ebbe26ca45b62a6f.jpg: score=-100;too_small:368x154
+Skip non-chart visual asset 96eb7ed8abfa6359714f104220e6a43f76f9ffc3ae2a190d5baaa85d0c0f95ad.jpg: score=-100;too_small:359x154
+Skip non-chart visual asset b6cb727d9a051d38f25c47696ec78449cb48cc360cced6b9ef4f5c52e1c3c499.jpg: score=-100;too_small:359x101
+Skip non-chart visual asset 227e996bba2d129f80994d44c38aa8c9357a6a145683b511601ccfeba17507b5.jpg: score=-100;too_small:451x109
+Skip non-chart visual asset 7d257e8378f916d14383f25e6195eeb961f3e00afce51515be754beebf7212ee.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Skip non-chart visual asset 09b591ddcdcd2eeaf273310c06ce79509e14529d1ba3f03a7732a0d3773a9ec4.jpg: score=-100;too_small:1412x117
+Skip non-chart visual asset 5805fa5f34d20c3a5d37f97a7a2148a48d739174b892c55a0953eb6fe19d57bc.jpg: score=-1;odd_ratio:5.45,edge:0.21
+Skip non-chart visual asset a5edf25ee308d7dd5a1c8a92da5694a0dd0410f2f6e41f31ffe728856c053c3b.jpg: score=-100;too_small:801x151
+Skip non-chart visual asset 49f325749d750bee4fd2dc001354d3dbcec7220420e03912bd30be985d0a44ac.jpg: score=1;odd_ratio:4.91,edge:0.32,contrast,large
+Neutralized WeChat title while keeping the report: 德意志银行：直觉外科机器人手术峰会关键要点 -> 德意志银行：机器人行业数据与主题变化观察
+Skip non-chart visual asset 7ef373ac06188335bb8ecc2fc4765738406e0560fad96ee77423b434d7a8c0fb.jpg: score=-100;too_small:448x170
+Skip non-chart visual asset 3cc0efb98778c9300069d60d80eb7efb60dcae10d88cfee2f03032367d7744d4.jpg: score=-1;odd_ratio:5.45,edge:0.21
+Skip non-chart visual asset 5ca6b98181cbdc85e4ee7304a4e211c0199321d0a353aac1131b8bf3cafee2d9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,contrast
+Skip non-chart visual asset 9a70988bfaceec8cbd6f90aae997092b2b0365186b49a297b44168f1711899a2.jpg: score=2;edge:0.18
+Skip non-chart visual asset 8be013701d4936a7e259464b4b42c25b5c76b8ee37d7dd1c02a3a1a980f8cc75.jpg: score=2;edge:0.24
+Skip non-chart visual asset c1d734367f787cc29cbd8e90f9a7f1c1e5a29e5510691857244af9b8bcb536d1.jpg: score=-100;too_small:1412x117
+Skip non-chart visual asset 17c7de292e0ab971afb8c14f89a88649b1bcc6e81f1b9c3ad0f1677848f04db7.jpg: score=-100;too_small:801x151
+Skip non-chart visual asset f19a79a4c56fa5b9cef34b5868bf2a17e69c0a46a8084f6bbdbaa380aad2b374.jpg: score=-100;too_small:448x139
+Skip non-chart visual asset 0fad16b64635511f4067b0bbf32470c656c59d09e168dd16a66d1f0c19a2bd7b.jpg: score=-100;too_small:490x187
+Skip non-chart visual asset 5ada4db986cb09def20ea5296ba984128748bd9f36750a275fe96466b62c61fb.jpg: score=2;edge:0.24
+Neutralized WeChat title while keeping the report: 德意志银行：通力订单增长与成本通胀特征 -> 德意志银行：价格数据与市场变化观察
+Skip non-chart visual asset 2b05be26c6d6218cf3ef3ef9ff51f226a79b0d5376050361fce22ee023397424.jpg: score=-100;too_small:428x151
+Skip non-chart visual asset 30ade050f3ce5dbe594f29fc2ef76bfa6ffdd18ab7c51260d7abe32660333158.jpg: score=-100;too_small:1431x148
+Skip non-chart visual asset 2771971c1f29595aebfa65bd252dea775ef3d8d6868161740d42e86a878ca4ea.jpg: score=-100;too_small:37x49
+Skip non-chart visual asset bff336444d0ea7fc41ea1dd7235df62c89727921dade2c13926b683f1fafae1f.jpg: score=-100;too_small:423x146
+Skip non-chart visual asset a601b981f2fe8a9454e9b8a8a344dfe4be5547f7d26c992554e8bdaa628f2a2a.jpg: score=-100;too_small:45x45
+Skip non-chart visual asset 8bbb03da8c82f3893f38ffb0ffec6e55a324665f6d394a3a2cd2a00f44eb877f.jpg: score=-100;too_small:45x37
+Skip non-chart visual asset 6de72180d91008f0f6f476de0dac47e1b330d607ebaff57dfef83fe973e38b97.jpg: score=-100;too_small:376x134
+Skip non-chart visual asset 7b526180e572deafbecfd1da473afed1edd62bcb58fbad9a815f721b45ee174e.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 291e65556d43b5ba2956866846086cb786cd46604163e64a0302d259fa02edc2.jpg: score=-100;too_small:434x154
+Skip non-chart visual asset 67bb172b9a1f85b97ed8bc483bcfaf06093278dbc7cf5f97c5687034aec873c5.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset c80357f6d75d22bd17421aa2e3885629d6debeec519faf504ebdfc50ae53bc5c.jpg: score=-100;too_small:371x131
+Skip non-chart visual asset b54a2cef81381ed1049d59c044c78b376a330985e25e65792ab5f3f81aecd888.jpg: score=-100;too_small:362x131
+Skip non-chart visual asset 27d65e89cf9d0c171848c20c2d0396b8c23934c139c4789b162b8b5067fd2756.jpg: score=2;chart_ratio,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260725/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

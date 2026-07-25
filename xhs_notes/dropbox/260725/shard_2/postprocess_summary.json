@@ -1,0 +1,560 @@
+[
+  {
+    "item": "0001-11-CITI-Global-Economic-Outlook---Strategy-Renewed-Uncertainties-But-Contin",
+    "source_pdf": "/tmp/pdf_batch_001_6nq6j6zx/pdfs/0001-11-CITI-Global Economic Outlook - Strategy-Renewed Uncertainties-But Continued Resilience-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "全球经济的“AI缓冲",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "全球经济->全球宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "全球经济->全球宏观环境 x3",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "全球经济->全球宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "全球经济->全球宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-CITI-Global Economic Outlook - Strategy-Renewed Uncertainties-But Continued Resilience-260723.pdf",
+      "cleaned_source_title": "CITI-Global Economic Outlook - Strategy-Renewed Uncertainties-But Continued Resilience",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：全球Economic展望策略RenewedUnc",
+      "raw_candidates": [
+        "全球宏观环境展望-策略-不确定性延续与韧性",
+        "全球宏观环境展望-2026年增长预测2.5%与AI研究支撑",
+        "全球宏观环境展望-策略-增长韧性延续与AI研究支撑"
+      ],
+      "cleaned_candidates": [
+        "Citi：全球宏观环境展望-策略-不确定性延续与韧性",
+        "Citi：全球宏观环境展望-2026年增长预测2.5%与AI研究支撑",
+        "Citi：全球宏观环境展望-策略-增长韧性延续与AI研究支撑",
+        "Citi：全球Economic展望策略RenewedUnc",
+        "Citi：同时指出，全球通胀预期较2月已上调约0.75个百分点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：全球宏观环境展望-2026年增长预测2.5%与AI研究支撑",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：全球Economic展望策略RenewedUnc",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：同时指出，全球通胀预期较2月已上调约0.75个百分点",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：全球宏观环境展望-策略-不确定性延续与韧性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-12-CITI-Digital-Realty-Trust-Inc-DLR.US-Takeaways-from-DLR-Earnings-Call-an",
+    "source_pdf": "/tmp/pdf_batch_001_6nq6j6zx/pdfs/0002-12-CITI-Digital Realty Trust Inc-DLR.US-Takeaways from DLR Earnings Call and Management Call-Back-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "数据中心需求有多强？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：在二季度1.08亿美元的签约中，约20%与AI部署直接相关",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-CITI-Digital Realty Trust Inc-DLR.US-Takeaways from DLR Earnings Call and Management Call-Back-260723.pdf",
+      "cleaned_source_title": "CITI-Digital Realty Trust Inc-DLR.US-Takeaways from DLR Earnings Call and Management Call-Back",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：DigitalRealtyTrustIncTak",
+      "raw_candidates": [
+        "Citi：Digital Realty数据中心租赁与开发管线支撑增长预期",
+        "Citi：Digital Realty二季度续约价差25% AI相关签约占20%",
+        "Citi：Digital Realty开发管线超200亿美元预租比例63%",
+        "Digital Realty数据中心租赁与开发管线支撑增长预期",
+        "Digital Realty二季度续约价差25% AI相关签约占20%",
+        "Digital Realty开发管线超200亿美元预租比例63%"
+      ],
+      "cleaned_candidates": [
+        "Citi：DigitalRealty数据中心租赁与开发管线支撑增长预期",
+        "Citi：DigitalRealty二季度续约价差25%AI相关签约占20",
+        "Citi：DigitalRealty开发管线超200亿美元预租比例63%",
+        "Citi：DigitalRealtyTrustIncTak",
+        "Citi：在二季度1.08亿美元的签约中，约20%与AI部署直接相关"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：DigitalRealty数据中心租赁与开发管线支撑增长预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：DigitalRealty二季度续约价差25%AI相关签约占20",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：DigitalRealty开发管线超200亿美元预租比例63%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：DigitalRealtyTrustIncTak",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：在二季度1.08亿美元的签约中，约20%与AI部署直接相关",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1.08",
+          "20"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Citi：在二季度1.08亿美元的签约中，约20%与AI部署直接相关",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Citi：Digital Realty数据中心租赁与开发管线支撑增长预期",
+        "Citi：Digital Realty二季度续约价差25% AI相关签约占20%",
+        "Citi：Digital Realty开发管线超200亿美元预租比例63%"
+      ],
+      "final_title_after_wording_guard": "Citi：在二季度1.08亿美元的签约中，约20%与AI部署直接相关"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-13-Deutsche-Bank-Intuitive-Surgical-ISRG.OQ-Key-takeaways-from-Society-of-R",
+    "source_pdf": "/tmp/pdf_batch_001_6nq6j6zx/pdfs/0003-13-DB-Intuitive Surgical-ISRG.OQ-Key takeaways from Society of Robotic Surgery investor summit-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "机器人手术的下一站：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "DB：机器人行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-DB-Intuitive Surgical-ISRG.OQ-Key takeaways from Society of Robotic Surgery investor summit-260723.pdf",
+      "cleaned_source_title": "DB-Intuitive Surgical-ISRG.OQ-Key takeaways from Society of Robotic Surgery investor summit",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：IntuitiveSurgicalKeyt",
+      "raw_candidates": [
+        "直觉外科机器人手术峰会关键要点",
+        "直觉外科：机器人手术渗透率五年内预计从33%升至48%",
+        "直觉外科：达芬奇系统装机份额五年后预计降至68%"
+      ],
+      "cleaned_candidates": [
+        "DB：直觉外科机器人手术峰会关键要点",
+        "DB：直觉外科，机器人手术渗透率五年内预计从33%升至48%",
+        "DB：直觉外科，达芬奇系统装机份额五年后预计降至68%",
+        "DB：IntuitiveSurgicalKeyt",
+        "DB：机器人手术渗透率五年内预计从33%升至48%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：直觉外科，机器人手术渗透率五年内预计从33%升至48%",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "DB：直觉外科，达芬奇系统装机份额五年后预计降至68%",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：IntuitiveSurgicalKeyt",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：机器人手术渗透率五年内预计从33%升至48%",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：机器人行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "DB：直觉外科机器人手术峰会关键要点",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "DB：机器人行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-14-Deutsche-Bank-KONE-Corporation-KNEBV.HE-Good-orders-with-cost-inflation-",
+    "source_pdf": "/tmp/pdf_batch_001_6nq6j6zx/pdfs/0004-14-DB-KONE Corporation-KNEBV.HE-Good orders with cost inflation starting to feature- new TP -67- BUY-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "通缩周期下，它还能提",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "DB：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-DB-KONE Corporation-KNEBV.HE-Good orders with cost inflation starting to feature- new TP -67- BUY-260723.pdf",
+      "cleaned_source_title": "DB-KONE Corporation-KNEBV.HE-Good orders with cost inflation starting to feature- new TP -67- BUY",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：KONECorporationGoodor",
+      "raw_candidates": [
+        "通力订单增长与成本通胀特征",
+        "通力Q2订单增长11%与成本通胀",
+        "通力订单增长与成本通胀定价策略"
+      ],
+      "cleaned_candidates": [
+        "DB：通力订单增长与成本通胀特征",
+        "DB：通力Q2订单增长11%与成本通胀",
+        "DB：通力订单增长与成本通胀定价策略",
+        "DB：KONECorporationGoodor",
+        "DB：通力2026年第二季度订单量同比增长11%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：通力Q2订单增长11%与成本通胀",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "DB：KONECorporationGoodor",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：通力2026年第二季度订单量同比增长11%",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "DB：通力订单增长与成本通胀特征",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "DB：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-15-CITI-Hengli-Hydraulic--601100-Ball-Screw-and-Linear-Guide-Likely-a-Beat-",
+    "source_pdf": "/tmp/pdf_batch_001_6nq6j6zx/pdfs/0005-15-CITI-Hengli Hydraulic -601100-Ball Screw and Linear Guide Likely a Beat-Positive Humanoid Read Through from Seenpin-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "滚珠丝杠订单超预期，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：恒立液压滚珠丝杠与直线导轨订单",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-CITI-Hengli Hydraulic -601100-Ball Screw and Linear Guide Likely a Beat-Positive Humanoid Read Through from Seenpin-260723.pdf",
+      "cleaned_source_title": "CITI-Hengli Hydraulic -601100-Ball Screw and Linear Guide Likely a Beat-Positive Humanoid Read Through from Seenpin",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：HengliHydraulic601100BallScrew",
+      "raw_candidates": [
+        "恒立液压滚珠丝杠与直线导轨订单",
+        "恒立液压滚珠丝杠与直线导轨订单超预期",
+        "恒立液压滚珠丝杠与直线导轨进口替代窗口"
+      ],
+      "cleaned_candidates": [
+        "Citi：恒立液压滚珠丝杠与直线导轨订单",
+        "Citi：恒立液压滚珠丝杠与直线导轨订单超预期",
+        "Citi：恒立液压滚珠丝杠与直线导轨进口替代窗口",
+        "Citi：HengliHydraulic601100BallScrew",
+        "Citi：其相关市场IPO招股书显示，2023至2025年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：HengliHydraulic601100BallScrew",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：其相关市场IPO招股书显示，2023至2025年",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：恒立液压滚珠丝杠与直线导轨订单",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：恒立液压滚珠丝杠与直线导轨订单"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
