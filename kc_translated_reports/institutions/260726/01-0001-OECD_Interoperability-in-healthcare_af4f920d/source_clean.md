@@ -1,0 +1,937 @@
+## OECD Health Working Papers No. 197
+# Interoperability in healthcare
+# Towards an interconnected future
+
+This work is issued under the responsibility of the Secretary-General of the OECD and does not necessarily reflect the official views of OECD Member countries.
+
+This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.
+
+
+## Abstract
+
+Interoperability in healthcare – the ability of health systems and stakeholders to securely exchange and use data – remains a longstanding yet underachieved goal in the digitalisation of health systems. This paper analyses international practices across OECD countries to support efficient, equitable, and impactful data use and sharing. Drawing on interviews, a survey, desk research, and expert consultations, the report highlights both the barriers and leading practices at the level of people, policy, processes, and technology. The report outlines opportunities at local, regional, national, and cross-border levels of health data exchange, focusing on stakeholder engagement, individual empowerment, global governance to guide interoperability efforts, collaboration, and the need for legislative foundations. The full value of interoperability is estimated to be between 2.7% and 6.6% of health expenditure annually as per OECD country estimates. Realising it requires a shift from implementation of health information systems to meet the needs of individual facilities towards implementation within an integrated digital health ecosystem centred around the patient. This shift can enable data to follow patients across the care continuum and allow for timelier reuse of data for public benefit, with protections. While technical challenges have historically been prioritised, findings suggest that interoperability is inherently a people (e.g. governance, trust, adoption) and leadership challenge and highlights an opportunity to rethink interoperability as a driver of economic growth and healthier populations. Keys to success are the establishment of trusted health data networks and sustained investment in standards, governance, and data quality to enable scalable and meaningful health system transformation.
+
+## Résumé
+
+L'interopérabilité en santé, c'est-à-dire la capacité des systèmes de santé et de leurs acteurs à échanger et à utiliser les données de manière sécurisée, constitue depuis longtemps un objectif majeur de la transformation numérique des systèmes de santé, mais elle n'a pas encore été pleinement réalisée. Ce document analyse les pratiques internationales au sein des pays de l'OCDE afin de soutenir une utilisation et un partage efficaces, équitables et à fort impact des données. S'appuyant sur des entretiens, une enquête, une recherche documentaire et des consultations d'experts, le rapport met en évidence les obstacles actuels, les pratiques de référence en matière de ressources humaines, de politiques publiques, de processus et de technologies, ainsi que les possibilités d'action. Le rapport présente des pistes d'action aux niveaux local, régional, national et transfrontalier pour l'échange de données de santé, en mettant l'accent sur l'implication des parties prenantes, le renforcement de leurs capacités, la gouvernance mondiale, la collaboration et la nécessité de disposer d'une base juridique solide. Réaliser pleinement la valeur de l'interopérabilité, estimée jusqu'à 6,6 % des dépenses annuelles de santé dans les pays de l'OCDE, nécessite un changement de paradigme : passer de modèles centrés sur les établissements à des systèmes centrés sur les patients. Dans ces systèmes, les données suivent le patient tout au long de son parcours et peuvent être réutilisées dans l'intérêt général, sous réserve de garanties de protection appropriées. Alors que les défis techniques et sémantiques ont historiquement été privilégiés, les résultats de ce rapport suggèrent que l'interopérabilité est intrinsèquement une question de personnes et de direction, tout en soulignant l'opportunité de la repenser comme un moteur de croissance économique et d'amélioration de la santé des populations. Les clés du succès résident dans la mise en place de réseaux de données de santé de confiance et dans des investissements durables en matière de normes, de gouvernance et de qualité des données afin de permettre une transformation des systèmes de santé à la fois évolutive et porteuse de sens.
+
+## Acknowledgements
+
+The work presented here was undertaken by Rachel Fellner and co-written by Yunona L'Heureux, Alina Velazquez Pelaez, and Johannes Köhr. The authors would especially like to thank Eric Sutherland, Senior Health Economist at the OECD, for his guidance in writing this paper and providing valuable recommendations, and Isaura Gutierrez Vargas, Agata Bartkowska, and Morgan Lemin for their revisions of the report. The authors would also like to thank Francesca Colombo of the Employment, Labour and Social Affairs (ELS) Division of the OECD, as well as colleagues from the Science, Technology, and Innovation (STI) Directorate for their time and contribution in reviewing this work. The authors would like to extend their gratitude to the OECD Health Committee and the many government officials, policy and technical experts across the OECD and members of the Joint Initiative Council for Global Health Informatics Standardization who participated in the interviews, provided recent literature and studies, and reviewed draft chapters. In addition, a special thank you goes to the speakers in the OECD workshop on interoperability in healthcare, Jordi Piera-Jiménez, Helen Caton-Peters, Anderson Chuck, Rachel Dunscombe, Kate Ebrill, and Markus Kalliola, who also provided valuable input to this report.
+
+## Table of contents
+
+OECD Health Working Papers 2
+Abstract 3
+Résumé 4
+Acknowledgements 5
+Executive Summary 10
+1 What is interoperability in healthcare? 12
+What is interoperability in healthcare? 13
+Why interoperability matters and the people behind it 16
+Objectives of this paper 17
+2 Economic promise of interoperability 20
+Economic benefits from implementing interoperability 21
+Costs of inaction in advancing and implementing interoperability 24
+3 What is the current state of interoperability? 26
+Health data standards 27
+Barriers for interoperability 31
+Policy enablers to address interoperability 34
+4 Actions to move towards a more connected future 41
+Learning from other industries 41
+Opportunities for action in interoperability 43
+5 Towards an interoperable future 47
+References 48
+FIGURES
+Figure 1. The European Interoperability Framework for eHealth (EIF/eHDSI) 14
+Figure 2. Health Data Lifecycle 15
+Figure 3. The why of Interoperability 16
+Figure 4. Interoperability Tower 18
+
+Figure 5. Estimated economic value to the UK NHS and benefit to patients 23
+Figure 6. Common Interoperability Challenges Identified by Interviewees 27
+Figure 7. Illustrative Example: The Role of Standards in Interoperability 29
+Figure 8. Interoperability Challenges 31
+Figure 9. Functional requirements for the national dataset catalogue within EHDS 39
+Figure 10. Common Interoperability Opportunities Identified by Interviewees 43
+Figure 11. Opportunities for Interoperability in Healthcare 44
+
+## TABLES
+
+Table 1. Benefits attributable to investing into interoperability according to the analysed papers 22
+Table 2. Health Data Standards 30
+Table 3. Concentration of policy enablers across health data exchange 35
+
+## Acronyms and abbreviations
+
+
+# Executive Summary
+
+1. Interoperability – the ability of different health systems, devices, applications, or organisations to securely exchange, interpret, and use data in a coordinated and meaningful way – has been a central objective of health system digitalisation. The costs of poor interoperability are significant: diagnostic errors account for an estimated 17.5% of healthcare costs (with a proportion attributable to poor interoperability), patients report a 15% reduction in trust in the health system when asked to repeat their information, and 81.5% of physicians believe that inadequate interoperability poses a potential risk to patient safety.
+
+2. Effective interoperability represents the opportunity to counteract these costs and support an integrated digital health infrastructure built on trusted health data networks. According to reports from Canada, Finland and the United Kingdom, the potential value of enabling health data interoperability is between 2.7% to 6.6% of health system expenditure. Value is generated through optimised service delivery, a reduction in errors, more timely treatment, faster research and development, and prevention. Despite the potential, OECD countries face systemic barriers to their realisation, including inconsistent adoption of compatible systems and standards, a lack of data stewardship, and complex processes for accessing health data.
+
+3. The OECD conducted 41 interviews with OECD country experts and health data standards organisations, received 22 survey responses from OECD countries, performed desk research, and held a workshop to understand the enablers to the efficient, effective, and equitable sharing of quality health data. The results establish 26 policy enablers across four main areas (1) people, (2) processes, (3) policy, and (4) technology. These areas are evaluated across the layers of health data exchange: local health facilities, regional (sub-national) groups, national practices, and cross-border collaboration. These collectively are referenced as the Tower of Interoperability.
+
+4. A key finding highlights efforts to date in technical and semantic areas have failed to address legal and operational barriers. The opportunity to achieve interoperability is to focus on people-centred actions that can facilitate a culture of interoperable health data use and re-use to drive activities toward interoperable systems. Actions can start with a progression from a shared mindset to the development of the necessary skillset, followed by the deployment of appropriate toolsets.
+
+## Current state of interoperability
+
+5. While countries have reached varying levels of health data exchange capability, barriers persist. The most prevalent barriers mentioned by interviewees were incompatible data sharing practices and inconsistent practices for de-identification (70.59%), infrastructure and technical fragmentation across regions (66.67%), and fragmented governance and institutional coordination (60.78%). Other themes also emerged:
+
+\- Insufficient buy-in for a unified framework for interoperability due to unaddressed concerns, inconsistent legislation, fragmented governance, and varying mandates influenced by industry interests.
+
+\- A gap between vision and implementation, with too much emphasis on theory over practical action.
+
+\- Cultural hesitancy and limited trust in the effectiveness, return on investment (ROI), and scalability of digital health investments.
+
+\- Inconsistent workforce capacity, literacy, and buy-in to effectively adopt interoperability initiatives.
+
+6. OECD member countries are advancing practices to address these challenges.
+
+\- People: Efforts focus on educating, engaging, and empowering stakeholders, including healthcare providers, industry, policymakers, and patients, to understand their role in ensuring quality health data. France and Denmark are enhancing public trust through transparent citizen engagement and data-use practices, while Australia is investing in a people-centred approach to national standards development and adoption.
+
+\- Processes: A focus on governance, with 32% of survey countries having implemented a national strategy or roadmap for health data standards adoption, 50% having national bodies responsible for standards adoption and use, and 55% using national processes or legislation to influence vendor compliance with interoperability requirements. Cross-border data exchange is increasing, with 45% of countries engaged in bilateral international collaborations and 75% having established trusted health data networks.
+
+\- Policies: Regulatory frameworks and legislation are a foundation to successful interoperability efforts; however, only 23% of surveyed countries report legislation mandating standards-based health data exchange. Countries are strengthening enablers, including cross-border data sharing (e.g. the European Health Data Space), the secondary use of health data (e.g. Finland's Act on the Secondary Use of Health and Social Data), and prevention of data blocking (e.g. the United States' 21st Century Cures Act).
+
+\- Technology: All countries surveyed are using health data standards, with 41% relying exclusively on international standards. The standards landscape is extensive, with 28 standards identified, spanning vocabulary, content structure, communication, privacy and security, and identifiers. Implementation gaps remain, with 27% of respondents having fully implemented a set of procedures to assess and ensure the quality of health data collection, and 23% having fully implemented procedures for cataloguing significant health data assets.
+
+7. These measures support the ability to incentivise interoperable health systems and highlight trends in the application of relevant processes – but do not account for the use of personal health data for appropriate purposes with necessary protections. Future work will be to evaluate the legitimate flow of health data and the value those data flows represent.
+
+## Opportunities for action to improve interoperability
+
+8. Interviews identified opportunities across people, policy, processes, and technology. The most frequently cited priorities were modernising interoperability infrastructure (70.83%), standardising datasets and vocabularies through shared repositories (64.58%), strengthening cross-border and cross-stakeholder collaboration (60.42%), and advancing legal frameworks to enable international data sharing and use (60.42%). Implementing these opportunities can be coordinated through action across local, regional, national, and cross-border levels, including a focus on people-centred implementation, stakeholder engagement, open and collaborative governance, sustainable financing, and internationally aligned data frameworks. Central to this is understanding the incentive for each individual who creates, shares, and uses health data to enable adoption and the sustainability of interoperability initiatives.
+
+9. The future of interoperability depends on proactive, collaborative leadership fostering patient-centric systems where health data is collected once, quality is measured, and data can be reused for secondary purposes with protections. With interoperable foundations, health data can be reconceptualised as a long-term asset for global public good, which promotes healthier populations and drives economic growth.
+
+# 1 What is interoperability in healthcare?
+
+10. In the past 20 years, the healthcare industry has put a significant investment behind the digitalisation of health services. However, investments often focused on siloed solutions to fix siloed problems without a broader perspective on the integration of the healthcare ecosystem. This has led to the building of a disconnected and fragmented system. While tools are generally fit for purpose, data remains locked in systems and not readily available for primary or secondary purposes. As a result, countries across the OECD have been cited as being “health data rich and information poor” (OECD, 2022[1]).
+
+11. As part of the work to continue advancing the OECD Recommendation on Health Data Governance (OECD, 2016[2]), and better understand the existing barriers and opportunities related to the interoperable sharing of health data, the OECD has conducted an analysis of leading international practices. This analysis delved into policy enablers to facilitate the efficient, effective, and equitable sharing of quality health data and set the stage for an integrated digital health infrastructure supported by trusted health data networks. Such a trusted health data network enables the exchange and use of health data between stakeholders while ensuring that security, privacy, and regulatory compliance are maintained.
+
+12. Across the OECD, countries have put a renewed focus on interoperability in healthcare, which encompasses technical (technology, infrastructure, and data exchange), semantic (terminologies, coding systems, and common data models), legal (laws and legal frameworks), regulatory (policies, rules, oversight and compliance mechanisms), and organisational (governance, processes, stakeholder engagement, change management) dimensions of interoperability (European Commission, 2017[3]). In this report, a focus on the application of these dimensions across people, processes, policies, and technology will be explored. In this, there is active work underway to develop and implement interoperability roadmaps and strategies, including the development of common, open standards which can cross borders. A cornerstone of the future of interoperability — where data follows the citizen and can be reused for the public good — is to make the easy things easy, to commoditise what can be commoditised, and in simple terms, to standardise, reduce complexity, and make health data more accessible for legitimate purposes while ensuring it remains protected.
+
+13. Following the example of other industries, such as banking or travel, there is potential to evolve toward a plug-and-play ecosystem, where citizens have control over digital solutions that can be plugged into and removed from the system, similar to applications within Apple or Android ecosystems. Today, healthcare has a long way to go to meet this vision of the future, with fragmented data often held within large systems, complicated, closed data models, and legacy processes which inhibit the sharing of data within and across borders. As a report from Alberta (Canada) emphasised, "optional health data interoperability is akin to suggesting that although we know stopping at red lights saves lives, it should nonetheless be optional" (Affleck et al., 2023[4]). Interoperability is not optional and should be implemented by default to address the fragmented nature of healthcare systems and unlock the full potential of health data.
+
+14. In healthcare, interoperability technologies and semantic standards for many intended uses are already well established. However, policy, process, and enablement problems remain. To move in the direction of a patient-centric health system, and reap the benefits that interoperability offers, there is a need to establish a compatible interoperability foundation in which stakeholders can come together to determine the structures the future will be built on. As one interviewee aptly said, “If nobody cares for the credit, we can get a lot more done”.
+
+15. As raised at the OECD workshop on interoperability in healthcare, the use of power to enforce semantically aligned interoperability foundation has been under-utilised by the people who can champion such initiatives. A collective effort toward interoperability across the health data ecosystem, which focuses on the benefits for both individuals and their communities, is key to a nuanced and effective future. When successful, those efforts would enable an environment where data flows just work, and when future leaders look back at this time of great challenge, they may question how it took so long to resolve these issues.
+
+16. Momentum is building. A number of legislation and projects are working to kick start a new approach to interoperability. The International Patient Summary (IPS) (The International Patient Summary, 2025[5]) is led by a collaboration of health standards development organisations (SDOs), governments, providers, patients, and industry to simplify the ability to share patient information for care purposes when they are in a foreign location. The European Health Data Space (EHDS) (European Commission, 2024[6]), and on a more national scale, the AU Sparked FHIR Accelerator (Sparked, 2025[7]), are strategic initiatives looking to connect data across large geographies to stimulate health system improvement and innovation.
+
+17. All these initiatives have the goal of harmonising health information standards, practices, and policies to enable enhanced cooperation and data sharing within countries and beyond. These projects represent key leading practices in bringing together stakeholders to reach a common goal: a patient-centric system where data is findable, accessible, interoperable, and reusable (FAIR), and can be effectively, efficiently, equitably, and safely used in the public interest for both primary and secondary purposes (GO FAIR, 2021[8]).
+
+## What is interoperability in healthcare?
+
+18. Interoperability is the ability of different health systems, devices, applications, or organisations to securely exchange, interpret, and use data in a coordinated and meaningful way, with minimal human intervention (National Library of Medicine, 2025[9]; Interoperability of Electronic Health Records, 2025[10]; The European Medical Device Regulation, 2017[11]). Interoperability enables seamless collaboration across institutional and technological boundaries, ensuring that information retains its integrity and supports the accurate execution of clinical, administrative, or analytical functions. This collaboration can be measured by how effectively different systems and organisations share and use information to support patient care, through layers of data availability, data exchange, data integration, and data use.
+
+19. When evaluating interoperability, arising challenges are related to limited organisational capacity, poor change management, and incompatible processes and regulations that fail to explicitly encourage interoperable practices across data layers for either primary or secondary purposes. Globally, the industry lacks an aligned strategy for the development of interoperability in health, which builds upon existing frameworks such as those developed by the European Commission (see Figure 1) (European Commission, 2017[3]).
+
+Figure 1. The European Interoperability Framework for eHealth (EIF/eHDSI)
+
+[[KC_IMAGE_001]]
+
+Source: The New European Interoperability Framework (European Commission, 2017[3])
+
+20. In the current structures and standards, interoperability faces barriers. For example, data exchange between systems is constrained by the weakest link (“dumbest system”), or in other words, the system with the least capability. This means, data can only be shared at the level of granularity all systems can handle (Grieve, 2012 $^{[12]}$ ). This creates a need to define interoperability across the entire health data supply chain, considering the data loss that occurs between systems. For example, Fast Healthcare Interoperable Resources (FHIR) implementations deviate significantly from the intended 80/20 standardisation rule, where 80% of data granularity is retained in exchange, with analysis showing that 35% of data elements require implementation-specific extensions that fall outside the standard specification and cannot be fully shared between different FHIR systems (Kramer, 2023 $^{[13]}$ ). Still, once data are mapped to FHIR, the data loss is reduced when moving through later steps in the supply chain if consistent standards are used.
+
+21. Before the data can be exchanged, the data element itself must be recorded (such as the result of a blood test, a noted allergy, or a person's address). The element is captured with supportive data schemas and syntactic structures. Often, the way a data element is represented can vary between systems and databases, especially through legacy systems. Incomplete data catalogues that fail to identify compatible practices used for data capture further hinder interoperability efforts (de Zegher and Celebi, 2025[14]). In addition, misaligned or unclear contextual information surrounding the data, such as why it was collected, by whom, and in what setting, can further complicate interpretation and limit the effective exchange and reuse of data across systems. Compatible data scheme foundations are a pre-requisite to effective semantic interoperability, with reusable data structures, storage, and formatting to support understandability of data and ease of mapping.
+
+22. Building on the challenges of interoperability and data loss across systems, the way data is captured, structured, and exchanged has a direct impact on its function. As shown in Figure 2, health data are collected through several sources for primary uses and have many potential pathways through the lifecycle. At each stage of connection, mapping activities are needed to ensure data is exchangeable and fit for purpose, which reduce the granularity and quality of data.
+
+Figure 2. Health Data Lifecycle
+
+[[KC_IMAGE_002]]
+
+Note: Visual depiction of the flow of data from point of capture, primary uses through to reuse for secondary purposes.
+Source: Developed by the authors based on interviews with country representatives, experts, and additional sources (HL7 FHIR CI Build, 2025[15]; Friedman, 2022[16]).
+
+23. When data are collected correctly from the start, it can be leveraged from effectively, efficiently and safely across health data networks, including primary and secondary uses. With all of this in mind, the industry faces an additional question: what level of interoperability is achievable and desirable?
+
+## Why interoperability matters and the people behind it
+
+24. Achieving effective interoperability is not a one-size-fits-all exercise. Countries begin from vastly different starting points, shaped by diverse health system needs, legacy digital infrastructure, policy environments, and governance structures. As governments shift toward integrated, patient-centred models of care, robust interoperability can act as a catalyst and, when implemented effectively, as an economic growth driver. The true value lies not merely in data exchange, but in the quality of that exchange built upon compatible data schemas, syntactic and semantic interoperability, and enabled by the people behind the data. Interoperability can accelerate data access and use, enable safety and oversight systems, improve user experience for providers and patients and drive health systems improvements, research, and innovation (see Figure 3). At the same time, its benefits depend on data protection and governance, ensuring that records remain securely and appropriately linked and effectively managed to support patient care.
+
+Figure 3. The why of Interoperability
+
+[[KC_IMAGE_003]]
+
+Source: Authors
+
+25. To reach FAIR data use and exchange, there is a need for coordinated efforts among a wide range of stakeholders, including clinicians, administrators, policymakers, technologists, industry, and citizens, each operating within distinct governance structures and pursuing diverse objectives. Each has their own “why” for creating, utilising, and maintaining quality data, from healthcare providers who aim to ensure quality and continuity of care first and foremost, to regulators and international bodies who seek quality, de-anonymised data to contribute to timely policy and research (see Figure 3). Recognising this diversity, approaches to interoperability must be tailored to reflect the specific needs, unique business cases and capacities at local, regional, national, and cross-border levels for governance, collaboration, and establishing a shared commitment to addressing challenges collectively. For example, the creators of health data, such as healthcare providers, also benefit from reusing that data to supports quality improvement initiatives and practice changes will benefit all levels of healthcare delivery and data use (Friedman, 2022[16]).
+
+26. A systems-level perspective is essential, one that recognises the interconnected roles of frontline health professionals, researchers, and administrators (see Figure 2 and Figure 3). Each group plays a vital part in generating and stewarding health data, and their collaboration is crucial to ensuring that data is both high-quality and usable. As healthcare becomes increasingly digitalised, it is important to consider not only how to deliver excellent patient care at the frontlines, but also how to build systems that enable data to be collected, shared, and responsibly reused in ways that balance innovation and commercially driven purposes with advancing the public good.
+
+## Objectives of this paper
+
+27. Today, OECD member countries are at a varied level of readiness and maturity in interoperability, and this is emphasized by governments' strategies, roadmaps, and priorities. In some countries, such as Finland, Denmark, and Estonia, the foundations for the interoperable sharing of health data have been well established at a regional and national level, and priority is on identifying the best ways to utilise data assets for secondary purposes and in cross-border data sharing. In other countries, such as Australia, Germany, and Canada, interoperability roadmaps have been introduced to develop common standards for data sharing at local and regional levels, with an eye toward enabling a higher quality and FAIR data assets at the national level.
+
+28. This report is based on interviews and an international workshop conducted in September 2025 and the OECD survey on Digital Health, AI and Interoperability. In total, 41 interviews were conducted with 19 representatives from 15 countries/regions, 18 representatives of health standards organisations, and 4 additional industry experts (see Annex A in Supporting Materials). Additionally, 22 country survey responses were reviewed. This international analysis delves into challenges, risks, opportunities, and leading practices to facilitate the efficient, effective, and equitable sharing of health data.
+
+29. Interviewees were selected across two diverse groups, representatives from SDOs and OECD country representatives. For SDOs, consultation was facilitated with the Joint Initiative Council for Global Health Informatics Standardization (JIC) (Joint Initiative Council, 2026[17]) and participating countries and representatives were identified based on their recognised experience in implementing digital health and interoperability initiatives, as well as recommendations from health committee representatives and subsequent national contacts. Semi-structured interviews were conducted virtually, primarily between February and April 2025, prior to the international workshop held in September 2025. To follow up on key themes raised during the workshop, two additional interviews were conducted in October 2025. A limitation to the results of the report is that not all OECD countries were included and the sample size across participating countries was uneven, which may limit the representativeness of findings. In addition, the selection of interviewees, while informed by expert consultation, may introduce selection bias towards countries with more advanced or visible initiatives.
+
+30. This analysis is guided by the Interoperability Tower (see Figure 4) which provides a frame of reference across local, regional, national, and cross-border levels of data exchange. With the complex nature of interoperability, and its common challenges involving people, processes, technology, and policy, the layers of the Interoperability Tower provide a new perspective on the compounding value of enacting effective health data policies and actions, and how those translate into value through FAIR data. Starting at the cross-border level, guiding policies proliferate their impact and implementations towards the regional and local level. However, if practices are not effectively understood, this can result in more siloes of data and use. When starting at the local level, the value that the data represents to the public expands and compounds upon each level, and it can be effectively and efficiently reused for other secondary towards cross border use cases.
+
+31. An important distinction when considering the value generated from health data is that the point of data capture marks the beginning of the data-exchange journey and reflects its primary purpose: supporting the provision of care. In a learning health system, making these data accessible to the individuals and teams who generate them drives continuous improvement in care delivery and, in turn, strengthens data quality (Friedman, 2022[16]). While secondary uses, at national and cross-border levels, create substantial value for the wider health system, it is at the frontline where the largest gains can be realised, as improvements there compound across all subsequent uses of the data. Decisions on data standards, workflows, and technical requirements must therefore consider the entire lifecycle of the data, from the moment it is captured to its eventual reuse, to support interoperability and maximise value creation.
+
+32. The Interoperability Tower reflects that a combination of top-down and bottom-up activities are necessary to sustainably unlock the value of interoperability. Together, these layers support the creation, management, and long-term sustainment of high-quality, FAIR health data exchange supported by the once-only principle (European Commission, 2024[18]; OECD, 2024[19]). Once-only is the principle that individuals should only need to provide the same information once, and for that information to be reused across government services through secure and interoperability systems, with appropriate permission (OECD, 2024[19]). The tower recognises that activities need to occur at each level in a way that is aligned with activities at other levels. Hence, strong governance and co-ordination is necessary to achieve interoperability.
+
+Figure 4. Interoperability Tower
+
+[[KC_IMAGE_004]]
+
+Note: Reflects the levels of interoperable data exchange based on interviews, FAIR and once-only principles (GO FAIR, 2021[8]) (OECD, 2024[19])
+Source: Authors
+
+33. This paper will identify key challenges, existing leading practices, and assess policy approaches that support interoperability. This includes collaboration among stakeholders to facilitate coherent and future-oriented interoperability action. The paper also examines the economic value proposition of interoperability and quality health data, including concrete actions which can be taken to enable health data as a driver for economic growth.
+
+34. To realise the full potential of interoperable healthcare systems, it is time for healthcare to learn from other industries, where applicable, and invest in the people challenges of interoperability, including coordinated leadership, organisational change management, training, primary and secondary use data governance, and multi-stakeholder collaboration.
+
+# 2 Economic promise of interoperability
+
+35. The potential benefits of interoperability are substantial. When implemented effectively, interoperability delivers transformative outcomes across multiple dimensions: improved financial sustainability, better health outcomes, enhanced trust, accelerated innovation, increased patient safety, and stronger population health.
+
+36. A central objective of interoperability is placing patients at the heart of their care and improving health outcomes through better use of their health data. Historically, health information was fragmented across hospitals, clinics, and pharmacies, with patient records duplicated for administrative or financial reasons (OECD, 2019[20]). This fragmentation persists across many OECD member countries and has only intensified as patients themselves have become data generators through wearables and mobile health applications (OECD, 2025[21]). A cornerstone of a more integrated health data ecosystem is empowering patients with greater control over their health information. This requires embedding digital literacy into system design and enabling patients to take a more proactive role in their care through tools like patient portals and personal health records (OECD, 2025[21]).
+
+37. In addition, interoperability serves as a catalyst for innovation in healthcare. By ensuring that data is accessible, consistent, and contextually rich across systems, interoperability lays the foundation for high-quality datasets, an essential prerequisite for analytics and emerging technologies such as artificial intelligence (AI). With reliable and harmonised data, AI models can be trained to support clinical decision-making, predict outcomes, personalise treatments, and even automate routine tasks (OECD forthcoming, 2026, AI in health workforce). For instance, research has demonstrated how harmonising healthcare data using FAIR principles and standards improves AI model performance, enabling more precise diagnoses and personalised treatments through a holistic view of patient health (Pezoulas and Fotiadis, 2024[22]).
+
+38. Interoperability has the potential to mitigate the risk of adverse medical events and errors, such as missed allergies, incorrect medications administered, and/or duplicate diagnostic procedures, while enabling more coordinated care across healthcare organisations and professionals (Li et al., 2022[23]). When accurate and up-to-date information is available at the point of care, healthcare professionals can make more evidence-based decisions, contributing to improved consistency and appropriateness of care. However, despite these potential benefits, the implementation to date has often yielded mixed results, with negative experiences reported by both healthcare professionals and patients (see Box 1) (Li et al., 2022[23]).
+
+39. It has been demonstrated that nurses and physicians are spending a disproportionate amount of time documenting within these systems rather than with patients (See Box 1) (HIMSS, 2019[24]). The cumulative effect of poor interoperability and current approaches to data capture is a system where timely care is delayed, staff are overwhelmed, and the promise of digital transformation remains unfulfilled (Michael Stearns, 2022[25]).
+
+## Box 1. Provider Experience with Interoperability and Health System Waste
+
+To date, the provider experience with digital health has not always been smooth. A comprehensive survey of doctors in England revealed that an overwhelming 95.9% have experienced difficulties retrieving clinical information from Electronic Health Records (EHR) systems, with nearly a quarter reporting this occurring most of the time or always. The scope of this problem extends beyond inconvenience, as 93.7% of respondents indicated that poor EHR interoperability negatively impacts their day-to-day clinical workflow. Perhaps most concerning, 81.5% of clinicians believe that inadequate interoperability poses a potential risk to patient safety through incomplete medical histories, inaccurate medication lists, and missing drug allergy information.
+
+The consequences of poor interoperability manifest in tangible ways that affect both patient care and healthcare efficiency. Clinicians report being forced to repeat diagnostics at alarming rates, with infectious panels being the most repeated tests on a daily basis, resulting in unnecessary waste and subjecting patients to unnecessary procedures and delays in treatment decisions. Hospital operations are also impacted, with 64.4% of surveyed physicians reporting that patients are kept in the hospital longer due to problems with sharing or retrieving clinical information. Outpatient care is similarly affected, with 95.9% of clinicians requiring extra preparation time and 96.8% needing additional time during consultations, typically adding 15-30 minutes to both preparation and consultation periods during routine clinic days.
+
+The broader implications extend to physician well-being and the overall quality of healthcare delivery. With nearly 63% of physicians reporting signs of burnout, the inability to access comprehensive and actionable health information compounds an already critical problem (Ward, 2023[26]). Clinicians are increasingly burdened with administrative tasks, reordering tests, and re-entering information rather than focusing on patient care.
+
+Sources: (Li et al., 2025[27]; Ward, 2023[26])
+
+40. From the patient perspective, trust and engagement in the system is also impacted by interoperability. Patients have a 15% reduction in their trust of the health system when needing to repeat health information that should have been in their care record, and for those with chronic conditions this number rose to 30% (OECD, 2025[28]). Additionally, integrated technology offers the potential to improve access to care and the continuity of care across care settings and regions (Series et al., 2018[29]).
+
+## Economic benefits from implementing interoperability
+
+41. Quantifying the benefits and costs of interoperability is challenging. While interoperability is essential to unlock the full economic potential of digitalisation, in-depth research on its impact remains limited. This is partly due to the close link between capital investments and digital innovation, which are spread across multiple budget components, making mid- and long-term economic assessments difficult. Nevertheless, its importance cannot be overstated: interoperability forms the foundation of healthcare digitalisation.
+
+42. Recent research in this area highlights the economic and ethical imperative to solve the puzzle of interoperability in healthcare. Notably, 17.5% of healthcare costs are related to diagnostic errors, which is in part a result of not having the right information at the right time in the right context (Slawomirski et al., 2025[30]). Interoperability plays a key role in addressing this challenge by enabling more efficient use of resources, reducing duplication of tests and procedures, and ultimately lowering costs. Several studies are quantifying the value of interoperability, capturing, in part, the benefits associated with reducing diagnostic errors. Across these studies, the quantified benefit of improved interoperability ranges from 2.70% to 6.64% of health system expenditure. The specific estimate for a country will vary based on its context (e.g., digital maturity) and priorities; however, this is indicative that there is a significant economic and social value from investing in interoperability (See Table 1).
+
+Table 1. Benefits attributable to investing into interoperability according to the analysed papers
+
+
+Note: \*Healthcare expenditures include personal health care and collective services but excludes investment expenditure; more detailed calculations can be found in the Supporting Materials; \*\*1 -3 years for Big Data savings; 3 – 9 years for AI enables benefits; after 10 years long-term benefits.
+Source: Authors; (Wayman and Hunerlach, 2019[31]); (Mullie, Chuck and Razek, 2025[32]), (Larsio, 2023[33]); (Larsio, Malkamäki and Kalliola, 2024[34]); (OECD, 2025[35])
+
+43. A Canadian study identified that interoperability could improve the economic efficiency in health systems by \$9.4 billion CAD annually, approximately 2.71% of health expenditure (Mullie, Chuck and Razek, 2025[32]). Similarly, the Finnish Innovation Fund Sitra (Sitra) estimated that quality health data, which can be supported through interoperability, can contribute to almost EUR 1.95 billion a year in savings, approximately 6.64% of Finnish health expenditure through improved quality and efficiency of health services, “especially for those healthcare clients who account for 80% of the cost of using services” (Larsio, Malkamäki and Kalliola, 2024[34]).
+
+44. In Finland, it was projected that positive outcomes in preventive care, particularly by reducing avoidable complications and enabling earlier intervention, more efficient and accurate use of medication and genomic data, improved division of labour between care professionals through clearer care pathways, and more accessible shared records can be projected to reduce health expenditure by EUR 770 million (Larsio, 2023[33]). It was also estimated that roughly 1 million fewer sick leave days per year could be achieved through improved interoperability. A second study published in 2024 expanded the economic potential of interoperability by estimating returns of EUR 1.5 billion annually through smoother treatment pathways, unified care data that reduces delays, duplications and administrative barriers. In addition, EUR 450 million are attributed to more efficient support services, including logistics, scheduling, and back-office functions (Larsio, Malkamäki and Kalliola, 2024[34]). Taken together, these estimates suggest annual savings equivalent to $6.64\%$ of national health expenditure, achievable within a three-to-five-year period.
+
+45. Over a 10-year time horizon, the NHS in the United Kingdom estimated the economic value of interoperability along with the benefits to patients, with estimated benefits equivalent to $4.31\%$ of annual health expenditure (Wayman and Hunerlach, 2019[31]). These savings are projected across 1 year, with infrastructure to support big data, 3 to 9 years, with AI enabled benefits, and in $10+$ years, with the expansion of personalised medicine (See Figure 5).
+
+Figure 5. Estimated economic value to the UK NHS and benefit to patients
+
+[[KC_IMAGE_005]]
+
+Source: (Wayman and Hunerlach, 2019[31]).
+
+46. Some key areas of economic value from the United Kingdom study come from improved productivity through care pathways, reducing administrative demand, allowing for earlier identification of inefficiencies in service delivery, and enable more informed clinical decisions based on unified longitudinal records. As AI is introduced, savings are attributed to automated triage and decision support tools reducing unnecessary activity, earlier detection of clinical deterioration, improving patient outcomes and reducing hospitalisations, optimisation of treatment choices driven by algorithmic insights and more accurate demand forecasting for workforce and resource planning. Related to personalised medicine, value is generated through matching treatments to patients' genetic and phenotypic profiles, eliminating ineffective care for non-responders, earlier detection of disease using genomic and real-time data streams and accelerated clinical trials and research productivity (Wayman and Hunerlach, 2019[31]). These examples demonstrate the multi-faceted value which can compound within a health system through investments in interoperable data foundations.
+
+47. The noted Canadian study similarly quantifies the benefits of interoperability, projecting 9.4 billion CAD annually which amounts to $2.71\%$ of total healthcare expenditures (Mullie, Chuck and Razek, 2025[32]). This economic potential can be unlocked through the impacts to patient care and administration, pharmaceutical interoperability, enabling AI for administrative efficiency, and health product commercialisation (Mullie, Chuck and Razek, 2025[32]). Some examples used to develop these estimates included the economic impact of avoided medication harm, improved colorectal cancer screening compliance through integrated health information exchange (HIE), faster pharmaceutical research and Development (R&D) with high-quality patient-level data, and unified medication histories that can lead to safer prescribing for seniors (Mullie, Chuck and Razek, 2025[32]).
+
+48. There is a huge economic promise which can be unlocked by improving interoperability and supporting healthier populations (see Table 1 and Annex B in Supporting Materials). OECD member countries can start to see these returns from investments within one year through administrative efficiencies and more timely access to data for decision making. Greater, sizeable returns come as more quality data is available to improve research and development, the use and implementation of AI, and personalised and preventive medicine. To reach these benefits, timely and strategic investment is needed today, supported by enabling policies and practices to reach the projected value. The urgency is further emphasised by the potential cost of inaction.
+
+## Costs of inaction in advancing and implementing interoperability
+
+49. There are two main costs which can be attributed to interoperability: the costs of implementation and the costs of inaction. In this case, inaction refers to the continuation of work in the digitalisation of health and health data without changing course, including the expansion of a fragmented and inefficient data infrastructure. An estimate of the costs of inaction can be derived from the previously mentioned OECD study, which estimates the diagnostic errors account for 17.5% of healthcare cost and contribute to an additional 11% increase in curative care costs, resulting in total costs equivalent to 28.5% of overall healthcare expenditure. In this, interoperability is a consequential contributor, yet, defining the exact proportion of expenditure attributable to interoperability remains challenging (Slawomirski et al., 2025[30]). Nonetheless, these costs can be reduced by investing in the foundation of interoperability, people, processes, and policies to enable the ongoing digitalisation process in healthcare. If no investments are done, costs attributed to poor data quality project to rise in the future, resulting in even higher costs.
+
+50. The Swedish Roadmap for a National Digital Infrastructure for Healthcare (E-hälsomyndigheten, 2024[36]) identifies non-interoperability as a source of structural disadvantages in which the system remains fragmented. As a result of this fragmented system, there are financial losses, an increase in the administrative burden, a reduction in patients' safety, and limitations in the ability to leverage data for research and innovation. Additionally, in Finland, the 2024 study published by Sitra reported that a lack of data mobility results in wasted labour time and lower preventive capacity (Larsio, Malkamäki and Kalliola, 2024[34]). In the given baseline scenario, around 5,000 nurses and 1,300 doctors are performing redundant administrative work, also factoring into labour shortages.
+
+51. Inaction presents a significant cost and risk, where outdated digital infrastructure and disconnected health data systems will compound inefficiencies and resources waste in an already overburdened health system, highlighting that inaction is the most costly options facing governments.
+
+52. The second type of cost is related to the implementation of interoperability, which consists of upfront and sustained investments after the initial system activation. According to the Finnish Sitra report, deploying harmonised data models based on openEHR and OMOP (Observational Medical Outcomes Partnership) across Finland, would require investments of up to EUR 2 billion over a period of three to five years to achieve interoperability (Larsio, Malkamäki and Kalliola, 2024[34]). Assuming constant investments over a period of 5 years, the implementation cost of interoperability would equal to roughly $1.36\%$ of Finland's overall healthcare expenditures per year. The deployment includes the creation of regional data repositories, harmonisation of existing systems and the integration of social and health data (Larsio, Malkamäki and Kalliola, 2024[34]).
+
+53. Likewise, Sweden anticipates high initial costs for building digital literacy and connecting approximately 18,000 currently active healthcare providers to the national infrastructure (E-hälsomyndigheten, 2024[36]). However, the Swedish estimate on the costs of interoperability, which is mainly builds upon connecting active healthcare providers to the national infrastructure, ranges from $0.06\%$ to $0.07\%$ of the total healthcare expenditures yearly until 2028. This is significantly less than the Finnish estimate as it relies on relatively low-cost, human investments in literacy rather than a significant infrastructure investment of implementing aligned data semantic and technical standards.
+
+54. Both papers identify essential costs that go beyond technology, starting with organisational and workforce adaptation, including staff training, new workflows, and governance reforms to embed datadriven decision making. Costs also arise from transition inefficiencies during the rollout period, in which organisations often operate old and new systems simultaneously, ultimately increasing costs and reducing productivity for the (ideally) short period of transition. It is necessary to take into account the costs of adopting and modernising existing legacy systems and workflows, which can be considerable. Additionally, regulatory adjustments such as updating privacy and data-sharing legislation, represent another cost and time factor beyond the technological implementation itself due to the duration of legislative time cycles (Larsio, Malkamäki and Kalliola, 2024[34]; E-hälsomyndigheten, 2024[36]).
+
+55. Overall, while the costs of implementing interoperability are high, they are necessary to unlock the full economic potential of digitalisation in healthcare, as data foundations, common health standards, and other contributing factors associated with interoperability are the cornerstone of an integrated, digitally enabled, health system. Without investing and continuously improving the people and technical systems, on which interoperability rests, the economic promise of interoperability, and ultimately the overall economic benefits of digitalisation in healthcare, cannot be realised.
+
+56. This is supported by the latest literature, which shows that there is value to interoperability, saving between 2.70% and 6.64% of the overall healthcare expenditure annually, and that interoperability will finance itself over time. Once the data foundations, common health standards, and other contributing factors are implemented and improved, the total costs of implementing interoperability can be returned through the savings in healthcare costs.
+
+57. The economic promise of interoperability requires timely and targeted investments to unlock those benefits – supported by co-ordinated governance with a focus on where the benefits of interoperability will be achieved. Governance would focus beyond technical and semantic attributes, to include people and organisational processes which sustain investment in, and value derived from, health data as a growth driver for national economies and as an enabler of preventative medicine and improves system efficiency.
+
+
+# 3 What is the current state of interoperability?
+
+58. Across OECD health systems, interoperability is not yet a dependable utility in care delivery; it is a patchwork. Interviews and survey responses point to a system that is heterogeneous, only partially coordinated across levels, and slow to progress. Countries are starting from different baselines and legacy realities, but the common picture is a messy one: fragmented decision-making, uneven standards uptake, inconsistent data quality, and little to no measurement of progress. This chapter explores the current state of health data interoperability across OECD member countries, focusing on what is preventing more meaningful progress. While interoperability is commonly defined as the seamless, secure, and meaningful exchange of health data, the reality is far more complex. Achieving effective interoperability requires navigating a dynamic landscape shaped by policy frameworks, diverse stakeholder roles, and technical challenges.
+
+59. The emergence of next-generation, data-driven tools such as AI further highlights the urgency of “addressing” the existing challenges around interoperability. AI holds transformative promise for healthcare, but it cannot function to its full potential without clean, understandable, timely, and interoperable data. As one OECD expert succinctly put it: “if you feed bad data to the AI, what you get out is just as bad.” Without strong data foundations, AI risks magnifying the very inefficiencies and inequalities it seeks to address. A study in 2024 revealed “There’s a lot of bad quality data, expired datasets, even datasets still in fax or paper format. Foundational work is needed before we go into any AI work.” (Nordic Council of Ministers, 2023[37]). Without timely, digitised, and trustworthy data, beginning at the point of collection, AI systems will continue to struggle to deliver reliable outcomes or a return on investment.
+
+60. The barriers to this foundational work are vast. Standards exist, but their deployment is inconsistent. The same can be said for identity and trust arrangements, content profiles, data cataloguing, and conformance testing. Even where modern frameworks are referenced, local extensions, vendor-specific endpoints and locked data models are common, reducing portability and increasing re-work when systems connect. The private sector benefits from maintaining "walled gardens", as an interviewee mentioned, "EHR vendors have proprietary data models and little incentive to adopt a universal standard". At the point of care, data capture is often incomplete, inconsistent, and coded after the fact, which can limit both point-of-care utility and its value for secondary use. Frontline workflow pressures and usability gaps encourage free text and workarounds, which further erode structure and analytic utility. Many more barriers were identified through expert feedback, with the most prevalent being incompatible data-sharing practices and inconsistent practices for de-identification (70.59%), infrastructure and technical fragmentation across regions (66.67%), and fragmented governance and institutional coordination (60.78%) (See Figure 6 and Annex C in Supporting Materials).
+
+Figure 6. Common Interoperability Challenges Identified by Interviewees
+
+[[KC_IMAGE_006]]
+
+Note: Numbers indicate how many stakeholders mentioned each challenge.
+Source: OECD 2025 Interviews with countries' representatives and standard organisations
+
+61. These barriers result in data that are hard to reliably link across organisations (and data supply chains), making it difficult to reuse for analytics and AI without costly post-hoc cleansing (Tamayo-Sarver, 2025[38]). Clinicians cannot assume timely, structured, externally sourced data will be available at the point of need; program leaders cannot reliably track adoption or quality; researchers and planners confront fragmented semantics and slow access; and cross-jurisdictional initiatives face governance and coordination gaps.
+
+62. Importantly, as demonstrated by the example of Estonia, advancing interoperability does not always require building systems from scratch. Instead, it demands strategy integration, refinement, collaboration and adaptation. Estonia achieved significant progress by aligning and connecting existing systems under a cohesive digital governance framework, with a forward-looking political vision and courage, enabling them to develop sustainable healthcare technologies within an infrastructure that has now surpassed its country borders (Sepp, 2025[39]).
+
+## Health data standards
+
+63. Healthcare data is generated in a number of formats such as text, codes, and images, which are classified through data standards, to enable the consistent, understandable, reusable, and interoperable use of information across healthcare systems. These standards, which are agreed-upon mechanisms that establish uniform technical criteria, methods, processes, or practices, enable different systems, devices, and applications to communicate, exchange, and interpret information meaningfully (Canadian Institute for Health Information, 2026[40]). By implementing such standards, healthcare providers can identify gaps in care, make informed clinical decisions, and contribute to the creation of a comprehensive patient record (MedTech Europe, 2021[41])
+
+64. Standards in healthcare are developed through open, consensus-based processes led by accredited organisations, SDOs, and supported by a broad range of stakeholders and subject matter experts. This collaborative approach ensures that standards are robust, widely applicable, and responsive to evolving needs (ITU, 2025[42]). There is no single, universal standard for health interoperability. Instead, a diverse array of standards, specifications, and implementation profiles has been developed by various organisations and initiatives, many of which have emerged organically to address specific interoperability challenges and use cases (see Table 2). These standards typically fall into five main categories: vocabulary, content, communication, privacy & security, and identifiers, with each defined by its core function in facilitating communication or data exchange (see Error! Reference source not found.. In this project, representatives of 18 of SDOs were interviewed to understand their perspectives on the challenges and opportunities in interoperability (see SDOs in Annex A of the Supporting Materials).
+
+65. Currently, SDOs operate as not-for-profits, functioning predominantly through volunteer-based work, support of membership dues and agreements with governments, to continue growing the portfolio and connectedness of health information standards. SDOs work traverses across international experts and organisations to develop technical and semantic standards that can be used by implementers.
+
+66. Without SDOs, each organisation would need to define its own standard and where those standards were incompatible with one another, the facilities could not easily collaborate on their health data. Standards enable facilities to work together by following compatible practices, increasing the likelihood of broad-based adoption and interoperable data. Today, the integration of standards in healthcare can be visualised as a set of building blocks, where the nature of the data being collected determines the specific requirements for standardisation (See Box 2). Many of the building blocks are versatile and can support multiple functions based on the context in which they are applied.
+
+## Box 2. Example of Connection between Health Information Standards
+
+Several health information standards can be used for different purposes across the semantic and technical foundations of a health information ecosystem. Starting with the level of terminology, the process begins with harmonising information and content structure. For example, SNOMED CT and ICD-10 enable the standardised representation of clinical concepts and diagnostic classifications, while HL7 standards, including the increasingly adopted FHIR framework, provide the structures and mechanisms for exchanging this information between systems and integrating it into clinical repositories (SNOMED, 2025[43]) (HL7 FHIR, 2025[44]). In parallel, openEHR provides an open, platform-independent specification for structuring and managing longitudinal health records based on clinically governed archetypes (openEHR, 2025[45]). When moving towards secondary purposes, OMOP serves as the CDM for longitudinal data analysis of aggregated data (Aditya Ayyagari, 2025[46]).
+
+
+[[KC_IMAGE_007]]
+
+
+67. In the past, competition between SDOs has expanded the interoperability divide across nations and borders. However, SDOs are making considerable efforts to combat this and come together, often in bi-lateral relationships, to collaborate, identify compatibility, recommend standards by use case, and reduce duplicative work efforts. A leader of broader coordination is the JIC, which was formed to foster collaboration amongst SDOs (Joint Initiative Council, 2026[17]). However, for standards to operate optimally across the lifecycle of health data, collaboration needs to expand towards compatibility between data mappings and common use cases for data use and reuse. Without a common roadmap and clear compatibility between the existing health data standards, the fragmentation has the potential to grow.
+
+Table 2. Health Data Standards
+
+
+Note: This is not a comprehensive list of all available sub-standards in use, but rather a high-level overview illustrating the complexity of the interoperability standards landscape. Terminology standards define concepts through controlled vocabularies and classifications; content structure standards determine how health data are structured, organised, and represented; communication standards enable the exchange of data between systems; privacy and security standards ensure the secure, trusted, and compliant handling of data; and identifier standards support the unique identification of entities such as patients, providers, or products.
+
+Source: Developed by the authors based on (HIMSS, 2025[47]; MedTech Europe, 2021[41]; IHE Profiles, 2025[48]; European Commission, 2017[3])
+
+## Barriers for interoperability
+
+68. This section examines the practical challenges involved in achieving interoperability across the OECD countries. While interoperability is often defined by the seamless, secure, and meaningful exchange of data, achieving full interoperability is far more nuanced. After consultations with policymakers, digital health experts across the OECD and within SDOs (See Annex A in the Supporting Materials), several common challenges to interoperability have been identified (See Figure 8 and Annex C of the Supporting Materials), including a number which permeate across the industry.
+
+\- Insufficient buy-in for a unified framework for interoperability due to unaddressed concerns, inconsistent legislation, and varying interoperability mandates and associated responsibilities influenced by industry interests.
+
+\- A gap between vision and implementation, with too much emphasis on theory over practical action.
+
+\- Cultural resistance and limited trust in the effectiveness, return on investment, and scalability of digital health investments.
+
+\- Sustainability and business model for SDOs, all relying on volunteer-based work and support from enterprise corporate social responsibility practices.
+
+69. A more detailed description of the common interoperability challenges can be found in Annex C of the Supporting Materials.
+
+Figure 8. Interoperability Challenges
+
+[[KC_IMAGE_008]]
+
+Note: While some of these challenges may traverse across all layers of data exchange, the most relevant level was chosen. 🙏 represent technical challenges, 📌 represent people challenges, 🚗 represent financial challenges, ✕ represent process challenges.
+Source: Developed by the authors based on interviews with country representatives and experts
+
+## Cross-border challenges
+
+70. This section presents the barriers, from cross-border down to local levels, in recognition of the trickle-down cost of not addressing barriers at a higher level. The area of cross-border data exchange is growing and is integral to seizing the value proposition of health data. However, fragmented governance, risks on privacy, profiling, data monetisation tactics, limited institutional coordination, and incompatible data-sharing and de-identification practices hinder progress. Despite growing support for initiatives like the EHDS (European Commission, 2024[6]), the IPS (The International Patient Summary, 2025[5]), and the Global Digital Health Partnership (Global Digital Health Partnership, 2024[49]), efforts are slowed by:
+
+\- Lack of cross-stakeholder collaboration on data standards across health systems, including industry, governments, SDOs, implementers, researchers, patients and providers. This includes inconsistency in the role of SDOs recognised by governments and policymakers and a lack of coherent strategy aims for SDOs. A challenge remains on how to maintain the unbiased and open access of standards while supporting the operation of SDOs and standards' refinement.
+
+\- Inconsistent practices and policies for de-identification and pseudonymisation. This limits the ability for inter-border and cross-border data sharing. In this, there is a lack of incentive for data holders to say “yes” to data requests, and many incentives to say “no” and limit the risk. Clear practices, and privacy guardrails across borders are needed to streamline approaches to access and provide support for decision makers to feel confident in authorising data sharing requests.
+
+\- Variance in regulation and legislation limits the ability to collaborate across borders between governments, researchers, and innovators. This includes the inconsistent interpretation of law, in particular privacy law, related to what constitutes ‘public benefit’.
+
+\- Unclear understanding of the cost of poor-quality data, combined with limited measurement frameworks to assess the benefits, costs, and outcomes of cross-border data sharing. As a result, data creators often bear the brunt of the costs to enable data exchange, while there is limited visibility of the broader impact of not making data available for secondary purposes on patients, healthcare systems, and society. Additionally, there is insufficient recognition of the cost of creating, maintaining, and implementing health data standards.
+
+\- Limited availability of experts who understand health information standards, interoperability, regulatory and legislative environments, and the nuances necessary for cross-border data governance and exchange.
+
+## National challenges
+
+71. Interoperability at the national level is shaped by a complex convergence of policy, infrastructure, governance, and financial planning. While many countries have made strides through digital health strategies and the adoption of common standards, progress remains uneven due to persistent structural and operational challenges, including:
+
+\- A range of health data standards are adopted, resulting in inconsistent data representation across innovators, implementers, and users. In this, systems store clinical concepts differently and rely on ad-hoc mappings, causing significant data loss.
+
+\- Inconsistent, confusing, and time-consuming processes to agree to access health data for secondary purposes. Often, data requesters need to complete the same lengthy process for similar data requests, regardless of the associated risk and amount of data requested.
+
+\- Vendors lock-in data with closed data models which limit true interoperability and openness. This has developed competitiveness over the access to data, rather than competing on the use of data for public benefit.
+
+\- Practices are decentralised, which limits national coordination and fragments the data. With the decentralised practices, data are mapped between many systems and standards, which reduces data quality with each mapping.
+
+\- Gaps in data stewardship, including underdeveloped metadata infrastructure and limited integration of additional data sources such as social determinants of health.
+
+## Regional challenges
+
+72. Interoperability within regions, provinces, states, and autonomous health systems is shaped by a complex interplay of fragmented governance, uneven technical infrastructure, and varying stakeholder priorities. Regional health systems, which provide service across the continuum of care, often operate where governance structures, standards, and digital capacities differ significantly. While several models emphasise clinical governance, infrastructure readiness, and cross-sector collaboration, these pillars can become points of friction when interpreted inconsistently across jurisdictions. Some common challenges in enabling regional health data exchange include:
+
+\- Fragmentation in governance, where variance in funding sources leads to disconnected policies, practices, and a lack of a common understanding of the strategic vision for health data which connects all stakeholders. This includes compliance with national standards.
+
+\- Lack of understanding on a co-ordinated approach to reach interoperability compliance mechanisms, including decentralised procurement processes which lead to uneven adoption and implementation of standards.
+
+\- Insufficient health data literacy of front and back-office healthcare professionals, industry, standards organisations, and patients when it comes to policy, regulation, legal barriers to interoperability and how to meet these requirements in a scalable way.
+
+\- Fragmentation in technical infrastructure is the compounded effect of misaligned procurement practices and inadequate compliance mechanisms in many OECD member countries, who have been deploying HIS technology for over 30 years, and now carry legacy technologies and integration approaches.
+
+\- Stakeholder distrust, including limited engagement and perceived administrative burden significantly hinder interoperability progress, highlighting the need for inclusive governance and clear value demonstration.
+
+## Local level (frontline) challenges
+
+73. The local level is where healthcare providers, patients, information technology specialists, and other clinical staff aim to provide quality care. There is value in timely and usable health information systems. This is also where all the policies and practices, which trickle down from the cross-border, national, and regional levels, reach the individuals who are delivering health services. Costs of poor interoperability both originate and are felt at this level, where data are first captured and consolidated, and where mixed messaging or inconsistent strategies can lead to confusion and burnout. These challenges can hinder the quality and completeness of health information but also increase the cost burden of capturing usable data, ultimately compromising its potential for meaningful sharing and reuse across the health ecosystem. Some of the barriers to interoperability at this level are:
+
+\- Outdated digital infrastructure, with legacy systems which were often developed in isolation to meet specific institutional needs and have become embedded into clinical workflows. The persistence of these systems is often linked to limited digital investment, uneven policy support, and resource constraints, especially at the local level.
+
+\- Inconsistent adoption of common standards, due to HIS's not adequately meeting a healthcare provider's needs leading to workarounds, increasing workload pressures, workforce shortages, rising care demands, and inconsistent messaging on the importance of data quality.
+
+\- Healthcare professional fatigue and burnout reduce willingness to participate in data initiatives. This includes limited capacity to improve digital health literacy among staff due to workload constraints.
+
+\- Burden of cost to capture quality data, where frontline providers bear the costs of capturing high-quality data, yet the return on investment is often unclear, as the benefits are largely realised downstream through data reuse in subsequent care, population health initiatives, research, and innovation.
+
+\- Stakeholders work within silos to solve problems, with duplicative efforts. Existing health system structures across hospitals, health authorities, clinics, and specialist centres have created siloed data environments, where lab results, imaging, and medication histories are stored separately and rarely interoperable.
+
+74. Importantly, local data collection and consolidation practices play a critical role in shaping the broader interoperability landscape. When data is structured, validated, and stored in ways that are misaligned with interoperability goals, it reinforces siloed problem solving and makes it significantly harder to scale data use effectively. Addressing these foundational gaps is essential to ensure that health data can be integrated and reused across systems, regions, and borders.
+
+## Policy enablers to address interoperability
+
+75. While the challenges to harness the value of health data through interoperability are prevalent, several OECD member countries are taking action to combat these challenges. These actions traverse the layers of health data exchange, from regulations and initiatives set at a global level, down to practices which have been taken to improve adoption and quality health data collection at the frontlines of care.
+
+76. Several of these examples are described in Annex D in the Supporting Materials and briefly summarised in the sections below. Actions may occur at any level – cross-border, national, regional, or local – although the examples below are primarily at the cross-border or national level. Table 3 Error! Reference source not found.Error! Reference source not found.summarises those actions, noting the level of governance where guidance is created (in green) and where action is applied (in blue). The most frequent levels where guidance is created or applied are noted by a star, and other levels are noted by a checkmark.
+
+77. A key consideration when introducing policy is the need for transparency, clear communication, and recognition of the proliferation of guidance across the different levels of health data exchange. As demonstrated in Table 3, of the 26 policy enablers, 88.5% can be applied at the national level, 100% at the regional level, and 69% at the local level. This highlights the need for policymakers, particularly at the national level, where 92% of policies can be established, to consider how these practices are disseminated and what supports are required to facilitate the effective adoption of recommended practices while avoiding the creation of additional silos in both practice and data collection. For cross-border policies, where 46% can be established, consideration should also be given to how collaboration with national stakeholders can support the effective dissemination of guidance across all levels.
+
+Table 3. Concentration of policy enablers across health data exchange
+
+
+Note: ★ items are where practices are most prominently set and applied, however, this varies based on national governance. Source: Authors
+
+## People: Education, engagement & empowerment
+
+78. As emphasised in the interviews, interoperability is not a technical problem, but a people problem, and more than people, a leadership problem where the individuals holding the leadership positions often lack the knowledge or incentive to effectively influence change. Across the OECD, several leading practices stand out which put the education, engagement, and empowerment of people to buy in to standard practices, quality data creation, and enabling policies for FAIR data exchange across all levels, starting at the frontline.
+
+79. To improve education, engagement and empowerment, countries are taking action. Canada is investing in capacity building and training to build system level capabilities of front and back-office health professionals, policymakers, HIS developers, and administrators on their role in quality health data. The European Union, through its projects such as Improving Digital Empowerment for Active Healthy Living (IDEAHL), is investing in general public health engagement to improve digital health literacy that encompasses the ability to seek, locate, comprehend, and critically evaluate health information from electronic sources, as well as effectively apply knowledge gained from digital platforms (Pisano González et al., 2024[50]). As countries move towards cross-border cooperation, multilingual interoperability and translation capacity can also be considered.
+
+80. France and Denmark are enhancing public trust through showing the positive impact of data use to foster cooperation and engagement from all parties. This includes mechanisms of obtaining informed consent for secondary use across legislation, policy, and/or process to enable the protection and use of health data needed without burdening health care professionals.
+
+81. Australia is investing in organisational change management, a people-based approach which focuses on change management and adoption of the change are integral to success to support healthcare stakeholders through HIS changes. This involves public-private sector collaboration to enhance trust to establish coalitions of public, private, and people which co-build health data as common public goods.
+
+## Processes: Strategy & process optimisation
+
+82. To tackle the people and leadership challenge of interoperability, strategy and process optimisation offer a first step for multi-stakeholder collaboration and unified direction. The OECD survey highlighted that a number of strategic approaches are emerging, with 32% of surveyed OECD member countries have implemented a national strategy / roadmap related to adoption of standards. In 23% of OECD member countries, this is supported by legislation which enforces adoption of standards for data exchange across health facilities.
+
+83. Interviews consistently highlighted that interoperability is no longer about solving isolated, local technical problems, but has become a global endeavour with implications that extend far beyond individual organisations or care settings. Decisions taken when implementing systems at the local level shape the long-term value, reuse potential, and scalability of health data. Shared principles and a common vision across governments, standards' development organisations, and industry are therefore critical to maximising the collective value generated from health data.
+
+84. Standards Development Organisations (SDOs) have established the JIC (Joint Initiative Council, 2026[17]) to foster global partnerships for shared interoperability principles and a global unified vision. The JIC aims to align international digital health SDOs, encouraging collaboration rather than competition, and supporting the development of compatible standards while reducing gaps and overlaps. Consistent adoption of international standards is promoted by the JIC, as national initiatives increasingly adopt semantically aligned approaches. These efforts are making an impact, with $100\%$ adoption of health data standards by all surveyed countries. The active transition in the use of these standards is well noted, with $59\%$ using a mix of international and local standards, and the remaining $41\%$ fully adopting international standards. This emphasizes that interoperability is in the midst of transitioning from solving local problems, to a global initiative that includes SDOs, governments and industry, to capture the potential for value generation from health data compounds. When combined with leading practices for international standard alignment, these alignments help to reduce data fragmentation, duplication of effort, and vendor lock-in, while supporting cross-border data exchange and innovation. A concrete example of this has been the development and dissemination of the IPS) (The International Patient Summary, 2025[5]). Although it represents leading practice, ongoing work is still needed to strengthen its global governance and ensure consistent alignment across international versions of the standard.
+
+85. Canada has developed a specific roadmap for interoperability, the Shared Pan-Canadian Interoperability Roadmap which provides guidance to provinces, territories, health system managers and industry on common standards to be used to support the secure transfer of health information from different systems and to patients themselves (Canada Health Infoway, 2023[51]). This included governance for interoperability specification oversight and conformance testing, which $50\%$ of surveyed countries have built into having a designated body accountable for the adoption and use of technical standards in interoperability for healthcare. These are crucial to ensure adherence continues after initial implementation, and to strengthen the foundation for a trustworthy and actionable data collection, as well as technical and semantic consistency.
+
+86. Denmark has introduced procurement guidelines to enforce health data standards and practices, which utilised government purchasing power within the procurement process to ensure that compatible technologies (e.g., hospital systems) support the country's healthcare ecosystem. One supportive mechanism, taken by $55\%$ of surveyed countries, is a national process or legislation requiring specific requirements for vendors to be eligible to bring their solutions into the country.
+
+87. Germany has developed a national semantic strategy to strengthen interoperability by promoting convergence toward international terminology standards such as SNOMED CT and LOINC. Implementation is coordinated by the Federal Institute for Drugs and Medical Devices (BfArM), including the development of a national terminology server to distribute and maintain standardised terminologies (BfArM, 2026[52]).
+
+88. Finally, Finland has introduced transparent processes for secondary use data access. A clear, transparent and timely process is critical to support the secondary uses of health data when moving past data foundations.
+
+## Policies: Legislation & regulation
+
+89. For interoperability, legislation is a driver for successful adoption of interoperability and realising its potential return on investment (ROI). Clear legal frameworks help set expectations, reduce fragmentation, and create the conditions for accountability, investment, and innovation. OECD member countries are in the process of establishing these, with frequent stakeholder collaboration and updates to meet the evolving needs of the health sector.
+
+90. For example, Estonia has introduced incentives and dis-incentives for interoperability. Practices use a mix of voluntary adoption, certification, procurement leverage, and binding legal requirements to encourage adherence to interoperability standards. By clarifying obligations and linking compliance to market access or participation in national infrastructures, legal and regulatory tools can shift interoperability from a discretionary activity to an expected norm, strengthening consistency and predictability across health systems.
+
+91. The United States has put into place reforms for anti-data blocking regulation, which prohibits practices that unreasonably restrict the access, exchange and use of electronic health information, alongside legislative reforms for data sharing and access (Office of the National Coordinator for Health IT, 2024[53]; U.S. Congress, 2016[54]). These measures simplify data sharing and use, and provide greater legal certainty for providers, vendors, and data users. Additionally, these legislative reforms create accountability and compliance mechanisms to embed digital exchange into routine care delivery and system operations.
+
+92. Colombia's Law 2015 of 2020 establishes a national framework for an interoperable electronic health record system, mandating the exchange of clinical data across providers to improve continuity of care and access to health information (Función Pública, 2020[55]). However, challenges persist related to the fragmentation of information systems, the heterogeneity of capabilities among system actors, the effective adoption of common standards, data quality and timeliness, and the coordination between territorial and national levels. This offers an example on the need to consolidate governance schemes that allow for the secure, legitimate, and useful exchange of information, in addition to legislative actions.
+
+93. The European Commission – through its EHDS initiative – focuses on regulatory framework compatibility and cross-border sharing agreements (European Commission, 2024[6]). Many interviewees mentioned the complex regulatory environment being a challenge to traverse, which highlights the need for compatible and inclusive frameworks that are easy to understand, and sufficient education for digital health implementers and users. Likewise, cross-border data sharing agreements can help to reduce challenges and support joint innovation, research and improved care.
+
+94. Additionally, the European Commission, is implementing practices for managing patient re-identification risk, especially for secondary use of health data through the EHDS (European Commission, 2024[6]). These practices move beyond anonymisation threshold by complementing Europe's General Data Protection Regulation (GDPR) principles with health-sector-specific governance and safeguards, which enables lawful and trustworthy data reuse while maintaining privacy protection (European Union, 2018[56]).
+
+## Technology: Data & infrastructure
+
+95. The last set of practices relate to the technical backbone and infrastructure of interoperability. Leading practices in this area focus on ensuring that health data are collected once with sufficient quality to be reused safely and efficiently across systems. By embedding consistent and compatible interoperability practices within core digital infrastructure, there is potential to offer substantial value to the health system.
+
+96. Among surveyed countries, 27% of respondents had fully implemented a set of procedures in place to assess and ensure the quality of health data collection. Within the OECD, Estonia and Switzerland are prioritising quality data collection at the point of care, aiming to eliminate redundant data collection by ensuring that information provided by individuals or generated in care settings can be reused across services, following the ‘once-only’ principle (OECD, 2024[57]; European Commission, 2024[18]). Additionally, data integration across the care continuum is crucial to enable all providers with useable data that can contribute to improved patient outcomes.
+
+97. Simultaneously, Finland's practices in national metadata infrastructure are essential for making interoperability more scalable, as they support clear custodianship models, semantic alignment and standardised frameworks for the social determinants of health (SDoH). Within the European Commission's work to implement the EHDS, the Second Joint Action Towards the European Health Data Space (TEHDAS2) has laid the groundwork for the secondary use of health data by developing draft guidelines for data holders, introduced through the Health Data Catalogue Application Profile (HealthDCAT-AP), as well as metadata standards for describing datasets under the EHDS (see Box 3) (TEHDAS2, 2025[58]). This is also a growing priority among survey respondents, with $23\%$ having a fully implemented national set of procedures in place to ensure the cataloguing of significant health data assets to enhance data discovery and management.
+
+## Box 3. Metadata Standards for the EHDS
+
+The European Commission, through the EHDS legislation, is creating a shared legal, technical and governance framework for the secondary use of health data across the EU. A central element of the initial work has been the development of metadata catalogues and standards. In this context, “metadata is information about data… [that]… primarily refers to descriptive information about datasets, such as what the dataset contains, how it was collected, how it can be accessed, and under what conditions it can be used.” Metadata is therefore not only a technical requirement, but also a governance tool for enabling the responsible reuse of health data.
+
+Through TEHDAS2, the EU is supporting Member States in operationalising this requirement by developing common guidance, specifications and tools for dataset description. This work centres on HealthDCAT-AP, a health-specific extension of the European DCAT-AP metadata standard. HealthDCAT-AP provides a common model for describing health datasets and sets out an approach for aligning national catalogues with a future EU-level dataset catalogue (see Figure 9).
+
+TEHDAS2 is also supporting implementation through practical guidance for health data holders, Health Data Access Bodies and National Contact Points. This includes guidance on metadata ingestion, validation, versioning, publication, alignment with FAIR principles, and synchronisation between national catalogues and the EU central catalogue. This approach illustrates how the EHDS uses metadata standards as part of a broader governance architecture: common dataset descriptions support transparency, discoverability, comparability, access management and cross-border reuse.
+
+Figure 9. Functional requirements for the national dataset catalogue within EHDS
+
+[[KC_IMAGE_009]]
+
+Source : (TEHDAS2, 2025[58]).
+
+## 98. Several countries including the United Kingdom and Estonia are investing in decentralised health data exchange and federated health data platforms to allow secure data exchange across
+
+autonomous systems while maintaining local data custodianship. These practices minimise data movement and preserve institutional autonomy. Closely linked are practices relating to preserving data privacy (e.g. practices for anonymisation and pseudonymisation) that reduce re-identification risks and enable a more effective use of secondary health data.
+
+99. Overall, the European Commission is investing in the EHDS to facilitate cross-border data exchange for care and analytical purposes. Within this framework, several cross-border services are expected to be mandatory, including the sharing of patient summaries, electronic prescriptions and dispensing, laboratory results, medical images and imaging reports, and discharge reports. These measures aim to ensure continuity of care when individuals receive medical treatment abroad, while also supporting the secondary use of data through international, multi-stakeholder collaboration for health research and innovation. Across the OECD these use cases are growing, with 45% of countries having bilateral international collaborations. A common trend is the establishment of trusted health data networks, with 75% of respondents noting the existence of one or more in the country. These networks have different purposes in the provision of care across primary care (64%), public health (45%), research and innovation (41%), and healthcare system monitoring and improvement (32%). To support this, 100% of those with a trusted health data network have a fully implemented approval process for accessing data, 87.5% used a data network with encrypted data at rest and when in transit, and 65% of the networks had established oversight measures.
+
+# 4 Actions to move towards a more connected future
+
+## Learning from other industries
+
+100. Insights from other industries can provide methods to address the barriers to interoperability. Sectors such as banking, transportation, and finance have demonstrated that successful interoperability governance depends on neutral governance, open standards, and strong collaboration between public and private sectors. The banking and finance sector has made significant strides in achieving interoperability through a combination of global and open standards, centralised governance, and strong regulatory support. Notable examples include the SWIFT network for money transfers and the United Kingdom's Open Banking initiative (Scott and Zachariadis, 2012[59]; Competition & Markets Authority, 2017[60]).
+
+101. In aeronautics, the implementation of Automatic Dependent Surveillance–Broadcast (ADS-B) which allows aircrafts to broadcast real-time flight data such as position and velocity, provides a valuable example. ADS-B adoption was enabled through a shared global objective, supported by standardised protocols that ensure consistent data interpretation across aircraft, ground stations, and air traffic control systems worldwide. Regulatory mandates successfully reinforced this adoption, requiring ADS-B compliance in all controlled airspaces (European Union Aviation Safety Agency, 2020[61]; Federal Aviation Administration, 2023[62]).
+
+102. The transportation and logistics sector are also undergoing a digital transformation as global supply chains grow more interconnected. The Global Navigation Satellite System (GNSS) – which includes the U.S. GPS, Russia’s GLONASS, the EU’s Galileo, and China’s BeiDou – represents a globally interoperable infrastructure built through decades of international cooperation and public-private collaboration. GNSS has emerged through bilateral and multilateral agreements, driven by shared goals of signal compatibility, open access, and market fairness, supported by forums like the ITU. Building on this, open specifications were developed to support the industry to build interoperable devices and these standards were enforced through certification standards, performance benchmarks, and economic incentives (GNSS SDR, 2025[63]; U.S. Space Force, 2025[64]).
+
+103. Initiatives like SWIFT, Open Banking, ADS-B and GNSS were built through international agreements, shared technical standards, and voluntary industry alignment. These systems succeeded by offering clear benefits, certification frameworks, and incentives that encouraged adoption (Scott and Zachariadis, 2012[59]; Competition & Markets Authority, 2017[60]; United Nations Office for Outer Space Affairs, 2026[65]; Federal Aviation Administration, 2023[62]).
+
+104. For healthcare, these models highlight the importance of coordinated leadership, stakeholder training, and a culture of continuous improvement, all essential for building a secure, scalable, and patient-centred data ecosystem. At the same time, experience from digitally mature sectors highlights the importance of ensuring that data-driven models, including those focused on monetisation, profiling, or automation, are implemented in ways that maintain trust and support the human relationships central to care. Learning from the first waves of digitalisation and other industries, the actions towards “good” interoperability will be built upon open platforms, standards, technical specifications with a focus on regulatory flexibility, collaboration, and balancing innovation with privacy protection.
+
+105. Moving toward a future state of interoperability, efforts must begin with the mindset of stakeholders, followed by the development of the necessary skillset and supported by the deployment of appropriate toolsets. Key considerations to achieve this vision (with more information available in Annex E of the Supporting Materials) include:
+
+\- Establish collaborative multi-disciplinary governance and stewardship, where stakeholder collaboration is essential to building consensus on data representation and the development of, open platforms. This includes understanding the people needs at each level of data exchange and ensure buy in to develop quality data assets.
+
+\- Prioritise compatible foundations where leadership should focus on patient-centric approaches and prioritise semantic interoperability as a continuum from the point of care to cross border data exchange. This includes creating consistent information models and enabling lifetime patient data tracking.
+
+\- Evaluate, measure, and seize the value of data, including ensuring that benefits are returned to those who collect and steward it. This involves recognising the incentives and motivations of each stakeholder and developing a clear value proposition for a collaborative health data ecosystem. The value proposition should include aligned financial and reimbursement models to optimise cost-effective health outcomes. It also requires developing clear measurement frameworks for interoperability, recognising that progress cannot be effectively managed or improved without measurement.
+
+\- Invest in people through organisational change management and education to ensure quality health data is collected at the point of care such that data are useable for care and analytic purposes.
+
+\- Build adaptable and sustainable approaches to policy and standards that can evolve with advances in technical capabilities. This includes building technical solutions that are resilient to change – recognising that today's leading practices are tomorrow's legacy solutions requiring change – and better integrated with the application layer of digital solutions.
+
+106. With these building blocks in place, healthcare systems will be better positioned to take advantage of the compounding effect on the value from health data over time. As this value is realised, it remains essential to preserve a patient-centred approach that enables data use while maintaining appropriate protections and safeguarding trust. As more quality data is collected at the point of care and more comprehensive health records being established, compatible foundations will enable the FAIR exchange of data for individual, regional, national, and cross border purposes.
+
+107. As data becomes increasingly available and exchangeable, from the frontlines to the international level, it can play a greater role in proactive public health and preventive measures, and support more innovative research, including in areas such as rare disease research, medical device, and treatment development. Furthermore, higher quality data will be available to train accurate, valuable and scalable AI tools and technologies.
+
+108. The value of health data also lies in its ability to map care pathways, link clinical and administrative data, and better understand the relationship between health outcomes and costs, supporting more sustainable and efficient health systems. This includes identifying and reducing unnecessary administrative burden and aligning data collection practices with meaningful clinical and system-level outcomes.
+
+109. It is time for this value proposition to be realised. Renewed investment from stakeholders in the foundations of healthcare transformation – including in standards, governance, trust, sustainability, and quality data – supported by interoperable solutions, will help drive this compounding effect.
+
+110. Future work could build on the challenges and opportunities identified in this report by further exploring the structural and systemic factors that shape interoperability outcomes. This could include investigating how the structure of health systems affects interoperability efforts and the application of incentives. In addition, further analysis could examine the extent of inefficiencies and waste within health systems, and how improved interoperability can support their identification and reduction. Other areas for further exploration include the evolving relationship between interoperability and cybersecurity risks, and how interoperability frameworks can incorporate governance mechanisms for Indigenous data sovereignty, among others.
+
+## Opportunities for action in interoperability
+
+111. While work is underway (see Annex D in the Supporting Materials) to bring healthcare in line with interoperability success in other industries, interviewees identified a number of opportunity areas of work to reach this potential (see Figure 11 and Annex D in the Supporting MaterialsError! Reference source not found.). Notably, the most prevalent opportunities mentioned were to modernise interoperability infrastructure (70.83%), standardise datasets and vocabularies across systems in common repository (64.58%), enhance cross-border and cross-stakeholder collaboration (60.42%), and support legal frameworks for international data sharing and use (60.42%) (See Figure 10). These actions will help maximise the value of digital health initiatives and EHRs for the primary and secondary uses of health data (Pedrera-Jiménez et al., 2023[66]).
+
+Figure 10. Common Interoperability Opportunities Identified by Interviewees
+
+[[KC_IMAGE_010]]
+
+Note: Numbers indicate how many stakeholders mentioned each challenge.
+
+Source: OECD 2025 Interviews with countries' representatives and standard organisations
+
+112. When considering where the opportunities for interoperability lie across the layers of data use and exchange, patterns of governance and process improvement opportunities emerge across the cross-border and national layers, particularly in terms of technical and people improvements.
+
+Figure 11. Opportunities for Interoperability in Healthcare
+
+[[KC_IMAGE_011]]
+
+Note: While some of these challenges may traverse across all layers of data exchange, the most relevant level was chosen. 🙏 represent technical opportunities, 📌 represent people opportunities, 🍴 represent financial opportunities, ✕ represent process opportunities
+Source: Developed by the authors based on interviews with country representatives' experts
+
+## Cross-border level of data exchange
+
+113. On a cross-border level, interviewees suggested the need for the following actions which emphasise strategic alignment:
+
+\- Enhance cross-border collaboration across stakeholders, including governments, SDOs, and industry under a common vision. This would involve establishing a long-term, adaptive vision for interoperability along with common guiding principles and approaches that look 5-10 years ahead.
+
+\- Build compatible legal frameworks for international data sharing and use to support a more global summary health record that can follow patients within and across borders, and to enable multi-country trusted health data networks for research and innovation.
+
+\- Adopt compatible international interoperability standards, including common data models (CDM) for both care purposes (such as the IPS) and for aggregated health data (e.g., OMOP). This CDM should be built upon open standards, such as HL7 FHIR, IHE profiles, and openEHR with terminologies such as SNOMED CT and LOINC, enabling adaptable, flexible collaboration and governance.
+
+\- Strengthen cross-border regulatory and privacy coordination, including fostering collaborative and compatible data sharing frameworks, so that data can legally move or be accessed more easily across borders. This includes clarifying when data may be used in the ‘public interest’ and establishing a compatible understanding of acceptable re-identification risk.
+
+\- Evaluate use cases that demonstrate the value of a globalised approach to interoperability, to provide a starting point from which to advance a more global approach to interoperability, such as in rare diseases, supported by compatible mapping between standards.
+
+## National level of data exchange
+
+114. On a national level, opportunities lie in sustainable policies, practices, and funding for interoperability to thrive.
+
+\- Ensure consistent funding for interoperability initiatives, such as operationalising funding for the procurement, sustainment and updates to HIS/EHRs, human capacity and skills, digital health infrastructure, and standards development and updates.
+
+\- Clarify accountability structures and sustainable business models between stakeholders (including the public, providers, industry, and the public sector). This includes defining clear roles and responsibilities, with governments and system leaders providing strategic direction and guidance for health data standards. Examples include certification aligned with consensus standards and specifying compliance requirements in procurement processes. This can be done with engagement from all stakeholders, while avoiding monopolisation of standards or imposing uniform practices across countries.
+
+\- Implement value-based incentives to support adoption, such as designing legislative or reimbursement models which reward the use of systems aligned with national standards. These incentives can be developed by governments in collaboration with the private sector. In parallel, governments can better leverage their purchasing power by embedding interoperability and standards compliance into procurement processes, influencing the adoption of compatible data models across systems.
+
+\- Establish national systems for health data exchange based on open standards and open platforms. This includes enabling data sharing in line with open standards, community, cooperation, and sustainable funding and prioritisation with embedded revision cycles, while considering the needs of both primary and secondary uses of health data, such as research, innovation, regulatory and health technology assessment decision making.
+
+\- Support interoperable legal and technical frameworks that incorporate individual and community protections and adopt a patient-centred design, while acknowledging the social and community nature of health data
+
+## Regional level of data exchange
+
+115. On a regional level, opportunities lie in facilitating action that supports national objectives while enabling the flexibility for local nuance.
+
+\- Promote open platform approaches for secure data collaboration. This includes setting strategic direction and funding open platforms while building towards this collaborative infrastructure. Considerations can be made for supporting federated health data networks to enable trusted health data networks.
+
+\- Standardise datasets and vocabularies across systems, for example, by developing a national metadata catalogue and national core data standards for interoperability, and through the measurement of compliance with those standards.
+
+\- Enhance understanding, communication, and action to achieve the stakeholder “why”. This is along the full health data lifecycle to establish a vision that supports adoption.
+
+\- Integrate emerging data sources (e.g. patient generated health data (PGHD), SDoH data) while determining how those new sources will be used in the provision of care and/or system analytics.
+
+\- Involve stakeholders in the governance of health data. This includes the public, providers, private sector, and SDOs to optimise the value and use of health data while minimising harms.
+
+## Local level of data exchange
+
+116. Finally, on a local level, this is where data are physically captured. This work should deliver solutions that optimise experience and outcomes to maximise the value of data while minimising data-related harms.
+
+\- Modernise interoperability infrastructure, for example, updating to the latest health data standards for data exchange, utilising cloud storage, and implementing decentralised health data exchange and federated health data platforms.
+
+\- Prioritise quality data capture and revise quality assessment mechanisms. For example, by establishing common, compatible standards at the point of data creation/collection (point of care), doing things the right way the first time, and limiting future data cleaning. This can be supported through the introduction of emerging technologies, such as AI scribes.
+
+\- Develop digital health and interoperability education programs. For example, integrating digital health education into medical education curricula and offering ongoing leading opportunities for professional staff on the value of quality health data and their role in ensuring it.
+
+\- Improve patient communication and engagement in data quality. For example, engaging with patient advocacy groups on data quality and enabling patients to be able to review their health records to identify any errors or omissions. To build towards a patient-centric health record for individuals to better engage with and enable their own healthcare.
+
+\- Identify key people change resources to support project success. For example, by recognising that interoperability is a people change initiative and bringing in people of different skillsets, such as organisational change management resources into the consensus building and decision-making processes.
+
+117. The challenges with interoperability in healthcare persist. This report aimed to answer the question: "Is it possible to course-correct towards a more interconnected health data ecosystem, built with data sharing across the continuum of health data use and trusted health data networks in mind?". The analysis demonstrated that the answer is 'yes'; however, significant co-operation is required across all health system stakeholders – the public and private sectors, providers, innovators, and the public.
+
+118. Across interviews with OECD member countries and SDO experts, a shared vision for the future of interoperability emerged. This vision builds on today's foundations and calls for proactive, forward-looking leadership that moves away from siloed thinking and short-term goals. A vision for interoperability involves a holistic, system-wide approach in which patient-centric data models drive care and innovation.
+
+119. There is an opportunity to reconceptualise data as a long-term asset for the global public good, that follows people throughout their lives. This requires careful attention at the point of data collection and a supportive environment of people, processes, policy, and technology to ensure that data can flow seamlessly across local, regional, national, and cross-border levels for legitimate purposes.
+
+120. This shifts the question to how to encourage cooperation and collective action – and what actions are most impactful? It recognises that action is necessary across borders, nationally, regionally, and locally to achieve this aim for the benefit of individual care, public health, population health, and innovation, to bring it all together into a coherent system.
+
+121. A number of key points have emerged to encourage this cooperation and collective action:
+
+\- Evaluate interoperability as a driver of economic growth and healthier societies.
+
+\- Prioritise the people and governance side of interoperability, clarifying accountability, authority, measurement, and compatible strategic direction across the health system.
+
+\- In particular, consider interoperability for health data to be used for individual and public interest with protections.
+
+\- Apply rigour to interoperability of health data, to be engineered for today and tomorrow.
+
+\- Invest in workforce to implement and adopt interoperable health practices and HIS.
+
+\- Involve the full health community in the interoperability of health data.
+
+\- Develop incentives for interoperable health data across financial and policy levers.
+
+\- Foster shared investment in digital health infrastructure and health data capture and use.
+
+122. It is notable that these actions are largely non-technical. This reflects the discussions which were had in the creation of this report – that challenges for interoperability are not technical. Rather, achieving interoperability is a people and leadership problem. By following the actions identified in this report, the value of health data can compound across the continuum of health data use, from the point of care to advanced global research in AI, new treatments, and rare disease identification. Ultimately, prioritising interoperability signals a move from health data (and systems) being facility-centric, serving the needs of individual health providers and institutions, to being patient-centric where data serves the needs of people to achieve better health outcomes for everyone, everywhere.
+
+## References
+
+Aditya Ayyagari (2025), Converge or Collide? Reconciling openEHR and FHIR for Real-World Interoperability – Carefluence, https://carefluence.com/converge-or-collide-reconciling-openehr-and-fhir-for-real-world-interoperability/ (accessed on 25 August 2025).
+
+Affleck, E. et al. (2023), “Interoperability Saves Lives”, https://www.networkedhealth.org/ourwork.
+
+Agence du Numérique en Santé (2024), “Comité Citoyenne”, Agence du Numérique en Santé, https://esante.gouv.fr/assises-citoyennes (accessed on 20 August 2025).
+
+AMA (2024), Burnout on the way down, but “pajama time” stands still | American Medical Association, https://www.ama-assn.org/practice-management/physician-health/burnout-way-down-pajama-time-stands-still (accessed on 13 August 2025).
+
+Apperta Foundation (2017), Defining an Open Platform, Apperta Foundation.
+
+Assistant Secretary for Technology Policy/Office of the National Coordinator for Health IT (2024), Trusted Exchange Framework and Common Agreement, https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca (accessed on 22 November 2024).
+
+Australasian Institute of Digital Health (2024), Assess your Digital Health Capabilities, https://digitalhealthworkforce.org.au/assess-your-digital-health-capabilities/ (accessed on 3 February 2026).
+
+Australian Digital Health Agency (2026), National standards and specifications, https://www.digitalhealth.gov.au/healthcare-providers/initiatives-and-programs/digital-health-standards/digital-health-standards-guidelines/get-started/1-national-standards-and-specifications (accessed on 2 February 2026).
+
+Australian Digital Health Agency (2025), Restrict access to your record, https://www.digitalhealth.gov.au/initiatives-and-programs/my-health-record/manage-your-record/privacy-and-access/restrict-access-to-your-record (accessed on 16 January 2026).
+
+Australian Digital Health Agency (2022), Health informatics - International patient summary, https://developer.digitalhealth.gov.au/standards/health-informatics-international-patient-summary (accessed on 2 February 2026).
+
+Australian Government (2025), My Health Record access controls, https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/health-service-providers/my-health-record/my-health-record-access-controls (accessed on 16 January 2026).
+
+BfArM (2026), Semantik-Strategie für das deutsche Gesundheitswesen Ein Positionspapier des BfArM, https://www.bundesgesundheitsministerium.de/fileadmin/user\_upload/BMG\_Broschuere\_Digitalisierungsstra.
+
+Blacketer, C. et al. (2025), “Advancing Real-World Evidence Through a Federated Health Data Network (EHDEN): Descriptive Study”, Journal of Medical Internet Research, Vol. 27/1, p. e74119, https://doi.org/10.2196/74119.
+
+Bundesamt für Gesundheit BAG (2018), “Strategy eHealth Switzerland 2.0”, https://www.e-health-suisse.ch/payload/api/documents/file/Strategie\_eHealth\_Schweiz\_2.0.pdf (accessed on 4 February 2026).
+
+Canada Health Infoway (2026), Ensuring patient information is there when it's needed., [158] https://www.infoway-inforoute.ca/en/featured-initiatives/patient-summary (accessed on 2 February 2026).
+
+
+Canada Health Infoway (2023), Connecting you to Modern Health Care: Shared Pan-Canadian Interoperability Roadmap, https://www.infoway-inforoute.ca/en/component/edocman/resources/interoperability/6444-connecting-you-to-modern-health-care-shared-pan-canadian-interoperability-roadmap?Itemid=103. [51]
+
+Canada Health Infoway (2023), Shared Pan-Canadian Interoperability Roadmap, [130] https://www.infoway-inforoute.ca/en/component/edocman/6444-connecting-you-to-modern-health-care-shared-pan-canadian-interoperability-roadmap/view-document (accessed on 2 February 2026).
+
+Canadian Institute for Health Information (2026), What are health data standards? | CIHI, https://www.cihi.ca/en/submit-data-and-view-standards/data-standards/what-are-health-data-standards (accessed on 8 July 2026).
+
+Candice Teitlebaum & Aaron Collins (2007), “CANADIAN PRIVACY LEGISLATION AND THE CROSS-BORDER TRANSFER OF PERSONAL INFORMATION”, http://www.ipc.on.ca/images/Findings/up-phia\_hi06\_45\_rpt.pdf. (accessed on 18 August 2025).
+
+CDC (2024), Implementing Public Health Interoperability | PHDI | CDC, https://www.cdc.gov/data-interoperability/php/public-health-strategy/index.html (accessed on 18 August 2025).
+
+Commonwealth of Australia (2012), My Health Records Act 2012. [145]
+
+Competition & Markets Authority (2017), Retail Banking Market Investigation Order 2017, https://www.gov.uk/government/publications/retail-banking-market-investigation-order-2017/the-retail-banking-market-investigation-order-2017 (accessed on 4 February 2026).
+
+Darwin EU (2025), Home, https://www.darwin-eu.org/ (accessed on 3 February 2026). [135]
+
+de Zegher, I. and R. Celebi (2025), “Journey of a Data Element to Data Interoperability and Reuse”, Studies in health technology and informatics, Vol. 327, pp. 974-978, https://doi.org/10.3233/SHTI250517.
+
+Department of Health and Aged Care (2025), Modernising My Health Record (Sharing by Default) Act 2025.
+
+DG Connect (2025), Data Act | Shaping Europe's digital future, https://digital-strategy.ec.europa.eu/en/policies/data-act (accessed on 4 February 2026).
+
+DG Connect (2024), European Data Governance Act | Shaping Europe's digital future, https://digital-strategy.ec.europa.eu/en/policies/data-governance-act (accessed on 4 February 2026).
+
+Directorate General for Health and Food Safety (2022), Proposal for a regulation - The European Health Data Space, https://health.ec.europa.eu/publications/proposal-regulation-european-health-data-space\_en (accessed on 3 February 2026).
+
+Ebbesen, A. (2014), “The Creation of the Central Person Registry in Denmark”, 4th History of Nordic Computing, pp. 49-57, https://inria.hal.science/hal-01301393v1/document#:\~:text=In%20May%2029%201968%20the,with%20their%20personal%20identification%20number.
+
+EDiHTA (2023), The first European Digital Health Technology Assessment framework co-created by all stakeholders in the European Health Ecosystem, https://edihta-project.eu/ (accessed on 3 February 2026).
+
+e-Estonia (2026), e-Governance - e-Estonia, https://e-estonia.com/solutions/e-governance/government-cloud/, https://e-estonia.com/solutions/e-governance/government-cloud/ (accessed on 29 May 2026).
+
+E-hälsomyndigheten (2024), “Roadmap for the implementation of a national digital infrastructure for healthcare”, https://www.ehalsomyndigheten.se/siteassets/ehm/3\_om-ehalsomyndigheten/rapporter/rapporter\_regeringsuppdrag/fardplan/forslag-till-fardplan-for-genomforandet-av-en-nationell-digital-infrastruktur-for-halso--och-sjukvarden---slutredovisning.pdf (accessed on 28 January 2026).
+
+E-hälsomyndigheten (2022), “Follow-up Vision for eHealth 2025”, [157] https://www.ehalsomyndigheten.se/siteassets/ehm/3\_om-ehalsomyndigheten/rapporter/rapporter\_regeringsuppdrag/follow-up-vision-for-ehealth-2025-report-on-the-year-2022.pdf (accessed on 4 February 2026).
+
+EOSC Association (2026), RAISE introduces its Node Community-based Network, https://raise-science.eu/ (accessed on 12 January 2026). [127]
+
+
+European Commission (2025), Design and implementation of the National eHealth Interoperability Framework in Greece - European Commission, https://reform-support.ec.europa.eu/what-we-do/health-and-long-term-care/design-and-implementation-national-ehealth-interoperability-framework-greece\_en (accessed on 18 August 2025).
+
+European Commission (2025), Finland's successful implementation of EIF principles in interoperability tools | Interoperable Europe Portal, https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/finlands-successful-implementation-eif-principles-interoperability-tools (accessed on 18 August 2025).
+
+European Commission (2024), European Health Data Space (EHDS), https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space\_en.
+
+
+European Commission (2017), New European Interoperability Framework, https://ec.europa.eu/isa2/sites/default/files/eif\_brochure\_final.pdf (accessed on 14 May 2025).
+
+European Disability Forum (2023), Update on the European Health Data Space regulation - [87]
+European Disability Forum, https://www.edf-feph.org/update-on-the-european-health-data-space-regulation/ (accessed on 14 December 2025).
+
+European Health Data & Evidence Network (2022), Becoming the trusted open science community built with standardised health data via a European federated network, https://www.ehden.eu/ (accessed on 3 February 2026).
+
+European Union (2018), General Data Protection Regulation (GDPR) – Legal Text, https://gdpr-info.eu/ (accessed on 26 April 2025). [56]
+
+European Union (2016), Regulation (EU) 2016/679 (General Data Protection Regulation), [152] https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679 (accessed on 4 February 2026).
+
+European Union Aviation Safety Agency (2020), Amendment to the Airspace Requirements on ADS-B and Mode S - Important information for Third Country Operators (TCO) | EASA, https://www.easa.europa.eu/en/newsroom-and-events/news/amendment-airspace-requirements-ads-b-and-mode-s (accessed on 1 August 2025).
+
+Federal Aviation Administration (2023), Automatic Dependent Surveillance-Broadcast (ADS-B) | Federal Aviation Administration, https://www.faa.gov/air\_traffic/technology/adsb (accessed on 1 August 2025).
+
+Federal Ministry of Health (2026), Digitalisation Strategy for Health and Care | BMG, [168] https://www.bundesgesundheitsministerium.de/en/topics/digitalisation/digitalisation-strategy (accessed on 19 March 2026).
+
+Fellner, R., E. Sutherland and K. Vujovic (2025), “Digitalisation of public health: Leading practices in immunisation reporting and respiratory disease surveillance”, OECD Health Working Papers, No. 185, OECD Publishing, Paris, https://doi.org/10.1787/97204768-en.
+
+FINDATA (2026), Finnish Social and Health Data Permit Authority Findata, https://findata.fi/en/ [149] (accessed on 12 January 2026).
+
+FINDATA (2025), Data permits, https://findata.fi/en/permits/data-permits/ (accessed on 15 January 2026).
+
+Finnish Instituto for Health and Welfare (2025), Challenges and success stories in the implementation of cross-border e-prescription between Finland and Estonia - THL, https://thl.fi/en/research-and-development/research-and-projects/world-s-smoothest-cross-border-mobility-and-daily-life-through-digitalisation/challenges-and-success-stories-in-the-implementation-of-cross-border-e-prescription-between-finland-and-estonia (accessed on 18 August 2025).
+
+Frean, I. et al. (2023), “Digital Transformation Of Healthcare In Australia Constrained-A Call To Action For A National Data Governance Framework”, http://www.digitalhealthcrc.com (accessed on 18 August 2025).
+
+Friedman, C. (2022), “What is unique about learning health systems?”, Learning health systems, Vol. 6/3, https://doi.org/10.1002/lrh2.10328.
+
+Función Pública (2020), Ley 2015 de 2020 - Por medio del cual se crea la historia clínica electrónica interoperable y se dictan otras disposiciones, https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=105472, https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=105472 (accessed on 27 May 2026).
+
+Geist, M., M. Teitelbaum and K. Wilson (2025), “Ensuring the sovereignty and security of Canadian health data”, CMAJ, Vol. 197/26, pp. E763-E764, https://doi.org/10.1503/CMAJ.250488.
+
+gematik Fachportal (2026), Roadmap der gematik Produkte, https://fachportal.gematik.de/telematikinfrastruktur/roadmap, https://fachportal.gematik.de/telematikinfrastruktur/roadmap (accessed on 19 March 2026).
+
+Global Digital Health Partnership (2024), About GDHP, https://gdhp.org/.
+
+GNSS SDR (2025), GNSS-SDR, https://gnss-sdr.org/design-forces/interoperability/ (accessed on 4 August 2025). [63]
+
+GO FAIR (2021), FAIR Principles, https://www.go-fair.org/fair-principles/ (accessed on 25 August 2025).
+
+Government of Canada (2025), Pan-Canadian Health Data Charter - Canada.ca, https://www.canada.ca/en/health-canada/corporate/transparency/health-agreements/shared-health-priorities/working-together-bilateral-agreements/pan-canadian-data-charter.html (accessed on 18 August 2025).
+
+Government of Canada (2023), The pan-Canadian Health Data Strategy: Expert Advisory Group: [74] Reports and summaries - Canada.ca, https://www.canada.ca/en/public-health/corporate/mandate/about-agency/external-advisory-bodies/list/pan-canadian-health-data-strategy-reports-summaries.html (accessed on 18 August 2025).
+
+Grieve, G. (2012), Good Exchange Specifications: Interoperability vs Intraoperability | Health Intersections, https://www.healthintersections.com.au/2012/02/28/good-exchange-specifications-interoperability-vs-intraoperability.html (accessed on 20 June 2025).
+
+Health Data Hub (2026), Nous garantissons l'accès aisé et unifié, transparent et sécurisé, aux données de santé pour améliorer la qualité des soins et l'accompagnement des patients, https://www.health-data-hub.fr/ (accessed on 12 January 2026).
+
+Health Data Hub (2025), HealthData@EU Pilot, https://www.health-data-hub.fr/page/healthdataeu-pilot (accessed on 12 January 2026).
+
+Health Management (2025), Achieving Healthcare Interoperability: Challenges and Opportunities in 2025, https://healthmanagement.org/c/it/editorialBoard/achieving-healthcare-interoperability-challenges-and-opportunities-in-2025 (accessed on 18 August 2025).
+
+Health New Zealand (2024), New Zealand Patient Summary, https://www.tewhatuora.govt.nz/health-services-and-programmes/digital-health/data-and-digital-standards/approved-standards/nz-patient-summary (accessed on 2 February 2026).
+
+Hermansen, A. and L. Celi (2024), “An Open Architecture for Health Data Interoperability How Open Source Can Help the Healthcare Sector Overcome the “Information Dark Ages” An Open Architecture for Health Data Interoperability”, https://www.linuxfoundation.org/hubfs/LF%20Research/lfr\_healthdata2024\_110524a.pdf?hsLang=en (accessed on 11 August 2025).
+
+HIMSS (2025), Interoperability in Healthcare, https://legacy.himss.org/resources/interoperability-healthcare (accessed on 9 July 2025). [47]
+
+HIMSS (2019), Healthcare Interoperability and Its Impact on Administrative Burden in the Age of Machine Learning | HIMSS, https://gkc.himss.org/resources/healthcare-interoperability-and-its-impact-administrative-burden-age-machine-learning (accessed on 11 July 2025).
+
+HL7 FHIR (2025), Modules - FHIR v5.0.0, https://hl7.org/fhir/modules.html (accessed on 25 August 2025).
+
+HL7 FHIR CI Build (2025), FHIR Overview - Architects, https://build.fhir.org/overview-arch.html [15] (accessed on 21 July 2025).
+
+Hripcsak, G. et al. (2015), “Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers.”, Studies in health technology and informatics, Vol. 216.
+
+IBM (2023), Cost of a data breach: The healthcare industry | IBM, https://www.ibm.com/think/insights/cost-of-a-data-breach-healthcare-industry (accessed on 13 August 2025).
+
+IHE Profiles (2025), Profiles - IHE Wiki, https://wiki.ihe.net/index.php/Profiles (accessed on 11 March 2026). [48]
+
+INA (2026), INA: Gematik, https://www.ina.gematik.de/en/home (accessed on 11 March 2026). [163]
+
+Interoperability of Electronic Health Records (2025), Interoperability in healthcare – iEHR.eu, http://iehr.eu/knowledge/interoperability-in-healthcare/ (accessed on 8 July 2025).
+
+ITU (2025), Digital health and standards, https://www.itu.int/en/ITU-T/e-Health/Pages/default.aspx (accessed on 9 July 2025).
+
+Jeurissen, P., N. Klazinga and L. Hagenaars (2022), “Complex Governance Does Increase Both the Real and Perceived Registration Burden: The Case of the Netherlands Comment on “Perceived Burden Due to Registrations for Quality Monitoring and Improvement in Hospitals: A Mixed Methods Study”.”, International journal of health policy and management, Vol. 11/4, pp. 533-535, https://doi.org/10.34172/ijhpm.2020.264.
+
+Joint Initiative Council (2026), Welcome to Joint Initiative Council, http://www.jointinitiativecouncil.org/, http://www.jointinitiativecouncil.org/ (accessed on 3 February 2026).
+
+
+Kalliola, J. (2025), Nordic countries champion cross-border use of health data for better care - Sitra, https://www.sitra.fi/en/news/nordic-countries-champion-cross-border-use-of-health-data-for-better-care/ (accessed on 18 August 2025).
+
+Kanta (2026), Services and deployments, https://www.kanta.fi/en/professionals/services-and-deployments (accessed on 12 January 2026). [108]
+
+Kanta (2025), Consents and denials of consent to sharing of patient data, [109] https://www.kanta.fi/en/consents-and-denials-of-consent-to-share-patient-data (accessed on 15 January 2026).
+
+Kanta (2025), Kanta PHR, https://www.kanta.fi/en/system-developers/kanta-phr (accessed on 4 February 2026). [150]
+
+Kela (2026), Kanta architecture and timeline of healthcare interoperability and IT standardisation, [159] https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2013/managing-access-to-electronic-health-records (accessed on 16 January 2026).
+
+
+Kramer, M. (2023), “Reducing FHIR “Profiliferation”: A Data-Driven Approach”, AMIA Annual Symposium Proceedings, Vol. 2022, p. 634, https://pmc.ncbi.nlm.nih.gov/articles/PMC10148270/ (accessed on 17 July 2025).
+
+Kroneman, M., J. de Jong and B. Beerman (2025), Wegiz – electronic data exchange, [110] https://eurohealthobservatory.who.int/monitors/health-systems-monitor/updates/hspm/netherlands-2016/wegiz-electronic-data-exchange (accessed on 12 January 2026).
+
+
+Larsio, A. (2023), “Strength from Data for the Health and Social Care System: Better Care and Cost Savings through the Use of Health and Social Care Data”, Sitra, https://www.sitra.fi/wp-content/uploads/2023/05/datasta-voimaa-sote-jarjestelmaan.pdf.
+
+Larsio, A., S. Malkamäki and M. Kalliola (2024), “Efficiency from Data Models for the Health and Social Care System”, Sitra, https://www.sitra.fi/wp-content/uploads/2024/05/sitra-tietomalleista-tehoa-sote-jarjestelmaan.pdf.
+
+Lepasepp, K., M. Matjus and M. Haamer (2014), Overview of the national laws on electronic health records in the EU Member States: National report for the Republic of Estonia, European Commission, Executive Agency for Health and Consumers, https://health.ec.europa.eu/document/download/bc146ae8-5b6f-45ae-a4ab-8aeb0c55db3b\_en?filename=laws\_estonia\_en.pdf (accessed on 29 January 2026).
+
+Lévy, A. (2025), Swiss Health Data Space – Benefits and Impact, https://www.baq.admin.ch/en/swiss-health-data-space-benefits-and-impact (accessed on 12 January 2026).
+
+Li, E. et al. (2022), “The Impact of Electronic Health Record Interoperability on Safety and Quality of Care in High-Income Countries: Systematic Review”, Journal of Medical Internet Research, Vol. 24/9, p. e38144, https://doi.org/10.2196/38144.
+
+
+Ludvigsson, J. et al. (2009), “The Swedish personal identity number: possibilities and pitfalls in healthcare and medical research”, European Journal of Epidemiology, Vol. 24/11. [101]
+
+McGrail, K., B. Diverty and L. Lix (2020), “Introducing Health Data Research Network Canada (HDRN Canada): A New Organization to Advance Canadian And International Population Data Science”, International Journal of Population Data Science, Vol. 5/5, https://doi.org/10.23889/ijpds.v5i5.1493.
+
+MedCom (2025), About MedCom, https://medcom.dk/medcom-in-english/ (accessed on 12 January 2026). [112]
+
+MedTech Europe (2021), Interoperability Standards in Digital Health: A White Paper from the Medical Technology Industry, https://www.medtecheurope.org/wp-content/uploads/2021/10/mte\_interoperability\_digital\_health\_white-paper\_06oct21.pdf (accessed on 25 August 2025).
+
+Michael Stearns (2022), Preparing for the Rising Tide of Interoperability in Healthcare, [25] https://journal.ahima.org/page/preparing-for-the-rising-tide-of-interoperability-in-healthcare (accessed on 16 July 2025).
+
+Ministerie van Volksgezondheid, W. (2023), “National Vision and Strategy on the Health Information System”, https://www.zn.nl/app/uploads/2023/04/nationale-visie-en-strategie-gezondheidsinformatiestelsel.pdf (accessed on 4 February 2026).
+
+
+Ministry of Justice of Finland (2009), Act No. 661/2009, https://www.finlex.fi/fi/lainsaadanto/2009/661 (accessed on 22 January 2026).
+
+Ministry of Social Affairs and Health (2024), Strategy for digitalisation and information management in healthcare and social welfare, https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/b720c698-6fb6-4c7c-9938-ad910932f801/content (accessed on 2 February 2026).
+
+
+National Library of Medicine (2026), All of Us, https://www.nnlm.gov/initiatives/all-of-us (accessed on 2 February 2026).
+
+National Library of Medicine (2025), Health Data Standards and Terminologies: A Tutorial, https://www.nlm.nih.gov/oet/ed/healthdatastandards/01-300.html (accessed on 8 July 2025). [9]
+
+Newswire (2025), Greece's Digital Health Reset: Opportunities Emerge for Local EHR and Interoperability Vendors Amid Lagging IT Infrastructure, Black Book Research | Newswire, https://www.newswire.com/news/greece-s-digital-health-reset-opportunities-emerge-for-local-ehr-and-22588173 (accessed on 18 August 2025).
+
+Nordic Council of Ministers (2023), Handbook of cross-border data exchange within the Nordic and Baltic countries, https://pub.norden.org/temanord2023-542/index.html (accessed on 19 December 2025).
+
+Nortal (2022), X-Road: Estonia's digital backbone, https://nortal.com/insights/x-road-estonias-digital-backbone (accessed on 16 January 2026). [113]
+
+OECD (2025), Does Healthcare Deliver?: Results from the Patient-Reported Indicator Surveys (PaRIS), OECD Publishing, Paris, https://doi.org/10.1787/c8af05a5-en. [28]
+
+OECD (2025), “Facilitating the secondary use of health data for public interest purposes across borders”, OECD Digital Economy Papers, No. 376, OECD Publishing, Paris, https://doi.org/10.1787/d7b90d15-en.
+
+OECD (2025), Health expenditure and financing, OECD Health Statistics, https://data-explorer.oecd.org/ (accessed on 28 January 2026).
+
+OECD (2025), “Personal health data systems in OECD countries: Insights into structures and solutions for public access and use”, OECD Health Working Papers, No. 187, OECD Publishing, Paris, https://doi.org/10.1787/0d118bb0-en. [21]
+
+OECD (2024), Recommendation of the Council on Health Data Governance, [57] https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0503#mainText (accessed on 4 February 2026).
+
+OECD (2024), Recommendation of the Council on Human-Centred Public Administrative Services, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0503, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0503 (accessed on 17 September 2025).
+
+OECD (2022), Health Data Governance for the Digital Age: Implementing the OECD Recommendation on Health Data Governance, OECD Publishing, Paris, https://doi.org/10.1787/68b60796-en.
+
+OECD (2022), Towards an Integrated Health Information System in the Netherlands, OECD Publishing, Paris, https://doi.org/10.1787/a1568975-en.
+
+OECD (2019), Health in the 21st Century: Putting Data to Work for Stronger Health Systems, OECD Health Policy Studies, OECD Publishing, Paris, https://doi.org/10.1787/e3b23f8e-en.
+
+OECD (2016), OECD Recommendation on Health Data Governance, https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0433.
+
+Office of Inspector General, U. (2025), Information blocking enforcement alert, U.S. Department of Health and Human Services, https://oig.hhs.gov/documents/special-advisory-bulletins/10930/information-blocking-enforcement-alert-2025.pdf (accessed on 3 February 2026).
+
+Office of the National Coordinator for Health IT (2024), TEFCA, https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca.
+
+Official Journal of the European Union (2025), “REGULATION (EU) 2025/327 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 February 2025 on the European Health Data Space and amending Directive 2011/24/EU and Regulation (EU) 2024/2847 (Text with EEA relevance)”, http://data.europa.eu/eli/reg/2025/327/oj (accessed on 13 May 2025).
+
+openEHR (2025), Specifications Program – openehr.org, https://openehr.org/specification-program/ (accessed on 25 August 2025).
+
+Parliament of Canada (2026), Connected Care for Canadians Act, [164] https://www.parl.ca/legisinfo/en/bill/45-1/s-5 (accessed on 11 March 2026).
+
+Parliament of Finland (2023), Act on the Processing of Customer Data in Social and Health Care 703/2023, https://www.finlex.fi/en/legislation/collection/2023/703 (accessed on 15 January 2026).
+
+Parliament of Finland (2007), Act on the Electronic Processing of Client Data in Healthcare and Social Welfare (159/2007), https://www.finlex.fi/fi/lainsaadanto/2007/61 (accessed on 16 January 2026).
+
+Peace Ojeka (2023), “Digital transformation in health care and elderly care-a comparison of three countries”, https://healthpolicy.se/wp-content/uploads/2023/09/Report\_digital-transformation-2023-English\_final.pdf (accessed on 18 August 2025).
+
+Pedrera-Jiménez, M. et al. (2023), “Can OpenEHR, ISO 13606, and HL7 FHIR Work Together? [66] An Agnostic Approach for the Selection and Application of Electronic Health Record Standards to the Next-Generation Health Data Spaces”, Journal of Medical Internet Research, Vol. 25/1, p. e48702, https://doi.org/10.2196/48702.
+
+Pezoulas, V. and D. Fotiadis (2024), “The pivotal role of data harmonization in revolutionizing global healthcare: a framework and a case study”, Conn Health Telemed 2024;3:300004., Vol. 3/2, pp. N/A-N/A, https://doi.org/10.20517/CHATMED.2023.37.
+
+Pisano González, M. et al. (2024), “IDEAHL European Digital Health Literacy Strategy”, [50] https://doi.org/10.5281/ZENODO.11395540.
+
+
+Republic of Finland (2019), Act on the Secondary Use of Health and Social Data, https://stm.fi/documents/1271139/1365571/The+Act+on+the+Secondary+Use+of+Health+and+Social+Data/a2bca08c-d067-3e54-45d1-18096de0ed76/The+Act+on+the+Secondary+Use+of+Health+and+Social+Data.pdf (accessed on 3 February 2026).
+
+
+Schweizerische Eidgenossenschaff (2025), Espace de données «SwissHDS», [154] https://www.bk.admin.ch/bk/fr/home/digitale-transformation-iktlenkung/datenoekosystem\_schweiz/monitoring-datenraume/swisshds.html (accessed on 3 July 2025).
+
+Schweizerische Eidgenossenschaft (2026), National Data Management, [114] https://digital.swiss/en/action-plan/measures/national-data-management-nadb (accessed on 12 January 2026).
+
+
+SDO Netherlands (2023), SDO-Netherlands, https://sdo-nl.org/ (accessed on 18 August 2025). [124]
+
+Sepp, K. (2025), Estonia showcased digital health innovation at Swiss Biotech Day, trade with estonia, https://tradewthestonia.com/estonia-showcased-digital-health-innovation-at-swiss-biotech-day/ (accessed on 19 December 2025). [39]
+
+Series, N. et al. (2018), “WHY INTEROPERABILITY IS ESSENTIAL IN HEALTH CARE”, Procuring Interoperability, https://doi.org/10.17226/27114. [29]
+
+Sitra (2025), VALO – Value from Nordic health data, https://www.sitra.fi/en/projects/valo-value-from-nordic-health-data/ (accessed on 1 December 2025). [70]
+
+Slawomirski, L. et al. (2025), “The economics of diagnostic safety”, OECD Health Working Papers, No. 176, OECD Publishing, Paris, https://doi.org/10.1787/fc61057a-en. [30]
+
+SNOMED (2025), What is SNOMED CT | SNOMED International, https://www.snomed.org/what-is-snomed-ct (accessed on 25 August 2025).
+
+Sosiaali- ja terveysministerio (2019), Act on the Processing of Client Data in Social and Health Care, https://stm.fi/-/sosiaali-ja-terveydenhuollon-toimijoita-ohjeistetaan-kyberturvallisuudesta (accessed on 1 July 2025).
+
+Sparked (2026), Shaping the future of Australian healthcare, https://sparked.csiro.au/, https://sparked.csiro.au/ (accessed on 12 January 2026).
+
+Sparked (2025), Sparked, https://sparked.csiro.au/ (accessed on 6 May 2025).
+
+sundhed.dk (2026), Background, https://www.sundhed.dk/borger/service/om-sundheddk/om-organisationen/ehealth-in-denmark/background/ (accessed on 12 January 2026). [115]
+
+Sutherland, E. et al. (2023), “Fast-Track on digital security in health”, OECD Health Working Papers, No. 164, OECD Publishing, Paris, https://doi.org/10.1787/c3357f9f-en. [171]
+
+Tamayo-Sarver, J. (2025), From Chaos to Clarity: Solving Interoperability Challenges at the Front End, Medium, https://inflecthealth.medium.com/from-chaos-to-clarity-solving-interoperability-challenges-at-the-front-end-bf7e1276ddf1 (accessed on 19 December 2025).
+
+TEHDAS2 (2025), TEHDAS2 publishes a technical blueprint for national metadata catalogues to power EHDS - Tehdas, https://tehdas.eu/results/tehdas2-publishes-technical-blueprint-for-national-metadata-catalogues-to-power-ehds/ (accessed on 28 May 2026).
+
+The Canadian Medical Protective Association (2022), Managing access to electronic health records, https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2013/managing-access-to-electronic-health-records (accessed on 16 January 2026). [172]
+
+The Commonwealth Fund (2025), Denmark | International Health Care System Profiles | Commonwealth Fund, https://www.commonwealthfund.org/international-health-policy-center/countries/denmark (accessed on 18 August 2025).
+
+The European Medical Device Regulation (2017), “REGULATION (EU) 2017/ 745 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL - of 5 April 2017 - on medical devices, amending Directive 2001/ 83/ EC, Regulation (EC) No 178/ 2002 and Regulation (EC) No 1223/ 2009 and repealing Council Directives 90/ 385/ EEC and 93/ 42/ EEC”, https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32017R0745 (accessed on 8 July 2025).
+
+The International Patient Summary (2025), The International Patient Summary – key health data, worldwide, https://international-patient-summary.net/ (accessed on 7 May 2025). [5]
+
+
+Tsafnat, G. et al. (2024), “Converge or Collide? Making Sense of a Plethora of Open Data Standards in Health Care”, Journal of Medical Internet Research, Vol. 26, https://doi.org/10.2196/55779 (accessed on 19 December 2025).
+
+
+U.S. Space Force (2025), GPS.gov: International Cooperation, https://www.gps.gov/policy/cooperation/ (accessed on 4 August 2025).
+
+United Nations Office for Outer Space Affairs (2026), Global Navigation Satellite Systems, [65] https://www.unoosa.org/oosa/en/ourwork/topics/gnss.html (accessed on 4 February 2026).
+
+University of Eastern Finland (2025), Cross-border ePrescription is perceived to improve access to medicines, https://medicalxpress.com/news/2025-04-border-eprescription-access-medicines.html, https://medicalxpress.com/news/2025-04-border-eprescription-access-medicines.html. [100]
+
+
+Volg je zorg (2025), About permissions, https://www.volqjezorg.nl/en (accessed on 15 January 2026). [116]
+
+
+Ward, C. (2023), Physician Burnout is a Data Problem, https://www.particlehealth.com/blog/physician-burnout-is-a-data-problem, https://www.particlehealth.com/blog/physician-burnout-is-a-data-problem (accessed on 19 January 2026).
+
+Wayman, C. and N. Hunerlach (2019), Realising the value of health care data: a framework for the future, EY, https://www.ey.com/content/dam/ey-unified-site/ey-com/en-gl/insights/life-sciences/documents/ey-value-of-health-care-data-v20-final.pdf (accessed on 20 January 2026).
+
+WHO (2022), Regional digital health action plan for the WHO European Region 2023–2030 [83] (RC72), https://www.who.int/europe/publications/i/item/EUR-RC72-5 (accessed on 14 December 2025).
+
+World Economic Forum (2024), Data and trust: the two pillars of value-based healthcare | World Economic Forum, https://www.weforum.org/stories/2024/01/value-based-healthcare-data-trust/ (accessed on 11 March 2026).
+
+Xpanding innovative Alliance (2025), XiA, a groundbreaking initiative in digital health!, https://xia-project.iscte-iul.pt/. [117]
