@@ -1,0 +1,146 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_l7lkwb2z/pdfs/0005-75-MS-Investor Presentation - Japan Semiconductor Production Equipment-Tech Monthly Jul 2026-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "日本半导体设备，正在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-75-MS-Investor Presentation - Japan Semiconductor Production Equipment-Tech Monthly Jul 2026-260723.pdf",
+    "cleaned_source_title": "MS-Investor Presentation - Japan Semiconductor Production Equipment-Tech Monthly Jul 2026",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：InvestorPresentation日本半导体",
+    "raw_candidates": [
+      "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏",
+      "MS：Ebara精密机械订单指引预计上调至4500亿日元",
+      "MS：日本半导体设备公司业绩分化与DRAM资本开支敞口关联",
+      "日本半导体生产设备月度报告",
+      "日本半导体设备公司业绩分化-DRAM研究节奏",
+      "Ebara精密机械订单指引预计上调至4500亿日元"
+    ],
+    "cleaned_candidates": [
+      "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏",
+      "MS：Ebara精密机械订单指引预计上调至4500亿日元",
+      "MS：日本半导体设备公司业绩分化与DRAM资本开支敞口关联",
+      "MS：日本半导体生产设备月度报告",
+      "MS：日本半导体设备公司业绩分化-DRAM研究节奏",
+      "MS：InvestorPresentation日本半导体",
+      "MS：这份MS2026年7月发布的日本半导体生产设备月度报"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：Ebara精密机械订单指引预计上调至4500亿日元",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：日本半导体设备公司业绩分化与DRAM资本开支敞口关联",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "MS：日本半导体生产设备月度报告",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：InvestorPresentation日本半导体",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：这份MS2026年7月发布的日本半导体生产设备月度报",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "MS：这份MS2026年7月发布的日本半导体生产设备月度报",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏",
+      "MS：Ebara精密机械订单指引预计上调至4500亿日元",
+      "MS：日本半导体设备公司业绩分化与DRAM资本开支敞口关联"
+    ],
+    "final_title_after_wording_guard": "MS：日本半导体设备公司业绩分化集中于DRAM研究节奏"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "486",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
