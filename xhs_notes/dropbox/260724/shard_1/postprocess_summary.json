@@ -1,0 +1,679 @@
+[
+  {
+    "item": "0001-06-Bernstein-Digital-Realty-Trust--Inc.-DLR.US-Digital-Realty--DLR--2Q26--S",
+    "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0001-06-Bernstein-Digital Realty Trust- Inc.-DLR.US-Digital Realty -DLR- 2Q26- Still like the story- but growth isn-t free-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "数据中心巨头DLR：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：二季度续租价差达到现金基础66%、GAAP基础92%的水平",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-Bernstein-Digital Realty Trust- Inc.-DLR.US-Digital Realty -DLR- 2Q26- Still like the story- but growth isn-t free-260723.pdf",
+      "cleaned_source_title": "Bernstein-Digital Realty Trust- Inc.-DLR.US-Digital Realty -DLR- 2Q26- Still like the story- but growth isn-t free",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：DigitalRealtyTrustInc.",
+      "raw_candidates": [
+        "Bernstein：Digital Realty二季度企业托管收入首次突破1亿美元",
+        "Bernstein：Digital Realty超大规模建设加速与每股稀释并存",
+        "Bernstein：Digital Realty二季度运营指标超预期6%及股权增发影响",
+        "Digital Realty二季度运营与股权稀释",
+        "Digital Realty二季度运营超预期6%及股权稀释",
+        "Digital Realty企业托管收入破亿与超大规模建设"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：DigitalRealty二季度企业托管收入首次突破1亿美元",
+        "Bernstein：DigitalRealty超大规模建设加速与每股稀释并存",
+        "Bernstein：DigitalRealty二季度运营指标超预期6%及股权增发",
+        "Bernstein：DigitalRealty二季度运营与股权稀释",
+        "Bernstein：DigitalRealty二季度运营超预期6%及股权稀释",
+        "Bernstein：DigitalRealty企业托管收入破亿与超大规模建设",
+        "Bernstein：DigitalRealtyTrustInc.",
+        "Bernstein：二季度续租价差达到现金基础66%、GAAP基础92%的水平"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：DigitalRealty二季度企业托管收入首次突破1亿美元",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealty超大规模建设加速与每股稀释并存",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealty二季度运营指标超预期6%及股权增发",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealty二季度运营与股权稀释",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealty二季度运营超预期6%及股权稀释",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealty企业托管收入破亿与超大规模建设",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：DigitalRealtyTrustInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：二季度续租价差达到现金基础66%、GAAP基础92%的水平",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "66",
+          "92"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Bernstein：二季度续租价差达到现金基础66%、GAAP基础92%的水平",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Bernstein：Digital Realty二季度企业托管收入首次突破1亿美元",
+        "Bernstein：Digital Realty超大规模建设加速与每股稀释并存",
+        "Bernstein：Digital Realty二季度运营指标超预期6%及股权增发影响"
+      ],
+      "final_title_after_wording_guard": "Bernstein：二季度续租价差达到现金基础66%、GAAP基础92%的水平"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-07-Bernstein-Honeywell-International-Inc-HON.US-HON-2Q26--Solid-results-com",
+    "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0002-07-Bernstein-Honeywell International Inc-HON.US-HON 2Q26- Solid results coming in better than expected with a guidance raise-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "霍尼韦尔Q2交卷，三",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：霍尼韦尔2026财年第二季度业绩",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-Bernstein-Honeywell International Inc-HON.US-HON 2Q26- Solid results coming in better than expected with a guidance raise-260723.pdf",
+      "cleaned_source_title": "Bernstein-Honeywell International Inc-HON.US-HON 2Q26- Solid results coming in better than expected with a guidance raise",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：HoneywellInternationalIncHON2Q",
+      "raw_candidates": [
+        "Bernstein：霍尼韦尔2026财年第二季度业绩",
+        "Bernstein：霍尼韦尔2026财年第二季度营收与利润率超预期",
+        "Bernstein：霍尼韦尔2026财年第二季度三大业务板块均超预期"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：霍尼韦尔2026财年第二季度业绩",
+        "Bernstein：霍尼韦尔2026财年第二季度营收与利润率超预期",
+        "Bernstein：霍尼韦尔2026财年第二季度三大业务板块均超预期",
+        "Bernstein：HoneywellInternationalIncHON2Q",
+        "Bernstein：调整后每股收益为1.95美元，比市场共识高出约7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：HoneywellInternationalIncHON2Q",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：调整后每股收益为1.95美元，比市场共识高出约7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：霍尼韦尔2026财年第二季度业绩",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：霍尼韦尔2026财年第二季度业绩"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-08-Bernstein-ServiceNow-Inc-NOW.US-Q2-26--beats-and-raises-are-back----2607",
+    "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0003-08-Bernstein-ServiceNow Inc-NOW.US-Q2-26- beats and raises are back----260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "NOW 又行了？Q2",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：该季度订阅收入超出公司指引230个基点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-Bernstein-ServiceNow Inc-NOW.US-Q2-26- beats and raises are back----260723.pdf",
+      "cleaned_source_title": "Bernstein-ServiceNow Inc-NOW.US-Q2-26- beats and raises are back",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：ServiceNowIncQ226",
+      "raw_candidates": [
+        "Bernstein：ServiceNow Q2订阅收入超预期230基点",
+        "Bernstein：ServiceNow Q2净新增ACV与提前续约共同驱动增长",
+        "Bernstein：ServiceNow公共部门与AI语音成为新增长方向",
+        "ServiceNow Q2业绩超预期与AI产品驱动增长",
+        "ServiceNow Q2订阅收入超预期230基点-净新增ACV与提前续约驱动",
+        "ServiceNow Q2业绩超预期-公共部门与AI语音成为新增长极"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：ServiceNowQ2订阅收入超预期230基点",
+        "Bernstein：ServiceNowQ2净新增ACV与提前续约共同驱动增长",
+        "Bernstein：ServiceNow公共部门与AI语音成为新增长方向",
+        "Bernstein：ServiceNowQ2业绩超预期与AI产品驱动增长",
+        "Bernstein：ServiceNowQ2业绩超预期",
+        "Bernstein：ServiceNowIncQ226",
+        "Bernstein：该季度订阅收入超出公司指引230个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：ServiceNowQ2订阅收入超预期230基点",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.39"
+          ]
+        },
+        {
+          "title": "Bernstein：ServiceNowQ2净新增ACV与提前续约共同驱动增长",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：ServiceNow公共部门与AI语音成为新增长方向",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：ServiceNowQ2业绩超预期与AI产品驱动增长",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：ServiceNowQ2业绩超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：ServiceNowIncQ226",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：该季度订阅收入超出公司指引230个基点",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Bernstein：该季度订阅收入超出公司指引230个基点",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Bernstein：ServiceNow Q2订阅收入超预期230基点",
+        "Bernstein：ServiceNow Q2净新增ACV与提前续约共同驱动增长",
+        "Bernstein：ServiceNow公共部门与AI语音成为新增长方向"
+      ],
+      "final_title_after_wording_guard": "Bernstein：该季度订阅收入超出公司指引230个基点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-09-Bernstein-International-Business-Machines-Corp-IBM.US-IBM-FQ2-26--Nothin",
+    "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0004-09-Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "IBM的Q2：没崩，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：IBMF业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230-260723.pdf",
+      "cleaned_source_title": "Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：InternationalBusinessM",
+      "raw_candidates": [
+        "Bernstein：IBM FQ2 2026收入172亿美元同比增1%",
+        "Bernstein：IBM FQ2 2026客户订单推迟至下半年",
+        "Bernstein：IBM FQ2 2026大型机降42%分布式增37%"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：IBMFQ22026收入172亿美元同比增1%",
+        "Bernstein：IBMFQ22026客户订单推迟至下半年",
+        "Bernstein：IBMFQ22026大型机降42%分布式增37%",
+        "Bernstein：InternationalBusinessM",
+        "Bernstein：IBM在7月22日发布FQ22026财报前罕见发布预公告"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：IBMFQ22026客户订单推迟至下半年",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        },
+        {
+          "title": "Bernstein：IBMFQ22026大型机降42%分布式增37%",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        },
+        {
+          "title": "Bernstein：InternationalBusinessM",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：IBM在7月22日发布FQ22026财报前罕见发布预公告",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：IBMF业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：IBMFQ22026收入172亿美元同比增1%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：IBMF业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-10-Bofa-The-Flow-Show-Bonds-bringing-the-heat-260723",
+    "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0005-10-Bofa-The Flow Show Bonds bringing the heat-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "债券猛涨，谁在悄悄买",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "收益率->回报表现 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金经理->组合负责人 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x2",
+      "基金->产品 x3",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-Bofa-The Flow Show Bonds bringing the heat-260723.pdf",
+      "cleaned_source_title": "Bofa-The Flow Show Bonds bringing the heat",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：TheFlowShowBondsbringingtheheat",
+      "raw_candidates": [
+        "BofA资金流向周报：债券回报表现飙升",
+        "BofA7月23日周报：30年期国债回报升至5.2%",
+        "BofA资金流向周报：债券回报与资产轮动信号"
+      ],
+      "cleaned_candidates": [
+        "BofA：BofA资金流向周报，债券回报表现飙升",
+        "BofA：BofA7月23日周报，30年期国债回报升至5.2%",
+        "BofA：BofA资金流向周报，债券回报与资产轮动信号",
+        "BofA：TheFlowShowBondsbringingtheheat",
+        "BofA：美国30年期国债回报表现升至5.2%，创2007年6月以来新高"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：BofA资金流向周报，债券回报表现飙升",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：BofA资金流向周报，债券回报与资产轮动信号",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：TheFlowShowBondsbringingtheheat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：美国30年期国债回报表现升至5.2%，创2007年6月以来新高",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "23",
+          "30",
+          "5.2",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：BofA7月23日周报，30年期国债回报升至5.2%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

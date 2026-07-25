@@ -1,0 +1,126 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_bz1kao93/pdfs/0004-09-Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "IBM的Q2：没崩，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：IBMF业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-09-Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230-260723.pdf",
+    "cleaned_source_title": "Bernstein-International Business Machines Corp-IBM.US-IBM FQ2-26- Nothing broken- Market-perform TP -230",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：InternationalBusinessM",
+    "raw_candidates": [
+      "Bernstein：IBM FQ2 2026收入172亿美元同比增1%",
+      "Bernstein：IBM FQ2 2026客户订单推迟至下半年",
+      "Bernstein：IBM FQ2 2026大型机降42%分布式增37%"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：IBMFQ22026收入172亿美元同比增1%",
+      "Bernstein：IBMFQ22026客户订单推迟至下半年",
+      "Bernstein：IBMFQ22026大型机降42%分布式增37%",
+      "Bernstein：InternationalBusinessM",
+      "Bernstein：IBM在7月22日发布FQ22026财报前罕见发布预公告"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：IBMFQ22026客户订单推迟至下半年",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "Bernstein：IBMFQ22026大型机降42%分布式增37%",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "Bernstein：InternationalBusinessM",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：IBM在7月22日发布FQ22026财报前罕见发布预公告",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：IBMF业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：IBMFQ22026收入172亿美元同比增1%",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：IBMF业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "618",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
