@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0001-21-GS-AMERICAS ENERGY- OIL US Majors- Screen for Attractive Valuation and Free Cash Flow Growth- Highlight 18- Total Return to COP -on Conviction List--260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0002-22-GS-Fed Chatterbox- July Edition-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0003-23-GS-FX Comment- US Treasury FX Report- No -Currency Manipulators- and a More Constructive Tone-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0004-24-GS-GLOBAL FX TRADER-Carry- With Energy-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0005-25-GS-Global PMI Monitor- Elevated Manufacturing Suppliers- Delivery Times-260724.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

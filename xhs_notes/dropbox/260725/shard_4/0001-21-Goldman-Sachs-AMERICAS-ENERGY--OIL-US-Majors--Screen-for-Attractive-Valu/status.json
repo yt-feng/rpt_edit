@@ -1,0 +1,138 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0001-21-GS-AMERICAS ENERGY- OIL US Majors- Screen for Attractive Valuation and Free Cash Flow Growth- Highlight 18- Total Return to COP -on Conviction List--260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "美国能源巨头，谁在闷",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "不确定性提示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-21-GS-AMERICAS ENERGY- OIL US Majors- Screen for Attractive Valuation and Free Cash Flow Growth- Highlight 18- Total Return to COP -on Conviction List--260724.pdf",
+    "cleaned_source_title": "GS-AMERICAS ENERGY- OIL US Majors- Screen for Attractive Valuation and Free Cash Flow Growth- Highlight 18- Total Return to COP -on Conviction List",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：AMERICAS能源OILUSMajorsScr",
+    "raw_candidates": [
+      "美国石油巨头估值与自由现金流增长筛选",
+      "雪佛龙与康菲石油自由现金流增长约10%-70亿美元",
+      "美国石油巨头资产组合与资本纪律拉开增长路径"
+    ],
+    "cleaned_candidates": [
+      "GS：美国石油巨头估值与自由现金流增长筛选",
+      "GS：雪佛龙与康菲石油自由现金流增长约10%-70亿美元",
+      "GS：美国石油巨头资产组合与资本纪律拉开增长路径",
+      "GS：AMERICAS能源OILUSMajorsScr",
+      "GS：1.雪佛龙，多元化资产组合支撑约10%的年均自由现金流增长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：雪佛龙与康菲石油自由现金流增长约10%-70亿美元",
+        "reasons": [
+          "anchor_coverage=0.41"
+        ]
+      },
+      {
+        "title": "GS：美国石油巨头资产组合与资本纪律拉开增长路径",
+        "reasons": [
+          "anchor_coverage=0.35"
+        ]
+      },
+      {
+        "title": "GS：AMERICAS能源OILUSMajorsScr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：1.雪佛龙，多元化资产组合支撑约10%的年均自由现金流增长",
+        "reasons": [
+          "anchor_coverage=0.35"
+        ]
+      }
+    ],
+    "selected_title": "GS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：美国石油巨头估值与自由现金流增长筛选",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "500",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

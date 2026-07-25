@@ -1,0 +1,115 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_y3tpp0uh/pdfs/0003-23-GS-FX Comment- US Treasury FX Report- No -Currency Manipulators- and a More Constructive Tone-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "封面短标题**",
+  "cover_subtitle": "封面副标题**",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：美国财政部外汇报告，未认定汇率操纵国",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-FX Comment- US Treasury FX Report- No -Currency Manipulators- and a More Constructive Tone-260724.pdf",
+    "cleaned_source_title": "GS-FX Comment- US Treasury FX Report- No -Currency Manipulators- and a More Constructive Tone",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：FXCommentUSTreasuryFXRep",
+    "raw_candidates": [
+      "美国财政部外汇报告：未认定汇率操纵国",
+      "美国财政部外汇报告：七地区满足两项标准",
+      "美国财政部外汇报告：对中国措辞有所缓和"
+    ],
+    "cleaned_candidates": [
+      "GS：美国财政部外汇报告，未认定汇率操纵国",
+      "GS：美国财政部外汇报告，七地区满足两项标准",
+      "GS：美国财政部外汇报告，对中国措辞有所缓和",
+      "GS：FXCommentUSTreasuryFXRep",
+      "GS：与1月报告相比，7月报告在对中国的表述上出现了几处变化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：美国财政部外汇报告，七地区满足两项标准",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：美国财政部外汇报告，对中国措辞有所缓和",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：FXCommentUSTreasuryFXRep",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：与1月报告相比，7月报告在对中国的表述上出现了几处变化",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：美国财政部外汇报告，未认定汇率操纵国",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：美国财政部外汇报告，未认定汇率操纵国"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "458",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
