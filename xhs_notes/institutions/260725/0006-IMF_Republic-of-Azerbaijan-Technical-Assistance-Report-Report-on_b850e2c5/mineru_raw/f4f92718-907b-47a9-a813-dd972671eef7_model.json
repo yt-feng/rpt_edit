@@ -1,0 +1,3560 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.1,
+                0.256,
+                0.201
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL\nMONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.294,
+                0.112,
+                0.416,
+                0.194
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.116,
+                0.226,
+                0.875,
+                0.315
+            ],
+            "angle": 0,
+            "content": "TECHNICAL ASSISTANCE\nREPORT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.386,
+                0.883,
+                0.424
+            ],
+            "angle": 0,
+            "content": "REPUBLIC OF AZERBAIJAN",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.428,
+                0.905,
+                0.519
+            ],
+            "angle": 0,
+            "content": "Report on Government Finance Statistics and Public Sector Debt Statistics (November 24–28, 2025) and (February 23–27, 2026)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.528,
+                0.307,
+                0.555
+            ],
+            "angle": 0,
+            "content": "JULY 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.59,
+                0.273,
+                0.61
+            ],
+            "angle": 0,
+            "content": "PREPARED BY",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.61,
+                0.379,
+                0.631
+            ],
+            "angle": 0,
+            "content": "Roderick O'Mahony (Expert)",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.872,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.278,
+                0.362,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.389,
+                0.879,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.431,
+                0.902,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.46,
+                0.894,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.491,
+                0.472,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.525,
+                0.308,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.588,
+                0.274,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.609,
+                0.378,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.093,
+                0.084,
+                0.365,
+                0.1
+            ],
+            "angle": 0,
+            "content": "©2026 International Monetary Fund"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.425,
+                0.187,
+                0.442
+            ],
+            "angle": 0,
+            "content": "Keywords:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.398,
+                0.32,
+                0.414
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.35,
+                0.398,
+                0.428,
+                0.414
+            ],
+            "angle": 0,
+            "content": "H60, H83",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.349,
+                0.425,
+                0.767,
+                0.442
+            ],
+            "angle": 0,
+            "content": "Government finance statistics; public sector accounting",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.479,
+                0.902,
+                0.684
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of Azerbaijan (the \"CD recipient\") in response to their request for technical assistance. Unless the CD recipient specifically objects to such disclosure, this document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Azerbaijan, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest, members of the Steering Committee of CCAMTAC (see Staff Operational Guidance on the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest, members of the Steering Committee of CCAMTAC shall require the explicit consent of the CD recipient and the IMF's Statistics department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.698,
+                0.83,
+                0.732
+            ],
+            "angle": 0,
+            "content": "The analysis and policy considerations expressed in this publication are those of the IMF Statistics Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.318,
+                0.763,
+                0.68,
+                0.849
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.427,
+                0.184,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.401,
+                0.316,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.351,
+                0.399,
+                0.426,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.352,
+                0.427,
+                0.763,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.48,
+                0.897,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.497,
+                0.818,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.514,
+                0.869,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.531,
+                0.866,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.549,
+                0.901,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.566,
+                0.888,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.583,
+                0.874,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.601,
+                0.861,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.617,
+                0.857,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.634,
+                0.834,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.65,
+                0.894,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.668,
+                0.332,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.7,
+                0.826,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.718,
+                0.189,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.765,
+                0.672,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.783,
+                0.678,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.333,
+                0.8,
+                0.664,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.416,
+                0.817,
+                0.583,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.449,
+                0.834,
+                0.55,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.086,
+                0.397,
+                0.114
+            ],
+            "angle": 0,
+            "content": "Acknowledgments"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.133,
+                0.195,
+                0.148
+            ],
+            "angle": 0,
+            "content": "MEMBERS"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.134,
+                0.162,
+                0.22,
+                0.201
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.149,
+                0.202,
+                0.206,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Armenia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.299,
+                0.162,
+                0.378,
+                0.201
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.304,
+                0.201,
+                0.374,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Azerbaijan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.126,
+                0.222,
+                0.229,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.459,
+                0.162,
+                0.541,
+                0.201
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.288,
+                0.222,
+                0.391,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.308,
+                0.26,
+                0.369,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Tajikistan"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.473,
+                0.202,
+                0.527,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Georgia"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.147,
+                0.26,
+                0.207,
+                0.274
+            ],
+            "angle": 0,
+            "content": "Mongolia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.459,
+                0.222,
+                0.54,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.458,
+                0.261,
+                0.543,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Turkmenistan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.611,
+                0.163,
+                0.713,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.623,
+                0.201,
+                0.7,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Kazakhstan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.778,
+                0.163,
+                0.869,
+                0.2
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.611,
+                0.221,
+                0.713,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.771,
+                0.201,
+                0.874,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Kyrgyz Republic"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.626,
+                0.26,
+                0.697,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Uzbekistan"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.094,
+                0.324,
+                0.353,
+                0.341
+            ],
+            "angle": 0,
+            "content": "DEVELOPMENT PARTNERS"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.134,
+                0.363,
+                0.22,
+                0.398
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.14,
+                0.399,
+                0.215,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Switzerland"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.294,
+                0.36,
+                0.385,
+                0.399
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.316,
+                0.4,
+                0.362,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Russia"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.455,
+                0.361,
+                0.545,
+                0.401
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.48,
+                0.4,
+                0.521,
+                0.411
+            ],
+            "angle": 0,
+            "content": "China"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.636,
+                0.353,
+                0.684,
+                0.383
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.605,
+                0.386,
+                0.718,
+                0.413
+            ],
+            "angle": 0,
+            "content": "Ministry of Strategy and Finance\nRepublic of Korea"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.776,
+                0.36,
+                0.87,
+                0.398
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.772,
+                0.399,
+                0.874,
+                0.423
+            ],
+            "angle": 0,
+            "content": "United States of America"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.138,
+                0.435,
+                0.217,
+                0.472
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.472,
+                0.229,
+                0.484
+            ],
+            "angle": 0,
+            "content": "European Union"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.308,
+                0.432,
+                0.369,
+                0.472
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.26,
+                0.472,
+                0.417,
+                0.484
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.433,
+                0.443,
+                0.462,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.458,
+                0.443,
+                0.569,
+                0.464
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.476,
+                0.472,
+                0.524,
+                0.484
+            ],
+            "angle": 0,
+            "content": "Poland"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.128,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.141,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.666,
+                0.959,
+                0.883,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.086,
+                0.395,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.135,
+                0.192,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.328,
+                0.35,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.094,
+                0.088,
+                0.245,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Contents"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.092,
+                0.141,
+                0.907,
+                0.321
+            ],
+            "angle": 0,
+            "content": "Acknowledgments....3   \nAbbreviations and Acronyms....5   \nSummary of Mission Outcomes and Priority Recommendations....6   \nDetailed Technical Assessment and Recommendations....8   \nA. Improving Quality of GFS....8   \nB. Initiating Dissemination of PSDS....9   \nC. Other Issues....10   \nD. Officials Met During the Mission....11"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.666,
+                0.959,
+                0.883,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.961,
+                0.904,
+                0.972
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.244,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.087,
+                0.567,
+                0.114
+            ],
+            "angle": 0,
+            "content": "Abbreviations and Acronyms"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.089,
+                0.14,
+                0.865,
+                0.717
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>AM</td><td>Azerbaijani Manat</td></tr><tr><td>BCG</td><td>Budgetary Central Government</td></tr><tr><td>CBA</td><td>Central Bank of the Republic of Azerbaijan</td></tr><tr><td>CCAMTAC</td><td>Caucasus, Central Asia, and Mongolia Regional Capacity Development Center</td></tr><tr><td>CG</td><td>Central Government</td></tr><tr><td>COFOG</td><td>Classification of Functions of Government</td></tr><tr><td>PDFLMA</td><td>Public Debt and Financial Liabilities Management Agency</td></tr><tr><td>EBF</td><td>Extrabudgetary Fund</td></tr><tr><td>GFS</td><td>Government Finance Statistics</td></tr><tr><td>GFSM 2014</td><td>Government Finance Statistics Manual 2014</td></tr><tr><td>IFRS</td><td>International Financial Reporting Standards</td></tr><tr><td>IPSAS</td><td>International Public Sector Accounting Standards</td></tr><tr><td>KRF</td><td>Karabakh Revival Fund</td></tr><tr><td>LEPL</td><td>Legal Entities of Public Law</td></tr><tr><td>MCD</td><td>Middle East and Central Asia Department</td></tr><tr><td>MOF</td><td>Ministry of Finance</td></tr><tr><td>MTEF</td><td>Medium-Term Expenditure Framework</td></tr><tr><td>PSDS</td><td>Public Sector Debt Statistics</td></tr><tr><td>QPSD</td><td>Quarterly Public Sector Debt (IMF-World Bank Database)</td></tr><tr><td>ROA</td><td>Republic of Azerbaijan</td></tr><tr><td>SB</td><td>State Budget</td></tr><tr><td>SOFAZ</td><td>State Oil Fund of the Republic of Azerbaijan</td></tr><tr><td>SSA</td><td>Social Services Agency</td></tr><tr><td>SAMHI</td><td>State Agency Mandatory Health Insurance</td></tr><tr><td>SSPF</td><td>State Social Protection Fund</td></tr><tr><td>TA</td><td>Technical Assistance</td></tr><tr><td>TD</td><td>Treasury Department</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.128,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.141,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.665,
+                0.959,
+                0.883,
+                0.974
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.087,
+                0.565,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.086,
+                0.798,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Summary of Mission Outcomes and Priority Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.172,
+                0.903,
+                0.304
+            ],
+            "angle": 0,
+            "content": "1. In response to a request from the Ministry of Finance (MOF) of the Republic of Azerbaijan (ROA), and with the support of the IMF's Middle East and Central Asia Department (MCD), the Caucasus, Central Asia, and Mongolia Regional Capacity Development Center (CCAMTAC) conducted a hybrid Technical Assistance (TA) mission during November 2025 and February 2026 to assist the authorities in developing capacity to compile and disseminate quarterly and annual fiscal statistics that support policy-making and IMF surveillance. The mission consisted of (i) the remote segment which took place remotely via Zoom during November 24–28, 2025, and (ii) the in-person segment, which took place in Baku, Azerbaijan, during February 23–27, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.313,
+                0.907,
+                0.462
+            ],
+            "angle": 0,
+            "content": "2. The main objectives of the mission were to: (i) provide an outline of GFS concepts specifically targeted for source data providers; (ii) assist the Medium-Term Expenditure Framework (MTEF) Development Center staff in compiling annual GFS for the General Government (GG) for 2024; (iii) extend work on developing quarterly GFS and PSDS that support Fund surveillance; and (iv) review progress since the last TA mission in 2025. The mission also focused on further strengthening the capability and confidence of the compilers of fiscal statistics and the source data providers in addressing issues in the relevant data and the compilation processes, identifying areas for further improvement, assisting compilers in assigning appropriate COFOG codes and promoting collaboration among agencies involved in the fiscal statistics compilation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.472,
+                0.904,
+                0.588
+            ],
+            "angle": 0,
+            "content": "3. The mission noted that the annual GFS dataset for 2024 was submitted to the IMF in late 2025 and that the dataset for 2025 can be submitted by July 2026. The mission welcomed the improvement in timeliness for the annual datasets and continued to stress the importance of having timely data available for users. The mission noted that quarterly data was available for budgetary central government (BCG), the State Oil Fund of the Republic of Azerbaijan (SOFAZ) and the Karabakh Revival Fund (KRF) for Q1 and Q2 2025. The mission encouraged the authorities to commence disseminating quarterly GFS as soon as possible once the figures have been finalized for BCG.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.597,
+                0.9,
+                0.697
+            ],
+            "angle": 0,
+            "content": "4. The mission met with officials from the Public Debt and Financial Liabilities Management Agency (PDFLMA) who agreed to submit quarterly debt data. Officials from the PDFLMA noted that the BCG also included debt expenditure relating to public sector bodies where government undertook to pay loans. These transactions are included in total loan payment (both principal and interest) in BCG figures. To address this anomaly, the mission suggested that the PDFLMA simply report debt figures to the QPSD and analyze its alignment with the BCG data. Both teams agreed to examine this workaround.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.707,
+                0.898,
+                0.74
+            ],
+            "angle": 0,
+            "content": "5. To support progress in the above work areas, the mission recommended a detailed one-year action plan with the following priority recommendations to improve GFS and PSDS:",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.14,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.665,
+                0.959,
+                0.883,
+                0.974
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.796,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.118,
+                0.397,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.173,
+                0.112,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.174,
+                0.869,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.19,
+                0.839,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.206,
+                0.819,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.224,
+                0.892,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.239,
+                0.892,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.256,
+                0.859,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.271,
+                0.899,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.289,
+                0.6,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.314,
+                0.112,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.313,
+                0.813,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.331,
+                0.889,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.347,
+                0.86,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.365,
+                0.878,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.379,
+                0.903,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.397,
+                0.901,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.413,
+                0.837,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.429,
+                0.878,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.446,
+                0.409,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.472,
+                0.113,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.474,
+                0.902,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.49,
+                0.9,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.507,
+                0.895,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.522,
+                0.867,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.539,
+                0.897,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.555,
+                0.846,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.499,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.599,
+                0.113,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.598,
+                0.868,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.615,
+                0.892,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.63,
+                0.871,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.648,
+                0.895,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.665,
+                0.891,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.681,
+                0.759,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.708,
+                0.895,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.725,
+                0.764,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.094,
+                0.088,
+                0.4,
+                0.112
+            ],
+            "angle": 0,
+            "content": "Recommendations"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.096,
+                0.141,
+                0.903,
+                0.263
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institution</td></tr><tr><td>May 2026</td><td>Submit quarterly GFS dataset for Q1 and Q2 2025 for BCG to IMF</td><td>MTEF</td></tr><tr><td>May 2026</td><td>Submit quarterly debt data to QPSD IMF/WB database</td><td>PDFLMA</td></tr><tr><td>July 2026</td><td>Submit annual dataset for 2025 to IMF</td><td>MTEF</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.092,
+                0.266,
+                0.891,
+                0.298
+            ],
+            "angle": 0,
+            "content": "Further details on the priority recommendations and the related actions/milestones can be found in the action plan under Detailed Technical Assessment and Recommendations."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.128,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.141,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.666,
+                0.959,
+                0.884,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.972
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.088,
+                0.398,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.094,
+                0.086,
+                0.67,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Detailed Technical Assessment and Recommendations"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.095,
+                0.171,
+                0.904,
+                0.592
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Priority</td><td>Action/Milestone</td><td>Target Completion Date</td></tr><tr><td colspan=\"3\">Outcome: Further development of GFS data in Azerbaijan</td></tr><tr><td colspan=\"3\">Outcome: Data is compiled and disseminated using the coverage and scope of the latest manual/guide.</td></tr><tr><td colspan=\"3\">Outcome: Data are compiled and disseminated using the classification of the latest manual/guide</td></tr><tr><td>H</td><td>Increase capacity and efficiency of the GFS team.</td><td>Ongoing</td></tr><tr><td>M</td><td>Explore and use supplementary data sources for GFS and PSDS</td><td>Ongoing</td></tr><tr><td>H</td><td>Develop time series on quarterly BCG debt in conjunction with PDFLMA.</td><td>End May 2026</td></tr><tr><td>H</td><td>Finalize Q1 and Q2 2025 data for BCG, SOFAZ and KRF</td><td>End May 2026</td></tr><tr><td>H</td><td>Finalize and transmit the 2025 annual GFS questionnaire to IMF STA.</td><td>End July 2026</td></tr><tr><td>H</td><td>Provide GFS training to data providers to improve quality of GFS input.</td><td>End November 2026</td></tr><tr><td>H</td><td>Update COFOG Classification in new edition of Functional Classification</td><td>End December 2026</td></tr><tr><td>H</td><td>Develop updated PSIT to take account of LEPLs and other EBFs.</td><td>End December 2026</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.613,
+                0.379,
+                0.632
+            ],
+            "angle": 0,
+            "content": "A. Improving Quality of GFS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.651,
+                0.208,
+                0.667
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.676,
+                0.904,
+                0.776
+            ],
+            "angle": 0,
+            "content": "6. Azerbaijan is a regular provider of annual GFS for GG and its subsectors to the IMF's GFS database. GFS are compiled using an Excel file which contains the source data, bridging sheets, and output tables. The IMF's annual GFS database (managed by STA's Government Finance Division) contains Azerbaijan's time series data for 2008–2024 for GG and its subsectors (central government, social security funds, state government and local government). Staff of the MTEF Development Centre are currently compiling GFS for 2025 and will submit data for 2025 before the end of July 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.785,
+                0.903,
+                0.884
+            ],
+            "angle": 0,
+            "content": "7. The source data for GFS is a mixture of IFRS and IPSAS-based annual financial statements which are sufficiently comprehensive and detailed to compile annual GFS. The GFS team in the MTEF Development Center continues to have a good working knowledge of the source data as well as the framework, principles, concepts, and classification system of GFS. It also has access to qualitative information from the sources, which enables them to understand and explain fiscal events underlying the reported numbers.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.666,
+                0.959,
+                0.883,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.904,
+                0.973
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.088,
+                0.668,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.118,
+                0.397,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.614,
+                0.377,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.652,
+                0.206,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.677,
+                0.112,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.676,
+                0.875,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.693,
+                0.903,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.709,
+                0.844,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.725,
+                0.889,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.744,
+                0.844,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.759,
+                0.704,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.786,
+                0.113,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.787,
+                0.882,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.803,
+                0.901,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.819,
+                0.836,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.835,
+                0.828,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.853,
+                0.872,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.87,
+                0.232,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.085,
+                0.906,
+                0.299
+            ],
+            "angle": 0,
+            "content": "8. Data provided to the IMF Area Department for surveillance should be consistent with the data submitted to Parliament and those published in the IMF GFS database. Nevertheless, when taking into account the methodological requirements of the Government Finance Statistics Manual 2014 (GFSM 2014) and the prevailing national legal framework, notable discrepancies remain between the GFS reports submitted to the IMF and the annual budget execution reports presented to Parliament. As emphasized in previous technical assistance missions, multiple and parallel data dissemination streams continue to operate within the Ministry of Finance, which undermines data consistency and transparency. In particular, the State Treasury Agency prepares the annual budget execution report on a cash basis, thereby limiting alignment with GFS reporting standards. In this context, the mission reiterated its recommendation that the authorities—specifically the staff of the MTEF Development Center—systematically utilize available accrual-based data as the primary source for IMF reporting. Furthermore, it was advised that such accrual-based information be shared with the IMF’s Area Department to enhance the quality and consistency of fiscal surveillance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.309,
+                0.902,
+                0.407
+            ],
+            "angle": 0,
+            "content": "9. As part of the remote mission, the team reviewed the significant discrepancies that arose from the GFS source annual data for 2024 at individual entity level and reduced them significantly to near zero in all cases. A common issue the mission noted was the continued misclassification of net acquisition of non-financial assets by the receiving entities, which were transferred from BCG. These should be classified as other ‘change in volume in assets and liabilities’, and source data providers must be familiar with the understanding of the above the line and below the line items.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.418,
+                0.906,
+                0.516
+            ],
+            "angle": 0,
+            "content": "10. The mission also examined quarterly data for Q1 and Q2 2025 for BCG, SOFAZ and KRF. While the KRF compilation exercise produced an essentially balanced set of accounts, significant discrepancies were found for BCG and SOFAZ. The mission recommended to staff that they examine the financial assets side of the accounts for BCG (specifically Currency and Deposits, for example assets held in the Central Bank of Azerbaijan (CBA)). For example, if the non-financial accounts showed a surplus or deficit, data users would expect to see some movement in the currency and deposit assets.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.531,
+                0.271,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Recommendations:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.556,
+                0.77,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Submit GFS dataset for 2025 by end July 2026 to the IMF's Statistics Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.583,
+                0.889,
+                0.616
+            ],
+            "angle": 0,
+            "content": "Consult (on an ongoing basis) with STA, including the CCAMTAC GFS-PSDS resident advisor, on specific source data and compilation issues as they arise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.627,
+                0.852,
+                0.659
+            ],
+            "angle": 0,
+            "content": "Review existing quarterly data for BCG and SOFAZ for Q1 and Q2 2025 to further reduce the statistical discrepancy and submit the data to the IMF.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.67,
+                0.897,
+                0.702
+            ],
+            "angle": 0,
+            "content": "- Continue developing quarterly data for other entities such as LEPLs to improve coverage to Central Government (CG) level.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.725,
+                0.46,
+                0.743
+            ],
+            "angle": 0,
+            "content": "B. Initiating Dissemination of PSDS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.762,
+                0.208,
+                0.779
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.787,
+                0.896,
+                0.854
+            ],
+            "angle": 0,
+            "content": "11. The quarterly debt securities and loans for BCG statistics are readily available for dissemination from PDFLMA. However, final agreement is required as to which agency should take responsibility for publishing the data and submit it to the joint IMF/WB Quarterly Public Sector Debt (QPSD) database pending the approval of the MOF management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.864,
+                0.87,
+                0.914
+            ],
+            "angle": 0,
+            "content": "12. The main issue to address is that there is a difference in the total debt payments that is shown for PDFLMA and that of the MOF. The difference can be explained by the inclusion of loans of public corporations that the MOF agrees to finance although some of the loans are repaid in full by the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.666,
+                0.959,
+                0.883,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.892,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.086,
+                0.112,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.087,
+                0.902,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.101,
+                0.895,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.119,
+                0.892,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.137,
+                0.836,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.152,
+                0.88,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.169,
+                0.901,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.185,
+                0.896,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.202,
+                0.881,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.218,
+                0.81,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.235,
+                0.833,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.251,
+                0.825,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.267,
+                0.813,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.285,
+                0.342,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.309,
+                0.114,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.31,
+                0.869,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.326,
+                0.897,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.343,
+                0.848,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.359,
+                0.898,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.376,
+                0.897,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.393,
+                0.611,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.418,
+                0.123,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.16,
+                0.419,
+                0.866,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.435,
+                0.819,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.451,
+                0.877,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.468,
+                0.903,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.485,
+                0.857,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.501,
+                0.774,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.533,
+                0.268,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.557,
+                0.767,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.586,
+                0.886,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.602,
+                0.584,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.629,
+                0.849,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.645,
+                0.556,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.676,
+                0.102,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.671,
+                0.894,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.689,
+                0.333,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.725,
+                0.458,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.763,
+                0.206,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.789,
+                0.807,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.806,
+                0.846,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.821,
+                0.891,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.839,
+                0.523,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.864,
+                0.853,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.882,
+                0.866,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.899,
+                0.855,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.085,
+                0.894,
+                0.152
+            ],
+            "angle": 0,
+            "content": "Public Corporations, while others will be repaid by Government once it becomes clear that the Public Corporations are unable to pay (which then move onto the Government's balance sheet). The matter is further complicated by the fact that the GFS team are legally required not to split total debt figures between interest payments and transaction in liabilities for public corporations and normal BCG debt operations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.16,
+                0.907,
+                0.244
+            ],
+            "angle": 0,
+            "content": "13. The PDFLMA agreed to submit the quarterly debt figures for BCG to the IMF/WB QPSD. The mission further requested that the PDFLMA also provide a breakdown to include long-term debt liabilities that have less than one year to maturity (initially long-term debt but reclassified as short-term debt on a remaining maturity basis). The GFS team agreed to consider appropriate methods to reconcile the difference between the totals provided by each agency.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.258,
+                0.271,
+                0.274
+            ],
+            "angle": 0,
+            "content": "Recommendations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.283,
+                0.779,
+                0.299
+            ],
+            "angle": 0,
+            "content": "The PDFLMA to contact the World Bank to initiate reporting to the QPSD database.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.31,
+                0.877,
+                0.327
+            ],
+            "angle": 0,
+            "content": "■ Establish a PSDS working group to discuss and report on debt issues to the GFS working group.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.348,
+                0.259,
+                0.366
+            ],
+            "angle": 0,
+            "content": "C. Other Issues"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.378,
+                0.906,
+                0.51
+            ],
+            "angle": 0,
+            "content": "14. Further progress in the compilation of sound fiscal statistics continues to depend on the political support and effective building capacities. The Director of MTEF Development Center confirmed interest in further development of GFS, focusing on expanding sector coverage. The mission continued to emphasize that the pace of future developments depends purely on capacity and recommended that the MOF senior staff ensure adequate resources be allocated to the MTEF Development Center. The authorities were encouraged to continue engaging with the CCAMTAC GFS-PSDS resident advisor on the necessary follow-up actions. The Director of MTEF also expressed an interest in hosting a training course for data providers of GFS as part of any subsequent TA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.519,
+                0.907,
+                0.667
+            ],
+            "angle": 0,
+            "content": "15. Besides the staff capacity and training issues, consideration should be given to collecting comprehensive source data needed to develop GFS data for entities to be included in the Central Government (CG) sector (e.g., Legal entities of Public Law or LEPLs). It is important to develop an updated Public Sector Institutional Table (PSIT) to ensure consistent classification of public sector entities by the various data compiling and source data providing agencies. In addition, to strengthen the institutional foundation for collaboration among compilers and users of fiscal and debt data for policy making, a technical working group comprising MTEF Development Center, Budget Department, Treasury Agency (TA) and PDFLMA should be established with support from the MOF and management from other government departments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.678,
+                0.903,
+                0.826
+            ],
+            "angle": 0,
+            "content": "16. The authorities requested the assistance of the mission to recommend the appropriate COFOG code for several Departments. The mission met with senior officials in the Departments of Finance of Social Sector, Finance of Military Institutions and Law Enforcement Bodies, and Accounting Policy to agree appropriate COFOG codes. In addition, the mission also assisted staff from the MTEF in this regard. The process of aligning the national functional classification with the COFOG is ongoing and is currently being prepared by the authorities. The finalized classification codes will be shared with the mission team and CCAMTAC GFS-PSDS resident advisor once they have been formally approved. The mission encouraged the authorities to reach out to the CCAMTAC GFS-PSDS resident advisor with any subsequent queries as required.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.837,
+                0.907,
+                0.886
+            ],
+            "angle": 0,
+            "content": "17. It should be noted that the authorities are also interested in developing a new Chart of Accounts system which will result in several significant improvements in GFS reporting. A request for TA, in coordination with PFM, may emerge soon.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.094,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.656,
+                0.959,
+                0.873,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.96,
+                0.905,
+                0.973
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.087,
+                0.843,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.103,
+                0.86,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.12,
+                0.889,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.136,
+                0.858,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.162,
+                0.125,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.163,
+                0.884,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.178,
+                0.874,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.197,
+                0.86,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.212,
+                0.903,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.23,
+                0.429,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.259,
+                0.268,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.285,
+                0.776,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.315,
+                0.104,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.311,
+                0.874,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.349,
+                0.256,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.38,
+                0.865,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.396,
+                0.898,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.413,
+                0.879,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.43,
+                0.869,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.445,
+                0.901,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.461,
+                0.884,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.478,
+                0.859,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.495,
+                0.451,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.52,
+                0.126,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.52,
+                0.876,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.538,
+                0.871,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.862,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.569,
+                0.903,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.587,
+                0.873,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.603,
+                0.901,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.621,
+                0.859,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.635,
+                0.848,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.653,
+                0.194,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.679,
+                0.125,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.679,
+                0.849,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.696,
+                0.844,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.711,
+                0.86,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.729,
+                0.898,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.746,
+                0.856,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.761,
+                0.897,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.777,
+                0.868,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.794,
+                0.897,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.811,
+                0.245,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.838,
+                0.845,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.855,
+                0.903,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.87,
+                0.459,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.085,
+                0.895,
+                0.118
+            ],
+            "angle": 0,
+            "content": "18. The mission also provided basic GFS training to members of the State Employment Agency. This was done to facilitate new members on the reporting team.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.139,
+                0.443,
+                0.157
+            ],
+            "angle": 0,
+            "content": "D. Officials Met During the Mission"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.095,
+                0.165,
+                0.904,
+                0.678
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Name</td><td>Institution</td></tr><tr><td>Ilham Karimov</td><td>Director of the MTEF Development Centre</td></tr><tr><td>Elnare Kazimova</td><td>Head of the Finance Statistics and Budget Classification Division</td></tr><tr><td>Gunel Aliyeva</td><td>Leading advisor, MTEF Development Centre</td></tr><tr><td>Anar Mehdiyev</td><td>Advisor, MTEF Development Centre</td></tr><tr><td>Firuze Abdullayeva</td><td>Head of the Accounting Policy Department</td></tr><tr><td>Ramiz Garayev</td><td>Deputy Head of the Accounting Policy Department</td></tr><tr><td>Zakir Hajiyev</td><td>Deputy Head of the Social Sector Finance Department</td></tr><tr><td>Nargiz Habibova</td><td>Deputy Head of the Social Sector Finance Department</td></tr><tr><td>Etibar Karimov</td><td>Head of the Department of Finance of Military Institutions and Law Enforcement Bodies</td></tr><tr><td>Sabuhi Jafarov</td><td>Head of the Reporting, Analysis and Risk Management Department, Public Debt and Financial Liabilities Management Agency</td></tr><tr><td>Jala Ahmadova</td><td>Chief advisor, Reporting, Analysis and Risk Management Department, Public Debt and Financial Liabilities Management Agency</td></tr><tr><td>Shams Gasimzadeh</td><td>Head of the Finance Department, State Employment Agency</td></tr><tr><td>Nurlan Tahmazli</td><td>Head of the Accounting Division, State Employment Agency</td></tr><tr><td>Rashad Farzalizadeh</td><td>Head of the Investment and Revenue Division, State Employment Agency</td></tr><tr><td>Naila Dlatova</td><td>Chief specialist - Finance Department, State Employment Agency</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.095,
+                0.959,
+                0.128,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.141,
+                0.959,
+                0.229,
+                0.973
+            ],
+            "angle": 0,
+            "content": "CCAMTAC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.656,
+                0.959,
+                0.873,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.96,
+                0.903,
+                0.973
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.085,
+                0.892,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.102,
+                0.568,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.139,
+                0.441,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

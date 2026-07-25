@@ -1,0 +1,120 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_2bi828_h/pdfs/0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "AI、贸易、碳税，三",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "衰退|萎缩|收缩->调整 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "IMF：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e.pdf",
+    "cleaned_source_title": "0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e",
+    "institution_name": "IMF",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "IMF：0003IMFEstimatingtheImpactsofAI",
+    "raw_candidates": [
+      "IMF：AI、贸易政策与能源转型对爱尔兰的影响",
+      "IMF：AI生产力与碳定价对爱尔兰宏观环境的影响",
+      "IMF：AI扩散、贸易政策与碳定价对爱尔兰的长期影响"
+    ],
+    "cleaned_candidates": [
+      "IMF：AI、贸易政策与能源转型对爱尔兰的影响",
+      "IMF：AI生产力与碳定价对爱尔兰宏观环境的影响",
+      "IMF：AI扩散、贸易政策与碳定价对爱尔兰的长期影响",
+      "IMF：0003IMFEstimatingtheImpactsofAI",
+      "IMF：AI生产力、贸易政策与碳定价对爱尔兰宏观环境的长期影响"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：AI生产力与碳定价对爱尔兰宏观环境的影响",
+        "reasons": [
+          "anchor_coverage=0.35"
+        ]
+      },
+      {
+        "title": "IMF：AI扩散、贸易政策与碳定价对爱尔兰的长期影响",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      },
+      {
+        "title": "IMF：0003IMFEstimatingtheImpactsofAI",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：AI生产力、贸易政策与碳定价对爱尔兰宏观环境的长期影响",
+        "reasons": [
+          "anchor_coverage=0.53"
+        ]
+      }
+    ],
+    "selected_title": "IMF：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：AI、贸易政策与能源转型对爱尔兰的影响",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "IMF：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

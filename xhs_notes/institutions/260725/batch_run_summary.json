@@ -1,0 +1,74 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 8,
+  "pdf_count_before_skip": 8,
+  "pdf_count": 8,
+  "generated_report_count": 8,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2bi828_h/pdfs/0001-ADB_Bullets-and-Budgets-Measuring-Defense-Spending-Multipliers_fa66d943.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2bi828_h/pdfs/0002-ADB_Renminbi-Invoicing-Under-Dollar-Dominance-Evidence-on-Inerti_0d543dd7.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2bi828_h/pdfs/0003-IMF_Estimating-the-Impacts-of-AI-Trade-Policy-and-the-Energy-Tra_b8e16e5e.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2bi828_h/pdfs/0004-IMF_Industrial-Policy-and-Trade-Tensions-in-Strategic-Sectors_d0825d9b.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2bi828_h/pdfs/0005-IMF_Mongolia-Technical-Assistance-Report-Nowcasting-and-Near-Ter_2a4bdd38.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5.pdf",
+          "batch_file": "/tmp/pdf_batch_002_ayk08bts/pdfs/0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1.pdf",
+          "batch_file": "/tmp/pdf_batch_002_ayk08bts/pdfs/0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1.pdf",
+          "stable_index": "7"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8.pdf",
+          "batch_file": "/tmp/pdf_batch_002_ayk08bts/pdfs/0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8.pdf",
+          "stable_index": "8"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

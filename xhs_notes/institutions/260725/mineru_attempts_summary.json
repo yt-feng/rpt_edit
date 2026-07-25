@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_ayk08bts/pdfs/0006-IMF_Republic-of-Azerbaijan-Technical-Assistance-Report-Report-on_b850e2c5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_ayk08bts/pdfs/0007-IMF_Settlement-Risk-and-Currency-Markets_d8cb24e1.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_ayk08bts/pdfs/0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

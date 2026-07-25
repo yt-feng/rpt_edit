@@ -1,0 +1,114 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_ayk08bts/pdfs/0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "能源效率越高，用能越",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "IMF：能源行业数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8.pdf",
+    "cleaned_source_title": "0008-IMF_The-Generalized-Jevons-Paradox-and-the-Future-of-Energy_f35d81c8",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0008IMFTheGeneralizedJe",
+    "raw_candidates": [
+      "IMF：广义杰文斯悖论与能源的未来",
+      "IMF：2026年7月论文-广义杰文斯悖论与能源加法逻辑",
+      "IMF：广义杰文斯悖论与全球能源材料结构性粘性"
+    ],
+    "cleaned_candidates": [
+      "IMF：广义杰文斯悖论与能源的未来",
+      "IMF：2026年7月论文-广义杰文斯悖论与能源加法逻辑",
+      "IMF：广义杰文斯悖论与全球能源材料结构性粘性",
+      "IMF：0008IMFTheGeneralizedJe",
+      "IMF：自2012年以来，全球化石燃料消费总量与排放总量仍在增长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：广义杰文斯悖论与全球能源材料结构性粘性",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "IMF：0008IMFTheGeneralizedJe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：自2012年以来，全球化石燃料消费总量与排放总量仍在增长",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：能源行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：2026年7月论文-广义杰文斯悖论与能源加法逻辑",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：能源行业数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
