@@ -4,7 +4,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \definecolor{refgray}{gray}{0.45}
-\title{\textbf{Market Views｜全球投行叙事汇编}\\[0.4em]{\large AI资本开支正向循环验证，但通胀路径分化与消费品牌重塑加剧市场分歧}}
+\title{\textbf{Market Views｜全球投行叙事汇编}\\[0.4em]{\large AI基建从算力军备转向客户绑定与平台变现，医疗设备与CCL进入盈利验证与涨价周期，音乐流媒体定价权释放持续}}
 \author{KC桌面 自动生成}
 \date{260725}
 \begin{document}
@@ -13,950 +13,434 @@
 \newpage
 \section{一页摘要}
 \begin{itemize}
-  \item 全球通胀前景因能源冲击与核心通胀放缓分化，欧洲央行面临能源价格回升抵消通胀进展的压力，日本央行维持观望但调整时点前移，中国央行通过中间价管理释放稳定信号。
-  \item AI产业从单点技术转向系统级竞争，算力集群互联规模、电力资源稀缺性及企业级AI货币化进程成为主线，NVIDIA与AMD在推理瓶颈上存在单核性能与并发工作流的分歧。
-  \item Adobe三重转型（免费增值、管理层更迭、AI再投入）使ARR增速拐点极不明朗，市场对免费模式能否提升付费转化率存在根本分歧。
-  \item 模拟芯片行业在工业与汽车双引擎驱动下进入周期性复苏，但毛利率修复节奏因库存管理差异分化，德州仪器库存天数仍高，修复慢于主动去库存同业。
-  \item 全球消费零售品牌主动收缩低效分销渠道以重塑溢价，Lululemon美洲业务调整规模存在25\%-60\%的分歧，美国散户资金从被动配置转向主动交易。
-  \item 中国医疗健康板块反弹由AI主题资金轮动驱动，CXO/CDMO凭借订单积压成为增持方向，但多肽CDMO领域药明康德产能优势显著，与传统欧洲供应商成本结构差异明显。
-  \item 全球电网投资2024-2035年复合增速约7\%，独立于AI资本开支周期，中国通过库存调节和电气化缓冲进口下降冲击，逆变器出口由新兴市场拉动。
-  \item 7月第三周中国新能源车订单呈现新车型驱动的结构性分化，小鹏与理想周环比爆发式增长，比亚迪与特斯拉回落，软件与高阶智驾正成为估值新锚点。
+  \item AI基础设施投资正从单一算力采购转向深度客户绑定与平台化部署，AMD与Anthropic/微软的合作以及Alphabet云业务的爆发式增长，共同指向AI商业化从硬件层向应用层迁移的结构性拐点。
+  \item 手术机器人行业从硬件参数竞争转向生态与数据壁垒构建，微创医疗机器人首次实现半年度盈利，标志着中国本土企业进入盈利验证阶段。
+  \item 覆铜板（CCL）涨价周期延续，标准无卤板报价已超2021年高点，上游电子布供给偏紧至少持续至2027年底，产业链利润向上游倾斜。
+  \item 中国音乐流媒体用户日均使用时长与日活率已接近短视频，但新进入者以免费模式快速获取份额，导致付费渗透率与ARPU分化加剧。
+  \item 中国光伏行业政策标准收紧与产能出清并行，多晶硅库存高企但价格微涨，硅片价格领跌，光伏玻璃产能主动收缩，短期供需仍偏松。
+  \item 音乐流媒体核心叙事从用户增长转向定价权释放，Spotify连续调价带动行业跟进，全球定价与渗透率仍有空间，价值释放路径至少可延续至2027年。
 \end{itemize}
 \section{全球投行叙事汇编}
-今日纳入 62 篇投行/券商研究，按 10 个市场、资产与产业主题系统整理。
+今日纳入 10 篇投行/券商研究，按 6 个市场、资产与产业主题系统整理。
 \newpage
-\subsection{宏观与利率：通胀路径分化与政策预期调整}
-\textbf{全球通胀前景正因能源冲击与核心通胀放缓的分化而变得复杂，央行政策路径预期出现调整：欧洲央行面临能源价格回升抵消通胀进展的压力，日本央行维持观望但调整时点前移，中国央行通过中间价管理释放稳定信号，日本GPIF潜在资金回流成为日元汇率的新变量。}
+\subsection{AI基建与云商业化：从算力军备到客户绑定}
+\textbf{AI基础设施投资正从单一算力采购转向深度客户绑定与平台化部署，AMD与Anthropic/微软的合作以及Alphabet云业务的爆发式增长，共同指向AI商业化从硬件层向应用层迁移的结构性拐点。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item 能源价格回升正在抵消此前通胀回落的进展，但第二轮效应尚未显现。
-  \item 日本央行7月会议将维持政策利率不变，下次调整更可能在2027年1月。
-  \item 中国央行通过中间价管理释放稳定信号，模型误差扩大反映政策意图。
+  \item AI基础设施投资规模将持续扩大，数据中心AI加速器市场到2030年预计达1.4万亿美元（CAGR 40\%）。
+  \item 云服务商与前沿AI模型公司的深度合作成为主流模式，通过硬件采购+软件优化+股权绑定锁定长期客户关系。
+  \item 资本支出与云计算收入正相关，大规模算力投入已开始转化为可量化的客户合同和积压订单。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item 欧洲央行是否需要因能源价格波动而调整政策节奏？GS模型显示直接效应已现但第二轮效应未至，央行仍有观察空间。
-  \item 日本央行下次加息时点存在分歧：GS认为2027年1月是基准，但概率分布前移，10月调整可能性上升。
-  \item 日本GPIF资金回流的影响规模与节奏：JPM测算33.8万亿日元可推动USD/JPY约15日元，但实际影响取决于渐进式流入而非一次性冲击。
+  \item 对资本支出回报率的判断存在分歧：部分观点认为高资本密集度（Alphabet 2027年达63.8\%）将挤压利润，另一观点则认为积压订单增长（Google Cloud 5140亿美元）证明投入有效。
+  \item AMD能否在数据中心CPU市场实现50\%份额目标存在争议，取决于其2nm Venice CPU的竞争力及微软等客户的采用节奏。
+  \item AI推理工作负载的部署路径分化：Anthropie选择自建2GW Helios机架，而微软则通过Azure云平台提供推理服务，两种模式对硬件供应商的议价能力影响不同。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{NOM} NOM的USD/CNY中间价模型显示，7月23日模型投影值为6.7716，较实际中间价6.7933低217个基点；计入逆周期因子后投影值为6.7770，仍低163个基点。模型误差持续扩大，反映央行在中间价定价中引入额外稳定因子，而非完全跟随市场波动。逆周期因子贡献约54个基点调整，误差序列可作为政策温度计追踪。
-{\small\color{refgray}数据：模型投影值6.7716，较实际中间价低217个基点\par}
-{\small\color{refgray}数据：计入逆周期因子后投影值6.7770，低163个基点\par}
-{\small\color{refgray}数据：逆周期因子贡献约54个基点调整\par}
-{\small\color{refgray}边际变化：模型误差扩大至217个基点，为近期较高水平，显示央行中间价管理意图增强。\par}
-\paragraph{GS} GS通过19变量BVAR模型追踪能源冲击传导，发现直接效应在3月强劲，间接效应4月累积但6月消退，未出现令人信服的第二轮效应。6月底能源期货低位时，通胀本可比欧洲央行基线低0.4个百分点（整体）和0.2个百分点（核心），但近期能源价格上涨已基本抵消这一差距，模型预测通胀走势与欧洲央行基线趋于一致。预计欧洲央行9月可能调整政策，之后大概率观望。
-{\small\color{refgray}数据：能源冲击直接效应3月强劲，间接效应6月消退\par}
-{\small\color{refgray}数据：第二轮效应（工资与通胀预期螺旋）未出现\par}
-{\small\color{refgray}数据：能源期货低位时通胀可比基线低0.4pp（整体）和0.2pp（核心）\par}
-{\small\color{refgray}边际变化：能源价格上涨已基本抵消此前通胀数据显示的进展，模型预测与欧洲央行基线趋于一致。\par}
-\paragraph{GS} GS预计日本央行7月会议维持政策不变，下次调整更可能在2027年1月，但概率分布已明显前移，不排除10月调整。6月短观调查显示企业信心良好，投资意愿积极，所有地区均报告经济“温和复苏”。布伦特原油价格低于4月展望报告，央行可能上调2026/2027财年增长预测并小幅下调通胀预测。核心风险在于核心通胀可能超2\%，若日元继续贬值，调整可能提前。
-{\small\color{refgray}数据：下次调整基准时点为2027年1月，但10月可能性上升\par}
-{\small\color{refgray}数据：布伦特原油价格低于4月展望报告水平\par}
-{\small\color{refgray}数据：春季劳资谈判实现约3\%基础工资涨幅\par}
-{\small\color{refgray}边际变化：调整时点概率分布前移，市场对10月加息的预期上升。\par}
-\paragraph{JPM} JPM分析日本GPIF潜在资金回流影响：即使不修改基本组合框架，仅将国内债券和日本股票配置提升至目标区间上限（各31\%），即可产生约33.8万亿日元买盘/外币卖盘。参考2022年4-5月财务省干预经验（12万亿日元推动USD/JPY下跌约5日元），理论上可推动汇率约15日元，但实际影响更渐进。关键监测节点为8月7日Q2业绩报告和8月10日月度资金流数据。
-{\small\color{refgray}数据：33.8万亿日元潜在买盘（国内债券12.3万亿+日本股票21.6万亿）\par}
-{\small\color{refgray}数据：2022年4-5月干预12万亿日元推动USD/JPY下跌约5日元\par}
-{\small\color{refgray}数据：日本生命保险公司持有约100万亿日元海外证券\par}
-{\small\color{refgray}边际变化：日本高层近期频繁提及GPIF增加国内配置，市场关注度显著上升。\par}
+\paragraph{GS} AMD在Advancing AI大会上宣布与Anthropic和微软的战略合作，标志着AI基础设施进入客户深度绑定阶段。Anthropic将从2027年上半年开始部署2GW的Instinct MI450 GPU Helios机架系统，AMD同时计划进行最高50亿美元的战略股权研究。微软将从2026年下半年开始部署Helios机架，用于Azure上的前沿模型推理。这两项合作的关键在于客户类型——同时获得前沿AI模型公司和云服务商的承诺，比单一订单更具结构意义。AMD还大幅上调了行业预期：到2030年数据中心AI加速器市场从2000亿美元上调至1.4万亿美元（CAGR 40\%），数据中心CPU市场从260亿上调至2200亿美元（CAGR 50\%），并预计在数据中心CPU市场占据50\%份额。
+{\small\color{refgray}数据：Anthropic将从2027年上半年开始部署2GW Helios机架系统\par}
+{\small\color{refgray}数据：AMD计划对Anthropic进行最高50亿美元战略股权研究\par}
+{\small\color{refgray}数据：微软从2026年下半年开始部署Helios机架\par}
+{\small\color{refgray}数据：2030年数据中心AI加速器市场预期从2000亿上调至1.4万亿美元\par}
+{\small\color{refgray}边际变化：从单一硬件采购转向硬件+软件优化+股权绑定的深度合作模式，客户类型从云服务商扩展到前沿AI模型公司。\par}
+\paragraph{GS} Alphabet 2026年第二季度财报显示AI商业化已进入可量化阶段。Google Cloud收入同比增长82\%，收入积压订单环比增加约500亿美元至5140亿美元，近90\%的财富100强企业使用Gemini Enterprise产品。管理层将2026年资本支出预期从1800-1900亿美元上调至1950-2050亿美元，并重申2027年将“显著增长”。GS据此上调云计算收入预测：2026年从4233亿上调至4330亿美元，2027年从5281亿上调至5488亿美元。资本密集度将从2025年的26.7\%攀升至2027年的63.8\%，但直接TPU硬件销售/承诺在云收入中的占比上升，表明算力研究正转变为可计量的客户合同。
+{\small\color{refgray}数据：Google Cloud收入同比增长82\%\par}
+{\small\color{refgray}数据：收入积压订单环比增加约500亿美元至5140亿美元\par}
+{\small\color{refgray}数据：近90\%的财富100强企业使用Gemini Enterprise\par}
+{\small\color{refgray}数据：2026年资本支出预期从1800-1900亿上调至1950-2050亿美元\par}
+{\small\color{refgray}边际变化：AI投入从基础设施层向平台和应用层迁移，资本支出扩张与云计算收入加速之间的直接关联得到验证，TPU硬件销售/承诺占比上升表明算力研究正转化为可计量的客户合同。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item NOM模型投影与实际中间价偏离217个基点，为近期较高水平
-  \item GS模型显示能源价格上涨已抵消通胀进展0.4个百分点
-  \item 日本央行下次加息基准时点为2027年1月，但10月可能性上升
-  \item GPIF潜在资金回流规模33.8万亿日元，理论影响USD/JPY约15日元
-  \item 布伦特原油价格低于日本央行4月展望报告水平
-  \item 春季劳资谈判实现约3\%基础工资涨幅
-  \item 欧洲央行SAFE调查显示中小企业工资增长预期下降
-  \item 日本生命保险公司持有约100万亿日元海外证券
+  \item Anthropic将从2027年上半年开始部署2GW Helios机架系统
+  \item AMD计划对Anthropic进行最高50亿美元战略股权研究
+  \item 微软从2026年下半年开始部署Helios机架
+  \item 2030年数据中心AI加速器市场预期从2000亿上调至1.4万亿美元
+  \item Google Cloud收入同比增长82\%，积压订单达5140亿美元
+  \item Alphabet 2026年资本支出预期上调至1950-2050亿美元
+  \item 资本密集度从2025年26.7\%升至2027年63.8\%
+  \item 近90\%的财富100强企业使用Gemini Enterprise
 \end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_076.jpg}
-\caption{Exhibit 1 - Exhibit 2: We Use a Bayesian Vector Auto-Regression to Jointly Model 19 Variables}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_093.jpg}
-\caption{Exhibit 1 - Exhibit 1: Business Sentiment Is Favorable BOJ Tankan, Business Conditions DI (All Enterprise Sizes) \#\# Exhibit 2: Companies Maintain a Positive Investment Stance BOJ Tankan, Capex Plans (All Enterprises, Excludes Land, Includes}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_124.jpg}
-\caption{Figure 2 - Figure 2: Cumulative flow into foreign bonds trillion yen No data for Pension Fund pre 2014 Figure 3: Cumulative flow into foreign equities trillion yen No data for Pension Fund pre 2014 Figure 4: \$30\textbackslash{}\%\$ of lifers' security as}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_077.jpg}
-\caption{Exhibit 3 - Exhibit 3: We Can Visualise Our Model With a Heatmap The heatmap shows the standardised response of price indicators to the oil supply shock, gas price shock, and diesel price shock identified in March 2026. We use sign restricti}
-\end{figure}
-{\small\color{refgray}本节综合 4 篇研究；涉及 NOM、GS、JPM。}
+{\small\color{refgray}本节综合 2 篇研究；涉及 GS。}
 \newpage
-\subsection{AI基础设施与商业化：从算力集群到企业级应用}
-\textbf{AI产业正从单点技术突破转向系统级竞争，算力集群的互联规模、电力资源的稀缺性以及企业级AI的货币化进程成为当前市场关注的三大主线。国产AI加速器竞争焦点已从单卡规格转向SuperPod系统级互联，而企业软件领域AI变现仍处于早期，但ServiceNow等公司已开始产生可量化的商业价值。}
+\subsection{医疗设备：手术机器人进入生态竞争与盈利验证阶段}
+\textbf{手术机器人行业正从硬件参数竞争转向生态与数据壁垒构建，同时微创医疗机器人首次实现半年度盈利，标志着中国本土企业进入盈利验证阶段。短期手术量增速担忧为长期投资者提供窗口，而海外扩张与AI赋能成为关键边际变化。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item AI算力竞争从单芯片转向系统级集群，国产厂商普遍展示64卡/128卡SuperPod方案，华为Atlas 950实现1024卡互联。
-  \item 电力资源成为AI基础设施的关键瓶颈，比特币矿工凭借现成电力接入和站点优势，在第三方算力供应中占据独特地位。
-  \item 企业级AI应用货币化仍处早期，但ServiceNow等先行者已实现AI ACV超10亿美元，L1 ITSM等产品开始规模化部署。
+  \item 软组织机器人手术渗透率仍处早期，新应用场景（心脏、良性普外、日间手术中心）提供长期增长空间。
+  \item AI正在提高行业进入壁垒，数据与软件生态成为差异化关键。
+  \item 海外市场成为手术机器人企业增长新引擎，装机目标上调是重要催化剂。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item NVIDIA认为AI推理瓶颈在单核性能，推出Vera CPU强调单线程速度；AMD则认为并发工作流数量是关键，EPYC机架级吞吐量可达Vera的2.4倍。
-  \item 东南亚电信商AI代币套餐能否成为持续盈利来源存在分歧：JPM认为门槛低、易复制，收益最终流向消费者；但自建AI基础设施的运营商可能受益。
-  \item 日本AI半导体板块回调性质存疑：JPM量化团队认为主要是情绪和仓位调整，盈利预期未恶化；但高贝塔/高动量策略反弹力度有限，板块重回领涨仍需时间。
+  \item 对Intuitive Surgical手术量增速可持续性存在分歧：部分投资者担忧2Q26数据后增速放缓，Bernstein认为长期机会未被充分定价。
+  \item 微创医疗机器人利润质量看法不一：Citi认为利润中位数低于预期反映研究驱动型增长阶段，但市场更关注首次正向利润的信号意义。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{BARC} AT\&T 2Q26资本开支57亿美元超预期，但全年指引维持不变，对光通信设备商影响中性偏正面。iPhone销量约340万部同比持平，但升级率降至3.2\%创历史低位，运营商补贴吸引力减弱。若iPhone 17系列ASP上升，苹果需靠单价而非销量拉动营收，供应链出货量预期需谨慎。
-{\small\color{refgray}数据：AT\&T 2Q26资本开支57亿美元，高于市场预期55亿\par}
-{\small\color{refgray}数据：iPhone销量约340万部，同比持平\par}
-{\small\color{refgray}数据：升级率从3.5\%降至3.2\%，同比下降10bp\par}
-{\small\color{refgray}边际变化：升级率连续两季下降且处于历史低位，运营商补贴对用户的吸引力正在减弱，这是此前市场未充分定价的风险。\par}
-\paragraph{Bernstein} 比特币矿工转型AI基础设施的逻辑被低估。矿工群体手握约30GW规划电力容量，已签约7.5GW长期合同对应约1500亿美元。美国数据中心电网并网等待期长达4年，而矿工站点拥有现成电力接入和变电设施。最新托管合同向15-20年期限和‘三净租赁’结构演进，WULF与Anthropic合同年收入约240万美元/IT兆瓦，较行业均值高30\%。
-{\small\color{refgray}数据：矿工签约7.5GW电力容量，对应约1500亿美元长期合同\par}
-{\small\color{refgray}数据：矿工群体手握约30GW规划电力组合\par}
-{\small\color{refgray}数据：WULF与Anthropic合同年收入约240万美元/IT兆瓦，较行业均值高30\%\par}
-{\small\color{refgray}边际变化：托管合同从10-12年延长至15-20年，并采用‘三净租赁’结构，房东实现接近100\%净利润率，商业模式显著升级。\par}
-\paragraph{BofA} NVIDIA首次详细披露Vera CPU架构，强调代理式AI由重复CPU-GPU循环构成，单核性能是瓶颈。Vera采用88个定制ARM核心、1.2TB/s内存带宽和3.4TB/s片上结构带宽，选择单片式计算die。AMD则认为生产级AI更像分布式软件平台，并发工作流数量是关键约束，测算EPYC 9965在100kW部署下机架级吞吐量约是Vera基准的2.4倍。
-{\small\color{refgray}数据：Vera CPU: 88个定制ARM核心，1.2TB/s内存带宽，3.4TB/s片上结构带宽\par}
-{\small\color{refgray}数据：AMD EPYC 9965在100kW下机架级吞吐量约是Vera基准的2.4倍\par}
-{\small\color{refgray}数据：服务器CPU市场到2030年可能增长至1700亿美元\par}
-{\small\color{refgray}边际变化：NVIDIA首次详细披露Vera CPU架构并提出AI基础设施评估新框架，AMD将在AI 2026 Day上给出首次公开技术回应，CPU路线之争正式升级。\par}
-\paragraph{MS} 2026年WAIC显示中国AI计算竞争焦点从单芯片转向系统级互联。华为Atlas 950 SuperPod实现1024颗Ascend 950DT NPU互联，提供1 EFLOPS FP8算力和96TB HBM内存池，通过UnifiedBus 2.0实现逻辑扁平化。几乎所有国产AI加速器厂商都展示了64卡或128卡SuperPod系统，依赖自研scale-up技术。尽管芯片层面受限于晶圆制程，但在光学互联和系统设计层面具备竞争力。
-{\small\color{refgray}数据：Atlas 950: 1024 NPU互联，1 EFLOPS FP8，96TB HBM内存池\par}
-{\small\color{refgray}数据：华为已部署超过750套Ascend 384 SuperPod系统\par}
-{\small\color{refgray}数据：每个64 NPU计算柜提供64 PFLOPS FP8性能\par}
-{\small\color{refgray}边际变化：与2025年WAIC以芯片发布和推理需求为主题不同，2026年几乎所有厂商都展示了SuperPod系统，竞争焦点已从单卡转向系统级集群。\par}
-\paragraph{UBS} WAIC 2026显示中国AI供应链加速，华为Atlas 950 SuperPod采用1024卡互联，提供1 EFLOPS FP8算力和256TB统一内存寻址，TB级NPU互联和3微秒超低延迟解决万亿参数模型训练通信瓶颈。中国宣布成立世界人工智能合作组织（WAICO）涉及29个国家，与海外公司新签合同约30亿美元。长电科技投资78亿建2.5D封装厂，AI封装产能已满产。
-{\small\color{refgray}数据：WAIC 2026: 1100+参展商，40万+参会者\par}
-{\small\color{refgray}数据：中国与海外公司新签合同约30亿美元\par}
-{\small\color{refgray}数据：长电科技投资78亿建2.5D封装厂，预计2029年投产\par}
-{\small\color{refgray}边际变化：中国宣布成立WAICO涉及29个国家，AI治理倡议签署，国际合作框架出现新变化。\par}
-\paragraph{GS} ServiceNow AI产品从概念验证走向规模化收入。2Q订阅收入同比+23\%，超指引175bps；cRPO同比+21.5\%，超指引200bps。AI ACV已超10亿美元，重申2026年底前达15亿美元目标。AI新合同价值环比增长超40\%，拥有AI生产部署客户数9个月增长9倍。L1 ITSM产品可自动处理80-85\%服务请求，某航空公司已迁移全部客服电话至平台，年通话量500万次。
-{\small\color{refgray}数据：AI ACV已超10亿美元，重申年底前达15亿美元\par}
-{\small\color{refgray}数据：AI新合同价值环比增长超40\%\par}
-{\small\color{refgray}数据：L1 ITSM自动处理80-85\%服务请求\par}
-{\small\color{refgray}边际变化：AI产品从演示阶段进入可量化商业价值阶段，AI ACV比核心工作流收入更有价值，因AI部署加深客户嵌入度。\par}
-\paragraph{JPM} 东南亚电信商AI代币套餐难以成为持续盈利来源，成功产品会被快速复制，收益流向消费者。AIS的Alisa AI以220泰铢/月捆绑10个模型，仅为单独订阅成本的6\%。真正有价值的是自建AI基础设施，新加坡电信计划到FY27投入6亿新元部署11MW AI算力。台湾远传电信1H26移动收入+6\%，ICT收入+33\%，净利润+17\%远超全年3\%指引。
-{\small\color{refgray}数据：AIS捆绑定价仅为单独订阅成本的6\%\par}
-{\small\color{refgray}数据：远传电信1H26净利润+17\%，远超全年3\%指引\par}
-{\small\color{refgray}数据：新加坡电信计划到FY27投入6亿新元部署11MW AI算力\par}
-{\small\color{refgray}边际变化：东南亚电信商AI代币产品从无到有，但JPM认为门槛低、易复制，市场此前可能高估其盈利潜力。\par}
-\paragraph{JPM} 日经指数反弹至66,000点，但AI半导体板块重回领涨仍需时间。市场情绪已降至接近零，TOPIX未来12个月EPS未明显波动，悲观情绪进一步扩散需新触发因素。CTA止损卖压最严峻阶段可能已过，日经若未跌破64,600则大规模平仓风险有限。但高贝塔/高动量策略反弹力度较弱，回升集中在少数个股，市场广度不足。
-{\small\color{refgray}数据：日经指数反弹至66,000点\par}
-{\small\color{refgray}数据：日本市场情绪已降至接近零\par}
-{\small\color{refgray}数据：TOPIX未来12个月EPS未明显波动\par}
-{\small\color{refgray}边际变化：此轮回调未伴随盈利预期下修，更多是AI叙事转变和动量交易者仓位调整的结果，与以往盈利驱动的调整性质不同。\par}
-\paragraph{JPM} Shopify 2Q GMV预计同比+29\%，高于管理层高20\%区间指引，JPM Chase Card数据显示美国CNP支出同比+11\%较上季加速。企业级商户数量过去两年增长，收入贡献提升约200bps。AI/LLM成本可能影响2026年订阅毛利率约160bps，但可通过模型组合和更深变现应对。市场关注Meta Business Agent竞争，但调研显示商家不愿让大平台完全管理店铺。
-{\small\color{refgray}数据：2Q GMV预计同比+29\%，高于管理层指引\par}
-{\small\color{refgray}数据：美国CNP支出同比+11\%，较1Q的10\%加速\par}
-{\small\color{refgray}数据：AI/LLM成本可能影响2026年订阅毛利率约160bps\par}
-{\small\color{refgray}边际变化：汇率顺风从1Q的约200bps降至2Q的约50bps，下半年同比增速将受自然压制，市场需关注增长质量而非总量。\par}
-\paragraph{DB} 年轻读者（‘时间亿万富翁’，预期剩余寿命超10亿秒）表现出更强的不确定性偏好，并希望借助AI管理投资组合。55岁以下美英读者年龄越小，未来1/3/5年计划增加投资风险的意愿越强。但消费者信心处于低位，家庭风险偏好上升与专家强调全球系统性风险加剧形成矛盾，个人行为与宏观环境出现方向性背离。
-{\small\color{refgray}数据：55岁以下美英读者年龄越小，未来1/3/5年风险意愿越强\par}
-{\small\color{refgray}数据：‘时间亿万富翁’定义：预期剩余寿命超10亿秒（约31.5年）\par}
-{\small\color{refgray}边际变化：年轻读者主动要求增加风险而非被动接受，同时愿意将投资决策交给AI，这与传统资产配置理论中‘年轻投资者应承担更高风险’的逻辑一致但主动程度不同。\par}
-\paragraph{MS} Workday护城河深（年处理超1万亿笔交易，服务65\%+财富500强，毛利率97\%），但AI货币化仍处早期试点阶段，无法对冲核心业务增速放缓。HCM增速已降至13\%，预计FY28进一步放缓至9\%。管理层放弃此前设定的中期增长与利润率框架，短期缺乏锚点。AI产品在HR和财务领域面临合规审查周期长，部署速度慢于其他软件品类。
-{\small\color{refgray}数据：HCM增速已降至13\%，预计FY28放缓至9\%\par}
-{\small\color{refgray}数据：年处理超1万亿笔交易，服务65\%+财富500强\par}
-{\small\color{refgray}数据：毛利率97\%\par}
-{\small\color{refgray}边际变化：管理层正式放弃此前分析师日设定的增长与利润率框架，新框架要等下次分析师日，短期市场失去锚点。\par}
+\paragraph{Bernstein} SRS 2026大会交流显示，软组织机器人手术旅程仍处早期，新应用场景（心脏、非工作时间、良性普外、日间手术中心、单孔）带来兴奋感，现有适应症潜力远未释放。AI正在提高竞争壁垒，Intuitive过去三十年投入数十亿美元构建的集成系统、软件、数据、培训生态，使新进入者必须解决现有平台未解决的问题才能获得真正traction。短期手术量增速担忧为长期投资者提供值得关注的窗口。
+{\small\color{refgray}数据：Intuitive过去三十年投入数十亿美元构建生态系统\par}
+{\small\color{refgray}数据：新应用场景包括心脏、非工作时间、良性普外、日间手术中心、单孔等\par}
+{\small\color{refgray}数据：医院对新进入者持开放态度但要求解决未满足需求\par}
+{\small\color{refgray}边际变化：市场焦点从硬件参数转向数据与软件生态壁垒，AI被视为进一步提高门槛的工具。\par}
+\paragraph{Citi} 微创医疗机器人2026年上半年首次实现半年度正向利润（2800-4000万元人民币），营收同比增长200-230\%，超出市场预期（+173\%）和Citi预期（+190\%），主要驱动力来自图迈手术机器人国内外商业化推进。海外营收同比增长超450\%，成为增长主引擎。毛利率同比提升超15个百分点，得益于规模效应、流程优化及高毛利耗材占比提升。利润中位数3400万元低于Citi预期的4400万元，反映当前研究驱动型增长阶段的合理投入。管理层可能在8月底半年报业绩会上上调全年装机目标（此前200台），被视为下一个关键观察点。
+{\small\color{refgray}数据：2026年上半年净利润2800-4000万元人民币，去年同期亏损1.15亿元\par}
+{\small\color{refgray}数据：营收同比增长200-230\%，超市场预期173\%和Citi预期190\%\par}
+{\small\color{refgray}数据：海外营收同比增长超450\%\par}
+{\small\color{refgray}数据：毛利率同比提升超15个百分点\par}
+{\small\color{refgray}边际变化：首次半年度正向利润标志着中国手术机器人企业进入盈利验证阶段，海外营收增速超450\%成为结构性变化。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item 华为Atlas 950 SuperPod实现1024 NPU互联，提供1 EFLOPS FP8算力
-  \item 比特币矿工签约7.5GW电力容量，对应约1500亿美元长期合同
-  \item ServiceNow AI ACV已超10亿美元，AI新合同价值环比增长超40\%
-  \item AT\&T iPhone升级率降至3.2\%，创历史低位
-  \item NVIDIA Vera CPU: 88个定制ARM核心，1.2TB/s内存带宽
-  \item AMD EPYC 9965在100kW下机架级吞吐量约是Vera基准的2.4倍
-  \item Workday HCM增速降至13\%，预计FY28放缓至9\%
-  \item 远传电信1H26净利润+17\%，远超全年3\%指引
-  \item 日本市场情绪已降至接近零，TOPIX未来12个月EPS未明显波动
-  \item 年轻读者（预期剩余寿命超31.5年）主动要求增加投资风险
+  \item Intuitive过去三十年投入数十亿美元构建生态系统
+  \item 微创医疗机器人2026年上半年净利润2800-4000万元，去年同期亏损1.15亿元
+  \item 营收同比增长200-230\%，超市场预期173\%
+  \item 海外营收同比增长超450\%
+  \item 毛利率同比提升超15个百分点
+  \item 利润中位数3400万元低于Citi预期4400万元
+  \item 新应用场景包括心脏、非工作时间、良性普外、日间手术中心、单孔
 \end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_028.jpg}
-\caption{Exhibit 1 - Exhibit 1: Huawei showcased its new Atlas 950 SuperPod at 2026 WAIC Exhibit 2: NPU blade (tray) of Atlas 950 SuperPod Exhibit 3: The reverse side of Atlas 950 mainly showcases the optical interconnects adopted by UBlink}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_011.jpg}
-\caption{EXHIBIT 1 - EXHIBIT 1: Bitcoin miners' transition story: Delivering \textbackslash{}\textasciitilde{}7.5 GW power for \textbackslash{}\textasciitilde{}\textbackslash{}\$150Bn contracted revenue CORZ, CIFR, WULF, IREN, RIOT, Google, MSFT, CRWV, Amazon, NVIDIA, AMD - covered; rest not covered EXHIBIT 2: Bitcoin miners'}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_021.jpg}
-\caption{Exhibit 1 - Exhibit 1: NVDA argues Vera provides the max single threaded performance critical for agentic AI Single-threaded core versus throughput quadrant and Vera CPU positioning BofA GLOBAL RESEARCH \#\# Glossary: AI – Artificial Intellige}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_050.jpg}
-\caption{Exhibit 2 - Exhibit 2: Workday screens expensive on a EV/FCF-SBC basis... Exhibit 3: ...as well as on a GAAP P/E basis \#\# What Could Make Us More Constructive?}
-\end{figure}
-{\small\color{refgray}本节综合 12 篇研究；涉及 BARC、Bernstein、BofA、MS、UBS、DB、GS、JPM。}
+{\small\color{refgray}本节综合 2 篇研究；涉及 Bernstein、Citi。}
 \newpage
-\subsection{Adobe三重转型：免费增值、管理层更迭与AI再投入下的增长迷雾}
-\textbf{Adobe正同时推进免费增值模式转型、CEO/CFO交接及AI再投入，三重叠加使核心指标ARR何时重新加速变得极不明朗。当前约12倍GAAP市盈率虽已反映部分不确定性，但缺乏清晰扭转路径，估值可能长期低位波动。}
+\subsection{CCL涨价周期延续，上游供给约束强化利润弹性}
+\textbf{覆铜板（CCL）涨价周期仍在推进，标准无卤板报价已超2021年高点，上游电子布供给偏紧至少持续至2027年底，CCL厂商定价能力持续增强，产业链利润向上游倾斜。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item Adobe的免费增值策略（免费MAU从5000万增至9000万）正在拉长付费转化路径，短期内ARR增速难以看到拐点。
-  \item 管理层主动推迟Creative Cloud涨价，并将用户导入免费产品线，进一步压制了收入可见度。
-  \item AI投入和低ARPU用户群的运营成本将压缩Adobe原本行业领先的利润率，利润率已接近阶段性高点。
+  \item CCL标准无卤板报价已超过2021年高点，当前超300元/张，较2025年底的160-170元近乎翻倍。
+  \item CCL厂商产能满负荷运行，成品库存接近零，增长驱动力从量转向价格与产品结构。
+  \item 上游电子布供给紧张，低端玻璃布供给可能要到2027年底前后才开始缓解。
+  \item AI-CCL需求保持增长，M6及以上等级占高速板收入近70\%，华为、阿里、腾讯等客户项目进入量产阶段。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item 市场对免费增值模式能否最终提升付费转化率存在分歧：部分观点认为流量增长（Adobe.com商务专业和消费者流量同比+35\%）将自然转化为付费用户，另一观点认为免费体验导向（Acrobat/Express/Firefly）反而削弱了传统购买漏斗。
-  \item 关于ARR增速拐点时间：MS认为可能持续放缓至FY27，除非进行较大幅度价格调整；但价格调整与免费策略存在内在矛盾。
-  \item 管理层更迭的影响评估不一：常规时期可接受，但在战略转型关键期，新团队执行能力尚需观察。
+  \item 电子布供给缓解时间点：Citi此前预期2027年中，但南亚新材管理层判断至少持续至2027年底，更为积极。
+  \item 产业链利润弹性分布：上游电子布/玻纤厂商利润增速最高，CCL厂商次之，PCB厂商弹性相对有限。
+  \item CCL价格年底目标：管理层预计年底或达到360-400元/张，但实际落地取决于下游接受度与产能切换节奏。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{MS} Adobe正同时推进免费增值GTM转型、CEO/CFO交接及AI再投入，三重变化叠加使ARR增速可见度显著下降。FY25全年ARR增长指引约10.2\%，但剔除Semrush收购后有机ARR被下调约5亿美元，主因免费MAU加速增长（从5000万至9000万）及推迟Creative Cloud定价调整。公司主动选择将流量导向免费体验而非付费转化，短期内缺乏增长拐点。利润率虽在SaaS同行中领先，但AI投入和低ARPU用户增长将压缩进一步改善空间。当前约12倍GAAP市盈率已反映部分风险，但缺乏清晰扭转路径。
-{\small\color{refgray}数据：FY25全年ARR增长指引约10.2\%（含Semrush收购）\par}
-{\small\color{refgray}数据：剔除收购后有机ARR被下调约5亿美元\par}
-{\small\color{refgray}数据：免费MAU从5000万增至9000万\par}
-{\small\color{refgray}数据：Adobe.com商务专业和消费者流量同比增长35\%\par}
-{\small\color{refgray}边际变化：此前市场主要关注Adobe的AI货币化潜力，MS最新报告指出三重转型叠加使ARR增速可见度显著下降，且利润率改善空间受限，估值可能长期低位波动。\par}
+\paragraph{Citi} CCL涨价周期仍有空间，标准无卤板报价已超2021年高点，企业连续上调最低毛利率门槛（从1Q26的15\%升至3Q26的23-25\%），反映定价能力增强。产能满负荷运行，月产出360-370万张，成品库存接近零，下一轮量增需待3Q26 N8新产线投产。AI驱动高速板占比提升，M6及以上等级占高速板收入近70\%，华为、阿里、腾讯项目进入量产。上游电子布供给偏紧至少持续至2027年底，比此前预期的2027年中更为积极，利好拥有垂直一体化能力的厂商。
+{\small\color{refgray}数据：标准无卤板报价超300元/张，2025年底为160-170元，2021年高点约280元。\par}
+{\small\color{refgray}数据：最低毛利率门槛从1Q26的15\%升至2Q26的18-20\%，3Q26为23-25\%。\par}
+{\small\color{refgray}数据：月产出360-370万张，月销量超400万张（含外协），成品库存接近零。\par}
+{\small\color{refgray}数据：高速板月产出从2Q26的50万张增至7月的65-70万张，M6及以上占高速板收入近70\%。\par}
+{\small\color{refgray}边际变化：CCL涨价从消费电子/汽车客户接受提价扩散至全品类，上游电子布供给紧张预期从2027年中延长至2027年底，产业链利润向上游倾斜。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item FY25全年ARR增长指引约10.2\%（含Semrush收购）
-  \item 剔除收购后有机ARR被下调约5亿美元
-  \item 免费MAU从5000万增至9000万
-  \item Adobe.com商务专业和消费者流量同比增长35\%
-  \item 当前约12倍GAAP市盈率
+  \item 标准无卤板报价超300元/张，较2025年底的160-170元近乎翻倍，已超2021年高点约280元。
+  \item 最低毛利率门槛连续三个季度上调：1Q26 15\% → 2Q26 18-20\% → 3Q26 23-25\%。
+  \item 南亚新材1H26净利润预告4.2-5亿元，同比增长382-473\%。
+  \item 7628玻纤布报价超9元/米，年初约3.5元/米。
+  \item 高速板月产出从2Q26的50万张增至7月的65-70万张。
+  \item 管理层预计电子布供给偏紧至少持续至2027年底。
+  \item M10在英伟达某平台验证，送样Df达0.00045。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_135.jpg}
-\caption{Exhibit 2 - Exhibit 2: Adobe Positioned at the Middle of the Pack on Both Moat and Journey Along with Adobe's relative position in our Moat \& Journey framework analysis, we downgrade to UW on the culmination of three impending transitions cr}
+\includegraphics[width=0.88\linewidth]{figures/fig_013.jpg}
+\caption{Figure 1 - Figure 1. A snapshot of 1H26 preliminary results on CCL / PCB chain Figure 2. E-glass fabric ASP more than double of YTD 2026 © 2026 Citi Inc. No redistribution without Citi's written permission. \#\# Kingboard Laminates Holdings \#\# Valuation Our target price fo}
 \end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_136.jpg}
-\caption{Exhibit 3 - Exhibit 4: Adobe Boasts Best in Class Margins Amongst SaaS Peers...}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_134.jpg}
-\caption{Exhibit 1 - Exhibit 2: Adobe Positioned at the Middle of the Pack on Both Moat and Journey}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_137.jpg}
-\caption{Exhibit 3 - Exhibit 4: Adobe Boasts Best in Class Margins Amongst SaaS Peers... Exhibit 5: ... Even After Materially Stepping Up R\&D Spend as a \% of Revenue Exhibit 6: Adobe Ranks Highly on GAAP GP/Employee...}
-\end{figure}
-{\small\color{refgray}本节综合 1 篇研究；涉及 MS。}
+{\small\color{refgray}本节综合 2 篇研究；涉及 Citi。}
 \newpage
-\subsection{半导体：模拟复苏确认，先进封装与设备景气分化}
-\textbf{模拟芯片行业在工业与汽车双引擎驱动下进入周期性复苏，但毛利率修复节奏因库存管理差异而分化；先进封装（TCB、CPO）和设备（日本前道设备）受益于AI基础设施扩张，但中国设备进口仍处同比调整区间，区域与子行业景气度分化明显。}
+\subsection{中国音乐流媒体：用户粘性逼近短视频，免费模式重塑竞争格局}
+\textbf{中国音乐流媒体市场用户日均使用时长与日活率已接近短视频，但新进入者以免费模式快速获取份额，导致行业付费渗透率与ARPU分化加剧；AI音乐渗透率超70\%，正成为用户行为与平台竞争的新变量。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item 模拟芯片行业在工业（环比+10\%）和汽车（环比高个位数）终端市场同步改善下进入周期性复苏，德州仪器Q2营收54.6亿美元超预期。
-  \item AI基础设施扩张驱动先进封装（TCB、CPO）和设备需求，日本半导体设备4-6月月均销售额5136亿日元（同比+27\%），SEAJ上调全年预测至6.55万亿日元（+26\%）。
-  \item 中国半导体设备进口6月环比反弹45\%至47亿美元，但2026上半年累计同比-9\%，多数供应商预期中国销售将回归正常化。
+  \item 中国音乐流媒体用户日均使用时长约88分钟，日活跃率66\%，已接近短视频的70\%，显示音乐App在用户时间争夺中仍具强竞争力。
+  \item 曲库规模与音质是用户切换平台的首要原因，头部平台（腾讯音乐、网易云音乐）凭借内容优势维持较高用户粘性。
+  \item AI音乐渗透率超70\%，其中12-17岁用户几乎全覆盖，超过60\%用户曾使用AI工具找歌或生成音乐，AI正成为行业新增长点。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item 毛利率修复节奏：GS认为德州仪器库存天数仍高（196天），毛利率修复慢于微芯、恩智浦等主动去库存的同业；Bernstein则认为TI当前估值已反映复苏，更倾向寻找其他机会。
-  \item 地平线机器人毛利率超预期（65-66\%）来自7nm成本下降与高阶方案ASP提升，但市场对其比亚迪钱包份额担忧尚未完全消散，下半年份额变化是关键变量。
-  \item 先进封装技术路线：JEF强调CPO并非替代铜互连，而是重新定义I/O角色以降低功耗；JPM则聚焦TCB在CoWoS/HBM扩产中的订单催化，两者侧重不同封装层级。
-  \item 日本设备需求结构切换：前端设备（HBM、先进逻辑、大宗DRAM/NAND）取代后端设备成为增长主力，但大宗存储的加入意味着周期敏感型产品线也开始贡献增量，景气持续性存疑。
+  \item Soda Music以免费模式快速获取43\%渗透率，但其用户月均消费仅12.1元，低于腾讯音乐/网易云音乐的14-15元，市场对免费模式能否持续提升ARPU存在分歧。
+  \item 现场演出消费保持稳定，平均票价1127元，44\%观众计划增加支出，但大麦与猫眼偏好度分化，平台间竞争格局尚未明朗。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{Bernstein} 德州仪器Q2业绩超预期（营收54.63亿美元，EPS 2.14美元，毛利率61.4\%），工业（同比+30\%）、数据中心（环比+20\%）、汽车（同比中十位数）三大终端市场同时发力，实现2009年以来最强Q2环比增长。但强劲表现已在市场预期内，当前估值下更倾向在半导体板块中寻找其他机会，维持市场表现评级。
-{\small\color{refgray}数据：Q2营收54.63亿美元，高于预期52.34亿美元\par}
-{\small\color{refgray}数据：毛利率61.4\%，高于预期59.5\%\par}
-{\small\color{refgray}数据：工业同比+30\%，数据中心环比+20\%\par}
-{\small\color{refgray}数据：库存天数196天，低于目标>200天\par}
-{\small\color{refgray}边际变化：工业复苏从预期变为现实，且数据中心弹性较高成为新增长点，但估值已反映复苏，Bernstein转向谨慎。\par}
-\paragraph{BofA} 中国半导体设备进口6月环比反弹45\%至47亿美元，但同比-1\%，2026上半年累计同比-9\%。前道设备环比+57\%，光刻设备环比+184\%但同比仅+3\%，累计同比-18\%。后道设备分化，引线键合机同比+153\%表现突出。多数设备商预期中国销售将趋于正常化，但3MMA环比仅+1\%，低于历史均值+5\%。
-{\small\color{refgray}数据：6月进口额47亿美元，环比+45\%，同比-1\%\par}
-{\small\color{refgray}数据：前道设备34亿美元，环比+57\%，同比+1\%\par}
-{\small\color{refgray}数据：光刻设备8.42亿美元，环比+184\%，同比+3\%\par}
-{\small\color{refgray}数据：2026上半年累计进口同比-9\%\par}
-{\small\color{refgray}边际变化：6月环比大幅反弹，但同比仍处调整区间，3MMA增速低于历史均值，中国设备进口尚未确认趋势性拐点。\par}
-\paragraph{Citi} 地平线机器人1H26净利润转正至35-40亿元（主要来自CARIAD可转换贷款公允价值变动），运营收入同比+34\%触及指引上沿，毛利率预计65-66\%接近指引上限。全年收入增长目标维持50\%，2H26加速依赖大众6-7款车型交付、比亚迪天神之眼B/C方案份额提升及奇瑞新订单。市场尚未充分关注其ADAS+AD双业务覆盖及L3/L4 IP授权潜力。
-{\small\color{refgray}数据：1H26净利润35-40亿元（1H25亏损52亿元）\par}
-{\small\color{refgray}数据：毛利率65-66\%，接近指引上限\par}
-{\small\color{refgray}数据：全年收入增长目标50\%\par}
-{\small\color{refgray}数据：比亚迪天神之眼C方案份额有望升至90-100\%\par}
-{\small\color{refgray}边际变化：利润转正且毛利率超预期，市场焦点从亏损转向份额扩张与IP授权潜力，但比亚迪份额担忧仍是短期压制因素。\par}
-\paragraph{GS} 德州仪器Q2业绩超预期（营收54.6亿美元，毛利率61.4\%），工业环比+10\%、汽车环比高个位数、数据中心环比+20\%，首次出现工业与汽车同步改善。Q3指引营收59亿美元（高于预期56.3亿），模拟芯片周期性复苏加速。但TI库存天数196天仍偏高，毛利率修复慢于微芯、恩智浦等主动去库存的同业，后者盈利上调空间更大。
-{\small\color{refgray}数据：Q2营收54.6亿美元，高于GS预期53.8亿美元\par}
-{\small\color{refgray}数据：毛利率61.4\%，高于GS预期59.4\%\par}
-{\small\color{refgray}数据：工业环比+10\%，数据中心环比+20\%\par}
-{\small\color{refgray}数据：库存天数196天，环比减少13天\par}
-{\small\color{refgray}边际变化：工业与汽车同步改善确认行业复苏，但GS强调毛利率修复分化，TI慢于同业，盈利上调空间有限。\par}
-\paragraph{GS} 日本半导体设备4-6月月均销售额5136亿日元（同比+27\%，环比+7\%），SEAJ上调FY3/27预测至6.55万亿日元（+26\%），FY3/28看至7.40万亿日元（+13\%）。前端设备取代后端设备成为增长主力，需求从HBM/先进逻辑扩展至大宗DRAM和NAND。GS将美元/日元假设从155调至160，据此上调5家公司盈利预测。
-{\small\color{refgray}数据：4-6月月均销售额5136亿日元，同比+27\%\par}
-{\small\color{refgray}数据：SEAJ上调FY3/27预测至6.55万亿日元（+26\%）\par}
-{\small\color{refgray}数据：前端设备需求主导增长，覆盖HBM、先进逻辑、大宗DRAM/NAND\par}
-{\small\color{refgray}数据：美元/日元假设从155调至160\par}
-{\small\color{refgray}边际变化：前端设备需求从先进制程专用扩展至大宗存储，客户催货持续，景气度超预期但周期敏感型产品线加入增加不确定性。\par}
-\paragraph{JPM} ASMPT新任CEO来自SkyWater/Intel背景，市场反应积极，公司将继续聚焦先进封装和运营效率，推进SMT业务剥离。TCB业务迎来多个催化剂：CoWoS/HBM扩产、台积电/OSAT的C2S/C2W订单、Intel数据中心CPU订单、中国先进封装产能建设。无焊剂TCB技术预计在韩国客户中拿下30-35\%份额，HBM4加速爬坡但HBM4E堆叠高度迁移放缓（12hi仍是主流）。
-{\small\color{refgray}数据：新CEO来自SkyWater/Intel，先进封装背景\par}
-{\small\color{refgray}数据：TCB业务催化剂：CoWoS/HBM扩产、CPU订单、中国产能建设\par}
-{\small\color{refgray}数据：无焊剂TCB在韩国客户份额30-35\%\par}
-{\small\color{refgray}数据：HBM4加速爬坡，HBM4E 12hi仍是主流\par}
-{\small\color{refgray}边际变化：CEO换帅但战略方向不变，TCB催化剂密集，HBM4加速但堆叠高度迁移放缓，市场关注点从人事转向订单落地。\par}
-\paragraph{JEF} AI系统正从计算设备转向通信系统，数据移动速度成为瓶颈。CPO并非替代铜互连，而是重新定义I/O角色以降低功耗。TSMC COUPE技术实现16倍键合密度提升和85\%杂散电容降低，同等功耗下速度提升170\%以上。边缘AI不是云AI补充，而是云AI在功耗、延迟、安全瓶颈下的必然延伸，2025年边缘AI市场约800亿美元，2028年预计增至1200亿美元。
-{\small\color{refgray}数据：TSMC COUPE：16倍键合密度提升，85\%杂散电容降低\par}
-{\small\color{refgray}数据：同等功耗下速度提升170\%以上或功耗降低40\%\par}
-{\small\color{refgray}数据：2025年AI半导体市场2360亿美元，边缘AI占800亿\par}
-{\small\color{refgray}数据：2028年AI半导体市场预计3710亿美元，边缘AI占1200亿\par}
-{\small\color{refgray}边际变化：AI瓶颈从算力转向互连，CPO和边缘AI成为新焦点，传统GPU算力指标重要性相对下降。\par}
+\paragraph{Citi} 基于2000名中国音乐流媒体用户调查，用户日均使用时长88分钟，日活跃率66\%，接近短视频的70\%。Soda Music渗透率达43\%，与腾讯音乐（46\%）、酷狗（47\%）、网易云音乐（41\%）接近，但其用户中41\%仅使用免费版本，月均消费12.1元低于行业平均14-15元。AI音乐渗透率超70\%，12-17岁用户几乎全覆盖，43\%听众难以区分AI与原创音乐。现场演出平均票价1127元，44\%观众计划增加支出。
+{\small\color{refgray}数据：用户日均使用音乐App 88分钟\par}
+{\small\color{refgray}数据：66\%用户每日使用音乐App\par}
+{\small\color{refgray}数据：Soda Music渗透率43\%，41\%用户仅用免费版\par}
+{\small\color{refgray}数据：Soda Music月均消费12.1元 vs 腾讯音乐/网易云音乐14-15元\par}
+{\small\color{refgray}边际变化：新进入者Soda Music以免费模式快速获取用户，但付费转化与ARPU低于传统平台，市场关注点从用户增长转向付费渗透率与消费升级。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item 德州仪器Q2营收54.6亿美元，毛利率61.4\%，均超预期
-  \item 工业环比+10\%，数据中心环比+20\%，汽车环比高个位数
-  \item 地平线1H26净利润转正至35-40亿元，毛利率65-66\%
-  \item 日本半导体设备4-6月月均销售额5136亿日元，同比+27\%
-  \item 中国半导体设备6月进口47亿美元，环比+45\%，同比-1\%
-  \item ASMPT无焊剂TCB在韩国客户份额30-35\%
-  \item TSMC COUPE：16倍键合密度提升，85\%杂散电容降低
-  \item 2025年AI半导体市场2360亿美元，边缘AI占800亿
+  \item 用户日均使用音乐App 88分钟，日活跃率66\%
+  \item Soda Music渗透率43\%，但41\%用户仅用免费版，月均消费12.1元
+  \item 腾讯音乐/网易云音乐月均消费14-15元
+  \item 70\%受访者听过AI音乐，12-17岁用户几乎全覆盖
+  \item 43\%听众难以区分AI与原创音乐
+  \item 现场演出平均票价1127元，44\%观众计划增加支出
 \end{itemize}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\linewidth]{figures/fig_006.jpg}
-\caption{EXHIBIT 2 - EXHIBIT 2: All segments were above expectations EXHIBIT 3: Q2 revenues were up 13\%, above seasonality (and the strongest since 2009)... EXHIBIT 4: ... with Q3 guided up \textbackslash{}\textasciitilde{}8\% QoQ, roughly in-line to above typical seasonality EXH}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_022.jpg}
-\caption{Exhibit 1 - Exhibit 1: Up 184\% mom to \textbackslash{}\$842mm in June 2026 Lithography monthly and 3MMA import value BofA GLOBAL RESEARCH Exhibit 2: Up 17\% mom to \textbackslash{}\$831mm in June 2026 Deposition monthly and 3MMA import value}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_091.jpg}
-\caption{Exhibit 1 - Exhibit 1: Japan SPE sales (3-MMA) Exhibit 2: Ratings and 12m target prices for our SPE coverage \textbackslash{}*APAC Conviction List}
+\caption{Figure 1 - ■ Demographic — 15\% of respondents are aged 12–17, 25\% are aged 18–29, 25\% are aged 30–39, and 35\% are aged 40 and above. The mean age of the sample is 33.5 years. ■ Geographic distribution — Among the respondents, 33\% reside in Tier-1 cities, 33\% in Tier-2 ci}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\linewidth]{figures/fig_007.jpg}
-\caption{EXHIBIT 3 - EXHIBIT 3: Q2 revenues were up 13\%, above seasonality (and the strongest since 2009)... EXHIBIT 4: ... with Q3 guided up \textbackslash{}\textasciitilde{}8\% QoQ, roughly in-line to above typical seasonality EXHIBIT 5: Analog and Embedded were both up YoY and}
+\caption{Figure 1 - ■ Content consumption profile — In addition to music streaming, 86\% also consume short-video content, 79\% stream movies/shows, 65\% engage with livestreaming, 61\% play video games via streaming, 57\% listen to audiobooks, and 44\% consume podcasts via streaming p}
 \end{figure}
-{\small\color{refgray}本节综合 7 篇研究；涉及 Bernstein、BofA、Citi、GS、JPM、JEF。}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\linewidth]{figures/fig_008.jpg}
+\caption{Figure 2 - Figure 2. Gender Figure 3. City tiers profile © 2026 Citi Inc. No redistribution without Citi's written permission. © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. Other online content usage besides music © 2026 Citi Inc. No red}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\linewidth]{figures/fig_009.jpg}
+\caption{Figure 4 - © 2026 Citi Inc. No redistribution without Citi's written permission. © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. Other online content usage besides music © 2026 Citi Inc. No redistribution without Citi's written permission.}
+\end{figure}
+{\small\color{refgray}本节综合 1 篇研究；涉及 Citi。}
 \newpage
-\subsection{消费与零售：品牌重塑与渠道分化}
-\textbf{全球消费零售板块正经历结构性调整：品牌方主动收缩低效分销渠道以重塑溢价，而IP零售与物流行业内部出现显著分化，投资者需关注品牌战略调整带来的短期阵痛与长期价值重塑机会。}
+\subsection{中国光伏产业链：政策收紧与产能出清并行}
+\textbf{中国光伏行业正经历政策标准收紧与市场供需宽松并存的格局。能耗新规加速低效名义产能退出，但对当前有效供给影响有限；产业链价格分化，多晶硅库存高企但价格微涨，硅片价格领跌，光伏玻璃产能主动收缩。短期供需仍偏松，中期关注减产执行与产能整合进度。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item 品牌方正主动削减低质量、促销驱动的线上分销渠道，以强化品牌形象和全价销售能力。
-  \item 中国IP零售赛道整体未转弱，但泡泡玛特因高基数和稀缺性消退面临同店销售压力。
-  \item 中国快递物流行业竞争格局从价格战转向质量战，收入增速连续两个月跑赢件量增速。
+  \item 多晶硅能耗新国标（2027年1月生效）主要淘汰已闲置的低效产能，对一线供应商当前有效供给影响不大。
+  \item 2026年上半年中国光伏新增装机同比下降65.9\%，主要受去年同期高基数影响，非需求根本性恶化。
+  \item 产业链各环节价格走势分化：多晶硅与电池片价格周环比微涨，硅片与组件价格下跌。
+  \item 光伏玻璃行业因盈利压力主动减产，日熔量月内下降7.7\%，库存周期略降至47.3天。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item Lululemon美洲业务规模是否需要调整25\%-60\%存在分歧，市场对其复苏深度和时长估计不足。
-  \item 霸王茶姬下半年同店销售能否如期转正存在不确定性，因其主动减少外卖补贴导致基数效应与同行相反。
-  \item 美国散户资金流向出现分化：ETF流入降温至第4百分位，而个股交易活跃度升至第72百分位，显示从被动配置转向主动交易。
+  \item 多晶硅价格微涨与31.8万吨高库存并存，市场对价格是否已触底存在分歧。
+  \item 硅片价格跌幅最大（周环比-2.3\%），但二三线企业开始产能共享，整合路径与效果存不确定性。
+  \item 月度多晶硅供给（10万吨）仍超需求（9.1万吨）约10\%，供需再平衡时点取决于后续减产执行力度。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{Bernstein} 耐克在中国主动削减经销商线上销售渠道，计划2027年1月完全终止通过滔搏和宝胜运营的线上店铺。此举旨在减少碎片化、强化品牌故事和消费者体验，短期将导致中国区销售两位数下滑，影响全球营收约2-3个百分点，但长期有助于恢复品牌溢价。滔搏和宝胜仍保留线下分销权。
-{\small\color{refgray}数据：耐克线上销售占滔搏中国区收入22\%，占宝胜15\%\par}
-{\small\color{refgray}数据：预计2027财年上半年中国区销售两位数下滑\par}
-{\small\color{refgray}数据：中国区约占耐克全球业务12\%\par}
-{\small\color{refgray}边际变化：耐克从依赖经销商线上渠道转向官方直营，标志着其中国分销策略的重大转变。\par}
-\paragraph{MS} Lululemon当前约78亿美元的美洲业务规模可能比可持续收入基础高出25\%-60\%。三种独立框架交叉验证显示，其美洲业务合理规模在30-65亿美元区间，远低于市场70亿美元以上的预期。市场对中国增长潜力可能过于乐观，预计中期每股盈利10-11美元，低于共识12美元。
-{\small\color{refgray}数据：美洲业务合理规模30-65亿美元，低于市场预期70亿+\par}
-{\small\color{refgray}数据：三种框架分别指向50亿、65亿和30-70亿美元\par}
-{\small\color{refgray}数据：预计中期每股盈利10-11美元，低于共识12美元\par}
-{\small\color{refgray}边际变化：MS认为市场对Lululemon美洲业务调整的深度和时长估计不足，同时高估了中国市场机会。\par}
-\paragraph{Citi} 霸王茶姬二季度同店GMV同比下滑约15\%，与一季度持平。但下半年因2025年主动减少外卖补贴形成低基数，同店降幅有望逐季收窄，四季度转正。2026年净开店计划下调至约300家，非GAAP净利润预测下调25\%-30\%。运营去杠杆效应和费用节省将在下半年更明显。
-{\small\color{refgray}数据：Q2同店GMV同比降15\%，单店月均GMV约35万元\par}
-{\small\color{refgray}数据：2026年净开店计划下调至约300家\par}
-{\small\color{refgray}数据：2026/27年非GAAP净利预测下调25\%/30\%\par}
-{\small\color{refgray}边际变化：Citi下调盈利预测，但认为下半年基数效应将推动同店转正，与同行高基数形成反差。\par}
-\paragraph{DB} 中国IP零售6月线下销售分化明显：泡泡玛特同店同比下滑16\%，较5月-6\%进一步恶化，二季度整体-4\%，与一季度+42\%形成鲜明对比。Labubu 4.0未能扭转需求放缓，稀缺性溢价基本消失。名创优品、TOP TOY等多数同行保持2\%-4\%正增长，卡游以+46\%领跑。
-{\small\color{refgray}数据：泡泡玛特6月同店同比-16\%，二季度整体-4\%\par}
-{\small\color{refgray}数据：单店月均收入120万元，为1月峰值83\%\par}
-{\small\color{refgray}数据：卡游6月同店同比+46\%，名创优品+3\%\par}
-{\small\color{refgray}边际变化：泡泡玛特从一季度+42\%同店增长骤降至二季度-4\%，IP稀缺性驱动模式正在消退。\par}
-\paragraph{JPM} 中国快递物流行业正从以量取胜转向以质驱动。6月行业收入同比+7.7\%，单价回升至7.77元，而件量增速仅3.8\%。圆通、申通、韵达二季度净利润同比分别增长92\%、152\%和136\%，盈利拐点已可验证。竞争格局从价格战转向质量战，头部企业主动放弃亏损件、聚焦高价值流量。
-{\small\color{refgray}数据：6月行业收入同比+7.7\%，单价7.77元（+3.8\%）\par}
-{\small\color{refgray}数据：圆通/申通/韵达Q2净利同比+92\%/+152\%/+136\%\par}
-{\small\color{refgray}数据：申通市占率提升1.8ppt至14.8\%\par}
-{\small\color{refgray}边际变化：收入增速连续第二个月跑赢件量，行业竞争从价格战转向质量战。\par}
-\paragraph{JPM} 美国散户资金流入降至近一年第35百分位，但结构显著分化：ETF流入降至第4百分位，个股交易活跃度升至第72百分位。动量因子过去一个月回撤约14\%，出现多次极端尾部事件，包括一次-6西格玛交易日。科技ETF流入转负，SOXL和SMH遭集中卖出，而Mag7内部散户买入NVDA、TSLA、MSFT、AMZN、META，唯独卖出AAPL。
-{\small\color{refgray}数据：散户资金净流入57亿美元，低于12周均值68亿\par}
-{\small\color{refgray}数据：动量因子一个月回撤约14\%\par}
-{\small\color{refgray}数据：SOXL和SMH录得-1.6西格玛异常流出\par}
-{\small\color{refgray}数据：散户买入NVDA 4.12亿美元，卖出AAPL 1.14亿\par}
-{\small\color{refgray}边际变化：散户行为从被动配置转向主动交易，动量因子拥挤度极端后的回撤幅度和速度均超过2025年2-3月。\par}
+\paragraph{Citi} 多晶硅能耗新国标（棒状硅三级上限6.3kgce/kg，颗粒硅4.6kgce/kg）主要影响已闲置的低效名义产能，前四大供应商合计191万吨名义产能均达标，对当前有效供给影响甚微。当前行业平均产能利用率仅30\%-40\%，月度供给（10万吨）仍超需求（9.1万吨），供需宽松格局未变。政策方向值得关注，但不应被解读为供给收缩信号。
+{\small\color{refgray}数据：棒状硅三级能耗上限从6.4下调至6.3kgce/kg\par}
+{\small\color{refgray}数据：颗粒硅三级能耗上限从5.0下调至4.6kgce/kg\par}
+{\small\color{refgray}数据：前四大供应商合计名义产能191万吨，均达标\par}
+{\small\color{refgray}数据：行业平均产能利用率30\%-40\%\par}
+{\small\color{refgray}边际变化：能耗标准正式版较征求意见稿进一步收紧，但市场焦点从政策预期转向实际供需，边际影响有限。\par}
+\paragraph{Citi} 中国光伏市场1H26新增装机72.1GW，同比降65.9\%，6月单月12.5GW同比降9.3\%，主要受高基数影响。产业链价格分化：多晶硅均价31.6元/kg周环比+0.1\%，颗粒硅持平31.5元/kg，但生产商库存高达31.8万吨；硅片价格领跌（周环比-2.3\%），电池片+0.9\%，组件-0.4\%。光伏玻璃日熔量降至77,750吨（月内-7.7\%），库存周期47.3天。硅片环节二三线企业开始产能共享，整合启动。
+{\small\color{refgray}数据：1H26中国光伏新增装机72.1GW，同比-65.9\%\par}
+{\small\color{refgray}数据：6月单月装机12.5GW，同比-9.3\%\par}
+{\small\color{refgray}数据：多晶硅库存31.8万吨，价格31.6元/kg（周环比+0.1\%）\par}
+{\small\color{refgray}数据：硅片价格周环比-2.3\%，电池片+0.9\%，组件-0.4\%\par}
+{\small\color{refgray}边际变化：光伏玻璃产能主动收缩（-7.7\%）是新增变化，反映行业盈利压力下的供给调整；硅片环节产能整合从预期走向执行。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item 耐克线上销售占滔搏中国区收入22\%，占宝胜15\%
-  \item Lululemon美洲业务合理规模30-65亿美元，低于市场预期70亿+
-  \item 霸王茶姬Q2同店GMV同比降15\%，单店月均GMV约35万元
-  \item 泡泡玛特6月同店同比-16\%，二季度整体-4\%，与一季度+42\%形成鲜明对比
-  \item 中国快递6月收入同比+7.7\%，单价7.77元（+3.8\%），件量增速仅3.8\%
-  \item 圆通/申通/韵达Q2净利同比+92\%/+152\%/+136\%
-  \item 美国动量因子一个月回撤约14\%，出现-6西格玛交易日
-  \item 散户买入NVDA 4.12亿美元，卖出AAPL 1.14亿
+  \item 棒状硅三级能耗上限从6.4下调至6.3kgce/kg
+  \item 颗粒硅三级能耗上限从5.0下调至4.6kgce/kg
+  \item 前四大供应商合计名义产能191万吨，均达标
+  \item 行业平均产能利用率30\%-40\%
+  \item 7月多晶硅月产量预计10万吨，月需求9.1万吨
+  \item 1H26中国光伏新增装机72.1GW，同比-65.9\%
+  \item 多晶硅库存31.8万吨，价格31.6元/kg（周环比+0.1\%）
+  \item 硅片价格周环比-2.3\%，电池片+0.9\%，组件-0.4\%
+  \item 光伏玻璃日熔量77,750吨，月内-7.7\%
+  \item 光伏玻璃库存周期47.3天，周环比-1.2\%
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_033.jpg}
-\caption{Exhibit 1 - Exhibit 3: Our scale analysis indicates that LULU Americas has the characteristics of a business that is typically \textbackslash{}\$3-7B in size – below its current \textbackslash{}\$7B + levels.}
+\includegraphics[width=0.88\linewidth]{figures/fig_011.jpg}
+\caption{Figure 1 - © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 1. PRC weekly polysilicon price © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 2. Monthly polysilicon output in China \#\# Companies Mentioned:}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_063.jpg}
-\caption{Figure 2 - Figure 2: China IP Retailers: SSSG performance by quarter Figure 3: Pop Mart: monthly sales per store Figure 4: Miniso: monthly sales per store Rmb per month The Green Party Monthly Sales Figure 5: Kule: monthly sales per stor}
+\includegraphics[width=0.88\linewidth]{figures/fig_014.jpg}
+\caption{Figure 1 - Figure 1. PRC weekly polysilicon prices in the week ended Jul 22 © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 2. PRC weekly polysilicon price © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 3. PRC we}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_113.jpg}
-\caption{Figure 1 - Figure 1: China logistics share price performance (past one month) Figure 2: China logistics share price performance (year to date)}
+\includegraphics[width=0.88\linewidth]{figures/fig_015.jpg}
+\caption{Figure 2 - © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 2. PRC weekly polysilicon price © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 3. PRC weekly wafer price © 2026 Citi Inc. No redistribution without Citi'}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_128.jpg}
-\caption{Figure 1 - Figure 1: Momentum Crowding Figure 2: Momentum Unwind Now vs Feb-Mar'25 Figure 3: Frequent Negative High-Sigma Events in Momentum}
+\includegraphics[width=0.88\linewidth]{figures/fig_016.jpg}
+\caption{Figure 3 - Figure 3. PRC weekly wafer price © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. PRC weekly cell price © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 5. PRC weekly module price © 2026 Citi Inc. No r}
 \end{figure}
-{\small\color{refgray}本节综合 6 篇研究；涉及 Bernstein、MS、Citi、DB、JPM。}
+{\small\color{refgray}本节综合 2 篇研究；涉及 Citi。}
 \newpage
-\subsection{医疗健康：资金轮动与结构分化下的CXO主线}
-\textbf{中国医疗健康板块近期反弹主要由AI主题资金轮动驱动，而非基本面单独支撑；CXO/CDMO凭借订单积压和全球创新链条关联成为资金集中增持方向，但板块内部业绩分化显著，制药、器械等子板块仍面临结构性压力。}
+\subsection{音乐流媒体定价周期的持续性：从用户增长到价值释放}
+\textbf{音乐流媒体行业的核心叙事正从用户增长转向定价权释放，Spotify 在主要市场的连续调价已带动行业跟进，但全球定价与渗透率仍有空间，价值释放路径至少可延续至2027年。}
 \subsubsection*{主流共识}
 \begin{itemize}
-  \item CXO/CDMO板块1H26业绩有望超预期，核心驱动力来自强劲的订单积压增长和产能规模优势。
-  \item GLP-1等代谢类多肽药物需求重塑了CDMO竞争格局，产能规模（吨位产出）成为核心竞争维度。
-  \item 医疗健康板块近期上涨部分源于AI主题资金流出后的再配置，CXO是北向资金增持最明显的子板块。
-  \item BD/对外授权交易成为制药/生物科技公司利润缓冲，但反腐行动持续干扰院内销售。
+  \item 定价提升是当前音乐流媒体行业可寻址市场增长的最大驱动力，贡献约6-7个百分点的年化收入增速。
+  \item Spotify 在北美和发达欧洲的渗透率已较高，拉美和亚洲（尤其是印度）是未来用户增长的主战场。
+  \item YouTube 和 Apple Music 已跟进 Spotify 的近期调价动作，表明行业定价周期具有协同性。
 \end{itemize}
 \subsubsection*{分歧与条件差异}
 \begin{itemize}
-  \item 多肽CDMO领域：药明康德凭借先发产能优势占据独立梯队（2025年产出约58吨），而传统欧洲供应商Bachem和PolyPeptide增速仅个位数至中低两位数，成本结构差异显著（药明EBIT利润率37\% vs Bachem 22\%）。
-  \item 康方生物HARMONi研究OS数据持续改善（全ITT人群HR从0.79降至0.76），但获批概率提升仍需等待完整数据公布及2026年11月监管决定。
-  \item 制药/生物科技内部：中国生物制药、翰森制药等受益于BD首付款或产品放量，而恒瑞医药营收可能不及预期，行业规范影响持续。
-  \item 资金轮动持续性存疑：若AI重新成为主线，医疗板块可能面临资金回流压力；美国《生物安全法案》对跨境BD交易的影响仍是市场担忧点。
+  \item 关于2025年Q2/Q3同比定价增速是否已触及阶段性高点：Bernstein认为核心定价变化率可能已见顶，但全球价格与渗透率仍有空间，整体价值释放路径未结束。
+  \item 增值服务（如HiFi、AI歌单）的变现弹性存在分歧：Bernstein估计2028年渗透率可达2.6\%，但强调收入测算有较大弹性空间，实际执行效果可能偏离预期。
 \end{itemize}
 \subsubsection*{机构观点}
-\paragraph{Bernstein} 全球多肽CDMO行业竞争重心已从技术专长转向资本部署和规模化生产。药明康德凭借先发产能优势占据独立梯队，2025年多肽产出约58吨，市场份额从2021年的11\%跃升至54\%；而传统欧洲供应商Bachem和PolyPeptide增速仅个位数至中低两位数。成本结构分化显著：药明EBIT利润率37\%，Bachem约22\%，PolyPeptide和EuroAPI接近盈亏平衡。批次规模上，凯莱英在液相合成领域具备超100公斤单批能力，多数领先CDMO商业批次规模在15-30公斤。
-{\small\color{refgray}数据：全球前四大多肽CDMO总收入从2021年约10亿美元增至2025年30亿美元\par}
-{\small\color{refgray}数据：药明康德TIDES收入从1.2亿美元跃升至17亿美元，市场份额从11\%扩张至54\%\par}
-{\small\color{refgray}数据：凯莱英多肽业务2025年增速124\%\par}
-{\small\color{refgray}数据：药明康德2025年多肽产出约58吨，CordenPharma和凯莱英10-20吨，Bachem和PolyPeptide 1-10吨\par}
-{\small\color{refgray}边际变化：行业竞争维度从技术专长转向资本部署和规模化生产，药明康德凭借先发产能优势实现市场份额跃升，传统欧洲供应商增速放缓。\par}
-\paragraph{NOM} 康方生物HARMONi研究OS数据持续改善，获批概率提升。2026年6月额外分析显示，全ITT人群和西方患者亚组OS HR均为0.76，较2025年4月首次分析（0.79和0.98）显著改善，且与国内HARMONi-A研究（HR 0.74）基本可比。西方患者亚组中位随访时间已达23.2个月，数据成熟度明显提升。该适应症（2L+ EGFRm NSCLC after 3rd gen TKI）的监管决定日期为2026年11月14日。
-{\small\color{refgray}数据：全ITT人群OS HR从2025年4月0.79降至2026年6月0.76\par}
-{\small\color{refgray}数据：西方患者亚组OS HR从2025年4月0.98降至0.76\par}
-{\small\color{refgray}数据：西方患者亚组中位随访时间从9.2个月延长至23.2个月\par}
-{\small\color{refgray}数据：HARMONi-A研究OS HR为0.74\par}
-{\small\color{refgray}边际变化：OS数据持续改善，西方患者亚组HR从0.98大幅降至0.76，与国内数据可比性增强，获批概率提升。\par}
-\paragraph{Citi} 中国医疗行业1H26业绩分化显著：CRO/CDMO板块有望超预期，药明康德调整后净利润可能超预期，TIDES业务和融资复苏是主要驱动力，管理层可能上调指引；药明合联收入超预期得益于ADC/XDC强劲势头；康龙化成新订单同比增长超30\%。制药/生物科技方面，BD交易成为利润缓冲，中国生物制药获赛诺菲1.35亿美元首付款，翰森制药受益于EGFR TKI快速放量，但恒瑞医药营收可能不及预期，反腐行动持续干扰院内销售。医疗器械、医院流通等子板块面临结构性不确定性。
-{\small\color{refgray}数据：药明康德调整后净利润可能超预期，TIDES业务和融资复苏是主要驱动力\par}
-{\small\color{refgray}数据：药明合联收入超预期，得益于ADC/XDC强劲势头\par}
-{\small\color{refgray}数据：康龙化成新订单同比增长超30\%\par}
-{\small\color{refgray}数据：中国生物制药获赛诺菲1.35亿美元首付款\par}
-{\small\color{refgray}边际变化：行业从普涨/普跌转向高度离散分化，CRO/CDMO订单积压驱动业绩超预期，制药/生物科技BD交易成为利润缓冲，反腐影响持续。\par}
-\paragraph{HSBC} 6月26日以来中国A/H股医疗健康指数分别反弹11\%和16\%，跑赢恒生指数7个百分点、沪深300指数19个百分点，主要受AI主题资金流出、科技与消费产品再配置驱动。CXO板块是北向资金最明显受益者：二季度北向资金对CXO持仓占比从7.03\%升至9.93\%，环比增加2.9个百分点，而制药和医疗器械板块持仓分别下降0.78和0.45个百分点。全球投资者最关注CDMO和生物科技/制药子领域，药明康德因上半年业绩预期较高被大量持有，药明生物和康龙化成因2026-2028年增长加速和利润率扩张受到关注。
-{\small\color{refgray}数据：A/H股医疗健康指数自6月26日分别反弹11\%和16\%\par}
-{\small\color{refgray}数据：跑赢恒生指数7个百分点、沪深300指数19个百分点\par}
-{\small\color{refgray}数据：北向资金对CXO持仓占比从1Q26的7.03\%升至2Q26的9.93\%\par}
-{\small\color{refgray}数据：制药和医疗器械板块北向持仓分别下降0.78和0.45个百分点\par}
-{\small\color{refgray}边际变化：医疗健康板块上涨由资金轮动驱动而非基本面单独支撑，CXO成为北向资金集中增持方向，但持续性存疑。\par}
+\paragraph{Bernstein} Spotify 的定价空间尚未用尽，至少到2027年仍有调整余地。报告拆解中期增长公式：用户增长贡献约5个百分点，定价提升贡献6-7个百分点，增值服务用户贡献3-3.5个百分点。当前Spotify Premium可寻址市场约1070亿美元，预计2030年增至约1270亿美元，定价提升是最大单一变量。全球价格与渗透率仍有可测量空间，且YouTube和Apple Music已跟进调价，价值释放路径可持续。
+{\small\color{refgray}数据：Spotify 年化收入增速约15\%，其中定价贡献6-7个百分点\par}
+{\small\color{refgray}数据：当前可寻址市场约1070亿美元，2030年预计增至约1270亿美元\par}
+{\small\color{refgray}数据：增值服务2028年渗透率预计2.6\%，每人多贡献约5美元\par}
+{\small\color{refgray}数据：全球付费音乐用户约8.6亿，Spotify占34\%份额\par}
+{\small\color{refgray}边际变化：此前市场焦点在核心忠实用户变现，Bernstein 指出基础付费流媒体订阅用户的渗透率和定价尚未被充分挖掘，定价权才是隐藏主线。\par}
 \subsubsection*{关键数据}
 \begin{itemize}
-  \item 全球前四大多肽CDMO总收入从2021年约10亿美元增至2025年30亿美元
-  \item 药明康德TIDES收入从1.2亿美元跃升至17亿美元，市场份额从11\%扩张至54\%
-  \item 药明康德2025年多肽产出约58吨，EBIT利润率37\%
-  \item 康方生物HARMONi研究全ITT人群OS HR从0.79降至0.76，西方患者亚组从0.98降至0.76
-  \item 北向资金对CXO持仓占比从1Q26的7.03\%升至2Q26的9.93\%
-  \item A/H股医疗健康指数自6月26日分别反弹11\%和16\%
-  \item 康龙化成新订单同比增长超30\%
-  \item 中国生物制药获赛诺菲1.35亿美元首付款
+  \item Spotify 年化收入增速约15\%，其中定价贡献6-7个百分点
+  \item 当前可寻址市场约1070亿美元，2030年预计增至约1270亿美元
+  \item 增值服务2028年渗透率预计2.6\%，每人多贡献约5美元
+  \item 全球付费音乐用户约8.6亿，Spotify占34\%份额
+  \item 拉美和亚洲是Spotify扩大市场份额的关键区域，印度最具潜力
 \end{itemize}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\linewidth]{figures/fig_001.jpg}
-\caption{EXHIBIT 1 - EXHIBIT 2: Global peptide CDMO market landscape by business focus Note: 1. Represent smaller CDMOs or pharma/biotech with peptide CDMO segment; Ambio is acquired by Corden in 2026 EXHIBIT 3: Thermo Fisher and WuXi AppTec anchor t}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_002.jpg}
-\caption{EXHIBIT 2 - EXHIBIT 4: Revenue trends indicate sustained expansion among leading peptide participants, with Wuxi AppTec demonstrating the strongest growth trajectory Note: \textbackslash{}* Total company revenue used where peptide revenue was not separatel}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_098.jpg}
-\caption{Exhibit 1 - Issuer of report: HSBC Qianhai Securities Limited View HSBC Qianhai Securities at: https://www.research.hsbc.com \#\# Industry update Exhibit 1. Y-t-d performance of China Healthcare index Exhibit 2. North Bound Holding and changes}
+\caption{Exhibit 18 - EXHIBIT 2: We estimate Spotify Premium's current TAM to be \textbackslash{}\textasciitilde{}\textbackslash{}\$107B with Developed Europe, North America, and Asia as the biggest markets Estimated current TAM penetration by music DSPs (annual, \textbackslash{}\$B) ■ Other DSPs ■ Spotify ■ Unpe}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.88\linewidth]{figures/fig_003.jpg}
-\caption{EXHIBIT 3 - EXHIBIT 5: WuXi AppTec and Asymchem significantly outpace global peers, delivering rapid peptide revenue growth driven by capacity expansion \#\# PLAYER BENCHMARKS: SCALE, COST STRUCTURE, AND TECHNOLOGY}
-\end{figure}
-{\small\color{refgray}本节综合 4 篇研究；涉及 Bernstein、NOM、Citi、HSBC。}
-\newpage
-\subsection{全球能源与工业转型：电网升级、库存缓冲与新兴市场驱动}
-\textbf{全球能源与工业领域正经历结构性转变：电网投资周期独立于AI叙事，中国通过库存调节和电气化缓冲进口下降冲击，新兴市场成为逆变器出口新引擎，而航空与工业设备制造商则聚焦股东回报与数据中心冷却需求。}
-\subsubsection*{主流共识}
-\begin{itemize}
-  \item 全球电网投资2024-2035年复合增速约7\%，驱动力包括基础设施老化、可再生能源并网及数据中心建设，独立于AI资本开支周期。
-  \item 中国能源体系通过有效去库存（煤炭、石油）和电气化（电动车渗透率提升）缓冲了化石燃料净进口下降24\%的冲击，总能源需求仍保持正增长。
-  \item 逆变器出口增长由新兴市场（大洋洲、非洲、亚洲）拉动，欧洲占比下降，显示需求地理分布分散化。
-\end{itemize}
-\subsubsection*{分歧与条件差异}
-\begin{itemize}
-  \item 空客中期EBIT指引符合预期，但50亿欧元回购计划被视为超预期信号，市场对其自由现金流生成能力信心分歧。
-  \item 华明装备的估值修复逻辑存在分歧：部分市场参与者将其与AI基础设施主题捆绑，而GS认为其受益于更广泛的电网升级周期。
-  \item 汉钟精机的增长驱动存在分歧：市场短期聚焦半导体真空泵业务，但HSBC认为数据中心磁悬浮压缩机市场（2028年预计169亿元）才是长期增长引擎。
-\end{itemize}
-\subsubsection*{机构观点}
-\paragraph{Citi} 中国逆变器出口6月同比增长34.1\%至12.3亿美元，增速较5月的13.7\%明显提升，增量主要来自大洋洲（+210.3\%，澳大利亚储能补贴驱动）和非洲（+77.0\%，尼日利亚需求释放）。欧洲占比下降1.6个百分点至35.5\%，显示需求分散化。浙江出口增速（+103.6\%）远超安徽（+8.8\%），反映产品结构差异。组件出口额同比+11.9\%但量同比-24.2\%，主因单价上涨。
-{\small\color{refgray}数据：6月逆变器出口额12.3亿美元，同比+34.1\%，环比+30.3\%\par}
-{\small\color{refgray}数据：大洋洲出口同比+210.3\%至1.07亿美元\par}
-{\small\color{refgray}数据：非洲出口同比+77.0\%至1.02亿美元\par}
-{\small\color{refgray}数据：浙江出口同比+103.6\%至4.05亿美元\par}
-{\small\color{refgray}边际变化：逆变器出口增速从5月的13.7\%跃升至6月的34.1\%，新兴市场取代欧洲成为主要增长引擎。\par}
-\paragraph{DB} 空客2029年中期指引调整后EBIT目标120-130亿欧元，与市场预期基本一致，但三年50亿欧元回购计划超预期，叠加30\%-50\%股息支付率，约60\%自由现金流返还股东。宽体机（A350）产能目标2028年月产12架，但可能提升至14-16架；服务业务目标2025-2030年销售额增至100亿欧元。防务与太空部门MRTT产量将提升。
-{\small\color{refgray}数据：2029年调整后EBIT目标120-130亿欧元\par}
-{\small\color{refgray}数据：三年50亿欧元股份回购计划\par}
-{\small\color{refgray}数据：股息支付率30\%-50\%\par}
-{\small\color{refgray}数据：A350产能目标2028年月产12架，潜在提升至14-16架\par}
-{\small\color{refgray}边际变化：空客首次披露2029年中期指引，回购计划规模和时间跨度超出市场预期，显示管理层对自由现金流生成的信心。\par}
-\paragraph{GS} 华明装备股价自高点回调52\%，GS上调评级，核心逻辑是全球电网投资周期（2024-2035年复合增速约7\%）而非AI主题。公司国内OLTC数量份额约90\%，全球份额13\%预计2030年升至16\%。海外业务毛利率比国内高5-10个百分点，海外收入占比将从41\%提升至59\%，推动2026-2030年净利润复合增速约17\%。
-{\small\color{refgray}数据：股价自高点回调52\%\par}
-{\small\color{refgray}数据：国内OLTC数量份额约90\%，价值份额约35\%\par}
-{\small\color{refgray}数据：全球OLTC市场份额13\%，预计2030年升至16\%\par}
-{\small\color{refgray}数据：海外业务毛利率比国内高5-10个百分点\par}
-{\small\color{refgray}边际变化：市场此前将华明装备与AI基础设施主题捆绑，GS指出其实际受益于更广泛的电网升级周期，且海外利润率优势被低估。\par}
-\paragraph{GS} 2026年二季度中国原油净进口同比下降24\%，天然气和煤炭净进口分别下降7\%和24\%，但4-5月总能源需求仍同比正增长0.4\%。缓冲机制包括：煤炭有效去库存贡献3.0个百分点，原油去库存贡献2.2个百分点；电动车渗透率提升使汽油消费下降23\%，充电量增长60\%。煤化工路线（煤炭制乙烯）帮助乙烯产量回升。
-{\small\color{refgray}数据：4-5月总能源需求同比+0.4\%\par}
-{\small\color{refgray}数据：原油净进口同比-24\%\par}
-{\small\color{refgray}数据：天然气净进口同比-7\%\par}
-{\small\color{refgray}数据：煤炭净进口同比-24\%\par}
-{\small\color{refgray}边际变化：中国从2025年二季度的补库存状态转为2026年同期的去库存状态，库存缓冲机制有效抵消了进口下降对能源供应的冲击。\par}
-\paragraph{HSBC} 汉钟精机半导体真空泵收入预计从2025年约1亿元增至2026年2.02亿元，2027年增速可能更快（12英寸设备认证完成）。但长期增长引擎是数据中心磁悬浮压缩机市场，2028年全球规模可达169亿元（假设渗透率70\%）。公司正在与Trane、Carrier、Vertiv等全球龙头接触测试。2026年PE约24倍，2027年降至17.6倍。
-{\small\color{refgray}数据：半导体真空泵收入2025年约1亿元，2026年预计2.02亿元\par}
-{\small\color{refgray}数据：2028年全球数据中心磁悬浮压缩机市场约169亿元\par}
-{\small\color{refgray}数据：磁悬浮压缩机每GW成本约10-15亿元\par}
-{\small\color{refgray}数据：2026年PE约24倍，2027年降至17.6倍\par}
-{\small\color{refgray}边际变化：市场将汉钟精机视为半导体概念股，但HSBC指出数据中心冷却需求（磁悬浮压缩机）才是未被充分定价的长期增长方向，且公司正在接触全球龙头。\par}
-\subsubsection*{关键数据}
-\begin{itemize}
-  \item 6月中国逆变器出口同比+34.1\%至12.3亿美元，环比+30.3\%
-  \item 空客三年50亿欧元回购计划，约60\%自由现金流返还股东
-  \item 华明装备全球OLTC份额13\%，预计2030年升至16\%
-  \item 中国4-5月总能源需求同比+0.4\%，原油净进口同比-24\%
-  \item 汉钟精机半导体真空泵收入2026年预计2.02亿元，2028年数据中心磁悬浮压缩机市场169亿元
-  \item 中国电动车充电量增长60\%，汽油消费下降23\%
-  \item 空客A350产能目标2028年月产12架，潜在提升至14-16架
-  \item 华明装备海外收入占比从41\%提升至59\%，净利润复合增速约17\%
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_071.jpg}
-\caption{Exhibit 1 - Exhibit 1: Huaming is trading at 18.1x 12-m forward P/E, slightly below its historical average of 20.3x since 2015 Exhibit 2: Huaming has pulled back \$52\textbackslash{}\%\$ from the peak, correcting more than its peers, Sieyuan and Yingliu Exh}
+\caption{EXHIBIT 4 - EXHIBIT 5: We estimate 2030E TAM to grow \textbackslash{}\textasciitilde{}18\% with the majority of growth attributed to price increases Estimated TAM Growth (\textbackslash{}\$B) from 2025 to 2030E}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_086.jpg}
-\caption{Exhibit 1 - Exhibit 1: Coal and Oil Effective Destocking and Higher Renewables Usage Helped Buffer China's Negative Fossil Fuel Import Shock The units here are percentage point contributions to total energy demand growth. “Oil Supply” is dec}
+\includegraphics[width=0.88\linewidth]{figures/fig_002.jpg}
+\caption{EXHIBIT 3 - EXHIBIT 4: Latin America and Asia are likely to be the key battlegrounds for Spotify to increase market share over other music DSPs. Within Asia, India is where we believe Spotify can have the greatest impact. Est. current music DS}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_100.jpg}
-\caption{Exhibit 2 - Our estimated global market size for magnetic levitation compressors for data centres is as much as RMB16.9bn in 2028e, and this indicate decent growth potential for the leading players. We think Hanbell will benefit: Downstream AIDC heat solution providers wi}
+\includegraphics[width=0.88\linewidth]{figures/fig_004.jpg}
+\caption{EXHIBIT 5 - EXHIBIT 6: Across varied price sensitivity assumptions, our estimates of current TAM range from \textbackslash{}\$90B to \textbackslash{}\$117B with a lot of the changes occurring in Asia and Southeast Asia}
 \end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_056.jpg}
-\caption{Figure 2 - Figure 2. PRC monthly solar module output © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 3. PRC monthly solar inverter export © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. PRC monthly solar invert}
-\end{figure}
-{\small\color{refgray}本节综合 5 篇研究；涉及 Citi、DB、GS、HSBC。}
-\newpage
-\subsection{汽车与出行：新车型驱动订单分化，软件与智驾成估值新锚点}
-\textbf{7月第三周中国新能源车订单呈现新车型驱动的结构性分化，小鹏与理想凭借新品实现周环比爆发式增长，而比亚迪与特斯拉订单回落，显示需求在不同价格带和品牌间重新分配。与此同时，通用汽车软件递延收入加速累积，地平线机器人面临下半年芯片收入需增长80\%以上的关键验证期，软件与高阶智驾正成为行业估值重估的核心驱动力。}
-\subsubsection*{主流共识}
-\begin{itemize}
-  \item 新车型上市是当前订单增长的核心驱动力，小鹏MONA L03和理想L系列贡献了主要增量。
-  \item 比亚迪与特斯拉周订单环比下滑，行业龙头进入需求消化期，市场整体并非全面复苏。
-  \item 通用汽车软件递延收入年底将达75亿美元，高毛利订阅业务正成为盈利增长新引擎。
-\end{itemize}
-\subsubsection*{分歧与条件差异}
-\begin{itemize}
-  \item 小鹏与理想的订单爆发能否持续转化为月度交付，还是仅为单周促销脉冲，市场存在分歧。
-  \item 地平线机器人下半年芯片收入需同比增长超80\%才能达标，但关键客户订单份额突破存在不确定性。
-  \item 蔚来双品牌策略（NIO+Onvo）效果初显，但高端市场竞争加剧下其增长路径与理想形成差异。
-\end{itemize}
-\subsubsection*{机构观点}
-\paragraph{DB} 7月第三周中国新能源车订单总量分化加剧：比亚迪周订单4.79万辆（环比-23\%，同比-44\%），特斯拉8,200辆（环比-12\%，同比-45\%），而小鹏订单飙升至5.92万辆（环比+737\%），理想1.25万辆（环比+131\%）。极端分化反映需求在不同价格带和品牌间重新分配，而非整体走弱。蔚来周订单9,400辆（同比+45\%但环比-23\%），前期促销脉冲正在消退。
-{\small\color{refgray}数据：比亚迪7月第三周订单4.79万辆，环比-23\%，同比-44\%\par}
-{\small\color{refgray}数据：特斯拉周订单8,200辆，环比-12\%，同比-45\%\par}
-{\small\color{refgray}数据：小鹏周订单5.92万辆，环比+737\%，同比+393\%\par}
-{\small\color{refgray}数据：理想周订单1.25万辆，环比+131\%，同比+32\%\par}
-{\small\color{refgray}边际变化：周度订单从整体平稳转向极端分化，新车型驱动品牌与头部品牌走势背离加剧。\par}
-\paragraph{MS} 通用汽车二季度业绩超预期，2026年EBIT指引中值上调5亿美元至140-160亿美元。软件递延收入年底将达75亿美元（同比+50\%），2027年转化为两位数增长，毛利率约70\%。国防业务收入接近7亿美元。市场关注点正从传统制造转向软件服务和非汽车业务，软件业务有望推动估值重估。
-{\small\color{refgray}数据：2026年EBIT指引中值上调5亿美元至140-160亿美元\par}
-{\small\color{refgray}数据：软件递延收入年底将达75亿美元，同比+50\%\par}
-{\small\color{refgray}数据：2027年软件收入实现两位数增长，毛利率约70\%\par}
-{\small\color{refgray}数据：2026年预计新增100万数字订阅用户\par}
-{\small\color{refgray}边际变化：通用汽车从传统汽车制造叙事转向软件服务和非汽车业务，软件递延收入加速累积成为估值重估新锚点。\par}
-\paragraph{MS} 7月第三周中国新能源车订单回暖但非全面启动，新车型驱动为主。小鹏MONA L03预订开启后周订单4.18-4.2万（环比+585\%），理想新L系列贡献超75\%订单，周订单1.79-1.81万（环比+225\%）。比亚迪订单企稳（7.67-7.72万，环比+4\%），零跑持续增长（1.61-1.66万，环比+15\%）。鸿蒙智行环比-2\%，AITO环比-28\%。蔚来双品牌合计11.8-12k（环比+27\%）。
-{\small\color{refgray}数据：小鹏周订单4.18-4.2万，环比+585\%，同比+287\%\par}
-{\small\color{refgray}数据：理想周订单1.79-1.81万，环比+225\%，新L系列贡献超75\%\par}
-{\small\color{refgray}数据：比亚迪周订单7.67-7.72万，环比+4\%，同比+7\%\par}
-{\small\color{refgray}数据：零跑周订单1.61-1.66万，环比+15\%，同比+58\%\par}
-{\small\color{refgray}边际变化：订单回暖从全面预期转向个别新车型驱动，比亚迪企稳暗示价格竞争进入阶段性平衡。\par}
-\paragraph{MS} 地平线机器人上半年收入同比增长25\%-35\%至19.3-20.8亿元，但剔除股份支付后净亏损扩大至14-17亿元（同比扩大5\%-28\%），研发投入集中于J7芯片和HSD高阶智驾方案。毛利率60\%-66\%，持平或略低，反映产品解决方案收入占比提升。下半年芯片驱动收入需同比增长超80\%才能达成全年预期，关键依赖比亚迪、理想、吉利、奇瑞订单放量。
-{\small\color{refgray}数据：上半年收入19.3-20.8亿元，同比+25\%-35\%\par}
-{\small\color{refgray}数据：剔除股份支付后净亏损14-17亿元，同比扩大5\%-28\%\par}
-{\small\color{refgray}数据：毛利率60\%-66\%，持平或略低于去年同期\par}
-{\small\color{refgray}数据：下半年芯片驱动收入需同比增长超80\%\par}
-{\small\color{refgray}边际变化：市场定价已反映最差情景，后续估值修复取决于比亚迪等关键客户订单份额突破及HSD商业化进展。\par}
-\subsubsection*{关键数据}
-\begin{itemize}
-  \item 比亚迪7月第三周订单4.79万辆，环比-23\%，同比-44\%
-  \item 小鹏周订单5.92万辆，环比+737\%，同比+393\%
-  \item 理想周订单1.25万辆，环比+131\%，同比+32\%
-  \item 通用汽车软件递延收入年底将达75亿美元，同比+50\%
-  \item 地平线下半年芯片收入需同比增长超80\%
-  \item 蔚来双品牌合计11.8-12k，环比+27\%，同比+127\%
-  \item 比亚迪周订单7.67-7.72万，环比+4\%，同比+7\%
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_058.jpg}
-\caption{Figure 2 - Figure 2: Weekly new orders trend of key automakers (Li, NIO, XPeng, Leap, Xiaomi, Tesla) Figure 3: Weekly BYD, Geely, HIMA (mainly AITO) new orders trend Figure 4: Weekly HIMA (mainly AITO) new orders trend}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_133.jpg}
-\caption{Exhibit 1 - Exhibit 1: 2027 MS EBIT Bridge Software and Services is an underappreciated growth driver. GM is positioning the digital services vector as an increasingly material and less-cyclical earnings engine, with 1mn new digital subscrip}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_059.jpg}
-\caption{Figure 2 - Figure 2: Weekly new orders trend of key automakers (Li, NIO, XPeng, Leap, Xiaomi, Tesla) Figure 3: Weekly BYD, Geely, HIMA (mainly AITO) new orders trend Figure 4: Weekly HIMA (mainly AITO) new orders trend Figure 5: Weekly}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_060.jpg}
-\caption{Figure 3 - Figure 3: Weekly BYD, Geely, HIMA (mainly AITO) new orders trend Figure 4: Weekly HIMA (mainly AITO) new orders trend Figure 5: Weekly Li Auto new orders trend Figure 6: Weekly NIO group new orders trend}
-\end{figure}
-{\small\color{refgray}本节综合 4 篇研究；涉及 DB、MS。}
-\newpage
-\subsection{区域市场与综合：AI资本开支、信贷扩张与财政分化}
-\textbf{全球市场正经历AI资本开支扩张与区域信贷结构分化的双重叙事：美国科技巨头以资本开支换取云收入增长，亚洲（除中国）信贷创18年新高，而中国财政脉冲转负、地产收入持续收缩。}
-\subsubsection*{主流共识}
-\begin{itemize}
-  \item AI基础设施投资正直接转化为云业务收入增长，资本开支扩张与收入加速的正向循环已可验证。
-  \item 亚洲（除中国）信贷扩张由AI、能源、国防等领域的多年代际资本支出超级周期驱动，企业贷款增速创18年新高。
-  \item 中国广义财政赤字（AFD）持续收窄，二季度财政脉冲转负，对GDP形成拖累。
-\end{itemize}
-\subsubsection*{分歧与条件差异}
-\begin{itemize}
-  \item AI货币化路径：BofA认为Alphabet云业务资本开支与收入正循环已确立，而UBS认为成本端（资本开支+股权激励）上升将压缩未来盈利。
-  \item 日本市场结构：Bernstein看好外资流入与估值修复，但出口与内需板块基本面信号分化，7月内需反超出口。
-  \item 中国CDMO板块：GS认为估值修复从alpha转向beta复苏，但持续性取决于二季度财报兑现。
-\end{itemize}
-\subsubsection*{机构观点}
-\paragraph{Bernstein} 日本市场短期调整不改中期逻辑：估值从17倍PE回落至14.9倍（十年均值），盈利上修覆盖广泛，外资净买入575亿美元，全球主动型基金低配比例从-1.6\%收窄至-0.48\%，仍有进一步流入空间。出口板块上半年跑赢内需（35\% vs 20\%），但7月内需反超（+4\% vs -6\%），内需营收增长更快（23\% vs 12\%）、股息率更高（2.2\% vs 1.7\%），估值处于历史低位。
-{\small\color{refgray}数据：MSCI Japan指数上半年涨16\%，日经225涨29\%，7月回调约6\%\par}
-{\small\color{refgray}数据：外资净买入日本公司575亿美元（年初至今）\par}
-{\small\color{refgray}数据：全球主动型基金对日本低配比例从-1.6\%收窄至-0.48\%\par}
-{\small\color{refgray}数据：内需板块营收增长23\%，出口板块12\%\par}
-{\small\color{refgray}边际变化：7月内需板块以4\%涨幅反超出口板块的-6\%，此前市场普遍偏好出口；零售资金从净卖出开始回暖，可能成为下一阶段增量来源。\par}
-\paragraph{BofA} Alphabet云业务资本开支与收入正循环已确立：2Q26云收入同比+82\%（超预期65\%），经营利润率35.6\%（超预期31.3\%），积压订单环比+500亿至5140亿美元。但资本开支指引上调至1950-2050亿美元，盘后股价承压约3\%。搜索收入同比+17\%符合预期，AI变现尚未体现增量效果。
-{\small\color{refgray}数据：云收入同比+82\%，超市场预期65\%\par}
-{\small\color{refgray}数据：云业务经营利润率35.6\%，超预期31.3\%\par}
-{\small\color{refgray}数据：资本开支指引上调至1950-2050亿美元（此前1800-1900亿）\par}
-{\small\color{refgray}数据：积压订单环比+500亿至5140亿美元\par}
-{\small\color{refgray}边际变化：资本开支上调幅度（约150亿）远低于积压订单增量（500亿），新增算力直接推动收入增长，而非成本膨胀。\par}
-\paragraph{MS} 亚洲（除中国）银行信贷增速升至8.5\%（18年最高），由AI基础设施、能源、国防等资本支出超级周期驱动。资本品进口增速33\%（2004年以来最高），PPI升至9.0\%（四年高点），企业贷款领跑，家庭贷款从低点5.6\%回升至6.6\%。中国信贷增速持续放缓，形成鲜明对比。
-{\small\color{refgray}数据：亚洲（除中国）信贷增速8.5\%（2026年5月），18年最高\par}
-{\small\color{refgray}数据：资本品进口增速33\%（3MMA），2004年以来最高\par}
-{\small\color{refgray}数据：PPI通胀升至9.0\%，四年高点\par}
-{\small\color{refgray}数据：家庭贷款增速从5.6\%回升至6.6\%\par}
-{\small\color{refgray}边际变化：信贷扩张从科技领域扩散至非科技领域，家庭贷款跟随企业贷款回暖，信贷需求支撑面拓宽且持续性增强。\par}
-\paragraph{GS} 中国6月广义财政赤字（AFD）继续收窄，3个月移动平均占GDP比重从-8.4\%收窄至-7.0\%，二季度财政脉冲转负，贡献GDP环比降幅的40\%以上。预算内收入增速8.7\%（税收10.8\%），但支出仅4.0\%；土地出让收入同比-42.1\%（5月-35.8\%），房地产相关税收-12.3\%。
-{\small\color{refgray}数据：AFD 3个月移动平均占GDP比重从-8.4\%收窄至-7.0\%\par}
-{\small\color{refgray}数据：6月预算内财政收入同比+8.7\%，税收+10.8\%\par}
-{\small\color{refgray}数据：6月预算内支出同比+4.0\%\par}
-{\small\color{refgray}数据：土地出让收入同比-42.1\%（5月-35.8\%）\par}
-{\small\color{refgray}边际变化：财政脉冲转负是土地收入塌陷和准财政工具调整的被动结果，而非主动财政纪律改善；二季度负向财政脉冲贡献GDP环比降幅的40\%以上。\par}
-\paragraph{BofA} BofA在7月发布的一份研报中，对美的集团（H/相关市场）给出了明确的判断：下半年展望正在改善。报告认为，尽管上半年收入增速可能落后于全年目标，但下半年存在追赶空间。支撑这一判断的因素包括国内与海外消费业务的基数效应、自有品牌持续增长，以及2B业务中储能和库卡机器人的相对强势。此外，报告还指出，公司持有的存储器研究可能在下半年产生可观的公允价值变动收益，这些...
-{\small\color{refgray}数据：BofA预计美的2026财年收入增长在中等至高个位数区间，核心利润率基本稳定。但根据其测算，上半年实际运行节奏可能落后于全年指引。具体来看，国内2C业务一季度增长约低个位数，二季度可能转为低个位数下滑；海外2C业务一季度持平，二季度恢复至中等个位数增长。报告认为，下半年国内外业务均有望提速，主要原因是基数变低——上半年国内受以旧换新补贴拉动需求前置，海外则因...\par}
-{\small\color{refgray}数据：KC评论： 这里的关键不是上半年数据本身，而是报告对“基数效应”的拆解。上半年海外抢单和国内补贴透支了部分需求，但这些是短期脉冲，下半年恢复正常节奏后，同比增速反而更容易改善。读者需要区分哪些是可持续的增长动力，哪些是一次性扰动。\par}
-\paragraph{MS} KC评论： 这里的关键不是Agentforce不够好，而是它的体量还不足以覆盖传统业务的变化。读者需要关注的是，AI收入增速何时能够超过传统业务的变化速度，而非单纯看AI指标的相对值。
-{\small\color{refgray}数据：研报用“AI就绪度框架”评估Salesforce，认为其在系统记录深度、企业分销能力、专有数据和领域知识方面得分较高。更重要的是，管理层愿意主动调整自身——从SaaS转型、扩展到前台相邻领域，再到从人工驱动的用户界面转向智能体——而非固守传统的席位制UI。报告认为，在智能体时代，Salesforce需要将货币化层下移到数据、元数据、权限和工作流层，而非停留在...\par}
-{\small\color{refgray}数据：但战略正确不等于增长拐点。报告特别指出，Salesforce已经多次调整AI定价结构——从基于对话的Agentforce定价转向更灵活的企业协议、基于行动的定价和信用模式。这种频繁调整本身说明，客户仍在寻求可预测性和价值对齐，AI货币化路径尚未稳定。相比之下，基础设施软件和部分安全软件已经看到AI带来的收入加速，而SaaS整体仍在探索中。\par}
-\paragraph{MS} 特斯拉正在经历一个规模超出预期的资本开支扩张阶段。MS在最新报告中指出，管理层已明确未来2-3年资本开支将继续增长，而非此前市场预期的逐步回落。2026年资本开支指引超过250亿美元，2027年预计接近300亿美元，较此前预测的约200亿美元大幅上调。这一投入方向覆盖Robotaxi车队扩张、Optimus产能建设、半导体工厂、太阳能制造和AI算力，但自由现...
-{\small\color{refgray}数据：报告的核心判断是：这些研究在战略上必要，但ROI的实现需要时间和可验证的里程碑。市场对持续资本消耗的容忍度，将取决于Robotaxi能否在现有城市内展示出密度提升和安全数据积累，以及Optimus能否从实验室走向规模化生产。\par}
-{\small\color{refgray}数据：FSD渗透率超预期，但Robotaxi商业化仍需密度与数据验证\par}
-\paragraph{UBS} 3M 在 2026 年第二季度交出了一份超出市场预期的成绩单。有机销售额同比增长 5.4\%，比市场共识高出 150 个基点，也是该公司近五年来较强的单季表现。每股收益 2.40 美元，较预期高出 7\%。UBS在最新报告中指出，这并非一次性改善，而是管理层过去几年在创新引擎上持续投入的初步回报。
-{\small\color{refgray}数据：报告的核心判断是：3M 正处于一个多增长加速周期的早期阶段。UBS将其 2027 年每股收益预期从 10.02 美元上调至 10.46 美元，比当前市场共识高出约 10\%。这一判断建立在三个可验证的支撑点上：新产品管线加速落地、利润率结构改善，以及管理层上调的全年指引中仍留有保守空间。\par}
-{\small\color{refgray}数据：3M 管理层在过去几年持续加大对新产品的投入，这种长周期努力正在转化为可量化的产出。公司计划到 2027 年推出超过 1000 款新产品，仅 2026 年就将推出超过 350 款。按照 2 到 3 年的产品成熟周期推算，这批新产品将在 2027 年及之后逐步释放增长动能。\par}
-\paragraph{UBS} 这份UBS在 2026 年 7 月发布的 Alphabet 财报点评，核心判断并非收入不及预期，而是“收入增长已被市场定价”。2Q26 总营收 1198 亿美元，略高于UBS预期的 1195 亿美元和共识预期的 1165 亿美元。但真正改变分析师 Stephen Ju 判断的，是成本端两个明确信号：2026 年资本支出指引上调至 亿美元（此前为 亿美元），以...
-{\small\color{refgray}数据：这份报告值得关注的，不是 Alphabet 某个业务线的单季表现，而是UBS如何用“积压订单转化为收入的速度”和“资本支出强度”两个变量，重新评估公司未来两年的盈利路径。\par}
-{\small\color{refgray}数据：2Q26 末 Google Cloud 积压订单达到约 5100 亿美元，高于UBS此前预测的 4820 亿美元，也高于 1Q26 末的约 4620 亿美元。按UBS假设的 50\% 两年转化率，这意味着 Google Cloud Platform 在 2026/2027 年的收入可达 1275 亿美元，或云业务整体收入约 1470 亿美元，明显高于财报前市场...\par}
-\paragraph{Citi} Citi在近期与埃斯顿董事会秘书肖婷婷的交流中，获得该公司2026年上半年初步业绩后的关键经营信号。这份研报的核心判断是：埃斯顿工业机器人毛利率在2026年第二季度提升至33\%-34\%，主要驱动力来自成本削减而非客户结构优化。与此同时，公司管理层维持2026年全年60亿元收入、31\%毛利率、5\%净利率及4.5万台工业机器人出货量的指引。但Citi同时指出，库...
-{\small\color{refgray}数据：埃斯顿2026年第二季度工业机器人毛利率达到33\%-34\%，较此前水平有明显提升。肖婷婷在交流中明确表示，成本削减是毛利率扩张的核心原因，具体路径包括关键零部件国产化和设计端降本。值得注意的是，埃斯顿同期降低了对大客户比亚迪和宁德时代的依赖，来自这两家客户的收入从2025年上半年的约8亿元降至2026年上半年的约4亿元。但管理层认为，即便客户结构发生变化，2...\par}
-{\small\color{refgray}数据：KC评论： 毛利率提升来自成本端而非客户结构优化，意味着埃斯顿的盈利改善更多依赖自身供应链管理能力，而非下游需求结构变化。这一点在评估其盈利可持续性时值得关注。\par}
-\paragraph{GS} 过去一个月，中国CDMO板块上涨27.9\%，领跑医疗保健板块的11.8\%反弹，也跑赢MSCI中国指数的7.6\%。相关研究在最新报告中认为，这一表现并非单纯板块轮动——二季度基本面数据提供了支撑：GLP-1和ADC等关键治疗领域的订单需求保持韧性，国内临床试验活动活跃推动NHP价格持续上涨，全球并购活跃以及AI驱动药物发现（AIDD）的采用率上升，都在创造增量...
-{\small\color{refgray}数据：CDMO的表现正在从1H26的alpha驱动故事，逐步转向更广泛的beta驱动复苏。不过，盈利持续性更强、GLP-1敞口更大的公司仍领跑：药明康德H股一个月/年内涨幅达22\%/59\%，凯莱英H股为29\%/70\%。市场也开始奖励那些实现盈利上修和订单趋势改善的公司——康龙化成H股在公布超预期的订单增长（整体订单同比+30\%，CDMO同比+50\%）后，一个月内反...\par}
-{\small\color{refgray}数据：相关研究认为，近期估值修复的可持续性，将取决于持续的盈利交付，包括订单摄入的韧性、商业化项目转化，以及市场对2026年预期的潜在上修。该机构上调了覆盖范围内部分公司 年调整后净利润预测5\%/10\%/6\%。\par}
-\paragraph{GS} 耐克将从2027年1月1日起终止两家主要经销商在中国大陆的线上平台销售授权。相关研究指出，这一决定对滔搏和宝胜的营收影响规模超出市场此前预期，但两家公司因线上业务利润率结构不同，利润冲击幅度存在显著差异。
-{\small\color{refgray}数据：受影响业务分别占滔搏2026财年集团营收约22\%，以及宝胜2025财年集团营收约15\%。两家公司均表示将继续与耐克合作线下销售。据此调整滔搏2027至2029财年营收和净利润6\%至21\%和8\%至35\%，调整宝胜2027至2028财年营收和净利润14\%和7\%至9\%。\par}
-{\small\color{refgray}数据：报告特别指出，两家经销商对线上业务利润率的描述截然不同。滔搏管理层此前表示线上利润率高于集团整体水平，而宝胜则认为线上销售因折扣力度较大，对集团利润形成稀释。这意味着，失去线上销售对滔搏的利润影响将大于营收占比所暗示的幅度，而对宝胜而言，线上业务剥离反而可能提升综合毛利率。\par}
-\subsubsection*{关键数据}
-\begin{itemize}
-  \item 日本MSCI Japan指数上半年涨16\%，日经225涨29\%，7月回调约6\%
-  \item 外资净买入日本公司575亿美元（年初至今）
-  \item Alphabet云收入同比+82\%，超预期65\%
-  \item Alphabet资本开支指引上调至1950-2050亿美元
-  \item 亚洲（除中国）信贷增速8.5\%，18年最高
-  \item 中国6月土地出让收入同比-42.1\%
-  \item 中国AFD 3个月移动平均占GDP比重从-8.4\%收窄至-7.0\%
-  \item 全球主动型基金对日本低配比例从-1.6\%收窄至-0.48\%
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_016.jpg}
-\caption{Exhibit 1 - Exhibit 1-Exhibit 5) EXHIBIT 1: YTD, MSCI Japan is up 14\% and NK225 is up 29\%. NK225 saw -6\% correction in Jul Japan Market Performance - MSCI Japan, TOPIX, NIKKEI 225 Data till Jul 21th 2026 EXHIBIT 2: Semis (79\%) remains the w}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_027.jpg}
-\caption{Exhibit 3 - Exhibit 5: We are raising our 2027 GAAP EPS estimate, key for valuation, by 2\% to \textbackslash{}\$15.01 Alphabet Estimate Changes}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_045.jpg}
-\caption{Exhibit 1 - Exhibit 1: Credit growth in Asia ex China at a 18-year high Bank credit is still the most important}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_081.jpg}
-\caption{Exhibit 1 - Exhibit 1: Fiscal revenue growth continued to outperform spending growth in June Exhibit 2: Property-related government revenue weakened further in June Exhibit 3: Our augmented fiscal deficit (AFD) metric continued to narrow i}
-\end{figure}
-{\small\color{refgray}本节综合 12 篇研究；涉及 Bernstein、BofA、MS、UBS、Citi、GS。}
-\newpage
-\subsection{区域市场与综合：结构性分化与周期拐点}
-\textbf{全球资金正从宏观叙事转向微观验证，日本银行受益于利率正常化与信贷加速，中国地产呈现K型复苏，电网设备受AI数据中心需求拉动进入超级周期，而互联网板块估值分化加剧，连锁药房则迎来行业出清后的客流再分配。}
-\subsubsection*{主流共识}
-\begin{itemize}
-  \item 日本银行板块受益于利率正常化与信贷加速，中期ROE前景支撑估值重估。
-  \item 中国地产行业最困难阶段正在过去，二手房流动性改善与高端需求韧性为2027年盈利修复奠定基础。
-  \item AI数据中心需求成为电网设备与光纤光缆市场的新增长引擎，相关订单与价格创历史新高。
-\end{itemize}
-\subsubsection*{分歧与条件差异}
-\begin{itemize}
-  \item 中国地产复苏路径：HSBC认为K型复苏下头部企业集中度提升，但大众市场与高端市场分化加剧。
-  \item 光纤光缆周期顶点：JEF认为2026年为价格与利润顶点，但中国产能快速扩张可能提前压制价格。
-  \item 北美互联网估值：MS指出头部平台（AMZN/GOOGL/META）估值折价，但中小型公司估值压缩更为显著，市场对二季度业绩预期分化。
-\end{itemize}
-\subsubsection*{机构观点}
-\paragraph{GS} 日本银行板块中期至长期ROE前景支撑P/B看向2倍或更高。城市银行贷款增速从1-3月的5.9\%加速至4-6月的8.4\%，利率正常化（2025年12月加息、2026年6月前短端利率上行）与资本市场活跃构成核心顺风。全球资金关注度提升，读者焦点从金融科技回归传统银行。
-{\small\color{refgray}数据：城市银行贷款同比增速：1-3月5.9\%，4-6月8.4\%\par}
-{\small\color{refgray}数据：GE Vernova电气化业务Q2订单63.47亿美元，同比+93\%\par}
-{\small\color{refgray}数据：GE Vernova数据中心订单H1超50亿美元，超FY2025全年\par}
-{\small\color{refgray}数据：特斯拉Q2非GAAP EPS 0.33美元，低于共识0.55美元\par}
-{\small\color{refgray}边际变化：贷款增速从5.9\%加速至8.4\%，GE Vernova数据中心订单半年超去年全年，特斯拉FSD用户环比+16\%\par}
-\paragraph{HSBC} 中国地产行业K型复苏：二手房流动性改善（10城7月成交量同比+7\%），高端需求韧性（杭州H1豪宅成交创纪录），头部企业市占率提升（Top10同比+1ppt）。越秀地产盈利预警（H1核心净利润同比-90\textasciitilde{}95\%）已被市场定价，注意力转向2027年盈利修复。
-{\small\color{refgray}数据：10城二手房成交量7月同比+7\%\par}
-{\small\color{refgray}数据：上海6月二手房成交量同比+21\%\par}
-{\small\color{refgray}数据：越秀地产H1核心净利润同比-90\textasciitilde{}95\%\par}
-{\small\color{refgray}数据：Top10开发商市占率同比+1ppt\par}
-{\small\color{refgray}边际变化：二手房成交量从下跌转为同比+7\%，越秀盈利预警后股价反涨1.6\%显示利空出尽\par}
-\paragraph{JPM} 中国连锁药房行业出清加速，客流再分配驱动同店增长重新加速。益丰Q2同店增速约6\%，老百姓5-6\%，大参林环比加速。全国药店数预计从70万家缩减至40-50万家，单店服务人口从2000人升至3000人，年化同店增长约5\%。并购估值压缩至0.3-0.5倍PS，加盟模式成为扩张主力（70-80\%为存量翻牌）。
-{\small\color{refgray}数据：益丰Q2同店增速约6\%\par}
-{\small\color{refgray}数据：全国药店数预计从70万家降至40-50万家\par}
-{\small\color{refgray}数据：并购估值0.3-0.5倍PS\par}
-{\small\color{refgray}数据：新签加盟店中70-80\%为存量翻牌\par}
-{\small\color{refgray}边际变化：同店增速从Q1低个位数升至Q2约5-6\%，加盟模式从新建为主转为存量翻牌为主\par}
-\paragraph{JEF} 全球光纤产能到2028年将增长69\%，中国产能弹性高，2026年成为价格与利润顶点。光纤均价从2020年31元/芯公里升至2026年Q2突破100元，预计全年146元（较2018年峰值高18\%）。数据中心占光纤需求比例将从2024年10\%跃升至2027年55\%。长飞光纤评级下调至持有。
-{\small\color{refgray}数据：光纤均价2026年预计146元/芯公里，较2025年+203\%\par}
-{\small\color{refgray}数据：全球光纤产能2028年+69\%\par}
-{\small\color{refgray}数据：数据中心占光纤需求2027年达55\%\par}
-{\small\color{refgray}数据：中国新增产能14700吨\par}
-{\small\color{refgray}边际变化：光纤均价突破100元创历史新高，数据中心需求占比从10\%跃升至55\%\par}
-\paragraph{MS} 北美互联网板块进入Q2财报季前整体下跌4\%，估值分化显著：AMZN/GOOGL/META的2026年预期PE分别为26/23/20倍，较各自历史均值低17\%/11\%/16\%。数字广告板块承压（市值加权-3.1\%），电商板块逆势上涨（+0.7\%）。中小市值公司估值压缩更为明显。
-{\small\color{refgray}数据：互联网板块上周下跌4\%，SPX/NDX -2\%/-4\%\par}
-{\small\color{refgray}数据：AMZN/GOOGL/META 2026E PE: 26/23/20倍\par}
-{\small\color{refgray}数据：数字广告板块市值加权-3.1\%\par}
-{\small\color{refgray}数据：电商板块市值加权+0.7\%\par}
-{\small\color{refgray}边际变化：头部平台估值折价扩大（较历史均值低11-17\%），数字广告与电商板块回报方向相反\par}
-\subsubsection*{关键数据}
-\begin{itemize}
-  \item 日本城市银行贷款增速从5.9\%加速至8.4\%
-  \item GE Vernova数据中心订单H1超50亿美元，超FY2025全年
-  \item 中国10城二手房成交量7月同比+7\%
-  \item 全国药店数预计从70万家降至40-50万家
-  \item 光纤均价2026年预计146元/芯公里，较2018年峰值高18\%
-  \item AMZN/GOOGL/META 2026E PE分别为26/23/20倍
-  \item 越秀地产H1核心净利润同比-90\textasciitilde{}95\%
-  \item 全球光纤产能2028年+69\%
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_104.jpg}
-\caption{Figure 1 - Figure 1: Key developers' 1H/2H net profit split in 2025 Figure 2: Earnings profile of developers}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_139.jpg}
-\caption{Exhibit 4 - Exhibit 4: NTM EV/EBITDA for AMZN/GOOGL/META vs. Historical Averages Exhibit 5: Internet names fell -4\% last week (SPX/NDX -2/-4\%) Exhibit 6: NTM EV/EBITDA Multiples Are -6\%/-13\% vs. 5/10-Year Averages...}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_140.jpg}
-\caption{Exhibit 5 - Exhibit 5: Internet names fell -4\% last week (SPX/NDX -2/-4\%) Exhibit 6: NTM EV/EBITDA Multiples Are -6\%/-13\% vs. 5/10-Year Averages... Exhibit 7: ... and NTM EV/Sales Multiples Are +18\%/+20\% vs. 5/10-Year Averages}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.88\linewidth]{figures/fig_141.jpg}
-\caption{Exhibit 6 - Exhibit 6: NTM EV/EBITDA Multiples Are -6\%/-13\% vs. 5/10-Year Averages... Exhibit 7: ... and NTM EV/Sales Multiples Are +18\%/+20\% vs. 5/10-Year Averages Exhibit 8: Digital Media: Treating SBC as Cash Increases EV/EBITDA Multipl}
-\end{figure}
-{\small\color{refgray}本节综合 7 篇研究；涉及 GS、HSBC、JPM、JEF、MS。}
+{\small\color{refgray}本节综合 1 篇研究；涉及 Bernstein。}
 \newpage
 \section{辅助信号｜战略咨询}
-本板块整合波士顿咨询近期研究，聚焦企业韧性、成本管理优先级、可再生能源扩张驱动因素、欧洲太空经济乘数效应及炼油行业AI转型，揭示扰动期超额回报来源、成本执行短板、土地与装机基础对风光部署的关键作用、太空投资的高杠杆回报以及AI对炼油利润的结构性改善。
-\subsection{企业韧性：扰动期超额回报的核心来源}
-\textbf{基于25年近1800家美国公司数据，扰动季度仅占研究周期的11\%，却解释了长期相对TSR的约30\%，韧性并非成本而是长期超额回报的关键。}
+本板块整合波士顿咨询近期研究，聚焦企业韧性、成本管理优先级、可再生能源扩张驱动因素、欧洲太空探索经济影响及炼油行业AI应用等主题，提供宏观、产业与资产叙事层面的辅助信号。
+\subsection{企业韧性：扰动时期的超额回报来源}
+\textbf{基于25年数据，扰动时期仅占研究周期的11\%，却解释了长期相对股东总回报（TSR）的约30\%，韧性是长期超额回报的关键来源。}
 \begin{itemize}
-  \item 扰动季度行业内TSR差距（第25至75百分位）达30个百分点，是平稳期（16个百分点）的近两倍，扰动是区分优秀与普通公司的关键窗口。
-  \item 韧性的三个维度中，降低即时冲击对扰动期相对TSR的贡献占63\%，恢复速度占23\%，恢复程度占15\%，抗压能力比事后追赶更重要。
-  \item 15\%的企业具备“通用韧性”（在超80\%扰动季度跑赢行业），这些公司25年年化TSR比行业高出5个百分点。
-  \item 财务缓冲（低负债）是通用韧性企业的显著特征，提示企业应优先构建扰动前的缓冲设计（财务储备、供应链冗余、早期预警机制）。
+  \item 扰动季度内，行业第25与第75百分位公司TSR差距达30个百分点，是平稳期（16个百分点）的近两倍，扰动是区分优秀与普通公司的关键窗口。
+  \item 韧性拆解为三个维度：降低即时冲击（贡献63\%）、恢复速度（23\%）、恢复程度（15\%），抗压能力比事后追赶更重要。
+  \item 15\%的企业具备“通用韧性”（在超80\%扰动季度跑赢行业），25年年化TSR比行业高出5个百分点，韧性并非成本而是长期超额回报来源。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_174.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_049.jpg}
 \caption{EXHIBIT 1 - Our study revealed several insights about the value of resilience: What happens during crisis quarters? The majority were linked to major economic recessions—the dot-com recession, the global financial crisis, and the coronavirus crisis. The rest were about ev}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_175.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_050.jpg}
 \caption{Exhibit 5 - Outperformance is driven primarily by withstanding the immediate impact. Of the three phases of resilience, not all are equally important. Reducing the immediate impact of a shock accounts for 63\% of relative TSR in crisis periods, while greater recovery speed}
 \end{figure}
-\subsection{2025年企业战略优先级转向成本管理，执行能力存系统性短板}
-\textbf{2024年底全球570余名高管调查显示，成本管理取代增长成为第一战略优先级（33\%，+8pp），但企业平均仅实现48\%的成本节约目标，文化阻力是最大障碍。}
+\subsection{成本管理优先级上升，但执行能力存短板}
+\textbf{2025年企业战略优先级中，成本管理超越增长扩张成为第一要务，但企业平均仅实现48\%的成本节约目标，文化阻力是最大障碍。}
 \begin{itemize}
-  \item 成本目标达成率不足五成，未能实现长期结构性降本的企业在股东总回报上比成功者平均落后9个百分点。
-  \item 最大障碍是“员工与组织文化”层面的阻力，主动推动文化对齐和敏捷管理的企业成本削减效率高出最多11个百分点。
-  \item 供应链优化与产品组合简化是优先方向，67\%的高管计划将节省成本重新投入增长和创新，体现“减脂不减肌”策略。
-  \item 成本管理本质是组织能力问题，而非单纯财务或运营技术，激励机制、沟通方式和组织惯性决定长期效果。
+  \item 2024年底全球570余名高管调查显示，33\%将成本管理列为2025年第一优先级（较2024年上升8个百分点），70\%有足够中期可见度做出决策，企业并非盲目调整而是有选择收紧。
+  \item 企业平均仅实现48\%的成本节约目标，未能达成目标的企业在股东总回报上比成功者落后9个百分点；最大障碍是“员工与组织文化”阻力，而非技术或资源不足。
+  \item 供应链优化与产品组合简化是优先方向，主动推动文化对齐与敏捷管理的企业成本削减效率高出同行最多11个百分点，成本管理本质是组织能力问题。
 \end{itemize}
-\subsection{可再生能源扩张的核心驱动：廉价土地与现有装机基础}
-\textbf{基于中美10万个数据点分析，廉价土地和现有装机基础对风能太阳能部署的预测能力远超资源禀赋或国家目标，电网条件影响路径在中美截然不同。}
+\subsection{可再生能源扩张：土地成本与装机基础是关键驱动}
+\textbf{基于中美10万个数据点的分析，廉价土地和现有装机基础是驱动风能和太阳能部署的核心变量，其重要性超过资源禀赋或国家目标。}
 \begin{itemize}
-  \item 廉价土地解释了中美约20\%-21\%的装机增长，美国土地成本最低十州装机增速（24\%）是最高十州（9\%）的2.6倍。
-  \item 现有装机基础解释了12\%-15\%的增长，体现经验曲线正向效应：早期部署降低后续供应链成本、施工经验和融资门槛。
-  \item 美国需求增长解释了13\%的扩张，而中国增长动力更多来自国家能源转型战略和跨区输电规划，与本地需求关联微弱。
-  \item 美国州级可再生能源目标短期与装机增长相关，但长期无显著影响，暗示政策目标本身不足以成为持续驱动力。
+  \item 廉价土地解释了中美约20\%-21\%的装机增长，美国土地成本最低十州装机增幅（24\%）是最高十州（9\%）的2.6倍，土地可及性直接决定项目商业模式可行性。
+  \item 现有装机基础解释了约12\%-15\%的增长，体现经验曲线正向效应：早期部署降低后续供应链成本、施工经验和融资门槛，形成“先发优势加速”循环。
+  \item 美国需求增长解释了13\%的扩张，而中国因西部基地远离负荷中心，增长动力更多来自国家能源转型战略与跨区输电规划，而非本地需求。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_184.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_059.jpg}
 \caption{Exhibit 1 - A close look at renewables at the province and state level reveals some surprises. \$\textasciicircum{}\{2\}\$ For example, even though China is the global leader in overall renewable energy production, the top five regions by share of electricity from renewables at the end of 202}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_185.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_060.jpg}
 \caption{Exhibit 2 - \#\# EXHIBIT 2 The Top Drivers Influencing Wind and Solar Scaling in the US and China Are Similar Relative importance of wind and solar adoption drivers across US states and Chinese provinces Note: Drivers are listed in descending order by combined share of scal}
 \end{figure}
-\subsection{欧洲太空探索：500亿欧元投资可撬动超5倍GDP乘数效应}
-\textbf{2025-2040年500亿欧元太空探索计划预计产生至少2600亿欧元累计GDP影响，乘数效应超5倍，催化效应贡献最大增量。}
+\subsection{欧洲太空探索：500亿欧元投资可撬动超5倍GDP乘数}
+\textbf{若2025-2040年投入500亿欧元，欧洲太空探索计划累计GDP影响至少达2600亿欧元，乘数效应超5倍，催化效应是主要增量来源。}
 \begin{itemize}
-  \item 直接、间接、诱导效应合计约1500亿欧元（约3倍乘数），其中直接贡献250亿欧元（新增4000个太空岗位），间接700亿欧元，诱导550亿欧元。
-  \item 催化效应贡献额外1100亿欧元，主要来自新太空市场（在轨服务、发射市场等），是拉开乘数差距的关键。
-  \item 全球太空经济2022年约4600亿美元，赋能价值约3.1万亿美元，预计2040年分别达1万亿和7.9万亿美元。
-  \item 欧洲目前仅占全球政府太空预算约15\%，与其约25\%的GDP份额不匹配，不参与的成本可能随其他大国加速布局而上升。
+  \item 直接、间接与诱导效应合计约1500亿欧元（约3倍乘数），包括新增4000个太空岗位（250亿欧元直接GDP）、采购支出带动700亿欧元间接影响、消费拉动550亿欧元。
+  \item 催化效应贡献额外1100亿欧元，主要来自新太空市场（如发射、制造、在轨服务），是拉开乘数差距的关键；全球太空经济2022年约4600亿美元，预计2040年达1万亿美元。
+  \item 欧洲目前仅占全球政府太空预算约15\%，与其GDP份额（约25\%）不匹配；不参与的成本已不可忽视，尤其在太空大国加速布局背景下。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_179.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_054.jpg}
 \caption{Figure 1 - Space exploration provides distinct levels of benefits that stem from the direct contribution of its core activities and propagate up to the level of the broader economy and society (Figure 1). Benefits of space exploration arise from a dedicated investment in}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_180.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_055.jpg}
 \caption{Figure 2 - \#\# 3.1 Economic and societal benefits of space exploration Space exploration has the potential to create at least \textbackslash{}\textasciitilde{}€260 billion of cumulative GDP impact and an average of \textbackslash{}\textasciitilde{}90,000 FTEs in Europe between 2025 and 2040 (Figure 2). The investment in space explor}
 \end{figure}
-\subsection{炼油行业AI转型：利润改善的结构性杠杆}
-\textbf{炼油产能增长持续超过需求，利润承压，AI到2030年可为中位玩家带来每桶0.5-1.2美元EBIT提升（超50\%利润改善），覆盖全价值链。}
+\subsection{炼油行业AI应用：利润改善的量化路径}
+\textbf{炼油行业面临长期需求下降与产能过剩的结构性矛盾，AI可带来每桶0.5-1.2美元EBIT提升，相当于超过50\%的利润改善空间。}
 \begin{itemize}
-  \item 2026-2030年净炼油产能增长超过需求增长，航空煤油和石脑油需求更具韧性，汽油因电动化面临侵蚀。
-  \item AI应用覆盖规划与排程（0.15-0.30美元/桶）、运营（0.1-0.5美元/桶）、物流与贸易（0.2-0.3美元/桶）、维护（0.05-0.1美元/桶）等环节。
-  \item 东南亚炼油企业通过AI数字孪生进行短期排程优化，实现每桶0.15-0.30美元EBIT提升，案例已可量化。
-  \item AI转型需从周期性、孤立的优化转向实时、以利润为导向的决策闭环，覆盖规划、运营、物流、维护和安全。
+  \item 2026-2030年净炼油产能增长将超过需求增长，即使保守情景下供应仍超乐观需求；航空煤油和石脑油需求更具韧性，汽油因电动化面临侵蚀。
+  \item AI应用覆盖全价值链：规划与排程（每桶0.15-0.30美元）、运营（0.1-0.5美元）、物流与贸易（0.2-0.3美元）、维护与可靠性（0.05-0.1美元），已有可量化落地案例。
+  \item 东南亚炼油企业通过AI数字孪生实现短期排程优化，每桶提升0.15-0.3美元；AI从周期性孤岛优化转向实时利润导向决策闭环，是波动中创造竞争优势的核心杠杆。
 \end{itemize}
 \newpage
 \section{辅助信号｜智库/国际机构}
-本板块整合亚洲开发银行与IMF最新研究，聚焦三大主题：亚太国防支出温和但持久的产出乘数、人民币计价结算的渐进渗透条件、以及全球能源消费的“加法”而非“替代”历史模式。
-\subsection{亚太国防支出：温和持久但高度依赖初始条件}
-\textbf{亚洲开发银行研究发现，新兴市场国防支出冲击带来温和但持久的正向产出响应（8年后乘数约0.7\%-1\%），但效果高度依赖财政空间、制度质量与冲突暴露程度，并非普适增长工具。}
+本板块整合了亚洲开发银行、IMF等机构的最新研究，聚焦三大主题：全球国防支出与补贴的结构性变化、人民币国际化的渐进路径、以及能源转型中的“加法”悖论。这些研究揭示了新兴市场国防支出的持久乘数效应、中国补贴对贸易的显著拉动、人民币计价扩张的条件依赖、以及清洁能源占比上升并未减少化石燃料绝对消费量的历史规律。
+\subsection{全球国防支出与工业补贴的结构性变化}
+\textbf{新兴市场国防支出和工业补贴正以结构性方式重塑全球宏观与贸易格局，其效应取决于初始条件与行业选择。}
 \begin{itemize}
-  \item 1990-2023年全球样本显示，新兴市场国防支出冲击8年后产出乘数约0.7\%-1\%，而发达经济体效应偏弱甚至为负。
-  \item 亚太地区国防支出增速显著高于其他新兴区域：2023年全球军事支出达2.4万亿美元，亚太新兴地区贡献超三分之一增量；中国一国支出2960亿美元，占区域近40\%。
-  \item 越南、菲律宾过去十年国防预算增幅超50\%，印尼、马来西亚国防负担升至GDP的1.2\%-1.5\%；拉丁美洲维持约1.3\%，撒哈拉以南非洲从2.3\%降至1.6\%。
-  \item 乘数差异源于初始条件：财政空间、收入能力、制度质量与冲突暴露程度是关键调节变量，而非支出规模本身。
-  \item 研究采用联合国政府职能分类数据，通过局部投影方法识别经周期调整的国防支出冲击，稳健性检验覆盖样本选择、变量定义与模型设定。
+  \item 亚洲开发银行研究显示，1990-2023年间新兴市场国防支出冲击产生温和但持久的正向产出响应，乘数在8年后达0.7\%-1\%，而发达经济体效应偏弱甚至为负；差异源于财政空间、制度质量与冲突暴露程度等初始条件。
+  \item 亚太地区国防支出增速显著高于其他新兴区域，2023年全球军事支出达2.4万亿美元，亚太新兴地区贡献超三分之一增量；中国支出2960亿美元，占区域近40\%，越南、菲律宾十年间国防预算增幅超50\%。
+  \item IMF工作论文量化2015-2023年全球工业补贴效应：中国对战略行业补贴使其出口增长约12\%，而美欧同类补贴仅带来约2\%出口提升；中国补贴率从0.5\%升至1.8\%，75\%以上流向半导体、机器人等战略行业，欧美则更多流向农业等非战略领域。
+  \item 中国在电子行业的规模经济效应放大补贴对出口的影响，模拟显示中国电子行业出口增长约20\%，而农业等非战略行业出口下降；补贴的行业选择比总额更能解释贸易效应差异。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_144.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_019.jpg}
 \caption{Figure 1 - \#\# 4.3. Stylized Facts Figure 1. Defense Spending as a Share of Gross Domestic Product: Median and Interquartile Range Across Country Groups (1990–2023) Figure 2. Composition of Government Defense Spending by Function (Share of Total Defense), 1990–2020}
 \end{figure}
-\subsection{人民币计价结算：贸易依赖与制度安排驱动的渐进渗透}
-\textbf{亚洲开发银行研究所基于70个地区2016-2023年数据发现，人民币计价扩张并非对美元的直接替代，而是在美元主导框架下，通过贸易依赖、制度安排和政策工具共同推动的渐进过程。}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\linewidth]{figures/fig_030.jpg}
+\caption{Figure 1 - Figure 1: Global exports of and subsidies to strategic products (2012-23 average) (b) Share of subsidy measures To evaluate the impact of industrial subsidies, we utilize a quantitative trade model incorporating external econo}
+\end{figure}
+\subsection{人民币国际化的渐进路径与条件依赖}
+\textbf{人民币计价扩张并非对美元的直接替代，而是在美元主导框架下，通过贸易依赖、制度安排和政策工具共同推动的渐进过程。}
 \begin{itemize}
-  \item 对中国的出口依赖度是解释人民币计价份额最稳定的变量，进口端效应比出口端更显著，反映中国作为买方的议价能力。
-  \item 但贸易依赖度本身不充分：许多对华贸易高依赖地区人民币计价比例仍低，存在结构性障碍限制传导。
-  \item 实行外汇管制、资本管制的经济体反而更倾向使用人民币（而非美元），接入CIPS、签订货币互换协议显著提升计价比例。
-  \item 2016-2023年跨越中美贸易摩擦、新冠疫情与俄乌冲突，外部冲击未根本改变美元主导地位，但改变了部分地区计价货币选择的边际行为。
-  \item 报告使用IMF贸易计价货币份额数据，系统量化汇率制度、资本管制、清算行与高层互访等新变量。
+  \item 亚洲开发银行研究所基于70个地区2016-2023年贸易计价数据发现，对中国的出口依赖度是解释人民币计价份额最稳定的变量，进口端效应比出口端更显著，显示中国作为买方在推动人民币计价方面拥有更强议价能力。
+  \item 贸易依赖度本身不充分：许多对华贸易依赖度高的地区人民币计价比例仍较低，存在结构性障碍限制贸易关系向计价货币选择的传导。
+  \item 报告引入汇率制度类型、资本管制程度、人民币清算行和货币互换协议、政治制度联系强度及高层互访频率等新变量，发现这些制度安排显著影响人民币计价扩张。
+  \item 2016-2023年跨越中美贸易摩擦、新冠疫情和俄乌冲突，外部冲击未根本改变美元主导地位，但改变了部分地区在计价货币选择上的边际行为。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_149.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_024.jpg}
 \caption{Figure 1 - Figure 1: As the local currency swap amount increases, so too does the renminbi settlement amount. However, since these settlement amounts include capital transaction figures, and as the data are only published for the top dozen o}
 \end{figure}
-\subsection{全球能源消费的“加法”逻辑：广义杰文斯悖论}
-\textbf{IMF最新工作论文指出，全球能源与材料流动历史上遵循“加法”而非“替代”逻辑，清洁能源占比上升并不必然导致化石燃料绝对消费量下降，效率提升反而刺激更多需求。}
+\subsection{能源转型中的“加法”悖论与结构性粘性}
+\textbf{全球能源与材料流动遵循“加法”而非“替代”逻辑，清洁能源占比上升并不必然导致化石燃料绝对消费量下降。}
 \begin{itemize}
-  \item 自2012年以来，全球化石燃料消费总量与排放总量仍在增长，即便可再生能源在电力结构中份额持续扩大。
-  \item 20世纪和21世纪技术创新未导致任何主要能源或材料的绝对消费下降（唯一例外：羊毛、石棉、汞）。
-  \item “广义杰文斯悖论”将市场力量、地缘格局、贸易安排和资金因素纳入分析，解释能源消费的结构性粘性。
-  \item 可再生能源基础设施建设本身需要大量钢铁、水泥和化工产品，而这些产品生产目前仍高度依赖化石燃料。
-  \item 全球碳排放强度持续下降但排放总量上升，这一矛盾组合正是“加法”逻辑的直接体现。
+  \item IMF工作论文提出“广义杰文斯悖论”：全球碳排放强度持续下降，但排放总量仍在上升；2012年以来全球化石燃料消费总量与排放总量仍在增长，即便可再生能源在电力结构中份额持续扩大。
+  \item 历史数据显示，20世纪和21世纪技术创新未导致任何主要能源或材料的绝对消费下降（羊毛、石棉、汞除外）；所有能源载体和工业材料全球消费总量均呈上升趋势。
+  \item 能源转型在历史尺度上更应描述为“能源叠加”：新技术的引入在既有体系之上增加新的能源和材料需求层，如可再生能源基础设施建设本身需要大量钢铁、水泥和化工产品，其生产目前仍高度依赖化石燃料。
+  \item 报告将市场力量、地缘政治格局、贸易安排和资金因素纳入分析框架，解释为何全球能源与材料消费呈现结构性粘性。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_169.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_044.jpg}
 \caption{Figure 1 - \#\# Energy Transition? The data show an absence of energy transition in absolute terms. Variations in the shares of global sources of energy over time mask increasing consumption levels for all energies. While there have been large shifts in the shares of diffe}
 \end{figure}
 \subsection{宏观政策与金融稳定}
 \textbf{用于校准利率、通胀、财政约束和金融稳定叙事。}
 \begin{itemize}
   \item 爱尔兰作为小型开放地区，正同时面对贸易政策调整、人工智能扩散和能源转型三重结构性力量。IMF最新发布的国别报告（SIP/2026/070）通过可计算一般均衡模型，量化了这三股力量对爱尔兰产出、出口、就业和碳排放的长期影响。核心发现是：贸易政策变化主要带来贸易流向的重新配置，对总体...
-  \item 中国在战略行业的补贴力度与贸易效应，已显著超过美国和欧盟。IMF最新工作论文通过构建多国多部门一般均衡模型，首次系统量化了2015至2023年间全球工业补贴对贸易流动和福利的影响。报告的核心发现是：中国对战略行业的补贴使其出口增长约12\%，而美国和欧盟的同类补贴仅带来约2\%的出口...
   \item 国际货币产品组织（IMF）2026年4月发布的技术援助报告，详细记录了为蒙古央行（BoM）开发并部署的现时预测与短期预测系统（NNTF）。该系统的核心价值在于：在验证测试中，其对关键指标的预测误差较历史人工预测降低了最高25\%，尤其在现时预测和未来一个季度的预测窗口上表现突出。这...
   \item 2025年11月和2026年2月，IMF通过高加索、中亚和蒙古区域能力发展中心（CCAMTAC）分两阶段对阿塞拜疆财政部开展了技术援助，核心目标是帮助该国建立按季度和年度编制并发布政府财政统计（GFS）与公共部门债务统计（PSDS）的能力。报告显示，阿塞拜疆已能定期向IMF提交年...
   \item 2015年11月16日，匈牙利福林（HUF）正式接入持续联系结算系统（CLS），成为中东欧地区首个通过支付对支付（PvP）机制完成外汇结算的货币。IMF三位研究员利用这一准自然实验，首次提供了结算不确定性在汇率定价中被定价的因果证据。
 \end{itemize}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_150.jpg}
+\includegraphics[width=0.88\linewidth]{figures/fig_025.jpg}
 \caption{Figure 1 - \#\# C. Tariff and Trade Agreements: Re-Shaping Global Trade 8. Trade policy shocks affect Ireland primarily through trade reallocation rather than through large aggregate output effects. Consistent with standard trade theory, the tariff shock has negative globa}
 \end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.88\linewidth]{figures/fig_155.jpg}
-\caption{Figure 1 - Figure 1: Global exports of and subsidies to strategic products (2012-23 average) (b) Share of subsidy measures To evaluate the impact of industrial subsidies, we utilize a quantitative trade model incorporating external econo}
+\includegraphics[width=0.88\linewidth]{figures/fig_035.jpg}
+\caption{Figure 1 - \#\# G. Forecast Quality Monitor 38. To support system maintenance, a Forecast Quality Monitor was developed as a standardized reporting tool. The monitor tracks forecast errors and selected diagnostic indicators at both the individual-model and model-portfolio }
 \end{figure}
 \section{结语}
-后续需验证的关键节点包括：日本央行7月会议政策声明及加息时点信号、Adobe免费增值模式付费转化率数据、德州仪器库存天数及毛利率修复节奏、Lululemon美洲业务调整具体规模与效果、中国CXO板块二季度财报兑现情况、以及小鹏与理想订单爆发能否持续转化为月度交付。
+后续需验证的关键节点包括：AMD 2nm Venice CPU的竞争力及微软等客户采用节奏；Intuitive Surgical手术量增速可持续性及微创医疗机器人利润质量；CCL价格年底目标360-400元/张的实际落地情况；多晶硅价格触底信号及减产执行力度；Spotify定价增速是否已触及阶段性高点及增值服务变现弹性。
 \newpage
 \section{覆盖概览}
-投行/券商 62 篇；战略咨询 5 篇；智库/国际机构 8 篇。\par
-投行覆盖：GS 13篇 / MS 12篇 / JPM 8篇 / Bernstein 5篇 / Citi 5篇 / BofA 4篇 / DB 4篇 / HSBC 3篇 / UBS 3篇 / JEF 2篇 / NOM 2篇 / BARC 1篇\par
+投行/券商 10 篇；战略咨询 5 篇；智库/国际机构 8 篇。\par
+投行覆盖：Citi 6篇 / Bernstein 2篇 / GS 2篇\par
 \section{Disclaimer}
 {\scriptsize\color{refgray}
 This community is a paid learning and information-sharing community created for general educational purposes only. The membership fee is charged solely for access to community discussions, educational content, organization, and operational costs. It is not an advisory fee, management fee, performance fee, brokerage fee, or compensation for personalized financial, investment, legal, tax, or professional advice.\par
