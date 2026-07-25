@@ -1,0 +1,89 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_kc8cvt8c/pdfs/0001-61-JPM-Yingliu Electromechanical -A-603308-Read-across from GE Vernova-s 2Q26 results-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "燃气轮机供应链，有个",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：应流股份-GEVernova2Q26业绩关联分析",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-JPM-Yingliu Electromechanical -A-603308-Read-across from GE Vernova-s 2Q26 results-260723.pdf",
+    "cleaned_source_title": "JPM-Yingliu Electromechanical -A-603308-Read-across from GE Vernova-s 2Q26 results",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：YingliuElectromechanicalA60330",
+    "raw_candidates": [
+      "应流股份-GE Vernova 2Q26业绩关联分析",
+      "应流股份-GE Vernova 2Q26订单数据与市场份额展望",
+      "应流股份-GE Vernova 2Q26业绩与燃气轮机上游铸件需求"
+    ],
+    "cleaned_candidates": [
+      "JPM：应流股份-GEVernova2Q26业绩关联分析",
+      "JPM：应流股份-GEVernova2Q26订单数据与市场份额展望",
+      "JPM：应流股份-GEVernova2Q26业绩与燃气轮机上游铸件需",
+      "JPM：YingliuElectromechanicalA60330",
+      "JPM：GEVernova在2026年第二季度签署了约20GW的新燃"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：YingliuElectromechanicalA60330",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：GEVernova在2026年第二季度签署了约20GW的新燃",
+        "reasons": [
+          "anchor_coverage=0.41",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：应流股份-GEVernova2Q26业绩关联分析",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：应流股份-GEVernova2Q26业绩关联分析"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "585",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
