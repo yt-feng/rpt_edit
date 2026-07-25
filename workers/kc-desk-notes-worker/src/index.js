@@ -1137,8 +1137,7 @@ async function currentUserFromRequest(env, request) {
   if (!token) throw new Error("Please log in.");
   const payload = await verifyAccountPayload(env, token, "user");
   const username = normalizeUsername(payload.username);
-  const mirroredUser = await safeR2GetJson(env, accountKey("users", "username", username));
-  const user = mirroredUser || await findSiteUserByUsername(env, username);
+  const user = await findSiteUserByUsername(env, username);
   if (!user) throw new Error("Account not found.");
   if (
     String(payload.sub || "") !== String(user.id || "")
