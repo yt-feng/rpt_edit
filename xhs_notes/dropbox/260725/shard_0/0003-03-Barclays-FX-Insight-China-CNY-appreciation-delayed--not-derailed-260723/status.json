@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_oh2odcdy/pdfs/0003-03-BARC-FX Insight-China-CNY appreciation delayed- not derailed-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "BARC",
+  "cover_short_title": "人民币升值只是暂停，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "股票|个股->公司 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "BARC：货币市场与相关指标观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-03-BARC-FX Insight-China-CNY appreciation delayed- not derailed-260723.pdf",
+    "cleaned_source_title": "BARC-FX Insight-China-CNY appreciation delayed- not derailed",
+    "institution_name": "BARC",
+    "required_terms": [],
+    "deterministic_fallback": "BARC：FXInsight中国CNYappreciat",
+    "raw_candidates": [
+      "BARC：人民币升值节奏调整而非逆转",
+      "BARC：人民币升值节奏调整-2026年底目标6.65",
+      "BARC：人民币升值节奏调整-央行中间价管理"
+    ],
+    "cleaned_candidates": [
+      "BARC：人民币升值节奏调整而非逆转",
+      "BARC：人民币升值节奏调整-2026年底目标6.65",
+      "BARC：人民币升值节奏调整-央行中间价管理",
+      "BARC：FXInsight中国CNYappreciat",
+      "BARC：维持2026年底美元兑人民币6.65的预测"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "BARC：人民币升值节奏调整-2026年底目标6.65",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "BARC：人民币升值节奏调整-央行中间价管理",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "BARC：FXInsight中国CNYappreciat",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：维持2026年底美元兑人民币6.65的预测",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "BARC：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "BARC：人民币升值节奏调整而非逆转",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "BARC：货币市场与相关指标观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "483",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
