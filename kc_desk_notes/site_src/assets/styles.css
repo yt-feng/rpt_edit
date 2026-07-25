@@ -710,6 +710,22 @@ button.primary:disabled {
   gap: 10px;
 }
 
+.account-redeem-row {
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.account-redeem-row input {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  font: inherit;
+  font-weight: 750;
+}
+
 .secondary-button {
   min-height: 44px;
   border: 1px solid var(--line);
@@ -1038,7 +1054,7 @@ a.secondary-button {
 
 .account-admin-table {
   width: 100%;
-  min-width: 920px;
+  min-width: 1040px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -1104,6 +1120,28 @@ a.secondary-button {
   color: var(--muted);
   font-size: 12px;
   font-weight: 800;
+}
+
+.account-admin-renew-field {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-renew-choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.account-admin-renew-choice input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 .account-admin-form-grid select,
@@ -3308,6 +3346,19 @@ a.secondary-button {
   .account-admin-wechat-summary {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .account-admin-heading {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  #accountAdminUserCount {
+    margin-right: auto;
+  }
+
+  .account-admin-form-grid {
+    grid-template-columns: 1fr;
   }
 
   .account-admin-file-actions {

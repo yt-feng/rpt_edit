@@ -2,6 +2,7 @@
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "MacroGate";
   const CONTACT_EMAIL = "econ.scroll@gmail.com";
+  const VID2PPT_SPONSOR_URL = "https://vid2ppt.com/sponsor/?from=kcdesk";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
   const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
@@ -370,7 +371,8 @@
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
     if (row.access_mode === "filters") return "条件报告下载权限";
-    if (row.plan === "annual") return "年度下载权限";
+    if (row.source === "vid2ppt_atlas" || row.grant_source === "vid2ppt_atlas") return "KCdesk.com 赠送会员权益";
+    if (row.plan === "annual") return "会员下载权限";
     if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
     return "下载权限";
   }
@@ -391,6 +393,14 @@
   }
 
   function accountRightSummary(data = {}) {
+    const effective = data && data.effective_access;
+    if (effective) {
+      if (effective.source === "error") return "权限核验失败（已拒绝）";
+      if (effective.active) {
+        return [accountRightLabel(effective), accountRightExpiryText(effective), accountRightUsageText(effective)].filter(Boolean).join("，");
+      }
+      return "";
+    }
     const access = data && data.access;
     if (access && access.active) {
       return [accountRightLabel(access), accountRightExpiryText(access), accountRightUsageText(access)].filter(Boolean).join("，");
@@ -425,7 +435,7 @@
   }
 
   function privateToolsUnlocked() {
-    return Boolean(getAdminToken() || canOpenOperationsPanel());
+    return Boolean(getAdminToken() || isSuperSession());
   }
 
   function canUseDeliveryTools(session = loadAuthSession()) {
@@ -528,7 +538,7 @@
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
-            <span>开通账号权限或获取报告，请联系${contactMethodHtml()}。</span>
+            <span>Vid2PPT 的 ATLAS 赞助恰好会赠送 KCdesk.com 对应时长会员权益；单篇报告或其它问题请联系${contactMethodHtml()}。</span>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -604,8 +614,8 @@
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
         if (adminOpen) {
-          adminOpen.hidden = !canOpenOperationsPanel(session);
-          adminOpen.textContent = isOperatorSession(session) && !isSuperSession(session) ? "运营后台" : "管理后台";
+          adminOpen.hidden = !isSuperSession(session);
+          adminOpen.textContent = "管理后台";
         }
         setStatus(statusOverride || (
           isSuperSession(session)
@@ -816,6 +826,7 @@
             <div class="account-admin-heading">
               <strong>用户信息</strong>
               <span id="accountAdminUserCount"></span>
+              <button class="secondary-button" id="accountAdminExportUsers" type="button">导出 Excel</button>
               <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
             </div>
             <div id="accountAdminUsersNotice" class="account-admin-module-notice" hidden></div>
@@ -858,6 +869,10 @@
                   <select id="accountAdminAccessDuration"></select>
                 </label>
                 <label>
+                  <span>到期日期（可精确指定）</span>
+                  <input id="accountAdminAccessExpiry" type="date">
+                </label>
+                <label>
                   <span>Institution</span>
                   <select id="accountAdminAccessInstitutions" multiple></select>
                 </label>
@@ -871,6 +886,11 @@
                 <span>备注</span>
                 <input id="accountAdminAccessNote" type="text" placeholder="可选">
               </label>
+              <label class="account-admin-renew-field">
+                <span>续期</span>
+                <span class="account-admin-renew-choice"><input id="accountAdminAccessRenew" type="checkbox"> 从今天按所选时长重新计算到期日</span>
+                <small>不勾选时，只改范围不会自动延长；需要精确日期可直接修改上方到期日期。</small>
+              </label>
               <div class="account-admin-user-editor-actions">
                 <button class="primary" type="submit">保存权限</button>
               </div>
@@ -879,12 +899,14 @@
               <table class="account-admin-table">
                 <thead>
                   <tr>
-                    <th>用户名</th>
-                    <th>邮箱</th>
-                    <th>状态</th>
+	                    <th>用户名</th>
+	                    <th>邮箱</th>
+	                    <th>注册站点</th>
+	                    <th>状态</th>
                     <th>账号</th>
-                    <th>下载权限</th>
+                    <th>实际下载权限</th>
                     <th>到期</th>
+                    <th>权限来源</th>
                     <th>注册</th>
                     <th>最近登录</th>
                     <th>操作</th>
@@ -907,8 +929,9 @@
   }
 
   function adminUserAccessLabel(user) {
-    if (user && user.role === "super") return "全站报告";
-    const access = user && user.access || {};
+    const access = user && (user.effective_access || user.access) || {};
+    if (access.source === "disabled") return "账号已禁用（不可下载）";
+    if (access.source === "error") return "权限读取失败（已拒绝）";
     if (!access.active) return "未开通";
     const suffix = accountRightUsageText(access);
     if (access.access_mode === "all") return suffix ? `全站报告 · ${suffix}` : "全站报告";
@@ -925,31 +948,75 @@
   }
 
   function adminUserAccessExpiry(user) {
-    const access = user && user.access || {};
-    if (user && user.role === "super") return "长期";
+    const access = user && (user.effective_access || user.access) || {};
+    if (access.source === "disabled") return "-";
+    if (access.source === "error") return "核验失败";
     if (!access.active) return "-";
     if (access.lifetime) return "长期";
     return access.current_period_end ? String(access.current_period_end).slice(0, 10) : "-";
   }
 
+  function adminUserAccessSource(user) {
+    const access = user && (user.effective_access || user.access) || {};
+    const entitlement = user && user.entitlement || {};
+    if (access.source === "role") return "账号角色";
+    if (access.source === "disabled") return "账号已禁用";
+    if (access.source === "vid2ppt_atlas") return `Vid2PPT ATLAS 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
+    if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
+    if (access.source === "entitlement") {
+      return entitlement.grant_source === "vid2ppt_atlas"
+        ? `Vid2PPT ATLAS 赠送${entitlement.source_plan_code ? ` · ${entitlement.source_plan_code}` : ""}`
+        : "会员权益";
+    }
+    if (access.source === "stored") return "后台授权";
+    if (access.source === "error") return "核验失败（已拒绝）";
+    return "未授权";
+  }
+
+  function adminUserViewModel(user) {
+    const disabled = Boolean(user && user.disabled);
+    return {
+      username: String(user && user.username || ""),
+      email: String(user && user.email || ""),
+      site_origin: String(user && (user.site_origin || user.registered_site) || "kcdesk"),
+      registered_site: String(user && (user.registered_site || user.site_origin) || "kcdesk"),
+      entitlement_source_site: String(user && user.entitlement && user.entitlement.source_site || ""),
+      entitlement_grant_source: String(user && user.entitlement && user.entitlement.grant_source || ""),
+      entitlement_plan_code: String(user && user.entitlement && user.entitlement.source_plan_code || ""),
+      status: disabled ? "已禁用" : "正常",
+      account: adminUserEntitlementLabel(user),
+      access: adminUserAccessLabel(user),
+      expiry: adminUserAccessExpiry(user),
+      registered: String(user && user.created_at || "").slice(0, 10),
+      last_login: String(user && user.last_login_at || "").replace("T", " ").slice(0, 16),
+      access_source: adminUserAccessSource(user),
+      access_updated: String(user && (user.effective_access || user.access) && (user.effective_access || user.access).updated_at || "").replace("T", " ").slice(0, 19),
+      disabled,
+    };
+  }
+
   function adminUserRow(user) {
-    const email = user.email || "";
-    const editable = user.role !== "super";
-    const disabled = Boolean(user.disabled);
+    const view = adminUserViewModel(user);
+    const email = view.email;
+    const canEditAccess = user.role === "user";
+    const canToggleStatus = user.role !== "super";
+    const disabled = view.disabled;
     return `
       <tr data-email="${escapeHtml(email)}"${disabled ? ' class="is-disabled-user"' : ""}>
-        <td>${escapeHtml(user.username || "")}</td>
+        <td>${escapeHtml(view.username)}</td>
         <td>${escapeHtml(email)}</td>
-        <td><span class="account-admin-user-status${disabled ? " is-disabled" : ""}">${disabled ? "已禁用" : "正常"}</span></td>
-        <td>${escapeHtml(adminUserEntitlementLabel(user))}</td>
-        <td>${escapeHtml(adminUserAccessLabel(user))}</td>
-        <td>${escapeHtml(adminUserAccessExpiry(user))}</td>
-        <td>${escapeHtml(String(user.created_at || "").slice(0, 10))}</td>
-        <td>${escapeHtml(String(user.last_login_at || "").replace("T", " ").slice(0, 16))}</td>
-        <td>${editable ? `
+        <td>${escapeHtml(view.registered_site || view.site_origin)}</td>
+        <td><span class="account-admin-user-status${disabled ? " is-disabled" : ""}">${escapeHtml(view.status)}</span></td>
+        <td>${escapeHtml(view.account)}</td>
+        <td title="${escapeHtml(view.access_source)}">${escapeHtml(view.access)}</td>
+        <td>${escapeHtml(view.expiry)}</td>
+        <td>${escapeHtml(view.access_source)}</td>
+        <td>${escapeHtml(view.registered)}</td>
+        <td>${escapeHtml(view.last_login)}</td>
+        <td>${canEditAccess || canToggleStatus ? `
           <div class="account-admin-row-actions">
-            <button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>
-            <button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>
+            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>` : ""}
+            ${canToggleStatus ? `<button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>` : ""}
           </div>
         ` : ""}</td>
       </tr>
@@ -962,7 +1029,7 @@
     if (targets.userCount) targets.userCount.textContent = `${rows.length} users`;
     targets.users.innerHTML = rows.length
       ? rows.map(adminUserRow).join("")
-      : '<tr><td colspan="9">暂无用户。</td></tr>';
+      : '<tr><td colspan="11">暂无用户。</td></tr>';
   }
 
   function optionMarkup(options = [], selected = []) {
@@ -990,10 +1057,13 @@
     const options = accountAdminAccessOptions || {};
     const username = user.username || user.email || "";
     targets.userEditor.hidden = false;
+    targets.userEditor.dataset.expectedChangeId = String(access.change_id || "");
+    targets.userEditor.dataset.expectedUpdatedAt = String(access.updated_at || "");
     targets.accessEmail.value = user.email || "";
     targets.userEditorTitle.textContent = `编辑权限：${username}`;
     targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
     targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : (access.duration_value || "12")]);
+    if (targets.accessExpiry) targets.accessExpiry.value = String(access.current_period_end || "").slice(0, 10);
     targets.accessInstitutions.innerHTML = optionMarkup(options.institutions || [], access.institutions || []);
     targets.accessIndustries.innerHTML = optionMarkup(options.industries || [], access.industries || []);
     setSelectValues(targets.accessInstitutions, access.institutions || []);
@@ -1006,6 +1076,7 @@
       </label>
     `).join("");
     targets.accessNote.value = access.note || "";
+    if (targets.accessRenew) targets.accessRenew.checked = false;
     targets.accessMode.dispatchEvent(new Event("change"));
     if (targets.status) {
       targets.status.className = "status-line ok";
@@ -1020,6 +1091,10 @@
   function updateUserAccessEditorMode(targets) {
     if (!targets || !targets.userEditor) return;
     const filters = targets.accessMode.value === "filters";
+    const enabled = targets.accessMode.value !== "none";
+    if (targets.accessDuration) targets.accessDuration.disabled = !enabled;
+    if (targets.accessExpiry) targets.accessExpiry.disabled = !enabled || targets.accessDuration.value === "lifetime";
+    if (targets.accessRenew) targets.accessRenew.disabled = !enabled || targets.accessDuration.value === "lifetime";
     targets.accessInstitutions.disabled = !filters;
     targets.accessIndustries.disabled = !filters;
     targets.accessPageRanges.querySelectorAll("input").forEach((input) => {
@@ -1040,6 +1115,10 @@
         ? Array.from(targets.accessPageRanges.querySelectorAll("input:checked")).map((input) => input.value)
         : [],
       note: targets.accessNote.value || "",
+      renew: Boolean(targets.accessRenew && targets.accessRenew.checked),
+      expires_on: mode === "none" ? "" : (targets.accessExpiry && targets.accessExpiry.value || ""),
+      expected_change_id: String(targets.userEditor.dataset.expectedChangeId || ""),
+      expected_updated_at: String(targets.userEditor.dataset.expectedUpdatedAt || ""),
     };
     const response = await fetch(`${workerUrl}/account-admin/user-access`, {
       method: "POST",
@@ -1050,6 +1129,9 @@
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.detail || "保存权限失败。");
     if (!data.verified) throw new Error("权限保存后读回校验失败，请重试。");
+    const savedAccess = data.access && typeof data.access === "object" ? data.access : {};
+    targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
+    targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
     const updated = data.user || null;
     if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
     else {
@@ -2147,6 +2229,55 @@
     }
   }
 
+  function adminExportFilename() {
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, "0");
+    return `kcdesk-users-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+  }
+
+  async function exportAdminUsersToExcel(workerUrl, targets) {
+    if (!targets.exportUsers) return;
+    targets.exportUsers.disabled = true;
+    targets.status.className = "status-line";
+    targets.status.textContent = "正在获取最新用户状态并生成 Excel…";
+    try {
+      const data = await loadAccountAdminSummary(workerUrl, targets, { throwOnError: true });
+      if (!data || data.can_view_users === false) throw new Error("当前账号不能导出用户信息。");
+      const users = Array.isArray(data.users) ? data.users : [];
+      const rows = users.map(adminUserViewModel);
+      const { buildXlsxWorkbook, downloadXlsx } = await import("/assets/xlsx-export.js");
+      const blob = buildXlsxWorkbook({
+        sheetName: "用户状态",
+        columns: [
+          { header: "用户名", key: "username", width: 18 },
+          { header: "邮箱", key: "email", width: 30 },
+          { header: "注册站点", key: "registered_site", width: 14 },
+          { header: "用户来源", key: "site_origin", width: 14 },
+          { header: "状态", key: "status", width: 12 },
+          { header: "账号", key: "account", width: 14 },
+          { header: "实际下载权限", key: "access", width: 28 },
+          { header: "到期", key: "expiry", width: 14 },
+          { header: "注册", key: "registered", width: 14 },
+          { header: "最近登录", key: "last_login", width: 20 },
+          { header: "权限来源", key: "access_source", width: 20 },
+          { header: "授权来源站点", key: "entitlement_source_site", width: 16 },
+          { header: "授权来源类型", key: "entitlement_grant_source", width: 18 },
+          { header: "授权代号", key: "entitlement_plan_code", width: 14 },
+          { header: "权限最后更新", key: "access_updated", width: 22 },
+        ],
+        rows,
+      });
+      downloadXlsx(blob, adminExportFilename());
+      targets.status.className = "status-line ok";
+      targets.status.textContent = `Excel 已导出：${rows.length} 个用户（使用点击时最新状态）。`;
+    } catch (error) {
+      targets.status.className = "status-line error";
+      targets.status.textContent = error.message || "Excel 导出失败。";
+    } finally {
+      targets.exportUsers.disabled = false;
+    }
+  }
+
   function showAccountAdminModal(workerUrl) {
     if (!workerUrl || !canOpenOperationsPanel()) return;
     const session = loadAuthSession();
@@ -2178,6 +2309,7 @@
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
+    const exportUsers = document.getElementById("accountAdminExportUsers");
     const newUser = document.getElementById("accountAdminNewUser");
     const userCreator = document.getElementById("accountAdminUserCreator");
     const userCreatorClose = document.getElementById("accountAdminUserCreatorClose");
@@ -2190,10 +2322,12 @@
     const accessEmail = document.getElementById("accountAdminAccessEmail");
     const accessMode = document.getElementById("accountAdminAccessMode");
     const accessDuration = document.getElementById("accountAdminAccessDuration");
+    const accessExpiry = document.getElementById("accountAdminAccessExpiry");
     const accessInstitutions = document.getElementById("accountAdminAccessInstitutions");
     const accessIndustries = document.getElementById("accountAdminAccessIndustries");
     const accessPageRanges = document.getElementById("accountAdminAccessPageRanges");
     const accessNote = document.getElementById("accountAdminAccessNote");
+    const accessRenew = document.getElementById("accountAdminAccessRenew");
     const files = document.getElementById("accountAdminFiles");
     const filesNotice = document.getElementById("accountAdminFilesNotice");
     const analyticsCount = document.getElementById("accountAdminAnalyticsCount");
@@ -2219,6 +2353,7 @@
       userCount,
       users,
       usersSection,
+      exportUsers,
       newUser,
       userCreator,
       userCreatorClose,
@@ -2231,10 +2366,12 @@
       accessEmail,
       accessMode,
       accessDuration,
+      accessExpiry,
       accessInstitutions,
       accessIndustries,
       accessPageRanges,
       accessNote,
+      accessRenew,
       files,
       filesNotice,
       usersNotice,
@@ -2253,7 +2390,9 @@
       if (event.target === modal) finish();
     });
     refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }));
+    if (exportUsers) exportUsers.addEventListener("click", () => exportAdminUsersToExcel(workerUrl, targets));
     if (accessMode) accessMode.addEventListener("change", () => updateUserAccessEditorMode(targets));
+    if (accessDuration) accessDuration.addEventListener("change", () => updateUserAccessEditorMode(targets));
     if (newUser && userCreator) {
       newUser.addEventListener("click", () => {
         userCreator.hidden = false;
@@ -2735,14 +2874,15 @@
     const gate = document.getElementById("adminGate");
     if (!gate) return;
     function update() {
-      gate.classList.toggle("is-unlocked", privateToolsUnlocked());
+      const unlocked = isSuperSession();
+      gate.hidden = !unlocked;
+      gate.classList.toggle("is-unlocked", unlocked);
     }
     update();
     document.addEventListener("kcdesk-admin-change", update);
     document.addEventListener("kcdesk-auth-change", update);
     gate.addEventListener("click", () => {
-      if (canOpenOperationsPanel()) showAccountAdminModal(workerUrl);
-      else showAdminLogin(workerUrl);
+      if (isSuperSession()) showAccountAdminModal(workerUrl);
     });
   }
 
@@ -4025,14 +4165,30 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">请先注册或登录账号；开通权限请联系${contactMethodHtml()}。</p>
+        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限；Vid2PPT 的 ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
+          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 ATLAS</a>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
+        </div>
+        <div class="account-redeem-row">
+          <input id="vid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
+          <button class="secondary-button" id="redeemVid2pptCode" type="button">兑换</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
       </section>
     `;
+  }
+
+  function vid2pptSponsorUrlForSession(session = loadAuthSession()) {
+    const url = new URL(VID2PPT_SPONSOR_URL);
+    url.searchParams.set("from", "kcdesk");
+    const user = session && session.user || {};
+    const email = String(user.email || "").trim();
+    const username = String(user.username || "").trim();
+    if (email) url.searchParams.set("email", email);
+    if (username) url.searchParams.set("username", username);
+    return url.toString();
   }
 
   function setLineStatus(target, text, kind) {
@@ -4093,6 +4249,9 @@
     if (!panel || !workerUrl) return;
     const openAccount = document.getElementById("openAccountPanel");
     const accountDownload = document.getElementById("accountDownloadReport");
+    const sponsorLink = document.getElementById("openVid2pptSponsor");
+    const redeemInput = document.getElementById("vid2pptRedeemCode");
+    const redeemButton = document.getElementById("redeemVid2pptCode");
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
     const passwordForm = document.getElementById("unlockForm");
@@ -4105,12 +4264,13 @@
     async function refresh() {
       const session = loadAuthSession();
       panel.hidden = false;
+      if (sponsorLink) sponsorLink.href = vid2pptSponsorUrlForSession(session);
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
-        hint.textContent = `请先注册或登录账号；注册必须填写常用邮箱。开通权限请联系${contactMethodText()}。`;
-        statusTarget(`注册后，管理员会在 5 个工作日内通过邮件开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。`);
+        hint.textContent = "登录后可查看账号下载权限；Vid2PPT 的 ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。";
+        statusTarget(`未登录时可先注册或登录账号；需要会员权益请前往 Vid2PPT 赞助页选择 ATLAS。其它问题可联系 ${CONTACT_EMAIL}。`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -4126,8 +4286,8 @@
         } else {
           if (passwordForm) passwordForm.hidden = false;
           statusTarget(summary
-            ? `当前账号有${summary}，但不包含此报告。如需调整权限，请联系${contactMethodText()}。`
-            : `当前账号尚未解锁此报告。如需开通权限，请联系${contactMethodText()}。`);
+            ? `当前账号有${summary}，但不包含此报告。Vid2PPT ATLAS 赞助会赠送 KCdesk.com 对应时长会员权益。`
+            : "当前账号尚未解锁此报告。请前往 Vid2PPT 赞助页选择 ATLAS；支付完成后，会赠送 KCdesk.com 对应时长会员权益。");
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;
@@ -4136,6 +4296,53 @@
     }
 
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
+    if (sponsorLink) {
+      sponsorLink.addEventListener("click", () => {
+        trackEvent(workerUrl, "vid2ppt_atlas_sponsor_click", {
+          ...analyticsReportPayload(item, source),
+          site_origin: "kcdesk",
+          target_site: "vid2ppt",
+          purchase_site: "vid2ppt.com",
+          gift_benefit_site: "kcdesk.com",
+        });
+      });
+    }
+    if (redeemButton && redeemInput) {
+      redeemButton.addEventListener("click", async () => {
+        const session = loadAuthSession();
+        if (!session) {
+          statusTarget("请先登录 KCdesk 账号，再兑换 Vid2PPT 代码。", "error");
+          showAccountModal(workerUrl, context);
+          return;
+        }
+        const code = String(redeemInput.value || "").trim().toUpperCase();
+        if (!code) {
+          statusTarget("请先输入 Vid2PPT 兑换代码。", "error");
+          redeemInput.focus();
+          return;
+        }
+        redeemButton.disabled = true;
+        statusTarget("正在校验 Vid2PPT 兑换代码…");
+        try {
+          const response = await fetch(`${workerUrl}/vid2ppt/redeem-code`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({ code }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) throw new Error(data.detail || "兑换失败。");
+          redeemInput.value = "";
+          const entitlement = data.entitlement || {};
+          const summary = accountRightSummary({ effective_access: entitlement });
+          statusTarget(summary ? `兑换成功，已开通：${summary}。` : "兑换成功，KCdesk.com 赠送会员权益已开通。", "ok");
+          refresh();
+        } catch (error) {
+          statusTarget(error.message || "兑换失败，请稍后重试。", "error");
+        } finally {
+          redeemButton.disabled = false;
+        }
+      });
+    }
     accountDownload.addEventListener("click", async () => {
       accountDownload.disabled = true;
       try {

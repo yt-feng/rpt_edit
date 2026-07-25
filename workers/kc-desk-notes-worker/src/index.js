@@ -6,6 +6,8 @@ const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
 const PASSWORD_ITERATIONS = 120000;
 const GENERATED_EMAIL_DOMAIN = "users.kcdesk.com";
+const SITE_ORIGIN = "kcdesk";
+const VID2PPT_SOURCE_SITE = "vid2ppt";
 const USERNAME_PATTERN = /^[a-z0-9][a-z0-9_.-]{2,31}$/;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const ACTIVE_STATUSES = new Set(["active", "trialing"]);
@@ -33,43 +35,6 @@ const ACCESS_DURATION_OPTIONS = [
   { value: "24", label: "2年", months: 24 },
   { value: "lifetime", label: "长期", months: 0 },
 ];
-const BOOTSTRAP_ACCESS_GRANTS = {
-  "17372527191@163.com": {
-    access_mode: "all",
-    status: "active",
-    current_period_end: "2027-07-07T05:40:19.920Z",
-    duration_value: "12",
-    note: "Restored full-site access after admin persistence audit.",
-  },
-  "nkj101310@outlook.com": {
-    access_mode: "all",
-    status: "active",
-    current_period_end: "2027-07-07T05:40:19.922Z",
-    duration_value: "12",
-    note: "Restored full-site access after admin persistence audit.",
-  },
-  "ziyang@kcdesk.com": {
-    access_mode: "all",
-    status: "active",
-    current_period_end: "2027-07-07T05:40:19.923Z",
-    duration_value: "12",
-    note: "Restored full-site access after admin persistence audit.",
-  },
-  "kris@kcdesk.com": {
-    access_mode: "all",
-    status: "active",
-    current_period_end: "2027-07-07T05:40:19.923Z",
-    duration_value: "12",
-    note: "Restored full-site access after admin persistence audit.",
-  },
-  "yjia0405@gmail.com": {
-    access_mode: "all",
-    status: "active",
-    current_period_end: "2027-01-07T05:40:19.924Z",
-    duration_value: "6",
-    note: "Restored full-site access after admin persistence audit.",
-  },
-};
 const REPORT_INDUSTRY_RULES = [
   ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
   ["Equity Strategy", /\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b/],
@@ -112,6 +77,13 @@ const PADDLE_HANDLED_EVENTS = new Set([
   "subscription.paused",
   "subscription.resumed",
 ]);
+const VID2PPT_ATLAS_PLANS = {
+  "ATLAS-M": { months: 1, label: "ATLAS monthly" },
+  "ATLAS-Q": { months: 3, label: "ATLAS quarter" },
+  "ATLAS-Y": { months: 12, label: "ATLAS year" },
+};
+const VID2PPT_REDEEM_URL = "https://vid2ppt.com/api/usage";
+const VID2PPT_CODE_PATTERN = /^[A-Z0-9][A-Z0-9-]{7,39}$/;
 
 // External report integration. Search/detail endpoints are public; PDF access
 // still requires a password.
@@ -364,7 +336,7 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, Range, X-KC-Timestamp, X-KC-Signature",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, X-Vid2PPT-Signature, Range, X-KC-Timestamp, X-KC-Signature",
     "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
     "Vary": "Origin",
   };
@@ -514,20 +486,25 @@ function adminTokenSecret(env) {
   return String(env.PASSWORD_SECRET || env.MASTER_KEY || "");
 }
 
-async function signAdminToken(env, payload) {
+async function adminTokenSignature(env, body) {
   const secret = adminTokenSecret(env);
   if (!secret) throw new Error("Admin token secret is not configured");
-  const body = base64UrlEncodeText(JSON.stringify(payload));
-  const signature = base64UrlEncodeBytes(await hmacSha256Bytes(secret, body));
+  return base64UrlEncodeBytes(await hmacSha256Bytes(secret, `kcdesk:admin-token:v1:${body}`));
+}
+
+async function signAdminToken(env, payload) {
+  const claims = { ...payload, kind: "admin", aud: "kcdesk-private-tools", v: 1 };
+  const body = base64UrlEncodeText(JSON.stringify(claims));
+  const signature = await adminTokenSignature(env, body);
   return `${body}.${signature}`;
 }
 
 async function verifyAdminToken(env, token) {
-  const secret = adminTokenSecret(env);
-  if (!secret) throw new Error("Admin token secret is not configured");
-  const [body, signature] = String(token || "").split(".");
+  const parts = String(token || "").split(".");
+  if (parts.length !== 2) throw new Error("Admin session is invalid");
+  const [body, signature] = parts;
   if (!body || !signature) throw new Error("Admin session is invalid");
-  const expected = base64UrlEncodeBytes(await hmacSha256Bytes(secret, body));
+  const expected = await adminTokenSignature(env, body);
   if (!constantTimeEqual(signature, expected)) throw new Error("Admin session is invalid");
 
   let payload;
@@ -537,7 +514,17 @@ async function verifyAdminToken(env, token) {
     throw new Error("Admin session is invalid");
   }
   const now = Math.floor(Date.now() / 1000);
-  if (!payload || Number(payload.exp || 0) < now) throw new Error("Admin session has expired");
+  if (
+    !payload
+    || payload.kind !== "admin"
+    || payload.aud !== "kcdesk-private-tools"
+    || payload.v !== 1
+    || !Number.isFinite(Number(payload.iat))
+    || Number(payload.iat) > now + 60
+  ) {
+    throw new Error("Admin session is invalid");
+  }
+  if (Number(payload.exp || 0) < now) throw new Error("Admin session has expired");
   return payload;
 }
 
@@ -665,14 +652,25 @@ function isSuperAccount(user) {
   if (!user) return false;
   const username = normalizeUsername(user.username);
   const email = normalizeEmail(user.email);
-  return SUPER_ACCOUNT_USERNAMES.has(username) || SUPER_ACCOUNT_EMAILS.has(email);
+  return SUPER_ACCOUNT_USERNAMES.has(username) && SUPER_ACCOUNT_EMAILS.has(email);
 }
 
 function isOperatorAccount(user) {
   if (!user) return false;
   const username = normalizeUsername(user.username);
   const email = normalizeEmail(user.email);
-  return OPERATOR_ACCOUNT_USERNAMES.has(username) || OPERATOR_ACCOUNT_EMAILS.has(email);
+  return OPERATOR_ACCOUNT_USERNAMES.has(username) && OPERATOR_ACCOUNT_EMAILS.has(email);
+}
+
+function isReservedPrivilegedIdentity(username, email) {
+  const normalizedUsername = normalizeUsername(username);
+  const normalizedEmail = normalizeEmail(email);
+  return SUPER_ACCOUNT_USERNAMES.has(normalizedUsername)
+    || SUPER_ACCOUNT_EMAILS.has(normalizedEmail)
+    || OPERATOR_ACCOUNT_USERNAMES.has(normalizedUsername)
+    || OPERATOR_ACCOUNT_EMAILS.has(normalizedEmail)
+    || NEWSFEED_ACCOUNT_USERNAMES.has(normalizedUsername)
+    || NEWSFEED_ACCOUNT_EMAILS.has(normalizedEmail);
 }
 
 function accountRole(user) {
@@ -689,12 +687,17 @@ function isNewsfeedAccount(user) {
   if (!user) return false;
   const username = normalizeUsername(user.username);
   const email = normalizeEmail(user.email);
-  return isSuperAccount(user) || NEWSFEED_ACCOUNT_USERNAMES.has(username) || NEWSFEED_ACCOUNT_EMAILS.has(email);
+  return isSuperAccount(user) || (
+    NEWSFEED_ACCOUNT_USERNAMES.has(username)
+    && NEWSFEED_ACCOUNT_EMAILS.has(email)
+  );
 }
 
 function accessErrorStatus(error) {
   const message = String(error && error.message || "");
-  return /log in|account|access denied|not enabled|only .*admin/i.test(message) ? 403 : 500;
+  if (/disabled|禁用|access denied|not enabled|only .*admin/i.test(message)) return 403;
+  if (/log in|session|account not found/i.test(message)) return 401;
+  return 503;
 }
 
 function generatedEmailForUsername(username) {
@@ -706,21 +709,33 @@ function isGeneratedEmail(email) {
 }
 
 function accountSecret(env) {
+  // AUTH_SECRET historically also peppers stored password hashes. Keep the
+  // fallback until those hashes are migrated; token protocols are separated
+  // cryptographically below so sharing this base secret cannot cross domains.
   const secret = String(env.AUTH_SECRET || env.PASSWORD_SECRET || env.MASTER_KEY || "").trim();
   if (!secret || secret === "unconfigured") throw new Error("Account service is temporarily unavailable.");
   return secret;
 }
 
+async function accountTokenSignature(env, body) {
+  return base64UrlEncodeBytes(await hmacSha256Bytes(
+    accountSecret(env),
+    `kcdesk:account-token:v1:${body}`,
+  ));
+}
+
 async function signAccountPayload(env, payload) {
   const body = base64UrlEncodeText(JSON.stringify(payload));
-  const signature = base64UrlEncodeBytes(await hmacSha256Bytes(accountSecret(env), body));
+  const signature = await accountTokenSignature(env, body);
   return `${body}.${signature}`;
 }
 
 async function verifyAccountPayload(env, token, expectedKind) {
-  const [body, signature] = String(token || "").split(".");
+  const parts = String(token || "").split(".");
+  if (parts.length !== 2) throw new Error("Session is invalid.");
+  const [body, signature] = parts;
   if (!body || !signature) throw new Error("Session is invalid.");
-  const expected = base64UrlEncodeBytes(await hmacSha256Bytes(accountSecret(env), body));
+  const expected = await accountTokenSignature(env, body);
   if (!constantTimeEqual(signature, expected)) throw new Error("Session is invalid.");
   let payload;
   try {
@@ -754,6 +769,9 @@ function publicUser(user) {
     username: user.username || "",
     email,
     email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
+    site_origin: user.site_origin || SITE_ORIGIN,
+    registered_site: user.registered_site || user.site_origin || SITE_ORIGIN,
+    source_site: user.source_site || user.site_origin || SITE_ORIGIN,
     created_at: user.created_at || "",
     updated_at: user.updated_at || "",
     disabled: accountDisabled(user),
@@ -814,7 +832,20 @@ async function supabaseRequest(env, method, path, payload = null, options = {}) 
 }
 
 function hasSupabaseConfig(env) {
-  return cleanEnv(env.SUPABASE_URL) && cleanEnv(env.SUPABASE_SERVICE_ROLE_KEY);
+  const mode = String(env.ACCOUNT_STORE_MODE || "").trim().toLowerCase();
+  const url = cleanEnv(env.SUPABASE_URL);
+  const serviceKey = cleanEnv(env.SUPABASE_SERVICE_ROLE_KEY);
+  if (!["supabase", "r2"].includes(mode)) {
+    throw new Error("Account storage mode is not configured.");
+  }
+  if (mode === "supabase") {
+    if (!url || !serviceKey) throw new Error("Account database configuration is incomplete.");
+    return true;
+  }
+  if (url || serviceKey) {
+    throw new Error("R2 account mode cannot be combined with Supabase credentials.");
+  }
+  return false;
 }
 
 function accountBucket(env) {
@@ -830,6 +861,18 @@ async function r2GetJson(env, key) {
   } catch (_error) {
     return null;
   }
+}
+
+async function r2GetJsonStrict(env, key) {
+  const object = await accountBucket(env).get(key);
+  if (!object) return null;
+  return JSON.parse(await object.text());
+}
+
+async function r2GetJsonObjectStrict(env, key) {
+  const object = await accountBucket(env).get(key);
+  if (!object) return null;
+  return { object, value: JSON.parse(await object.text()) };
 }
 
 async function safeR2GetJson(env, key) {
@@ -879,18 +922,32 @@ async function writeSiteUserIndexesInR2(env, user) {
     id: user.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
     updated_at: user.updated_at || now,
   };
-  const writes = [
-    safeR2PutJson(env, accountKey("users", "id", normalized.id), normalized),
-  ];
-  if (normalized.username) writes.push(safeR2PutJson(env, accountKey("users", "username", normalized.username), normalized));
-  if (normalized.email) writes.push(safeR2PutJson(env, accountKey("users", "email", normalized.email), normalized));
-  const results = await Promise.all(writes);
-  if (!results.some(Boolean)) throw new Error("Account storage is temporarily unavailable.");
+  const keys = [accountKey("users", "id", normalized.id)];
+  if (normalized.username) keys.push(accountKey("users", "username", normalized.username));
+  if (normalized.email) keys.push(accountKey("users", "email", normalized.email));
+  await Promise.all(keys.map((key) => r2PutJson(env, key, normalized)));
+  const verified = await Promise.all(keys.map((key) => r2GetJsonStrict(env, key)));
+  if (verified.some((row) => {
+    try {
+      return validateSiteUserRow(row, {
+        id: normalized.id,
+        username: normalized.username,
+        email: normalized.email,
+      }) !== row;
+    } catch (_error) {
+      return true;
+    }
+  })) {
+    throw new Error("Account identity verification failed.");
+  }
   return normalized;
 }
 
 async function repairSiteUserIndexesInR2(env, user) {
   if (!user) return null;
+  // Supabase is the sole identity authority in production. Never mirror its
+  // password hashes into the legacy R2 identity namespace.
+  if (hasSupabaseConfig(env)) return user;
   try {
     return await writeSiteUserIndexesInR2(env, user);
   } catch (_error) {
@@ -899,62 +956,92 @@ async function repairSiteUserIndexesInR2(env, user) {
 }
 
 async function updateSiteUserInR2(env, userId, fields) {
-  const existing = await safeR2GetJson(env, accountKey("users", "id", userId));
+  const existing = await r2GetJsonStrict(env, accountKey("users", "id", userId));
   const user = { ...(existing || {}), ...fields, id: userId, updated_at: new Date().toISOString() };
-  if (user.username) await r2PutJson(env, accountKey("users", "username", user.username), user);
-  if (user.email) await r2PutJson(env, accountKey("users", "email", user.email), user);
-  await r2PutJson(env, accountKey("users", "id", userId), user);
-  return user;
+  validateSiteUserRow(user, { id: userId });
+  return writeSiteUserIndexesInR2(env, user);
+}
+
+function validateSiteUserRow(row, expected = {}) {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Account identity verification failed.");
+  }
+  const username = normalizeUsername(row.username);
+  const email = normalizeEmail(row.email);
+  const id = String(row.id || "").trim();
+  if (!USERNAME_PATTERN.test(username) || !email || !id) {
+    throw new Error("Account identity verification failed.");
+  }
+  if (expected.username && username !== normalizeUsername(expected.username)) {
+    throw new Error("Account identity verification failed.");
+  }
+  if (expected.email && email !== normalizeEmail(expected.email)) {
+    throw new Error("Account identity verification failed.");
+  }
+  if (expected.id && id !== String(expected.id)) {
+    throw new Error("Account identity verification failed.");
+  }
+  return row;
 }
 
 async function findSiteUserByUsername(env, username) {
+  const normalized = normalizeUsername(username);
+  if (!USERNAME_PATTERN.test(normalized)) return null;
   if (hasSupabaseConfig(env)) {
-    try {
-      const query = queryString({ username: `eq.${username}`, limit: "1" });
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-      if (Array.isArray(rows) && rows.length) return rows[0];
-    } catch (_error) {
-      // Fall through to account data persisted in R2.
+    const query = queryString({ username: `eq.${normalized}`, site_origin: `eq.${SITE_ORIGIN}`, limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+    let row = Array.isArray(rows) && rows.length ? rows[0] : null;
+    if (!row) {
+      const fallback = queryString({ username: `eq.${normalized}`, limit: "1" });
+      const fallbackRows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${fallback}`);
+      row = Array.isArray(fallbackRows) && fallbackRows.length ? fallbackRows[0] : null;
     }
+    return validateSiteUserRow(row, { username: normalized });
   }
-  return repairSiteUserIndexesInR2(env, await safeR2GetJson(env, accountKey("users", "username", username)));
+  const row = await r2GetJsonStrict(env, accountKey("users", "username", normalized));
+  return repairSiteUserIndexesInR2(env, validateSiteUserRow(row, { username: normalized }));
 }
 
 async function findSiteUserByEmail(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return null;
   if (hasSupabaseConfig(env)) {
-    try {
-      const query = queryString({ email: `eq.${email}`, limit: "1" });
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-      if (Array.isArray(rows) && rows.length) return rows[0];
-    } catch (_error) {
-      // Fall through to account data persisted in R2.
+    const query = queryString({ email: `eq.${normalized}`, site_origin: `eq.${SITE_ORIGIN}`, limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+    let row = Array.isArray(rows) && rows.length ? rows[0] : null;
+    if (!row) {
+      const fallback = queryString({ email: `eq.${normalized}`, limit: "1" });
+      const fallbackRows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${fallback}`);
+      row = Array.isArray(fallbackRows) && fallbackRows.length ? fallbackRows[0] : null;
     }
+    return validateSiteUserRow(row, { email: normalized });
   }
-  return repairSiteUserIndexesInR2(env, await safeR2GetJson(env, accountKey("users", "email", email)));
+  const row = await r2GetJsonStrict(env, accountKey("users", "email", normalized));
+  return repairSiteUserIndexesInR2(env, validateSiteUserRow(row, { email: normalized }));
 }
 
 async function createSiteUser(env, fields) {
   if (!hasSupabaseConfig(env)) return createSiteUserInR2(env, fields);
-  try {
-    const rows = await supabaseRequest(env, "POST", "/rest/v1/site_users?select=*", fields, { preferReturn: true });
-    return Array.isArray(rows) && rows.length ? rows[0] : fields;
-  } catch (_error) {
-    return createSiteUserInR2(env, fields);
-  }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/site_users?select=*", {
+    site_origin: SITE_ORIGIN,
+    registered_site: SITE_ORIGIN,
+    source_site: SITE_ORIGIN,
+    ...fields,
+  }, { preferReturn: true });
+  const row = Array.isArray(rows) && rows.length ? rows[0] : fields;
+  return validateSiteUserRow(row, { username: fields.username, email: fields.email });
 }
 
 async function updateSiteUser(env, userId, fields) {
   if (!hasSupabaseConfig(env)) return updateSiteUserInR2(env, userId, fields);
-  try {
-    const query = queryString({ id: `eq.${userId}`, select: "*" });
-    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/site_users?${query}`, {
-      ...fields,
-      updated_at: new Date().toISOString(),
-    }, { preferReturn: true });
-    return Array.isArray(rows) && rows.length ? rows[0] : fields;
-  } catch (_error) {
-    return updateSiteUserInR2(env, userId, fields);
-  }
+  const query = queryString({ id: `eq.${userId}`, select: "*" });
+  const rows = await supabaseRequest(env, "PATCH", `/rest/v1/site_users?${query}`, {
+    ...fields,
+    updated_at: new Date().toISOString(),
+  }, { preferReturn: true });
+  const row = Array.isArray(rows) && rows.length ? rows[0] : null;
+  return validateSiteUserRow(row, { id: userId });
 }
 
 function accountDisabled(user) {
@@ -977,8 +1064,38 @@ function userAdminStateKeys(user = {}) {
 async function findUserAdminState(env, user = {}) {
   const keys = userAdminStateKeys(user);
   if (!keys.length) return {};
-  const rows = await Promise.all(keys.map((key) => safeR2GetJson(env, key)));
-  return rows.reduce((merged, row) => row && typeof row === "object" ? { ...merged, ...row } : merged, {});
+  const expectedEmail = normalizeEmail(user.email);
+  const expectedId = String(user.id || "").trim();
+  const rows = (await Promise.all(keys.map(async (key) => {
+    const row = await r2GetJsonStrict(env, key);
+    if (!row) return null;
+    if (typeof row !== "object" || Array.isArray(row) || typeof row.disabled !== "boolean") {
+      throw new Error("Account status verification failed.");
+    }
+    if (key.includes("/email/") && normalizeEmail(row.email) !== expectedEmail) {
+      throw new Error("Account status verification failed.");
+    }
+    if (key.includes("/id/") && String(row.user_id || "") !== expectedId) {
+      throw new Error("Account status verification failed.");
+    }
+    if (row.email && expectedEmail && normalizeEmail(row.email) !== expectedEmail) {
+      throw new Error("Account status verification failed.");
+    }
+    if (row.user_id && expectedId && String(row.user_id) !== expectedId) {
+      throw new Error("Account status verification failed.");
+    }
+    return row;
+  }))).filter(Boolean);
+  if (!rows.length) return {};
+  rows.sort((a, b) => String(a.updated_at || "").localeCompare(String(b.updated_at || "")));
+  const merged = rows.reduce((result, row) => ({ ...result, ...row }), {});
+  const disabledRow = rows.find((row) => row.disabled);
+  return {
+    ...merged,
+    disabled: rows.some((row) => row.disabled),
+    disabled_at: disabledRow && disabledRow.disabled_at || merged.disabled_at || "",
+    disabled_by: disabledRow && disabledRow.disabled_by || merged.disabled_by || "",
+  };
 }
 
 async function mergeSiteUserAdminState(env, user) {
@@ -1023,6 +1140,13 @@ async function currentUserFromRequest(env, request) {
   const mirroredUser = await safeR2GetJson(env, accountKey("users", "username", username));
   const user = mirroredUser || await findSiteUserByUsername(env, username);
   if (!user) throw new Error("Account not found.");
+  if (
+    String(payload.sub || "") !== String(user.id || "")
+    || normalizeUsername(payload.username) !== normalizeUsername(user.username)
+    || normalizeEmail(payload.email) !== normalizeEmail(user.email)
+  ) {
+    throw new Error("Session is invalid.");
+  }
   const merged = await mergeSiteUserAdminState(env, user);
   if (accountDisabled(merged)) throw new Error(disabledAccountMessage());
   return merged;
@@ -1060,55 +1184,125 @@ async function recoverExistingUserResponse(request, env, user, password) {
   return authSuccessResponse(request, env, 200, merged, { recovered: true });
 }
 
-async function findEntitlement(env, email) {
-  if (hasSupabaseConfig(env)) {
-    try {
-      const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
-      if (Array.isArray(rows) && rows.length) return rows[0];
-    } catch (_error) {
-      // Fall through to account data persisted in R2.
-    }
+function validateEntitlementRow(row, expectedEmail) {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Entitlement verification failed.");
   }
-  return safeR2GetJson(env, accountKey("entitlements", email));
+  const email = normalizeEmail(row.email);
+  const status = String(row.status || "");
+  const plan = String(row.plan || "");
+  const periodEnd = row.current_period_end;
+  const lastEventId = String(row.paddle_last_event_id || "").trim();
+  const lastOccurredAt = String(row.paddle_last_occurred_at || "").trim();
+  const paddleEventVersionValid = !lastEventId && !lastOccurredAt
+    || Boolean(validPaddleEventIdentity({ event_id: lastEventId, occurred_at: lastOccurredAt }));
+  if (
+    !email
+    || email !== normalizeEmail(expectedEmail)
+    || !status
+    || !plan
+    || typeof row.lifetime !== "boolean"
+    || !paddleEventVersionValid
+    || !(periodEnd === null || (typeof periodEnd === "string" && Number.isFinite(Date.parse(periodEnd))))
+  ) {
+    throw new Error("Entitlement verification failed.");
+  }
+  return row;
+}
+
+async function findEntitlement(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return null;
+  if (hasSupabaseConfig(env)) {
+    const query = queryString({ email: `eq.${normalized}`, order: "updated_at.desc", limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+    const row = Array.isArray(rows) && rows.length ? rows[0] : null;
+    return validateEntitlementRow(row, normalized);
+  }
+  return validateEntitlementRow(
+    await r2GetJsonStrict(env, accountKey("entitlements", normalized)),
+    normalized,
+  );
 }
 
 async function saveEntitlementInR2(env, email, fields, now = new Date().toISOString()) {
-  const existing = await safeR2GetJson(env, accountKey("entitlements", email));
-  return r2PutJson(env, accountKey("entitlements", email), {
+  const existing = validateEntitlementRow(
+    await r2GetJsonStrict(env, accountKey("entitlements", email)),
+    email,
+  );
+  const key = accountKey("entitlements", email);
+  const payload = {
     ...(existing || {}),
     ...fields,
     email,
     id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
     updated_at: now,
     created_at: existing && existing.created_at || now,
-  });
+  };
+  validateEntitlementRow(payload, email);
+  await r2PutJson(env, key, payload);
+  return validateEntitlementRow(await r2GetJsonStrict(env, key), email);
 }
 
 async function saveEntitlement(env, email, fields) {
   const now = new Date().toISOString();
   if (!hasSupabaseConfig(env)) return saveEntitlementInR2(env, email, fields, now);
-  try {
-    const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
-    const existingRows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
-    const existing = Array.isArray(existingRows) && existingRows.length ? existingRows[0] : null;
-    const payload = { ...fields, email, updated_at: now };
-    if (existing && existing.id) {
-      const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
-      const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${patchQuery}`, payload, { preferReturn: true });
-      return Array.isArray(rows) && rows.length ? rows[0] : payload;
-    }
-    const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
-      ...payload,
-      created_at: now,
-    }, { preferReturn: true });
-    return Array.isArray(rows) && rows.length ? rows[0] : payload;
-  } catch (_error) {
-    return saveEntitlementInR2(env, email, fields, now);
+  const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
+  const existingRows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+  const existing = Array.isArray(existingRows) && existingRows.length
+    ? validateEntitlementRow(existingRows[0], email)
+    : null;
+  const payload = {
+    site_origin: SITE_ORIGIN,
+    source_site: fields.source_site || SITE_ORIGIN,
+    grant_source: fields.grant_source || "kcdesk",
+    ...fields,
+    email,
+    updated_at: now,
+  };
+  if (existing && existing.id) {
+    const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
+    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${patchQuery}`, payload, { preferReturn: true });
+    return validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
   }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
+    ...payload,
+    created_at: now,
+  }, { preferReturn: true });
+  return validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
+}
+
+function validateReportPurchaseRow(row, expected = {}) {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Purchase verification failed.");
+  }
+  const email = normalizeEmail(row.email);
+  const reportId = String(row.report_id || "");
+  const source = String(row.source || "");
+  const status = String(row.status || "");
+  if (
+    !email
+    || email !== normalizeEmail(expected.email)
+    || !reportId
+    || reportId !== String(expected.report_id || "")
+    || !source
+    || source !== String(expected.source || "")
+    || !status
+  ) {
+    throw new Error("Purchase verification failed.");
+  }
+  return row;
 }
 
 async function findReportPurchase(env, email, reportId, source) {
+  const expected = {
+    email: normalizeEmail(email),
+    report_id: String(reportId || ""),
+    source: String(source || ""),
+  };
+  if (!expected.email || !expected.report_id || !expected.source) return null;
   if (hasSupabaseConfig(env)) {
     const query = queryString({
       email: `eq.${email}`,
@@ -1117,56 +1311,63 @@ async function findReportPurchase(env, email, reportId, source) {
       order: "updated_at.desc",
       limit: "1",
     });
-    try {
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-      if (Array.isArray(rows) && rows.length) return rows[0];
-    } catch (_error) {
-      // Fall through to account data persisted in R2.
-    }
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+    const row = Array.isArray(rows) && rows.length ? rows[0] : null;
+    return validateReportPurchaseRow(row, expected);
   }
-  return safeR2GetJson(env, accountKey("purchases", source, reportId, email));
+  return validateReportPurchaseRow(
+    await r2GetJsonStrict(env, accountKey("purchases", source, reportId, email)),
+    expected,
+  );
 }
 
 async function saveReportPurchaseInR2(env, fields, now = new Date().toISOString()) {
-  const existing = await safeR2GetJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email));
-  return r2PutJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email), {
+  const expected = { email: fields.email, report_id: fields.report_id, source: fields.source };
+  const existing = validateReportPurchaseRow(
+    await r2GetJsonStrict(env, accountKey("purchases", fields.source, fields.report_id, fields.email)),
+    expected,
+  );
+  const key = accountKey("purchases", fields.source, fields.report_id, fields.email);
+  const payload = {
     ...(existing || {}),
     ...fields,
     id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
     purchased_at: existing && existing.purchased_at || now,
     created_at: existing && existing.created_at || now,
     updated_at: now,
-  });
+  };
+  validateReportPurchaseRow(payload, expected);
+  await r2PutJson(env, key, payload);
+  return validateReportPurchaseRow(await r2GetJsonStrict(env, key), expected);
 }
 
 async function saveReportPurchase(env, fields) {
   const now = new Date().toISOString();
   if (!hasSupabaseConfig(env)) return saveReportPurchaseInR2(env, fields, now);
-  try {
-    const query = queryString({
-      email: `eq.${fields.email}`,
-      report_id: `eq.${fields.report_id}`,
-      source: `eq.${fields.source}`,
-      order: "updated_at.desc",
-      limit: "1",
-    });
-    const existingRows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-    const existing = Array.isArray(existingRows) && existingRows.length ? existingRows[0] : null;
-    const payload = { ...fields, updated_at: now };
-    if (existing && existing.id) {
-      const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
-      const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${patchQuery}`, payload, { preferReturn: true });
-      return Array.isArray(rows) && rows.length ? rows[0] : payload;
-    }
-    const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
-      ...payload,
-      purchased_at: now,
-      created_at: now,
-    }, { preferReturn: true });
-    return Array.isArray(rows) && rows.length ? rows[0] : payload;
-  } catch (_error) {
-    return saveReportPurchaseInR2(env, fields, now);
+  const expected = { email: fields.email, report_id: fields.report_id, source: fields.source };
+  const query = queryString({
+    email: `eq.${fields.email}`,
+    report_id: `eq.${fields.report_id}`,
+    source: `eq.${fields.source}`,
+    order: "updated_at.desc",
+    limit: "1",
+  });
+  const existingRows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+  const existing = Array.isArray(existingRows) && existingRows.length
+    ? validateReportPurchaseRow(existingRows[0], expected)
+    : null;
+  const payload = { ...fields, updated_at: now };
+  if (existing && existing.id) {
+    const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
+    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${patchQuery}`, payload, { preferReturn: true });
+    return validateReportPurchaseRow(Array.isArray(rows) && rows.length ? rows[0] : payload, expected);
   }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
+    ...payload,
+    purchased_at: now,
+    created_at: now,
+  }, { preferReturn: true });
+  return validateReportPurchaseRow(Array.isArray(rows) && rows.length ? rows[0] : payload, expected);
 }
 
 async function insertUsageEventInR2(env, email, eventType, metadata = {}) {
@@ -1183,12 +1384,14 @@ async function insertUsageEventInR2(env, email, eventType, metadata = {}) {
 
 async function insertUsageEvent(env, email, eventType, metadata = {}) {
   if (!hasSupabaseConfig(env)) return insertUsageEventInR2(env, email, eventType, metadata);
+  const siteOrigin = cleanAnalyticsText(metadata && metadata.site_origin || SITE_ORIGIN, 80) || SITE_ORIGIN;
   try {
     await supabaseRequest(env, "POST", "/rest/v1/usage_events", {
       email,
+      site_origin: siteOrigin,
       event_type: eventType,
       units: 1,
-      metadata,
+      metadata: { site_origin: siteOrigin, ...metadata },
     });
   } catch (_error) {
     await insertUsageEventInR2(env, email, eventType, metadata);
@@ -1222,6 +1425,11 @@ function publicEntitlement(row) {
     lifetime,
     current_period_end: currentPeriodEnd,
     active,
+    site_origin: row.site_origin || SITE_ORIGIN,
+    source_site: row.source_site || "",
+    grant_source: row.grant_source || "",
+    source_plan_code: row.source_plan_code || "",
+    source_reference: row.source_reference || "",
     updated_at: row.updated_at || "",
   };
 }
@@ -1292,42 +1500,28 @@ function publicAccessGrant(row) {
       .filter((value) => ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value)),
     note: String(row && row.note || "").slice(0, 240),
     source,
+    source_site: String(row && row.source_site || ""),
+    grant_source: String(row && row.grant_source || ""),
+    source_plan_code: String(row && row.source_plan_code || ""),
+    source_reference: String(row && row.source_reference || ""),
+    change_id: String(row && row.change_id || ""),
     updated_at: row && row.updated_at || "",
     updated_by: row && row.updated_by || "",
   };
-}
-
-function bootstrapAccessGrant(email) {
-  const normalized = normalizeEmail(email);
-  const grant = BOOTSTRAP_ACCESS_GRANTS[normalized];
-  if (!grant) return null;
-  return publicAccessGrant({
-    ...grant,
-    email: normalized,
-    source: "bootstrap",
-    updated_at: "2026-07-04T00:00:00.000Z",
-  });
 }
 
 function accessGrantBackupLatestKey(email) {
   return accountKey("access_backup", "latest", email);
 }
 
-function accessGrantBackupHistoryKey(email, timestamp) {
-  return accountKey("access_backup", "history", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
+function accessGrantBackupHistoryKey(email, timestamp, changeId = "") {
+  const suffix = `${timestamp || ""}-${changeId || ""}`.replace(/[^0-9A-Za-z_-]+/g, "-");
+  return accountKey("access_backup", "history", email, suffix);
 }
 
-function accessGrantBackupHistoryPrefix(email) {
-  return accountKey("access_backup", "history", email, "");
-}
-
-function accessGrantAuditKey(email, timestamp) {
-  return accountKey("access_audit", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
-}
-
-function accessGrantUpdatedAtMs(row) {
-  const time = Date.parse(row && row.updated_at || "");
-  return Number.isFinite(time) ? time : 0;
+function accessGrantAuditKey(email, timestamp, changeId = "") {
+  const suffix = `${timestamp || ""}-${changeId || ""}`.replace(/[^0-9A-Za-z_-]+/g, "-");
+  return accountKey("access_audit", email, suffix);
 }
 
 function accessGrantComparable(row) {
@@ -1341,10 +1535,12 @@ function accessGrantComparable(row) {
     duration_value: access.duration_value || "",
     download_limit: access.download_limit || 0,
     download_count: access.download_count || 0,
+    download_items: access.download_items,
     institutions: access.institutions,
     industries: access.industries,
     page_ranges: access.page_ranges,
     note: access.note || "",
+    change_id: access.change_id || "",
   };
 }
 
@@ -1352,51 +1548,115 @@ function accessGrantMatchesExpected(actual, expected) {
   return JSON.stringify(accessGrantComparable(actual)) === JSON.stringify(accessGrantComparable(expected));
 }
 
-async function findStoredAccessGrant(env, email) {
-  const normalized = normalizeEmail(email);
-  if (!normalized) return null;
-  const [primary, latestBackup] = await Promise.all([
-    safeR2GetJson(env, accountKey("access", normalized)),
-    safeR2GetJson(env, accessGrantBackupLatestKey(normalized)),
-  ]);
-  let historyBackups = [];
-  if (!latestBackup) {
-    historyBackups = await listR2JsonObjects(env, accessGrantBackupHistoryPrefix(normalized), 20).catch(() => []);
+function validateAccessGrantRow(row, expectedEmail) {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Access record verification failed.");
   }
-  const candidates = [primary, latestBackup, ...historyBackups].filter((row) => row && typeof row === "object");
-  if (!candidates.length) return null;
-  candidates.sort((a, b) => accessGrantUpdatedAtMs(b) - accessGrantUpdatedAtMs(a));
-  const best = { ...candidates[0], email: normalized };
-  if (!primary || accessGrantUpdatedAtMs(best) > accessGrantUpdatedAtMs(primary)) {
-    await r2PutJson(env, accountKey("access", normalized), best);
+  const email = normalizeEmail(row.email);
+  const mode = String(row.access_mode || "");
+  const status = String(row.status || "");
+  const periodEnd = row.current_period_end;
+  const listFieldsValid = [row.institutions, row.industries, row.page_ranges, row.download_items]
+    .every((value) => Array.isArray(value) && value.every((item) => typeof item === "string"));
+  const downloadLimit = row.download_limit;
+  const downloadCount = row.download_count;
+  const uniqueDownloadItems = Array.isArray(row.download_items)
+    ? [...new Set(row.download_items.filter(Boolean))]
+    : [];
+  const quotaValid = Number.isInteger(downloadLimit)
+    && downloadLimit >= 0
+    && Number.isInteger(downloadCount)
+    && downloadCount >= 0
+    && downloadCount === uniqueDownloadItems.length
+    && uniqueDownloadItems.length === (Array.isArray(row.download_items) ? row.download_items.length : 0)
+    && (String(row.duration_value || "") === TRIAL_3D_DURATION_VALUE
+      ? downloadLimit === TRIAL_3D_DOWNLOAD_LIMIT
+      : downloadLimit === 0)
+    && (downloadLimit === 0 || downloadCount <= downloadLimit);
+  if (
+    !email
+    || email !== normalizeEmail(expectedEmail)
+    || !String(row.id || "").trim()
+    || !ACCESS_MODES.has(mode)
+    || !["active", "inactive"].includes(status)
+    || typeof row.lifetime !== "boolean"
+    || !listFieldsValid
+    || !quotaValid
+    || !(periodEnd === null || (typeof periodEnd === "string" && Number.isFinite(Date.parse(periodEnd))))
+    || (mode === "none") !== (status === "inactive")
+    || (row.lifetime && periodEnd !== null)
+    || (!row.lifetime && status === "active" && !periodEnd)
+  ) {
+    throw new Error("Access record verification failed.");
   }
-  return best;
+  return row;
 }
 
-async function writeAccessGrantDurably(env, email, payload) {
+async function findStoredAccessGrantSnapshot(env, email) {
   const normalized = normalizeEmail(email);
-  const timestamp = payload.updated_at || new Date().toISOString();
-  const primaryKey = accountKey("access", normalized);
+  if (!normalized) return { record: null, etag: "" };
+  // The primary record is the only authorization source. Backups are retained
+  // for audit/recovery by an administrator, but an older or partially written
+  // backup must never silently restore broader access.
+  const snapshot = await r2GetJsonObjectStrict(env, accountKey("access", normalized));
+  const record = validateAccessGrantRow(snapshot && snapshot.value, normalized);
+  const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+  if (snapshot && !etag) throw new Error("Access record version verification failed.");
+  return { record, etag };
+}
+
+async function findStoredAccessGrant(env, email) {
+  return (await findStoredAccessGrantSnapshot(env, email)).record;
+}
+
+async function writeAccessGrantRecoveryCopies(env, email, payload) {
+  const normalized = normalizeEmail(email);
+  const timestamp = payload.quota_updated_at || payload.updated_at || new Date().toISOString();
   const latestKey = accessGrantBackupLatestKey(normalized);
-  const historyKey = accessGrantBackupHistoryKey(normalized, timestamp);
-  await Promise.all([
-    r2PutJson(env, primaryKey, payload),
-    r2PutJson(env, latestKey, payload),
-    r2PutJson(env, historyKey, payload),
+  const historyKey = accessGrantBackupHistoryKey(normalized, timestamp, payload.change_id);
+  const backupResults = await Promise.allSettled([
+    (async () => {
+      await r2PutJson(env, latestKey, payload);
+      const saved = validateAccessGrantRow(await r2GetJsonStrict(env, latestKey), normalized);
+      if (!accessGrantMatchesExpected(saved, payload)) throw new Error("Latest backup verification failed.");
+    })(),
+    (async () => {
+      await r2PutJson(env, historyKey, payload);
+      const saved = validateAccessGrantRow(await r2GetJsonStrict(env, historyKey), normalized);
+      if (!accessGrantMatchesExpected(saved, payload)) throw new Error("History backup verification failed.");
+    })(),
   ]);
-  const [primary, latestBackup, historyBackup] = await Promise.all([
-    r2GetJson(env, primaryKey),
-    r2GetJson(env, latestKey),
-    r2GetJson(env, historyKey),
-  ]);
-  if (
-    !accessGrantMatchesExpected(primary, payload) ||
-    !accessGrantMatchesExpected(latestBackup, payload) ||
-    !accessGrantMatchesExpected(historyBackup, payload)
-  ) {
+  return {
+    backup_count: backupResults.filter((result) => result.status === "fulfilled").length,
+    backup_error: backupResults.some((result) => result.status === "rejected"),
+  };
+}
+
+async function writeAccessGrantDurably(env, email, payload, expectedEtag) {
+  const normalized = normalizeEmail(email);
+  const primaryKey = accountKey("access", normalized);
+  validateAccessGrantRow(payload, normalized);
+  // The primary record is the sole authorization commit point. In particular,
+  // narrowing or revoking access must not be held back by a backup failure.
+  const onlyIf = expectedEtag
+    ? { etagMatches: String(expectedEtag) }
+    : { etagDoesNotMatch: "*" };
+  const written = await accountBucket(env).put(primaryKey, JSON.stringify(payload), {
+    onlyIf,
+    httpMetadata: { contentType: "application/json; charset=utf-8" },
+  });
+  if (written === null) {
+    const error = new Error("权限记录已被其他操作更新，请刷新后重试。");
+    error.code = "ACCESS_CONFLICT";
+    throw error;
+  }
+  const primary = validateAccessGrantRow(await r2GetJsonStrict(env, primaryKey), normalized);
+  if (!accessGrantMatchesExpected(primary, payload)) {
     throw new Error("Access save verification failed. Please retry.");
   }
-  return primary;
+  const backups = await writeAccessGrantRecoveryCopies(env, normalized, payload);
+  return { record: primary, ...backups };
 }
 
 async function writeAccessGrantAudit(env, email, previous, next, adminUser) {
@@ -1410,7 +1670,7 @@ async function writeAccessGrantAudit(env, email, previous, next, adminUser) {
     previous: previous ? publicAccessGrant(previous) : publicAccessGrant(null),
     next: next ? publicAccessGrant(next) : publicAccessGrant(null),
   };
-  await r2PutJson(env, accessGrantAuditKey(normalized, timestamp), audit);
+  await r2PutJson(env, accessGrantAuditKey(normalized, timestamp, next && next.change_id), audit);
   return audit;
 }
 
@@ -1418,8 +1678,10 @@ async function findAccessGrant(env, email) {
   const normalized = normalizeEmail(email);
   if (!normalized) return publicAccessGrant(null);
   const stored = await findStoredAccessGrant(env, normalized);
-  if (stored && typeof stored === "object") return publicAccessGrant({ ...stored, email: normalized });
-  return bootstrapAccessGrant(normalized) || publicAccessGrant({ email: normalized });
+  if (stored && typeof stored === "object") {
+    return publicAccessGrant({ ...stored, email: normalized, source: "stored" });
+  }
+  return publicAccessGrant({ email: normalized, source: "none" });
 }
 
 function accessDurationEndIso(durationMonths) {
@@ -1443,15 +1705,64 @@ function accessDurationDownloadLimit(durationValue) {
   return cleanAccessCount(spec && spec.download_limit);
 }
 
+function explicitAccessEndIso(value) {
+  const date = String(value || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  // Admin dates are Beijing business dates. End them at 23:59:59.999
+  // Asia/Shanghai (UTC+08:00), not eight hours into the following day.
+  const parsed = new Date(`${date}T15:59:59.999Z`);
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === date
+    ? parsed.toISOString()
+    : null;
+}
+
 async function saveAccessGrant(env, email, fields, adminUser) {
   const normalized = normalizeEmail(email);
   if (!normalized) throw new Error("Email is required.");
-  const existing = await findStoredAccessGrant(env, normalized);
+  const snapshot = await findStoredAccessGrantSnapshot(env, normalized);
+  const existing = snapshot.record;
+  const expectedChangeId = String(fields.expected_change_id || "");
+  const expectedUpdatedAt = String(fields.expected_updated_at || "");
+  if (existing) {
+    const versionMatches = existing.change_id
+      ? expectedChangeId === String(existing.change_id)
+      : expectedUpdatedAt === String(existing.updated_at || "");
+    if (!versionMatches) {
+      const error = new Error("权限记录已变化，请刷新后再保存。");
+      error.code = "ACCESS_CONFLICT";
+      throw error;
+    }
+  } else if (expectedChangeId || expectedUpdatedAt) {
+    const error = new Error("权限记录已变化，请刷新后再保存。");
+    error.code = "ACCESS_CONFLICT";
+    throw error;
+  }
   const mode = ACCESS_MODES.has(String(fields.access_mode || "")) ? String(fields.access_mode) : "none";
   const activeMode = mode !== "none";
   const duration = String(fields.duration_months || "").trim();
   const lifetime = activeMode && duration === "lifetime";
-  const currentPeriodEnd = activeMode ? (lifetime ? null : accessDurationEndIso(duration || "1")) : null;
+  const durationValue = activeMode ? (duration || "1") : "";
+  const renew = Boolean(fields.renew);
+  const expiresOn = String(fields.expires_on || "").trim();
+  const explicitEnd = activeMode && !lifetime && !renew ? explicitAccessEndIso(expiresOn) : null;
+  if (activeMode && !lifetime && !renew && expiresOn && !explicitEnd) {
+    throw new Error("到期日期格式无效。");
+  }
+  const preserveExistingExpiry = Boolean(
+    activeMode
+    && existing
+    && !renew
+    && String(existing.duration_value || "") === durationValue,
+  );
+  const currentPeriodEnd = activeMode
+    ? (lifetime
+      ? null
+      : explicitEnd
+        ? (existing && String(existing.current_period_end || "").slice(0, 10) === expiresOn ? existing.current_period_end : explicitEnd)
+        : preserveExistingExpiry
+          ? existing.current_period_end
+          : accessDurationEndIso(durationValue))
+    : null;
   const now = new Date().toISOString();
   const downloadLimit = activeMode ? accessDurationDownloadLimit(duration) : 0;
   const sameLimitedGrant = Boolean(
@@ -1469,7 +1780,7 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     status: activeMode ? "active" : "inactive",
     lifetime,
     current_period_end: currentPeriodEnd,
-    duration_value: activeMode ? (duration || "1") : "",
+    duration_value: durationValue,
     download_limit: downloadLimit,
     download_count: downloadLimit ? downloadItems.length : 0,
     download_items: downloadLimit ? downloadItems : [],
@@ -1481,13 +1792,27 @@ async function saveAccessGrant(env, email, fields, adminUser) {
       : [],
     note: String(fields.note || "").slice(0, 240),
     id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+    change_id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
     created_at: existing && existing.created_at || now,
     updated_at: now,
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
-  const saved = await writeAccessGrantDurably(env, normalized, payload);
-  await writeAccessGrantAudit(env, normalized, existing, saved, adminUser);
-  return publicAccessGrant(saved);
+  const writeResult = await writeAccessGrantDurably(env, normalized, payload, snapshot.etag);
+  let auditSaved = true;
+  try {
+    await writeAccessGrantAudit(env, normalized, existing, writeResult.record, adminUser);
+  } catch (_error) {
+    auditSaved = false;
+  }
+  return {
+    access: publicAccessGrant({ ...writeResult.record, source: "stored" }),
+    durability: {
+      primary_verified: true,
+      backup_count: writeResult.backup_count,
+      audit_saved: auditSaved,
+      warning: Boolean(writeResult.backup_error || !auditSaved),
+    },
+  };
 }
 
 function accessPageRangeMatches(range, pages) {
@@ -1514,14 +1839,14 @@ function accessGrantMatchesReport(grant, report, source) {
       report.bank_name,
       reportBankLabel(report),
     ].map(normalizeText).filter(Boolean);
-    if (!institutionFilters.some((filter) => reportInstitutions.some((value) => value === filter || value.includes(filter) || filter.includes(value)))) {
+    if (!institutionFilters.some((filter) => reportInstitutions.includes(filter))) {
       return false;
     }
   }
 
   if (industryFilters.length) {
     const industry = normalizeText(inferReportIndustry(report));
-    if (!industryFilters.some((filter) => industry === filter || industry.includes(filter) || filter.includes(industry))) {
+    if (!industryFilters.includes(industry)) {
       return false;
     }
   }
@@ -1543,31 +1868,90 @@ function limitedAccessNeedsConsumption(access) {
   return grant.active && grant.download_limit > 0;
 }
 
-async function consumeLimitedAccessDownload(env, email, reportId, source) {
+async function consumeLimitedAccessDownload(env, email, reportId, source, expectedChangeId = "") {
   const normalized = normalizeEmail(email);
   if (!normalized) return { ok: true, access: publicAccessGrant(null) };
-  const key = accountKey("access", normalized);
-  const stored = await safeR2GetJson(env, key);
-  const access = publicAccessGrant(stored);
-  if (!limitedAccessNeedsConsumption(access)) return { ok: true, access };
   const itemKey = accessGrantDownloadItemKey(reportId, source);
-  const existingItems = Array.isArray(stored && stored.download_items) ? stored.download_items.map(String) : [];
-  const uniqueItems = [...new Set(existingItems.filter(Boolean))];
-  if (uniqueItems.includes(itemKey)) return { ok: true, access };
-  if (uniqueItems.length >= access.download_limit) {
-    return { ok: false, access, error: TRIAL_LIMIT_MESSAGE, contact: CONTACT_WECHAT };
+  const key = accountKey("access", normalized);
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const stored = validateAccessGrantRow(snapshot && snapshot.value, normalized);
+    const access = publicAccessGrant(stored);
+    if (!snapshot || !stored || !limitedAccessNeedsConsumption(access)) {
+      return {
+        ok: false,
+        status: 409,
+        limit_exceeded: false,
+        access,
+        error: "Download access could not be verified. Please retry.",
+        contact: CONTACT_WECHAT,
+      };
+    }
+    if (String(stored.change_id || "") !== String(expectedChangeId || "")) {
+      return {
+        ok: false,
+        status: 409,
+        limit_exceeded: false,
+        access,
+        error: "下载权限刚刚发生变化，请刷新后重试。",
+        contact: CONTACT_WECHAT,
+      };
+    }
+    const etag = String(snapshot.object && snapshot.object.etag || "");
+    if (!etag) {
+      return {
+        ok: false,
+        status: 503,
+        limit_exceeded: false,
+        access,
+        error: "Download quota could not be verified. Please retry.",
+        contact: CONTACT_WECHAT,
+      };
+    }
+    const existingItems = Array.isArray(stored.download_items) ? stored.download_items.map(String) : [];
+    const uniqueItems = [...new Set(existingItems.filter(Boolean))];
+    if (uniqueItems.includes(itemKey)) return { ok: true, access };
+    if (uniqueItems.length >= access.download_limit) {
+      return {
+        ok: false,
+        status: 403,
+        limit_exceeded: true,
+        access,
+        error: TRIAL_LIMIT_MESSAGE,
+        contact: CONTACT_WECHAT,
+      };
+    }
+    const updatedItems = [...uniqueItems, itemKey];
+    const updated = {
+      ...stored,
+      email: normalized,
+      download_items: updatedItems,
+      download_count: updatedItems.length,
+      // Quota consumption is not a permission-policy edit. Keep the editor
+      // version stable while the R2 ETag protects the quota counter itself.
+      change_id: String(stored.change_id || ""),
+      updated_at: stored.updated_at || new Date().toISOString(),
+      quota_updated_at: new Date().toISOString(),
+    };
+    validateAccessGrantRow(updated, normalized);
+    const written = await accountBucket(env).put(key, JSON.stringify(updated), {
+      onlyIf: { etagMatches: etag },
+      httpMetadata: { contentType: "application/json; charset=utf-8" },
+    });
+    if (written === null) continue;
+    const verified = validateAccessGrantRow(await r2GetJsonStrict(env, key), normalized);
+    if (!accessGrantMatchesExpected(verified, updated)) continue;
+    await writeAccessGrantRecoveryCopies(env, normalized, updated);
+    return { ok: true, access: publicAccessGrant({ ...verified, source: "stored" }) };
   }
-  const updatedItems = [...uniqueItems, itemKey].slice(0, access.download_limit);
-  const now = new Date().toISOString();
-  const updated = {
-    ...(stored || {}),
-    email: normalized,
-    download_items: updatedItems,
-    download_count: updatedItems.length,
-    updated_at: now,
+  return {
+    ok: false,
+    status: 409,
+    limit_exceeded: false,
+    access: publicAccessGrant({ email: normalized, source: "error" }),
+    error: "Download quota changed concurrently. Please retry.",
+    contact: CONTACT_WECHAT,
   };
-  await writeAccessGrantDurably(env, normalized, updated);
-  return { ok: true, access: publicAccessGrant(updated) };
 }
 
 function superEntitlement(user) {
@@ -1582,58 +1966,113 @@ function superEntitlement(user) {
   };
 }
 
+function roleAccessForUser(user) {
+  return publicAccessGrant({
+    email: normalizeEmail(user && user.email),
+    access_mode: "all",
+    status: "active",
+    lifetime: true,
+    source: "role",
+    updated_at: "",
+  });
+}
+
+function effectiveAccessForUser(user, entitlementRow, accessRow) {
+  if (accountDisabled(user)) {
+    return publicAccessGrant({
+      email: normalizeEmail(user && user.email),
+      source: "disabled",
+    });
+  }
+  if (isPrivilegedAccount(user)) return roleAccessForUser(user);
+  const access = publicAccessGrant(accessRow);
+  if (access.source === "error") return access;
+  const entitlement = publicEntitlement(entitlementRow);
+  if (entitlement.active && entitlement.plan === "annual") {
+    const entitlementSource = entitlement.grant_source === "vid2ppt_atlas"
+      ? "vid2ppt_atlas"
+      : (access.active ? "entitlement+stored" : "entitlement");
+    const entitlementAccess = publicAccessGrant({
+      email: normalizeEmail(user && user.email),
+      access_mode: "all",
+      status: "active",
+      lifetime: entitlement.lifetime,
+      current_period_end: entitlement.current_period_end,
+      source: entitlementSource,
+      grant_source: entitlement.grant_source,
+      source_site: entitlement.source_site,
+      source_plan_code: entitlement.source_plan_code,
+      source_reference: entitlement.source_reference,
+      updated_at: entitlement.updated_at,
+    });
+    if (access.active && access.access_mode === "all") {
+      const accessEnd = access.lifetime ? Number.POSITIVE_INFINITY : Date.parse(access.current_period_end || "");
+      const entitlementEnd = entitlementAccess.lifetime
+        ? Number.POSITIVE_INFINITY
+        : Date.parse(entitlementAccess.current_period_end || "");
+      if (accessEnd > entitlementEnd) return publicAccessGrant({ ...access, source: "entitlement+stored" });
+    }
+    return entitlementAccess;
+  }
+  return access;
+}
+
 function shouldConsumeAccessGrantDownload(accessResult) {
   if (!accessResult || !limitedAccessNeedsConsumption(accessResult.access)) return false;
-  const entitlement = publicEntitlement(accessResult.entitlement);
-  const annual = entitlement.active && entitlement.plan === "annual";
+  const entitlementProvidesAccess = accessResult.effective_access
+    && String(accessResult.effective_access.source || "").includes("entitlement");
   const purchased = Boolean(accessResult.purchase);
-  return !annual && !purchased;
+  return !entitlementProvidesAccess && !purchased;
 }
 
 async function reportAccessForUser(env, user, reportId, source) {
   const email = normalizeEmail(user.email);
-  if (!email) return { can_download: false, entitlement: publicEntitlement(null), access: publicAccessGrant(null), purchase: null };
+  if (!email) {
+    const noAccess = publicAccessGrant({ source: "none" });
+    return {
+      can_download: false,
+      entitlement: publicEntitlement(null),
+      access: noAccess,
+      effective_access: noAccess,
+      purchase: null,
+    };
+  }
   if (isPrivilegedAccount(user)) {
+    const roleAccess = roleAccessForUser(user);
     return {
       can_download: true,
       entitlement: superEntitlement(user),
-      access: publicAccessGrant({
-        email,
-        access_mode: "all",
-        status: "active",
-        lifetime: true,
-        source: "role",
-        updated_at: new Date().toISOString(),
-      }),
+      access: roleAccess,
+      effective_access: roleAccess,
       purchase: null,
     };
   }
   const [entitlementRow, purchase, accessRow] = await Promise.all([
-    findEntitlement(env, email).catch(() => null),
-    reportId ? findReportPurchase(env, email, reportId, source).catch(() => null) : Promise.resolve(null),
-    findAccessGrant(env, email).catch(() => publicAccessGrant(null)),
+    findEntitlement(env, email),
+    reportId ? findReportPurchase(env, email, reportId, source) : Promise.resolve(null),
+    findAccessGrant(env, email),
   ]);
   const entitlement = publicEntitlement(entitlementRow);
   const access = publicAccessGrant(accessRow);
+  // Existing business policy is additive: annual, a custom grant, an exact
+  // report purchase, or a privileged role can independently allow a download.
   const annual = entitlement.active && entitlement.plan === "annual";
-  const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || "active"));
+  const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || ""));
   let customAccess = false;
   if (access.active) {
     if (access.access_mode === "all") {
       customAccess = true;
     } else if (reportId && source === "catalog") {
-      try {
-        const catalog = await loadCatalog(env);
-        customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
-      } catch (_error) {
-        customAccess = false;
-      }
+      const catalog = await loadCatalog(env);
+      customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
     }
   }
+  const effectiveAccess = effectiveAccessForUser(user, entitlementRow, accessRow);
   return {
     can_download: Boolean(annual || customAccess || purchased),
     entitlement,
     access,
+    effective_access: effectiveAccess,
     purchase: purchased ? purchase : null,
   };
 }
@@ -1658,18 +2097,48 @@ async function accountDownloadDecision(env, request, reportId, source) {
       consume_limited_access: shouldConsumeAccessGrantDownload(access),
     };
   } catch (error) {
+    const status = accessErrorStatus(error);
     return {
       allowed: false,
-      status: /disabled|禁用/i.test(String(error && error.message || "")) ? 403 : 401,
-      error: error && error.message || "Please log in.",
+      status,
+      error: status === 503
+        ? "下载权限暂时无法核验，请稍后重试。"
+        : error && error.message || "Please log in.",
     };
   }
 }
 
-async function finalizeAccountDownloadDecision(env, decision, reportId, source) {
-  if (!decision || !decision.allowed || !decision.consume_limited_access) return { ok: true };
+async function finalizeAccountDownloadDecision(env, request, decision, reportId, source) {
+  if (!decision || !decision.allowed) return { ok: true };
+  try {
+    const user = await currentUserFromRequest(env, request);
+    if (String(user.id || "") !== String(decision.user && decision.user.id || "")) {
+      return { ok: false, status: 409, limit_exceeded: false, error: "下载权限已发生变化，请重试。", contact: CONTACT_WECHAT };
+    }
+    const refreshedAccess = await reportAccessForUser(env, user, reportId, source);
+    if (!refreshedAccess.can_download) {
+      return { ok: false, status: 403, limit_exceeded: false, error: "下载权限已失效，请刷新后重试。", contact: CONTACT_WECHAT };
+    }
+    decision.user = user;
+    decision.access = refreshedAccess;
+    decision.consume_limited_access = shouldConsumeAccessGrantDownload(refreshedAccess);
+  } catch (_error) {
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
+  }
+  if (!decision.consume_limited_access) return { ok: true };
   const email = normalizeEmail(decision.user && decision.user.email);
-  const consumed = await consumeLimitedAccessDownload(env, email, reportId, source);
+  let consumed;
+  try {
+    consumed = await consumeLimitedAccessDownload(
+      env,
+      email,
+      reportId,
+      source,
+      decision.access && decision.access.access && decision.access.access.change_id,
+    );
+  } catch (_error) {
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
+  }
   if (!consumed.ok) return consumed;
   decision.access = {
     ...(decision.access || {}),
@@ -1825,6 +2294,9 @@ async function handleAuth(request, env) {
       if (!email) {
         return jsonResponse(request, env, 400, { detail: "注册必须填写有效邮箱。" });
       }
+      if (isReservedPrivilegedIdentity(username, email)) {
+        return jsonResponse(request, env, 403, { detail: "该用户名或邮箱为系统保留身份。" });
+      }
       const existingEmail = await findSiteUserByEmail(env, email);
       if (existingEmail) {
         const recovered = await recoverExistingUserResponse(request, env, existingEmail, password);
@@ -1924,7 +2396,10 @@ async function handleEntitlement(request, env) {
       ...access,
     });
   } catch (error) {
-    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status, {
+      detail: status === 503 ? "下载权限暂时无法核验，请稍后重试。" : error.message || "Please log in.",
+    });
   }
 }
 
@@ -2077,27 +2552,32 @@ function firstText(...values) {
   return "";
 }
 
-function collectPriceIds(value, found = []) {
-  if (Array.isArray(value)) {
-    value.forEach((child) => collectPriceIds(child, found));
-  } else if (value && typeof value === "object") {
-    Object.values(value).forEach((child) => collectPriceIds(child, found));
-  } else if (typeof value === "string" && value.startsWith("pri_") && !found.includes(value)) {
-    found.push(value);
+function collectPaddleLineItemPriceIds(data) {
+  const details = asObject(data && data.details);
+  const items = [
+    ...(Array.isArray(data && data.items) ? data.items : []),
+    ...(Array.isArray(details.line_items) ? details.line_items : []),
+  ];
+  const found = [];
+  for (const rawItem of items) {
+    const item = asObject(rawItem);
+    const price = asObject(item.price);
+    const priceId = firstText(price.id, item.price_id);
+    if (priceId.startsWith("pri_") && !found.includes(priceId)) found.push(priceId);
   }
   return found;
 }
 
-function extractPaddleEmail(data, customData) {
+function claimedPaddleEmail(data, customData) {
   const customer = asObject(data.customer);
   const billing = asObject(data.billing_details);
   return normalizeEmail(firstText(
-    customData.email,
-    customData.customer_email,
     data.customer_email,
     data.email,
     customer.email,
     billing.email,
+    customData.email,
+    customData.customer_email,
   ));
 }
 
@@ -2113,29 +2593,204 @@ function subscriptionIdForEvent(eventType, data) {
     : firstText(data.subscription_id);
 }
 
+function validPaddleCustomerId(value) {
+  const customerId = String(value || "").trim();
+  return /^ctm_[a-z0-9]{26}$/.test(customerId) ? customerId : "";
+}
+
+function validPaddleSubscriptionId(value) {
+  const subscriptionId = String(value || "").trim();
+  return /^sub_[a-z0-9]{26}$/.test(subscriptionId) ? subscriptionId : "";
+}
+
+function paddleCustomerBindingKey(customerId) {
+  return accountKey("paddle_binding", "customer", customerId);
+}
+
+function validatePaddleCustomerBinding(row, customerId) {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Paddle customer binding verification failed.");
+  }
+  const email = normalizeEmail(row.email);
+  const storedCustomerId = validPaddleCustomerId(row.paddle_customer_id);
+  if (!email || !storedCustomerId || storedCustomerId !== customerId) {
+    throw new Error("Paddle customer binding verification failed.");
+  }
+  return { ...row, email, paddle_customer_id: storedCustomerId };
+}
+
+async function findPaddleCustomerBinding(env, customerId) {
+  const normalized = validPaddleCustomerId(customerId);
+  if (!normalized) return null;
+  if (hasSupabaseConfig(env)) {
+    const query = queryString({
+      paddle_customer_id: `eq.${normalized}`,
+      select: "id,email,plan,status,lifetime,current_period_end,paddle_customer_id,paddle_subscription_id,paddle_transaction_id,paddle_last_event_id,paddle_last_occurred_at,created_at,updated_at",
+      limit: "2",
+    });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+    if (!Array.isArray(rows)) throw new Error("Account database response is invalid.");
+    if (rows.length > 1) throw new Error("Paddle customer binding is not unique.");
+    return validatePaddleCustomerBinding(rows[0] || null, normalized);
+  }
+  return validatePaddleCustomerBinding(
+    await r2GetJsonStrict(env, paddleCustomerBindingKey(normalized)),
+    normalized,
+  );
+}
+
 function resolvePaddleStatus(eventType, data) {
   if (eventType === "subscription.canceled") return "canceled";
   if (eventType === "subscription.paused") return "paused";
   if (eventType === "subscription.past_due") return "past_due";
   if (eventType === "subscription.resumed") return "active";
   if (eventType.startsWith("subscription.")) {
-    const status = String(data.status || "active").toLowerCase();
+    const status = String(data.status || "unknown").toLowerCase();
     return ACTIVE_STATUSES.has(status) ? "active" : status;
   }
   return "active";
 }
 
-function futureIso(days) {
-  return new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
-}
-
-function paddlePeriodEnd(plan, data) {
+function paddlePeriodEnd(data) {
   const period = asObject(data.current_billing_period);
-  return firstText(period.ends_at, data.next_billed_at, data.billing_period_end) || (plan === "annual" ? futureIso(365) : null);
+  const value = firstText(period.ends_at, data.next_billed_at, data.billing_period_end);
+  return value && Number.isFinite(Date.parse(value)) ? value : null;
 }
 
-function requestedPaddlePlan(customData) {
-  return firstText(customData.plan, customData.kc_plan, customData.order_plan);
+function validPaddleEventIdentity(event) {
+  const eventId = String(event && event.event_id || "").trim();
+  const occurredAt = String(event && event.occurred_at || "").trim();
+  if (!/^evt_[a-z0-9]{26}$/.test(eventId) || !Number.isFinite(Date.parse(occurredAt))) return null;
+  return { eventId, occurredAt, occurredMs: Date.parse(occurredAt) };
+}
+
+function legacyPaddleEntitlementStateKey(email) {
+  return accountKey("paddle_state", "entitlement", normalizeEmail(email));
+}
+
+async function assertNoLegacyPaddleWriteInFlight(env, email) {
+  const row = await r2GetJsonStrict(env, legacyPaddleEntitlementStateKey(email));
+  if (!row) return;
+  const identity = validPaddleEventIdentity({
+    event_id: row.event_id,
+    occurred_at: row.occurred_at,
+  });
+  if (
+    typeof row !== "object"
+    || Array.isArray(row)
+    || normalizeEmail(row.email) !== normalizeEmail(email)
+    || !identity
+    || !["pending", "applied"].includes(String(row.state || ""))
+  ) {
+    throw new Error("Legacy Paddle event state requires manual reconciliation.");
+  }
+  if (row.state === "pending") {
+    throw new Error("Legacy Paddle entitlement update is still pending.");
+  }
+}
+
+function paddleEventDisposition(row, identity, baselineUpdatedAt = "") {
+  if (!identity) return "invalid";
+  const lastEventId = String(row && row.paddle_last_event_id || "").trim();
+  const lastOccurredAt = String(row && row.paddle_last_occurred_at || "").trim();
+  if (lastEventId || lastOccurredAt) {
+    const last = validPaddleEventIdentity({ event_id: lastEventId, occurred_at: lastOccurredAt });
+    if (!last) throw new Error("Paddle entitlement event version is invalid.");
+    if (last.eventId === identity.eventId) return "duplicate";
+    if (identity.occurredMs <= last.occurredMs) return "stale";
+    return "apply";
+  }
+  const baselineMs = Date.parse(String(baselineUpdatedAt || row && row.updated_at || ""));
+  return Number.isFinite(baselineMs) && identity.occurredMs <= baselineMs ? "stale" : "apply";
+}
+
+function paddleEntitlementUpdateFields(binding, identity, fields) {
+  return {
+    ...fields,
+    email: normalizeEmail(binding.email),
+    paddle_customer_id: binding.paddle_customer_id,
+    paddle_subscription_id: binding.paddle_subscription_id,
+    paddle_last_event_id: identity.eventId,
+    paddle_last_occurred_at: identity.occurredAt,
+    updated_at: new Date().toISOString(),
+  };
+}
+
+async function applyPaddleEntitlementEventInSupabase(env, binding, identity, fields) {
+  let current = binding;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const action = paddleEventDisposition(current, identity, binding.updated_at);
+    if (action !== "apply") return { action, entitlement: current };
+    const id = String(current && current.id || "").trim();
+    if (!id) throw new Error("Paddle customer binding is missing its entitlement id.");
+    const query = {
+      id: `eq.${id}`,
+      paddle_customer_id: `eq.${binding.paddle_customer_id}`,
+      paddle_subscription_id: `eq.${binding.paddle_subscription_id}`,
+      select: "*",
+    };
+    const lastOccurredAt = String(current.paddle_last_occurred_at || "").trim();
+    query.paddle_last_occurred_at = lastOccurredAt ? `eq.${lastOccurredAt}` : "is.null";
+    const rows = await supabaseRequest(
+      env,
+      "PATCH",
+      `/rest/v1/user_entitlements?${queryString(query)}`,
+      paddleEntitlementUpdateFields(binding, identity, fields),
+      { preferReturn: true },
+    );
+    if (Array.isArray(rows) && rows.length === 1) {
+      const saved = validateEntitlementRow(rows[0], binding.email);
+      validatePaddleCustomerBinding(saved, binding.paddle_customer_id);
+      return { action: "applied", entitlement: saved };
+    }
+    current = await findPaddleCustomerBinding(env, binding.paddle_customer_id);
+    if (!current) throw new Error("Paddle customer binding disappeared during update.");
+  }
+  throw new Error("Paddle entitlement changed concurrently. Please retry.");
+}
+
+async function applyPaddleEntitlementEventInR2(env, binding, identity, fields) {
+  const email = normalizeEmail(binding.email);
+  const key = accountKey("entitlements", email);
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const current = validateEntitlementRow(snapshot && snapshot.value, email);
+    const action = paddleEventDisposition(current, identity, binding.updated_at);
+    if (action !== "apply") return { action, entitlement: current };
+    const now = new Date().toISOString();
+    const payload = {
+      ...(current || {}),
+      ...paddleEntitlementUpdateFields(binding, identity, fields),
+      id: current && current.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+      created_at: current && current.created_at || now,
+    };
+    validateEntitlementRow(payload, email);
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    if (snapshot && !etag) throw new Error("Paddle entitlement version could not be verified.");
+    const written = await accountBucket(env).put(key, JSON.stringify(payload), {
+      onlyIf: snapshot ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8" },
+    });
+    if (written === null) continue;
+    const saved = validateEntitlementRow(await r2GetJsonStrict(env, key), email);
+    if (
+      String(saved.paddle_last_event_id || "") !== identity.eventId
+      || String(saved.paddle_last_occurred_at || "") !== identity.occurredAt
+    ) {
+      throw new Error("Paddle entitlement update could not be verified.");
+    }
+    return { action: "applied", entitlement: saved };
+  }
+  throw new Error("Paddle entitlement changed concurrently. Please retry.");
+}
+
+async function applyPaddleEntitlementEvent(env, binding, event, fields) {
+  const identity = validPaddleEventIdentity(event);
+  if (!identity) return { action: "invalid", entitlement: binding };
+  return hasSupabaseConfig(env)
+    ? applyPaddleEntitlementEventInSupabase(env, binding, identity, fields)
+    : applyPaddleEntitlementEventInR2(env, binding, identity, fields);
 }
 
 async function processPaddleEvent(env, event) {
@@ -2144,62 +2799,73 @@ async function processPaddleEvent(env, event) {
 
   const data = asObject(event.data);
   const customData = asObject(data.custom_data || data.customData);
-  const email = extractPaddleEmail(data, customData);
-  const priceIds = collectPriceIds(data);
+  const priceIds = collectPaddleLineItemPriceIds(data);
   const config = paddleConfig(env);
   const reportPrice = config.PADDLE_PRICE_REPORT_CNY_CENT;
   const yearlyPrice = config.PADDLE_PRICE_YEARLY;
-  const requestedPlan = requestedPaddlePlan(customData);
-  const orderKind = firstText(customData.order_kind, customData.orderKind);
-
-  if (!email) return { processed: false, event_type: eventType, detail: "missing email" };
+  const customerId = validPaddleCustomerId(data.customer_id);
+  if (!customerId) return { processed: false, event_type: eventType, detail: "missing customer id" };
+  const binding = await findPaddleCustomerBinding(env, customerId);
+  if (!binding) return { processed: false, event_type: eventType, detail: "unbound customer" };
+  const email = normalizeEmail(binding.email);
+  const claimedEmail = claimedPaddleEmail(data, customData);
+  if (claimedEmail && claimedEmail !== email) {
+    return { processed: false, event_type: eventType, detail: "customer identity mismatch" };
+  }
+  await assertNoLegacyPaddleWriteInFlight(env, email);
 
   const isReportPurchase = eventType === "transaction.completed"
     && reportPrice
     && priceIds.includes(reportPrice)
-    && (requestedPlan === "single_report" || orderKind === "report_purchase" || reportPrice !== yearlyPrice);
+    && reportPrice !== yearlyPrice;
   if (isReportPurchase) {
-    const reportId = firstText(customData.report_id, customData.reportId);
-    const source = firstText(customData.source) || "catalog";
-    if (!reportId) return { processed: false, event_type: eventType, detail: "missing report id" };
-    const saved = await saveReportPurchase(env, {
-      email,
-      report_id: reportId,
-      source,
-      title: firstText(customData.title).slice(0, 500),
-      status: "active",
-      paddle_customer_id: firstText(data.customer_id, customData.paddle_customer_id),
-      paddle_transaction_id: transactionIdForEvent(eventType, data),
-    });
-    await insertUsageEvent(env, email, "report_purchase.completed", {
-      event_id: event.event_id,
-      report_id: reportId,
-      source,
-      quantity: Number(customData.quantity || 0) || null,
-      price_ids: priceIds,
-    });
-    return { processed: true, event_type: eventType, email, report_id: saved.report_id, source };
+    // Self-service checkout is disabled. A client-provided report id or email
+    // is not an authorization source; re-enable only with a server-signed,
+    // single-use checkout intent.
+    return { processed: false, event_type: eventType, detail: "checkout intent required" };
   }
 
-  const isAnnualPurchase = yearlyPrice
+  const subscriptionId = validPaddleSubscriptionId(subscriptionIdForEvent(eventType, data));
+  const boundSubscriptionId = validPaddleSubscriptionId(binding.paddle_subscription_id);
+  const subscriptionMatches = Boolean(
+    eventType.startsWith("subscription.")
+    && subscriptionId
+    && boundSubscriptionId
+    && subscriptionId === boundSubscriptionId,
+  );
+  const status = resolvePaddleStatus(eventType, data);
+  const boundRevocation = subscriptionMatches && !ACTIVE_STATUSES.has(status);
+  const isAnnualPurchase = boundRevocation || Boolean(
+    yearlyPrice
     && priceIds.includes(yearlyPrice)
-    && (
-      requestedPlan === "annual"
-      || orderKind === "membership"
-      || eventType.startsWith("subscription.")
-      || reportPrice !== yearlyPrice
-    );
+    && (eventType === "transaction.completed" || eventType.startsWith("subscription.")),
+  );
   if (isAnnualPurchase) {
-    const status = resolvePaddleStatus(eventType, data);
-    const saved = await saveEntitlement(env, email, {
+    if (!subscriptionId || !boundSubscriptionId || subscriptionId !== boundSubscriptionId) {
+      return { processed: false, event_type: eventType, detail: "unbound subscription" };
+    }
+    const applied = await applyPaddleEntitlementEvent(env, {
+      ...binding,
+      paddle_customer_id: customerId,
+      paddle_subscription_id: subscriptionId,
+    }, event, {
       plan: "annual",
       status,
       lifetime: false,
-      paddle_customer_id: firstText(data.customer_id, customData.paddle_customer_id),
-      paddle_subscription_id: subscriptionIdForEvent(eventType, data),
       paddle_transaction_id: transactionIdForEvent(eventType, data),
-      current_period_end: paddlePeriodEnd("annual", data),
+      current_period_end: paddlePeriodEnd(data),
     });
+    if (applied.action === "invalid") {
+      return { processed: false, event_type: eventType, detail: "missing event identity" };
+    }
+    if (applied.action === "duplicate" || applied.action === "stale") {
+      return {
+        processed: false,
+        event_type: eventType,
+        detail: applied.action === "duplicate" ? "duplicate event" : "stale event",
+      };
+    }
+    const saved = applied.entitlement;
     await insertUsageEvent(env, email, eventType, {
       event_id: event.event_id,
       plan: "annual",
@@ -2231,6 +2897,259 @@ async function handlePaddleWebhook(request, env) {
     return jsonResponse(request, env, 200, { ok: true, ...result });
   } catch (error) {
     return jsonResponse(request, env, 500, { detail: error.message || "Webhook processing failed." });
+  }
+}
+
+function vid2pptGrantSecret(env) {
+  return String(env.VID2PPT_KCDESK_GRANT_SECRET || "").trim();
+}
+
+async function verifyVid2PptGrantSignature(env, request, rawBody) {
+  const secret = vid2pptGrantSecret(env);
+  const submitted = String(request.headers.get("X-Vid2PPT-Signature") || "")
+    .trim()
+    .replace(/^sha256=/i, "");
+  if (!secret || !submitted) return false;
+  const expected = await hmacSha256Hex(secret, rawBody);
+  return constantTimeEqual(submitted, expected);
+}
+
+function cleanGrantText(value, limit = 160) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001f\u007f]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+function cleanAtlasPlanCode(value) {
+  return cleanGrantText(value, 32).toUpperCase();
+}
+
+function atlasGrantPeriodEnd(planCode, startAt) {
+  const spec = VID2PPT_ATLAS_PLANS[planCode];
+  if (!spec) return null;
+  const parsed = Date.parse(String(startAt || ""));
+  const date = new Date(Number.isFinite(parsed) ? parsed : Date.now());
+  date.setUTCMonth(date.getUTCMonth() + spec.months);
+  return date.toISOString();
+}
+
+function normalizeVid2PptCode(value) {
+  const code = cleanGrantText(value, 40).toUpperCase();
+  return VID2PPT_CODE_PATTERN.test(code) ? code : "";
+}
+
+function vid2pptRedeemUrl(env) {
+  return cleanEnv(env.VID2PPT_REDEEM_URL) || VID2PPT_REDEEM_URL;
+}
+
+function atlasGrantStartIso(existingEntitlement, completedAt) {
+  const completedMs = Date.parse(String(completedAt || ""));
+  const baselineMs = Number.isFinite(completedMs) ? completedMs : Date.now();
+  const existingMs = existingEntitlement && existingEntitlement.active && existingEntitlement.current_period_end
+    ? Date.parse(String(existingEntitlement.current_period_end))
+    : NaN;
+  return new Date(Math.max(baselineMs, Number.isFinite(existingMs) ? existingMs : 0)).toISOString();
+}
+
+function sameAtlasGrant(entitlement, planCode, sourceReference) {
+  return entitlement
+    && entitlement.active
+    && entitlement.grant_source === "vid2ppt_atlas"
+    && entitlement.source_plan_code === planCode
+    && entitlement.source_reference === sourceReference;
+}
+
+async function applyVid2PptAtlasGift(env, options = {}) {
+  const email = normalizeEmail(options.email);
+  const planCode = cleanAtlasPlanCode(options.planCode || options.plan_code);
+  if (!email) throw new Error("Valid email is required.");
+  if (!VID2PPT_ATLAS_PLANS[planCode]) throw new Error("Unsupported ATLAS plan.");
+
+  const requestId = cleanGrantText(options.requestId || options.request_id, 96);
+  const transactionId = cleanGrantText(options.transactionId || options.paddle_transaction_id || options.transaction_id, 120);
+  const eventId = cleanGrantText(options.eventId || options.event_id, 120);
+  const code = normalizeVid2PptCode(options.code);
+  const sourceReference = requestId || transactionId || eventId || code;
+  const existing = await findEntitlement(env, email).catch(() => null);
+  const entitlement = publicEntitlement(existing);
+
+  if (sameAtlasGrant(entitlement, planCode, sourceReference)) {
+    return { saved: existing || entitlement, duplicate: true, sourceReference };
+  }
+  if (entitlement.active && entitlement.lifetime) {
+    return { saved: existing || entitlement, duplicate: false, lifetime: true, sourceReference };
+  }
+
+  const startAt = atlasGrantStartIso(entitlement, options.completedAt || options.completed_at);
+  const currentPeriodEnd = atlasGrantPeriodEnd(planCode, startAt);
+  if (!currentPeriodEnd) throw new Error("Unsupported ATLAS plan.");
+
+  const saved = await saveEntitlement(env, email, {
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: currentPeriodEnd,
+    paddle_transaction_id: transactionId,
+    site_origin: SITE_ORIGIN,
+    source_site: VID2PPT_SOURCE_SITE,
+    grant_source: "vid2ppt_atlas",
+    source_plan_code: planCode,
+    source_reference: sourceReference,
+  });
+  await insertUsageEvent(env, email, options.eventType || "vid2ppt_atlas.granted", {
+    site_origin: SITE_ORIGIN,
+    source_site: VID2PPT_SOURCE_SITE,
+    grant_source: "vid2ppt_atlas",
+    plan_code: planCode,
+    request_id: requestId,
+    event_id: eventId,
+    code,
+    paddle_transaction_id: transactionId,
+    amount_cny: cleanGrantText(options.amountCny || options.amount_cny, 40),
+    legal_purchase_site: "vid2ppt.com",
+    granted_benefit_site: "kcdesk.com",
+    source_reference: sourceReference,
+  }).catch(() => {});
+  return { saved, duplicate: false, sourceReference };
+}
+
+async function handleVid2PptAtlasGrant(request, env) {
+  const rawBody = await request.text();
+  if (!(await verifyVid2PptGrantSignature(env, request, rawBody))) {
+    return jsonResponse(request, env, 401, { detail: "Invalid grant signature." });
+  }
+
+  let payload = {};
+  try {
+    payload = JSON.parse(rawBody || "{}");
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const email = normalizeEmail(payload.email);
+  const planCode = cleanAtlasPlanCode(payload.plan_code);
+  if (!email) return jsonResponse(request, env, 400, { detail: "Valid email is required." });
+  if (!VID2PPT_ATLAS_PLANS[planCode]) {
+    return jsonResponse(request, env, 200, { ok: true, granted: false, detail: "Not an ATLAS plan." });
+  }
+
+  const requestId = cleanGrantText(payload.request_id, 96);
+  const transactionId = cleanGrantText(payload.paddle_transaction_id || payload.transaction_id, 120);
+  const eventId = cleanGrantText(payload.event_id, 120);
+
+  try {
+    const { saved, duplicate } = await applyVid2PptAtlasGift(env, {
+      email,
+      planCode,
+      requestId,
+      transactionId,
+      eventId,
+      completedAt: payload.completed_at,
+      amountCny: payload.amount_cny,
+      eventType: "vid2ppt_atlas.granted",
+    });
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      granted: true,
+      duplicate,
+      email,
+      plan: saved.plan,
+      status: saved.status,
+      current_period_end: saved.current_period_end,
+      source_plan_code: planCode,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 500, { detail: error.message || "Grant failed." });
+  }
+}
+
+async function callVid2PptRedeemCode(env, { code, email, username, mode }) {
+  const response = await fetchWithTimeout(vid2pptRedeemUrl(env), {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      action: "redeem_code",
+      mode: mode || "check",
+      code,
+      email,
+      source: "kcdesk_redeem_fallback",
+      metadata: {
+        site_origin: SITE_ORIGIN,
+        source_site: VID2PPT_SOURCE_SITE,
+        username,
+        legal_purchase_site: "vid2ppt.com",
+        gift_benefit_site: "kcdesk.com",
+      },
+    }),
+  }, 12000);
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(data.detail || `Vid2PPT returned HTTP ${response.status}.`);
+  }
+  return data;
+}
+
+async function handleVid2PptRedeemCode(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const code = normalizeVid2PptCode(payload.code);
+  if (!code) return jsonResponse(request, env, 400, { detail: "请输入有效的 Vid2PPT 兑换代码。" });
+
+  const email = normalizeEmail(user.email);
+  const username = normalizeUsername(user.username);
+  try {
+    const checked = await callVid2PptRedeemCode(env, { code, email, username, mode: "check" });
+    const order = checked && checked.order || {};
+    const orderEmail = normalizeEmail(order.email);
+    const planCode = cleanAtlasPlanCode(order.plan_code);
+    if (!checked.valid) return jsonResponse(request, env, 404, { detail: checked.detail || "代码未找到或未支付完成。" });
+    if (checked.redeemed) return jsonResponse(request, env, 409, { detail: "这串代码已经兑换过。", order });
+    if (!VID2PPT_ATLAS_PLANS[planCode] || (order.benefit_site && order.benefit_site !== "kcdesk")) {
+      return jsonResponse(request, env, 400, { detail: "这串代码不是 ATLAS 赠送权益代码。", order });
+    }
+    if (orderEmail && orderEmail !== email) {
+      return jsonResponse(request, env, 403, { detail: "这串代码对应的支付邮箱与当前 KCdesk 账号邮箱不一致。", order });
+    }
+
+    const { saved, duplicate } = await applyVid2PptAtlasGift(env, {
+      email,
+      planCode,
+      requestId: order.request_id,
+      code,
+      completedAt: order.completed_at || new Date().toISOString(),
+      amountCny: order.amount_cny,
+      eventType: "vid2ppt_atlas.code_redeemed",
+    });
+    const redeemed = await callVid2PptRedeemCode(env, { code, email, username, mode: "redeem" });
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      redeemed: Boolean(redeemed.redeemed || redeemed.valid),
+      granted: true,
+      duplicate,
+      user: publicUser(user),
+      entitlement: publicEntitlement(saved),
+      order: redeemed.order || order,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 502, { detail: error.message || "兑换代码校验失败，请稍后重试。" });
   }
 }
 
@@ -2335,12 +3254,12 @@ async function handleDownload(request, env) {
     });
   }
 
-  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "catalog");
+  const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "catalog");
   if (!consumed.ok) {
-    return jsonResponse(request, env, 403, {
+    return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
       contact: consumed.contact || CONTACT_WECHAT,
-      limit_exceeded: true,
+      limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
 
@@ -2538,20 +3457,14 @@ async function requireOperationsUser(request, env) {
 
 function adminVisibleUser(user, entitlementRow, accessRow) {
   const publicInfo = publicUser(user);
+  const entitlement = isPrivilegedAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow);
+  const access = publicAccessGrant(accessRow);
   return {
     ...publicInfo,
     last_login_at: user.last_login_at || "",
-    entitlement: isPrivilegedAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow),
-    access: isPrivilegedAccount(user)
-      ? publicAccessGrant({
-        email: normalizeEmail(user && user.email),
-        access_mode: "all",
-        status: "active",
-        lifetime: true,
-        source: "role",
-        updated_at: new Date().toISOString(),
-      })
-      : publicAccessGrant(accessRow),
+    entitlement,
+    access,
+    effective_access: effectiveAccessForUser(user, entitlementRow, accessRow),
   };
 }
 
@@ -3565,38 +4478,33 @@ async function listR2JsonObjects(env, prefix, limit = 500) {
 
 async function listSiteUsers(env) {
   if (hasSupabaseConfig(env)) {
-    try {
-      const query = queryString({
-        select: "id,username,email,email_is_generated,created_at,updated_at,last_login_at",
-        order: "updated_at.desc",
-        limit: "500",
-      });
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-      if (Array.isArray(rows)) return Promise.all(rows.map((row) => mergeSiteUserAdminState(env, row)));
-    } catch (_error) {
-      // Fall through to the R2 mirror.
-    }
+    const query = queryString({
+      select: "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at",
+      order: "updated_at.desc",
+      limit: "500",
+    });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+    if (!Array.isArray(rows)) throw new Error("Account database response is invalid.");
+    return Promise.all(rows.map((row) => mergeSiteUserAdminState(env, validateSiteUserRow(row))));
   }
   const rows = await listR2JsonObjects(env, accountKey("users", "id", ""), 500);
-  const merged = await Promise.all(rows.map((row) => mergeSiteUserAdminState(env, row)));
+  const merged = await Promise.all(rows.map((row) => mergeSiteUserAdminState(env, validateSiteUserRow(row))));
   return merged.sort((a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")));
 }
 
 async function listEntitlementRows(env) {
   if (hasSupabaseConfig(env)) {
-    try {
-      const query = queryString({
-        select: "email,plan,status,lifetime,current_period_end,updated_at",
-        order: "updated_at.desc",
-        limit: "1000",
-      });
-      const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
-      if (Array.isArray(rows)) return rows;
-    } catch (_error) {
-      // Fall through to R2.
-    }
+    const query = queryString({
+      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+      order: "updated_at.desc",
+      limit: "1000",
+    });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+    if (!Array.isArray(rows)) throw new Error("Account database response is invalid.");
+    return rows.map((row) => validateEntitlementRow(row, row && row.email));
   }
-  return listR2JsonObjects(env, accountKey("entitlements", ""), 1000);
+  const rows = await listR2JsonObjects(env, accountKey("entitlements", ""), 1000);
+  return rows.map((row) => validateEntitlementRow(row, row && row.email));
 }
 
 function entitlementMap(rows) {
@@ -7093,14 +8001,18 @@ async function handleAccountAdminUserAccess(request, env) {
   if (!email) return jsonResponse(request, env, 400, { detail: "Email is required." });
 
   try {
-    const access = await saveAccessGrant(env, email, payload, adminUser);
+    const user = await findSiteUserByEmail(env, email);
+    if (!user) return jsonResponse(request, env, 404, { detail: "User not found." });
+    if (isPrivilegedAccount(user)) {
+      return jsonResponse(request, env, 400, { detail: "系统角色账号不能写入普通用户授权。" });
+    }
+    const saveResult = await saveAccessGrant(env, email, payload, adminUser);
+    const access = saveResult.access;
     const verifiedAccess = await findAccessGrant(env, email);
     if (!accessGrantMatchesExpected(verifiedAccess, access)) {
       throw new Error("Access save verification failed. Please retry.");
     }
-    let user = await findSiteUserByEmail(env, email).catch(() => null);
-    if (!user && payload.username) user = await findSiteUserByUsername(env, normalizeUsername(payload.username)).catch(() => null);
-    const visibleUser = user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null;
+    const visibleUser = adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access);
     if (visibleUser) await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     await persistAnalyticsEvent(request, env, {
       type: "admin_user_update",
@@ -7119,7 +8031,15 @@ async function handleAccountAdminUserAccess(request, env) {
       access,
     });
   } catch (error) {
-    return jsonResponse(request, env, 400, { detail: error.message || "Could not save access." });
+    if (error && error.code === "ACCESS_CONFLICT") {
+      return jsonResponse(request, env, 409, {
+        detail: error.message || "权限记录已变化，请刷新后重试。",
+      });
+    }
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status === 503 ? 503 : 400, {
+      detail: status === 503 ? "权限保存或核验失败，请稍后重试。" : error.message || "Could not save access.",
+    });
   }
 }
 
@@ -7149,6 +8069,9 @@ async function handleAccountAdminUserCreate(request, env) {
   }
   if (password.length < 4 || password.length > 128) {
     return jsonResponse(request, env, 400, { detail: "密码需为 4-128 位。" });
+  }
+  if (isReservedPrivilegedIdentity(username, email)) {
+    return jsonResponse(request, env, 403, { detail: "该用户名或邮箱为系统保留身份，不能通过通用入口创建。" });
   }
 
   try {
@@ -7189,7 +8112,7 @@ async function handleAccountAdminUserCreate(request, env) {
     if (/duplicate|409|unique/i.test(text)) {
       return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
     }
-    return jsonResponse(request, env, 400, { detail: error.message || "Could not create user." });
+    return jsonResponse(request, env, 503, { detail: "用户创建或权限核验失败，请稍后重试。" });
   }
 }
 
@@ -7233,7 +8156,7 @@ async function handleAccountAdminUserStatus(request, env) {
       user: visibleUser,
     });
   } catch (error) {
-    return jsonResponse(request, env, 400, { detail: error.message || "Could not update user status." });
+    return jsonResponse(request, env, 503, { detail: "用户状态保存或核验失败，请稍后重试。" });
   }
 }
 
@@ -8022,8 +8945,7 @@ async function sanitizePdfExternalLinksBody(body) {
   return sanitizePdfExternalLinksBytes(bytes);
 }
 
-async function externalPdfResponse(request, env, body, title, id) {
-  const sanitized = await sanitizePdfExternalLinksBody(body);
+function externalPdfResponse(request, env, sanitized, title, id) {
   return new Response(sanitized, {
     headers: {
       ...corsHeaders(request, env),
@@ -8094,15 +9016,16 @@ async function handleExternalPdf(request, env) {
     try {
       const pdf = await fetchWithTimeout(direct.url, { headers: { "User-Agent": EXTERNAL_UA } }, UPSTREAM_PDF_TIMEOUT_MS);
       if (pdf.ok) {
-        const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "external");
+        const sanitized = await sanitizePdfExternalLinksBody(pdf.body);
+        const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
         if (!consumed.ok) {
-          return jsonResponse(request, env, 403, {
+          return jsonResponse(request, env, consumed.status || 403, {
             error: consumed.error || TRIAL_LIMIT_MESSAGE,
             contact: consumed.contact || CONTACT_WECHAT,
-            limit_exceeded: true,
+            limit_exceeded: Boolean(consumed.limit_exceeded),
           });
         }
-        return await externalPdfResponse(request, env, pdf.body, direct.title, id);
+        return externalPdfResponse(request, env, sanitized, direct.title, id);
       }
     } catch (_error) {
       // Fall through to the R2 / grab paths below.
@@ -8113,15 +9036,16 @@ async function handleExternalPdf(request, env) {
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
-      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "external");
+      const sanitized = await sanitizePdfExternalLinksBody(object.body);
+      const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
       if (!consumed.ok) {
-        return jsonResponse(request, env, 403, {
+        return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
           contact: consumed.contact || CONTACT_WECHAT,
-          limit_exceeded: true,
+          limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
-      return await externalPdfResponse(request, env, object.body, direct.title, id);
+      return externalPdfResponse(request, env, sanitized, direct.title, id);
     }
   }
 
@@ -8670,15 +9594,16 @@ async function handleThinkTankPdf(request, env) {
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(cacheKey);
     if (object) {
-      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, canonicalId, THINKTANK_SOURCE);
+      const sanitized = await sanitizePdfExternalLinksBody(object.body);
+      const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, canonicalId, THINKTANK_SOURCE);
       if (!consumed.ok) {
-        return jsonResponse(request, env, 403, {
+        return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
           contact: consumed.contact || CONTACT_WECHAT,
-          limit_exceeded: true,
+          limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
-      return await externalPdfResponse(request, env, object.body, row.title, id);
+      return externalPdfResponse(request, env, sanitized, row.title, id);
     }
   }
 
@@ -8695,15 +9620,16 @@ async function handleThinkTankPdf(request, env) {
       contact: CONTACT_WECHAT,
     });
   }
-  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, canonicalId, THINKTANK_SOURCE);
+  const sanitized = await sanitizePdfExternalLinksBody(cached.body);
+  const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, canonicalId, THINKTANK_SOURCE);
   if (!consumed.ok) {
-    return jsonResponse(request, env, 403, {
+    return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
       contact: consumed.contact || CONTACT_WECHAT,
-      limit_exceeded: true,
+      limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
-  return await externalPdfResponse(request, env, cached.body, row.title, id);
+  return externalPdfResponse(request, env, sanitized, row.title, id);
 }
 
 // ---------------------------------------------------------------------------
@@ -8911,6 +9837,10 @@ export default {
       return handleOpsAlertEmail(request, env);
     }
 
+    if (pathname === "/vid2ppt/redeem-code" && request.method === "POST") {
+      return handleVid2PptRedeemCode(request, env);
+    }
+
     if (pathname === "/newsfeed/home" && request.method === "GET") {
       return handleNewsfeedHome(request, env);
     }
@@ -8952,11 +9882,19 @@ export default {
     }
 
     if (pathname === "/paddle-config" && request.method === "GET") {
-      return handlePaddleConfig(request, env);
+      return jsonResponse(request, env, 410, {
+        detail: "KCdesk checkout is closed. Vid2PPT ATLAS sponsor checkout handles payment and may gift KCdesk.com membership time.",
+      });
     }
 
     if (pathname === "/paddle-webhook" && request.method === "POST") {
-      return handlePaddleWebhook(request, env);
+      return jsonResponse(request, env, 410, {
+        detail: "KCdesk Paddle webhook is closed. Payment events are handled by Vid2PPT.",
+      });
+    }
+
+    if (pathname === "/vid2ppt/atlas-grant" && request.method === "POST") {
+      return handleVid2PptAtlasGrant(request, env);
     }
 
     if (pathname === "/admin/login" && request.method === "POST") {
