@@ -1,0 +1,330 @@
+{
+  "created_at_utc": "2026-07-25T03:15:02.763020+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260724",
+  "output_dir": "publish_ready_zips/260724",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 19,
+  "skipped_shards": [],
+  "total_files": 1669,
+  "total_renamed_markdown_count": 455,
+  "total_raw_file_bytes": 236884806,
+  "zip_count": 3,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260724/publish_ready_260724_part001.zip",
+      "size_bytes": 87808469,
+      "file_count": 618,
+      "renamed_markdown_count": 160,
+      "raw_file_bytes": 94322003,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_13",
+        "shard_14"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260724/publish_ready_260724_part002.zip",
+      "size_bytes": 87575256,
+      "file_count": 713,
+      "renamed_markdown_count": 200,
+      "raw_file_bytes": 94193192,
+      "shards": [
+        "shard_14",
+        "shard_15",
+        "shard_16",
+        "shard_17",
+        "shard_18",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260724/publish_ready_260724_part003.zip",
+      "size_bytes": 45542594,
+      "file_count": 338,
+      "renamed_markdown_count": 95,
+      "raw_file_bytes": 48369611,
+      "shards": [
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15977165,
+      "reports": [
+        "0001-01-Bernstein-Alphabet-Inc-GOOGL.US-Google-2Q26--Should-we-eat-or-go-to-bed-",
+        "0002-02-Barclays-China-Overcapacity-tracker-260722",
+        "0003-03-Barclays-IBM-Corp.-IBM.US-2Q26-Recap--Adjusting-for-Changing-Customer-Be",
+        "0004-04-Bernstein-GE-Aerospace-GE.US-GE-Aerospace--Strength-continues--Another-b",
+        "0005-05-Bernstein-China-Pharma-and-Biotech-Asia-Biopharma-Summer-Teach-in--GLP-1"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15701406,
+      "reports": [
+        "0001-06-Bernstein-Digital-Realty-Trust--Inc.-DLR.US-Digital-Realty--DLR--2Q26--S",
+        "0002-07-Bernstein-Honeywell-International-Inc-HON.US-HON-2Q26--Solid-results-com",
+        "0003-08-Bernstein-ServiceNow-Inc-NOW.US-Q2-26--beats-and-raises-are-back----2607",
+        "0004-09-Bernstein-International-Business-Machines-Corp-IBM.US-IBM-FQ2-26--Nothin",
+        "0005-10-Bofa-The-Flow-Show-Bonds-bringing-the-heat-260723"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13263150,
+      "reports": [
+        "0001-51-HSBC-China-s-trade-relations-Pushback--not-pullback-260722",
+        "0002-52-J.P.-Morgan-BoJ-preview--Bold-outlook--cautious-execution-260723",
+        "0003-53-J.P.-Morgan-Asia-Power-Equipment-Read-through-from-GE-Vernova-s-2Q26-res",
+        "0004-54-J.P.-Morgan-Asia-Vital-Components-3017.TW-2Q-preview--Another-strong-GM-",
+        "0005-55-J.P.-Morgan-China--Slow-2Q-fiscal-deployment-leaves-more-room-for-2H-Nea"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11512213,
+      "reports": [
+        "0001-56-J.P.-Morgan-SK-Innovation-096770.KS--W0.9tn-SK-China-stake-sale-to-fund-",
+        "0002-57-J.P.-Morgan-Korea-Shipbuilding-Investor-Feedback-Ahead-of-2Q26-Earnings-",
+        "0003-58-J.P.-Morgan-ServiceNow-NOW.US-F2Q-Review-Results-to-Calm-Fears-Around-Bo",
+        "0004-59-J.P.-Morgan-Semiconductor-Tech-Materials-Feedback-from-investor-visits-i",
+        "0005-60-J.P.-Morgan-Soitec-SOIT.PA-Feedback-from-call--Growing-management-confid"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14383848,
+      "reports": [
+        "0001-61-J.P.-Morgan-Yingliu-Electromechanical--A-603308-Read-across-from-GE-Vern",
+        "0002-62-Morgan-Stanley-Alphabet-Inc.---North-America-4-Learnings-and-2-Catalysts",
+        "0003-63-J.P.-Morgan-Tesla-Inc-TSLA.US-Lower-Estimates-on-Large-Margin-Miss-with-",
+        "0004-64-Morgan-Stanley-Asia-Summer-School--Asia-Beauty---Trends-and-Cycles-26072",
+        "0005-65-Morgan-Stanley-China-Equity-Strategy-China-Free-Liquidity-vs.-MSCI-China"
+      ]
+    },
+    {
+      "shard": "shard_13",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16123330,
+      "reports": [
+        "0001-66-Morgan-Stanley-Apple--Inc.---North-America-F3Q26-Earnings-Preview---The-",
+        "0002-67-Morgan-Stanley-China-Musings-No-Pivot-Yet-but-Watch-Closely-260723",
+        "0003-68-Morgan-Stanley-Eyes-on-the-Tide--Swimming-Ring-in-Hand-260723",
+        "0004-69-Morgan-Stanley-Cloud-Semis--Unlikely-to-slow-down-260722",
+        "0005-70-Morgan-Stanley-Greater-China-Technology-Semiconductors---Asia-Pacific-Cl"
+      ]
+    },
+    {
+      "shard": "shard_14",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16623130,
+      "reports": [
+        "0001-71-Morgan-Stanley-IBM-IBM.UN-2Q26-Earnings---Transitory-or-Prolonged-Spendi",
+        "0002-72-Morgan-Stanley-G10-FX-Strategy-Another-ECB-Hike-Would-Likely-Strengthen-",
+        "0003-73-Morgan-Stanley-Microsoft---North-America-4Q26-Preview---Time-to-Take-Bac",
+        "0004-74-Morgan-Stanley-Investor-Presentation-Japan-Summer-School--Energy---Utili",
+        "0005-75-Morgan-Stanley-Investor-Presentation---Japan-Semiconductor-Production-Eq"
+      ]
+    },
+    {
+      "shard": "shard_15",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10229194,
+      "reports": [
+        "0001-76-Morgan-Stanley-Semiconductor-Capital-Equipment-Thoughts-on-Intel-Capex-2",
+        "0002-77-Morgan-Stanley-Soitec-SA-SOIT.PA-The-confirmation-the-market-needed-2607",
+        "0003-78-Morgan-Stanley-SpaceX-SPCX.US-Anomalies-and-Rapid-Unscheduled-Disassembl",
+        "0004-79-Morgan-Stanley-Topsports-6110.HK-Nike-s-Channel-Reset-Raises-Los-Lose-Ri",
+        "0005-80-Morgan-Stanley-Tanker-Shipping-New-Dynamics-and-Implications-260722"
+      ]
+    },
+    {
+      "shard": "shard_16",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14476416,
+      "reports": [
+        "0001-81-Morgan-Stanley-TSMC-preview-and-CoWoS-update---CPU--GPU--ASIC--Optical--",
+        "0002-82-Nomura-AI-Semi-TSMC-shares-react-negatively-despite-guidance-beat-260724",
+        "0003-83-Morgan-Stanley-VNET-Group-Inc-VNET.US-2Q26-preview-and-our-thoughts-on-r",
+        "0004-84-Morgan-Stanley-Yageo-Corp.-2327.TW-2Q-preview---tightening-MLCC-narrativ",
+        "0005-85-Nomura-Asia-AI-Server-Upsides-from-neoclouds-in-the-late-GB300-cycle-260"
+      ]
+    },
+    {
+      "shard": "shard_17",
+      "report_count": 5,
+      "file_count": 63,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 6995582,
+      "reports": [
+        "0001-86-Nomura-China-sportswear-Sequentially-weakening-momentum-in-2Q26-260723",
+        "0002-87-Nomura-AI-industry-update-Moonshot-AI-releases-Kimi-K3-260722",
+        "0003-88-Nomura-Policy-Watch-July-FOMC-Preview-260723",
+        "0004-89-Nomura-Global-AI-Trend-Tracker-Alphabet-s-2Q26-results-read-through-2607",
+        "0005-90-Nomura-USD-CNY-fix-model-Projection--6.7822-260724"
+      ]
+    },
+    {
+      "shard": "shard_18",
+      "report_count": 1,
+      "file_count": 23,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 2824329,
+      "reports": [
+        "0001-91-UBS-China-Equity-Strategy-Mutual-funds--position-in-tech-sector-hit-a-re"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 79,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11281086,
+      "reports": [
+        "0001-11-Bernstein-Spotify-Technology-SA-SPOT.US-Spotify---US-Music--Is-this-as-g",
+        "0002-12-Bernstein-U.S.-Medical-Devices-U.S.-Medtech--Top-8-takeaways-from-SRS-20",
+        "0003-13-CITI-China-CCL-Nanya-New-Material--688519--Not-Covered----Downstream-Acc",
+        "0004-14-CITI-China-Internet-Proprietary-Survey-On-Music-Streaming-Experience---C",
+        "0005-15-CITI-China-Renewable-Energy-Good-to-See-Tightened-Energy-Standards-for-P"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10309171,
+      "reports": [
+        "0001-16-CITI-MicroPort-MedBot--2252.HK--1H26-Positive-Profit-Alert-Announced--An",
+        "0002-17-CITI-Kingboard-Laminates-Holdings--1888.HK--Read-across-from-Citi-Call-w",
+        "0003-18-CITI-China-Renewable-Energy-Solar-Product-Prices-Stayed-Low-PRC-Solar-In",
+        "0004-19-Goldman-Sachs-Advanced-Micro-Devices-Inc.--AMD.US---Key-takeaways-from-A",
+        "0005-20-Goldman-Sachs-Alphabet-Inc.--GOOGL.US--Q2-26-Review--The-AI-Investment-C"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13812753,
+      "reports": [
+        "0001-21-Goldman-Sachs-China-Healthcare--ESMO-2026-China-datapoints--eyes-on-sac-",
+        "0002-22-Goldman-Sachs-Chow-Tai-Fook-Jewellery-Group--1929.HK--1QFY27-solid-SSSG-",
+        "0003-23-Goldman-Sachs-DISCO--6146.T--Earnings-Review--2Q-shipment-guidance-beats",
+        "0004-24-Goldman-Sachs-China-Retail-Chartbook-Jun-26--Broad-based-volume-decline-",
+        "0005-25-Goldman-Sachs-GLOBAL-TECHNOLOGY-Global-Data-Center-Capacity-update--Incr"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12610661,
+      "reports": [
+        "0001-26-Goldman-Sachs-Digital-Realty-Trust-Inc.--DLR.US---2Q26-review--Growing-b",
+        "0002-27-Goldman-Sachs-Energy--Utilities---Mining-Pulse--Investors-Asking--Where-",
+        "0003-28-Goldman-Sachs-Global-Markets-Comment--Distinguishing-AI-Risks-Size-of-th",
+        "0004-29-Goldman-Sachs-Intel-Corp.--INTC.US---Strong-quarter-across-the-board--wi",
+        "0005-30-Goldman-Sachs-Horizon-Robotics--9660.HK---HSD-V2.0-launched-with-new-mod"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11403290,
+      "reports": [
+        "0001-31-Goldman-Sachs-Japan-Healthcare--Roche-Galderma-2Q-results-read-across--C",
+        "0002-32-Goldman-Sachs-Japan-Semiconductor-Capital-Equipment--Intel-2Q-read-acros",
+        "0003-33-Goldman-Sachs-International-Business-Machines-Corp.--IBM.US---Ticks-down",
+        "0004-34-Goldman-Sachs-MiniMax-Group--0100.HK--Takeaways-from-Founder-CEO-meeting",
+        "0005-35-Goldman-Sachs-Mitsubishi-Electric--6503.T---Announces-AI-sensor-JV-with-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14730501,
+      "reports": [
+        "0001-36-Goldman-Sachs-LG-Display--034220.KS--Earnings-Review--2Q26-miss--expect-",
+        "0002-37-Goldman-Sachs-Mobileye-Global-Inc.-MBLY.US-Execution-on-robotaxi-and-rob",
+        "0003-38-Goldman-Sachs-OIL-ANALYST-New-Upside-Price-Risks-Amid-Red-Sea-Tensions-2",
+        "0004-39-Goldman-Sachs-Nestle--NESN.S--Soft-US-growth-and-caution-on-margin-traje",
+        "0005-40-Goldman-Sachs-SK-Telecom--017670.KS---Established-SK-Hyper-as-AIDC-devel"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11571785,
+      "reports": [
+        "0001-41-Goldman-Sachs-SAP--SAPG.DE---2Q26--CCB-stronger-while-EBIT-below--FY26-E",
+        "0002-42-Goldman-Sachs-SOUTH-KOREA-TELECOM-SERVICES-2Q26E-earnings-preview--Mixed",
+        "0003-43-Goldman-Sachs-Samsung-Electro-Mechanics-009150.KS--Announces-another-lar",
+        "0004-44-Goldman-Sachs-StarPower-603290--Product-line-diversification-supporting-",
+        "0005-45-Goldman-Sachs-Samsung-Electronics--005930.KS---Galaxy-Z-Fold-Flip-8-seri"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13055796,
+      "reports": [
+        "0001-46-HSBC-China-Healthcare--AI-in-Drug-Discovery--AIDD--260723",
+        "0002-47-Goldman-Sachs-Volkswagen--VOWG_p.DE---2Q26-operating-miss--EPS-further-b",
+        "0003-48-Goldman-Sachs-Yaskawa-Electric--6506.T---Conf.-Call-Takeaways--Reconfirm",
+        "0004-49-HSBC-Fuyao-Glass-Industry--600660-Buy-Buy--Weak-auto-beta-priced-in--rec",
+        "0005-50-HSBC-Lithium-Beyond-the-peak-260723"
+      ]
+    }
+  ]
+}
