@@ -1,0 +1,127 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_cight35v/pdfs/0005-20-GS-CATL -300750- Earnings Review- 2Q26 results inline- demand outlook reaffirmed- largest A-share buyback announced to date- Buy-260725.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "宁德时代交出二季度成",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x2",
+    "市场市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "A股|港股->相关市场 x1",
+    "股价->报价 x1",
+    "市场市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：宁德时代业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-GS-CATL -300750- Earnings Review- 2Q26 results inline- demand outlook reaffirmed- largest A-share buyback announced to date- Buy-260725.pdf",
+    "cleaned_source_title": "GS-CATL -300750- Earnings Review- 2Q26 results inline- demand outlook reaffirmed- largest A-share buyback announced to date- Buy",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：CATL300750EarningsReview2Q26",
+    "raw_candidates": [
+      "宁德时代二季度业绩符合预期并宣布回购计划",
+      "宁德时代二季度净利润225.5亿元同比增36%",
+      "宁德时代二季度业绩与大规模回购计划"
+    ],
+    "cleaned_candidates": [
+      "GS：宁德时代二季度业绩符合预期并宣布回购计划",
+      "GS：宁德时代二季度净利润225.5亿元同比增36%",
+      "GS：宁德时代二季度业绩与大规模回购计划",
+      "GS：CATL300750EarningsReview2Q26",
+      "GS：宁德时代在7月24日盘后发布了二季度业绩"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：宁德时代二季度净利润225.5亿元同比增36%",
+        "reasons": [
+          "anchor_coverage=0.32"
+        ]
+      },
+      {
+        "title": "GS：宁德时代二季度业绩与大规模回购计划",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "GS：CATL300750EarningsReview2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：宁德时代在7月24日盘后发布了二季度业绩",
+        "reasons": [
+          "anchor_coverage=0.37"
+        ]
+      }
+    ],
+    "selected_title": "GS：宁德时代业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：宁德时代二季度业绩符合预期并宣布回购计划",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：宁德时代业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "555",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
