@@ -1,0 +1,572 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0001-36-JPM-Bank of China-BOCHK- -2388.HK-Superior TSR to support relative outperformance-upgrade to OW-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "中银香港终于被上调评",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "A股|港股->相关市场 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中银香港，净息差预期与股东回报关注焦点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-JPM-Bank of China-BOCHK- -2388.HK-Superior TSR to support relative outperformance-upgrade to OW-260723.pdf",
+      "cleaned_source_title": "JPM-Bank of China-BOCHK- -2388.HK-Superior TSR to support relative outperformance-upgrade to OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Bankof中国BOCHK",
+      "raw_candidates": [
+        "中银香港：净息差预期与股东回报关注焦点",
+        "中银香港：净息差持稳预期与FY26盈利上调",
+        "中银香港：净息差与股东回报能力分析"
+      ],
+      "cleaned_candidates": [
+        "JPM：中银香港，净息差预期与股东回报关注焦点",
+        "JPM：中银香港，净息差持稳预期与FY26盈利上调",
+        "JPM：中银香港，净息差与股东回报能力分析",
+        "JPM：Bankof中国BOCHK",
+        "JPM：该机构此前预计中银香港未来两年净息差将逐年收窄3至4个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中银香港，净息差持稳预期与FY26盈利上调",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "JPM：中银香港，净息差与股东回报能力分析",
+          "reasons": [
+            "anchor_coverage=0.59"
+          ]
+        },
+        {
+          "title": "JPM：Bankof中国BOCHK",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：该机构此前预计中银香港未来两年净息差将逐年收窄3至4个基点",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中银香港，净息差预期与股东回报关注焦点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中银香港，净息差预期与股东回报关注焦点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0002-37-JPM-Servers-Read-through from Google-s Jun-26 earnings-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "谷歌砸钱搞基建，服务",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Google6月季度财报-服务器供应链影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-JPM-Servers-Read-through from Google-s Jun-26 earnings-260723.pdf",
+      "cleaned_source_title": "JPM-Servers-Read-through from Google-s Jun-26 earnings",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：ServersReadthroughfrom",
+      "raw_candidates": [
+        "Google 6月季度财报-服务器供应链影响",
+        "Google 2026年资本支出上调至约2000亿美元-服务器供应链受益",
+        "Google 资本支出结构变化-服务器与组件供应商收入弹性"
+      ],
+      "cleaned_candidates": [
+        "JPM：Google6月季度财报-服务器供应链影响",
+        "JPM：Google2026年资本支出上调至约2000亿美元",
+        "JPM：Google资本支出结构变化-服务器与组件供应商收入弹性",
+        "JPM：ServersReadthroughfrom",
+        "JPM：1.云收入加速增长，订单积压突破5000亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Google2026年资本支出上调至约2000亿美元",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Google资本支出结构变化-服务器与组件供应商收入弹性",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "JPM：ServersReadthroughfrom",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：1.云收入加速增长，订单积压突破5000亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Google6月季度财报-服务器供应链影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Google6月季度财报-服务器供应链影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0003-38-JPM-Disco-6146.T-1Q results-Headcount for factory production support unchanged-limited surprise in the numbers-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "Disco 最新季报",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：Disco业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-JPM-Disco-6146.T-1Q results-Headcount for factory production support unchanged-limited surprise in the numbers-260724.pdf",
+      "cleaned_source_title": "JPM-Disco-6146.T-1Q results-Headcount for factory production support unchanged-limited surprise in the numbers",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Disco1QresultsHeadcoun",
+      "raw_candidates": [
+        "Disco一季度业绩符合预期-工厂支援人员维持百人规模",
+        "Disco一季度出货1359亿日元-工厂支援人员维持百人规模",
+        "Disco一季度业绩与出货数据-工厂支援与产能瓶颈观察"
+      ],
+      "cleaned_candidates": [
+        "JPM：Disco一季度业绩符合预期-工厂支援人员维持百人规模",
+        "JPM：Disco一季度出货1359亿日元-工厂支援人员维持百人规模",
+        "JPM：Disco一季度业绩与出货数据-工厂支援与产能瓶颈观察",
+        "JPM：Disco1QresultsHeadcoun",
+        "JPM：出货额1359亿日元，环比增长12%，同比增22%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Disco一季度业绩与出货数据-工厂支援与产能瓶颈观察",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Disco1QresultsHeadcoun",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：出货额1359亿日元，环比增长12%，同比增22%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Disco业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：Disco一季度业绩符合预期-工厂支援人员维持百人规模",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：Disco业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0004-39-MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "A股情绪降温，港股窗",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "MS：行业规则与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns-260723.pdf",
+      "cleaned_source_title": "MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Equity策略AshareSenti",
+      "raw_candidates": [
+        "A股情绪指标与政策真空期观察",
+        "A股情绪指标降至37%与修复窗口",
+        "A股情绪指标与AI盈利增长支撑"
+      ],
+      "cleaned_candidates": [
+        "MS：A股情绪指标与政策真空期观察",
+        "MS：A股情绪指标降至37%与修复窗口",
+        "MS：A股情绪指标与AI盈利增长支撑",
+        "MS：中国Equity策略AshareSenti",
+        "MS：7月22日更新的MS相关市场情绪指标（MSASI）加"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：A股情绪指标降至37%与修复窗口",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "MS：A股情绪指标与AI盈利增长支撑",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "MS：中国Equity策略AshareSenti",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：7月22日更新的MS相关市场情绪指标（MSASI）加",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：行业规则与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：A股情绪指标与政策真空期观察",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "MS：行业规则与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0005-40-MS-PayPay -PAYP.US-OW Upgrade- Growth Outlook Intact- Attractive Valuation- With Life Insurance Investment Uncertainty Reflected-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "PayPay 的核心",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "股价->报价 x2",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "金融->资金 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资者->读者 x2",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x2",
+      "投资->研究 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x2",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-MS-PayPay -PAYP.US-OW Upgrade- Growth Outlook Intact- Attractive Valuation- With Life Insurance Investment Uncertainty Reflected-260723.pdf",
+      "cleaned_source_title": "MS-PayPay -PAYP.US-OW Upgrade- Growth Outlook Intact- Attractive Valuation- With Life Insurance Investment Uncertainty Reflected",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：PayPayOWUpgrade增长展望In",
+      "raw_candidates": [
+        "PayPay评级上调至超配-增长前景未变",
+        "PayPay评级上调至超配-7月23日报告",
+        "PayPay评级上调至超配-核心业务增长与寿险估值折价"
+      ],
+      "cleaned_candidates": [
+        "MS：PayPay评级上调至超配-增长前景未变",
+        "MS：PayPay评级上调至超配-7月23日报告",
+        "MS：PayPay评级上调至超配-核心业务增长与寿险估值折价",
+        "MS：PayPayOWUpgrade增长展望In",
+        "MS：MS在7月23日发布的一份报告中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：PayPay评级上调至超配-7月23日报告",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：PayPay评级上调至超配-核心业务增长与寿险估值折价",
+          "reasons": [
+            "anchor_coverage=0.69",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：PayPayOWUpgrade增长展望In",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS在7月23日发布的一份报告中",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：PayPay评级上调至超配-增长前景未变",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

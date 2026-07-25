@@ -1,0 +1,144 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_p4ml8fzo/pdfs/0004-39-MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "A股情绪降温，港股窗",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "A股|港股->相关市场 x2",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x2",
+    "市场市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x2",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive",
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "MS：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-39-MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns-260723.pdf",
+    "cleaned_source_title": "MS-China Equity Strategy-A-share Sentiment Lukewarm Amid Policy Vacuum and IPO Concerns",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国Equity策略AshareSenti",
+    "raw_candidates": [
+      "A股情绪指标与政策真空期观察",
+      "A股情绪指标降至37%与修复窗口",
+      "A股情绪指标与AI盈利增长支撑"
+    ],
+    "cleaned_candidates": [
+      "MS：A股情绪指标与政策真空期观察",
+      "MS：A股情绪指标降至37%与修复窗口",
+      "MS：A股情绪指标与AI盈利增长支撑",
+      "MS：中国Equity策略AshareSenti",
+      "MS：7月22日更新的MS相关市场情绪指标（MSASI）加"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：A股情绪指标降至37%与修复窗口",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "MS：A股情绪指标与AI盈利增长支撑",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "MS：中国Equity策略AshareSenti",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：7月22日更新的MS相关市场情绪指标（MSASI）加",
+        "reasons": [
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：A股情绪指标与政策真空期观察",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "MS：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "457",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
