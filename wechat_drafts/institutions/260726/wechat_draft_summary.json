@@ -1,0 +1,92 @@
+{
+  "date_folder": "260726",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 2,
+  "selected_count": 2,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "title_log": "wechat_drafts/institutions/260726/wechat_title_log.json",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8wmAjIiuV5RfDzpi6SaOocNORjJ7-D-lPBUk23uLA_3D",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 2,
+      "payload_bytes": 14182,
+      "payload": "wechat_drafts/institutions/260726/draft_payload_01.json",
+      "titles": [
+        "经合组织：医疗健康互操作性障碍与路径，互操作性障碍集中在数据共享实践",
+        "经合组织：行业规则与主题变化观察，多数国家通过现有劳动政策框架应对AI"
+      ],
+      "wechat_titles": [
+        "经合组织：医疗健康互操作性障碍与路径，互操作性障碍集中在数据共享实践",
+        "经合组织：行业规则与主题变化观察"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 2,
+        "expected_article_count": 2,
+        "matches_expected_article_count": true,
+        "titles": [
+          "ç»åç»ç»ï¼å»çå¥åº·äºæä½æ§éç¢ä¸è·¯å¾ï¼äºæä½æ§éç¢éä¸­å¨æ°æ®å ±äº«å®è·µ",
+          "ç»åç»ç»ï¼è¡ä¸è§åä¸ä¸»é¢ååè§å¯"
+        ],
+        "create_time": 1785020892,
+        "update_time": 1785020893
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "经合组织：医疗健康互操作性障碍与路径，互操作性障碍集中在数据共享实践",
+      "wechat_title": "经合组织：医疗健康互操作性障碍与路径，互操作性障碍集中在数据共享实践",
+      "header_title": "互操作性障碍集中在业务与近期数据观察",
+      "digest": "医疗健康互操作性障碍与路径，互操作性障碍集中在数据共享实践、基础设施碎片化和治理协调不足。",
+      "institution_name": "经合组织",
+      "source_report_name": "OECD Interoperability-in-healthcare af4f920d",
+      "report_dir": "kc_translated_reports/institutions/260726/01-0001-OECD_Interoperability-in-healthcare_af4f920d",
+      "content_chars": 5695,
+      "content_bytes": 7777,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "wechat_drafts/institutions/260726/_assets/article_01_cover.jpg"
+    },
+    {
+      "title": "经合组织：行业规则与主题变化观察，多数国家通过现有劳动政策框架应对AI",
+      "wechat_title": "经合组织：行业规则与主题变化观察",
+      "header_title": "行业规则与主题变化观察",
+      "digest": "行业规则与主题变化观察，多数国家通过现有劳动政策框架应对AI影响。",
+      "institution_name": "经合组织",
+      "source_report_name": "OECD Recent-policy-developments-on-AI-in-the-labour-market c91f6405",
+      "report_dir": "kc_translated_reports/institutions/260726/02-0002-OECD_Recent-policy-developments-on-AI-in-the-labour-market_c91f6405",
+      "content_chars": 3600,
+      "content_bytes": 5244,
+      "visible_text_chars": 730,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 1,
+      "cover_image": "wechat_drafts/institutions/260726/_assets/article_02_cover.jpg"
+    }
+  ]
+}
