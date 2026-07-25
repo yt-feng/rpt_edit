@@ -1,0 +1,7717 @@
+[
+    {
+        "type": "text",
+        "text": "BCG",
+        "bbox": [
+            109,
+            64,
+            187,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Executive Perspectives",
+        "bbox": [
+            107,
+            181,
+            239,
+            283
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Outperforming Through Volatility: AI in Refining",
+        "text_level": 2,
+        "bbox": [
+            341,
+            400,
+            886,
+            538
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Refining",
+        "bbox": [
+            344,
+            564,
+            452,
+            624
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "April 2026",
+        "bbox": [
+            342,
+            657,
+            443,
+            709
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            47,
+            103,
+            177,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We meet often with CEOs to discuss AI, a topic that is both fascinating and rapidly evolving. After working with more than 2,000 clients over the past two+ years, we are sharing our latest insights in a new series designed to help CEOs navigate AI. For refining leaders, the question is no longer whether AI matters, but how to use it to outperform through volatility and create durable competitive advantage.",
+        "bbox": [
+            45,
+            172,
+            647,
+            342
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The refining sector is under structural pressure. Long-term demand is expected to decline, while net refining capacity could still grow by 2030, even after closures, sustaining pressure on margins. At the same time, geopolitics, sanctions, regulation, and trade dislocations are amplifying volatility. AI offers a new set of levers—moving refineries from periodic, siloed optimization to real-time, margin-driven decisioning and closed-loop workflows across planning, operations, logistics, maintenance, and safety. For a reference mid-quartile player, that can translate into \\~\\$0.5–1.2/bbl of EBIT uplift by 2030. Against this backdrop, three questions matter most:",
+        "bbox": [
+            45,
+            357,
+            639,
+            627
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• What does it mean to operate as an AI-first refinery end to end?",
+        "bbox": [
+            46,
+            631,
+            501,
+            664
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Where are leading refiners already creating value today in planning and scheduling, operations, logistics and trading, maintenance and reliability, turnarounds, and HSSE?",
+        "bbox": [
+            46,
+            672,
+            633,
+            770
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- What pragmatic steps should companies take to move from isolated pilots to scaled transformation?",
+        "bbox": [
+            46,
+            779,
+            572,
+            846
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Advances in AI, generative AI, and agentic AI are enabling refiners to shift from isolated tools to embedded capabilities",
+        "bbox": [
+            45,
+            864,
+            640,
+            933
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this Executive Perspective, we outline how AI-first refineries can outperform in a structurally challenged and volatile market",
+        "bbox": [
+            683,
+            105,
+            919,
+            512
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/9f54b3568e8625accb90fc764dd18f65a79567d612b8ac7fbeea8bacb9defc0f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            664,
+            525,
+            998,
+            998
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Executive summary l AI-first refineries will outperform in a structurally challenged and volatile market",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            896,
+            135
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "WHY",
+        "text_level": 2,
+        "bbox": [
+            56,
+            225,
+            100,
+            257
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI adoption is now critical for refineries facing structural pressures",
+        "bbox": [
+            55,
+            259,
+            186,
+            379
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- The refining outlook is tightening, long-term demand is expected to decline, while net refining capacity could grow by 2030—even after closures—sustaining pressure on margins. Geopolitics, sanctions, regulation, and trade dislocations are amplifying volatility.",
+        "bbox": [
+            210,
+            218,
+            942,
+            320
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- At the same time, recent advances in AI and computing are opening new value pools that were previously inaccessible. For a reference mid-quartile player, AI can unlock \\~\\$0.5–1.2/bbl of EBIT uplift by 2030.",
+        "bbox": [
+            210,
+            324,
+            951,
+            392
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "WHAT",
+        "text_level": 2,
+        "bbox": [
+            56,
+            435,
+            110,
+            468
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- AI is moving refineries from periodic, siloed optimization to real-time, margin-driven decisioning and closed-loop workflows across planning, operations, logistics, maintenance, and safety.",
+        "bbox": [
+            211,
+            416,
+            890,
+            485
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- The impact is already visible across the value chain: planning and scheduling can deliver \\~\\$0.15–0.30/bbl, operations \\~\\$0.1–0.5/bbl, logistics/trading \\~\\$0.2–0.3/bbl, and maintenance/reliability \\~\\$0.05–0.1/bbl.",
+        "bbox": [
+            212,
+            488,
+            945,
+            555
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Proven deployments show material results, including +\\$80M from a \\~300 kbpd refinery in operations, >\\$80M annual margin opportunity in logistics/trading, and 5%-15% maintenance cost reduction with 62% inspection-efficiency gains.",
+        "bbox": [
+            212,
+            557,
+            935,
+            659
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "HOW",
+        "text_level": 2,
+        "bbox": [
+            56,
+            716,
+            102,
+            748
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Start with the highest-value workflows—planning and scheduling, operations, and maintenance and reliability—where AI directly improves margin and reduces value leakage.",
+        "bbox": [
+            210,
+            688,
+            900,
+            755
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Winning refineries anchor AI in P&L impact through focused formations",
+        "text_level": 2,
+        "bbox": [
+            55,
+            751,
+            179,
+            870
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Build the foundations to scale: standardized data, digital twins, enterprise platforms, and workflow integration are critical to embed AI into day-to-day execution.",
+        "bbox": [
+            210,
+            759,
+            878,
+            827
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Redesign processes and the operating model—don’t just deploy tools—to capture value at scale, with governance, value tracking, and capability building embedded from day one.",
+        "bbox": [
+            210,
+            829,
+            912,
+            900
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "1. AI impact in G&A functions and related examples are excluded from this report.",
+        "bbox": [
+            48,
+            933,
+            419,
+            957
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            939,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Long-term oil demand is set to decline across a spectrum of scenarios",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            881,
+            109
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Refined products global demand (Mbpd)",
+        "text_level": 2,
+        "bbox": [
+            47,
+            205,
+            414,
+            248
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3d8c1ba93defb8075cd5282de6762548758c99adcc1ff5e040943149416a4b23.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            94,
+            270,
+            929,
+            788
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Actual demand and mix will be defined by future regulations and how pledges translate into policies",
+        "bbox": [
+            183,
+            829,
+            813,
+            864
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. IEA STEP scenario. 2. IEA APS scenario, emission reduction is from 2022 to 2050. 3. Scenario slope of IEA NZE has been adjusted in order to reflect a stronger emission reduction effort from 2030. Temperature rises and CO2 reduction for cases 2 and 3 are approximate and derived by linear interpolation from IEA STEPS and IEA APS scenarios, not bottom-up climate modeling.\nSource: IEA WEO 2024; IEA WEO 2025; BP; ExxonMobil; BCG Oil Long Term Model; BCG analysis.",
+        "bbox": [
+            46,
+            892,
+            935,
+            957
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            939,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Refinery capacity growth is set to outpace demand, putting sustained pressure on the margins",
+        "text_level": 2,
+        "bbox": [
+            48,
+            35,
+            873,
+            135
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b9a637212465249b1db7f5eef25fd16e07837a40195766aade556f4d70c76aed.jpg",
+        "content": "",
+        "chart_caption": [
+            "Net refining capacity growth 2026-2030 $^{1,2,3}$ (Mbpd)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            75,
+            283,
+            445,
+            781
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1. Not probability weighted. 2. CDU + Condensate. 3. Including both expansion projects of existing refineries and new refineries, including projects that roll over from 2025, and excluding capacity added or closed in 2025.",
+        "bbox": [
+            47,
+            814,
+            477,
+            875
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Note: Excluding greenfield refinery projects under approval or prior stages. Probability category attribution subject to available information at the time of elaboration of the slide.",
+        "bbox": [
+            47,
+            874,
+            475,
+            916
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Source: GlobalData 2025; IEA WEO 2025; Wood Mackenzie; BCG Oil Long Term Model; BCG Global Refining Model; BCG Analysis.",
+        "bbox": [
+            47,
+            914,
+            466,
+            957
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a8077e176c84ecedeae776c9dcf1a63a7c777c85e6283cbbd6d2211d5ac4a05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            550,
+            272,
+            600,
+            366
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/6c4e8e09c10d3c35116b44d61d24185c0ae2b844ba69a66bc0a2ad2c306f4929.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            548,
+            490,
+            602,
+            577
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/ec9fb0c6272a8766af49db5472e3ea0e02c1c746ae8eaeddf2a73887446ca6d1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            548,
+            694,
+            600,
+            788
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Supply exceeds demand even in the conservative Brown scenario, where demand decline is minimal",
+        "text_level": 2,
+        "bbox": [
+            627,
+            277,
+            917,
+            400
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Even if we exclude capacities with \"low\" probability, supply exceeds most optimistic demand growth scenario",
+        "text_level": 2,
+        "bbox": [
+            627,
+            488,
+            898,
+            651
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Supply-demand dynamics de-",
+        "text_level": 2,
+        "bbox": [
+            629,
+            701,
+            893,
+            740
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "averaged by refined product (e.g., jet fuel, naphtha demand more resilient)",
+        "bbox": [
+            627,
+            742,
+            933,
+            822
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            939,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "However, margins are expected to be highly volatile in the near term",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            864,
+            111
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7783d65933564e52f33fd4519eac7ec58ccf2ba6ada925a08708275117291ba3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            125,
+            224,
+            173,
+            300
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Electrification of transport",
+        "bbox": [
+            125,
+            324,
+            241,
+            398
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Market dynamic",
+        "bbox": [
+            51,
+            451,
+            115,
+            518
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Faster EV and hybrid uptake...",
+        "bbox": [
+            126,
+            451,
+            234,
+            518
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Margin impact",
+        "bbox": [
+            50,
+            635,
+            104,
+            700
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "... erodes\ngasoline demand\nand caps margin\nupside",
+        "bbox": [
+            125,
+            635,
+            248,
+            759
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/1bae23dedeef96e0fff3781ec6954f79ca82b6dd05be0b68573ee4bb1d42d3fc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            267,
+            231,
+            318,
+            290
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Chinese\nexports",
+        "bbox": [
+            264,
+            324,
+            332,
+            398
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Potentially higher export quotas...",
+        "bbox": [
+            264,
+            450,
+            378,
+            518
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "... pressure\nregional margins\nthrough\noversupply\nand price\ncompetition",
+        "bbox": [
+            263,
+            637,
+            373,
+            825
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/f834a18b719ce88b24baa16ef0a15f0feac9ac37c96f16df88fe9080da2c8ac6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            405,
+            229,
+            453,
+            292
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Global growth and tariffs",
+        "bbox": [
+            403,
+            324,
+            518,
+            396
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Uneven economic growth and trade barriers across regions ...",
+        "bbox": [
+            403,
+            450,
+            520,
+            581
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "...create margin\nvolatility from\nuneven demand\nand product\nflows",
+        "bbox": [
+            402,
+            633,
+            520,
+            790
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/ab2e1947548995d60558c7514127f5230886483af1061ce243222a00254707cb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            540,
+            229,
+            591,
+            292
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Evolving Russian sanctions",
+        "bbox": [
+            542,
+            324,
+            675,
+            394
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "US sanctions on Rosneft/Lukoil and the EU's 2026 product ban...",
+        "bbox": [
+            542,
+            450,
+            665,
+            581
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "...potentially\ndisrupt trade and\namplify margin\nvolatility",
+        "bbox": [
+            541,
+            631,
+            664,
+            762
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/e3718616db7b5e0286aecef9438977f9cd894d03615aef1a938c5c190b8ac6a0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            685,
+            220,
+            736,
+            300
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "New capacity startups",
+        "bbox": [
+            681,
+            324,
+            791,
+            398
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Accelerating startups of large-scale refining capacity....",
+        "bbox": [
+            680,
+            451,
+            803,
+            581
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "...exacerbates oversupply and compresses margins",
+        "bbox": [
+            680,
+            633,
+            788,
+            762
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/ae0bf5b89f0b55cc077345d98b0736ab874cfc0a18c2e9b9d9d75032fa553243.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            816,
+            229,
+            866,
+            290
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "IMO\nMEPC83 $^{1}$",
+        "bbox": [
+            820,
+            324,
+            896,
+            396
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Tightening emissions standards $^{2}$ across the global fleet...",
+        "bbox": [
+            819,
+            451,
+            942,
+            581
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "... require\noperational\nreinvestments\nwith penalties for\nnon-compliance",
+        "bbox": [
+            819,
+            633,
+            941,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "1. International Maritime Organization Marine Environment Protection Committee. 2. Carbon intensity cuts of 20%–30% by 2030 and 70%–80% by 2040 vs 2008 levels. Source: BCG analysis",
+        "bbox": [
+            46,
+            912,
+            804,
+            957
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            938,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/3958c13a584103993997e7d386f4d06d444c4f6bbaa110fe26b86c8d42ab588a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            772,
+            250,
+            947,
+            642
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rapid advances in AI and high-performance computing have the potential to fundamentally transform the refining industry",
+        "text_level": 2,
+        "bbox": [
+            46,
+            33,
+            929,
+            138
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "— Deterministic",
+        "text_level": 2,
+        "bbox": [
+            46,
+            212,
+            182,
+            246
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rules-based",
+        "bbox": [
+            92,
+            475,
+            178,
+            511
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/84cc360a1470747de671478ab539af0a027fd65105c79c21d2bee81bff7c61ff.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            79,
+            531,
+            188,
+            588
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Systems follow a programmed set of rules",
+        "text_level": 2,
+        "bbox": [
+            57,
+            653,
+            212,
+            716
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "When column pressure exceeds threshold, system triggers predefined shutdown or alarm",
+        "bbox": [
+            54,
+            785,
+            209,
+            896
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Machine Learning",
+        "bbox": [
+            254,
+            427,
+            380,
+            466
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/ffeffbaa8107c892b0ddf8923a3d5d37c712bdcf13c7ba10979e3117527c5219.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            276,
+            485,
+            354,
+            611
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Deep Learning (via multi-layer neural networks)",
+        "bbox": [
+            423,
+            362,
+            576,
+            420
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d7ffcaa7b2ee8c1ef69fba64df99d13150317ba03ef95cd8ef6b008f3518333.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            442,
+            429,
+            557,
+            572
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Systems automatically learn from data without being explicitly programmed (e.g., to predict values or identify correlations)",
+        "bbox": [
+            234,
+            653,
+            582,
+            716
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "ML models predict heat exchanger fouling or compressor failure weeks in advance, enabling planned intervention",
+        "bbox": [
+            234,
+            783,
+            566,
+            844
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Probabilistic",
+        "bbox": [
+            543,
+            212,
+            638,
+            246
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Generative AI (e.g., via transformer-based model)",
+        "bbox": [
+            600,
+            312,
+            764,
+            370
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/765f5ab891e8b34175506a3027db9790c9681733b56a51d54318d0544ca3811e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            600,
+            307,
+            761,
+            635
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not exhaustive",
+        "bbox": [
+            858,
+            188,
+            945,
+            220
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI (e.g., using GenAI and tools)",
+        "bbox": [
+            796,
+            257,
+            930,
+            318
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Systems use existing content to create new variations",
+        "bbox": [
+            594,
+            653,
+            769,
+            714
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GenAI synthesizes sensor trends, lab assays, and shift logs to recommend optimal crude blends and operating envelopes",
+        "bbox": [
+            602,
+            785,
+            750,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Systems respond to environments and prompts, to plan then auto-execute tasks",
+        "bbox": [
+            777,
+            655,
+            950,
+            740
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI continuously monitors unit constraints and margins, selects optimal setpoints, and makes adjustments via control systems",
+        "bbox": [
+            781,
+            785,
+            952,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            939,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "AI is already driving a step-change in the efficiency and efficacy of core functions of the refining value chain",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            894,
+            135
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/a775452c2b809b84bf6016f5793e597601d7aab69ec8cd800797b9dad9047c33.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            58,
+            296,
+            86,
+            342
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Planning and Scheduling",
+        "text_level": 2,
+        "bbox": [
+            95,
+            292,
+            191,
+            353
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/61824938ac611ccfa7461d2c6a00774c1a4bc1f246ecdfc95237930edc37ff2b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            57,
+            396,
+            86,
+            451
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Operations",
+        "text_level": 2,
+        "bbox": [
+            95,
+            409,
+            176,
+            444
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/3354800a8fd9dada1f73b62872c1b4fd4fe28cb13662cefbb59ad0e641246287.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            56,
+            505,
+            87,
+            538
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Logistics and Trading",
+        "text_level": 2,
+        "bbox": [
+            95,
+            492,
+            183,
+            557
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/3d31c6940cfcfb2dc5f69b379ac311ee7cf764f6a3c937f1287cf48fb5442aa9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            58,
+            581,
+            89,
+            635
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Maintenance and Reliability",
+        "text_level": 2,
+        "bbox": [
+            95,
+            579,
+            200,
+            640
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/a0ddce36e4cb2ea9bed53db21b7ccaef5e518f1a2ea8f8c66caecb60d45f13a0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            58,
+            661,
+            87,
+            716
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Turnarounds and Projects",
+        "text_level": 2,
+        "bbox": [
+            95,
+            662,
+            187,
+            725
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/f72e7694db58f9c4655ce98748ba56ef7c669f2fde1f5873a6c6f763c537bbdb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            56,
+            770,
+            87,
+            825
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "HSSE $^{1}$",
+        "text_level": 2,
+        "bbox": [
+            96,
+            783,
+            142,
+            812
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1. Health, Safety, Sustainability, and Environment.\nNote: Business support functions are excluded.\nSource: BCG analysis",
+        "bbox": [
+            48,
+            853,
+            200,
+            957
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "From...",
+        "text_level": 2,
+        "bbox": [
+            232,
+            229,
+            302,
+            264
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Periodic constraint-based planning using LP models and offline simulations, with limited response to real-time disruptions",
+        "bbox": [
+            230,
+            279,
+            561,
+            368
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Advanced process control optimizing individual units with manual, cross-unit coordination",
+        "bbox": [
+            230,
+            381,
+            572,
+            438
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Conservative blending and manual quality checks",
+        "bbox": [
+            230,
+            440,
+            567,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Deterministic planning with static demand and inventory assumptions with reliance on buffers",
+        "bbox": [
+            228,
+            498,
+            540,
+            557
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Predictive maintenance based on historical data and expert judgement",
+        "bbox": [
+            228,
+            579,
+            551,
+            640
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Capex decisions based on deterministic business cases and static schedules, updated periodically",
+        "bbox": [
+            228,
+            651,
+            555,
+            712
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Safety managed through audits, procedures, and lagging/ leading indicators",
+        "bbox": [
+            228,
+            750,
+            543,
+            807
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Rules-based energy management and emissions tracking driven by expert judgment",
+        "bbox": [
+            228,
+            807,
+            550,
+            868
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To...",
+        "text_level": 2,
+        "bbox": [
+            593,
+            227,
+            636,
+            262
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Not exhaustive",
+        "bbox": [
+            859,
+            190,
+            944,
+            216
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Real-time, AI-driven planning continuously reoptimizing production, logistics, and product slate using live plant and market data",
+        "bbox": [
+            594,
+            279,
+            921,
+            368
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous, plant-wide closed-loop optimization, AI-driven blending optimizing quality, yield, and cost in real time",
+        "bbox": [
+            595,
+            388,
+            938,
+            474
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- AI-enabled stochastic optimization dynamically balancing inventories and logistics across scenarios to maximize margin",
+        "bbox": [
+            594,
+            483,
+            936,
+            572
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- AI agents orchestrating maintenance end-to-end predicting failures and prioritizing interventions",
+        "bbox": [
+            594,
+            581,
+            918,
+            642
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- AI continuously stress-testing scope and sequencing across thousands of scenarios identifying optimal paths much more quickly",
+        "bbox": [
+            594,
+            650,
+            953,
+            738
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- AI-enabled continuous risk sensing and incident prediction",
+        "bbox": [
+            595,
+            750,
+            858,
+            807
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Model-driven, scenario-based optimization under real-time constraints",
+        "bbox": [
+            595,
+            807,
+            926,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            939,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "AI is unlocking several high-impact applications across the refining value chain",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            851,
+            131
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "1 Planning and Scheduling",
+        "text_level": 2,
+        "bbox": [
+            60,
+            196,
+            294,
+            238
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2 Operations",
+        "text_level": 2,
+        "bbox": [
+            362,
+            194,
+            482,
+            235
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/5ba6525bd8261de134702adf1a71906809d8c0b34dd984eec9fead7142a32ef6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>AI-driven crude slate and margin optimizer</td><td><img src=\"images/c51183590e82ef097bf5c3f5ededfac1694d140d195dae89a3982235cfe08e4a.jpg\"/> AI-assisted real-time optimization, control room</td><td>AI inventory reconciliation and loss detection</td></tr><tr><td><img src=\"images/f177c340d09331cf29ea89e20881f74b952629b0fd95e02b2abba16e46c24b39.jpg\"/> AI-based short-interval scheduling optimizer</td><td>Lab and quality analytics for spec giveaway prevention</td><td>Integrated logistics network and transport optimization</td></tr><tr><td><img src=\"images/e9d7ed857314c71cbfbd405113cf4bffab3ca04643080d44b440341651678e76.jpg\"/> Automated plan-to-actual root cause diagnosis and learning</td><td><img src=\"images/1e68302b85e52f15f35e3894e2c3fc646598f23936a60c06e514016776fe4c6e.jpg\"/> AI energy management optimizer</td><td><img src=\"images/7f7f15cca81bc75d50ec6d3e322b93c41727ebb76a733bbe2f701f2a9b70d0da.jpg\"/> Market structure prediction for proactive trades</td></tr><tr><td>Automated multi-scenario refinery planning and feasibility</td><td></td><td></td></tr></table>",
+        "bbox": [
+            45,
+            242,
+            954,
+            498
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3 Logistics and Trading",
+        "text_level": 2,
+        "bbox": [
+            663,
+            194,
+            869,
+            238
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4 Maintenance and Reliability",
+        "text_level": 2,
+        "bbox": [
+            60,
+            525,
+            326,
+            564
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "5 Turnarounds and Projects",
+        "text_level": 2,
+        "bbox": [
+            362,
+            524,
+            602,
+            566
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "6 HSSE",
+        "text_level": 2,
+        "bbox": [
+            657,
+            524,
+            736,
+            564
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/d3ec4f0b31966326e5ac89183695785811bf104991e7e285242fd5809ab1962c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Predictive maintenance platform</td><td><img src=\"images/db00bf82c64c6f681d02affb4025c53dfd8d7c20125d1767b967ce27c467d24d.jpg\"/></td><td>Integrated turnaround planning and resource scheduler</td><td><img src=\"images/40d68ff4ce944d2d6ade231cf16a64a47094b54eaf0623e9eda64b0c72c067af.jpg\"/></td><td>Predictive safety risk and incident detection</td></tr><tr><td><img src=\"images/531ff38b320a96f5f2d3326b66c125cb6e88239f957c86b57fb5da5431386b85.jpg\"/> Risk-based inspection and integrity analytics</td><td colspan=\"2\">Turnaround execution control tower</td><td colspan=\"2\">Carbon intensity analytics, reporting automation</td></tr><tr><td>AI maintenance planning and scheduling optimizer</td><td colspan=\"2\">AI-assisted inspection planning and execution</td><td rowspan=\"2\" colspan=\"2\"></td></tr><tr><td>AI-driven equipment strategy optimizer</td><td colspan=\"2\">MOC and compliance co-pilot</td></tr></table>",
+        "bbox": [
+            47,
+            572,
+            951,
+            820
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Common business support functions (legal, HR, IT, procurement)\nMaterial opportunities exist in these functions as well, but are not Chemicals-specific and therefore out of scope of this report",
+        "bbox": [
+            122,
+            844,
+            882,
+            911
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            147,
+            957
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Core functions",
+        "bbox": [
+            464,
+            938,
+            536,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Enablers",
+        "bbox": [
+            561,
+            933,
+            637,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Deep-dives to follow",
+        "bbox": [
+            788,
+            925,
+            902,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            939,
+            933,
+            948,
+            955
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "AI has potential to improve refining EBIT by over 50% by 2030",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            777,
+            111
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ecb4c5f7876ab8747f38e1b78ce5cdeb44f914b36888b2802df638e08d5bec0d.jpg",
+        "content": "",
+        "chart_caption": [
+            "2030 AI impact on EBIT $^{1}$ (\\$/bbl)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            75,
+            290,
+            928,
+            838
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "1. For a reference player- mid-quartile. Examples of Al-levers in refining: gross margin (e.g. Al-driven real-time prescriptive input of optimal operating points, maximizing throughputs and yields value and optimal scheduling plan generation with Al algorithms), energy and utilities (e.g., real-time utility network monitoring and optimization to minimize energy and H2 cost), maintenance (e.g., LLM-based agents to support maintenance operators in end-to-end execution including work order generation, image-based unit diagnostics, repair instructions, and log and report automation), CapEx run and maintenance (e.g., capital deployment optimization based on risk-based optimization of project selection supported by Al algorithms). 2. Logistics, maintenance, G&A.",
+        "bbox": [
+            46,
+            872,
+            890,
+            959
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            938,
+            933,
+            948,
+            955
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/6b12ecbc208e30223f2a83f2e48ff2b35e8a347914b6966093fdf212b300a4b9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            356,
+            494,
+            948,
+            925
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI improves margin and operational performance through adaptive scheduling that rapidly reoptimizes under changing conditions",
+        "text_level": 2,
+        "bbox": [
+            46,
+            33,
+            854,
+            138
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            64,
+            229,
+            137,
+            288
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "At a Southeast Asian refiner, short-term scheduling was constrained by:",
+        "bbox": [
+            156,
+            203,
+            542,
+            231
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• High complexity across units, tanks, logistics, and time",
+        "bbox": [
+            164,
+            231,
+            485,
+            257
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Manual/Excel-based scheduling focused on feasibility over value maximization",
+        "bbox": [
+            164,
+            255,
+            609,
+            281
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Slow response to disruptions leading to margin leakage",
+        "bbox": [
+            164,
+            279,
+            486,
+            307
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Impact",
+        "text_level": 2,
+        "bbox": [
+            680,
+            227,
+            733,
+            294
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\~0.15 - 0.30 \\$/bbl\nMargin uplift",
+        "bbox": [
+            778,
+            225,
+            914,
+            290
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/940b7e3f361672a269cc7d694c07927461c560d73c04b0d9c7405b407f63ffad.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            86,
+            337,
+            222,
+            368
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI scheduler runs a digital twin to dynamically reoptimize short-term refinery operation schedule as operational variability occurs",
+        "bbox": [
+            84,
+            366,
+            886,
+            400
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Live Detailed Digital Twin",
+        "text_level": 2,
+        "bbox": [
+            60,
+            453,
+            243,
+            485
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI uses the digital twin as the executable model of refinery state, flows and constraints",
+        "bbox": [
+            59,
+            500,
+            308,
+            555
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/2280c6c001efbadc7ffd3fc384ecc805969bff030cf3bc1ba7b47d48a04cda63.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            51,
+            588,
+            320,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Inventory\nmanagement",
+        "bbox": [
+            118,
+            824,
+            177,
+            870
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Operational Variability",
+        "text_level": 2,
+        "bbox": [
+            373,
+            451,
+            537,
+            485
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A crude ship arrives later than scheduled",
+        "bbox": [
+            492,
+            500,
+            632,
+            555
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A refinery unit suddenly shuts down",
+        "bbox": [
+            809,
+            500,
+            942,
+            555
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI reoptimizes routing, blending, inventory, and dispatch in minutes, dynamically updating the 30-60 day plan to be as close as LP as conditions evolve",
+        "bbox": [
+            373,
+            594,
+            894,
+            657
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Updated detailed 30-60 day plan",
+        "bbox": [
+            414,
+            705,
+            611,
+            738
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "LP plan (long term)",
+        "text_level": 2,
+        "bbox": [
+            725,
+            705,
+            846,
+            738
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Increased\nthroughputs",
+        "bbox": [
+            407,
+            833,
+            473,
+            885
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Improved yields and giveaway",
+        "bbox": [
+            522,
+            822,
+            575,
+            900
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Access to\nopportunity\ncrudes",
+        "bbox": [
+            637,
+            822,
+            700,
+            896
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Optimized\nInventory\nmanagement",
+        "bbox": [
+            761,
+            822,
+            833,
+            896
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Minimized\ndemurrage\ncost",
+        "bbox": [
+            880,
+            820,
+            939,
+            896
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Planning and Scheduling",
+        "bbox": [
+            18,
+            7,
+            144,
+            35
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            148,
+            957
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Planning and Scheduling",
+        "text_level": 2,
+        "bbox": [
+            17,
+            7,
+            144,
+            35
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "AI pinpoints margin leakage and analyzes root causes across the integrated value chain to protect refinery margin",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            823,
+            137
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            64,
+            227,
+            137,
+            288
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "At a European downstream major, operational performance analysis was challenged",
+        "bbox": [
+            156,
+            203,
+            610,
+            231
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Traditional backcasting focused on isolated KPIs, not total margin",
+        "bbox": [
+            164,
+            231,
+            544,
+            257
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Limited visibility into value leakage across trading, refining, and sales",
+        "bbox": [
+            164,
+            255,
+            560,
+            281
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Manual, slow root-cause analysis",
+        "bbox": [
+            165,
+            279,
+            365,
+            307
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Impact",
+        "text_level": 2,
+        "bbox": [
+            680,
+            227,
+            733,
+            292
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\~1 - 3 \\$/bbl\nIdentified opportunity $^{1}$",
+        "bbox": [
+            782,
+            225,
+            907,
+            290
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/0d1060335ff9c7d3bbff108e43ae9d5889487fbf4aa53eb3842193018de69c19.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            84,
+            340,
+            220,
+            372
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "AI detects plan-to-actual margin leakage by comparing actual performance with reference scenarios and surface actionable drivers",
+        "bbox": [
+            83,
+            372,
+            952,
+            403
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Capture",
+        "text_level": 2,
+        "bbox": [
+            59,
+            442,
+            119,
+            472
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unify Data and Codify Logic",
+        "text_level": 2,
+        "bbox": [
+            59,
+            474,
+            228,
+            505
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Ingest diverse internal, cloud, and external data sources",
+        "bbox": [
+            82,
+            546,
+            322,
+            574
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/5ac430adeba2369060cdcc63ad207a69a78b74e15e9be5798b617bf5f89f8b31.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            96,
+            612,
+            132,
+            681
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/75535077c74195fb2c54a7049b7bf3075ad9de9c90fe5a540be5628125b5b6a1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            182,
+            624,
+            221,
+            670
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Internal Data",
+        "bbox": [
+            95,
+            694,
+            134,
+            738
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/cc85c4f55cc6804fd9f58e6e7767cf94bb25656531c2f9bea114b1d91ad03b90.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "External Data",
+            "Execution leakage",
+            "Planning leakage"
+        ],
+        "content": "",
+        "bbox": [
+            267,
+            618,
+            311,
+            677
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Cloud\nData",
+        "bbox": [
+            187,
+            694,
+            216,
+            738
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analyze",
+        "text_level": 2,
+        "bbox": [
+            357,
+            442,
+            417,
+            472
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Advanced Analytics + Cloud Architecture",
+        "text_level": 2,
+        "bbox": [
+            356,
+            474,
+            603,
+            503
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Decision-quality gap",
+        "bbox": [
+            370,
+            625,
+            466,
+            653
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Structural upside gap",
+        "bbox": [
+            369,
+            666,
+            470,
+            696
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/dc0b35d0d333921b88420ae8a1211ee6a6027316ec01507297ab8daecb373954.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Optimize Margins"
+        ],
+        "content": "",
+        "bbox": [
+            497,
+            525,
+            621,
+            746
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Total identified opportunity",
+        "bbox": [
+            369,
+            707,
+            497,
+            738
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Integrate trading, refining, and sales data with standardized margin calculation logic",
+        "bbox": [
+            69,
+            779,
+            335,
+            835
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Establish baseline for plan and reference scenarios - Compare scenarios with plan and actual performance to size \\$/bbl margin leakage",
+        "bbox": [
+            68,
+            840,
+            345,
+            866
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            363,
+            779,
+            608,
+            835
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Automate root causes analysis across leakages",
+        "bbox": [
+            363,
+            840,
+            633,
+            868
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Act",
+        "text_level": 2,
+        "bbox": [
+            650,
+            442,
+            679,
+            470
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/31cc4622d776317e6a63c0c36372038cedd812680962997dd78fbc6e6e179620.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            522,
+            923,
+            753
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Surface margin improvement opportunities across value chain",
+        "bbox": [
+            661,
+            779,
+            913,
+            835
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Recommend actions on highest impact levers",
+        "bbox": [
+            660,
+            840,
+            926,
+            868
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Note: 1. Opportunity ranges indicative based on prior implementations. Identified opportunity reflects indicative margin leakage estimated through plan-to-actual and scenario analysis. Realized value will depend on follow-through actions, operational feasibility, and market conditions.\nSource: BCG analysis",
+        "bbox": [
+            46,
+            892,
+            794,
+            957
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            933,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "AI agents orchestrate real-time refinery optimization, translating plant conditions into margin actions for the control room",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            894,
+            135
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            64,
+            227,
+            137,
+            288
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "At a Latin American large refiner, operational performance was constrained by:",
+        "bbox": [
+            155,
+            212,
+            581,
+            240
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ High operating variability (feed/utility swings, unit constraints)",
+        "bbox": [
+            163,
+            238,
+            518,
+            264
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ Manual, slow diagnosis and response, driving margin leakage",
+        "bbox": [
+            164,
+            262,
+            514,
+            287
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ Decision making was siloed, remaining unit by unit and shift by shift",
+        "bbox": [
+            164,
+            285,
+            551,
+            312
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The impact",
+        "text_level": 2,
+        "bbox": [
+            682,
+            227,
+            736,
+            290
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "+\\$80M from \\~300 kbpd capacity",
+        "bbox": [
+            781,
+            225,
+            906,
+            294
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/04d08d1a1b4a34824eed86e1c73bffb089be59cbc9485ad5ad4d95da6eef22e1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            401
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            87,
+            322,
+            223,
+            351
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI agents orchestrate real-time refinery optimization by combining plant data, KPIs, alerts, and historical knowledge to detect issues early, optimize trade-offs, and guide control room actions.",
+        "bbox": [
+            84,
+            350,
+            921,
+            409
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/3086fcd3c751f11a1c0631451b4cfecd89a1fe6ca9b23a8e7639c73297ae3938.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            128,
+            453,
+            159,
+            514
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Data layer",
+        "text_level": 2,
+        "bbox": [
+            162,
+            466,
+            250,
+            501
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/2e1a220eb881b372896a8263604f87e58c2e3e2f814ce4b20a66b9c0079b6349.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            79,
+            559,
+            112,
+            616
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Real-time plant data",
+        "bbox": [
+            122,
+            575,
+            269,
+            609
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/c80d06be9e9d7b934c4c982c625206e5c1ac2c7add58a944005ca11e61b80c8d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            76,
+            640,
+            115,
+            698
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Operating KPIs",
+        "text_level": 2,
+        "bbox": [
+            121,
+            655,
+            232,
+            688
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Alerts and events feed",
+        "bbox": [
+            121,
+            731,
+            282,
+            764
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/63db26088cf2320e3f9685b84e708157e0ca3d9a44760d2c266421e751977118.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            77,
+            714,
+            114,
+            779
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/7d582231eecdd5db4a34b3ecadfec55ae5fb4f4b150b5b6fd7e8c10aef6e3546.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            325,
+            662,
+            359,
+            703
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa10bafeffc649973ad11209821770f09108ff8049a9a27677f55e73375056bf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            410,
+            464,
+            588,
+            503
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Knowledge base (historical reports, expert inputs)",
+        "text_level": 2,
+        "bbox": [
+            121,
+            796,
+            314,
+            857
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/6d3465d66aa7fb1cc5010deb0e86d35de4e8b8c34181e1107fe9185e5ebc204c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            76,
+            792,
+            114,
+            859
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Workflow orchestration",
+        "text_level": 2,
+        "bbox": [
+            416,
+            531,
+            587,
+            564
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "24/7 multi-agent advisors",
+        "text_level": 2,
+        "bbox": [
+            411,
+            581,
+            591,
+            612
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "answer questions and guide action using data and knowledge",
+        "bbox": [
+            410,
+            612,
+            592,
+            664
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Optimization Engine across",
+        "text_level": 2,
+        "bbox": [
+            411,
+            694,
+            596,
+            724
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "100+ critical variables for better operating settings/trade-offs",
+        "bbox": [
+            410,
+            722,
+            588,
+            775
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Early warning and real-",
+        "text_level": 2,
+        "bbox": [
+            412,
+            803,
+            577,
+            833
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/9c0c7e79b87b679a32b2a21dbbf25ea14f338ff912c06badafa2e8fb92d56081.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            732,
+            442,
+            775,
+            512
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Action layer",
+        "text_level": 2,
+        "bbox": [
+            779,
+            459,
+            878,
+            496
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI control room center",
+        "text_level": 2,
+        "bbox": [
+            694,
+            546,
+            857,
+            575
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "with single view that consolidates KPIs, alerts, recommendations for leadership",
+        "bbox": [
+            693,
+            574,
+            911,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/80f17729cada050e8c412d2239881da6792c130362e53d611f4d4439b2a7174d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            693,
+            631,
+            926,
+            879
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "2 Operations",
+        "bbox": [
+            4,
+            3,
+            79,
+            35
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            148,
+            957
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            934,
+            935,
+            948,
+            953
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI predicts market structure to unlock margin from physical assets by shifting trading from reactive coverage to proactive capture",
+        "text_level": 2,
+        "bbox": [
+            48,
+            35,
+            847,
+            138
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            62,
+            229,
+            135,
+            290
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "At an American refiner, trading performance was challenged due to:",
+        "bbox": [
+            155,
+            205,
+            523,
+            235
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ Reactive execution focused on near-term cost minimization to meet volume commitments",
+        "bbox": [
+            163,
+            235,
+            643,
+            262
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "■ Physical markets difficult to predict outside of 5- to 10-day windows",
+        "bbox": [
+            164,
+            262,
+            525,
+            290
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Trader insight/tribal knowledge not codified, making decision logic inconsistent",
+        "bbox": [
+            164,
+            290,
+            585,
+            318
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Impact",
+        "text_level": 2,
+        "bbox": [
+            675,
+            227,
+            729,
+            294
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": ">\\$80M+ annual margin opportunity Ten trades executed in two weeks, with 75% of closed positions cash-positive",
+        "bbox": [
+            746,
+            218,
+            946,
+            307
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/b6d03508c174c37be0ec6764dcd7c0c54c2789f852effb9d66bba734c9261cbf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            85,
+            342,
+            221,
+            372
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI forecasts market structure and spread dynamics by combining internal proprietary signals with market feeds",
+        "text_level": 2,
+        "bbox": [
+            84,
+            372,
+            831,
+            405
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ingest Inputs",
+        "text_level": 2,
+        "bbox": [
+            53,
+            440,
+            150,
+            472
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI aggregates a range of internal and external data sources",
+        "text_level": 2,
+        "bbox": [
+            52,
+            490,
+            233,
+            544
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/00aa34199f46e39af6e31c8bb59642c7d46b16dec78d9a1e53cd0a4f823d20c9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            550,
+            116,
+            588
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/c6ef7b64122f7be04107411179c78ff9c8765af1260455a939c77cb0b75d1cb6.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "indicators"
+        ],
+        "content": "",
+        "bbox": [
+            163,
+            550,
+            202,
+            588
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/84988450367ec179d6442ab6e7e6f9b8c167cddc9a9c33a01c8a256e6fbf2828.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Shipping and freight rates"
+        ],
+        "content": "",
+        "bbox": [
+            84,
+            633,
+            118,
+            672
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Inventory levels",
+        "bbox": [
+            77,
+            675,
+            125,
+            716
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/95a28c3cd307b166ffc2aceea89034a0dd00ead04d557fc890205ad53b06b109.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            167,
+            633,
+            200,
+            672
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Macro factors and sentiment",
+        "bbox": [
+            147,
+            674,
+            218,
+            718
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/8e77c8d02313b0c37f1d2d0338c4bb6739e471d45ba368511cac77b3cd7d96fc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            83,
+            722,
+            122,
+            755
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ccc4afedced5e86eb44ae06c506bbb11bead9c2429a48e2dbb389d9181ed21b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            164,
+            716,
+            201,
+            759
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/b30bbdb4e7269b46ca551cad0c360dce93a1d7ffb3cac77b44dd007bae684172.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            800,
+            118,
+            848
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/e6e4d1b0627051bb1ebb6d4e4cf9e2cc4d5ca96395907be7d6539a3c53040e60.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            168,
+            807,
+            198,
+            853
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Refinery utilization",
+        "bbox": [
+            75,
+            853,
+            127,
+            896
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Proprietary data",
+        "bbox": [
+            155,
+            855,
+            211,
+            900
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Predict market structure",
+        "text_level": 2,
+        "bbox": [
+            263,
+            440,
+            440,
+            472
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI transforms raw data into proprietary factors and forecast distributions of commodity prices and spreads",
+        "text_level": 2,
+        "bbox": [
+            263,
+            490,
+            587,
+            548
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/39e47de54752e97fedb56aa54d8169063de24feac6ba7350cb0eda2fe2fade45.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            237,
+            646,
+            252,
+            685
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/fd914a3ac217d860ebbfad36a47299a20e14a80bd4007d9015536ca71a5c1491.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Time arbitrage signals"
+        ],
+        "content": "",
+        "bbox": [
+            275,
+            588,
+            393,
+            705
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/28594da3ded5b1ae88ae37647e5cb946a218923957580ed9e110c33529ee1dac.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Commodity spread signals"
+        ],
+        "content": "",
+        "bbox": [
+            405,
+            590,
+            522,
+            705
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/2bd0663ecb11147dbe56d6799d29e8ed03555702388a46293573af03a56decda.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            255,
+            750,
+            306,
+            846
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/3284763ad42325aec8acf57b4aa9cf8f283d01e7875948a355ef8f4ca2843e7a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Geo arbitrage signals"
+        ],
+        "content": "",
+        "bbox": [
+            537,
+            590,
+            653,
+            703
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Technical analysis (including mean reversion vs. momentum)",
+        "bbox": [
+            346,
+            766,
+            666,
+            792
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Factor analysis and feature engineering",
+        "bbox": [
+            346,
+            792,
+            564,
+            816
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Correlation analysis",
+        "bbox": [
+            347,
+            814,
+            467,
+            838
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Closed loop: AI learns from past executed trades to improve next recommendations",
+        "text_level": 2,
+        "bbox": [
+            330,
+            855,
+            784,
+            885
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Recommend Trades",
+        "text_level": 2,
+        "bbox": [
+            685,
+            440,
+            830,
+            470
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI recommends daily 'best trades' across various instruments",
+        "text_level": 2,
+        "bbox": [
+            683,
+            490,
+            870,
+            546
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/6c5933b18cb961ec0d0eeef92bff8b2c28cfe63b3f755317773dc37b450718b7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            690,
+            570,
+            923,
+            831
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Note: Opportunity ranges indicative based on prior implementations and depend on portfolio, constraints, and market conditions. Source: BCG analysis",
+        "bbox": [
+            46,
+            912,
+            633,
+            957
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI agents reduce maintenance costs by orchestrating remote inspections and risk-based interventions across assets",
+        "text_level": 2,
+        "bbox": [
+            46,
+            35,
+            920,
+            133
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            62,
+            233,
+            134,
+            292
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "At a Southeast Asian NOC's flagship refinery, asset reliability was challenged due to:",
+        "bbox": [
+            155,
+            205,
+            612,
+            233
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Maintenance spend misaligned with actual risk exposure",
+        "bbox": [
+            163,
+            235,
+            497,
+            262
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Limited visibility on failure probability vs economic impact",
+        "bbox": [
+            164,
+            264,
+            504,
+            290
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Reactive, budget-driven inspection strategies rather than risk-based prioritization",
+        "bbox": [
+            164,
+            290,
+            623,
+            318
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The Impact",
+        "text_level": 2,
+        "bbox": [
+            676,
+            231,
+            729,
+            296
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "5%-15% Maintenance cost reduction",
+        "bbox": [
+            785,
+            203,
+            915,
+            259
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "62% Efficiency gain in inspection workflow",
+        "bbox": [
+            788,
+            262,
+            911,
+            318
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/88e1e22be043937d21977790b140e85a29696f737b33b13904f48d096ea4c9f2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            84,
+            342,
+            220,
+            372
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI fuses unmanned inspection data and computer-vision integrity analytics to prioritize risk-based inspection and maintenance actions",
+        "bbox": [
+            83,
+            372,
+            903,
+            403
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Unmanned Inspection",
+        "text_level": 2,
+        "bbox": [
+            55,
+            435,
+            214,
+            468
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI agents ingest drone, robot, and sensor data across assets",
+        "bbox": [
+            53,
+            490,
+            306,
+            546
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/5b1ef725f2ee86dfcb22f8db67c44f34f24bfabdec61dcf9885f0d44c4fba761.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            109,
+            559,
+            278,
+            831
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/fa04ae56613b0c2bdba845924095ab886a096253999a1667da7227cef4f721af.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            842,
+            85,
+            868
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/6a25c6a1c5ac5addac522b029d123b54397d4539d8e82f0de03799d18bc6dca3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            71,
+            872,
+            85,
+            896
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "√ Replace manual work with remote inspection",
+        "bbox": [
+            69,
+            842,
+            333,
+            868
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Lower HSE risk by limiting onsite exposure",
+        "bbox": [
+            86,
+            868,
+            320,
+            896
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Computer Vision",
+        "text_level": 2,
+        "bbox": [
+            357,
+            435,
+            479,
+            468
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI agents detect defects, assess severity, and prioritize interventions based on risk",
+        "bbox": [
+            356,
+            490,
+            584,
+            548
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/6bfc5168bfbd036f61ec380cea41a03170ed345db4800c70a395be3f1282593f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            392,
+            553,
+            612,
+            822
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "√ Automate corrosion detections from imagery",
+        "bbox": [
+            364,
+            842,
+            625,
+            868
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/eeeef27ff5481996934e1b9c76b408c7bbd9e18bd56289afdb1086a978e99c05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            365,
+            872,
+            379,
+            896
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "√ Quantify severity for each case",
+        "bbox": [
+            364,
+            868,
+            550,
+            898
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Actionable Outcomes",
+        "text_level": 2,
+        "bbox": [
+            656,
+            435,
+            811,
+            468
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI agents recommend highest-priority work orders and inspection actions",
+        "bbox": [
+            655,
+            490,
+            894,
+            548
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Top risk actions",
+        "text_level": 2,
+        "bbox": [
+            771,
+            607,
+            833,
+            631
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/7a4ab35d00537d17cf4d5cf5828efcce64b4154d946da64b777409d216a4e2aa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            712,
+            646,
+            746,
+            675
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Risk exposure (next 30d)",
+        "bbox": [
+            710,
+            679,
+            747,
+            707
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "▲ Run targeted CUI checks on flagged anomalies",
+        "bbox": [
+            772,
+            644,
+            878,
+            674
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "▲ Issue work orders for coating repair on high-severity findings",
+        "bbox": [
+            772,
+            681,
+            885,
+            714
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Inspect now: 3\nRepair now: 2",
+        "bbox": [
+            707,
+            729,
+            751,
+            762
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "▲ Execute leak repair and complete post-repair pressure testing",
+        "bbox": [
+            773,
+            720,
+            886,
+            753
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Schedule planned maintenance for Tank 1030 to Tank 1058",
+        "bbox": [
+            772,
+            759,
+            888,
+            788
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/6423d6b88acda36f4808d7858ce912dd7f89cd1f77ff4146834d2d60f35421a7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            670,
+            872,
+            685,
+            898
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "√ Surface highest priority maintenance issues",
+        "bbox": [
+            669,
+            840,
+            929,
+            868
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "√ Recommend work orders for inspection/repair",
+        "bbox": [
+            669,
+            868,
+            940,
+            896
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Maintenance and Reliability",
+        "bbox": [
+            20,
+            7,
+            159,
+            33
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            147,
+            957
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Limited visibility into time-cost-risk trade-offs across scenarios",
+        "bbox": [
+            164,
+            292,
+            517,
+            320
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/b0223c7dfc8d71f5e20342c9147865ca74cdc5ffb9238440a8cec73bb2db226d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            85,
+            340,
+            221,
+            372
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI evaluates thousands of scenarios to recommend the 'best-fit' schedule – and triggers co-pilot reoptimization on disruption",
+        "text_level": 2,
+        "bbox": [
+            84,
+            372,
+            915,
+            403
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "INGEST DATA",
+        "text_level": 2,
+        "bbox": [
+            57,
+            442,
+            158,
+            474
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI builds a model with digital schedule and constraints",
+        "bbox": [
+            56,
+            494,
+            217,
+            548
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/043f1fc9b56ac549052d1c071df87b70d295b8835fb3761944d551f4a3e47794.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            122,
+            551,
+            163,
+            618
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Schedule: Microsoft Project/Primavera (mpp, xer, xml)",
+        "bbox": [
+            60,
+            633,
+            223,
+            692
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Constraints: Variable ranges of crews, resources, etc.",
+        "bbox": [
+            60,
+            700,
+            221,
+            753
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Live signals: daily progress, equipment availability, etc.",
+        "bbox": [
+            60,
+            766,
+            219,
+            824
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "ANALYZE",
+        "text_level": 2,
+        "bbox": [
+            252,
+            442,
+            323,
+            474
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/f5e6e69f21f88fe9450606cac440579d68b7c8b3a256aea4022db4c83c72a446.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            243,
+            505,
+            267,
+            550
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI generates and ranks all feasible scenarios based on time, cost, risk",
+        "bbox": [
+            257,
+            581,
+            363,
+            685
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Resource agent checks feasibility and estimates cost",
+        "bbox": [
+            385,
+            518,
+            460,
+            627
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/a1fd5267497ebda67b32705a77e57f81645cc371bc8baea7dafc42b1238e75f8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            381,
+            512,
+            676,
+            740
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Scenario agent\ngenerates thousands\nof schedules",
+        "bbox": [
+            553,
+            516,
+            662,
+            605
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Risk agent\nstress-tests\nuncertainty and\ndelay probability",
+        "bbox": [
+            588,
+            622,
+            669,
+            737
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/dccf206a31734b0ede99a00b2bf1c80fcfdf82496af061102734bed9696c6d3a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            244,
+            750,
+            266,
+            788
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI triggers re-",
+        "text_level": 2,
+        "bbox": [
+            272,
+            761,
+            350,
+            790
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "optimization upon changes – refresh and re-rank scenarios",
+        "bbox": [
+            250,
+            790,
+            371,
+            862
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Example",
+        "text_level": 2,
+        "bbox": [
+            387,
+            751,
+            434,
+            781
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "task slips",
+        "bbox": [
+            409,
+            835,
+            459,
+            866
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "ACT",
+        "text_level": 2,
+        "bbox": [
+            695,
+            442,
+            730,
+            474
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "crew unavailable",
+        "bbox": [
+            490,
+            835,
+            578,
+            866
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI suggests best-fit plan and recovery actions based on real-time progress",
+        "text_level": 2,
+        "bbox": [
+            695,
+            494,
+            901,
+            551
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "bad weather",
+        "bbox": [
+            603,
+            835,
+            668,
+            866
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/5e84db0a01c56de4073b913e81e40fe4c6f5e23e0133b20166252c68737ee7bd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            730,
+            570,
+            915,
+            768
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "User push to:",
+        "text_level": 2,
+        "bbox": [
+            693,
+            792,
+            769,
+            820
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- Approve and export schedule to P6/MSP",
+        "bbox": [
+            692,
+            820,
+            932,
+            846
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- Generate change log for stakeholder sign-off",
+        "bbox": [
+            692,
+            846,
+            943,
+            875
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Turnarounds and projects",
+        "bbox": [
+            25,
+            7,
+            148,
+            33
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "AI turns static turnaround schedules into continuously reoptimized plans for optimized time, cost, and risks",
+        "bbox": [
+            47,
+            33,
+            923,
+            135
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "The challenge",
+        "bbox": [
+            64,
+            227,
+            137,
+            288
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "At a Middle Eastern NOC refinery, turnaround and capital schedules were challenged due to",
+        "bbox": [
+            155,
+            203,
+            653,
+            233
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "- Manual sequencing struggles with high complexity across work front and dependencies",
+        "bbox": [
+            162,
+            235,
+            651,
+            264
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "• Static plans breaking in execution, and slow to reoptimize under changing conditions",
+        "bbox": [
+            164,
+            264,
+            642,
+            294
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "The impact",
+        "bbox": [
+            680,
+            231,
+            733,
+            296
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "\\~10% cost reduction for routine maintenance\n20%-30% reduction in backlog",
+        "bbox": [
+            769,
+            207,
+            948,
+            300
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Note: Opportunity ranges are indicative, based on prior implementations, and depend on portfolio, constraints, and market conditions. Source: BCG analysis",
+        "bbox": [
+            46,
+            912,
+            653,
+            959
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "AI tracks outcome to improve next recommendation",
+        "bbox": [
+            664,
+            911,
+            827,
+            964
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "AI improves refinery safety by shifting from reactive incident management to real-time intervention, reducing near-misses and response time",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            920,
+            135
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The challenge",
+        "text_level": 2,
+        "bbox": [
+            65,
+            229,
+            136,
+            288
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "At a large Indian refinery, on-site safety and risk management faced gaps due to:",
+        "bbox": [
+            156,
+            205,
+            591,
+            233
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Reactive incident detection, with issues identified only after escalation",
+        "bbox": [
+            163,
+            235,
+            566,
+            262
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Manual monitoring unable to keep pace with operational scale and complexity in real time",
+        "bbox": [
+            164,
+            264,
+            630,
+            290
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• Passive CCTV systems, limited to recording without real-time risk detection or analytics",
+        "bbox": [
+            164,
+            290,
+            627,
+            318
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The impact",
+        "text_level": 2,
+        "bbox": [
+            676,
+            229,
+            729,
+            292
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "30%-50% reduction in near-miss incidents >50% faster response time in intervention",
+        "bbox": [
+            778,
+            200,
+            929,
+            316
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/7d16c6323fddf2a23f68f6b5020d0432881c40f19d10c0d6e286824627bcac76.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            333,
+            81,
+            400
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "How AI played a role",
+        "text_level": 2,
+        "bbox": [
+            86,
+            342,
+            222,
+            372
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "AI overlays real-time safety detection on CCTV to flag violations, escalate high-risk events, and build an incident log for trend analytics",
+        "text_level": 2,
+        "bbox": [
+            85,
+            372,
+            910,
+            403
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/a923eda52d12327b1ddcee9c65cf0e8c5b5f14116255dc968204ba48fa8ac1de.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            58,
+            451,
+            92,
+            503
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Run 20+ real-time safety scenarios with customizable detection parameters to detect violations early",
+        "text_level": 2,
+        "bbox": [
+            100,
+            446,
+            338,
+            533
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/0446ddb917e5475031d47f0e852a1121ece732b657cc9f25949b3d52af6823ee.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Example of computer vision detection of safety violations at a refinery"
+        ],
+        "content": "",
+        "bbox": [
+            101,
+            561,
+            307,
+            805
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/5b3f57fdd378b550f188b3051e6ae63daf27309394490fbc61ab0bf82b20f261.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            364,
+            444,
+            396,
+            500
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Provide continuous incident logging and safety trend analytics to pinpoint hotspots and repeated violations",
+        "text_level": 2,
+        "bbox": [
+            401,
+            446,
+            629,
+            533
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/cbf7961e450ffa6fc1fb9329cb9d7093258c47297946e635b3748c66ff4be849.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Incident log and trend analytics dashboard"
+        ],
+        "content": "",
+        "bbox": [
+            402,
+            561,
+            610,
+            805
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/e0760b064b6f385615940528fe99aed50421d7e71f409703fc5c6d985445c0d1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            660,
+            442,
+            689,
+            500
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Trigger real-time alerts via mobile notifications and audio alarms to prompt immediate intervention",
+        "text_level": 2,
+        "bbox": [
+            695,
+            446,
+            912,
+            535
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/8b1231c566f95f30fb4cf3178aaa5437dbb5f38a58cbb3feb63afc1c6f5ab20d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Operator-ready view of active safety scenarios and alerts"
+        ],
+        "content": "",
+        "bbox": [
+            695,
+            564,
+            910,
+            798
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "6 HSSE",
+        "bbox": [
+            3,
+            3,
+            53,
+            35
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            147,
+            957
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            583,
+            993,
+            951
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Organizational inertia, fragmentation, and weak governance are key implementation hurdles to successful AI transformation in refineries",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            873,
+            135
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/02e0d62c37196e370ca271980e9d9c1a5415eea5d61e668d7f550b27fe5dd12c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            45,
+            270,
+            83,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Fragmented priorities",
+        "text_level": 2,
+        "bbox": [
+            93,
+            272,
+            195,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Diffused priorities and agendas (across operations, maintenance, sales) with no common view of impact—dilutes focus and funding, creating many pilots, but limited scale-up of high-value use cases",
+        "bbox": [
+            60,
+            420,
+            196,
+            770
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/4736d6310b0f030781ce01aaf76fd45278c0217b4982069edaeca22995f7825a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            239,
+            270,
+            280,
+            342
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Legacy IT systems",
+        "text_level": 2,
+        "bbox": [
+            286,
+            272,
+            366,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Plants operate on fragmented and aging IT/OT stacks (e.g., DCS/SCADA, SAP/CMMS) leading to gaps in data quality and integration—slows deployment of digital and AI use cases in control room and field",
+        "bbox": [
+            250,
+            422,
+            384,
+            800
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/d7593569b2da0e188b7a392f58ad691e64750403935ed5818051661fcb852e4e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            414,
+            272,
+            455,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Siloed operations",
+        "text_level": 2,
+        "bbox": [
+            464,
+            272,
+            554,
+            346
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Refineries make decisions by unit and function with limited cross-unit and asset coordination, preventing end-to-end optimization of throughput, margin, and reliability trade-offs",
+        "bbox": [
+            428,
+            422,
+            567,
+            770
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/61d74598f703cb3fa9f30f6fef3a3042fb8edae05efedb4930b1563f99f62f86.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            600,
+            281,
+            639,
+            333
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Inflexible operating models",
+        "text_level": 2,
+        "bbox": [
+            646,
+            253,
+            729,
+            361
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Delivery model is designed to run day-to-day operations, such as “keeping the lights on.” Talent and org not optimized with resources dedicated to fast implementation, scaling, and learning",
+        "bbox": [
+            606,
+            422,
+            747,
+            772
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Lack of governance",
+        "text_level": 2,
+        "bbox": [
+            825,
+            272,
+            921,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/504f41e3dc4971c95f7854f79285e765f9de088e517bb98ea3bdee3ecfd1d021.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            782,
+            275,
+            818,
+            340
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Dedicated resources and senior sponsorship required to centrally run the transformation, constantly assessing value and steering use case scaling to keep implementations on track and “fund the journey”",
+        "bbox": [
+            790,
+            422,
+            941,
+            801
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            148,
+            957
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Future-built refineries overcome these hurdles through value-driven multiyear transformations",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            857,
+            133
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "What future-built companies do differently",
+        "text_level": 2,
+        "bbox": [
+            47,
+            233,
+            392,
+            270
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/70280c10de25aaad4494666ab31820eadf6ce5bb2f31874810dcd0bee7490020.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            300,
+            86,
+            362
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Pursue a multiyear strategic ambition",
+        "bbox": [
+            96,
+            316,
+            364,
+            351
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/de17ef10dd1e59e644b630375a57a5cc2751be05e60fd8015b792f50d2fa5d43.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            54,
+            425,
+            85,
+            479
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Reshape and reinvent for P&L impact",
+        "bbox": [
+            96,
+            438,
+            360,
+            472
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/9c0714505c0610f300448a919027731b16299932b19a24f8adabc60b9d240865.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            559,
+            87,
+            611
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Implement an AI-first operating model",
+        "text_level": 2,
+        "bbox": [
+            96,
+            570,
+            368,
+            603
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/c170147b2771adef6127463e36204e54184ffab8d55362dd392cfc1f33e75362.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            53,
+            683,
+            83,
+            744
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Secure and enable necessary talent",
+        "bbox": [
+            95,
+            701,
+            348,
+            733
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/eb9aa602743ce80da081db3b995267f198725a6d2d5be70f823ef03731976e37.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            54,
+            809,
+            81,
+            864
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Use fit-for-purpose technology and data",
+        "text_level": 2,
+        "bbox": [
+            96,
+            822,
+            375,
+            857
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Outperformers vs. laggards",
+        "text_level": 2,
+        "bbox": [
+            446,
+            233,
+            666,
+            272
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "C-suite actively engaged in AI agenda (refinery general manager, functional leaders)\nMore likely to appoint chief AI and data officers",
+        "bbox": [
+            445,
+            307,
+            961,
+            379
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Greater focus on P&L impact over tool deployment\nStronger AI governance and value tracking\nGreater deployment and scaling of AI workflows",
+        "bbox": [
+            446,
+            400,
+            792,
+            512
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Strategic workforce planning for AI in place",
+        "text_level": 2,
+        "bbox": [
+            446,
+            531,
+            743,
+            566
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Mature and responsible AI guardrails and governance\nShared business-IT ownership (e.g., engineering and digital) in implementation",
+        "bbox": [
+            446,
+            570,
+            936,
+            644
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Small number of capable AI leaders shaping requirements and vendor choices Higher business-led ownership of AI solution design and deployment Greater workforce enablement without building large internal AI teams",
+        "bbox": [
+            446,
+            662,
+            941,
+            775
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Standard templates and enterprise-wide data models Synergistic, enterprise AI platform as an efficient backbone",
+        "bbox": [
+            445,
+            803,
+            846,
+            877
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG Build for the Future 2025 Global Study (n = 1250).",
+        "bbox": [
+            48,
+            933,
+            333,
+            957
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "AI agents and solutions will enable simplified human-in-loop workflows to provide necessary automation with checks and balances",
+        "text_level": 2,
+        "bbox": [
+            46,
+            33,
+            907,
+            135
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Example of human-agent $^{1}$ supervision flow in refinery operations, such as crude slate, unit optimization",
+        "text_level": 2,
+        "bbox": [
+            47,
+            225,
+            977,
+            266
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Strategic decision layer (L2)\nHuman-led\nsets crude slate strategy, throughput/yield targets,\nproduct quality guardrails, emissions\nand safety limits",
+        "bbox": [
+            46,
+            327,
+            330,
+            472
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Orchestration layer (L3)",
+        "text_level": 2,
+        "bbox": [
+            47,
+            490,
+            209,
+            520
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Co-led/split responsibilities",
+        "text_level": 2,
+        "bbox": [
+            47,
+            522,
+            176,
+            550
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "human governs critical decisions such as constraint exceptions and major rate changes; agents handle the baseline by recommending setpoints and actions based on constraints, energy cost, reliability risk",
+        "bbox": [
+            46,
+            550,
+            348,
+            668
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Execution layer (L4)",
+        "text_level": 2,
+        "bbox": [
+            47,
+            688,
+            183,
+            718
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "AI-led",
+        "text_level": 2,
+        "bbox": [
+            47,
+            718,
+            81,
+            744
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "optimize unit operation and energy use, draft shift logs and work orders, monitor alarms and anomalies; detect safety, quality, and compliance triggers",
+        "bbox": [
+            46,
+            744,
+            348,
+            835
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/4468b4a7a507381cc22a831e5c2e402e58ce8febe00505e309b4eeed12fd2deb.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Source: BCG experience",
+            "1. Agents connected to systems such as DCS/SCADA | Historian | LIMS | CMMS | LP/Scheduling."
+        ],
+        "content": "",
+        "bbox": [
+            385,
+            296,
+            950,
+            820
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            933,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "AI-first organizations use business context fabric and easy access to structured and unstructured data to enable development of AI agents",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            881,
+            133
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c208311e854f01d2c4e8ec227a3956a86b4f1ec02abc8d8d71ef67fd30e5ff56.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Data teams"
+        ],
+        "bbox": [
+            48,
+            381,
+            209,
+            681
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "1 Business context fabric",
+        "text_level": 2,
+        "bbox": [
+            256,
+            231,
+            445,
+            264
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Agents need more than data, they need business context, including:",
+        "bbox": [
+            264,
+            277,
+            634,
+            303
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Objectives – outcomes, not outputs",
+        "bbox": [
+            292,
+            305,
+            500,
+            331
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Resources – tools and data",
+        "bbox": [
+            292,
+            333,
+            459,
+            355
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Constraints – safety and spec limits and regulatory limits",
+        "bbox": [
+            291,
+            357,
+            608,
+            385
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "2 Unstructured data ready for agent retrieval",
+        "text_level": 2,
+        "bbox": [
+            256,
+            450,
+            582,
+            481
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Enable retrieval over unstructured data by converting documents (e.g., contracts and network manuals) into searchable formats that agents can retrieve at runtime",
+        "bbox": [
+            264,
+            496,
+            636,
+            574
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Implement short- and long-term agent memory (session and episodic or semantic) to retain and reuse interaction history",
+        "bbox": [
+            265,
+            575,
+            617,
+            629
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "3 Data products for agents",
+        "text_level": 2,
+        "bbox": [
+            256,
+            677,
+            454,
+            712
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- APIs and model context protocol (MCP) that agents and data teams can call autonomously to expose data",
+        "bbox": [
+            265,
+            718,
+            646,
+            770
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Federated data ownership, with business teams owning data while platforms expose it via APIs for agent consumption",
+        "bbox": [
+            265,
+            770,
+            635,
+            822
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Data-driven decision-making culture, with shared playbooks and templates to standardize high-quality agent-supported decisions",
+        "bbox": [
+            264,
+            824,
+            629,
+            877
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bringing this to life across refineries",
+        "text_level": 2,
+        "bbox": [
+            675,
+            233,
+            919,
+            266
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/8f5f57ffe76618a95ea6d16b0116eb681a6376cd0172e96f75fd2ffad3f6bb96.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            672,
+            290,
+            694,
+            327
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Must have well-connected integration across",
+        "text_level": 2,
+        "bbox": [
+            697,
+            294,
+            962,
+            320
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "lab, plant, quality, and customer systems (e.g., ELN/LIMS, plant sensor, and batch data)",
+        "bbox": [
+            697,
+            322,
+            948,
+            375
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/073b2a14603b7135df2b623db7b51b61b175920597e1a8424ff519f6ba825c2a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            672,
+            418,
+            693,
+            457
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Must mine thousands of data records daily to surface relevant insights",
+        "text_level": 2,
+        "bbox": [
+            690,
+            420,
+            923,
+            475
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "3 Users must be equipped with intuitive platforms to interact with and supervise agents",
+        "text_level": 2,
+        "bbox": [
+            676,
+            522,
+            927,
+            603
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Continuous monitoring and",
+        "text_level": 2,
+        "bbox": [
+            692,
+            650,
+            863,
+            677
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "enhancements are essential to ensure the capability scales and adapts with the business",
+        "bbox": [
+            695,
+            679,
+            947,
+            731
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/5bbc18b63235c8ed4299cd2236fde61b75bdb1c579c2760397e91cca561bfb91.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            671,
+            742,
+            692,
+            781
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Key takeaway: Data must be treated as a critical enterprise asset. Investing in quality, governance, and management is essential for scaling agents across chemical players.",
+        "bbox": [
+            690,
+            768,
+            938,
+            901
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "#",
+        "bbox": [
+            957,
+            14,
+            988,
+            72
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            583,
+            992,
+            951
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            935,
+            147,
+            955
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/7d09f9b35868584106827e90f587f4a994c84ea0590e3ca045fff31a2eed486d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            444,
+            290,
+            495,
+            325
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Building an agentic ecosystem requires a new stack on top of traditional business systems and data",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            780,
+            133
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Traditional",
+        "text_level": 2,
+        "bbox": [
+            47,
+            324,
+            141,
+            355
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Conventional digital application architecture is organized into distinct layers with limited flexibility and integration resulting in reduced adaptability and greater rigidity",
+        "bbox": [
+            47,
+            357,
+            296,
+            468
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Digitally enhanced",
+        "text_level": 2,
+        "bbox": [
+            48,
+            516,
+            201,
+            550
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "AI-driven architecture combining tools like chatbots, agents, and protocols over traditional structures. Integrates diverse data for enhanced adaptability and efficiency",
+        "bbox": [
+            47,
+            551,
+            294,
+            662
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "AI-First",
+        "text_level": 2,
+        "bbox": [
+            48,
+            707,
+            111,
+            738
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "An ecosystem built around embedded AI agents, orchestrations, and tools, emphasizing secure, observable agent-to-agent interactions. Integrates legacy systems and data to boost AI-driven operations.",
+        "bbox": [
+            47,
+            742,
+            294,
+            879
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Traditional",
+        "text_level": 2,
+        "bbox": [
+            340,
+            242,
+            435,
+            277
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Digital app",
+        "bbox": [
+            346,
+            298,
+            429,
+            335
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Digital UI",
+        "bbox": [
+            362,
+            409,
+            414,
+            442
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Business and API layer",
+        "text_level": 2,
+        "bbox": [
+            352,
+            535,
+            425,
+            594
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Data layer",
+        "bbox": [
+            358,
+            685,
+            417,
+            716
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Business systems",
+        "bbox": [
+            340,
+            807,
+            435,
+            838
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Digitally enhanced",
+        "text_level": 2,
+        "bbox": [
+            494,
+            240,
+            647,
+            279
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "AI platform",
+        "bbox": [
+            527,
+            296,
+            613,
+            335
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/14532ba82ee74d3fb9ea156c93f6f9946a5297d4ccc83fea9cb7d93d4f5b9e1f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            641,
+            290,
+            692,
+            324
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Digital UI",
+        "bbox": [
+            502,
+            409,
+            555,
+            442
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Chatbots\nand\nvoice-bots",
+        "bbox": [
+            585,
+            383,
+            642,
+            468
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agents",
+        "bbox": [
+            550,
+            498,
+            591,
+            529
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Tools, protocols, and guardrails",
+        "bbox": [
+            490,
+            546,
+            651,
+            581
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Business and API layer",
+        "bbox": [
+            509,
+            600,
+            631,
+            633
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Structured data",
+        "bbox": [
+            496,
+            672,
+            557,
+            729
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Unstructured data",
+        "bbox": [
+            578,
+            672,
+            648,
+            729
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Business systems",
+        "bbox": [
+            522,
+            805,
+            618,
+            840
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "AI-first",
+        "text_level": 2,
+        "bbox": [
+            781,
+            242,
+            841,
+            277
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "AI ecosystem",
+        "text_level": 2,
+        "bbox": [
+            762,
+            298,
+            860,
+            335
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "New",
+        "bbox": [
+            675,
+            494,
+            703,
+            522
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Embedded agents",
+        "bbox": [
+            722,
+            412,
+            820,
+            444
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "New",
+        "bbox": [
+            676,
+            546,
+            704,
+            572
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agent orchestration",
+        "bbox": [
+            719,
+            498,
+            825,
+            529
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "New",
+        "bbox": [
+            677,
+            600,
+            704,
+            625
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agent to agent",
+        "bbox": [
+            732,
+            550,
+            812,
+            581
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "New",
+        "bbox": [
+            676,
+            651,
+            705,
+            679
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agentic tool registries",
+        "bbox": [
+            712,
+            600,
+            825,
+            633
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Memory platforms",
+        "bbox": [
+            721,
+            685,
+            822,
+            718
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Legacy business systems and data",
+        "bbox": [
+            725,
+            794,
+            818,
+            853
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Illustrative",
+        "text_level": 2,
+        "bbox": [
+            870,
+            190,
+            933,
+            216
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agent operations and monitoring",
+        "bbox": [
+            864,
+            442,
+            886,
+            564
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "LLM evaluation",
+        "bbox": [
+            867,
+            700,
+            881,
+            825
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agent-to-agent guardrails",
+        "bbox": [
+            895,
+            505,
+            909,
+            744
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "#",
+        "bbox": [
+            956,
+            14,
+            989,
+            72
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            934,
+            935,
+            947,
+            955
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Best- in-class refiners strategically leverage partners to accelerate AI delivery on top of traditional platforms",
+        "text_level": 2,
+        "bbox": [
+            47,
+            31,
+            905,
+            140
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• Value case and roadmap",
+        "bbox": [
+            450,
+            205,
+            600,
+            233
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Operating model and governance",
+        "bbox": [
+            450,
+            233,
+            645,
+            261
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Foundation models",
+        "bbox": [
+            47,
+            359,
+            125,
+            414
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Organization design and change leadership",
+        "bbox": [
+            450,
+            259,
+            700,
+            290
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Customization",
+        "bbox": [
+            46,
+            414,
+            141,
+            440
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Safety features",
+        "bbox": [
+            46,
+            440,
+            143,
+            468
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Rapid innovation cycles",
+        "bbox": [
+            47,
+            468,
+            120,
+            551
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Workflow orchestration",
+        "bbox": [
+            47,
+            644,
+            134,
+            700
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/3f0ee38f75466833e50f89d97d609a9a5342d7530414890c36826afe4e7dbb60.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            344,
+            222,
+            393,
+            287
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Automation",
+        "bbox": [
+            47,
+            700,
+            127,
+            725
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Adoption at scale",
+        "bbox": [
+            47,
+            725,
+            126,
+            779
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/afff7cb50cb4a7a380691be75af5d822f43f90adbe089e7c05d97a7df1fbc7fa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            209,
+            353,
+            255,
+            429
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Model providers and AI labs\nfurnish the \"brains\"",
+        "bbox": [
+            177,
+            433,
+            288,
+            520
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/9a5c5c3baa52fd53bd5347ae38238d0c6ea6b7e1fded176c56bc23268cf6a5a5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            210,
+            612,
+            252,
+            681
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Workflow and automation platforms embed AI in daily work",
+        "bbox": [
+            189,
+            685,
+            280,
+            822
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Strategic advisors\nadvise on ambition\nand execution",
+        "bbox": [
+            310,
+            300,
+            426,
+            392
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/97b68344af2b279a5c96b37c169c264f5cc130d8ac8303ec1f4ac519b1705a75.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            323,
+            475,
+            412,
+            650
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Data, operations, and governance\nmake AI usable,\nreliable, and\ncompliant",
+        "bbox": [
+            314,
+            750,
+            421,
+            944
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/c36e3aca3c7dacf015bf4a466264e7fcd5dab6258c5b9a104df0cfec518bbfd5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            482,
+            340,
+            529,
+            420
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Builders and integrators engineer and integrate at scale - End-to-end build",
+        "bbox": [
+            459,
+            431,
+            551,
+            546
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            588,
+            385,
+            693,
+            414
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• Integration and migration",
+        "bbox": [
+            588,
+            416,
+            690,
+            468
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Delivery factory",
+        "bbox": [
+            588,
+            468,
+            689,
+            496
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Run and operate",
+        "bbox": [
+            587,
+            494,
+            695,
+            524
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/c5f84a7f173c22ff1a4d542a310a5db70deb2ef6bc1ea86b6343414b934bb9ed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            485,
+            629,
+            526,
+            679
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Cloud platforms deliver compute and enterprise services - Scalable compute and storage",
+        "bbox": [
+            450,
+            700,
+            561,
+            785
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            588,
+            644,
+            700,
+            700
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• Security and landing zones - AI services",
+        "bbox": [
+            587,
+            700,
+            681,
+            753
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            587,
+            751,
+            664,
+            779
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• Data foundation and pipelines",
+        "bbox": [
+            451,
+            857,
+            633,
+            885
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- LLM and ML operations and monitoring",
+        "bbox": [
+            451,
+            885,
+            683,
+            914
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Governance controls",
+        "bbox": [
+            452,
+            912,
+            581,
+            940
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/ec587ac67db436cb5a1f056c4a49bbb384e17158f50c1178102e44103141366f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            777,
+            322,
+            855,
+            459
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Value proposition varies across partners. Critical to select best-in-role and orchestrate capabilities across the build-buy-partner mix",
+        "bbox": [
+            784,
+            492,
+            943,
+            779
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Transformation to future-built refineries requires an early focus on prioritized opportunities before expansion and scale-up",
+        "text_level": 2,
+        "bbox": [
+            46,
+            33,
+            850,
+            140
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\~3 months",
+        "bbox": [
+            237,
+            212,
+            312,
+            248
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\~12 months",
+        "bbox": [
+            459,
+            212,
+            542,
+            248
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\~18 months",
+        "bbox": [
+            689,
+            207,
+            771,
+            244
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Define North Star vision",
+        "bbox": [
+            48,
+            433,
+            243,
+            468
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Prioritize value pools and identify quick wins",
+        "bbox": [
+            48,
+            470,
+            245,
+            535
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Establish governance",
+        "bbox": [
+            50,
+            537,
+            228,
+            570
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/0bf4ef54c7b20a851b232f359360fdeba3f8d456360de8955780cc3ac2ffe252.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            194,
+            952,
+            779
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Phase 2 Focusing on acceleration",
+        "bbox": [
+            279,
+            307,
+            485,
+            388
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Address foundational gaps and outline people, operations, and a tech roadmap",
+        "bbox": [
+            276,
+            433,
+            493,
+            570
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Conduct pilots to prove value",
+        "bbox": [
+            276,
+            568,
+            423,
+            635
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Upskill leadership and define the shape of the organization and talent",
+        "bbox": [
+            276,
+            635,
+            466,
+            740
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Phase 3 Scaling lighthouse pilots",
+        "bbox": [
+            507,
+            307,
+            710,
+            388
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "• Transform the prioritized scope end to end",
+        "bbox": [
+            502,
+            433,
+            705,
+            503
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "• Institutionalize value tracking and adoption",
+        "bbox": [
+            502,
+            503,
+            692,
+            570
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Enable large-scale upskilling and change management",
+        "bbox": [
+            502,
+            570,
+            691,
+            672
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Launch the next wave, replicating across sites and functions",
+        "bbox": [
+            730,
+            435,
+            926,
+            535
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Move from productivity to differentiation",
+        "bbox": [
+            731,
+            535,
+            911,
+            601
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "• Continuously scale and upgrade the foundation (including data and tech capabilities) and the workforce",
+        "bbox": [
+            730,
+            601,
+            932,
+            772
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Underpin the transformation journey with increasing investments in enterprise foundations including core tech and data, people, and responsible AI",
+        "bbox": [
+            131,
+            833,
+            867,
+            912
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            933,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Is my organization on track to be AI future-ready? Leaders' checklist",
+        "text_level": 2,
+        "bbox": [
+            48,
+            27,
+            737,
+            138
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/26b7df26f8caf7c1dbb02e5650a8debb6fa90cda88405fe24c1413ff7c70707b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td><img src=\"images/1a9b99c3bb245822f3b7bae60c0b815e7a06d26278f187acfdbd80a024397f4c.jpg\"/></td><td>Leadership and strategy set the direction</td><td>AI is a strategic priority communicated to the organizationI have a named AI sponsor (C-level or board level)Al progress is a standing agenda item in leadership meetings</td></tr><tr><td><img src=\"images/fd5bc5a219a420649c0d315533f8370dd5463f4e5d06066d4cc9b520bda888a5.jpg\"/></td><td>Solutions and business value determine priorities</td><td>We&#x27;ve identified functions or E2E processes where AI can create tangible valueWe prioritize use cases identified for each function, with target outcomesEach use case has a business sponsor with P&amp;L accountabilityWe track both business ROI and operational outcomes from AI cases</td></tr><tr><td><img src=\"images/422c63ecca55f85cd257939e6f30ced13d6f57d91d820ecd6103b49df8d808c2.jpg\"/></td><td>Funding and investment back it with resources</td><td>Our leadership has a standard way to request AI funding that communicates ROII have an approved budget for AI-ready data, talent, and implementationThere is a defined three-year AI investment envelope (% of revenue)</td></tr><tr><td></td><td>Data and technology build the foundation</td><td>Named data owners/stewards exist in business units or functions (e.g., operations, maintenance)We have an active program cleaning, governing, and integrating refinery data from control business systems (including DCS/SCADA, APC, MES, CMMS)Our critical data is AI ready (structured and labeled, accessible, compliant)</td></tr><tr><td><img src=\"images/f7fb4e6a5c501af3c24ce3042c2c7ca19fef53da67e31ad4272ef13245989227.jpg\"/></td><td>People and processes drive adoption</td><td>Our leadership team is undergoing AI fluency trainingWe have cross-functional AI teams that combine refinery domain experts (field operations, process engineering, maintenance) with OT/IT and Centers of ExcellenceThere is a change management plan to address trust, compliance, and regulationWe have an AI talent plan to attract, retain, and motivate talent</td></tr><tr><td><img src=\"images/ad84ff2de9cf87af50cb2a984e5fa1087044898cf66938d922082e299076129b.jpg\"/></td><td>Governance and responsible AI scale with trust</td><td>Wins and lessons learned from pilots communicated visibly across the organizationWe have an AI governance council (ethics, compliance, regulatory).We operate under a responsible AI framework (safety, explainability, bias)I receive a quarterly AI impact report with business and operational outcomes</td></tr></table>",
+        "bbox": [
+            50,
+            196,
+            944,
+            924
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            48,
+            933,
+            148,
+            957
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            934,
+            935,
+            948,
+            955
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "BCG experts | Key contacts for refinery AI transformations",
+        "bbox": [
+            32,
+            105,
+            298,
+            366
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/49f96d6eed584aa75291510e971b301564df00c841e8f1d3be84f4643b66e2e6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            403,
+            332,
+            998
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Americas",
+        "text_level": 2,
+        "bbox": [
+            418,
+            51,
+            490,
+            88
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/2fea1108d1d4e408856d5c94ae29b048e6429e57e29d3b9d0deffdf123cbaf70.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            370,
+            107,
+            434,
+            220
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/d9f4c662227007eaa223d47d943737951110692b42014343c17b1890cc34932b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            370,
+            250,
+            433,
+            364
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Ilshat\nHaris",
+        "bbox": [
+            442,
+            131,
+            483,
+            200
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Oleg\nGubin",
+        "bbox": [
+            442,
+            275,
+            486,
+            342
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/2e0c73599c6aca1c968532a5cf73ec6d540b20fdb27fe25278f3bdca3769e63b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            370,
+            394,
+            433,
+            507
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/7e433f4771d95fff933834dce54477331cf6222887b8a90fd0feaa3fd4307325.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            369,
+            537,
+            433,
+            651
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "John\nFlorez",
+        "bbox": [
+            441,
+            418,
+            487,
+            487
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/c649f283cc4c886cb77d09d55e64f55766d92c5e3e239a3a8c0ef8c4aca6157b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            369,
+            679,
+            433,
+            794
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Buddy Myers",
+        "bbox": [
+            442,
+            562,
+            488,
+            631
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Elisabet Assens\nGibert",
+        "bbox": [
+            442,
+            705,
+            546,
+            772
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/bd156b9775785916be4223be7a932715f56567528a0d23121cd7aaac60c2b35b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            369,
+            824,
+            434,
+            937
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Wade\nBarnes",
+        "bbox": [
+            443,
+            850,
+            492,
+            916
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Europe, Middle East, and Africa",
+        "text_level": 2,
+        "bbox": [
+            573,
+            24,
+            714,
+            85
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/f59a9a5c4e481d5467c0c491efae5237d3571475a8f55dfdba5d7e5f1698f6b8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            107,
+            638,
+            220
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Alex\nde Mur",
+        "bbox": [
+            644,
+            131,
+            696,
+            200
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/eb2fd72fb1cf03bcfdcfe9e51abd516aeebaa5d7671128ebffbf88360d533a82.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            251,
+            637,
+            364
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Alberto\nde la Fuente",
+        "bbox": [
+            644,
+            275,
+            728,
+            344
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/4fdc4000519a2288b07dcba7360843ce9a0ae29825cce9ccd516ce044171d8ad.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            394,
+            637,
+            507
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Jaime\nRuiz-Cabrero",
+        "bbox": [
+            644,
+            420,
+            732,
+            487
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/bf7f0b73b454860ef570c1a752270c05682a318547b2612d5ebe0c6704bc5b0c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            538,
+            637,
+            651
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Ana María\nMartínez",
+        "bbox": [
+            645,
+            562,
+            715,
+            629
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/be5c1bebff245908c9bd420d0e53c20f7d00b1058c767d4ddcdb0cd46773bd16.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            679,
+            638,
+            794
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Sébastien\nRexhausen",
+        "bbox": [
+            644,
+            705,
+            719,
+            772
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/1b87192a37d8800cf1ddd130a1f5c2fad024724aea33b6a4447f897be1b7da9a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            575,
+            824,
+            638,
+            938
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Arthur\nAkhmetov",
+        "bbox": [
+            644,
+            850,
+            713,
+            916
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Asia Pacific",
+        "text_level": 2,
+        "bbox": [
+            810,
+            51,
+            896,
+            85
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/a0c79f7fe88e94845573074093cdc7a3deee98baa349acbbb40d27d27f567b79.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            783,
+            107,
+            846,
+            220
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/f01bdec39ea6948666f8b3add50259e5240e280e016ef8d3314827f46aea5fed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            782,
+            250,
+            846,
+            364
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Arun\nRajamani",
+        "bbox": [
+            856,
+            133,
+            925,
+            201
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Asheesh\nSastry",
+        "bbox": [
+            856,
+            275,
+            915,
+            344
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/350145fdeb932a10f8eeb14771e19f9f64c6b62a402178e76f77dac4bc291098.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            783,
+            394,
+            846,
+            507
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Rahool Pai\nPanandiker",
+        "bbox": [
+            857,
+            418,
+            934,
+            488
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/0b5439d2dbb41e00606d4cb54781fe18d4b6361069d261512815cb49cd920d12.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            783,
+            537,
+            846,
+            651
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Kashmira\nJirafe",
+        "bbox": [
+            856,
+            562,
+            925,
+            631
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/15d341a11ac51d43d7986a43bd7b45f22813761d3752b4d1fcf20ad7138db02d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            783,
+            679,
+            846,
+            794
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Anish\nNazimudeen",
+        "bbox": [
+            857,
+            707,
+            943,
+            774
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/053b66f6f3422e6fdbdeb2831a68308439ace4951bddda67f394067aa8b4100c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            782,
+            824,
+            846,
+            938
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Achraf\nEl Ouali",
+        "bbox": [
+            857,
+            850,
+            912,
+            916
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            934,
+            933,
+            947,
+            955
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            579,
+            993,
+            955
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "BOG",
+        "text_level": 2,
+        "bbox": [
+            367,
+            394,
+            639,
+            607
+        ],
+        "page_idx": 26
+    }
+]

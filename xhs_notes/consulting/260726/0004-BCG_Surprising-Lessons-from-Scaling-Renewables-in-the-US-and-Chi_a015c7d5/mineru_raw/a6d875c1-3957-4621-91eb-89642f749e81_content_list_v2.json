@@ -1,0 +1,2083 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cc24a09428b7174daa1804db9ceed1a390e4e62758480ddfbada3b28ef57f17b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ENERGY TRANSITION"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                464,
+                202,
+                481
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Surprising Lessons from Scaling Renewables in the US and China"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                510,
+                799,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Maurice Berns, Rina Su, Ross LaFleur, Khushboo Goel, Cédric Hazevoets, and Eden Cottee-Jones"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                689,
+                765,
+                727
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE APRIL 07, 2026 12 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                751,
+                373,
+                769
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As global demand for electricity rises, driven in part by the rapid buildout of AI data centers, the pace of the energy transition increasingly depends on whether low-carbon power is available to meet that demand. Solar and wind energy, core technologies in the transition, have scaled rapidly in many countries over the past decade, most notably in China and the US. And yet, deployment is uneven in both nations. Some provinces and states have seen a massive ramp-up in solar and wind capacity; others have witnessed halting or stalled progress, even where the underlying resources are abundant."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                829,
+                947,
+                929
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                895,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This reality reveals an important but overlooked dynamic. Certainly, national energy policies are impactful, and the diverging approaches of the US and China will influence the overall trajectory of renewables in each nation in the years ahead. But the vastly different geographic concentration of solar and wind capacity across provinces and states within each country tells us that national policy is only one piece of the puzzle. Other factors also help shape how renewable buildout does or does not advance."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                947,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To understand exactly what these drivers are, we conducted an in-depth analysis of China and the US, the world's number one and number two producers of renewable energy today. We examined 70 explanatory variables related to renewable energy scale-up, drawing on more than 100,000 data points across all 50 US states and 31 Chinese provinces from 2014 to 2024. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                255,
+                949,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What stood out most wasn't that the business case matters for scaling renewables—it was which parts of the business case matter most. Our model pinpointed empirically the specific elements that had the greatest impact in both countries. Several are especially noteworthy:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                353,
+                942,
+                413
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Cheap Land. Access to affordable land was far and away the biggest factor in both China and the US, reflecting the core role it plays in making the economics of a project work."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                441,
+                925,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Existing Solar and Wind Capacity. We observed a definite association between a strong foundation of renewable energy in a state or province and successful scaling over our study period. This finding suggests that even regions that start from a small base can create a virtuous cycle, with early investments generating momentum that attracts further investment and growth."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                495,
+                917,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- A Robust Grid. Both the reliability of the grid and investment in utility infrastructure had a clear connection to renewable scaling. Nevertheless, the dynamics related to the grid—the foundational infrastructure for delivering renewable energy—were complex, differing in US states as compared to Chinese provinces."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                609,
+                914,
+                689
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By revealing the conditions that enable renewable energy to scale, these data-driven insights offer guidance for private- and public-sector players. Companies can use them to inform smarter decisions about where and how to deploy capital, and governments and regulators can draw on them to design policies that advance the deployment of low-carbon energy."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                719,
+                939,
+                797
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Renewables Story in China and the US"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                65,
+                821,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A close look at renewables at the province and state level reveals some surprises.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  For example, even though China is the global leader in overall renewable energy production, the top five regions by share of electricity from renewables at the end of 2024 were US states. And both countries exhibited wide variations in renewable penetration—from less than 1% to 64% across the 50 US states and 31 Chinese provinces—with especially pronounced differences in the US. (See Exhibit 1.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                177,
+                944,
+                297
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                326,
+                114,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Share of Electricity from Wind and Solar Sources Within the US and China Varies Widely"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                344,
+                718,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Share of electricity generated from wind and solar across US states and Chinese provinces, 2024 (% of TWh)"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                404,
+                626,
+                418
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6208c120d62c9f9de8b83e3095bc0ee5ddee91c715945b99281c0560926bce6f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: US Energy Information Administration; National Bureau of Statistics of China; BCG Henderson Institute analysis.\nNote: This analysis covers mainland China's 31 province-level regions (22 provinces, five autonomous regions, and four municipalities). Wind and solar adoption is defined as the share of electricity generated in-state or in-province from wind and solar (excluding electricity imports). TWh = terawatt-hours."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                417,
+                725,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With that variability in mind, the BCG Henderson Institute created a model to tease out the factors that influence renewable energy buildout. Essentially the analysis quantifies how important specific factors were in predicting wind and solar expansion from the end of 2014 through 2024. The model does not prove that any one factor directly caused renewable scaling, but it does identify factors that are clearly associated with renewable uptake and therefore should be integrated into decision making. (See the sidebar, “Modeling Renewable Scaling.”)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                653,
+                927,
+                774
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "- Modeling Renewable Scaling"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                802,
+                542,
+                831
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our research followed a three-step process to identify key factors underlying the adoption of wind and solar energy across Chinese provinces and US states."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                866,
+                831,
+                907
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, on the basis of a literature review and more than 20 expert interviews, we built a comprehensive set of hypotheses about likely drivers of renewable deployment, including legacy mix, local economy, regulatory enablers, and infrastructure maturity. Second, we gathered data across all 81 states and provinces in our study set for each hypothesis. Third, we developed and ran a model to assess the influence of those variables. We used 2014 as the baseline year and modeled the share of growth from the end of 2014 through the end of 2024 predicted by specific variables."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                67,
+                821,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To improve model performance, we rigorously screened the input variables. Initially, we performed correlation analysis, applying statistical and practical tests to exclude variables with weak or inconsistent relationships. Then we assessed the significance of each variable through permutation-based importance, which quantifies each variable's explanatory power by measuring accuracy loss when values are randomly shuffled. Next, we used Recursive Feature Elimination to iteratively remove redundant or low-value variables. This step involved conducting thousands of iterations as well as applying nonlinear tree-based algorithms (specifically Random Forest, Gradient Boosting, and XGBoost) to capture the complex, nonlinear interactions inherent in renewable energy adoption. Finally, to understand each variable's impact, we used SHAP analysis, a technique that illustrates the significance and direction of each variable. Sensitivity testing further validated the robustness of our model."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                244,
+                824,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We found it challenging to model a handful of variables that likely play a role in scaling renewables. For example, permitting complexity and resulting interconnection delays are well-known barriers to renewable buildout. However, given the wide range of state policies in the US and the limited availability of some permitting data in China, we were not able to build a reliable dataset on this variable, so we excluded it from the modeling."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                519,
+                826,
+                639
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                971,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "What Matters—and What Doesn’t—for Scaling Renewables"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                67,
+                867,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Examining the key drivers associated with renewable expansion reveals striking similarities between US states and Chinese provinces, along with a few notable distinctions. Some findings from our model align with intuition, but others challenge it. For instance, although access to abundant solar or wind resources matters, it isn't one of the top two factors driving growth in either the US or China. (See Exhibit 2.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                173,
+                930,
+                273
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                303,
+                114,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Top Drivers Influencing Wind and Solar Scaling in the US and China Are Similar"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                319,
+                698,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Relative importance of wind and solar adoption drivers across US states and Chinese provinces"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                380,
+                563,
+                394
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f6716b9294711c7ed73a2f55a5d3d53e59a4a7e221aab3dab9980a1defa6e170.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG Henderson Institute analysis."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Drivers are listed in descending order by combined share of scaling in the US and China. All listed drivers had a positive or neutral impact on scaling except two in China: reliability of power grid and higher GDP per capita. Both of those drivers influenced the scaling of wind and solar in China in a negative direction, meaning that worse-performing local grids and lower GDP per capita were associated with higher wind and solar adoption."
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                393,
+                728,
+                639
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cheap Land"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                722,
+                289,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The single strongest signal across both countries is the cost of rural land, which accounts for 20% to 21% of modeled growth over the period from 2014 through 2024."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                784,
+                946,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "During our study period, the average increase in wind and solar capacity for the ten US states with the cheapest land was 24%, versus just 9% for the ten states with the most expensive land."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                839,
+                954,
+                879
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indeed, New Mexico, the state with the cheapest land, had the greatest growth in solar and wind capacity (40%). We observed similar patterns in the China data."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                934,
+                107
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Existing Renewable Capacity"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                135,
+                634,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The model's second-strongest signal across both countries is the presence of a preexisting base of installed wind and solar. This variable explains roughly 12% to 15% of growth over the study period—a striking indication of the positive impact of an experience curve. In China, the three provinces where solar and wind already had a 10% share of the generation mix in 2014 were among the top ten performers for capacity additions over the following decade: Gansu added a further 23%, Jilin 20%, and Inner Mongolia 14%."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                197,
+                937,
+                317
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This finding does not mean, however, that regions with little existing capacity realistically lack any major renewable opportunity. Instead, it implies that returns on early deployment may compound over time. Each round of buildout can improve the economics and execution of the next, creating a virtuous cycle in which regions that move earlier accelerate faster."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                330,
+                952,
+                410
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Robust Grid"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                438,
+                333,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Two drivers in our model capture the robustness of the grid: reliability and investment level. For investment in the grid, the story is straightforward. In both the US and China, the level of investment in utility infrastructure is clearly associated with the scale-up of renewables. The top ten US states for grid investment as a share of GDP experienced six times the rate of solar and wind capacity growth that the bottom ten states did (18% versus 3%)."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                499,
+                939,
+                600
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With regard to grid reliability, as reflected in the frequency and duration of power outages, the story is more complex. Our model showed a clear association between reliability and scaling in US states (where it explained 14% of the buildout) and in Chinese provinces (where it explained 9%). However, the direction of that association differed. In the US, more reliable grids were associated with successful scaling over the ten-year period. In Chinese provinces, the opposite was true: less robust grids were associated with more scaling."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                613,
+                934,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A closer look at the dynamics on the ground explains the seeming contradiction. The Chinese central government has encouraged renewables investment in poorer provinces by strengthening power infrastructure—not through conventional local grid upgrades, but by building high-voltage transmission lines that span hundreds of kilometers from inland provinces to coastal economic powerhouses. As a result, while local grid quality in these provinces remains limited, the high-capacity transmission network is strong, enabling electricity to be exported to distant cities and major industrial hubs."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                746,
+                942,
+                885
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Growth in Power Demand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                67,
+                575,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Chinese efforts to make renewable power generated in rural locations available to faster-growing areas also helps explain another finding."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                129,
+                917,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In China, the model found little connection between power demand growth and solar and wind scaling. In the US, however, the reverse is true. Growth of power demand explained 13% of renewable expansion over the study period, demonstrating that a rising load can strengthen the investment case for renewables. When demand is flat or declining, independent system operators and companies may need to retire older—yet still economically viable—assets to justify new projects. But when demand is increasing, companies can add wind and solar to meet incremental load, yielding a more attractive business case and lower overall systems costs."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                183,
+                936,
+                323
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Missing Connections"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                350,
+                474,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The strong connections that our model identified are valuable signals. But it’s equally telling when a relationship that you might expect to be vigorous turns out to be weak—or nonexistent. Consider the role of regulatory renewables targets. Although state-level targets in the US seemed to be connected to rollout in the short term, they had no measurable impact over the long term."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                412,
+                951,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We also found little connection between renewable scaling and the degree to which the state or province relied on resources from other regions inside or outside the country for power. Evidently, although energy security is a major energy transition driver at the national level, it has minimal impact at the state or provincial level."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                505,
+                944,
+                586
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Insights from Two Breakout Regions"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                42,
+                656,
+                735,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The state of Texas and China's Gansu province enjoyed robust large-scale renewable growth from 2015 through 2024. An examination of both brings the findings in our model to life. (See Exhibit 3.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                763,
+                949,
+                804
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Both Texas and Gansu Have Rapidly Increased Their Share of Solar-and Wind-Based Power Generation"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                713,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Texas tripled its share of solar and wind in 10 years\nAnnual power generation, 2015–2024 (TWh)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                140,
+                326,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gansu's share of solar and wind doubled in 10 years\nAnnual power generation, 2015–2024 (TWh)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                397,
+                140,
+                685,
+                168
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/88ccfb085007807c31ad12ff8afe6f0465e164b246482957d8b70aa83d8f737d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: US Energy Information Administration; National Bureau of Statistics of China; expert interviews; BCG Henderson Institute analysis. Note: TWh = terawatt-hours. Because of rounding, not all bar segment totals add up to 100%.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Does not include power imports."
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Includes hydropower, geothermal, nuclear, biomass, and wood-derived fuels.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Includes natural gas, coal, and petroleum products."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                137,
+                686,
+                342
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Path to Scale in Texas"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                443,
+                585,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Texas, over just a decade, wind and solar tripled their share of the state's power generation, from about  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "10\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2015 to roughly  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2024. Four key findings in our model played significant roles in the buildout."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                505,
+                937,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, our analysis identified demand growth as an important driver in the US—and it was certainly a factor in Texas, with total power generation climbing from around 450 terawatt-hours (TWh) to nearly 570 TWh. Second, access to low-cost land underpinned the scale-up of renewables in Texas. Third, in many places that affordable land boasted some of the country’s strongest and most consistent wind or ranked among the sunniest places in the US. Fourth, the state government prioritized development of grid infrastructure: Texas proactively invested in 3,600 miles of high-voltage transmission lines to connect designated Competitive Renewable Energy Zones in resource-rich, remote parts of the state to regions with high electricity demand. This buildout of transmission infrastructure, along with the state’s deregulated market structure, helped incentivize developers to invest in new generation capacity."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                577,
+                939,
+                778
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Building on Advantage in Gansu"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                804,
+                698,
+                841
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For its part, the Chinese province of Gansu posted the nation's second-highest growth in renewables capacity from 2015 through 2024, despite having only average solar and wind resources in comparison to other Chinese provinces. Scrutiny of the buildout brings three factors to the forefront."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                866,
+                873,
+                907
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                942,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, the province already had a strong base of existing wind power, most notably in the form of the Jiuquan wind power base, one of the largest wind farms in the world. This made Gansu, with its well-established supply chains, local know-how in the construction sector, and proven business case, appealing for future investors. Second, Gansu province has the fourth-lowest land prices in China—one-sixth the national average. Third, even though there is little local demand, the province has directed major investment toward infrastructure, ranking it in the top six provinces in terms of share of GDP spent on utilities."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                944,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Understanding the elements of the business case that have an outsize impact on how renewables scale is a critical first step. From there, companies and governments should examine how those factors intersect with their own plans and efforts."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                311,
+                946,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For companies, insights from the model can help formulate the right questions to ask about future investments and identify steps to strengthen the business case. For instance, which regions have affordable land and an ecosystem of experienced renewable players to drive efficient development? What can companies do to ensure access to reliable grid infrastructure when needed? And where is the strongest growth in demand likely to occur?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                384,
+                952,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For policymakers who want to attract investment in renewables, the most critical questions center on which measures can help reduce the land costs for renewable developers and which proactive strategies pursued today can attract the transmission investment required to transmit solar and wind power tomorrow."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                498,
+                939,
+                577
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policymakers and companies can also explore how to partner to improve the overall economics of renewable scaling. When public-sector actions create the conditions for viable projects—and private capital responds with scale, execution, and expertise—renewable deployment accelerates."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                592,
+                934,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors thank Jamie Webster, Lars Holm, and Grace Keliher for their assistance in the research for this article."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                686,
+                917,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                848,
+                723,
+                928
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                708,
+                147
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                210,
+                245,
+                250
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ff383a761309b4127aa1ca8d0410109eabb867d30be0e28ca7841143ff54e145.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                67,
+                291,
+                218,
+                401
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f132caa91c12d626d69098ee646795eab6673b401d5b0410dc8822907b721731.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Maurice Berns"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner; Chair, Center for Energy Impact\nLondon"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                456,
+                220,
+                564
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f22f125d48e99360b8d87af740947eda644df71951a213d69950afe58e7b621f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                75,
+                615,
+                205,
+                718
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/452eda54035b6724c5175e45a9b7a976ffd72e012f74abe670e3f83628060a99.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                386,
+                274,
+                403
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/47b1cba831838b8a5f9e8ee407b7a12aacd512fd5644b1e41475feefcd0e598c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nBeijing"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Rina Su"
+                    }
+                ]
+            },
+            "bbox": [
+                530,
+                291,
+                683,
+                399
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9d05057c22811ff40a0d2c3c0f644c7ab408cc059eec3bb7d4d67f5c46070427.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                375,
+                735,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ross LaFleur"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                242,
+                460,
+                387,
+                483
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner\nDallas"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                493,
+                437,
+                535
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cédric Hazevoets"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                640,
+                439,
+                663
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d93364ac55fac24df69402247aa014a36555107d43c6f284820b008f7e9f209b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Alumnus"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                539,
+                274,
+                556
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/29b286ce16fdaeeebaf9d4a70e19f50f5e013946ca48e357e03609828e7714a2.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                530,
+                456,
+                683,
+                564
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Khushboo Goel"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                464,
+                882,
+                489
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a60fb95f9351d53980218e7c131fb36219ab53758418c8e0d75d07bb1fae4ffb.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Partner\nNew York"
+                    }
+                ]
+            },
+            "bbox": [
+                708,
+                533,
+                737,
+                550
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dda242462540c95059f75253bfbc46be95c2beeaf852c05d340728415ecf862c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                533,
+                612,
+                681,
+                718
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/16a1450b4a7eac9015be607e1d8bfae4665a670ba2843dafedea5f79231262d1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                687,
+                737,
+                703
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/91f798bcd0575e68c519700109277d218652e410bd3e28089952705dfa431177.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "BCG Institute Senior Director\nLondon Canary Wharf"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                620,
+                915,
+                643
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                102,
+                434,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                137,
+                951,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "renewables refers exclusively to solar and wind."
+                    }
+                ]
+            },
+            "bbox": [
+                688,
+                378,
+                934,
+                407
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Chinese in this report refers to mainland China's 31 province-level regions (22 provinces, five autonomous regions, and four provinces municipalities). Hong Kong, Macao, and Taiwan are not included in the data modeling."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                341,
+                890,
+                372
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Although hydro, geothermal, and biomass power generation are additional types of renewables, in this paper the term"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                378,
+                621,
+                407
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

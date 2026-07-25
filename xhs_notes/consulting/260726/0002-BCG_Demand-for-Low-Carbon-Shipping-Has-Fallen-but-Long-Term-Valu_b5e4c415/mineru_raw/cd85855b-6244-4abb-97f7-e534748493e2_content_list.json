@@ -1,0 +1,4863 @@
+[
+    {
+        "type": "text",
+        "text": "BCG",
+        "bbox": [
+            108,
+            62,
+            189,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Executive Perspectives",
+        "bbox": [
+            105,
+            179,
+            241,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BCG's Guide to Cost and Growth",
+        "text_level": 2,
+        "bbox": [
+            326,
+            400,
+            796,
+            470
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategic Insights for Navigating Economic Uncertainty",
+        "bbox": [
+            329,
+            509,
+            722,
+            620
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "January 2025",
+        "bbox": [
+            335,
+            657,
+            466,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/c504545034afa56aa50f35b59ebabe637ac8b8ce2740cf9736756b3ea98c11db.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            555,
+            675,
+            995,
+            1000
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            27,
+            92,
+            180,
+            138
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The year ahead brings both opportunities and challenges as CEOs and executive leaders worldwide grapple with economic uncertainty and the need for strategic reinvestment. In our latest survey of over 570 executives across regions and industries (conducted at the close of 2024), we explored the primary concerns and strategies shaping business priorities for 2025.",
+        "bbox": [
+            25,
+            238,
+            520,
+            455
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our research reveals that cost management remains a top priority amid fluctuating interest rates and global trade tensions. This edition synthesizes insights from CEOs and leading experts at BCG, providing a roadmap for sustainable margins and cost efficiency while positioning businesses for long-term growth.",
+        "bbox": [
+            25,
+            488,
+            513,
+            672
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This edition also delves into the factors critical to maintaining financial discipline in companies and explores how leaders can reinvest strategically to fuel competitive advantage in 2025.",
+        "bbox": [
+            25,
+            700,
+            482,
+            812
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/e15ba231b9a4b1f229fae195926501c4bc1578baa815a0d3aa4e2f4c33ad7e52.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            557,
+            0,
+            1000,
+            294
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this BCG Executive Perspectives edition, we share executives' views on the 2025 macroeconomic outlook, with a focus on cost management and growth",
+        "bbox": [
+            575,
+            329,
+            890,
+            653
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Executive summary | In a complex and uncertain economic environment, cost management remains the top priority for executives across industries",
+        "text_level": 2,
+        "bbox": [
+            28,
+            35,
+            919,
+            138
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/514408ddca600e4e6e4b338e98084998e534665ded078d35ce175f71136a1e69.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Navigating the economic landscape of 2025</td><td>The global market outlook for 2025 remains relatively steady, with declining optimism in 2025 relative to 2024 following the US election outcome40% of executives feel unprepared for market shocks in 2025, despite years of navigating disruptions (e.g., COVID, supply chain, ChatGPT)North American and European executives are increasingly concerned about margins and profitability as rising interest rates, inflation, and potential tariff and regulatory changes intensify pressureAsia-Pacific1 executives are concerned about impacts on exports that could slow economic growth as geopolitical tensions in the region could further erode investor confidence and disrupt global supply chainsIn the wake of the recent US election,85% of executives are already addressing tariffs and regulatory changes to mitigate potential disruptions</td></tr><tr><td>Managing cost structures in 2025</td><td>Amid a complex economic landscape,cost management remains executives’ top priorityHeading into 2025, executives are prioritizing cost efficiency in theircore operations including supply chain optimization and product portfolio simplificationto remain competitiveExecutives in the sample report thatonly 48% of cost-saving targets are achievedand that their companies struggle to maintain efficiencies Companies that announce but fail to achieve targets average9pp TSR underperformance compared with successful peersThe greatest barrier to lasting structural cost change is &quot;cultural resistance&quot; to cost-saving measures, but firms withactive focus to align culture on cost and efficiencies and agile management achieve up11% greater lasting cost reduction</td></tr><tr><td>Unlocking sustainable growth</td><td>Laying the foundations for sustainablecost management is vital, as67% of executives plan reinvest savings into growth and innovationExecutives view GenAI as a pillar for efficiency, with86% planning to invest in AI and advanced analytics in 2025Executives see GenAI and advanced analytics as anopportunity to cut costs in areas like customer serviceBCG’s holistic approach combines deep expertise and proprietary capabilities todeliver cost management programs that drive lasting savings, fuel growth, and tackle structural cost challenges</td></tr></table>",
+        "bbox": [
+            26,
+            214,
+            961,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/c044e207209db2190279bd6ef3e0797ccd81ee4e2f171c5560aaadee90e9ee94.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            5,
+            388,
+            985
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BCG Executive Perspectives",
+        "text_level": 2,
+        "bbox": [
+            56,
+            155,
+            290,
+            283
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AGENDA",
+        "bbox": [
+            53,
+            331,
+            132,
+            370
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/ad061ce396a3c7ba7ee28169a145ff744b9ea8dcf6971b80c833a42e4edf92ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            412,
+            333,
+            446,
+            390
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Navigating the economic landscape of 2025\nManaging cost structures in 2025\nUnlocking sustainable growth",
+        "bbox": [
+            413,
+            335,
+            843,
+            709
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            955,
+            944,
+            963,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Executives show caution regarding 2025 outlook amid economic and geopolitical uncertainty",
+        "text_level": 2,
+        "bbox": [
+            36,
+            35,
+            798,
+            135
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "How do executives view the stability of the markets they are operating in?",
+        "bbox": [
+            34,
+            212,
+            626,
+            251
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8d866f31619c3e51fdfdd9989613043a7b0e25b8b5bcc0ed2d7e6851b0171034.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            38,
+            272,
+            361,
+            553
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- The US economy has remained strong and stable since COVID, despite threats of recession, with $\\pm 2.2\\%$ GDP growth $^{2}$ projected for 2025",
+        "bbox": [
+            98,
+            568,
+            360,
+            677
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• 42% of executives expect their markets to outperform the forecasted GDP growth",
+        "bbox": [
+            100,
+            685,
+            353,
+            746
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Nevertheless, concerns over global economic and geopolitical stability have arisen following the recent US election outcome",
+        "bbox": [
+            100,
+            751,
+            357,
+            862
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/06ff06be6d5f1e15c8352eeb3bcf95eecee5536a194f454a2c48607745eec93a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            396,
+            274,
+            644,
+            553
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Despite economic challenges, optimism remains steady supported by low unemployment and a projected $\\pm 1.5\\%$ GDP growth $^{1}$ in 2025",
+        "bbox": [
+            392,
+            568,
+            646,
+            679
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "• 47% of executives expect their markets to outperform the forecasted GDP growth",
+        "bbox": [
+            392,
+            685,
+            646,
+            746
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Pessimism likely reflects an uneven recovery since COVID, geopolitical tensions, armed conflicts, and energy concerns",
+        "bbox": [
+            393,
+            751,
+            647,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1cde782ceb5ffdd7df9101dd10d2ae700752cda57c70872ccea8f771fb2b6882.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            683,
+            275,
+            945,
+            555
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Optimism has dropped in Asia $^{2}$ , despite the continuously strong GDP growth forecast of ±4.5% $^{3}$ for 2025",
+        "bbox": [
+            680,
+            568,
+            941,
+            651
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Yet 47% of executives expect their markets to outperform the forecasted GDP growth",
+        "bbox": [
+            680,
+            659,
+            939,
+            744
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Executives’ sentiment toward market stability has shifted further to neutrality following the recent US election outcome, as they are seeking early indications of potential tariffs and trade policy changes",
+        "bbox": [
+            680,
+            751,
+            941,
+            890
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "1. IMF forecast (Oct. 2024) 2. Asia-Pacific countries including India, Australia, Japan, and South Korea 3. IMF forecast for ASEAN-5, used as conservative projection for important Asia-Pacific global economy players Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            27,
+            912,
+            912,
+            959
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            954,
+            942,
+            964,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "40% of executives feel unprepared for market shocks heading into 2025",
+        "text_level": 2,
+        "bbox": [
+            35,
+            61,
+            883,
+            109
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "How prepared are executives for market shocks heading into 2025?",
+        "text_level": 2,
+        "bbox": [
+            34,
+            212,
+            571,
+            251
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7f03466ce4a59c02378fe4b04d6645ba34aa1dc26b20d7f1d72d9bc3465ba93f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            45,
+            296,
+            267,
+            566
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "40% of executives continue to feel unprepared for potential future market shocks, despite navigating years of disruptions like COVID, supply chain crises, the ChatGPT launch, and other economic upheavals",
+        "bbox": [
+            329,
+            383,
+            922,
+            512
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Learn more about current challenges and risks:",
+        "text_level": 2,
+        "bbox": [
+            35,
+            625,
+            381,
+            666
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/411859cac16feabd67d009bea40cc8bd25c9d314402275610d29672dec0f8d1a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            712,
+            91,
+            788
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Geopolitical tensions and supply chain",
+        "text_level": 2,
+        "bbox": [
+            113,
+            690,
+            389,
+            725
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Ongoing conflicts impact trade and market stability; companies should use scenario planning and diversify supply chains to enhance resilience",
+        "bbox": [
+            113,
+            731,
+            457,
+            829
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Read more about geopolitical risk management in strategic planning",
+        "bbox": [
+            113,
+            853,
+            453,
+            883
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/3d635ce49781a937d69eff44172d5e5e87d58a5f3900aeaf0f9dd37546573f33.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            707,
+            579,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Rapid technological changes",
+        "text_level": 2,
+        "bbox": [
+            603,
+            690,
+            809,
+            725
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Companies struggle to keep up with innovation yet need to adapt quickly by implementing new tech and upskilling employees",
+        "bbox": [
+            602,
+            731,
+            905,
+            829
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Read more about the value in AI",
+        "text_level": 2,
+        "bbox": [
+            603,
+            851,
+            767,
+            881
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            583,
+            993,
+            953
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            933,
+            436,
+            959
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            952,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "North American and European executives are increasingly concerned about margin pressure",
+        "text_level": 2,
+        "bbox": [
+            35,
+            38,
+            863,
+            138
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "What top macroeconomic factors do executives expect to affect their company performance in 2025?",
+        "bbox": [
+            33,
+            214,
+            544,
+            287
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "North America",
+        "bbox": [
+            151,
+            318,
+            260,
+            350
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe",
+        "text_level": 2,
+        "bbox": [
+            346,
+            320,
+            402,
+            351
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Asia-Pacific $^{1}$",
+        "text_level": 2,
+        "bbox": [
+            504,
+            318,
+            596,
+            350
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d70e844debb7c0188f72d1564c327c5a33fc04a238e98b079cbe70d003f3b48a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Over 60% of executives expressed increased concerns about tariffs, following the recent US election outcome"
+        ],
+        "bbox": [
+            35,
+            359,
+            602,
+            855
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "North American and European executives are increasingly concerned about margins and profitability as high interest rates, inflation, potential changes in regulations, and tariffs intensify pressures",
+        "bbox": [
+            660,
+            290,
+            960,
+            462
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Protectionist measures introduced by the recently elected US government could reshape global trade dynamics, reducing trade flows and disrupting supply chain stability—even before considering potential retaliatory actions",
+        "bbox": [
+            660,
+            479,
+            947,
+            683
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "These measures, aimed at boosting domestic US manufacturing, may accelerate local investments while discouraging offshoring. For Europe, this could exacerbate existing competitiveness challenges",
+        "bbox": [
+            660,
+            700,
+            955,
+            905
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis 1. Asia-Pacific includes India, Australia, Japan, and South Korea",
+        "bbox": [
+            27,
+            933,
+            437,
+            979
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            954,
+            942,
+            964,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Asia-Pacific executives are concerned about impacts on exports that could slow economic growth",
+        "text_level": 2,
+        "bbox": [
+            34,
+            38,
+            798,
+            135
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "What top macroeconomic factors do executives expect to affect their company performance in 2025?",
+        "bbox": [
+            33,
+            212,
+            544,
+            287
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "North America",
+        "bbox": [
+            152,
+            318,
+            260,
+            350
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Europe",
+        "bbox": [
+            346,
+            320,
+            401,
+            351
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Asia-Pacific $^{1}$",
+        "bbox": [
+            488,
+            318,
+            581,
+            350
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f0ce4c96e3741d7287640b90987781701c14e541ac619de4e564e5ddb9b16b91.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Over 60% of Asia-Pacific (excl. China) executives expressed increased concerns about economic uncertainty and tariffs, following the US election outcome"
+        ],
+        "bbox": [
+            33,
+            355,
+            609,
+            838
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Asia-Pacific executives are navigating a complex economic environment marked by persistent inflation, varied monetary policy responses, and global trade uncertainties—all of which contribute to heightened concerns over inflation and interest rates",
+        "bbox": [
+            660,
+            290,
+            959,
+            525
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "They are increasingly concerned about economic uncertainty stemming from the recent US election outcome, with recession risks and US-China trade tensions emerging as top underlying concerns",
+        "bbox": [
+            660,
+            544,
+            964,
+            718
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Potential geopolitical tensions in the region could further erode investor confidence and disrupt global supply chains, potentially reducing revenues and slowing economic growth in export-dependent Asia-Pacific economies",
+        "bbox": [
+            660,
+            733,
+            958,
+            937
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Note: Asia-Pacific countries excluding China  \nSource: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis  \n1. Asia-Pacific includes India, Australia, Japan, and South Korea",
+        "bbox": [
+            25,
+            920,
+            434,
+            985
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            954,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1. No immediate actions taken in response to the US election outcome\nSource: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            914,
+            437,
+            959
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Following the US election, 85% of executives are acting on tariffs and regulatory changes",
+        "text_level": 2,
+        "bbox": [
+            35,
+            37,
+            725,
+            137
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "What actions are executives taking in response to the US election outcome?",
+        "text_level": 2,
+        "bbox": [
+            34,
+            212,
+            642,
+            251
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/64a45a100767fa98d86a80cb479932b90aa42a4a1fa0ffd6e2db3569ab8a9a21.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            148,
+            274,
+            470,
+            601
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "54% are actively monitoring",
+        "text_level": 2,
+        "bbox": [
+            47,
+            616,
+            273,
+            651
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "What top indicators are executives tracking, given the recent US election outcome?",
+        "bbox": [
+            46,
+            653,
+            291,
+            705
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "1. Tariffs changes",
+        "bbox": [
+            56,
+            735,
+            169,
+            768
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2. Regulatory changes",
+        "bbox": [
+            56,
+            775,
+            197,
+            807
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3. Geopolitical conflicts",
+        "bbox": [
+            56,
+            814,
+            203,
+            846
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4. Supply chain disruption",
+        "bbox": [
+            56,
+            855,
+            219,
+            888
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "31% have launched contingency plans",
+        "text_level": 2,
+        "bbox": [
+            330,
+            616,
+            635,
+            651
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "What top initiatives have executives launched, given the recent US election outcome?",
+        "bbox": [
+            331,
+            651,
+            588,
+            705
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "1. Planning response to tariffs changes",
+        "bbox": [
+            340,
+            733,
+            576,
+            768
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2. Assessing impact of regulatory changes",
+        "bbox": [
+            340,
+            775,
+            594,
+            807
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3. Redesigning supply chain",
+        "bbox": [
+            340,
+            814,
+            514,
+            848
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4. Reviewing geopolitical risks and business impacts",
+        "bbox": [
+            340,
+            853,
+            653,
+            888
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Executives across regions express concern for supply chain disruption, driven by the potential reinstatement or escalation of tariffs and trade barriers, which could significantly impact companies' performances in 2025",
+        "bbox": [
+            710,
+            283,
+            968,
+            474
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Corporate leaders globally are closely monitoring or assessing developments in geopolitical conflicts in Eastern Europe and the Middle East, along with US-China trade tensions, as potential sanctions and the economic isolation of certain countries could have significant impacts on business operations such as energy prices, supply chain disruption",
+        "bbox": [
+            710,
+            492,
+            964,
+            809
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Read more about managing geopolitical risk in the context of supply chains",
+        "bbox": [
+            729,
+            848,
+            950,
+            905
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            954,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/652de93b0323b3262cbed753b0fbf7c1d8747b4c32dcf9b37d3ea82dc91a0799.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            412,
+            650,
+            446,
+            705
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/8881daf119ba794f74d80d5ed53c456c34d48e27257b962aa30e37a6feee76a7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            411,
+            333,
+            446,
+            390
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/9f77cbd7fd8c282bfd5ae1ffc5910dcf8ca257e97b4e0694eab7351036d502cc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            3,
+            387,
+            985
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "BCG Executive Perspectives",
+        "text_level": 2,
+        "bbox": [
+            55,
+            155,
+            290,
+            283
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AGENDA",
+        "bbox": [
+            53,
+            331,
+            132,
+            370
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/69db3a114e7fb1a0253cbe79ace54e8d8f4711eb7627d1e35c78fdd953e32158.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            412,
+            492,
+            446,
+            548
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Navigating the economic landscape of 2025\nManaging cost structures in 2025\nUnlocking sustainable growth",
+        "bbox": [
+            452,
+            340,
+            809,
+            707
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            948,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/a66c027a06b08186a4e6c4b5876a8db6a3b73e0ef6089de39a47b196dd82c967.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            36,
+            507,
+            152,
+            698
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Cost management remains the top priority for executives across regions and industries",
+        "text_level": 2,
+        "bbox": [
+            35,
+            35,
+            722,
+            135
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "What are the top three strategic priorities for executives heading into 2025?",
+        "text_level": 2,
+        "bbox": [
+            34,
+            212,
+            637,
+            251
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/71f7f8909552ea64168ef10b60f5c84290206ae8fe5dc095bcb4b095d10945c6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            720,
+            172,
+            929,
+            244
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "#1",
+        "text_level": 2,
+        "bbox": [
+            38,
+            374,
+            79,
+            429
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/1171688bac4aabf019417e660aa2a584480d32c8a3cc25591320e492fa30b08e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            103,
+            359,
+            148,
+            438
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Cost management",
+        "text_level": 2,
+        "bbox": [
+            194,
+            325,
+            366,
+            366
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "33% of corporate leaders are prioritizing cost reduction as most critical, +8pp compared with 2024",
+        "bbox": [
+            194,
+            375,
+            588,
+            448
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "#2",
+        "text_level": 2,
+        "bbox": [
+            37,
+            579,
+            80,
+            635
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Growth/Expansion",
+        "text_level": 2,
+        "bbox": [
+            194,
+            531,
+            368,
+            570
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Growth remains a focus, with 70% of executives reporting that they have sufficient mid-term visibility to make informed investment decisions",
+        "bbox": [
+            193,
+            579,
+            677,
+            683
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/068aaa8794d130ee7ab1d964c1d176ab8a9082481aa3c22294652fff4241d2a3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            109,
+            768,
+            142,
+            851
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "#3",
+        "text_level": 2,
+        "bbox": [
+            38,
+            785,
+            78,
+            840
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Revenue management",
+        "text_level": 2,
+        "bbox": [
+            195,
+            738,
+            405,
+            777
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Executives are looking into pricing strategies to manage potential rising supply chain costs while addressing end-consumer pressures",
+        "bbox": [
+            194,
+            785,
+            650,
+            859
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In a challenging economic landscape, companies that prioritize productivity growth through disciplined cost management will outperform those that choose to absorb margin pressures or pass costs on to consumers",
+        "bbox": [
+            753,
+            424,
+            952,
+            783
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            579,
+            993,
+            953
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            933,
+            437,
+            959
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            947,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "When it comes to cost efficiency, executives prioritize supply chain optimization and product portfolio simplification",
+        "text_level": 2,
+        "bbox": [
+            35,
+            35,
+            832,
+            135
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "What key cost drivers are executives prioritizing for optimization in 2025?",
+        "bbox": [
+            34,
+            212,
+            622,
+            251
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Top ranking across industries",
+        "text_level": 2,
+        "bbox": [
+            27,
+            333,
+            118,
+            431
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "#1",
+        "bbox": [
+            170,
+            355,
+            206,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/21892fd69372fa0e27ebe38f100ccf6bb627a11f023247f4965fc623628a3a05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            167,
+            438,
+            210,
+            512
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Supply chain optimization #2",
+        "bbox": [
+            148,
+            557,
+            230,
+            622
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            279,
+            357,
+            316,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/f60a34100107264e4f877658cba66a634033e7e9a59d23c6ebf27e6cedfb141e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            273,
+            433,
+            321,
+            518
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Product\nportfolio\nsimplification #3",
+        "bbox": [
+            255,
+            559,
+            339,
+            651
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            387,
+            355,
+            423,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f00bab3ee81106fec2b8881c13d7f99be2e6fde6af2e28874ca8b81d7560d8c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            377,
+            438,
+            434,
+            512
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Operating\nmodel and\nworkforce\nproductivity #4",
+        "bbox": [
+            369,
+            559,
+            441,
+            681
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            495,
+            355,
+            532,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/7bd4ac94f24221d245beb4fc48122cb37bfa6c61d61c32e15396a41d10abe12b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            489,
+            433,
+            537,
+            516
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Customer\nservice\noperations #5",
+        "bbox": [
+            480,
+            559,
+            548,
+            651
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            607,
+            355,
+            644,
+            407
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/180bff431b9e779b80e3118b824d7d3f7c08b3407ceed1f51780344b780429ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            603,
+            427,
+            650,
+            524
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Sales\nand\nmarketing",
+        "bbox": [
+            594,
+            559,
+            659,
+            651
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Industries where each cost action is top-of-mind",
+        "text_level": 2,
+        "bbox": [
+            27,
+            731,
+            125,
+            859
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Consumer",
+        "bbox": [
+            153,
+            729,
+            225,
+            764
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Industrials",
+        "bbox": [
+            154,
+            772,
+            225,
+            805
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Insurance",
+        "bbox": [
+            263,
+            731,
+            332,
+            764
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Technology",
+        "bbox": [
+            258,
+            772,
+            336,
+            807
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Finance",
+        "bbox": [
+            269,
+            814,
+            327,
+            850
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Industrials",
+        "bbox": [
+            369,
+            729,
+            442,
+            764
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Health care",
+        "bbox": [
+            366,
+            772,
+            445,
+            805
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Insurance",
+        "bbox": [
+            479,
+            731,
+            548,
+            764
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Finance",
+        "bbox": [
+            485,
+            772,
+            542,
+            805
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Technology",
+        "bbox": [
+            587,
+            729,
+            665,
+            766
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Consumer",
+        "bbox": [
+            590,
+            772,
+            663,
+            805
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "While all companies prioritize cost management, there is no one-size-fits-all approach—it must be tailored to focus on areas that strengthen the industry’s competitive advantage",
+        "bbox": [
+            711,
+            277,
+            934,
+            531
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To remain competitive,\nexecutives are prioritizing core\noperations, optimizing supply\nchains, and streamlining\nproduct portfolios for cost\nefficiency",
+        "bbox": [
+            712,
+            562,
+            942,
+            781
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Read more about our latest thinking on cost excellence",
+        "bbox": [
+            763,
+            850,
+            917,
+            905
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            933,
+            437,
+            959
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            948,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A cost-efficient and resilient supply chain reinforces competitive advantage",
+        "text_level": 2,
+        "bbox": [
+            36,
+            59,
+            937,
+            109
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/555f3df7144e2082cf58f62635abf42b3ccab758625cd0ad3993a77dea8273e3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            39,
+            231,
+            104,
+            350
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Supply chain optimization",
+        "text_level": 2,
+        "bbox": [
+            116,
+            250,
+            235,
+            329
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Supply chains remain under\nrelentless pressure from multiple\ndirections:",
+        "bbox": [
+            35,
+            381,
+            250,
+            474
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Geopolitical crisis",
+        "bbox": [
+            46,
+            485,
+            170,
+            514
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Uncertain macroeconomic outlook",
+        "bbox": [
+            46,
+            525,
+            269,
+            553
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Climate change and pressure of net zero commitments",
+        "bbox": [
+            46,
+            564,
+            254,
+            622
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Technology disruptions",
+        "bbox": [
+            47,
+            633,
+            202,
+            664
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Changing consumer expectations",
+        "bbox": [
+            46,
+            674,
+            260,
+            705
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Cost-efficient and resilient supply chains need to be managed across the value chain...",
+        "text_level": 2,
+        "bbox": [
+            321,
+            246,
+            970,
+            281
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Dimensions",
+        "text_level": 2,
+        "bbox": [
+            323,
+            298,
+            411,
+            327
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/f47872eb9b123af0df942adc14d0090257a8e36c75983fa6b861ac035e0d542f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            333,
+            342,
+            351,
+            396
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Product",
+        "bbox": [
+            375,
+            344,
+            425,
+            370
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "development",
+        "bbox": [
+            375,
+            372,
+            457,
+            400
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/8a7e0e9050aa6b8d765172832aede0ccf0d4d64f5b3838d323d85918f9558568.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            327,
+            440,
+            358,
+            481
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Planning",
+        "bbox": [
+            375,
+            440,
+            432,
+            470
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/a117124befbf0fc2fffb5e707e3b7ecbe7030772c0383233da8a9bb3802cb2a2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            333,
+            527,
+            351,
+            575
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Procurement",
+        "text_level": 2,
+        "bbox": [
+            375,
+            535,
+            457,
+            562
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/9a5842976bb3a474376f329b07b7aacf4ee231ea37dcaeb8e55477c403fb4c3d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            329,
+            614,
+            355,
+            672
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Manufacturing",
+        "text_level": 2,
+        "bbox": [
+            375,
+            627,
+            468,
+            657
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/2198102c740467d0de0a1238c6db0f303538093077fac6efe5c187ea6138e359.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            327,
+            720,
+            358,
+            751
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Logistics and transportation",
+        "bbox": [
+            375,
+            707,
+            465,
+            764
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/bb830338359fa232009d67de49683156cc21abd871cc3d2b83cc0bc4ec92be75.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            328,
+            818,
+            357,
+            851
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Warehousing",
+        "text_level": 2,
+        "bbox": [
+            375,
+            814,
+            458,
+            842
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Optimization levers",
+        "text_level": 2,
+        "bbox": [
+            496,
+            298,
+            638,
+            329
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Modularize product design",
+        "bbox": [
+            496,
+            344,
+            657,
+            372
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Design solution-oriented for fast-cycled processes and reduced bottlenecks",
+        "bbox": [
+            495,
+            372,
+            914,
+            400
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Leverage digital scenario planning",
+        "bbox": [
+            496,
+            414,
+            698,
+            444
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Engage AI in forecasting",
+        "bbox": [
+            496,
+            442,
+            645,
+            470
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Align processes between supply chain and manufacturing",
+        "bbox": [
+            495,
+            468,
+            823,
+            498
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Deploy strategic global sourcing to identify best suppliers",
+        "bbox": [
+            495,
+            507,
+            821,
+            535
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Ensure best prices through competitive tenders, benchmarking, should-cost models",
+        "bbox": [
+            495,
+            535,
+            960,
+            562
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Enhance supplier relationship and develop joint innovation programs",
+        "bbox": [
+            495,
+            562,
+            886,
+            590
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Conduct material flow and utilization analysis",
+        "bbox": [
+            495,
+            601,
+            762,
+            629
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Optimize plant layout and equipment",
+        "bbox": [
+            496,
+            629,
+            718,
+            655
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Reassess service level and maintenance needs",
+        "bbox": [
+            496,
+            655,
+            767,
+            683
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Optimize logistics network",
+        "bbox": [
+            496,
+            694,
+            658,
+            722
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Consolidate transport routes and explore shared services",
+        "bbox": [
+            495,
+            722,
+            820,
+            750
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Reduce \"rush shipments\"",
+        "bbox": [
+            496,
+            750,
+            653,
+            777
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Consolidate warehousing",
+        "bbox": [
+            496,
+            788,
+            651,
+            816
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Explore digitization and automation",
+        "bbox": [
+            496,
+            816,
+            708,
+            842
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Renegotiate capacity and rates",
+        "bbox": [
+            496,
+            844,
+            682,
+            872
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Read more about future-proof end-to-end supply chain transformations",
+        "bbox": [
+            451,
+            900,
+            838,
+            927
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            982,
+            581,
+            992,
+            951
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            30,
+            933,
+            128,
+            957
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            948,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A design-to-value optimization approach ensures a lean and competitive product portfolio",
+        "text_level": 2,
+        "bbox": [
+            36,
+            38,
+            644,
+            135
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/23241bec05c83d09138a30ee5ed13c3517deb70c78f2f6e0d88527f3f48583a2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            39,
+            229,
+            104,
+            350
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Product portfolio optimization",
+        "text_level": 2,
+        "bbox": [
+            115,
+            250,
+            273,
+            329
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "In fast-moving markets, growing product complexity and shifting priorities drive up structural costs and profitability pressures",
+        "bbox": [
+            42,
+            372,
+            258,
+            498
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Product complexity and proliferation (e.g., too many SKUs)",
+        "bbox": [
+            53,
+            501,
+            277,
+            562
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Raw material and component costs",
+        "bbox": [
+            53,
+            566,
+            282,
+            594
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Manufacturing overhead and supply chain complexity",
+        "bbox": [
+            53,
+            600,
+            284,
+            657
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Inventory holding costs",
+        "bbox": [
+            54,
+            662,
+            210,
+            692
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Product development and R&D costs",
+        "bbox": [
+            54,
+            696,
+            257,
+            753
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Life cycle management costs",
+        "bbox": [
+            53,
+            761,
+            245,
+            790
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Marketing and sales expenses",
+        "bbox": [
+            53,
+            796,
+            251,
+            825
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Regulatory and compliance costs",
+        "bbox": [
+            54,
+            829,
+            268,
+            861
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Focusing resources on high-value products while improving operation efficiency and reducing supply chain complexity",
+        "text_level": 2,
+        "bbox": [
+            320,
+            251,
+            918,
+            322
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Optimization levers",
+        "text_level": 2,
+        "bbox": [
+            323,
+            364,
+            467,
+            396
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "#1",
+        "text_level": 2,
+        "bbox": [
+            325,
+            425,
+            351,
+            462
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Eliminating the “tail” through consolidation to eliminate low-volume configurations while retaining volume and revenue",
+        "bbox": [
+            362,
+            414,
+            884,
+            475
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "#2 A design-to-value approach with a customer-centric perspective helps to rebalance value and cost of the product portfolio",
+        "bbox": [
+            325,
+            492,
+            904,
+            553
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Baseline setting",
+        "text_level": 2,
+        "bbox": [
+            398,
+            712,
+            516,
+            744
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Understanding customer voice",
+        "bbox": [
+            377,
+            753,
+            530,
+            805
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Detailed cost breakdown",
+        "bbox": [
+            377,
+            807,
+            528,
+            835
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Gap analysis",
+        "bbox": [
+            377,
+            835,
+            465,
+            864
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Idea generation",
+        "text_level": 2,
+        "bbox": [
+            570,
+            683,
+            687,
+            718
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Cross-functional workshops to rebalance value and cost",
+        "bbox": [
+            550,
+            725,
+            695,
+            807
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Benchmarking",
+        "bbox": [
+            550,
+            807,
+            647,
+            838
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Implementation",
+        "text_level": 2,
+        "bbox": [
+            741,
+            664,
+            861,
+            698
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Ensuring customer and supplier alignment on design changes",
+        "bbox": [
+            720,
+            707,
+            864,
+            788
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• Monitoring progress",
+        "bbox": [
+            721,
+            788,
+            850,
+            818
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis",
+        "bbox": [
+            25,
+            933,
+            125,
+            957
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            948,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/2d75f5c3011b5d190db785fdf2568f46cf9d1522c74723858259f4da22fc53b7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            685,
+            320,
+            761,
+            442
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Companies struggle to achieve their cost targets",
+        "text_level": 2,
+        "bbox": [
+            36,
+            61,
+            613,
+            112
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/d09a11979a8df0e27de0fbd71f5dde4e50287df29de00755570eca569adccd2a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            170,
+            208,
+            246
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/d8c215ca99dafeaec733345cc4ed85d45ddf2d5b8ea1b4f5b5724e8c43e8e814.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            40,
+            324,
+            123,
+            407
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Average proportion of\ncost-saving target\nachieved by companies",
+        "bbox": [
+            130,
+            301,
+            306,
+            416
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/895089f9c7717cc3e392e28e366167d6fc0225a78068bf065a7bb67fd42b3b29.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Proportion of\ncompanies failed to\nachieve long-lasting\nstructural cost cutting"
+        ],
+        "content": "",
+        "bbox": [
+            40,
+            498,
+            125,
+            609
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Companies failing to meet cost targets underperformed on total shareholder return by an average of 9pp compared with the average TSR of peers that met their targets",
+        "bbox": [
+            34,
+            690,
+            303,
+            874
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "What were the biggest challenges to the success of past cost reduction efforts?",
+        "text_level": 2,
+        "bbox": [
+            345,
+            227,
+            976,
+            268
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/f0561eb6758cb657be68f23a7a99a54c71212bf87a1c488cffad930c61c09442.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Employee and\norganizational\nculture"
+        ],
+        "content": "",
+        "bbox": [
+            421,
+            320,
+            501,
+            588
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/f25b56a6454d395d7aee499d7fb98112d89ed42139ab53f408c650a10a601616.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            550,
+            318,
+            632,
+            588
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/b4ad969f463adebefc0a8d08e7be3be71827d58b289dd887be1009804316acbb.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Change in mgmt.\n(org. structure\nand process)",
+            "Skills/Expertise"
+        ],
+        "content": "",
+        "bbox": [
+            681,
+            466,
+            761,
+            588
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/3b29a934b4564126e292d2e16853b53e946d76d700acdaae1a9ae7f21bb28f59.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Technical\ninfrastructure\nand capabilities"
+        ],
+        "content": "",
+        "bbox": [
+            809,
+            320,
+            891,
+            588
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/393c577b29c61b402835a3ee3ddf8f04ab3942e545fd05b68677754396b18182.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            720,
+            680,
+            755
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Resistance to change can hinder implementation of new cost-saving measures and efficiency improvements; however, firms with aligned culture and agile management see up to 11% higher efficiency in cost reduction initiatives",
+        "bbox": [
+            345,
+            761,
+            943,
+            875
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            955
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Source: FT longitude x BCG research (N=770) Aug 2024; BCG global executive survey on strategic priorities (N=570) Q4 2024; S&P Capital IQ; BCG ValueScience® Center",
+        "bbox": [
+            27,
+            933,
+            790,
+            959
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            947,
+            942,
+            964,
+            966
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "A cost-conscious organizational culture is essential for successful cost management",
+        "text_level": 2,
+        "bbox": [
+            33,
+            35,
+            690,
+            135
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Which measures are most effective for embedding cost awareness into daily operations?",
+        "text_level": 2,
+        "bbox": [
+            33,
+            212,
+            605,
+            287
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Company performance visibility",
+        "text_level": 2,
+        "bbox": [
+            34,
+            301,
+            135,
+            403
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "79%",
+        "text_level": 2,
+        "bbox": [
+            192,
+            312,
+            230,
+            353
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "What types of company performance information are most effective?",
+        "bbox": [
+            301,
+            366,
+            644,
+            405
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#1 Financial year targets and gaps",
+        "bbox": [
+            316,
+            414,
+            532,
+            451
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#2 Specific cost-saving achievements and initiatives",
+        "bbox": [
+            317,
+            455,
+            623,
+            496
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#3 Market trends and economic forecasts",
+        "bbox": [
+            318,
+            505,
+            570,
+            544
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Communications from organization leadership",
+        "text_level": 2,
+        "bbox": [
+            34,
+            616,
+            167,
+            716
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "62%",
+        "text_level": 2,
+        "bbox": [
+            193,
+            627,
+            229,
+            664
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "What types of communication from leaders are most effective?",
+        "bbox": [
+            302,
+            679,
+            615,
+            716
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#1 Ensuring leaders model cost-conscious behavior",
+        "bbox": [
+            317,
+            725,
+            620,
+            762
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#2 Regular executive-led town halls",
+        "bbox": [
+            318,
+            768,
+            538,
+            805
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "#3 Internal written updates from executives",
+        "bbox": [
+            318,
+            816,
+            581,
+            855
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Achieving cost excellence requires effective change management to secure employee buy-in",
+        "bbox": [
+            710,
+            383,
+            900,
+            535
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Clear communication and leadership transparency on company performance are key to embedding cost awareness into daily operations",
+        "bbox": [
+            709,
+            562,
+            936,
+            748
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Read more about how to sustain a cost-conscious culture over time",
+        "bbox": [
+            739,
+            855,
+            931,
+            912
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Source: FT longitude x BCG research (N=770) Aug 2024; BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            27,
+            931,
+            654,
+            959
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            948,
+            942,
+            964,
+            966
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            579,
+            993,
+            953
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/b206ea7630b0040143bd4cbeecaad37dff198ad211add286aaf3543272db5e67.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            412,
+            650,
+            446,
+            705
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "BCG Executive Perspectives",
+        "text_level": 2,
+        "bbox": [
+            55,
+            155,
+            290,
+            283
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "AGENDA",
+        "bbox": [
+            53,
+            331,
+            132,
+            370
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Navigating the economic landscape of 2025\nManaging cost structures in 2025\nUnlocking sustainable growth",
+        "bbox": [
+            454,
+            340,
+            809,
+            707
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            948,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Laying solid foundations is crucial, as 67% of executives plan to reinvest cost savings into growth",
+        "text_level": 2,
+        "bbox": [
+            36,
+            35,
+            790,
+            133
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Enduring cost management fosters continuous improvement of HOW work is done...",
+        "text_level": 2,
+        "bbox": [
+            258,
+            214,
+            935,
+            251
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f5d6fa0ec20ca125f4fc598aecfdd28a7de40d26826df2b7ed02e4547df2e904.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            33,
+            372,
+            223,
+            605
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Of executives plan to invest savings from cost reduction efforts into growth",
+        "bbox": [
+            34,
+            670,
+            213,
+            831
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "DESIRED CULTURE",
+        "bbox": [
+            287,
+            516,
+            380,
+            596
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d05851d2a3213c8f6a0b25c7d4f05bcc4d27592e2f9f0622dd40d43b71e641e4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            258,
+            292,
+            507,
+            824
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "LEADER ENABLEMENT",
+        "text_level": 2,
+        "bbox": [
+            512,
+            290,
+            669,
+            320
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "HOW: Equip leaders with tools, visibility, and empowerment to identify and drive cost-saving initiatives",
+        "bbox": [
+            510,
+            327,
+            950,
+            388
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "DESIRED CULTURE",
+        "text_level": 2,
+        "bbox": [
+            511,
+            435,
+            642,
+            466
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "HOW: Foster a cost-aware and accountable culture by celebrating wins; encourage learning from successes and setbacks to drive ongoing improvement",
+        "bbox": [
+            509,
+            474,
+            977,
+            535
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "PEOPLE ENGAGEMENT",
+        "text_level": 2,
+        "bbox": [
+            512,
+            585,
+            669,
+            616
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "HOW: Align employees with cost reduction goals and growth vision; empower employees to join solutioning process; provide real-time feedback",
+        "bbox": [
+            509,
+            624,
+            953,
+            687
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "EXECUTIONAL CERTAINTY",
+        "text_level": 2,
+        "bbox": [
+            512,
+            729,
+            690,
+            759
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "HOW: Implement effective governance and tracking of cost reduction initiatives; hold employees accountable for progress",
+        "bbox": [
+            510,
+            766,
+            915,
+            827
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Learn more about cost management foundations",
+        "bbox": [
+            679,
+            870,
+            950,
+            898
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            933,
+            436,
+            957
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            948,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Organizations plan to use cost savings to support strategic investments",
+        "text_level": 2,
+        "bbox": [
+            37,
+            62,
+            889,
+            111
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Strategic priorities vary for each organization, yet a few are highly relevant for most",
+        "text_level": 2,
+        "bbox": [
+            35,
+            214,
+            703,
+            251
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/99ea57d33f15bc0127369548376776777eca12782e03c8a1903d326892a78d35.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            298,
+            248,
+            877
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/0e59eaf1af99bb1537f65950ce5289c7c7658334379d5fc48a165418d14e5dcd.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Digital and AI</td><td>Accelerating digital adoption positions tech and digital as key to resilience and cost efficiency. Organizations need to quickly adapt tech capabilities like GenAI to boost efficiency and drive business growth Read more</td></tr><tr><td>Talent advancement</td><td>Competition for talent will persist, requiring companies to enhance their strategies through data-driven hiring, continuous skill development, and AI-driven processes Read more</td></tr><tr><td>Climate and sustainability</td><td>To bolster long-term sustainability and address climate challenges, leaders should invest in high-impact sustainable projects and align with climate benchmarks Read more</td></tr><tr><td>Supply chain of the future</td><td>Supply chains should leverage cross-functional coordination, digital integration, and rapid execution to enable seamless transformation, enhancing resilience and efficiency Read more</td></tr><tr><td>Operational excellence</td><td>Amid ongoing uncertainty, companies should shift from reactive cost-cutting to strategic efficiency by focusing on optimization and building sustainable competitive capabilities Read more</td></tr><tr><td>Business expansion</td><td>Successful top-line growth amid shifting global economic and geopolitical dynamics can be achieved by focusing on core markets while exploring new regions, sectors, and product lines Read more</td></tr></table>",
+        "bbox": [
+            254,
+            316,
+            957,
+            868
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis and client experience",
+        "bbox": [
+            29,
+            933,
+            227,
+            957
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            948,
+            942,
+            963,
+            966
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/1507a86c3e2ac0743fb52af87a7d8855873463b5f852c76b30b61f5aa707c10e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            666,
+            514,
+            688,
+            551
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Executives see GenAI as a key pillar for future efficiency",
+        "text_level": 2,
+        "bbox": [
+            38,
+            61,
+            709,
+            109
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Which applications of GenAI and advanced analytics can drive significant near-term cost reductions?",
+        "text_level": 2,
+        "bbox": [
+            260,
+            238,
+            761,
+            312
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bcf98a822423db5e2a0ec1b16ddcfbe3fb9c748b913bd26d6d48a0197a5f8e36.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            31,
+            366,
+            228,
+            607
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Of executives plan to invest in AI and/or advanced analytics in 2025",
+        "bbox": [
+            34,
+            668,
+            216,
+            829
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Customer service",
+        "bbox": [
+            262,
+            344,
+            391,
+            379
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Sales and marketing",
+        "bbox": [
+            262,
+            433,
+            412,
+            470
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Support functions",
+        "bbox": [
+            262,
+            518,
+            395,
+            555
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "R&D in engineering",
+        "bbox": [
+            263,
+            605,
+            406,
+            644
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Supply chain",
+        "bbox": [
+            262,
+            690,
+            359,
+            727
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "50%",
+        "bbox": [
+            425,
+            344,
+            461,
+            383
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "49%",
+        "bbox": [
+            426,
+            431,
+            461,
+            468
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "47%",
+        "bbox": [
+            426,
+            518,
+            461,
+            555
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "35%",
+        "bbox": [
+            425,
+            603,
+            461,
+            642
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "31%",
+        "bbox": [
+            425,
+            688,
+            461,
+            727
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/7a8d2c2be82b57a833af4518986b342006e384b00faa612e3dbdc8a6f96dcd1f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            666,
+            340,
+            688,
+            379
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "E.g., customer inquiries, call center insights, back-office processing",
+        "bbox": [
+            712,
+            333,
+            955,
+            392
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/63160ed24899197d3bd508ceef706094f26c9852d71d2c791a2638c827878aef.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            666,
+            427,
+            687,
+            466
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "E.g., content creation and distribution, marketing insights, lead generation",
+        "bbox": [
+            708,
+            420,
+            926,
+            479
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "E.g., financial planning and reporting, training, legal review",
+        "bbox": [
+            665,
+            505,
+            923,
+            564
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Investing in GenAI not only helps with cost reduction efforts, but also boosts productivity, scales capacity, and supports growth through continuous innovation",
+        "bbox": [
+            276,
+            835,
+            948,
+            911
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG global executive survey on strategic priorities (N=570) Q4 2024; BCG analysis",
+        "bbox": [
+            28,
+            933,
+            437,
+            959
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            947,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Executives can also use GenAI to tackle their top three strategic priorities for 2025",
+        "text_level": 2,
+        "bbox": [
+            36,
+            35,
+            691,
+            135
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Cost management",
+        "text_level": 2,
+        "bbox": [
+            195,
+            250,
+            366,
+            285
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Read more about unlocking impact with AI",
+        "bbox": [
+            866,
+            218,
+            962,
+            301
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "#1",
+        "text_level": 2,
+        "bbox": [
+            38,
+            312,
+            77,
+            364
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Automating processes, optimizing supply chains, and improving operational efficiency:",
+        "bbox": [
+            194,
+            285,
+            738,
+            318
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/5bf2f5abb32c15c11cefc47d654ba1f9e5a5d949d9bff401ef32a77e3f72bf45.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            296,
+            147,
+            374
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Decrease labor cost by automating tasks in areas like customer service and content creation",
+        "bbox": [
+            203,
+            322,
+            803,
+            353
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Use predictive models to enhance supply chain efficiency by forecasting demand and inventory levels",
+        "bbox": [
+            203,
+            357,
+            859,
+            392
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Monitor and reduce energy consumption across facilities, directly impacting operating costs",
+        "bbox": [
+            203,
+            394,
+            800,
+            429
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Growth/Expansion",
+        "text_level": 2,
+        "bbox": [
+            195,
+            483,
+            367,
+            518
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "#2",
+        "text_level": 2,
+        "bbox": [
+            38,
+            546,
+            79,
+            598
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d875b1d1a37594cb05c354aef15fe650ea31006cfa14a91e5e4c7d3b68afcc0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            102,
+            529,
+            150,
+            607
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Enabling employees to perform more complex tasks, speeding up workflows:",
+        "bbox": [
+            195,
+            520,
+            678,
+            553
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Accelerate product development and innovation through AI, enhancing speed-to-market",
+        "bbox": [
+            203,
+            557,
+            776,
+            588
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Drive growth with AI-powered upselling, personalized marketing, and quick adaptation to new markets",
+        "bbox": [
+            203,
+            592,
+            865,
+            625
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Prioritize high-impact AI initiatives around large, homogenous resource pools, not just incremental automation",
+        "bbox": [
+            203,
+            629,
+            869,
+            662
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "#3",
+        "text_level": 2,
+        "bbox": [
+            39,
+            779,
+            78,
+            831
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/4cd3cede653256b3cb63b9f592e0480d94066a7f92349abb51def673d0668a32.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            110,
+            761,
+            142,
+            844
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Revenue management",
+        "text_level": 2,
+        "bbox": [
+            195,
+            716,
+            405,
+            751
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Driving revenue by enhancing personalization and opening new revenue streams, including:",
+        "bbox": [
+            195,
+            751,
+            775,
+            785
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Improve customer retention and upselling (e.g., churn prediction, targeted retention strategies)",
+        "bbox": [
+            203,
+            790,
+            818,
+            822
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Enable personalized marketing (e.g., product recommendations, targeted campaigns)",
+        "bbox": [
+            204,
+            825,
+            760,
+            859
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Assist in product innovation and accelerate development processes",
+        "bbox": [
+            204,
+            862,
+            648,
+            894
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis and client experience",
+        "bbox": [
+            29,
+            933,
+            227,
+            957
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            948,
+            942,
+            963,
+            964
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "BCG has deep expertise in cost management Partnering with your organization to craft a cost program that creates enduring impact",
+        "text_level": 2,
+        "bbox": [
+            37,
+            42,
+            901,
+            135
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "We leverage our unique strengths and approach to transform your organization, delivering lasting structural cost savings that fuel growth",
+        "bbox": [
+            35,
+            244,
+            566,
+            312
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/e11990a1091922ef4df8ce383e1a2625e7b151c51cf72294e335a0b2fb3deebf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            370,
+            72,
+            438
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/ad4492df64ae017121553dee6671f681bdfdf03b2462f41e7ccabec60b9a06b8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            39,
+            485,
+            77,
+            544
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/d91eadae6e111577b0bbfd604cd09b6e31b0ce7371b45c55a76ee17db81b7f79.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            41,
+            598,
+            75,
+            657
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/1b6554c3f675e7f5823c5370746afbe80fedb9977fd4ebe99955fc1bbca1a465.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            42,
+            709,
+            76,
+            770
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/b400503c5b33df0183e6fa3b0cdd015140249feab5a86c9c28cdfea8c510dc1a.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Strategic cost optimization with growth focus</td><td>We design lean cost structures that drive savings without limiting growth, aligning cost management with your strategic objectives</td></tr><tr><td>Empowered culture and continuous improvement</td><td>We foster a culture of continuous improvement, empowering employees to take accountability, ensuring sustainable progress even after our engagement</td></tr><tr><td>Customized expertise and reliable execution</td><td>We deliver tailored cost solutions for competitive advantage leveraging our deep industry expertise, ensuring end-to-end focus and reliable outcomes</td></tr><tr><td>Advanced digital &amp; AI capabilities and data-driven insights</td><td>We embed cutting-edge digital and AI tools in operations, enabling data-driven decisions for enhanced operations efficiency and productivity</td></tr><tr><td>Collaborative partnership and lasting impact</td><td>We work hand-in-hand with your leaders, ensuring projects are co-created for lasting results that stick, with a “done with” partnership mentality</td></tr></table>",
+        "bbox": [
+            91,
+            364,
+            578,
+            901
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/0160c1bcb0179ca301e89c1c3fe6510409fe0808209df08f346a62546c39b474.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            41,
+            816,
+            77,
+            888
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "BCG cost experts",
+        "text_level": 2,
+        "bbox": [
+            632,
+            272,
+            788,
+            309
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/e9c962a193b71e69a73edbd9a00f7ec24a5fdf63c95012725515b4b99482b2ba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            639,
+            359,
+            684,
+            448
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Paul Goydan",
+        "text_level": 2,
+        "bbox": [
+            695,
+            359,
+            762,
+            383
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner Houston",
+        "bbox": [
+            695,
+            383,
+            783,
+            450
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/8154e26b10e90a65c7037345bbd85dd2121b7b55e3694fe6cfb291a5e5415469.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            810,
+            357,
+            860,
+            450
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/4acca7459ef27780bad07affa51d79d37b5e1cfab1dd75a1b28a97859aa64dd4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            636,
+            472,
+            687,
+            559
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Namit Puri",
+        "text_level": 2,
+        "bbox": [
+            695,
+            472,
+            754,
+            494
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner",
+        "bbox": [
+            695,
+            494,
+            783,
+            540
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "New Delhi",
+        "bbox": [
+            695,
+            540,
+            746,
+            562
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c96d508102bb00dd2001f24dd21ba39e2a96acc6fa8ab1fb6bf106275386155.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            810,
+            472,
+            858,
+            559
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/3e80a01223ff0cd71b5933182c1905f240ff368edd10c8b27f2c12cf0f0c2de6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            636,
+            583,
+            684,
+            672
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Karin von Funck",
+        "text_level": 2,
+        "bbox": [
+            695,
+            585,
+            780,
+            607
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director",
+        "bbox": [
+            695,
+            607,
+            783,
+            631
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "& Senior Partner",
+        "bbox": [
+            695,
+            629,
+            775,
+            651
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Munich",
+        "bbox": [
+            695,
+            651,
+            733,
+            674
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/4be501fd2d80400e69f134fddc4c2b6b7dd0e9069fbecdea059915c38af56260.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            810,
+            585,
+            858,
+            672
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Michael Grebe",
+        "text_level": 2,
+        "bbox": [
+            695,
+            696,
+            771,
+            720
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/8fc3e5562d37ce90a54e73dadd39b6bcf63debbcfff914e8494d8dd1cd4de0a6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            636,
+            696,
+            686,
+            785
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director",
+        "bbox": [
+            695,
+            720,
+            783,
+            744
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "& Senior Partner",
+        "bbox": [
+            695,
+            742,
+            775,
+            764
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Munich",
+        "bbox": [
+            695,
+            764,
+            733,
+            785
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/56120463c61700bf95d80d8c3e335a70dcfff3b5eae44d11c6b96b2132661f93.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            811,
+            696,
+            857,
+            785
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/a4d0779cf4a0f8539cb4716d692917d8737187bfab2d0cfefb4d5aa725599c16.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            637,
+            809,
+            686,
+            898
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Jochen Schönfelder",
+        "text_level": 2,
+        "bbox": [
+            695,
+            809,
+            794,
+            831
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director",
+        "bbox": [
+            695,
+            833,
+            785,
+            855
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "& Senior Partner",
+        "bbox": [
+            695,
+            855,
+            775,
+            875
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/cf652315f9a6db5bf9d42a430677a778e98c0c3d9d32bc6afbcbd60a8a08a5b4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            810,
+            809,
+            858,
+            896
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Cologne",
+        "bbox": [
+            695,
+            877,
+            736,
+            901
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Jacopo Brunelli",
+        "text_level": 2,
+        "bbox": [
+            868,
+            359,
+            950,
+            383
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner Milan",
+        "bbox": [
+            867,
+            383,
+            957,
+            450
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Dwight Hutchins",
+        "text_level": 2,
+        "bbox": [
+            868,
+            472,
+            955,
+            496
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner Boston",
+        "bbox": [
+            868,
+            494,
+            956,
+            562
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Kevin Kelley",
+        "text_level": 2,
+        "bbox": [
+            869,
+            585,
+            934,
+            607
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner Dallas",
+        "bbox": [
+            868,
+            607,
+            956,
+            674
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Rashi Agarwal",
+        "text_level": 2,
+        "bbox": [
+            869,
+            696,
+            944,
+            720
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nNew York",
+        "bbox": [
+            869,
+            720,
+            956,
+            787
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Mai-Britt Poulsen",
+        "text_level": 2,
+        "bbox": [
+            869,
+            809,
+            959,
+            831
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner London",
+        "bbox": [
+            868,
+            831,
+            957,
+            898
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2025 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG approach and client experience",
+        "bbox": [
+            29,
+            933,
+            233,
+            957
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            948,
+            942,
+            964,
+            964
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Disclaimer",
+        "text_level": 2,
+        "bbox": [
+            53,
+            437,
+            300,
+            522
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The services and materials provided by Boston Consulting Group (BCG) are subject to BCG's Standard Terms (a copy of which is available upon request) or such other agreement as may have been previously executed by BCG. BCG does not provide legal, accounting, or tax advice. The Client is responsible for obtaining independent advice concerning these matters. This advice may affect the guidance given by BCG. Further, BCG has made no undertaking to update these materials after the date hereof, notwithstanding that such information may become outdated or inaccurate.",
+        "bbox": [
+            407,
+            244,
+            919,
+            366
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The materials contained in this presentation are designed for the sole use by the board of directors or senior management of the Client and solely for the limited purposes described in the presentation. The materials shall not be copied or given to any person or entity other than the Client (“Third Party”) without the prior written consent of BCG. These materials serve only as the focus for discussion; they are incomplete without the accompanying oral commentary and may not be relied on as a stand-alone document. Further, Third Parties may not, and it is unreasonable for any Third Party to, rely on these materials for any purpose whatsoever. To the fullest extent permitted by law (and except to the extent otherwise agreed in a signed writing by BCG), BCG shall have no liability whatsoever to any Third Party, and any Third Party hereby waives any rights and claims it may have at any time against BCG with regard to the services, this presentation, or other materials, including the accuracy or completeness thereof. Receipt and review of this document shall be deemed agreement with and consideration for the foregoing.",
+        "bbox": [
+            407,
+            383,
+            914,
+            588
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "BCG does not provide fairness opinions or valuations of market transactions, and these materials should not be relied on or construed as such. Further, the financial evaluations, projected market and financial information, and conclusions contained in these materials are based upon standard valuation methodologies, are not definitive forecasts, and are not guaranteed by BCG. BCG has used public and/or confidential data and assumptions provided to BCG by the Client. BCG has not independently verified the data and assumptions used in these analyses. Changes in the underlying data or operating assumptions will clearly impact the analyses and conclusions.",
+        "bbox": [
+            407,
+            603,
+            913,
+            727
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            935,
+            935,
+            947,
+            955
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ed5d841faf0a98a3b7a76877ac823e57744f110eaf7e76d7ee08d4948f32901.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            1000
+        ],
+        "page_idx": 23
+    }
+]

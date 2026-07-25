@@ -1,0 +1,105 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_v0vfxp76/pdfs/0005-BCG_The-AI-First-Refiner_07c3fb7f.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "AI正在改变化工炼油",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "全球经济->全球宏观环境 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：AI炼油厂每桶EBIT提升0.5至1.2美元",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-BCG_The-AI-First-Refiner_07c3fb7f.pdf",
+    "cleaned_source_title": "0005-BCG_The-AI-First-Refiner_07c3fb7f",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+    "raw_candidates": [
+      "波士顿咨询：AI优先炼油厂",
+      "波士顿咨询：AI炼油厂每桶EBIT提升0.5至1.2美元",
+      "波士顿咨询：AI炼油厂运营与规划调度优化"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：AI优先炼油厂",
+      "波士顿咨询：AI炼油厂每桶EBIT提升0.5至1.2美元",
+      "波士顿咨询：AI炼油厂运营与规划调度优化",
+      "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+      "波士顿咨询：1.运营环节已出现单个炼油厂超8000万美元的AI收益"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "body_too_short"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：AI优先炼油厂",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：AI炼油厂运营与规划调度优化",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0005BCGTheAIFirstRefiner07c3",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：1.运营环节已出现单个炼油厂超8000万美元的AI收益",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：AI炼油厂每桶EBIT提升0.5至1.2美元",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "0.5",
+        "1.2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：AI炼油厂每桶EBIT提升0.5至1.2美元"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
