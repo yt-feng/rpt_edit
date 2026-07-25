@@ -1,0 +1,145 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_y8z6aa6p/pdfs/0005-35-JPM-China Equity Strategy-Policy put emerges after tech sell-off-2Q earnings catalyst-260723.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "AI砸盘后，政策底来",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "A股|港股->相关市场 x1",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "金融->资金 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资周期->研究周期 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "A股|港股->相关市场 x1",
+    "券商->机构 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive",
+    "neutralized:evaluative_or_adversarial_wording",
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "JPM：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-35-JPM-China Equity Strategy-Policy put emerges after tech sell-off-2Q earnings catalyst-260723.pdf",
+    "cleaned_source_title": "JPM-China Equity Strategy-Policy put emerges after tech sell-off-2Q earnings catalyst",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：中国Equity策略政策putemerges",
+    "raw_candidates": [
+      "中国权益策略-科技股抛售后政策回应-二季度业绩催化剂",
+      "中国权益策略-600亿元购买计划与科技股资金逆转-二季度业绩催化剂",
+      "中国权益策略-二季度业绩期板块分化-政策回应与资金结构"
+    ],
+    "cleaned_candidates": [
+      "JPM：中国权益策略-科技股抛售后政策回应-二季度业绩催化剂",
+      "JPM：中国权益策略-600亿元购买计划与科技股资金逆转",
+      "JPM：中国权益策略-二季度业绩期板块分化-政策回应与资金结构",
+      "JPM：中国Equity策略政策putemerges",
+      "JPM：百度广告收入预计二季度同比下降约23%，全年下降约21%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：中国权益策略-600亿元购买计划与科技股资金逆转",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：中国权益策略-二季度业绩期板块分化-政策回应与资金结构",
+        "reasons": [
+          "anchor_coverage=0.52"
+        ]
+      },
+      {
+        "title": "JPM：中国Equity策略政策putemerges",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：百度广告收入预计二季度同比下降约23%，全年下降约21%",
+        "reasons": [
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：中国权益策略-科技股抛售后政策回应-二季度业绩催化剂",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "JPM：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "426",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

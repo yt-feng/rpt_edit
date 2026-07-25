@@ -1,0 +1,69 @@
+Found 59 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_y8z6aa6p/pdfs/0001-31-J.P. Morgan-Akeso-9926.HK- Ad hoc HARMONi OS update- Positive but unlikely to be fundamentally needle-moving-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_y8z6aa6p/pdfs/0002-32-Goldman Sachs-US WEEKLY KICKSTART-The 2026 midterms and US equities-260724.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_y8z6aa6p/pdfs/0003-33-Goldman Sachs-WEEKLY FUND FLOWS Japan Flows in Focus-260724.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_y8z6aa6p/pdfs/0004-34-J.P. Morgan-China AI-Driven Drug Discovery-Drug Discovery Riding the Next Wave of AI- initiate on Insilico - XtalPi at OW-260723.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_y8z6aa6p/pdfs/0005-35-J.P. Morgan-China Equity Strategy-Policy put emerges after tech sell-off-2Q earnings catalyst-260723.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=f61d940d-3049-450a-a180-3356fae6eb4b
+MinerU states: done, running, running, running, waiting-file
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset cb1043f34b54e0830c4c241adf964812e1d9c5b7793df21823badbbe06e09fb7.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 05ca1f685b3f2475a925da7a348f8f11ef2ebb8000c8f682bf3699a2340aaf71.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 151d966235dd4a24d0e23fafe93e42057a19ab1f1caecfcbdeb808b78626eab3.jpg: score=0;square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset f509ee4e57990eb9740372ebfcf945392eb6209d89b806e70d024dd0f7a7cd1a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.24,contrast,large
+Skip non-chart visual asset 10a491af60eb379aa05c396cb337c12c70afde804a0469b818f54878031e1003.jpg: score=0;square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset f35316bca054bed4f9a859b42c4d2747edbf205a4fe28c322f58926e8ba2eba8.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.40,contrast,large
+Skip non-chart visual asset da648a736f0d8e3384b87b66041e2be3c93de62e8f43d2d7b84a5cdff0b0eb58.jpg: score=1;square_without_chart_hint,edge:0.45,contrast,large
+Skip non-chart visual asset ae07a86e9d38769c498ee65153be2d1278c27dc9158f3858eed3a5529880510e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Neutralized WeChat title while keeping the report: 高盛：2026年中期选举与美国权益市场-标普500选举前后回报 -> 高盛：区域环境与行业变化观察
+Skip non-chart visual asset 5b51bc140d2f9e18b4ec8fccab176fea19a966eaa916ee8ba1268e07abd125a2.jpg: score=1;square_without_chart_hint,edge:0.29,contrast,large
+Skip non-chart visual asset 6d82e75cc4a3521a99177fe215c137a2e68e13beaf67e6fae125858cefad8ff7.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Skip non-chart visual asset ecdb5204b1a80d5de530c486e90aa4880377c56cfd739584a6b3b69016995923.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset faf0a86f03c4177fa2449ca822e43a20fa9656e95592f29548c83e7863d740a8.jpg: score=1;square_without_chart_hint,edge:0.32,contrast,large
+Skip non-chart visual asset 837c6f7de11be8091304805406f7f5c30a29c12e27c219bf683421be16ae1ce1.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset a6716567994c5812000ead6cabf4e3d58e7a74758c08b1e9f9ea87ccb4132bd6.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.19
+Skip non-chart visual asset 13a4735aea90f7410d244acb99d397bf1f3d3b74de3e57642c620f2a4e102ab6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Skip non-chart visual asset 8e77df646166096cee79971ef69e43d8cdc38ef789628e8d02505d19c5e4d42b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 0d2ee55942ba5c50e8c6c6d128ff800a85dcd5858bed48d63881ffcdd40f215b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Skip non-chart visual asset 3e140b4812c05a17028c3e4d97dd0bcf75f20a36bf61ca293247e2749b5711ae.jpg: score=-100;too_small:478x176
+Skip non-chart visual asset af27b5d87eafcb9ef29c2e7f4d93cc232c5cdd768d98f86f4dbb28ddc6445c1a.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset c660b94c55280ab16e3266000c0f49c7605c285e451ea09ccf5d7f96de8deea0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 4f794d4dd98a925f00d3d928f9868221402562cafb8835767e078775886e5907.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 27db35fcbf9d5c0877c3d9733952db102e99e993a08ff6dc30143ba7df6b7a1f.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 0ab5118d519bbe59f49cb076330558b5c6990e77f89b792bcb6ef6ff48efa409.jpg: score=-100;too_small:526x75
+Skip non-chart visual asset 530238f2dc076ee7395079697e3ce0b8bf66e537b168a4a11866ba050e9f5ba4.jpg: score=-100;too_small:478x179
+Skip non-chart visual asset bf8e81ba788f7e308cc1838f2f9e0f06e0aba3932433b5a16e7e8cb496412c20.jpg: score=-100;too_small:439x179
+Skip non-chart visual asset afb506014807206ad8bdc339df03d2400b50a430111820249bb2c7a2083604cc.jpg: score=-100;too_small:439x176
+Skip non-chart visual asset 452fad8f9361dfe79c47ebc201d22b2be30f960c0f358e8ad6bfbdbeea116a1b.jpg: score=-100;too_small:456x176
+Skip non-chart visual asset db7e9e63264dbbe9254025bef8d5623c43a2ff6ba39489cd821a0f70d69c2f21.jpg: score=1;chart_ratio
+Skip non-chart visual asset 4d4f7d200766b65f7a6159768fd85f7330eb024924ab38d3672520020106c678.jpg: score=-100;too_small:475x176
+Skip non-chart visual asset b6cd24b56971fb6022e36c8d6b026eb531816ac2bc538577bedb47abc8600b07.jpg: score=-100;too_small:528x82
+Skip non-chart visual asset 03dfbbe896450f1fe0dbba9f3129c944ddef0b2faceaa11b8b4dd49573aa4f43.jpg: score=1;square_without_chart_hint,edge:0.44,contrast,large
+Skip non-chart visual asset 2c308c88ed4fbdd5a83f2e7b2717e7b22f0a8f23822e052d4477a3fe91c78573.jpg: score=-100;too_small:623x84
+Skip non-chart visual asset 92bb26d6da50e0f9e99d3d5b8d6e3377490b2a09c8beb5302103d7252333aa86.jpg: score=0;square_without_chart_hint,edge:0.36,contrast
+Skip non-chart visual asset 54bfc093eda5a65a99b3c1d75dc2f6abe487df6105a7481bb64ce60fc7fd39f9.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 172c4714662581d1285ec14c4a190ed45b10953e6e33c92e1b14caed6525d761.jpg: score=-100;too_small:1348x137
+Skip non-chart visual asset 973dc0519ed6e619c66e23d6ce3127295cba5709b2be55128abd03acb414244c.jpg: score=-100;too_small:475x179
+Skip non-chart visual asset 2d092d94f749441b11a2053f442b1bf46903575cb02069942765868266da1ac0.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset b31c0a16f42ffe0cf28627d83d61837cd778fe5cdb75795964d6e7e56365553f.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 9f18fe8a95dda9d948c60ed540ea11e4dc5c3fd08012768ab684a736f2325ba5.jpg: score=-100;too_small:623x84
+Skip non-chart visual asset b0d41121b7bccc97f900aaa3f24b9c932b0b8ac41b1ece7fbfc8e201defbcf41.jpg: score=-100;too_small:456x173
+Skip non-chart visual asset 4f75863dd6afce527c6d744f3a996d9124d39a4110955bb865d3fefb5721f969.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset dfd57bba879b4e6acbfefa877dabb4bba7666802592c8e59555f9fd671ac0113.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 8c0ddf4fdcf92b47841128e6744447005ac997fa3c380feab1724713ea180669.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset 70239b49003f1b826f60d419b59cc36f55d3c2d844b3c5792cb0325d9f8adb76.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：中国AI驱动药物研发-英矽智能与晶泰科技超配 -> 摩根大通：AI技术与行业应用观察
+Skip non-chart visual asset d37db14ceb03d6c86b299fe9c65063959bcead2ad62d784b8b7ead1416474e76.jpg: score=1;chart_ratio
+Skip non-chart visual asset 8513a0693c2412a728757fd1ff0d6a68ed0efc7475a259de4babe17e20e27ee7.jpg: score=0;square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset e27db2882b4d38f3ac7d9f035b07d454295c89c95a21bd8d84695e310f96d30a.jpg: score=-100;too_small:926x159
+Skip non-chart visual asset c8911a63c9e9f7c2872e04a0fc6f467bfe198c2841f6efb5202f0d68a6d2031b.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：中国权益策略-科技股抛售后政策回应-二季度业绩催化剂 -> 摩根大通：行业规则与主题变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260725/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

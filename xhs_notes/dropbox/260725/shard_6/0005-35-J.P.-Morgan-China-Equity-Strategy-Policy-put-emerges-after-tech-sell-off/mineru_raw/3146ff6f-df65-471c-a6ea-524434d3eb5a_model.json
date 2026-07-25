@@ -1,0 +1,6360 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.002,
+                0.557,
+                0.099,
+                0.88
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.137,
+                0.006,
+                0.35,
+                0.044
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.008,
+                0.901,
+                0.037
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.139,
+                0.092,
+                0.487,
+                0.121
+            ],
+            "angle": 0,
+            "content": "China Equity Strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.127,
+                0.619,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Policy put emerges after tech sell-off, 2Q earnings catalyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.136,
+                0.184,
+                0.691,
+                0.559
+            ],
+            "angle": 0,
+            "content": "Policy put emerges after AI-led deaveraging. The sharp AI-led onshore sell-off has finally triggered a policy response. Over the weekend, China Reform Holding and China Chengtong announced Rmb60bn of purchases in onshore equities and ETFs, while indicating they will continue to add holdings. Notably, tech companies were explicitly included alongside central SOE stocks and ETFs. Our ETF flow tracker shows a swift reversal over the past week across both benchmark ETFs and AI/tech-focused products such as STAR 50 and STAR Chip ETFs. Daily A-share buybacks have also recently surged to a YTD high (Figure 1-Figure 4). Positioning also looks less stretched, with the A-share margin-buy ratio normalized and, regionally, Korea's leveraged ETF unwind estimated to be ~75% through. In early July we called for a tactical rotation into non-AI trades, but this trade may regain traction in late July/early August as solid global earnings guidance coincides with a healthier price set-up following the recent deleveraging. Our US equity strategist expects 2Q26 hyperscaler results to continue validating the AI infrastructure build-out, with upside risk to consensus capex over the next 4–6 quarters and further upward earnings revisions for semiconductors. However, a more sustainable market rebalancing in China equities still requires stronger fundamental support from non-AI and domestic demand cohorts, which appears limited at this stage. Our China economists expect additional policy support could be introduced after the July Politburo meeting if June activity data and 3Q momentum remain soft. JPM China AI ecosystem top picks are Zhongji Innolight, Victory Giant-H, JCET-A and Weichai-H in the global supply chain, and NAURA, AMEC-A, Baidu, Zhipu and Iluvatar CoreX as localization plays. We think China's AI ecosystem can reassert leadership during the earnings season, outperforming on both 2Q results and 2H guidance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.136,
+                0.567,
+                0.694,
+                0.78
+            ],
+            "angle": 0,
+            "content": "- 2Q26 earnings: achievable bar, eye on potential upgrades from Materials, IT, Industrials, and non-bank Financials. The 2Q26 EPS y-y consensus growth estimates of \\(2.8\\% / 15.7\\%\\) for MXCN/CSI-300 appear achievable to us without significant downward revision. Resilient performance from upstream commodities, IT, industrials and non-bank financials should help offset continued pressure in broad consumption, property, traditional infrastructure and related upstream sectors. However, bifurcation could remain within sectors, e.g. across internet platforms where revenue quality is improving in AI cloud service though bottom-line consensus remains constrained by elevated AI capex and reinvestment cycles. We recommend investors position for names with visible earnings upgrade trajectories and improving margins, namely IT, industrials, and materials while remaining cautious on sectors where revenue deceleration coincides with sticky cost structures, i.e. consumer staples in particular liquor, and second-tier property.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.789,
+                0.694,
+                0.926
+            ],
+            "angle": 0,
+            "content": "- The Internet Sector Conundrum: China's internet sector may see a revenue-up, earnings-flat dynamic. The nuance lies in the divergence between operating momentum in core businesses and the dilutive impact of accelerated AI investment on bottom-line outcomes. Tencent: for 2Q26, JPM forecasts revenue to rise ~9%y-y, with VAS up 5–6%, games up 9–10%, marketing services up 18–19%, and fintech up around 5%, showing continued strength in established businesses; however, adjusted EPS was cut by 5% after the FY26 capex estimate was raised to RMB200bn, with the reduction attributed to heavier AI investment and depreciation from 2H26 rather than any deterioration",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.941,
+                0.855,
+                0.96
+            ],
+            "angle": 0,
+            "content": "See page 8 for analyst certification and important disclosures, including non-US analyst disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.191,
+                0.959,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Equity Macro Research  \nErin Zhang, CFA AC  \n(86-21) 6106 6328  \nerin.zhang@JPM.com  \nSAC Registration Number: S1730521090002  \nJPM Securities (China) Company Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.291,
+                0.958,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Tim Huang  \n(852) 2800-4323  \ntim.huang@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.361,
+                0.94,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Rajiv Batra  \n(65) 6882-8151  \nrajiv.j.batra@JPM.com  \nJPM Securities Singapore Private Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.428,
+                0.89,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Head of China Research",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.445,
+                0.959,
+                0.528
+            ],
+            "angle": 0,
+            "content": "Alex Yao  \n(86 21) 6106 6505  \nalex.yao@JPM.com  \nSAC Registration Number: S1730523020001  \nJPM Securities (China) Company Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.938,
+                0.971,
+                0.967,
+                0.983
+            ],
+            "angle": 0,
+            "content": "om"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.135,
+                0.004,
+                0.351,
+                0.044
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.092,
+                0.483,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.129,
+                0.616,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.148,
+                0.219,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.186,
+                0.687,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.2,
+                0.687,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.216,
+                0.686,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.231,
+                0.686,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.245,
+                0.686,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.26,
+                0.685,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.275,
+                0.684,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.29,
+                0.685,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.305,
+                0.684,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.32,
+                0.685,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.335,
+                0.685,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.35,
+                0.684,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.363,
+                0.684,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.379,
+                0.685,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.394,
+                0.686,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.409,
+                0.684,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.424,
+                0.686,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.438,
+                0.685,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.453,
+                0.685,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.468,
+                0.685,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.483,
+                0.685,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.497,
+                0.688,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.513,
+                0.686,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.528,
+                0.685,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.543,
+                0.533,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.57,
+                0.688,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.584,
+                0.689,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.6,
+                0.688,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.615,
+                0.688,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.63,
+                0.689,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.645,
+                0.689,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.66,
+                0.687,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.674,
+                0.688,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.69,
+                0.689,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.704,
+                0.688,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.719,
+                0.688,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.734,
+                0.688,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.748,
+                0.688,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.763,
+                0.322,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.79,
+                0.689,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.805,
+                0.688,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.821,
+                0.689,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.835,
+                0.688,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.85,
+                0.688,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.865,
+                0.688,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.88,
+                0.689,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.895,
+                0.688,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.91,
+                0.688,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.942,
+                0.851,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.193,
+                0.879,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.209,
+                0.853,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.225,
+                0.82,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.238,
+                0.863,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.252,
+                0.954,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.265,
+                0.934,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.276,
+                0.763,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.292,
+                0.798,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.308,
+                0.81,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.321,
+                0.86,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.335,
+                0.954,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.346,
+                0.938,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.362,
+                0.799,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.376,
+                0.803,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.391,
+                0.866,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.404,
+                0.936,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.414,
+                0.763,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.432,
+                0.884,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.447,
+                0.784,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.463,
+                0.819,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.476,
+                0.853,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.49,
+                0.953,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.503,
+                0.934,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.515,
+                0.763,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.007,
+                0.234,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.345,
+                0.007,
+                0.486,
+                0.03
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.827,
+                0.038,
+                0.952,
+                0.062
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.151,
+                0.134,
+                0.693,
+                0.301
+            ],
+            "angle": 0,
+            "content": "in established businesses. Alibaba: JPM expects substantial upward revision in cloud profitability to be largely offset by continued softness in core commerce customer management revenue, leaving group-level full-year earnings essentially unchanged net-net. Baidu: Advertising revenue is expected to decline by ~23%/21% in 2Q26/2026, alongside sustained AI investment intensity, which has driven ~12% YTD downward revisions to full-year EPS, despite high double-digit AI cloud revenue growth (JPMe: +87%y-y in 2Q26). The net takeaway is that the internet sector is not experiencing a traditional earnings downgrade cycle, but rather a deliberate reinvestment cycle that is compressing near-term margins in exchange for longer-term optionality—an outcome that the market is still in the process of re-rating.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.31,
+                0.693,
+                0.462
+            ],
+            "angle": 0,
+            "content": "- Likely outperformer #1 – Information Technology & AI Supply Chain: Global AI capex remains the dominant secular tailwind for China's technology hardware ecosystem. The dual-circulation dynamic—domestic AI infrastructure buildout alongside overseas hyperscaler demand—continues to drive export momentum and electronic supply chain profitability. Semiconductor equipment stands out with a 70.0% positive profit alert ratio, while the broader IT sector is expected to deliver 72% y-y EPS growth in Q2 for CSI 300 constituents, with full-year 2026 consensus at 96%. Materials sectors leveraged to advanced manufacturing, particularly specialty chemicals and new materials, are compounding this uplift.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.472,
+                0.693,
+                0.653
+            ],
+            "angle": 0,
+            "content": "- Likely outperformer #2 – Industrials & Advanced Manufacturing: Industrial profit momentum has inflected decisively higher. Operating profit growth for above-scale industrial enterprises continues to outpace revenue expansion, indicating sustained net profit margin improvement across the sector. Machinery, high-end equipment and defense contractors are seeing tangible order conversion, with capacity utilization rates for auto manufacturing and chemical fibers sitting at elevated percentiles versus history. Within the CSI 300 universe, the industrials sector is expected to deliver 10.6% y-y EPS growth in Q2, with full-year 2026 consensus at 20.3%. The breadth of positive profit alerts is particularly encouraging—machinery and electrical equipment sectors report 85.7% and 69.8% positive pre-announcement rates respectively, signaling broad-based operational improvement rather than idiosyncratic strength.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.662,
+                0.694,
+                0.829
+            ],
+            "angle": 0,
+            "content": "- Likely outperformer #3 – Financials: The financial sector is experiencing a pronounced earnings rebound driven by capital markets recovery. Average daily A-share trading value doubled y-y in Q2, accompanied by substantial margin financing expansion, and ongoing IPO rush. Securities firms are the primary beneficiaries (Figure 17 and Figure 18). Insurance companies are also seeing meaningful recovery in equity investment floating gains. Within the CSI 300, financials EPS growth reaches 3.7% y-y in Q2, accelerating to 31.6% for full-year 2026 as the operating leverage from market activity compounds. Energy and materials sectors, while cyclical in nature, are delivering the strongest headline EPS growth at 52.8% and 72.4% respectively for Q2 CSI 300, supported by commodity price stabilization and supply discipline.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.838,
+                0.694,
+                0.945
+            ],
+            "angle": 0,
+            "content": "- Likely underperformer #1 – Real Estate & Post-Property Cycle: Property and its downstream value chain remain the most significant drag on aggregate earnings. Thirty-city commodity housing sales continue to contract y-y, with no meaningful inflection in sight. Building materials, home appliances, and furniture sectors face sustained revenue pressure, compounded by raw material cost increases including resin price hikes. Furniture industry operating profits collapsed 59% y-y in the first five months, while real estate development and",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.09,
+                0.947,
+                0.103,
+                0.958
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.137,
+                0.688,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.152,
+                0.689,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.166,
+                0.689,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.182,
+                0.688,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.195,
+                0.688,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.21,
+                0.689,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.226,
+                0.689,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.24,
+                0.689,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.255,
+                0.689,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.271,
+                0.688,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.285,
+                0.423,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.313,
+                0.688,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.327,
+                0.687,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.342,
+                0.689,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.356,
+                0.69,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.371,
+                0.69,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.387,
+                0.689,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.402,
+                0.689,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.417,
+                0.689,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.432,
+                0.69,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.447,
+                0.319,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.474,
+                0.688,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.488,
+                0.689,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.503,
+                0.69,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.519,
+                0.688,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.533,
+                0.689,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.548,
+                0.69,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.563,
+                0.689,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.577,
+                0.69,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.592,
+                0.689,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.607,
+                0.689,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.621,
+                0.689,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.638,
+                0.631,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.663,
+                0.69,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.679,
+                0.688,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.693,
+                0.688,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.71,
+                0.688,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.723,
+                0.689,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.739,
+                0.688,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.754,
+                0.688,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.768,
+                0.688,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.783,
+                0.689,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.798,
+                0.687,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.813,
+                0.589,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.84,
+                0.688,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.855,
+                0.688,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.869,
+                0.688,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.884,
+                0.688,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.9,
+                0.689,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.914,
+                0.688,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.93,
+                0.689,
+                0.942
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.007,
+                0.234,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.345,
+                0.007,
+                0.486,
+                0.03
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy\n23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.827,
+                0.038,
+                0.951,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.152,
+                0.135,
+                0.692,
+                0.165
+            ],
+            "angle": 0,
+            "content": "management have reported an 18.7% first-loss ratio among pre-announcing firms.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.177,
+                0.693,
+                0.313
+            ],
+            "angle": 0,
+            "content": "- Likely underperformer #2 – Consumers: Consumer sectors are navigating a high-base hangover from last year's trade-in subsidy programs. Auto and home appliance sales growth has decelerated materially in Q2 as the favorable year-ago comparison rolls off. Auto industry operating profit fell 20% y-y in 5M26, with auto components reporting a 14.1% first-loss ratio. Consumer discretionary overall is tracking -6.9% y-y EPS growth for MXCN names in Q2 on consensus, with autos, household durables, and specialty retail all contributing negatively. Even consumer staples are seeing pressure, with food products and beverages registering elevated earnings decline ratios.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.137,
+                0.323,
+                0.694,
+                0.429
+            ],
+            "angle": 0,
+            "content": "- We maintain our end-2026 base case targets for the MXCN index and CSI-300 at 100 and 5,200, respectively, with bear-case targets of 80 and 4,000, underpinned by \\(13\\%\\) and \\(24\\%\\) consensus year-over-year EPS growth projections and broadly supportive liquidity conditions. Our China economists expect additional policy support could be introduced after the July Politburo meeting if June activity data and 3Q momentum remain soft. Our top picks in the non-AI fields include Bank of China-H, CICC-H, Innovent, BYD-H and CR Land.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.947,
+                0.946,
+                0.959,
+                0.958
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.136,
+                0.689,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.15,
+                0.199,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.178,
+                0.69,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.194,
+                0.689,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.209,
+                0.688,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.224,
+                0.688,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.238,
+                0.688,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.157,
+                0.253,
+                0.688,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.268,
+                0.687,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.283,
+                0.687,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.298,
+                0.442,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.324,
+                0.688,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.339,
+                0.688,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.354,
+                0.688,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.369,
+                0.69,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.384,
+                0.691,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.399,
+                0.689,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.414,
+                0.678,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.905,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.088,
+                0.133,
+                0.48,
+                0.161
+            ],
+            "angle": 0,
+            "content": "Figure 1: Accumulative benchmark ETF inflows since 2024: market tends to recover following the ETF inflow upticks"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.16,
+                0.493,
+                0.344
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.353,
+                0.209,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.133,
+                0.907,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Figure 2: Accumulative STAR50 + STAR Chip ETF inflows since 2024"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.508,
+                0.148,
+                0.904,
+                0.329
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.336,
+                0.626,
+                0.35
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.088,
+                0.379,
+                0.47,
+                0.408
+            ],
+            "angle": 0,
+            "content": "Figure 3: Accumulative A-share ETF net flow has seen more than RMB1trn drop this year"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.408,
+                0.494,
+                0.601
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.594,
+                0.209,
+                0.606
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.379,
+                0.809,
+                0.395
+            ],
+            "angle": 0,
+            "content": "Figure 4: A-share daily buyback surged to YTD high"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.512,
+                0.396,
+                0.892,
+                0.577
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.577,
+                0.626,
+                0.59
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.606,
+                0.355,
+                0.62
+            ],
+            "angle": 0,
+            "content": "Figure 5: Onshore margin activity has cooled"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.092,
+                0.628,
+                0.487,
+                0.806
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.813,
+                0.209,
+                0.826
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.605,
+                0.824,
+                0.62
+            ],
+            "angle": 0,
+            "content": "Figure 6: A-share margin balance eased on the margin"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.507,
+                0.622,
+                0.903,
+                0.796
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.507,
+                0.8,
+                0.625,
+                0.813
+            ],
+            "angle": 0,
+            "content": "Source: Wind (21 Jul 2026)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.091,
+                0.956,
+                0.102,
+                0.967
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.093,
+                0.513,
+                0.485,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Revenue y-y: industrial enterprises above designated side (YTD)\nOperating profit y-y: industrial enterprises above designated side (YTD)\nSource: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.904,
+                0.06
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.089,
+                0.134,
+                0.479,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Figure 7: MXCN EPS y-y by sector (2Q26/2H26/2026 on consensus)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.092,
+                0.147,
+                0.487,
+                0.33
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>GICS Sector Name</td><td>1Q26</td><td>2Q26</td><td>2H26</td><td>2026</td></tr><tr><td>Index</td><td>-19.1%</td><td>2.8%</td><td>16.7%</td><td>8.8%</td></tr><tr><td>Communication Services</td><td>5.8%</td><td>2.7%</td><td>4.1%</td><td>6.0%</td></tr><tr><td>Consumer Discretionary</td><td>-68.8%</td><td>-6.9%</td><td>81.5%</td><td>13.1%</td></tr><tr><td>Consumer Staples</td><td>-47.7%</td><td>-0.1%</td><td>69.8%</td><td>18.2%</td></tr><tr><td>Energy</td><td>12.5%</td><td>44.0%</td><td>38.7%</td><td>25.1%</td></tr><tr><td>Financials</td><td>-7.4%</td><td>-0.5%</td><td>-6.6%</td><td>-0.1%</td></tr><tr><td>Health Care</td><td>-32.4%</td><td>16.9%</td><td>109.9%</td><td>36.4%</td></tr><tr><td>Industrials</td><td>-9.0%</td><td>6.0%</td><td>15.3%</td><td>13.4%</td></tr><tr><td>Information Technology</td><td>0.6%</td><td>-12.6%</td><td>25.1%</td><td>14.5%</td></tr><tr><td>Materials</td><td>16.5%</td><td>73.2%</td><td>82.8%</td><td>71.0%</td></tr><tr><td>Real Estate</td><td>-85.6%</td><td>-9.8%</td><td>26.4%</td><td>8.9%</td></tr><tr><td>Utilities</td><td>-2.5%</td><td>5.2%</td><td>-30.1%</td><td>-12.1%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.33,
+                0.429,
+                0.342
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Workspace (17 Jul 2026), Wind (17 Jul 2026), MSCI (1 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.134,
+                0.904,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Figure 8: CSI-300 EPS y-y by sector (2Q26/2H26/2026 on consensus)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.51,
+                0.147,
+                0.903,
+                0.33
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>GICS Sector Name</td><td>1Q26</td><td>2Q26</td><td>2H26</td><td>2026</td></tr><tr><td>Index</td><td>6.8%</td><td>15.7%</td><td>38.3%</td><td>24.4%</td></tr><tr><td>Communication Services</td><td>2.3%</td><td>6.8%</td><td>52.4%</td><td>20.0%</td></tr><tr><td>Consumer Discretionary</td><td>-9.3%</td><td>-5.0%</td><td>30.8%</td><td>6.4%</td></tr><tr><td>Consumer Staples</td><td>-6.2%</td><td>-8.6%</td><td>22.3%</td><td>3.1%</td></tr><tr><td>Energy</td><td>17.8%</td><td>52.8%</td><td>43.3%</td><td>31.6%</td></tr><tr><td>Financials</td><td>-5.5%</td><td>3.8%</td><td>5.3%</td><td>4.9%</td></tr><tr><td>Health Care</td><td>5.2%</td><td>-2.3%</td><td>71.6%</td><td>26.1%</td></tr><tr><td>Industrials</td><td>9.3%</td><td>10.6%</td><td>20.4%</td><td>20.3%</td></tr><tr><td>Information Technology</td><td>76.5%</td><td>71.9%</td><td>109.9%</td><td>96.3%</td></tr><tr><td>Materials</td><td>83.0%</td><td>74.1%</td><td>63.1%</td><td>61.0%</td></tr><tr><td>Real Estate</td><td>-22.8%</td><td>58.8%</td><td>92.9%</td><td>80.4%</td></tr><tr><td>Utilities</td><td>6.3%</td><td>6.2%</td><td>-2.5%</td><td>3.6%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.331,
+                0.764,
+                0.343
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Workspace (17 Jul 2026), Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.342,
+                0.485,
+                0.356
+            ],
+            "angle": 0,
+            "content": "Figure 9: Industrial enterprises' revenue y-y and operating profit y-y"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.092,
+                0.356,
+                0.487,
+                0.517
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.539,
+                0.209,
+                0.551
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.507,
+                0.343,
+                0.754,
+                0.356
+            ],
+            "angle": 0,
+            "content": "Figure 10: Industrial Production by sector"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.363,
+                0.886,
+                0.534
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.551,
+                0.322,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Figure 11: Industrial capacity utilization"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.096,
+                0.564,
+                0.491,
+                0.746
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.748,
+                0.209,
+                0.76
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.538,
+                0.627,
+                0.55
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.507,
+                0.55,
+                0.798,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Figure 12: Industrial capacity utilization by sector"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.512,
+                0.565,
+                0.907,
+                0.736
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.744,
+                0.626,
+                0.757
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.902,
+                0.956,
+                0.913,
+                0.967
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.783,
+                0.039,
+                0.905,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.088,
+                0.133,
+                0.494,
+                0.162
+            ],
+            "angle": 0,
+            "content": "Figure 13: China 30-cities' commodity housing sales (mn sqm, rolling 90d sum y-y)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.095,
+                0.16,
+                0.478,
+                0.335
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.347,
+                0.209,
+                0.361
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.133,
+                0.879,
+                0.16
+            ],
+            "angle": 0,
+            "content": "Figure 14: Selected consumer industries' revenue and OP y-y in 5M26"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.51,
+                0.16,
+                0.91,
+                0.334
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.344,
+                0.626,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.089,
+                0.374,
+                0.291,
+                0.388
+            ],
+            "angle": 0,
+            "content": "Figure 15: China raw milk ASP y-y"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.093,
+                0.39,
+                0.492,
+                0.573
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.571,
+                0.209,
+                0.584
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.374,
+                0.69,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Figure 16: China auto sales y-y"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.51,
+                0.395,
+                0.9,
+                0.569
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.507,
+                0.572,
+                0.625,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.598,
+                0.254,
+                0.612
+            ],
+            "angle": 0,
+            "content": "Figure 17: A-share turnover"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.615,
+                0.483,
+                0.791
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.794,
+                0.209,
+                0.807
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.507,
+                0.598,
+                0.739,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Figure 18: HK market's equity financing"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.51,
+                0.613,
+                0.904,
+                0.79
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.793,
+                0.626,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Source: Wind (17 Jul 2026)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.091,
+                0.956,
+                0.102,
+                0.967
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.038,
+                0.904,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.133,
+                0.291,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Figure 19: A-share 2Q profit alerts"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.08,
+                0.145,
+                0.971,
+                0.856
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>GICS Sector</td><td>GICS Industry</td><td>Aggr. FF mkt cap (Rmb bn)</td><td>Return since end 1Q26</td><td>Return YTD</td><td>Positive profit alert %</td><td>(Sizable increase - sizable decrease)/ total</td><td>(Loss to profit - first loss)/ total</td></tr><tr><td rowspan=\"12\">Consumer Discretionary</td><td>Auto Components</td><td>246.8</td><td>-10.9%</td><td>-18.5%</td><td>34.4%</td><td>-1.6%</td><td>-14.1%</td></tr><tr><td>Automobiles</td><td>191.7</td><td>-34.6%</td><td>-43.1%</td><td>33.3%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Distributors III</td><td>11.0</td><td>-8.1%</td><td>-7.3%</td><td>50.0%</td><td>50.0%</td><td>-50.0%</td></tr><tr><td>Diversified Consumer Services</td><td>12.0</td><td>-20.2%</td><td>-31.3%</td><td>33.3%</td><td>16.7%</td><td>0.0%</td></tr><tr><td>Hotels, Restaurants &amp; Leisure</td><td>38.2</td><td>-23.2%</td><td>-26.8%</td><td>31.3%</td><td>-18.8%</td><td>18.8%</td></tr><tr><td>Household Durables</td><td>145.6</td><td>-12.9%</td><td>-20.4%</td><td>19.6%</td><td>-16.1%</td><td>-23.2%</td></tr><tr><td>Internet &amp; Catalog Retail</td><td>41.7</td><td>37.5%</td><td>43.1%</td><td>100.0%</td><td>42.9%</td><td>42.9%</td></tr><tr><td>Leisure Equipment &amp; Products</td><td>25.6</td><td>-2.9%</td><td>5.7%</td><td>33.3%</td><td>22.2%</td><td>-11.1%</td></tr><tr><td>Media III</td><td>171.0</td><td>-23.1%</td><td>-20.5%</td><td>20.0%</td><td>-7.5%</td><td>-10.0%</td></tr><tr><td>Multiline Retail</td><td>32.7</td><td>-15.5%</td><td>-27.0%</td><td>40.0%</td><td>0.0%</td><td>-6.7%</td></tr><tr><td>Specialty Retail</td><td>8.7</td><td>-18.6%</td><td>-21.6%</td><td>0.0%</td><td>0.0%</td><td>-50.0%</td></tr><tr><td>Textiles, Apparel &amp; Luxury Goods</td><td>87.7</td><td>-10.4%</td><td>-11.1%</td><td>38.1%</td><td>9.5%</td><td>2.4%</td></tr><tr><td rowspan=\"5\">Consumer Staples</td><td>Beverages</td><td>195.7</td><td>-24.0%</td><td>-26.5%</td><td>35.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Food &amp; Staples Retailing III</td><td>29.4</td><td>-13.7%</td><td>-28.6%</td><td>42.9%</td><td>0.0%</td><td>14.3%</td></tr><tr><td>Food Products</td><td>346.4</td><td>-13.6%</td><td>-19.3%</td><td>30.1%</td><td>6.8%</td><td>-27.4%</td></tr><tr><td>Household Products III</td><td>6.3</td><td>-15.7%</td><td>-14.6%</td><td>50.0%</td><td>50.0%</td><td>0.0%</td></tr><tr><td>Personal Products III</td><td>1.4</td><td>-7.1%</td><td>-24.0%</td><td>100.0%</td><td>100.0%</td><td>0.0%</td></tr><tr><td rowspan=\"2\">Energy</td><td>Energy Equipment &amp; Services</td><td>30.9</td><td>-17.6%</td><td>-3.7%</td><td>10.0%</td><td>-10.0%</td><td>-40.0%</td></tr><tr><td>Oil, Gas &amp; Consumable Fuels</td><td>362.6</td><td>-9.1%</td><td>7.9%</td><td>56.3%</td><td>28.1%</td><td>6.3%</td></tr><tr><td rowspan=\"2\">Financials</td><td>Capital Markets</td><td>1,012.7</td><td>13.9%</td><td>-5.0%</td><td>89.7%</td><td>75.9%</td><td>3.4%</td></tr><tr><td>Diversified Financial Services</td><td>45.2</td><td>-4.3%</td><td>-3.9%</td><td>60.0%</td><td>20.0%</td><td>20.0%</td></tr><tr><td rowspan=\"5\">Health Care</td><td>Biotechnology III</td><td>99.6</td><td>-11.3%</td><td>-15.5%</td><td>35.3%</td><td>5.9%</td><td>0.0%</td></tr><tr><td>Health Care Equipment &amp; Supplies</td><td>39.7</td><td>-2.6%</td><td>35.3%</td><td>37.5%</td><td>12.5%</td><td>-12.5%</td></tr><tr><td>Health Care Providers &amp; Services</td><td>65.6</td><td>-17.3%</td><td>-19.0%</td><td>17.6%</td><td>-5.9%</td><td>-5.9%</td></tr><tr><td>Life Sciences Tools &amp; Services III</td><td>63.4</td><td>39.7%</td><td>39.2%</td><td>66.7%</td><td>33.3%</td><td>-33.3%</td></tr><tr><td>Pharmaceuticals III</td><td>228.8</td><td>-1.5%</td><td>0.7%</td><td>48.1%</td><td>19.2%</td><td>-1.9%</td></tr><tr><td rowspan=\"14\">Industrials</td><td>Aerospace &amp; Defense</td><td>280.0</td><td>-25.6%</td><td>-28.3%</td><td>50.0%</td><td>4.5%</td><td>22.7%</td></tr><tr><td>Air Freight &amp; Logistics III</td><td>60.4</td><td>-11.4%</td><td>-3.0%</td><td>50.0%</td><td>28.6%</td><td>7.1%</td></tr><tr><td>Airlines III</td><td>83.1</td><td>-14.6%</td><td>-38.6%</td><td>0.0%</td><td>-40.0%</td><td>0.0%</td></tr><tr><td>Building Products III</td><td>70.2</td><td>13.4%</td><td>11.7%</td><td>26.1%</td><td>4.3%</td><td>-13.0%</td></tr><tr><td>Commercial Services &amp; Supplies</td><td>100.7</td><td>-11.0%</td><td>4.0%</td><td>42.4%</td><td>18.2%</td><td>-9.1%</td></tr><tr><td>Construction &amp; Engineering III</td><td>129.8</td><td>-12.2%</td><td>-2.7%</td><td>15.9%</td><td>4.5%</td><td>-13.6%</td></tr><tr><td>Electrical Equipment</td><td>530.2</td><td>-16.9%</td><td>-12.9%</td><td>40.8%</td><td>17.1%</td><td>-11.8%</td></tr><tr><td>Industrial Conglomerates III</td><td>26.3</td><td>-23.9%</td><td>-20.7%</td><td>40.0%</td><td>40.0%</td><td>-40.0%</td></tr><tr><td>Machinery</td><td>584.2</td><td>0.2%</td><td>-8.7%</td><td>35.2%</td><td>11.1%</td><td>-14.8%</td></tr><tr><td>Marine III</td><td>83.9</td><td>-7.4%</td><td>49.3%</td><td>85.7%</td><td>71.4%</td><td>14.3%</td></tr><tr><td>Professional Services</td><td>46.4</td><td>-5.5%</td><td>-6.5%</td><td>36.4%</td><td>-9.1%</td><td>-18.2%</td></tr><tr><td>Road &amp; Rail III</td><td>16.5</td><td>-20.7%</td><td>-25.2%</td><td>16.7%</td><td>-16.7%</td><td>-16.7%</td></tr><tr><td>Trading Companies &amp; Distributors III</td><td>117.1</td><td>16.7%</td><td>3.3%</td><td>69.2%</td><td>46.2%</td><td>15.4%</td></tr><tr><td>Transportation Infrastructure</td><td>18.9</td><td>-16.9%</td><td>-24.7%</td><td>50.0%</td><td>0.0%</td><td>-16.7%</td></tr><tr><td rowspan=\"7\">Information Technology</td><td>Communications Equipment III</td><td>823.4</td><td>24.9%</td><td>46.2%</td><td>53.2%</td><td>31.9%</td><td>-2.1%</td></tr><tr><td>Computers &amp; Peripherals</td><td>335.5</td><td>40.2%</td><td>39.9%</td><td>87.5%</td><td>75.0%</td><td>0.0%</td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>2,634.2</td><td>51.4%</td><td>50.3%</td><td>50.9%</td><td>25.0%</td><td>-3.4%</td></tr><tr><td>Internet Software &amp; Services III</td><td>89.3</td><td>-12.8%</td><td>-13.5%</td><td>56.3%</td><td>18.8%</td><td>18.8%</td></tr><tr><td>IT Services</td><td>158.0</td><td>-20.7%</td><td>-26.6%</td><td>17.2%</td><td>6.9%</td><td>-20.7%</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment III</td><td>1,460.4</td><td>57.6%</td><td>70.0%</td><td>62.7%</td><td>40.4%</td><td>11.5%</td></tr><tr><td>Software</td><td>426.2</td><td>-13.5%</td><td>-23.9%</td><td>34.3%</td><td>17.1%</td><td>-5.7%</td></tr><tr><td rowspan=\"5\">Materials</td><td>Chemicals</td><td>1,390.5</td><td>-10.8%</td><td>-1.9%</td><td>61.0%</td><td>33.5%</td><td>7.5%</td></tr><tr><td>Construction Materials III</td><td>200.4</td><td>18.9%</td><td>24.5%</td><td>21.4%</td><td>-3.6%</td><td>-17.9%</td></tr><tr><td>Containers &amp; Packaging</td><td>46.3</td><td>-12.0%</td><td>2.0%</td><td>50.0%</td><td>25.0%</td><td>6.3%</td></tr><tr><td>Metals &amp; Mining</td><td>2,275.5</td><td>-11.3%</td><td>-6.4%</td><td>68.8%</td><td>51.8%</td><td>-1.8%</td></tr><tr><td>Paper &amp; Forest Products</td><td>64.5</td><td>-24.4%</td><td>-26.8%</td><td>18.2%</td><td>0.0%</td><td>-18.2%</td></tr><tr><td>Real Estate</td><td>Real Estate Management &amp; Development</td><td>275.4</td><td>-9.1%</td><td>-13.4%</td><td>17.8%</td><td>0.0%</td><td>-13.7%</td></tr><tr><td rowspan=\"5\">Utilities</td><td>Electric Utilities III</td><td>150.9</td><td>-5.6%</td><td>9.7%</td><td>50.0%</td><td>5.6%</td><td>5.6%</td></tr><tr><td>Gas Utilities III</td><td>12.4</td><td>4.9%</td><td>26.1%</td><td>60.0%</td><td>20.0%</td><td>20.0%</td></tr><tr><td>Independent Power Producers &amp; Energy Traders III</td><td>54.7</td><td>-28.3%</td><td>-3.2%</td><td>36.4%</td><td>-9.1%</td><td>-18.2%</td></tr><tr><td>Multi-Utilities III</td><td>7.1</td><td>-13.0%</td><td>1.6%</td><td>50.0%</td><td>0.0%</td><td>25.0%</td></tr><tr><td>Water Utilities III</td><td>10.5</td><td>-7.0%</td><td>-15.3%</td><td>100.0%</td><td>66.7%</td><td>33.3%</td></tr><tr><td>TOTAL</td><td></td><td>16,103.4</td><td>3.3%</td><td>4.2%</td><td>43.1%</td><td>17.5%</td><td>-5.3%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.859,
+                0.209,
+                0.872
+            ],
+            "angle": 0,
+            "content": "Source: Wind (16 Jul 2026)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.902,
+                0.956,
+                0.913,
+                0.967
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.904,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.143,
+                0.858,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Companies Discussed in This Report (all prices in this report as of market close on 22 July 2026, unless otherwise indicated)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.173,
+                0.913,
+                0.278
+            ],
+            "angle": 0,
+            "content": "AMEC - A(688012.SS/Rmb392.99/OW), BYD Company Limited - H(1211.HK/HK$87.85/OW), Baidu.com (BIDU)(BIDU/$107.52/OW), Bank of China - H(3988.HK/HK$5.19/OW), China International Capital Corporation (3908)(3908.HK/HK$22.18/OW), China Resources Land (1109)(1109.HK/HK$33.38/OW), Iluvatar CoreX - H(9903.HK/HK$585.00/OW), Innovent Biologics (1801)(1801.HK/HK$92.25/OW), JCET - A(600584.SS/Rmb85.78/OW), NAURA - A(002371.SZ/Rmb764.00/OW), Victory Giant Technology - H(2476.HK/HK$226.80/OW), Weichai Power - H(2338.HK/HK$32.80/OW), Z AI Co Ltd(2513.HK/HK$1175.00/OW), Zhongji Innolight - A(300308.SZ/Rmb1060.80/OW)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.286,
+                0.91,
+                0.395
+            ],
+            "angle": 0,
+            "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.401,
+                0.888,
+                0.444
+            ],
+            "angle": 0,
+            "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.451,
+                0.251,
+                0.467
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.489,
+                0.895,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.579,
+                0.66,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.592,
+                0.907,
+                0.783
+            ],
+            "angle": 0,
+            "content": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.091,
+                0.956,
+                0.102,
+                0.967
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.144,
+                0.856,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.16,
+                0.159,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.173,
+                0.811,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.191,
+                0.851,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.204,
+                0.811,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.219,
+                0.909,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.234,
+                0.884,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.249,
+                0.698,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.265,
+                0.309,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.287,
+                0.886,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.302,
+                0.855,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.314,
+                0.885,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.329,
+                0.903,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.342,
+                0.904,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.354,
+                0.848,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.369,
+                0.899,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.382,
+                0.592,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.403,
+                0.879,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.416,
+                0.885,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.43,
+                0.166,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.453,
+                0.248,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.491,
+                0.89,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.505,
+                0.878,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.519,
+                0.886,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.532,
+                0.878,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.545,
+                0.77,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.558,
+                0.47,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.581,
+                0.655,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.593,
+                0.882,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.605,
+                0.858,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.619,
+                0.901,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.633,
+                0.878,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.645,
+                0.881,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.66,
+                0.882,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.673,
+                0.906,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.688,
+                0.865,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.701,
+                0.862,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.715,
+                0.87,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.728,
+                0.88,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.742,
+                0.899,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.755,
+                0.86,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.768,
+                0.828,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.075
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.904,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.094,
+                0.134,
+                0.545,
+                0.149
+            ],
+            "angle": 0,
+            "content": "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.082,
+                0.152,
+                0.628,
+                0.226
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.095,
+                0.23,
+                0.504,
+                0.243
+            ],
+            "angle": 0,
+            "content": "*Please note that the percentages may not add to 100% because of rounding."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.094,
+                0.242,
+                0.867,
+                0.266
+            ],
+            "angle": 0,
+            "content": "**Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.093,
+                0.266,
+                0.9,
+                0.304
+            ],
+            "angle": 0,
+            "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.327,
+                0.909,
+                0.41
+            ],
+            "angle": 0,
+            "content": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.417,
+                0.358,
+                0.431
+            ],
+            "angle": 0,
+            "content": "History of Investment Recommendations:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.429,
+                0.901,
+                0.46
+            ],
+            "angle": 0,
+            "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.474,
+                0.899,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.51,
+                0.913,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.573,
+                0.221,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Other Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.593,
+                0.854,
+                0.622
+            ],
+            "angle": 0,
+            "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.629,
+                0.904,
+                0.659
+            ],
+            "angle": 0,
+            "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.673,
+                0.89,
+                0.717
+            ],
+            "angle": 0,
+            "content": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.731,
+                0.904,
+                0.761
+            ],
+            "angle": 0,
+            "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.776,
+                0.902,
+                0.833
+            ],
+            "angle": 0,
+            "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.847,
+                0.862,
+                0.889
+            ],
+            "angle": 0,
+            "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.905,
+                0.891,
+                0.934
+            ],
+            "angle": 0,
+            "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.901,
+                0.956,
+                0.913,
+                0.967
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.268,
+                0.888,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.28,
+                0.897,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.292,
+                0.498,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.33,
+                0.867,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.343,
+                0.904,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.355,
+                0.905,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.37,
+                0.856,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.382,
+                0.895,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.397,
+                0.341,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.419,
+                0.355,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.431,
+                0.899,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.445,
+                0.867,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.476,
+                0.894,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.49,
+                0.792,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.512,
+                0.909,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.526,
+                0.905,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.539,
+                0.848,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.552,
+                0.619,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.575,
+                0.218,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.595,
+                0.849,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.609,
+                0.159,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.631,
+                0.9,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.645,
+                0.812,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.677,
+                0.84,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.688,
+                0.885,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.702,
+                0.661,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.734,
+                0.901,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.747,
+                0.501,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.778,
+                0.868,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.791,
+                0.897,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.805,
+                0.886,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.817,
+                0.857,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.849,
+                0.849,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.862,
+                0.858,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.875,
+                0.156,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.908,
+                0.887,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.921,
+                0.345,
+                0.932
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.905,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.152,
+                0.901,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.25,
+                0.912,
+                0.304
+            ],
+            "angle": 0,
+            "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.304,
+                0.813,
+                0.319
+            ],
+            "angle": 0,
+            "content": "08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.326,
+                0.907,
+                0.368
+            ],
+            "angle": 0,
+            "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.375,
+                0.905,
+                0.417
+            ],
+            "angle": 0,
+            "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.424,
+                0.91,
+                0.559
+            ],
+            "angle": 0,
+            "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.567,
+                0.529,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.58,
+                0.878,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.619,
+                0.912,
+                0.768
+            ],
+            "angle": 0,
+            "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.767,
+                0.852,
+                0.795
+            ],
+            "angle": 0,
+            "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.794,
+                0.909,
+                0.835
+            ],
+            "angle": 0,
+            "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.834,
+                0.613,
+                0.848
+            ],
+            "angle": 0,
+            "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.847,
+                0.9,
+                0.874
+            ],
+            "angle": 0,
+            "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.875,
+                0.907,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.092,
+                0.956,
+                0.109,
+                0.967
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.154,
+                0.892,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.166,
+                0.878,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.18,
+                0.877,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.194,
+                0.873,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.207,
+                0.897,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.222,
+                0.426,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.252,
+                0.909,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.265,
+                0.894,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.278,
+                0.838,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.292,
+                0.68,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.304,
+                0.809,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.328,
+                0.9,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.342,
+                0.903,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.355,
+                0.601,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.376,
+                0.899,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.391,
+                0.9,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.404,
+                0.842,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.426,
+                0.888,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.44,
+                0.888,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.453,
+                0.849,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.467,
+                0.9,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.48,
+                0.904,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.493,
+                0.906,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.507,
+                0.883,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.52,
+                0.903,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.533,
+                0.906,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.546,
+                0.337,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.569,
+                0.526,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.581,
+                0.872,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.595,
+                0.874,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.607,
+                0.133,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.622,
+                0.891,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.635,
+                0.901,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.648,
+                0.91,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.661,
+                0.897,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.675,
+                0.858,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.689,
+                0.881,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.701,
+                0.837,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.716,
+                0.854,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.728,
+                0.903,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.742,
+                0.894,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.756,
+                0.218,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.768,
+                0.847,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.78,
+                0.81,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.795,
+                0.852,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.809,
+                0.904,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.821,
+                0.468,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.836,
+                0.608,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.847,
+                0.896,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.862,
+                0.147,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.876,
+                0.886,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.889,
+                0.882,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.903,
+                0.903,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.916,
+                0.608,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.904,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.134,
+                0.897,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.188,
+                0.897,
+                0.215
+            ],
+            "angle": 0,
+            "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.214,
+                0.91,
+                0.309
+            ],
+            "angle": 0,
+            "content": "Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.308,
+                0.91,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.384,
+                0.905,
+                0.483
+            ],
+            "angle": 0,
+            "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.482,
+                0.9,
+                0.536
+            ],
+            "angle": 0,
+            "content": "NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com;"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.535,
+                0.904,
+                0.576
+            ],
+            "angle": 0,
+            "content": "+912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.576,
+                0.883,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.602,
+                0.904,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.656,
+                0.883,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.683,
+                0.903,
+                0.723
+            ],
+            "angle": 0,
+            "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.723,
+                0.885,
+                0.763
+            ],
+            "angle": 0,
+            "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.763,
+                0.912,
+                0.803
+            ],
+            "angle": 0,
+            "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.803,
+                0.871,
+                0.843
+            ],
+            "angle": 0,
+            "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.843,
+                0.91,
+                0.925
+            ],
+            "angle": 0,
+            "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.896,
+                0.956,
+                0.912,
+                0.967
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.074
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.905,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.134,
+                0.9,
+                0.162
+            ],
+            "angle": 0,
+            "content": "investors,\" as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.161,
+                0.865,
+                0.189
+            ],
+            "angle": 0,
+            "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.187,
+                0.908,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.322,
+                0.912,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.362,
+                0.91,
+                0.523
+            ],
+            "angle": 0,
+            "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.522,
+                0.89,
+                0.563
+            ],
+            "angle": 0,
+            "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.571,
+                0.913,
+                0.935
+            ],
+            "angle": 0,
+            "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.092,
+                0.956,
+                0.109,
+                0.967
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.135,
+                0.897,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.15,
+                0.527,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.161,
+                0.862,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.176,
+                0.818,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.188,
+                0.887,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.203,
+                0.904,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.217,
+                0.887,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.229,
+                0.854,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.242,
+                0.891,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.256,
+                0.896,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.268,
+                0.864,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.282,
+                0.903,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.295,
+                0.904,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.31,
+                0.601,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.322,
+                0.886,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.336,
+                0.907,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.35,
+                0.691,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.363,
+                0.9,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.377,
+                0.878,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.388,
+                0.907,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.402,
+                0.852,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.416,
+                0.878,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.429,
+                0.907,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.444,
+                0.861,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.458,
+                0.901,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.47,
+                0.888,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.483,
+                0.85,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.497,
+                0.903,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.511,
+                0.218,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.523,
+                0.886,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.536,
+                0.869,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.551,
+                0.14,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.571,
+                0.911,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.586,
+                0.857,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.599,
+                0.838,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.613,
+                0.886,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.626,
+                0.906,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.64,
+                0.88,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.654,
+                0.875,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.667,
+                0.89,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.68,
+                0.851,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.694,
+                0.877,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.707,
+                0.901,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.718,
+                0.862,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.734,
+                0.878,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.747,
+                0.887,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.76,
+                0.88,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.773,
+                0.903,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.787,
+                0.884,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.8,
+                0.888,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.814,
+                0.882,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.827,
+                0.897,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.84,
+                0.89,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.854,
+                0.846,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.868,
+                0.867,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.881,
+                0.844,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.894,
+                0.854,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.908,
+                0.901,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.921,
+                0.853,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.09,
+                0.04,
+                0.234,
+                0.075
+            ],
+            "angle": 0,
+            "content": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.346,
+                0.039,
+                0.486,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Global Markets Strategy 23 July 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.782,
+                0.039,
+                0.904,
+                0.061
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.134,
+                0.913,
+                0.257
+            ],
+            "angle": 0,
+            "content": "independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.272,
+                0.909,
+                0.382
+            ],
+            "angle": 0,
+            "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.388,
+                0.897,
+                0.458
+            ],
+            "angle": 0,
+            "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.473,
+                0.909,
+                0.555
+            ],
+            "angle": 0,
+            "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.561,
+                0.339,
+                0.575
+            ],
+            "angle": 0,
+            "content": "\"Other Disclosures\" last revised July 04, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.578,
+                0.906,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 JPM Securities (China) Company Limited. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.896,
+                0.956,
+                0.913,
+                0.967
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.973,
+                0.942,
+                0.985
+            ],
+            "angle": 0,
+            "content": "T"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.136,
+                0.897,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.148,
+                0.895,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.163,
+                0.91,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.176,
+                0.907,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.19,
+                0.894,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.203,
+                0.906,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.217,
+                0.909,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.23,
+                0.901,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.243,
+                0.188,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.272,
+                0.873,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.286,
+                0.881,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.3,
+                0.906,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.315,
+                0.872,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.329,
+                0.889,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.342,
+                0.863,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.355,
+                0.9,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.368,
+                0.765,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.388,
+                0.881,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.404,
+                0.893,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.416,
+                0.89,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.429,
+                0.891,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.443,
+                0.635,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.475,
+                0.899,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.489,
+                0.901,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.502,
+                0.904,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.516,
+                0.872,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.528,
+                0.89,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.543,
+                0.304,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.563,
+                0.337,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.579,
+                0.896,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.594,
+                0.903,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.608,
+                0.88,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.62,
+                0.897,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.635,
+                0.168,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

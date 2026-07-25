@@ -1,0 +1,1875 @@
+[
+    {
+        "type": "text",
+        "text": "JPM",
+        "text_level": 1,
+        "bbox": [
+            136,
+            5,
+            349,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China Equity Strategy",
+        "text_level": 2,
+        "bbox": [
+            137,
+            91,
+            486,
+            120
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Policy put emerges after tech sell-off, 2Q earnings catalyst",
+        "bbox": [
+            136,
+            126,
+            618,
+            167
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Policy put emerges after AI-led deaveraging. The sharp AI-led onshore sell-off has finally triggered a policy response. Over the weekend, China Reform Holding and China Chengtong announced Rmb60bn of purchases in onshore equities and ETFs, while indicating they will continue to add holdings. Notably, tech companies were explicitly included alongside central SOE stocks and ETFs. Our ETF flow tracker shows a swift reversal over the past week across both benchmark ETFs and AI/tech-focused products such as STAR 50 and STAR Chip ETFs. Daily A-share buybacks have also recently surged to a YTD high (Figure 1-Figure 4). Positioning also looks less stretched, with the A-share margin-buy ratio normalized and, regionally, Korea's leveraged ETF unwind estimated to be \\~75% through. In early July we called for a tactical rotation into non-AI trades, but this trade may regain traction in late July/early August as solid global earnings guidance coincides with a healthier price set-up following the recent deleveraging. Our US equity strategist expects 2Q26 hyperscaler results to continue validating the AI infrastructure build-out, with upside risk to consensus capex over the next 4–6 quarters and further upward earnings revisions for semiconductors. However, a more sustainable market rebalancing in China equities still requires stronger fundamental support from non-AI and domestic demand cohorts, which appears limited at this stage. Our China economists expect additional policy support could be introduced after the July Politburo meeting if June activity data and 3Q momentum remain soft. JPM China AI ecosystem top picks are Zhongji Innolight, Victory Giant-H, JCET-A and Weichai-H in the global supply chain, and NAURA, AMEC-A, Baidu, Zhipu and Iluvatar CoreX as localization plays. We think China's AI ecosystem can reassert leadership during the earnings season, outperforming on both 2Q results and 2H guidance.",
+        "bbox": [
+            134,
+            183,
+            690,
+            558
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- 2Q26 earnings: achievable bar, eye on potential upgrades from Materials, IT, Industrials, and non-bank Financials. The 2Q26 EPS y-y consensus growth estimates of $2.8\\% / 15.7\\%$ for MXCN/CSI-300 appear achievable to us without significant downward revision. Resilient performance from upstream commodities, IT, industrials and non-bank financials should help offset continued pressure in broad consumption, property, traditional infrastructure and related upstream sectors. However, bifurcation could remain within sectors, e.g. across internet platforms where revenue quality is improving in AI cloud service though bottom-line consensus remains constrained by elevated AI capex and reinvestment cycles. We recommend investors position for names with visible earnings upgrade trajectories and improving margins, namely IT, industrials, and materials while remaining cautious on sectors where revenue deceleration coincides with sticky cost structures, i.e. consumer staples in particular liquor, and second-tier property.",
+        "bbox": [
+            134,
+            565,
+            693,
+            779
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- The Internet Sector Conundrum: China's internet sector may see a revenue-up, earnings-flat dynamic. The nuance lies in the divergence between operating momentum in core businesses and the dilutive impact of accelerated AI investment on bottom-line outcomes. Tencent: for 2Q26, JPM forecasts revenue to rise \\~9%y-y, with VAS up 5–6%, games up 9–10%, marketing services up 18–19%, and fintech up around 5%, showing continued strength in established businesses; however, adjusted EPS was cut by 5% after the FY26 capex estimate was raised to RMB200bn, with the reduction attributed to heavier AI investment and depreciation from 2H26 rather than any deterioration",
+        "bbox": [
+            136,
+            788,
+            693,
+            925
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 8 for analyst certification and important disclosures, including non-US analyst disclosures.",
+        "bbox": [
+            136,
+            940,
+            854,
+            959
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Equity Macro Research  \nErin Zhang, CFA AC  \n(86-21) 6106 6328  \nerin.zhang@JPM.com  \nSAC Registration Number: S1730521090002  \nJPM Securities (China) Company Limited",
+        "bbox": [
+            719,
+            189,
+            957,
+            288
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tim Huang  \n(852) 2800-4323  \ntim.huang@JPM.com  \nJPM Securities (Asia Pacific) Limited/  \nJPM Broking (Hong Kong) Limited",
+        "bbox": [
+            719,
+            290,
+            957,
+            357
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rajiv Batra  \n(65) 6882-8151  \nrajiv.j.batra@JPM.com  \nJPM Securities Singapore Private Limited",
+        "bbox": [
+            719,
+            360,
+            939,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Head of China Research",
+        "bbox": [
+            719,
+            427,
+            888,
+            443
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Alex Yao  \n(86 21) 6106 6505  \nalex.yao@JPM.com  \nSAC Registration Number: S1730523020001  \nJPM Securities (China) Company Limited",
+        "bbox": [
+            719,
+            444,
+            957,
+            527
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "JPM",
+        "bbox": [
+            1,
+            556,
+            98,
+            879
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            721,
+            7,
+            900,
+            36
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "om",
+        "bbox": [
+            937,
+            970,
+            965,
+            981
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "in established businesses. Alibaba: JPM expects substantial upward revision in cloud profitability to be largely offset by continued softness in core commerce customer management revenue, leaving group-level full-year earnings essentially unchanged net-net. Baidu: Advertising revenue is expected to decline by \\~23%/21% in 2Q26/2026, alongside sustained AI investment intensity, which has driven \\~12% YTD downward revisions to full-year EPS, despite high double-digit AI cloud revenue growth (JPMe: +87%y-y in 2Q26). The net takeaway is that the internet sector is not experiencing a traditional earnings downgrade cycle, but rather a deliberate reinvestment cycle that is compressing near-term margins in exchange for longer-term optionality—an outcome that the market is still in the process of re-rating.",
+        "bbox": [
+            150,
+            133,
+            691,
+            299
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Likely outperformer #1 – Information Technology & AI Supply Chain: Global AI capex remains the dominant secular tailwind for China's technology hardware ecosystem. The dual-circulation dynamic—domestic AI infrastructure buildout alongside overseas hyperscaler demand—continues to drive export momentum and electronic supply chain profitability. Semiconductor equipment stands out with a 70.0% positive profit alert ratio, while the broader IT sector is expected to deliver 72% y-y EPS growth in Q2 for CSI 300 constituents, with full-year 2026 consensus at 96%. Materials sectors leveraged to advanced manufacturing, particularly specialty chemicals and new materials, are compounding this uplift.",
+        "bbox": [
+            136,
+            308,
+            691,
+            461
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Likely outperformer #2 – Industrials & Advanced Manufacturing: Industrial profit momentum has inflected decisively higher. Operating profit growth for above-scale industrial enterprises continues to outpace revenue expansion, indicating sustained net profit margin improvement across the sector. Machinery, high-end equipment and defense contractors are seeing tangible order conversion, with capacity utilization rates for auto manufacturing and chemical fibers sitting at elevated percentiles versus history. Within the CSI 300 universe, the industrials sector is expected to deliver 10.6% y-y EPS growth in Q2, with full-year 2026 consensus at 20.3%. The breadth of positive profit alerts is particularly encouraging—machinery and electrical equipment sectors report 85.7% and 69.8% positive pre-announcement rates respectively, signaling broad-based operational improvement rather than idiosyncratic strength.",
+        "bbox": [
+            136,
+            471,
+            691,
+            652
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Likely outperformer #3 – Financials: The financial sector is experiencing a pronounced earnings rebound driven by capital markets recovery. Average daily A-share trading value doubled y-y in Q2, accompanied by substantial margin financing expansion, and ongoing IPO rush. Securities firms are the primary beneficiaries (Figure 17 and Figure 18). Insurance companies are also seeing meaningful recovery in equity investment floating gains. Within the CSI 300, financials EPS growth reaches 3.7% y-y in Q2, accelerating to 31.6% for full-year 2026 as the operating leverage from market activity compounds. Energy and materials sectors, while cyclical in nature, are delivering the strongest headline EPS growth at 52.8% and 72.4% respectively for Q2 CSI 300, supported by commodity price stabilization and supply discipline.",
+        "bbox": [
+            136,
+            661,
+            693,
+            828
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Likely underperformer #1 – Real Estate & Post-Property Cycle: Property and its downstream value chain remain the most significant drag on aggregate earnings. Thirty-city commodity housing sales continue to contract y-y, with no meaningful inflection in sight. Building materials, home appliances, and furniture sectors face sustained revenue pressure, compounded by raw material cost increases including resin price hikes. Furniture industry operating profits collapsed 59% y-y in the first five months, while real estate development and management have reported an 18.7% first-loss ratio among pre-announcing firms.",
+        "bbox": [
+            136,
+            837,
+            693,
+            944
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            6,
+            232,
+            41
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy\n23 July 2026",
+        "bbox": [
+            344,
+            6,
+            485,
+            29
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            37,
+            950,
+            60
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            88,
+            945,
+            101,
+            957
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            150,
+            134,
+            691,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Likely underperformer #2 – Consumers: Consumer sectors are navigating a high-base hangover from last year's trade-in subsidy programs. Auto and home appliance sales growth has decelerated materially in Q2 as the favorable year-ago comparison rolls off. Auto industry operating profit fell 20% y-y in 5M26, with auto components reporting a 14.1% first-loss ratio. Consumer discretionary overall is tracking -6.9% y-y EPS growth for MXCN names in Q2 on consensus, with autos, household durables, and specialty retail all contributing negatively. Even consumer staples are seeing pressure, with food products and beverages registering elevated earnings decline ratios.",
+        "bbox": [
+            136,
+            175,
+            691,
+            312
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- We maintain our end-2026 base case targets for the MXCN index and CSI-300 at 100 and 5,200, respectively, with bear-case targets of 80 and 4,000, underpinned by $13\\%$ and $24\\%$ consensus year-over-year EPS growth projections and broadly supportive liquidity conditions. Our China economists expect additional policy support could be introduced after the July Politburo meeting if June activity data and 3Q momentum remain soft. Our top picks in the non-AI fields include Bank of China-H, CICC-H, Innovent, BYD-H and CR Land.",
+        "bbox": [
+            136,
+            322,
+            693,
+            428
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            6,
+            232,
+            41
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy\n23 July 2026",
+        "bbox": [
+            344,
+            6,
+            485,
+            29
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            826,
+            37,
+            950,
+            60
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            945,
+            945,
+            957,
+            957
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/30000da183ea0c64ea81153a12624fe2a53c558207a71df83b36dac4015c41fe.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: Accumulative benchmark ETF inflows since 2024: market tends to recover following the ETF inflow upticks"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            90,
+            158,
+            491,
+            343
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/548015c87c1d824d215d53e9c574785c6386c16efbb36d128fc7747ae4198a81.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: Accumulative STAR50 + STAR Chip ETF inflows since 2024"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            506,
+            147,
+            903,
+            328
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8e040d18137c7821e2d2def5af66f91b7987e30fd66cbd4823ba87a8bd2d0c93.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: Accumulative A-share ETF net flow has seen more than RMB1trn drop this year"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            90,
+            406,
+            493,
+            600
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d27b338c30b020ac23b707f379d6f4fef89e8169abd2edee9426ae0ddb814d36.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: A-share daily buyback surged to YTD high"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            511,
+            395,
+            891,
+            576
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/24273fea4652ce1ee5f0e55f657816ed7a56f104fa2f2b2279f8a6417679ff3e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: Onshore margin activity has cooled"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            91,
+            627,
+            486,
+            804
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c8911a63c9e9f7c2872e04a0fc6f467bfe198c2841f6efb5202f0d68a6d2031b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: A-share margin balance eased on the margin"
+        ],
+        "chart_footnote": [
+            "Source: Wind (21 Jul 2026)"
+        ],
+        "bbox": [
+            506,
+            621,
+            901,
+            795
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            904,
+            60
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            90,
+            954,
+            101,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Revenue y-y: industrial enterprises above designated side (YTD)\nOperating profit y-y: industrial enterprises above designated side (YTD)\nSource: Wind (17 Jul 2026)",
+        "bbox": [
+            91,
+            512,
+            483,
+            546
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/0cdd52714185e0246e2dfc6c2e8634d5b361a4909334a97e6b400ce3e68230b4.jpg",
+        "table_caption": [
+            "Figure 7: MXCN EPS y-y by sector (2Q26/2H26/2026 on consensus)"
+        ],
+        "table_footnote": [
+            "Source: LSEG Workspace (17 Jul 2026), Wind (17 Jul 2026), MSCI (1 Jul 2026)"
+        ],
+        "table_body": "<table><tr><td>GICS Sector Name</td><td>1Q26</td><td>2Q26</td><td>2H26</td><td>2026</td></tr><tr><td>Index</td><td>-19.1%</td><td>2.8%</td><td>16.7%</td><td>8.8%</td></tr><tr><td>Communication Services</td><td>5.8%</td><td>2.7%</td><td>4.1%</td><td>6.0%</td></tr><tr><td>Consumer Discretionary</td><td>-68.8%</td><td>-6.9%</td><td>81.5%</td><td>13.1%</td></tr><tr><td>Consumer Staples</td><td>-47.7%</td><td>-0.1%</td><td>69.8%</td><td>18.2%</td></tr><tr><td>Energy</td><td>12.5%</td><td>44.0%</td><td>38.7%</td><td>25.1%</td></tr><tr><td>Financials</td><td>-7.4%</td><td>-0.5%</td><td>-6.6%</td><td>-0.1%</td></tr><tr><td>Health Care</td><td>-32.4%</td><td>16.9%</td><td>109.9%</td><td>36.4%</td></tr><tr><td>Industrials</td><td>-9.0%</td><td>6.0%</td><td>15.3%</td><td>13.4%</td></tr><tr><td>Information Technology</td><td>0.6%</td><td>-12.6%</td><td>25.1%</td><td>14.5%</td></tr><tr><td>Materials</td><td>16.5%</td><td>73.2%</td><td>82.8%</td><td>71.0%</td></tr><tr><td>Real Estate</td><td>-85.6%</td><td>-9.8%</td><td>26.4%</td><td>8.9%</td></tr><tr><td>Utilities</td><td>-2.5%</td><td>5.2%</td><td>-30.1%</td><td>-12.1%</td></tr></table>",
+        "bbox": [
+            91,
+            145,
+            486,
+            329
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/035a00c9ca79253840ffab8e6850a26ad3e348c612c7ec97803c505d81749ec6.jpg",
+        "table_caption": [
+            "Figure 8: CSI-300 EPS y-y by sector (2Q26/2H26/2026 on consensus)"
+        ],
+        "table_footnote": [
+            "Source: LSEG Workspace (17 Jul 2026), Wind (17 Jul 2026)",
+            "Figure 9: Industrial enterprises' revenue y-y and operating profit y-y"
+        ],
+        "table_body": "<table><tr><td>GICS Sector Name</td><td>1Q26</td><td>2Q26</td><td>2H26</td><td>2026</td></tr><tr><td>Index</td><td>6.8%</td><td>15.7%</td><td>38.3%</td><td>24.4%</td></tr><tr><td>Communication Services</td><td>2.3%</td><td>6.8%</td><td>52.4%</td><td>20.0%</td></tr><tr><td>Consumer Discretionary</td><td>-9.3%</td><td>-5.0%</td><td>30.8%</td><td>6.4%</td></tr><tr><td>Consumer Staples</td><td>-6.2%</td><td>-8.6%</td><td>22.3%</td><td>3.1%</td></tr><tr><td>Energy</td><td>17.8%</td><td>52.8%</td><td>43.3%</td><td>31.6%</td></tr><tr><td>Financials</td><td>-5.5%</td><td>3.8%</td><td>5.3%</td><td>4.9%</td></tr><tr><td>Health Care</td><td>5.2%</td><td>-2.3%</td><td>71.6%</td><td>26.1%</td></tr><tr><td>Industrials</td><td>9.3%</td><td>10.6%</td><td>20.4%</td><td>20.3%</td></tr><tr><td>Information Technology</td><td>76.5%</td><td>71.9%</td><td>109.9%</td><td>96.3%</td></tr><tr><td>Materials</td><td>83.0%</td><td>74.1%</td><td>63.1%</td><td>61.0%</td></tr><tr><td>Real Estate</td><td>-22.8%</td><td>58.8%</td><td>92.9%</td><td>80.4%</td></tr><tr><td>Utilities</td><td>6.3%</td><td>6.2%</td><td>-2.5%</td><td>3.6%</td></tr></table>",
+        "bbox": [
+            509,
+            145,
+            901,
+            329
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/27d878f3eaf0fe9af38a2f45bbff9273b217bd4083740f7d1b57d64cb2644592.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "chart_footnote": [
+            "Figure 10: Industrial Production by sector"
+        ],
+        "bbox": [
+            91,
+            355,
+            486,
+            516
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a8a247e58d403a29f6f3fb35e38afe51ef63ce5f6b9703b1e16f1cf5c3974619.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            361,
+            885,
+            533
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3cfd41cabb6768dc660691f533a11c7c99417b8efd545fdb03aaaf4d14c90aca.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11: Industrial capacity utilization"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)",
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            95,
+            563,
+            490,
+            745
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d9fc9bbb309f1dbb48205f06a7b0c19be77687818176b14d67489707d99d71a8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 12: Industrial capacity utilization by sector"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            511,
+            564,
+            906,
+            735
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            903,
+            59
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            901,
+            954,
+            911,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/74552035eafd5f9f65327c306175e852b070ccf7aeb68b9bf989f7f6de6803ee.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 13: China 30-cities' commodity housing sales (mn sqm, rolling 90d sum y-y)"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            93,
+            158,
+            477,
+            334
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e76ee20a5f3a9afbdf821b4529b473e2423d935a4efd5b95936e46c5a076b9f5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 14: Selected consumer industries' revenue and OP y-y in 5M26"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            509,
+            158,
+            909,
+            333
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d37db14ceb03d6c86b299fe9c65063959bcead2ad62d784b8b7ead1416474e76.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 15: China raw milk ASP y-y"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            91,
+            388,
+            491,
+            572
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a481ebe18e36547d7ac688f984553e1f5e9cad6fecff9c539bbc1639a9de3dca.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 16: China auto sales y-y"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            509,
+            394,
+            900,
+            568
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0f2e1ad6f9539c843f4794bed7ff1a882d6395949400ef5438eba61da6d8535a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 17: A-share turnover"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            90,
+            614,
+            481,
+            790
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/77dcac3d775aee78be64d10191a18b5341fc3d273c4a24bc7866daefc49b5e0b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 18: HK market's equity financing"
+        ],
+        "chart_footnote": [
+            "Source: Wind (17 Jul 2026)"
+        ],
+        "bbox": [
+            509,
+            612,
+            903,
+            789
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            904,
+            60
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            90,
+            954,
+            101,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/8513a0693c2412a728757fd1ff0d6a68ed0efc7475a259de4babe17e20e27ee7.jpg",
+        "table_caption": [
+            "Figure 19: A-share 2Q profit alerts"
+        ],
+        "table_footnote": [
+            "Source: Wind (16 Jul 2026)"
+        ],
+        "table_body": "<table><tr><td>GICS Sector</td><td>GICS Industry</td><td>Aggr. FF mkt cap (Rmb bn)</td><td>Return since end 1Q26</td><td>Return YTD</td><td>Positive profit alert %</td><td>(Sizable increase - sizable decrease)/ total</td><td>(Loss to profit - first loss)/ total</td></tr><tr><td rowspan=\"12\">Consumer Discretionary</td><td>Auto Components</td><td>246.8</td><td>-10.9%</td><td>-18.5%</td><td>34.4%</td><td>-1.6%</td><td>-14.1%</td></tr><tr><td>Automobiles</td><td>191.7</td><td>-34.6%</td><td>-43.1%</td><td>33.3%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Distributors III</td><td>11.0</td><td>-8.1%</td><td>-7.3%</td><td>50.0%</td><td>50.0%</td><td>-50.0%</td></tr><tr><td>Diversified Consumer Services</td><td>12.0</td><td>-20.2%</td><td>-31.3%</td><td>33.3%</td><td>16.7%</td><td>0.0%</td></tr><tr><td>Hotels, Restaurants &amp; Leisure</td><td>38.2</td><td>-23.2%</td><td>-26.8%</td><td>31.3%</td><td>-18.8%</td><td>18.8%</td></tr><tr><td>Household Durables</td><td>145.6</td><td>-12.9%</td><td>-20.4%</td><td>19.6%</td><td>-16.1%</td><td>-23.2%</td></tr><tr><td>Internet &amp; Catalog Retail</td><td>41.7</td><td>37.5%</td><td>43.1%</td><td>100.0%</td><td>42.9%</td><td>42.9%</td></tr><tr><td>Leisure Equipment &amp; Products</td><td>25.6</td><td>-2.9%</td><td>5.7%</td><td>33.3%</td><td>22.2%</td><td>-11.1%</td></tr><tr><td>Media III</td><td>171.0</td><td>-23.1%</td><td>-20.5%</td><td>20.0%</td><td>-7.5%</td><td>-10.0%</td></tr><tr><td>Multiline Retail</td><td>32.7</td><td>-15.5%</td><td>-27.0%</td><td>40.0%</td><td>0.0%</td><td>-6.7%</td></tr><tr><td>Specialty Retail</td><td>8.7</td><td>-18.6%</td><td>-21.6%</td><td>0.0%</td><td>0.0%</td><td>-50.0%</td></tr><tr><td>Textiles, Apparel &amp; Luxury Goods</td><td>87.7</td><td>-10.4%</td><td>-11.1%</td><td>38.1%</td><td>9.5%</td><td>2.4%</td></tr><tr><td rowspan=\"5\">Consumer Staples</td><td>Beverages</td><td>195.7</td><td>-24.0%</td><td>-26.5%</td><td>35.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Food &amp; Staples Retailing III</td><td>29.4</td><td>-13.7%</td><td>-28.6%</td><td>42.9%</td><td>0.0%</td><td>14.3%</td></tr><tr><td>Food Products</td><td>346.4</td><td>-13.6%</td><td>-19.3%</td><td>30.1%</td><td>6.8%</td><td>-27.4%</td></tr><tr><td>Household Products III</td><td>6.3</td><td>-15.7%</td><td>-14.6%</td><td>50.0%</td><td>50.0%</td><td>0.0%</td></tr><tr><td>Personal Products III</td><td>1.4</td><td>-7.1%</td><td>-24.0%</td><td>100.0%</td><td>100.0%</td><td>0.0%</td></tr><tr><td rowspan=\"2\">Energy</td><td>Energy Equipment &amp; Services</td><td>30.9</td><td>-17.6%</td><td>-3.7%</td><td>10.0%</td><td>-10.0%</td><td>-40.0%</td></tr><tr><td>Oil, Gas &amp; Consumable Fuels</td><td>362.6</td><td>-9.1%</td><td>7.9%</td><td>56.3%</td><td>28.1%</td><td>6.3%</td></tr><tr><td rowspan=\"2\">Financials</td><td>Capital Markets</td><td>1,012.7</td><td>13.9%</td><td>-5.0%</td><td>89.7%</td><td>75.9%</td><td>3.4%</td></tr><tr><td>Diversified Financial Services</td><td>45.2</td><td>-4.3%</td><td>-3.9%</td><td>60.0%</td><td>20.0%</td><td>20.0%</td></tr><tr><td rowspan=\"5\">Health Care</td><td>Biotechnology III</td><td>99.6</td><td>-11.3%</td><td>-15.5%</td><td>35.3%</td><td>5.9%</td><td>0.0%</td></tr><tr><td>Health Care Equipment &amp; Supplies</td><td>39.7</td><td>-2.6%</td><td>35.3%</td><td>37.5%</td><td>12.5%</td><td>-12.5%</td></tr><tr><td>Health Care Providers &amp; Services</td><td>65.6</td><td>-17.3%</td><td>-19.0%</td><td>17.6%</td><td>-5.9%</td><td>-5.9%</td></tr><tr><td>Life Sciences Tools &amp; Services III</td><td>63.4</td><td>39.7%</td><td>39.2%</td><td>66.7%</td><td>33.3%</td><td>-33.3%</td></tr><tr><td>Pharmaceuticals III</td><td>228.8</td><td>-1.5%</td><td>0.7%</td><td>48.1%</td><td>19.2%</td><td>-1.9%</td></tr><tr><td rowspan=\"14\">Industrials</td><td>Aerospace &amp; Defense</td><td>280.0</td><td>-25.6%</td><td>-28.3%</td><td>50.0%</td><td>4.5%</td><td>22.7%</td></tr><tr><td>Air Freight &amp; Logistics III</td><td>60.4</td><td>-11.4%</td><td>-3.0%</td><td>50.0%</td><td>28.6%</td><td>7.1%</td></tr><tr><td>Airlines III</td><td>83.1</td><td>-14.6%</td><td>-38.6%</td><td>0.0%</td><td>-40.0%</td><td>0.0%</td></tr><tr><td>Building Products III</td><td>70.2</td><td>13.4%</td><td>11.7%</td><td>26.1%</td><td>4.3%</td><td>-13.0%</td></tr><tr><td>Commercial Services &amp; Supplies</td><td>100.7</td><td>-11.0%</td><td>4.0%</td><td>42.4%</td><td>18.2%</td><td>-9.1%</td></tr><tr><td>Construction &amp; Engineering III</td><td>129.8</td><td>-12.2%</td><td>-2.7%</td><td>15.9%</td><td>4.5%</td><td>-13.6%</td></tr><tr><td>Electrical Equipment</td><td>530.2</td><td>-16.9%</td><td>-12.9%</td><td>40.8%</td><td>17.1%</td><td>-11.8%</td></tr><tr><td>Industrial Conglomerates III</td><td>26.3</td><td>-23.9%</td><td>-20.7%</td><td>40.0%</td><td>40.0%</td><td>-40.0%</td></tr><tr><td>Machinery</td><td>584.2</td><td>0.2%</td><td>-8.7%</td><td>35.2%</td><td>11.1%</td><td>-14.8%</td></tr><tr><td>Marine III</td><td>83.9</td><td>-7.4%</td><td>49.3%</td><td>85.7%</td><td>71.4%</td><td>14.3%</td></tr><tr><td>Professional Services</td><td>46.4</td><td>-5.5%</td><td>-6.5%</td><td>36.4%</td><td>-9.1%</td><td>-18.2%</td></tr><tr><td>Road &amp; Rail III</td><td>16.5</td><td>-20.7%</td><td>-25.2%</td><td>16.7%</td><td>-16.7%</td><td>-16.7%</td></tr><tr><td>Trading Companies &amp; Distributors III</td><td>117.1</td><td>16.7%</td><td>3.3%</td><td>69.2%</td><td>46.2%</td><td>15.4%</td></tr><tr><td>Transportation Infrastructure</td><td>18.9</td><td>-16.9%</td><td>-24.7%</td><td>50.0%</td><td>0.0%</td><td>-16.7%</td></tr><tr><td rowspan=\"7\">Information Technology</td><td>Communications Equipment III</td><td>823.4</td><td>24.9%</td><td>46.2%</td><td>53.2%</td><td>31.9%</td><td>-2.1%</td></tr><tr><td>Computers &amp; Peripherals</td><td>335.5</td><td>40.2%</td><td>39.9%</td><td>87.5%</td><td>75.0%</td><td>0.0%</td></tr><tr><td>Electronic Equipment, Instruments &amp; Components</td><td>2,634.2</td><td>51.4%</td><td>50.3%</td><td>50.9%</td><td>25.0%</td><td>-3.4%</td></tr><tr><td>Internet Software &amp; Services III</td><td>89.3</td><td>-12.8%</td><td>-13.5%</td><td>56.3%</td><td>18.8%</td><td>18.8%</td></tr><tr><td>IT Services</td><td>158.0</td><td>-20.7%</td><td>-26.6%</td><td>17.2%</td><td>6.9%</td><td>-20.7%</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment III</td><td>1,460.4</td><td>57.6%</td><td>70.0%</td><td>62.7%</td><td>40.4%</td><td>11.5%</td></tr><tr><td>Software</td><td>426.2</td><td>-13.5%</td><td>-23.9%</td><td>34.3%</td><td>17.1%</td><td>-5.7%</td></tr><tr><td rowspan=\"5\">Materials</td><td>Chemicals</td><td>1,390.5</td><td>-10.8%</td><td>-1.9%</td><td>61.0%</td><td>33.5%</td><td>7.5%</td></tr><tr><td>Construction Materials III</td><td>200.4</td><td>18.9%</td><td>24.5%</td><td>21.4%</td><td>-3.6%</td><td>-17.9%</td></tr><tr><td>Containers &amp; Packaging</td><td>46.3</td><td>-12.0%</td><td>2.0%</td><td>50.0%</td><td>25.0%</td><td>6.3%</td></tr><tr><td>Metals &amp; Mining</td><td>2,275.5</td><td>-11.3%</td><td>-6.4%</td><td>68.8%</td><td>51.8%</td><td>-1.8%</td></tr><tr><td>Paper &amp; Forest Products</td><td>64.5</td><td>-24.4%</td><td>-26.8%</td><td>18.2%</td><td>0.0%</td><td>-18.2%</td></tr><tr><td>Real Estate</td><td>Real Estate Management &amp; Development</td><td>275.4</td><td>-9.1%</td><td>-13.4%</td><td>17.8%</td><td>0.0%</td><td>-13.7%</td></tr><tr><td rowspan=\"5\">Utilities</td><td>Electric Utilities III</td><td>150.9</td><td>-5.6%</td><td>9.7%</td><td>50.0%</td><td>5.6%</td><td>5.6%</td></tr><tr><td>Gas Utilities III</td><td>12.4</td><td>4.9%</td><td>26.1%</td><td>60.0%</td><td>20.0%</td><td>20.0%</td></tr><tr><td>Independent Power Producers &amp; Energy Traders III</td><td>54.7</td><td>-28.3%</td><td>-3.2%</td><td>36.4%</td><td>-9.1%</td><td>-18.2%</td></tr><tr><td>Multi-Utilities III</td><td>7.1</td><td>-13.0%</td><td>1.6%</td><td>50.0%</td><td>0.0%</td><td>25.0%</td></tr><tr><td>Water Utilities III</td><td>10.5</td><td>-7.0%</td><td>-15.3%</td><td>100.0%</td><td>66.7%</td><td>33.3%</td></tr><tr><td>TOTAL</td><td></td><td>16,103.4</td><td>3.3%</td><td>4.2%</td><td>43.1%</td><td>17.5%</td><td>-5.3%</td></tr></table>",
+        "bbox": [
+            78,
+            144,
+            970,
+            855
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            37,
+            903,
+            60
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            901,
+            954,
+            911,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Companies Discussed in This Report (all prices in this report as of market close on 22 July 2026, unless otherwise indicated)",
+        "bbox": [
+            86,
+            142,
+            857,
+            171
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "AMEC - A(688012.SS/Rmb392.99/OW), BYD Company Limited - H(1211.HK/HK\\$87.85/OW), Baidu.com (BIDU)(BIDU/\\$107.52/OW), Bank of China - H(3988.HK/HK\\$5.19/OW), China International Capital Corporation (3908)(3908.HK/HK\\$22.18/OW), China Resources Land (1109)(1109.HK/HK\\$33.38/OW), Iluvatar CoreX - H(9903.HK/HK\\$585.00/OW), Innovent Biologics (1801)(1801.HK/HK\\$92.25/OW), JCET - A(600584.SS/Rmb85.78/OW), NAURA - A(002371.SZ/Rmb764.00/OW), Victory Giant Technology - H(2476.HK/HK\\$226.80/OW), Weichai Power - H(2338.HK/HK\\$32.80/OW), Z AI Co Ltd(2513.HK/HK\\$1175.00/OW), Zhongji Innolight - A(300308.SZ/Rmb1060.80/OW)",
+        "bbox": [
+            86,
+            171,
+            911,
+            277
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            86,
+            285,
+            909,
+            394
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            86,
+            400,
+            886,
+            443
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            450,
+            250,
+            466
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            86,
+            488,
+            893,
+            571
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            578,
+            659,
+            591
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            85,
+            591,
+            906,
+            782
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            903,
+            60
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            90,
+            954,
+            101,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/e27db2882b4d38f3ac7d9f035b07d454295c89c95a21bd8d84695e310f96d30a.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding.",
+            "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            81,
+            151,
+            627,
+            224
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            91,
+            264,
+            900,
+            303
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            85,
+            326,
+            908,
+            409
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            416,
+            357,
+            430
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            86,
+            428,
+            900,
+            459
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            86,
+            472,
+            898,
+            503
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            86,
+            509,
+            911,
+            565
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            86,
+            572,
+            219,
+            587
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            86,
+            591,
+            852,
+            621
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            86,
+            627,
+            903,
+            658
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            86,
+            671,
+            888,
+            715
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            86,
+            729,
+            903,
+            760
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            86,
+            775,
+            901,
+            832
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            86,
+            846,
+            860,
+            888
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            86,
+            904,
+            890,
+            932
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            74
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            903,
+            60
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            900,
+            954,
+            911,
+            966
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            85,
+            151,
+            900,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-",
+        "bbox": [
+            86,
+            249,
+            911,
+            303
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            86,
+            303,
+            811,
+            317
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            86,
+            325,
+            906,
+            366
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            86,
+            374,
+            904,
+            416
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            86,
+            423,
+            909,
+            558
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            86,
+            565,
+            527,
+            578
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            86,
+            578,
+            877,
+            618
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            86,
+            618,
+            911,
+            767
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            86,
+            766,
+            850,
+            794
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            86,
+            793,
+            908,
+            834
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            86,
+            833,
+            611,
+            847
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            86,
+            846,
+            900,
+            873
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            86,
+            874,
+            906,
+            928
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            904,
+            60
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            91,
+            954,
+            108,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            86,
+            133,
+            896,
+            187
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für",
+        "bbox": [
+            86,
+            187,
+            896,
+            214
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            86,
+            213,
+            909,
+            308
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            86,
+            307,
+            909,
+            388
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-",
+        "bbox": [
+            86,
+            383,
+            904,
+            481
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com;",
+        "bbox": [
+            86,
+            481,
+            900,
+            534
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "+912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            86,
+            534,
+            903,
+            574
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            86,
+            574,
+            881,
+            602
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            86,
+            600,
+            903,
+            655
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            86,
+            655,
+            881,
+            682
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            86,
+            682,
+            901,
+            722
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            86,
+            722,
+            883,
+            762
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            86,
+            762,
+            911,
+            802
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            86,
+            802,
+            870,
+            842
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "ref_text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional",
+        "bbox": [
+            86,
+            842,
+            909,
+            923
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            903,
+            60
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            895,
+            954,
+            911,
+            966
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "investors,\" as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            86,
+            133,
+            900,
+            161
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            86,
+            160,
+            863,
+            188
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            86,
+            186,
+            906,
+            321
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            86,
+            321,
+            911,
+            361
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            86,
+            361,
+            909,
+            521
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            86,
+            521,
+            888,
+            562
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own",
+        "bbox": [
+            85,
+            569,
+            911,
+            934
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            73
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            904,
+            60
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            91,
+            954,
+            108,
+            966
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            86,
+            133,
+            911,
+            255
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            85,
+            271,
+            908,
+            381
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            86,
+            387,
+            896,
+            457
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            86,
+            472,
+            908,
+            554
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            88,
+            560,
+            337,
+            574
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Securities (China) Company Limited. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            86,
+            577,
+            904,
+            647
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Erin Zhang, CFA (86-21) 6106 6328 erin.zhang@JPM.com",
+        "bbox": [
+            88,
+            38,
+            232,
+            74
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy 23 July 2026",
+        "bbox": [
+            345,
+            38,
+            485,
+            62
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            781,
+            38,
+            903,
+            60
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            895,
+            954,
+            911,
+            966
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "T",
+        "bbox": [
+            929,
+            972,
+            940,
+            984
+        ],
+        "page_idx": 12
+    }
+]
