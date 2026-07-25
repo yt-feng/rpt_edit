@@ -1,0 +1,510 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_icsr11cq/pdfs/0001-46-HSBC-China Healthcare- AI in Drug Discovery -AIDD--260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "AI药物发现，从实验",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "HSBC：中国医疗-AI药物发现-价值迁移",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-HSBC-China Healthcare- AI in Drug Discovery -AIDD--260723.pdf",
+      "cleaned_source_title": "HSBC-China Healthcare- AI in Drug Discovery -AIDD",
+      "institution_name": "HSBC",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "HSBC：AI中国Healthcare",
+      "raw_candidates": [
+        "中国医疗-AI药物发现",
+        "中国医疗-AI药物发现-价值迁移",
+        "中国医疗-AI药物发现-从工具到资产"
+      ],
+      "cleaned_candidates": [
+        "HSBC：中国医疗-AI药物发现",
+        "HSBC：中国医疗-AI药物发现-价值迁移",
+        "HSBC：中国医疗-AI药物发现-从工具到资产",
+        "HSBC：AI中国Healthcare",
+        "HSBC：AI药物发现的价值迁移正从工具走向资产"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：AI中国Healthcare",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：AI药物发现的价值迁移正从工具走向资产",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：中国医疗-AI药物发现-价值迁移",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "HSBC：中国医疗-AI药物发现-价值迁移"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_icsr11cq/pdfs/0002-47-GS-Volkswagen -VOWG_p.DE-- 2Q26 operating miss- EPS further burdened by tax while auto cash flow beat- growth outlook revised down-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "大众Q2利润低于预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：大众汽车业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-GS-Volkswagen -VOWG_p.DE-- 2Q26 operating miss- EPS further burdened by tax while auto cash flow beat- growth outlook revised down-260724.pdf",
+      "cleaned_source_title": "GS-Volkswagen -VOWG_p.DE-- 2Q26 operating miss- EPS further burdened by tax while auto cash flow beat- growth outlook revised down",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：VolkswagenVOWG2Q26operat",
+      "raw_candidates": [
+        "大众汽车二季度运营利润低于预期",
+        "大众汽车二季度运营利润低于预期-营收指引下调",
+        "大众汽车二季度运营利润低于预期-现金流超预期"
+      ],
+      "cleaned_candidates": [
+        "GS：大众汽车二季度运营利润低于预期",
+        "GS：大众汽车二季度运营利润低于预期-营收指引下调",
+        "GS：大众汽车二季度运营利润低于预期-现金流超预期",
+        "GS：VolkswagenVOWG2Q26operat",
+        "GS：大众汽车7月24日公布的二季度业绩呈现明显分化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：VolkswagenVOWG2Q26operat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：大众汽车7月24日公布的二季度业绩呈现明显分化",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        }
+      ],
+      "selected_title": "GS：大众汽车业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：大众汽车二季度运营利润低于预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：大众汽车业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_icsr11cq/pdfs/0003-48-GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain Buy-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "ERP出包后，安川电",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain Buy-260723.pdf",
+      "cleaned_source_title": "GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：YaskawaElectricConf.Call",
+      "raw_candidates": [
+        "安川电机ERP影响与恢复路径电话会议",
+        "安川电机ERP影响恢复-各业务利用率回升数据",
+        "安川电机ERP恢复与AI需求驱动订单增长"
+      ],
+      "cleaned_candidates": [
+        "GS：安川电机ERP影响与恢复路径电话会议",
+        "GS：安川电机ERP影响恢复-各业务利用率回升数据",
+        "GS：安川电机ERP恢复与AI需求驱动订单增长",
+        "GS：YaskawaElectricConf.Call",
+        "GS：GS在7月23日与安川电机读者关系部门举行电话会议后发布报告"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：安川电机ERP影响恢复-各业务利用率回升数据",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：安川电机ERP恢复与AI需求驱动订单增长",
+          "reasons": [
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "GS：YaskawaElectricConf.Call",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS在7月23日与安川电机读者关系部门举行电话会议后发布报告",
+          "reasons": [
+            "anchor_coverage=0.35"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：安川电机ERP影响与恢复路径电话会议",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_icsr11cq/pdfs/0004-49-HSBC-Fuyao Glass Industry -600660-Buy Buy- Weak auto beta priced in- recovery ahead-260722.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "福耀玻璃跌到位了吗？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：汽车行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-HSBC-Fuyao Glass Industry -600660-Buy Buy- Weak auto beta priced in- recovery ahead-260722.pdf",
+      "cleaned_source_title": "HSBC-Fuyao Glass Industry -600660-Buy Buy- Weak auto beta priced in- recovery ahead",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：FuyaoGlassIndustry600660报告观点报告观点",
+      "raw_candidates": [
+        "福耀玻璃国内汽车beta已反映-基本面有望下半年改善",
+        "福耀玻璃：A/H股年初至今下跌15%和17%-国内汽车beta已消化",
+        "福耀玻璃：弱汽车周期中防御性盈利-ASP扩张与海外份额增长"
+      ],
+      "cleaned_candidates": [
+        "HSBC：福耀玻璃国内汽车beta已反映-基本面有望下半年改善",
+        "HSBC：H股年初至今下跌15%和17%-国内汽车beta已消化",
+        "HSBC：福耀玻璃，弱汽车周期中防御性盈利-ASP扩张与海外份额增长",
+        "HSBC：FuyaoGlassIndustry600660报告观点报告观点",
+        "HSBC：H股年初至今分别下跌15%和17%，同期沪深300下跌2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：H股年初至今下跌15%和17%-国内汽车beta已消化",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：福耀玻璃，弱汽车周期中防御性盈利-ASP扩张与海外份额增长",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：FuyaoGlassIndustry600660报告观点报告观点",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：H股年初至今分别下跌15%和17%，同期沪深300下跌2%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：汽车行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：福耀玻璃国内汽车beta已反映-基本面有望下半年改善",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：汽车行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_icsr11cq/pdfs/0005-50-HSBC-Lithium-Beyond the peak-260723.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "锂价降温，但还没凉透",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-HSBC-Lithium-Beyond the peak-260723.pdf",
+      "cleaned_source_title": "HSBC-Lithium-Beyond the peak",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：LithiumBeyondthepeak",
+      "raw_candidates": [
+        "HSBC锂行业：价格高位回落",
+        "HSBC锂行业：价格高位回落与权益定价分歧",
+        "HSBC锂行业：价格高位回落与储能需求增长"
+      ],
+      "cleaned_candidates": [
+        "HSBC：HSBC锂行业，价格高位回落",
+        "HSBC：HSBC锂行业，价格高位回落与权益定价分歧",
+        "HSBC：HSBC锂行业，价格高位回落与储能需求增长",
+        "HSBC：LithiumBeyondthepeak",
+        "HSBC：中国电池级碳酸锂价格自2026年5月高点回落约28%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：LithiumBeyondthepeak",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：中国电池级碳酸锂价格自2026年5月高点回落约28%",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：HSBC锂行业，价格高位回落与权益定价分歧",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
