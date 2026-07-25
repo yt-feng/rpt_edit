@@ -1,0 +1,150 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_8/0005-45-Goldman-Sachs-Samsung-Electronics--005930.KS---Galaxy-Z-Fold-Flip-8-seri",
+  "title": "高盛：研究主题与行业变化观察",
+  "source_title": "0005-45-GS-Samsung Electronics -005930.KS-- Galaxy Z Fold Flip 8 series launched at higher pricing with no changes in memory content-260723",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-GS-Samsung Electronics -005930.KS-- Galaxy Z Fold Flip 8 series launched at higher pricing with no changes in memory content-260723",
+    "cleaned_source_title": "GS-Samsung Electronics -005930.KS-- Galaxy Z Fold Flip 8 series launched at higher pricing with no changes in memory content",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：SamsungElectronics",
+    "raw_candidates": [
+      "高盛：三星电子Galaxy Z Fold Flip 8系列定价更高内存不变",
+      "高盛：三星电子新款折叠屏手机定价上涨5%至8%",
+      "高盛：三星电子Galaxy Z系列发布折叠屏手机定价与内存分析",
+      "三星电子Galaxy Z Fold Flip 8系列发布-定价更高内存不变",
+      "三星电子Galaxy Z Fold Flip 8系列发布-定价上涨5%-8%",
+      "三星电子Galaxy Z Fold Flip 8系列发布-折叠屏手机定价与内存分析"
+    ],
+    "cleaned_candidates": [
+      "高盛：三星电子GalaxyZFoldFlip8系列定价更高内存不变",
+      "高盛：三星电子新款折叠屏手机定价上涨5%至8%",
+      "高盛：三星电子GalaxyZ系列发布折叠屏手机定价与内存分析",
+      "高盛：三星电子GalaxyZFoldFlip8系列发布",
+      "高盛：三星电子GalaxyZFoldFlip8系列发布-定价上涨5%",
+      "高盛：SamsungElectronics",
+      "高盛：据公司称，美国市场于7月22日开启预售"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：三星电子GalaxyZFoldFlip8系列定价更高内存不变",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：三星电子GalaxyZ系列发布折叠屏手机定价与内存分析",
+        "reasons": [
+          "anchor_coverage=0.53"
+        ]
+      },
+      {
+        "title": "高盛：三星电子GalaxyZFoldFlip8系列发布",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：三星电子GalaxyZFoldFlip8系列发布-定价上涨5%",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.41"
+        ]
+      },
+      {
+        "title": "高盛：SamsungElectronics",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：据公司称，美国市场于7月22日开启预售",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "5",
+        "8"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "高盛：据公司称，美国市场于7月22日开启预售",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "高盛：三星电子Galaxy Z Fold Flip 8系列定价更高内存不变",
+      "高盛：三星电子新款折叠屏手机定价上涨5%至8%",
+      "高盛：三星电子Galaxy Z系列发布折叠屏手机定价与内存分析"
+    ],
+    "pre_neutralization_title": "高盛：三星电子新款折叠屏手机定价上涨5%至8%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_86.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

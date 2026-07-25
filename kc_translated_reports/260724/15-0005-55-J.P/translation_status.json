@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_10/0005-55-J.P.-Morgan-China--Slow-2Q-fiscal-deployment-leaves-more-room-for-2H-Nea",
+  "title": "摩根大通：研究主题与行业变化观察",
+  "source_title": "0005-55-JPM-China- Slow 2Q fiscal deployment leaves more room for 2H Near-term focus on execution-260722",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-JPM-China- Slow 2Q fiscal deployment leaves more room for 2H Near-term focus on execution-260722",
+    "cleaned_source_title": "JPM-China- Slow 2Q fiscal deployment leaves more room for 2H Near-term focus on execution",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国-Slow2Qfiscaldeploym",
+    "raw_candidates": [
+      "中国二季度财政部署偏慢为下半年留出空间",
+      "中国6月财政收支改善-上半年存款增量仍偏高",
+      "中国财政执行偏慢-短期焦点在预算部署"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国二季度财政部署偏慢为下半年留出空间",
+      "摩根大通：中国6月财政收支改善-上半年存款增量仍偏高",
+      "摩根大通：中国财政执行偏慢-短期焦点在预算部署",
+      "摩根大通：中国-Slow2Qfiscaldeploym",
+      "摩根大通：6月一般公共预算收入同比增速升至8.7%（全年预算目标为2."
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国6月财政收支改善-上半年存款增量仍偏高",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国财政执行偏慢-短期焦点在预算部署",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国-Slow2Qfiscaldeploym",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：6月一般公共预算收入同比增速升至8.7%（全年预算目标为2.",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：中国二季度财政部署偏慢为下半年留出空间",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "摩根大通：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 8,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "基金->产品 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "证券->标的 x1",
+    "衰退|萎缩|收缩->调整 x2",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x5",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "恶化->出现变化 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1"
+  ]
+}

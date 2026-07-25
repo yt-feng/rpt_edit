@@ -1,0 +1,92 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_6/0004-34-Goldman-Sachs-MiniMax-Group--0100.HK--Takeaways-from-Founder-CEO-meeting",
+  "title": "高盛：MiniMax创始人CEO会面要点，追求极致性价比",
+  "source_title": "0004-34-GS-MiniMax Group -0100.HK- Takeaways from Founder CEO meeting- Pursuing ultimate price-to-performance- reiterate Buy-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-34-GS-MiniMax Group -0100.HK- Takeaways from Founder CEO meeting- Pursuing ultimate price-to-performance- reiterate Buy-260724",
+    "cleaned_source_title": "GS-MiniMax Group -0100.HK- Takeaways from Founder CEO meeting- Pursuing ultimate price-to-performance- reiterate Buy",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：MiniMaxGroupTakeawaysfro",
+    "raw_candidates": [
+      "MiniMax创始人CEO会面要点：追求极致性价比",
+      "MiniMax创始人CEO会面要点：7月23日讨论模型性价比与算力优势",
+      "MiniMax创始人CEO会面要点：M3模型性价比与自营算力基础设施优势"
+    ],
+    "cleaned_candidates": [
+      "高盛：MiniMax创始人CEO会面要点，追求极致性价比",
+      "高盛：MiniMax创始人CEO会面要点",
+      "高盛：MiniMaxGroupTakeawaysfro",
+      "高盛：我们于7月23日参加了MiniMax创始人兼CEO闫俊杰博士及管"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：MiniMax创始人CEO会面要点",
+        "reasons": [
+          "anchor_coverage=0.70",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：MiniMaxGroupTakeawaysfro",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：我们于7月23日参加了MiniMax创始人兼CEO闫俊杰博士及管",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：MiniMax创始人CEO会面要点，追求极致性价比",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：MiniMax创始人CEO会面要点，追求极致性价比"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_75.pdf",
+  "figure_count": 3,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line"
+  ]
+}

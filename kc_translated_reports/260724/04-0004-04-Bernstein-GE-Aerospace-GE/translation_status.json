@@ -1,0 +1,109 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_0/0004-04-Bernstein-GE-Aerospace-GE.US-GE-Aerospace--Strength-continues--Another-b",
+  "title": "伯恩斯坦：研究主题与行业变化观察",
+  "source_title": "0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive ",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive ",
+    "cleaned_source_title": "Bernstein-GE Aerospace-GE.US-GE Aerospace- Strength continues- Another big beat for Q2 -But- this time also a raise plus a positive",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：GEAerospaceGEAerospace",
+    "raw_candidates": [
+      "通用电气航空航天：Q2超预期并上调指引",
+      "通用电气航空航天：Q2业绩超预期与全年指引上调",
+      "通用电气航空航天：CFM56进厂维修与宽体机服务增长"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：通用电气航空航天，Q2超预期并上调指引",
+      "伯恩斯坦：通用电气航空航天，Q2业绩超预期与全年指引上调",
+      "伯恩斯坦：通用电气航空航天，CFM56进厂维修与宽体机服务增长",
+      "伯恩斯坦：GEAerospaceGEAerospace",
+      "伯恩斯坦：通用电气航空航天在7月16日公布Q2业绩时"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：通用电气航空航天，CFM56进厂维修与宽体机服务增长",
+        "reasons": [
+          "anchor_coverage=0.41",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：GEAerospaceGEAerospace",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：通用电气航空航天在7月16日公布Q2业绩时",
+        "reasons": [
+          "anchor_coverage=0.47",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "伯恩斯坦：通用电气航空航天，Q2超预期并上调指引",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 1,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

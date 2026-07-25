@@ -1,0 +1,131 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_16/0001-81-Morgan-Stanley-TSMC-preview-and-CoWoS-update---CPU--GPU--ASIC--Optical--",
+  "title": "摩根士丹利：CPU与GPU与ASIC与AI技术与相关数据观察",
+  "source_title": "0001-81-MS-TSMC preview and CoWoS update - CPU- GPU- ASIC- Optical- China AI Compute-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-81-MS-TSMC preview and CoWoS update - CPU- GPU- ASIC- Optical- China AI Compute-260724",
+    "cleaned_source_title": "MS-TSMC preview and CoWoS update - CPU- GPU- ASIC- Optical- China AI Compute",
+    "institution_name": "摩根士丹利",
+    "required_terms": [
+      "CPU",
+      "GPU",
+      "ASIC",
+      "AI"
+    ],
+    "deterministic_fallback": "摩根士丹利：CPU与GPU与ASIC与AITSMCpreview",
+    "raw_candidates": [
+      "台积电2026年第二季度业绩预览与CoWoS更新：CPU、GPU、ASIC与AI算力",
+      "台积电AI半导体前景与CoWoS封装更新：CPU、GPU、ASIC与光学",
+      "台积电CoWoS更新与中国AI算力：CPU、GPU、ASIC与光学技术",
+      "台积电前瞻与CoWoS更新-CPU GPU ASIC 光学 中国AI算力",
+      "台积电2026年第二季度业绩预览与CoWoS更新",
+      "台积电AI半导体前景与CoWoS封装更新"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：台积电2026年第二季度业绩预览与CoWoS更新",
+      "摩根士丹利：台积电AI半导体前景与CoWoS封装更新",
+      "摩根士丹利：台积电CoWoS更新与中国AI算力",
+      "摩根士丹利：台积电前瞻与CoWoS更新",
+      "摩根士丹利：CPU与GPU与ASIC与AITSMCpreview",
+      "摩根士丹利：CPU与GPU与ASIC与AI技术与相关数据观察"
+    ],
+    "faithful_candidate_missing_terms": [
+      "CPU",
+      "GPU",
+      "ASIC",
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：台积电2026年第二季度业绩预览与CoWoS更新",
+        "reasons": [
+          "missing_required_terms=CPU,GPU,ASIC,AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：台积电AI半导体前景与CoWoS封装更新",
+        "reasons": [
+          "missing_required_terms=CPU,GPU,ASIC",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：台积电CoWoS更新与中国AI算力",
+        "reasons": [
+          "missing_required_terms=CPU,GPU,ASIC",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：台积电前瞻与CoWoS更新",
+        "reasons": [
+          "missing_required_terms=CPU,GPU,ASIC,AI",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：CPU与GPU与ASIC与AITSMCpreview",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.55"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：CPU与GPU与ASIC与AI技术与相关数据观察",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根士丹利：CPU与GPU与ASIC与AI技术与相关数据观察",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "台积电2026年第二季度业绩预览与CoWoS更新：CPU、GPU、ASIC与AI算力",
+      "台积电AI半导体前景与CoWoS封装更新：CPU、GPU、ASIC与光学",
+      "台积电CoWoS更新与中国AI算力：CPU、GPU、ASIC与光学技术"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：CPU与GPU与ASIC与AI技术与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_41.pdf",
+  "figure_count": 28,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

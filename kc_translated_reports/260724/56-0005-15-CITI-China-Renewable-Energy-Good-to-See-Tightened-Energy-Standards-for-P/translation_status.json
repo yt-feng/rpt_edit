@@ -1,0 +1,94 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_2/0005-15-CITI-China-Renewable-Energy-Good-to-See-Tightened-Energy-Standards-for-P",
+  "title": "花旗：能源行业数据与主题变化观察",
+  "source_title": "0005-15-CITI-China Renewable Energy-Good to See Tightened Energy Standards for Polysilicon- but Immaterial Impact on Current Supply-260722",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-15-CITI-China Renewable Energy-Good to See Tightened Energy Standards for Polysilicon- but Immaterial Impact on Current Supply-260722",
+    "cleaned_source_title": "CITI-China Renewable Energy-Good to See Tightened Energy Standards for Polysilicon- but Immaterial Impact on Current Supply",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：中国Renewable能源GoodtoSeeTightened能",
+    "raw_candidates": [
+      "中国可再生能源-多晶硅能耗标准收紧对当前供应影响甚微",
+      "中国可再生能源-7月多晶硅月产量10万吨需求9.1万吨",
+      "中国可再生能源-多晶硅能耗标准收紧与产能利用率30-40%"
+    ],
+    "cleaned_candidates": [
+      "花旗：中国可再生能源-多晶硅能耗标准收紧对当前供应影响甚微",
+      "花旗：中国可再生能源-7月多晶硅月产量10万吨需求9.1万吨",
+      "花旗：中国可再生能源-多晶硅能耗标准收紧与产能利用率30-40%",
+      "花旗：中国Renewable能源GoodtoSeeTightened能",
+      "花旗：根据中国硅业协会数据，7月多晶硅月产量预计为10万吨"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：中国可再生能源-7月多晶硅月产量10万吨需求9.1万吨",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：中国可再生能源-多晶硅能耗标准收紧与产能利用率30-40%",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "花旗：中国Renewable能源GoodtoSeeTightened能",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：根据中国硅业协会数据，7月多晶硅月产量预计为10万吨",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：能源行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "花旗：中国可再生能源-多晶硅能耗标准收紧对当前供应影响甚微",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "花旗：能源行业数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_56.pdf",
+  "figure_count": 2,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

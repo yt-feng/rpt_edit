@@ -1,0 +1,107 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_3/0003-18-CITI-China-Renewable-Energy-Solar-Product-Prices-Stayed-Low-PRC-Solar-In",
+  "title": "花旗：价格数据与市场变化观察",
+  "source_title": "0003-18-CITI-China Renewable Energy-Solar Product Prices Stayed Low-PRC Solar Installation Fell 66- in 1H26-260722",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-18-CITI-China Renewable Energy-Solar Product Prices Stayed Low-PRC Solar Installation Fell 66- in 1H26-260722",
+    "cleaned_source_title": "CITI-China Renewable Energy-Solar Product Prices Stayed Low-PRC Solar Installation Fell 66- in 1H26",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：中国Renewable能源SolarProduc",
+    "raw_candidates": [
+      "中国可再生能源-太阳能产品价格低位与装机量下降66%",
+      "中国可再生能源-2026上半年太阳能装机量下降66%至72.1GW",
+      "中国可再生能源-太阳能产品价格低位与产能整合"
+    ],
+    "cleaned_candidates": [
+      "花旗：中国可再生能源-太阳能产品价格低位与装机量下降66%",
+      "花旗：中国可再生能源",
+      "花旗：中国可再生能源-太阳能产品价格低位与产能整合",
+      "花旗：中国Renewable能源SolarProduc",
+      "花旗：2026年上半年中国太阳能装机量下降66%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：中国可再生能源",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：中国可再生能源-太阳能产品价格低位与产能整合",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      },
+      {
+        "title": "花旗：中国Renewable能源SolarProduc",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：2026年上半年中国太阳能装机量下降66%",
+        "reasons": [
+          "anchor_coverage=0.39",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：价格数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "花旗：中国可再生能源-太阳能产品价格低位与装机量下降66%",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "花旗：价格数据与市场变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_59.pdf",
+  "figure_count": 5,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

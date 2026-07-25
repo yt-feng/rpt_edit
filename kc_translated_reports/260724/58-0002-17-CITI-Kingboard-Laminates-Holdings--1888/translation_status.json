@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_3/0002-17-CITI-Kingboard-Laminates-Holdings--1888.HK--Read-across-from-Citi-Call-w",
+  "title": "花旗：建滔积层板与南亚新材料电话会议启示",
+  "source_title": "0002-17-CITI-Kingboard Laminates Holdings -1888.HK- Read across from Citi Call with Nanya New Material-260722",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-17-CITI-Kingboard Laminates Holdings -1888.HK- Read across from Citi Call with Nanya New Material-260722",
+    "cleaned_source_title": "CITI-Kingboard Laminates Holdings -1888.HK- Read across from Citi Call with Nanya New Material",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：KingboardLaminatesHoldings",
+    "raw_candidates": [
+      "建滔积层板与南亚新材料电话会议启示",
+      "建滔积层板：2026下半年CCL均价上涨预期",
+      "建滔积层板：电子级玻璃布供应紧张至2027年底"
+    ],
+    "cleaned_candidates": [
+      "花旗：建滔积层板与南亚新材料电话会议启示",
+      "花旗：建滔积层板，2026下半年CCL均价上涨预期",
+      "花旗：建滔积层板，电子级玻璃布供应紧张至2027年底",
+      "花旗：KingboardLaminatesHoldings",
+      "花旗：我们在南亚新材料(688519)发布2026年上半年盈利预警后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：建滔积层板，2026下半年CCL均价上涨预期",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：建滔积层板，电子级玻璃布供应紧张至2027年底",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：KingboardLaminatesHoldings",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：我们在南亚新材料(688519)发布2026年上半年盈利预警后",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：建滔积层板与南亚新材料电话会议启示",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "花旗：建滔积层板与南亚新材料电话会议启示"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_58.pdf",
+  "figure_count": 4,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "研究研究->研究 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "风险->不确定性 x5",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x6",
+    "买入->观点偏积极 x3",
+    "卖出->观点偏谨慎 x3",
+    "投资->研究 x8",
+    "股票|个股->公司 x5",
+    "证券->标的 x2",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x3"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260724/shard_9/0003-48-Goldman-Sachs-Yaskawa-Electric--6506.T---Conf.-Call-Takeaways--Reconfirm",
+  "title": "高盛：安川电机电话会议，确认ERP影响现状与未来路径",
+  "source_title": "0003-48-GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-48-GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain",
+    "cleaned_source_title": "GS-Yaskawa Electric -6506.T-- Conf. Call Takeaways- Reconfirming the current status of ERP-related impact and path forward- maintain",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：YaskawaElectricConf.Call",
+    "raw_candidates": [
+      "安川电机电话会议：确认ERP影响现状与未来路径",
+      "安川电机电话会议：ERP影响现状与5月利用率低谷复苏",
+      "安川电机电话会议：ERP影响现状与下半年增产计划"
+    ],
+    "cleaned_candidates": [
+      "高盛：安川电机电话会议，确认ERP影响现状与未来路径",
+      "高盛：安川电机电话会议，ERP影响现状与5月利用率低谷复苏",
+      "高盛：安川电机电话会议，ERP影响现状与下半年增产计划",
+      "高盛：YaskawaElectricConf.Call",
+      "高盛：在7月23日上午的会议中"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：安川电机电话会议，ERP影响现状与5月利用率低谷复苏",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "高盛：安川电机电话会议，ERP影响现状与下半年增产计划",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "高盛：YaskawaElectricConf.Call",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：在7月23日上午的会议中",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：安川电机电话会议，确认ERP影响现状与未来路径",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：安川电机电话会议，确认ERP影响现状与未来路径"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_89.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x3",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}
