@@ -1,0 +1,122 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260725/shard_5/0002-27-Goldman-Sachs-GS-China-Econ-Proprietary-Indicators--July-260724",
+  "title": "高盛：近期数据与市场变化观察",
+  "source_title": "0002-27-GS-GS China Econ Proprietary Indicators- July-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-27-GS-GS China Econ Proprietary Indicators- July-260724",
+    "cleaned_source_title": "GS-GS China Econ Proprietary Indicators- July",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国EconProprietaryIndicators-July",
+    "raw_candidates": [
+      "高盛中国宏观环境自建指标-7月",
+      "高盛中国宏观环境自建指标-6月CAI环比年化增长5.3%",
+      "高盛中国宏观环境自建指标-7月数据与资金状况指数"
+    ],
+    "cleaned_candidates": [
+      "高盛：高盛中国宏观环境自建指标-7月",
+      "高盛：高盛中国宏观环境自建指标-6月CAI环比年化增长5.3%",
+      "高盛：高盛中国宏观环境自建指标-7月数据与资金状况指数",
+      "高盛：中国EconProprietaryIndicators-July",
+      "高盛：图1，我们的中国当前活动指标（CAI）6月环比年化增长率为+5."
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "incomplete_last_segment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：高盛中国宏观环境自建指标-7月",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：高盛中国宏观环境自建指标-7月数据与资金状况指数",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国EconProprietaryIndicators-July",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：图1，我们的中国当前活动指标（CAI）6月环比年化增长率为+5.",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：近期数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "5.3",
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：高盛中国宏观环境自建指标-6月CAI环比年化增长5.3%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "高盛：近期数据与市场变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_36.pdf",
+  "figure_count": 20,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "中国经济->中国宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股票市场|股市->市场 x1",
+    "股票|个股->公司 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "中国经济->中国宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260725/shard_8/0003-43-Morgan-Stanley-Software-Cyber-Thoughts-on-Hugging-Face-Security-Incident",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-Software-Cyber Thoughts on Hugging Face Security Incident-260723",
+    "cleaned_source_title": "MS-Software-Cyber Thoughts on Hugging Face Security Incident",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：软件CyberThoughtsonHuggingFace安",
+    "raw_candidates": [
+      "Hugging Face安全事件：基于大语言模型的异常检测与SIEM/XDR对比",
+      "Hugging Face安全事件：传统SIEM与下一代网络安全工具分析",
+      "Hugging Face安全事件：大语言模型代理攻击的检测与缓解方法",
+      "Hugging Face安全事件中的软件与网络安全思考",
+      "Hugging Face安全事件：基于大语言模型的异常检测与SIEM/XDR对比",
+      "Hugging Face安全事件：传统SIEM与下一代网络安全工具分析"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：XDR对比",
+      "摩根士丹利：HuggingFace安全事件",
+      "摩根士丹利：HuggingFace安全事件中的软件与网络安全思考",
+      "摩根士丹利：软件CyberThoughtsonHuggingFace安",
+      "摩根士丹利：我们通过将约13倍倍数（0.51倍增长调整后）应用于我们"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "body_too_short"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：XDR对比",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：HuggingFace安全事件",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：HuggingFace安全事件中的软件与网络安全思考",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：软件CyberThoughtsonHuggingFace安",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "0.51",
+        "13"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根士丹利：我们通过将约13倍倍数（0.51倍增长调整后）应用于我们",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "Hugging Face安全事件：基于大语言模型的异常检测与SIEM/XDR对比",
+      "Hugging Face安全事件：传统SIEM与下一代网络安全工具分析",
+      "Hugging Face安全事件：大语言模型代理攻击的检测与缓解方法"
+    ],
+    "pre_neutralization_title": "摩根士丹利：我们通过将约13倍倍数（0.51倍增长调整后）应用于我们",
+    "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_52.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

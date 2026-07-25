@@ -1,0 +1,144 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260725/shard_1/0003-08-Bernstein-NextEra-Energy-Inc-NEE.US-NextEra-Energy--NEE--Q2-26--Firing-o",
+  "title": "伯恩斯坦：第二季度资本支出约为28亿美元，全年指引维持在120",
+  "source_title": "0003-08-Bernstein-NextEra Energy Inc-NEE.US-NextEra Energy -NEE- Q2 26- Firing on all cylinders - large load tariffs at FPL- strong originat",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-Bernstein-NextEra Energy Inc-NEE.US-NextEra Energy -NEE- Q2 26- Firing on all cylinders - large load tariffs at FPL- strong originat",
+    "cleaned_source_title": "Bernstein-NextEra Energy Inc-NEE.US-NextEra Energy -NEE- Q2 26- Firing on all cylinders - large load tariffs at FPL- strong originat",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：NextEra能源IncNextEra能源NEEQ226",
+    "raw_candidates": [
+      "伯恩斯坦：NextEra Energy 2026年第二季度FPL大负荷电价落地",
+      "伯恩斯坦：NextEra Energy 2026年第二季度NEER业务拓展3.6吉瓦",
+      "伯恩斯坦：NextEra Energy 2026年第二季度数据中心驱动电力需求增长",
+      "NextEra Energy 2026年第二季度-全面发力-FPL大负荷电价落地-NEER拓展强劲",
+      "NextEra Energy 2026年第二季度-调整后每股收益超预期-FPL大负荷意向21吉瓦",
+      "NextEra Energy 2026年第二季度-数据中心驱动电力需求-FPL与NEER业务拓展"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：NextEraEnergy2026年第二季度FPL大负荷电价",
+      "伯恩斯坦：NextEraEnergy2026年第二季度NEER业务拓展",
+      "伯恩斯坦：NextEraEnergy2026年第二季度数据中心驱动电力",
+      "伯恩斯坦：NextEraEnergy2026年第二季度-全面发力",
+      "伯恩斯坦：NextEraEnergy2026年第二季度",
+      "伯恩斯坦：NextEra能源IncNextEra能源NEEQ226",
+      "伯恩斯坦：第二季度资本支出约为28亿美元，全年指引维持在120"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：NextEraEnergy2026年第二季度FPL大负荷电价",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：NextEraEnergy2026年第二季度NEER业务拓展",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：NextEraEnergy2026年第二季度数据中心驱动电力",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：NextEraEnergy2026年第二季度-全面发力",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：NextEraEnergy2026年第二季度",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：NextEra能源IncNextEra能源NEEQ226",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：第二季度资本支出约为28亿美元，全年指引维持在120",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "120",
+        "28"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "伯恩斯坦：第二季度资本支出约为28亿美元，全年指引维持在120",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "伯恩斯坦：NextEra Energy 2026年第二季度FPL大负荷电价落地",
+      "伯恩斯坦：NextEra Energy 2026年第二季度NEER业务拓展3.6吉瓦",
+      "伯恩斯坦：NextEra Energy 2026年第二季度数据中心驱动电力需求增长"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：第二季度资本支出约为28亿美元，全年指引维持在120"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 5,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

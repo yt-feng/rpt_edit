@@ -1,0 +1,105 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260725/shard_3/0001-16-Deutsche-Bank-Minth-0425.HK-European-Strength-and-Resilient-Margin-Offse",
+  "title": "德意志银行：敏实集团业务与近期数据观察",
+  "source_title": "0001-16-DB-Minth-0425.HK-European Strength and Resilient Margin Offset Domestic China Headwinds-260723",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-16-DB-Minth-0425.HK-European Strength and Resilient Margin Offset Domestic China Headwinds-260723",
+    "cleaned_source_title": "DB-Minth-0425.HK-European Strength and Resilient Margin Offset Domestic China Headwinds",
+    "institution_name": "德意志银行",
+    "required_terms": [],
+    "deterministic_fallback": "德意志银行：MinthEuropeanStrength",
+    "raw_candidates": [
+      "敏实集团：欧洲市场强劲与韧性利润率抵消中国国内不利因素",
+      "敏实集团：2026年上半年欧洲新能源汽车销量同比增长32%",
+      "敏实集团：欧洲电动化趋势与电池盒业务关联"
+    ],
+    "cleaned_candidates": [
+      "德意志银行：敏实集团，欧洲市场强劲与韧性利润率抵消中国国内不利因素",
+      "德意志银行：敏实集团，2026年上半年欧洲新能源汽车销量同比增长32%",
+      "德意志银行：敏实集团，欧洲电动化趋势与电池盒业务关联",
+      "德意志银行：MinthEuropeanStrength",
+      "德意志银行：具体到2026年6月，新注册BEV为360,843辆"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "德意志银行：敏实集团，2026年上半年欧洲新能源汽车销量同比增长32%",
+        "reasons": [
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：敏实集团，欧洲电动化趋势与电池盒业务关联",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：MinthEuropeanStrength",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "德意志银行：具体到2026年6月，新注册BEV为360,843辆",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "德意志银行：敏实集团业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "德意志银行：敏实集团，欧洲市场强劲与韧性利润率抵消中国国内不利因素",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "德意志银行：敏实集团业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_25.pdf",
+  "figure_count": 0,
+  "institution_name": "德意志银行",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x4",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260725/shard_9/0001-46-Nomura-China-Robotics-2026-Shanghai-WAIC-takeaways-260723",
+  "title": "野村：中国机器人-2026上海WAIC要点",
+  "source_title": "0001-46-NOM-China Robotics-2026 Shanghai WAIC takeaways-260723",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-46-NOM-China Robotics-2026 Shanghai WAIC takeaways-260723",
+    "cleaned_source_title": "NOM-China Robotics-2026 Shanghai WAIC takeaways",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：中国Robotics2026ShanghaiWA",
+    "raw_candidates": [
+      "中国机器人-2026上海WAIC要点",
+      "中国机器人-2026上海WAIC-量产拐点与需求不确定性",
+      "中国机器人-2026上海WAIC-身体规模化与数据瓶颈"
+    ],
+    "cleaned_candidates": [
+      "野村：中国机器人-2026上海WAIC要点",
+      "野村：中国机器人-2026上海WAIC-量产拐点与需求不确定性",
+      "野村：中国机器人-2026上海WAIC-身体规模化与数据瓶颈",
+      "野村：中国Robotics2026ShanghaiWA",
+      "野村：近60台人形机器人在1100多家参展商的场馆中提供实际服务"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：中国Robotics2026ShanghaiWA",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：近60台人形机器人在1100多家参展商的场馆中提供实际服务",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：中国机器人-2026上海WAIC要点",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：中国机器人-2026上海WAIC要点"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_55.pdf",
+  "figure_count": 6,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}
