@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_iv80h8bp/pdfs/0002-OECD_Recent-policy-developments-on-AI-in-the-labour-market_c91f6405.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "AI如何重塑你的工作",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "经合组织：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-OECD_Recent-policy-developments-on-AI-in-the-labour-market_c91f6405.pdf",
+    "cleaned_source_title": "0002-OECD_Recent-policy-developments-on-AI-in-the-labour-market_c91f6405",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "经合组织：AI0002OECDRecent政策develo",
+    "raw_candidates": [
+      "经合组织：劳动力市场AI政策近期发展",
+      "经合组织：2026年7月G7国家AI劳动力政策框架",
+      "经合组织：AI技能培训与隐私政策在劳动力市场进展"
+    ],
+    "cleaned_candidates": [
+      "经合组织：劳动力市场AI政策近期发展",
+      "经合组织：2026年7月G7国家AI劳动力政策框架",
+      "经合组织：AI技能培训与隐私政策在劳动力市场进展",
+      "经合组织：AI0002OECDRecent政策develo",
+      "经合组织：G7国家劳动力市场AI政策仍以现有框架为主"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：2026年7月G7国家AI劳动力政策框架",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "经合组织：AI技能培训与隐私政策在劳动力市场进展",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "经合组织：AI0002OECDRecent政策develo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "经合组织：劳动力市场AI政策近期发展",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "经合组织：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

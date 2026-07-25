@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_iv80h8bp/pdfs/0001-OECD_Interoperability-in-healthcare_af4f920d.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "医院数据不通，每年浪",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：医疗数据互操作性价值评估",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-OECD_Interoperability-in-healthcare_af4f920d.pdf",
+    "cleaned_source_title": "0001-OECD_Interoperability-in-healthcare_af4f920d",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0001OECDInteroperabili",
+    "raw_candidates": [
+      "经合组织：医疗数据互操作性价值评估",
+      "经合组织：医疗数据互操作性年价值达卫生支出2.7%-6.6%",
+      "经合组织：医疗数据互操作性的现状与障碍"
+    ],
+    "cleaned_candidates": [
+      "经合组织：医疗数据互操作性价值评估",
+      "经合组织：医疗数据互操作性年价值达卫生支出2.7%-6.6%",
+      "经合组织：医疗数据互操作性的现状与障碍",
+      "经合组织：0001OECDInteroperabili",
+      "经合组织：该机构最新发布的健康工作论文基于41次专家访谈、22国调查反"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：医疗数据互操作性年价值达卫生支出2.7%-6.6%",
+        "reasons": [
+          "incomplete_last_segment"
+        ]
+      },
+      {
+        "title": "经合组织：医疗数据互操作性的现状与障碍",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "经合组织：0001OECDInteroperabili",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：该机构最新发布的健康工作论文基于41次专家访谈、22国调查反",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：医疗数据互操作性价值评估",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：医疗数据互操作性价值评估"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
