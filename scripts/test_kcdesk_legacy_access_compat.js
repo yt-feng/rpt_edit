@@ -7,7 +7,7 @@ const app = fs.readFileSync(path.join(root, "kc_desk_notes/site_src/assets/app.j
 const worker = fs.readFileSync(path.join(root, "workers/kc-desk-notes-worker/src/index.js"), "utf8");
 
 assert.match(app, /function isLegacyKcdeskSession\(/);
-assert.match(app, /origin === "legacy-unknown"/);
+assert.match(app, /!origin \|\| origin === "legacy-unknown"/);
 assert.match(app, /sponsorLink\.hidden = !showSponsorOptions/);
 assert.match(app, /redeemRow\.hidden = !showSponsorOptions/);
 assert.match(app, /id="openVid2pptSponsor"[^>]+hidden/);

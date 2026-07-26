@@ -381,7 +381,7 @@
     const origin = String(user && (user.site_origin || user.registered_site || user.source_site) || "")
       .trim()
       .toLowerCase();
-    return origin === "legacy-unknown" || origin.startsWith("legacy-");
+    return Boolean(user) && (!origin || origin === "legacy-unknown" || origin.startsWith("legacy-"));
   }
 
   function accountRightLabel(row = {}) {
