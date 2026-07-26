@@ -1311,16 +1311,29 @@ async function findReportPurchase(env, email, reportId, source) {
   };
   if (!expected.email || !expected.report_id || !expected.source) return null;
   if (hasSupabaseConfig(env)) {
-    const query = queryString({
-      email: `eq.${email}`,
-      report_id: `eq.${reportId}`,
-      source: `eq.${source}`,
-      order: "updated_at.desc",
-      limit: "1",
-    });
-    const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-    const row = Array.isArray(rows) && rows.length ? rows[0] : null;
-    return validateReportPurchaseRow(row, expected);
+    try {
+      const query = queryString({
+        email: `eq.${email}`,
+        report_id: `eq.${reportId}`,
+        source: `eq.${source}`,
+        order: "updated_at.desc",
+        limit: "1",
+      });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+      const row = Array.isArray(rows) && rows.length ? rows[0] : null;
+      return validateReportPurchaseRow(row, expected);
+    } catch (error) {
+      const legacyRow = validateReportPurchaseRow(
+        await r2GetJsonStrict(env, accountKey("purchases", expected.source, expected.report_id, expected.email)),
+        expected,
+      );
+      if (legacyRow) return legacyRow;
+      const message = String(error && error.message || "");
+      if (/PGRST205|report_purchases.*schema cache|relation .*report_purchases.*does not exist/i.test(message)) {
+        return null;
+      }
+      throw error;
+    }
   }
   return validateReportPurchaseRow(
     await r2GetJsonStrict(env, accountKey("purchases", source, reportId, email)),
@@ -2151,9 +2164,8 @@ async function reportAccessForUser(env, user, reportId, source) {
       purchase: null,
     };
   }
-  const [entitlementRow, purchase, accessRow, trialAccessRow] = await Promise.all([
+  const [entitlementRow, accessRow, trialAccessRow] = await Promise.all([
     findEntitlement(env, email),
-    reportId ? findReportPurchase(env, email, reportId, source) : Promise.resolve(null),
     findAccessGrant(env, email),
     findVid2PptTrialAccess(env, email),
   ]);
@@ -2163,7 +2175,6 @@ async function reportAccessForUser(env, user, reportId, source) {
   // Existing business policy is additive: annual, a custom grant, an exact
   // report purchase, or a privileged role can independently allow a download.
   const annual = entitlement.active && entitlement.plan === "annual";
-  const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || ""));
   let customAccess = false;
   if (access.active) {
     if (access.access_mode === "all") {
@@ -2174,6 +2185,14 @@ async function reportAccessForUser(env, user, reportId, source) {
     }
   }
   const trialAccessMatched = trialAccess.active && trialAccess.access_mode === "all";
+  // A secondary purchase lookup must never block a verified membership or
+  // custom grant. This also preserves legacy grants when the optional purchase
+  // table has not been provisioned in the current account database.
+  const baseAccess = Boolean(annual || customAccess || trialAccessMatched);
+  const purchase = reportId && !baseAccess
+    ? await findReportPurchase(env, email, reportId, source)
+    : null;
+  const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || ""));
   const effectiveAccess = effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow);
   return {
     can_download: Boolean(annual || customAccess || trialAccessMatched || purchased),

@@ -376,6 +376,14 @@
     return user.username || user.email || "账号";
   }
 
+  function isLegacyKcdeskSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    const origin = String(user && (user.site_origin || user.registered_site || user.source_site) || "")
+      .trim()
+      .toLowerCase();
+    return origin === "legacy-unknown" || origin.startsWith("legacy-");
+  }
+
   function accountRightLabel(row = {}) {
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
@@ -500,8 +508,16 @@
   function accountModalMarkup(context = {}) {
     const session = loadAuthSession();
     const signedIn = Boolean(session);
+    const legacyCustomer = isLegacyKcdeskSession(session);
     const reportTitle = context.item ? titleText(context.item) : "";
     const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
+    const reportHelp = legacyCustomer
+      ? `<span>已有下载权限会继续按原授权范围使用；如需协助请联系${contactMethodHtml()}。</span>`
+      : `<span>${novaSponsorGuidanceHtml("", session)}</span>
+            <div class="account-redeem-row">
+              <input id="accountVid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
+              <button class="secondary-button" id="accountRedeemVid2pptCode" type="button">兑换</button>
+            </div>`;
     return `
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
         <div class="admin-dialog account-dialog">
@@ -544,14 +560,10 @@
               <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
             </form>
           </div>
-          <div class="contact-card" id="accountContactCard">
+          <div class="contact-card" id="accountContactCard" ${legacyCustomer ? "hidden" : ""}>
             <strong>报告获取</strong>
             ${reportLine}
-            <span>${novaSponsorGuidanceHtml("", session)}</span>
-            <div class="account-redeem-row">
-              <input id="accountVid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
-              <button class="secondary-button" id="accountRedeemVid2pptCode" type="button">兑换</button>
-            </div>
+            ${reportHelp}
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -608,6 +620,7 @@
     const newPassword = document.getElementById("accountNewPassword");
     const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
     const passwordSubmit = document.getElementById("accountPasswordSubmit");
+    const contactCard = document.getElementById("accountContactCard");
     const redeemInput = document.getElementById("accountVid2pptRedeemCode");
     const redeemButton = document.getElementById("accountRedeemVid2pptCode");
     const status = document.getElementById("accountModalStatus");
@@ -625,6 +638,7 @@
       const signedIn = Boolean(session);
       form.hidden = signedIn;
       summary.hidden = !signedIn;
+      if (contactCard) contactCard.hidden = signedIn && isLegacyKcdeskSession(session);
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
@@ -4225,13 +4239,13 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">${novaSponsorGuidanceHtml("登录后可查看账号下载权限；")}。</p>
+        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
-          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 NOVA</a>
+          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener" hidden>开通 NOVA</a>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
         </div>
-        <div class="account-redeem-row">
+        <div class="account-redeem-row" id="vid2pptRedeemRow" hidden>
           <input id="vid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
           <button class="secondary-button" id="redeemVid2pptCode" type="button">兑换</button>
         </div>
@@ -4316,6 +4330,7 @@
     const openAccount = document.getElementById("openAccountPanel");
     const accountDownload = document.getElementById("accountDownloadReport");
     const sponsorLink = document.getElementById("openVid2pptSponsor");
+    const redeemRow = document.getElementById("vid2pptRedeemRow");
     const redeemInput = document.getElementById("vid2pptRedeemCode");
     const redeemButton = document.getElementById("redeemVid2pptCode");
     const hint = document.getElementById("accountAccessHint");
@@ -4333,8 +4348,13 @@
 
     async function refresh() {
       const session = loadAuthSession();
+      const showSponsorOptions = !isLegacyKcdeskSession(session);
       panel.hidden = false;
-      if (sponsorLink) sponsorLink.href = vid2pptSponsorUrlForSession(session);
+      if (sponsorLink) {
+        sponsorLink.hidden = !showSponsorOptions;
+        if (showSponsorOptions) sponsorLink.href = vid2pptSponsorUrlForSession(session);
+      }
+      if (redeemRow) redeemRow.hidden = !showSponsorOptions;
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
@@ -4355,9 +4375,15 @@
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          statusTargetHtml(summary
-            ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${novaSponsorGuidanceHtml("", session)}。`
-            : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
+          if (isLegacyKcdeskSession(session)) {
+            statusTarget(summary
+              ? `当前账号有${summary}，但不包含此报告。如需调整授权范围，请联系${contactMethodText()}。`
+              : `当前账号尚未解锁此报告。如需协助，请联系${contactMethodText()}。`);
+          } else {
+            statusTargetHtml(summary
+              ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${novaSponsorGuidanceHtml("", session)}。`
+              : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
+          }
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;
