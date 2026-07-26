@@ -1,7 +1,9 @@
 # kcdesk.com 技术架构文档
 
-最后更新：2026-07-18
-维护范围：`kcdesk.com` / KC Desk Notes 搜索站、报告详情页、外部报告检索、账号权限、管理后台、运营后台、每日文件缓存、访问埋点。
+最后更新：2026-07-26
+维护范围：`kcdesk.com` / KC Desk Notes 搜索站、报告详情页、外部报告检索、账号权限、管理后台、运营后台、每日文件缓存、访问埋点，以及接收 Vid2PPT NOVA 赠送权益的跨站协议。
+
+维护规则：凡涉及账号、登录、权限、老客户兼容、跨站赠送、数据存储、Worker API 或部署链路的改动，必须在同一个 PR 或提交中同步更新本文件。文档只记录 secret 名称，不记录任何密码、token 或密钥值。
 
 ## 1. 总览
 
@@ -12,6 +14,8 @@
 - 私有 PDF、外部报告缓存、账号兜底数据、每日文件缓存、访问埋点都存放在 Cloudflare R2。
 - 账号主库优先走 Supabase；如果 Supabase 配置不可用，Worker 会回退到 R2 JSON 索引。
 - 用户端只需要能访问 `kcdesk.com`。第三方检索、GitHub 文件、R2 下载等都由 Worker 代理或缓存，前端不直连上游。
+- KCdesk 不接收 Paddle 付款。符合条件的 Vid2PPT NOVA 支付在 `vid2ppt.com` 完成后，通过签名服务端请求或兑换码兜底赠送 KCdesk 权益。
+- 老 KCdesk 客户的原始账号和下载授权独立受保护，不因 Vid2PPT 集成改变，也不展示 Vid2PPT、NOVA 或兑换码入口。
 
 ```mermaid
 flowchart LR
@@ -22,6 +26,8 @@ flowchart LR
   API --> GH["GitHub API / raw files"]
   API --> EXT["外部报告源<br/>Worker 代理"]
   API --> SNAP["R2 管理后台快照<br/>last-known-good"]
+  VID["vid2ppt.com<br/>Paddle 收款与 NOVA 订单"] -->|"HMAC 签名赠送"| API
+  API -->|"兑换码校验"| VID
   GHA["GitHub Actions"] --> PAGES["GitHub Pages artifact"]
   GHA --> R2
   PAGES --> D
@@ -39,6 +45,8 @@ flowchart LR
 | `kc_desk_notes/password_rules.json` | 通用密码 hash 和备用分组规则。 |
 | `workers/kc-desk-notes-worker/src/index.js` | Cloudflare Worker 主逻辑，包含鉴权、下载、搜索代理、管理后台、缓存、埋点。 |
 | `.github/workflows/kc-desk-notes-pages.yml` | 构建/部署 kcdesk.com 的主 workflow。 |
+| `.github/workflows/kcdesk-worker-emergency-deploy.yml` | 手动、轻量、仅部署 Worker；发布前运行老客户权限兼容测试。 |
+| `.github/workflows/kcdesk-pages-emergency-deploy.yml` | 手动、轻量、仅构建并部署 Pages；发布前运行老客户 UI 兼容测试。 |
 | `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox、生成/合并 catalog、同步 PDF 到 R2、执行 PDF 容量清理。 |
 | `scripts/build_kc_desk_notes_site.py` | 生成 Pages artifact 和公开搜索索引。 |
 | `scripts/submit_kcdesk_indexnow.py` | 对比部署前后 catalog，只把新增、更新或删除的公开 canonical URL 通知 IndexNow。 |
@@ -72,7 +80,15 @@ flowchart LR
 10. 条件满足时部署 Cloudflare Worker，并写入 `CATALOG_URL`、`SEARCH_INDEX_URL`、`PASSWORD_RULES_URL` 等变量。
 11. 提交更新后的 `kc_desk_notes/data/catalog.json`。
 
-### 3.1 SEO / GEO 公开发现层
+### 3.1 发布层级
+
+- 日常数据更新与完整发布使用 `KC Desk Notes Pages` 主 workflow。
+- 只修改 Worker 时使用 `KCdesk Worker Emergency Deploy`，避免重新扫描 Dropbox 或重建全站数据。
+- 只修改静态前端时使用 `KCdesk Pages Emergency Deploy`，避免顺带部署 Worker。
+- 两个轻量 workflow 都只允许手动触发，并在部署前运行 `scripts/test_kcdesk_legacy_access_compat.js`。
+- 账号、权限或跨站 UI 改动必须先通过老客户兼容测试；Worker 与 Pages 分开发布时，按向后兼容顺序逐个验证线上接口和页面。
+
+### 3.2 SEO / GEO 公开发现层
 
 公开索引只使用短 canonical URL：
 
@@ -159,8 +175,11 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `/report-a/search` | GET | “报告A”检索，只返回站内格式，不跳上游页面。 |
 | `/authority/search` | GET | “高权报告”检索。 |
 | `/authority/pdf` | GET/POST | “高权报告”不下载，前端按浏览器语言显示对应联系方式。 |
-| `/paddle-config` | GET | 历史兼容接口；前台自助支付入口已下架。 |
-| `/paddle-webhook` | POST | 历史兼容 webhook；当前售卖/权限开通走微信。 |
+| `/vid2ppt/redeem-code` | POST | 已登录 KCdesk 用户校验并兑换 Vid2PPT NOVA 代码。 |
+| `/vid2ppt/nova-grant` | POST | 接收 Vid2PPT 已支付订单的 HMAC 签名自动赠送。 |
+| `/vid2ppt/atlas-grant` | POST | 旧路径兼容别名；只接受当前允许的 NOVA 计划，不再新增 ATLAS 赠送。 |
+| `/paddle-config` | GET | 已关闭，固定返回 410；KCdesk 不提供 checkout。 |
+| `/paddle-webhook` | POST | 已关闭，固定返回 410；Paddle 事件只由 Vid2PPT 处理。 |
 
 ## 6. R2 数据分区
 
@@ -172,6 +191,10 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `reportify/<id>.pdf` | 历史命名的外部报告 PDF 缓存；用户端不展示这个名称。 |
 | `reportify-status/<id>.json` | 外部报告后台准备状态；用户端不展示这个名称。 |
 | `_account/...` | R2 兜底账号、权益、购买记录、GitHub 文件缓存。 |
+| `_account/access/<email>.json` | 管理员手工开通的全站或条件授权主记录；实际下载鉴权来源之一。 |
+| `_account/access_backup/...` | 手工授权 latest/history 恢复副本；不自动覆盖主记录。 |
+| `_account/vid2ppt_trial/<email>.json` | NOVA-3D 独立 3 天/10 篇试用记录。 |
+| `_account/vid2ppt_trial_backup/...` | NOVA-3D latest/history 恢复副本。 |
 | `_account/github-cache/...` | 管理后台/运营后台每日文件缓存。 |
 | `_account/admin-snapshots/*.json` | 管理后台各模块最后一次成功快照：每日文件、精选、公众号批次、分析、用户列表。 |
 | `_analytics/events/YYYY-MM-DD/...json` | 访问、搜索、打开报告、下载等埋点事件。 |
@@ -233,10 +256,24 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 
 ## 8. 账号与权限
 
-账号主库：
+### 8.1 数据来源
 
-- 优先 Supabase：`site_users`、`user_entitlements`、`report_purchases`、`usage_events`。
-- Supabase 不可用时，Worker 使用 R2 JSON 兜底。
+- Supabase 是生产账号身份主库，当前核心表是 `site_users`、`user_entitlements`、`usage_events`。
+- `report_purchases` 是可选的单篇购买表。当前数据库未创建该表时，Worker 会读取旧 R2 单篇授权；表不存在必须被视为“没有单篇购买”，不能让有效会员、管理员或手工授权失败。
+- R2 `_account/access/...` 保存管理员手工开通的全站/条件授权，并保留 latest/history 恢复副本。
+- R2 `_account/vid2ppt_trial/...` 单独保存 NOVA-3D 的 3 天/10 篇试用和已下载报告 id，避免覆盖普通会员或老客户授权。
+- Supabase 未配置时仍保留 R2 JSON 账号/权益兼容路径；生产 Supabase 已配置后，不把密码 hash 重新镜像到旧 R2 identity namespace。
+
+实际下载权限是叠加判断：super/operator/有效会员、`_account/access/...` 手工授权、NOVA-3D 试用、单篇授权和密码授权分别计算。任何可选的单篇购买查询都不得阻断已经验证通过的会员或手工授权。
+
+### 8.2 两站账号与来源
+
+- KCdesk 与 Vid2PPT 没有跨域 Cookie 或浏览器自动登录；两站各自签发 session token。
+- 两站可以使用同一组 Supabase 业务表，但 Vid2PPT 不向 KCdesk 发送密码或 session。跨站自动赠送只传规范化邮箱、计划代号、订单引用、兑换码和支付元数据。
+- 账号查询先按 `site_origin=kcdesk` 定位；无来源老数据保留兼容 fallback。这个 fallback 只服务迁移，不代表可以任意合并跨站账号。
+- 管理分析口径只有在规范化用户名和邮箱都一致时才合并为同一用户；任一字段不同就保留为两个用户。
+- `site_origin`、`registered_site`、`source_site` 标注注册来源；行为事件自己的 `site_origin` 标注动作实际发生在哪个站点，不能只靠邮箱推断。
+- 自动 NOVA 赠送以有效支付邮箱匹配 KCdesk 邮箱。兑换码订单带有效邮箱时，还会校验该邮箱与当前登录 KCdesk 账号邮箱完全一致；未绑定邮箱的代码作为一次性兜底凭证。
 
 固定高权限账号：
 
@@ -249,6 +286,8 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 
 - 登录后根据 `role` 显示“管理后台”或“运营后台”。
 - 也保留一个隐藏的通用密钥入口，用于临时生成报告密码/发货链接。
+- `liuxin` 必须始终保留 operator 的“运营后台”入口；不能因为 sponsor UI 或来源判断而隐藏。
+- 来源为空、`legacy-unknown` 或 `legacy-*` 的老 KCdesk 会话不显示 Vid2PPT、NOVA、赞助链接和兑换码输入框，只显示原有 KCdesk 权限和联系方式。
 
 注册与联系方式：
 
@@ -423,20 +462,43 @@ dashboard：
 - `KC Search Mirror` workflow 负责维护镜像结果。
 - 前端会显示加载动画，外部结果多等一会也仍留在当前页面。
 
-## 14. 支付现状
+## 14. Vid2PPT NOVA 赠送
 
-当前前台自助支付已经下架：
+### 14.1 对外与支付边界
 
-- 站点不展示定价按钮或 checkout。
-- 获取权限、开通报告、售后统一使用语言自适应联系方式；非中文浏览器不展示微信，改为 `econ.scroll@gmail.com`。
-- Worker 中的 Paddle 配置、webhook、entitlement 处理保留为历史兼容代码，不作为当前用户路径。
+- KCdesk 不展示 checkout、不创建 Paddle 交易、不接收 Paddle webhook，也不作为商品销售方。
+- 所有付款和 Paddle 记录只发生在 `vid2ppt.com`。对外口径是：Vid2PPT 的 NOVA 赞助恰好赠送 KCdesk.com 对应时长权益。
+- KCdesk `/paddle-config` 和 `/paddle-webhook` 固定返回 410，防止旧前端或错误配置重新启用 KCdesk 收款。
+- 老 KCdesk 客户沿用原始授权路径，不显示 Vid2PPT/NOVA/兑换码，也不需要知道赠送系统存在。
 
-如果未来重启支付，需要同时更新：
+### 14.2 计划映射
 
-- 前台定价入口。
-- Worker `paddle-config` / `paddle-webhook`。
-- Supabase `user_entitlements` / `report_purchases`。
-- 域名和商品合规说明页面。
+| Vid2PPT 计划 | KCdesk 赠送 |
+| --- | --- |
+| `NOVA-3D` | 3 天体验，最多下载 10 篇；独立试用记录。 |
+| `NOVA-M` | 1 个月全站下载权益。 |
+| `NOVA-Q` | 3 个月全站下载权益。 |
+| `NOVA-Y` | 12 个月全站下载权益。 |
+| `NOVA-2Y` | 24 个月全站下载权益。 |
+
+ATLAS 旧映射只为历史数据识别保留；新的 KCdesk 赠送只接受 NOVA。
+
+### 14.3 自动赠送
+
+1. Vid2PPT 的 Paddle webhook 完成验签、订单落库和兑换码生成。
+2. Vid2PPT 使用 `VID2PPT_KCDESK_GRANT_SECRET` 对原始 JSON body 做 HMAC-SHA256，通过 `X-Vid2PPT-Signature` 调用 `/vid2ppt/nova-grant`。
+3. KCdesk 以 `request_id`、Paddle transaction id、event id 或兑换码形成稳定 `source_reference`；同一订单重复通知不得重复增加时长。
+4. 普通 NOVA 权益从现有有效到期日继续顺延；终身权益不被较短赠送覆盖。
+5. NOVA-3D 写入 `_account/vid2ppt_trial/...`，独立统计 10 个唯一报告下载；不覆盖 `_account/access/...` 老授权。
+6. 事件写入 `usage_events`，明确记录 `legal_purchase_site=vid2ppt.com` 和 `granted_benefit_site=kcdesk.com`。
+
+### 14.4 兑换码兜底
+
+- 非 legacy KCdesk 用户登录后，可在“账号管理”弹窗或报告详情的账号下载区域输入 Vid2PPT 兑换码。
+- Worker 调用 Vid2PPT `/api/usage` 校验代码已支付、未兑换、属于 NOVA 且赠送站点为 KCdesk。
+- 订单带有效支付邮箱时，必须与当前 KCdesk 账号邮箱一致；未绑定邮箱的代码兑换到当时已登录的 KCdesk 账号。
+- 发放成功后再把代码标记为已兑换；失败时不能消耗代码。
+- 自动赠送是主路径，兑换码用于自动请求延迟、失败或人工核对后的兜底。
 
 ## 15. Secrets / Vars 清单
 
@@ -460,6 +522,8 @@ dashboard：
 | `AUTH_SECRET` | secret | 账号/session token 签名。 |
 | `SUPABASE_URL` | secret/var | Supabase REST endpoint。 |
 | `SUPABASE_SERVICE_ROLE_KEY` | secret | Supabase service role。 |
+| `VID2PPT_KCDESK_GRANT_SECRET` | secret | 验证 Vid2PPT 到 KCdesk 自动赠送请求的 HMAC。 |
+| `VID2PPT_REDEEM_URL` | var | KCdesk 服务端校验/消费 Vid2PPT 兑换码的 endpoint；缺省为 Vid2PPT `/api/usage`。 |
 | `GH_READ_TOKEN` | secret | 读取 GitHub 文件/私有 repo。 |
 | `GH_DISPATCH_TOKEN` | secret | 触发后台准备 workflow。 |
 | `JIANGUOYUN_WEBDAV_URL` | secret | 坚果云 WebDAV endpoint。 |
@@ -489,24 +553,28 @@ gh workflow run "KC Desk Notes Pages" \
   -f deploy_worker=true
 ```
 
-只部署 Worker：
+只部署 Worker（账号/权限/API 紧急修复）：
 
 ```bash
-gh workflow run "KC Desk Notes Pages" \
+gh workflow run "KCdesk Worker Emergency Deploy" \
   --repo yt-feng/rpt_edit \
-  --ref main \
-  -f dropbox_root=/zip_backup \
-  -f days=0 \
-  -f sync_r2=false \
-  -f force_upload=false \
-  -f storage_limit_gb=8 \
-  -f deploy_worker=true
+  --ref main
 ```
 
-本地检查 Worker 语法：
+只部署 Pages（前端紧急修复）：
+
+```bash
+gh workflow run "KCdesk Pages Emergency Deploy" \
+  --repo yt-feng/rpt_edit \
+  --ref main
+```
+
+本地检查 Worker、前端和老客户兼容：
 
 ```bash
 node --check workers/kc-desk-notes-worker/src/index.js
+node --check kc_desk_notes/site_src/assets/app.js
+node scripts/test_kcdesk_legacy_access_compat.js
 ```
 
 健康检查：
@@ -532,6 +600,12 @@ curl -s https://kcdesk.com/api/health
 
 不要在用户可见页面出现真实上游品牌名、内部抓取项目名、第三方 API 域名、后台实现路径或调试词。源码内部常量、历史 R2 prefix、workflow 文件名可以保留，但新增 UI 文案要按上面的产品命名。
 
+Vid2PPT 集成的额外展示规则：
+
+- 只有非 legacy 的新账号路径可以显示 `https://vid2ppt.com/sponsor/`、NOVA 说明和兑换码输入框。
+- 来源为空、`legacy-unknown` 或 `legacy-*` 的老客户不得看到 Vid2PPT、NOVA、ATLAS 或兑换码相关文案。
+- 已开通权益的来源标签面向用户统一显示为 KCdesk 权益；支付站点、计划代号和跨站协议只在允许的新用户引导或管理数据中出现。
+
 ## 18. 稳定性约束与排障顺序
 
 稳定性约束：
@@ -542,6 +616,12 @@ curl -s https://kcdesk.com/api/health
 4. 用户权限修改仍以 `_account/access/...` 的主记录、latest backup、history backup 三份写入并读回校验；用户列表快照只是管理后台展示层，不参与实际下载授权判断。
 5. 用户权限新增、编辑、禁用后立即更新对应的用户列表快照；即使随后刷新失败，当前管理界面也保留服务端刚确认的结果。
 6. Pages workflow 在同步和部署前执行前端与 Worker 的 `node --check`；语法校验失败时禁止继续部署 Worker。
+7. 老客户现有 R2 手工授权、有效会员、super/operator 和单篇授权都是叠加来源；新增 NOVA 集成不得覆盖、缩短或清空其中任何一项。
+8. `report_purchases` 是次要且可选的查询。它不存在或未部署时，已验证的会员、手工授权和 NOVA-3D 试用仍必须正常下载。
+9. `NOVA-3D` 使用独立试用记录和独立恢复副本；它的 10 篇计数不能写入老客户 `_account/access/...` 主记录。
+10. `liuxin` 的 operator 入口和 `twotigers` 的 super 入口由服务端角色决定，不得受 sponsor 可见性、用户来源或普通 entitlement 分支影响。
+11. 跨站自动赠送失败只影响该次赠送状态，不得让 KCdesk 登录、老客户下载、运营后台或 Vid2PPT 已支付订单失效。
+12. 账号/权限改动发布前先保存当前云端 `main` SHA 和生产 Worker version，运行语法及老客户兼容测试；Worker 与 Pages 使用独立轻量 workflow 发布并逐项验证后，再继续其他生产改动。
 
 排障顺序：
 
@@ -550,3 +630,7 @@ curl -s https://kcdesk.com/api/health
 3. files 为 `updating` 时等待后台刷新；旧文件仍应可见。若旧文件也消失，视为快照回归问题。
 4. analytics 为 `updating` 时检查 R2 `_analytics/events/` 是否持续写入，以及 `_account/admin-snapshots/analytics.json` 的更新时间。
 5. 权限显示与下载结果不一致时，以 `/entitlement` 和 `_account/access/...` 为准，不以用户列表快照作为授权依据。
+6. 老客户突然无法下载时，先核对 `_account/access/<email>.json`、有效 entitlement、`effective_access` 和 Worker version；不要先修改或迁移账号记录。
+7. 看到 `report_purchases` 表不存在时，确认 Worker 已命中可选表兼容分支；该错误不能覆盖已经成立的基础权限。
+8. `liuxin` 看不到运营后台时，检查 `/auth` 返回的 `role=operator` 和前端 `canOpenOperationsPanel`，不要用 sponsor 来源条件控制后台入口。
+9. NOVA 自动赠送失败时，依次核对签名、计划 allowlist、支付邮箱、`source_reference` 和 R2/Supabase 写入；订单代码仍可走 `/vid2ppt/redeem-code` 兜底。
