@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 35,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-BARC-Amazon Inc. （AMZN.US）The Hyperscaler Effect on Retail-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001__6ihecih/pdfs/0001-01-BARC-Amazon Inc. -AMZN.US-The Hyperscaler Effect on Retail-260724.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-CITI-BYD （1211.HK） Fundamentals vs Fund~Flow Dashboard-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001__6ihecih/pdfs/0002-02-CITI-BYD -1211.HK- Fundamentals vs Fund-Flow Dashboard-260724.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-BARC-Alphabet Inc.（GOOGL.US）Unpacking TPU~As~A~Service-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001__6ihecih/pdfs/0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-CITI-Global Semiconductors Reality Check： Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001__6ihecih/pdfs/0004-04-CITI-Global Semiconductors Reality Check- Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand-260724.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-CITI-MiniMax （0100.HK） Key Takeaways from Senior Management Meeting-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001__6ihecih/pdfs/0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

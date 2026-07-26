@@ -1,0 +1,171 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "BARC",
+  "cover_short_title": "谷歌悄悄开了个新生意",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融机构->机构 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+    "cleaned_source_title": "BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service",
+    "institution_name": "BARC",
+    "required_terms": [
+      "TPU"
+    ],
+    "deterministic_fallback": "BARC：TPUAlphabetInc.",
+    "raw_candidates": [
+      "BARC：Alphabet TPU即服务模式可能重塑AI基础设施资金结构",
+      "BARC：Alphabet TPU即服务模式到2028年外部收入约2500亿美元",
+      "BARC：Alphabet TPU即服务模式为AI实验室提供自控计算选择",
+      "BARC：Alphabet TPU即服务模式分析",
+      "BARC：Alphabet TPU即服务模式-2028年收入展望",
+      "BARC：Alphabet TPU即服务模式-AI基础设施资金结构"
+    ],
+    "cleaned_candidates": [
+      "BARC：AlphabetTPU即服务模式可能重塑AI基础设施资金结构",
+      "BARC：AlphabetTPU即服务模式到2028年外部收入约2500",
+      "BARC：AlphabetTPU即服务模式为AI实验室提供自控计算选择",
+      "BARC：AlphabetTPU即服务模式分析",
+      "BARC：AlphabetTPU即服务模式-2028年收入展望",
+      "BARC：AlphabetTPU即服务模式-AI基础设施资金结构",
+      "BARC：TPUAlphabetInc.",
+      "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "BARC：AlphabetTPU即服务模式可能重塑AI基础设施资金结构",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：AlphabetTPU即服务模式到2028年外部收入约2500",
+        "reasons": [
+          "long_untranslated_english",
+          "bare_trailing_number",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：AlphabetTPU即服务模式为AI实验室提供自控计算选择",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：AlphabetTPU即服务模式分析",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：AlphabetTPU即服务模式-2028年收入展望",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：AlphabetTPU即服务模式-AI基础设施资金结构",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BARC：TPUAlphabetInc.",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "BARC：Alphabet TPU即服务模式可能重塑AI基础设施资金结构",
+      "BARC：Alphabet TPU即服务模式到2028年外部收入约2500亿美元",
+      "BARC：Alphabet TPU即服务模式为AI实验室提供自控计算选择"
+    ],
+    "final_title_after_wording_guard": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "599",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

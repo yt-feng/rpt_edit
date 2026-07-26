@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0001-01-BARC-Amazon Inc. -AMZN.US-The Hyperscaler Effect on Retail-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0002-02-CITI-BYD -1211.HK- Fundamentals vs Fund-Flow Dashboard-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0004-04-CITI-Global Semiconductors Reality Check- Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

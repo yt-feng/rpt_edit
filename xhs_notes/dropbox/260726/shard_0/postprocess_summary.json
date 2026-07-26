@@ -1,0 +1,590 @@
+[
+  {
+    "item": "0001-01-BARC-Amazon-Inc.--AMZN.US-The-Hyperscaler-Effect-on-Retail-260724",
+    "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0001-01-BARC-Amazon Inc. -AMZN.US-The Hyperscaler Effect on Retail-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "亚马逊正在拖累零售板",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "BARC：亚马逊超大规模云服务商发债对零售板块信用影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-BARC-Amazon Inc. -AMZN.US-The Hyperscaler Effect on Retail-260724.pdf",
+      "cleaned_source_title": "BARC-Amazon Inc. -AMZN.US-The Hyperscaler Effect on Retail",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：AmazonInc.",
+      "raw_candidates": [
+        "亚马逊超大规模云服务商发债对零售板块信用影响",
+        "亚马逊发债压制零售板块信用利差表现",
+        "亚马逊发行节奏与零售板块信用分化"
+      ],
+      "cleaned_candidates": [
+        "BARC：亚马逊超大规模云服务商发债对零售板块信用影响",
+        "BARC：亚马逊发债压制零售板块信用利差表现",
+        "BARC：亚马逊发行节奏与零售板块信用分化",
+        "BARC：AmazonInc.",
+        "BARC：在欧洲市场，其145亿欧元的发行规模虽仅占泛欧公司债指数的0."
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：亚马逊发债压制零售板块信用利差表现",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "BARC：亚马逊发行节奏与零售板块信用分化",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "BARC：AmazonInc.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：在欧洲市场，其145亿欧元的发行规模虽仅占泛欧公司债指数的0.",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "BARC：亚马逊超大规模云服务商发债对零售板块信用影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "BARC：亚马逊超大规模云服务商发债对零售板块信用影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-02-CITI-BYD--1211.HK--Fundamentals-vs-Fund-Flow-Dashboard-260724",
+    "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0002-02-CITI-BYD -1211.HK- Fundamentals vs Fund-Flow Dashboard-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "比亚迪的股价，最近和",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "股价->报价 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：比亚迪基本面与资金流向-4至6月背离",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-CITI-BYD -1211.HK- Fundamentals vs Fund-Flow Dashboard-260724.pdf",
+      "cleaned_source_title": "CITI-BYD -1211.HK- Fundamentals vs Fund-Flow Dashboard",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：BYD-FundamentalsvsFundFl",
+      "raw_candidates": [
+        "Citi：比亚迪基本面与资金流向",
+        "Citi：比亚迪基本面与资金流向-4至6月背离",
+        "Citi：比亚迪基本面与资金流向-加权指数观察"
+      ],
+      "cleaned_candidates": [
+        "Citi：比亚迪基本面与资金流向",
+        "Citi：比亚迪基本面与资金流向-4至6月背离",
+        "Citi：比亚迪基本面与资金流向-加权指数观察",
+        "Citi：BYD-FundamentalsvsFundFl",
+        "Citi：Citi在7月24日发布的报告中构建了一个“加权基本面指数”"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：比亚迪基本面与资金流向-加权指数观察",
+          "reasons": [
+            "generic_series_title"
+          ]
+        },
+        {
+          "title": "Citi：BYD-FundamentalsvsFundFl",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Citi在7月24日发布的报告中构建了一个“加权基本面指数”",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：比亚迪基本面与资金流向-4至6月背离",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "4",
+          "6"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：比亚迪基本面与资金流向-4至6月背离"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-03-BARC-Alphabet-Inc.-GOOGL.US-Unpacking-TPU-As-A-Service-260724",
+    "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "谷歌悄悄开了个新生意",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融机构->机构 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service-260724.pdf",
+      "cleaned_source_title": "BARC-Alphabet Inc.-GOOGL.US-Unpacking TPU-As-A-Service",
+      "institution_name": "BARC",
+      "required_terms": [
+        "TPU"
+      ],
+      "deterministic_fallback": "BARC：TPUAlphabetInc.",
+      "raw_candidates": [
+        "BARC：Alphabet TPU即服务模式可能重塑AI基础设施资金结构",
+        "BARC：Alphabet TPU即服务模式到2028年外部收入约2500亿美元",
+        "BARC：Alphabet TPU即服务模式为AI实验室提供自控计算选择",
+        "BARC：Alphabet TPU即服务模式分析",
+        "BARC：Alphabet TPU即服务模式-2028年收入展望",
+        "BARC：Alphabet TPU即服务模式-AI基础设施资金结构"
+      ],
+      "cleaned_candidates": [
+        "BARC：AlphabetTPU即服务模式可能重塑AI基础设施资金结构",
+        "BARC：AlphabetTPU即服务模式到2028年外部收入约2500",
+        "BARC：AlphabetTPU即服务模式为AI实验室提供自控计算选择",
+        "BARC：AlphabetTPU即服务模式分析",
+        "BARC：AlphabetTPU即服务模式-2028年收入展望",
+        "BARC：AlphabetTPU即服务模式-AI基础设施资金结构",
+        "BARC：TPUAlphabetInc.",
+        "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：AlphabetTPU即服务模式可能重塑AI基础设施资金结构",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：AlphabetTPU即服务模式到2028年外部收入约2500",
+          "reasons": [
+            "long_untranslated_english",
+            "bare_trailing_number",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：AlphabetTPU即服务模式为AI实验室提供自控计算选择",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：AlphabetTPU即服务模式分析",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：AlphabetTPU即服务模式-2028年收入展望",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：AlphabetTPU即服务模式-AI基础设施资金结构",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：TPUAlphabetInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "BARC：Alphabet TPU即服务模式可能重塑AI基础设施资金结构",
+        "BARC：Alphabet TPU即服务模式到2028年外部收入约2500亿美元",
+        "BARC：Alphabet TPU即服务模式为AI实验室提供自控计算选择"
+      ],
+      "final_title_after_wording_guard": "BARC：BARC估算，Google向SPV出售每颗TPU的价格约为2万美"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-04-CITI-Global-Semiconductors-Reality-Check--Memory-Upcycle-Intact-on-Tight",
+    "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0004-04-CITI-Global Semiconductors Reality Check- Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "内存周期没结束，库存",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：半导体与存储行业数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-CITI-Global Semiconductors Reality Check- Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand-260724.pdf",
+      "cleaned_source_title": "CITI-Global Semiconductors Reality Check- Memory Upcycle Intact on Tight Inventories and Strong KV Cache Demand",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：全球半导体RealityCheck",
+      "raw_candidates": [
+        "Citi：全球半导体存储器周期未因库存紧张见顶",
+        "Citi：存储器库存低于正常水平，AI需求支撑周期延续",
+        "Citi：全球半导体存储器周期受AI与库存数据支撑"
+      ],
+      "cleaned_candidates": [
+        "Citi：全球半导体存储器周期未因库存紧张见顶",
+        "Citi：存储器库存低于正常水平，AI需求支撑周期延续",
+        "Citi：全球半导体存储器周期受AI与库存数据支撑",
+        "Citi：全球半导体RealityCheck",
+        "Citi：Citi在7月24日发布的全球半导体报告中给出了一个与市场情绪相反"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：存储器库存低于正常水平，AI需求支撑周期延续",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：全球半导体存储器周期受AI与库存数据支撑",
+          "reasons": [
+            "anchor_coverage=0.59"
+          ]
+        },
+        {
+          "title": "Citi：全球半导体RealityCheck",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Citi在7月24日发布的全球半导体报告中给出了一个与市场情绪相反",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：半导体与存储行业数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：全球半导体存储器周期未因库存紧张见顶",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：半导体与存储行业数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-05-CITI-MiniMax--0100.HK--Key-Takeaways-from-Senior-Management-Meeting-2607",
+    "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "** MiniMax",
+    "cover_subtitle": "** 3万亿参数模型+极致性价比",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+      "cleaned_source_title": "CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：MiniMax",
+      "raw_candidates": [
+        "MiniMax管理层会议要点",
+        "MiniMax管理层会议-算力与训练策略进展",
+        "MiniMax管理层会议-3万亿参数模型与编程智能体"
+      ],
+      "cleaned_candidates": [
+        "Citi：MiniMax管理层会议要点",
+        "Citi：MiniMax管理层会议-算力与训练策略进展",
+        "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+        "Citi：MiniMax",
+        "Citi：2026年7月23日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：MiniMax",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "Citi：2026年7月23日",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,18 @@
+EN_A: So I came across this really interesting report about Google rolling out something called TPU-as-a-Service. What exactly is that?
+EN_B: In simple terms, instead of just renting out TPU computing power through its own cloud platform, Google is now selling the TPU chips directly to customers. It gives them more control over the hardware. It started with Anthropic, but the idea is to expand to other AI labs.
+EN_A: But why would Google do that? Wouldn’t it be more profitable to keep all the chips for itself?
+EN_B: The report points to a few key reasons. First, there are natural limits on how much AI capital expenditure Google can deploy on its own, both in terms of money and data center power. Second, big customers like Anthropic increasingly want more control and flexibility, and they are willing to pay for it.
+EN_A: So it’s a more capital-light way for Google to scale?
+EN_B: Exactly, and there is a deeper strategic play here. By selling TPUs, Google can lock more of the AI developer community into its chip ecosystem. At the same time, it shields itself from potential liabilities around copyright or security that could come with running AI applications directly.
+EN_A: How big could this market actually be? Did the report put any numbers on it?
+EN_B: The report estimates that by 2028, TPU-as-a-Service revenue could reach 250 billion dollars. That would represent a 35% upside to current consensus Alphabet revenue, and a 15% boost to gross profit. That estimate is based on two major initiatives.
+EN_A: Which initiatives?
+EN_B: One is the Broadcom, Blackstone, and Apollo AI XPU platform, which plans for 20 gigawatts of capacity, with TPUs accounting for about 15 gigawatts. The other is a separate Google-Blackstone joint venture, starting with 0.5 gigawatts next year. Combined, they could bring over 11 gigawatts of external TPU sales online by 2028.
+EN_A: But what is the incentive for an AI lab like Anthropic? Why choose this over just renting cloud compute?
+EN_B: The benefits are significant. First, they get much deeper access to the TPU hardware, which lets them customize the compute stack in ways that a cloud provider would never allow. Second, it enables vertical integration and gives them more control over their business model. Third, it insulates them from any sudden changes in hyperscaler service agreements.
+EN_A: Sounds like a win-win. But are there any uncertainties in this model that the report doesn’t fully answer?
+EN_B: There is one big question mark. The report assumes Google makes a 25% gross margin on each TPU sale, but that number could change depending on future chip costs and pricing. Also, whether such a massive external capacity can actually come online on schedule depends heavily on data center construction and supply chain execution.
+EN_A: So those details are explored more in the full report?
+EN_B: Yes, the full report includes a complete rebuild of Google’s financial model, including purchase commitments, inventory changes, and a detailed revenue breakdown. If you want to dig into those specific calculations, it is worth reading the full piece.
+EN_A: Great, thanks for the insights. If you want to get the full report, check out our community for the latest updates. We will catch you next time.
+EN_B: See you then.

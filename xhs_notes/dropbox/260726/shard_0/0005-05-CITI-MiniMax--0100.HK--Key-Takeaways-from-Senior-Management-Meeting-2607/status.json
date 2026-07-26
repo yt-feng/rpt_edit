@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__6ihecih/pdfs/0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "** MiniMax",
+  "cover_subtitle": "** 3万亿参数模型+极致性价比",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting-260724.pdf",
+    "cleaned_source_title": "CITI-MiniMax -0100.HK- Key Takeaways from Senior Management Meeting",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：MiniMax",
+    "raw_candidates": [
+      "MiniMax管理层会议要点",
+      "MiniMax管理层会议-算力与训练策略进展",
+      "MiniMax管理层会议-3万亿参数模型与编程智能体"
+    ],
+    "cleaned_candidates": [
+      "Citi：MiniMax管理层会议要点",
+      "Citi：MiniMax管理层会议-算力与训练策略进展",
+      "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+      "Citi：MiniMax",
+      "Citi：2026年7月23日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：MiniMax",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "Citi：2026年7月23日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Citi：MiniMax管理层会议-3万亿参数模型与编程智能体"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "549",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
