@@ -264,7 +264,7 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - R2 `_account/vid2ppt_trial/...` 单独保存 NOVA-3D 的 3 天/10 篇试用和已下载报告 id，避免覆盖普通会员或老客户授权。
 - Supabase 未配置时仍保留 R2 JSON 账号/权益兼容路径；生产 Supabase 已配置后，不把密码 hash 重新镜像到旧 R2 identity namespace。
 
-实际下载权限是叠加判断：super/operator/有效会员、`_account/access/...` 手工授权、NOVA-3D 试用、单篇授权和密码授权分别计算。任何可选的单篇购买查询都不得阻断已经验证通过的会员或手工授权。
+账号权益先解析出唯一的有效基础权限，再执行单篇授权和密码授权：super/operator 角色最高；普通账号只要存在有效的 `_account/access/...` 管理后台手工授权，就无条件以该授权的范围、期限和下载额度为准。没有有效手工授权时，才在会员与 NOVA-3D 试用中选择到期时间最晚的一项，终身权益视为最长；同到期日优先无限量、全站范围。`effective_access`、页面展示和实际下载鉴权必须使用同一选择结果。单篇购买/授权和报告密码继续作为独立入口，任何可选的单篇购买查询都不得阻断已经验证通过的基础权限。
 
 ### 8.2 两站账号与来源
 
@@ -492,7 +492,14 @@ ATLAS 旧映射只为历史数据识别保留；新的 KCdesk 赠送只接受 NO
 5. NOVA-3D 写入 `_account/vid2ppt_trial/...`，独立统计 10 个唯一报告下载；不覆盖 `_account/access/...` 老授权。
 6. 事件写入 `usage_events`，明确记录 `legal_purchase_site=vid2ppt.com` 和 `granted_benefit_site=kcdesk.com`。
 
-### 14.4 兑换码兜底
+### 14.4 权益优先级
+
+1. super/operator 角色权限最高。
+2. 有效的管理后台手工授权是普通账号的最高权限来源；即使会员或试用到期更晚，也不得覆盖、拓宽或隐藏后台指定范围。
+3. 没有有效后台授权时，会员、NOVA 赠送和 NOVA-3D 试用按到期时间最晚者生效；终身权益最长。
+4. 单篇购买/授权是独立补充，不改变账号基础权限的来源与页面显示。
+
+### 14.5 兑换码兜底
 
 - 非 legacy KCdesk 用户登录后，可在“账号管理”弹窗或报告详情的账号下载区域输入 Vid2PPT 兑换码。
 - Worker 调用 Vid2PPT `/api/usage` 校验代码已支付、未兑换、属于 NOVA 且赠送站点为 KCdesk。
@@ -574,7 +581,9 @@ gh workflow run "KCdesk Pages Emergency Deploy" \
 ```bash
 node --check workers/kc-desk-notes-worker/src/index.js
 node --check kc_desk_notes/site_src/assets/app.js
+node scripts/test_kcdesk_entitlement_precedence.js
 node scripts/test_kcdesk_legacy_access_compat.js
+node scripts/test_kcdesk_access_renewal.js
 ```
 
 健康检查：
@@ -616,7 +625,7 @@ Vid2PPT 集成的额外展示规则：
 4. 用户权限修改仍以 `_account/access/...` 的主记录、latest backup、history backup 三份写入并读回校验；用户列表快照只是管理后台展示层，不参与实际下载授权判断。
 5. 用户权限新增、编辑、禁用后立即更新对应的用户列表快照；即使随后刷新失败，当前管理界面也保留服务端刚确认的结果。
 6. Pages workflow 在同步和部署前执行前端与 Worker 的 `node --check`；语法校验失败时禁止继续部署 Worker。
-7. 老客户现有 R2 手工授权、有效会员、super/operator 和单篇授权都是叠加来源；新增 NOVA 集成不得覆盖、缩短或清空其中任何一项。
+7. 老客户现有 R2 手工授权是普通账号的最高权限来源；新增 NOVA 集成不得覆盖、缩短、拓宽、隐藏或清空该授权。没有有效手工授权时，会员与试用才按到期时间最长者生效；单篇授权保持独立补充。
 8. `report_purchases` 是次要且可选的查询。它不存在或未部署时，已验证的会员、手工授权和 NOVA-3D 试用仍必须正常下载。
 9. `NOVA-3D` 使用独立试用记录和独立恢复副本；它的 10 篇计数不能写入老客户 `_account/access/...` 主记录。
 10. `liuxin` 的 operator 入口和 `twotigers` 的 super 入口由服务端角色决定，不得受 sponsor 可见性、用户来源或普通 entitlement 分支影响。
@@ -630,7 +639,7 @@ Vid2PPT 集成的额外展示规则：
 2. 查看 30 分钟 cron 是否执行完成；视频已经在源 repo 生成但后台未出现时，优先检查 files snapshot，而不是重新生成视频。
 3. files 为 `updating` 时等待后台刷新；旧文件仍应可见。若旧文件也消失，视为快照回归问题。
 4. analytics 为 `updating` 时检查 R2 `_analytics/events/` 是否持续写入，以及 `_account/admin-snapshots/analytics.json` 的更新时间。
-5. 权限显示与下载结果不一致时，以 `/entitlement` 和 `_account/access/...` 为准，不以用户列表快照作为授权依据。
+5. 权限显示与下载结果不一致时，先核对 `/entitlement` 的 `effective_access_kind` 和 `effective_access`；存在有效 `_account/access/...` 时，两者必须分别为 `admin` 和该后台授权，不以用户列表快照作为授权依据。
 6. 老客户突然无法下载时，先核对 `_account/access/<email>.json`、有效 entitlement、`effective_access` 和 Worker version；不要先修改或迁移账号记录。
 7. 看到 `report_purchases` 表不存在时，确认 Worker 已命中可选表兼容分支；该错误不能覆盖已经成立的基础权限。
 8. `liuxin` 看不到运营后台时，检查 `/auth` 返回的 `role=operator` 和前端 `canOpenOperationsPanel`，不要用 sponsor 来源条件控制后台入口。

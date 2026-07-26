@@ -10,6 +10,9 @@ on:
       - "kc_desk_notes/site_src/**"
       - "scripts/build_kc_desk_notes_site.py"
       - "scripts/submit_kcdesk_indexnow.py"
+      - "scripts/test_kcdesk_contact_locale.js"
+      - "scripts/test_kcdesk_entitlement_precedence.js"
+      - "scripts/test_kcdesk_legacy_access_compat.js"
       - "scripts/test_kcdesk_access_renewal.js"
       - "workers/kc-desk-notes-worker/**"
   workflow_dispatch:
@@ -89,6 +92,7 @@ jobs:
           node --check kc_desk_notes/site_src/assets/app.js
           node --check workers/kc-desk-notes-worker/src/index.js
           node scripts/test_kcdesk_contact_locale.js
+          node scripts/test_kcdesk_entitlement_precedence.js
           node scripts/test_kcdesk_legacy_access_compat.js
           node scripts/test_kcdesk_access_renewal.js
 

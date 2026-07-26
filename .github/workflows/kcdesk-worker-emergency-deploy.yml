@@ -24,6 +24,7 @@ jobs:
           sparse-checkout: |
             workers/kc-desk-notes-worker/src/index.js
             kc_desk_notes/site_src/assets/app.js
+            scripts/test_kcdesk_entitlement_precedence.js
             scripts/test_kcdesk_legacy_access_compat.js
             scripts/test_kcdesk_access_renewal.js
 
@@ -31,6 +32,7 @@ jobs:
         run: |
           node --check workers/kc-desk-notes-worker/src/index.js
           node --check kc_desk_notes/site_src/assets/app.js
+          node scripts/test_kcdesk_entitlement_precedence.js
           node scripts/test_kcdesk_legacy_access_compat.js
           node scripts/test_kcdesk_access_renewal.js
 

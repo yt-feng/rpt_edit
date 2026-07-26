@@ -19,8 +19,10 @@ const accessFunction = worker.match(
 );
 assert.ok(accessFunction, "reportAccessForUser must exist");
 const accessSource = accessFunction[0];
-const customGrantIndex = accessSource.indexOf("customAccess = accessGrantMatchesReport");
-const purchaseLookupIndex = accessSource.indexOf("const purchase = reportId && !baseAccess");
+const customGrantIndex = accessSource.indexOf("customAccess = accessGrantMatchesReport(effectiveAccess");
+const purchaseLookupIndex = accessSource.indexOf(
+  "const purchase = reportId && !accessVerificationFailed && !baseAccess",
+);
 assert.ok(customGrantIndex >= 0, "custom grant matching must remain enabled");
 assert.ok(
   purchaseLookupIndex > customGrantIndex,

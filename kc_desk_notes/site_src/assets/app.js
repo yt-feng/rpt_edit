@@ -387,11 +387,30 @@
   function accountRightLabel(row = {}) {
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
-    if (row.access_mode === "filters") return "条件报告下载权限";
+    if (row.access_mode === "filters") {
+      const institutions = Array.isArray(row.institutions) ? row.institutions.filter(Boolean) : [];
+      const industries = Array.isArray(row.industries) ? row.industries.filter(Boolean) : [];
+      if (institutions.length === 1 && !industries.length && !(row.page_ranges || []).length) {
+        return `${institutions[0]}报告下载权限`;
+      }
+      if (institutions.length) return `机构报告下载权限（${institutions.slice(0, 3).join("、")}）`;
+      if (industries.length) return `行业报告下载权限（${industries.slice(0, 3).join("、")}）`;
+      return "条件报告下载权限";
+    }
     if (["vid2ppt_nova", "vid2ppt_atlas"].includes(row.source) || ["vid2ppt_nova", "vid2ppt_atlas"].includes(row.grant_source)) return "KCdesk.com 赠送会员权益";
     if (row.plan === "annual") return "会员下载权限";
     if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
     return "下载权限";
+  }
+
+  function accountRightDurationText(row = {}) {
+    if (!row || !row.active || row.lifetime) return "";
+    const value = String(row.duration_value || "").trim();
+    if (value === "trial_3d") return "3天体验";
+    const months = Number(value);
+    if (!Number.isInteger(months) || months <= 0) return "";
+    if (months % 12 === 0) return `${months / 12}年`;
+    return `${months}个月`;
   }
 
   function accountRightExpiryText(row = {}) {
@@ -414,13 +433,13 @@
     if (effective) {
       if (effective.source === "error") return "权限核验失败（已拒绝）";
       if (effective.active) {
-        return [accountRightLabel(effective), accountRightExpiryText(effective), accountRightUsageText(effective)].filter(Boolean).join("，");
+        return [accountRightLabel(effective), accountRightDurationText(effective), accountRightExpiryText(effective), accountRightUsageText(effective)].filter(Boolean).join("，");
       }
       return "";
     }
     const access = data && data.access;
     if (access && access.active) {
-      return [accountRightLabel(access), accountRightExpiryText(access), accountRightUsageText(access)].filter(Boolean).join("，");
+      return [accountRightLabel(access), accountRightDurationText(access), accountRightExpiryText(access), accountRightUsageText(access)].filter(Boolean).join("，");
     }
     const entitlement = data && data.entitlement;
     if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {

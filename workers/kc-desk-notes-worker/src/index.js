@@ -2096,48 +2096,86 @@ function roleAccessForUser(user) {
   });
 }
 
-function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
-  if (accountDisabled(user)) {
+function entitlementAccessForUser(user, entitlementRow) {
+  const entitlement = publicEntitlement(entitlementRow);
+  if (!entitlement.active || entitlement.plan !== "annual") {
     return publicAccessGrant({
       email: normalizeEmail(user && user.email),
-      source: "disabled",
+      source: "none",
     });
   }
-  if (isPrivilegedAccount(user)) return roleAccessForUser(user);
+  const source = VID2PPT_GIFT_SOURCES.has(entitlement.grant_source)
+    ? entitlement.grant_source
+    : "entitlement";
+  return publicAccessGrant({
+    email: normalizeEmail(user && user.email),
+    access_mode: "all",
+    status: "active",
+    lifetime: entitlement.lifetime,
+    current_period_end: entitlement.current_period_end,
+    source,
+    grant_source: entitlement.grant_source,
+    source_site: entitlement.source_site,
+    source_plan_code: entitlement.source_plan_code,
+    source_reference: entitlement.source_reference,
+    updated_at: entitlement.updated_at,
+  });
+}
+
+function accessGrantExpiryRank(row) {
+  const access = publicAccessGrant(row);
+  if (!access.active) return Number.NEGATIVE_INFINITY;
+  if (access.lifetime) return Number.POSITIVE_INFINITY;
+  const end = Date.parse(access.current_period_end || "");
+  return Number.isFinite(end) ? end : Number.NEGATIVE_INFINITY;
+}
+
+function accessChoiceTieRank(choice) {
+  const access = publicAccessGrant(choice && choice.access);
+  let rank = 0;
+  if (access.download_limit === 0) rank += 4;
+  if (access.access_mode === "all") rank += 2;
+  if (choice && choice.kind === "entitlement") rank += 1;
+  return rank;
+}
+
+function longerAccessChoice(left, right) {
+  const leftRank = accessGrantExpiryRank(left && left.access);
+  const rightRank = accessGrantExpiryRank(right && right.access);
+  if (rightRank > leftRank) return right;
+  if (leftRank > rightRank) return left;
+  return accessChoiceTieRank(right) > accessChoiceTieRank(left) ? right : left;
+}
+
+function effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
+  if (accountDisabled(user)) {
+    return {
+      kind: "disabled",
+      access: publicAccessGrant({
+        email: normalizeEmail(user && user.email),
+        source: "disabled",
+      }),
+    };
+  }
+  if (isPrivilegedAccount(user)) return { kind: "role", access: roleAccessForUser(user) };
   const access = publicAccessGrant(accessRow);
+  if (access.source === "error") return { kind: "error", access };
+
+  // An active administrator grant is authoritative. It must not be broadened
+  // or hidden by a shorter trial or another membership source.
+  if (access.active) return { kind: "admin", access };
+
   const trialAccess = publicAccessGrant(trialAccessRow);
-  if (access.source === "error") return access;
-  if (trialAccess.source === "error") return trialAccess;
-  const entitlement = publicEntitlement(entitlementRow);
-  if (entitlement.active && entitlement.plan === "annual") {
-    const entitlementSource = VID2PPT_GIFT_SOURCES.has(entitlement.grant_source)
-      ? entitlement.grant_source
-      : (access.active ? "entitlement+stored" : "entitlement");
-    const entitlementAccess = publicAccessGrant({
-      email: normalizeEmail(user && user.email),
-      access_mode: "all",
-      status: "active",
-      lifetime: entitlement.lifetime,
-      current_period_end: entitlement.current_period_end,
-      source: entitlementSource,
-      grant_source: entitlement.grant_source,
-      source_site: entitlement.source_site,
-      source_plan_code: entitlement.source_plan_code,
-      source_reference: entitlement.source_reference,
-      updated_at: entitlement.updated_at,
-    });
-    if (access.active && access.access_mode === "all") {
-      const accessEnd = access.lifetime ? Number.POSITIVE_INFINITY : Date.parse(access.current_period_end || "");
-      const entitlementEnd = entitlementAccess.lifetime
-        ? Number.POSITIVE_INFINITY
-        : Date.parse(entitlementAccess.current_period_end || "");
-      if (accessEnd > entitlementEnd) return publicAccessGrant({ ...access, source: "entitlement+stored" });
-    }
-    return entitlementAccess;
-  }
-  if (access.active && access.access_mode === "all" && access.download_limit === 0) return access;
-  if (trialAccess.active && trialAccess.access_mode === "all") return trialAccess;
-  return access.active ? access : trialAccess;
+  if (trialAccess.source === "error") return { kind: "error", access: trialAccess };
+  const entitlementAccess = entitlementAccessForUser(user, entitlementRow);
+  return longerAccessChoice(
+    { kind: entitlementAccess.active ? "entitlement" : "none", access: entitlementAccess },
+    { kind: trialAccess.active ? "trial" : "none", access: trialAccess },
+  );
+}
+
+function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
+  return effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow).access;
 }
 
 function shouldConsumeAccessGrantDownload(accessResult) {
@@ -2189,36 +2227,42 @@ async function reportAccessForUser(env, user, reportId, source) {
   const entitlement = publicEntitlement(entitlementRow);
   const access = publicAccessGrant(accessRow);
   const trialAccess = publicAccessGrant(trialAccessRow);
-  // Existing business policy is additive: annual, a custom grant, an exact
-  // report purchase, or a privileged role can independently allow a download.
-  const annual = entitlement.active && entitlement.plan === "annual";
+  const effectiveChoice = effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow);
+  const effectiveAccess = effectiveChoice.access;
   let customAccess = false;
-  if (access.active) {
-    if (access.access_mode === "all") {
+  if (effectiveChoice.kind === "admin") {
+    if (effectiveAccess.access_mode === "all") {
       customAccess = true;
     } else if (reportId && source === "catalog") {
       const catalog = await loadCatalog(env);
-      customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
+      customAccess = accessGrantMatchesReport(effectiveAccess, findReport(catalog, reportId), source);
     }
   }
-  const trialAccessMatched = trialAccess.active && trialAccess.access_mode === "all";
+  const entitlementAccessMatched = effectiveChoice.kind === "entitlement"
+    && effectiveAccess.active
+    && effectiveAccess.access_mode === "all";
+  const trialAccessMatched = effectiveChoice.kind === "trial"
+    && effectiveAccess.active
+    && effectiveAccess.access_mode === "all";
+  const accessVerificationFailed = effectiveChoice.kind === "disabled" || effectiveChoice.kind === "error";
   // A secondary purchase lookup must never block a verified membership or
   // custom grant. This also preserves legacy grants when the optional purchase
   // table has not been provisioned in the current account database.
-  const baseAccess = Boolean(annual || customAccess || trialAccessMatched);
-  const purchase = reportId && !baseAccess
+  const baseAccess = Boolean(entitlementAccessMatched || customAccess || trialAccessMatched);
+  const purchase = reportId && !accessVerificationFailed && !baseAccess
     ? await findReportPurchase(env, email, reportId, source)
     : null;
   const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || ""));
-  const effectiveAccess = effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow);
   return {
-    can_download: Boolean(annual || customAccess || trialAccessMatched || purchased),
+    can_download: Boolean(!accessVerificationFailed && (entitlementAccessMatched || customAccess || trialAccessMatched || purchased)),
     entitlement,
     access,
     trial_access: trialAccess,
     effective_access: effectiveAccess,
+    effective_access_kind: effectiveChoice.kind,
     purchase: purchased ? purchase : null,
     custom_access_matched: customAccess,
+    entitlement_access_matched: entitlementAccessMatched,
     trial_access_matched: trialAccessMatched,
   };
 }
