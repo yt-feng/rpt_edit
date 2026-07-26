@@ -1,0 +1,529 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0001-11-DB-SAP-SAP.GR-More evidence of 2027 growth acceleration to come - reiterate Buy-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "SAP的2027年，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：SAP云积压订单增速超越云收入",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-DB-SAP-SAP.GR-More evidence of 2027 growth acceleration to come - reiterate Buy-260724.pdf",
+      "cleaned_source_title": "DB-SAP-SAP.GR-More evidence of 2027 growth acceleration to come - reiterate Buy",
+      "institution_name": "DB",
+      "required_terms": [],
+      "deterministic_fallback": "DB：SAPMoreevidenceof2027增长",
+      "raw_candidates": [
+        "SAP云积压订单增速超越云收入",
+        "SAP云积压订单增速26%指向2027年增长加速",
+        "SAP云积压订单与AI产品组合增长潜力"
+      ],
+      "cleaned_candidates": [
+        "DB：SAP云积压订单增速超越云收入",
+        "DB：SAP云积压订单增速26%指向2027年增长加速",
+        "DB：SAP云积压订单与AI产品组合增长潜力",
+        "DB：SAPMoreevidenceof2027增长",
+        "DB：第二季度云收入增长24%，而CCB增速达到26%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：SAP云积压订单增速26%指向2027年增长加速",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "DB：SAP云积压订单与AI产品组合增长潜力",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "DB：SAPMoreevidenceof2027增长",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：第二季度云收入增长24%，而CCB增速达到26%",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：SAP云积压订单增速超越云收入",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：SAP云积压订单增速超越云收入"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0002-12-GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE-260725.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "国产存储扩产节奏，比",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国内存专家会议，产能、产品与价格",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE-260725.pdf",
+      "cleaned_source_title": "GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国MemoryExpertcalltakeaw",
+      "raw_candidates": [
+        "中国内存专家会议：产能、产品与价格",
+        "中国内存专家会议：DRAM产能2030年翻倍以上",
+        "中国内存专家会议：HBM3与3D DRAM产品演进"
+      ],
+      "cleaned_candidates": [
+        "GS：中国内存专家会议，产能、产品与价格",
+        "GS：中国内存专家会议，DRAM产能2030年翻倍以上",
+        "GS：中国内存专家会议，HBM3与3DDRAM产品演进",
+        "GS：中国MemoryExpertcalltakeaw",
+        "GS：GS在7月24日举办的中国内存专家电话会议中，获得了一个关键判断"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国内存专家会议，DRAM产能2030年翻倍以上",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国内存专家会议，HBM3与3DDRAM产品演进",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国MemoryExpertcalltakeaw",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS在7月24日举办的中国内存专家电话会议中，获得了一个关键判断",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国内存专家会议，产能、产品与价格",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国内存专家会议，产能、产品与价格"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0003-13-GS-EM ASIA FX RATES VIEWS-Asian tech-related currencies outperform-260725.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "亚洲科技货币，正在悄",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "中国经济->中国宏观环境 x1",
+      "经济->宏观环境 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "经济->宏观环境 x1",
+      "投资组合->组合观察 x1",
+      "股票|个股->公司 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：货币市场与相关指标观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-GS-EM ASIA FX RATES VIEWS-Asian tech-related currencies outperform-260725.pdf",
+      "cleaned_source_title": "GS-EM ASIA FX RATES VIEWS-Asian tech-related currencies outperform",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：EMASIAFX利率VIEWSAsiantech",
+      "raw_candidates": [
+        "GS：亚洲科技相关货币表现优于其他货币",
+        "GS：亚洲科技货币表现优于其他货币-能源与AI驱动",
+        "GS：亚洲科技货币跑赢-韩元新台币林吉特领先"
+      ],
+      "cleaned_candidates": [
+        "GS：亚洲科技相关货币表现优于其他货币",
+        "GS：亚洲科技货币表现优于其他货币-能源与AI驱动",
+        "GS：亚洲科技货币跑赢-韩元新台币林吉特领先",
+        "GS：EMASIAFX利率VIEWSAsiantech",
+        "GS：尽管美元指数自1月以来上涨约5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：亚洲科技货币跑赢-韩元新台币林吉特领先",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EMASIAFX利率VIEWSAsiantech",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：尽管美元指数自1月以来上涨约5%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：货币市场与相关指标观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：亚洲科技相关货币表现优于其他货币",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：货币市场与相关指标观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0004-14-HSBC-China Autos-Weaker demand- ongoing consolidation-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "中国车市，2026年",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "买入->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：汽车行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-HSBC-China Autos-Weaker demand- ongoing consolidation-260724.pdf",
+      "cleaned_source_title": "HSBC-China Autos-Weaker demand- ongoing consolidation",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：中国汽车Weakerdemand",
+      "raw_candidates": [
+        "中国汽车-需求走弱与行业整合",
+        "中国汽车-2026年需求预测下调至-13%",
+        "中国汽车-需求降温与行业整合加速"
+      ],
+      "cleaned_candidates": [
+        "HSBC：中国汽车-需求走弱与行业整合",
+        "HSBC：中国汽车-2026年需求预测下调至-13%",
+        "HSBC：中国汽车-需求降温与行业整合加速",
+        "HSBC：中国汽车Weakerdemand",
+        "HSBC：这一调整基于1H26实际销售数据——乘用车零售同比下降20%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：中国汽车-2026年需求预测下调至-13%",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：中国汽车Weakerdemand",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：这一调整基于1H26实际销售数据——乘用车零售同比下降20%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：汽车行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：中国汽车-需求走弱与行业整合",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：汽车行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0005-15-GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "这家PA大厂，AI故",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607.pdf",
+      "cleaned_source_title": "GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Win半导体Corp.",
+      "raw_candidates": [
+        "全新光电业绩回顾：新光学产品2026下半年放量",
+        "全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+        "全新光电：AI光学产品推进，新PD产品2026下半年放量"
+      ],
+      "cleaned_candidates": [
+        "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+        "GS：全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+        "GS：全新光电，AI光学产品推进，新PD产品2026下半年放量",
+        "GS：Win半导体Corp.",
+        "GS：全新光电2026年第二季度营业利润比GS预期高出56%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "GS：Win半导体Corp.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：全新光电2026年第二季度营业利润比GS预期高出56%",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        }
+      ],
+      "selected_title": "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：全新光电业绩回顾，新光学产品2026下半年放量"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

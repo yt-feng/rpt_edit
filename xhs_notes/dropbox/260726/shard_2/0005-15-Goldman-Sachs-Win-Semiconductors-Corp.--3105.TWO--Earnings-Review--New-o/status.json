@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0005-15-GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "这家PA大厂，AI故",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-15-GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607.pdf",
+    "cleaned_source_title": "GS-Win Semiconductors Corp. -3105.TWO- Earnings Review- New optical product to ramp up in 2H26- higher margin but limited contribution- reiterate Sell-2607",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：Win半导体Corp.",
+    "raw_candidates": [
+      "全新光电业绩回顾：新光学产品2026下半年放量",
+      "全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+      "全新光电：AI光学产品推进，新PD产品2026下半年放量"
+    ],
+    "cleaned_candidates": [
+      "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+      "GS：全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+      "GS：全新光电，AI光学产品推进，新PD产品2026下半年放量",
+      "GS：Win半导体Corp.",
+      "GS：全新光电2026年第二季度营业利润比GS预期高出56%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：全新光电2026年第二季度业绩超预期，新光学产品下半年放量",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      },
+      {
+        "title": "GS：Win半导体Corp.",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：全新光电2026年第二季度营业利润比GS预期高出56%",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      }
+    ],
+    "selected_title": "GS：全新光电业绩回顾，新光学产品2026下半年放量",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：全新光电业绩回顾，新光学产品2026下半年放量"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "604",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

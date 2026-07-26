@@ -1,0 +1,98 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_b3s741m6/pdfs/0002-12-GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE-260725.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "国产存储扩产节奏，比",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：中国内存专家会议，产能、产品与价格",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-12-GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE-260725.pdf",
+    "cleaned_source_title": "GS-China Memory- Expert call takeaways- Capacity- Product- Price- Buy China SPE",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：中国MemoryExpertcalltakeaw",
+    "raw_candidates": [
+      "中国内存专家会议：产能、产品与价格",
+      "中国内存专家会议：DRAM产能2030年翻倍以上",
+      "中国内存专家会议：HBM3与3D DRAM产品演进"
+    ],
+    "cleaned_candidates": [
+      "GS：中国内存专家会议，产能、产品与价格",
+      "GS：中国内存专家会议，DRAM产能2030年翻倍以上",
+      "GS：中国内存专家会议，HBM3与3DDRAM产品演进",
+      "GS：中国MemoryExpertcalltakeaw",
+      "GS：GS在7月24日举办的中国内存专家电话会议中，获得了一个关键判断"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：中国内存专家会议，DRAM产能2030年翻倍以上",
+        "reasons": [
+          "anchor_coverage=0.57",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：中国内存专家会议，HBM3与3DDRAM产品演进",
+        "reasons": [
+          "anchor_coverage=0.57",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：中国MemoryExpertcalltakeaw",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：GS在7月24日举办的中国内存专家电话会议中，获得了一个关键判断",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：中国内存专家会议，产能、产品与价格",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：中国内存专家会议，产能、产品与价格"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "529",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
