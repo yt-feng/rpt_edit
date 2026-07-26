@@ -1,0 +1,154 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+24 Jul 2026 06:00:00 ET | 11 pages
+
+# US Semiconductors and Semiconductor Equipment
+
+Summer Sell-off; Fundamentals Intact; Prefer Semi Caps to Semis
+
+## CITI'S TAKE
+
+We view the SOX pullback on surging oil prices, rising bond yields, and AI spending concerns as a buying opportunity. Fundamentally, data center remains the strongest end market (34% of semi TAM) and is on track to exceed the entire semiconductor TAM by 2030E. Recovery is underway in Auto and Industrial (21%), while demand from PCs, handsets, and consumer electronics (42%) continues to weaken due to memory cost inflation and supply constraints (see Figure 2). We recap key highlights from earnings so far and note that consensus 2026E/2027E revenue estimates for companies that reported increased 4%/7% on average, while EPS estimates rose 7%/8%. We prefer semi caps to semis on higher estimate revisions driven by capex increases.
+
+INTC/TSMC/TSLA Capex Outlook All Very Positive for SCE - Intel highlighted meaningful foundry progress and raised 2026 capex guidance to over \$20Bn from \~\$18Bn previously, driven primarily by tools with 40% YoY growth. Intel is aggressively locking in equipment orders, accelerating clean-room buildouts, and securing key substrate and memory supply. With increased confidence in customer demand across multiple end markets and a strong advanced packaging backlog, Intel expects 2027 capex to be significantly higher than 2026, with most investments directed toward U.S. manufacturing. TSMC, during its Q2 earnings call, raised 2026 capex again to \$60-64Bn from nearly \$56Bn, driven by stronger-than-expected AI demand and higher equipment costs. Given the large supply/demand gap, management commented that capex over the next three years will be significantly higher than the prior three years and announced an additional \$100Bn investment in Arizona (now \$265Bn total), including roughly four additional fabs. Tesla reiterated that 2026 capex will exceed \$25Bn and continue growing over the next 2-3 years, including semiconductor manufacturing investments. On Terafab, management disclosed that equipment orders have already been placed for its Austin development fab, and Elon Musk indicated the company expects to announce a location and provide more detailed plans soon. On the backend, Amkor announced a \$1.5Bn multi-year partnership with NVIDIA to support U.S. advanced packaging capacity, with NVIDIA providing a prepayment to support the expansion. Amkor previously outlined a \$7Bn Arizona investment plan, with Phase 1 construction underway, HVM beginning in 2028, and full buildout by 2030.
+
+AMD Lifts CPU TAM - At AMD AI Day, the company raised its Data Center AI Accelerator TAM forecast from \~\$200B in 2025 to \~\$1.4T by 2030E (>45% CAGR) and its Data Center CPU TAM from \~\$26B to \~\$220B (>50% CAGR). AMD's CPU TAM lift is positive for INTC.
+
+Atif Malik $^{AC}$ +1-415-951-1892
+atif.malik@citi.com
+
+Kelsey Chia, CFA
++1-415-951-1791
+kelsey.chia@citi.com
+
+Elizabeth Sun, CFA
++1-212-816-3308
+elizabeth.sun@citi.com
+
+Adrienne Colby
++1-212-816-8975
+adrienne.colby@citi.com
+
+See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Affiliations
+
+Figure 1. AMD's Updated CPU TAM  
+![](images/52a1bb5a102de1c31ccf60a15a057dd7edd4e116c8ce428207f24f6c187ffe6b.jpg)
+
+Google Capex Positive for Networking & Compute- With its Jun-Q results, GOOGL raised its outlook for FY26 capex by \$15Bn at the midpoint, as demand for capacity continues to accelerate and higher component pricing pushes up the company's technical infrastructure spend. Projected FY26 capex in the range of \$195-205Bn is more than 2x FY25 spend of \$91Bn and ahead of Citi's prior \$190Bn outlook. Importantly, GOOGL reiterated prior expectations for FY27 capex to "increase significantly." We note Jun-Q capex of \~\$45Bn, up 100% Y/Y was split 60%/ 40% between compute/ data centers and networking. We view GOOGL's capex outlook positively with regards to the broader hyperscale spending environment and specifically for CLS, AVGO, and NVDA in our coverage.
+
+Analog Commentary: TXN and STM both reported a broad-based recovery with Industrial revenue up roughly 30% YoY, Automotive up mid-teens YoY, and Personal Electronics up high-single digits YoY. AI data center buildouts and new power architectures are emerging as incremental drivers of analog demand, with TXN's Data Center business expected to double YoY to \$3.1Bn in 2026 and STM raising its targets to \$1Bn in 2026 and \$2Bn in 2027, roughly double prior expectations. STM reported tightening supply conditions and lengthening lead times, while TXN leverages its manufacturing capacity to maintain industry-leading lead times. Both companies are implementing price increases, with TXN expecting stronger pricing through 2026. We see the read as positive for ADI, MCHP, NXPI, and ON.
+
+Figure 2. Semiconductor End-Market Demand
+
+<table><tr><td>End Market</td><td>% of Semi TAM</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25E</td><td>4Q25</td><td>1Q26</td><td>2Q26</td><td>3Q26E</td></tr><tr><td>PC</td><td>19%</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>mixed</td><td>stable</td><td>stable</td><td>falling</td><td>falling</td><td>falling</td></tr><tr><td>Wireless</td><td>16%</td><td>weak</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>stable</td><td>falling</td><td>falling</td><td>falling</td></tr><tr><td>Industrial</td><td>10%</td><td>mixed</td><td>falling</td><td>falling</td><td>falling</td><td>mixed</td><td>weak</td><td>mixed</td><td>stable</td><td>improving</td><td>improving</td><td>improving</td><td>improving</td><td>improving</td></tr><tr><td>Consumer</td><td>7%</td><td>weak</td><td>weak</td><td>weak</td><td>stable</td><td>stable</td><td>mixed</td><td>stable</td><td>stable</td><td>improving</td><td>improving</td><td>falling</td><td>falling</td><td>falling</td></tr><tr><td>Comm Infra</td><td>3%</td><td>weak</td><td>weak</td><td>weak</td><td>weak</td><td>improving</td><td>improving</td><td>mixed</td><td>mixed</td><td>improving</td><td>improving</td><td>improving</td><td>improving</td><td>improving</td></tr><tr><td>Automotive</td><td>11%</td><td>mixed</td><td>falling</td><td>falling</td><td>falling</td><td>mixed</td><td>mixed</td><td>weak</td><td>weak</td><td>weak</td><td>mixed</td><td>mixed</td><td>improving</td><td>improving</td></tr><tr><td>Data Center</td><td>34%</td><td>mixed</td><td>mixed</td><td>improving</td><td>improving</td><td>improving</td><td>good</td><td>good</td><td>good</td><td>strong</td><td>strong</td><td>strong</td><td>strong</td><td>strong</td></tr></table>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.
+
+Figure 3. C26 and C27 EPS Changes Post Earnings (Local Currency)
+
+<table><tr><td rowspan="2"></td><td colspan="3">2026 Consensus EPS</td><td colspan="3">2027 Consensus EPS</td></tr><tr><td>Pre-earnings</td><td>Post-earnings</td><td>De ta</td><td>Pre-earnings</td><td>Post-earnings</td><td>De ta</td></tr><tr><td>STLIFA-PAR</td><td>$1.13</td><td>$1.15</td><td>1%</td><td>$2.22</td><td>$2.18</td><td>1%</td></tr><tr><td>BES-AL</td><td>$4.14</td><td>$4.18</td><td>1%</td><td>$5.43</td><td>$5.42</td><td>0%</td></tr><tr><td>VTC</td><td>$1.09</td><td>$1.19</td><td>9%</td><td>$1.82</td><td>$1.72</td><td>6%</td></tr><tr><td>ASY-AL</td><td>$37.24</td><td>$37.35</td><td>18%</td><td>$51.43</td><td>$51.37</td><td>18%</td></tr><tr><td>TXN</td><td>$7.76</td><td>$8.54</td><td>10%</td><td>$9.10</td><td>$9.10</td><td>13%</td></tr><tr><td>VACN-SWX</td><td>$10.35</td><td>$10.35</td><td>3%</td><td>$15.15</td><td>$15.15</td><td>10%</td></tr><tr><td>Average</td><td></td><td></td><td>7%</td><td></td><td></td><td>8%</td></tr><tr><td>Median</td><td></td><td></td><td>6%</td><td></td><td></td><td>8%</td></tr></table>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, FactSet
+
+Figure 4. C26 and C27 Sales Changes Post Earnings (Local Currency)
+
+<table><tr><td rowspan="2"></td><td colspan="3">2026 Consensus Sales</td><td colspan="3">2027 Consensus Sales</td></tr><tr><td>Pre-earnings</td><td>Post-earnings</td><td>De ta</td><td>Pre-earnings</td><td>Post-earnings</td><td>De ta</td></tr><tr><td>STJIFA-PAR</td><td>$12,528</td><td>$12.5-3</td><td>0%</td><td>$1-889</td><td>$1-300</td><td>1%</td></tr><tr><td>BES-XL</td><td>$655</td><td>$58</td><td>1%</td><td>$1,028</td><td>$1,128</td><td>0%</td></tr><tr><td>VTO</td><td>$64-87</td><td>$55-44</td><td>9%</td><td>$53,857</td><td>$57-88</td><td>15%</td></tr><tr><td>ASML</td><td>$45,778</td><td>$4-878</td><td>9%</td><td>$57,188</td><td>$53-43</td><td>11%</td></tr><tr><td>TXN</td><td>$21,128</td><td>$21,855</td><td>4%</td><td>$23,687</td><td>$24-83</td><td>6%</td></tr><tr><td>VACN-SWX</td><td>$1,300</td><td>$1,328</td><td>2%</td><td>$1,858</td><td>$1,828</td><td>8%</td></tr><tr><td>Average</td><td></td><td></td><td>4%</td><td></td><td></td><td>7%</td></tr><tr><td>Voclar</td><td></td><td></td><td>3%</td><td></td><td></td><td>7%</td></tr></table>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, FactSet
+
+## Companies Mentioned:
+
+Analog Devices (ADI.O; US\$380.2; 1; 23 Jul 26; 16:00) | Broadcom Inc (AVGO.O; US\$392.47; 1; 23 Jul 26; 16:00) | Celestica (CLS.N; US\$334.75; 1; 23 Jul 26; 16:00) | Intel Corp (INTC.O; US\$100.23; 1; 23 Jul 26; 16:00) | Microchip Technology (MCHP.O; US\$81.35; 1; 23 Jul 26; 16:00) | NVIDIA Corp (NVDA.O; US\$208.76; 1; 23 Jul 26; 16:00) | NXP Semiconductors NV (NXPI.O; US\$277.29; 1; 23 Jul 26; 16:00) | ON Semiconductor (ON.O; US\$90.13; 2; 23 Jul 26; 16:00)
+
+If you are visually impaired and would like to speak to a Citi representative regarding the details of the graphics in this document, please call USA 1-888-500-5008 (TTY: 711), from outside the US +1-210-677-3788
+
+## Appendix A-1
+
+## ANALYST CERTIFICATION
+
+The research analysts primarily responsible for the preparation and content of this research report are either (i) designated by “AC” in the author block or (ii) listed in bold alongside content which is attributable to that analyst. If multiple AC analysts are designated in the author block, each analyst is certifying with respect to the entire research report other than (a) content attributable to another AC certifying analyst listed in bold alongside the content and (b) views expressed solely with respect to a specific issuer which are attributable to another AC certifying analyst identified in the price charts or rating history tables for that issuer shown below. Each of these analysts certify, with respect to the sections of the report for which they are responsible: (1) that the views expressed therein accurately reflect their personal views about each issuer and security referenced and were prepared in an independent manner, including with respect to Citi Global Markets Inc. and its affiliates; and (2) no part of the research analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in this report.
+
+## IMPORTANT DISCLOSURES
+
+<table><tr><td>A member of Citi&#x27;s Board of Directors is also on the Board of Directors of Analog Devices.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates beneficially owns 1% or more of any class of common equity securities of ON Semiconductor. This position reflects information available as of the prior business day.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates has a net long position of 0.5% or more of any class of common equity securities of Microchip Technology,NXP Semiconductors NV,ON Semiconductor.</td></tr><tr><td>Within the past 12 months, Citi Global Markets Inc. or its affiliates has acted as manager or co-manager of an offering of securities of Broadcom Inc,Intel Corp,NVIDIA Corp,ON Semiconductor.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates has received compensation for investment banking services provided within the past 12 months from Analog Devices,Broadcom Inc,Celestica,Intel Corp,NVIDIA Corp,NXP Semiconductors NV,ON Semiconductor.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates expects to receive or intends to seek, within the next three months, compensation for investment banking services from Celestica,Intel Corp.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates received compensation for products and services other than investment banking services from Analog Devices,Broadcom Inc,Celestica,Intel Corp,NVIDIA Corp,NXP Semiconductors NV,ON Semiconductor in the past 12 months.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as investment banking client(s): Analog Devices,Broadcom Inc,Celestica,Intel Corp,NVIDIA Corp,NXP Semiconductors NV,ON Semiconductor.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as clients, and the services provided were non-investment-banking, securities-related: Analog Devices,Broadcom Inc,Celestica,Intel Corp,NVIDIA Corp,NXP Semiconductors NV,ON Semiconductor.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as clients, and the services provided were non-investment-banking, non-securities-related: Analog Devices,Broadcom Inc,Celestica,Intel Corp,NVIDIA Corp,NXP Semiconductors NV,ON Semiconductor.</td></tr><tr><td>Citi Global Markets Inc. and/or its affiliates has a significant financial interest in relation to Broadcom Inc,Intel Corp,NVIDIA Corp. (For an explanation of the determination of significant financial interest, please refer to the policy for managing conflicts of interest which can be found at www.citiVelocity.com.)</td></tr><tr><td>Analysts&#x27; compensation is determined by Citi management and Citi&#x27;s senior management and is based upon activities and services intended to benefit the investor clients of Citi Global Markets Inc. and its affiliates (the &quot;Firm&quot;). Compensation is not linked to specific transactions or recommendations. Like all Firm employees, analysts receive compensation that is impacted by overall Firm profitability which includes investment banking, sales and trading, and principal trading revenues. One factor in equity research analyst compensation is arranging corporate access events between institutional clients and the management teams of covered companies. Typically, company management is more likely to participate when the analyst has a positive view of the company.</td></tr><tr><td>For financial instruments recommended in the Product in which the Firm is not a market maker, the Firm is a liquidity provider in such financial instruments (and any underlying instruments) and may act as principal in connection with transactions in such instruments. The Firm is a regular issuer of traded financial instruments linked to securities that may have been recommended in the Product. The Firm regularly trades in the securities of the issuer(s) discussed in the Product. The Firm may engage in securities transactions in a manner inconsistent with the Product and, with respect to securities covered by the Product, will buy or sell from customers on a principal basis.</td></tr></table>
+
+Unless stated otherwise neither the Research Analyst nor any member of their team has viewed the material operations of the Companies for which an investment view has been provided within the past 12 months. For important disclosures (including copies of historical disclosures) regarding the companies that are the sub
+
+[中间内容因长度限制已省略]
+
+ipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business.
+
+Citi product may source data from dataCentral. dataCentral is a Citi proprietary database, which includes the Firm's estimates, data from company reports and feeds from LSEG Data & Analytics. The source for all referenced prices, unless otherwise stated, is DataCentral. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance. The printed and printable version of the research report may not include all the information <(e.g. certain financial summary information and comparable company data) that is linked to the online version available on the Firm's proprietary electronic distribution platforms.
+
+Where included in this report, MSCI sourced information is the exclusive property of MS Capital International Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced, redisseminated or used to create any financial products, including any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all warranties of originality,
+
+accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability for any damages of any kind. MSCI, MS Capital International and the MSCI indexes are services marks of MSCI and its affiliates. Where data is attributed to Morningstar that data is © 2026 Morningstar, Inc. All Rights Reserved. That information: (1) is proprietary to Morningstar and/or its content providers; (2) may not be copied or distributed; and (3) is not warranted to be accurate, complete or timely. Neither Morningstar nor its content providers are responsible for any damages or losses arising from any use of this information.
+
+The Firm accepts no liability whatsoever for the actions of third parties. The Product may provide the addresses of, or contain hyperlinks to, websites. Except to the extent to which the Product refers to website material of the Firm, the Firm has not reviewed the linked site. Equally, except to the extent to which the Product refers to website material of the Firm, the Firm takes no responsibility for, and makes no representations or warranties whatsoever as to, the data and information contained therein. Such address or hyperlink (including addresses or hyperlinks to website material of the Firm) is provided solely for your convenience and information and the content of the linked site does not in any way form part of this document. Accessing such website or following such link through the Product or the website of the Firm shall be at your own risk and the Firm shall have no liability arising out of, or in connection with, any such referenced website.
+
+© 2026 Citi Global Markets Inc. Citi is a division of Citi Global Markets Inc. Citi and Citi and Arc Design are trademarks and service marks of Citi Inc. and its affiliates and are used and registered throughout the world. All rights reserved. The research data in this report are not intended to be used for the purpose of (a) determining the price of or amounts due in respect of (or to value) one or more financial products or instruments and/or (b) measuring or comparing the performance of, or defining the asset allocation of a financial product, a portfolio of financial instruments, or a collective investment undertaking, and any such use is strictly prohibited without the prior written consent of Citi. Any
+
+unauthorized use, duplication, redistribution or disclosure of this report (the "Product"), including, but not limited to, redistribution of the Product by electronic mail, posting of the Product on a website or page, and/or providing to a third party a link to the Product, is prohibited by law and will result in prosecution. The information contained in the Product is intended solely for the recipient and may not be further distributed by the recipient to any third party.
+
+ADDITIONAL INFORMATION IS AVAILABLE UPON REQUEST
+"""

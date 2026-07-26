@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_v_0o7dvm/pdfs/0001-06-CITI-Global Power Tools-Latest US Tariff Announcement Removes Overhang-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_v_0o7dvm/pdfs/0002-07-DB-Precious Blog-What importance for systematic flow--260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_v_0o7dvm/pdfs/0003-08-CITI-US Semiconductors and Semiconductor Equipment-Summer Sell-off- Fundamentals Intact- Prefer Semi Caps to Semis-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_v_0o7dvm/pdfs/0004-09-DB-Meta-META.US-Meta Ambitions Need Meta Scale-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_v_0o7dvm/pdfs/0005-10-GS-China Dairy- Modern Dairy positive profit alert plus controlling stake on Shengmu- positive read across to Mengniu-260725.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
