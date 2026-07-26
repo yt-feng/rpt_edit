@@ -629,8 +629,10 @@
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
         if (adminOpen) {
-          adminOpen.hidden = !isSuperSession(session);
-          adminOpen.textContent = "管理后台";
+          adminOpen.hidden = !canOpenOperationsPanel(session);
+          adminOpen.textContent = isOperatorSession(session) && !isSuperSession(session)
+            ? "运营后台"
+            : "管理后台";
         }
         setStatus(statusOverride || (
           isSuperSession(session)
