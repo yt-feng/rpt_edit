@@ -166,6 +166,42 @@ test("activity pagination uses one immutable filter snapshot per load", () => {
   assert.match(init, /pageLoadInProgress \|\| exportInProgress \|\| !cursorStack\.length/u);
 });
 
+test("activity filtered search returns the first matching batch and bounds empty auto-scan", () => {
+  const shouldContinue = vm.runInNewContext(
+    `(${extractFunction(app, "shouldContinueAnalyticsHistoryAutoScan")})`,
+    { ANALYTICS_HISTORY_AUTO_SCAN_BATCH_LIMIT: 4 },
+  );
+
+  assert.equal(shouldContinue({
+    autoScan: true,
+    batchCount: 1,
+    eventCount: 0,
+    nextCursor: "cursor-a",
+  }), true, "an empty first batch should continue looking for a nearby match");
+  assert.equal(shouldContinue({
+    autoScan: true,
+    batchCount: 2,
+    eventCount: 1,
+    nextCursor: "cursor-b",
+  }), false, "the first matching batch must render immediately instead of filling the requested page size");
+  assert.equal(shouldContinue({
+    autoScan: true,
+    batchCount: 4,
+    eventCount: 0,
+    nextCursor: "cursor-c",
+  }), false, "an empty filtered search must yield after four server batches");
+  assert.equal(shouldContinue({
+    autoScan: false,
+    batchCount: 1,
+    eventCount: 0,
+    nextCursor: "cursor-d",
+  }), false);
+
+  const loadPage = extractFunction(app, "loadPage");
+  assert.match(loadPage, /shouldContinueAnalyticsHistoryAutoScan/u);
+  assert.doesNotMatch(loadPage, /events\.length >= targetCount \|\| !batchNextCursor/u);
+});
+
 test("activity history does not wait for the user-option export before loading events", () => {
   const init = extractFunction(app, "initAnalyticsHistory");
   assert.match(

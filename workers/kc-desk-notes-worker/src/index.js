@@ -5280,14 +5280,22 @@ function decodeAnalyticsHistoryRequestCursor(value, expectedSignature) {
   return { date, after_key: afterKey, signature: expectedSignature };
 }
 
+function normalizeAnalyticsIdentity(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\u0000-\u001f\u007f]+/g, "")
+    .trim();
+}
+
 function analyticsHistoryEventMatches(event, filters) {
   if (!event || typeof event !== "object") return false;
   if (filters.type && String(event.type || "").toLowerCase() !== filters.type) return false;
   const user = event.user && typeof event.user === "object" ? event.user : {};
   if (filters.user) {
-    const requestedUser = normalizeText(filters.user);
+    const requestedUser = normalizeAnalyticsIdentity(filters.user);
     const identities = [user.username, user.email, event.visitor_id]
-      .map((value) => normalizeText(value))
+      .map((value) => normalizeAnalyticsIdentity(value))
       .filter(Boolean);
     if (!requestedUser || !identities.includes(requestedUser)) return false;
   }

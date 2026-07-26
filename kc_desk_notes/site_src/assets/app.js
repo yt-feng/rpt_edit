@@ -2179,6 +2179,14 @@
     return params;
   }
 
+  const ANALYTICS_HISTORY_AUTO_SCAN_BATCH_LIMIT = 4;
+
+  function shouldContinueAnalyticsHistoryAutoScan(options = {}) {
+    if (!options.autoScan || !options.nextCursor) return false;
+    if (Number(options.eventCount) > 0) return false;
+    return Number(options.batchCount) < ANALYTICS_HISTORY_AUTO_SCAN_BATCH_LIMIT;
+  }
+
   async function loadAnalyticsHistoryUserOptions(workerUrl, input, datalist) {
     if (!input || !datalist) return 0;
     const data = await fetchFreshAdminUsers(workerUrl);
@@ -2376,7 +2384,12 @@
           if (batchData.has_more === true && !batchNextCursor) {
             throw new Error("历史接口提示还有记录，但没有返回下一页游标。");
           }
-          if (!autoScan || events.length >= targetCount || !batchNextCursor) break;
+          if (!shouldContinueAnalyticsHistoryAutoScan({
+            autoScan,
+            batchCount,
+            eventCount: events.length,
+            nextCursor: batchNextCursor,
+          })) break;
           requestCursor = batchNextCursor;
         }
 

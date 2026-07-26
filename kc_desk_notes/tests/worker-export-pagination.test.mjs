@@ -286,6 +286,25 @@ test("filtered analytics history rejects invalid and cross-filter cursors", () =
   assert.match(handler, /error instanceof TypeError \? 400 : 503/u);
 });
 
+test("analytics user filter keeps punctuation significant for exact identities", () => {
+  const sandbox = {
+    normalizeAnalyticsIdentity: vm.runInNewContext(`(${extractFunction(worker, "normalizeAnalyticsIdentity")})`),
+    normalizeText(value) { return String(value || "").toLowerCase(); },
+  };
+  const matches = vm.runInNewContext(`(${extractFunction(worker, "analyticsHistoryEventMatches")})`, sandbox);
+  const event = {
+    type: "page_view",
+    visitor_id: "visitor-1",
+    user: { username: "Xiao.Yi", email: "xiao.yi@example.com" },
+  };
+  const baseFilters = { type: "", query: "" };
+
+  assert.equal(matches(event, { ...baseFilters, user: " XIAO.YI@EXAMPLE.COM " }), true);
+  assert.equal(matches(event, { ...baseFilters, user: "xiao-yi@example.com" }), false);
+  assert.equal(matches(event, { ...baseFilters, user: "xiao-yi" }), false);
+  assert.equal(matches(event, { ...baseFilters, user: "visitor-1" }), true);
+});
+
 test("analytics export uses native R2 cursors for more than 2200 events and scans both mirrors", async () => {
   const { handle } = loadAnalyticsExportHandler();
   const primaryRoot = "_analytics/events";
