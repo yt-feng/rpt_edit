@@ -1,0 +1,589 @@
+[
+  {
+    "item": "0001-21-J.P.-Morgan-China--A-preview-of-the-July-Politburo-260724",
+    "source_pdf": "/tmp/pdf_batch_001_qenhawvn/pdfs/0001-21-JPM-China- A preview of the July Politburo-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "7月政治局会议，重点",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融->资金 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "JPM：区域环境与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-JPM-China- A preview of the July Politburo-260724.pdf",
+      "cleaned_source_title": "JPM-China- A preview of the July Politburo",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国-ApreviewoftheJulyPolitburo",
+      "raw_candidates": [
+        "中国7月政治局会议前瞻",
+        "中国7月政治局会议聚焦预算执行",
+        "中国7月政治局会议关注财政与AI"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国7月政治局会议前瞻",
+        "JPM：中国7月政治局会议聚焦预算执行",
+        "JPM：中国7月政治局会议关注财政与AI",
+        "JPM：中国-ApreviewoftheJulyPolitburo",
+        "JPM：二季度GDP同比增速4.3%，低于市场预期和政府全年4.5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国-ApreviewoftheJulyPolitburo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：二季度GDP同比增速4.3%，低于市场预期和政府全年4.5%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：区域环境与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：中国7月政治局会议前瞻",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "JPM：区域环境与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-22-J.P.-Morgan-European-Luxury-and-Sporting-Goods-Weekly-Timely---Priceless",
+    "source_pdf": "/tmp/pdf_batch_001_qenhawvn/pdfs/0002-22-JPM-European Luxury and Sporting Goods Weekly-Timely - Priceless-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "奢侈品一周：分化比想",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：消费品牌数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-JPM-European Luxury and Sporting Goods Weekly-Timely - Priceless-260724.pdf",
+      "cleaned_source_title": "JPM-European Luxury and Sporting Goods Weekly-Timely - Priceless",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：EuropeanLuxury和Sportin",
+      "raw_candidates": [
+        "欧洲奢侈品与运动品牌周报",
+        "欧洲奢侈品周报：Q2业绩分化加剧",
+        "欧洲奢侈品周报：斯沃琪与杰尼亚业绩分化"
+      ],
+      "cleaned_candidates": [
+        "JPM：欧洲奢侈品与运动品牌周报",
+        "JPM：欧洲奢侈品周报，Q2业绩分化加剧",
+        "JPM：欧洲奢侈品周报，斯沃琪与杰尼亚业绩分化",
+        "JPM：EuropeanLuxury和Sportin",
+        "JPM：6月出口总额同比+11%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：欧洲奢侈品与运动品牌周报",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.36",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：欧洲奢侈品周报，斯沃琪与杰尼亚业绩分化",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "JPM：EuropeanLuxury和Sportin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：6月出口总额同比+11%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：消费品牌数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：欧洲奢侈品周报，Q2业绩分化加剧",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：消费品牌数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-23-J.P.-Morgan-PCs-and-Servers-Read-through-from-INTC-s-2Q26-and-AMD-Advanc",
+    "source_pdf": "/tmp/pdf_batch_001_qenhawvn/pdfs/0003-23-JPM-PCs and Servers-Read-through from INTC-s 2Q26 and AMD Advancing AI 2026-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "PC市场冷，服务器继",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：PC与服务器-英特尔2Q26与AMDAI2026影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-JPM-PCs and Servers-Read-through from INTC-s 2Q26 and AMD Advancing AI 2026-260724.pdf",
+      "cleaned_source_title": "JPM-PCs and Servers-Read-through from INTC-s 2Q26 and AMD Advancing AI 2026",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AIPCs和ServersReadthrough",
+      "raw_candidates": [
+        "PC与服务器-英特尔2Q26与AMD AI 2026影响",
+        "PC与服务器-英特尔2Q26与AMD AI 2026-需求分化",
+        "PC与服务器-英特尔2Q26与AMD AI 2026-供应链展望"
+      ],
+      "cleaned_candidates": [
+        "JPM：PC与服务器-英特尔2Q26与AMDAI2026影响",
+        "JPM：PC与服务器-英特尔2Q26与AMDAI2026-需求分化",
+        "JPM：PC与服务器-英特尔2Q26与AMDAI2026-供应链展望",
+        "JPM：AIPCs和ServersReadthrough",
+        "JPM：服务器端则因AI驱动和供应改善，CPU需求有望在未来2"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：AIPCs和ServersReadthrough",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：服务器端则因AI驱动和供应改善，CPU需求有望在未来2",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：PC与服务器-英特尔2Q26与AMDAI2026影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：PC与服务器-英特尔2Q26与AMDAI2026影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-24-J.P.-Morgan-Digital-Realty-Trust-DLR.US-Strong-Bookings--Backlog--and-Co",
+    "source_pdf": "/tmp/pdf_batch_001_qenhawvn/pdfs/0004-24-JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Double Digit Core FFOPS Grow.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "数据中心需求有多强？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66.",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Double Digit Core FFOPS Grow.pdf",
+      "cleaned_source_title": "JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Double Digit Core FFOPS Grow",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：DigitalRealtyTrustStro",
+      "raw_candidates": [
+        "JPM：Digital Realty 续租价差达66.7%",
+        "JPM：Digital Realty 积压订单19亿美元支撑增长",
+        "JPM：Digital Realty 全球在建项目1.4吉瓦",
+        "Digital Realty Trust 强劲预订与定价改善推动核心FFOPS增长",
+        "Digital Realty Trust 2026年核心FFOPS预计两位数增长",
+        "Digital Realty Trust 数据中心定价环境持续改善与积压订单支撑增长"
+      ],
+      "cleaned_candidates": [
+        "JPM：DigitalRealty续租价差达66.7%",
+        "JPM：DigitalRealty积压订单19亿美元支撑增长",
+        "JPM：DigitalRealty全球在建项目1.4吉瓦",
+        "JPM：DigitalRealtyTrust强劲预订与定价改善推动核",
+        "JPM：DigitalRealtyTrust2026年核心FFOPS",
+        "JPM：DigitalRealtyTrust数据中心定价环境持续改善",
+        "JPM：DigitalRealtyTrustStro",
+        "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66."
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english",
+        "english_heavy_fragment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：DigitalRealty续租价差达66.7%",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealty积压订单19亿美元支撑增长",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealty全球在建项目1.4吉瓦",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealtyTrust强劲预订与定价改善推动核",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealtyTrust2026年核心FFOPS",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealtyTrust数据中心定价环境持续改善",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：DigitalRealtyTrustStro",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66.",
+          "reasons": [
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66.",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1",
+          "66"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66.",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "JPM：Digital Realty 续租价差达66.7%",
+        "JPM：Digital Realty 积压订单19亿美元支撑增长",
+        "JPM：Digital Realty 全球在建项目1.4吉瓦"
+      ],
+      "final_title_after_wording_guard": "JPM：其中，1兆瓦以上业务的表现尤为突出——现金续租价差高达66."
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-25-Morgan-Stanley-Aluminum-Corp.-of-China-Ltd.-2600.HK-Baotou-Plant-Visit-a",
+    "source_pdf": "/tmp/pdf_batch_001_qenhawvn/pdfs/0005-25-MS-Aluminum Corp. of China Ltd.-2600.HK-Baotou Plant Visit and Management Meeting-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "铝厂调研，挖到两个关",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x5",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国铝业包头工厂调研与管理会议",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-MS-Aluminum Corp. of China Ltd.-2600.HK-Baotou Plant Visit and Management Meeting-260724.pdf",
+      "cleaned_source_title": "MS-Aluminum Corp. of China Ltd.-2600.HK-Baotou Plant Visit and Management Meeting",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：AluminumCorp.of中国Ltd.",
+      "raw_candidates": [
+        "中国铝业包头工厂调研与管理会议",
+        "中国铝业包头工厂调研-45万吨产能监管框架",
+        "中国铝业包头工厂调研-电力成本与追溯式核查"
+      ],
+      "cleaned_candidates": [
+        "MS：中国铝业包头工厂调研与管理会议",
+        "MS：中国铝业包头工厂调研-45万吨产能监管框架",
+        "MS：中国铝业包头工厂调研-电力成本与追溯式核查",
+        "MS：AluminumCorp.of中国Ltd.",
+        "MS：但真正值得关注的是，国家发改委第45号文件自8月1日生效后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国铝业包头工厂调研-45万吨产能监管框架",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "MS：中国铝业包头工厂调研-电力成本与追溯式核查",
+          "reasons": [
+            "anchor_coverage=0.64"
+          ]
+        },
+        {
+          "title": "MS：AluminumCorp.of中国Ltd.",
+          "reasons": [
+            "listing_suffix",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：但真正值得关注的是，国家发改委第45号文件自8月1日生效后",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国铝业包头工厂调研与管理会议",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国铝业包头工厂调研与管理会议"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 35,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-JPM-China： A preview of the July Politburo-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qenhawvn/pdfs/0001-21-JPM-China- A preview of the July Politburo-260724.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-JPM-European Luxury and Sporting Goods Weekly：Timely & Priceless-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qenhawvn/pdfs/0002-22-JPM-European Luxury and Sporting Goods Weekly-Timely - Priceless-260724.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-JPM-PCs and Servers：Read~through from INTC’s 2Q26 and AMD Advancing AI 2026-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qenhawvn/pdfs/0003-23-JPM-PCs and Servers-Read-through from INTC-s 2Q26 and AMD Advancing AI 2026-260724.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-JPM-Digital Realty Trust（DLR.US）Strong Bookings， Backlog， and Commencements， with Rapidly Improving Pricing Outlook； Multi~Year Double Digit Core FFOPS Grow.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qenhawvn/pdfs/0004-24-JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Double Digit Core FFOPS Grow.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-MS-Aluminum Corp. of China Ltd.（2600.HK）Baotou Plant Visit and Management Meeting-260724.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qenhawvn/pdfs/0005-25-MS-Aluminum Corp. of China Ltd.-2600.HK-Baotou Plant Visit and Management Meeting-260724.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
