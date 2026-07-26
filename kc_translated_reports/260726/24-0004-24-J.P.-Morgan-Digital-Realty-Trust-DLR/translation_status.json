@@ -1,0 +1,157 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260726/shard_4/0004-24-J.P.-Morgan-Digital-Realty-Trust-DLR.US-Strong-Bookings--Backlog--and-Co",
+  "title": "摩根大通：研究主题与行业变化观察",
+  "source_title": "0004-24-JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Doub",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-24-JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Doub",
+    "cleaned_source_title": "JPM-Digital Realty Trust-DLR.US-Strong Bookings- Backlog- and Commencements- with Rapidly Improving Pricing Outlook- Multi-Year Doub",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：DigitalRealtyTrustStro",
+    "raw_candidates": [
+      "摩根大通：Digital Realty Trust上调2026年收入指引至69亿美元",
+      "摩根大通：Digital Realty Trust数据中心预订与定价前景持续改善",
+      "摩根大通：Digital Realty Trust积压订单增至19亿美元并上调资本支出",
+      "Digital Realty Trust-强劲预订量与定价前景改善",
+      "Digital Realty Trust-2026年收入指引上调至69亿美元",
+      "Digital Realty Trust-数据中心预订与定价前景改善"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：DigitalRealtyTrust上调2026年收入指引至",
+      "摩根大通：DigitalRealtyTrust数据中心预订与定价前景持",
+      "摩根大通：DigitalRealtyTrust积压订单增至19亿美元并",
+      "摩根大通：DigitalRealtyTrust",
+      "摩根大通：DigitalRealtyTrustStro",
+      "摩根大通：总收入指引中点上调2亿美元至69亿美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english",
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：DigitalRealtyTrust上调2026年收入指引至",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "摩根大通：DigitalRealtyTrust数据中心预订与定价前景持",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：DigitalRealtyTrust积压订单增至19亿美元并",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：DigitalRealtyTrust",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：DigitalRealtyTrustStro",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "2",
+        "69"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根大通：总收入指引中点上调2亿美元至69亿美元",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "摩根大通：Digital Realty Trust上调2026年收入指引至69亿美元",
+      "摩根大通：Digital Realty Trust数据中心预订与定价前景持续改善",
+      "摩根大通：Digital Realty Trust积压订单增至19亿美元并上调资本支出"
+    ],
+    "pre_neutralization_title": "摩根大通：总收入指引中点上调2亿美元至69亿美元",
+    "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_24.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x4",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "股票|个股->公司 x1",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "下行|放缓->节奏变化 x1",
+    "负面->谨慎 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}

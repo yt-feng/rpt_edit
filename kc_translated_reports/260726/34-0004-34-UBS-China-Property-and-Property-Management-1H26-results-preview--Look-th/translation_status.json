@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260726/shard_6/0004-34-UBS-China-Property-and-Property-Management-1H26-results-preview--Look-th",
+  "title": "瑞银：城市与住房数据变化观察",
+  "source_title": "0004-34-UBS-China Property and Property Management-1H26 results preview- Look through the earnings-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-34-UBS-China Property and Property Management-1H26 results preview- Look through the earnings-260724",
+    "cleaned_source_title": "UBS-China Property and Property Management-1H26 results preview- Look through the earnings",
+    "institution_name": "瑞银",
+    "required_terms": [],
+    "deterministic_fallback": "瑞银：中国地产和地产Management1H26res",
+    "raw_candidates": [
+      "中国房地产与物业管理2026上半年业绩预览-透视盈利",
+      "中国房地产与物业管理2026上半年业绩预览-一线城市房价趋稳",
+      "中国房地产与物业管理2026上半年业绩预览-开发商与物管公司盈利分化"
+    ],
+    "cleaned_candidates": [
+      "瑞银：中国房地产与物业管理2026上半年业绩预览-透视盈利",
+      "瑞银：中国房地产与物业管理2026上半年业绩预览-一线城市房价趋稳",
+      "瑞银：中国房地产与物业管理2026上半年业绩预览",
+      "瑞银：中国地产和地产Management1H26res",
+      "瑞银：2）二线城市房价同比跌幅较2025年收窄，挂牌量增长节奏变化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "瑞银：中国房地产与物业管理2026上半年业绩预览-一线城市房价趋稳",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：中国房地产与物业管理2026上半年业绩预览",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：中国地产和地产Management1H26res",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：2）二线城市房价同比跌幅较2025年收窄，挂牌量增长节奏变化",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "瑞银：城市与住房数据变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "瑞银：中国房地产与物业管理2026上半年业绩预览-透视盈利",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "瑞银：城市与住房数据变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_34.pdf",
+  "figure_count": 4,
+  "institution_name": "瑞银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "压力->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x3",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x3"
+  ]
+}

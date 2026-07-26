@@ -1,0 +1,126 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260726/shard_1/0001-06-CITI-Global-Power-Tools-Latest-US-Tariff-Announcement-Removes-Overhang-2",
+  "title": "花旗：跨境贸易与行业变化观察",
+  "source_title": "0001-06-CITI-Global Power Tools-Latest US Tariff Announcement Removes Overhang-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-06-CITI-Global Power Tools-Latest US Tariff Announcement Removes Overhang-260724",
+    "cleaned_source_title": "CITI-Global Power Tools-Latest US Tariff Announcement Removes Overhang",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：全球PowerToolsLatestUSTari",
+    "raw_candidates": [
+      "全球电动工具-美国最新关税公告消除不确定性",
+      "全球电动工具-美国对60国征收最高12.5%关税",
+      "全球电动工具-关税更新与创科实业营业利润率展望"
+    ],
+    "cleaned_candidates": [
+      "花旗：全球电动工具-美国最新关税公告消除不确定性",
+      "花旗：全球电动工具-美国对60国征收最高12.5%关税",
+      "花旗：全球电动工具-关税更新与创科实业营业利润率展望",
+      "花旗：全球PowerToolsLatestUSTari",
+      "花旗：据路透社（2026年7月26日）报道"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：全球电动工具-美国对60国征收最高12.5%关税",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：全球电动工具-关税更新与创科实业营业利润率展望",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：全球PowerToolsLatestUSTari",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：据路透社（2026年7月26日）报道",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：跨境贸易与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "花旗：全球电动工具-美国最新关税公告消除不确定性",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "花旗：跨境贸易与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 8,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1"
+  ]
+}

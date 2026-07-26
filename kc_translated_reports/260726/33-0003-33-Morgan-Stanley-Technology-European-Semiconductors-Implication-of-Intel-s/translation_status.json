@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260726/shard_6/0003-33-Morgan-Stanley-Technology-European-Semiconductors-Implication-of-Intel-s",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0003-33-MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI-260724",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-33-MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI-260724",
+    "cleaned_source_title": "MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：科技European半导体Implicat",
+    "raw_candidates": [
+      "英特尔资本支出上调对ASML和ASMI的影响",
+      "英特尔2026年资本支出超200亿美元-ASML与ASMI受益",
+      "英特尔资本支出上调-欧洲半导体设备需求增长"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：英特尔资本支出上调对ASML和ASMI的影响",
+      "摩根士丹利：英特尔2026年资本支出超200亿美元",
+      "摩根士丹利：英特尔资本支出上调-欧洲半导体设备需求增长",
+      "摩根士丹利：科技European半导体Implicat",
+      "摩根士丹利：2026年设备支出预计较2025年增长40%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：英特尔2026年资本支出超200亿美元",
+        "reasons": [
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：英特尔资本支出上调-欧洲半导体设备需求增长",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "摩根士丹利：科技European半导体Implicat",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：2026年设备支出预计较2025年增长40%",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：英特尔资本支出上调对ASML和ASMI的影响",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_33.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x4",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "投资->研究 x1",
+    "证券->标的 x2",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "(?:投资建议|操作建议|买卖建议)->研究交流 x1",
+    "买入->观点偏积极 x2",
+    "卖出->观点偏谨慎 x2",
+    "投资者->读者 x4",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x3",
+    "买入->观点偏积极 x3",
+    "卖出->观点偏谨慎 x3",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
