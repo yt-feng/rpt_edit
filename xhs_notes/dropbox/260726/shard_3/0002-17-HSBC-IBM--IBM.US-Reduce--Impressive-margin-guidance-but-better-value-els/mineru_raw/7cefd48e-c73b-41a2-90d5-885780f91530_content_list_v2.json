@@ -1,0 +1,3912 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reduce: Impressive margin guidance but better value elsewhere"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                57,
+                147,
+                627,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IBM cut its 2026 constant currency revenue guidance but still guided to non-GAAP PBT margin improving 100bp y-o-y"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                218,
+                618,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Increasing our 2026-30e non-GAAP EPS estimates by 1-2% to reflect higher-than-expected margin guidance"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                264,
+                612,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- TP cut to USD174 (from USD175) despite 1-2% higher EPS estimates due to lower multiples. Maintain Reduce"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                309,
+                610,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Impressive margin guidance: As pre-announced on 14 July 2026, 2Q26 revenue rose  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y cc to USD17,161m (1Q26:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "). The company cut its 2026 cc revenue growth guidance to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4\\%-5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " from more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " previously. Despite the cut to revenue guidance, the management maintained it expects 2026 non-GAAP profit before tax margin to rise by 100bp y-o-y. 2Q26 non-GAAP profit before tax margin rose 30bp y-o-y but it was largely a result of a favourable USD280m non-GAAP other income in 2Q26 (2Q25: USD65m). The extent to which the expected margin improvement comes from one-off items such as other income is a key monitorable."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                365,
+                623,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software segment disappoints: Software segment cc growth slowed to 4.6% from 8% in 1Q26. Organic growth slipped to 0% y-o-y in 2Q26 (1Q26: we estimate 7%). Management cut 2026 cc revenue growth guidance to 6-8% from more than 10% previously. Transaction processing subsegment dipped 9% y-o-y (cc) (1Q26: +2%). The management expects low- to mid-single-digit % decline in 2H26 but suggested most of the missing revenue is likely delayed and not lost. Hybrid cloud subsegment cc growth accelerated to 11% y-o-y in 2Q26 (1Q26: 10%). Automation segment cc growth slipped to 3% in 2Q26 (1Q26: 7%). Reported growth for the data subsegment accelerated to 19% in 2Q26 (1Q26: 16%), but, net of c18-19pp inorganic contribution from the Confluent acquisition in 2Q26, organic growth slowed considerably."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                499,
+                620,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Infrastructure segment inflecting: Infrastructure cc revenue dipped 7% y-o-y in 2Q26 (1Q26: +12%) as the new z17 series entered its fifth quarter since launch. The weakness in the mainframes subsegment was partially offset by a strong distributed infrastructure subsegment where revenue rose 37% y-o-y (1Q26: 13%), on a low base. The management now expects infrastructure segment cc revenue to rise by low-single-digit % in 2026 (previously low-single-digit decline) largely due to stronger distributed infra subsegment."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                664,
+                618,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Expensive valuation: IBM shares are trading at 14.2x CY27e non-GAAP EV/EBIT (sector median: 13.9x). We expect IBM's non-GAAP EPS to rise at a CAGR of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " over CY26-28e (sector median  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "19.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "). Our TP of USD174 (was USD175) is based on our SOTP valuation. Our TP implies  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "15.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " downside, and we maintain a Reduce rating as we see better value elsewhere."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                782,
+                618,
+                863
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures & Disclaimer"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                918,
+                252,
+                933
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                931,
+                620,
+                964
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United States"
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                168,
+                760,
+                185
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f77b3985b5c63b5be575c12d86709b8eacf0ce12412674753655a2516d156e7d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                645,
+                219,
+                688,
+                252
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MAINTAIN REDUCE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                709,
+                229,
+                858,
+                245
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TARGET PRICE (USD) PREVIOUS TARGET (USD)"
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                262,
+                944,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "174.00 175.00"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                277,
+                895,
+                298
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SHARE PRICE (USD) UPSIDE/DOWNSIDE"
+                    }
+                ]
+            },
+            "bbox": [
+                644,
+                309,
+                912,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "205.77 -15.4%"
+                    }
+                ]
+            },
+            "bbox": [
+                644,
+                325,
+                898,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(as of 22 Jul 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                345,
+                720,
+                358
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MARKET DATA"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                645,
+                366,
+                731,
+                379
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9b266b4c4029f2d9f9d037916fcb7ddc0d3ad642fef56d030fa7ca4916176337.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Market cap (USDm)</td><td>193,400</td></tr><tr><td>Market cap (USDm)</td><td>193,400</td></tr><tr><td>3m ADTV (USDm)</td><td>2,815</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                642,
+                379,
+                806,
+                411
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/271c30c6ac9d76f47c16fb5e0318b520699e242a412a2060ce14006bb0fe51bc.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Free float</td><td>100%</td></tr><tr><td>BBG</td><td>IBM US</td></tr><tr><td>RIC</td><td>IBM.N</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                814,
+                377,
+                961,
+                411
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/bde471e62892c610bdc835c2d817a0ec11a94f1bbe83fe24536d42971093c8c4.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "FINANCIALS AND RATIOS (USD)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td>HSBC EPS</td><td>11.59</td><td>12.16</td><td>12.30</td><td>13.86</td></tr><tr><td>HSBC EPS (prev)</td><td>11.59</td><td>11.56</td><td>12.10</td><td>13.60</td></tr><tr><td>Change (%)</td><td>0.0</td><td>5.2</td><td>1.7</td><td>1.9</td></tr><tr><td>Consensus EPS</td><td>11.35</td><td>12.30</td><td>13.11</td><td>14.29</td></tr><tr><td>PE (x)</td><td>17.8</td><td>16.9</td><td>16.7</td><td>14.8</td></tr><tr><td>Dividend yield (%)</td><td>3.3</td><td>3.3</td><td>3.3</td><td>3.3</td></tr><tr><td>EV/EBITDA (x)</td><td>13.2</td><td>14.4</td><td>12.6</td><td>11.3</td></tr><tr><td>ROE (%)</td><td>36.6</td><td>32.8</td><td>29.3</td><td>29.2</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                642,
+                433,
+                961,
+                529
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2f9b5671224d6e88c825ea5388cb2b7301db89d72d793fe3aa556657be1a84ba.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "52-WEEK PRICE (USD)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LSEG IBES, HSBC estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                649,
+                560,
+                942,
+                629
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abhishek Shukla*, CFA"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                645,
+                668,
+                782,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Analyst, Technology\nHSBC Bank Middle East Limited, DIFC\nabhishek2.shukla@hsbc.com\n+971 4 5093343"
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                679,
+                854,
+                720
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Bersey"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                645,
+                725,
+                741,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Head of US Technology Research\nHSBC Securities (USA) Inc.\nstephen.bersey@us.hsbc.com\n+1 212 525 4153"
+                    }
+                ]
+            },
+            "bbox": [
+                644,
+                735,
+                841,
+                778
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sameer Lam*"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                644,
+                782,
+                726,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Software Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                644,
+                792,
+                787,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                803,
+                733,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "sameer.lam@hsbc.com"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                814,
+                775,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+44 20 7992 3780"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                823,
+                747,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations"
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                852,
+                952,
+                876
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report: HSBC Bank Middle East Limited, DIFC"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                916,
+                952,
+                941
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "View HSBC Global Investment Research at: https://www.research.hsbc.com"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                951,
+                927,
+                980
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                12,
+                451,
+                43
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                20,
+                962,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IBM (IBM US)"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                95,
+                350,
+                134
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities IT Services"
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                95,
+                772,
+                134
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Financials & valuation: IBM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                117,
+                338,
+                134
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e579dfa24bdaa57173871676d2db4cc3e8e051fe4ab843f8a744291b4a1e5bf6.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Financial statements"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td colspan=\"5\">Profit &amp; loss summary (USDm)</td></tr><tr><td>Revenue</td><td>67,535</td><td>70,025</td><td>71,325</td><td>75,081</td></tr><tr><td>EBITDA</td><td>16,843</td><td>15,619</td><td>17,199</td><td>18,214</td></tr><tr><td>Depreciation &amp; amortisation</td><td>-5,022</td><td>-3,605</td><td>-4,319</td><td>-3,655</td></tr><tr><td>Operating profit/EBIT</td><td>11,821</td><td>12,014</td><td>12,880</td><td>14,559</td></tr><tr><td>Net interest</td><td>-1,935</td><td>-1,937</td><td>-2,043</td><td>-2,097</td></tr><tr><td>PBT</td><td>10,329</td><td>10,735</td><td>11,155</td><td>13,038</td></tr><tr><td>HSBC PBT</td><td>12,713</td><td>13,744</td><td>14,067</td><td>15,950</td></tr><tr><td>Taxation</td><td>242</td><td>-1,584</td><td>-1,785</td><td>-2,086</td></tr><tr><td>Net profit</td><td>10,571</td><td>9,151</td><td>9,370</td><td>10,952</td></tr><tr><td>HSBC net profit</td><td>10,994</td><td>11,607</td><td>11,817</td><td>13,398</td></tr><tr><td colspan=\"5\">Cash flow summary (USDm)</td></tr><tr><td>Cash flow from operations</td><td>13,193</td><td>16,772</td><td>15,718</td><td>17,737</td></tr><tr><td>Capex</td><td>-1,617</td><td>-1,574</td><td>-1,600</td><td>-1,600</td></tr><tr><td>Cash flow from investment</td><td>-10,302</td><td>-11,770</td><td>-1,600</td><td>-1,600</td></tr><tr><td>Dividends</td><td>-6,254</td><td>-6,354</td><td>-6,409</td><td>-6,450</td></tr><tr><td>Change in net debt</td><td>2,950</td><td>2,345</td><td>-7,845</td><td>-10,254</td></tr><tr><td>FCF equity</td><td>11,575</td><td>15,230</td><td>14,118</td><td>16,137</td></tr><tr><td colspan=\"5\">Balance sheet summary (USDm)</td></tr><tr><td>Intangible fixed assets</td><td>79,108</td><td>87,561</td><td>85,781</td><td>84,246</td></tr><tr><td>Tangible fixed assets</td><td>33,715</td><td>32,409</td><td>31,483</td><td>31,018</td></tr><tr><td>Current assets</td><td>36,944</td><td>35,308</td><td>41,376</td><td>50,565</td></tr><tr><td>Cash &amp; others</td><td>30,654</td><td>28,036</td><td>33,881</td><td>42,134</td></tr><tr><td>Total assets</td><td>151,879</td><td>157,306</td><td>160,669</td><td>167,858</td></tr><tr><td>Operating liabilities</td><td>48,861</td><td>49,708</td><td>50,398</td><td>53,284</td></tr><tr><td>Gross debt</td><td>61,260</td><td>60,987</td><td>58,987</td><td>56,987</td></tr><tr><td>Net debt</td><td>30,606</td><td>32,951</td><td>25,106</td><td>14,853</td></tr><tr><td>Shareholders&#x27; funds</td><td>32,740</td><td>38,008</td><td>42,681</td><td>48,984</td></tr><tr><td>Invested capital</td><td>70,252</td><td>77,533</td><td>74,361</td><td>70,411</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                162,
+                489,
+                511
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reduce"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                856,
+                117,
+                935,
+                134
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ef7f5badf53a4d7c40315757fc4dcd82bc4fb7c77d10b7ea084ece0a351929ce.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Key forecast drivers"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Ratio, growth and per share analysis"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td>Revenue growth</td><td>8</td><td>4</td><td>2</td><td>5</td></tr><tr><td>Non-GAAP operating margin</td><td>21</td><td>21</td><td>22</td><td>23</td></tr><tr><td>Non-GAAP profit before tax margin</td><td>19</td><td>20</td><td>20</td><td>21</td></tr><tr><td>Non-GAAP EPS growth</td><td>12</td><td>5</td><td>1</td><td>13</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                514,
+                164,
+                935,
+                224
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b8bd4f0a387b8b32359447c8e6cd3e5be3974694f5e40dbe9f38eb2e95b62834.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Valuation data"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* Based on HSBC EPS (diluted)"
+                    }
+                ],
+                "html": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td>EV/sales</td><td>3.3</td><td>3.2</td><td>3.0</td><td>2.7</td></tr><tr><td>EV/EBITDA</td><td>13.2</td><td>14.4</td><td>12.6</td><td>11.3</td></tr><tr><td>EV/IC</td><td>3.2</td><td>2.9</td><td>2.9</td><td>2.9</td></tr><tr><td>PE*</td><td>17.8</td><td>16.9</td><td>16.7</td><td>14.8</td></tr><tr><td>PB</td><td>5.9</td><td>5.1</td><td>4.6</td><td>4.0</td></tr><tr><td>FCF yield (%)</td><td>6.0</td><td>7.9</td><td>7.3</td><td>8.3</td></tr><tr><td>Dividend yield (%)</td><td>3.3</td><td>3.3</td><td>3.3</td><td>3.3</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                514,
+                279,
+                935,
+                373
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2669d549c7b5f2bd9a5135331e1710ea56488d7fb5cb51a828ceb4c2f35d4fb4.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "ESG metrics"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Environmental Indicators</td><td>12/2024a</td></tr><tr><td>GHG emission intensity*</td><td>n/a</td></tr><tr><td>Energy intensity*</td><td>n/a</td></tr><tr><td>CO2 reduction policy</td><td>Yes</td></tr><tr><td>Social Indicators</td><td>12/2024a</td></tr><tr><td>Employee costs as % of revenues</td><td>n/a</td></tr><tr><td>Employee turnover (%)</td><td>n/a</td></tr><tr><td>Diversity policy</td><td>Yes</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                514,
+                420,
+                713,
+                521
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/09c5000f747cc1c89955fde671a95bf04f25ed5f3ac0df2d8346553db2e2e707.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC"
+                    },
+                    {
+                        "type": "text",
+                        "content": "* GHG intensity and energy intensity are measured in kg and kWh respectively against revenue in USD '000s"
+                    }
+                ],
+                "html": "<table><tr><td>Governance Indicators</td><td>12/2025a</td></tr><tr><td>No. of board members</td><td>13</td></tr><tr><td>Average board tenure (years)</td><td>n/a</td></tr><tr><td>Female board members (%)</td><td>23.1</td></tr><tr><td>Board members independence (%)</td><td>92.3</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                728,
+                419,
+                935,
+                484
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/cad0bb960be3207fdba2ae7a76390189c35c77d0824d88884c00114ba50851df.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td colspan=\"5\">Y-o-y % change</td></tr><tr><td>Revenue</td><td>7.6</td><td>3.7</td><td>1.9</td><td>5.3</td></tr><tr><td>EBITDA</td><td>22.3</td><td>-7.3</td><td>10.1</td><td>5.9</td></tr><tr><td>Operating profit</td><td>26.0</td><td>1.6</td><td>7.2</td><td>13.0</td></tr><tr><td>PBT</td><td>78.2</td><td>3.9</td><td>3.9</td><td>16.9</td></tr><tr><td>HSBC EPS</td><td>11.7</td><td>5.0</td><td>1.1</td><td>12.7</td></tr><tr><td colspan=\"5\">Ratios (%)</td></tr><tr><td>Revenue/IC (x)</td><td>1.0</td><td>0.9</td><td>0.9</td><td>1.0</td></tr><tr><td>ROIC</td><td>18.2</td><td>13.9</td><td>14.2</td><td>16.9</td></tr><tr><td>ROE</td><td>36.6</td><td>32.8</td><td>29.3</td><td>29.2</td></tr><tr><td>ROA</td><td>8.7</td><td>7.0</td><td>7.0</td><td>7.7</td></tr><tr><td>EBITDA margin</td><td>24.9</td><td>22.3</td><td>24.1</td><td>24.3</td></tr><tr><td>Operating profit margin</td><td>17.5</td><td>17.2</td><td>18.1</td><td>19.4</td></tr><tr><td>EBITDA/net interest (x)</td><td>8.7</td><td>8.1</td><td>8.4</td><td>8.7</td></tr><tr><td>Net debt/equity</td><td>93.5</td><td>86.7</td><td>58.8</td><td>30.3</td></tr><tr><td>Net debt/EBITDA (x)</td><td>1.8</td><td>2.1</td><td>1.5</td><td>0.8</td></tr><tr><td>CF from operations/net debt</td><td>43.1</td><td>50.9</td><td>62.6</td><td>119.4</td></tr><tr><td colspan=\"5\">Per share data (USD)</td></tr><tr><td>EPS Rep (diluted)</td><td>11.14</td><td>9.59</td><td>9.76</td><td>11.33</td></tr><tr><td>HSBC EPS (diluted)</td><td>11.59</td><td>12.16</td><td>12.30</td><td>13.86</td></tr><tr><td>DPS</td><td>6.71</td><td>6.75</td><td>6.76</td><td>6.76</td></tr><tr><td>Book value</td><td>35.12</td><td>40.36</td><td>45.00</td><td>51.32</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                543,
+                489,
+                812
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/3f13e4844fcbed7fb65b56945c11a28c966396caea18933559137706bf34cb27.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Issuer information"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Share price (USD)</td><td>205.77</td></tr><tr><td>Target price (USD)</td><td>174.00</td></tr><tr><td>RIC (Equity)</td><td>IBM.N</td></tr><tr><td>Bloomberg (Equity)</td><td>IBM US</td></tr><tr><td>Market cap (USDm)</td><td>193,400</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                514,
+                578,
+                718,
+                646
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ecf9a7b71fa89be4415a321a5c934f442519a616deb7692643bd87737b72b7b6.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Free float</td><td>100%</td></tr><tr><td>Sector</td><td>It Services</td></tr><tr><td>Country/Region</td><td>United States</td></tr><tr><td>Analyst</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Contact</td><td>+971 4 5093343</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                733,
+                577,
+                935,
+                646
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3631b91dd2c1f1da1b9ccf2ec42ec319e34749fb3a7627adad981b02a18f7adb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Price relative"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                534,
+                688,
+                913,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note: Priced at close of 22 Jul 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                837,
+                659,
+                849
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                965,
+                80,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Impressive margin guidance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                117,
+                563,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IBM announced its 2Q26 results on 22 July 2026. The company pre-announced most of the key income statement items on 14 July 2026 but had not updated its full year guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                149,
+                930,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2Q26 revenue rose 1% y-o-y (constant currency) to USD17,161m (1Q26: 6%). The company cut its 2026 constant currency revenue growth guidance to 4%-5% from more than 5% previously."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                188,
+                930,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite the cut to revenue growth guidance, the management maintained it expects non-GAAP profit before tax margin to rise by 100bp y-o-y due to higher productivity and efficiency, better supply chain optimization and lower third-party spend. 2Q26 non-GAAP profit before tax margin rose 30bp y-o-y but it was largely a result of a favourable USD280m non-GAAP other income in 2Q26 (2Q25: USD65m). Non-GAAP operating margin dipped 106bp y-o-y to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". But for the favourable impact of other income, the non-GAAP PBT margin would have been down about 90bp y-o-y."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                227,
+                930,
+                337
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/75be336c73941e029333d7fd3b55e85fd9c5a8747ed2222651f30fffeb163fac.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM: Evolution of results"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26</td><td>3Q26e</td><td>4Q26e</td></tr><tr><td>Revenue</td><td>17,554</td><td>14,541</td><td>16,978</td><td>16,330</td><td>19,686</td><td>15,918</td><td>17,161</td><td>16,697</td><td>20,248</td></tr><tr><td>Software</td><td>7,924</td><td>6,336</td><td>7,387</td><td>7,209</td><td>9,031</td><td>7,052</td><td>7,761</td><td>7,544</td><td>9,423</td></tr><tr><td>Consulting</td><td>5,175</td><td>5,068</td><td>5,314</td><td>5,324</td><td>5,349</td><td>5,272</td><td>5,327</td><td>5,317</td><td>5,388</td></tr><tr><td>Infrastructure</td><td>4,256</td><td>2,886</td><td>4,142</td><td>3,559</td><td>5,132</td><td>3,326</td><td>3,835</td><td>3,612</td><td>5,234</td></tr><tr><td>Other</td><td>199</td><td>251</td><td>135</td><td>238</td><td>174</td><td>268</td><td>238</td><td>225</td><td>204</td></tr><tr><td>Revenue: y-o-y</td><td>0.5%</td><td>0.5%</td><td>7.7%</td><td>9.1%</td><td>12.1%</td><td>9.5%</td><td>1.1%</td><td>2.2%</td><td>2.9%</td></tr><tr><td>Software</td><td>10.4%</td><td>7.4%</td><td>9.6%</td><td>10.5%</td><td>14.0%</td><td>11.3%</td><td>5.1%</td><td>4.6%</td><td>4.3%</td></tr><tr><td>Consulting</td><td>-2.0%</td><td>-2.3%</td><td>2.6%</td><td>3.3%</td><td>3.4%</td><td>4.0%</td><td>0.2%</td><td>-0.1%</td><td>0.7%</td></tr><tr><td>Infrastructure</td><td>-7.6%</td><td>-6.2%</td><td>13.6%</td><td>17.0%</td><td>20.6%</td><td>15.2%</td><td>-7.4%</td><td>1.5%</td><td>2.0%</td></tr><tr><td>Revenue: y-o-y, constant FX</td><td>2.0%</td><td>2.0%</td><td>5.0%</td><td>7.0%</td><td>9.0%</td><td>6.0%</td><td>1.0%</td><td>3.8%</td><td>3.9%</td></tr><tr><td>Software</td><td>9.0%</td><td>9.0%</td><td>8.0%</td><td>9.0%</td><td>11.0%</td><td>8.0%</td><td>4.6%</td><td>6.2%</td><td>5.3%</td></tr><tr><td>Consulting</td><td>1.0%</td><td>0.0%</td><td>0.0%</td><td>2.0%</td><td>1.0%</td><td>1.0%</td><td>1.1%</td><td>1.4%</td><td>1.7%</td></tr><tr><td>Infrastructure</td><td>-3.0%</td><td>-4.0%</td><td>11.0%</td><td>15.0%</td><td>17.0%</td><td>12.0%</td><td>-7.4%</td><td>3.0%</td><td>3.0%</td></tr><tr><td>FX effect</td><td>-1.5%</td><td>-1.5%</td><td>2.7%</td><td>2.1%</td><td>3.1%</td><td>3.5%</td><td>0.1%</td><td>-1.5%</td><td>-1.0%</td></tr><tr><td>Operating profit (Non-GAAP)</td><td>4,403</td><td>2,005</td><td>3,641</td><td>3,334</td><td>5,149</td><td>2,505</td><td>3,498</td><td>3,463</td><td>5,326</td></tr><tr><td>Margin</td><td>25.1%</td><td>13.8%</td><td>21.4%</td><td>20.4%</td><td>26.2%</td><td>15.7%</td><td>20.4%</td><td>20.7%</td><td>26.3%</td></tr><tr><td>Interest expense</td><td>-424</td><td>-455</td><td>-510</td><td>-492</td><td>-478</td><td>-473</td><td>-486</td><td>-484</td><td>-494</td></tr><tr><td>Other income (Non-GAAP)</td><td>292</td><td>188</td><td>65</td><td>191</td><td>75</td><td>97</td><td>280</td><td>242</td><td>271</td></tr><tr><td>Profit before tax (Non-GAAP)</td><td>4,271</td><td>1,738</td><td>3,196</td><td>3,033</td><td>4,746</td><td>2,129</td><td>3,292</td><td>3,220</td><td>5,103</td></tr><tr><td>Margin</td><td>24.3%</td><td>12.0%</td><td>18.8%</td><td>18.6%</td><td>24.1%</td><td>13.4%</td><td>19.2%</td><td>19.3%</td><td>25.2%</td></tr><tr><td>Net profit (Non-GAAP)</td><td>3,690</td><td>1,517</td><td>2,652</td><td>2,517</td><td>4,308</td><td>1,821</td><td>2,794</td><td>2,705</td><td>4,287</td></tr><tr><td>EPS (Non-GAAP)</td><td>3.92</td><td>1.60</td><td>2.80</td><td>2.65</td><td>4.52</td><td>1.91</td><td>2.93</td><td>2.83</td><td>4.48</td></tr><tr><td>y-o-y</td><td>1.2%</td><td>-4.2%</td><td>14.9%</td><td>15.5%</td><td>15.5%</td><td>19.2%</td><td>4.8%</td><td>6.8%</td><td>-0.9%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                377,
+                932,
+                651
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disappointing software performance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                283,
+                684,
+                554,
+                698
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software segment cc growth slowed to 4.6% from 8% in 1Q26. Organic growth slipped to 0% y-o-y in 2Q26 (1Q26: we estimate 7%). Management cut 2026 cc revenue growth guidance to 6-8% from more than 10% previously. The management flagged that c20% of IBM's software revenue comes from a point in time (as opposed to subscription revenue). A large part of the point in time revenue comes from customers' \"capex budget\". As customers redirected their capex towards servers/storage/memory, ahead of expected price hikes, IBM's mainframe hardware and point in time revenue faced setbacks. Annual recurring revenue, however, rose 8% y-o-y in 2Q26, suggesting continued strength."
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                699,
+                932,
+                826
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The transaction processing subsegment dipped  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y (cc) (1Q26:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "+2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "), which we consider largely a timing issue driven by a lumpy revenue recognition cycle as explained in our note Disappointing preannouncement; limited read across for the broader sector dated 16 July 2026. The management expects low- to mid-single-digit  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " decline in 2H26 but suggested most of the missing revenue is likely delayed and not lost. The management hinted weak 2026 revenue could help boost 2027 growth."
+                    }
+                ]
+            },
+            "bbox": [
+                283,
+                833,
+                927,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                965,
+                934,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hybrid cloud subsegment cc growth accelerated to 11% y-o-y in 2Q26 (1Q26: 10%)."
+                    }
+                ]
+            },
+            "bbox": [
+                283,
+                117,
+                881,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data and automation segments however disappointed. Automation segment cc growth slipped to 3% in 2Q26 (1Q26: 7%)."
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                140,
+                898,
+                173
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Reported growth for the data subsegment accelerated to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "19\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2Q26 (1Q26:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "16\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "). However, growth in 2Q26 likely includes an additional 18-19pp inorganic contribution from the Confluent acquisition that closed on 17 March 2026. The management had previously guided to a constant currency growth of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20 - 25\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2Q26. Consequently, we consider the reported growth a significant sequential slowdown. The company blamed the slowdown on a largely lumpy revenue recognition cycle."
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                179,
+                925,
+                275
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9b5647d2bb99f2e2317b7c98bbd6bd0ea616c67690011cc43ec5b438829c8a8e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM: Software segment dynamics"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26</td><td>3Q26e</td><td>4Q26e</td></tr><tr><td>Software</td><td>7,924</td><td>6,336</td><td>7,387</td><td>7,209</td><td>9,031</td><td>7,052</td><td>7,761</td><td>7,544</td><td>9,423</td></tr><tr><td>Hybrid cloud</td><td>1,774</td><td>1,687</td><td>1,796</td><td>1,886</td><td>2,000</td><td>1,900</td><td>1,994</td><td>2,044</td><td>2,177</td></tr><tr><td>Automation</td><td>1,984</td><td>1,584</td><td>1,883</td><td>1,934</td><td>2,300</td><td>1,700</td><td>1,958</td><td>1,963</td><td>2,346</td></tr><tr><td>Data</td><td>1,728</td><td>1,236</td><td>1,499</td><td>1,459</td><td>2,100</td><td>1,500</td><td>1,784</td><td>1,694</td><td>2,375</td></tr><tr><td>Transaction processing</td><td>2,438</td><td>1,828</td><td>2,208</td><td>1,930</td><td>2,631</td><td>1,952</td><td>2,025</td><td>1,843</td><td>2,526</td></tr><tr><td>Reported Revenue: y-o-y</td><td>10.4%</td><td>7.4%</td><td>9.6%</td><td>10.5%</td><td>14.0%</td><td>11.3%</td><td>5.1%</td><td>4.6%</td><td>4.3%</td></tr><tr><td>Hybrid cloud</td><td>15.7%</td><td>11.7%</td><td>16.1%</td><td>13.7%</td><td>12.7%</td><td>12.6%</td><td>11.0%</td><td>8.4%</td><td>8.8%</td></tr><tr><td>Automation</td><td>11.1%</td><td>13.9%</td><td>16.2%</td><td>23.7%</td><td>15.9%</td><td>7.3%</td><td>4.0%</td><td>1.5%</td><td>2.0%</td></tr><tr><td>Data</td><td>4.2%</td><td>5.4%</td><td>8.8%</td><td>7.9%</td><td>21.5%</td><td>21.4%</td><td>19.0%</td><td>16.1%</td><td>13.1%</td></tr><tr><td>Transaction processing</td><td>10.7%</td><td>0.2%</td><td>0.6%</td><td>-1.1%</td><td>7.9%</td><td>6.8%</td><td>-8.3%</td><td>-4.5%</td><td>-4.0%</td></tr><tr><td>FX Effect</td><td>1.4%</td><td>-0.6%</td><td>1.6%</td><td>1.5%</td><td>3.0%</td><td>3.3%</td><td>0.5%</td><td>-1.5%</td><td>-1.0%</td></tr><tr><td>Revenue: y-o-y, cc</td><td>9.0%</td><td>8.0%</td><td>8.0%</td><td>9.0%</td><td>11.0%</td><td>8.0%</td><td>4.6%</td><td>6.2%</td><td>5.3%</td></tr><tr><td>Hybrid cloud</td><td>14.3%</td><td>13.0%</td><td>12.4%</td><td>12.0%</td><td>8.0%</td><td>10.0%</td><td>10.6%</td><td>9.9%</td><td>9.8%</td></tr><tr><td>Automation</td><td>9.8%</td><td>15.0%</td><td>14.0%</td><td>22.0%</td><td>14.0%</td><td>7.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td></tr><tr><td>Data</td><td>2.8%</td><td>7.0%</td><td>7.0%</td><td>7.0%</td><td>19.0%</td><td>16.0%</td><td>18.0%</td><td>17.6%</td><td>14.1%</td></tr><tr><td>Transaction processing</td><td>9.3%</td><td>2.0%</td><td>-2.0%</td><td>-3.0%</td><td>4.0%</td><td>2.0%</td><td>-9.0%</td><td>-3.0%</td><td>-3.0%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                315,
+                932,
+                510
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The management has historically guided for a long-term segment revenue growth rate approaching double digits, including 6-7ppt of organic growth and 2-3ppt of inorganic contribution. We continue to model a long-term revenue CAGR of c7%, in-line with the management organic guidance. We do not model acquisitions that are not yet announced."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                539,
+                893,
+                603
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9d974083a952f6736d6303e0e7a6cddd6ef5f1248226e58e31f0681e13b16ac8.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM software segment: Long-term revenue estimates"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td></tr><tr><td>Software</td><td>25,011</td><td>27,086</td><td>29,963</td><td>31,779</td><td>34,288</td><td>36,479</td><td>39,010</td><td>41,849</td></tr><tr><td>Hybrid cloud</td><td>5,827</td><td>6,490</td><td>7,369</td><td>8,114</td><td>9,027</td><td>9,999</td><td>11,097</td><td>12,358</td></tr><tr><td>Automation</td><td>6,009</td><td>6,558</td><td>7,701</td><td>7,967</td><td>8,395</td><td>8,898</td><td>9,432</td><td>9,998</td></tr><tr><td>Data</td><td>5,462</td><td>5,631</td><td>6,294</td><td>7,353</td><td>7,916</td><td>8,391</td><td>8,894</td><td>9,428</td></tr><tr><td>Transaction processing</td><td>7,714</td><td>8,407</td><td>8,597</td><td>8,345</td><td>8,950</td><td>9,190</td><td>9,586</td><td>10,065</td></tr><tr><td>Reported Revenue: y-o-y</td><td>5.8%</td><td>8.3%</td><td>10.6%</td><td>6.1%</td><td>7.9%</td><td>6.4%</td><td>6.9%</td><td>7.3%</td></tr><tr><td>Hybrid cloud</td><td>8.9%</td><td>11.4%</td><td>13.5%</td><td>10.1%</td><td>11.2%</td><td>10.8%</td><td>11.0%</td><td>11.4%</td></tr><tr><td>Automation</td><td>3.4%</td><td>9.1%</td><td>17.4%</td><td>3.5%</td><td>5.4%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td></tr><tr><td>Data</td><td>4.5%</td><td>3.1%</td><td>11.8%</td><td>16.8%</td><td>7.7%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td></tr><tr><td>Transaction processing</td><td>6.6%</td><td>9.0%</td><td>2.3%</td><td>-2.9%</td><td>7.2%</td><td>2.7%</td><td>4.3%</td><td>5.0%</td></tr><tr><td>FX effect</td><td>-0.3%</td><td>-0.1%</td><td>1.4%</td><td>0.3%</td><td>-0.5%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Revenue: y-o-y, cc</td><td>6.3%</td><td>8.3%</td><td>9.0%</td><td>6.0%</td><td>8.3%</td><td>6.4%</td><td>6.9%</td><td>7.3%</td></tr><tr><td>Hybrid cloud</td><td>9.3%</td><td>11.4%</td><td>11.4%</td><td>10.1%</td><td>11.7%</td><td>10.8%</td><td>11.0%</td><td>11.4%</td></tr><tr><td>Automation</td><td>4.3%</td><td>9.2%</td><td>16.3%</td><td>4.0%</td><td>5.8%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td></tr><tr><td>Data</td><td>5.3%</td><td>3.1%</td><td>10.0%</td><td>16.4%</td><td>8.5%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td></tr><tr><td>Transaction processing</td><td>6.5%</td><td>8.9%</td><td>0.3%</td><td>-3.3%</td><td>7.6%</td><td>2.8%</td><td>4.3%</td><td>5.0%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                641,
+                932,
+                835
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                967,
+                80,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Infrastructure segment to inflect on distributed infrastructure subsegment growth"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                120,
+                878,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Infrastructure cc revenue dipped 7% y-o-y in 2Q26 (1Q26: +12%) as the new z17 series entered its fifth quarter since launch. Typically, revenue from new mainframe series generally begins to decline from the fifth quarter onwards, but the 2Q26 decline of 42% was unusually strong (e.g., z16 revenue was down only 30% y-o-y in 2Q23, its fifth quarter since launch). The management flagged customers were forced to prioritize their capex elsewhere due to rising component costs."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                134,
+                935,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The weakness in the mainframes subsegment was partially offset by a strong distributed infrastructure subsegment where revenue rose 37% y-o-y (1Q26: 13%). Acceleration in growth is partially due to a low base. Revenue slipped 17% y-o-y in 2Q25 (1Q25: -4%)."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                221,
+                925,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The management now expects infrastructure segment cc revenue to rise by low-single-digit % in 2026 (previously low-single-digit decline). The management flagged strong growth in distributed infrastructure as the foremost driver for the increased growth guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                275,
+                935,
+                323
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Consulting segment continues to disappoint"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                331,
+                612,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consulting segment cc revenue rose 1% y-o-y in 2Q26 (1Q26: 1%). IBM's consulting segment growth continued to underperform the broader IT services sector. Reported growth of 0.2% lagged the broader IT services 2Q26e reported growth of 3.6%."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                346,
+                922,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The management expects cc revenue growth to accelerate to low- to mid-single-digit for the full year 2026. We are modelling 2H26 cc revenue growth of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y (1H:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ")."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                400,
+                927,
+                433
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f632cea9adf082f048be50bb71478e9c5d4dd88bbc129d0c81fc527260f5a871.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM consulting segment growth generally underperforms the broader IT service sector"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, Visible Alpha consensus, HSBC estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                293,
+                477,
+                927,
+                647
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes in HSBC estimates"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                283,
+                705,
+                559,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are no material changes to our revenue estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                739,
+                671,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are increasing our non-GAAP operating profit estimates by 1-2% as we were previously expecting the company to strongly cut its margin guidance along with the revenue growth guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                761,
+                932,
+                793
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We will, however, focus on the quality of margin improvement and whether it comes from one-off factors. One-off factors such as favourable other income and/or the impact of cheaply acquired historical inventory are unlikely to change IBM's investment merits, while better efficiency and productivity obviously will."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                800,
+                920,
+                863
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services\n24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                10,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                965,
+                934,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f74e3ddcd8bd3a9c8e1c219fb8f252fffce184d6ceda5715e95e06a9b4cc4751.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM: Changes in HSBC estimates"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td></tr><tr><td>Revenue</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Old</td><td>62,754</td><td>67,535</td><td>69,562</td><td>71,226</td><td>74,935</td><td>77,453</td><td>79,726</td></tr><tr><td>New</td><td>62,754</td><td>67,535</td><td>70,025</td><td>71,325</td><td>75,081</td><td>77,548</td><td>79,769</td></tr><tr><td>% change</td><td>0.0%</td><td>0.0%</td><td>0.7%</td><td>0.1%</td><td>0.2%</td><td>0.1%</td><td>0.1%</td></tr><tr><td>Non-GAAP operating profit</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Old</td><td>11,262</td><td>14,129</td><td>14,473</td><td>15,474</td><td>17,096</td><td>18,077</td><td>18,957</td></tr><tr><td>New</td><td>11,262</td><td>14,129</td><td>14,792</td><td>15,712</td><td>17,391</td><td>18,329</td><td>19,168</td></tr><tr><td>% change</td><td>0.0%</td><td>0.0%</td><td>2.2%</td><td>1.5%</td><td>1.7%</td><td>1.4%</td><td>1.1%</td></tr><tr><td>Non-GAAP profit before tax</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Old</td><td>11,208</td><td>12,713</td><td>13,057</td><td>13,838</td><td>15,662</td><td>16,531</td><td>17,677</td></tr><tr><td>New</td><td>11,208</td><td>12,713</td><td>13,744</td><td>14,067</td><td>15,950</td><td>16,825</td><td>17,928</td></tr><tr><td>% change</td><td>0.0%</td><td>0.0%</td><td>5.3%</td><td>1.7%</td><td>1.8%</td><td>1.8%</td><td>1.4%</td></tr><tr><td>Non-GAAP net profit</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Old</td><td>9,684</td><td>10,994</td><td>11,033</td><td>11,624</td><td>13,156</td><td>13,886</td><td>14,849</td></tr><tr><td>New</td><td>9,684</td><td>10,994</td><td>11,607</td><td>11,817</td><td>13,398</td><td>14,133</td><td>15,059</td></tr><tr><td>% change</td><td>0.0%</td><td>0.0%</td><td>5.2%</td><td>1.7%</td><td>1.8%</td><td>1.8%</td><td>1.4%</td></tr><tr><td>Non-GAAP EPS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Old</td><td>10.33</td><td>11.59</td><td>11.56</td><td>12.10</td><td>13.60</td><td>14.27</td><td>15.17</td></tr><tr><td>New</td><td>10.33</td><td>11.59</td><td>12.16</td><td>12.30</td><td>13.86</td><td>14.53</td><td>15.39</td></tr><tr><td>% change</td><td>0.0%</td><td>0.0%</td><td>5.2%</td><td>1.7%</td><td>1.9%</td><td>1.8%</td><td>1.5%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                133,
+                932,
+                373
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/812a369453bec5686d33014a309e4813cc36d49be1ccb0042da393cb89d1241d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM: Summary sheet"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td></tr><tr><td>Revenue</td><td>61,953</td><td>62,754</td><td>67,535</td><td>70,025</td><td>71,325</td><td>75,081</td><td>77,548</td><td>79,769</td></tr><tr><td>Software</td><td>25,011</td><td>27,086</td><td>29,963</td><td>31,779</td><td>34,288</td><td>36,479</td><td>39,010</td><td>41,849</td></tr><tr><td>Consulting</td><td>20,884</td><td>20,692</td><td>21,055</td><td>21,303</td><td>21,435</td><td>21,558</td><td>21,881</td><td>22,210</td></tr><tr><td>Infrastructure</td><td>14,592</td><td>14,019</td><td>15,719</td><td>16,007</td><td>14,718</td><td>16,159</td><td>15,771</td><td>14,825</td></tr><tr><td>Other</td><td>1,466</td><td>957</td><td>798</td><td>935</td><td>885</td><td>885</td><td>885</td><td>885</td></tr><tr><td>Revenue: y-o-y</td><td>2.3%</td><td>1.3%</td><td>7.6%</td><td>3.7%</td><td>1.9%</td><td>5.3%</td><td>3.3%</td><td>2.9%</td></tr><tr><td>Software</td><td>5.8%</td><td>8.3%</td><td>10.6%</td><td>6.1%</td><td>7.9%</td><td>6.4%</td><td>6.9%</td><td>7.3%</td></tr><tr><td>Consulting</td><td>4.1%</td><td>-0.9%</td><td>1.8%</td><td>1.2%</td><td>0.6%</td><td>0.6%</td><td>1.5%</td><td>1.5%</td></tr><tr><td>Infrastructure</td><td>-4.6%</td><td>-3.9%</td><td>12.1%</td><td>1.8%</td><td>-8.1%</td><td>9.8%</td><td>-2.4%</td><td>-6.0%</td></tr><tr><td>Revenue: y-o-y, constant FX</td><td>2.5%</td><td>2.8%</td><td>5.8%</td><td>3.7%</td><td>2.3%</td><td>5.2%</td><td>3.4%</td><td>2.9%</td></tr><tr><td>Software</td><td>6.3%</td><td>8.3%</td><td>9.3%</td><td>6.0%</td><td>8.3%</td><td>6.4%</td><td>6.9%</td><td>7.3%</td></tr><tr><td>Consulting</td><td>6.3%</td><td>1.3%</td><td>0.8%</td><td>1.3%</td><td>1.1%</td><td>0.6%</td><td>1.5%</td><td>1.5%</td></tr><tr><td>Infrastructure</td><td>-5.3%</td><td>-1.7%</td><td>9.8%</td><td>1.6%</td><td>-7.5%</td><td>9.0%</td><td>-1.0%</td><td>-6.0%</td></tr><tr><td>FX effect</td><td>-0.2%</td><td>-1.4%</td><td>1.6%</td><td>0.3%</td><td>-0.5%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Operating profit (Non-GAAP)</td><td>11,054</td><td>11,262</td><td>14,129</td><td>14,792</td><td>15,712</td><td>17,391</td><td>18,329</td><td>19,168</td></tr><tr><td>Margin</td><td>17.8%</td><td>17.9%</td><td>20.9%</td><td>21.1%</td><td>22.0%</td><td>23.2%</td><td>23.6%</td><td>24.0%</td></tr><tr><td>Interest expense</td><td>-1,607</td><td>-1,712</td><td>-1,935</td><td>-1,937</td><td>-2,043</td><td>-2,097</td><td>-2,102</td><td>-2,076</td></tr><tr><td>Other income (Non-GAAP)</td><td>865</td><td>1,658</td><td>519</td><td>890</td><td>398</td><td>656</td><td>598</td><td>836</td></tr><tr><td>Profit before tax (Non-GAAP)</td><td>10,312</td><td>11,208</td><td>12,713</td><td>13,744</td><td>14,067</td><td>15,950</td><td>16,825</td><td>17,928</td></tr><tr><td>Margin</td><td>16.6%</td><td>17.9%</td><td>18.8%</td><td>19.6%</td><td>19.7%</td><td>21.2%</td><td>21.7%</td><td>22.5%</td></tr><tr><td>Net profit (Non-GAAP)</td><td>8,871</td><td>9,684</td><td>10,994</td><td>11,607</td><td>11,817</td><td>13,398</td><td>14,133</td><td>15,059</td></tr><tr><td>EPS (Non-GAAP)</td><td>9.64</td><td>10.33</td><td>11.59</td><td>12.16</td><td>12.30</td><td>13.86</td><td>14.53</td><td>15.39</td></tr><tr><td>y-o-y</td><td>5.4%</td><td>7.2%</td><td>12.1%</td><td>5.0%</td><td>1.1%</td><td>12.7%</td><td>4.8%</td><td>5.9%</td></tr><tr><td>Total debt</td><td>56,547</td><td>54,973</td><td>61,260</td><td>60,987</td><td>58,987</td><td>56,987</td><td>54,987</td><td>52,987</td></tr><tr><td>Cash</td><td>26,021</td><td>27,317</td><td>30,654</td><td>28,036</td><td>33,881</td><td>42,134</td><td>49,540</td><td>57,708</td></tr><tr><td>Net debt</td><td>30,526</td><td>27,656</td><td>30,606</td><td>32,951</td><td>25,106</td><td>14,853</td><td>5,447</td><td>-4,721</td></tr><tr><td>Operating cash flow</td><td>13,634</td><td>9,139</td><td>13,193</td><td>16,772</td><td>15,718</td><td>17,737</td><td>17,276</td><td>18,037</td></tr><tr><td>Capex</td><td>-1,940</td><td>-1,989</td><td>-1,617</td><td>-1,574</td><td>-1,600</td><td>-1,600</td><td>-1,600</td><td>-1,600</td></tr><tr><td>FCF</td><td>11,694</td><td>7,150</td><td>11,576</td><td>15,198</td><td>14,118</td><td>16,137</td><td>15,676</td><td>16,437</td></tr><tr><td>Acquisitions</td><td>-356</td><td>0</td><td>-8,294</td><td>-10,480</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dividends</td><td>-6,059</td><td>-6,135</td><td>-6,254</td><td>-6,354</td><td>-6,409</td><td>-6,450</td><td>-6,490</td><td>-6,529</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                69,
+                458,
+                934,
+                818
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services\n24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                10,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                967,
+                80,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Expensive valuation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                115,
+                269,
+                134
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/03f1b1a49cf2c1031c52dfc4606c5cb1d16e8eb90bd298a7506adf39286c2630.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Comparative valuation using share-based compensation as a real expense"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LSEG Datastream, Company data, HSBC estimates *Depressed due to one off effects in 2026e"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td rowspan=\"2\">CMP (USD)</td><td rowspan=\"2\">TP (USD)</td><td colspan=\"4\">PE (non-GAAP, after SBC)</td><td colspan=\"4\">EV/EBIT (non-GAAP, after SBC)</td><td rowspan=\"2\">EPS CAGR 26-28e</td><td rowspan=\"2\">PEG 26e</td></tr><tr><td>CY25</td><td>CY26e</td><td>CY27e</td><td>CY28e</td><td>CY25</td><td>CY26e</td><td>CY27e</td><td>CY28e</td></tr><tr><td>Oracle</td><td>ORCL US</td><td>Buy</td><td>125.84</td><td>316.00</td><td>24.0</td><td>22.3</td><td>18.3</td><td>12.8</td><td>21.1</td><td>17.7</td><td>15.0</td><td>11.6</td><td>32.0%</td><td>0.70</td></tr><tr><td>Apple</td><td>AAPL US</td><td>Buy</td><td>325.89</td><td>366.00</td><td>41.7</td><td>35.4</td><td>31.1</td><td>28.8</td><td>34.7</td><td>28.9</td><td>25.2</td><td>23.0</td><td>10.8%</td><td>3.27</td></tr><tr><td>Adobe</td><td>ADBE US</td><td>Buy</td><td>218.36</td><td>308.00</td><td>12.9</td><td>11.1</td><td>9.9</td><td>8.9</td><td>10.3</td><td>9.0</td><td>8.0</td><td>7.0</td><td>11.3%</td><td>0.98</td></tr><tr><td>Autodesk</td><td>ADSK US</td><td>Buy</td><td>203.50</td><td>357.00</td><td>38.3</td><td>30.1</td><td>22.2</td><td>19.8</td><td>22.6</td><td>17.0</td><td>14.1</td><td>12.0</td><td>23.2%</td><td>1.30</td></tr><tr><td>Amazon</td><td>AMZN US</td><td>Buy</td><td>244.85</td><td>310.00</td><td>30.8</td><td>26.3</td><td>23.8</td><td>20.0</td><td>31.7</td><td>25.8</td><td>20.5</td><td>17.0</td><td>14.7%</td><td>1.79</td></tr><tr><td>Salesforce</td><td>CRM US</td><td>Buy</td><td>163.00</td><td>356.00</td><td>16.8</td><td>15.0</td><td>13.6</td><td>11.6</td><td>15.1</td><td>13.6</td><td>11.2</td><td>9.4</td><td>13.5%</td><td>1.11</td></tr><tr><td>CoreWeave</td><td>CRWV US</td><td>Reduce</td><td>82.64</td><td>36.00</td><td>-32.3</td><td>-18.3</td><td>-22.4</td><td>-45.6</td><td>1,439.3</td><td>2,371.3</td><td>48.5</td><td>25.8</td><td>NA</td><td>NA</td></tr><tr><td>Fair Isaac</td><td>FICO US</td><td>Reduce</td><td>1,221.47</td><td>707.00</td><td>46.1</td><td>28.0</td><td>27.3</td><td>27.8</td><td>33.0</td><td>20.8</td><td>20.6</td><td>21.1</td><td>0.4%</td><td>71.55</td></tr><tr><td>HP</td><td>HPQ US</td><td>Buy</td><td>25.10</td><td>29.60</td><td>7.9</td><td>7.6</td><td>7.2</td><td>6.5</td><td>7.4</td><td>7.0</td><td>6.7</td><td>6.2</td><td>7.5%</td><td>1.01</td></tr><tr><td>IBM</td><td>IBM US</td><td>Reduce</td><td>205.77</td><td>174.00</td><td>17.8</td><td>16.9</td><td>16.7</td><td>14.8</td><td>16.0</td><td>15.5</td><td>14.2</td><td>12.3</td><td>6.7%</td><td>2.51</td></tr><tr><td>Intuit</td><td>INTU US</td><td>Buy</td><td>284.47</td><td>707.00</td><td>17.3</td><td>14.6</td><td>12.0</td><td>10.6</td><td>13.5</td><td>10.7</td><td>8.2</td><td>6.4</td><td>17.4%</td><td>0.84</td></tr><tr><td>Meta</td><td>META US</td><td>Buy</td><td>627.17</td><td>905.00</td><td>NA</td><td>20.0</td><td>18.7</td><td>15.7</td><td>19.1</td><td>19.0</td><td>16.2</td><td>13.4</td><td>12.9%*</td><td>1.55</td></tr><tr><td>Microsoft</td><td>MSFT US</td><td>Buy</td><td>390.34</td><td>567.00</td><td>25.3</td><td>20.9</td><td>17.2</td><td>14.3</td><td>20.1</td><td>17.0</td><td>13.9</td><td>11.4</td><td>21.0%</td><td>1.00</td></tr><tr><td>Palantir</td><td>PLTR US</td><td>Hold</td><td>124.57</td><td>151.00</td><td>259.4</td><td>108.1</td><td>71.6</td><td>61.0</td><td>198.9</td><td>83.4</td><td>53.6</td><td>45.6</td><td>33.1%</td><td>3.26</td></tr><tr><td>SAP (EUR)</td><td>SAP GR</td><td>Buy</td><td>132.04</td><td>185.00</td><td>21.6</td><td>18.7</td><td>16.0</td><td>14.2</td><td>14.6</td><td>13.1</td><td>10.9</td><td>9.4</td><td>15.0%</td><td>1.25</td></tr><tr><td>Snowflake</td><td>SNOW US</td><td>Buy</td><td>267.80</td><td>289.00</td><td>-80.1</td><td>-102.9</td><td>-139.3</td><td>-170.2</td><td>-84.0</td><td>-89.0</td><td>-112.0</td><td>-135.5</td><td>NA</td><td>NA</td></tr><tr><td>SpaceX</td><td>SPCX US</td><td>Hold</td><td>115.26</td><td>130.00</td><td>-49.0</td><td>-164.4</td><td>-205.9</td><td>-306.6</td><td>-83.6</td><td>-329.4</td><td>-219.5</td><td>-393.7</td><td>NA</td><td>NA</td></tr><tr><td>TE Connectivity</td><td>TEL US</td><td>Hold</td><td>200.28</td><td>216.00</td><td>21.0</td><td>17.6</td><td>15.6</td><td>14.1</td><td>17.4</td><td>14.2</td><td>12.4</td><td>13.7</td><td>11.9%</td><td>1.48</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td>21.6</td><td>18.7</td><td>16.7</td><td>14.2</td><td>16.0</td><td>15.5</td><td>13.9</td><td>11.4</td><td>19.2%</td><td>1.18</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                179,
+                932,
+                432
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are cutting our sum of the parts valuation for IBM to USD174 from USD175, despite slightly higher estimates, to reflect a sector-wide derating."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                462,
+                927,
+                494
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5180ec5a9cc4c2b314f8e01158eab81f6080f6b4fde9d2403a408d699785a90f.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "IBM: Sum of the parts valuation"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LSEG Datastream, Company data, HSBC estimates *We treat financing receivables as cash equivalent"
+                    }
+                ],
+                "html": "<table><tr><td>USDm, FYE Dec</td><td>Using bottom-up valuation of Quantum business</td><td>Using peer multiples for valuing quantum business</td></tr><tr><td>Non-GAAP EBIT (2027e)</td><td>15,712</td><td>15,712</td></tr><tr><td>Software</td><td>10,564</td><td>10,564</td></tr><tr><td>Consulting</td><td>2,335</td><td>2,335</td></tr><tr><td>Infrastructure</td><td>2,420</td><td>2,420</td></tr><tr><td>Financing/Other</td><td>393</td><td>393</td></tr><tr><td colspan=\"3\">Target 2027e non-GAAP EV/EBIT</td></tr><tr><td>Software</td><td>10.9x</td><td>10.9x</td></tr><tr><td>Consulting</td><td>6.7x</td><td>6.7x</td></tr><tr><td>Infrastructure</td><td>8.7x</td><td>8.7x</td></tr><tr><td>Financing/Other</td><td>10.0x</td><td>10.0x</td></tr><tr><td>Target EV</td><td>192,546</td><td>185,797</td></tr><tr><td>Software</td><td>115,144</td><td>115,144</td></tr><tr><td>Consulting</td><td>15,647</td><td>15,647</td></tr><tr><td>Infrastructure</td><td>21,079</td><td>21,079</td></tr><tr><td>Financing/Other</td><td>3,925</td><td>3,925</td></tr><tr><td>Valuation of Quantum computing business</td><td>36,751</td><td>30,002</td></tr><tr><td>Net debt 2027e*</td><td>25,106</td><td>25,106</td></tr><tr><td>Target shareholder equity valuation</td><td>167,440</td><td>160,690</td></tr><tr><td>Number of shares (2027e)</td><td>961</td><td>961</td></tr><tr><td>Target price</td><td>174</td><td>167</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                281,
+                534,
+                932,
+                784
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                817,
+                354,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our target EV of USD115,144m is 10.9x 2027e non-GAAP EV/EBIT. SAP, a pure play software company, is trading at 10.9x 2027e non-GAAP EV/EBIT. We expect IBM software's non-GAAP EBIT to rise at a CAGR of 10.2% over CY26-30e, in line with 10.3% for SAP. Over 2023-26e, IBM's software non-GAAP EBIT rose at a CAGR of 13.2% vs 21.6% for SAP."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                833,
+                927,
+                896
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We previously used a target EV/EBIT of 11.3x and have cut this to 10.9x to reflect the sector-wide (and SAP's) derating."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                902,
+                913,
+                934
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                965,
+                934,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Consulting"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                119,
+                370,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our target EV of USD15,647m is 6.7x 2027e non-GAAP EV/EBIT. Accenture, a close peer for the segment, is trading at 6.7x 2027e non-GAAP EV/EBIT (using Visible Alpha consensus). We expect IBM consulting's non-GAAP EBIT to rise at a CAGR of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " over CY26-30e, slightly below the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for Accenture. Over 2023-26e, IBM's software non-GAAP EBIT rose at a CAGR of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " vs  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for Accenture. Accenture generally outperformed IBM in revenue growth, but IBM likely did a better job of improving margins on a low base. We estimate IBM consulting's non-GAAP operating margin rose to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "10.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2026e from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2023. In comparison, Accenture's non-GAAP EBIT margin improved to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "15.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "15.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in the same period."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                134,
+                932,
+                262
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Infrastructure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                281,
+                269,
+                389,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our target EV of USD21,079m is 8.7x 2027e non-GAAP EV/EBIT. We do not have any true peer for IBM's mainframe focussed infrastructure/hardware business. HP is trading at 6.7x CY27e non-GAAP EV/EBIT. We use a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " premium to HP to be conservative* and because we consider IBM's infrastructure business strategically better and differentiated."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                284,
+                913,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Financially, we consider HP a close enough peer. We expect (and management guides to) a roughly flat revenue trajectory for IBM's infrastructure segment through the cycle. HP's business of selling printers/printer supplies and personal computers is similar. We expect 2025-30e non-GAAP operating profit CAGR of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (2020-25e CAGR:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "-1.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ")."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                354,
+                932,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*As our rating is Reduce, a higher multiple is conservative"
+                    }
+                ]
+            },
+            "bbox": [
+                283,
+                427,
+                591,
+                439
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantum computing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                283,
+                449,
+                438,
+                462
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We value the business at USD36,751m based on our bottom-up valuation of the quantum computing market/business. Please refer to our note Downgrade to Reduce: Prefer synthetic IBM to the real one, 14 July 2026, for details."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                464,
+                912,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key upside risks include: better-than-expected success in cutting costs, higher-than-expected revenue from AI and other software offerings, and a better-than-expected macroeconomic and stock market environment."
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                518,
+                925,
+                566
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services\n24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                10,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                967,
+                80,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure appendix"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                69,
+                121,
+                519,
+                155
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                191,
+                222,
+                207
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Abhishek Shukla, CFA, Stephen Bersey and Sameer Lam"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                208,
+                937,
+                320
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                326,
+                234,
+                341
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities: Stock ratings and basis for financial analysis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                345,
+                468,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                360,
+                937,
+                472
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                479,
+                607,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Buy; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock may be classified as a Buy or a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock will be classified as a Reduce."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                495,
+                937,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                597,
+                935,
+                628
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Upside/Downside is the percentage difference between the target price and the share price."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                636,
+                688,
+                651
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Prior to this date, HSBC's rating structure was applied on the following basis:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                659,
+                635,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                674,
+                937,
+                801
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*A stock was classified as volatile if its historical volatility had exceeded  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " benchmark in either direction for a stock's status to change."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                808,
+                937,
+                888
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                192,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                965,
+                934,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating distribution for long-term investment opportunities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                119,
+                494,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of 30 June 2026, the distribution of all independent ratings published by HSBC is as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                137,
+                763,
+                151
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f5a38e1ccfd115ab19b9e5d9213d76b87f3bc09438202f51ea780b9ef75cd338.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Buy</td><td>61%</td><td>(13% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>34%</td><td>(10% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>5%</td><td>(8% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                149,
+                905,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                210,
+                935,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                262,
+                935,
+                292
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Share price and rating changes for long-term investment opportunities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                298,
+                585,
+                314
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IBM (IBM.N) share price performance USD Vs HSBC rating history"
+                    }
+                ]
+            },
+            "bbox": [
+                74,
+                314,
+                456,
+                345
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/20c4f451c4d82b3e1aae873801e6290813b021aa2cacd4e1e829e9952963670d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                351,
+                490,
+                535
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0a835085a7c57d62abc7d9d3f99ba583d5e907bba4742ab052e8d16434e2f4f4.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating & target price history"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HSBC"
+                    }
+                ],
+                "html": "<table><tr><td>From</td><td>To</td><td>Date</td><td>Analyst</td></tr><tr><td>N/A</td><td>Reduce</td><td>14 Dec 2023</td><td>Stephen Bersey</td></tr><tr><td>Reduce</td><td>Hold</td><td>27 Apr 2026</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Hold</td><td>Reduce</td><td>14 Jul 2026</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Target price</td><td>Value</td><td>Date</td><td>Analyst</td></tr><tr><td>Price 1</td><td>124.00</td><td>14 Dec 2023</td><td>Stephen Bersey</td></tr><tr><td>Price 2</td><td>146.00</td><td>26 Jan 2024</td><td>Stephen Bersey</td></tr><tr><td>Price 3</td><td>148.00</td><td>25 Apr 2024</td><td>Stephen Bersey</td></tr><tr><td>Price 4</td><td>162.00</td><td>25 Jul 2024</td><td>Stephen Bersey</td></tr><tr><td>Price 5</td><td>183.00</td><td>25 Oct 2024</td><td>Stephen Bersey</td></tr><tr><td>Price 6</td><td>179.00</td><td>31 Jan 2025</td><td>Stephen Bersey</td></tr><tr><td>Price 7</td><td>190.00</td><td>25 Apr 2025</td><td>Stephen Bersey</td></tr><tr><td>Price 8</td><td>205.00</td><td>25 Jul 2025</td><td>Stephen Bersey</td></tr><tr><td>Price 9</td><td>227.00</td><td>18 Nov 2025</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Price 10</td><td>218.00</td><td>30 Jan 2026</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Price 11</td><td>231.00</td><td>27 Apr 2026</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Price 12</td><td>191.00</td><td>14 Jul 2026</td><td>Abhishek Shukla, CFA</td></tr><tr><td>Price 13</td><td>175.00</td><td>15 Jul 2026</td><td>Abhishek Shukla, CFA</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                339,
+                927,
+                563
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                569,
+                935,
+                616
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                620,
+                613,
+                636
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "All other clients: www.research.hsbc.com/A/Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                642,
+                448,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC & Analyst disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                662,
+                279,
+                676
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/41aa715c83068a8054af1cef1d6fb6c56787c123f937da81237f28685e0abd41.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure checklist"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Company</td><td>Ticker</td><td>Recent price</td><td>Price date</td><td>Disclosure</td></tr><tr><td>IBM</td><td>IBM.N</td><td>205.77</td><td>22 Jul 2026</td><td>1, 5, 7</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                697,
+                932,
+                730
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 HSBC has managed or co-managed a public offering of securities for this company within the past 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                750,
+                846,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 HSBC expects to receive or intends to seek compensation for investment banking services from this company in the next 3 months."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                767,
+                920,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 At the time of publication of this report, HSBC Securities (USA) Inc. is a Market Maker in securities issued by this company."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                800,
+                924,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4 As of 30 June 2026, HSBC beneficially owned 1% or more of a class of common equity securities of this company."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                818,
+                878,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of investment banking services."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                837,
+                843,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-investment banking securities-related services."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                869,
+                841,
+                900
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-securities services."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                902,
+                843,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                965,
+                87,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "8 A covering analyst/s has received compensation from this company in the past 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                120,
+                716,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9 A covering analyst/s or a member of his/her household has a financial interest in the securities of this company, as detailed below."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                137,
+                878,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "10 A covering analyst/s or a member of his/her household is an officer, director or supervisory board member of this company, as detailed below."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                170,
+                866,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "11 At the time of publication of this report, HSBC is a non-US Market Maker in securities issued by this company and/or in securities in respect of this company."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                202,
+                905,
+                232
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "12 As of 17 July 2026, HSBC beneficially held a net long position of more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of this company's total issued share capital, calculated according to the SSR methodology."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                235,
+                898,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "13 As of 17 July 2026, HSBC beneficially held a net short position of more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of this company's total issued share capital, calculated according to the SSR methodology."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                268,
+                903,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "14 HSBC Qianhai Securities Limited holds 1% or more of a class of common equity securities of this company."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                300,
+                831,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                319,
+                935,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                374,
+                935,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                411,
+                779,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                436,
+                935,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                490,
+                935,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                561,
+                937,
+                623
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                631,
+                237,
+                645
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 This report is dated as at 24 July 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                648,
+                372,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 All market data included in this report are dated as at close 22 July 2026, unless a different date and/or a specific time of day is indicated in the report."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                665,
+                919,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                698,
+                927,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                773,
+                920,
+                833
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5 As of 17 July 2026 HSBC owned a significant interest in the debt securities of the following company(ies): IBM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                835,
+                849,
+                851
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Production & distribution disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                859,
+                347,
+                872
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. This report was produced and signed off by the author on 23 Jul 2026 19:15 GMT."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                874,
+                657,
+                889
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/zvGxf9v"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                897,
+                763,
+                927
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                193,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services\n24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                10,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                965,
+                932,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimer"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                122,
+                305,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entities as at 13 May 2026:"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                156,
+                231,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                166,
+                659,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report  \nHSBC Bank Middle East Limited, DIFC  \nPO Box 30444  \nDIFC, Dubai UAE  \nTelephone: +971 4 5623465  \nFax: +971 4 4267397  \nWebsite: www.research.hsbc.com"
+                    }
+                ]
+            },
+            "bbox": [
+                667,
+                156,
+                858,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the United Arab Emirates (\"UAE\"), this document has been distributed to you by HSBC Bank Middle East Limited (\"HBME\") through its Dubai branch for distribution within the UAE (excluding free zones) only and through its head office in the Dubai International Financial Centre (\"DIFC\") for distribution within the DIFC only. HBME is regulated and authorised for these purposes by the Central Bank of the UAE, the Capital Market Authority of the UAE for licenced activities (including Fifth Category License no. 602004 for 'Financial Consultations' activity) and lead regulated by the Dubai Financial Services Authority. This document is for private circulation to the intended recipients only and may not be distributed to any other person. It is intended only to be distributed to 'Professional Clients' or 'Market Counterparties' in the DIFC or 'Professional Investors or Counterparties' in the UAE (excluding free zones) and is not intended to be distributed to or relied on by 'Retail Clients' in the DIFC or 'Ordinary Investors' in the UAE (excluding free zones)."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                246,
+                932,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. If this research is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                311,
+                932,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services."
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                366,
+                893,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Hong Kong, this document has been distributed by The Hongkong and Shanghai Banking Corporation Limited in the conduct of its Hong Kong regulated business for the information of its institutional and professional customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited makes no representations that the products or services mentioned in this document are available to persons in Hong Kong or are necessarily suitable for any particular person or appropriate in accordance with local law. All inquiries by such recipients must be directed to The Hongkong and Shanghai Banking Corporation Limited. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                376,
+                932,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All U.S. persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\"."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                585,
+                932,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. The opinions contained within the report are based upon publicly available information at the time of publication and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. Past performance is not necessarily a guide to future performance. The value of any investment or income may go down as well as up and you may not get back the full amount invested. Where an investment is denominated in a currency other than the local currency of the recipient of the research report, changes in the exchange rates may have an adverse effect on the value, price or income of that investment. In case of investments for which there is no recognised market it may be difficult for investors to sell their investments or to obtain reliable information about its value or the extent of the risk to which it is exposed. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                651,
+                932,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB. © Copyright 2026, HSBC Bank Middle East Limited, DIFC, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of HSBC Bank Middle East Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                749,
+                934,
+                837
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                10,
+                192,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • IT Services 24 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                775,
+                9,
+                935,
+                36
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "[1283445]"
+                    }
+                ]
+            },
+            "bbox": [
+                861,
+                852,
+                934,
+                866
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                967,
+                87,
+                976
+            ]
+        }
+    ]
+]

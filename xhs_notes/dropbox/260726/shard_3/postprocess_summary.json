@@ -1,0 +1,577 @@
+[
+  {
+    "item": "0001-16-HSBC-SpaceX-Initiate-at-Hold--Rocket-centric-260724",
+    "source_pdf": "/tmp/pdf_batch_001_qptzi1fz/pdfs/0001-16-HSBC-SpaceX Initiate at Hold- Rocket-centric-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "SpaceX 研报拆",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：SpaceX火箭业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-HSBC-SpaceX Initiate at Hold- Rocket-centric-260724.pdf",
+      "cleaned_source_title": "HSBC-SpaceX Initiate at Hold- Rocket-centric",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：SpaceXInitiateat报告观点",
+      "raw_candidates": [
+        "HSBC：SpaceX火箭业务与Starlink支撑估值",
+        "HSBC：SpaceX2025年营收187亿美元Starlink占六成",
+        "HSBC：SpaceX火箭与Starlink估值AI整合待验证"
+      ],
+      "cleaned_candidates": [
+        "HSBC：SpaceX火箭业务与Starlink支撑估值",
+        "HSBC：SpaceX2025年营收187亿美元Starlink占六成",
+        "HSBC：SpaceX火箭与Starlink估值AI整合待验证",
+        "HSBC：SpaceXInitiateat报告观点",
+        "HSBC：HSBC全球科技平台团队在2026年7月发布的首份SpaceX研报中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：SpaceX2025年营收187亿美元Starlink占六成",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "HSBC：SpaceXInitiateat报告观点",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：HSBC全球科技平台团队在2026年7月发布的首份SpaceX研报中",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：SpaceX火箭业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：SpaceX火箭业务与Starlink支撑估值",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：SpaceX火箭业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-HSBC-IBM--IBM.US-Reduce--Impressive-margin-guidance-but-better-value-els",
+    "source_pdf": "/tmp/pdf_batch_001_qptzi1fz/pdfs/0002-17-HSBC-IBM -IBM.US-Reduce- Impressive margin guidance but better value elsewhere-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "IBM的利润指引很漂",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：IBM业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-HSBC-IBM -IBM.US-Reduce- Impressive margin guidance but better value elsewhere-260724.pdf",
+      "cleaned_source_title": "HSBC-IBM -IBM.US-Reduce- Impressive margin guidance but better value elsewhere",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：IBMReduce",
+      "raw_candidates": [
+        "HSBC：IBM收入指引下调与利润率目标维持",
+        "HSBC：IBM二季度财报后收入指引下调",
+        "HSBC：IBM软件业务有机增长与估值分析"
+      ],
+      "cleaned_candidates": [
+        "HSBC：IBM收入指引下调与利润率目标维持",
+        "HSBC：IBM二季度财报后收入指引下调",
+        "HSBC：IBM软件业务有机增长与估值分析",
+        "HSBC：IBMReduce",
+        "HSBC：IBM在2026年7月22日发布了第二季度财报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：IBM二季度财报后收入指引下调",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "HSBC：IBM软件业务有机增长与估值分析",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：IBMReduce",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：IBM在2026年7月22日发布了第二季度财报",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：IBM业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：IBM收入指引下调与利润率目标维持",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：IBM业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-HSBC-Siemens-Energy-AG--ENR.GR-Buy--Cyclical-support-amid-cautious-marke",
+    "source_pdf": "/tmp/pdf_batch_001_qptzi1fz/pdfs/0003-18-HSBC-Siemens Energy AG -ENR.GR-Buy- Cyclical support amid cautious market mood-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "西门子能源：燃气轮机",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：能源行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-HSBC-Siemens Energy AG -ENR.GR-Buy- Cyclical support amid cautious market mood-260724.pdf",
+      "cleaned_source_title": "HSBC-Siemens Energy AG -ENR.GR-Buy- Cyclical support amid cautious market mood",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：Siemens能源AG报告观点",
+      "raw_candidates": [
+        "西门子能源：周期性支撑与谨慎市场情绪",
+        "西门子能源三季度业绩前市场已部分消化不确定性",
+        "西门子能源：燃气轮机订单与海上风电盈利拐点"
+      ],
+      "cleaned_candidates": [
+        "HSBC：西门子能源，周期性支撑与谨慎市场情绪",
+        "HSBC：西门子能源三季度业绩前市场已部分消化不确定性",
+        "HSBC：西门子能源，燃气轮机订单与海上风电盈利拐点",
+        "HSBC：Siemens能源AG报告观点",
+        "HSBC：西门子能源报价自2026年4月高点回落约19%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：西门子能源三季度业绩前市场已部分消化不确定性",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：西门子能源，燃气轮机订单与海上风电盈利拐点",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：Siemens能源AG报告观点",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：西门子能源报价自2026年4月高点回落约19%",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：能源行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：西门子能源，周期性支撑与谨慎市场情绪",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：能源行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-J.P.-Morgan-China-Local-Markets-Weekly-Waiting-for-a-summer-reset-260724",
+    "source_pdf": "/tmp/pdf_batch_001_qptzi1fz/pdfs/0004-19-JPM-China Local Markets Weekly-Waiting for a summer reset-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "夏天等一个“rese",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "金融市场->市场 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "经济->宏观环境 x1",
+      "投资者->读者 x2",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "卖出->观点偏谨慎 x5",
+      "sanitize_wechat_stock_line",
+      "资产定价->市场定价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "资产定价->市场定价 x2",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：统计方法与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-JPM-China Local Markets Weekly-Waiting for a summer reset-260724.pdf",
+      "cleaned_source_title": "JPM-China Local Markets Weekly-Waiting for a summer reset",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国LocalMarketsWeeklyWa",
+      "raw_candidates": [
+        "中国地方市场周报-等待夏季政策信号",
+        "中国资产不确定性溢价回归中性-二季度GDP增速4.3%",
+        "中国债券与汇率观察-外资无对冲参与与企业结汇支撑"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国地方市场周报-等待夏季政策信号",
+        "JPM：中国资产不确定性溢价回归中性-二季度GDP增速4.3%",
+        "JPM：中国债券与汇率观察-外资无对冲参与与企业结汇支撑",
+        "JPM：中国LocalMarketsWeeklyWa",
+        "JPM：二季度GDP同比增速从一季度的5.0%节奏变化至4.3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国地方市场周报-等待夏季政策信号",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国债券与汇率观察-外资无对冲参与与企业结汇支撑",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国LocalMarketsWeeklyWa",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：二季度GDP同比增速从一季度的5.0%节奏变化至4.3%",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：统计方法与相关数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "4.3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：中国资产不确定性溢价回归中性-二季度GDP增速4.3%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：统计方法与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-J.P.-Morgan-Advanced-Micro-Devices-AMD.US-AAI26-Takeaways--Higher-AI-CPU",
+    "source_pdf": "/tmp/pdf_batch_001_qptzi1fz/pdfs/0005-20-JPM-Advanced Micro Devices-AMD.US-AAI26 Takeaways- Higher AI CPU TAM Forecasts and MI450 Helios Ramp Underscore a Broadening AI Opportunity- Closing the Gap wit.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "AMD的新战场：AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-JPM-Advanced Micro Devices-AMD.US-AAI26 Takeaways- Higher AI CPU TAM Forecasts and MI450 Helios Ramp Underscore a Broadening AI Opportunity- Closing the Gap wit.pdf",
+      "cleaned_source_title": "JPM-Advanced Micro Devices-AMD.US-AAI26 Takeaways- Higher AI CPU TAM Forecasts and MI450 Helios Ramp Underscore a Broadening AI Opportunity- Closing the Gap wit",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI",
+        "CPU"
+      ],
+      "deterministic_fallback": "JPM：AI与CPUAdvancedMicroDevicesA26",
+      "raw_candidates": [
+        "AMD上调AI CPU与加速器TAM预期",
+        "AMD上调AI加速器与数据中心CPU TAM至2030年",
+        "AMD上调AI CPU与加速器TAM-智能体AI驱动需求"
+      ],
+      "cleaned_candidates": [
+        "JPM：AMD上调AICPU与加速器TAM预期",
+        "JPM：AMD上调AI加速器与数据中心CPUTAM至2030年",
+        "JPM：AMD上调AICPU与加速器TAM-智能体AI驱动需求",
+        "JPM：AI与CPUAdvancedMicroDevicesA26",
+        "JPM：AMD上调AI加速器与数据中心CPU市场预期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：AI与CPUAdvancedMicroDevicesA26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：AMD上调AICPU与加速器TAM预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
