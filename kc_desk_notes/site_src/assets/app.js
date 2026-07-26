@@ -1125,6 +1125,25 @@
     return Array.from(select.selectedOptions || []).map((option) => option.value).filter(Boolean);
   }
 
+  function accessDurationPreviewDate(durationValue) {
+    const value = String(durationValue || "");
+    if (!value || value === "lifetime") return "";
+    const date = new Date();
+    if (value === "trial_3d") date.setUTCDate(date.getUTCDate() + 3);
+    else {
+      const months = Number(value);
+      if (!Number.isFinite(months) || months <= 0) return "";
+      date.setUTCMonth(date.getUTCMonth() + months);
+    }
+    return date.toISOString().slice(0, 10);
+  }
+
+  function prepareExpiredAccessRenewal(targets) {
+    if (!targets || targets.accessMode.value === "none" || targets.accessDuration.value === "lifetime") return;
+    if (targets.accessRenew) targets.accessRenew.checked = true;
+    if (targets.accessExpiry) targets.accessExpiry.value = accessDurationPreviewDate(targets.accessDuration.value);
+  }
+
   function fillUserAccessEditor(user, targets) {
     if (!user || !targets.userEditor) return;
     const access = user.access || {};
@@ -1133,6 +1152,7 @@
     targets.userEditor.hidden = false;
     targets.userEditor.dataset.expectedChangeId = String(access.change_id || "");
     targets.userEditor.dataset.expectedUpdatedAt = String(access.updated_at || "");
+    targets.userEditor.dataset.originalAccessActive = access.active ? "true" : "false";
     targets.accessEmail.value = user.email || "";
     targets.userEditorTitle.textContent = `编辑权限：${username}`;
     targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
@@ -1150,11 +1170,15 @@
       </label>
     `).join("");
     targets.accessNote.value = access.note || "";
-    if (targets.accessRenew) targets.accessRenew.checked = false;
+    const needsRenewal = access.access_mode !== "none" && !access.active && !access.lifetime;
+    if (targets.accessRenew) targets.accessRenew.checked = needsRenewal;
+    if (needsRenewal) prepareExpiredAccessRenewal(targets);
     targets.accessMode.dispatchEvent(new Event("change"));
     if (targets.status) {
       targets.status.className = "status-line ok";
-      targets.status.textContent = `正在编辑 ${username || "用户"} 的下载权限。`;
+      targets.status.textContent = needsRenewal
+        ? `${username || "用户"} 的旧权限已过期；保存时将从今天按所选时长重新开通。`
+        : `正在编辑 ${username || "用户"} 的下载权限。`;
     }
     requestAnimationFrame(() => {
       targets.userEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -1206,6 +1230,9 @@
     const savedAccess = data.access && typeof data.access === "object" ? data.access : {};
     targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
     targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
+    targets.userEditor.dataset.originalAccessActive = savedAccess.active ? "true" : "false";
+    if (targets.accessExpiry) targets.accessExpiry.value = String(savedAccess.current_period_end || "").slice(0, 10);
+    if (targets.accessRenew) targets.accessRenew.checked = false;
     const updated = data.user || null;
     if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
     else {
@@ -2465,8 +2492,18 @@
     });
     refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }));
     if (exportUsers) exportUsers.addEventListener("click", () => exportAdminUsersToExcel(workerUrl, targets));
-    if (accessMode) accessMode.addEventListener("change", () => updateUserAccessEditorMode(targets));
-    if (accessDuration) accessDuration.addEventListener("change", () => updateUserAccessEditorMode(targets));
+    if (accessMode) accessMode.addEventListener("change", () => {
+      if (accessMode.value !== "none" && userEditor && userEditor.dataset.originalAccessActive !== "true") {
+        prepareExpiredAccessRenewal(targets);
+      }
+      updateUserAccessEditorMode(targets);
+    });
+    if (accessDuration) accessDuration.addEventListener("change", () => {
+      if (accessMode && accessMode.value !== "none" && accessDuration.value !== "lifetime") {
+        prepareExpiredAccessRenewal(targets);
+      }
+      updateUserAccessEditorMode(targets);
+    });
     if (newUser && userCreator) {
       newUser.addEventListener("click", () => {
         userCreator.hidden = false;

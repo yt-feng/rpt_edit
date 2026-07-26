@@ -622,6 +622,7 @@ Vid2PPT 集成的额外展示规则：
 10. `liuxin` 的 operator 入口和 `twotigers` 的 super 入口由服务端角色决定，不得受 sponsor 可见性、用户来源或普通 entitlement 分支影响。
 11. 跨站自动赠送失败只影响该次赠送状态，不得让 KCdesk 登录、老客户下载、运营后台或 Vid2PPT 已支付订单失效。
 12. 账号/权限改动发布前先保存当前云端 `main` SHA 和生产 Worker version，运行语法及老客户兼容测试；Worker 与 Pages 使用独立轻量 workflow 发布并逐项验证后，再继续其他生产改动。
+13. 管理员把用户设置为启用状态时，不得保存一个已经过期的到期日。旧记录已过期或输入日期已过时，Worker 必须按所选时长从当前时间重新计算；前端同时默认勾选续期并展示预计新日期。
 
 排障顺序：
 
@@ -634,3 +635,4 @@ Vid2PPT 集成的额外展示规则：
 7. 看到 `report_purchases` 表不存在时，确认 Worker 已命中可选表兼容分支；该错误不能覆盖已经成立的基础权限。
 8. `liuxin` 看不到运营后台时，检查 `/auth` 返回的 `role=operator` 和前端 `canOpenOperationsPanel`，不要用 sponsor 来源条件控制后台入口。
 9. NOVA 自动赠送失败时，依次核对签名、计划 allowlist、支付邮箱、`source_reference` 和 R2/Supabase 写入；订单代码仍可走 `/vid2ppt/redeem-code` 兜底。
+10. 管理后台提示保存成功但表格仍显示“未开通”时，检查 `_account/access/<email>.json` 的 `current_period_end` 是否已过期；过期记录重新保存后必须得到未来日期并立即读回为 `active=true`。

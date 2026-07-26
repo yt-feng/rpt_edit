@@ -10,6 +10,7 @@ on:
       - "kc_desk_notes/site_src/**"
       - "scripts/build_kc_desk_notes_site.py"
       - "scripts/submit_kcdesk_indexnow.py"
+      - "scripts/test_kcdesk_access_renewal.js"
       - "workers/kc-desk-notes-worker/**"
   workflow_dispatch:
     inputs:
@@ -89,6 +90,7 @@ jobs:
           node --check workers/kc-desk-notes-worker/src/index.js
           node scripts/test_kcdesk_contact_locale.js
           node scripts/test_kcdesk_legacy_access_compat.js
+          node scripts/test_kcdesk_access_renewal.js
 
       - name: Update catalog and mirror current PDFs to R2
         id: catalog

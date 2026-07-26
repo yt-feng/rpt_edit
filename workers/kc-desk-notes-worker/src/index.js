@@ -1809,6 +1809,13 @@ function explicitAccessEndIso(value) {
     : null;
 }
 
+function shouldRecalculateAccessEnd({ activeMode, lifetime, renew, explicitEnd, existing }) {
+  if (!activeMode || lifetime) return false;
+  if (renew) return true;
+  if (explicitEnd && !periodIsCurrent(explicitEnd)) return true;
+  return Boolean(existing && !accessGrantActive(existing) && !explicitEnd);
+}
+
 async function saveAccessGrant(env, email, fields, adminUser) {
   const normalized = normalizeEmail(email);
   if (!normalized) throw new Error("Email is required.");
@@ -1837,20 +1844,30 @@ async function saveAccessGrant(env, email, fields, adminUser) {
   const durationValue = activeMode ? (duration || "1") : "";
   const renew = Boolean(fields.renew);
   const expiresOn = String(fields.expires_on || "").trim();
-  const explicitEnd = activeMode && !lifetime && !renew ? explicitAccessEndIso(expiresOn) : null;
+  const explicitEnd = activeMode && !lifetime ? explicitAccessEndIso(expiresOn) : null;
   if (activeMode && !lifetime && !renew && expiresOn && !explicitEnd) {
     throw new Error("到期日期格式无效。");
   }
+  const recalculateEnd = shouldRecalculateAccessEnd({
+    activeMode,
+    lifetime,
+    renew,
+    explicitEnd,
+    existing,
+  });
   const preserveExistingExpiry = Boolean(
     activeMode
     && existing
-    && !renew
+    && !recalculateEnd
+    && accessGrantActive(existing)
     && String(existing.duration_value || "") === durationValue,
   );
   const currentPeriodEnd = activeMode
     ? (lifetime
       ? null
-      : explicitEnd
+      : recalculateEnd
+        ? accessDurationEndIso(durationValue)
+        : explicitEnd
         ? (existing && String(existing.current_period_end || "").slice(0, 10) === expiresOn ? existing.current_period_end : explicitEnd)
         : preserveExistingExpiry
           ? existing.current_period_end
