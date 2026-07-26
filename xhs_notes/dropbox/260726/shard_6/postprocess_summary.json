@@ -1,0 +1,564 @@
+[
+  {
+    "item": "0001-31-Morgan-Stanley-SpaceX-SPCX.US-Starlink-and-Tesla...-Connective-Tissue-fo",
+    "source_pdf": "/tmp/pdf_batch_001_0f5ya3gm/pdfs/0001-31-MS-SpaceX-SPCX.US-Starlink and Tesla... Connective Tissue for Robot Swarm-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "机器人 + 卫星",
+    "cover_subtitle": "研报拆解Cybercab如何联网",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_stock_parenthetical x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：SpaceX-Starlink与特斯拉机器人集群通信整合",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-MS-SpaceX-SPCX.US-Starlink and Tesla... Connective Tissue for Robot Swarm-260724.pdf",
+      "cleaned_source_title": "MS-SpaceX-SPCX.US-Starlink and Tesla... Connective Tissue for Robot Swarm",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SpaceXStarlink和Tesla...",
+      "raw_candidates": [
+        "SpaceX-Starlink与特斯拉机器人集群通信整合",
+        "SpaceX-Starlink与特斯拉Cybercab整合指向机器人集群通信需求",
+        "SpaceX-Starlink与特斯拉整合：机器人集群通信与2050年75万亿美元RaaS市场"
+      ],
+      "cleaned_candidates": [
+        "MS：SpaceX-Starlink与特斯拉机器人集群通信整合",
+        "MS：SpaceX",
+        "MS：SpaceX-Starlink与特斯拉整合",
+        "MS：SpaceXStarlink和Tesla...",
+        "MS：MS分析师AdamJonas团队在7月24日发布的报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SpaceX",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SpaceX-Starlink与特斯拉整合",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "MS：SpaceXStarlink和Tesla...",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：MS分析师AdamJonas团队在7月24日发布的报",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：SpaceX-Starlink与特斯拉机器人集群通信整合",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：SpaceX-Starlink与特斯拉机器人集群通信整合"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-32-Morgan-Stanley-US-Economics-Weekly-July-FOMC-A-question-of-patience-2607",
+    "source_pdf": "/tmp/pdf_batch_001_0f5ya3gm/pdfs/0002-32-MS-US Economics Weekly-July FOMC-A question of patience-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "美联储的耐心，还能撑",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "通缩->价格变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x3",
+      "基金->产品 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：美国宏观周报-7月FOMC会议与耐心立场",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-MS-US Economics Weekly-July FOMC-A question of patience-260724.pdf",
+      "cleaned_source_title": "MS-US Economics Weekly-July FOMC-A question of patience",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：USEconomicsWeeklyJuly",
+      "raw_candidates": [
+        "美国宏观周报-7月FOMC会议与耐心立场",
+        "美国宏观周报-7月FOMC会议与3.50-3.75%利率预期",
+        "美国宏观周报-7月FOMC会议与关税框架切换"
+      ],
+      "cleaned_candidates": [
+        "MS：美国宏观周报-7月FOMC会议与耐心立场",
+        "MS：美国宏观周报-7月FOMC会议与3.50",
+        "MS：美国宏观周报-7月FOMC会议与关税框架切换",
+        "MS：USEconomicsWeeklyJuly",
+        "MS：预计，联邦产品利率目标区间在7月会议将维持在3.50"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：USEconomicsWeeklyJuly",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：预计，联邦产品利率目标区间在7月会议将维持在3.50",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：美国宏观周报-7月FOMC会议与耐心立场",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：美国宏观周报-7月FOMC会议与耐心立场"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-33-Morgan-Stanley-Technology-European-Semiconductors-Implication-of-Intel-s",
+    "source_pdf": "/tmp/pdf_batch_001_0f5ya3gm/pdfs/0003-33-MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "英特尔加码2026，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI-260724.pdf",
+      "cleaned_source_title": "MS-Technology-European Semiconductors-Implication of Intel-s capex raise for ASML and ASMI",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：科技European半导体Implicat",
+      "raw_candidates": [
+        "英特尔资本支出上调对ASML与ASMI的影响",
+        "英特尔2026年资本支出超200亿美元对ASML与ASMI影响",
+        "英特尔先进节点工具采购对ASML与ASMI可寻址市场影响"
+      ],
+      "cleaned_candidates": [
+        "MS：英特尔资本支出上调对ASML与ASMI的影响",
+        "MS：英特尔2026年资本支出超200亿美元对ASML与ASMI",
+        "MS：英特尔先进节点工具采购对ASML与ASMI可寻址市场影响",
+        "MS：科技European半导体Implicat",
+        "MS：2026年设备支出预计较2025年增长40%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：英特尔2026年资本支出超200亿美元对ASML与ASMI",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "MS：英特尔先进节点工具采购对ASML与ASMI可寻址市场影响",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "MS：科技European半导体Implicat",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2026年设备支出预计较2025年增长40%",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：英特尔资本支出上调对ASML与ASMI的影响",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-34-UBS-China-Property-and-Property-Management-1H26-results-preview--Look-th",
+    "source_pdf": "/tmp/pdf_batch_001_0f5ya3gm/pdfs/0004-34-UBS-China Property and Property Management-1H26 results preview- Look through the earnings-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "地产人的中期成绩单，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "UBS：城市与住房数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-UBS-China Property and Property Management-1H26 results preview- Look through the earnings-260724.pdf",
+      "cleaned_source_title": "UBS-China Property and Property Management-1H26 results preview- Look through the earnings",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：中国地产和地产Management1H26res",
+      "raw_candidates": [
+        "中国房地产与物管-1H26业绩预览-透视盈利",
+        "中国房地产与物管-1H26业绩预览-盈利同比降26%",
+        "中国房地产与物管-1H26业绩预览-土地与物管分化"
+      ],
+      "cleaned_candidates": [
+        "UBS：中国房地产与物管-1H26业绩预览-透视盈利",
+        "UBS：中国房地产与物管-1H26业绩预览-盈利同比降26%",
+        "UBS：中国房地产与物管-1H26业绩预览-土地与物管分化",
+        "UBS：中国地产和地产Management1H26res",
+        "UBS：中国开发商2026年上半年盈利预计同比下滑26%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：中国房地产与物管-1H26业绩预览-土地与物管分化",
+          "reasons": [
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：中国地产和地产Management1H26res",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：中国开发商2026年上半年盈利预计同比下滑26%",
+          "reasons": [
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "UBS：城市与住房数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "26"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：中国房地产与物管-1H26业绩预览-盈利同比降26%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "UBS：城市与住房数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-35-Morgan-Stanley-Weekly-Widget--Gas-Turbines-Engines---If-you-build-it--th",
+    "source_pdf": "/tmp/pdf_batch_001_0f5ya3gm/pdfs/0005-35-MS-Weekly Widget- Gas Turbines Engines - If you build it- they will come-260724.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "天然气轮机供应激增，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-MS-Weekly Widget- Gas Turbines Engines - If you build it- they will come-260724.pdf",
+      "cleaned_source_title": "MS-Weekly Widget- Gas Turbines Engines - If you build it- they will come",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：WeeklyWidget",
+      "raw_candidates": [
+        "燃气轮机周度报告-供应量上调至146GW",
+        "燃气轮机周度报告-2030年供应量146GW",
+        "燃气轮机周度报告-数据中心表后市场64GW供应"
+      ],
+      "cleaned_candidates": [
+        "MS：燃气轮机周度报告-供应量上调至146GW",
+        "MS：燃气轮机周度报告-2030年供应量146GW",
+        "MS：燃气轮机周度报告-数据中心表后市场64GW供应",
+        "MS：WeeklyWidget",
+        "MS：燃气轮机2030年供应量上调至146GW"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：燃气轮机周度报告-数据中心表后市场64GW供应",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：WeeklyWidget",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：燃气轮机周度报告-供应量上调至146GW",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
