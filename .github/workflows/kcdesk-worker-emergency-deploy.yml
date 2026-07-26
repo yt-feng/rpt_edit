@@ -23,7 +23,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             workers/kc-desk-notes-worker/src/index.js
-            kc_desk_notes/site_src/assets/app.js
+            kc_desk_notes/site_src
             scripts/test_kcdesk_entitlement_precedence.js
             scripts/test_kcdesk_legacy_access_compat.js
             scripts/test_kcdesk_access_renewal.js
