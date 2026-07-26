@@ -47,6 +47,7 @@ vm.runInNewContext(`
   ${topicRules}
   ${extractFunction(worker, "dailyPickPatternGroupHits")}
   ${extractFunction(worker, "dailyPickTopicProfile")}
+  ${extractFunction(worker, "dailyPickDisplayTopicProfile")}
   ${extractFunction(worker, "dailyPickTopicTags")}
   ${extractFunction(worker, "dailyPickThemes")}
   ${extractFunction(worker, "dailyPickBodyInsights")}
@@ -68,10 +69,43 @@ vm.runInNewContext(`
     "An appendix mentions energy once, commodities once, and lists the Middle East and Iran among global regions.",
   ].join(" ");
   const koreaWeeklyTags = dailyPickTopicTags(koreaWeekly, incidentalBody);
+  const tsmcCowos = {
+    title: "MS-TSMC preview and CoWoS update – CPU, GPU, ASIC, Optical, China AI Compute-260724",
+    title_zh: "MS-台积电预览及CoWoS",
+    filename: "MS-TSMC-preview-and-CoWoS-update.pdf",
+    bank_name: "摩根士丹利",
+    page_count: 60,
+    first_page_landscape: true,
+  };
+  const tsmcBody = [
+    "The report focuses on TSMC advanced packaging, CoWoS capacity, CPU, GPU and ASIC demand.",
+    "A China AI compute comparison table includes CNY pricing and policy-rate assumptions.",
+  ].join(" ");
+  const tsmcTags = dailyPickTopicTags(tsmcCowos, tsmcBody);
+  const japanSpe = {
+    title: "MS-Investor Presentation - Japan Semiconductor Production Equipment-Tech Monthly Jul 2026-260723",
+    title_zh: "MS-投资者演示文稿 - 日本半导体生产设备-技术月刊 2026年7月-260723",
+    filename: "MS-Japan-Semiconductor-Production-Equipment.pdf",
+    bank_name: "摩根士丹利",
+    page_count: 23,
+    first_page_landscape: true,
+  };
+  const japanSpeBody = [
+    "Japan semiconductor production equipment and wafer fabrication tools are the report's main subjects.",
+    "The appendix compares an asset allocation portfolio that is overweight technology.",
+    "A sensitivity table mentions Iran conflict, OPEC crude supply, recession GDP and AI valuation once.",
+  ].join(" ");
+  const japanSpeTags = dailyPickTopicTags(japanSpe, japanSpeBody);
   result = {
     koreaWeeklyThemes: dailyPickThemes(koreaWeekly, koreaWeeklyTags, incidentalBody),
     koreaWeeklyTags,
     koreaWeeklyIntro: dailyPickIntro(koreaWeekly, koreaWeeklyTags, incidentalBody),
+    tsmcThemes: dailyPickThemes(tsmcCowos, tsmcTags, tsmcBody),
+    tsmcTags,
+    tsmcIntro: dailyPickIntro(tsmcCowos, tsmcTags, tsmcBody),
+    japanSpeThemes: dailyPickThemes(japanSpe, japanSpeTags, japanSpeBody),
+    japanSpeTags,
+    japanSpeIntro: dailyPickIntro(japanSpe, japanSpeTags, japanSpeBody),
     koreaBokThemes: dailyPickThemes({
       title: "NOM-Asia Insights Korea: BOK delivers a unanimous decision for a 25bp hike",
       title_zh: "野村-亚洲洞察韩国：韩国央行一致决定加息25个基点",
@@ -104,6 +138,10 @@ vm.runInNewContext(`
     }, [], "CPI and disinflation are the report's main subjects."),
     weakBodyThemes: dailyPickThemes({ title: "Asia Insights Weekly", filename: "Asia-Insights.pdf" }, [], "Oil was mentioned once."),
     strongBodyThemes: dailyPickThemes({ title: "Asia Insights Weekly", filename: "Asia-Insights.pdf" }, [], "Crude oil demand, OPEC supply and refinery inventories are the main focus."),
+    ambiguousSpeThemes: dailyPickThemes({
+      title: "Special Purpose Entity (SPE) Regulatory Update",
+      filename: "SPE-Regulatory-Update.pdf",
+    }, [], "The note covers legal structuring and disclosure requirements."),
   };
 `, sandbox);
 
@@ -114,8 +152,23 @@ assert.equal(koreaWeeklyThemes[0], "韩国股票市场与资金流向", "Korea/K
 assert.ok(!koreaWeeklyThemes.some((theme) => /大宗商品|地缘政治/.test(theme)), "incidental body words must not become Korea-report themes");
 assert.equal(koreaWeeklyTags[0], "韩国股市", "precise tags must precede the generic macro fallback");
 assert.ok(!koreaWeeklyTags.includes("大宗商品"));
+assert.ok(!koreaWeeklyTags.includes("宏观趋势"), "precise industry copy must not receive a generic macro tag");
 assert.match(result.koreaWeeklyIntro, /韩国股票市场与资金流向/);
-assert.doesNotMatch(result.koreaWeeklyIntro, /大宗商品|地缘政治/);
+assert.doesNotMatch(result.koreaWeeklyIntro, /大宗商品|地缘政治|宏观主线/);
+
+const tsmcThemes = Array.from(result.tsmcThemes);
+const tsmcTags = Array.from(result.tsmcTags);
+assert.match(tsmcThemes[0], /台积电|先进封装|半导体/);
+assert.doesNotMatch(tsmcThemes.join("|"), /中国宏观|人民币|通胀/);
+assert.doesNotMatch(tsmcTags.join("|"), /中国宏观|宏观趋势/);
+assert.doesNotMatch(result.tsmcIntro, /中国宏观|人民币|通胀|宏观主线|AI 与估值变化/);
+
+const japanSpeThemes = Array.from(result.japanSpeThemes);
+const japanSpeTags = Array.from(result.japanSpeTags);
+assert.equal(japanSpeThemes[0], "日本半导体设备与产业链");
+assert.doesNotMatch(japanSpeThemes.join("|"), /地缘|资产配置|衰退|油价|原油/);
+assert.doesNotMatch(japanSpeTags.join("|"), /宏观趋势|地缘政治|资产配置|经济增长|原油市场/);
+assert.doesNotMatch(result.japanSpeIntro, /AI 与估值|宏观主线|油价|原油|地缘|大类资产|衰退/);
 
 assert.equal(Array.from(result.koreaBokThemes)[0], "韩国宏观与货币政策");
 assert.ok(!Array.from(result.koreaBokThemes).slice(0, 3).some((theme) => /地缘政治|大宗商品/.test(theme)));
@@ -138,8 +191,14 @@ assert.equal(Array.from(result.consumerPriceThemes)[0], "通胀与价格路径")
 assert.ok(!Array.from(result.consumerPriceThemes).some((theme) => /消费、零售/.test(theme)));
 assert.ok(!Array.from(result.weakBodyThemes).some((theme) => /原油|大宗商品/.test(theme)), "one body mention must not classify a topic");
 assert.equal(Array.from(result.strongBodyThemes)[0], "原油市场与供需", "multiple independent body anchors may classify the subject");
+assert.ok(!Array.from(result.ambiguousSpeThemes).some((theme) => /半导体/.test(theme)), "the ambiguous SPE acronym must not mean semiconductor equipment by itself");
 
 assert.match(worker, /daily_picks:\s*selectDailyPicks\(catalog, 5, searchIndex\)/, "the shared snapshot must use the corrected generator");
 assert.match(worker, /const dailyPicks = Array\.isArray\(picksData\.daily_picks\)/, "management and operations dashboards must read the same pick snapshot");
+assert.match(worker, /ADMIN_PICKS_SNAPSHOT_KEY\s*=\s*`\$\{ADMIN_SNAPSHOT_PREFIX\}\/picks-v2\.json`/, "topic-generator upgrades must use a versioned snapshot key");
+assert.match(worker, /ADMIN_PICKS_LEGACY_SNAPSHOT_KEY\s*=\s*`\$\{ADMIN_SNAPSHOT_PREFIX\}\/picks\.json`/, "the v1 snapshot must remain available during migration");
+assert.match(worker, /topic_version:\s*ADMIN_PICKS_TOPIC_VERSION/, "the snapshot payload must record its topic version");
+assert.match(worker, /safeR2GetJson\(env, ADMIN_PICKS_LEGACY_SNAPSHOT_KEY\)/, "the v2 loader must read the legacy snapshot during migration");
+assert.match(worker, /data:\s*legacy\.data[\s\S]*state:\s*"updating"/, "legacy picks must remain visible while the v2 snapshot refreshes");
 
 console.log("KCdesk daily-pick topic checks passed.");

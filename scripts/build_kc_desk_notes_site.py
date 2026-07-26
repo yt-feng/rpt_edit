@@ -83,6 +83,7 @@ INDEXNOW_KEY = "201eca2fc32f348cb7280e22b4999524"
 RSS_ITEM_LIMIT = 100
 LLMS_REPORT_LIMIT = 200
 BLOG_START_DATE = "2026-07-27"
+DEFAULT_SEARCH_INDEX_LIMIT_GIB = 0.09
 BLOG_ARCHIVE_SCHEMA_VERSION = 1
 BLOG_SOURCE_LABELS = {
     "xhs_notes": "外资研报",
@@ -549,7 +550,31 @@ def merge_search_indexes(
 
 
 def search_index_size_bytes(index: dict[str, Any]) -> int:
-    return len(json.dumps(index, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
+    # Keep this byte-for-byte aligned with write_json(). GitHub evaluates the
+    # committed file, not a compact in-memory representation.
+    return len((json.dumps(index, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+
+
+def search_index_with_size_metadata(
+    index: dict[str, Any],
+    items: list[dict[str, Any]],
+    limit_bytes: int,
+    pruned_dates: list[str],
+) -> dict[str, Any]:
+    candidate = dict(index)
+    candidate["items"] = items
+    candidate["item_count"] = len(items)
+    candidate["text_storage_limit_bytes"] = limit_bytes
+    candidate["text_pruned_dates"] = list(pruned_dates)
+    candidate["text_storage_size_bytes"] = 0
+    # The recorded byte count is itself part of the JSON. Iterate until its
+    # digit width and the serialized file size agree.
+    for _attempt in range(8):
+        measured = search_index_size_bytes(candidate)
+        if candidate["text_storage_size_bytes"] == measured:
+            break
+        candidate["text_storage_size_bytes"] = measured
+    return candidate
 
 
 def limit_search_index_by_size(
@@ -558,10 +583,7 @@ def limit_search_index_by_size(
     limit_bytes: int,
 ) -> dict[str, Any]:
     if limit_bytes <= 0:
-        index["text_storage_limit_bytes"] = 0
-        index["text_storage_size_bytes"] = search_index_size_bytes(index)
-        index["text_pruned_dates"] = []
-        return index
+        return search_index_with_size_metadata(index, list(index.get("items", [])), 0, [])
 
     id_to_date = {
         str(item.get("id")): str(item.get("date_folder") or "")
@@ -571,22 +593,13 @@ def limit_search_index_by_size(
     items = list(index.get("items", []))
     pruned_dates: list[str] = []
 
-    candidate_index = dict(index)
-    candidate_index["items"] = items
-    while items and search_index_size_bytes(candidate_index) > limit_bytes:
+    candidate_index = search_index_with_size_metadata(index, items, limit_bytes, pruned_dates)
+    while items and candidate_index["text_storage_size_bytes"] > limit_bytes:
         dates = sorted({id_to_date.get(str(item.get("id")), "") for item in items}, key=sort_date_value)
         oldest = dates[0]
         pruned_dates.append(oldest)
         items = [item for item in items if id_to_date.get(str(item.get("id")), "") != oldest]
-        candidate_index = dict(index)
-        candidate_index["items"] = items
-        candidate_index["item_count"] = len(items)
-        candidate_index["text_pruned_dates"] = pruned_dates
-
-    candidate_index["item_count"] = len(items)
-    candidate_index["text_storage_limit_bytes"] = limit_bytes
-    candidate_index["text_storage_size_bytes"] = search_index_size_bytes(candidate_index)
-    candidate_index["text_pruned_dates"] = pruned_dates
+        candidate_index = search_index_with_size_metadata(index, items, limit_bytes, pruned_dates)
     return candidate_index
 
 
@@ -675,54 +688,89 @@ def build_history_search_index(
     return limit_search_index_by_size(index=index, catalog=catalog, limit_bytes=limit_bytes)
 
 
-def write_history_search_shards(
-    history_index: dict[str, Any],
+def search_index_month(value: Any) -> str:
+    compact = re.sub(r"[^0-9]", "", str(value or ""))
+    if re.fullmatch(r"\d{6}", compact):
+        return compact[:4]
+    if re.fullmatch(r"\d{8}", compact):
+        return compact[2:6]
+    return "0000"
+
+
+def search_index_date(value: Any) -> str:
+    compact = re.sub(r"[^0-9]", "", str(value or ""))
+    if re.fullmatch(r"\d{6}", compact):
+        return compact
+    if re.fullmatch(r"\d{8}", compact):
+        return compact[2:]
+    return "000000"
+
+
+def write_search_index_shards(
+    index: dict[str, Any],
     catalog: dict[str, Any],
     output_dir: Path,
+    partition: str = "month",
 ) -> dict[str, Any]:
-    """Split the size-capped history text index into per-month shard files.
-
-    The browser loads the manifest lazily and then streams shards newest-first,
-    so the initial page load never downloads the history text at all. The
-    Worker keeps loading only the small search_index.json.
-    """
-    id_to_month: dict[str, str] = {}
+    """Split a size-capped text index into bounded monthly or daily files."""
+    if partition not in {"month", "day"}:
+        raise ValueError("Search-index shard partition must be month or day")
+    id_to_partition: dict[str, str] = {}
     for item in catalog.get("items", []):
         report_id = str(item.get("id") or "")
         if report_id:
-            id_to_month[report_id] = str(item.get("date_folder") or "")[:4] or "0000"
+            id_to_partition[report_id] = (
+                search_index_date(item.get("date_folder"))
+                if partition == "day"
+                else search_index_month(item.get("date_folder"))
+            )
 
     groups: dict[str, list[dict[str, str]]] = {}
-    for entry in history_index.get("items", []):
-        month = id_to_month.get(str(entry.get("id")), "0000")
-        groups.setdefault(month, []).append(entry)
+    for entry in index.get("items", []):
+        partition_key = id_to_partition.get(str(entry.get("id")), "000000" if partition == "day" else "0000")
+        groups.setdefault(partition_key, []).append(entry)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     shards: list[dict[str, Any]] = []
-    for month in sorted(groups, reverse=True):
-        filename = f"shard_{month}.json"
-        payload = json.dumps({"items": groups[month]}, ensure_ascii=False, separators=(",", ":"))
+    for partition_key in sorted(groups, reverse=True):
+        filename = f"shard_{partition_key}.json"
+        payload = json.dumps({"items": groups[partition_key]}, ensure_ascii=False, separators=(",", ":"))
         shard_path = output_dir / filename
         shard_path.write_text(payload, encoding="utf-8")
-        shards.append({
+        shard_row = {
             "file": filename,
-            "month": month,
-            "item_count": len(groups[month]),
+            "item_count": len(groups[partition_key]),
             "bytes": len(payload.encode("utf-8")),
-        })
+        }
+        shard_row["date" if partition == "day" else "month"] = partition_key
+        shards.append(shard_row)
 
     manifest = {
         "schema_version": 1,
-        "updated_at_bjt": history_index.get("updated_at_bjt", ""),
-        "item_count": history_index.get("item_count", 0),
-        "text_storage_limit_bytes": history_index.get("text_storage_limit_bytes", 0),
-        "text_storage_size_bytes": history_index.get("text_storage_size_bytes", 0),
-        "text_pruned_dates": history_index.get("text_pruned_dates", []),
+        "updated_at_bjt": index.get("updated_at_bjt", ""),
+        "item_count": index.get("item_count", 0),
+        "text_storage_limit_bytes": index.get("text_storage_limit_bytes", 0),
+        "text_storage_size_bytes": index.get("text_storage_size_bytes", 0),
+        "text_pruned_dates": index.get("text_pruned_dates", []),
+        "partition": partition,
         "total_bytes": sum(shard["bytes"] for shard in shards),
         "shards": shards,
     }
     write_json(output_dir / "manifest.json", manifest)
     return manifest
+
+
+def write_history_search_shards(
+    history_index: dict[str, Any],
+    catalog: dict[str, Any],
+    output_dir: Path,
+) -> dict[str, Any]:
+    """Keep the public helper name used by the browser-history build/tests."""
+    return write_search_index_shards(
+        index=history_index,
+        catalog=catalog,
+        output_dir=output_dir,
+    )
 
 
 def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
@@ -2326,8 +2374,11 @@ def main() -> int:
     parser.add_argument(
         "--search-index-limit-gb",
         type=float,
-        default=2,
-        help="Maximum public text index size in GiB. Oldest date folders are removed from the text index if exceeded. 0 disables.",
+        default=DEFAULT_SEARCH_INDEX_LIMIT_GIB,
+        help=(
+            "Maximum public text index size in GiB. The default stays below GitHub's 100 MiB"
+            " per-file limit; oldest date folders are removed first. 0 disables."
+        ),
     )
     parser.add_argument("--history-catalog", default="kc_desk_notes/data/history_catalog.json")
     parser.add_argument("--history-text-dir", default="kc_desk_notes/data/history_text")
@@ -2379,6 +2430,12 @@ def main() -> int:
         texts=history_texts,
         limit_bytes=int(args.history_index_limit_gb * 1024 * 1024 * 1024),
     )
+    current_manifest = write_search_index_shards(
+        index=search_index,
+        catalog=catalog,
+        output_dir=output_dir / "data" / "search_index_current",
+        partition="day",
+    )
     history_manifest = write_history_search_shards(
         history_index=history_index,
         catalog=catalog,
@@ -2405,6 +2462,7 @@ def main() -> int:
         f"({history_stats['history_added']} history-only, {history_stats['history_deduped']} history deduped) "
         f"and {search_index['item_count']} full-text search entries, "
         f"{len(blog_articles)} blog articles, "
+        f"{search_index['item_count']} current text entries in {len(current_manifest['shards'])} daily shards, "
         f"{history_index['item_count']} history text entries in {len(history_manifest['shards'])} lazy shards "
         f"({history_manifest['total_bytes'] / 1e6:.1f} MB)"
     )

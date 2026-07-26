@@ -5,6 +5,18 @@ OUTPUT_DIR="${1:-}"
 COMMIT_MESSAGE="${2:-Commit generated outputs}"
 MAX_ATTEMPTS="${3:-8}"
 REQUIRE_PUSH_SUCCESS="${4:-false}"
+GITHUB_MAX_FILE_BYTES="${GITHUB_MAX_FILE_BYTES:-104857600}"
+
+case "$GITHUB_MAX_FILE_BYTES" in
+  ''|*[!0-9]*)
+    echo "ERROR: GITHUB_MAX_FILE_BYTES must be a positive integer."
+    exit 2
+    ;;
+esac
+if [ "$GITHUB_MAX_FILE_BYTES" -le 0 ]; then
+  echo "ERROR: GITHUB_MAX_FILE_BYTES must be a positive integer."
+  exit 2
+fi
 
 case "$REQUIRE_PUSH_SUCCESS" in
   1|true|TRUE|True|yes|YES|Yes|y|Y|on|ON|On) REQUIRE_PUSH_SUCCESS="true" ;;
@@ -46,6 +58,22 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
   if git diff --cached --quiet; then
     echo "No generated changes to commit for $OUTPUT_DIR."
     exit 0
+  fi
+
+  oversized_files=0
+  while IFS= read -r -d '' staged_path; do
+    if ! staged_size="$(git cat-file -s ":$staged_path")"; then
+      echo "ERROR: Could not inspect staged object size: $staged_path"
+      exit 2
+    fi
+    if [ "$staged_size" -gt "$GITHUB_MAX_FILE_BYTES" ]; then
+      echo "ERROR: Staged file exceeds GitHub's ${GITHUB_MAX_FILE_BYTES}-byte limit: $staged_path ($staged_size bytes)"
+      oversized_files=$((oversized_files + 1))
+    fi
+  done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+  if [ "$oversized_files" -gt 0 ]; then
+    echo "ERROR: This push would be rejected permanently; stopping without retrying. Split or prune the generated file first."
+    exit 3
   fi
 
   git commit -m "$COMMIT_MESSAGE"

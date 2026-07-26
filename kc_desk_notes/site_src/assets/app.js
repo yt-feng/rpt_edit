@@ -1929,7 +1929,7 @@
     `;
   }
 
-  const ANALYTICS_HISTORY_EXPORT_MAX_PAGES = 10000;
+  const ANALYTICS_HISTORY_EXPORT_MAX_PAGES = 12000;
   const ANALYTICS_HISTORY_EXPORT_MAX_ROWS = 1048575;
   const ANALYTICS_HISTORY_EXPORT_COLUMNS = [
     { header: "时间（ISO）", key: "ts", width: 25 },
@@ -2029,7 +2029,20 @@
     const maxRows = Number.isFinite(requestedMaxRows) && requestedMaxRows > 0
       ? Math.floor(requestedMaxRows)
       : ANALYTICS_HISTORY_EXPORT_MAX_ROWS;
+    const requestedMaxAttempts = Number(options.maxAttemptsPerPage);
+    const maxAttemptsPerPage = Number.isFinite(requestedMaxAttempts) && requestedMaxAttempts > 0
+      ? Math.floor(requestedMaxAttempts)
+      : 1;
+    const requestedRetryDelayMs = Number(options.retryDelayMs);
+    const retryDelayMs = Number.isFinite(requestedRetryDelayMs) && requestedRetryDelayMs >= 0
+      ? requestedRetryDelayMs
+      : 800;
     const onProgress = typeof options.onProgress === "function" ? options.onProgress : () => {};
+    const onPageStart = typeof options.onPageStart === "function" ? options.onPageStart : () => {};
+    const onRetry = typeof options.onRetry === "function" ? options.onRetry : () => {};
+    const sleep = typeof options.sleep === "function"
+      ? options.sleep
+      : (delay) => new Promise((resolve) => setTimeout(resolve, delay));
     const events = [];
     const seenEventIds = new Set();
     const requestedCursors = new Set();
@@ -2040,14 +2053,50 @@
 
     while (true) {
       if (pageCount >= maxPages) {
-        throw new Error(`导出已读取 ${maxPages} 批仍未结束，请缩小日期范围后重试。`);
+        throw new Error(`导出已读取 ${maxPages} 批仍未结束，请联系管理员检查存档数量或分页状态。`);
       }
       if (requestedCursors.has(cursor)) {
         throw new Error("历史分页游标发生循环，导出已停止以避免生成不完整文件。");
       }
       requestedCursors.add(cursor);
 
-      const data = await fetchPage(cursor, pageCount + 1);
+      let data;
+      let attempt = 0;
+      while (attempt < maxAttemptsPerPage) {
+        attempt += 1;
+        onPageStart({
+          pageNumber: pageCount + 1,
+          attempt,
+          maxAttempts: maxAttemptsPerPage,
+          eventCount: events.length,
+          scannedCount,
+        });
+        try {
+          data = await fetchPage(cursor, pageCount + 1, attempt);
+          break;
+        } catch (error) {
+          const statusCode = Number(error && error.status);
+          const retryable = Boolean(error && error.retryable === true)
+            || statusCode === 408
+            || statusCode === 425
+            || statusCode === 429
+            || statusCode >= 500;
+          if (!retryable || attempt >= maxAttemptsPerPage) throw error;
+          const delayMs = retryDelayMs * (2 ** (attempt - 1));
+          onRetry({
+            pageNumber: pageCount + 1,
+            attempt,
+            nextAttempt: attempt + 1,
+            maxAttempts: maxAttemptsPerPage,
+            delayMs,
+            status: statusCode || 0,
+            eventCount: events.length,
+            scannedCount,
+            error,
+          });
+          await sleep(delayMs);
+        }
+      }
       if (!data || typeof data !== "object" || !Array.isArray(data.events)) {
         throw new Error("历史接口返回的数据格式不完整。");
       }
@@ -2062,7 +2111,7 @@
           continue;
         }
         if (events.length >= maxRows) {
-          throw new Error(`匹配记录超过 Excel 的 ${maxRows} 条上限，请缩小日期范围后重试。`);
+          throw new Error(`匹配记录超过 Excel 的 ${maxRows} 条上限，无法生成完整文件。`);
         }
         if (eventId) seenEventIds.add(eventId);
         events.push(event);
@@ -2092,6 +2141,80 @@
     return { events, pageCount, scannedCount, duplicateCount };
   }
 
+  function analyticsHistoryFilterSnapshot(fields = {}) {
+    const valueOf = (name) => String(fields[name] && fields[name].value || "").trim();
+    const requestedPageSize = Math.floor(Number(valueOf("pageSize")) || 100);
+    return {
+      type: valueOf("type"),
+      user: valueOf("user"),
+      query: valueOf("query"),
+      startDate: valueOf("startDate"),
+      endDate: valueOf("endDate"),
+      pageSize: Math.min(200, Math.max(1, requestedPageSize)),
+    };
+  }
+
+  function analyticsHistoryFilterKey(filters = {}) {
+    return [
+      filters.type,
+      filters.user,
+      filters.query,
+      filters.startDate,
+      filters.endDate,
+      filters.pageSize,
+    ].map((value) => String(value || "")).join("\u001f");
+  }
+
+  function analyticsHistorySearchParams(filters = {}, options = {}) {
+    const params = new URLSearchParams();
+    if (filters.type) params.set("type", filters.type);
+    if (filters.user) params.set("user", filters.user);
+    if (filters.query) params.set("q", filters.query);
+    if (filters.startDate) params.set("start_date", filters.startDate);
+    if (filters.endDate) params.set("end_date", filters.endDate);
+    const requestedPageSize = Math.floor(Number(options.pageSize) || Number(filters.pageSize) || 100);
+    params.set("page_size", String(Math.min(200, Math.max(1, requestedPageSize))));
+    const requestedCursor = String(options.cursor || "");
+    if (requestedCursor) params.set("cursor", requestedCursor);
+    return params;
+  }
+
+  async function loadAnalyticsHistoryUserOptions(workerUrl, input, datalist) {
+    if (!input || !datalist) return 0;
+    const data = await fetchFreshAdminUsers(workerUrl);
+    const users = Array.isArray(data.users) ? data.users : [];
+    const values = new Map();
+    for (const user of users) {
+      const username = String(user && user.username || "").trim();
+      const email = String(user && user.email || "").trim();
+      const state = user && user.disabled ? "已禁用" : "正常";
+      if (username && !values.has(username.toLowerCase())) {
+        values.set(username.toLowerCase(), {
+          value: username,
+          label: email ? `${email} · ${state}` : state,
+        });
+      }
+      if (email && !values.has(email.toLowerCase())) {
+        values.set(email.toLowerCase(), {
+          value: email,
+          label: username ? `${username} · ${state}` : state,
+        });
+      }
+    }
+    const fragment = document.createDocumentFragment();
+    [...values.values()]
+      .sort((a, b) => a.value.localeCompare(b.value, "zh-CN", { sensitivity: "base" }))
+      .forEach((entry) => {
+        const option = document.createElement("option");
+        option.value = entry.value;
+        option.label = entry.label;
+        fragment.appendChild(option);
+      });
+    datalist.replaceChildren(fragment);
+    input.placeholder = `用户名或邮箱（${users.length} 个用户）`;
+    return users.length;
+  }
+
   async function initAnalyticsHistory() {
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
@@ -2099,6 +2222,8 @@
 
     const form = document.getElementById("analyticsHistoryFilters");
     const type = document.getElementById("analyticsHistoryType");
+    const userFilter = document.getElementById("analyticsHistoryUser");
+    const userOptions = document.getElementById("analyticsHistoryUserOptions");
     const query = document.getElementById("analyticsHistoryQuery");
     const startDate = document.getElementById("analyticsHistoryStartDate");
     const endDate = document.getElementById("analyticsHistoryEndDate");
@@ -2119,6 +2244,9 @@
     let pageNumber = 1;
     let exportInProgress = false;
     let pageLoadInProgress = false;
+    let activeFilters = null;
+    let pageLoadSequence = 0;
+    let pageLoadController = null;
 
     function setStatus(message, kind = "") {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -2132,16 +2260,26 @@
       pageNumber = 1;
     }
 
-    function historySearchParams(options = {}) {
-      const params = new URLSearchParams();
-      if (type.value) params.set("type", type.value);
-      if (query.value.trim()) params.set("q", query.value.trim());
-      if (startDate.value) params.set("start_date", startDate.value);
-      if (endDate.value) params.set("end_date", endDate.value);
-      params.set("page_size", String(options.pageSize || pageSize.value || "100"));
-      const requestedCursor = options.cursor === undefined ? cursor : String(options.cursor || "");
-      if (requestedCursor) params.set("cursor", requestedCursor);
-      return params;
+    function currentHistoryFilters() {
+      return analyticsHistoryFilterSnapshot({
+        type,
+        user: userFilter,
+        query,
+        startDate,
+        endDate,
+        pageSize,
+      });
+    }
+
+    function historyFiltersChanged() {
+      return Boolean(activeFilters)
+        && analyticsHistoryFilterKey(currentHistoryFilters()) !== analyticsHistoryFilterKey(activeFilters);
+    }
+
+    function updateHistoryNavigation() {
+      const unavailable = pageLoadInProgress || exportInProgress || historyFiltersChanged();
+      previous.disabled = unavailable || cursorStack.length === 0;
+      next.disabled = unavailable || !nextCursor;
     }
 
     function analyticsHistoryExportParams() {
@@ -2169,21 +2307,87 @@
 
     async function loadPage(options = {}) {
       if (exportInProgress) return;
-      if (options.reset) resetPagination();
+      if (options.reset || !activeFilters) {
+        resetPagination();
+        activeFilters = currentHistoryFilters();
+      }
+      const loadFilters = { ...activeFilters };
+      const loadCursor = cursor;
+      const loadPageNumber = pageNumber;
+      const loadSequence = pageLoadSequence + 1;
+      pageLoadSequence = loadSequence;
+      if (pageLoadController) pageLoadController.abort();
+      const controller = typeof AbortController === "function" ? new AbortController() : null;
+      pageLoadController = controller;
       pageLoadInProgress = true;
       refresh.disabled = true;
       if (exportAll) exportAll.disabled = true;
-      previous.disabled = true;
-      next.disabled = true;
-      setStatus(`正在读取第 ${pageNumber} 页…`);
+      updateHistoryNavigation();
+      setStatus(`正在读取第 ${loadPageNumber} 页…`);
       try {
-        const response = await fetch(`${workerUrl}/account-admin/analytics-events?${historySearchParams()}`, {
-          cache: "no-store",
-          headers: authHeaders(),
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.detail || `历史记录读取失败 (${response.status})。`);
-        const events = Array.isArray(data.events) ? data.events : [];
+        const targetCount = loadFilters.pageSize;
+        const autoScan = Boolean(
+          loadFilters.type
+          || loadFilters.user
+          || loadFilters.query,
+        );
+        const events = [];
+        const seenEventIds = new Set();
+        const seenCursors = new Set();
+        let requestCursor = loadCursor;
+        let scannedCount = 0;
+        let batchCount = 0;
+        let firstData = null;
+        let lastData = null;
+
+        while (true) {
+          if (seenCursors.has(requestCursor)) throw new Error("历史查询游标发生循环，已停止读取。");
+          if (batchCount >= 1000) throw new Error("历史查询批次过多，已停止以避免返回不完整结果。");
+          seenCursors.add(requestCursor);
+          const remaining = Math.max(1, targetCount - events.length);
+          if (autoScan) {
+            setStatus(`正在查找第 ${loadPageNumber} 页：已扫描 ${scannedCount} 条，找到 ${events.length} 条…`);
+          }
+          const response = await fetch(`${workerUrl}/account-admin/analytics-events?${analyticsHistorySearchParams(loadFilters, {
+            cursor: requestCursor,
+            pageSize: remaining,
+          })}`, {
+            cache: "no-store",
+            headers: authHeaders(),
+            ...(controller ? { signal: controller.signal } : {}),
+          });
+          if (loadSequence !== pageLoadSequence) return;
+          const batchData = await response.json().catch(() => ({}));
+          if (loadSequence !== pageLoadSequence) return;
+          if (!response.ok) throw new Error(batchData.detail || `历史记录读取失败 (${response.status})。`);
+          if (!Array.isArray(batchData.events)) throw new Error("历史接口返回的数据格式不完整。");
+          batchCount += 1;
+          if (!firstData) firstData = batchData;
+          lastData = batchData;
+          const batchScanned = Number(batchData.scanned_count);
+          if (Number.isFinite(batchScanned) && batchScanned > 0) scannedCount += batchScanned;
+          for (const event of batchData.events) {
+            const eventId = String(event && event.id || "").trim();
+            if (eventId && seenEventIds.has(eventId)) continue;
+            if (eventId) seenEventIds.add(eventId);
+            events.push(event);
+          }
+          const batchNextCursor = String(batchData.next_cursor || "");
+          if (batchData.has_more === true && !batchNextCursor) {
+            throw new Error("历史接口提示还有记录，但没有返回下一页游标。");
+          }
+          if (!autoScan || events.length >= targetCount || !batchNextCursor) break;
+          requestCursor = batchNextCursor;
+        }
+
+        if (loadSequence !== pageLoadSequence) return;
+
+        const data = {
+          ...(firstData || {}),
+          ...(lastData || {}),
+          events,
+          scanned_count: scannedCount,
+        };
         nextCursor = String(data.next_cursor || "");
         results.innerHTML = renderAnalyticsHistoryEvents(events);
         renderHistoryMeta(data);
@@ -2193,30 +2397,38 @@
           endDate.min = data.oldest_date;
           endDate.max = data.newest_date || "";
         }
-        pageLabel.textContent = `第 ${pageNumber} 页`;
-        previous.disabled = cursorStack.length === 0;
-        next.disabled = !nextCursor;
+        pageLabel.textContent = `第 ${loadPageNumber} 页`;
         setStatus(events.length
           ? (nextCursor
-            ? `已读取 ${events.length} 条事件；还有更早记录，请点击“下一页（更早记录）”。`
-            : `已读取 ${events.length} 条事件，已到当前筛选范围的最早记录。`)
-          : (nextCursor ? "当前扫描区间没有匹配事件，可继续搜索更早记录。" : "没有匹配事件。"), "ok");
+            ? `${autoScan ? `已自动扫描 ${scannedCount} 条存档，` : ""}找到 ${events.length} 条事件；还有更早记录。`
+            : `${autoScan ? `已自动扫描 ${scannedCount} 条存档，` : ""}找到 ${events.length} 条事件，已到最早记录。`)
+          : (nextCursor
+            ? `已扫描 ${scannedCount} 条存档，当前页没有匹配事件；可继续查看更早记录。`
+            : `已扫描 ${scannedCount} 条存档，全历史没有匹配事件。`), "ok");
       } catch (error) {
+        if (loadSequence !== pageLoadSequence || (controller && controller.signal.aborted)) return;
         results.innerHTML = '<div class="empty-state">无法读取用户行为历史。</div>';
         meta.textContent = "";
         setStatus(error.message || "历史记录读取失败。", "error");
-        previous.disabled = cursorStack.length === 0;
       } finally {
-        pageLoadInProgress = false;
-        refresh.disabled = false;
-        if (exportAll) exportAll.disabled = !isSuperSession();
+        if (loadSequence === pageLoadSequence) {
+          pageLoadInProgress = false;
+          if (pageLoadController === controller) pageLoadController = null;
+          refresh.disabled = false;
+          if (exportAll) exportAll.disabled = !isSuperSession();
+          updateHistoryNavigation();
+        }
       }
     }
 
     async function exportAllHistory() {
       if (!exportAll || exportInProgress || pageLoadInProgress) return;
+      const exportButtonLabel = exportAll.textContent || "导出全部历史";
       exportInProgress = true;
       exportAll.disabled = true;
+      exportAll.textContent = "正在准备…";
+      refresh.disabled = true;
+      updateHistoryNavigation();
       const exportParams = analyticsHistoryExportParams();
       setStatus("正在准备导出全部历史（不受当前页面筛选影响）…");
       try {
@@ -2224,19 +2436,50 @@
         const collected = await collectAnalyticsHistoryPages(async (batchCursor) => {
           const params = new URLSearchParams(exportParams);
           if (batchCursor) params.set("cursor", batchCursor);
-          const response = await fetch(`${workerUrl}/account-admin/analytics-events?${params}`, {
-            cache: "no-store",
-            headers: authHeaders(),
-          });
-          const data = await response.json().catch(() => ({}));
-          if (!response.ok) throw new Error(data.detail || `历史记录导出失败 (${response.status})。`);
-          return data;
+          try {
+            const response = await fetch(`${workerUrl}/account-admin/analytics-events-export?${params}`, {
+              cache: "no-store",
+              headers: authHeaders(),
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+              const error = new Error(data.detail || `历史记录导出失败 (${response.status})。`);
+              error.status = response.status;
+              error.retryable = response.status === 408
+                || response.status === 425
+                || response.status === 429
+                || response.status >= 500;
+              throw error;
+            }
+            return data;
+          } catch (error) {
+            if (!Number(error && error.status)) error.retryable = true;
+            throw error;
+          }
         }, {
+          maxAttemptsPerPage: 4,
+          retryDelayMs: 800,
+          onPageStart(progress) {
+            exportAll.textContent = `导出中 · ${progress.eventCount} 条`;
+            if (progress.attempt === 1) {
+              setStatus(`正在请求第 ${progress.pageNumber} 批；已保留 ${progress.eventCount} 条…`);
+            }
+          },
+          onRetry(progress) {
+            const reason = progress.status ? `HTTP ${progress.status}` : "网络中断";
+            const seconds = Math.max(0.1, progress.delayMs / 1000).toFixed(1);
+            setStatus(`第 ${progress.pageNumber} 批遇到 ${reason}，${seconds} 秒后进行第 ${progress.nextAttempt}/${progress.maxAttempts} 次尝试；已保留 ${progress.eventCount} 条。`);
+          },
           onProgress(progress) {
-            setStatus(`正在导出第 ${progress.pageCount} 批：已收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档…`);
+            exportAll.textContent = `导出中 · ${progress.eventCount} 条`;
+            setStatus(`已完成 ${progress.pageCount} 批：收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档；正在继续…`);
           },
         });
-        const rows = collected.events.map(analyticsHistoryExportRow);
+        exportAll.textContent = "正在生成 Excel…";
+        setStatus(`数据读取完成，共 ${collected.events.length} 条；正在生成 Excel…`);
+        const rows = [...collected.events]
+          .sort((a, b) => String(b && b.ts || "").localeCompare(String(a && a.ts || "")))
+          .map(analyticsHistoryExportRow);
         const blob = buildXlsxWorkbook({
           sheetName: "用户行为历史",
           columns: ANALYTICS_HISTORY_EXPORT_COLUMNS,
@@ -2251,7 +2494,10 @@
         setStatus(error.message || "全部历史导出失败。", "error");
       } finally {
         exportInProgress = false;
+        exportAll.textContent = exportButtonLabel;
         exportAll.disabled = !isSuperSession();
+        refresh.disabled = false;
+        updateHistoryNavigation();
       }
     }
 
@@ -2259,20 +2505,21 @@
       event.preventDefault();
       loadPage({ reset: true });
     });
+    form.addEventListener("input", updateHistoryNavigation);
     reset.addEventListener("click", () => {
       form.reset();
       loadPage({ reset: true });
     });
-    refresh.addEventListener("click", () => loadPage());
+    refresh.addEventListener("click", () => loadPage({ reset: historyFiltersChanged() }));
     if (exportAll) exportAll.addEventListener("click", exportAllHistory);
     previous.addEventListener("click", () => {
-      if (!cursorStack.length) return;
+      if (pageLoadInProgress || exportInProgress || !cursorStack.length || historyFiltersChanged()) return;
       cursor = cursorStack.pop() || "";
       pageNumber = Math.max(1, pageNumber - 1);
       loadPage();
     });
     next.addEventListener("click", () => {
-      if (!nextCursor) return;
+      if (pageLoadInProgress || exportInProgress || !nextCursor || historyFiltersChanged()) return;
       cursorStack.push(cursor);
       cursor = nextCursor;
       pageNumber += 1;
@@ -2284,6 +2531,11 @@
       results.innerHTML = '<div class="empty-state">请先使用管理员账号登录。</div>';
       setStatus("当前账号没有查看用户行为历史的权限。", "error");
       return;
+    }
+    if (userFilter && userOptions) {
+      loadAnalyticsHistoryUserOptions(workerUrl, userFilter, userOptions).catch(() => {
+        userFilter.placeholder = "用户名或邮箱（可直接输入）";
+      });
     }
     await loadPage({ reset: true });
   }
@@ -5392,6 +5644,221 @@
     `;
   }
 
+  function textOnlyTextAccessMarkup() {
+    return `
+      <section class="text-only-text-access" id="textOnlyTextAccess">
+        <div class="admin-panel-heading">
+          <h3>原始文本（Text only）</h3>
+          <span>1个月及以上 · 须在授权范围</span>
+        </div>
+        <p class="subtle">这份报告目前没有可下载 PDF。登录后，会员时长达到 1 个月且报告在账号授权范围内，即可分页查看已保存的提取文本。</p>
+        <div class="text-only-text-actions">
+          <button class="primary" id="viewTextOnlyText" type="button">查看原始文本</button>
+          <a class="secondary-button" id="openTextOnlySponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 NOVA-M</a>
+        </div>
+        <div id="textOnlyTextStatus" class="status-line" aria-live="polite"></div>
+        <div id="textOnlyTextContent" class="text-only-text-content" hidden>
+          <div id="textOnlyTextSource" class="text-only-text-source"></div>
+          <pre id="textOnlyTextBody" tabindex="0"></pre>
+          <button class="secondary-button" id="loadMoreTextOnlyText" type="button" hidden>继续加载</button>
+        </div>
+      </section>
+    `;
+  }
+
+  function initTextOnlyTextAccess(item, workerUrl) {
+    const panel = document.getElementById("textOnlyTextAccess");
+    const openButton = document.getElementById("viewTextOnlyText");
+    const sponsorLink = document.getElementById("openTextOnlySponsor");
+    const status = document.getElementById("textOnlyTextStatus");
+    const content = document.getElementById("textOnlyTextContent");
+    const source = document.getElementById("textOnlyTextSource");
+    const body = document.getElementById("textOnlyTextBody");
+    const loadMore = document.getElementById("loadMoreTextOnlyText");
+    if (!panel || !openButton || !sponsorLink || !status || !content || !source || !body || !loadMore || !workerUrl) return;
+
+    let nextCursor = "";
+    let requestGeneration = 0;
+    let requestInProgress = false;
+    let activeSessionIdentity = null;
+    const loadedCursors = new Set();
+
+    function sessionIdentity(session) {
+      if (!session || !session.user) return "signed-out";
+      const user = session.user;
+      return [
+        "signed-in",
+        user.id,
+        String(user.email || "").trim().toLowerCase(),
+        String(user.username || "").trim().toLowerCase(),
+        user.role,
+        user.disabled === true ? "disabled" : "enabled",
+      ].map((value) => String(value || "")).join("\u001f");
+    }
+
+    function paginationError(message) {
+      const error = new Error(message);
+      error.pagination = true;
+      return error;
+    }
+
+    function resetText() {
+      requestGeneration += 1;
+      requestInProgress = false;
+      nextCursor = "";
+      loadedCursors.clear();
+      content.hidden = true;
+      source.textContent = "";
+      body.textContent = "";
+      loadMore.hidden = true;
+      loadMore.disabled = false;
+      openButton.disabled = false;
+    }
+
+    function refreshSession() {
+      const session = loadAuthSession();
+      const identity = sessionIdentity(session);
+      const identityChanged = identity !== activeSessionIdentity;
+      activeSessionIdentity = identity;
+      if (identityChanged) resetText();
+      openButton.textContent = session ? "查看原始文本" : "注册 / 登录后查看";
+      sponsorLink.href = vid2pptSponsorUrlForSession(session);
+      if (identityChanged) {
+        status.className = "status-line";
+        status.textContent = session
+          ? "点击后将核验这份报告的会员权限。"
+          : "请先注册或登录；需至少 1 个月会员且报告在账号授权范围内。";
+      }
+    }
+
+    async function loadText(cursor = "") {
+      if (requestInProgress) return;
+      const session = loadAuthSession();
+      if (!session) {
+        showAccountModal(workerUrl, { item, source: "catalog" });
+        return;
+      }
+      const requestedCursor = String(cursor || "");
+      if (requestedCursor && requestedCursor !== nextCursor) {
+        status.className = "status-line error";
+        status.textContent = "文本分页状态已变化，请重新点击“查看原始文本”。";
+        return;
+      }
+      const generation = requestGeneration;
+      const requestToken = String(session.token || "");
+      requestInProgress = true;
+      openButton.disabled = true;
+      loadMore.disabled = true;
+      status.className = "status-line";
+      status.textContent = requestedCursor ? "正在继续加载文本…" : "正在核验权限并读取文本…";
+      try {
+        const params = new URLSearchParams({ report_id: String(item.id || "") });
+        if (requestedCursor) params.set("cursor", requestedCursor);
+        const response = await fetch(`${workerUrl}/report-text?${params.toString()}`, {
+          cache: "no-store",
+          headers: { "Authorization": `Bearer ${requestToken}` },
+        });
+        const data = await response.json().catch(() => ({}));
+        if (generation !== requestGeneration) return;
+        if (!response.ok) {
+          if (response.status === 401) {
+            const currentSession = loadAuthSession();
+            if (String(currentSession && currentSession.token || "") === requestToken) {
+              clearAuthSession();
+              return;
+            }
+          }
+          const fallback = response.status === 401
+            ? "登录状态已更新，请重新点击查看。"
+            : response.status === 403
+              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。开通 NOVA-M 或更长期全站套餐后可查看。"
+              : response.status === 404
+                ? "这份报告暂时没有可读取的原始文本。"
+                : response.status === 400
+                  ? "文本分页已过期或无效，请重新点击“查看原始文本”。"
+                  : "原始文本读取失败，请稍后重试。";
+          const error = new Error([400, 401, 403, 404].includes(response.status) ? fallback : (data.detail || fallback));
+          error.status = response.status;
+          error.pagination = response.status === 400;
+          throw error;
+        }
+        if (typeof data.text !== "string" || typeof data.has_more !== "boolean") {
+          throw paginationError("原始文本接口返回的数据格式不完整。请重新点击查看。");
+        }
+        if (data.report_id !== undefined
+          && data.report_id !== null
+          && String(data.report_id) !== String(item.id || "")) {
+          throw paginationError("原始文本接口返回的报告不匹配。请重新点击查看。");
+        }
+        const responseCursor = String(data.next_cursor || "");
+        if (data.has_more && !responseCursor) {
+          throw paginationError("文本尚未加载完成，但接口没有返回下一页游标。请重新点击查看。");
+        }
+        if (!data.has_more && responseCursor) {
+          throw paginationError("原始文本分页状态不一致。请重新点击查看。");
+        }
+        if (responseCursor && (responseCursor === requestedCursor || loadedCursors.has(responseCursor))) {
+          throw paginationError("原始文本分页游标发生循环。请重新点击查看。");
+        }
+        loadedCursors.add(requestedCursor);
+        const chunk = data.text;
+        body.textContent += chunk;
+        source.textContent = String(data.source_label || "提取文本");
+        nextCursor = responseCursor;
+        content.hidden = false;
+        loadMore.hidden = !Boolean(data.has_more && nextCursor);
+        status.textContent = loadMore.hidden ? "文本已全部加载。" : "已加载部分文本，可继续加载。";
+        status.classList.add("ok");
+        trackEvent(workerUrl, "report_text_view", {
+          ...analyticsReportPayload(item, "catalog"),
+          action: requestedCursor ? "load_more" : "open",
+          source_label: String(data.source_label || ""),
+        });
+      } catch (error) {
+        if (generation !== requestGeneration) return;
+        if (Number(error && error.status) === 403) {
+          resetText();
+        }
+        if (error && error.pagination === true) {
+          nextCursor = "";
+          loadMore.hidden = true;
+        }
+        status.className = "status-line error";
+        status.textContent = localizedContactText(error.message || "原始文本读取失败，请稍后重试。");
+      } finally {
+        if (generation === requestGeneration) {
+          requestInProgress = false;
+          openButton.disabled = false;
+          loadMore.disabled = false;
+        }
+      }
+    }
+
+    openButton.addEventListener("click", () => {
+      if (!loadAuthSession()) {
+        showAccountModal(workerUrl, { item, source: "catalog" });
+        return;
+      }
+      resetText();
+      loadText();
+    });
+    loadMore.addEventListener("click", () => {
+      if (nextCursor) loadText(nextCursor);
+    });
+    sponsorLink.addEventListener("click", () => {
+      trackEvent(workerUrl, "vid2ppt_nova_sponsor_click", {
+        ...analyticsReportPayload(item, "catalog"),
+        site_origin: "kcdesk",
+        target_site: "vid2ppt",
+        purchase_site: "vid2ppt.com",
+        gift_benefit_site: "kcdesk.com",
+        required_plan: "NOVA-M",
+      });
+    });
+    document.addEventListener("kcdesk-auth-change", refreshSession);
+    refreshSession();
+  }
+
   function initTextOnlyPdfUpload(item, workerUrl) {
     const panel = document.getElementById("textOnlyPdfUpload");
     const form = document.getElementById("textOnlyPdfUploadForm");
@@ -5832,7 +6299,7 @@
       : '<div class="setup-warning">PDF download is temporarily unavailable. Please try again later.</div>';
     const archiveNotice = available
       ? ""
-      : `<div class="archive-notice">PDF storage for this report is currently archived, but the text record remains searchable. Please contact ${contactMethodHtml("en")}.</div>`;
+      : '<div class="archive-notice">PDF 暂不可下载；符合条件的会员可在下方查看已保存的提取文本。</div>';
     const related = relatedReports(item, catalogItems, searchTextById);
     const relatedMarkup = related.length
       ? `
@@ -5860,6 +6327,7 @@
       `
       : archiveNotice;
     const textOnlyUpload = !available && workerUrl ? textOnlyPdfUploadMarkup() : "";
+    const textOnlyTextAccess = !available && workerUrl ? textOnlyTextAccessMarkup() : "";
 
     detail.innerHTML = `
       ${detailTitleMarkup(item)}
@@ -5870,6 +6338,7 @@
         ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
       </div>
       ${unlockMarkup}
+      ${textOnlyTextAccess}
       ${textOnlyUpload}
       ${workerUrl ? adminPanelMarkup() : ""}
       ${relatedMarkup}
@@ -5891,6 +6360,7 @@
     });
 
     initDetailAdmin(item, workerUrl);
+    initTextOnlyTextAccess(item, workerUrl);
     initTextOnlyPdfUpload(item, workerUrl);
     initReportAccessControls(item, workerUrl, "catalog", (statusTarget) => (
       downloadCatalogWithAccount(workerUrl, item, statusTarget)

@@ -24,6 +24,7 @@ jobs:
           sparse-checkout: |
             workers/kc-desk-notes-worker/src/index.js
             kc_desk_notes/site_src
+            scripts/build_kc_desk_notes_site.py
             scripts/test_kcdesk_entitlement_precedence.js
             scripts/test_kcdesk_legacy_access_compat.js
             scripts/test_kcdesk_access_renewal.js
@@ -31,6 +32,7 @@ jobs:
             scripts/test_kcdesk_hot_reports.js
             scripts/test_kcdesk_multi_institution_access.js
             scripts/test_kcdesk_text_only_pdf_upload.js
+            scripts/test_kcdesk_text_only_text_access.js
 
       - name: Validate legacy access compatibility
         run: |
@@ -43,6 +45,7 @@ jobs:
           node scripts/test_kcdesk_hot_reports.js
           node scripts/test_kcdesk_multi_institution_access.js
           node scripts/test_kcdesk_text_only_pdf_upload.js
+          node scripts/test_kcdesk_text_only_text_access.js
 
       - name: Prepare Cloudflare Worker config
         env:

@@ -701,6 +701,59 @@ button.primary:disabled {
   background: #f2fbf9;
 }
 
+.text-only-text-access {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #bad7e8;
+  border-radius: 8px;
+  background: #f4faff;
+}
+
+.text-only-text-access .admin-panel-heading h3,
+.text-only-text-access p {
+  margin: 0;
+}
+
+.text-only-text-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.text-only-text-content {
+  display: grid;
+  gap: 10px;
+}
+
+.text-only-text-content[hidden] {
+  display: none;
+}
+
+.text-only-text-source {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.text-only-text-content pre {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  max-height: 640px;
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font: 14px/1.75 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .text-only-pdf-upload[hidden] {
   display: none;
 }
@@ -1658,7 +1711,7 @@ a.secondary-button {
 
 .analytics-history-filters {
   display: grid;
-  grid-template-columns: minmax(150px, 0.8fr) minmax(280px, 2fr) repeat(3, minmax(140px, 0.8fr)) auto;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(220px, 1.25fr) minmax(260px, 1.6fr) repeat(3, minmax(130px, 0.75fr)) auto;
   gap: 12px;
   align-items: end;
   padding: 20px 0;
@@ -3665,6 +3718,24 @@ a.secondary-button {
     grid-template-columns: 1fr;
   }
 
+  .text-only-text-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .text-only-text-actions > * {
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .text-only-text-content pre {
+    max-height: 55vh;
+    padding: 12px;
+    font-size: 13px;
+  }
+
   h1 {
     font-size: 28px;
   }
@@ -3938,6 +4009,7 @@ a.secondary-button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .analytics-history-user-filter,
   .analytics-history-query {
     grid-column: span 2;
   }
@@ -3972,6 +4044,7 @@ a.secondary-button {
     grid-template-columns: 1fr;
   }
 
+  .analytics-history-user-filter,
   .analytics-history-query {
     grid-column: auto;
   }

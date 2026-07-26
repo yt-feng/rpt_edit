@@ -68,8 +68,11 @@ function historyCollector() {
 test("admin export asset and activity export control are shipped", async () => {
   await access(xlsxPath);
   assert.match(activity, /id="analyticsHistoryExportAll"/u);
+  assert.match(activity, /id="analyticsHistoryUser"/u);
+  assert.match(activity, /id="analyticsHistoryUserOptions"/u);
   assert.match(app, /import\(versionedSiteAssetUrl\("assets\/xlsx-export\.js"\)\)/u);
   assert.match(app, /account-admin\/users-export/u);
+  assert.match(app, /account-admin\/analytics-events-export/u);
 });
 
 test("admin summary loader returns fresh data and propagates export failures", async () => {
@@ -119,6 +122,59 @@ test("full-history export ignores current page filters", () => {
   assert.doesNotMatch(exportFunction, /historySearchParams/u);
 });
 
+test("activity pagination uses one immutable filter snapshot per load", () => {
+  const snapshotFilters = vm.runInNewContext(`(${extractFunction(app, "analyticsHistoryFilterSnapshot")})`);
+  const filterKey = vm.runInNewContext(`(${extractFunction(app, "analyticsHistoryFilterKey")})`);
+  const searchParams = vm.runInNewContext(`(${extractFunction(app, "analyticsHistorySearchParams")})`, {
+    URLSearchParams,
+  });
+  const fields = {
+    type: { value: "search" },
+    user: { value: " xiaoyi " },
+    query: { value: " Nomura " },
+    startDate: { value: "2026-07-01" },
+    endDate: { value: "2026-07-26" },
+    pageSize: { value: "500.9" },
+  };
+  const snapshot = snapshotFilters(fields);
+  fields.user.value = "another-user";
+  fields.query.value = "changed while loading";
+  fields.pageSize.value = "1";
+
+  const params = searchParams(snapshot, { cursor: "cursor-a", pageSize: 37.8 });
+  assert.equal(params.get("type"), "search");
+  assert.equal(params.get("user"), "xiaoyi");
+  assert.equal(params.get("q"), "Nomura");
+  assert.equal(params.get("start_date"), "2026-07-01");
+  assert.equal(params.get("end_date"), "2026-07-26");
+  assert.equal(params.get("page_size"), "37");
+  assert.equal(params.get("cursor"), "cursor-a");
+  assert.equal(snapshot.pageSize, 200, "page size is clamped before the request starts");
+  assert.notEqual(filterKey(snapshot), filterKey(snapshotFilters(fields)));
+
+  const loadPage = extractFunction(app, "loadPage");
+  assert.match(loadPage, /const loadFilters = \{ \.\.\.activeFilters \}/u);
+  assert.match(loadPage, /analyticsHistorySearchParams\(loadFilters/u);
+  assert.match(loadPage, /pageLoadController\.abort\(\)/u);
+  assert.doesNotMatch(loadPage, /userFilter\.value|query\.value|pageSize\.value/u);
+
+  const exportAll = extractFunction(app, "exportAllHistory");
+  assert.match(exportAll, /exportInProgress = true;[\s\S]*updateHistoryNavigation\(\)/u);
+  assert.match(exportAll, /exportInProgress = false;[\s\S]*updateHistoryNavigation\(\)/u);
+  const init = extractFunction(app, "initAnalyticsHistory");
+  assert.match(init, /pageLoadInProgress \|\| exportInProgress \|\| !nextCursor/u);
+  assert.match(init, /pageLoadInProgress \|\| exportInProgress \|\| !cursorStack\.length/u);
+});
+
+test("activity history does not wait for the user-option export before loading events", () => {
+  const init = extractFunction(app, "initAnalyticsHistory");
+  assert.match(
+    init,
+    /loadAnalyticsHistoryUserOptions\(workerUrl, userFilter, userOptions\)\.catch[\s\S]*await loadPage\(\{ reset: true \}\)/u,
+  );
+  assert.doesNotMatch(init, /await loadAnalyticsHistoryUserOptions/u);
+});
+
 test("full-history collection follows empty filtered pages and removes duplicate event ids", async () => {
   const collect = historyCollector();
   const cursors = [];
@@ -152,6 +208,72 @@ test("full-history collection follows empty filtered pages and removes duplicate
   assert.equal(result.scannedCount, 202);
   assert.equal(result.duplicateCount, 1);
   assert.deepEqual(Array.from(progress, (value) => value.pageCount), [1, 2, 3]);
+});
+
+test("full-history collection retries a transient page in place without losing prior rows", async () => {
+  const collect = historyCollector();
+  const calls = [];
+  const retries = [];
+  const delays = [];
+  let twelfthPageAttempts = 0;
+
+  const result = await collect(async (cursor, pageNumber, attempt) => {
+    calls.push({ cursor, pageNumber, attempt });
+    if (pageNumber <= 11) {
+      return {
+        events: Array.from({ length: 200 }, (_value, index) => ({
+          id: `event-${(pageNumber - 1) * 200 + index + 1}`,
+        })),
+        scanned_count: 200,
+        has_more: true,
+        next_cursor: `cursor-${pageNumber}`,
+      };
+    }
+    twelfthPageAttempts += 1;
+    if (twelfthPageAttempts < 3) {
+      throw Object.assign(new Error("temporary worker deployment"), { status: 503, retryable: true });
+    }
+    return {
+      events: Array.from({ length: 5 }, (_value, index) => ({ id: `event-${2201 + index}` })),
+      scanned_count: 5,
+      has_more: false,
+      next_cursor: "",
+    };
+  }, {
+    maxAttemptsPerPage: 4,
+    retryDelayMs: 800,
+    sleep(delay) { delays.push(delay); },
+    onRetry(progress) { retries.push({ ...progress, error: undefined }); },
+  });
+
+  assert.equal(result.events.length, 2205);
+  assert.equal(result.pageCount, 12);
+  assert.equal(result.scannedCount, 2205);
+  assert.equal(twelfthPageAttempts, 3);
+  assert.deepEqual(delays, [800, 1600]);
+  assert.deepEqual(retries.map((value) => [value.pageNumber, value.nextAttempt, value.eventCount]), [
+    [12, 2, 2200],
+    [12, 3, 2200],
+  ]);
+  assert.equal(calls.filter((value) => value.pageNumber === 1).length, 1, "retry must not restart at page one");
+  assert.equal(calls.filter((value) => value.pageNumber === 12).length, 3);
+  assert.ok(calls.filter((value) => value.pageNumber === 12).every((value) => value.cursor === "cursor-11"));
+});
+
+test("full-history collection does not retry permission failures", async () => {
+  const collect = historyCollector();
+  let calls = 0;
+  await assert.rejects(
+    collect(async () => {
+      calls += 1;
+      throw Object.assign(new Error("Please log in."), { status: 403, retryable: false });
+    }, {
+      maxAttemptsPerPage: 4,
+      sleep() { throw new Error("403 must not sleep or retry"); },
+    }),
+    /Please log in/u,
+  );
+  assert.equal(calls, 1);
 });
 
 test("full-history collection rejects cursor loops and inconsistent pagination", async () => {

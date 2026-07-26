@@ -92,6 +92,41 @@ class BlogSanitizerTests(unittest.TestCase):
 
 
 class BlogBuildTests(unittest.TestCase):
+    def test_current_search_index_daily_shards_are_generated(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "data" / "search_index_current"
+            catalog = {
+                "items": [
+                    {"id": "current-six", "date_folder": "260722"},
+                    {"id": "current-eight", "date_folder": "20260723"},
+                ],
+            }
+            index = {
+                "schema_version": 1,
+                "updated_at_bjt": "2026-07-26 12:00:00",
+                "item_count": 2,
+                "items": [
+                    {"id": "current-six", "text": "first extracted report body"},
+                    {"id": "current-eight", "text": "second extracted report body"},
+                ],
+            }
+
+            manifest = builder.write_search_index_shards(
+                index=index,
+                catalog=catalog,
+                output_dir=output,
+                partition="day",
+            )
+            self.assertTrue((output / "manifest.json").is_file())
+            self.assertEqual(
+                ["shard_260723.json", "shard_260722.json"],
+                [row["file"] for row in manifest["shards"]],
+            )
+            first = json.loads((output / "shard_260722.json").read_text(encoding="utf-8"))
+            second = json.loads((output / "shard_260723.json").read_text(encoding="utf-8"))
+            self.assertEqual(["current-six"], [row["id"] for row in first["items"]])
+            self.assertEqual(["current-eight"], [row["id"] for row in second["items"]])
+
     def test_wechat_image_reupload_urls_do_not_duplicate_an_article(self) -> None:
         first = builder.sanitize_blog_html(
             '<section><p>同一正文</p><img src="https://mmbiz.qpic.cn/old-token" alt="图表"></section>'

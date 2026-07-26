@@ -50,9 +50,20 @@
             <option value="daily_file_download">每日文件下载</option>
           </select>
         </label>
+        <label class="analytics-history-user-filter">
+          <span>用户</span>
+          <input
+            id="analyticsHistoryUser"
+            type="search"
+            list="analyticsHistoryUserOptions"
+            autocomplete="off"
+            placeholder="用户名或邮箱（全部用户）"
+          >
+          <datalist id="analyticsHistoryUserOptions"></datalist>
+        </label>
         <label class="analytics-history-query">
           <span>关键词</span>
-          <input id="analyticsHistoryQuery" type="search" autocomplete="off" placeholder="用户、邮箱、搜索词、报告、来源或状态">
+          <input id="analyticsHistoryQuery" type="search" autocomplete="off" placeholder="搜索词、报告、页面、来源或状态">
         </label>
         <label>
           <span>开始日期</span>

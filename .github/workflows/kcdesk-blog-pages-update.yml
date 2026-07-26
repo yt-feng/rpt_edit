@@ -54,6 +54,7 @@ jobs:
             wechat_drafts
             scripts/build_kc_desk_notes_site.py
             scripts/commit_output_dir.sh
+            scripts/test_commit_output_dir.sh
             scripts/test_kcdesk_blog_build.py
             scripts/test_kcdesk_contact_locale.js
             scripts/test_kcdesk_entitlement_precedence.js
@@ -62,11 +63,15 @@ jobs:
             scripts/test_kcdesk_daily_pick_topics.js
             scripts/test_kcdesk_hot_reports.js
             scripts/test_kcdesk_multi_institution_access.js
+            scripts/test_kcdesk_search_index_limit.py
             scripts/test_kcdesk_text_only_pdf_upload.js
+            scripts/test_kcdesk_text_only_text_access.js
             workers/kc-desk-notes-worker/src/index.js
 
       - name: Validate Pages, exports, permissions, and Blog
         run: |
+          bash -n scripts/commit_output_dir.sh
+          bash scripts/test_commit_output_dir.sh
           node --check kc_desk_notes/site_src/assets/contact.js
           node --check kc_desk_notes/site_src/assets/app.js
           node --check kc_desk_notes/site_src/assets/xlsx-export.js
@@ -80,6 +85,8 @@ jobs:
           node scripts/test_kcdesk_hot_reports.js
           node scripts/test_kcdesk_multi_institution_access.js
           node scripts/test_kcdesk_text_only_pdf_upload.js
+          node scripts/test_kcdesk_text_only_text_access.js
+          python3 scripts/test_kcdesk_search_index_limit.py
           python3 scripts/test_kcdesk_blog_build.py
 
       - name: Build static Pages artifact and Blog archive

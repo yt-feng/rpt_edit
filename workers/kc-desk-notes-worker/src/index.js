@@ -163,6 +163,10 @@ const CATALOG_PDF_OVERRIDE_PDF_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/pdfs`;
 const CATALOG_PDF_OVERRIDE_MAX_ITEMS = 5000;
 const CATALOG_PDF_OVERRIDE_MAX_BYTES = 95 * 1024 * 1024;
 const CATALOG_PDF_OVERRIDE_HEAD_CONCURRENCY = 20;
+const REPORT_TEXT_CHUNK_CHARS = 12 * 1024;
+const REPORT_TEXT_CURSOR_TTL_SECONDS = 15 * 60;
+const REPORT_TEXT_CURSOR_MAX_LENGTH = 2048;
+const REPORT_TEXT_SOURCE_LABEL = "提取文本节选";
 const UPSTREAM_SEARCH_TIMEOUT_MS = 28000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
@@ -177,9 +181,13 @@ const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 60;
 const ANALYTICS_DASHBOARD_TIMEOUT_MS = 9000;
 const ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE = 100;
 const ANALYTICS_HISTORY_MAX_PAGE_SIZE = 200;
-const ANALYTICS_HISTORY_FILTER_SCAN_LIMIT = 100;
+const ANALYTICS_HISTORY_FILTER_SCAN_LIMIT = 300;
 const ANALYTICS_HISTORY_READ_BATCH = 30;
 const ANALYTICS_HISTORY_R2_MAX_LIST_PAGES = 10000;
+const ANALYTICS_HISTORY_CURSOR_MAX_LENGTH = 4096;
+const ANALYTICS_EXPORT_CURSOR_VERSION = 1;
+const ANALYTICS_EXPORT_CURSOR_MAX_LENGTH = 4096;
+const ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH = 2048;
 const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
 const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
 const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
@@ -194,7 +202,9 @@ const SUPABASE_TIMEOUT_MS = 6500;
 const SUPABASE_WRITE_TIMEOUT_MS = 15000;
 const ADMIN_SNAPSHOT_PREFIX = "_account/admin-snapshots";
 const ADMIN_FILES_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/files.json`;
-const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks.json`;
+const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks-v2.json`;
+const ADMIN_PICKS_LEGACY_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks.json`;
+const ADMIN_PICKS_TOPIC_VERSION = 2;
 const ADMIN_WECHAT_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/wechat.json`;
 const ADMIN_ANALYTICS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/analytics.json`;
 const ADMIN_USERS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/users.json`;
@@ -337,6 +347,7 @@ let rulesCache = null;
 let rulesFetchedAt = 0;
 let searchIndexCache = null;
 let searchIndexFetchedAt = 0;
+const reportTextShardCache = new Map();
 let adminFilesRefreshPromise = null;
 let adminPicksRefreshPromise = null;
 let adminWechatRefreshPromise = null;
@@ -383,6 +394,24 @@ function jsonResponse(request, env, status, body) {
   });
 }
 
+function privateJsonResponse(request, env, status, body) {
+  const serialized = JSON.stringify(body).replace(/[<>&]/g, (character) => ({
+    "<": "\\u003c",
+    ">": "\\u003e",
+    "&": "\\u0026",
+  })[character]);
+  return new Response(serialized, {
+    status,
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "private, no-store, max-age=0",
+      "Pragma": "no-cache",
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
+}
+
 async function fetchJson(url) {
   const response = await fetchWithTimeout(url, { headers: { "Accept": "application/json" } }, INTERNAL_JSON_TIMEOUT_MS);
   if (!response.ok) {
@@ -422,6 +451,95 @@ async function loadSearchIndex(env) {
   searchIndexCache = await fetchJson(url);
   searchIndexFetchedAt = now;
   return searchIndexCache;
+}
+
+function reportTextHistoryMonth(report) {
+  const candidates = [
+    report && report.date_folder,
+    ...(Array.isArray(report && report.date_folders) ? report.date_folders : []),
+  ];
+  for (const candidate of candidates) {
+    const compact = String(candidate || "").replace(/[^0-9]/g, "");
+    if (/^\d{6}$/.test(compact)) return compact.slice(0, 4);
+    if (/^\d{8}$/.test(compact)) return compact.slice(2, 6);
+  }
+  return "";
+}
+
+function reportTextCurrentDates(report) {
+  const dates = [];
+  const add = (value) => {
+    const normalized = reportTextDateToken(value);
+    const date = normalized ? normalized.slice(2) : "";
+    if (date && !dates.includes(date) && dates.length < 12) dates.push(date);
+  };
+  add(reportTextDateKey(report));
+  add(report && report.date_folder);
+  for (const value of Array.isArray(report && report.date_folders) ? report.date_folders : []) add(value);
+  return dates;
+}
+
+function reportTextShardIndexUrl(env, kind, partitionKey) {
+  const shardKey = String(partitionKey || "").trim();
+  if (
+    !["current", "history"].includes(kind)
+    || (kind === "current" ? !/^\d{6}$/.test(shardKey) : !/^\d{4}$/.test(shardKey))
+  ) {
+    return "";
+  }
+  const configured = String(kind === "current"
+    ? env.SEARCH_INDEX_CURRENT_BASE_URL || ""
+    : env.SEARCH_INDEX_HISTORY_BASE_URL || "").trim();
+  if (configured) return `${configured.replace(/\/+$/, "")}/shard_${shardKey}.json`;
+  const catalogUrl = String(env.CATALOG_URL || "").trim();
+  if (!catalogUrl) return "";
+  try {
+    const url = new URL(catalogUrl);
+    if (!/\/catalog\.json$/i.test(url.pathname)) return "";
+    url.pathname = url.pathname.replace(/\/catalog\.json$/i, `/search_index_${kind}/shard_${shardKey}.json`);
+    return url.toString();
+  } catch (_error) {
+    if (!/\/catalog\.json(?:\?.*)?$/i.test(catalogUrl)) return "";
+    return catalogUrl.replace(/\/catalog\.json(?:\?.*)?$/i, `/search_index_${kind}/shard_${shardKey}.json`);
+  }
+}
+
+function reportTextHistoryIndexUrl(env, report) {
+  return reportTextShardIndexUrl(env, "history", reportTextHistoryMonth(report));
+}
+
+function reportTextCurrentIndexUrl(env, report, date = "") {
+  const shardDate = String(date || "").trim() || reportTextCurrentDates(report)[0] || "";
+  return reportTextShardIndexUrl(env, "current", shardDate);
+}
+
+async function loadReportTextIndexShard(url) {
+  if (!url) return null;
+  const now = Date.now();
+  const cached = reportTextShardCache.get(url);
+  if (cached && now - cached.fetchedAt < CACHE_TTL_MS) return cached.value;
+  const response = await fetchWithTimeout(
+    url,
+    { headers: { "Accept": "application/json" } },
+    INTERNAL_JSON_TIMEOUT_MS,
+  );
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error(`Could not fetch ${url}: ${response.status}`);
+  const value = await response.json();
+  if (reportTextShardCache.size >= 2) {
+    const oldestKey = reportTextShardCache.keys().next().value;
+    if (oldestKey) reportTextShardCache.delete(oldestKey);
+  }
+  reportTextShardCache.set(url, { fetchedAt: now, value });
+  return value;
+}
+
+async function loadReportTextHistoryIndex(env, report) {
+  return loadReportTextIndexShard(reportTextHistoryIndexUrl(env, report));
+}
+
+async function loadReportTextCurrentIndex(env, report, date) {
+  return loadReportTextIndexShard(reportTextCurrentIndexUrl(env, report, date));
 }
 
 async function loadRules(env) {
@@ -777,6 +895,86 @@ async function verifyAccountPayload(env, token, expectedKind) {
   const now = Math.floor(Date.now() / 1000);
   if (Number(payload.exp || 0) < now) throw new Error("Session has expired.");
   return payload;
+}
+
+async function reportTextCursorSignature(env, body) {
+  return base64UrlEncodeBytes(await hmacSha256Bytes(
+    accountSecret(env),
+    `kcdesk:report-text-cursor:v1:${body}`,
+  ));
+}
+
+async function createReportTextCursor(env, reportId, offset, indexVersion) {
+  const id = cleanCatalogReportId(reportId);
+  const nextOffset = Number(offset);
+  const version = String(indexVersion || "");
+  if (!id || !Number.isSafeInteger(nextOffset) || nextOffset <= 0 || !version) {
+    throw new Error("Report text cursor could not be created.");
+  }
+  const now = Math.floor(Date.now() / 1000);
+  const body = base64UrlEncodeText(JSON.stringify({
+    v: 1,
+    kind: "report-text",
+    report_id: id,
+    offset: nextOffset,
+    index_version: version,
+    iat: now,
+    exp: now + REPORT_TEXT_CURSOR_TTL_SECONDS,
+  }));
+  return `${body}.${await reportTextCursorSignature(env, body)}`;
+}
+
+async function readReportTextCursor(env, value, expectedReportId, expectedIndexVersion) {
+  const encoded = String(value || "");
+  const expectedId = cleanCatalogReportId(expectedReportId);
+  const expectedVersion = String(expectedIndexVersion || "");
+  if (!encoded || encoded.length > REPORT_TEXT_CURSOR_MAX_LENGTH || !expectedId || !expectedVersion) {
+    throw new Error("Report text cursor is invalid.");
+  }
+  const parts = encoded.split(".");
+  if (
+    parts.length !== 2
+    || !/^[A-Za-z0-9_-]+$/.test(parts[0])
+    || !/^[A-Za-z0-9_-]{43}$/.test(parts[1])
+  ) {
+    throw new Error("Report text cursor is invalid.");
+  }
+  const [body, signature] = parts;
+  const expectedSignature = await reportTextCursorSignature(env, body);
+  if (!constantTimeEqual(signature, expectedSignature)) {
+    throw new Error("Report text cursor is invalid.");
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(base64UrlDecodeText(body));
+  } catch (_error) {
+    throw new Error("Report text cursor is invalid.");
+  }
+  const expectedKeys = ["exp", "iat", "index_version", "kind", "offset", "report_id", "v"];
+  const payloadKeys = payload && typeof payload === "object" && !Array.isArray(payload)
+    ? Object.keys(payload).sort()
+    : [];
+  const now = Math.floor(Date.now() / 1000);
+  if (
+    payloadKeys.length !== expectedKeys.length
+    || payloadKeys.some((key, index) => key !== expectedKeys[index])
+    || payload.v !== 1
+    || payload.kind !== "report-text"
+    || payload.report_id !== expectedId
+    || payload.index_version !== expectedVersion
+    || !Number.isSafeInteger(payload.offset)
+    || payload.offset <= 0
+    || !Number.isInteger(payload.iat)
+    || !Number.isInteger(payload.exp)
+    || payload.iat > now + 60
+    || payload.iat < now - REPORT_TEXT_CURSOR_TTL_SECONDS - 60
+    || payload.exp !== payload.iat + REPORT_TEXT_CURSOR_TTL_SECONDS
+    || payload.exp <= now
+  ) {
+    throw new Error("Report text cursor is invalid.");
+  }
+  return payload.offset;
 }
 
 async function createUserToken(env, user) {
@@ -2455,6 +2653,33 @@ function hotReportAccessQualifies(user, accessResult) {
   return hotReportAccessMonths(accessResult) >= HOT_REPORT_MIN_MONTHS;
 }
 
+function reportTextAccessQualifies(user, accessResult) {
+  if (!user || accountDisabled(user)) return false;
+  if (isPrivilegedAccount(user)) return true;
+  const result = accessResult && typeof accessResult === "object" ? accessResult : {};
+  const effective = result.effective_access && typeof result.effective_access === "object"
+    ? result.effective_access
+    : {};
+  const entitlement = result.entitlement && typeof result.entitlement === "object"
+    ? result.entitlement
+    : {};
+  const kind = String(result.effective_access_kind || "");
+  const matched = (kind === "admin" && result.custom_access_matched === true)
+    || (kind === "entitlement" && result.entitlement_access_matched === true);
+  const sourcePlanCodes = [effective.source_plan_code, entitlement.source_plan_code]
+    .map((value) => String(value || "").trim().toUpperCase());
+  if (
+    result.can_download !== true
+    || !effective.active
+    || !matched
+    || String(effective.duration_value || "") === TRIAL_3D_DURATION_VALUE
+    || sourcePlanCodes.includes("NOVA-3D")
+  ) {
+    return false;
+  }
+  return hotReportAccessMonths(result) >= 1;
+}
+
 async function hotReportAccessForUser(env, user) {
   const access = await reportAccessForUser(env, user, "", HOT_REPORT_SOURCE);
   return {
@@ -3813,6 +4038,315 @@ async function catalogReportPdfDescriptor(env, report, options = {}) {
   };
 }
 
+function reportTextWords(value) {
+  const normalized = String(value || "")
+    .normalize("NFKC")
+    .replace(/\.pdf\s*$/i, "")
+    .toLowerCase();
+  return normalized.match(/[\p{L}\p{N}]+/gu) || [];
+}
+
+function reportTextDateToken(value) {
+  let token = String(value || "").replace(/[^0-9]/g, "");
+  if (token.length === 6) token = `20${token}`;
+  if (!/^20\d{6}$/.test(token)) return "";
+  const year = Number(token.slice(0, 4));
+  const month = Number(token.slice(4, 6));
+  const day = Number(token.slice(6, 8));
+  const parsed = new Date(Date.UTC(year, month - 1, day));
+  if (
+    parsed.getUTCFullYear() !== year
+    || parsed.getUTCMonth() !== month - 1
+    || parsed.getUTCDate() !== day
+  ) {
+    return "";
+  }
+  return token;
+}
+
+function reportTextDateKey(report) {
+  for (const value of [report && report.title, report && report.filename]) {
+    const match = String(value || "").replace(/\.pdf\s*$/i, "").match(/((?:20)?\d{6})(?:[^0-9]*)$/);
+    const date = reportTextDateToken(match && match[1]);
+    if (date) return date;
+  }
+  const candidates = [
+    report && report.date_folder,
+    report && report.date,
+    ...(Array.isArray(report && report.date_folders) ? report.date_folders : []),
+  ];
+  for (const value of candidates) {
+    const date = reportTextDateToken(value);
+    if (date) return date;
+  }
+  return "";
+}
+
+function reportTextInstitutionPrefixMatches(report, value) {
+  const prefix = reportTextWords(value);
+  if (!prefix.length) return false;
+  const allowedDescriptors = new Set(["global", "research", "securities", "security"]);
+  const candidates = [report && report.bank_code, report && report.bank_name, report && report.institution]
+    .map((candidate) => reportTextWords(candidate))
+    .filter((candidate) => candidate.length)
+    .sort((left, right) => right.length - left.length);
+  return candidates.some((candidate) => (
+    candidate.length <= prefix.length
+    && candidate.every((word, index) => word === prefix[index])
+    && prefix.slice(candidate.length).every((word) => allowedDescriptors.has(word))
+  ));
+}
+
+function reportTextCanonicalTitle(report) {
+  let title = String(report && (report.title || report.filename) || "")
+    .normalize("NFKC")
+    .replace(/\.pdf\s*$/i, "")
+    .trim();
+  const divided = title.match(/^(.{1,96}?)[\-\u2013\u2014:\uff1a|\uff5c]\s*(.+)$/u);
+  if (divided && reportTextInstitutionPrefixMatches(report, divided[1])) title = divided[2];
+  title = title.replace(/(?:[\s\-\u2013\u2014_/:\uff1a]+)(?:20)?\d{6}\s*$/u, "");
+  return reportTextWords(title).join("");
+}
+
+function reportTextEntryHasBody(report, entry) {
+  const textWords = reportTextWords(entry && entry.text);
+  const text = textWords.join(" ");
+  if (!text) return false;
+  const titleKeys = [report && report.title, report && report.title_zh, report && report.filename]
+    .map((value) => reportTextWords(value).join(" "))
+    .filter(Boolean)
+    .sort((left, right) => right.length - left.length);
+  let remainder = text;
+  let changed = true;
+  while (remainder && changed) {
+    changed = false;
+    for (const titleKey of titleKeys) {
+      if (remainder === titleKey) return false;
+      if (remainder.startsWith(`${titleKey} `)) {
+        remainder = remainder.slice(titleKey.length + 1);
+        changed = true;
+        break;
+      }
+    }
+  }
+  const remainderWords = reportTextWords(remainder);
+  const remainderChars = remainderWords.join("").length;
+  const largestTitleWords = titleKeys.reduce(
+    (largest, titleKey) => Math.max(largest, reportTextWords(titleKey).length),
+    0,
+  );
+  const largestTitleChars = titleKeys.reduce(
+    (largest, titleKey) => Math.max(largest, reportTextWords(titleKey).join("").length),
+    0,
+  );
+  const wordGrowth = textWords.length - largestTitleWords;
+  const characterGrowth = textWords.join("").length - largestTitleChars;
+  const substantiveRemainder = remainderWords.length >= 12 || remainderChars >= 96;
+  const substantiveGrowth = wordGrowth >= 12 || characterGrowth >= 96;
+  return substantiveRemainder && substantiveGrowth;
+}
+
+function findReportTextEntry(searchIndex, reportId) {
+  if (!searchIndex || typeof searchIndex !== "object" || !Array.isArray(searchIndex.items)) {
+    throw new Error("Report text index verification failed.");
+  }
+  const id = cleanCatalogReportId(reportId);
+  if (!id) return null;
+  const matches = searchIndex.items.filter((entry) => entry && entry.id === id);
+  if (matches.length > 1) throw new Error("Report text index verification failed.");
+  if (!matches.length) return null;
+  if (typeof matches[0].text !== "string") throw new Error("Report text index verification failed.");
+  return { id, text: matches[0].text };
+}
+
+function resolveReportTextEntry(catalog, searchIndex, report) {
+  const direct = findReportTextEntry(searchIndex, report && report.id);
+  if (direct && reportTextEntryHasBody(report, direct)) {
+    return { entry: direct, aliased: false, has_body: true };
+  }
+  const titleKey = reportTextCanonicalTitle(report);
+  const dateKey = reportTextDateKey(report);
+  if (!titleKey || !dateKey || !catalog || !Array.isArray(catalog.items)) {
+    return direct ? { entry: direct, aliased: false, has_body: false } : null;
+  }
+  const aliases = [];
+  for (const candidate of catalog.items) {
+    if (
+      !candidate
+      || candidate.id === report.id
+      || reportTextDateKey(candidate) !== dateKey
+      || reportTextCanonicalTitle(candidate) !== titleKey
+    ) {
+      continue;
+    }
+    const entry = findReportTextEntry(searchIndex, candidate.id);
+    if (entry && reportTextEntryHasBody(candidate, entry)) aliases.push(entry);
+  }
+  if (aliases.length) {
+    aliases.sort((left, right) => left.id.localeCompare(right.id));
+    const distinctTexts = new Set(aliases.map((entry) => entry.text));
+    if (distinctTexts.size === 1) return { entry: aliases[0], aliased: true, has_body: true };
+    if (aliases.length === 1) return { entry: aliases[0], aliased: true, has_body: true };
+  }
+  return direct ? { entry: direct, aliased: false, has_body: false } : null;
+}
+
+function reportTextIndexVersion(searchIndex, entry) {
+  const revision = String(searchIndex && (searchIndex.updated_at_bjt || searchIndex.generated_at) || "")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .slice(0, 120);
+  return `${cleanCatalogReportId(entry && entry.id)}:${String(entry && entry.text || "").length}:${revision}`;
+}
+
+function reportTextChunk(value, offset, limit = REPORT_TEXT_CHUNK_CHARS) {
+  const text = String(value || "");
+  const start = Number(offset);
+  const size = Number(limit);
+  if (
+    !Number.isSafeInteger(start)
+    || start < 0
+    || start >= text.length
+    || !Number.isSafeInteger(size)
+    || size <= 0
+  ) {
+    throw new Error("Report text cursor is invalid.");
+  }
+  let end = Math.min(text.length, start + size);
+  if (end < text.length) {
+    const minimumBreak = start + Math.floor(size * 0.7);
+    const whitespace = text.lastIndexOf(" ", end);
+    if (whitespace >= minimumBreak) end = whitespace + 1;
+    const lastCode = text.charCodeAt(end - 1);
+    const nextCode = text.charCodeAt(end);
+    if (lastCode >= 0xD800 && lastCode <= 0xDBFF && nextCode >= 0xDC00 && nextCode <= 0xDFFF) end -= 1;
+  }
+  return {
+    text: text.slice(start, end),
+    next_offset: end,
+    has_more: end < text.length,
+  };
+}
+
+async function handleReportText(request, env) {
+  const url = new URL(request.url);
+  const reportIds = url.searchParams.getAll("report_id");
+  const cursors = url.searchParams.getAll("cursor");
+  const reportId = reportIds.length === 1 ? cleanCatalogReportId(reportIds[0]) : "";
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return privateJsonResponse(request, env, status, {
+      detail: status === 503 ? "文本权限暂时无法核验，请稍后重试。" : error.message || "请先登录。",
+    });
+  }
+  if (!reportId) {
+    return privateJsonResponse(request, env, 404, { detail: "Text-only report not found." });
+  }
+  if (cursors.length > 1 || (cursors.length === 1 && !cursors[0])) {
+    return privateJsonResponse(request, env, 409, { detail: "Report text cursor is invalid." });
+  }
+
+  let access;
+  try {
+    access = await reportAccessForUser(env, user, reportId, "catalog");
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "文本权限暂时无法核验，请稍后重试。" });
+  }
+  if (
+    String(access && access.effective_access_kind || "") === "error"
+    || String(access && access.effective_access && access.effective_access.source || "") === "error"
+  ) {
+    return privateJsonResponse(request, env, 503, { detail: "文本权限暂时无法核验，请稍后重试。" });
+  }
+  if (!reportTextAccessQualifies(user, access)) {
+    return privateJsonResponse(request, env, 403, { detail: "当前账号没有该 Text only 报告的有效阅读权限。" });
+  }
+
+  let catalog;
+  let report;
+  try {
+    catalog = await loadCatalog(env);
+    report = findReport(catalog, reportId);
+    if (!report) return privateJsonResponse(request, env, 404, { detail: "Text-only report not found." });
+    if (report.available !== false) {
+      return privateJsonResponse(request, env, 409, { detail: "This report has a downloadable PDF." });
+    }
+    const pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+    if (pdfDescriptor) {
+      return privateJsonResponse(request, env, 409, { detail: "This report has a downloadable PDF." });
+    }
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "报告状态暂时无法核验，请稍后重试。" });
+  }
+
+  let selectedIndex = null;
+  let resolved = null;
+  try {
+    let historyIndex = null;
+    try {
+      historyIndex = await loadReportTextHistoryIndex(env, report);
+    } catch (_error) {
+      historyIndex = null;
+    }
+    if (historyIndex) {
+      const historyResolved = resolveReportTextEntry(catalog, historyIndex, report);
+      if (historyResolved) {
+        selectedIndex = historyIndex;
+        resolved = historyResolved;
+      }
+    }
+    if (!resolved || !resolved.has_body) {
+      for (const date of reportTextCurrentDates(report)) {
+        const currentIndex = await loadReportTextCurrentIndex(env, report, date);
+        if (!currentIndex) continue;
+        const currentResolved = resolveReportTextEntry(catalog, currentIndex, report);
+        if (currentResolved && (currentResolved.has_body || !resolved)) {
+          selectedIndex = currentIndex;
+          resolved = currentResolved;
+        }
+        if (resolved && resolved.has_body) break;
+      }
+    }
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "提取文本暂时无法读取，请稍后重试。" });
+  }
+  const fullText = String(resolved && resolved.entry && resolved.entry.text || "");
+  if (!selectedIndex || !resolved || !resolved.has_body || !fullText.trim()) {
+    return privateJsonResponse(request, env, 404, { detail: "Extracted text is not available for this report." });
+  }
+
+  const indexVersion = reportTextIndexVersion(selectedIndex, resolved.entry);
+  let offset = 0;
+  if (cursors.length === 1) {
+    try {
+      offset = await readReportTextCursor(env, cursors[0], reportId, indexVersion);
+    } catch (_error) {
+      return privateJsonResponse(request, env, 409, { detail: "Report text cursor is invalid." });
+    }
+  }
+  let chunk;
+  try {
+    chunk = reportTextChunk(fullText, offset);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 409, { detail: "Report text cursor is invalid." });
+  }
+  try {
+    return privateJsonResponse(request, env, 200, {
+      report_id: reportId,
+      text: chunk.text,
+      source_label: REPORT_TEXT_SOURCE_LABEL,
+      next_cursor: chunk.has_more
+        ? await createReportTextCursor(env, reportId, chunk.next_offset, indexVersion)
+        : "",
+      has_more: chunk.has_more,
+    });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "提取文本暂时无法读取，请稍后重试。" });
+  }
+}
+
 function publicCatalogPdfOverride(row) {
   return {
     id: row.id,
@@ -4513,6 +5047,154 @@ async function readAnalyticsEventsByRows(env, rows) {
   }));
 }
 
+function analyticsExportPhaseForRoot(root) {
+  if (root === ANALYTICS_PREFIX) return "primary";
+  if (root === ANALYTICS_BACKUP_PREFIX) return "backup";
+  return "";
+}
+
+function analyticsExportRootsForDateRow(dateRow) {
+  const available = new Set(Array.isArray(dateRow && dateRow.prefix_roots) ? dateRow.prefix_roots : []);
+  return [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX].filter((root) => available.has(root));
+}
+
+function encodeAnalyticsExportCursor(position) {
+  return encodeAnalyticsHistoryCursor({
+    version: ANALYTICS_EXPORT_CURSOR_VERSION,
+    date: position.date,
+    phase: analyticsExportPhaseForRoot(position.root),
+    root: position.root,
+    native_cursor: String(position.nativeCursor || ""),
+    at_start: !position.nativeCursor,
+  });
+}
+
+function decodeAnalyticsExportCursor(value) {
+  const encoded = String(value || "");
+  if (!encoded || encoded.length > ANALYTICS_EXPORT_CURSOR_MAX_LENGTH) return null;
+  const parsed = decodeAnalyticsHistoryCursor(encoded);
+  if (!parsed || parsed.version !== ANALYTICS_EXPORT_CURSOR_VERSION) return null;
+  if (!Object.prototype.hasOwnProperty.call(parsed, "native_cursor")) return null;
+  const date = String(parsed.date || "");
+  const root = String(parsed.root || "");
+  const phase = String(parsed.phase || "");
+  const nativeCursor = String(parsed.native_cursor || "");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  if (!phase || phase !== analyticsExportPhaseForRoot(root)) return null;
+  if (nativeCursor.length > ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH || /[\u0000-\u001f\u007f]/.test(nativeCursor)) return null;
+  if (parsed.at_start !== !nativeCursor) return null;
+  return { date, root, nativeCursor };
+}
+
+function resolveAnalyticsExportPosition(dateRows, encodedCursor = "") {
+  const rows = Array.isArray(dateRows) ? dateRows : [];
+  if (!encodedCursor) {
+    for (let dateIndex = 0; dateIndex < rows.length; dateIndex += 1) {
+      const roots = analyticsExportRootsForDateRow(rows[dateIndex]);
+      if (roots.length) return { dateIndex, date: rows[dateIndex].date, root: roots[0], nativeCursor: "" };
+    }
+    return null;
+  }
+  const cursor = decodeAnalyticsExportCursor(encodedCursor);
+  if (!cursor) throw new TypeError("Invalid analytics export cursor.");
+  const dateIndex = rows.findIndex((row) => row.date === cursor.date);
+  if (dateIndex < 0 || !analyticsExportRootsForDateRow(rows[dateIndex]).includes(cursor.root)) {
+    throw new TypeError("Analytics export cursor no longer matches stored history.");
+  }
+  return { dateIndex, ...cursor };
+}
+
+function nextAnalyticsExportPosition(dateRows, position) {
+  const rows = Array.isArray(dateRows) ? dateRows : [];
+  const currentRoots = analyticsExportRootsForDateRow(rows[position.dateIndex]);
+  const rootIndex = currentRoots.indexOf(position.root);
+  if (rootIndex >= 0 && rootIndex + 1 < currentRoots.length) {
+    return {
+      dateIndex: position.dateIndex,
+      date: rows[position.dateIndex].date,
+      root: currentRoots[rootIndex + 1],
+      nativeCursor: "",
+    };
+  }
+  for (let dateIndex = position.dateIndex + 1; dateIndex < rows.length; dateIndex += 1) {
+    const roots = analyticsExportRootsForDateRow(rows[dateIndex]);
+    if (roots.length) return { dateIndex, date: rows[dateIndex].date, root: roots[0], nativeCursor: "" };
+  }
+  return null;
+}
+
+function analyticsExportMirrorKey(key, root, date) {
+  const prefix = `${root}/${date}/`;
+  if (!String(key || "").startsWith(prefix) || String(key).length <= prefix.length) return "";
+  const mirrorRoot = root === ANALYTICS_PREFIX ? ANALYTICS_BACKUP_PREFIX : ANALYTICS_PREFIX;
+  return `${mirrorRoot}/${date}/${String(key).slice(prefix.length)}`;
+}
+
+async function readAnalyticsExportObject(env, key, root, date) {
+  const mirrorKey = analyticsExportMirrorKey(key, root, date);
+  if (!mirrorKey) throw new Error("Analytics export listing returned an invalid object key.");
+  for (const candidate of [String(key), mirrorKey]) {
+    try {
+      const stored = await env.REPORT_BUCKET.get(candidate);
+      if (!stored) continue;
+      const event = JSON.parse(await stored.text());
+      if (!event || typeof event !== "object" || Array.isArray(event) || !String(event.id || "").trim()) continue;
+      return event;
+    } catch (_error) {
+      // The corresponding object in the other analytics mirror is authoritative fallback.
+    }
+  }
+  throw new Error("Analytics event object is unreadable in both storage mirrors.");
+}
+
+async function readAnalyticsExportObjects(env, objects, root, date) {
+  const rows = [];
+  const listedObjects = Array.isArray(objects) ? objects : [];
+  for (let offset = 0; offset < listedObjects.length; offset += ANALYTICS_HISTORY_READ_BATCH) {
+    const batch = listedObjects.slice(offset, offset + ANALYTICS_HISTORY_READ_BATCH);
+    const events = await Promise.all(batch.map((object) => readAnalyticsExportObject(
+      env,
+      object && object.key,
+      root,
+      date,
+    )));
+    rows.push(...events);
+  }
+  return rows;
+}
+
+async function listAnalyticsExportPage(env, position, pageSize) {
+  const prefix = `${position.root}/${position.date}/`;
+  const listed = await env.REPORT_BUCKET.list({
+    prefix,
+    limit: pageSize,
+    cursor: position.nativeCursor || undefined,
+  });
+  if (!listed || typeof listed !== "object" || !Array.isArray(listed.objects)) {
+    throw new Error("Analytics export storage returned an invalid listing.");
+  }
+  const seenKeys = new Set();
+  for (const object of listed.objects) {
+    const key = String(object && object.key || "");
+    if (!key.startsWith(prefix) || key.length <= prefix.length || seenKeys.has(key)) {
+      throw new Error("Analytics export storage returned an invalid or duplicate object key.");
+    }
+    seenKeys.add(key);
+  }
+  let nextNativeCursor = "";
+  if (listed.truncated) {
+    nextNativeCursor = String(listed.cursor || "");
+    if (!nextNativeCursor) throw new Error("Analytics export pagination did not return an R2 cursor.");
+    if (nextNativeCursor === String(position.nativeCursor || "")) {
+      throw new Error("Analytics export R2 cursor repeated without progress.");
+    }
+    if (nextNativeCursor.length > ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH) {
+      throw new Error("Analytics export R2 cursor is too long.");
+    }
+  }
+  return { objects: listed.objects, nextNativeCursor, truncated: Boolean(listed.truncated) };
+}
+
 function publicAnalyticsEvent(event) {
   return {
     id: event.id || "",
@@ -4562,7 +5244,7 @@ function cleanAnalyticsHistoryDate(value) {
 }
 
 function analyticsHistoryFilterSignature(filters) {
-  return [filters.type, filters.query, filters.startDate, filters.endDate].join("\u001f");
+  return [filters.type, filters.user, filters.query, filters.startDate, filters.endDate].join("\u001f");
 }
 
 function encodeAnalyticsHistoryCursor(value) {
@@ -4578,11 +5260,38 @@ function decodeAnalyticsHistoryCursor(value) {
   }
 }
 
+function decodeAnalyticsHistoryRequestCursor(value, expectedSignature) {
+  const encoded = String(value || "");
+  if (!encoded) return null;
+  if (encoded.length > ANALYTICS_HISTORY_CURSOR_MAX_LENGTH) {
+    throw new TypeError("Invalid analytics history cursor.");
+  }
+  const parsed = decodeAnalyticsHistoryCursor(encoded);
+  const date = String(parsed && parsed.date || "");
+  const afterKey = String(parsed && parsed.after_key || "");
+  if (!parsed
+    || parsed.signature !== expectedSignature
+    || !/^\d{4}-\d{2}-\d{2}$/.test(date)
+    || !afterKey
+    || afterKey.length > 500
+    || /[\u0000-\u001f\u007f]/.test(afterKey)) {
+    throw new TypeError("Invalid analytics history cursor.");
+  }
+  return { date, after_key: afterKey, signature: expectedSignature };
+}
+
 function analyticsHistoryEventMatches(event, filters) {
   if (!event || typeof event !== "object") return false;
   if (filters.type && String(event.type || "").toLowerCase() !== filters.type) return false;
-  if (!filters.query) return true;
   const user = event.user && typeof event.user === "object" ? event.user : {};
+  if (filters.user) {
+    const requestedUser = normalizeText(filters.user);
+    const identities = [user.username, user.email, event.visitor_id]
+      .map((value) => normalizeText(value))
+      .filter(Boolean);
+    if (!requestedUser || !identities.includes(requestedUser)) return false;
+  }
+  if (!filters.query) return true;
   const haystack = normalizeText([
     event.type,
     event.visitor_id,
@@ -4624,15 +5333,16 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
   const url = new URL(request.url);
   const pageSize = Math.min(
     ANALYTICS_HISTORY_MAX_PAGE_SIZE,
-    Math.max(1, Number(url.searchParams.get("page_size")) || ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE),
+    Math.max(1, Math.floor(Number(url.searchParams.get("page_size")) || ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE)),
   );
   const filters = {
     type: cleanAnalyticsText(url.searchParams.get("type"), 60).toLowerCase(),
+    user: cleanAnalyticsText(url.searchParams.get("user"), 240),
     query: cleanAnalyticsText(url.searchParams.get("q"), 240),
     startDate: cleanAnalyticsHistoryDate(url.searchParams.get("start_date")),
     endDate: cleanAnalyticsHistoryDate(url.searchParams.get("end_date")),
   };
-  const scanLimit = filters.type || filters.query
+  const scanLimit = filters.type || filters.user || filters.query
     ? ANALYTICS_HISTORY_FILTER_SCAN_LIMIT
     : pageSize;
   if (filters.startDate && filters.endDate && filters.startDate > filters.endDate) {
@@ -4640,8 +5350,12 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
   }
 
   const signature = analyticsHistoryFilterSignature(filters);
-  const requestedCursor = decodeAnalyticsHistoryCursor(url.searchParams.get("cursor"));
-  const cursor = requestedCursor && requestedCursor.signature === signature ? requestedCursor : null;
+  let cursor;
+  try {
+    cursor = decodeAnalyticsHistoryRequestCursor(url.searchParams.get("cursor"), signature);
+  } catch (error) {
+    return jsonResponse(request, env, 400, { detail: error.message || "Invalid analytics history cursor." });
+  }
 
   try {
     const allDateRows = await listAnalyticsEventDateRows(env);
@@ -4654,10 +5368,9 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
     let afterKey = "";
     if (cursor && cursor.date) {
       const index = dateRows.findIndex((row) => row.date === cursor.date);
-      if (index >= 0) {
-        dateIndex = index;
-        afterKey = cleanAnalyticsText(cursor.after_key, 500);
-      }
+      if (index < 0) throw new TypeError("Analytics history cursor no longer matches stored history.");
+      dateIndex = index;
+      afterKey = cursor.after_key;
     }
 
     const events = [];
@@ -4731,7 +5444,78 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
       generated_at: new Date().toISOString(),
     });
   } catch (error) {
-    return jsonResponse(request, env, 503, { detail: error.message || "Analytics history is unavailable." });
+    const status = error instanceof TypeError ? 400 : 503;
+    return jsonResponse(request, env, status, { detail: error.message || "Analytics history is unavailable." });
+  }
+}
+
+async function handleAccountAdminAnalyticsEventsExport(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  if (!env.REPORT_BUCKET
+    || typeof env.REPORT_BUCKET.list !== "function"
+    || typeof env.REPORT_BUCKET.get !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Analytics storage is unavailable." });
+  }
+
+  const url = new URL(request.url);
+  const pageSize = Math.min(
+    ANALYTICS_HISTORY_MAX_PAGE_SIZE,
+    Math.max(1, Math.floor(Number(url.searchParams.get("page_size")) || ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE)),
+  );
+  const encodedCursor = String(url.searchParams.get("cursor") || "");
+  if (encodedCursor && !decodeAnalyticsExportCursor(encodedCursor)) {
+    return jsonResponse(request, env, 400, { detail: "Invalid analytics export cursor." });
+  }
+
+  try {
+    const dateRows = await listAnalyticsEventDateRows(env);
+    const position = resolveAnalyticsExportPosition(dateRows, encodedCursor);
+    if (!position) {
+      return jsonResponse(request, env, 200, {
+        events: [],
+        next_cursor: "",
+        has_more: false,
+        page_size: pageSize,
+        scanned_count: 0,
+        source_date: "",
+        source_phase: "",
+        available_dates: [],
+        generated_at: new Date().toISOString(),
+      });
+    }
+
+    const listed = await listAnalyticsExportPage(env, position, pageSize);
+    const rawEvents = await readAnalyticsExportObjects(env, listed.objects, position.root, position.date);
+    const events = rawEvents.map(publicAnalyticsEvent);
+    let nextPosition = null;
+    if (listed.truncated) {
+      nextPosition = { ...position, nativeCursor: listed.nextNativeCursor };
+    } else {
+      nextPosition = nextAnalyticsExportPosition(dateRows, position);
+    }
+    const nextCursor = nextPosition ? encodeAnalyticsExportCursor(nextPosition) : "";
+
+    return jsonResponse(request, env, 200, {
+      events,
+      next_cursor: nextCursor,
+      has_more: Boolean(nextCursor),
+      page_size: pageSize,
+      scanned_count: listed.objects.length,
+      source_date: position.date,
+      source_phase: analyticsExportPhaseForRoot(position.root),
+      available_dates: dateRows.map((row) => row.date),
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    const status = error instanceof TypeError ? 400 : 503;
+    return jsonResponse(request, env, status, {
+      detail: error.message || "Analytics history export is unavailable.",
+    });
   }
 }
 
@@ -5386,6 +6170,8 @@ function addUnique(list, value) {
 }
 
 const DAILY_PICK_KOREA_PATTERN = /\b(?:south korea|s korea|korea|korean|krw|kospi|bok)\b|韩国|韩元|韩国央行/;
+const DAILY_PICK_JAPAN_PATTERN = /\b(?:japan|japanese|jpy|yen|boj|nikkei)\b|日本|日元|日本央行/;
+const DAILY_PICK_SEMICONDUCTOR_PATTERN = /\b(?:semiconductor|semiconductors|semis|semicap|memory|dram|nand|hbm|chip|chips|foundry|wafer|tsmc|cowos|advanced packaging|semiconductor(?: production)? equipment)\b|半导体|存储|芯片|晶圆|台积电|先进封装|半导体(?:生产)?设备/;
 
 const DAILY_PICK_THEME_RULES = [
   // Country + industry rules are intentionally first and cover both families.
@@ -5461,6 +6247,23 @@ const DAILY_PICK_THEME_RULES = [
     ],
     priority: 94,
   },
+  {
+    theme: "台积电、先进封装与半导体产业链",
+    tag: "先进封装",
+    families: ["industry:semis"],
+    title_groups: [[/\b(?:tsmc|cowos|advanced packaging)\b|台积电|先进封装/]],
+    priority: 104,
+  },
+  {
+    theme: "日本半导体设备与产业链",
+    tag: "日本半导体",
+    families: ["region:japan", "industry:semis"],
+    title_groups: [
+      [DAILY_PICK_JAPAN_PATTERN],
+      [DAILY_PICK_SEMICONDUCTOR_PATTERN],
+    ],
+    priority: 102,
+  },
 
   // Region rules. A body-only region requires a local anchor in addition to the
   // country name, so legal distribution lists do not qualify as report topics.
@@ -5480,7 +6283,7 @@ const DAILY_PICK_THEME_RULES = [
     theme: "日本市场与政策趋势",
     tag: "日本市场",
     families: ["region:japan"],
-    title_groups: [[/\b(?:japan|japanese|jpy|yen|boj|nikkei)\b|日本|日元|日本央行/]],
+    title_groups: [[DAILY_PICK_JAPAN_PATTERN]],
     body_groups: [
       [/\b(?:japan|japanese)\b|日本/],
       [/\b(?:jpy|yen|boj|bank of japan|nikkei|tokyo)\b|日元|日本央行|日经|东京/],
@@ -5504,7 +6307,10 @@ const DAILY_PICK_THEME_RULES = [
     theme: "中国宏观与资本市场",
     tag: "中国宏观",
     families: ["region:china"],
-    title_groups: [[/\b(?:china|chinese|cny|rmb|renminbi|pboc)\b|中国|人民币|中国央行/]],
+    title_groups: [
+      [/\b(?:china|chinese)\b|中国/],
+      [/\b(?:economic|economics|economy|macro|cny|rmb|renminbi|pboc|a shares?|equity strategy|capital markets?|monetary policy)\b|宏观|经济|人民币|中国央行|a股|权益策略|资本市场|货币政策/],
+    ],
     body_groups: [
       [/\b(?:china|chinese)\b|中国/],
       [/\b(?:cny|rmb|renminbi|pboc|people s bank of china|a shares?)\b|人民币|中国央行|a股/],
@@ -5543,7 +6349,7 @@ const DAILY_PICK_THEME_RULES = [
     theme: "半导体与存储产业链",
     tag: "半导体",
     families: ["industry:semis"],
-    title_groups: [[/\b(?:semiconductor|semiconductors|semis|memory|dram|nand|hbm|chip|chips|foundry|wafer)\b|半导体|存储|芯片|晶圆/]],
+    title_groups: [[DAILY_PICK_SEMICONDUCTOR_PATTERN]],
     body_groups: [
       [/\b(?:semiconductor|semiconductors|chip|chips)\b|半导体|芯片/],
       [/\b(?:memory|dram|nand|hbm)\b|存储|内存/],
@@ -5814,22 +6620,33 @@ function dailyPickTopicProfile(item, bodyText = "") {
   return selected;
 }
 
+function dailyPickDisplayTopicProfile(item, bodyText = "") {
+  const profile = dailyPickTopicProfile(item, bodyText);
+  const hasExplicitIndustryTitle = profile.some((topic) => (
+    topic.title_matched
+    && topic.families.some((family) => String(family).startsWith("industry:"))
+  ));
+  // Once the title names an industry, title-backed subjects own the public
+  // copy. Comparisons and sensitivity tables in the body must not add unrelated
+  // macro, commodity or geopolitical labels.
+  return hasExplicitIndustryTitle
+    ? profile.filter((topic) => topic.title_matched)
+    : profile;
+}
+
 function dailyPickTopicTags(item, bodyText = "") {
   const tags = [];
   const add = (tag) => {
     if (tag && !tags.includes(tag)) tags.push(tag);
   };
-  for (const topic of dailyPickTopicProfile(item, bodyText)) add(topic.tag);
-  // This fallback remains useful for sparse reports, but it comes after every
-  // evidence-backed topic and therefore cannot displace a precise label.
-  if (tags.length < 3) add("宏观趋势");
+  for (const topic of dailyPickDisplayTopicProfile(item, bodyText)) add(topic.tag);
   const bank = String(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
   if (bank && bank.length <= 12) add(bank);
   return tags.slice(0, 4);
 }
 
 function dailyPickThemes(item, tags, bodyText = "") {
-  const themes = dailyPickTopicProfile(item, bodyText).map((topic) => topic.theme);
+  const themes = dailyPickDisplayTopicProfile(item, bodyText).map((topic) => topic.theme);
   if (!themes.length) {
     for (const tag of tags || []) {
       if (tag !== "宏观趋势" && tag !== item.bank_name && tag !== item.bank_code) addUnique(themes, tag);
@@ -5842,7 +6659,7 @@ function dailyPickBodyInsights(item, bodyText = "") {
   const titleText = dailyPickTitleText(item);
   const text = dailyPickSourceText(item, bodyText).slice(0, 22000);
   const indiaContext = textMatches(titleText, [/\bindia\b|\binr\b|\brbi\b|印度|印度央行/]);
-  const classifiedThemes = dailyPickTopicProfile(item, bodyText).map((topic) => topic.theme);
+  const classifiedThemes = dailyPickDisplayTopicProfile(item, bodyText).map((topic) => topic.theme);
   const hasClassifiedTheme = (pattern) => classifiedThemes.some((theme) => pattern.test(theme));
   const fedContext = hasClassifiedTheme(/美联储政策/);
   const energyContext = hasClassifiedTheme(/原油市场|能源与公用事业|大宗商品/);
@@ -5850,7 +6667,7 @@ function dailyPickBodyInsights(item, bodyText = "") {
   const growthContext = hasClassifiedTheme(/经济增长|宏观/);
   const monetaryContext = hasClassifiedTheme(/央行政策|货币政策|利率与债券/);
   const tradeContext = hasClassifiedTheme(/贸易与出口|地缘政治/);
-  const aiContext = hasClassifiedTheme(/人工智能|半导体|数字基础设施/);
+  const aiContext = hasClassifiedTheme(/人工智能|数字基础设施/);
   const insights = [];
   const add = (value) => addUnique(insights, value);
 
@@ -5907,7 +6724,9 @@ function dailyPickBodyInsights(item, bodyText = "") {
   if (tradeContext && textMatches(text, [/tariff|trade|exports|imports|贸易|出口|进口/])) {
     add("贸易和出口变化会影响增长结构与市场预期");
   }
-  if (aiContext && textMatches(text, [/\bai\b|artificial intelligence|估值|valuation/])) {
+  if (aiContext
+    && textMatches(text, [/\bai\b|artificial intelligence|人工智能/])
+    && textMatches(text, [/\bvaluation\b|估值/])) {
     add("AI 与估值变化仍是风险资产需要跟踪的变量");
   }
 
@@ -5948,12 +6767,14 @@ function dailyPickIntro(item, tags, bodyText = "") {
   const title = reportEnglishTitle(item);
   const themes = dailyPickThemes(item, tags, bodyText);
   const insights = dailyPickBodyInsights(item, bodyText);
-  const topicText = chineseJoin(themes.slice(0, 3), "全球宏观趋势、政策变化与资产市场");
+  const topicText = chineseJoin(themes.slice(0, 3), "报告标题所示主题");
   const landscapeText = reportIsLandscape(item) ? "这份 PDF 为横屏呈现，适合直接做会议讨论或素材摘图。" : "";
   const pageText = reportPageCount(item) ? `报告共 ${reportPageCount(item)} 页，` : "";
   const detailText = insights.length
     ? `核心围绕${chineseJoin(insights.slice(0, 3))}。${insights[3] ? `同时，报告也提示：${insights.slice(3, 5).join("，")}。` : ""}`
-    : "核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。";
+    : themes.length
+      ? `核心围绕${chineseJoin(themes.slice(0, 3))}展开，便于快速核对报告的主要判断与数据。`
+      : "核心内容以报告标题和正文摘要所示主题为准。";
   const tagText = tags
     .map((tag) => String(tag || "").trim())
     .filter(Boolean)
@@ -9522,6 +10343,7 @@ async function refreshAdminPicksSnapshot(env) {
     throw new Error("Catalog is not ready.");
   }
   return writeAdminSnapshot(env, ADMIN_PICKS_SNAPSHOT_KEY, {
+    topic_version: ADMIN_PICKS_TOPIC_VERSION,
     daily_picks: selectDailyPicks(catalog, 5, searchIndex),
     access_options: accessOptionRowsFromCatalog(catalog),
   });
@@ -9534,6 +10356,51 @@ function refreshAdminPicksSnapshotOnce(env) {
     });
   }
   return adminPicksRefreshPromise;
+}
+
+async function loadAdminPicksSnapshotModule(env, options = {}) {
+  const current = await safeR2GetJson(env, ADMIN_PICKS_SNAPSHOT_KEY);
+  if (hasAdminSnapshot(current)) {
+    return loadAdminSnapshotModule(env, ADMIN_PICKS_SNAPSHOT_KEY, options);
+  }
+
+  // A missing v2 snapshot is expected immediately after deployment. Try to
+  // build it within the normal request budget; if upstream data is temporarily
+  // unavailable, keep serving the verified v1 payload while a background
+  // refresh continues.
+  const legacy = await safeR2GetJson(env, ADMIN_PICKS_LEGACY_SNAPSHOT_KEY);
+  const refresh = options.refresh;
+  const timeoutMs = Number(options.timeoutMs || ADMIN_GITHUB_FILES_TIMEOUT_MS);
+  if (typeof refresh === "function") {
+    const refreshPromise = refresh();
+    const refreshed = await resolveWithin(refreshPromise, timeoutMs, null);
+    if (hasAdminSnapshot(refreshed)) {
+      return {
+        data: refreshed.data,
+        status: adminSnapshotStatus(refreshed, Number(options.freshMs || ADMIN_SNAPSHOT_FRESH_MS)),
+        snapshot: refreshed,
+      };
+    }
+    if (options.ctx && typeof options.ctx.waitUntil === "function") {
+      options.ctx.waitUntil(refreshPromise.catch(() => null));
+    }
+  }
+  if (hasAdminSnapshot(legacy)) {
+    return {
+      data: legacy.data,
+      status: {
+        ...adminSnapshotStatus(legacy, Number(options.freshMs || ADMIN_SNAPSHOT_FRESH_MS)),
+        state: "updating",
+        legacy: true,
+      },
+      snapshot: legacy,
+    };
+  }
+  return {
+    data: options.fallback,
+    status: adminSnapshotStatus(null, Number(options.freshMs || ADMIN_SNAPSHOT_FRESH_MS)),
+    snapshot: null,
+  };
 }
 
 async function refreshAdminWechatSnapshot(env) {
@@ -9664,7 +10531,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         fallback: { files: [] },
         ctx,
       }),
-      loadAdminSnapshotModule(env, ADMIN_PICKS_SNAPSHOT_KEY, {
+      loadAdminPicksSnapshotModule(env, {
         refresh: () => refreshAdminPicksSnapshotOnce(env),
         timeoutMs: Math.max(ADMIN_CATALOG_TIMEOUT_MS * 2, 8000),
         fallback: { daily_picks: [], access_options: null },
@@ -11804,6 +12671,10 @@ export default {
       return handleEntitlement(request, env);
     }
 
+    if (pathname === "/report-text" && request.method === "GET") {
+      return handleReportText(request, env);
+    }
+
     if (pathname === "/catalog-pdf-overrides" && request.method === "GET") {
       return handleCatalogPdfOverrides(request, env);
     }
@@ -11890,6 +12761,10 @@ export default {
 
     if (pathname === "/account-admin/analytics-events" && request.method === "GET") {
       return handleAccountAdminAnalyticsEvents(request, env);
+    }
+
+    if (pathname === "/account-admin/analytics-events-export" && request.method === "GET") {
+      return handleAccountAdminAnalyticsEventsExport(request, env);
     }
 
     if (pathname === "/account-admin/user-access" && request.method === "GET") {
