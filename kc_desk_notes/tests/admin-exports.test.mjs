@@ -111,9 +111,10 @@ test("admin summary loader returns fresh data and propagates export failures", a
 test("full-history export ignores current page filters", () => {
   const createParams = vm.runInNewContext(`(${extractFunction(app, "analyticsHistoryExportParams")})`, {
     URLSearchParams,
+    ANALYTICS_HISTORY_EXPORT_PAGE_SIZE: 50,
   });
   const params = createParams();
-  assert.equal(params.toString(), "page_size=200");
+  assert.equal(params.toString(), "page_size=50");
   for (const name of ["type", "q", "start_date", "end_date", "cursor"]) {
     assert.equal(params.has(name), false, `${name} must not constrain the all-history export`);
   }
@@ -216,7 +217,7 @@ test("full-history collection follows empty filtered pages and removes duplicate
   const cursors = [];
   const progress = [];
   const pages = new Map([
-    ["", { events: [], scanned_count: 100, has_more: true, next_cursor: "cursor-a" }],
+    ["", { events: [], scanned_count: 100, skipped_count: 1, has_more: true, next_cursor: "cursor-a" }],
     ["cursor-a", {
       events: [{ id: "event-1" }, { id: "event-2" }],
       scanned_count: 100,
@@ -226,6 +227,7 @@ test("full-history collection follows empty filtered pages and removes duplicate
     ["cursor-b", {
       events: [{ id: "event-2" }, { id: "event-3" }],
       scanned_count: 2,
+      skipped_count: 2,
       has_more: false,
       next_cursor: "",
     }],
@@ -243,7 +245,29 @@ test("full-history collection follows empty filtered pages and removes duplicate
   assert.equal(result.pageCount, 3);
   assert.equal(result.scannedCount, 202);
   assert.equal(result.duplicateCount, 1);
+  assert.equal(result.skippedCount, 3);
   assert.deepEqual(Array.from(progress, (value) => value.pageCount), [1, 2, 3]);
+  assert.deepEqual(Array.from(progress, (value) => value.skippedCount), [1, 1, 3]);
+});
+
+test("full-history export preserves a bounded non-JSON Cloudflare diagnostic", () => {
+  const createError = vm.runInNewContext(`(${extractFunction(app, "analyticsHistoryExportResponseError")})`, {
+    Error,
+    Number,
+    String,
+  });
+  const response = {
+    status: 503,
+    statusText: "Service Unavailable",
+    headers: { get(name) { return name === "cf-ray" ? "ray-123-SHA" : ""; } },
+  };
+  const error = createError(response, "<html><body>upstream temporarily unavailable</body></html>");
+  assert.equal(error.status, 503);
+  assert.equal(error.retryable, true);
+  assert.match(error.message, /503/u);
+  assert.match(error.message, /upstream temporarily unavailable/u);
+  assert.match(error.message, /CF-Ray ray-123-SHA/u);
+  assert.ok(error.message.length < 400);
 });
 
 test("full-history collection retries a transient page in place without losing prior rows", async () => {

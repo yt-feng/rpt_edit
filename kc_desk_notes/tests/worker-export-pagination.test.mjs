@@ -62,6 +62,8 @@ function loadAnalyticsExportHandler(options = {}) {
     ANALYTICS_EXPORT_CURSOR_VERSION: 1,
     ANALYTICS_EXPORT_CURSOR_MAX_LENGTH: 4096,
     ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH: 2048,
+    ANALYTICS_EXPORT_MAX_PAGE_SIZE: 50,
+    ANALYTICS_EXPORT_READ_CONCURRENCY: 4,
     encodeAnalyticsHistoryCursor(value) {
       return Buffer.from(JSON.stringify(value), "utf8").toString("base64url");
     },
@@ -305,7 +307,7 @@ test("analytics user filter keeps punctuation significant for exact identities",
   assert.equal(matches(event, { ...baseFilters, user: "visitor-1" }), true);
 });
 
-test("analytics export uses native R2 cursors for more than 2200 events and scans both mirrors", async () => {
+test("analytics export caps R2 pages at 50 objects and scans both mirrors beyond 2200 events", async () => {
   const { handle } = loadAnalyticsExportHandler();
   const primaryRoot = "_analytics/events";
   const backupRoot = "_analytics_backup/events";
@@ -357,12 +359,12 @@ test("analytics export uses native R2 cursors for more than 2200 events and scan
   assert.equal(rawCount, primaryCount * 2 + 1, "both mirrors must be scanned");
   assert.equal(uniqueEvents.size, primaryCount + 1, "the client can deduplicate mirrors and keep backup-only events");
   assert.ok(uniqueEvents.has("event-backup-only"));
-  assert.equal(calls.length, Math.ceil(primaryCount / 200) + Math.ceil((primaryCount + 1) / 200));
-  assert.ok(calls.every((call) => call.limit === 200 && call.objectCount <= 200));
+  assert.equal(calls.length, Math.ceil(primaryCount / 50) + Math.ceil((primaryCount + 1) / 50));
+  assert.ok(calls.every((call) => call.limit === 50 && call.objectCount <= 50));
   assert.equal(calls.filter((call) => !call.cursor).length, 2, "each mirror starts once instead of relisting the day");
 });
 
-test("analytics export falls back to the mirror and fails explicitly when both copies are unreadable", async () => {
+test("analytics export falls back to the mirror and counts then skips objects damaged in both copies", async () => {
   const { handle } = loadAnalyticsExportHandler();
   const primaryRoot = "_analytics/events";
   const backupRoot = "_analytics_backup/events";
@@ -382,7 +384,9 @@ test("analytics export falls back to the mirror and fails explicitly when both c
     REPORT_BUCKET: analyticsExportBucket(recoveredRecords),
   });
   assert.equal(recovered.status, 200);
-  assert.deepEqual(Array.from((await recovered.json()).events, (event) => event.id), ["recovered"]);
+  const recoveredBody = await recovered.json();
+  assert.deepEqual(Array.from(recoveredBody.events, (event) => event.id), ["recovered"]);
+  assert.equal(recoveredBody.skipped_count, 0);
 
   const broken = await handle({
     url: "https://worker.test/account-admin/analytics-events-export?page_size=200",
@@ -393,8 +397,65 @@ test("analytics export falls back to the mirror and fails explicitly when both c
       [backupKey, "[]"],
     ])),
   });
-  assert.equal(broken.status, 503);
-  assert.match((await broken.json()).detail, /unreadable in both storage mirrors/u);
+  assert.equal(broken.status, 200);
+  const brokenBody = await broken.json();
+  assert.deepEqual(Array.from(brokenBody.events), []);
+  assert.equal(brokenBody.scanned_count, 1);
+  assert.equal(brokenBody.skipped_count, 1);
+});
+
+test("analytics export retries an R2 read failure instead of silently skipping a possibly valid event", async () => {
+  const { handle } = loadAnalyticsExportHandler();
+  const primaryRoot = "_analytics/events";
+  const date = "2026-07-26";
+  const response = await handle({
+    url: "https://worker.test/account-admin/analytics-events-export?page_size=50",
+  }, {
+    dateRows: [{ date, prefix_roots: [primaryRoot] }],
+    REPORT_BUCKET: {
+      async list() {
+        return { objects: [{ key: `${primaryRoot}/${date}/one.json` }], truncated: false };
+      },
+      async get() {
+        throw new Error("temporary R2 outage");
+      },
+    },
+  });
+  assert.equal(response.status, 503);
+  assert.match((await response.json()).detail, /storage read failed; retry/u);
+});
+
+test("analytics export bounds concurrent R2 reads", async () => {
+  const { handle } = loadAnalyticsExportHandler();
+  const primaryRoot = "_analytics/events";
+  const date = "2026-07-26";
+  let activeReads = 0;
+  let peakReads = 0;
+  const response = await handle({
+    url: "https://worker.test/account-admin/analytics-events-export?page_size=50",
+  }, {
+    dateRows: [{ date, prefix_roots: [primaryRoot] }],
+    REPORT_BUCKET: {
+      async list() {
+        return {
+          objects: Array.from({ length: 50 }, (_value, index) => ({
+            key: `${primaryRoot}/${date}/${String(index).padStart(3, "0")}.json`,
+          })),
+          truncated: false,
+        };
+      },
+      async get(key) {
+        activeReads += 1;
+        peakReads = Math.max(peakReads, activeReads);
+        await new Promise((resolve) => setImmediate(resolve));
+        activeReads -= 1;
+        return storedAnalyticsValue({ id: key, ts: "2026-07-26T00:00:00.000Z", date });
+      },
+    },
+  });
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).events.length, 50);
+  assert.ok(peakReads <= 4, `expected at most 4 concurrent reads, saw ${peakReads}`);
 });
 
 test("analytics export fails closed for invalid, missing, and repeated cursors", async () => {

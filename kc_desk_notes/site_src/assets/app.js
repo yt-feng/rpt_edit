@@ -1931,6 +1931,7 @@
 
   const ANALYTICS_HISTORY_EXPORT_MAX_PAGES = 12000;
   const ANALYTICS_HISTORY_EXPORT_MAX_ROWS = 1048575;
+  const ANALYTICS_HISTORY_EXPORT_PAGE_SIZE = 50;
   const ANALYTICS_HISTORY_EXPORT_COLUMNS = [
     { header: "时间（ISO）", key: "ts", width: 25 },
     { header: "北京时间日期", key: "date", width: 14 },
@@ -2050,6 +2051,7 @@
     let pageCount = 0;
     let scannedCount = 0;
     let duplicateCount = 0;
+    let skippedCount = 0;
 
     while (true) {
       if (pageCount >= maxPages) {
@@ -2103,6 +2105,8 @@
       pageCount += 1;
       const pageScannedCount = Number(data.scanned_count);
       if (Number.isFinite(pageScannedCount) && pageScannedCount > 0) scannedCount += pageScannedCount;
+      const pageSkippedCount = Number(data.skipped_count);
+      if (Number.isFinite(pageSkippedCount) && pageSkippedCount > 0) skippedCount += pageSkippedCount;
 
       for (const event of data.events) {
         const eventId = String(event && event.id || "").trim();
@@ -2129,6 +2133,7 @@
         eventCount: events.length,
         scannedCount,
         duplicateCount,
+        skippedCount,
         hasMore: Boolean(nextCursor),
       });
       if (!nextCursor) break;
@@ -2138,7 +2143,30 @@
       cursor = nextCursor;
     }
 
-    return { events, pageCount, scannedCount, duplicateCount };
+    return { events, pageCount, scannedCount, duplicateCount, skippedCount };
+  }
+
+  function analyticsHistoryExportResponseError(response, responseText, payload = {}) {
+    const rawDetail = String(payload && payload.detail || responseText || "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 240);
+    const status = Number(response && response.status) || 0;
+    const statusText = String(response && response.statusText || "").trim();
+    const ray = response && response.headers && typeof response.headers.get === "function"
+      ? String(response.headers.get("cf-ray") || "").trim()
+      : "";
+    const diagnostic = rawDetail || statusText;
+    const suffix = [diagnostic, ray ? `CF-Ray ${ray}` : ""].filter(Boolean).join("；");
+    const error = new Error(`历史记录导出失败${status ? ` (${status})` : ""}${suffix ? `：${suffix}` : "。"}`);
+    error.status = status;
+    error.retryable = status === 0
+      || status === 408
+      || status === 425
+      || status === 429
+      || status >= 500;
+    return error;
   }
 
   function analyticsHistoryFilterSnapshot(fields = {}) {
@@ -2291,7 +2319,7 @@
     }
 
     function analyticsHistoryExportParams() {
-      return new URLSearchParams({ page_size: "200" });
+      return new URLSearchParams({ page_size: String(ANALYTICS_HISTORY_EXPORT_PAGE_SIZE) });
     }
 
     function renderHistoryMeta(data) {
@@ -2454,15 +2482,21 @@
               cache: "no-store",
               headers: authHeaders(),
             });
-            const data = await response.json().catch(() => ({}));
+            const responseText = await response.text();
+            let data = {};
+            if (responseText.trim()) {
+              try {
+                data = JSON.parse(responseText);
+              } catch (_error) {
+                if (response.ok) {
+                  throw analyticsHistoryExportResponseError(response, responseText, {
+                    detail: "历史接口返回了非 JSON 数据。",
+                  });
+                }
+              }
+            }
             if (!response.ok) {
-              const error = new Error(data.detail || `历史记录导出失败 (${response.status})。`);
-              error.status = response.status;
-              error.retryable = response.status === 408
-                || response.status === 425
-                || response.status === 429
-                || response.status >= 500;
-              throw error;
+              throw analyticsHistoryExportResponseError(response, responseText, data);
             }
             return data;
           } catch (error) {
@@ -2485,7 +2519,10 @@
           },
           onProgress(progress) {
             exportAll.textContent = `导出中 · ${progress.eventCount} 条`;
-            setStatus(`已完成 ${progress.pageCount} 批：收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档；正在继续…`);
+            const skippedNote = progress.skippedCount
+              ? `，跳过 ${progress.skippedCount} 次主备均不可读的存档读取`
+              : "";
+            setStatus(`已完成 ${progress.pageCount} 批：收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档${skippedNote}；正在继续…`);
           },
         });
         exportAll.textContent = "正在生成 Excel…";
@@ -2502,7 +2539,10 @@
         const duplicateNote = collected.duplicateCount
           ? `；已去除 ${collected.duplicateCount} 条重复事件`
           : "";
-        setStatus(`Excel 已导出：全部历史共 ${rows.length} 条事件，读取 ${collected.pageCount} 批${duplicateNote}。`, "ok");
+        const skippedNote = collected.skippedCount
+          ? `；已跳过 ${collected.skippedCount} 次主备均不可读的存档读取`
+          : "";
+        setStatus(`Excel 已导出：全部历史共 ${rows.length} 条事件，读取 ${collected.pageCount} 批${duplicateNote}${skippedNote}。`, "ok");
       } catch (error) {
         setStatus(error.message || "全部历史导出失败。", "error");
       } finally {

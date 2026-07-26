@@ -188,6 +188,8 @@ const ANALYTICS_HISTORY_CURSOR_MAX_LENGTH = 4096;
 const ANALYTICS_EXPORT_CURSOR_VERSION = 1;
 const ANALYTICS_EXPORT_CURSOR_MAX_LENGTH = 4096;
 const ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH = 2048;
+const ANALYTICS_EXPORT_MAX_PAGE_SIZE = 50;
+const ANALYTICS_EXPORT_READ_CONCURRENCY = 4;
 const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
 const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
 const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
@@ -5133,34 +5135,55 @@ function analyticsExportMirrorKey(key, root, date) {
 async function readAnalyticsExportObject(env, key, root, date) {
   const mirrorKey = analyticsExportMirrorKey(key, root, date);
   if (!mirrorKey) throw new Error("Analytics export listing returned an invalid object key.");
+  const storageErrors = [];
   for (const candidate of [String(key), mirrorKey]) {
+    let stored;
     try {
-      const stored = await env.REPORT_BUCKET.get(candidate);
-      if (!stored) continue;
-      const event = JSON.parse(await stored.text());
+      stored = await env.REPORT_BUCKET.get(candidate);
+    } catch (error) {
+      storageErrors.push(error);
+      continue;
+    }
+    if (!stored) continue;
+    let serialized;
+    try {
+      serialized = await stored.text();
+    } catch (error) {
+      storageErrors.push(error);
+      continue;
+    }
+    try {
+      const event = JSON.parse(serialized);
       if (!event || typeof event !== "object" || Array.isArray(event) || !String(event.id || "").trim()) continue;
       return event;
     } catch (_error) {
-      // The corresponding object in the other analytics mirror is authoritative fallback.
+      // Invalid JSON is a damaged object. Try the corresponding mirror before skipping it.
     }
   }
-  throw new Error("Analytics event object is unreadable in both storage mirrors.");
+  if (storageErrors.length) {
+    throw new Error("Analytics event storage read failed; retry this export page.");
+  }
+  return null;
 }
 
 async function readAnalyticsExportObjects(env, objects, root, date) {
   const rows = [];
+  let skippedCount = 0;
   const listedObjects = Array.isArray(objects) ? objects : [];
-  for (let offset = 0; offset < listedObjects.length; offset += ANALYTICS_HISTORY_READ_BATCH) {
-    const batch = listedObjects.slice(offset, offset + ANALYTICS_HISTORY_READ_BATCH);
+  for (let offset = 0; offset < listedObjects.length; offset += ANALYTICS_EXPORT_READ_CONCURRENCY) {
+    const batch = listedObjects.slice(offset, offset + ANALYTICS_EXPORT_READ_CONCURRENCY);
     const events = await Promise.all(batch.map((object) => readAnalyticsExportObject(
       env,
       object && object.key,
       root,
       date,
     )));
-    rows.push(...events);
+    for (const event of events) {
+      if (event) rows.push(event);
+      else skippedCount += 1;
+    }
   }
-  return rows;
+  return { events: rows, skippedCount };
 }
 
 async function listAnalyticsExportPage(env, position, pageSize) {
@@ -5472,7 +5495,7 @@ async function handleAccountAdminAnalyticsEventsExport(request, env) {
 
   const url = new URL(request.url);
   const pageSize = Math.min(
-    ANALYTICS_HISTORY_MAX_PAGE_SIZE,
+    ANALYTICS_EXPORT_MAX_PAGE_SIZE,
     Math.max(1, Math.floor(Number(url.searchParams.get("page_size")) || ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE)),
   );
   const encodedCursor = String(url.searchParams.get("cursor") || "");
@@ -5490,6 +5513,7 @@ async function handleAccountAdminAnalyticsEventsExport(request, env) {
         has_more: false,
         page_size: pageSize,
         scanned_count: 0,
+        skipped_count: 0,
         source_date: "",
         source_phase: "",
         available_dates: [],
@@ -5498,8 +5522,8 @@ async function handleAccountAdminAnalyticsEventsExport(request, env) {
     }
 
     const listed = await listAnalyticsExportPage(env, position, pageSize);
-    const rawEvents = await readAnalyticsExportObjects(env, listed.objects, position.root, position.date);
-    const events = rawEvents.map(publicAnalyticsEvent);
+    const readResult = await readAnalyticsExportObjects(env, listed.objects, position.root, position.date);
+    const events = readResult.events.map(publicAnalyticsEvent);
     let nextPosition = null;
     if (listed.truncated) {
       nextPosition = { ...position, nativeCursor: listed.nextNativeCursor };
@@ -5514,6 +5538,7 @@ async function handleAccountAdminAnalyticsEventsExport(request, env) {
       has_more: Boolean(nextCursor),
       page_size: pageSize,
       scanned_count: listed.objects.length,
+      skipped_count: readResult.skippedCount,
       source_date: position.date,
       source_phase: analyticsExportPhaseForRoot(position.root),
       available_dates: dateRows.map((row) => row.date),
