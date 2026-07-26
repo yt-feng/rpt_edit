@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8mqa3lfc/pdfs/0001-26-MS-Advanced Micro Devices-AMD.US-AMD advancing AI event recap and takeaways-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8mqa3lfc/pdfs/0002-27-MS-Intel Corporation-INTC.US-Strong earnings- higher spending-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8mqa3lfc/pdfs/0003-28-MS-PayPal Holdings- Inc.-PYPL.US-2Q26 Preview- At a Crossroads-Waiting for a Signal-260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8mqa3lfc/pdfs/0004-29-MS-SpaceX-SPCX.US-SpaceX Approaches -100- What-s in the Price--260724.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8mqa3lfc/pdfs/0005-30-MS-Sho-Time- AI Revive- Value Alive-260724.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

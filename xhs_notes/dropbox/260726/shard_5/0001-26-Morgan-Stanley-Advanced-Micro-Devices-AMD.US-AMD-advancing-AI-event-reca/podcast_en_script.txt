@@ -1,0 +1,15 @@
+EN_A: So we just got a very detailed recap from AMD’s recent AI event, put together by a global investment bank. What’s the big picture here?
+EN_B: This was a massive update. AMD basically laid out their entire roadmap from CPUs and GPUs to software, and the most striking number is the server CPU TAM forecast — it jumped to 220 billion dollars.
+EN_A: That’s huge. How did we get there?
+EN_B: Last year at the analyst day, it was 60 billion. Then in the last earnings call, it went to 120 billion. Now it’s 220 billion. That’s almost a fourfold increase in just over a year. The report points out that this pace of revision itself is a bit unsettling, but it also strongly suggests that AMD’s data center revenue in the near term is going to be very strong.
+EN_A: So what does that mean for AMD’s position against Nvidia?
+EN_B: That’s the million-dollar question. On the GPU side, AMD officially launched Helios, which combines 72 MI455X GPUs with 18 EPYC processors. They claim 30% more inference tokens per dollar compared to Nvidia. And customer testimonials suggest adoption is going smoothly, especially with coding agents driving the ecosystem.
+EN_A: So is AMD finally catching up in GPUs?
+EN_B: The report says Helios is a step forward, but the ecosystem needs time to mature. And there’s a catch — AMD is issuing a lot of warrants to customers as an incentive. The report treats that as a marketing expense, and it will eat up most of the GPU profits for the next few years. So the product story is good, but the financial story is more complicated.
+EN_A: What about the software side? ROCm has been a weak point for AMD.
+EN_B: They launched rocm.ai, an agentic layer that lets tools like Claude and Codex natively understand AMD hardware. And the release cadence for ROCm has gone from every four months to every six weeks. They showed a 2.4x training speedup and 3.3x inference speedup on DeepSeek models. But the report doesn’t fully answer whether this performance holds across more mainstream models — that’s something the full report explores with more customer examples.
+EN_A: And what’s the rating on the stock?
+EN_B: The bank has an equal-weight rating with a 410 dollar price target. The stock is currently at 539. They like the narrative but see better risk-reward elsewhere — specifically Nvidia and Broadcom. The CPU business is strong, but the GPU margins are being diluted by the warrant issuance, and the valuation is already pretty high.
+EN_A: So the product roadmap is solid, but the investment case isn’t as compelling?
+EN_B: Exactly. The report says they’re constructive but see better alternatives. The full report goes deeper into the partnership with Cerebras and how that could challenge Nvidia plus Groq, as well as the details on Zen 7 and MI600 roadmaps.
+EN_A: If you want to read the full report, you can find the link in our community. Thanks for joining us.
