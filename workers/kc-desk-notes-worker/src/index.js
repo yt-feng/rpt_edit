@@ -77,12 +77,18 @@ const PADDLE_HANDLED_EVENTS = new Set([
   "subscription.paused",
   "subscription.resumed",
 ]);
-const VID2PPT_ATLAS_PLANS = {
-  "ATLAS-M": { months: 1, label: "ATLAS monthly" },
-  "ATLAS-Q": { months: 3, label: "ATLAS quarter" },
-  "ATLAS-Y": { months: 12, label: "ATLAS year" },
-  "ATLAS-2Y": { months: 24, label: "ATLAS two years" },
+const VID2PPT_KCDESK_GIFT_PLANS = {
+  "NOVA-M": { months: 1, label: "NOVA monthly" },
+  "NOVA-Q": { months: 3, label: "NOVA quarter" },
+  "NOVA-Y": { months: 12, label: "NOVA year" },
+  "NOVA-2Y": { months: 24, label: "NOVA two years" },
+  // Keep already-issued ATLAS codes redeemable after the NOVA migration.
+  "ATLAS-M": { months: 1, label: "ATLAS monthly (legacy)" },
+  "ATLAS-Q": { months: 3, label: "ATLAS quarter (legacy)" },
+  "ATLAS-Y": { months: 12, label: "ATLAS year (legacy)" },
+  "ATLAS-2Y": { months: 24, label: "ATLAS two years (legacy)" },
 };
+const VID2PPT_GIFT_SOURCES = new Set(["vid2ppt_nova", "vid2ppt_atlas"]);
 const VID2PPT_REDEEM_URL = "https://vid2ppt.com/api/usage";
 const VID2PPT_CODE_PATTERN = /^[A-Z0-9][A-Z0-9-]{7,39}$/;
 
@@ -1989,8 +1995,8 @@ function effectiveAccessForUser(user, entitlementRow, accessRow) {
   if (access.source === "error") return access;
   const entitlement = publicEntitlement(entitlementRow);
   if (entitlement.active && entitlement.plan === "annual") {
-    const entitlementSource = entitlement.grant_source === "vid2ppt_atlas"
-      ? "vid2ppt_atlas"
+    const entitlementSource = VID2PPT_GIFT_SOURCES.has(entitlement.grant_source)
+      ? entitlement.grant_source
       : (access.active ? "entitlement+stored" : "entitlement");
     const entitlementAccess = publicAccessGrant({
       email: normalizeEmail(user && user.email),
@@ -2923,12 +2929,12 @@ function cleanGrantText(value, limit = 160) {
     .slice(0, limit);
 }
 
-function cleanAtlasPlanCode(value) {
+function cleanGiftPlanCode(value) {
   return cleanGrantText(value, 32).toUpperCase();
 }
 
-function atlasGrantPeriodEnd(planCode, startAt) {
-  const spec = VID2PPT_ATLAS_PLANS[planCode];
+function giftGrantPeriodEnd(planCode, startAt) {
+  const spec = VID2PPT_KCDESK_GIFT_PLANS[planCode];
   if (!spec) return null;
   const parsed = Date.parse(String(startAt || ""));
   const date = new Date(Number.isFinite(parsed) ? parsed : Date.now());
@@ -2945,7 +2951,7 @@ function vid2pptRedeemUrl(env) {
   return cleanEnv(env.VID2PPT_REDEEM_URL) || VID2PPT_REDEEM_URL;
 }
 
-function atlasGrantStartIso(existingEntitlement, completedAt) {
+function giftGrantStartIso(existingEntitlement, completedAt) {
   const completedMs = Date.parse(String(completedAt || ""));
   const baselineMs = Number.isFinite(completedMs) ? completedMs : Date.now();
   const existingMs = existingEntitlement && existingEntitlement.active && existingEntitlement.current_period_end
@@ -2954,19 +2960,24 @@ function atlasGrantStartIso(existingEntitlement, completedAt) {
   return new Date(Math.max(baselineMs, Number.isFinite(existingMs) ? existingMs : 0)).toISOString();
 }
 
-function sameAtlasGrant(entitlement, planCode, sourceReference) {
+function giftGrantSource(planCode) {
+  return String(planCode || "").startsWith("NOVA-") ? "vid2ppt_nova" : "vid2ppt_atlas";
+}
+
+function sameVid2PptGift(entitlement, planCode, sourceReference) {
+  const grantSource = giftGrantSource(planCode);
   return entitlement
     && entitlement.active
-    && entitlement.grant_source === "vid2ppt_atlas"
+    && entitlement.grant_source === grantSource
     && entitlement.source_plan_code === planCode
     && entitlement.source_reference === sourceReference;
 }
 
-async function applyVid2PptAtlasGift(env, options = {}) {
+async function applyVid2PptGift(env, options = {}) {
   const email = normalizeEmail(options.email);
-  const planCode = cleanAtlasPlanCode(options.planCode || options.plan_code);
+  const planCode = cleanGiftPlanCode(options.planCode || options.plan_code);
   if (!email) throw new Error("Valid email is required.");
-  if (!VID2PPT_ATLAS_PLANS[planCode]) throw new Error("Unsupported ATLAS plan.");
+  if (!VID2PPT_KCDESK_GIFT_PLANS[planCode]) throw new Error("Unsupported NOVA gift plan.");
 
   const requestId = cleanGrantText(options.requestId || options.request_id, 96);
   const transactionId = cleanGrantText(options.transactionId || options.paddle_transaction_id || options.transaction_id, 120);
@@ -2976,16 +2987,17 @@ async function applyVid2PptAtlasGift(env, options = {}) {
   const existing = await findEntitlement(env, email).catch(() => null);
   const entitlement = publicEntitlement(existing);
 
-  if (sameAtlasGrant(entitlement, planCode, sourceReference)) {
+  if (sameVid2PptGift(entitlement, planCode, sourceReference)) {
     return { saved: existing || entitlement, duplicate: true, sourceReference };
   }
   if (entitlement.active && entitlement.lifetime) {
     return { saved: existing || entitlement, duplicate: false, lifetime: true, sourceReference };
   }
 
-  const startAt = atlasGrantStartIso(entitlement, options.completedAt || options.completed_at);
-  const currentPeriodEnd = atlasGrantPeriodEnd(planCode, startAt);
-  if (!currentPeriodEnd) throw new Error("Unsupported ATLAS plan.");
+  const startAt = giftGrantStartIso(entitlement, options.completedAt || options.completed_at);
+  const currentPeriodEnd = giftGrantPeriodEnd(planCode, startAt);
+  if (!currentPeriodEnd) throw new Error("Unsupported NOVA gift plan.");
+  const grantSource = giftGrantSource(planCode);
 
   const saved = await saveEntitlement(env, email, {
     plan: "annual",
@@ -2995,14 +3007,14 @@ async function applyVid2PptAtlasGift(env, options = {}) {
     paddle_transaction_id: transactionId,
     site_origin: SITE_ORIGIN,
     source_site: VID2PPT_SOURCE_SITE,
-    grant_source: "vid2ppt_atlas",
+    grant_source: grantSource,
     source_plan_code: planCode,
     source_reference: sourceReference,
   });
-  await insertUsageEvent(env, email, options.eventType || "vid2ppt_atlas.granted", {
+  await insertUsageEvent(env, email, options.eventType || `${grantSource}.granted`, {
     site_origin: SITE_ORIGIN,
     source_site: VID2PPT_SOURCE_SITE,
-    grant_source: "vid2ppt_atlas",
+    grant_source: grantSource,
     plan_code: planCode,
     request_id: requestId,
     event_id: eventId,
@@ -3016,7 +3028,7 @@ async function applyVid2PptAtlasGift(env, options = {}) {
   return { saved, duplicate: false, sourceReference };
 }
 
-async function handleVid2PptAtlasGrant(request, env) {
+async function handleVid2PptGiftGrant(request, env) {
   const rawBody = await request.text();
   if (!(await verifyVid2PptGrantSignature(env, request, rawBody))) {
     return jsonResponse(request, env, 401, { detail: "Invalid grant signature." });
@@ -3030,10 +3042,10 @@ async function handleVid2PptAtlasGrant(request, env) {
   }
 
   const email = normalizeEmail(payload.email);
-  const planCode = cleanAtlasPlanCode(payload.plan_code);
+  const planCode = cleanGiftPlanCode(payload.plan_code);
   if (!email) return jsonResponse(request, env, 400, { detail: "Valid email is required." });
-  if (!VID2PPT_ATLAS_PLANS[planCode]) {
-    return jsonResponse(request, env, 200, { ok: true, granted: false, detail: "Not an ATLAS plan." });
+  if (!VID2PPT_KCDESK_GIFT_PLANS[planCode]) {
+    return jsonResponse(request, env, 200, { ok: true, granted: false, detail: "Not a NOVA gift plan." });
   }
 
   const requestId = cleanGrantText(payload.request_id, 96);
@@ -3041,7 +3053,7 @@ async function handleVid2PptAtlasGrant(request, env) {
   const eventId = cleanGrantText(payload.event_id, 120);
 
   try {
-    const { saved, duplicate } = await applyVid2PptAtlasGift(env, {
+    const { saved, duplicate } = await applyVid2PptGift(env, {
       email,
       planCode,
       requestId,
@@ -3049,7 +3061,7 @@ async function handleVid2PptAtlasGrant(request, env) {
       eventId,
       completedAt: payload.completed_at,
       amountCny: payload.amount_cny,
-      eventType: "vid2ppt_atlas.granted",
+      eventType: `${giftGrantSource(planCode)}.granted`,
     });
     return jsonResponse(request, env, 200, {
       ok: true,
@@ -3119,24 +3131,24 @@ async function handleVid2PptRedeemCode(request, env) {
     const checked = await callVid2PptRedeemCode(env, { code, email, username, mode: "check" });
     const order = checked && checked.order || {};
     const orderEmail = normalizeEmail(order.email);
-    const planCode = cleanAtlasPlanCode(order.plan_code);
+    const planCode = cleanGiftPlanCode(order.plan_code);
     if (!checked.valid) return jsonResponse(request, env, 404, { detail: checked.detail || "代码未找到或未支付完成。" });
     if (checked.redeemed) return jsonResponse(request, env, 409, { detail: "这串代码已经兑换过。", order });
-    if (!VID2PPT_ATLAS_PLANS[planCode] || (order.benefit_site && order.benefit_site !== "kcdesk")) {
-      return jsonResponse(request, env, 400, { detail: "这串代码不是 ATLAS 赠送权益代码。", order });
+    if (!VID2PPT_KCDESK_GIFT_PLANS[planCode] || (order.benefit_site && order.benefit_site !== "kcdesk")) {
+      return jsonResponse(request, env, 400, { detail: "这串代码不是 NOVA 赠送权益代码。", order });
     }
     if (orderEmail && orderEmail !== email) {
       return jsonResponse(request, env, 403, { detail: "这串代码对应的支付邮箱与当前 KCdesk 账号邮箱不一致。", order });
     }
 
-    const { saved, duplicate } = await applyVid2PptAtlasGift(env, {
+    const { saved, duplicate } = await applyVid2PptGift(env, {
       email,
       planCode,
       requestId: order.request_id,
       code,
       completedAt: order.completed_at || new Date().toISOString(),
       amountCny: order.amount_cny,
-      eventType: "vid2ppt_atlas.code_redeemed",
+      eventType: `${giftGrantSource(planCode)}.code_redeemed`,
     });
     const redeemed = await callVid2PptRedeemCode(env, { code, email, username, mode: "redeem" });
     return jsonResponse(request, env, 200, {
@@ -9883,7 +9895,7 @@ export default {
 
     if (pathname === "/paddle-config" && request.method === "GET") {
       return jsonResponse(request, env, 410, {
-        detail: "KCdesk checkout is closed. Vid2PPT ATLAS sponsor checkout handles payment and may gift KCdesk.com membership time.",
+        detail: "KCdesk checkout is closed. Vid2PPT NOVA sponsor checkout handles payment and may gift KCdesk.com membership time.",
       });
     }
 
@@ -9893,8 +9905,8 @@ export default {
       });
     }
 
-    if (pathname === "/vid2ppt/atlas-grant" && request.method === "POST") {
-      return handleVid2PptAtlasGrant(request, env);
+    if (["/vid2ppt/nova-grant", "/vid2ppt/atlas-grant"].includes(pathname) && request.method === "POST") {
+      return handleVid2PptGiftGrant(request, env);
     }
 
     if (pathname === "/admin/login" && request.method === "POST") {

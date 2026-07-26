@@ -144,8 +144,8 @@
     return `<a class="vid2ppt-sponsor-link" href="${escapeHtml(vid2pptSponsorUrlForSession(session))}" target="_blank" rel="noopener">${escapeHtml(VID2PPT_SPONSOR_DISPLAY_URL)}</a>`;
   }
 
-  function atlasSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
-    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 的 NOVA 赞助恰好会赠送 KCdesk.com 对应时长会员权益`;
+  function novaSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
+    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 无限量下载全站报告，NOVA-M单月，<b>NOVA-Q季度，NOVA-Y年度，NOVA-2Y两年</b>`;
   }
 
   function normalize(value) {
@@ -380,7 +380,7 @@
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
     if (row.access_mode === "filters") return "条件报告下载权限";
-    if (row.source === "vid2ppt_atlas" || row.grant_source === "vid2ppt_atlas") return "KCdesk.com 赠送会员权益";
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(row.source) || ["vid2ppt_nova", "vid2ppt_atlas"].includes(row.grant_source)) return "KCdesk.com 赠送会员权益";
     if (row.plan === "annual") return "会员下载权限";
     if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
     return "下载权限";
@@ -547,7 +547,11 @@
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
-            <span>${atlasSponsorGuidanceHtml("", session)}；单篇报告或其它问题请联系${contactMethodHtml()}。</span>
+            <span>${novaSponsorGuidanceHtml("", session)}</span>
+            <div class="account-redeem-row">
+              <input id="accountVid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
+              <button class="secondary-button" id="accountRedeemVid2pptCode" type="button">兑换</button>
+            </div>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -604,6 +608,8 @@
     const newPassword = document.getElementById("accountNewPassword");
     const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
     const passwordSubmit = document.getElementById("accountPasswordSubmit");
+    const redeemInput = document.getElementById("accountVid2pptRedeemCode");
+    const redeemButton = document.getElementById("accountRedeemVid2pptCode");
     const status = document.getElementById("accountModalStatus");
     let mode = "login";
     let captchaToken = "";
@@ -682,6 +688,49 @@
     }
     if (adminOpen) {
       adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
+    }
+    if (redeemButton && redeemInput) {
+      redeemButton.addEventListener("click", async () => {
+        const session = loadAuthSession();
+        if (!session) {
+          setStatus("请先登录 KCdesk 账号，再兑换 Vid2PPT 代码。", "error");
+          if (username) username.focus();
+          return;
+        }
+        const code = String(redeemInput.value || "").trim().toUpperCase();
+        if (!code) {
+          setStatus("请先输入 Vid2PPT 兑换代码。", "error");
+          redeemInput.focus();
+          return;
+        }
+        redeemButton.disabled = true;
+        setStatus("正在校验 Vid2PPT 兑换代码…");
+        try {
+          const response = await fetch(`${workerUrl}/vid2ppt/redeem-code`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({ code }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) throw new Error(data.detail || "兑换失败。");
+          redeemInput.value = "";
+          const entitlementSummary = accountRightSummary({ effective_access: data.entitlement || {} });
+          const successMessage = entitlementSummary
+            ? `兑换成功，已开通：${entitlementSummary}。`
+            : "兑换成功，KCdesk.com 赠送会员权益已开通。";
+          refreshUi({ statusOverride: successMessage });
+          document.dispatchEvent(new CustomEvent("kcdesk-auth-change"));
+        } catch (error) {
+          setStatus(error.message || "兑换失败，请稍后重试。", "error");
+        } finally {
+          redeemButton.disabled = false;
+        }
+      });
+      redeemInput.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter") return;
+        event.preventDefault();
+        redeemButton.click();
+      });
     }
     if (passwordForm) {
       passwordForm.addEventListener("submit", async (event) => {
@@ -970,10 +1019,10 @@
     const entitlement = user && user.entitlement || {};
     if (access.source === "role") return "账号角色";
     if (access.source === "disabled") return "账号已禁用";
-    if (access.source === "vid2ppt_atlas") return `Vid2PPT NOVA 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(access.source)) return `Vid2PPT NOVA 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
     if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
     if (access.source === "entitlement") {
-      return entitlement.grant_source === "vid2ppt_atlas"
+      return ["vid2ppt_nova", "vid2ppt_atlas"].includes(entitlement.grant_source)
         ? `Vid2PPT NOVA 赠送${entitlement.source_plan_code ? ` · ${entitlement.source_plan_code}` : ""}`
         : "会员权益";
     }
@@ -4174,7 +4223,7 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；")}。</p>
+        <p class="subtle" id="accountAccessHint">${novaSponsorGuidanceHtml("登录后可查看账号下载权限；")}。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 NOVA</a>
@@ -4288,7 +4337,7 @@
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
-        hint.innerHTML = `${atlasSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
+        hint.innerHTML = `${novaSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
         statusTargetHtml(`未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
         return;
       }
@@ -4305,7 +4354,7 @@
         } else {
           if (passwordForm) passwordForm.hidden = false;
           statusTargetHtml(summary
-            ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${atlasSponsorGuidanceHtml("", session)}。`
+            ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${novaSponsorGuidanceHtml("", session)}。`
             : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
         }
       } catch (error) {
@@ -4317,7 +4366,7 @@
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
     if (sponsorLink) {
       sponsorLink.addEventListener("click", () => {
-        trackEvent(workerUrl, "vid2ppt_atlas_sponsor_click", {
+        trackEvent(workerUrl, "vid2ppt_nova_sponsor_click", {
           ...analyticsReportPayload(item, source),
           site_origin: "kcdesk",
           target_site: "vid2ppt",
