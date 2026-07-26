@@ -692,6 +692,40 @@ button.primary:disabled {
   line-height: 1.5;
 }
 
+.text-only-pdf-upload {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #b7d8d1;
+  border-radius: 8px;
+  background: #f2fbf9;
+}
+
+.text-only-pdf-upload[hidden] {
+  display: none;
+}
+
+.text-only-pdf-upload .admin-panel-heading h3,
+.text-only-pdf-upload p {
+  margin: 0;
+}
+
+.text-only-pdf-upload-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.text-only-pdf-upload-form input[type="file"] {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+}
+
 .account-access {
   display: grid;
   gap: 12px;
@@ -914,6 +948,137 @@ a.secondary-button {
   margin-top: 10px;
 }
 
+.hot-report-description {
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  background: #f5faf9;
+  color: #334155;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.hot-comments-section {
+  display: grid;
+  gap: 12px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.hot-comments-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+
+.hot-comments-heading h3 {
+  margin: 0;
+}
+
+.hot-comments-heading span,
+.hot-comment-form-actions span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hot-comment-list {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.hot-comment {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hot-comment:last-child {
+  border-bottom: 0;
+}
+
+.hot-comment-meta,
+.hot-comment-order-actions,
+.hot-comment-form-actions,
+.hot-comment-login,
+.hot-comment-admin-alias {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hot-comment-meta time {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hot-comment-order-actions {
+  margin-left: auto;
+}
+
+.hot-comment-order-actions .secondary-button {
+  min-width: 34px;
+  min-height: 32px;
+  padding: 0 8px;
+}
+
+.hot-comment p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.hot-comment-login {
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  background: #eef7f5;
+}
+
+.hot-comment-form {
+  display: grid;
+  gap: 10px;
+}
+
+.hot-comment-form textarea,
+.hot-comment-admin-alias input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.hot-comment-admin-alias {
+  align-items: end;
+}
+
+.hot-comment-admin-alias label {
+  display: grid;
+  flex: 1 1 260px;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hot-comment-form-actions {
+  justify-content: space-between;
+}
+
 .external-wait {
   padding: 12px 14px;
   border: 1px solid #f5d08a;
@@ -1036,6 +1201,99 @@ a.secondary-button {
   font-weight: 800;
 }
 
+.account-admin-hot-form {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  background: #eef7f5;
+}
+
+.account-admin-hot-description,
+.account-admin-hot-file {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-hot-description textarea,
+.account-admin-hot-file input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 10px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+}
+
+.account-admin-hot-description textarea {
+  resize: vertical;
+}
+
+.account-admin-hot-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-admin-hot-actions span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-hot-list {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-hot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 13px;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.account-admin-hot-row:last-child {
+  border-bottom: 0;
+}
+
+.account-admin-hot-row:hover,
+.account-admin-hot-row:focus {
+  background: #eef7f5;
+  outline: none;
+}
+
+.account-admin-hot-row > span:first-child {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.account-admin-hot-row strong,
+.account-admin-hot-row small {
+  overflow-wrap: anywhere;
+}
+
+.account-admin-hot-row small,
+.account-admin-hot-row > span:last-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .account-admin-module-notice {
   padding: 9px 11px;
   border: 1px solid #f0c36b;
@@ -1114,6 +1372,7 @@ a.secondary-button {
 }
 
 .account-admin-form-grid label,
+.account-admin-access-field,
 .account-admin-note-field {
   display: grid;
   gap: 6px;
@@ -1158,6 +1417,86 @@ a.secondary-button {
 
 .account-admin-form-grid select[multiple] {
   min-height: 122px;
+}
+
+.account-admin-access-field-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.account-admin-access-field-head span:last-child {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.account-admin-access-checkboxes {
+  display: grid;
+  gap: 6px;
+  max-height: 220px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: #ffffff;
+}
+
+.account-admin-access-checkboxes:empty::before {
+  content: "暂无可选机构";
+  padding: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.account-admin-access-checkbox {
+  display: flex !important;
+  grid-template-columns: none;
+  align-items: flex-start;
+  gap: 8px !important;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 7px 8px;
+  color: var(--ink) !important;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 700 !important;
+}
+
+.account-admin-access-checkbox:hover,
+.account-admin-access-checkbox:has(input:checked) {
+  border-color: #b7d8d3;
+  background: #eef7f5;
+}
+
+.account-admin-access-checkbox.is-legacy {
+  border-color: #f0c36a;
+  background: #fff8e8;
+}
+
+.account-admin-access-checkbox input {
+  flex: 0 0 auto;
+  width: 16px;
+  min-height: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  padding: 0;
+}
+
+.account-admin-access-checkbox span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.account-admin-access-checkbox[hidden] {
+  display: none !important;
+}
+
+.account-admin-access-field small {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .account-admin-row-actions {
@@ -1307,6 +1646,14 @@ a.secondary-button {
 .analytics-history-title p {
   margin: 0;
   color: var(--muted);
+}
+
+.analytics-history-title-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .analytics-history-filters {
@@ -3314,6 +3661,10 @@ a.secondary-button {
     flex-direction: column;
   }
 
+  .text-only-pdf-upload-form {
+    grid-template-columns: 1fr;
+  }
+
   h1 {
     font-size: 28px;
   }
@@ -3370,6 +3721,18 @@ a.secondary-button {
 
   .account-admin-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .account-admin-hot-actions,
+  .account-admin-hot-row,
+  .hot-comment-login,
+  .hot-comment-admin-alias {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .account-admin-hot-row > span:last-child {
+    align-self: flex-start;
   }
 
   .account-admin-file-actions {

@@ -27,6 +27,10 @@ jobs:
             scripts/test_kcdesk_entitlement_precedence.js
             scripts/test_kcdesk_legacy_access_compat.js
             scripts/test_kcdesk_access_renewal.js
+            scripts/test_kcdesk_daily_pick_topics.js
+            scripts/test_kcdesk_hot_reports.js
+            scripts/test_kcdesk_multi_institution_access.js
+            scripts/test_kcdesk_text_only_pdf_upload.js
 
       - name: Validate legacy access compatibility
         run: |
@@ -35,6 +39,10 @@ jobs:
           node scripts/test_kcdesk_entitlement_precedence.js
           node scripts/test_kcdesk_legacy_access_compat.js
           node scripts/test_kcdesk_access_renewal.js
+          node scripts/test_kcdesk_daily_pick_topics.js
+          node scripts/test_kcdesk_hot_reports.js
+          node scripts/test_kcdesk_multi_institution_access.js
+          node scripts/test_kcdesk_text_only_pdf_upload.js
 
       - name: Prepare Cloudflare Worker config
         env:

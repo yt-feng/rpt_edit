@@ -19,7 +19,7 @@
     <meta property="og:title" content="KC Desk Notes | 中文金融研报检索与报告索引">
     <meta property="og:description" content="中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
     <meta property="og:url" content="https://kcdesk.com/">
-    <link rel="stylesheet" href="assets/styles.css?v=admin-download-20260704d">
+    <link rel="stylesheet" href="assets/styles.css?v=kcdesk-suite-20260726b">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,6 +44,7 @@
       </a>
       <div class="topbar-actions">
         <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+        <a class="topbar-link" href="blog/">Blog</a>
         <a id="newsfeedNav" class="topbar-link" href="newsfeed.html" hidden>Newsfeed</a>
         <button id="accountGate" class="account-button" type="button">登录</button>
         <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
@@ -143,6 +144,16 @@
         <div id="results" class="results-list"></div>
       </section>
 
+      <section class="external-section hot-reports-section" id="hotReportsSection" aria-labelledby="hotReportsTitle" hidden>
+        <div class="results-heading">
+          <h2 id="hotReportsTitle">近期热门报告</h2>
+          <span id="hotReportsCount"></span>
+        </div>
+        <p class="subtle external-hint">精选近期热门 PDF；NOVA-Q（3个月）及以上用户可下载全文。</p>
+        <div id="hotReportsResults" class="related-list"></div>
+        <div id="hotReportsStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
       <section class="external-section" id="thinkTankSection" aria-labelledby="thinkTankTitle" hidden>
         <div class="results-heading">
           <h2 id="thinkTankTitle">国际智库</h2>
@@ -185,6 +196,15 @@
         <div id="authorityStatus" class="status-line" aria-live="polite"></div>
       </section>
 
+      <section class="external-section search-recommendations-section" id="searchRecommendationsSection" aria-labelledby="searchRecommendationsTitle" hidden>
+        <div class="results-heading">
+          <h2 id="searchRecommendationsTitle">相关推荐</h2>
+          <span id="searchRecommendationsCount"></span>
+        </div>
+        <p class="subtle external-hint">所有报告库均未找到匹配结果，先看看这些近期报告。</p>
+        <div id="searchRecommendationsResults" class="related-list"></div>
+      </section>
+
       <section class="about-section" aria-labelledby="aboutTitle">
         <div class="about-copy">
           <h2 id="aboutTitle">关于我们</h2>
@@ -199,6 +219,7 @@
     </main>
 
     <footer class="legal-footer">
+      <a href="blog/">Blog</a>
       <a href="reports/index.html">报告索引</a>
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
@@ -207,6 +228,6 @@
     </footer>
 
     <script src="assets/contact.js"></script>
-    <script src="assets/app.js?v=admin-access-priority-20260726"></script>
+    <script src="assets/app.js?v=kcdesk-suite-20260726b"></script>
   </body>
 </html>

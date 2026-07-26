@@ -7,13 +7,21 @@ on:
     paths:
       - ".github/workflows/kc-desk-notes-pages.yml"
       - "kc_desk_notes/password_rules.json"
+      - "kc_desk_notes/data/blog_archive/**"
       - "kc_desk_notes/site_src/**"
+      - "kc_desk_notes/tests/**"
       - "scripts/build_kc_desk_notes_site.py"
       - "scripts/submit_kcdesk_indexnow.py"
+      - "scripts/test_kcdesk_blog_build.py"
       - "scripts/test_kcdesk_contact_locale.js"
       - "scripts/test_kcdesk_entitlement_precedence.js"
       - "scripts/test_kcdesk_legacy_access_compat.js"
       - "scripts/test_kcdesk_access_renewal.js"
+      - "scripts/test_kcdesk_daily_pick_topics.js"
+      - "scripts/test_kcdesk_hot_reports.js"
+      - "scripts/test_kcdesk_multi_institution_access.js"
+      - "scripts/test_kcdesk_text_only_pdf_upload.js"
+      - "wechat_drafts/**"
       - "workers/kc-desk-notes-worker/**"
   workflow_dispatch:
     inputs:
@@ -74,6 +82,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # Queued runs must start from the latest archive commit, not the older
+          # push-event SHA captured before the previous serialized run finished.
+          ref: main
           fetch-depth: 1
 
       - name: Set up Python
@@ -90,11 +101,18 @@ jobs:
         run: |
           node --check kc_desk_notes/site_src/assets/contact.js
           node --check kc_desk_notes/site_src/assets/app.js
+          node --check kc_desk_notes/site_src/assets/xlsx-export.js
           node --check workers/kc-desk-notes-worker/src/index.js
+          node --test kc_desk_notes/tests/*.test.mjs
           node scripts/test_kcdesk_contact_locale.js
           node scripts/test_kcdesk_entitlement_precedence.js
           node scripts/test_kcdesk_legacy_access_compat.js
           node scripts/test_kcdesk_access_renewal.js
+          node scripts/test_kcdesk_daily_pick_topics.js
+          node scripts/test_kcdesk_hot_reports.js
+          node scripts/test_kcdesk_multi_institution_access.js
+          node scripts/test_kcdesk_text_only_pdf_upload.js
+          python3 scripts/test_kcdesk_blog_build.py
 
       - name: Update catalog and mirror current PDFs to R2
         id: catalog
@@ -151,8 +169,13 @@ jobs:
             --catalog-path "kc_desk_notes/data/catalog.json" \
             --password-rules "kc_desk_notes/password_rules.json" \
             --site-src "kc_desk_notes/site_src" \
+            --wechat-drafts-root "wechat_drafts" \
+            --blog-archive-root "kc_desk_notes/data/blog_archive" \
             --output-dir "_kc_desk_notes_pages" \
             --worker-base-url "$KC_DESK_WORKER_URL"
+          test -f "_kc_desk_notes_pages/assets/xlsx-export.js"
+          test -f "_kc_desk_notes_pages/assets/blog.css"
+          test -f "_kc_desk_notes_pages/blog/index.html"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -202,9 +225,9 @@ jobs:
             --base-url "https://kcdesk.com" \
             --key "$INDEXNOW_KEY"
 
-      - name: Commit persistent catalog and search archive
+      - name: Commit persistent catalog, search, and Blog archive
         run: |
-          bash scripts/commit_output_dir.sh "kc_desk_notes/data" "Update KC Desk Notes catalog and search archive" 8
+          bash scripts/commit_output_dir.sh "kc_desk_notes/data" "Update KC Desk Notes catalog, search and Blog archive" 8 true
 
       - name: Prepare Cloudflare Worker deploy config
         id: worker_config

@@ -15,12 +15,23 @@
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const THINKTANK_SOURCE = "thinktank";
+  const HOT_REPORT_SOURCE = "hot";
   const EXTERNAL_SOURCE = "external";
   const NEWSFEED_TOPIC_LIMIT = 10000;
   const NEWSFEED_ACCOUNT_USERNAMES = new Set(["jacob"]);
   const NEWSFEED_ACCOUNT_EMAILS = new Set(["jacob@bo-axis.com"]);
   const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
   const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
+  const APP_ASSET_VERSION = (() => {
+    try {
+      const script = document.currentScript;
+      return script && script.src
+        ? new URL(script.src, document.baseURI).searchParams.get("v") || ""
+        : "";
+    } catch (_error) {
+      return "";
+    }
+  })();
   let accountAdminDailyPicks = new Map();
   let accountAdminUsersByEmail = new Map();
   let accountAdminAccessOptions = {};
@@ -29,6 +40,12 @@
   let accountAdminRefreshTimer = null;
   let pdfJsLoadPromise = null;
   const activeAdminButtonActions = new WeakMap();
+
+  function versionedSiteAssetUrl(path) {
+    const url = new URL(String(path || ""), document.baseURI);
+    if (APP_ASSET_VERSION) url.searchParams.set("v", APP_ASSET_VERSION);
+    return url.href;
+  }
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -874,6 +891,7 @@
     const showWechat = options.showWechat !== false;
     const showUsers = options.showUsers !== false;
     const showAnalytics = options.showAnalytics !== false;
+    const showHotReports = options.showHotReports !== false;
     return `
       <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
         <div class="admin-dialog account-admin-dialog">
@@ -898,6 +916,46 @@
             </div>
             <div id="accountAdminWechatNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminWechatSchedule" class="account-admin-wechat-schedule"></div>
+          </section>
+          <section class="account-admin-section account-admin-hot-section" id="accountAdminHotReportsSection" ${showHotReports ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>近期热门报告</strong>
+              <span id="accountAdminHotReportCount"></span>
+            </div>
+            <form id="accountAdminHotReportForm" class="account-admin-hot-form" enctype="multipart/form-data">
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>英文/主标题</span>
+                  <input id="accountAdminHotReportTitle" name="title" type="text" maxlength="320" autocomplete="off" required>
+                </label>
+                <label>
+                  <span>中文标题（可选）</span>
+                  <input name="title_cn" type="text" maxlength="320" autocomplete="off">
+                </label>
+                <label>
+                  <span>机构（可选）</span>
+                  <input name="institution" type="text" maxlength="160" autocomplete="off">
+                </label>
+                <label>
+                  <span>报告日期</span>
+                  <input id="accountAdminHotReportDate" name="date" type="date" required>
+                </label>
+              </div>
+              <label class="account-admin-hot-description">
+                <span>简介（可选）</span>
+                <textarea name="description" rows="3" maxlength="1600" placeholder="显示在报告详情页"></textarea>
+              </label>
+              <label class="account-admin-hot-file">
+                <span>PDF 文件（最大 95 MB）</span>
+                <input id="accountAdminHotReportPdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
+              </label>
+              <div class="account-admin-hot-actions">
+                <span>NOVA-Q（3个月）及以上用户可下载全文。</span>
+                <button class="primary" type="submit">上传到近期热门报告</button>
+              </div>
+            </form>
+            <div id="accountAdminHotReportStatus" class="status-line" aria-live="polite"></div>
+            <div id="accountAdminHotReportList" class="account-admin-hot-list"></div>
           </section>
           <section class="account-admin-section">
             <div class="account-admin-heading">
@@ -965,10 +1023,15 @@
                   <span>到期日期（可精确指定）</span>
                   <input id="accountAdminAccessExpiry" type="date">
                 </label>
-                <label>
-                  <span>Institution</span>
-                  <select id="accountAdminAccessInstitutions" multiple></select>
-                </label>
+                <div class="account-admin-access-field">
+                  <div class="account-admin-access-field-head">
+                    <span>机构（可多选）</span>
+                    <span id="accountAdminAccessInstitutionCount">已选 0</span>
+                  </div>
+                  <input id="accountAdminAccessInstitutionSearch" type="search" autocomplete="off" placeholder="搜索机构">
+                  <div class="account-admin-access-checkboxes" id="accountAdminAccessInstitutions" role="group" aria-label="机构下载权限"></div>
+                  <small>直接勾选多个机构（最多 60 项）；已有但不在当前目录中的授权会标为“历史授权”并继续保留。</small>
+                </div>
                 <label>
                   <span>Industry</span>
                   <select id="accountAdminAccessIndustries" multiple></select>
@@ -1144,6 +1207,106 @@
     return Array.from(select.selectedOptions || []).map((option) => option.value).filter(Boolean);
   }
 
+  function accessOptionKey(value) {
+    return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function mergeAccessOptionRows(options = [], selected = []) {
+    const rows = Array.isArray(options) ? options : [];
+    const selectedValues = (Array.isArray(selected) ? selected : []).map(String).filter(Boolean);
+    const optionsByKey = new Map();
+    rows.forEach((option) => {
+      const value = String(option && option.value || "");
+      const key = accessOptionKey(value);
+      if (key && !optionsByKey.has(key)) optionsByKey.set(key, option);
+    });
+    const used = new Set();
+    const merged = [];
+    selectedValues.forEach((value) => {
+      const key = accessOptionKey(value);
+      if (!key || used.has(key)) return;
+      const current = optionsByKey.get(key);
+      merged.push(current
+        ? { ...current, value }
+        : { value, label: `${value}（历史授权，保留）`, legacy: true });
+      used.add(key);
+    });
+    rows.forEach((option) => {
+      const value = String(option && option.value || "");
+      const key = accessOptionKey(value);
+      if (!key || used.has(key)) return;
+      merged.push(option);
+      used.add(key);
+    });
+    return merged;
+  }
+
+  function renderAccessCheckboxOptions(target, options = [], selected = []) {
+    if (!target) return;
+    const selectedKeys = new Set((Array.isArray(selected) ? selected : []).map(accessOptionKey).filter(Boolean));
+    target.innerHTML = mergeAccessOptionRows(options, selected).map((option, index) => {
+      const value = String(option && option.value || "");
+      const label = String(option && option.label || value);
+      const inputId = `accountAdminInstitutionOption${index}`;
+      const checked = selectedKeys.has(accessOptionKey(value));
+      const searchText = `${value} ${label}`.normalize("NFKC").toLowerCase();
+      return `
+        <label class="account-admin-access-checkbox${option && option.legacy ? " is-legacy" : ""}" data-access-search="${escapeHtml(searchText)}">
+          <input id="${inputId}" type="checkbox" value="${escapeHtml(value)}"${checked ? " checked" : ""}>
+          <span>${escapeHtml(label)}</span>
+        </label>
+      `;
+    }).join("");
+  }
+
+  function selectedAccessCheckboxValues(target) {
+    return Array.from(target && target.querySelectorAll("input[type='checkbox']:checked") || [])
+      .map((input) => input.value)
+      .filter(Boolean);
+  }
+
+  function updateAccessCheckboxCount(target, countTarget) {
+    if (!countTarget) return;
+    countTarget.textContent = `已选 ${selectedAccessCheckboxValues(target).length}`;
+  }
+
+  function filterAccessCheckboxOptions(target, query) {
+    const normalized = String(query || "").normalize("NFKC").trim().toLowerCase();
+    Array.from(target && target.querySelectorAll(".account-admin-access-checkbox") || []).forEach((row) => {
+      row.hidden = Boolean(normalized) && !String(row.dataset.accessSearch || "").includes(normalized);
+    });
+  }
+
+  function accessScopeSnapshot(access = {}) {
+    return {
+      access_mode: String(access.access_mode || "none"),
+      institutions: (Array.isArray(access.institutions) ? access.institutions : []).map(String).filter(Boolean),
+      industries: (Array.isArray(access.industries) ? access.industries : []).map(String).filter(Boolean),
+      page_ranges: (Array.isArray(access.page_ranges) ? access.page_ranges : []).map(String).filter(Boolean),
+    };
+  }
+
+  function accessScopeNeedsConfirmation(previous = {}, next = {}) {
+    const before = accessScopeSnapshot(previous);
+    const after = accessScopeSnapshot(next);
+    if (before.access_mode !== after.access_mode) {
+      return before.access_mode !== "none" || after.access_mode === "all";
+    }
+    if (before.access_mode !== "filters") return false;
+    return ["institutions", "industries", "page_ranges"].some((field) => {
+      const nextKeys = new Set(after[field].map(accessOptionKey));
+      return before[field].some((value) => !nextKeys.has(accessOptionKey(value)));
+    });
+  }
+
+  function accessScopeConfirmationText(previous = {}, next = {}) {
+    if (String(next.access_mode || "") === "all") {
+      return "确认把该用户改为“全站报告”吗？这会移除原有的机构、行业和页数限制。";
+    }
+    if (String(next.access_mode || "") === "none") return "确认关闭该用户的下载权限吗？";
+    return "这次保存会移除部分已有机构、行业或页数权限。确认继续吗？";
+  }
+
   function accessDurationPreviewDate(durationValue) {
     const value = String(durationValue || "");
     if (!value || value === "lifetime") return "";
@@ -1172,15 +1335,21 @@
     targets.userEditor.dataset.expectedChangeId = String(access.change_id || "");
     targets.userEditor.dataset.expectedUpdatedAt = String(access.updated_at || "");
     targets.userEditor.dataset.originalAccessActive = access.active ? "true" : "false";
+    targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(access));
     targets.accessEmail.value = user.email || "";
     targets.userEditorTitle.textContent = `编辑权限：${username}`;
     targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
     targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : (access.duration_value || "12")]);
     if (targets.accessExpiry) targets.accessExpiry.value = String(access.current_period_end || "").slice(0, 10);
-    targets.accessInstitutions.innerHTML = optionMarkup(options.institutions || [], access.institutions || []);
-    targets.accessIndustries.innerHTML = optionMarkup(options.industries || [], access.industries || []);
-    setSelectValues(targets.accessInstitutions, access.institutions || []);
+    renderAccessCheckboxOptions(targets.accessInstitutions, options.institutions || [], access.institutions || []);
+    targets.accessIndustries.innerHTML = optionMarkup(
+      mergeAccessOptionRows(options.industries || [], access.industries || []),
+      access.industries || [],
+    );
     setSelectValues(targets.accessIndustries, access.industries || []);
+    if (targets.accessInstitutionSearch) targets.accessInstitutionSearch.value = "";
+    filterAccessCheckboxOptions(targets.accessInstitutions, "");
+    updateAccessCheckboxCount(targets.accessInstitutions, targets.accessInstitutionCount);
     const selectedRanges = new Set(access.page_ranges || []);
     targets.accessPageRanges.innerHTML = (options.page_ranges || []).map((option) => `
       <label>
@@ -1212,7 +1381,10 @@
     if (targets.accessDuration) targets.accessDuration.disabled = !enabled;
     if (targets.accessExpiry) targets.accessExpiry.disabled = !enabled || targets.accessDuration.value === "lifetime";
     if (targets.accessRenew) targets.accessRenew.disabled = !enabled || targets.accessDuration.value === "lifetime";
-    targets.accessInstitutions.disabled = !filters;
+    targets.accessInstitutions.querySelectorAll("input").forEach((input) => {
+      input.disabled = !filters;
+    });
+    if (targets.accessInstitutionSearch) targets.accessInstitutionSearch.disabled = !filters;
     targets.accessIndustries.disabled = !filters;
     targets.accessPageRanges.querySelectorAll("input").forEach((input) => {
       input.disabled = !filters;
@@ -1226,7 +1398,7 @@
       email,
       access_mode: mode,
       duration_months: mode === "none" ? "" : (targets.accessDuration.value || "12"),
-      institutions: mode === "filters" ? selectedSelectValues(targets.accessInstitutions) : [],
+      institutions: mode === "filters" ? selectedAccessCheckboxValues(targets.accessInstitutions) : [],
       industries: mode === "filters" ? selectedSelectValues(targets.accessIndustries) : [],
       page_ranges: mode === "filters"
         ? Array.from(targets.accessPageRanges.querySelectorAll("input:checked")).map((input) => input.value)
@@ -1236,7 +1408,23 @@
       expires_on: mode === "none" ? "" : (targets.accessExpiry && targets.accessExpiry.value || ""),
       expected_change_id: String(targets.userEditor.dataset.expectedChangeId || ""),
       expected_updated_at: String(targets.userEditor.dataset.expectedUpdatedAt || ""),
+      confirm_scope_change: false,
     };
+    if (mode === "filters" && !payload.institutions.length && !payload.industries.length && !payload.page_ranges.length) {
+      throw new Error("按条件筛选至少要勾选一个机构、行业或页数条件。");
+    }
+    let originalScope = {};
+    try {
+      const originalScopeText = targets.userEditor.dataset.originalAccessScope || "";
+      if (!originalScopeText) throw new Error("missing scope");
+      originalScope = JSON.parse(originalScopeText);
+    } catch (_error) {
+      throw new Error("原权限状态无法核验，请关闭编辑框并重新打开。");
+    }
+    if (accessScopeNeedsConfirmation(originalScope, payload)) {
+      if (!window.confirm(accessScopeConfirmationText(originalScope, payload))) return { cancelled: true };
+      payload.confirm_scope_change = true;
+    }
     const response = await fetch(`${workerUrl}/account-admin/user-access`, {
       method: "POST",
       cache: "no-store",
@@ -1250,6 +1438,7 @@
     targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
     targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
     targets.userEditor.dataset.originalAccessActive = savedAccess.active ? "true" : "false";
+    targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(savedAccess));
     if (targets.accessExpiry) targets.accessExpiry.value = String(savedAccess.current_period_end || "").slice(0, 10);
     if (targets.accessRenew) targets.accessRenew.checked = false;
     const updated = data.user || null;
@@ -1259,6 +1448,20 @@
       accountAdminUsersByEmail.set(email, { ...existing, access: data.access });
     }
     return data;
+  }
+
+  async function loadAdminUserAccess(workerUrl, email) {
+    const response = await fetch(`${workerUrl}/account-admin/user-access?email=${encodeURIComponent(email)}`, {
+      method: "GET",
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.user) throw new Error(data.detail || "读取最新用户权限失败。");
+    if (data.access_options && typeof data.access_options === "object") {
+      accountAdminAccessOptions = data.access_options;
+    }
+    return data.user;
   }
 
   async function createAdminUser(workerUrl, targets) {
@@ -1726,6 +1929,169 @@
     `;
   }
 
+  const ANALYTICS_HISTORY_EXPORT_MAX_PAGES = 10000;
+  const ANALYTICS_HISTORY_EXPORT_MAX_ROWS = 1048575;
+  const ANALYTICS_HISTORY_EXPORT_COLUMNS = [
+    { header: "时间（ISO）", key: "ts", width: 25 },
+    { header: "北京时间日期", key: "date", width: 14 },
+    { header: "事件", key: "event_label", width: 16 },
+    { header: "事件代码", key: "type", width: 24 },
+    { header: "用户名", key: "username", width: 18 },
+    { header: "邮箱", key: "email", width: 30 },
+    { header: "账号角色", key: "role", width: 14 },
+    { header: "访客 ID", key: "visitor_id", width: 28 },
+    { header: "IP Hash", key: "ip_hash", width: 28 },
+    { header: "国家", key: "country", width: 10 },
+    { header: "节点", key: "colo", width: 10 },
+    { header: "页面", key: "page", width: 18 },
+    { header: "路径", key: "path", width: 36 },
+    { header: "来源", key: "source", width: 18 },
+    { header: "搜索词", key: "query", width: 36 },
+    { header: "机构", key: "institution", width: 24 },
+    { header: "行业", key: "industry", width: 24 },
+    { header: "开始日期", key: "start_date", width: 14 },
+    { header: "结束日期", key: "end_date", width: 14 },
+    { header: "范围", key: "scope", width: 16 },
+    { header: "可用状态", key: "availability", width: 16 },
+    { header: "页码范围", key: "page_ranges", width: 20 },
+    { header: "页码标签", key: "page_range_labels", width: 24 },
+    { header: "结果数", key: "result_count", width: 12 },
+    { header: "总数", key: "total_count", width: 12 },
+    { header: "缓存状态", key: "cache_status", width: 16 },
+    { header: "报告 ID", key: "report_id", width: 28 },
+    { header: "报告标题", key: "report_title", width: 48 },
+    { header: "对象", key: "target", width: 32 },
+    { header: "动作", key: "action", width: 18 },
+    { header: "状态", key: "status", width: 18 },
+    { header: "耗时（ms）", key: "duration_ms", width: 14 },
+    { header: "错误", key: "error", width: 36 },
+    { header: "来源页", key: "referrer", width: 42 },
+    { header: "User-Agent", key: "user_agent", width: 54 },
+    { header: "事件 ID", key: "id", width: 38 },
+  ];
+
+  function analyticsHistoryExportRow(event) {
+    const value = event && typeof event === "object" ? event : {};
+    const user = value.user && typeof value.user === "object" ? value.user : {};
+    return {
+      ts: value.ts || "",
+      date: value.date || "",
+      event_label: analyticsEventLabel(value.type),
+      type: value.type || "",
+      username: user.username || "",
+      email: user.email || "",
+      role: user.role || "",
+      visitor_id: value.visitor_id || "",
+      ip_hash: value.ip_hash || "",
+      country: value.country || "",
+      colo: value.colo || "",
+      page: value.page || "",
+      path: value.path || "",
+      source: value.source || "",
+      query: value.query || "",
+      institution: value.institution || "",
+      industry: value.industry || "",
+      start_date: value.start_date || "",
+      end_date: value.end_date || "",
+      scope: value.scope || "",
+      availability: value.availability || "",
+      page_ranges: value.page_ranges || "",
+      page_range_labels: value.page_range_labels || "",
+      result_count: value.result_count || 0,
+      total_count: value.total_count || 0,
+      cache_status: value.cache_status || "",
+      report_id: value.report_id || "",
+      report_title: value.report_title || "",
+      target: value.target || "",
+      action: value.action || "",
+      status: value.status || "",
+      duration_ms: value.duration_ms || 0,
+      error: value.error || "",
+      referrer: value.referrer || "",
+      user_agent: value.user_agent || "",
+      id: value.id || "",
+    };
+  }
+
+  function analyticsHistoryExportFilename() {
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, "0");
+    return `kcdesk-activity-history-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+  }
+
+  async function collectAnalyticsHistoryPages(fetchPage, options = {}) {
+    if (typeof fetchPage !== "function") throw new TypeError("fetchPage must be a function");
+    const requestedMaxPages = Number(options.maxPages);
+    const requestedMaxRows = Number(options.maxRows);
+    const maxPages = Number.isFinite(requestedMaxPages) && requestedMaxPages > 0
+      ? Math.floor(requestedMaxPages)
+      : ANALYTICS_HISTORY_EXPORT_MAX_PAGES;
+    const maxRows = Number.isFinite(requestedMaxRows) && requestedMaxRows > 0
+      ? Math.floor(requestedMaxRows)
+      : ANALYTICS_HISTORY_EXPORT_MAX_ROWS;
+    const onProgress = typeof options.onProgress === "function" ? options.onProgress : () => {};
+    const events = [];
+    const seenEventIds = new Set();
+    const requestedCursors = new Set();
+    let cursor = "";
+    let pageCount = 0;
+    let scannedCount = 0;
+    let duplicateCount = 0;
+
+    while (true) {
+      if (pageCount >= maxPages) {
+        throw new Error(`导出已读取 ${maxPages} 批仍未结束，请缩小日期范围后重试。`);
+      }
+      if (requestedCursors.has(cursor)) {
+        throw new Error("历史分页游标发生循环，导出已停止以避免生成不完整文件。");
+      }
+      requestedCursors.add(cursor);
+
+      const data = await fetchPage(cursor, pageCount + 1);
+      if (!data || typeof data !== "object" || !Array.isArray(data.events)) {
+        throw new Error("历史接口返回的数据格式不完整。");
+      }
+      pageCount += 1;
+      const pageScannedCount = Number(data.scanned_count);
+      if (Number.isFinite(pageScannedCount) && pageScannedCount > 0) scannedCount += pageScannedCount;
+
+      for (const event of data.events) {
+        const eventId = String(event && event.id || "").trim();
+        if (eventId && seenEventIds.has(eventId)) {
+          duplicateCount += 1;
+          continue;
+        }
+        if (events.length >= maxRows) {
+          throw new Error(`匹配记录超过 Excel 的 ${maxRows} 条上限，请缩小日期范围后重试。`);
+        }
+        if (eventId) seenEventIds.add(eventId);
+        events.push(event);
+      }
+
+      const nextCursor = String(data.next_cursor || "");
+      if (data.has_more === true && !nextCursor) {
+        throw new Error("历史接口提示还有记录，但没有返回下一页游标。");
+      }
+      if (data.has_more === false && nextCursor) {
+        throw new Error("历史接口分页状态不一致，导出已停止。");
+      }
+      onProgress({
+        pageCount,
+        eventCount: events.length,
+        scannedCount,
+        duplicateCount,
+        hasMore: Boolean(nextCursor),
+      });
+      if (!nextCursor) break;
+      if (requestedCursors.has(nextCursor)) {
+        throw new Error("历史分页游标发生循环，导出已停止以避免生成不完整文件。");
+      }
+      cursor = nextCursor;
+    }
+
+    return { events, pageCount, scannedCount, duplicateCount };
+  }
+
   async function initAnalyticsHistory() {
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
@@ -1739,6 +2105,7 @@
     const pageSize = document.getElementById("analyticsHistoryPageSize");
     const reset = document.getElementById("analyticsHistoryReset");
     const refresh = document.getElementById("analyticsHistoryRefresh");
+    const exportAll = document.getElementById("analyticsHistoryExportAll");
     const status = document.getElementById("analyticsHistoryStatus");
     const meta = document.getElementById("analyticsHistoryMeta");
     const results = document.getElementById("analyticsHistoryResults");
@@ -1750,6 +2117,8 @@
     let cursorStack = [];
     let nextCursor = "";
     let pageNumber = 1;
+    let exportInProgress = false;
+    let pageLoadInProgress = false;
 
     function setStatus(message, kind = "") {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -1763,15 +2132,20 @@
       pageNumber = 1;
     }
 
-    function historySearchParams() {
+    function historySearchParams(options = {}) {
       const params = new URLSearchParams();
       if (type.value) params.set("type", type.value);
       if (query.value.trim()) params.set("q", query.value.trim());
       if (startDate.value) params.set("start_date", startDate.value);
       if (endDate.value) params.set("end_date", endDate.value);
-      params.set("page_size", pageSize.value || "100");
-      if (cursor) params.set("cursor", cursor);
+      params.set("page_size", String(options.pageSize || pageSize.value || "100"));
+      const requestedCursor = options.cursor === undefined ? cursor : String(options.cursor || "");
+      if (requestedCursor) params.set("cursor", requestedCursor);
       return params;
+    }
+
+    function analyticsHistoryExportParams() {
+      return new URLSearchParams({ page_size: "200" });
     }
 
     function renderHistoryMeta(data) {
@@ -1794,8 +2168,11 @@
     }
 
     async function loadPage(options = {}) {
+      if (exportInProgress) return;
       if (options.reset) resetPagination();
+      pageLoadInProgress = true;
       refresh.disabled = true;
+      if (exportAll) exportAll.disabled = true;
       previous.disabled = true;
       next.disabled = true;
       setStatus(`正在读取第 ${pageNumber} 页…`);
@@ -1830,7 +2207,51 @@
         setStatus(error.message || "历史记录读取失败。", "error");
         previous.disabled = cursorStack.length === 0;
       } finally {
+        pageLoadInProgress = false;
         refresh.disabled = false;
+        if (exportAll) exportAll.disabled = !isSuperSession();
+      }
+    }
+
+    async function exportAllHistory() {
+      if (!exportAll || exportInProgress || pageLoadInProgress) return;
+      exportInProgress = true;
+      exportAll.disabled = true;
+      const exportParams = analyticsHistoryExportParams();
+      setStatus("正在准备导出全部历史（不受当前页面筛选影响）…");
+      try {
+        const { buildXlsxWorkbook, downloadXlsx } = await import(versionedSiteAssetUrl("assets/xlsx-export.js"));
+        const collected = await collectAnalyticsHistoryPages(async (batchCursor) => {
+          const params = new URLSearchParams(exportParams);
+          if (batchCursor) params.set("cursor", batchCursor);
+          const response = await fetch(`${workerUrl}/account-admin/analytics-events?${params}`, {
+            cache: "no-store",
+            headers: authHeaders(),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.detail || `历史记录导出失败 (${response.status})。`);
+          return data;
+        }, {
+          onProgress(progress) {
+            setStatus(`正在导出第 ${progress.pageCount} 批：已收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档…`);
+          },
+        });
+        const rows = collected.events.map(analyticsHistoryExportRow);
+        const blob = buildXlsxWorkbook({
+          sheetName: "用户行为历史",
+          columns: ANALYTICS_HISTORY_EXPORT_COLUMNS,
+          rows,
+        });
+        downloadXlsx(blob, analyticsHistoryExportFilename());
+        const duplicateNote = collected.duplicateCount
+          ? `；已去除 ${collected.duplicateCount} 条重复事件`
+          : "";
+        setStatus(`Excel 已导出：全部历史共 ${rows.length} 条事件，读取 ${collected.pageCount} 批${duplicateNote}。`, "ok");
+      } catch (error) {
+        setStatus(error.message || "全部历史导出失败。", "error");
+      } finally {
+        exportInProgress = false;
+        exportAll.disabled = !isSuperSession();
       }
     }
 
@@ -1843,6 +2264,7 @@
       loadPage({ reset: true });
     });
     refresh.addEventListener("click", () => loadPage());
+    if (exportAll) exportAll.addEventListener("click", exportAllHistory);
     previous.addEventListener("click", () => {
       if (!cursorStack.length) return;
       cursor = cursorStack.pop() || "";
@@ -1858,6 +2280,7 @@
     });
 
     if (!isSuperSession()) {
+      if (exportAll) exportAll.disabled = true;
       results.innerHTML = '<div class="empty-state">请先使用管理员账号登录。</div>';
       setStatus("当前账号没有查看用户行为历史的权限。", "error");
       return;
@@ -2180,6 +2603,23 @@
     }
   }
 
+  function shanghaiDateInputValue(value = new Date()) {
+    const date = value instanceof Date ? value : new Date(value);
+    if (!Number.isFinite(date.getTime())) return "";
+    try {
+      const parts = new Intl.DateTimeFormat("en", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).formatToParts(date);
+      const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+      return `${values.year}-${values.month}-${values.day}`;
+    } catch (_error) {
+      return date.toISOString().slice(0, 10);
+    }
+  }
+
   function mergeAccountAdminSummaryWithLast(data) {
     if (!accountAdminLastSummary) return data;
     const merged = { ...data, module_status: { ...(data.module_status || {}) } };
@@ -2324,10 +2764,16 @@
         accountAdminRefreshTimer = setTimeout(() => {
           accountAdminRefreshTimer = null;
           if (document.getElementById("accountAdminModal")) {
-            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true });
+            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).then(() => {
+              if (targets.exportUsers && document.getElementById("accountAdminModal")) {
+                return loadFreshAdminUsers(workerUrl, targets);
+              }
+              return null;
+            }).catch(() => null);
           }
-        }, 12000);
+          }, 12000);
       }
+      return data;
     } catch (error) {
       if (error && (error.status === 401 || error.status === 403)) {
         targets.status.textContent = "登录状态已失效，请重新登录后打开后台。";
@@ -2344,9 +2790,67 @@
           target.innerHTML = `<div class="empty-state">${message}</div>`;
         });
       }
+      if (options.throwOnError) throw error;
+      return null;
     } finally {
       targets.refresh.disabled = false;
     }
+  }
+
+  function adminHotReportRow(item) {
+    const date = String(item && item.date || "");
+    const institution = String(item && item.institution || "");
+    const size = formatSize(item && item.size_bytes);
+    const meta = [institution, date, size].filter(Boolean).join(" · ");
+    const url = externalPageUrl({ ...item, source: HOT_REPORT_SOURCE }, "");
+    return `
+      <a class="account-admin-hot-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+        <span>
+          <strong>${escapeHtml(item && item.title || "近期热门报告")}</strong>
+          ${item && item.title_cn ? `<small>${escapeHtml(item.title_cn)}</small>` : ""}
+        </span>
+        <span>${escapeHtml(meta || "已上传")}</span>
+      </a>
+    `;
+  }
+
+  async function loadAdminHotReports(workerUrl, targets) {
+    if (!targets.hotReportSection || targets.hotReportSection.hidden || !targets.hotReportList) return [];
+    targets.hotReportStatus.className = "status-line";
+    targets.hotReportStatus.textContent = "正在读取已上传报告…";
+    try {
+      const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
+      const items = Array.isArray(data.items) ? data.items : [];
+      targets.hotReportList.innerHTML = items.length
+        ? items.map(adminHotReportRow).join("")
+        : '<div class="empty-state">还没有上传近期热门报告。</div>';
+      targets.hotReportCount.textContent = `${items.length} 条`;
+      targets.hotReportStatus.textContent = "";
+      return items;
+    } catch (error) {
+      targets.hotReportList.innerHTML = '<div class="empty-state">暂时无法读取已上传报告。</div>';
+      targets.hotReportCount.textContent = "";
+      targets.hotReportStatus.className = "status-line error";
+      targets.hotReportStatus.textContent = error.message || "近期热门报告读取失败。";
+      return [];
+    }
+  }
+
+  async function uploadAdminHotReport(workerUrl, targets) {
+    const file = targets.hotReportPdf && targets.hotReportPdf.files && targets.hotReportPdf.files[0];
+    if (!file) throw new Error("请选择 PDF 文件。");
+    if (file.size > 95 * 1024 * 1024) throw new Error("PDF 必须小于 95 MB。");
+    const formData = new FormData(targets.hotReportForm);
+    const response = await fetch(`${workerUrl}/account-admin/hot-report`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: formData,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.item) throw new Error(data.detail || "热门报告上传失败。");
+    return data.item;
   }
 
   function adminExportFilename() {
@@ -2355,17 +2859,51 @@
     return `kcdesk-users-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
   }
 
+  async function fetchFreshAdminUsers(workerUrl) {
+    const response = await fetch(`${workerUrl}/account-admin/users-export`, {
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || `用户读取失败 (${response.status})。`);
+    if (!Array.isArray(data.users)) throw new Error("用户接口返回的数据格式不完整。");
+    return data;
+  }
+
+  async function loadFreshAdminUsers(workerUrl, targets) {
+    const data = await fetchFreshAdminUsers(workerUrl);
+    accountAdminUsersByEmail = new Map(data.users.map((user) => [String(user.email || "").toLowerCase(), user]));
+    if (accountAdminLastSummary) accountAdminLastSummary = { ...accountAdminLastSummary, users: data.users };
+    if (targets.usersNotice) {
+      targets.usersNotice.hidden = true;
+      targets.usersNotice.textContent = "";
+    }
+    renderAdminUserTable(targets);
+    return data;
+  }
+
+  function renderAdminUsersVerificationState(targets, message, kind = "") {
+    if (targets.userCount) targets.userCount.textContent = kind === "error" ? "未核验" : "核验中…";
+    if (targets.users) {
+      targets.users.innerHTML = `<tr><td colspan="11"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
+    }
+    if (targets.usersNotice) {
+      targets.usersNotice.hidden = false;
+      targets.usersNotice.className = kind ? `account-admin-module-notice ${kind}` : "account-admin-module-notice";
+      targets.usersNotice.textContent = message;
+    }
+  }
+
   async function exportAdminUsersToExcel(workerUrl, targets) {
     if (!targets.exportUsers) return;
     targets.exportUsers.disabled = true;
     targets.status.className = "status-line";
-    targets.status.textContent = "正在获取最新用户状态并生成 Excel…";
+    targets.status.textContent = "正在现场读取全部用户最新状态并生成 Excel…";
     try {
-      const data = await loadAccountAdminSummary(workerUrl, targets, { throwOnError: true });
-      if (!data || data.can_view_users === false) throw new Error("当前账号不能导出用户信息。");
-      const users = Array.isArray(data.users) ? data.users : [];
+      const data = await fetchFreshAdminUsers(workerUrl);
+      const users = data.users;
       const rows = users.map(adminUserViewModel);
-      const { buildXlsxWorkbook, downloadXlsx } = await import("/assets/xlsx-export.js");
+      const { buildXlsxWorkbook, downloadXlsx } = await import(versionedSiteAssetUrl("assets/xlsx-export.js"));
       const blob = buildXlsxWorkbook({
         sheetName: "用户状态",
         columns: [
@@ -2412,6 +2950,7 @@
       showWechat: !isOperatorOnly,
       showUsers: !isOperatorOnly,
       showAnalytics: !isOperatorOnly,
+      showHotReports: !isOperatorOnly,
     }));
 
     const modal = document.getElementById("accountAdminModal");
@@ -2426,6 +2965,14 @@
     const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
     const wechatNotice = document.getElementById("accountAdminWechatNotice");
     const wechatSection = document.getElementById("accountAdminWechatSection");
+    const hotReportSection = document.getElementById("accountAdminHotReportsSection");
+    const hotReportCount = document.getElementById("accountAdminHotReportCount");
+    const hotReportForm = document.getElementById("accountAdminHotReportForm");
+    const hotReportTitle = document.getElementById("accountAdminHotReportTitle");
+    const hotReportDate = document.getElementById("accountAdminHotReportDate");
+    const hotReportPdf = document.getElementById("accountAdminHotReportPdf");
+    const hotReportStatus = document.getElementById("accountAdminHotReportStatus");
+    const hotReportList = document.getElementById("accountAdminHotReportList");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
@@ -2444,6 +2991,8 @@
     const accessDuration = document.getElementById("accountAdminAccessDuration");
     const accessExpiry = document.getElementById("accountAdminAccessExpiry");
     const accessInstitutions = document.getElementById("accountAdminAccessInstitutions");
+    const accessInstitutionSearch = document.getElementById("accountAdminAccessInstitutionSearch");
+    const accessInstitutionCount = document.getElementById("accountAdminAccessInstitutionCount");
     const accessIndustries = document.getElementById("accountAdminAccessIndustries");
     const accessPageRanges = document.getElementById("accountAdminAccessPageRanges");
     const accessNote = document.getElementById("accountAdminAccessNote");
@@ -2466,6 +3015,14 @@
       wechatSchedule,
       wechatNotice,
       wechatSection,
+      hotReportSection,
+      hotReportCount,
+      hotReportForm,
+      hotReportTitle,
+      hotReportDate,
+      hotReportPdf,
+      hotReportStatus,
+      hotReportList,
       analyticsCount,
       analytics,
       analyticsNotice,
@@ -2488,6 +3045,8 @@
       accessDuration,
       accessExpiry,
       accessInstitutions,
+      accessInstitutionSearch,
+      accessInstitutionCount,
       accessIndustries,
       accessPageRanges,
       accessNote,
@@ -2509,8 +3068,66 @@
     modal.addEventListener("click", (event) => {
       if (event.target === modal) finish();
     });
-    refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }));
+    refresh.addEventListener("click", async () => {
+      await Promise.allSettled([
+        loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
+        loadAdminHotReports(workerUrl, targets),
+      ]);
+      if (exportUsers) {
+        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
+        targets.status.className = "status-line";
+        targets.status.textContent = "正在同步读取最新用户状态…";
+        try {
+          const fresh = await loadFreshAdminUsers(workerUrl, targets);
+          targets.status.className = "status-line ok";
+          targets.status.textContent = `用户状态已同步：${fresh.users.length} 个用户。`;
+        } catch (error) {
+          renderAdminUsersVerificationState(
+            targets,
+            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            "error",
+          );
+          targets.status.className = "status-line error";
+          targets.status.textContent = error.message || "最新用户状态读取失败。";
+        }
+      }
+    });
     if (exportUsers) exportUsers.addEventListener("click", () => exportAdminUsersToExcel(workerUrl, targets));
+    if (hotReportDate) {
+      hotReportDate.value = shanghaiDateInputValue();
+    }
+    if (hotReportPdf && hotReportTitle) {
+      hotReportPdf.addEventListener("change", () => {
+        const file = hotReportPdf.files && hotReportPdf.files[0];
+        if (file && !hotReportTitle.value.trim()) {
+          hotReportTitle.value = file.name.replace(/\.pdf$/i, "").replace(/[_-]+/g, " ").trim();
+        }
+      });
+    }
+    if (hotReportForm) {
+      hotReportForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = hotReportForm.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        hotReportStatus.className = "status-line";
+        hotReportStatus.textContent = "正在上传 PDF，请保持页面开启…";
+        try {
+          const item = await uploadAdminHotReport(workerUrl, targets);
+          hotReportStatus.className = "status-line ok";
+          hotReportStatus.textContent = `已上传：${item.title}`;
+          hotReportForm.reset();
+          if (hotReportDate) hotReportDate.value = String(item.date || "");
+          await loadAdminHotReports(workerUrl, targets);
+          hotReportStatus.className = "status-line ok";
+          hotReportStatus.textContent = `已上传并读回确认：${item.title}`;
+        } catch (error) {
+          hotReportStatus.className = "status-line error";
+          hotReportStatus.textContent = error.message || "热门报告上传失败。";
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
     if (accessMode) accessMode.addEventListener("change", () => {
       if (accessMode.value !== "none" && userEditor && userEditor.dataset.originalAccessActive !== "true") {
         prepareExpiredAccessRenewal(targets);
@@ -2523,6 +3140,21 @@
       }
       updateUserAccessEditorMode(targets);
     });
+    if (accessInstitutionSearch) {
+      accessInstitutionSearch.addEventListener("input", () => {
+        filterAccessCheckboxOptions(accessInstitutions, accessInstitutionSearch.value);
+      });
+    }
+    if (accessInstitutions) {
+      accessInstitutions.addEventListener("change", (event) => {
+        if (selectedAccessCheckboxValues(accessInstitutions).length > 60) {
+          if (event.target && event.target.matches("input[type='checkbox']")) event.target.checked = false;
+          status.className = "status-line error";
+          status.textContent = "机构最多选择 60 项。";
+        }
+        updateAccessCheckboxCount(accessInstitutions, accessInstitutionCount);
+      });
+    }
     if (newUser && userCreator) {
       newUser.addEventListener("click", () => {
         userCreator.hidden = false;
@@ -2592,13 +3224,20 @@
         }
         const button = event.target.closest(".account-admin-edit-user");
         if (!button) return;
-        const user = accountAdminUsersByEmail.get(String(button.dataset.email || ""));
-        if (user) {
+        const email = String(button.dataset.email || "");
+        button.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在读取该用户的最新权限…";
+        try {
+          const user = await loadAdminUserAccess(workerUrl, email);
+          accountAdminUsersByEmail.set(String(user.email || email), user);
           if (userCreator) userCreator.hidden = true;
           fillUserAccessEditor(user, targets);
-        } else {
+        } catch (error) {
           status.className = "status-line error";
-          status.textContent = "没有找到这个用户，请刷新后台后再试。";
+          status.textContent = error.message || "读取最新用户权限失败，请刷新后台后再试。";
+        } finally {
+          button.disabled = false;
         }
       });
     }
@@ -2610,7 +3249,11 @@
         status.className = "status-line";
         status.textContent = "正在保存用户权限…";
         try {
-          await saveUserAccess(workerUrl, targets);
+          const result = await saveUserAccess(workerUrl, targets);
+          if (result && result.cancelled) {
+            status.textContent = "已取消保存，用户权限没有变化。";
+            return;
+          }
           renderAdminUserTable(targets);
           status.textContent = "用户权限已保存，并已读回确认。";
           status.classList.add("ok");
@@ -2803,7 +3446,23 @@
       }
     });
 
-    loadAccountAdminSummary(workerUrl, targets);
+    loadAccountAdminSummary(workerUrl, targets).then(() => {
+      if (exportUsers && document.getElementById("accountAdminModal")) {
+        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
+        return loadFreshAdminUsers(workerUrl, targets).catch((error) => {
+          renderAdminUsersVerificationState(
+            targets,
+            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            "error",
+          );
+          targets.status.className = "status-line error";
+          targets.status.textContent = error.message || "最新用户状态读取失败，请点击刷新重试。";
+          return null;
+        });
+      }
+      return null;
+    }).catch(() => null);
+    loadAdminHotReports(workerUrl, targets);
   }
 
   function adminModalMarkup() {
@@ -3082,6 +3741,46 @@
     return item.available !== false;
   }
 
+  function mergeCatalogPdfOverrides(items, overrides) {
+    const merged = (Array.isArray(items) ? items : []).map((item) => ({ ...item }));
+    const byId = new Map(merged.map((item) => [String(item.id || ""), item]));
+    for (const override of Array.isArray(overrides) ? overrides : []) {
+      const id = String(override && override.id || "").trim();
+      const item = byId.get(id);
+      if (!item || item.available !== false || !override || override.available !== true) continue;
+      const sizeBytes = Math.max(0, Number(override.size_bytes || 0) || 0);
+      if (!sizeBytes) continue;
+      Object.assign(item, {
+        available: true,
+        pdf_archived: false,
+        archive_reason: "",
+        manual_pdf: true,
+        size_bytes: sizeBytes,
+        pdf_uploaded_at: String(override.uploaded_at || ""),
+      });
+    }
+    return merged;
+  }
+
+  async function loadCatalogPdfOverrides(workerUrl) {
+    if (!workerUrl) return [];
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 6000);
+    try {
+      const response = await fetch(`${workerUrl}/catalog-pdf-overrides`, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "PDF override status is unavailable.");
+      return Array.isArray(data.items) ? data.items : [];
+    } catch (_error) {
+      return [];
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  }
+
   function metadataText(item) {
     return normalize([
       item.title,
@@ -3234,6 +3933,9 @@
         category: item.category || "",
         author: item.author || "",
         rating: item.rating || "",
+        description: item.description || "",
+        filename: item.filename || "",
+        required_plan: item.required_plan || "",
       },
     };
     const entries = Object.entries(cache)
@@ -3314,6 +4016,28 @@
     `;
   }
 
+  function hotReportRow(item) {
+    const docItem = { ...item, source: HOT_REPORT_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
+    const meta = [
+      item.institution,
+      item.date,
+      formatSize(item.size_bytes),
+      item.required_plan ? `${item.required_plan} 及以上` : "NOVA-Q 及以上",
+    ].map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    return `
+      <a class="related-row hot-report-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title || "近期热门报告")}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
   function reportAMeta(item) {
     return [
       item.institution,
@@ -3387,6 +4111,8 @@
       loadJson("data/catalog.json"),
       loadOptionalJson("data/config.json", {}),
     ]);
+    const workerUrl = workerBaseUrl(config);
+    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
     const input = document.getElementById("searchInput");
     const results = document.getElementById("results");
     const count = document.getElementById("resultCount");
@@ -3404,7 +4130,7 @@
     const nextPage = document.getElementById("nextPage");
     const pageInfo = document.getElementById("pageInfo");
     const pageSize = document.getElementById("pageSize");
-    const items = Array.isArray(catalog.items) ? catalog.items : [];
+    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
     const catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
     const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
     const searchTextById = new Map();
@@ -3413,11 +4139,113 @@
     let catalogAnalyticsTimer = 0;
     let lastCatalogAnalyticsKey = "";
 
-    const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
     trackEvent(workerUrl, "page_view", { page: "home", report_count: items.length });
+
+    const hotReportsSection = document.getElementById("hotReportsSection");
+    const hotReportsResults = document.getElementById("hotReportsResults");
+    const hotReportsCount = document.getElementById("hotReportsCount");
+    const hotReportsStatus = document.getElementById("hotReportsStatus");
+    const searchRecommendationsSection = document.getElementById("searchRecommendationsSection");
+    const searchRecommendationsResults = document.getElementById("searchRecommendationsResults");
+    const searchRecommendationsCount = document.getElementById("searchRecommendationsCount");
+    const hotReportItems = new Map();
+    const searchResultCounts = {
+      catalog: 0,
+      hot: workerUrl ? null : 0,
+      thinktank: 0,
+      external: 0,
+      reportA: 0,
+      authority: 0,
+    };
+    let hotReportsLoaded = !workerUrl;
+    let hotReportsFailed = false;
+    const fallbackRecommendations = items
+      .filter((item) => isPdfAvailable(item))
+      .slice()
+      .sort((left, right) => dateSortValue(right) - dateSortValue(left))
+      .slice(0, 6);
+
+    function setHotReportsStatus(text, kind) {
+      if (!hotReportsStatus) return;
+      hotReportsStatus.className = kind ? `status-line ${kind}` : "status-line";
+      hotReportsStatus.textContent = text || "";
+    }
+
+    function renderSearchRecommendations() {
+      if (!searchRecommendationsSection || !searchRecommendationsResults) return;
+      const query = String(input.value || "").trim();
+      const counts = Object.values(searchResultCounts);
+      const ready = counts.every((value) => Number.isFinite(value));
+      const noMatches = ready && counts.every((value) => value === 0);
+      if (!query || !noMatches || !fallbackRecommendations.length) {
+        searchRecommendationsSection.hidden = true;
+        searchRecommendationsResults.innerHTML = "";
+        if (searchRecommendationsCount) searchRecommendationsCount.textContent = "";
+        return;
+      }
+      searchRecommendationsSection.hidden = false;
+      if (searchRecommendationsCount) searchRecommendationsCount.textContent = `${fallbackRecommendations.length} 条`;
+      searchRecommendationsResults.innerHTML = fallbackRecommendations.map(relatedRow).join("");
+    }
+
+    function renderHotReports(query = "") {
+      if (!hotReportsSection || !hotReportsResults) return;
+      if (!hotReportsLoaded) {
+        hotReportsSection.hidden = false;
+        hotReportsResults.innerHTML = `
+          <div class="loading-state">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span>正在读取近期热门报告…</span>
+          </div>
+        `;
+        searchResultCounts.hot = null;
+        renderSearchRecommendations();
+        return;
+      }
+      const normalizedQuery = normalize(query);
+      const tokens = queryTokens(normalizedQuery);
+      const allItems = [...hotReportItems.values()];
+      const matches = normalizedQuery
+        ? allItems.filter((item) => {
+          const text = normalize([item.title, item.title_cn, item.institution, item.description, item.date].filter(Boolean).join(" "));
+          return tokens.every((token) => text.includes(token));
+        })
+        : allItems;
+      searchResultCounts.hot = hotReportsFailed ? "error" : matches.length;
+      hotReportsSection.hidden = !allItems.length && !normalizedQuery;
+      if (hotReportsCount) hotReportsCount.textContent = matches.length ? `${matches.length} 条` : "";
+      hotReportsResults.innerHTML = matches.length
+        ? matches.map(hotReportRow).join("")
+        : '<div class="empty-state">暂无匹配结果。</div>';
+      renderSearchRecommendations();
+    }
+
+    async function loadHotReports() {
+      if (!workerUrl || !hotReportsSection || !hotReportsResults) return;
+      hotReportsLoaded = false;
+      hotReportsFailed = false;
+      renderHotReports(input.value.trim());
+      setHotReportsStatus("");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
+        hotReportItems.clear();
+        for (const item of Array.isArray(data.items) ? data.items : []) {
+          if (item && item.id) hotReportItems.set(String(item.id), { ...item, source: HOT_REPORT_SOURCE });
+        }
+      } catch (error) {
+        hotReportItems.clear();
+        hotReportsFailed = true;
+        setHotReportsStatus(error.message || "近期热门报告暂时无法读取。", "error");
+      } finally {
+        hotReportsLoaded = true;
+        renderHotReports(input.value.trim());
+      }
+    }
 
     const bankOptions = new Map();
     const industryOptions = new Map();
@@ -3517,6 +4345,8 @@
         : "Page 0 / 0";
       prevPage.disabled = currentPage <= 1 || !scoped.length;
       nextPage.disabled = currentPage >= pageCount || !scoped.length;
+      searchResultCounts.catalog = scoped.length;
+      renderSearchRecommendations();
 
       if (!scoped.length) {
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
@@ -3579,7 +4409,12 @@
       render({ resetPage: true });
     }
 
-    input.addEventListener("input", () => render({ resetPage: true }));
+    input.addEventListener("input", () => {
+      prepareRemoteSearch(input.value.trim());
+      render({ resetPage: true });
+      renderHotReports(input.value.trim());
+      scheduleExternalSearch();
+    });
     [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter, ...pageRangeInputs].forEach((control) => {
       control.addEventListener("change", () => render({ resetPage: true }));
     });
@@ -3648,6 +4483,8 @@
       thinkTankItems.clear();
       if (thinkTankCount) thinkTankCount.textContent = "";
       setThinkTankStatus("");
+      searchResultCounts.thinktank = 0;
+      renderSearchRecommendations();
     }
 
     function setExternalStatus(text, kind) {
@@ -3669,6 +4506,8 @@
       reportAItems.clear();
       if (reportACount) reportACount.textContent = "";
       setReportAStatus("");
+      searchResultCounts.reportA = 0;
+      renderSearchRecommendations();
     }
 
     function setAuthorityStatus(text, kind) {
@@ -3685,6 +4524,15 @@
       authorityItems.clear();
       if (authorityCount) authorityCount.textContent = "";
       setAuthorityStatus("");
+      searchResultCounts.authority = 0;
+      renderSearchRecommendations();
+    }
+
+    function prepareRemoteSearch(query) {
+      for (const source of ["thinktank", "external", "reportA", "authority"]) {
+        searchResultCounts[source] = query && externalUrl ? null : 0;
+      }
+      renderSearchRecommendations();
     }
 
     async function runThinkTankSearch(query) {
@@ -3712,6 +4560,7 @@
         const data = await response.json();
         if (token !== thinkTankToken) return;
         const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.thinktank = items.length;
         thinkTankItems.clear();
         items.forEach((item) => thinkTankItems.set(String(item.id), item));
         if (thinkTankCount) thinkTankCount.textContent = items.length ? `${items.length} 条` : "";
@@ -3725,11 +4574,14 @@
           total_count: data.total || 0,
           cache_status: data.cache_status || "",
         });
+        renderSearchRecommendations();
       } catch (error) {
         if (token !== thinkTankToken) return;
         if (thinkTankCount) thinkTankCount.textContent = "";
         thinkTankResults.innerHTML = "";
         setThinkTankStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.thinktank = "error";
+        renderSearchRecommendations();
       }
     }
 
@@ -3741,6 +4593,8 @@
         externalItems.clear();
         if (externalCount) externalCount.textContent = "";
         setExternalStatus("");
+        searchResultCounts.external = 0;
+        renderSearchRecommendations();
         hideAuthorityResults();
         return;
       }
@@ -3763,6 +4617,7 @@
         const data = await response.json();
         if (token !== externalToken) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.external = items.length;
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
@@ -3776,11 +4631,14 @@
           total_count: data.total_count || data.total_page || 0,
           cache_status: data.cache_status || "",
         });
+        renderSearchRecommendations();
       } catch (error) {
         if (token !== externalToken) return;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
         setExternalStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.external = "error";
+        renderSearchRecommendations();
       }
     }
 
@@ -3809,6 +4667,7 @@
         const data = await response.json();
         if (token !== reportAToken) return;
         const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.reportA = items.length;
         reportAItems.clear();
         items.forEach((item) => reportAItems.set(String(item.id), item));
         if (reportACount) reportACount.textContent = items.length ? `${items.length} 条` : "";
@@ -3822,11 +4681,14 @@
           total_count: data.total || 0,
           cache_status: data.cache_status || "",
         });
+        renderSearchRecommendations();
       } catch (error) {
         if (token !== reportAToken) return;
         if (reportACount) reportACount.textContent = "";
         reportAResults.innerHTML = "";
         setReportAStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.reportA = "error";
+        renderSearchRecommendations();
       }
     }
 
@@ -3856,6 +4718,7 @@
         const data = await response.json();
         if (token !== authorityToken) return;
         const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.authority = items.length;
         authorityItems.clear();
         items.forEach((item) => authorityItems.set(String(item.id), item));
         if (authorityCount) authorityCount.textContent = items.length ? `${items.length} 条` : "";
@@ -3869,11 +4732,14 @@
           total_count: data.total || 0,
           cache_status: data.cache_status || "",
         });
+        renderSearchRecommendations();
       } catch (error) {
         if (token !== authorityToken) return;
         if (authorityCount) authorityCount.textContent = "";
         authorityResults.innerHTML = "";
         setAuthorityStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.authority = "error";
+        renderSearchRecommendations();
       }
     }
 
@@ -3881,19 +4747,22 @@
       window.clearTimeout(externalTimer);
       const query = input.value.trim();
       externalTimer = window.setTimeout(() => {
-        runThinkTankSearch(query);
-        runExternalSearch(query);
-        runReportASearch(query);
-        runAuthoritySearch(query);
+        Promise.allSettled([
+          runThinkTankSearch(query),
+          runExternalSearch(query),
+          runReportASearch(query),
+          runAuthoritySearch(query),
+        ]).then(renderSearchRecommendations);
       }, 400);
     }
 
-    input.addEventListener("input", scheduleExternalSearch);
     clearFilters.addEventListener("click", () => {
+      prepareRemoteSearch("");
       hideThinkTankResults();
       runExternalSearch("");
       hideReportAResults();
       hideAuthorityResults();
+      renderHotReports("");
     });
     if (thinkTankResults) {
       thinkTankResults.addEventListener("click", (event) => {
@@ -3953,10 +4822,30 @@
         if (item) openInNewTab(externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, ""));
       });
     }
+    if (hotReportsResults) {
+      hotReportsResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".hot-report-row");
+        if (!row) return;
+        const item = hotReportItems.get(String(row.dataset.id || ""));
+        if (item) {
+          rememberDocItem({ ...item, source: HOT_REPORT_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, HOT_REPORT_SOURCE));
+        }
+      });
+    }
+    if (searchRecommendationsResults) {
+      searchRecommendationsResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".report-link");
+        if (!row) return;
+        const item = catalogById.get(String(row.dataset.id || ""));
+        trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "recommendation"));
+      });
+    }
 
     const initialQuery = new URLSearchParams(window.location.search).get("q");
     if (initialQuery && input) {
       input.value = initialQuery.slice(0, 200);
+      prepareRemoteSearch(input.value.trim());
       scheduleExternalSearch();
     }
 
@@ -4026,6 +4915,8 @@
 
     updateMeta();
     render();
+    renderHotReports(input.value.trim());
+    loadHotReports();
   }
 
   function filenameFromDisposition(disposition, fallback) {
@@ -4179,6 +5070,198 @@
       .slice(0, limit);
   }
 
+  function hotReportCommentsMarkup() {
+    return `
+      <section class="hot-comments-section" id="hotReportComments" aria-labelledby="hotReportCommentsTitle">
+        <div class="related-heading hot-comments-heading">
+          <h3 id="hotReportCommentsTitle">评论</h3>
+          <span id="hotReportCommentCount"></span>
+        </div>
+        <div id="hotReportCommentList" class="hot-comment-list"></div>
+        <div id="hotReportCommentLogin" class="hot-comment-login" hidden>
+          <span>注册或登录后即可评论。</span>
+          <button class="secondary-button" id="hotReportCommentLoginButton" type="button">注册 / 登录</button>
+        </div>
+        <form id="hotReportCommentForm" class="hot-comment-form" hidden>
+          <div id="hotReportCommentAdminAlias" class="hot-comment-admin-alias" hidden>
+            <label>
+              <span>管理员评论昵称</span>
+              <input id="hotReportCommentAlias" type="text" maxlength="48" autocomplete="off" placeholder="随机用户名或自定义昵称">
+            </label>
+            <button class="secondary-button" id="hotReportRandomAlias" type="button">生成随机用户名</button>
+          </div>
+          <textarea id="hotReportCommentBody" rows="4" maxlength="1200" placeholder="写下你的评论…" required></textarea>
+          <div class="hot-comment-form-actions">
+            <span>最多 1200 字</span>
+            <button class="primary" type="submit">发布评论</button>
+          </div>
+        </form>
+        <div id="hotReportCommentStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function randomHotCommentAlias() {
+    const prefixes = ["山岚", "星河", "远帆", "青禾", "云杉", "海盐", "南风", "北辰", "纸鸢", "松果"];
+    const suffixes = ["观察员", "研究者", "读报人", "分析室", "笔记本", "望远镜", "资料员", "思考者"];
+    return `${prefixes[Math.floor(Math.random() * prefixes.length)]}${suffixes[Math.floor(Math.random() * suffixes.length)]}${Math.floor(10 + Math.random() * 90)}`;
+  }
+
+  function hotCommentTime(value) {
+    const timestamp = Date.parse(value || "");
+    if (!Number.isFinite(timestamp)) return "";
+    return new Intl.DateTimeFormat("zh-CN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "Asia/Shanghai",
+    }).format(new Date(timestamp));
+  }
+
+  function hotCommentRow(comment, canOrder) {
+    return `
+      <article class="hot-comment" data-comment-id="${escapeHtml(comment.id)}">
+        <div class="hot-comment-meta">
+          <strong>${escapeHtml(comment.display_name || "KCdesk 用户")}</strong>
+          <time>${escapeHtml(hotCommentTime(comment.created_at))}</time>
+          ${canOrder ? `
+            <span class="hot-comment-order-actions">
+              <button class="secondary-button" type="button" data-action="comment-up" data-id="${escapeHtml(comment.id)}" aria-label="评论上移">↑</button>
+              <button class="secondary-button" type="button" data-action="comment-down" data-id="${escapeHtml(comment.id)}" aria-label="评论下移">↓</button>
+            </span>
+          ` : ""}
+        </div>
+        <p>${escapeHtml(comment.body || "")}</p>
+      </article>
+    `;
+  }
+
+  function initHotReportComments(item, workerUrl) {
+    const section = document.getElementById("hotReportComments");
+    const list = document.getElementById("hotReportCommentList");
+    const count = document.getElementById("hotReportCommentCount");
+    const login = document.getElementById("hotReportCommentLogin");
+    const loginButton = document.getElementById("hotReportCommentLoginButton");
+    const form = document.getElementById("hotReportCommentForm");
+    const body = document.getElementById("hotReportCommentBody");
+    const submit = form && form.querySelector("button[type='submit']");
+    const adminAlias = document.getElementById("hotReportCommentAdminAlias");
+    const alias = document.getElementById("hotReportCommentAlias");
+    const randomAlias = document.getElementById("hotReportRandomAlias");
+    const status = document.getElementById("hotReportCommentStatus");
+    if (!section || !list || !form || !body || !submit || !status || !workerUrl) return;
+    let comments = [];
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = text || "";
+    }
+
+    function render() {
+      const session = loadAuthSession();
+      const canOrder = isSuperSession(session);
+      if (count) count.textContent = comments.length ? `${comments.length} 条` : "";
+      list.innerHTML = comments.length
+        ? comments.map((comment) => hotCommentRow(comment, canOrder)).join("")
+        : '<div class="empty-state">还没有评论，来写第一条吧。</div>';
+      if (login) login.hidden = Boolean(session);
+      form.hidden = !session;
+      if (adminAlias) adminAlias.hidden = !canOrder;
+    }
+
+    async function loadComments() {
+      setStatus("正在读取评论…");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports/comments?report_id=${encodeURIComponent(item.id)}`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "评论读取失败。");
+        comments = Array.isArray(data.comments) ? data.comments : [];
+        setStatus("");
+        render();
+      } catch (error) {
+        setStatus(error.message || "评论暂时无法读取。", "error");
+      }
+    }
+
+    async function saveCommentOrder(nextComments) {
+      setStatus("正在保存评论顺序…");
+      const response = await fetch(`${workerUrl}/hot-reports/comments/order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({
+          report_id: item.id,
+          ordered_ids: nextComments.map((comment) => comment.id),
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "评论排序保存失败。");
+      comments = Array.isArray(data.comments) ? data.comments : nextComments;
+      setStatus("评论顺序已保存。", "ok");
+      render();
+    }
+
+    list.addEventListener("click", async (event) => {
+      const button = event.target.closest("button[data-action]");
+      if (!button || !isSuperSession()) return;
+      const index = comments.findIndex((comment) => comment.id === button.dataset.id);
+      const direction = button.dataset.action === "comment-up" ? -1 : 1;
+      const destination = index + direction;
+      if (index < 0 || destination < 0 || destination >= comments.length) return;
+      const next = comments.slice();
+      [next[index], next[destination]] = [next[destination], next[index]];
+      button.disabled = true;
+      try {
+        await saveCommentOrder(next);
+      } catch (error) {
+        setStatus(error.message || "评论排序保存失败。", "error");
+        await loadComments();
+      }
+    });
+
+    if (loginButton) loginButton.addEventListener("click", () => showAccountModal(workerUrl, { item, source: HOT_REPORT_SOURCE }));
+    if (randomAlias && alias) randomAlias.addEventListener("click", () => {
+      alias.value = randomHotCommentAlias();
+      alias.focus();
+    });
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!loadAuthSession()) {
+        showAccountModal(workerUrl, { item, source: HOT_REPORT_SOURCE });
+        return;
+      }
+      const text = String(body.value || "").trim();
+      if (!text) return;
+      submit.disabled = true;
+      setStatus("正在发布评论…");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports/comments`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({
+            report_id: item.id,
+            body: text,
+            author_alias: isSuperSession() && alias ? alias.value.trim() : "",
+          }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "评论发布失败。");
+        body.value = "";
+        setStatus("评论已发布。", "ok");
+        await loadComments();
+      } catch (error) {
+        setStatus(error.message || "评论发布失败。", "error");
+      } finally {
+        submit.disabled = false;
+      }
+    });
+    document.addEventListener("kcdesk-auth-change", render);
+    render();
+    loadComments();
+  }
+
   function externalRelatedMarkup() {
     return `
       <section class="related-section external-related-section" id="externalRelatedSection" hidden aria-labelledby="externalRelatedTitle">
@@ -4192,6 +5275,7 @@
   }
 
   function docRelatedRow(item) {
+    if (item.source === HOT_REPORT_SOURCE) return hotReportRow(item);
     if (item.source === EXTERNAL_SOURCE) return externalRow(item);
     if (item.source === THINKTANK_SOURCE) return thinkTankRow(item);
     if (item.source === REPORT_A_SOURCE) return reportARow(item);
@@ -4291,6 +5375,83 @@
     `;
   }
 
+  function textOnlyPdfUploadMarkup() {
+    return `
+      <section class="text-only-pdf-upload" id="textOnlyPdfUpload" hidden>
+        <div class="admin-panel-heading">
+          <h3>补传 PDF</h3>
+          <span>仅 twotigers</span>
+        </div>
+        <p class="subtle">为当前 Text only 报告补充原始 PDF。上传成功后，原报告 id、标题、全文索引和权限规则保持不变。</p>
+        <form id="textOnlyPdfUploadForm" class="text-only-pdf-upload-form">
+          <input id="textOnlyPdfFile" name="pdf" type="file" accept="application/pdf,.pdf" required>
+          <button class="primary" id="textOnlyPdfUploadButton" type="submit">上传 PDF</button>
+        </form>
+        <div id="textOnlyPdfUploadStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function initTextOnlyPdfUpload(item, workerUrl) {
+    const panel = document.getElementById("textOnlyPdfUpload");
+    const form = document.getElementById("textOnlyPdfUploadForm");
+    const fileInput = document.getElementById("textOnlyPdfFile");
+    const button = document.getElementById("textOnlyPdfUploadButton");
+    const status = document.getElementById("textOnlyPdfUploadStatus");
+    if (!panel || !form || !fileInput || !button || !status || !workerUrl) return;
+
+    function refreshVisibility() {
+      panel.hidden = isPdfAvailable(item) || !isSuperSession();
+    }
+
+    refreshVisibility();
+    document.addEventListener("kcdesk-auth-change", refreshVisibility);
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const pdf = fileInput.files && fileInput.files[0];
+      status.className = "status-line";
+      if (!isSuperSession()) {
+        status.textContent = "请先登录 twotigers 管理员账号。";
+        status.classList.add("error");
+        refreshVisibility();
+        return;
+      }
+      if (!pdf) {
+        status.textContent = "请选择 PDF 文件。";
+        status.classList.add("error");
+        return;
+      }
+      if (pdf.size <= 0 || pdf.size > 95 * 1024 * 1024) {
+        status.textContent = "PDF 必须不超过 95 MB。";
+        status.classList.add("error");
+        return;
+      }
+      const formData = new FormData();
+      formData.set("id", item.id);
+      formData.set("pdf", pdf, pdf.name);
+      button.disabled = true;
+      fileInput.disabled = true;
+      status.textContent = "正在上传并核验 PDF…";
+      try {
+        const response = await fetch(`${workerUrl}/account-admin/text-only-pdf`, {
+          method: "POST",
+          headers: authHeaders(),
+          body: formData,
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) throw new Error(data.detail || "PDF 上传失败。");
+        status.textContent = "PDF 已上传并核验，正在刷新报告状态…";
+        status.classList.add("ok");
+        window.setTimeout(() => window.location.reload(), 350);
+      } catch (error) {
+        status.textContent = localizedContactText(error.message || "PDF 上传失败，请稍后重试。");
+        status.classList.add("error");
+        button.disabled = false;
+        fileInput.disabled = false;
+      }
+    });
+  }
+
   function accountAccessMarkup(item = {}) {
     return `
       <section class="account-access" id="accountAccess" hidden>
@@ -4336,8 +5497,11 @@
   async function fetchReportAccess(workerUrl, item, source) {
     const session = loadAuthSession();
     if (!session) return null;
+    const endpoint = source === HOT_REPORT_SOURCE
+      ? `${workerUrl}/hot-reports/access?report_id=${encodeURIComponent(item.id)}`
+      : `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`;
     const response = await fetch(
-      `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`,
+      endpoint,
       { cache: "no-store", headers: authHeaders() },
     );
     const data = await response.json().catch(() => ({}));
@@ -4392,6 +5556,7 @@
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
     const passwordForm = document.getElementById("unlockForm");
+    const isHotReport = source === HOT_REPORT_SOURCE;
     const context = { item, source };
 
     function statusTarget(text, kind) {
@@ -4408,15 +5573,22 @@
       panel.hidden = false;
       if (sponsorLink) {
         sponsorLink.hidden = !showSponsorOptions;
-        if (showSponsorOptions) sponsorLink.href = vid2pptSponsorUrlForSession(session);
+        if (showSponsorOptions) {
+          sponsorLink.href = vid2pptSponsorUrlForSession(session);
+          if (isHotReport) sponsorLink.textContent = "开通 NOVA-Q";
+        }
       }
       if (redeemRow) redeemRow.hidden = !showSponsorOptions;
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
-        hint.innerHTML = `${novaSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
-        statusTargetHtml(`未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
+        hint.innerHTML = isHotReport
+          ? "登录后可查看热门报告下载权限；NOVA-Q（3个月）及以上可下载全文。"
+          : `${novaSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
+        statusTargetHtml(isHotReport
+          ? `请先注册或登录；下载全文需要前往 ${vid2pptSponsorLinkHtml(session)} 开通 NOVA-Q（3个月）或更长期套餐。`
+          : `未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -4431,7 +5603,9 @@
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          if (isLegacyKcdeskSession(session)) {
+          if (isHotReport) {
+            statusTargetHtml(`当前权益未达到 3 个月。近期热门报告全文需要开通 ${vid2pptSponsorLinkHtml(session)} 的 NOVA-Q（3个月）或更长期套餐。`);
+          } else if (isLegacyKcdeskSession(session)) {
             statusTarget(summary
               ? `当前账号有${summary}，但不包含此报告。如需调整授权范围，请联系${contactMethodText()}。`
               : `当前账号尚未解锁此报告。如需协助，请联系${contactMethodText()}。`);
@@ -4685,6 +5859,7 @@
         </form>
       `
       : archiveNotice;
+    const textOnlyUpload = !available && workerUrl ? textOnlyPdfUploadMarkup() : "";
 
     detail.innerHTML = `
       ${detailTitleMarkup(item)}
@@ -4695,6 +5870,7 @@
         ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
       </div>
       ${unlockMarkup}
+      ${textOnlyUpload}
       ${workerUrl ? adminPanelMarkup() : ""}
       ${relatedMarkup}
     `;
@@ -4715,6 +5891,7 @@
     });
 
     initDetailAdmin(item, workerUrl);
+    initTextOnlyPdfUpload(item, workerUrl);
     initReportAccessControls(item, workerUrl, "catalog", (statusTarget) => (
       downloadCatalogWithAccount(workerUrl, item, statusTarget)
     ));
@@ -4818,10 +5995,11 @@
       loadJson("data/config.json"),
     ]);
     const workerUrl = workerBaseUrl(config);
+    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
-    const items = Array.isArray(catalog.items) ? catalog.items : [];
+    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
     const item = items.find((entry) => entry.id === id);
     if (!item) {
       document.getElementById("detail").innerHTML = '<div class="error-state">Report not found.</div>';
@@ -4871,12 +6049,16 @@
       ? AUTHORITY_SOURCE
       : (/^report-a:/.test(id)
         ? REPORT_A_SOURCE
-        : (/^thinktank:/.test(id) ? THINKTANK_SOURCE : EXTERNAL_SOURCE));
+        : (/^thinktank:/.test(id)
+          ? THINKTANK_SOURCE
+          : (/^hot:[a-f0-9]{16}$/i.test(id) ? HOT_REPORT_SOURCE : EXTERNAL_SOURCE)));
     const source = rawSource === AUTHORITY_SOURCE
       ? AUTHORITY_SOURCE
       : (rawSource === REPORT_A_SOURCE
         ? REPORT_A_SOURCE
-        : (rawSource === THINKTANK_SOURCE ? THINKTANK_SOURCE : inferredSource));
+        : (rawSource === THINKTANK_SOURCE
+          ? THINKTANK_SOURCE
+          : (rawSource === HOT_REPORT_SOURCE ? HOT_REPORT_SOURCE : inferredSource)));
     return {
       id,
       source,
@@ -4893,6 +6075,9 @@
       category: params.get("category") || "",
       author: params.get("author") || "",
       rating: params.get("rating") || "",
+      description: params.get("description") || "",
+      filename: params.get("filename") || "",
+      required_plan: params.get("required_plan") || "",
     };
   }
 
@@ -4908,6 +6093,10 @@
     return item && item.source === THINKTANK_SOURCE;
   }
 
+  function isHotReportItem(item) {
+    return item && item.source === HOT_REPORT_SOURCE;
+  }
+
   function isContactOnlyItem(item) {
     return isAuthorityItem(item) || isReportAItem(item);
   }
@@ -4916,10 +6105,12 @@
     if (isAuthorityItem(item)) return "高权报告";
     if (isReportAItem(item)) return "报告A";
     if (isThinkTankItem(item)) return "国际智库";
+    if (isHotReportItem(item)) return "近期热门报告";
     return "其他报告";
   }
 
   function docEndpoint(item) {
+    if (isHotReportItem(item)) return "hot-reports";
     if (isThinkTankItem(item)) return "thinktank";
     return isAuthorityItem(item) ? "authority" : "external";
   }
@@ -4928,6 +6119,7 @@
     if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
     if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
     if (isThinkTankItem(item)) return /^thinktank:[A-Za-z0-9._-]{3,220}$/.test(item.id);
+    if (isHotReportItem(item)) return /^hot:[a-f0-9]{16}$/i.test(item.id);
     return /^[0-9]{6,25}$/.test(item.id);
   }
 
@@ -5038,7 +6230,8 @@
     let merged = cached ? { ...item, ...cached, source: item.source } : item;
     if (!workerUrl || !validDocId(merged)) return merged;
     let endpoint = "";
-    if (isThinkTankItem(merged)) endpoint = "thinktank/item";
+    if (isHotReportItem(merged)) endpoint = "hot-reports/item";
+    else if (isThinkTankItem(merged)) endpoint = "thinktank/item";
     else if (merged.source === EXTERNAL_SOURCE) endpoint = "external/item";
     if (!endpoint) return merged;
     try {
@@ -5109,6 +6302,12 @@
         ${field("Category", item.category || "-")}
         ${field("Author", item.author || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+      ` : (isHotReportItem(item) ? `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("PDF", formatSize(item.size_bytes) || "Available")}
+        ${field("全文权限", `${item.required_plan || "NOVA-Q"} 及以上`)}
       ` : (isThinkTankItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
@@ -5120,12 +6319,14 @@
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
-      `));
+      `)));
     const detailHeader = `
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">${isContactOnlyItem(item) ? `${docSourceLabel(item)}检索线索。` : "Password-protected report delivery."}</p>
+        <p class="subtle">${isContactOnlyItem(item)
+          ? `${docSourceLabel(item)}检索线索。`
+          : (isHotReportItem(item) ? "NOVA-Q（3个月）及以上用户可下载全文。" : "Password-protected report delivery.")}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}
@@ -5144,6 +6345,22 @@
         </section>
         ${externalRelatedMarkup()}
       `;
+      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+      return;
+    }
+
+    if (isHotReportItem(item)) {
+      target.innerHTML = `
+        ${detailHeader}
+        ${item.description ? `<p class="hot-report-description">${escapeHtml(item.description)}</p>` : ""}
+        ${workerUrl ? accountAccessMarkup(item) : ""}
+        ${hotReportCommentsMarkup()}
+        ${externalRelatedMarkup()}
+      `;
+      initReportAccessControls(item, workerUrl, HOT_REPORT_SOURCE, (statusTarget) => (
+        downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ));
+      initHotReportComments(item, workerUrl);
       searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
       return;
     }

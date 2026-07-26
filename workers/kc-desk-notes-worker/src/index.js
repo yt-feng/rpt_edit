@@ -145,6 +145,24 @@ const THINKTANK_R2_PREFIX = "thinktank";
 const THINKTANK_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
+const HOT_REPORT_SOURCE = "hot";
+const HOT_REPORT_PREFIX = "_hot-reports";
+const HOT_REPORT_ITEM_PREFIX = `${HOT_REPORT_PREFIX}/items`;
+const HOT_REPORT_PDF_PREFIX = `${HOT_REPORT_PREFIX}/pdfs`;
+const HOT_REPORT_COMMENT_PREFIX = `${HOT_REPORT_PREFIX}/comments`;
+const HOT_REPORT_COMMENT_ORDER_PREFIX = `${HOT_REPORT_PREFIX}/comment-orders`;
+const HOT_REPORT_ID_PATTERN = /^hot:[a-f0-9]{16}$/;
+const HOT_REPORT_MAX_ITEMS = 200;
+const HOT_REPORT_MAX_COMMENTS = 500;
+const HOT_REPORT_MAX_PDF_BYTES = 95 * 1024 * 1024;
+const HOT_REPORT_MIN_MONTHS = 3;
+const HOT_REPORT_REQUIRED_PLAN = "NOVA-Q";
+const CATALOG_PDF_OVERRIDE_PREFIX = "_catalog-pdf-overrides";
+const CATALOG_PDF_OVERRIDE_ITEM_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/items`;
+const CATALOG_PDF_OVERRIDE_PDF_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/pdfs`;
+const CATALOG_PDF_OVERRIDE_MAX_ITEMS = 5000;
+const CATALOG_PDF_OVERRIDE_MAX_BYTES = 95 * 1024 * 1024;
+const CATALOG_PDF_OVERRIDE_HEAD_CONCURRENCY = 20;
 const UPSTREAM_SEARCH_TIMEOUT_MS = 28000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
@@ -161,6 +179,10 @@ const ANALYTICS_HISTORY_DEFAULT_PAGE_SIZE = 100;
 const ANALYTICS_HISTORY_MAX_PAGE_SIZE = 200;
 const ANALYTICS_HISTORY_FILTER_SCAN_LIMIT = 100;
 const ANALYTICS_HISTORY_READ_BATCH = 30;
+const ANALYTICS_HISTORY_R2_MAX_LIST_PAGES = 10000;
+const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
+const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
+const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
 const ADMIN_GITHUB_FILES_TIMEOUT_MS = 12000;
 const ADMIN_GITHUB_SOURCE_TIMEOUT_MS = 8500;
 const ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS = 2500;
@@ -1438,6 +1460,17 @@ function publicEntitlement(row) {
   const lifetime = Boolean(row.lifetime);
   const currentPeriodEnd = row.current_period_end || null;
   const active = ACTIVE_STATUSES.has(status) && (lifetime || periodIsCurrent(currentPeriodEnd));
+  const paddleOccurredAt = String(row.paddle_last_occurred_at || "").trim();
+  const giftOccurredAt = giftSourceReferenceOccurredAt(row.source_reference);
+  const grantSource = String(row.grant_source || "").trim().toLowerCase();
+  // One entitlement row can retain identifiers from an older Paddle or
+  // Vid2PPT grant so future events can still be reconciled.  The authority
+  // timestamp must nevertheless come from the source that wrote the current
+  // entitlement fields; never borrow a newer timestamp left by another
+  // source.
+  const authorityOccurredAt = VID2PPT_GIFT_SOURCES.has(grantSource)
+    ? giftOccurredAt
+    : (Number.isFinite(Date.parse(paddleOccurredAt)) ? paddleOccurredAt : "");
   return {
     email: row.email || "",
     plan: row.plan || "free",
@@ -1447,9 +1480,11 @@ function publicEntitlement(row) {
     active,
     site_origin: row.site_origin || SITE_ORIGIN,
     source_site: row.source_site || "",
-    grant_source: row.grant_source || "",
+    grant_source: grantSource,
     source_plan_code: row.source_plan_code || "",
-    source_reference: row.source_reference || "",
+    source_reference: giftSourceReferenceId(row.source_reference),
+    authority_occurred_at: authorityOccurredAt,
+    paddle_last_occurred_at: paddleOccurredAt,
     updated_at: row.updated_at || "",
   };
 }
@@ -1468,6 +1503,91 @@ function normalizeAccessList(values, limit = 60) {
     if (items.length >= limit) break;
   }
   return items;
+}
+
+function canonicalizeLegacyAccessGrantRow(row) {
+  if (!row || typeof row !== "object" || Array.isArray(row)) return row;
+  const canonical = { ...row };
+  const fields = [
+    ["institutions", "institution", 60],
+    ["industries", "industry", 60],
+    ["page_ranges", "page_range", ACCESS_PAGE_RANGE_OPTIONS.length],
+  ];
+  fields.forEach(([plural, singular, limit]) => {
+    const value = canonical[plural];
+    if (Array.isArray(value)) return;
+    if (typeof value === "string") {
+      canonical[plural] = normalizeAccessList(value, limit);
+      return;
+    }
+    if ((value === undefined || value === null) && typeof canonical[singular] === "string") {
+      canonical[plural] = normalizeAccessList(canonical[singular], limit);
+      return;
+    }
+    if (value === undefined || value === null) canonical[plural] = [];
+  });
+  // Grants created before download quotas were introduced did not contain
+  // these three fields. Ordinary historical grants have no quota.
+  if (canonical.download_limit === undefined && String(canonical.duration_value || "") !== TRIAL_3D_DURATION_VALUE) {
+    canonical.download_limit = 0;
+  }
+  if (canonical.download_items === undefined) canonical.download_items = [];
+  if (canonical.download_count === undefined && Array.isArray(canonical.download_items)) {
+    canonical.download_count = canonical.download_items.filter(Boolean).length;
+  }
+  return canonical;
+}
+
+function accessPayloadError(message, code = "ACCESS_INVALID_PAYLOAD") {
+  const error = new Error(message);
+  error.code = code;
+  return error;
+}
+
+function validateAccessListPayload(value, fieldName, limit = 60) {
+  if (!Array.isArray(value)) throw accessPayloadError(`${fieldName} 必须是字符串数组。`);
+  if (value.length > limit) throw accessPayloadError(`${fieldName} 最多选择 ${limit} 项。`);
+  value.forEach((item) => {
+    if (typeof item !== "string") throw accessPayloadError(`${fieldName} 必须是字符串数组。`);
+    const text = item.replace(/\s+/g, " ").trim();
+    if (!text) throw accessPayloadError(`${fieldName} 不能包含空值。`);
+    if (text.length > 120) throw accessPayloadError(`${fieldName} 单项不能超过 120 个字符。`);
+  });
+  return normalizeAccessList(value, limit);
+}
+
+function validateAccessGrantPayloadLists(fields, mode) {
+  const institutions = validateAccessListPayload(fields.institutions, "institutions");
+  const industries = validateAccessListPayload(fields.industries, "industries");
+  const pageRanges = validateAccessListPayload(
+    fields.page_ranges,
+    "page_ranges",
+    ACCESS_PAGE_RANGE_OPTIONS.length,
+  );
+  if (pageRanges.some((value) => !ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value))) {
+    throw accessPayloadError("page_ranges 包含不支持的选项。");
+  }
+  if (mode !== "filters") {
+    if (institutions.length || industries.length || pageRanges.length) {
+      throw accessPayloadError("非筛选模式不能携带机构、行业或页数条件。");
+    }
+    return { institutions: [], industries: [], page_ranges: [] };
+  }
+  if (!institutions.length && !industries.length && !pageRanges.length) {
+    throw accessPayloadError("按条件筛选至少要选择一个机构、行业或页数条件。", "ACCESS_EMPTY_FILTERS");
+  }
+  return { institutions, industries, page_ranges: pageRanges };
+}
+
+function accessScopeChangeNeedsConfirmation(existing, nextMode, nextLists) {
+  const before = publicAccessGrant(existing);
+  const beforeMode = String(before.access_mode || "none");
+  if (beforeMode !== nextMode) return beforeMode !== "none" || nextMode === "all";
+  if (beforeMode !== "filters") return false;
+  return ["institutions", "industries", "page_ranges"].some((field) => {
+    const nextKeys = new Set((nextLists[field] || []).map(normalizeText).filter(Boolean));
+    return (before[field] || []).some((value) => !nextKeys.has(normalizeText(value)));
+  });
 }
 
 function accessGrantActive(row) {
@@ -1523,7 +1643,10 @@ function publicAccessGrant(row) {
     source_site: String(row && row.source_site || ""),
     grant_source: String(row && row.grant_source || ""),
     source_plan_code: String(row && row.source_plan_code || ""),
-    source_reference: String(row && row.source_reference || ""),
+    source_reference: giftSourceReferenceId(row && row.source_reference),
+    authority_occurred_at: String(
+      row && row.authority_occurred_at || giftSourceReferenceOccurredAt(row && row.source_reference) || "",
+    ),
     change_id: String(row && row.change_id || ""),
     updated_at: row && row.updated_at || "",
     updated_by: row && row.updated_by || "",
@@ -1573,6 +1696,7 @@ function validateAccessGrantRow(row, expectedEmail) {
   if (!row || typeof row !== "object" || Array.isArray(row)) {
     throw new Error("Access record verification failed.");
   }
+  row = canonicalizeLegacyAccessGrantRow(row);
   const email = normalizeEmail(row.email);
   const mode = String(row.access_mode || "");
   const status = String(row.status || "");
@@ -1837,7 +1961,14 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     error.code = "ACCESS_CONFLICT";
     throw error;
   }
-  const mode = ACCESS_MODES.has(String(fields.access_mode || "")) ? String(fields.access_mode) : "none";
+  const mode = String(fields.access_mode || "");
+  if (!ACCESS_MODES.has(mode)) throw accessPayloadError("access_mode 无效。");
+  const accessLists = validateAccessGrantPayloadLists(fields, mode);
+  if (accessScopeChangeNeedsConfirmation(existing, mode, accessLists) && fields.confirm_scope_change !== true) {
+    const error = new Error("本次操作会改变已有权限范围，请确认后再保存。");
+    error.code = "ACCESS_SCOPE_CONFIRMATION_REQUIRED";
+    throw error;
+  }
   const activeMode = mode !== "none";
   const duration = String(fields.duration_months || "").trim();
   const lifetime = activeMode && duration === "lifetime";
@@ -1894,12 +2025,9 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     download_limit: downloadLimit,
     download_count: downloadLimit ? downloadItems.length : 0,
     download_items: downloadLimit ? downloadItems : [],
-    institutions: mode === "filters" ? normalizeAccessList(fields.institutions) : [],
-    industries: mode === "filters" ? normalizeAccessList(fields.industries) : [],
-    page_ranges: mode === "filters"
-      ? normalizeAccessList(fields.page_ranges, ACCESS_PAGE_RANGE_OPTIONS.length)
-        .filter((value) => ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value))
-      : [],
+    institutions: accessLists.institutions,
+    industries: accessLists.industries,
+    page_ranges: accessLists.page_ranges,
     note: String(fields.note || "").slice(0, 240),
     id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
     change_id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
@@ -2118,6 +2246,7 @@ function entitlementAccessForUser(user, entitlementRow) {
     source_site: entitlement.source_site,
     source_plan_code: entitlement.source_plan_code,
     source_reference: entitlement.source_reference,
+    authority_occurred_at: entitlement.authority_occurred_at,
     updated_at: entitlement.updated_at,
   });
 }
@@ -2147,6 +2276,15 @@ function longerAccessChoice(left, right) {
   return accessChoiceTieRank(right) > accessChoiceTieRank(left) ? right : left;
 }
 
+function accessAuthorityRank(row) {
+  const source = String(row && row.source || "");
+  const occurredAt = source === "stored"
+    ? String(row && row.updated_at || "")
+    : String(row && row.authority_occurred_at || "");
+  const occurredMs = Date.parse(occurredAt);
+  return Number.isFinite(occurredMs) ? occurredMs : Number.NEGATIVE_INFINITY;
+}
+
 function effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
   if (accountDisabled(user)) {
     return {
@@ -2168,10 +2306,24 @@ function effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAcce
   const trialAccess = publicAccessGrant(trialAccessRow);
   if (trialAccess.source === "error") return { kind: "error", access: trialAccess };
   const entitlementAccess = entitlementAccessForUser(user, entitlementRow);
-  return longerAccessChoice(
+  const fallbackChoice = longerAccessChoice(
     { kind: entitlementAccess.active ? "entitlement" : "none", access: entitlementAccess },
     { kind: trialAccess.active ? "trial" : "none", access: trialAccess },
   );
+
+  // An expired or explicitly closed administrator record continues to block
+  // older entitlement/trial rows. A genuinely later purchase or redemption
+  // can take effect only when its signed business-event time is newer than the
+  // administrator decision; delayed processing time is never enough. This
+  // prevents an old all-site membership from reappearing when a narrower
+  // administrator grant expires.
+  if (
+    access.source === "stored"
+    && accessAuthorityRank(fallbackChoice.access) <= accessAuthorityRank(access)
+  ) {
+    return { kind: "admin", access };
+  }
+  return fallbackChoice;
 }
 
 function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
@@ -2264,6 +2416,53 @@ async function reportAccessForUser(env, user, reportId, source) {
     custom_access_matched: customAccess,
     entitlement_access_matched: entitlementAccessMatched,
     trial_access_matched: trialAccessMatched,
+  };
+}
+
+function hotReportPlanMonths(value) {
+  const code = String(value || "").trim().toUpperCase();
+  const spec = VID2PPT_KCDESK_GIFT_PLANS[code];
+  if (!spec || !Number.isFinite(Number(spec.months))) return 0;
+  return Math.max(0, Number(spec.months));
+}
+
+function hotReportAccessMonths(accessResult) {
+  const result = accessResult && typeof accessResult === "object" ? accessResult : {};
+  const effective = result.effective_access && typeof result.effective_access === "object"
+    ? result.effective_access
+    : {};
+  if (!effective.active) return 0;
+  if (effective.lifetime || String(effective.source || "") === "role") return Number.POSITIVE_INFINITY;
+  const entitlement = result.entitlement && typeof result.entitlement === "object" ? result.entitlement : {};
+  const kind = String(result.effective_access_kind || "");
+  if (kind === "entitlement") {
+    const planMonths = hotReportPlanMonths(entitlement.source_plan_code)
+      || hotReportPlanMonths(effective.source_plan_code);
+    if (planMonths) return planMonths;
+  }
+  const duration = Number(effective.duration_value);
+  if (Number.isFinite(duration) && duration > 0) return duration;
+  // Older paid annual rows predate source_plan_code. Keep those users eligible,
+  // while NOVA-M is still rejected above because its explicit one-month code wins.
+  if (kind === "entitlement" && entitlement.active && entitlement.plan === "annual") {
+    return 12;
+  }
+  return 0;
+}
+
+function hotReportAccessQualifies(user, accessResult) {
+  if (isPrivilegedAccount(user)) return true;
+  return hotReportAccessMonths(accessResult) >= HOT_REPORT_MIN_MONTHS;
+}
+
+async function hotReportAccessForUser(env, user) {
+  const access = await reportAccessForUser(env, user, "", HOT_REPORT_SOURCE);
+  return {
+    ...access,
+    can_download: hotReportAccessQualifies(user, access),
+    qualifying_months: hotReportAccessMonths(access),
+    required_plan: HOT_REPORT_REQUIRED_PLAN,
+    required_months: HOT_REPORT_MIN_MONTHS,
   };
 }
 
@@ -2904,6 +3103,13 @@ function paddleEntitlementUpdateFields(binding, identity, fields) {
   return {
     ...fields,
     email: normalizeEmail(binding.email),
+    site_origin: SITE_ORIGIN,
+    source_site: SITE_ORIGIN,
+    // Explicitly switch current authority back to Paddle while retaining the
+    // binding/version columns required to reconcile later Paddle events.
+    grant_source: "paddle",
+    source_plan_code: "",
+    source_reference: "",
     paddle_customer_id: binding.paddle_customer_id,
     paddle_subscription_id: binding.paddle_subscription_id,
     paddle_last_event_id: identity.eventId,
@@ -3122,6 +3328,38 @@ function cleanGiftPlanCode(value) {
   return cleanGrantText(value, 32).toUpperCase();
 }
 
+const GIFT_SOURCE_TIME_MARKER = "::grant_at=";
+
+function normalizeGrantOccurredAt(value) {
+  const occurredMs = Date.parse(String(value || ""));
+  return Number.isFinite(occurredMs) ? new Date(occurredMs).toISOString() : "";
+}
+
+function encodedGiftSourceReference(value, occurredAt) {
+  const reference = cleanGrantText(value, 120);
+  const normalizedOccurredAt = normalizeGrantOccurredAt(occurredAt);
+  return reference && normalizedOccurredAt
+    ? `${reference}${GIFT_SOURCE_TIME_MARKER}${normalizedOccurredAt}`
+    : reference;
+}
+
+function giftSourceReferenceParts(value) {
+  const text = String(value || "");
+  const markerIndex = text.lastIndexOf(GIFT_SOURCE_TIME_MARKER);
+  if (markerIndex <= 0) return { reference: text, occurredAt: "" };
+  const reference = text.slice(0, markerIndex);
+  const occurredAt = normalizeGrantOccurredAt(text.slice(markerIndex + GIFT_SOURCE_TIME_MARKER.length));
+  return occurredAt ? { reference, occurredAt } : { reference: text, occurredAt: "" };
+}
+
+function giftSourceReferenceId(value) {
+  return giftSourceReferenceParts(value).reference;
+}
+
+function giftSourceReferenceOccurredAt(value) {
+  return giftSourceReferenceParts(value).occurredAt;
+}
+
 function giftGrantPeriodEnd(planCode, startAt) {
   const spec = VID2PPT_KCDESK_GIFT_PLANS[planCode];
   if (!spec) return null;
@@ -3164,7 +3402,7 @@ function sameVid2PptGift(entitlement, planCode, sourceReference) {
   return entitlement
     && entitlement.grant_source === grantSource
     && entitlement.source_plan_code === planCode
-    && entitlement.source_reference === sourceReference;
+    && giftSourceReferenceId(entitlement.source_reference) === sourceReference;
 }
 
 async function applyVid2PptGift(env, options = {}) {
@@ -3181,6 +3419,8 @@ async function applyVid2PptGift(env, options = {}) {
   if (!sourceReference) throw new Error("Grant reference is required.");
   const spec = VID2PPT_KCDESK_GIFT_PLANS[planCode];
   const grantSource = giftGrantSource(planCode);
+  const grantOccurredAt = normalizeGrantOccurredAt(options.completedAt || options.completed_at);
+  const storedSourceReference = encodedGiftSourceReference(sourceReference, grantOccurredAt);
 
   if (cleanAccessCount(spec.download_limit) > 0) {
     const snapshot = await findStoredVid2PptTrialAccessSnapshot(env, email);
@@ -3213,7 +3453,7 @@ async function applyVid2PptGift(env, options = {}) {
       source_site: VID2PPT_SOURCE_SITE,
       grant_source: grantSource,
       source_plan_code: planCode,
-      source_reference: sourceReference,
+      source_reference: storedSourceReference,
       paddle_transaction_id: transactionId,
       change_id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
       created_at: existing && existing.created_at || now,
@@ -3263,7 +3503,7 @@ async function applyVid2PptGift(env, options = {}) {
     source_site: VID2PPT_SOURCE_SITE,
     grant_source: grantSource,
     source_plan_code: planCode,
-    source_reference: sourceReference,
+    source_reference: storedSourceReference,
   });
   await insertUsageEvent(env, email, options.eventType || `${grantSource}.granted`, {
     site_origin: SITE_ORIGIN,
@@ -3404,7 +3644,7 @@ async function handleVid2PptRedeemCode(request, env) {
       planCode,
       requestId: order.request_id,
       code,
-      completedAt: order.completed_at || new Date().toISOString(),
+      completedAt: order.completed_at,
       amountCny: order.amount_cny,
       eventType: `${giftGrantSource(planCode)}.code_redeemed`,
     });
@@ -3431,6 +3671,12 @@ function safeFilename(value) {
   return filename || "report.pdf";
 }
 
+function safePdfFilename(value) {
+  const filename = safeFilename(value || "report.pdf");
+  const stem = (/\.pdf$/i.test(filename) ? filename.slice(0, -4) : filename).slice(0, 236).trim();
+  return `${stem || "report"}.pdf`;
+}
+
 function asciiFilename(value) {
   return safeFilename(value).replace(/[^\x20-\x7e]+/g, "_");
 }
@@ -3443,6 +3689,184 @@ function contentDisposition(filename) {
 function objectKeyForReport(env, id) {
   const prefix = String(env.R2_OBJECT_PREFIX || DEFAULT_R2_PREFIX).replace(/^\/+|\/+$/g, "");
   return prefix ? `${prefix}/${id}.pdf` : `${id}.pdf`;
+}
+
+function cleanCatalogReportId(value) {
+  const id = String(value || "").trim().toLowerCase();
+  return /^[a-f0-9]{16,64}$/.test(id) ? id : "";
+}
+
+function catalogPdfOverrideItemKey(value) {
+  const id = cleanCatalogReportId(value);
+  return id ? `${CATALOG_PDF_OVERRIDE_ITEM_PREFIX}/${id}.json` : "";
+}
+
+function catalogPdfOverridePdfKey(value, uploadVersion) {
+  const id = cleanCatalogReportId(value);
+  const version = String(uploadVersion || "").trim().toLowerCase();
+  return id && /^[a-f0-9]{16}$/.test(version)
+    ? `${CATALOG_PDF_OVERRIDE_PDF_PREFIX}/${id}/${version}.pdf`
+    : "";
+}
+
+function validateCatalogPdfOverride(row, expectedId = "") {
+  if (row === null || row === undefined) return null;
+  if (!row || typeof row !== "object" || Array.isArray(row)) {
+    throw new Error("Catalog PDF override verification failed.");
+  }
+  const id = cleanCatalogReportId(row.id);
+  const version = String(row.version || "").trim().toLowerCase();
+  const objectKey = catalogPdfOverridePdfKey(id, version);
+  const sizeBytes = Number(row.size_bytes || 0);
+  const filename = safePdfFilename(row.filename || "report.pdf");
+  const uploadedAt = String(row.uploaded_at || "").trim();
+  const etag = String(row.etag || "").trim();
+  const uploadedBy = normalizeEmail(row.uploaded_by);
+  if (
+    !id
+    || (expectedId && id !== cleanCatalogReportId(expectedId))
+    || !objectKey
+    || String(row.object_key || "") !== objectKey
+    || !Number.isInteger(sizeBytes)
+    || sizeBytes <= 0
+    || sizeBytes > CATALOG_PDF_OVERRIDE_MAX_BYTES
+    || filename !== String(row.filename || "")
+    || !/\.pdf$/i.test(filename)
+    || !Number.isFinite(Date.parse(uploadedAt))
+    || !etag
+    || !uploadedBy
+    || String(row.source || "") !== "catalog-pdf-override"
+  ) {
+    throw new Error("Catalog PDF override verification failed.");
+  }
+  return {
+    ...row,
+    id,
+    version,
+    object_key: objectKey,
+    size_bytes: sizeBytes,
+    filename,
+    uploaded_at: uploadedAt,
+    uploaded_by: uploadedBy,
+    etag,
+  };
+}
+
+function catalogPdfOverrideObjectMatches(row, object) {
+  if (!row || !object) return false;
+  const metadata = object.customMetadata || {};
+  const objectEtag = String(object.etag || "").trim();
+  return Number(object.size || 0) === Number(row.size_bytes || 0)
+    && Boolean(objectEtag)
+    && objectEtag === String(row.etag || "")
+    && String(metadata.source || "") === "catalog-pdf-override"
+    && cleanCatalogReportId(metadata.report_id) === row.id
+    && String(metadata.version || "").trim().toLowerCase() === row.version;
+}
+
+async function readCatalogPdfOverride(env, value, options = {}) {
+  const id = cleanCatalogReportId(value);
+  if (!id) return null;
+  const row = validateCatalogPdfOverride(
+    await r2GetJsonStrict(env, catalogPdfOverrideItemKey(id)),
+    id,
+  );
+  if (!row) return null;
+  if (!options.verifyObject) return { row, object: null };
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.head !== "function") {
+    throw new Error("Report storage is unavailable.");
+  }
+  const object = await env.REPORT_BUCKET.head(row.object_key);
+  return catalogPdfOverrideObjectMatches(row, object) ? { row, object } : null;
+}
+
+async function catalogReportPdfDescriptor(env, report, options = {}) {
+  const id = cleanCatalogReportId(report && report.id);
+  if (!id || !report) return null;
+  if (report.available !== false) {
+    return {
+      id,
+      available: true,
+      manual_pdf: false,
+      object_key: objectKeyForReport(env, id),
+      filename: safePdfFilename(report.filename || `${id}.pdf`),
+      size_bytes: Math.max(0, Number(report.size_bytes || 0) || 0),
+      uploaded_at: "",
+      etag: "",
+      version: "",
+    };
+  }
+  const override = await readCatalogPdfOverride(env, id, {
+    verifyObject: options.verifyObject !== false,
+  });
+  if (!override) return null;
+  return {
+    id,
+    available: true,
+    manual_pdf: true,
+    object_key: override.row.object_key,
+    filename: override.row.filename,
+    size_bytes: override.row.size_bytes,
+    uploaded_at: override.row.uploaded_at,
+    etag: override.row.etag,
+    version: override.row.version,
+  };
+}
+
+function publicCatalogPdfOverride(row) {
+  return {
+    id: row.id,
+    available: true,
+    manual_pdf: true,
+    size_bytes: row.size_bytes,
+    uploaded_at: row.uploaded_at,
+  };
+}
+
+function catalogReportPdfObjectMatches(descriptor, object) {
+  if (!descriptor || !object) return false;
+  if (!descriptor.manual_pdf) return true;
+  const metadata = object.customMetadata || {};
+  return Number(object.size || 0) === Number(descriptor.size_bytes || 0)
+    && String(object.etag || "").trim() === String(descriptor.etag || "").trim()
+    && String(metadata.source || "") === "catalog-pdf-override"
+    && cleanCatalogReportId(metadata.report_id) === descriptor.id
+    && String(metadata.version || "").trim().toLowerCase() === descriptor.version;
+}
+
+async function handleCatalogPdfOverrides(request, env) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function" || typeof env.REPORT_BUCKET.head !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
+  }
+  try {
+    const rows = await listR2JsonObjects(
+      env,
+      `${CATALOG_PDF_OVERRIDE_ITEM_PREFIX}/`,
+      CATALOG_PDF_OVERRIDE_MAX_ITEMS,
+    );
+    const verified = await mapWithConcurrency(
+      rows,
+      CATALOG_PDF_OVERRIDE_HEAD_CONCURRENCY,
+      async (raw) => {
+        try {
+          const row = validateCatalogPdfOverride(raw);
+          if (!row) return null;
+          const object = await env.REPORT_BUCKET.head(row.object_key);
+          return catalogPdfOverrideObjectMatches(row, object) ? publicCatalogPdfOverride(row) : null;
+        } catch (_error) {
+          return null;
+        }
+      },
+    );
+    const items = verified.filter(Boolean).sort((left, right) => left.id.localeCompare(right.id));
+    return jsonResponse(request, env, 200, {
+      items,
+      total: items.length,
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "Report PDF overrides are unavailable." });
+  }
 }
 
 async function handleDownload(request, env) {
@@ -3479,7 +3903,17 @@ async function handleDownload(request, env) {
   if (!report) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
-  if (report.available === false) {
+
+  if (!env.REPORT_BUCKET) {
+    return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
+  }
+  let pdfDescriptor;
+  try {
+    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
+  }
+  if (!pdfDescriptor) {
     return jsonResponse(request, env, 404, {
       error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
       archived: true,
@@ -3510,13 +3944,8 @@ async function handleDownload(request, env) {
     }
   }
 
-  if (!env.REPORT_BUCKET) {
-    return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
-  }
-
-  const key = objectKeyForReport(env, id);
-  const object = await env.REPORT_BUCKET.get(key);
-  if (!object) {
+  const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
+  if (!catalogReportPdfObjectMatches(pdfDescriptor, object)) {
     return jsonResponse(request, env, 404, {
       error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
       archived: true,
@@ -3537,7 +3966,7 @@ async function handleDownload(request, env) {
     headers: {
       ...corsHeaders(request, env),
       "Content-Type": "application/pdf",
-      "Content-Disposition": contentDisposition(report.filename || `${id}.pdf`),
+      "Content-Disposition": contentDisposition(pdfDescriptor.filename),
       "Cache-Control": "no-store, private",
       "X-Content-Type-Options": "nosniff",
     },
@@ -3701,11 +4130,13 @@ async function handleAdminReportPassword(request, env) {
   }
 
   try {
+    const pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
     return jsonResponse(request, env, 200, {
       id,
       title: report.title || "",
       title_zh: report.title_zh || "",
-      available: report.available !== false,
+      available: Boolean(pdfDescriptor),
+      manual_pdf: Boolean(pdfDescriptor && pdfDescriptor.manual_pdf),
       password: await derivedReportPassword(env, id),
     });
   } catch (_error) {
@@ -3948,20 +4379,40 @@ function analyticsDateFromPrefix(prefixRoot, value) {
 
 async function listAnalyticsEventDatesForRoot(env, prefixRoot) {
   const dates = new Set();
+  const requestedCursors = new Set();
   let cursor = undefined;
+  let pageCount = 0;
   do {
+    const cursorKey = String(cursor || "");
+    if (requestedCursors.has(cursorKey)) {
+      throw new Error(`Analytics date pagination cursor repeated for ${prefixRoot}.`);
+    }
+    if (pageCount >= ANALYTICS_HISTORY_R2_MAX_LIST_PAGES) {
+      throw new Error(`Analytics date pagination exceeded ${ANALYTICS_HISTORY_R2_MAX_LIST_PAGES} pages for ${prefixRoot}.`);
+    }
+    requestedCursors.add(cursorKey);
     const listed = await env.REPORT_BUCKET.list({
       prefix: `${prefixRoot}/`,
       delimiter: "/",
       limit: 1000,
       cursor,
     });
+    pageCount += 1;
+    const beforeSize = dates.size;
     for (const value of Array.isArray(listed && listed.delimitedPrefixes) ? listed.delimitedPrefixes : []) {
       const date = analyticsDateFromPrefix(prefixRoot, value);
       if (date) dates.add(date);
     }
-    if (!listed || !listed.truncated || !listed.cursor) break;
-    cursor = listed.cursor;
+    if (!listed || !listed.truncated) break;
+    const nextCursor = String(listed.cursor || "");
+    if (!nextCursor) throw new Error(`Analytics date pagination did not return a cursor for ${prefixRoot}.`);
+    if (requestedCursors.has(nextCursor)) {
+      throw new Error(`Analytics date pagination cursor repeated for ${prefixRoot}.`);
+    }
+    if (dates.size === beforeSize) {
+      throw new Error(`Analytics date pagination made no progress for ${prefixRoot}.`);
+    }
+    cursor = nextCursor;
   } while (cursor);
   return [...dates];
 }
@@ -3987,23 +4438,45 @@ async function listAnalyticsEventDateRows(env) {
 
 async function listAnalyticsEventKeysForRoot(env, prefixRoot, date) {
   const rows = [];
+  const seenKeys = new Set();
+  const requestedCursors = new Set();
   let cursor = undefined;
+  let pageCount = 0;
   do {
+    const cursorKey = String(cursor || "");
+    if (requestedCursors.has(cursorKey)) {
+      throw new Error(`Analytics object pagination cursor repeated for ${prefixRoot}/${date}.`);
+    }
+    if (pageCount >= ANALYTICS_HISTORY_R2_MAX_LIST_PAGES) {
+      throw new Error(`Analytics object pagination exceeded ${ANALYTICS_HISTORY_R2_MAX_LIST_PAGES} pages for ${prefixRoot}/${date}.`);
+    }
+    requestedCursors.add(cursorKey);
     const listed = await env.REPORT_BUCKET.list({
       prefix: `${prefixRoot}/${date}/`,
       limit: 1000,
       cursor,
     });
+    pageCount += 1;
+    let added = 0;
     for (const object of Array.isArray(listed && listed.objects) ? listed.objects : []) {
       if (!object || !object.key) continue;
       const key = String(object.key);
+      if (seenKeys.has(key)) continue;
+      seenKeys.add(key);
+      added += 1;
       rows.push({
         key,
         suffix: key.slice(`${prefixRoot}/${date}/`.length),
       });
     }
-    if (!listed || !listed.truncated || !listed.cursor) break;
-    cursor = listed.cursor;
+    if (!listed || !listed.truncated) break;
+    const nextCursor = String(listed.cursor || "");
+    if (!nextCursor) throw new Error(`Analytics object pagination did not return a cursor for ${prefixRoot}/${date}.`);
+    if (requestedCursors.has(nextCursor)) {
+      throw new Error(`Analytics object pagination cursor repeated for ${prefixRoot}/${date}.`);
+    }
+    if (added === 0) throw new Error(`Analytics object pagination made no progress for ${prefixRoot}/${date}.`);
+    cursor = nextCursor;
   } while (cursor);
   return rows;
 }
@@ -4262,6 +4735,421 @@ async function handleAccountAdminAnalyticsEvents(request, env) {
   }
 }
 
+function cleanHotReportId(value) {
+  const id = String(value || "").trim().toLowerCase();
+  return HOT_REPORT_ID_PATTERN.test(id) ? id : "";
+}
+
+function hotReportSlug(value) {
+  const id = cleanHotReportId(value);
+  return id ? id.slice("hot:".length) : "";
+}
+
+function hotReportItemKey(value) {
+  const slug = hotReportSlug(value);
+  return slug ? `${HOT_REPORT_ITEM_PREFIX}/${slug}.json` : "";
+}
+
+function hotReportPdfKey(value) {
+  const slug = hotReportSlug(value);
+  return slug ? `${HOT_REPORT_PDF_PREFIX}/${slug}.pdf` : "";
+}
+
+function cleanHotReportText(value, limit = 320) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
+    .replace(/[ \t]+/g, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+function publicHotReportItem(row) {
+  const id = cleanHotReportId(row && row.id);
+  if (!id) return null;
+  return {
+    id,
+    source: HOT_REPORT_SOURCE,
+    title: cleanHotReportText(row.title, 320) || "近期热门报告",
+    title_cn: cleanHotReportText(row.title_cn, 320),
+    institution: cleanHotReportText(row.institution, 160),
+    date: cleanHotReportText(row.date, 10),
+    description: cleanHotReportText(row.description, 1600),
+    filename: safeFilename(row.filename || `${id}.pdf`),
+    size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
+    sort_order: Number(row.sort_order || 0) || 0,
+    created_at: String(row.created_at || ""),
+    updated_at: String(row.updated_at || ""),
+    required_plan: HOT_REPORT_REQUIRED_PLAN,
+    required_months: HOT_REPORT_MIN_MONTHS,
+  };
+}
+
+async function listHotReportRows(env) {
+  const rows = await listR2JsonObjects(env, `${HOT_REPORT_ITEM_PREFIX}/`, HOT_REPORT_MAX_ITEMS);
+  return rows
+    .map((row) => ({ row, item: publicHotReportItem(row) }))
+    .filter((entry) => entry.item)
+    .sort((left, right) => {
+      if (right.item.sort_order !== left.item.sort_order) return right.item.sort_order - left.item.sort_order;
+      if (right.item.date !== left.item.date) return right.item.date.localeCompare(left.item.date);
+      return right.item.created_at.localeCompare(left.item.created_at);
+    });
+}
+
+async function findHotReportRow(env, value) {
+  const key = hotReportItemKey(value);
+  if (!key) return null;
+  const row = await safeR2GetJson(env, key);
+  const item = publicHotReportItem(row);
+  return item ? { row, item } : null;
+}
+
+async function handleHotReportsList(request, env) {
+  try {
+    const rows = await listHotReportRows(env);
+    return jsonResponse(request, env, 200, {
+      items: rows.map((entry) => entry.item),
+      total: rows.length,
+      required_plan: HOT_REPORT_REQUIRED_PLAN,
+      required_months: HOT_REPORT_MIN_MONTHS,
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "近期热门报告暂时无法读取。" });
+  }
+}
+
+async function handleHotReportItem(request, env) {
+  const id = cleanHotReportId(new URL(request.url).searchParams.get("id"));
+  if (!id) return jsonResponse(request, env, 400, { detail: "Invalid hot report id." });
+  try {
+    const found = await findHotReportRow(env, id);
+    if (!found) return jsonResponse(request, env, 404, { detail: "Hot report not found." });
+    return jsonResponse(request, env, 200, { item: found.item });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "近期热门报告暂时无法读取。" });
+  }
+}
+
+async function handleAccountAdminHotReportUpload(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.put !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
+  }
+
+  let form;
+  try {
+    form = await request.formData();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "请使用表单上传 PDF。" });
+  }
+  const pdf = form.get("pdf");
+  const title = cleanHotReportText(form.get("title"), 320);
+  if (!title) return jsonResponse(request, env, 400, { detail: "报告标题不能为空。" });
+  if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
+    return jsonResponse(request, env, 400, { detail: "请选择 PDF 文件。" });
+  }
+  const contentType = String(pdf.type || "").trim().toLowerCase();
+  if (contentType && contentType !== "application/pdf") {
+    return jsonResponse(request, env, 400, { detail: "文件类型必须为 PDF。" });
+  }
+  if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
+    return jsonResponse(request, env, 400, { detail: "无法识别文件类型时，文件名必须以 .pdf 结尾。" });
+  }
+  const size = Math.max(0, Number(pdf.size || 0) || 0);
+  if (!size || size > HOT_REPORT_MAX_PDF_BYTES) {
+    return jsonResponse(request, env, 413, { detail: "PDF 必须不超过 95 MB。" });
+  }
+  try {
+    const magicBytes = new Uint8Array(await pdf.slice(0, 5).arrayBuffer());
+    const magic = String.fromCharCode(...magicBytes);
+    if (magic !== "%PDF-") return jsonResponse(request, env, 400, { detail: "文件内容不是有效 PDF。" });
+
+    const id = `hot:${randomHex(8)}`;
+    const now = new Date().toISOString();
+    const date = cleanHotReportText(form.get("date"), 10);
+    const row = {
+      id,
+      source: HOT_REPORT_SOURCE,
+      title,
+      title_cn: cleanHotReportText(form.get("title_cn"), 320),
+      institution: cleanHotReportText(form.get("institution"), 160),
+      date: /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : now.slice(0, 10),
+      description: cleanHotReportText(form.get("description"), 1600),
+      filename: safePdfFilename(pdf.name || title),
+      size_bytes: size,
+      sort_order: Date.now(),
+      created_at: now,
+      updated_at: now,
+      uploaded_by: normalizeEmail(adminUser.email),
+    };
+    const pdfKey = hotReportPdfKey(id);
+    await env.REPORT_BUCKET.put(pdfKey, pdf, {
+      httpMetadata: {
+        contentType: "application/pdf",
+        cacheControl: "no-store, private",
+        contentDisposition: contentDisposition(row.filename),
+      },
+      customMetadata: { report_id: id, uploaded_at: now },
+    });
+    try {
+      await r2PutJson(env, hotReportItemKey(id), row);
+    } catch (metadataError) {
+      try {
+        await env.REPORT_BUCKET.delete(pdfKey);
+      } catch (cleanupError) {
+        throw new Error(`热门报告元数据写入失败，且 PDF 清理失败：${cleanupError.message || cleanupError}`);
+      }
+      throw metadataError;
+    }
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_hot_report_upload",
+      path: "/account-admin/hot-report",
+      data: { report_id: id, report_title: title, status: "success" },
+    }, adminUser).catch(() => null);
+    return jsonResponse(request, env, 201, { ok: true, item: publicHotReportItem(row) });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "热门报告上传失败，请稍后重试。" });
+  }
+}
+
+async function handleHotReportAccess(request, env) {
+  try {
+    const user = await currentUserFromRequest(env, request);
+    const access = await hotReportAccessForUser(env, user);
+    return jsonResponse(request, env, 200, { user: publicUser(user), ...access });
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status, {
+      detail: status === 503 ? "下载权限暂时无法核验，请稍后重试。" : error.message || "请先登录。",
+      required_plan: HOT_REPORT_REQUIRED_PLAN,
+      required_months: HOT_REPORT_MIN_MONTHS,
+    });
+  }
+}
+
+async function handleHotReportPdf(request, env) {
+  let payload = {};
+  try {
+    payload = request.method === "GET"
+      ? { id: new URL(request.url).searchParams.get("id") }
+      : await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { error: "Invalid request body." });
+  }
+  const id = cleanHotReportId(payload.id);
+  if (!id) return jsonResponse(request, env, 400, { error: "Invalid hot report id." });
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, {
+      error: error.message || "请先登录。",
+      required_plan: HOT_REPORT_REQUIRED_PLAN,
+    });
+  }
+  try {
+    const access = await hotReportAccessForUser(env, user);
+    if (!access.can_download) {
+      return jsonResponse(request, env, 402, {
+        error: "近期热门报告需开通 NOVA-Q（3个月）或更长期套餐后下载全文。",
+        required_plan: HOT_REPORT_REQUIRED_PLAN,
+        required_months: HOT_REPORT_MIN_MONTHS,
+      });
+    }
+    const found = await findHotReportRow(env, id);
+    if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
+    const object = await env.REPORT_BUCKET.get(hotReportPdfKey(id));
+    if (!object) return jsonResponse(request, env, 404, { error: "PDF is not currently available.", archived: true });
+    return new Response(object.body, {
+      headers: {
+        ...corsHeaders(request, env),
+        "Content-Type": "application/pdf",
+        "Content-Disposition": contentDisposition(found.item.filename),
+        "Cache-Control": "no-store, private",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { error: error.message || "热门报告下载暂时不可用。" });
+  }
+}
+
+function cleanHotCommentId(value) {
+  const id = String(value || "").trim().toLowerCase();
+  return /^comment:[a-f0-9]{16}$/.test(id) ? id : "";
+}
+
+function hotReportCommentPrefix(value) {
+  const slug = hotReportSlug(value);
+  return slug ? `${HOT_REPORT_COMMENT_PREFIX}/${slug}` : "";
+}
+
+function hotReportCommentKey(reportId, commentId) {
+  const prefix = hotReportCommentPrefix(reportId);
+  const id = cleanHotCommentId(commentId);
+  return prefix && id ? `${prefix}/${id.slice("comment:".length)}.json` : "";
+}
+
+function hotReportCommentOrderKey(reportId) {
+  const slug = hotReportSlug(reportId);
+  return slug ? `${HOT_REPORT_COMMENT_ORDER_PREFIX}/${slug}.json` : "";
+}
+
+function publicHotReportComment(row) {
+  const id = cleanHotCommentId(row && row.id);
+  const reportId = cleanHotReportId(row && row.report_id);
+  if (!id || !reportId) return null;
+  return {
+    id,
+    report_id: reportId,
+    display_name: cleanHotReportText(row.display_name, 48) || "KCdesk 用户",
+    body: cleanHotReportText(row.body, 1200),
+    sort_order: Number(row.sort_order || 0) || 0,
+    created_at: String(row.created_at || ""),
+    updated_at: String(row.updated_at || ""),
+  };
+}
+
+async function listHotReportCommentRows(env, reportId) {
+  const prefix = hotReportCommentPrefix(reportId);
+  if (!prefix) return [];
+  const rows = await listR2JsonObjects(env, `${prefix}/`, HOT_REPORT_MAX_COMMENTS);
+  const baseRows = rows
+    .map((row) => ({ row, item: publicHotReportComment(row) }))
+    .filter((entry) => entry.item && entry.item.body)
+    .sort((left, right) => {
+      if (left.item.sort_order !== right.item.sort_order) return left.item.sort_order - right.item.sort_order;
+      return left.item.created_at.localeCompare(right.item.created_at);
+    });
+  const manifest = await safeR2GetJson(env, hotReportCommentOrderKey(reportId));
+  const orderedIds = Array.isArray(manifest && manifest.ordered_ids)
+    ? manifest.ordered_ids.map(cleanHotCommentId).filter(Boolean)
+    : [];
+  if (!orderedIds.length) return baseRows;
+  const byId = new Map(baseRows.map((entry) => [entry.item.id, entry]));
+  const seen = new Set();
+  const orderedRows = [];
+  for (const id of orderedIds) {
+    if (seen.has(id) || !byId.has(id)) continue;
+    seen.add(id);
+    orderedRows.push(byId.get(id));
+  }
+  for (const entry of baseRows) {
+    if (!seen.has(entry.item.id)) orderedRows.push(entry);
+  }
+  return orderedRows;
+}
+
+async function handleHotReportComments(request, env) {
+  const url = new URL(request.url);
+  if (request.method === "GET") {
+    const reportId = cleanHotReportId(url.searchParams.get("report_id"));
+    if (!reportId) return jsonResponse(request, env, 400, { detail: "Invalid hot report id." });
+    try {
+      const comments = await listHotReportCommentRows(env, reportId);
+      return jsonResponse(request, env, 200, { comments: comments.map((entry) => entry.item) });
+    } catch (error) {
+      return jsonResponse(request, env, 503, { detail: error.message || "评论暂时无法读取。" });
+    }
+  }
+
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "请先登录后评论。" });
+  }
+  if (accountDisabled(user)) return jsonResponse(request, env, 403, { detail: "账号已禁用。" });
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  const reportId = cleanHotReportId(payload.report_id);
+  const body = cleanHotReportText(payload.body, 1200);
+  if (!reportId) return jsonResponse(request, env, 400, { detail: "Invalid hot report id." });
+  if (!body) return jsonResponse(request, env, 400, { detail: "评论内容不能为空。" });
+  try {
+    if (!await findHotReportRow(env, reportId)) {
+      return jsonResponse(request, env, 404, { detail: "Hot report not found." });
+    }
+    const existing = await listHotReportCommentRows(env, reportId);
+    if (existing.length >= HOT_REPORT_MAX_COMMENTS) {
+      return jsonResponse(request, env, 409, { detail: `评论已达 ${HOT_REPORT_MAX_COMMENTS} 条上限。` });
+    }
+    const now = new Date().toISOString();
+    const isSuper = isSuperAccount(user);
+    const alias = isSuper ? cleanHotReportText(payload.author_alias, 48) : "";
+    const id = `comment:${randomHex(8)}`;
+    const row = {
+      id,
+      report_id: reportId,
+      display_name: alias || cleanHotReportText(user.username, 48) || "KCdesk 用户",
+      body,
+      sort_order: existing.reduce((max, entry) => Math.max(max, entry.item.sort_order), 0) + 100,
+      created_at: now,
+      updated_at: now,
+      author_user_id: String(user.id || ""),
+      author_email: normalizeEmail(user.email),
+      admin_alias: Boolean(alias),
+    };
+    await r2PutJson(env, hotReportCommentKey(reportId, id), row);
+    return jsonResponse(request, env, 201, { ok: true, comment: publicHotReportComment(row) });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "评论发布失败，请稍后重试。" });
+  }
+}
+
+async function handleHotReportCommentOrder(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  const reportId = cleanHotReportId(payload.report_id);
+  const orderedIds = Array.isArray(payload.ordered_ids)
+    ? payload.ordered_ids.map(cleanHotCommentId).filter(Boolean)
+    : [];
+  if (!reportId || !orderedIds.length || new Set(orderedIds).size !== orderedIds.length) {
+    return jsonResponse(request, env, 400, { detail: "评论顺序无效。" });
+  }
+  try {
+    const rows = await listHotReportCommentRows(env, reportId);
+    const currentIds = new Set(rows.map((entry) => entry.item.id));
+    if (orderedIds.length !== rows.length || orderedIds.some((id) => !currentIds.has(id))) {
+      return jsonResponse(request, env, 409, { detail: "评论列表已变化，请刷新后重试。" });
+    }
+    const now = new Date().toISOString();
+    const orderKey = hotReportCommentOrderKey(reportId);
+    const previous = await safeR2GetJson(env, orderKey);
+    const previousVersion = Math.max(0, Number(previous && previous.version || 0) || 0);
+    await r2PutJson(env, orderKey, {
+      report_id: reportId,
+      ordered_ids: orderedIds,
+      version: previousVersion + 1,
+      updated_at: now,
+    });
+    const comments = await listHotReportCommentRows(env, reportId);
+    return jsonResponse(request, env, 200, { ok: true, comments: comments.map((entry) => entry.item) });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "评论排序保存失败。" });
+  }
+}
+
 function analyticsEventVisitorKey(event) {
   return String(event && (event.visitor_id || event.ip_hash || (event.user && event.user.email)) || "");
 }
@@ -4474,6 +5362,17 @@ function dailyPickSourceText(item, bodyText = "") {
   return normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""} ${String(bodyText || "").slice(0, 30000)}`);
 }
 
+function dailyPickTitleText(item) {
+  return normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`);
+}
+
+function dailyPickBodyText(bodyText = "") {
+  // The first pages contain the report thesis. Keeping this window deliberately
+  // short also prevents distribution boilerplate at the end of a PDF from
+  // becoming a topic merely because it lists countries or asset classes.
+  return normalizeText(String(bodyText || "").slice(0, 12000));
+}
+
 function textMatches(text, patterns) {
   return patterns.some((pattern) => {
     if (pattern instanceof RegExp) return pattern.test(text);
@@ -4486,59 +5385,472 @@ function addUnique(list, value) {
   if (clean && !list.includes(clean)) list.push(clean);
 }
 
+const DAILY_PICK_KOREA_PATTERN = /\b(?:south korea|s korea|korea|korean|krw|kospi|bok)\b|韩国|韩元|韩国央行/;
+
+const DAILY_PICK_THEME_RULES = [
+  // Country + industry rules are intentionally first and cover both families.
+  // This keeps a precise title such as "Korea Batteries" from degrading into
+  // two generic labels such as "Korea" and "Commodities".
+  {
+    theme: "韩国股票市场与资金流向",
+    tag: "韩国股市",
+    families: ["region:korea", "industry:equity"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:kospi|equity|equities|stock market|weekly kickstart|foreign inflows?|fund flows?)\b|股票|股市|资金流/],
+    ],
+    priority: 100,
+  },
+  {
+    theme: "韩国宏观与货币政策",
+    tag: "韩国宏观",
+    families: ["region:korea", "macro:monetary"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:bok|bank of korea|policy rate|rate hike|rate cut|inflation|gdp|economic outlook)\b|韩国央行|加息|降息|通胀|经济展望/],
+    ],
+    priority: 98,
+  },
+  {
+    theme: "韩国半导体与科技产业",
+    tag: "韩国科技",
+    families: ["region:korea", "industry:semis"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:semiconductor|semiconductors|memory|dram|nand|hbm|chip|chips|technology|tech)\b|半导体|存储|芯片|科技/],
+    ],
+    priority: 96,
+  },
+  {
+    theme: "韩国汽车、电池与新能源产业",
+    tag: "韩国电池",
+    families: ["region:korea", "industry:autos"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:battery|batteries|automotive|automobile|autos?|electric vehicles?|ev|ess|lithium)\b|电池|汽车|新能源车|储能|锂/],
+    ],
+    priority: 96,
+  },
+  {
+    theme: "韩国金融与金融科技",
+    tag: "韩国金融",
+    families: ["region:korea", "industry:financials"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:financials?|fintech|banks?|insurance|brokerage)\b|金融科技|金融|银行|保险|券商/],
+    ],
+    priority: 94,
+  },
+  {
+    theme: "韩国工业与造船",
+    tag: "韩国工业",
+    families: ["region:korea", "industry:industrials"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:shipbuilding|shipyard|industrials?|machinery|capital goods)\b|造船|工业|机械|资本品/],
+    ],
+    priority: 94,
+  },
+  {
+    theme: "韩国通信与数字产业",
+    tag: "韩国通信",
+    families: ["region:korea", "industry:digital"],
+    title_groups: [
+      [DAILY_PICK_KOREA_PATTERN],
+      [/\b(?:telecom|telecommunications|communications services|it services|software)\b|电信|通信服务|信息技术服务|软件/],
+    ],
+    priority: 94,
+  },
+
+  // Region rules. A body-only region requires a local anchor in addition to the
+  // country name, so legal distribution lists do not qualify as report topics.
+  {
+    theme: "韩国市场与产业趋势",
+    tag: "韩国市场",
+    families: ["region:korea"],
+    title_groups: [[DAILY_PICK_KOREA_PATTERN]],
+    body_groups: [
+      [/\b(?:south korea|s korea|korea|korean)\b|韩国/],
+      [/\b(?:krw|won|kospi|bok|bank of korea|seoul)\b|韩元|韩国央行|首尔/],
+    ],
+    min_body_hits: 2,
+    priority: 70,
+  },
+  {
+    theme: "日本市场与政策趋势",
+    tag: "日本市场",
+    families: ["region:japan"],
+    title_groups: [[/\b(?:japan|japanese|jpy|yen|boj|nikkei)\b|日本|日元|日本央行/]],
+    body_groups: [
+      [/\b(?:japan|japanese)\b|日本/],
+      [/\b(?:jpy|yen|boj|bank of japan|nikkei|tokyo)\b|日元|日本央行|日经|东京/],
+    ],
+    min_body_hits: 2,
+    priority: 68,
+  },
+  {
+    theme: "印度宏观与资本市场",
+    tag: "印度市场",
+    families: ["region:india"],
+    title_groups: [[/\b(?:india|indian|inr|rbi|nifty)\b|印度|印度央行/]],
+    body_groups: [
+      [/\b(?:india|indian)\b|印度/],
+      [/\b(?:inr|rbi|reserve bank of india|nifty|mumbai)\b|印度央行|卢比|孟买/],
+    ],
+    min_body_hits: 2,
+    priority: 68,
+  },
+  {
+    theme: "中国宏观与资本市场",
+    tag: "中国宏观",
+    families: ["region:china"],
+    title_groups: [[/\b(?:china|chinese|cny|rmb|renminbi|pboc)\b|中国|人民币|中国央行/]],
+    body_groups: [
+      [/\b(?:china|chinese)\b|中国/],
+      [/\b(?:cny|rmb|renminbi|pboc|people s bank of china|a shares?)\b|人民币|中国央行|a股/],
+    ],
+    min_body_hits: 2,
+    priority: 68,
+  },
+  {
+    theme: "美国宏观与资本市场",
+    tag: "美国市场",
+    families: ["region:us"],
+    title_groups: [[/\b(?:united states|u s|us economic|us economics|us equities|american economy)\b|美国经济|美国股市|美国宏观/]],
+    body_groups: [
+      [/\b(?:united states|u s economy|us economy|american economy)\b|美国经济/],
+      [/\b(?:fed|fomc|treasury|dollar|s p 500)\b|美联储|美债|美元|标普/],
+    ],
+    min_body_hits: 2,
+    priority: 66,
+  },
+  {
+    theme: "欧洲宏观与市场趋势",
+    tag: "欧洲市场",
+    families: ["region:europe"],
+    title_groups: [[/\b(?:europe|european|euro area|eurozone|ecb)\b|欧洲|欧元区|欧洲央行/]],
+    body_groups: [
+      [/\b(?:europe|european|euro area|eurozone)\b|欧洲|欧元区/],
+      [/\b(?:ecb|euro|bund)\b|欧洲央行|欧元|德债/],
+    ],
+    min_body_hits: 2,
+    priority: 66,
+  },
+
+  // Industry rules. Body-only classification needs several independent anchors;
+  // a single disclosure mention is never enough.
+  {
+    theme: "半导体与存储产业链",
+    tag: "半导体",
+    families: ["industry:semis"],
+    title_groups: [[/\b(?:semiconductor|semiconductors|semis|memory|dram|nand|hbm|chip|chips|foundry|wafer)\b|半导体|存储|芯片|晶圆/]],
+    body_groups: [
+      [/\b(?:semiconductor|semiconductors|chip|chips)\b|半导体|芯片/],
+      [/\b(?:memory|dram|nand|hbm)\b|存储|内存/],
+      [/\b(?:foundry|wafer|fab|packaging)\b|晶圆|代工|封装/],
+    ],
+    min_body_hits: 2,
+    priority: 58,
+  },
+  {
+    theme: "人工智能与数字基础设施",
+    tag: "人工智能",
+    families: ["industry:ai"],
+    title_groups: [[/\b(?:artificial intelligence|ai infrastructure|ai compute|data centers?|cloud computing)\b|人工智能|ai算力|数据中心|云计算/]],
+    body_groups: [
+      [/\b(?:artificial intelligence|ai models?|generative ai)\b|人工智能|生成式ai/],
+      [/\b(?:gpu|accelerator|ai compute|computing power)\b|gpu|算力|加速器/],
+      [/\b(?:data centers?|cloud computing|servers?)\b|数据中心|云计算|服务器/],
+    ],
+    min_body_hits: 2,
+    priority: 56,
+  },
+  {
+    theme: "汽车、电池与新能源产业链",
+    tag: "汽车电池",
+    families: ["industry:autos"],
+    title_groups: [[/\b(?:battery|batteries|automotive|automobile|autos?|electric vehicles?|ev|ess|lithium)\b|电池|汽车|新能源车|储能|锂/]],
+    body_groups: [
+      [/\b(?:battery|batteries|cell chemistry)\b|电池|电芯/],
+      [/\b(?:electric vehicles?|ev|automotive|automobile)\b|新能源车|电动车|汽车/],
+      [/\b(?:ess|energy storage|lithium|cathode|anode)\b|储能|锂|正极|负极/],
+    ],
+    min_body_hits: 2,
+    priority: 56,
+  },
+  {
+    theme: "银行、保险与金融科技",
+    tag: "金融行业",
+    families: ["industry:financials"],
+    title_groups: [[/\b(?:financials?|fintech|commercial banks?|banks|banking|lenders?|insurance|brokerage|asset managers?)\b|金融科技|金融|银行|保险|券商|资管/]],
+    priority: 54,
+  },
+  {
+    theme: "工业制造与资本品",
+    tag: "工业制造",
+    families: ["industry:industrials"],
+    title_groups: [[/\b(?:shipbuilding|industrials?|machinery|capital goods|factory automation)\b|造船|工业|机械|资本品|工业自动化/]],
+    priority: 54,
+  },
+  {
+    theme: "通信、互联网与软件服务",
+    tag: "数字产业",
+    families: ["industry:digital"],
+    title_groups: [[/\b(?:telecom|telecommunications|internet|software|it services|cybersecurity|e commerce)\b|电信|通信服务|互联网|软件|网络安全|电商/]],
+    priority: 54,
+  },
+  {
+    theme: "消费、零售与品牌趋势",
+    tag: "消费零售",
+    families: ["industry:consumer"],
+    title_groups: [[/\b(?:consumer sector|consumer discretionary|consumer staples|consumer goods|retail|luxury|beauty|apparel|restaurants?|beverage)\b|消费行业|可选消费|必选消费|零售|奢侈品|美妆|服饰|餐饮/]],
+    priority: 54,
+  },
+  {
+    theme: "医药与医疗健康产业",
+    tag: "医疗健康",
+    families: ["industry:healthcare"],
+    title_groups: [[/\b(?:healthcare|health care|biotech|pharma|pharmaceutical|medtech|drug discovery)\b|医疗健康|医药|生物科技|医疗器械|药物研发/]],
+    priority: 54,
+  },
+  {
+    theme: "能源与公用事业",
+    tag: "能源公用",
+    families: ["industry:energy"],
+    title_groups: [[/\b(?:energy|utilities|power grid|renewables?|solar|wind power|electricity)\b|能源|公用事业|电网|可再生能源|光伏|风电|电力/]],
+    body_groups: [
+      [/\b(?:utilities|power grid|electricity)\b|公用事业|电网|电力/],
+      [/\b(?:renewables?|solar|wind power)\b|可再生能源|光伏|风电/],
+      [/\b(?:power generation|power demand|generation capacity)\b|发电|用电需求|装机容量/],
+    ],
+    min_body_hits: 2,
+    priority: 52,
+  },
+  {
+    theme: "原油市场与供需",
+    tag: "原油市场",
+    families: ["market:oil"],
+    title_groups: [[/\b(?:oil|crude|opec|petroleum)\b|油价|原油|石油/]],
+    body_groups: [
+      [/\b(?:oil|crude|petroleum)\b|油价|原油|石油/],
+      [/\b(?:opec|refinery|inventories|barrels?)\b|欧佩克|炼厂|库存|桶/],
+      [/\b(?:oil supply|oil demand|crude supply|crude demand)\b|原油供给|原油需求/],
+    ],
+    min_body_hits: 2,
+    priority: 55,
+  },
+  {
+    theme: "大宗商品与金属矿业",
+    tag: "大宗商品",
+    families: ["market:commodities"],
+    title_groups: [[/\b(?:commodities|commodity|metals|metal mining|copper|aluminium|aluminum|iron ore|gold)\b|大宗商品|金属矿业|铜|铝|铁矿石|黄金/]],
+    body_groups: [
+      [/\b(?:commodities|commodity|metals)\b|大宗商品|金属/],
+      [/\b(?:copper|aluminium|aluminum|iron ore|gold)\b|铜|铝|铁矿石|黄金/],
+      [/\b(?:mining|miners|smelters?)\b|矿业|矿山|冶炼/],
+    ],
+    min_body_hits: 2,
+    priority: 53,
+  },
+
+  // Macro and cross-asset rules. Geopolitics is deliberately separated from
+  // oil/commodities: "energy" or "Middle East" alone cannot fuse the two.
+  {
+    theme: "美联储政策路径与美国通胀",
+    tag: "美联储政策",
+    families: ["macro:fed"],
+    title_groups: [[/\b(?:fed|fomc|federal reserve|core pce|us inflation)\b|美联储|美国通胀/]],
+    body_groups: [
+      [/\b(?:fed|fomc|federal reserve)\b|美联储/],
+      [/\b(?:core pce|core cpi|us inflation)\b|核心pce|核心cpi|美国通胀/],
+      [/\b(?:rate hike|rate cut|policy rate)\b|加息|降息|政策利率/],
+    ],
+    min_body_hits: 2,
+    priority: 60,
+  },
+  {
+    theme: "央行政策与利率路径",
+    tag: "央行政策",
+    families: ["macro:monetary"],
+    title_groups: [[/\b(?:central bank|policy rate|rate hike|rate cut|monetary policy|ecb|boj|boe|pboc|bok|rbi)\b|央行|货币政策|政策利率|加息|降息/]],
+    body_groups: [
+      [/\b(?:central bank|monetary policy|ecb|boj|boe|pboc|bok|rbi)\b|央行|货币政策/],
+      [/\b(?:policy rate|rate hike|rate cut|tightening|easing)\b|政策利率|加息|降息|紧缩|宽松/],
+      [/\b(?:inflation target|forward guidance)\b|通胀目标|前瞻指引/],
+    ],
+    min_body_hits: 2,
+    priority: 58,
+  },
+  {
+    theme: "利率与债券市场",
+    tag: "利率债券",
+    families: ["market:rates"],
+    title_groups: [[/\b(?:rates strategy|treasury|bond market|government bonds?|yield curve|fixed income)\b|利率策略|债券市场|国债|收益率曲线|固定收益/]],
+    body_groups: [
+      [/\b(?:treasury|government bonds?|bond market)\b|国债|债券市场/],
+      [/\b(?:yield curve|bond yields?|term premium)\b|收益率曲线|债券收益率|期限溢价/],
+      [/\b(?:duration|fixed income|rates strategy)\b|久期|固定收益|利率策略/],
+    ],
+    min_body_hits: 2,
+    priority: 56,
+  },
+  {
+    theme: "汇率与外汇市场",
+    tag: "汇率",
+    families: ["market:fx"],
+    title_groups: [[/\b(?:fx strategy|foreign exchange|currency strategy|dollar outlook|usd|cny|jpy|krw|inr)\b|外汇策略|汇率|美元|人民币|日元|韩元|卢比/]],
+    body_groups: [
+      [/\b(?:foreign exchange|fx market|currency markets?)\b|外汇|汇率市场/],
+      [/\b(?:dollar|usd|cny|jpy|krw|inr)\b|美元|人民币|日元|韩元|卢比/],
+      [/\b(?:currency appreciation|currency depreciation|exchange rate)\b|货币升值|货币贬值|汇率/],
+    ],
+    min_body_hits: 2,
+    priority: 54,
+  },
+  {
+    theme: "通胀与价格路径",
+    tag: "通胀",
+    families: ["macro:inflation"],
+    title_groups: [[/\b(?:inflation|consumer prices?|cpi|pce|producer prices?|ppi)\b|通胀|消费者价格|生产者价格/]],
+    body_groups: [
+      [/\b(?:inflation|consumer prices?)\b|通胀|消费者价格/],
+      [/\b(?:cpi|pce|ppi)\b|cpi|pce|ppi/],
+      [/\b(?:price pressures?|disinflation|deflation)\b|价格压力|去通胀|通缩/],
+    ],
+    min_body_hits: 2,
+    priority: 55,
+  },
+  {
+    theme: "经济增长与景气周期",
+    tag: "经济增长",
+    families: ["macro:growth"],
+    title_groups: [[/\b(?:economic outlook|economics|gdp|growth outlook|recession|business cycle)\b|经济展望|经济增长|gdp|衰退|景气周期/]],
+    body_groups: [
+      [/\b(?:gdp|economic growth|growth outlook)\b|gdp|经济增长/],
+      [/\b(?:recession|business cycle|slowdown|recovery)\b|衰退|景气周期|放缓|复苏/],
+      [/\b(?:pmi|industrial production|consumer spending)\b|pmi|工业生产|消费支出/],
+    ],
+    min_body_hits: 2,
+    priority: 53,
+  },
+  {
+    theme: "大类资产配置",
+    tag: "资产配置",
+    families: ["market:allocation"],
+    title_groups: [[/\b(?:asset allocation|portfolio strategy|cross asset|global asset strategy)\b|大类资产|资产配置|组合策略/]],
+    body_groups: [
+      [/\b(?:asset allocation|cross asset|portfolio strategy)\b|大类资产|资产配置|组合策略/],
+      [/\b(?:equities and bonds|stocks and bonds|risk assets)\b|股债|风险资产/],
+      [/\b(?:portfolio weights?|overweight|underweight)\b|组合权重|超配|低配/],
+    ],
+    min_body_hits: 2,
+    priority: 52,
+  },
+  {
+    theme: "贸易与出口趋势",
+    tag: "贸易出口",
+    families: ["macro:trade"],
+    title_groups: [[/\b(?:exports?|imports?|trade balance|trade outlook|export tracker)\b|出口|进口|贸易差额|贸易展望/]],
+    body_groups: [
+      [/\b(?:exports?|imports?)\b|出口|进口/],
+      [/\b(?:trade balance|trade surplus|trade deficit)\b|贸易差额|贸易顺差|贸易逆差/],
+      [/\b(?:external demand|overseas demand|customs data)\b|外需|海外需求|海关数据/],
+    ],
+    min_body_hits: 2,
+    priority: 51,
+  },
+  {
+    theme: "地缘政治与贸易政策",
+    tag: "地缘政治",
+    families: ["macro:geopolitics"],
+    title_groups: [[/\b(?:geopolitics|geopolitical|war|conflict|sanctions?|trade war|tariffs?|export controls?|iran|russia|ukraine|taiwan strait|middle east conflict)\b|地缘政治|战争|冲突|制裁|贸易战|关税|出口管制|台海/]],
+    body_groups: [
+      [/\b(?:geopolitics|geopolitical|war|conflict)\b|地缘政治|战争|冲突/],
+      [/\b(?:sanctions?|trade war|tariffs?|export controls?)\b|制裁|贸易战|关税|出口管制/],
+      [/\b(?:iran|russia|ukraine|taiwan strait|middle east)\b|伊朗|俄罗斯|乌克兰|台海|中东/],
+    ],
+    min_body_hits: 2,
+    priority: 50,
+  },
+];
+
+function dailyPickPatternGroupHits(text, groups) {
+  return (groups || []).reduce((count, group) => count + (textMatches(text, group) ? 1 : 0), 0);
+}
+
+function dailyPickTopicProfile(item, bodyText = "") {
+  const titleText = dailyPickTitleText(item);
+  const mainBodyText = dailyPickBodyText(bodyText);
+  const candidates = [];
+  for (const [ruleIndex, rule] of DAILY_PICK_THEME_RULES.entries()) {
+    const titleGroups = Array.isArray(rule.title_groups) ? rule.title_groups : [];
+    const titleHits = dailyPickPatternGroupHits(titleText, titleGroups);
+    const titleMatched = titleGroups.length > 0 && titleHits === titleGroups.length;
+    const bodyGroups = Array.isArray(rule.body_groups) ? rule.body_groups : [];
+    const bodyHits = dailyPickPatternGroupHits(mainBodyText, bodyGroups);
+    const minBodyHits = Math.max(1, Number(rule.min_body_hits || 2));
+    if (!titleMatched && bodyHits < minBodyHits) continue;
+    candidates.push({
+      theme: rule.theme,
+      tag: rule.tag || rule.theme,
+      families: Array.isArray(rule.families) ? rule.families : [],
+      title_matched: titleMatched,
+      title_hits: titleHits,
+      body_hits: bodyHits,
+      score: (titleMatched ? 1000 : 0) + titleHits * 40 + bodyHits * 12 + Number(rule.priority || 0),
+      rule_index: ruleIndex,
+    });
+  }
+
+  candidates.sort((a, b) => b.score - a.score || b.title_hits - a.title_hits || b.body_hits - a.body_hits || a.rule_index - b.rule_index);
+  const selected = [];
+  const coveredFamilies = new Set();
+  for (const candidate of candidates) {
+    if (candidate.families.some((family) => coveredFamilies.has(family))) continue;
+    selected.push(candidate);
+    candidate.families.forEach((family) => coveredFamilies.add(family));
+    if (selected.length >= 8) break;
+  }
+  return selected;
+}
+
 function dailyPickTopicTags(item, bodyText = "") {
-  const text = dailyPickSourceText(item, bodyText);
   const tags = [];
   const add = (tag) => {
     if (tag && !tags.includes(tag)) tags.push(tag);
   };
-  if (/fed|fomc|ecb|boj|boe|pboc|central bank|央行|货币政策/.test(text)) add("央行政策");
-  if (/oil|crude|commodity|commodities|gold|energy|油价|原油|黄金|大宗/.test(text)) add("大宗商品");
-  if (/china|cny|pboc|中国|人民币/.test(text)) add("中国宏观");
-  if (/fx|currency|dollar|usd|汇率|美元|外汇/.test(text)) add("汇率");
-  if (/rates|treasury|bond|yield|利率|债券|国债/.test(text)) add("利率");
-  if (/strategy|asset allocation|market outlook|global markets|大类资产|资产配置/.test(text)) add("资产配置");
-  if (/inflation|cpi|pce|通胀/.test(text)) add("通胀");
-  add("宏观趋势");
+  for (const topic of dailyPickTopicProfile(item, bodyText)) add(topic.tag);
+  // This fallback remains useful for sparse reports, but it comes after every
+  // evidence-backed topic and therefore cannot displace a precise label.
+  if (tags.length < 3) add("宏观趋势");
   const bank = String(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
   if (bank && bank.length <= 12) add(bank);
   return tags.slice(0, 4);
 }
 
 function dailyPickThemes(item, tags, bodyText = "") {
-  const titleText = normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`);
-  const text = dailyPickSourceText(item, bodyText).slice(0, 16000);
-  const focusedText = `${titleText} ${text}`;
-  const indiaStrong = textMatches(titleText, [/\bindia\b|\binr\b|\brbi\b|印度|印度央行/]);
-  const globalAggStrong = textMatches(titleText, [/\bglobal agg\b|\bglobal aggregate\b|index inclusion|指数纳入/]) ||
-    textMatches(text, [/\bglobal aggregate index\b|bloomberg global aggregate|index inclusion/]);
-  const themes = [];
-  if (indiaStrong) addUnique(themes, "印度宏观与亚洲外汇利率");
-  if (globalAggStrong) addUnique(themes, "全球综合债券指数纳入预期");
-  if (indiaStrong && textMatches(focusedText, [/\bfx\b|currency|currencies|\bdollar\b|\busd\b|汇率|外汇|美元/])) addUnique(themes, "汇率市场");
-  if (indiaStrong && textMatches(focusedText, [/\brates\b|treasury|\bbond\b|\byield\b|curve|债券|国债|收益率|利率/])) addUnique(themes, "利率与债券市场");
-  if (textMatches(focusedText, [/\bfed\b|\bfomc\b|core pce|core cpi|rate hikes|on hold|美联储|加息/])) addUnique(themes, "美联储政策路径与美国通胀数据");
-  if (textMatches(focusedText, [/payroll|unemployment|labor market|就业|失业率/])) addUnique(themes, "就业市场");
-  if (textMatches(focusedText, [/\boil\b|crude|energy|middle east|iran|油价|原油|中东/])) addUnique(themes, "油价与地缘冲突");
-  if (textMatches(focusedText, [/\bchina\b|\bcny\b|\bpboc\b|人民币|中国宏观/])) addUnique(themes, "中国宏观与人民币");
-  if (textMatches(focusedText, [/inflation|\bcpi\b|\bpce\b|通胀/])) addUnique(themes, "通胀路径");
-  if (textMatches(focusedText, [/fiscal|deficit|subsidy|财政|补贴/])) addUnique(themes, "财政压力");
-  if (textMatches(focusedText, [/asset allocation|global markets|portfolio|资产配置|大类资产/])) addUnique(themes, "大类资产配置");
-  if (textMatches(focusedText, [/\bgdp\b|growth|recession|经济增长|衰退/])) addUnique(themes, "经济增长与衰退概率");
-  if (textMatches(focusedText, [/\bfx\b|currency|currencies|\bdollar\b|\busd\b|汇率|外汇|美元/])) addUnique(themes, "汇率市场");
-  if (textMatches(focusedText, [/\brates\b|treasury|\bbond\b|\byield\b|curve|债券|国债|收益率|利率/])) addUnique(themes, "利率与债券市场");
-  for (const tag of tags || []) {
-    if (tag !== "宏观趋势" && tag !== item.bank_name && tag !== item.bank_code) addUnique(themes, tag);
+  const themes = dailyPickTopicProfile(item, bodyText).map((topic) => topic.theme);
+  if (!themes.length) {
+    for (const tag of tags || []) {
+      if (tag !== "宏观趋势" && tag !== item.bank_name && tag !== item.bank_code) addUnique(themes, tag);
+    }
   }
   return themes.slice(0, 4);
 }
 
 function dailyPickBodyInsights(item, bodyText = "") {
-  const titleText = normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`);
+  const titleText = dailyPickTitleText(item);
   const text = dailyPickSourceText(item, bodyText).slice(0, 22000);
-  const focusedText = `${titleText} ${text}`;
   const indiaContext = textMatches(titleText, [/\bindia\b|\binr\b|\brbi\b|印度|印度央行/]);
-  const fedContext = textMatches(focusedText, [/\bfed\b|\bfomc\b|core pce|core cpi|rate hikes|on hold|payroll|unemployment|labor market|美联储|加息|失业率|就业/]);
+  const classifiedThemes = dailyPickTopicProfile(item, bodyText).map((topic) => topic.theme);
+  const hasClassifiedTheme = (pattern) => classifiedThemes.some((theme) => pattern.test(theme));
+  const fedContext = hasClassifiedTheme(/美联储政策/);
+  const energyContext = hasClassifiedTheme(/原油市场|能源与公用事业|大宗商品/);
+  const geopoliticsContext = hasClassifiedTheme(/地缘政治/);
+  const growthContext = hasClassifiedTheme(/经济增长|宏观/);
+  const monetaryContext = hasClassifiedTheme(/央行政策|货币政策|利率与债券/);
+  const tradeContext = hasClassifiedTheme(/贸易与出口|地缘政治/);
+  const aiContext = hasClassifiedTheme(/人工智能|半导体|数字基础设施/);
   const insights = [];
   const add = (value) => addUnique(insights, value);
 
@@ -4563,8 +5875,11 @@ function dailyPickBodyInsights(item, bodyText = "") {
   if (textMatches(text, [/recommend going long|going long.*bond|long inr|做多/])) {
     add("配置结论指向做多相关长期债券或利率品种");
   }
-  if (!indiaContext && textMatches(text, [/lower oil prices|oil prices.*came down|\boil\b|crude|middle east|iran|能源价格|油价/])) {
-    add("油价和地缘局势变化会影响通胀预期、增长判断和政策路径");
+  if (!indiaContext && energyContext && textMatches(text, [/lower oil prices|oil prices.*came down|oil supply|oil demand|\bcrude\b|\bopec\b|能源价格|油价|原油供需/])) {
+    add("原油与能源供需变化会影响通胀预期、增长判断和政策路径");
+  }
+  if (geopoliticsContext && textMatches(text, [/geopolitic|war|conflict|sanction|trade war|tariff|export control|地缘|战争|冲突|制裁|贸易战|关税|出口管制/])) {
+    add("地缘冲突与贸易政策变化会影响跨境供给、成本和市场预期");
   }
 
   if (fedContext && textMatches(text, [/\bfed\b.*stays on hold|fed on hold|on hold through year end|no rate hikes|美联储.*观望/])) {
@@ -4583,16 +5898,16 @@ function dailyPickBodyInsights(item, bodyText = "") {
     add("就业增长放缓是其基准路径的重要前提");
   }
 
-  if (textMatches(text, [/recession risk|recession probability|衰退/])) {
+  if (growthContext && textMatches(text, [/recession risk|recession probability|衰退/])) {
     add("衰退风险评估是资产市场定价的重要约束");
   }
-  if (textMatches(text, [/ecb|boe|boj|pboc|central banks|央行/])) {
+  if (monetaryContext && textMatches(text, [/ecb|boe|boj|pboc|bok|rbi|central banks|央行/])) {
     add("主要央行的政策分化会影响利率、汇率和风险资产定价");
   }
-  if (textMatches(text, [/tariff|trade|exports|imports|贸易|出口|进口/])) {
+  if (tradeContext && textMatches(text, [/tariff|trade|exports|imports|贸易|出口|进口/])) {
     add("贸易和出口变化会影响增长结构与市场预期");
   }
-  if (textMatches(text, [/ai|artificial intelligence|估值|valuation/])) {
+  if (aiContext && textMatches(text, [/\bai\b|artificial intelligence|估值|valuation/])) {
     add("AI 与估值变化仍是风险资产需要跟踪的变量");
   }
 
@@ -4746,6 +6061,165 @@ async function listR2JsonObjects(env, prefix, limit = 500) {
   return rows;
 }
 
+function accountExportRowKey(row, keyFields) {
+  if (!row || typeof row !== "object" || Array.isArray(row)) return "";
+  return (Array.isArray(keyFields) ? keyFields : [])
+    .map((field) => String(row[field] || "").trim())
+    .filter(Boolean)
+    .join("\u001f");
+}
+
+async function listAllSupabaseAccountRows(env, table, params, options = {}) {
+  const pageSize = Math.max(1, Math.min(1000, Number(options.pageSize) || ACCOUNT_ADMIN_EXPORT_PAGE_SIZE));
+  const maxRows = Math.max(1, Number(options.maxRows) || ACCOUNT_ADMIN_EXPORT_MAX_USERS);
+  const maxPages = Math.ceil(maxRows / pageSize) + 1;
+  const keyFields = Array.isArray(options.keyFields) && options.keyFields.length ? options.keyFields : ["id"];
+  const cursorField = String(options.cursorField || keyFields[0] || "id");
+  const rows = [];
+  const seenRows = new Set();
+  const requestedCursors = new Set();
+  let cursor = "";
+  let pageCount = 0;
+
+  while (true) {
+    if (requestedCursors.has(cursor)) {
+      throw new Error(`Account export pagination cursor repeated for ${table}.`);
+    }
+    if (pageCount >= maxPages) {
+      throw new Error(`Account export pagination exceeded ${maxPages} pages for ${table}.`);
+    }
+    requestedCursors.add(cursor);
+    const query = queryString({
+      ...(params || {}),
+      limit: String(pageSize),
+      ...(cursor ? { [cursorField]: `gt.${cursor}` } : {}),
+    });
+    const page = await supabaseRequest(env, "GET", `/rest/v1/${table}?${query}`);
+    if (!Array.isArray(page)) throw new Error(`Account export received an invalid page for ${table}.`);
+    pageCount += 1;
+    let added = 0;
+    let nextCursor = cursor;
+    for (const row of page) {
+      const rowCursor = String(row && row[cursorField] || "").trim();
+      if (!rowCursor) throw new Error(`Account export received a row without ${cursorField} for ${table}.`);
+      if (nextCursor && rowCursor <= nextCursor) {
+        throw new Error(`Account export pagination order did not advance for ${table}.`);
+      }
+      nextCursor = rowCursor;
+      const key = accountExportRowKey(row, keyFields);
+      if (!key) throw new Error(`Account export received a row without a stable key for ${table}.`);
+      if (seenRows.has(key)) continue;
+      seenRows.add(key);
+      rows.push(row);
+      added += 1;
+      if (rows.length > maxRows) {
+        throw new Error(`Account export exceeds the ${maxRows}-user hard limit.`);
+      }
+    }
+    if (page.length < pageSize) break;
+    if (added === 0) throw new Error(`Account export pagination made no progress for ${table}.`);
+    if (!nextCursor || requestedCursors.has(nextCursor)) {
+      throw new Error(`Account export pagination cursor repeated for ${table}.`);
+    }
+    cursor = nextCursor;
+  }
+  return rows;
+}
+
+async function listAllR2AccountRows(env, prefix, options = {}) {
+  const pageSize = Math.max(1, Math.min(1000, Number(options.pageSize) || ACCOUNT_ADMIN_EXPORT_PAGE_SIZE));
+  const maxRows = Math.max(1, Number(options.maxRows) || ACCOUNT_ADMIN_EXPORT_MAX_USERS);
+  const maxPages = Math.ceil(maxRows / pageSize) + 1;
+  const requestedCursors = new Set();
+  const seenKeys = new Set();
+  const rows = [];
+  let cursor = undefined;
+  let pageCount = 0;
+
+  while (true) {
+    const cursorKey = String(cursor || "");
+    if (requestedCursors.has(cursorKey)) {
+      throw new Error(`Account export pagination cursor repeated for ${prefix}.`);
+    }
+    if (pageCount >= maxPages) {
+      throw new Error(`Account export pagination exceeded ${maxPages} pages for ${prefix}.`);
+    }
+    requestedCursors.add(cursorKey);
+    const listed = await accountBucket(env).list({ prefix, limit: pageSize, cursor });
+    pageCount += 1;
+    const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+    const pageKeys = [];
+    for (const object of objects) {
+      const key = String(object && object.key || "");
+      if (!key || seenKeys.has(key)) continue;
+      seenKeys.add(key);
+      pageKeys.push(key);
+      if (seenKeys.size > maxRows) {
+        throw new Error(`Account export exceeds the ${maxRows}-user hard limit.`);
+      }
+    }
+    const pageRows = await Promise.all(pageKeys.map((key) => r2GetJsonStrict(env, key)));
+    rows.push(...pageRows.filter((row) => row && typeof row === "object" && !Array.isArray(row)));
+    if (!listed || !listed.truncated) break;
+    const nextCursor = String(listed.cursor || "");
+    if (!nextCursor) throw new Error(`Account export pagination did not return a cursor for ${prefix}.`);
+    if (requestedCursors.has(nextCursor)) {
+      throw new Error(`Account export pagination cursor repeated for ${prefix}.`);
+    }
+    if (pageKeys.length === 0) throw new Error(`Account export pagination made no progress for ${prefix}.`);
+    cursor = nextCursor;
+  }
+  return rows;
+}
+
+async function listAllSiteUsersForExport(env) {
+  let rows;
+  if (hasSupabaseConfig(env)) {
+    rows = await listAllSupabaseAccountRows(env, "site_users", {
+      select: "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at",
+      order: "id.asc",
+    }, {
+      keyFields: ["id"],
+      cursorField: "id",
+      maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
+    });
+  } else {
+    rows = await listAllR2AccountRows(env, accountKey("users", "id", ""), {
+      maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
+    });
+  }
+  return rows.map((row) => validateSiteUserRow(row)).filter(Boolean);
+}
+
+async function mapWithConcurrency(rows, concurrency, mapper) {
+  const values = Array.isArray(rows) ? rows : [];
+  if (!values.length) return [];
+  const results = new Array(values.length);
+  let cursor = 0;
+  async function worker() {
+    while (cursor < values.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await mapper(values[index], index);
+    }
+  }
+  const workerCount = Math.max(1, Math.min(values.length, Number(concurrency) || 1));
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+  return results;
+}
+
+async function loadAllAdminUsersForExport(env) {
+  const users = await listAllSiteUsersForExport(env);
+  return mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (user) => {
+    const [mergedUser, entitlement, access] = await Promise.all([
+      mergeSiteUserAdminState(env, user),
+      findEntitlement(env, user.email),
+      findAccessGrant(env, user.email),
+    ]);
+    return adminVisibleUser(mergedUser, entitlement, access);
+  });
+}
+
 async function listSiteUsers(env) {
   if (hasSupabaseConfig(env)) {
     const query = queryString({
@@ -4765,7 +6239,7 @@ async function listSiteUsers(env) {
 async function listEntitlementRows(env) {
   if (hasSupabaseConfig(env)) {
     const query = queryString({
-      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,paddle_last_occurred_at,updated_at",
       order: "updated_at.desc",
       limit: "1000",
     });
@@ -8092,7 +9566,10 @@ async function refreshAdminUsersSnapshot(env) {
   const [userRows, entitlementRows] = await Promise.all([listSiteUsers(env), listEntitlementRows(env)]);
   if (!Array.isArray(userRows) || !userRows.length) throw new Error("User list is not ready.");
   const entitlementsByEmail = entitlementMap(entitlementRows);
-  const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email).catch(() => publicAccessGrant(null))));
+  // Do not turn an unreadable administrator grant into "none": doing so can
+  // make an older annual entitlement look like all-site access in the admin
+  // table. Keep the previous verified snapshot instead by failing this refresh.
+  const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email)));
   const users = userRows.map((user, index) => adminVisibleUser(
     user,
     entitlementsByEmail.get(normalizeEmail(user.email)),
@@ -8252,6 +9729,59 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   }
 }
 
+async function handleAccountAdminUsersExport(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  try {
+    const users = await loadAllAdminUsersForExport(env);
+    return jsonResponse(request, env, 200, {
+      users,
+      total: users.length,
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, {
+      detail: error.message || "User export data is unavailable.",
+      code: "user_export_unavailable",
+    });
+  }
+}
+
+async function handleAccountAdminUserAccessRead(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const email = normalizeEmail(new URL(request.url).searchParams.get("email"));
+  if (!email) return jsonResponse(request, env, 400, { detail: "Email is required." });
+  try {
+    const storedUser = await findSiteUserByEmail(env, email);
+    if (!storedUser) return jsonResponse(request, env, 404, { detail: "User not found." });
+    const user = await mergeSiteUserAdminState(env, storedUser);
+    const [access, entitlement, catalog] = await Promise.all([
+      findAccessGrant(env, email),
+      findEntitlement(env, email).catch(() => null),
+      loadCatalog(env),
+    ]);
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      verified: true,
+      user: adminVisibleUser(user, entitlement, access),
+      access,
+      access_options: accessOptionRowsFromCatalog(catalog),
+    });
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status === 503 ? 503 : 400, {
+      detail: status === 503 ? "用户权限暂时无法核验，请稍后重试。" : error.message || "Could not load access.",
+    });
+  }
+}
+
 async function handleAccountAdminUserAccess(request, env) {
   let adminUser;
   try {
@@ -8296,14 +9826,28 @@ async function handleAccountAdminUserAccess(request, env) {
     return jsonResponse(request, env, 200, {
       ok: true,
       verified: true,
-      backup_count: 3,
+      backup_count: saveResult.durability.backup_count,
+      durability: saveResult.durability,
       user: visibleUser,
       access,
     });
   } catch (error) {
     if (error && error.code === "ACCESS_CONFLICT") {
       return jsonResponse(request, env, 409, {
+        code: error.code,
         detail: error.message || "权限记录已变化，请刷新后重试。",
+      });
+    }
+    if (error && error.code === "ACCESS_SCOPE_CONFIRMATION_REQUIRED") {
+      return jsonResponse(request, env, 409, {
+        code: error.code,
+        detail: error.message || "请确认权限范围变化后再保存。",
+      });
+    }
+    if (error && ["ACCESS_INVALID_PAYLOAD", "ACCESS_EMPTY_FILTERS"].includes(error.code)) {
+      return jsonResponse(request, env, 400, {
+        code: error.code,
+        detail: error.message || "权限参数无效。",
       });
     }
     const status = accessErrorStatus(error);
@@ -8430,6 +9974,155 @@ async function handleAccountAdminUserStatus(request, env) {
   }
 }
 
+async function handleAccountAdminTextOnlyPdf(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  if (
+    !env.REPORT_BUCKET
+    || typeof env.REPORT_BUCKET.put !== "function"
+    || typeof env.REPORT_BUCKET.get !== "function"
+    || typeof env.REPORT_BUCKET.head !== "function"
+    || typeof env.REPORT_BUCKET.delete !== "function"
+  ) {
+    return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
+  }
+
+  let form;
+  try {
+    form = await request.formData();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "请使用表单上传 PDF。" });
+  }
+  const id = cleanCatalogReportId(form.get("id"));
+  const pdf = form.get("pdf");
+  if (!id) return jsonResponse(request, env, 400, { detail: "报告 id 无效。" });
+  if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
+    return jsonResponse(request, env, 400, { detail: "请选择 PDF 文件。" });
+  }
+
+  let catalog;
+  try {
+    catalog = await loadCatalog(env);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "Catalog is unavailable." });
+  }
+  const report = findReport(catalog, id);
+  if (!report) return jsonResponse(request, env, 404, { detail: "Report not found." });
+  if (report.available !== false) {
+    return jsonResponse(request, env, 409, { detail: "这份报告已经有 PDF，不能通过 Text only 补传入口覆盖。" });
+  }
+
+  const contentType = String(pdf.type || "").trim().toLowerCase();
+  if (contentType && contentType !== "application/pdf") {
+    return jsonResponse(request, env, 400, { detail: "文件类型必须为 PDF。" });
+  }
+  if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
+    return jsonResponse(request, env, 400, { detail: "无法识别文件类型时，文件名必须以 .pdf 结尾。" });
+  }
+  const sizeBytes = Math.max(0, Number(pdf.size || 0) || 0);
+  if (!sizeBytes || sizeBytes > CATALOG_PDF_OVERRIDE_MAX_BYTES) {
+    return jsonResponse(request, env, 413, { detail: "PDF 必须不超过 95 MB。" });
+  }
+  const itemKey = catalogPdfOverrideItemKey(id);
+  try {
+    if (await env.REPORT_BUCKET.head(itemKey)) {
+      return jsonResponse(request, env, 409, { detail: "这份 Text only 报告已经补传过 PDF。" });
+    }
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "补传状态暂时无法核验，请稍后重试。" });
+  }
+
+  let pdfKey = "";
+  let metadataWritten = false;
+  try {
+    const magicBytes = new Uint8Array(await pdf.slice(0, 5).arrayBuffer());
+    if (String.fromCharCode(...magicBytes) !== "%PDF-") {
+      return jsonResponse(request, env, 400, { detail: "文件内容不是有效 PDF。" });
+    }
+
+    const version = randomHex(8);
+    pdfKey = catalogPdfOverridePdfKey(id, version);
+    const filename = safePdfFilename(pdf.name || report.filename || `${id}.pdf`);
+    const uploadedAt = new Date().toISOString();
+    const uploadedBy = normalizeEmail(adminUser.email);
+    const writtenPdf = await env.REPORT_BUCKET.put(pdfKey, pdf, {
+      onlyIf: { etagDoesNotMatch: "*" },
+      httpMetadata: {
+        contentType: "application/pdf",
+        cacheControl: "no-store, private",
+        contentDisposition: contentDisposition(filename),
+      },
+      customMetadata: {
+        source: "catalog-pdf-override",
+        report_id: id,
+        version,
+        uploaded_at: uploadedAt,
+        uploaded_by: uploadedBy,
+      },
+    });
+    if (writtenPdf === null) {
+      return jsonResponse(request, env, 409, { detail: "上传版本发生冲突，请重试。" });
+    }
+    const verifiedPdf = await env.REPORT_BUCKET.head(pdfKey);
+    const etag = String(verifiedPdf && verifiedPdf.etag || "").trim();
+    const row = validateCatalogPdfOverride({
+      id,
+      version,
+      object_key: pdfKey,
+      filename,
+      size_bytes: sizeBytes,
+      etag,
+      uploaded_at: uploadedAt,
+      uploaded_by: uploadedBy,
+      source: "catalog-pdf-override",
+    }, id);
+    if (!catalogPdfOverrideObjectMatches(row, verifiedPdf)) {
+      throw new Error("Uploaded PDF verification failed.");
+    }
+
+    const writtenMetadata = await env.REPORT_BUCKET.put(itemKey, JSON.stringify(row), {
+      onlyIf: { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    });
+    if (writtenMetadata === null) {
+      await env.REPORT_BUCKET.delete(pdfKey);
+      pdfKey = "";
+      return jsonResponse(request, env, 409, { detail: "这份 Text only 报告已经补传过 PDF。" });
+    }
+    metadataWritten = true;
+    const saved = validateCatalogPdfOverride(await r2GetJsonStrict(env, itemKey), id);
+    const savedObject = await env.REPORT_BUCKET.head(saved.object_key);
+    if (!catalogPdfOverrideObjectMatches(saved, savedObject)) {
+      throw new Error("Uploaded PDF readback verification failed.");
+    }
+
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_text_only_pdf_upload",
+      path: "/account-admin/text-only-pdf",
+      data: { report_id: id, report_title: report.title || "", status: "success" },
+    }, adminUser).catch(() => null);
+    return jsonResponse(request, env, 201, {
+      ok: true,
+      item: publicCatalogPdfOverride(saved),
+    });
+  } catch (error) {
+    const cleanup = [];
+    if (metadataWritten) cleanup.push(env.REPORT_BUCKET.delete(itemKey));
+    if (pdfKey) cleanup.push(env.REPORT_BUCKET.delete(pdfKey));
+    const cleanupResults = await Promise.allSettled(cleanup);
+    const cleanupFailed = cleanupResults.some((result) => result.status === "rejected");
+    return jsonResponse(request, env, 503, {
+      detail: cleanupFailed
+        ? "补传失败且清理未完成，请联系管理员核验存储。"
+        : (error.message || "Text only PDF 补传失败，请稍后重试。"),
+    });
+  }
+}
+
 async function handleAccountAdminReportPdf(request, env) {
   try {
     await requireOperationsUser(request, env);
@@ -8454,16 +10147,24 @@ async function handleAccountAdminReportPdf(request, env) {
   }
   const report = findReport(catalog, id);
   if (!report) return jsonResponse(request, env, 404, { detail: "Report not found." });
-  if (report.available === false) {
+  let pdfDescriptor;
+  try {
+    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "Report PDF status is unavailable." });
+  }
+  if (!pdfDescriptor) {
     return jsonResponse(request, env, 404, { detail: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.` });
   }
 
-  const object = await env.REPORT_BUCKET.get(objectKeyForReport(env, id));
-  if (!object) return jsonResponse(request, env, 404, { detail: "Report PDF was not found in storage." });
+  const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
+  if (!catalogReportPdfObjectMatches(pdfDescriptor, object)) {
+    return jsonResponse(request, env, 404, { detail: "Report PDF was not found in storage." });
+  }
   const headers = {
     ...corsHeaders(request, env),
     "Content-Type": "application/pdf",
-    "Content-Disposition": contentDisposition(report.filename || `${id}.pdf`),
+    "Content-Disposition": contentDisposition(pdfDescriptor.filename),
     "Content-Length": String(object.size || ""),
     "Cache-Control": "no-store, private",
     "X-Content-Type-Options": "nosniff",
@@ -10103,6 +11804,10 @@ export default {
       return handleEntitlement(request, env);
     }
 
+    if (pathname === "/catalog-pdf-overrides" && request.method === "GET") {
+      return handleCatalogPdfOverrides(request, env);
+    }
+
     if (pathname === "/ops/alerts/email" && request.method === "POST") {
       return handleOpsAlertEmail(request, env);
     }
@@ -10179,8 +11884,16 @@ export default {
       return handleAccountAdminSummary(request, env, ctx);
     }
 
+    if (pathname === "/account-admin/users-export" && request.method === "GET") {
+      return handleAccountAdminUsersExport(request, env);
+    }
+
     if (pathname === "/account-admin/analytics-events" && request.method === "GET") {
       return handleAccountAdminAnalyticsEvents(request, env);
+    }
+
+    if (pathname === "/account-admin/user-access" && request.method === "GET") {
+      return handleAccountAdminUserAccessRead(request, env);
     }
 
     if (pathname === "/account-admin/user-access" && request.method === "POST") {
@@ -10209,6 +11922,38 @@ export default {
 
     if (pathname === "/account-admin/report-pdf" && request.method === "GET") {
       return handleAccountAdminReportPdf(request, env);
+    }
+
+    if (pathname === "/account-admin/text-only-pdf" && request.method === "POST") {
+      return handleAccountAdminTextOnlyPdf(request, env);
+    }
+
+    if (pathname === "/account-admin/hot-report" && request.method === "POST") {
+      return handleAccountAdminHotReportUpload(request, env);
+    }
+
+    if (pathname === "/hot-reports" && request.method === "GET") {
+      return handleHotReportsList(request, env);
+    }
+
+    if (pathname === "/hot-reports/item" && request.method === "GET") {
+      return handleHotReportItem(request, env);
+    }
+
+    if (pathname === "/hot-reports/access" && request.method === "GET") {
+      return handleHotReportAccess(request, env);
+    }
+
+    if (pathname === "/hot-reports/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleHotReportPdf(request, env);
+    }
+
+    if (pathname === "/hot-reports/comments" && (request.method === "GET" || request.method === "POST")) {
+      return handleHotReportComments(request, env);
+    }
+
+    if (pathname === "/hot-reports/comments/order" && request.method === "POST") {
+      return handleHotReportCommentOrder(request, env);
     }
 
     if (pathname === "/external/search" && request.method === "GET") {

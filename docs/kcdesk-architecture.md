@@ -103,7 +103,7 @@ https://kcdesk.com/reports/<report_id>.html
 | 文件 | 用途 |
 | --- | --- |
 | `sitemap.xml` | sitemap index，供 Google、Bing、Yandex 和通用爬虫使用。 |
-| `sitemap-pages.xml` / `sitemap-reports-*.xml` | 公开页面与报告静态页分片，每片最多 5000 篇。 |
+| `sitemap-pages.xml` / `sitemap-reports-*.xml` / `sitemap-blog-*.xml` | 公开页面、报告与 Blog 静态页分片，每片最多 5000 篇。 |
 | `sitemap-baidu.xml` | 百度专用扁平 URL 集；不使用百度已停止处理的 sitemap index。 |
 | `sitemap-sogou.xml` | 搜狗可直接提交的扁平 URL 集。 |
 | `feed.xml` | 最近 100 篇报告 RSS；供 Bing、阅读器和增量发现使用。 |
@@ -135,6 +135,7 @@ https://kcdesk.com/reports/<report_id>.html
 | 页面 | 文件 | 说明 |
 | --- | --- | --- |
 | 首页 | `kc_desk_notes/site_src/index.html` + `assets/app.js` | 报告搜索、机构/行业/日期/范围/PDF状态/页数筛选、外部报告检索、登录入口。 |
+| Blog | 构建生成的 `blog/index.html` 与 `blog/<slug>.html` | 自 2026-07-27 起归档每日微信公众号文章；正文经过白名单净化并进入公开 sitemap。 |
 | 报告详情 | `kc_desk_notes/site_src/report.html` | 站内 PDF 报告详情、密码/账号下载、相关报告推荐。 |
 | 外部报告详情 | `kc_desk_notes/site_src/doc.html` | “其他报告 / 报告A / 高权报告”的统一详情页。 |
 | 交付页 | `kc_desk_notes/site_src/delivery.html` | 发货链接落地页，预填密码，但仍由客户点击下载按钮。 |
@@ -160,6 +161,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `/captcha` | GET | 注册/登录验证码。 |
 | `/auth` | GET/POST | 获取 session、注册、登录。 |
 | `/entitlement` | GET | 查询当前账号权益。 |
+| `/catalog-pdf-overrides` | GET | 返回 Text only 管理员补传 PDF 的公开可用状态，不含对象键、版本、ETag 或上传账号。 |
 | `/download` | POST | 站内 PDF 密码/账号校验后下载。 |
 | `/calc` | GET | 隐藏的单篇报告密码计算器，需要 `CALC_KEY`。 |
 | `/admin/login` | POST | 通用密钥入口，写入管理 token。 |
@@ -169,6 +171,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `/account-admin/github-file` | GET | 每日文件下载，支持 R2 缓存和 Range。 |
 | `/account-admin/github-artifact` | GET | GitHub artifact 下载，支持 R2 缓存和 Range。 |
 | `/account-admin/report-pdf` | GET | 管理后台每日精选 PDF 下载。 |
+| `/account-admin/text-only-pdf` | POST | 仅 `twotigers` super 账号可用；给已有 Text only catalog 条目补传 PDF，不创建新报告。 |
 | `/external/search` | GET | “其他报告”检索。 |
 | `/external/pdf` | GET/POST | “其他报告”PDF 准备/下载。 |
 | `/external/status` | GET | “其他报告”准备状态轮询。 |
@@ -188,6 +191,8 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | Prefix | 内容 |
 | --- | --- |
 | `reports/<report_id>.pdf` | 站内 Dropbox PDF 镜像。 |
+| `_catalog-pdf-overrides/pdfs/<report_id>/<version>.pdf` | super 管理员补传的 Text only PDF；独立于 Dropbox 容量清理。 |
+| `_catalog-pdf-overrides/items/<report_id>.json` | 补传 PDF 的版本、对象校验和审计元数据；前端只读取脱敏后的公开状态接口。 |
 | `reportify/<id>.pdf` | 历史命名的外部报告 PDF 缓存；用户端不展示这个名称。 |
 | `reportify-status/<id>.json` | 外部报告后台准备状态；用户端不展示这个名称。 |
 | `_account/...` | R2 兜底账号、权益、购买记录、GitHub 文件缓存。 |
@@ -207,6 +212,8 @@ PDF 容量策略：
 - 超过上限时，只归档旧 PDF：`available=false`、`r2_synced=false`，并删除对应 R2 PDF。
 - catalog、标题、日期、机构、页数和搜索文字继续保留。
 - 前端搜索到已归档报告时显示 `Text only`，并按浏览器语言提示对应联系方式。
+- `twotigers` 登录后可在原报告详情页为 Text only 条目补传 PDF。补传写入独立、版本化前缀并读回核验，不会被 Dropbox 容量清理；首页、筛选、相关推荐、详情和下载在运行时合并公开 override 状态。
+- 补传只改变 PDF 可用性，不改变 report id、全文索引、账号权益、机构范围、单篇密码或体验下载计数；实际对象确认存在后才消耗限次下载额度。
 
 文字索引策略：
 
@@ -264,7 +271,7 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - R2 `_account/vid2ppt_trial/...` 单独保存 NOVA-3D 的 3 天/10 篇试用和已下载报告 id，避免覆盖普通会员或老客户授权。
 - Supabase 未配置时仍保留 R2 JSON 账号/权益兼容路径；生产 Supabase 已配置后，不把密码 hash 重新镜像到旧 R2 identity namespace。
 
-账号权益先解析出唯一的有效基础权限，再执行单篇授权和密码授权：super/operator 角色最高；普通账号只要存在有效的 `_account/access/...` 管理后台手工授权，就无条件以该授权的范围、期限和下载额度为准。没有有效手工授权时，才在会员与 NOVA-3D 试用中选择到期时间最晚的一项，终身权益视为最长；同到期日优先无限量、全站范围。`effective_access`、页面展示和实际下载鉴权必须使用同一选择结果。单篇购买/授权和报告密码继续作为独立入口，任何可选的单篇购买查询都不得阻断已经验证通过的基础权限。
+账号权益先解析出唯一的有效基础权限，再执行单篇授权和密码授权：super/operator 角色最高；普通账号只要存在有效的 `_account/access/...` 管理后台手工授权，就无条件以该授权的范围、期限和下载额度为准。手工记录过期或被明确关闭后，仍会阻止更早的会员/试用记录重新扩大权限；只有可信业务发生时间晚于管理员决定的新购买或兑换才可接替（Paddle 使用 `paddle_last_occurred_at`，NOVA/Vid2PPT 使用签名结果中的 `completed_at`，缺少可信业务时间时不得越过管理员决定）。完全没有手工决策时，才在会员与 NOVA-3D 试用中选择到期时间最晚的一项，终身权益视为最长；同到期日优先无限量、全站范围。`effective_access`、页面展示和实际下载鉴权必须使用同一选择结果。单篇购买/授权和报告密码继续作为独立入口，任何可选的单篇购买查询都不得阻断已经验证通过的基础权限。
 
 ### 8.2 两站账号与来源
 
@@ -496,7 +503,7 @@ ATLAS 旧映射只为历史数据识别保留；新的 KCdesk 赠送只接受 NO
 
 1. super/operator 角色权限最高。
 2. 有效的管理后台手工授权是普通账号的最高权限来源；即使会员或试用到期更晚，也不得覆盖、拓宽或隐藏后台指定范围。
-3. 没有有效后台授权时，会员、NOVA 赠送和 NOVA-3D 试用按到期时间最晚者生效；终身权益最长。
+3. 手工授权过期或被关闭时，更早的会员/试用记录仍不得自动恢复；只有可信业务发生时间晚于管理员决策的新购买或兑换才可接替，异步事件的处理时间 `updated_at` 不得作为依据，缺少可信业务时间时保守保持管理员决策。完全没有手工记录时，会员、NOVA 赠送和 NOVA-3D 试用按到期时间最晚者生效；终身权益最长。
 4. 单篇购买/授权是独立补充，不改变账号基础权限的来源与页面显示。
 
 ### 14.5 兑换码兜底
@@ -625,7 +632,7 @@ Vid2PPT 集成的额外展示规则：
 4. 用户权限修改仍以 `_account/access/...` 的主记录、latest backup、history backup 三份写入并读回校验；用户列表快照只是管理后台展示层，不参与实际下载授权判断。
 5. 用户权限新增、编辑、禁用后立即更新对应的用户列表快照；即使随后刷新失败，当前管理界面也保留服务端刚确认的结果。
 6. Pages workflow 在同步和部署前执行前端与 Worker 的 `node --check`；语法校验失败时禁止继续部署 Worker。
-7. 老客户现有 R2 手工授权是普通账号的最高权限来源；新增 NOVA 集成不得覆盖、缩短、拓宽、隐藏或清空该授权。没有有效手工授权时，会员与试用才按到期时间最长者生效；单篇授权保持独立补充。
+7. 老客户现有 R2 手工授权是普通账号的最高权限来源；新增 NOVA 集成不得覆盖、缩短、拓宽、隐藏或清空该授权。手工记录过期或关闭后，旧会员/试用也不得重新出现；仅管理员决策之后的新购买或兑换可接替。单篇授权保持独立补充。
 8. `report_purchases` 是次要且可选的查询。它不存在或未部署时，已验证的会员、手工授权和 NOVA-3D 试用仍必须正常下载。
 9. `NOVA-3D` 使用独立试用记录和独立恢复副本；它的 10 篇计数不能写入老客户 `_account/access/...` 主记录。
 10. `liuxin` 的 operator 入口和 `twotigers` 的 super 入口由服务端角色决定，不得受 sponsor 可见性、用户来源或普通 entitlement 分支影响。

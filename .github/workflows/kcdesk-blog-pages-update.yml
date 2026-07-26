@@ -1,28 +1,48 @@
-name: KCdesk Pages Emergency Deploy
+name: KCdesk Blog Pages Update
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Final PDF to XHS notes
+      - Institution latest PDF to WeChat
+      - Consulting latest PDF to WeChat
+      - ARK Invest feed to WeChat
+      - Upload XHS notes to WeChat drafts
+      - KC translated WeChat draft test
+      - KC WeChat Draft Maintenance
+    types:
+      - completed
+    branches:
+      - main
+  schedule:
+    # Bot commits made with GITHUB_TOKEN do not emit another push workflow.
+    # This Beijing 18:30 run catches unusually late WeChat generation as well.
+    - cron: "30 10 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: kcdesk-pages-emergency-deploy
-  cancel-in-progress: true
+  # Serialize with the full Pages workflow so two artifacts never deploy at once.
+  group: kc-desk-notes-pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  deploy-blog:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout Pages source
+      - name: Checkout latest Pages and WeChat sources
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 1
           filter: blob:none
           sparse-checkout-cone-mode: false
@@ -33,6 +53,7 @@ jobs:
             kc_desk_notes/password_rules.json
             wechat_drafts
             scripts/build_kc_desk_notes_site.py
+            scripts/commit_output_dir.sh
             scripts/test_kcdesk_blog_build.py
             scripts/test_kcdesk_contact_locale.js
             scripts/test_kcdesk_entitlement_precedence.js
@@ -44,11 +65,12 @@ jobs:
             scripts/test_kcdesk_text_only_pdf_upload.js
             workers/kc-desk-notes-worker/src/index.js
 
-      - name: Validate legacy access UI
+      - name: Validate Pages, exports, permissions, and Blog
         run: |
           node --check kc_desk_notes/site_src/assets/contact.js
           node --check kc_desk_notes/site_src/assets/app.js
           node --check kc_desk_notes/site_src/assets/xlsx-export.js
+          node --check workers/kc-desk-notes-worker/src/index.js
           node --test kc_desk_notes/tests/*.test.mjs
           node scripts/test_kcdesk_contact_locale.js
           node scripts/test_kcdesk_entitlement_precedence.js
@@ -60,14 +82,16 @@ jobs:
           node scripts/test_kcdesk_text_only_pdf_upload.js
           python3 scripts/test_kcdesk_blog_build.py
 
-      - name: Build static Pages artifact
+      - name: Build static Pages artifact and Blog archive
         env:
           KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || '/api' }}
-          KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
-          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
         run: |
+          cp kc_desk_notes/data/archive_catalog.json "$RUNNER_TEMP/kcdesk-archive-catalog.json"
+          cp kc_desk_notes/data/search_index.json "$RUNNER_TEMP/kcdesk-search-index.json"
           python3 scripts/build_kc_desk_notes_site.py \
             --catalog-path "kc_desk_notes/data/catalog.json" \
+            --archive-catalog-path "$RUNNER_TEMP/kcdesk-archive-catalog.json" \
+            --search-index-path "$RUNNER_TEMP/kcdesk-search-index.json" \
             --password-rules "kc_desk_notes/password_rules.json" \
             --site-src "kc_desk_notes/site_src" \
             --wechat-drafts-root "wechat_drafts" \
@@ -77,6 +101,10 @@ jobs:
           test -f "_kc_desk_notes_pages/assets/xlsx-export.js"
           test -f "_kc_desk_notes_pages/assets/blog.css"
           test -f "_kc_desk_notes_pages/blog/index.html"
+
+      - name: Persist Blog archive before deployment
+        run: |
+          bash scripts/commit_output_dir.sh "kc_desk_notes/data/blog_archive" "Archive KCdesk Blog articles" 8 true
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

@@ -4,19 +4,21 @@
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from email.utils import format_datetime
 import gzip
 import hashlib
-from html import escape as html_escape
+from html import escape as html_escape, unescape as html_unescape
+from html.parser import HTMLParser
 import json
 import os
 import re
 import shutil
+import tempfile
 import unicodedata
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit, urlunsplit
 
 
 PUBLIC_ITEM_KEYS = [
@@ -80,6 +82,43 @@ SITEMAP_REPORT_CHUNK_SIZE = 5000
 INDEXNOW_KEY = "201eca2fc32f348cb7280e22b4999524"
 RSS_ITEM_LIMIT = 100
 LLMS_REPORT_LIMIT = 200
+BLOG_START_DATE = "2026-07-27"
+BLOG_ARCHIVE_SCHEMA_VERSION = 1
+BLOG_SOURCE_LABELS = {
+    "xhs_notes": "外资研报",
+    "institutions": "研究机构",
+    "consulting": "咨询公司",
+    "ark": "ARK Invest",
+    "institutions_bis_repair": "研究机构修复稿",
+    "root": "综合研报",
+    "legacy": "历史稿件",
+}
+BLOG_SOURCE_ORDER = {name: index for index, name in enumerate(BLOG_SOURCE_LABELS)}
+BLOG_SOURCE_PUBLICATION_DAY_OFFSETS = {"xhs_notes": 1, "root": 1}
+BLOG_MAX_PAYLOAD_BYTES = 20 * 1024 * 1024
+BLOG_MAX_ARTICLE_HTML_CHARS = 2_000_000
+BLOG_ALLOWED_TAGS = {
+    "a", "b", "blockquote", "br", "caption", "code", "div", "em", "figcaption",
+    "figure", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "i", "img", "li",
+    "ol", "p", "pre", "s", "section", "small", "span", "strong", "sub", "sup",
+    "table", "tbody", "td", "tfoot", "th", "thead", "tr", "u", "ul",
+}
+BLOG_DROP_CONTENT_TAGS = {"embed", "iframe", "math", "object", "script", "style", "svg", "template"}
+BLOG_VOID_TAGS = {"br", "hr", "img"}
+BLOG_STYLE_PROPERTIES = {
+    "background", "background-color", "border", "border-bottom", "border-bottom-color",
+    "border-bottom-style", "border-bottom-width", "border-color", "border-left",
+    "border-left-color", "border-left-style", "border-left-width", "border-radius",
+    "border-right", "border-right-color", "border-right-style", "border-right-width",
+    "border-style", "border-top", "border-top-color", "border-top-style", "border-top-width",
+    "border-width", "box-sizing", "color", "display", "font-family", "font-size",
+    "font-style", "font-weight", "height", "letter-spacing", "line-height", "list-style",
+    "list-style-position", "list-style-type", "margin", "margin-bottom", "margin-left",
+    "margin-right", "margin-top", "max-height", "max-width", "min-height", "min-width",
+    "overflow-wrap", "padding", "padding-bottom", "padding-left", "padding-right",
+    "padding-top", "text-align", "text-decoration", "vertical-align", "white-space", "width",
+    "word-break",
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -812,7 +851,7 @@ def item_page_label(item: dict[str, Any]) -> str:
 def item_availability_label(item: dict[str, Any]) -> str:
     if item.get("available") and not item.get("pdf_archived"):
         return "PDF可用"
-    return "文字索引可检索，原文获取请联系平台"
+    return "文字索引可检索，PDF状态以报告详情页实时核验为准"
 
 
 def item_meta_description(item: dict[str, Any]) -> str:
@@ -842,7 +881,16 @@ def write_text(path: Path, text: str) -> None:
 
 
 def render_json_ld(data: dict[str, Any]) -> str:
-    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    # JSON-LD lives in an HTML raw-text element. Escape markup-significant
+    # characters so draft metadata can never terminate the script element.
+    return (
+        json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+        .replace("&", "\\u0026")
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+        .replace("\u2028", "\\u2028")
+        .replace("\u2029", "\\u2029")
+    )
 
 
 def report_keywords(item: dict[str, Any]) -> str:
@@ -973,10 +1021,13 @@ def render_report_seo_page(
   <body>
     <header class="topbar">
       <a class="back-link" href="../index.html">返回首页</a>
-      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
-        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
-        <span>KC Desk Notes</span>
-      </a>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="../blog/">Blog</a>
+        <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+          <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+          <span>KC Desk Notes</span>
+        </a>
+      </div>
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
@@ -997,6 +1048,7 @@ def render_report_seo_page(
       </article>
     </main>
     <footer class="legal-footer">
+      <a href="../blog/">Blog</a>
       <a href="../reports/index.html">报告索引</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
@@ -1078,10 +1130,13 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
   <body>
     <header class="topbar">
       <a class="back-link" href="../index.html">返回首页</a>
-      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
-        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
-        <span>KC Desk Notes</span>
-      </a>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="../blog/">Blog</a>
+        <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+          <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+          <span>KC Desk Notes</span>
+        </a>
+      </div>
     </header>
     <main class="shell legal-shell">
       <section class="legal-panel">
@@ -1095,6 +1150,7 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
     </main>
     <footer class="legal-footer">
       <a href="../index.html">首页检索</a>
+      <a href="../blog/">Blog</a>
       <a href="../feed.xml">最近报告 RSS</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
@@ -1236,8 +1292,840 @@ def render_llms_full(catalog: dict[str, Any], base_url: str) -> str:
     return "\n".join(lines)
 
 
-def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SITE_BASE_URL) -> None:
+def parse_blog_date(value: str) -> date | None:
+    text = str(value or "")
+    if not re.fullmatch(r"\d{6}", text):
+        return None
+    try:
+        year = 2000 + int(text[:2])
+        return datetime(year, int(text[2:4]), int(text[4:6])).date()
+    except ValueError:
+        return None
+
+
+def parse_blog_start_date(value: str) -> date:
+    try:
+        return datetime.strptime(str(value or ""), "%Y-%m-%d").date()
+    except ValueError as error:
+        raise ValueError("--blog-start-date must use YYYY-MM-DD") from error
+
+
+def blog_publication_date(source: str, folder_date: date) -> date:
+    """Convert a source folder date to the article's actual publication date."""
+    return folder_date + timedelta(days=BLOG_SOURCE_PUBLICATION_DAY_OFFSETS.get(source, 0))
+
+
+def sanitize_blog_style(value: str) -> str:
+    safe: list[str] = []
+    for declaration in str(value or "").split(";"):
+        if ":" not in declaration:
+            continue
+        property_name, property_value = declaration.split(":", 1)
+        property_name = property_name.strip().lower()
+        property_value = re.sub(r"\s+", " ", property_value).strip()
+        lowered = html_unescape(property_value).lower()
+        if property_name not in BLOG_STYLE_PROPERTIES or not property_value or len(property_value) > 300:
+            continue
+        if re.search(r"(?:url\s*\(|expression\s*\(|javascript:|vbscript:|data:|@import|-moz-binding|behavior\s*:|var\s*\()", lowered):
+            continue
+        if "\\" in property_value or any(ord(char) < 0x20 and char not in "\t\n\r" for char in property_value):
+            continue
+        numeric_source = re.sub(r"#[0-9a-fA-F]{3,8}\b", "", property_value)
+        numeric_values = [float(number) for number in re.findall(r"-?\d+(?:\.\d+)?", numeric_source)]
+        if numeric_values and max(abs(number) for number in numeric_values) > 2000:
+            continue
+        if property_name.startswith(("margin", "padding")) and any(number < 0 for number in numeric_values):
+            continue
+        if property_name == "font-size" and numeric_values and numeric_values[0] > 96:
+            continue
+        safe.append(f"{property_name}:{property_value}")
+    return ";".join(safe)
+
+
+def sanitize_blog_url(value: str, *, image: bool = False) -> str:
+    text = re.sub(r"[\x00-\x20\x7f]+", "", html_unescape(str(value or ""))).strip()
+    if not text:
+        return ""
+    if text.startswith("//"):
+        text = f"https:{text}"
+    if not image and text.startswith("#"):
+        return text[:500]
+    try:
+        parsed = urlsplit(text)
+    except ValueError:
+        return ""
+    scheme = parsed.scheme.lower()
+    allowed = {"http", "https"} if image else {"http", "https", "mailto"}
+    if scheme not in allowed:
+        return ""
+    if scheme in {"http", "https"} and not parsed.netloc:
+        return ""
+    if scheme == "http":
+        parsed = parsed._replace(scheme="https")
+    cleaned = urlunsplit(parsed)
+    return cleaned[:3000]
+
+
+class BlogHTMLSanitizer(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.output: list[str] = []
+        self.open_tags: list[str] = []
+        self.blocked_tag = ""
+        self.blocked_depth = 0
+
+    def _safe_attributes(self, tag: str, attrs: list[tuple[str, str | None]]) -> list[tuple[str, str]]:
+        values: dict[str, str] = {}
+        for raw_name, raw_value in attrs:
+            name = str(raw_name or "").lower()
+            if not name or name in values or name.startswith("on"):
+                continue
+            value = str(raw_value or "")
+            if name == "style":
+                style = sanitize_blog_style(value)
+                if style:
+                    values[name] = style
+            elif name in {"title", "alt"} and tag in {"a", "img"}:
+                values[name] = compact_space(value)[:500]
+            elif name == "href" and tag == "a":
+                href = sanitize_blog_url(value)
+                if href:
+                    values[name] = href
+            elif name in {"src", "data-src", "data-original", "data-actualsrc"} and tag == "img":
+                src = sanitize_blog_url(value, image=True)
+                if src and ("src" not in values or name == "src"):
+                    values["src"] = src
+            elif name in {"colspan", "rowspan"} and tag in {"td", "th"}:
+                if value.isdigit() and 1 <= int(value) <= 100:
+                    values[name] = value
+            elif name in {"width", "height"} and tag == "img":
+                if re.fullmatch(r"\d{1,4}(?:\.\d+)?%?", value.strip()):
+                    values[name] = value.strip()
+
+        if tag == "img":
+            if "src" not in values:
+                return []
+            values["loading"] = "lazy"
+            values["decoding"] = "async"
+            values["referrerpolicy"] = "no-referrer"
+        elif tag == "a" and values.get("href", "").startswith(("http://", "https://")):
+            values["target"] = "_blank"
+            values["rel"] = "noopener noreferrer nofollow"
+        return list(values.items())
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = str(tag or "").lower()
+        if self.blocked_tag:
+            if tag == self.blocked_tag:
+                self.blocked_depth += 1
+            return
+        if tag in BLOG_DROP_CONTENT_TAGS:
+            self.blocked_tag = tag
+            self.blocked_depth = 1
+            return
+        if tag not in BLOG_ALLOWED_TAGS:
+            return
+        safe_attrs = self._safe_attributes(tag, attrs)
+        if tag == "img" and not safe_attrs:
+            return
+        attributes = "".join(
+            f' {html_escape(name, quote=True)}="{html_escape(value, quote=True)}"'
+            for name, value in safe_attrs
+        )
+        self.output.append(f"<{tag}{attributes}>")
+        if tag not in BLOG_VOID_TAGS:
+            self.open_tags.append(tag)
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        normalized = str(tag or "").lower()
+        self.handle_starttag(normalized, attrs)
+        if normalized not in BLOG_VOID_TAGS:
+            self.handle_endtag(normalized)
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = str(tag or "").lower()
+        if self.blocked_tag:
+            if tag == self.blocked_tag:
+                self.blocked_depth -= 1
+                if self.blocked_depth <= 0:
+                    self.blocked_tag = ""
+                    self.blocked_depth = 0
+            return
+        if tag not in BLOG_ALLOWED_TAGS or tag in BLOG_VOID_TAGS or tag not in self.open_tags:
+            return
+        while self.open_tags:
+            current = self.open_tags.pop()
+            self.output.append(f"</{current}>")
+            if current == tag:
+                break
+
+    def handle_data(self, data: str) -> None:
+        if self.blocked_tag:
+            # HTMLParser treats script/style bodies as raw text, so account for a
+            # nested opening token before accepting the first closing tag.
+            nested_pattern = rf"<\s*{re.escape(self.blocked_tag)}(?:\s|/?>)"
+            self.blocked_depth += len(re.findall(nested_pattern, data, flags=re.IGNORECASE))
+            return
+        if data:
+            self.output.append(html_escape(data, quote=False))
+
+    def get_html(self) -> str:
+        while self.open_tags:
+            self.output.append(f"</{self.open_tags.pop()}>")
+        return "".join(self.output).strip()
+
+
+class BlogTextExtractor(HTMLParser):
+    BLOCK_TAGS = {"blockquote", "br", "div", "figcaption", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "li", "p", "section", "tr"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, _attrs: list[tuple[str, str | None]]) -> None:
+        if str(tag or "").lower() in self.BLOCK_TAGS:
+            self.parts.append(" ")
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
+def sanitize_blog_html(value: str) -> str:
+    sanitizer = BlogHTMLSanitizer()
+    sanitizer.feed(str(value or ""))
+    sanitizer.close()
+    return sanitizer.get_html()
+
+
+def blog_html_text(value: str) -> str:
+    extractor = BlogTextExtractor()
+    extractor.feed(str(value or ""))
+    extractor.close()
+    return compact_space("".join(extractor.parts))
+
+
+def blog_article_fingerprint(title: str, sanitized_content: str) -> str:
+    normalized_title = compact_space(unicodedata.normalize("NFKC", str(title or ""))).casefold()
+    # WeChat re-uploads inline images on a retry and therefore rewrites their
+    # CDN URLs even when the article is otherwise identical. Ignore only the
+    # volatile image src value; retain the tag structure, alt text, styles,
+    # links and visible text so genuinely different articles remain distinct.
+    stable_content = re.sub(
+        r'(<img\b[^>]*?\s)src="[^"]*"',
+        r'\1src="[wechat-image]"',
+        str(sanitized_content or ""),
+        flags=re.IGNORECASE,
+    )
+    normalized_content = re.sub(r"\s+", " ", unicodedata.normalize("NFKC", stable_content)).strip()
+    return hashlib.sha256(f"{normalized_title}\0{normalized_content}".encode("utf-8")).hexdigest()
+
+
+def discover_blog_payloads(drafts_root: Path, start_date: date) -> list[tuple[date, str, Path]]:
+    payloads: list[tuple[date, str, Path]] = []
+    for source in BLOG_SOURCE_LABELS:
+        source_dir = drafts_root / source
+        if not source_dir.is_dir() or source_dir.is_symlink():
+            continue
+        for date_dir in source_dir.iterdir():
+            folder_date = parse_blog_date(date_dir.name)
+            if folder_date is None or not date_dir.is_dir() or date_dir.is_symlink():
+                continue
+            date_value = blog_publication_date(source, folder_date)
+            if date_value < start_date:
+                continue
+            for payload_path in date_dir.glob("draft_payload_*.json"):
+                if payload_path.is_file() and not payload_path.is_symlink():
+                    payloads.append((date_value, source, payload_path))
+    if drafts_root.is_dir() and not drafts_root.is_symlink():
+        for date_dir in drafts_root.iterdir():
+            folder_date = parse_blog_date(date_dir.name)
+            if folder_date is None or not date_dir.is_dir() or date_dir.is_symlink():
+                continue
+            date_value = blog_publication_date("root", folder_date)
+            if date_value < start_date:
+                continue
+            for payload_path in date_dir.glob("draft_payload_*.json"):
+                if payload_path.is_file() and not payload_path.is_symlink():
+                    payloads.append((date_value, "root", payload_path))
+    return sorted(payloads, key=lambda row: (row[0], BLOG_SOURCE_ORDER[row[1]], row[2].name))
+
+
+def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[str, Any]]:
+    unique: dict[str, dict[str, Any]] = {}
+    for date_value, source, payload_path in discover_blog_payloads(drafts_root, start_date):
+        if payload_path.stat().st_size > BLOG_MAX_PAYLOAD_BYTES:
+            raise ValueError(f"Blog payload is too large: {payload_path}")
+        try:
+            payload = json.loads(payload_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+            raise ValueError(f"Invalid blog payload: {payload_path}") from error
+        articles = payload.get("articles") if isinstance(payload, dict) else None
+        if not isinstance(articles, list):
+            raise ValueError(f"Blog payload must contain an articles list: {payload_path}")
+        try:
+            relative_payload = payload_path.relative_to(drafts_root).as_posix()
+        except ValueError:
+            relative_payload = payload_path.name
+
+        for article_index, raw_article in enumerate(articles, start=1):
+            if not isinstance(raw_article, dict):
+                raise ValueError(f"Blog article {article_index} must be an object: {payload_path}")
+            title = compact_space(str(raw_article.get("title") or ""))[:300]
+            raw_content_value = raw_article.get("content")
+            if raw_content_value is not None and not isinstance(raw_content_value, str):
+                raise ValueError(f"Blog article {article_index} content must be text: {payload_path}")
+            raw_content = str(raw_content_value or "")
+            if len(raw_content) > BLOG_MAX_ARTICLE_HTML_CHARS:
+                raise ValueError(f"Blog article {article_index} is too large: {payload_path}")
+            if not title and not raw_content.strip():
+                continue
+            sanitized_content = sanitize_blog_html(raw_content)
+            fingerprint = blog_article_fingerprint(title, sanitized_content)
+            origin = {
+                "source": source,
+                "source_label": BLOG_SOURCE_LABELS[source],
+                "date": date_value.isoformat(),
+                "payload": relative_payload,
+                "article_index": article_index,
+            }
+            existing = unique.get(fingerprint)
+            if existing is not None:
+                previous_last_date = str(existing.get("last_date") or existing.get("date") or "")
+                origin_key = (source, date_value.isoformat(), relative_payload, article_index)
+                known_origins = {
+                    (row["source"], row["date"], row["payload"], row["article_index"])
+                    for row in existing["origins"]
+                }
+                if origin_key not in known_origins:
+                    existing["origins"].append(origin)
+                    existing["last_date"] = max(existing["last_date"], date_value.isoformat())
+                if date_value.isoformat() >= previous_last_date and sanitized_content:
+                    existing["content"] = sanitized_content
+                continue
+
+            digest = compact_space(str(raw_article.get("digest") or ""))[:300]
+            if not digest:
+                digest = blog_html_text(sanitized_content)[:220]
+            display_title = title or digest[:80] or "未命名文章"
+            slug = f"{date_value.strftime('%Y%m%d')}-{source}-{fingerprint[:16]}"
+            unique[fingerprint] = {
+                "fingerprint": fingerprint,
+                "slug": slug,
+                "title": display_title,
+                "author": compact_space(str(raw_article.get("author") or "KC桌面"))[:100],
+                "digest": digest,
+                "content": sanitized_content or "<p>正文暂不可用。</p>",
+                "date": date_value.isoformat(),
+                "last_date": date_value.isoformat(),
+                "source": source,
+                "source_label": BLOG_SOURCE_LABELS[source],
+                "source_order": BLOG_SOURCE_ORDER[source],
+                "payload": relative_payload,
+                "article_index": article_index,
+                "origins": [origin],
+            }
+
+    rows = list(unique.values())
+    rows.sort(key=lambda row: (row["source_order"], row["payload"], row["article_index"], row["title"]))
+    rows.sort(key=lambda row: row["date"], reverse=True)
+    return rows
+
+
+def blog_source_label(source: str) -> str:
+    return BLOG_SOURCE_LABELS.get(str(source or ""), compact_space(str(source or "")).replace("_", " ") or "其他来源")
+
+
+def normalize_blog_origins(origins: list[dict[str, Any]]) -> list[dict[str, str]]:
+    unique: dict[tuple[str, str], dict[str, str]] = {}
+    for origin in origins:
+        if not isinstance(origin, dict):
+            continue
+        source = compact_space(str(origin.get("source") or ""))
+        date_value = compact_space(str(origin.get("date") or ""))
+        if not re.fullmatch(r"[a-z0-9_][a-z0-9_-]{0,80}", source):
+            continue
+        try:
+            datetime.strptime(date_value, "%Y-%m-%d")
+        except ValueError:
+            continue
+        unique[(source, date_value)] = {
+            "source": source,
+            "source_label": blog_source_label(source),
+            "date": date_value,
+        }
+    return sorted(
+        unique.values(),
+        key=lambda row: (row["date"], BLOG_SOURCE_ORDER.get(row["source"], 999), row["source"]),
+    )
+
+
+def atomic_write_blog_json(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    serialized = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    if path.exists():
+        try:
+            if path.read_text(encoding="utf-8") == serialized:
+                return
+        except (OSError, UnicodeDecodeError):
+            pass
+    temporary: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            temporary = Path(handle.name)
+            handle.write(serialized)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            try:
+                temporary.unlink()
+            except FileNotFoundError:
+                pass
+
+
+def blog_archive_manifest(start_date: date) -> dict[str, Any]:
+    return {
+        "schema_version": BLOG_ARCHIVE_SCHEMA_VERSION,
+        "start_date": start_date.isoformat(),
+        "layout": "YYYYMMDD/<fingerprint>.json",
+    }
+
+
+def ensure_blog_archive_manifest(archive_root: Path, start_date: date) -> None:
+    if archive_root.is_symlink() or (archive_root.exists() and not archive_root.is_dir()):
+        raise ValueError(f"Blog archive root must be a regular directory: {archive_root}")
+    manifest_path = archive_root / "manifest.json"
+    expected = blog_archive_manifest(start_date)
+    if not manifest_path.exists():
+        existing_shards = list(archive_root.glob("*/*.json")) if archive_root.exists() else []
+        if existing_shards:
+            raise ValueError(f"Blog archive manifest is missing: {manifest_path}")
+        atomic_write_blog_json(manifest_path, expected)
+        return
+    if manifest_path.is_symlink() or not manifest_path.is_file():
+        raise ValueError(f"Blog archive manifest must be a regular file: {manifest_path}")
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError(f"Invalid Blog archive manifest: {manifest_path}") from error
+    if manifest != expected:
+        raise ValueError(
+            f"Unsupported Blog archive manifest in {manifest_path}; "
+            f"expected schema {BLOG_ARCHIVE_SCHEMA_VERSION} from {start_date.isoformat()}"
+        )
+
+
+def blog_archive_record(article: dict[str, Any]) -> dict[str, Any]:
+    origins = normalize_blog_origins(list(article.get("origins") or []))
+    return {
+        "schema_version": BLOG_ARCHIVE_SCHEMA_VERSION,
+        "fingerprint": str(article.get("fingerprint") or ""),
+        "slug": str(article.get("slug") or ""),
+        "title": str(article.get("title") or ""),
+        "author": str(article.get("author") or "KC桌面"),
+        "digest": str(article.get("digest") or ""),
+        "content": str(article.get("content") or "<p>正文暂不可用。</p>"),
+        "date": str(article.get("date") or ""),
+        "last_date": str(article.get("last_date") or article.get("date") or ""),
+        "source": str(article.get("source") or "legacy"),
+        "origins": [
+            {"source": origin["source"], "date": origin["date"]}
+            for origin in origins
+        ],
+    }
+
+
+def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dict[str, Any]:
+    if not isinstance(data, dict) or data.get("schema_version") != BLOG_ARCHIVE_SCHEMA_VERSION:
+        raise ValueError(f"Invalid Blog archive schema: {path}")
+    fingerprint = str(data.get("fingerprint") or "")
+    if not re.fullmatch(r"[0-9a-f]{64}", fingerprint) or path.stem != fingerprint:
+        raise ValueError(f"Invalid Blog archive fingerprint: {path}")
+    title = compact_space(str(data.get("title") or ""))[:300]
+    slug = str(data.get("slug") or "")
+    source = compact_space(str(data.get("source") or ""))
+    date_value = str(data.get("date") or "")
+    last_date = str(data.get("last_date") or date_value)
+    if not title or not re.fullmatch(r"[a-z0-9_-]{8,160}", slug):
+        raise ValueError(f"Invalid Blog archive title or slug: {path}")
+    if not re.fullmatch(r"[a-z0-9_][a-z0-9_-]{0,80}", source):
+        raise ValueError(f"Invalid Blog archive source: {path}")
+    try:
+        published = datetime.strptime(date_value, "%Y-%m-%d").date()
+        modified = datetime.strptime(last_date, "%Y-%m-%d").date()
+    except ValueError as error:
+        raise ValueError(f"Invalid Blog archive date: {path}") from error
+    if published < start_date or modified < published or path.parent.name != published.strftime("%Y%m%d"):
+        raise ValueError(f"Blog archive path/date mismatch: {path}")
+    expected_slug = f"{published.strftime('%Y%m%d')}-{source}-{fingerprint[:16]}"
+    if slug != expected_slug:
+        raise ValueError(f"Blog archive slug does not match its identity: {path}")
+    content = str(data.get("content") or "")
+    if not content or len(content) > BLOG_MAX_ARTICLE_HTML_CHARS or sanitize_blog_html(content) != content:
+        raise ValueError(f"Blog archive contains unsanitized or invalid HTML: {path}")
+    raw_origins = data.get("origins")
+    if not isinstance(raw_origins, list):
+        raise ValueError(f"Blog archive origins must be a list: {path}")
+    origins = normalize_blog_origins(raw_origins)
+    if (
+        not origins
+        or len(origins) != len(raw_origins)
+        or any(origin["date"] < date_value or origin["date"] > last_date for origin in origins)
+        or max(origin["date"] for origin in origins) != last_date
+        or not any(origin["source"] == source and origin["date"] == date_value for origin in origins)
+    ):
+        raise ValueError(f"Blog archive origins are incomplete: {path}")
+    return {
+        "fingerprint": fingerprint,
+        "slug": slug,
+        "title": title,
+        "author": compact_space(str(data.get("author") or "KC桌面"))[:100],
+        "digest": compact_space(str(data.get("digest") or ""))[:300],
+        "content": content,
+        "date": date_value,
+        "last_date": last_date,
+        "source": source,
+        "source_label": blog_source_label(source),
+        "source_order": BLOG_SOURCE_ORDER.get(source, 999),
+        "payload": "",
+        "article_index": 0,
+        "origins": origins,
+    }
+
+
+def load_blog_archive(archive_root: Path, start_date: date) -> list[dict[str, Any]]:
+    ensure_blog_archive_manifest(archive_root, start_date)
+    rows: list[dict[str, Any]] = []
+    fingerprints: set[str] = set()
+    shard_paths: list[Path] = []
+    for entry in archive_root.iterdir():
+        if entry.name == "manifest.json":
+            continue
+        if entry.is_symlink() or not entry.is_dir() or not re.fullmatch(r"\d{8}", entry.name):
+            raise ValueError(f"Unexpected entry in Blog archive: {entry}")
+        for path in entry.iterdir():
+            if path.is_symlink() or not path.is_file() or path.suffix != ".json":
+                raise ValueError(f"Unexpected Blog archive shard entry: {path}")
+            shard_paths.append(path)
+    for path in sorted(shard_paths):
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+            raise ValueError(f"Invalid Blog archive shard: {path}") from error
+        row = validate_blog_archive_record(raw, path, start_date)
+        if row["fingerprint"] in fingerprints:
+            raise ValueError(f"Duplicate Blog archive fingerprint: {path}")
+        fingerprints.add(row["fingerprint"])
+        rows.append(row)
+    return rows
+
+
+def merge_blog_articles(
+    archived_articles: list[dict[str, Any]],
+    draft_articles: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged = {str(article.get("fingerprint") or ""): dict(article) for article in archived_articles}
+    for draft in draft_articles:
+        fingerprint = str(draft.get("fingerprint") or "")
+        existing = merged.get(fingerprint)
+        if existing is None:
+            merged[fingerprint] = dict(draft)
+            continue
+        origins = normalize_blog_origins(list(existing.get("origins") or []) + list(draft.get("origins") or []))
+        existing["origins"] = origins
+        existing["last_date"] = max(
+            str(existing.get("last_date") or existing.get("date") or ""),
+            str(draft.get("last_date") or draft.get("date") or ""),
+        )
+        if draft.get("content"):
+            existing["content"] = draft["content"]
+        if not existing.get("digest") and draft.get("digest"):
+            existing["digest"] = draft["digest"]
+        if not existing.get("author") and draft.get("author"):
+            existing["author"] = draft["author"]
+    rows = [article for fingerprint, article in merged.items() if fingerprint]
+    rows.sort(key=lambda row: (row.get("source_order", 999), row.get("payload", ""), row.get("article_index", 0), row.get("title", "")))
+    rows.sort(key=lambda row: str(row.get("date") or ""), reverse=True)
+    return rows
+
+
+def persist_blog_archive(archive_root: Path, articles: list[dict[str, Any]], start_date: date) -> None:
+    ensure_blog_archive_manifest(archive_root, start_date)
+    for article in articles:
+        record = blog_archive_record(article)
+        date_folder = str(record["date"]).replace("-", "")
+        path = archive_root / date_folder / f'{record["fingerprint"]}.json'
+        atomic_write_blog_json(path, record)
+
+
+def blog_source_badges(article: dict[str, Any]) -> str:
+    seen: set[str] = set()
+    badges: list[str] = []
+    origins = sorted(
+        article.get("origins", []),
+        key=lambda row: (row.get("date", ""), BLOG_SOURCE_ORDER.get(str(row.get("source") or ""), 999)),
+    )
+    for origin in origins:
+        source = str(origin.get("source") or "")
+        if not source or source in seen:
+            continue
+        seen.add(source)
+        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or source)
+        badges.append(
+            f'<span class="blog-source-badge" title="{html_escape(source, quote=True)}">{html_escape(label)}</span>'
+        )
+    return "".join(badges)
+
+
+def blog_origin_details(article: dict[str, Any]) -> str:
+    rows: list[str] = []
+    origins = sorted(
+        article.get("origins", []),
+        key=lambda row: (row.get("date", ""), BLOG_SOURCE_ORDER.get(str(row.get("source") or ""), 999)),
+    )
+    seen: set[tuple[str, str]] = set()
+    for origin in origins:
+        source = str(origin.get("source") or "")
+        date_value = str(origin.get("date") or "")
+        key = (source, date_value)
+        if key in seen:
+            continue
+        seen.add(key)
+        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or source)
+        rows.append(f"{html_escape(date_value)} · {html_escape(label)}（{html_escape(source)}）")
+    return "；".join(rows)
+
+
+def blog_csp_meta() -> str:
+    return (
+        '<meta http-equiv="Content-Security-Policy" '
+        'content="default-src &#39;none&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; '
+        'img-src &#39;self&#39; https: data:; font-src &#39;self&#39; data:; base-uri &#39;none&#39;; '
+        'form-action &#39;none&#39;; frame-ancestors &#39;none&#39;">'
+    )
+
+
+def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date: date) -> str:
+    canonical = url_join(base_url, "blog/")
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for article in articles:
+        grouped.setdefault(str(article.get("date") or ""), []).append(article)
+    sections: list[str] = []
+    for date_value, date_articles in grouped.items():
+        cards = []
+        for article in date_articles:
+            cards.append(
+                '<article class="blog-card">'
+                '<div class="blog-card-meta">'
+                f'<time datetime="{html_escape(date_value, quote=True)}">{html_escape(date_value)}</time>'
+                f'{blog_source_badges(article)}'
+                '</div>'
+                f'<h2><a href="{html_escape(article["slug"], quote=True)}.html">{html_escape(article["title"])}</a></h2>'
+                f'<p>{html_escape(article.get("digest") or "")}</p>'
+                f'<a class="blog-read-more" href="{html_escape(article["slug"], quote=True)}.html">阅读全文</a>'
+                '</article>'
+            )
+        sections.append(
+            '<section class="blog-day">'
+            f'<h2 class="blog-day-title"><time datetime="{html_escape(date_value, quote=True)}">{html_escape(date_value)}</time></h2>'
+            f'<div class="blog-card-grid">{"".join(cards)}</div>'
+            '</section>'
+        )
+    if not sections:
+        sections.append(
+            '<section class="blog-empty">'
+            f'<h2>内容将从 {html_escape(start_date.isoformat())} 起发布</h2>'
+            '<p>公众号正文进入每日草稿后，会在这里自动生成可长期访问的静态文章。</p>'
+            '</section>'
+        )
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "KC Desk Blog",
+        "description": "KC Desk 每日研究文章与公众号正文存档。",
+        "url": canonical,
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": article["title"],
+                "datePublished": article["date"],
+                "url": url_join(base_url, f'blog/{article["slug"]}.html'),
+            }
+            for article in articles
+        ],
+    }
+    return f"""<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | KC Desk Notes</title>
+    <meta name="description" content="KC Desk 每日研究文章与公众号正文存档，覆盖外资研报、研究机构与咨询公司内容。">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="KC Desk Notes">
+    <meta property="og:title" content="Blog | KC Desk Notes">
+    <meta property="og:description" content="KC Desk 每日研究文章与公众号正文存档。">
+    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    {blog_csp_meta()}
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/blog.css">
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body class="blog-page">
+    <header class="topbar blog-topbar">
+      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="../index.html">首页</a>
+        <a class="topbar-link is-active" href="index.html" aria-current="page">Blog</a>
+        <a class="topbar-link" href="../reports/index.html">报告索引</a>
+      </nav>
+    </header>
+    <main class="blog-shell">
+      <header class="blog-hero">
+        <p class="blog-kicker">KC DESK · DAILY RESEARCH</p>
+        <h1>Blog</h1>
+        <p>从 {html_escape(start_date.isoformat())} 起，完整保存每日公众号文章，按首次入库日期倒序展示。</p>
+        <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章</div>
+      </header>
+      {"".join(sections)}
+    </main>
+    <footer class="legal-footer blog-footer">
+      <a href="../index.html">首页检索</a>
+      <a href="../reports/index.html">报告索引</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="mailto:econ.scroll@gmail.com">Email: econ.scroll@gmail.com</a>
+    </footer>
+  </body>
+</html>
+"""
+
+
+def render_blog_article(article: dict[str, Any], base_url: str) -> str:
+    canonical = url_join(base_url, f'blog/{article["slug"]}.html')
+    title = str(article.get("title") or "未命名文章")
+    digest = str(article.get("digest") or "")
+    author = str(article.get("author") or "KC桌面")
+    image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', str(article.get("content") or ""), re.IGNORECASE)
+    image_url = html_unescape(image_match.group(1)) if image_match else ""
+    json_ld: dict[str, Any] = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": digest,
+        "datePublished": article["date"],
+        "dateModified": article.get("last_date") or article["date"],
+        "mainEntityOfPage": canonical,
+        "author": {"@type": "Organization", "name": author},
+        "publisher": {"@type": "Organization", "name": "KC Desk Notes", "url": url_join(base_url, "/")},
+    }
+    if image_url:
+        json_ld["image"] = [image_url]
+    og_image = f'<meta property="og:image" content="{html_escape(image_url, quote=True)}">' if image_url else ""
+    return f"""<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{html_escape(title)} | KC Desk Blog</title>
+    <meta name="description" content="{html_escape(digest, quote=True)}">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="KC Desk Notes">
+    <meta property="og:title" content="{html_escape(title, quote=True)}">
+    <meta property="og:description" content="{html_escape(digest, quote=True)}">
+    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    {og_image}
+    {blog_csp_meta()}
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/blog.css">
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body class="blog-page blog-article-page">
+    <header class="topbar blog-topbar">
+      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="../index.html">首页</a>
+        <a class="topbar-link is-active" href="index.html">Blog</a>
+        <a class="topbar-link" href="../reports/index.html">报告索引</a>
+      </nav>
+    </header>
+    <main class="blog-article-shell">
+      <a class="blog-back" href="index.html">← 返回 Blog</a>
+      <article class="blog-article">
+        <header class="blog-article-header">
+          <div class="blog-card-meta">
+            <time datetime="{html_escape(article["date"], quote=True)}">{html_escape(article["date"])}</time>
+            {blog_source_badges(article)}
+          </div>
+          <h1>{html_escape(title)}</h1>
+          {f'<p class="blog-digest">{html_escape(digest)}</p>' if digest else ''}
+          <p class="blog-byline">作者：{html_escape(author)} · 来源：{blog_origin_details(article)}</p>
+        </header>
+        <div class="blog-article-content">
+          {article["content"]}
+        </div>
+      </article>
+    </main>
+    <footer class="legal-footer blog-footer">
+      <a href="index.html">Blog</a>
+      <a href="../index.html">首页检索</a>
+      <a href="../reports/index.html">报告索引</a>
+      <a href="mailto:econ.scroll@gmail.com">Email: econ.scroll@gmail.com</a>
+    </footer>
+  </body>
+</html>
+"""
+
+
+def build_blog(
+    output: Path,
+    drafts_root: Path,
+    base_url: str,
+    start_date: date,
+    archive_root: Path | None = None,
+) -> list[dict[str, Any]]:
+    draft_articles = load_blog_draft_articles(drafts_root, start_date)
+    if archive_root is None:
+        articles = draft_articles
+    else:
+        archived_articles = load_blog_archive(archive_root, start_date)
+        articles = merge_blog_articles(archived_articles, draft_articles)
+        persist_blog_archive(archive_root, articles, start_date)
+    blog_dir = output / "blog"
+    blog_dir.mkdir(parents=True, exist_ok=True)
+    write_text(blog_dir / "index.html", render_blog_index(articles, base_url, start_date))
+    for article in articles:
+        write_text(blog_dir / f'{article["slug"]}.html', render_blog_article(article, base_url))
+    return articles
+
+
+def build_seo_outputs(
+    output: Path,
+    catalog: dict[str, Any],
+    base_url: str = SITE_BASE_URL,
+    blog_articles: list[dict[str, Any]] | None = None,
+) -> None:
     base_url = base_url.rstrip("/") or SITE_BASE_URL
+    blog_articles = list(blog_articles or [])
     generated_date = bjt_timestamp_to_date(str(catalog.get("updated_at_bjt") or "")) or ""
     reports_dir = output / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
@@ -1259,6 +2147,11 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
     page_rows = [
         sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
         sitemap_url(url_join(base_url, "reports/"), generated_date, "0.9"),
+        sitemap_url(
+            url_join(base_url, "blog/"),
+            max((str(article.get("last_date") or article.get("date") or "") for article in blog_articles), default=generated_date),
+            "0.8",
+        ),
         sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
     ]
@@ -1276,6 +2169,20 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
                 "0.8" if item.get("available") else "0.6",
             )
             for item in chunk
+        ]
+        write_urlset(output / sitemap_name, rows)
+
+    for index in range(0, len(blog_articles), SITEMAP_REPORT_CHUNK_SIZE):
+        chunk = blog_articles[index:index + SITEMAP_REPORT_CHUNK_SIZE]
+        sitemap_name = f"sitemap-blog-{index // SITEMAP_REPORT_CHUNK_SIZE + 1}.xml"
+        sitemap_names.append(sitemap_name)
+        rows = [
+            sitemap_url(
+                url_join(base_url, f'blog/{article["slug"]}.html'),
+                str(article.get("last_date") or article.get("date") or generated_date),
+                "0.7",
+            )
+            for article in chunk
         ]
         write_urlset(output / sitemap_name, rows)
 
@@ -1305,6 +2212,14 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
             "0.8" if item.get("available") else "0.6",
         )
         for item in report_items
+    )
+    cn_rows.extend(
+        sitemap_url(
+            url_join(base_url, f'blog/{article["slug"]}.html'),
+            str(article.get("last_date") or article.get("date") or generated_date),
+            "0.7",
+        )
+        for article in blog_articles
     )
     write_urlset(output / "sitemap-baidu.xml", cn_rows)
     write_urlset(output / "sitemap-sogou.xml", cn_rows)
@@ -1346,6 +2261,7 @@ def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SIT
             "## Primary URLs",
             f"- Home/Search: {url_join(base_url, '/')}",
             f"- Report index: {url_join(base_url, 'reports/')}",
+            f"- Blog: {url_join(base_url, 'blog/')}",
             f"- Sitemap index: {url_join(base_url, 'sitemap.xml')}",
             f"- Recent reports RSS: {url_join(base_url, 'feed.xml')}",
             f"- Expanded public report metadata: {url_join(base_url, 'llms-full.txt')}",
@@ -1376,7 +2292,7 @@ def version_assets(output: Path) -> None:
     effect immediately. Only busts when the file content actually changes.
     """
     versions: dict[str, str] = {}
-    for rel in ("assets/app.js", "assets/contact.js", "assets/styles.css"):
+    for rel in ("assets/app.js", "assets/contact.js", "assets/styles.css", "assets/blog.css"):
         path = output / rel
         if path.exists():
             versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
@@ -1396,6 +2312,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-src", default="kc_desk_notes/site_src")
     parser.add_argument("--output-dir", default="_kc_desk_notes_pages")
+    parser.add_argument("--wechat-drafts-root", default="wechat_drafts")
+    parser.add_argument("--blog-start-date", default=BLOG_START_DATE)
+    parser.add_argument("--blog-archive-root", default="kc_desk_notes/data/blog_archive")
     parser.add_argument("--catalog-path", default="kc_desk_notes/data/catalog.json")
     parser.add_argument("--archive-catalog-path", default="kc_desk_notes/data/archive_catalog.json")
     parser.add_argument("--search-index-path", default="kc_desk_notes/data/search_index.json")
@@ -1472,12 +2391,20 @@ def main() -> int:
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})
     write_json(archive_catalog_path, archive_catalog)
     write_json(search_index_path, search_index)
-    build_seo_outputs(output_dir, catalog, SITE_BASE_URL)
+    blog_articles = build_blog(
+        output=output_dir,
+        drafts_root=Path(args.wechat_drafts_root),
+        base_url=SITE_BASE_URL,
+        start_date=parse_blog_start_date(args.blog_start_date),
+        archive_root=Path(args.blog_archive_root),
+    )
+    build_seo_outputs(output_dir, catalog, SITE_BASE_URL, blog_articles)
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "
         f"({history_stats['history_added']} history-only, {history_stats['history_deduped']} history deduped) "
         f"and {search_index['item_count']} full-text search entries, "
+        f"{len(blog_articles)} blog articles, "
         f"{history_index['item_count']} history text entries in {len(history_manifest['shards'])} lazy shards "
         f"({history_manifest['total_bytes'] / 1e6:.1f} MB)"
     )

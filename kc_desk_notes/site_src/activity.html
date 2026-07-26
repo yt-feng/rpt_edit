@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>用户行为历史 | KC Desk Notes</title>
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <link rel="stylesheet" href="assets/styles.css?v=admin-activity-20260718c">
+    <link rel="stylesheet" href="assets/styles.css?v=kcdesk-suite-20260726b">
   </head>
   <body data-page="activity" class="analytics-history-page">
     <header class="topbar">
@@ -15,6 +15,7 @@
       </a>
       <div class="topbar-actions">
         <a class="topbar-link" href="index.html">返回首页</a>
+        <a class="topbar-link" href="blog/">Blog</a>
         <button id="accountGate" class="account-button" type="button">登录</button>
       </div>
     </header>
@@ -25,7 +26,10 @@
           <h1>用户行为历史（已采集）</h1>
           <p>查看埋点启用后已存档的访问、搜索、报告、账号与后台操作。</p>
         </div>
-        <button id="analyticsHistoryRefresh" class="secondary-button" type="button">刷新</button>
+        <div class="analytics-history-title-actions">
+          <button id="analyticsHistoryExportAll" class="secondary-button" type="button">导出全部历史</button>
+          <button id="analyticsHistoryRefresh" class="secondary-button" type="button">刷新</button>
+        </div>
       </div>
 
       <form id="analyticsHistoryFilters" class="analytics-history-filters">
@@ -85,6 +89,6 @@
     </main>
 
     <script src="assets/contact.js"></script>
-    <script src="assets/app.js?v=admin-access-priority-20260726"></script>
+    <script src="assets/app.js?v=kcdesk-suite-20260726b"></script>
   </body>
 </html>
