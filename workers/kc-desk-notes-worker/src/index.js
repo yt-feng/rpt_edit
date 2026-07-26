@@ -78,6 +78,7 @@ const PADDLE_HANDLED_EVENTS = new Set([
   "subscription.resumed",
 ]);
 const VID2PPT_KCDESK_GIFT_PLANS = {
+  "NOVA-3D": { days: 3, download_limit: TRIAL_3D_DOWNLOAD_LIMIT, label: "NOVA three-day trial" },
   "NOVA-M": { months: 1, label: "NOVA monthly" },
   "NOVA-Q": { months: 3, label: "NOVA quarter" },
   "NOVA-Y": { months: 12, label: "NOVA year" },
@@ -1616,6 +1617,79 @@ async function findStoredAccessGrant(env, email) {
   return (await findStoredAccessGrantSnapshot(env, email)).record;
 }
 
+function vid2PptTrialAccessKey(email) {
+  return accountKey("vid2ppt_trial", normalizeEmail(email));
+}
+
+function vid2PptTrialAccessBackupLatestKey(email) {
+  return accountKey("vid2ppt_trial_backup", "latest", normalizeEmail(email));
+}
+
+function vid2PptTrialAccessBackupHistoryKey(email, timestamp, changeId = "") {
+  const suffix = `${timestamp || ""}-${changeId || ""}`.replace(/[^0-9A-Za-z_-]+/g, "-");
+  return accountKey("vid2ppt_trial_backup", "history", normalizeEmail(email), suffix);
+}
+
+async function findStoredVid2PptTrialAccessSnapshot(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return { record: null, etag: "" };
+  const snapshot = await r2GetJsonObjectStrict(env, vid2PptTrialAccessKey(normalized));
+  const record = validateAccessGrantRow(snapshot && snapshot.value, normalized);
+  const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+  if (snapshot && !etag) throw new Error("Trial access record version verification failed.");
+  return { record, etag };
+}
+
+async function writeVid2PptTrialAccessRecoveryCopies(env, email, payload) {
+  const normalized = normalizeEmail(email);
+  const timestamp = payload.quota_updated_at || payload.updated_at || new Date().toISOString();
+  const keys = [
+    vid2PptTrialAccessBackupLatestKey(normalized),
+    vid2PptTrialAccessBackupHistoryKey(normalized, timestamp, payload.change_id),
+  ];
+  const results = await Promise.allSettled(keys.map(async (key) => {
+    await r2PutJson(env, key, payload);
+    const saved = validateAccessGrantRow(await r2GetJsonStrict(env, key), normalized);
+    if (!accessGrantMatchesExpected(saved, payload)) throw new Error("Trial access backup verification failed.");
+  }));
+  return {
+    backup_count: results.filter((result) => result.status === "fulfilled").length,
+    backup_error: results.some((result) => result.status === "rejected"),
+  };
+}
+
+async function writeVid2PptTrialAccessDurably(env, email, payload, expectedEtag) {
+  const normalized = normalizeEmail(email);
+  const key = vid2PptTrialAccessKey(normalized);
+  validateAccessGrantRow(payload, normalized);
+  const onlyIf = expectedEtag
+    ? { etagMatches: String(expectedEtag) }
+    : { etagDoesNotMatch: "*" };
+  const written = await accountBucket(env).put(key, JSON.stringify(payload), {
+    onlyIf,
+    httpMetadata: { contentType: "application/json; charset=utf-8" },
+  });
+  if (written === null) {
+    const error = new Error("体验权益已被其他操作更新，请重试。");
+    error.code = "ACCESS_CONFLICT";
+    throw error;
+  }
+  const saved = validateAccessGrantRow(await r2GetJsonStrict(env, key), normalized);
+  if (!accessGrantMatchesExpected(saved, payload)) throw new Error("Trial access save verification failed.");
+  const backups = await writeVid2PptTrialAccessRecoveryCopies(env, normalized, payload);
+  return { record: saved, ...backups };
+}
+
+async function findVid2PptTrialAccess(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return publicAccessGrant(null);
+  const snapshot = await findStoredVid2PptTrialAccessSnapshot(env, normalized);
+  if (snapshot.record) {
+    return publicAccessGrant({ ...snapshot.record, email: normalized, source: "vid2ppt_trial" });
+  }
+  return publicAccessGrant({ email: normalized, source: "none" });
+}
+
 async function writeAccessGrantRecoveryCopies(env, email, payload) {
   const normalized = normalizeEmail(email);
   const timestamp = payload.quota_updated_at || payload.updated_at || new Date().toISOString();
@@ -1874,11 +1948,12 @@ function limitedAccessNeedsConsumption(access) {
   return grant.active && grant.download_limit > 0;
 }
 
-async function consumeLimitedAccessDownload(env, email, reportId, source, expectedChangeId = "") {
+async function consumeLimitedAccessDownload(env, email, reportId, source, expectedChangeId = "", storageKind = "access") {
   const normalized = normalizeEmail(email);
   if (!normalized) return { ok: true, access: publicAccessGrant(null) };
   const itemKey = accessGrantDownloadItemKey(reportId, source);
-  const key = accountKey("access", normalized);
+  const trialStorage = storageKind === "vid2ppt_trial";
+  const key = trialStorage ? vid2PptTrialAccessKey(normalized) : accountKey("access", normalized);
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const snapshot = await r2GetJsonObjectStrict(env, key);
     const stored = validateAccessGrantRow(snapshot && snapshot.value, normalized);
@@ -1947,8 +2022,16 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
     if (written === null) continue;
     const verified = validateAccessGrantRow(await r2GetJsonStrict(env, key), normalized);
     if (!accessGrantMatchesExpected(verified, updated)) continue;
-    await writeAccessGrantRecoveryCopies(env, normalized, updated);
-    return { ok: true, access: publicAccessGrant({ ...verified, source: "stored" }) };
+    if (trialStorage) {
+      await writeVid2PptTrialAccessRecoveryCopies(env, normalized, updated);
+    } else {
+      await writeAccessGrantRecoveryCopies(env, normalized, updated);
+    }
+    return {
+      ok: true,
+      access: publicAccessGrant({ ...verified, source: trialStorage ? "vid2ppt_trial" : "stored" }),
+      storage_kind: storageKind,
+    };
   }
   return {
     ok: false,
@@ -1983,7 +2066,7 @@ function roleAccessForUser(user) {
   });
 }
 
-function effectiveAccessForUser(user, entitlementRow, accessRow) {
+function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
   if (accountDisabled(user)) {
     return publicAccessGrant({
       email: normalizeEmail(user && user.email),
@@ -1992,7 +2075,9 @@ function effectiveAccessForUser(user, entitlementRow, accessRow) {
   }
   if (isPrivilegedAccount(user)) return roleAccessForUser(user);
   const access = publicAccessGrant(accessRow);
+  const trialAccess = publicAccessGrant(trialAccessRow);
   if (access.source === "error") return access;
+  if (trialAccess.source === "error") return trialAccess;
   const entitlement = publicEntitlement(entitlementRow);
   if (entitlement.active && entitlement.plan === "annual") {
     const entitlementSource = VID2PPT_GIFT_SOURCES.has(entitlement.grant_source)
@@ -2020,15 +2105,26 @@ function effectiveAccessForUser(user, entitlementRow, accessRow) {
     }
     return entitlementAccess;
   }
-  return access;
+  if (access.active && access.access_mode === "all" && access.download_limit === 0) return access;
+  if (trialAccess.active && trialAccess.access_mode === "all") return trialAccess;
+  return access.active ? access : trialAccess;
 }
 
 function shouldConsumeAccessGrantDownload(accessResult) {
-  if (!accessResult || !limitedAccessNeedsConsumption(accessResult.access)) return false;
+  if (!accessResult) return null;
   const entitlementProvidesAccess = accessResult.effective_access
     && String(accessResult.effective_access.source || "").includes("entitlement");
   const purchased = Boolean(accessResult.purchase);
-  return !entitlementProvidesAccess && !purchased;
+  if (entitlementProvidesAccess || purchased) return null;
+  if (accessResult.custom_access_matched) {
+    return limitedAccessNeedsConsumption(accessResult.access)
+      ? { storage_kind: "access", grant: accessResult.access }
+      : null;
+  }
+  if (accessResult.trial_access_matched && limitedAccessNeedsConsumption(accessResult.trial_access)) {
+    return { storage_kind: "vid2ppt_trial", grant: accessResult.trial_access };
+  }
+  return null;
 }
 
 async function reportAccessForUser(env, user, reportId, source) {
@@ -2039,6 +2135,7 @@ async function reportAccessForUser(env, user, reportId, source) {
       can_download: false,
       entitlement: publicEntitlement(null),
       access: noAccess,
+      trial_access: noAccess,
       effective_access: noAccess,
       purchase: null,
     };
@@ -2049,17 +2146,20 @@ async function reportAccessForUser(env, user, reportId, source) {
       can_download: true,
       entitlement: superEntitlement(user),
       access: roleAccess,
+      trial_access: publicAccessGrant(null),
       effective_access: roleAccess,
       purchase: null,
     };
   }
-  const [entitlementRow, purchase, accessRow] = await Promise.all([
+  const [entitlementRow, purchase, accessRow, trialAccessRow] = await Promise.all([
     findEntitlement(env, email),
     reportId ? findReportPurchase(env, email, reportId, source) : Promise.resolve(null),
     findAccessGrant(env, email),
+    findVid2PptTrialAccess(env, email),
   ]);
   const entitlement = publicEntitlement(entitlementRow);
   const access = publicAccessGrant(accessRow);
+  const trialAccess = publicAccessGrant(trialAccessRow);
   // Existing business policy is additive: annual, a custom grant, an exact
   // report purchase, or a privileged role can independently allow a download.
   const annual = entitlement.active && entitlement.plan === "annual";
@@ -2073,13 +2173,17 @@ async function reportAccessForUser(env, user, reportId, source) {
       customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
     }
   }
-  const effectiveAccess = effectiveAccessForUser(user, entitlementRow, accessRow);
+  const trialAccessMatched = trialAccess.active && trialAccess.access_mode === "all";
+  const effectiveAccess = effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow);
   return {
-    can_download: Boolean(annual || customAccess || purchased),
+    can_download: Boolean(annual || customAccess || trialAccessMatched || purchased),
     entitlement,
     access,
+    trial_access: trialAccess,
     effective_access: effectiveAccess,
     purchase: purchased ? purchase : null,
+    custom_access_matched: customAccess,
+    trial_access_matched: trialAccessMatched,
   };
 }
 
@@ -2096,11 +2200,13 @@ async function accountDownloadDecision(env, request, reportId, source) {
         error: "Please log in, purchase this report, or enter the report password.",
       };
     }
+    const limitedAccess = shouldConsumeAccessGrantDownload(access);
     return {
       allowed: true,
       user,
       access,
-      consume_limited_access: shouldConsumeAccessGrantDownload(access),
+      consume_limited_access: Boolean(limitedAccess),
+      limited_access: limitedAccess,
     };
   } catch (error) {
     const status = accessErrorStatus(error);
@@ -2127,7 +2233,8 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
     }
     decision.user = user;
     decision.access = refreshedAccess;
-    decision.consume_limited_access = shouldConsumeAccessGrantDownload(refreshedAccess);
+    decision.limited_access = shouldConsumeAccessGrantDownload(refreshedAccess);
+    decision.consume_limited_access = Boolean(decision.limited_access);
   } catch (_error) {
     return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
   }
@@ -2140,7 +2247,8 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
       email,
       reportId,
       source,
-      decision.access && decision.access.access && decision.access.access.change_id,
+      decision.limited_access && decision.limited_access.grant && decision.limited_access.grant.change_id,
+      decision.limited_access && decision.limited_access.storage_kind || "access",
     );
   } catch (_error) {
     return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
@@ -2148,7 +2256,8 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
   if (!consumed.ok) return consumed;
   decision.access = {
     ...(decision.access || {}),
-    access: consumed.access,
+    [consumed.storage_kind === "vid2ppt_trial" ? "trial_access" : "access"]: consumed.access,
+    effective_access: consumed.access,
   };
   return { ok: true, access: consumed.access };
 }
@@ -2938,7 +3047,13 @@ function giftGrantPeriodEnd(planCode, startAt) {
   if (!spec) return null;
   const parsed = Date.parse(String(startAt || ""));
   const date = new Date(Number.isFinite(parsed) ? parsed : Date.now());
-  date.setUTCMonth(date.getUTCMonth() + spec.months);
+  if (Number(spec.days || 0) > 0) {
+    date.setUTCDate(date.getUTCDate() + Number(spec.days));
+  } else if (Number(spec.months || 0) > 0) {
+    date.setUTCMonth(date.getUTCMonth() + Number(spec.months));
+  } else {
+    return null;
+  }
   return date.toISOString();
 }
 
@@ -2967,7 +3082,6 @@ function giftGrantSource(planCode) {
 function sameVid2PptGift(entitlement, planCode, sourceReference) {
   const grantSource = giftGrantSource(planCode);
   return entitlement
-    && entitlement.active
     && entitlement.grant_source === grantSource
     && entitlement.source_plan_code === planCode
     && entitlement.source_reference === sourceReference;
@@ -2984,21 +3098,81 @@ async function applyVid2PptGift(env, options = {}) {
   const eventId = cleanGrantText(options.eventId || options.event_id, 120);
   const code = normalizeVid2PptCode(options.code);
   const sourceReference = requestId || transactionId || eventId || code;
+  if (!sourceReference) throw new Error("Grant reference is required.");
+  const spec = VID2PPT_KCDESK_GIFT_PLANS[planCode];
+  const grantSource = giftGrantSource(planCode);
+
+  if (cleanAccessCount(spec.download_limit) > 0) {
+    const snapshot = await findStoredVid2PptTrialAccessSnapshot(env, email);
+    const existing = snapshot.record;
+    const access = publicAccessGrant(existing && { ...existing, source: "vid2ppt_trial" });
+    if (sameVid2PptGift(access, planCode, sourceReference)) {
+      return { saved: existing || access, duplicate: true, sourceReference, accessKind: "trial" };
+    }
+
+    const startAt = giftGrantStartIso(access, options.completedAt || options.completed_at);
+    const currentPeriodEnd = giftGrantPeriodEnd(planCode, startAt);
+    if (!currentPeriodEnd) throw new Error("Unsupported NOVA gift plan.");
+    const now = new Date().toISOString();
+    const payload = {
+      ...(existing || {}),
+      id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+      email,
+      access_mode: "all",
+      status: "active",
+      lifetime: false,
+      current_period_end: currentPeriodEnd,
+      duration_value: TRIAL_3D_DURATION_VALUE,
+      download_limit: TRIAL_3D_DOWNLOAD_LIMIT,
+      download_count: 0,
+      download_items: [],
+      institutions: [],
+      industries: [],
+      page_ranges: [],
+      note: "Vid2PPT NOVA-3D gift",
+      source_site: VID2PPT_SOURCE_SITE,
+      grant_source: grantSource,
+      source_plan_code: planCode,
+      source_reference: sourceReference,
+      paddle_transaction_id: transactionId,
+      change_id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
+      created_at: existing && existing.created_at || now,
+      updated_at: now,
+      updated_by: "vid2ppt.com",
+    };
+    const writeResult = await writeVid2PptTrialAccessDurably(env, email, payload, snapshot.etag);
+    await insertUsageEvent(env, email, options.eventType || `${grantSource}.granted`, {
+      site_origin: SITE_ORIGIN,
+      source_site: VID2PPT_SOURCE_SITE,
+      grant_source: grantSource,
+      plan_code: planCode,
+      request_id: requestId,
+      event_id: eventId,
+      code,
+      paddle_transaction_id: transactionId,
+      amount_cny: cleanGrantText(options.amountCny || options.amount_cny, 40),
+      legal_purchase_site: "vid2ppt.com",
+      granted_benefit_site: "kcdesk.com",
+      source_reference: sourceReference,
+      duration_days: Number(spec.days),
+      download_limit: TRIAL_3D_DOWNLOAD_LIMIT,
+    }).catch(() => {});
+    return { saved: writeResult.record, duplicate: false, sourceReference, accessKind: "trial" };
+  }
+
   const existing = await findEntitlement(env, email).catch(() => null);
   const entitlement = publicEntitlement(existing);
 
   if (sameVid2PptGift(entitlement, planCode, sourceReference)) {
-    return { saved: existing || entitlement, duplicate: true, sourceReference };
+    return { saved: existing || entitlement, duplicate: true, sourceReference, accessKind: "entitlement" };
   }
   if (entitlement.active && entitlement.lifetime) {
-    return { saved: existing || entitlement, duplicate: false, lifetime: true, sourceReference };
+    return { saved: existing || entitlement, duplicate: false, lifetime: true, sourceReference, accessKind: "entitlement" };
   }
 
   const startAt = giftGrantStartIso(entitlement, options.completedAt || options.completed_at);
   const currentPeriodEnd = giftGrantPeriodEnd(planCode, startAt);
   if (!currentPeriodEnd) throw new Error("Unsupported NOVA gift plan.");
-  const grantSource = giftGrantSource(planCode);
-
   const saved = await saveEntitlement(env, email, {
     plan: "annual",
     status: "active",
@@ -3025,7 +3199,7 @@ async function applyVid2PptGift(env, options = {}) {
     granted_benefit_site: "kcdesk.com",
     source_reference: sourceReference,
   }).catch(() => {});
-  return { saved, duplicate: false, sourceReference };
+  return { saved, duplicate: false, sourceReference, accessKind: "entitlement" };
 }
 
 async function handleVid2PptGiftGrant(request, env) {
@@ -3053,7 +3227,7 @@ async function handleVid2PptGiftGrant(request, env) {
   const eventId = cleanGrantText(payload.event_id, 120);
 
   try {
-    const { saved, duplicate } = await applyVid2PptGift(env, {
+    const { saved, duplicate, accessKind } = await applyVid2PptGift(env, {
       email,
       planCode,
       requestId,
@@ -3063,14 +3237,18 @@ async function handleVid2PptGiftGrant(request, env) {
       amountCny: payload.amount_cny,
       eventType: `${giftGrantSource(planCode)}.granted`,
     });
+    const grant = accessKind === "trial" ? publicAccessGrant(saved) : publicEntitlement(saved);
     return jsonResponse(request, env, 200, {
       ok: true,
       granted: true,
       duplicate,
       email,
-      plan: saved.plan,
-      status: saved.status,
-      current_period_end: saved.current_period_end,
+      access_kind: accessKind,
+      plan: accessKind === "trial" ? TRIAL_3D_DURATION_VALUE : saved.plan,
+      status: grant.status,
+      current_period_end: grant.current_period_end,
+      download_limit: grant.download_limit || 0,
+      downloads_remaining: grant.downloads_remaining,
       source_plan_code: planCode,
     });
   } catch (error) {
@@ -3141,7 +3319,7 @@ async function handleVid2PptRedeemCode(request, env) {
       return jsonResponse(request, env, 403, { detail: "这串代码对应的支付邮箱与当前 KCdesk 账号邮箱不一致。", order });
     }
 
-    const { saved, duplicate } = await applyVid2PptGift(env, {
+    const { saved, duplicate, accessKind } = await applyVid2PptGift(env, {
       email,
       planCode,
       requestId: order.request_id,
@@ -3157,7 +3335,7 @@ async function handleVid2PptRedeemCode(request, env) {
       granted: true,
       duplicate,
       user: publicUser(user),
-      entitlement: publicEntitlement(saved),
+      entitlement: accessKind === "trial" ? publicAccessGrant(saved) : publicEntitlement(saved),
       order: redeemed.order || order,
     });
   } catch (error) {

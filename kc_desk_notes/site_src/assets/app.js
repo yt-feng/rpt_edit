@@ -145,7 +145,7 @@
   }
 
   function novaSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
-    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} 无限量下载全站报告，NOVA-M单月，<b>NOVA-Q季度，NOVA-Y年度，NOVA-2Y两年</b>`;
+    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} NOVA-3D赠送3天体验（限下载10篇）；无限量下载全站报告，NOVA-M单月，<b>NOVA-Q季度，NOVA-Y年度，NOVA-2Y两年</b>`;
   }
 
   function normalize(value) {
