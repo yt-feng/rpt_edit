@@ -1,0 +1,68 @@
+name: KCdesk Pages Emergency Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kcdesk-pages-emergency-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Pages source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            kc_desk_notes/site_src
+            kc_desk_notes/data
+            kc_desk_notes/password_rules.json
+            scripts/build_kc_desk_notes_site.py
+            scripts/test_kcdesk_contact_locale.js
+            scripts/test_kcdesk_legacy_access_compat.js
+            workers/kc-desk-notes-worker/src/index.js
+
+      - name: Validate legacy access UI
+        run: |
+          node --check kc_desk_notes/site_src/assets/contact.js
+          node --check kc_desk_notes/site_src/assets/app.js
+          node scripts/test_kcdesk_contact_locale.js
+          node scripts/test_kcdesk_legacy_access_compat.js
+
+      - name: Build static Pages artifact
+        env:
+          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || '/api' }}
+          KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
+          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+        run: |
+          python3 scripts/build_kc_desk_notes_site.py \
+            --catalog-path "kc_desk_notes/data/catalog.json" \
+            --password-rules "kc_desk_notes/password_rules.json" \
+            --site-src "kc_desk_notes/site_src" \
+            --output-dir "_kc_desk_notes_pages" \
+            --worker-base-url "$KC_DESK_WORKER_URL"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _kc_desk_notes_pages
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
