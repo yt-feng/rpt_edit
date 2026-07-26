@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_5akrwl37/pdfs/0001-BCG_Design-Your-Company-for-AI-Not-AI-for-Your-Company_ac567729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5akrwl37/pdfs/0002-BCG_South-Korea-Value-Creators-Report-2026-A-Wake-Up-Call-for-Un_5ca10957.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
