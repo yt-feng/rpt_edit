@@ -1,0 +1,95 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260727/shard_3/0002-17-Goldman-Sachs-US-Economics-Analyst-July-FOMC-Preview--Better-Inflation-D",
+  "title": "高盛：美国宏观环境分析-七月FOMC预览",
+  "source_title": "0002-17-GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News-260726",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-17-GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News-260726",
+    "cleaned_source_title": "GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：USEconomicsAnalystJulyFO",
+    "raw_candidates": [
+      "美国经济分析-七月FOMC预览-通胀数据改善与地缘政治新闻变化",
+      "美国经济分析-七月FOMC预览-核心PCE环比18bp与通胀趋势",
+      "美国经济分析-七月FOMC预览-通胀数据与地缘政治对利率的影响"
+    ],
+    "cleaned_candidates": [
+      "高盛：美国宏观环境分析-七月FOMC预览",
+      "高盛：USEconomicsAnalystJulyFO",
+      "高盛：我们预计6月核心CPI环比-2bp将转化为核心PCE环比18bp"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：USEconomicsAnalystJulyFO",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：我们预计6月核心CPI环比-2bp将转化为核心PCE环比18bp",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：美国宏观环境分析-七月FOMC预览",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：美国宏观环境分析-七月FOMC预览"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_17.pdf",
+  "figure_count": 7,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

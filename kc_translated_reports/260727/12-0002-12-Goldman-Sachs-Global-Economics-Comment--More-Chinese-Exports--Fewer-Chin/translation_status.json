@@ -1,0 +1,124 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260727/shard_2/0002-12-Goldman-Sachs-Global-Economics-Comment--More-Chinese-Exports--Fewer-Chin",
+  "title": "高盛：价格数据与市场变化观察",
+  "source_title": "0002-12-GS-Global Economics Comment- More Chinese Exports- Fewer Chinese Imports- Lower Global Inflation-260726",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-12-GS-Global Economics Comment- More Chinese Exports- Fewer Chinese Imports- Lower Global Inflation-260726",
+    "cleaned_source_title": "GS-Global Economics Comment- More Chinese Exports- Fewer Chinese Imports- Lower Global Inflation",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：全球EconomicsCommentMoreCh",
+    "raw_candidates": [
+      "中国出口增加与进口减少对全球通胀的影响",
+      "2024年以来中国贸易变化使非美发达地区商品价格下降0.7%",
+      "中国出口与进口变化对发达地区通胀的量化影响"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国出口增加与进口减少对全球通胀的影响",
+      "高盛：2024年以来中国贸易变化使非美发达地区商品价格下降0.7%",
+      "高盛：中国出口与进口变化对发达地区通胀的量化影响",
+      "高盛：全球EconomicsCommentMoreCh",
+      "高盛：图表1显示，自2024年以来"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：2024年以来中国贸易变化使非美发达地区商品价格下降0.7%",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国出口与进口变化对发达地区通胀的量化影响",
+        "reasons": [
+          "anchor_coverage=0.44"
+        ]
+      },
+      {
+        "title": "高盛：全球EconomicsCommentMoreCh",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：图表1显示，自2024年以来",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：价格数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：中国出口增加与进口减少对全球通胀的影响",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：价格数据与市场变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_12.pdf",
+  "figure_count": 5,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "中国经济->中国宏观环境 x1",
+    "经济体->地区 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "经济体->地区 x2",
+    "经济->宏观环境 x1",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "通缩->价格变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "经济体->地区 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "中国经济->中国宏观环境 x1"
+  ]
+}

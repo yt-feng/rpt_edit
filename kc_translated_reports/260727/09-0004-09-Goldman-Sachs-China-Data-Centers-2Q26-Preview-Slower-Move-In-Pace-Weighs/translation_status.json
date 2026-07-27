@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260727/shard_1/0004-09-Goldman-Sachs-China-Data-Centers-2Q26-Preview-Slower-Move-In-Pace-Weighs",
+  "title": "高盛：中国数据中心2Q26预览，入驻速度影响季度表现",
+  "source_title": "0004-09-GS-China Data Centers-2Q26 Preview-Slower Move-In Pace Weighs on Quarter-But 12-Month Thesis Intact-Buy VNET GDS -260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-09-GS-China Data Centers-2Q26 Preview-Slower Move-In Pace Weighs on Quarter-But 12-Month Thesis Intact-Buy VNET GDS -260727",
+    "cleaned_source_title": "GS-China Data Centers-2Q26 Preview-Slower Move-In Pace Weighs on Quarter-But 12-Month Thesis Intact-Buy VNET GDS",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国DataCenters2Q26Preview",
+    "raw_candidates": [
+      "中国数据中心2Q26预览：入驻速度影响季度表现",
+      "中国数据中心2Q26预览：入驻速度放缓与AI需求增长",
+      "中国数据中心2Q26预览：AI模型与硬件进展支撑需求"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国数据中心2Q26预览，入驻速度影响季度表现",
+      "高盛：中国数据中心2Q26预览，入驻速度放缓与AI需求增长",
+      "高盛：中国数据中心2Q26预览，AI模型与硬件进展支撑需求",
+      "高盛：中国DataCenters2Q26Preview",
+      "高盛：4，尽管每计算能力的成本是其3倍（图表5）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国数据中心2Q26预览，入驻速度放缓与AI需求增长",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "高盛：中国数据中心2Q26预览，AI模型与硬件进展支撑需求",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国DataCenters2Q26Preview",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：4，尽管每计算能力的成本是其3倍（图表5）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：中国数据中心2Q26预览，入驻速度影响季度表现",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：中国数据中心2Q26预览，入驻速度影响季度表现"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_09.pdf",
+  "figure_count": 14,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x2",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260727/shard_3/0003-18-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next-",
+  "title": "高盛：跨境贸易与行业变化观察",
+  "source_title": "0003-18-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-18-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis-260727",
+    "cleaned_source_title": "GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：USTariffImpactTracker",
+    "raw_candidates": [
+      "美国关税影响追踪：洛杉矶进口量同比表现不一",
+      "美国关税影响追踪：洛杉矶进口量未来两周同比+8.5%和-10%",
+      "美国关税影响追踪：洛杉矶进口量环比+2%及同比变化"
+    ],
+    "cleaned_candidates": [
+      "高盛：美国关税影响追踪，洛杉矶进口量同比表现不一",
+      "高盛：美国关税影响追踪，洛杉矶进口量未来两周同比+8.5%和-10%",
+      "高盛：美国关税影响追踪，洛杉矶进口量环比+2%及同比变化",
+      "高盛：USTariffImpactTracker",
+      "高盛：我们需要监测的是7月和8月的运量变化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：美国关税影响追踪，洛杉矶进口量未来两周同比+8.5%和-10%",
+        "reasons": [
+          "incomplete_last_segment"
+        ]
+      },
+      {
+        "title": "高盛：USTariffImpactTracker",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：我们需要监测的是7月和8月的运量变化",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：跨境贸易与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：美国关税影响追踪，洛杉矶进口量环比+2%及同比变化",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "高盛：跨境贸易与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_18.pdf",
+  "figure_count": 20,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

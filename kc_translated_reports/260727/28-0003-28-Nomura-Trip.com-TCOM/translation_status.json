@@ -1,0 +1,106 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260727/shard_5/0003-28-Nomura-Trip.com-TCOM.US-TCOM-required-to-rectify-improper-business-pract",
+  "title": "野村：携程被要求整改不当商业行为",
+  "source_title": "0003-28-NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-28-NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices-260727",
+    "cleaned_source_title": "NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：TCOMrequiredtorectifyimp",
+    "raw_candidates": [
+      "携程被要求整改不当商业行为",
+      "携程被市场监管总局要求整改并罚款53亿元",
+      "携程反垄断调查结论：排他性协议与流量分配"
+    ],
+    "cleaned_candidates": [
+      "野村：携程被要求整改不当商业行为",
+      "野村：携程被市场监管总局要求整改并罚款53亿元",
+      "野村：携程反垄断调查结论，排他性协议与流量分配",
+      "野村：TCOMrequiredtorectifyimp",
+      "野村：7月25日，中国国家市场监督管理总局（SAMR）公布了针对携程（"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：携程被市场监管总局要求整改并罚款53亿元",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "野村：携程反垄断调查结论，排他性协议与流量分配",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：TCOMrequiredtorectifyimp",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：7月25日，中国国家市场监督管理总局（SAMR）公布了针对携程（",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：携程被要求整改不当商业行为",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：携程被要求整改不当商业行为"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_28.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x3",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "投资银行->国际机构 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "全球经济->全球宏观环境 x1",
+    "风险->不确定性 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
