@@ -1,0 +1,57 @@
+Found 32 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6746rbjn/pdfs/0001-06-Bernstein-Naver Corporation-035420.KS-Quick Take- Naver-When the supplier becomes the shareholder- NVIDIA takes a stake in Naver-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6746rbjn/pdfs/0002-07-Goldman Sachs-China- Three things in China-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6746rbjn/pdfs/0003-08-Goldman Sachs-Europe Healthcare- Medical Technology- Further share gains for Oticon Zeal underline real momentum-reiterate Buy on Demant-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6746rbjn/pdfs/0004-09-Goldman Sachs-China Data Centers-2Q26 Preview-Slower Move-In Pace Weighs on Quarter-But 12-Month Thesis Intact-Buy VNET GDS -260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6746rbjn/pdfs/0005-10-Goldman Sachs-Europe Multi-Industry-China Trade Tracker and what it foretells for European Capital Goods-260727.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=449aa6f5-1969-43f8-ba74-3f6eaf556780
+MinerU states: running, running, pending, waiting-file, waiting-file
+MinerU states: running, done, running, pending, pending
+MinerU states: running, done, done, running, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 0db4ffd7cf9c37a3c1f5bf507fbb4af6b75de10d7fbf209c7c92647248d1b815.jpg: score=-100;too_small:96x95
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 1503b2e2b88633053c8c4468e0c27b67a299e0158afe0635b190ed062ce97648.jpg: score=-100;too_small:1331x171
+Skip non-chart visual asset 4ef604aee1abc3ef51afd7978a06ae94116c98ad0fd8adf9520614c35c5486ff.jpg: score=-100;too_small:87x92
+Skip non-chart visual asset a079a089d4cb23cfaa26c8475e4cd8b6f9bf41f8f38d584680ef6af31b8fb2c3.jpg: score=-100;too_small:462x134
+Skip non-chart visual asset 5a7b55923e0120c658311251026ba1dc46057d6cbf8e9cab889ddb4f6cfb2c3b.jpg: score=-100;too_small:96x89
+Skip non-chart visual asset f64663ebd3de48f0dfbc3957c76bcc9464b09d14bb7e7a6d8ebcac03fe2dd765.jpg: score=-100;too_small:401x156
+Skip non-chart visual asset f05a379163db18eea77e4caf8673e04305a18d277b86e78bbd17293f12f2ed5f.jpg: score=-100;too_small:462x79
+Skip non-chart visual asset cc9880f51c2c9a05ad9a0bdbadc044715e8473eac6924663b04e2f9731035604.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 922093625265a4799ec5c4f723a6c037947fefe8a8b18ab3a30c38956f559579.jpg: score=1;odd_ratio:4.93,edge:0.22,contrast,large
+Neutralized WeChat title while keeping the report: 高盛：中国三件事-6月财政数据 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset d0aaccfbcd6aaf66240396eeb6d9541e9e4e52d2f2750fb61bcbf77dd337442b.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset ea2abcc9056fbf83e73749ee53c00ecf84c9abbcda4304a59e565d9fc22df4ce.jpg: score=-100;too_small:1162x109
+Skip non-chart visual asset 1044e91b37d16b29af16ea3b851dbc95eeaf3e274d1bc4b2530198d270d0786f.jpg: score=0;odd_ratio:6.24,edge:0.32,contrast
+Skip non-chart visual asset 4657757a30ba32d1c673a7118a497dfadf7f916a7e2137b5448dcff844d85c8b.jpg: score=-100;too_small:504x65
+Skip non-chart visual asset 60425122432e9c298d11a5fc3e3701620772b036d59f93009af2021d050d13bd.jpg: score=-100;too_small:592x134
+Skip non-chart visual asset 7f04b3659b100df071979a1c3fc7da8d9e2b3f29a2bf43edaeb228091d23410e.jpg: score=-100;too_small:759x151
+Skip non-chart visual asset 3809cdfcada4f4e5b291e2300ed0aa87e9448033508a8c86962f62688cd9b199.jpg: score=-100;too_small:637x151
+Skip non-chart visual asset 301b2a7d1de6e77847a5c853b5ff400945cfa18d07692381a4b0b79f694c5cfc.jpg: score=-1;odd_ratio:5.56,edge:0.19
+Skip non-chart visual asset be2cca64d31282aa549ee5f255da19ec1def297a19788044a096c04930051b98.jpg: score=-1;square_without_chart_hint,edge:0.29
+Skip non-chart visual asset 2a65bb1643757e555b6c69fd1c7682843ff3e40758ec2dd392a4b3d8b8130450.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset 0d2cdb0e72255a180fde7f46f8a9e8f15813fe5a854e092b4533182d89186d64.jpg: score=-100;too_small:554x151
+Skip non-chart visual asset ee53e19c9d875c946320b27718bf976ae810a60713de65fddfd560c6d15b0e65.jpg: score=-100;too_small:287x887
+Skip non-chart visual asset 9450c911f2eef1a485e80d8e349c982119692bbd6b2dd339822746558068d69d.jpg: score=0;square_without_chart_hint,edge:0.40,contrast
+Skip non-chart visual asset 3c8e507e94acf570871cbcfe61adf4834bcc43653332ded888d349b99eb5e76e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.39,contrast
+Neutralized WeChat title while keeping the report: 高盛：中国数据中心2Q26预览-并网节奏放缓但12个月需求框架不变 -> 高盛：月度与季度数据变化观察
+Skip non-chart visual asset b65d19db59fef190f35e2b038d33b75ab07f46b8594f1c707f7315b83141c642.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 9b9136b55c495a833a99e7c4dfdc5c738f965b540f01fb9e34c3372661e2e86e.jpg: score=1;square_without_chart_hint,edge:0.21,contrast,large
+Skip non-chart visual asset c0f8280e674d20400798502e86ddcc67a367fa79f229babc1a8951db15507519.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.42,large
+Skip non-chart visual asset f5149ed957715bbcc5fb97094e2c5862cb3de677e4b9e869b209ec37791ec9b9.jpg: score=1;square_without_chart_hint,edge:0.19,contrast,large
+Skip non-chart visual asset de720fcd2406b89189daba23ea7665572946aab829f08cc457a241026010dccd.jpg: score=1;square_without_chart_hint,edge:0.22,contrast,large
+Skip non-chart visual asset a6aa39e3bc3a1e751bf8eec636bee5c41e4802da5805b4855f71d62711df1a73.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset dea006c1f3fb73adf3a55f8b2c2efdbac41d2abcb2ffb092e079c4ec15cd28f9.jpg: score=0;square_without_chart_hint,edge:0.15,large
+Skip non-chart visual asset 4bc02d6220496116bbd3919ccf135dd058a0b3dd361096c451465392c4dad9a9.jpg: score=0;square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset b6d90289c0f12e58ead140d7afd0372fe4bb47804d6e086158a4ad249372ef9f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260727/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

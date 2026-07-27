@@ -1,0 +1,449 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Global Energy Storage-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-global energy storage-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global energy storage-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.88,
+    "reason": "全球能源存储行业报告，非单一公司；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-Asia Quantitative Strategy：Asia Quant+Fundamental Portfolio：17 top picks for 2H26-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-asia quantitative strategy：asia quant+fundamental portfolio：17 top picks for 2h26-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-asia quantitative strategy：asia quant+fundamental portfolio：17 top picks for 2h26-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "亚洲量化策略与组合推荐，宏观策略类；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-China Semiconductors：Global Memory Interface Chip： Competitive dynamics deep dive-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-china semiconductors：global memory interface chip： competitive dynamics deep dive-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china semiconductors：global memory interface chip： competitive dynamics deep dive-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.8300000000000001,
+    "reason": "中国半导体行业深度，聚焦行业竞争格局；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Global Memory Global Memory， NVIDIA & Broadcom： Quick thoughts on strategic partnerships-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-global memory global memory， nvidia & broadcom： quick thoughts on strategic partnerships-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global memory global memory， nvidia & broadcom： quick thoughts on strategic partnerships-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.73,
+    "reason": "全球内存及NVIDIA/Broadcom战略合作，涉及个股但以行业视角为主；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Global Luxury Goods： A logic lens to understand tourist headwinds in 1H26E-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-global luxury goods： a logic lens to understand tourist headwinds in 1h26e-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global luxury goods： a logic lens to understand tourist headwinds in 1h26e-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.88,
+    "reason": "全球奢侈品行业趋势分析，非单一公司；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 5,
+    "name": "Bernstein-Naver Corporation（035420.KS）Quick Take： Naver~When the supplier becomes the shareholder； NVIDIA takes a stake in Naver-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/bernstein-naver corporation（035420.ks）quick take： naver~when the supplier becomes the shareholder； nvidia takes a stake in naver-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-naver corporation（035420.ks）quick take： naver~when the supplier becomes the shareholder； nvidia takes a stake in naver-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Naver公司，含股票代码及事件点评；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=3",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=3"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "GS-China： Three things in China-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-china： three things in china-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china： three things in china-260726.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国宏观市场评论，宏观趋势类",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 7,
+    "name": "GS-Europe Healthcare： Medical Technology： Further share gains for Oticon Zeal underline real momentum；reiterate Buy on Demant-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-europe healthcare： medical technology： further share gains for oticon zeal underline real momentum；reiterate buy on demant-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-europe healthcare： medical technology： further share gains for oticon zeal underline real momentum；reiterate buy on demant-260727.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "欧洲医疗科技行业，但明确提及Oticon Zeal并重申Demant买入评级",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 8,
+    "name": "GS-China Data Centers：2Q26 Preview：Slower Move~In Pace Weighs on Quarter，But 12~Month Thesis Intact；Buy VNET GDS -260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-china data centers：2q26 preview：slower move~in pace weighs on quarter，but 12~month thesis intact；buy vnet gds -260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china data centers：2q26 preview：slower move~in pace weighs on quarter，but 12~month thesis intact；buy vnet gds -260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "中国数据中心行业，但明确给出VNET和GDS买入建议",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 9,
+    "name": "GS-Europe Multi~Industry：China Trade Tracker and what it foretells for European Capital Goods-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-europe multi~industry：china trade tracker and what it foretells for european capital goods-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-europe multi~industry：china trade tracker and what it foretells for european capital goods-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.88,
+    "reason": "欧洲多行业中国贸易追踪，宏观主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 5,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 10,
+    "name": "GS-Japan Chemicals： Asia investor visit feedback： High interest in electronic materials companies and individual catalysts amid volatility-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-japan chemicals： asia investor visit feedback： high interest in electronic materials companies and individual catalysts amid volatility-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan chemicals： asia investor visit feedback： high interest in electronic materials companies and individual catalysts amid volatility-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "日本化工行业投资者反馈，行业趋势类",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 11,
+    "name": "GS-Global Economics Comment： More Chinese Exports， Fewer Chinese Imports， Lower Global Inflation-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-global economics comment： more chinese exports， fewer chinese imports， lower global inflation-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global economics comment： more chinese exports， fewer chinese imports， lower global inflation-260726.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "全球经济评论，宏观趋势类；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 4,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 12,
+    "name": "GS-STMicroelectronics （STMPA.PA）： Improving demand visibility， with AI datacentres & optical connectivity the key growth drivers-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-stmicroelectronics （stmpa.pa）： improving demand visibility， with ai datacentres & optical connectivity the key growth drivers-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-stmicroelectronics （stmpa.pa）： improving demand visibility， with ai datacentres & optical connectivity the key growth drivers-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对STMicroelectronics公司，含股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 13,
+    "name": "GS-Nokia （NOKIA.HE）： Optical momentum builds alongside capacity investment progress； Neutral on valuation-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-nokia （nokia.he）： optical momentum builds alongside capacity investment progress； neutral on valuation-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-nokia （nokia.he）： optical momentum builds alongside capacity investment progress； neutral on valuation-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Nokia公司，含股票代码；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "GS-Moderna Inc. （MRNA.US）： 2Q earnings preview： Upcoming Phase 3 melanoma data is the primary catalyst-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-moderna inc. （mrna.us）： 2q earnings preview： upcoming phase 3 melanoma data is the primary catalyst-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-moderna inc. （mrna.us）： 2q earnings preview： upcoming phase 3 melanoma data is the primary catalyst-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Moderna公司，含股票代码及业绩预览；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "GS-Trip.com Group （TCOM.US）： Conclusion of anti~trust investigation； Buy-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-trip.com group （tcom.us）： conclusion of anti~trust investigation； buy-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-trip.com group （tcom.us）： conclusion of anti~trust investigation； buy-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Trip.com公司，含股票代码及评级；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "GS-US Economics Analyst：July FOMC Preview： Better Inflation Data， Worse Geopolitical News-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-us economics analyst：july fomc preview： better inflation data， worse geopolitical news-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us economics analyst：july fomc preview： better inflation data， worse geopolitical news-260726.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "美国经济分析及FOMC预览，宏观政策类；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 3,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 17,
+    "name": "GS-US Tariff Impact Tracker： Imports into LA Mixed Over Next Two Weeks on a YOY Basis-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-us tariff impact tracker： imports into la mixed over next two weeks on a yoy basis-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us tariff impact tracker： imports into la mixed over next two weeks on a yoy basis-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "美国关税影响追踪，宏观政策类；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 18,
+    "name": "GS-Want Want China（0151.HK）：Profit Alert：1QFY26 Revenue NI under pressure on muted consumer sentiment，traditional channel weakness-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-want want china（0151.hk）：profit alert：1qfy26 revenue ni under pressure on muted consumer sentiment，traditional channel weakness-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-want want china（0151.hk）：profit alert：1qfy26 revenue ni under pressure on muted consumer sentiment，traditional channel weakness-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Want Want China公司，含股票代码及盈利预警；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "GS-Vodafone （VOD.L）： Modest 1Q27 beat and Africa~driven raise likely to reassure while limited Europe growth continues-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-vodafone （vod.l）： modest 1q27 beat and africa~driven raise likely to reassure while limited europe growth continues-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-vodafone （vod.l）： modest 1q27 beat and africa~driven raise likely to reassure while limited europe growth continues-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Vodafone公司，含股票代码及业绩点评；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "GS-Vertex Pharmaceuticals Inc. （VRTX.US）： 2Q earnings preview： Facing an eventful 2H-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/GS-vertex pharmaceuticals inc. （vrtx.us）： 2q earnings preview： facing an eventful 2h-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-vertex pharmaceuticals inc. （vrtx.us）： 2q earnings preview： facing an eventful 2h-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Vertex Pharmaceuticals公司，含股票代码及业绩预览；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "MS-Global Thematics Playing the AI Infrastructure Dip-Where to Invest and Where We See Risk-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/MS-global thematics playing the ai infrastructure dip-where to invest and where we see risk-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-global thematics playing the ai infrastructure dip-where to invest and where we see risk-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "全球主题投资策略，宏观趋势类；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 22,
+    "name": "MS-Hard Disk Drives - North America F4Q26 Earnings Preview - Reigniting The Bull Case-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/MS-hard disk drives - north america f4q26 earnings preview - reigniting the bull case-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-hard disk drives - north america f4q26 earnings preview - reigniting the bull case-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "北美硬盘驱动器行业业绩预览，行业趋势类",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 23,
+    "name": "MS-Semiconductors - North America Weekly-Earnings Week 2 (AMKR, NVTS, NXPI, SWKS, QCOM, ALGM, ON); Thoughts on MRVL-Frozen, MCHP-Hailo-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/MS-semiconductors - north america weekly-earnings week 2 (amkr, nvts, nxpi, swks, qcom, algm, on); thoughts on mrvl-frozen, mchp-hailo-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-semiconductors - north america weekly-earnings week 2 (amkr, nvts, nxpi, swks, qcom, algm, on); thoughts on mrvl-frozen, mchp-hailo-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.75,
+    "reason": "北美半导体周报，覆盖多家公司，行业视角为主",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 24,
+    "name": "NOM-ChangXin Memory Technologies 688825.SS 688825 CH EQUITY-TECHNOLOGY The DRAM in the Chinese crown; initiate at Buy-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-changxin memory technologies 688825.ss 688825 ch equity-technology the dram in the chinese crown; initiate at buy-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-changxin memory technologies 688825.ss 688825 ch equity-technology the dram in the chinese crown; initiate at buy-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对ChangXin Memory Technologies公司，含股票代码及首次覆盖买入；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "NOM-Contemporary Amperex Technology（300750）2Q26 in line， positive on share buyback-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-contemporary amperex technology（300750）2q26 in line， positive on share buyback-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-contemporary amperex technology（300750）2q26 in line， positive on share buyback-260726.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Contemporary Amperex Technology公司，含股票代码及业绩点评",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 26,
+    "name": "NOM-China Internet & New Media：Takeaways from an LLM expert call-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-china internet & new media：takeaways from an llm expert call-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china internet & new media：takeaways from an llm expert call-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国互联网与新媒行业专家电话会，行业趋势类",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 27,
+    "name": "NOM-Trip.com（TCOM.US）TCOM required to rectify improper business practices-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-trip.com（tcom.us）tcom required to rectify improper business practices-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-trip.com（tcom.us）tcom required to rectify improper business practices-260727.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Trip.com公司，含股票代码及事件点评；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "NOM-Samsung Heavy Industries（010140.KS）2Q26 OP miss； now on reasonable level-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-samsung heavy industries（010140.ks）2q26 op miss； now on reasonable level-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-samsung heavy industries（010140.ks）2q26 op miss； now on reasonable level-260726.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Samsung Heavy Industries公司，含股票代码及业绩点评；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "NOM-Tata Consumer Products（TACN.NS）Growth business outshines and changing the company’s DNA-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-tata consumer products（tacn.ns）growth business outshines and changing the company’s dna-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-tata consumer products（tacn.ns）growth business outshines and changing the company’s dna-260726.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Tata Consumer Products公司，含股票代码",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 30,
+    "name": "NOM-USD CNY fix model：Projection，6.7685-260727.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-usd cny fix model：projection，6.7685-260727.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection，6.7685-260727.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美元/人民币汇率模型预测，宏观汇率类",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 31,
+    "name": "NOM-WIN Semiconductors（3105.TWO）More positive narratives about optical-260726.pdf",
+    "dropbox_path": "/zip_backup/260727/NOM-win semiconductors（3105.two）more positive narratives about optical-260726.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-win semiconductors（3105.two）more positive narratives about optical-260726.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对WIN Semiconductors公司，含股票代码；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  }
+]
