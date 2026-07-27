@@ -2224,6 +2224,46 @@
     "oecd:https://www.oecd.org/en/publications/interoperability-in-healthcare_eb71b7be-en.html": {
       "first_seen": "2026-07-25",
       "status": "downloaded"
+    },
+    "imf:3cdee9c20caccebaa0db2ca6c97af3be6281206bd82ad1b85d828701148b": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "imf:7774bf94a512c5af2dc35e792f499c249c56c642dd98e92dce4844a48473": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "imf:c6a81bdcd7f5959d5e868fd5cea7d338e25675a51afe31851a1af454d099": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "imf:f81e7a975e56dc850a55c51928547af914311ad0e8451a97c608071e410a": {
+      "first_seen": "2026-07-27",
+      "status": "too_old"
+    },
+    "imf:0f6d01cb986772c689f05f52f99ceb42efda4ff4feb6c3a638a02489c0b1": {
+      "first_seen": "2026-07-27",
+      "status": "too_old"
+    },
+    "imf:bea3192893a033d649d0fa4bfd5eb2c76a2dfb32c02462ef72893b764a0e": {
+      "first_seen": "2026-07-27",
+      "status": "too_old"
+    },
+    "imf:1120ca222d68f7f02ceda9ff7e52242deebd4afc940b8832d779d5e16d9e": {
+      "first_seen": "2026-07-27",
+      "status": "too_old"
+    },
+    "worldbank:099158007272624843": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "adb:297141": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/dsb_24jul26_464_e.htm": {
+      "first_seen": "2026-07-27",
+      "status": "no_pdf"
     }
   }
 }
