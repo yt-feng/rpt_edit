@@ -1,0 +1,236 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# US Tariff Impact Tracker: Imports into LA Mixed Over Next Two Weeks on a YOY Basis
+
+US Tariff Impact Tracker: This past week, laden vessels from China to USA were down sequentially (-3% WoW) and down on a YoY basis (-14.5% YoY). Data suggests TEUs coming into Port of LA will turn positive next week (+2% WoW) following this past week's +2% sequential move, before seeing a similar increase of +2% WoW two weeks out (YoY is expected to be +8.5% and then -10%, one week and two weeks out). What we will need to monitor is how levels move through July and August, which could suggest how shippers are deciding to restock, how early peak could be starting (and whether there was an early start to peak shipping this spring), and with in some cases how lower effective tariff rates impact import decisions amidst an uncertain geopolitical backdrop.
+
+Trade uncertainty remains prevalent in global trade.
+
+Jordan Alliger
++1(212)357-4913 |
+jordan.alliger@gs.com
+GS & Co. LLC
+
+Paul Stoddard
++1(801)744-3761 |
+paul.x.stoddard@gs.com
+GS & Co. LLC
+
+Andrzej Tomczyk, CFA
++1(212)357-4445 |
+andrzej.tomczyk@gs.com
+GS & Co. LLC
+
+Key observations from this past week's report:
+
+China freight flows (week ending Thursday, July $23^{\text{rd}}$ ) showed a sequential decline in laden vessels from China to the US $(-3\%)$ with a negative YoY at $-14.5\%$ (vs $-18\%$ in the prior week).
+
+■ Port Optimizer sequentials indicate imports into the Port of Los Angeles are set to be up +2% TEUs (July 31) while the early read suggests an increase of +2% on a two-week out basis; on a YoY basis, imports into LA are set to trend positive to +8.5% and then decrease -10% two-week out.
+
+Rail intermodal volumes along the West Coast were up +8% YoY following last week's +4% performance.
+
+Ocean container rates were down -12% sequentially; rates on a YoY basis were up +167% YoY this past week. We anticipate some choppiness could remain over the coming weeks as global capacity potentially shifts given ongoing geopolitical events.
+
+\- Load availability for trucks on the West Coast increased last week sequentially (+2%) and was negative on a YoY basis (-5%); truck spot rates on the West Coast were up +56% YoY ex-fuel.
+
+## What the Tracker Is:
+
+What We Disseminate Weekly: High frequency data to help assess the ongoing impact of tariffs on global supply chains and the accompanying ramifications on the flows of freight (e.g., expected ships leaving from China to USA). While we think our data set is representative, we do plan to periodically add new data series as they become available.
+
+It is important to recognize that weekly data can be volatile, with a fair bit of noise depending on timing—but we still think looking at the data collectively, and perhaps over a multi-week basis can be informative as to tariff-related trends.
+
+2026 Trade and Transport Scenario Roadmap—Revised From First and Second Edition: As we moved past the 2025 homestretch and into 2026, the ability to find a profit and earnings bottom and eventually see an earnings upgrade cycle comes down to one thing: volume growth, with an appropriate weighting towards higher margin business-to-business, commercial and/or manufacturing flows. Recent improved share price performance from the trucking sector could perhaps be tied to the notion that volumes (and in terms of truckload - supply) could indeed be at a more stable point with which improvement could come from at some point in 2026.
+
+Ramifications from tariff-related uncertainty that caused pull-forward in demand—bracketed by shipper indecision as to how much product to manufacture and/or order for inventory—had been a culprit behind transports broad underperformance for much of 2025 and tied directly into our view that we may see subseasonal peak season shipping demand (for 4Q reporting).
+
+That said, we remain positive on the cycle recovery story—despite the heretofore elusive bottom, and we note several factors that could finally stimulate a favorable and fulsome volume inflection into 2026 as we look to the medium to longer term.
+
+Fed rate cut cycles are typically beneficial to transport shares (see Fed Rate Cuts and Transports); GS economists predict one rate cut in 2026 (December) and another cut in March 2027 to add to the three cuts in 2025
+
+■ While tariff uncertainty still exists, we lapped Liberation Day on April 2, 2026—potentially yielding a more consistent playbook for shippers to work with and to plan.
+
+■ Various corporations are announcing increased investments in US manufacturing—including companies like Apple, Nvidia, IBM, Pfizer, Johnson & Johnson, etc.—which should auger-in more domestic freight flows.
+
+The bonus depreciation revival via the One Big Beautiful Bill Act could incentivize capital to reinvest in businesses.
+
+While tariff deployment is disruptive, any resulting re-shoring or nearshoring would bolster US manufacturing, which also should auger-in more domestic freight flows.
+
+■ Shifting logistics patterns and changing supply chain sourcing could drive secular global trade opportunity as companies potentially pursue a China Plus 1 or 2 strategy.
+
+## What to do with Transport stocks:
+
+We upgraded the truckers last year (see our upgrade note), as we believed the likelihood of recession had lessened, and as the consumer has stayed relatively resilient. While freight forwarders such as EXPD and CHRW could benefit from the volatility and surge in customs brokerage demand, we do note that YoY comparisons for ocean rates will be challenging. Should the Red Sea re-open, that could further add to effective capacity.
+
+\- Other beneficiaries could be the parcels (UPS and FDX—both Buy-rated) with their fast cycle logistics and air freight as well as large global footprints that can help shippers shift supply chains.
+
+## High Frequency Weekly Data
+
+We track weekly (and some daily) data that helps provide as real time as possible insights into trade volumes, demand and pricing. We note that much of this data is choppy in the near term and more than often shows trends developing over time as we receive more data, but also speaks to the volatility of trade flows. Therefore, we caution against drawing conclusions week to week but note that it can be helpful to see changes in the data week to week given the dynamic trade environment. Below, we track the high frequency data points that we believe are highly relevant to trade and US freight transportation.
+
+Laden container vessels from China to the US were -14.5% YoY over the last week (7/17-7/23) versus -18% YoY in the prior week (7/10-7/16). The sequential vessel decrease of -3% in the most recent week follows last decrease of -15%.
+
+TEUs from China to the US were -23% YoY over the past week (7/17-7/23) versus -18.5% in the prior week (7/10-7/16). Sequentially, we saw a -7% change in TEUs from Mainland China.
+
+Exhibit 3: TEUs have remained volatile Daily TEU from China to the US  
+![](images/26ec015cb147aa00c238fc3f086148f1b00ed5fa81d5e0939026ad6b373ee735.jpg)
+
+Data as of 7/23/2026. Represents the aggregated container volume, measured in twenty-foot equivalent units (TEU), of vessels departing China for the United States over a 15-day rolling period. Accounts for the shipping capacity being utilized, irrespective of the number of vessels. Dry cargo vessels leaving China are monitored as they exit Chinese waters. The dataset is filtered for vessels that have left over the 15 previous days and have reported the US as their country of destination. Note that data is subject to revisions.
+
+## Source: Bloomberg
+
+Exhibit 4: TEU growth decelerated in the most recent week Daily TEU from China to the US, YoY  
+![](images/4aeeccd62b2a5058579b25becdd211d8b67cd385f59f078b6c3e0cdc9ec89768.jpg)
+
+Data as of 7/23/2026. Represents the aggregated container volume, measured in twenty-foot equivalent units (TEU), of vessels departing China for the United States over a 15-day rolling period. Accounts for the shipping capacity being utilized, irrespective of the number of vessels. Dry cargo vessels leaving China are monitored as they exit Chinese waters. The dataset is filtered for vessels that have left over the 15 previous days and have reported the US as their country of destination. Note that data is subject to revisions.
+
+Source: Bloomberg
+
+Exhibit 5: Week 29 China to US vessels and TEUs were down WoW Weekly Average TEUs and Vessels from China to US
+
+<table><tr><td colspan="8">Bloomberg China to US 6 Week Dashboard Weekly Average TEUs &amp; Vessels</td></tr><tr><td>Week</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr><tr><td>2026 Vessels</td><td>63</td><td>67</td><td>70</td><td>65</td><td>60</td><td>51</td><td>49</td></tr><tr><td>WoW</td><td></td><td>6.1%</td><td>3.8%</td><td>-7.0%</td><td>-7.9%</td><td>-14.9%</td><td>-3.4%</td></tr><tr><td>2025 Vessels</td><td>58</td><td>64</td><td>70</td><td>65</td><td>64</td><td>62</td><td>57</td></tr><tr><td>2025 WoW</td><td></td><td>11.7%</td><td>8.7%</td><td>-7.4%</td><td>-1.8%</td><td>-2.2%</td><td>-7.8%</td></tr><tr><td>2026 YoY</td><td>9.7%</td><td>4.2%</td><td>-0.4%</td><td>0.0%</td><td>-6.3%</td><td>-18.4%</td><td>-14.5%</td></tr><tr><td>2026 TEUs</td><td>517,628</td><td>575,345</td><td>555,551</td><td>540,110</td><td>492,602</td><td>427,500</td><td>398,691</td></tr><tr><td>WoW</td><td></td><td>11.2%</td><td>-3.4%</td><td>-2.8%</td><td>-8.8%</td><td>-13.2%</td><td>-6.7%</td></tr><tr><td>2025 TEUs</td><td>459,259</td><td>532,618</td><td>559,219</td><td>525,660</td><td>510,667</td><td>524,435</td><td>516,271</td></tr><tr><td>2025 WoW</td><td></td><td>16.0%</td><td>5.0%</td><td>-6.0%</td><td>-2.9%</td><td>2.7%</td><td>-1.6%</td></tr><tr><td>2026 YoY</td><td>12.7%</td><td>8.0%</td><td>-0.7%</td><td>2.7%</td><td>-3.5%</td><td>-18.5%</td><td>-22.8%</td></tr></table>
+
+Week 29 7/17/2026-7/23/2026; Note that data is subject to revisions.
+
+Source: Bloomberg
+
+Mainland China's laden vessel and TEU growth vs. Asia Ex-Mainland China to US: On a laden vessel basis, Mainland China was down $-15.5\%$ YoY on average while Asia-Ex Mainland China was down $-10.5\%$ YoY. On a TEU basis, Mainland China was down $-23\%$ YoY on average while Asia-Ex Mainland was down $-9\%$ on average. We use the summation of Mainland China, Vietnam, South Korea, Taiwan and Japan as a proxy for Asia exports to the US.
+
+Exhibit 6: Mainland China and Asia-Ex Mainland: vessels were down YoY for Mainland China and for Asia Ex Mainland China
+
+Daily Laden Container Ship Vessels from Asia ex-Mainland China and Mainland China to US, YoY
+
+![](images/622976f670fed3513f202d16e28be719fc38577b714ab27855ac2384711e1bd4.jpg)  
+Asia ex-Mainland China includes Vietnam, South Korea, Taiwan, and Japan Data as of 7/23/2026  
+Exhibit 7: TEU growth from Mainland China decelerated Yoy and Asia-Ex Mainland China accelerated YoY this past week  
+Daily TEU from Asia ex-Mainland China and Mainland China to US, YoY
+
+![](images/48b6a2d631f4434e8f16434fee8f774ca1d1a1915348a1d9b01122a6cbac3229.jpg)  
+Asia ex-Mainland China includes Vietnam, South Korea, Taiwan and Japan Data as of 7/23/2026  
+Source: Bloomberg
+
+## Source: Bloomberg
+
+Chinese major port weekly throughput was down +4% w/w during the week ended 7/19 (latest available) after being down -15% w/w the prior week. Throughput was -10% YoY vs -11% in the prior week.
+
+Exhibit 8: Chinese port activity was down $+4\%$ sequentially in the most recent week and down $-10\%$ YoY Chinese major port weekly container throughput  
+![](images/1967702731cc3a10999dbe0bfb34a80a4890161cfc70245edb93a9a92dd4ab47.jpg)  
+Note: Label showing latest weekly YoY showing data from 13-Jul-2026 to 19-Jul-2026  
+Weekly through 7/19/2026. Data compiled by our Asia Analysts, Herbert Lu, Simon Cheung and Dorothy Wong
+
+Ocean container rates from China/East Asia to the US West Coast were down -12% from last week and up +167% YoY in the most recent week. We anticipate some volatility over the coming weeks as global capacity shifts given ongoing geopolitical events, given potential surcharges, and considering peak season beginning earlier this year.
+
+Exhibit 9: Ocean rates decreased -12% WoW after decreasing -6% in the previous week China/East Asia to the North American West Coast, \$/FEU  
+![](images/d2abb9bd76aa80c09c12b9f5947371010743b7437b4347be2db12bd2a1432b61.jpg)  
+Weekly rate through 7/24/2026  
+Source: Freightos
+
+Planned TEUs into the Port of LA in the most recent week were up $+2\%$ sequentially after $+4\% / -6\%$ WoW moves in the prior two weeks. Looking ahead, this week's positive sequential move appears to remained unchanged next week and two weeks out. YoY trends are expected to increase $+8.5\%$ YoY for TEUs next week and then decrease $-10\%$ two weeks out.
+
+Exhibit 10: Planned TEUs are expected to stay unchanged next week and two weeks out  
+Planned TEUs into the Port of LA  
+![](images/c1cd3295e2611c5b47cc8e2d428d0445ecaf001f529aebc30fbec61b3cc5a003.jpg)  
+Weekly data updated daily as of 7/24/2026 Port Optimizer data includes two week forward data for week ending 8/7  
+Source: Port Optimizer
+
+Exhibit 11: Tracking volumes over the last four weeks and upcoming 2 weeks  
+Port Optimizer 6 Week Dashboard
+
+<table><tr><td colspan="8">Port Optimizer 6 Week Dashboard</td></tr><tr><td>Date</td><td>6/26/2026</td><td>7/3/2026</td><td>7/10/2026</td><td>7/17/2026</td><td>7/24/2026</td><td>7/31/2026</td><td>8/7/2026</td></tr><tr><td>Week</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr><tr><td>TEUs</td><td>125,283</td><td>118,669</td><td>122,977</td><td>115,261</td><td>117,882</td><td>119,960</td><td>121,837</td></tr><tr><td>WoW</td><td>N/A</td><td>-5.3%</td><td>3.6%</td><td>-6.3%</td><td>2.3%</td><td>1.8%</td><td>1.6%</td></tr><tr><td>2025 WoW</td><td>23.3%</td><td>13.6%</td><td>0.6%</td><td>-11.0%</td><td>7.6%</td><td>-13.3%</td><td>22.6%</td></tr><tr><td>2026 YoY</td><td>7.5%</td><td>-10.3%</td><td>-7.6%</td><td>-2.7%</td><td>-7.5%</td><td>8.5%</td><td>-10.1%</td></tr><tr><td>Vessels</td><td>23</td><td>23</td><td>22</td><td>23</td><td>21</td><td>24</td><td>23</td></tr><tr><td>WoW</td><td>N/A</td><td>0.0%</td><td>-4.3%</td><td>4.5%</td><td>-8.7%</td><td>14.3%</td><td>-4.2%</td></tr><tr><td>2025 WoW</td><td>17.6%</td><td>20.0%</td><td>8.3%</td><td>-7.7%</td><td>-12.5%</td><td>4.8%</td><td>18.2%</td></tr><tr><td>2026 YoY</td><td>15.0%</td><td>-4.2%</td><td>-15.4%</td><td>-4.2%</td><td>0.0%</td><td>9.1%</td><td>-11.5%</td></tr></table>
+
+Weekly data update as of 7/24/2026 Port Optimizer data includes two week forward data for week ending 8/7
+
+Source: Port Optimizer
+
+WorldACD Weekly Cargo Trends Asia Pacific to North America weights and rates (as of 7/16; latest), two week over two week was -4% and -6% last week, after -2% and -3% in the prior week, respectively. The sequential weight movements are figures to watch to ascertain the need for faster cycle logistics. We continue to monitor rate impact on global and regional rates from reduced air capacity in Gulf states in addition to increase in jet fuel pricing, noting the limited visibility on weekly rates, as well as recognizing the dynamic situation as some airports have limited reopening of flights.
+
+Intermodal traffic growth on the West Coast (UNP/BNSF) was +8% YoY in the most recent week, versus +4% last week.
+
+Exhibit 13: West Coast intermodal carloads were $+8\%$ YoY versus $+4\%$ YoY last week Intermodal Carloads on the West Coast  
+![](images/0af9899236d9a7b08cf2887d48976ca024a65f284db010f10b7a4b78f91dfa37.jpg)  
+Weekly intermodal carload as of 7/18/2026  
+Source: AAR
+
+Truckload spot rates ex-fuel on the West Coast from truckstop.com increased -3% w/w and +56% YoY in the most recent week.
+
+\- Truck load availability index on the West Coast was up +2% w/w and up -5% YoY.
+
+Exhibit 14: Rates were +56% YoY last week 
+
+[中间内容因长度限制已省略]
+
+ including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""

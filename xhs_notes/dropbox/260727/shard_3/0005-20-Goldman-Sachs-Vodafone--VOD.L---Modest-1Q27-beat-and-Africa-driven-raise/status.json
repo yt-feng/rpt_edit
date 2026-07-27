@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0005-20-GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "沃达丰小超预期，非洲",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：沃达丰非洲业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues-260727.pdf",
+    "cleaned_source_title": "GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：Vodafone",
+    "raw_candidates": [
+      "沃达丰非洲业务拉动集团指引上调",
+      "沃达丰2027财年一季度非洲业务驱动指引上调",
+      "沃达丰非洲业务与欧洲增长有限"
+    ],
+    "cleaned_candidates": [
+      "GS：沃达丰非洲业务拉动集团指引上调",
+      "GS：沃达丰2027财年一季度非洲业务驱动指引上调",
+      "GS：沃达丰非洲业务与欧洲增长有限",
+      "GS：Vodafone",
+      "GS：德国一季度有机服务收入增长1.2%，超出市场预期的0.1%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：沃达丰2027财年一季度非洲业务驱动指引上调",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "GS：沃达丰非洲业务与欧洲增长有限",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "GS：Vodafone",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：德国一季度有机服务收入增长1.2%，超出市场预期的0.1%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：沃达丰非洲业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：沃达丰非洲业务拉动集团指引上调",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：沃达丰非洲业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "504",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,557 @@
+[
+  {
+    "item": "0001-16-Goldman-Sachs-Trip.com-Group--TCOM.US---Conclusion-of-anti-trust-investi",
+    "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0001-16-GS-Trip.com Group -TCOM.US-- Conclusion of anti-trust investigation- Buy-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "携程反垄断处罚落地，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：携程反垄断调查结案-罚款51.79亿元",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-Trip.com Group -TCOM.US-- Conclusion of anti-trust investigation- Buy-260727.pdf",
+      "cleaned_source_title": "GS-Trip.com Group -TCOM.US-- Conclusion of anti-trust investigation- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Group-Conclusionofantitr",
+      "raw_candidates": [
+        "携程反垄断调查结案",
+        "携程反垄断调查结案-罚款51.79亿元",
+        "携程反垄断调查结案-整改措施与市场影响"
+      ],
+      "cleaned_candidates": [
+        "GS：携程反垄断调查结案",
+        "GS：携程反垄断调查结案-罚款51.79亿元",
+        "GS：携程反垄断调查结案-整改措施与市场影响",
+        "GS：Group-Conclusionofantitr",
+        "GS：7月25日，中国国家市场监督管理总局宣布完成对携程集团为期六个月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：Group-Conclusionofantitr",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月25日，中国国家市场监督管理总局宣布完成对携程集团为期六个月",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：携程反垄断调查结案-罚款51.79亿元",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "51.79"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：携程反垄断调查结案-罚款51.79亿元"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-Goldman-Sachs-US-Economics-Analyst-July-FOMC-Preview--Better-Inflation-D",
+    "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0002-17-GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美联储7月决议倒计时",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News-260726.pdf",
+      "cleaned_source_title": "GS-US Economics Analyst-July FOMC Preview- Better Inflation Data- Worse Geopolitical News",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：USEconomicsAnalystJulyFO",
+      "raw_candidates": [
+        "GS美国宏观分析-7月FOMC会议通胀改善与地缘不确定性",
+        "GS：7月FOMC会议通胀改善与地缘不确定性-6月核心CPI环比降2基点",
+        "GS：7月FOMC会议通胀改善与地缘不确定性-加息概率上调至35%"
+      ],
+      "cleaned_candidates": [
+        "GS：GS美国宏观分析-7月FOMC会议通胀改善与地缘不确定性",
+        "GS：7月FOMC会议通胀改善与地缘不确定性",
+        "GS：7月FOMC会议通胀改善与地缘不确定性-加息概率上调至35%",
+        "GS：USEconomicsAnalystJulyFO",
+        "GS：6月核心CPI环比下降2个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：7月FOMC会议通胀改善与地缘不确定性",
+          "reasons": [
+            "anchor_coverage=0.69",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月FOMC会议通胀改善与地缘不确定性-加息概率上调至35%",
+          "reasons": [
+            "anchor_coverage=0.69",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：USEconomicsAnalystJulyFO",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：6月核心CPI环比下降2个基点",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：GS美国宏观分析-7月FOMC会议通胀改善与地缘不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-Goldman-Sachs-US-Tariff-Impact-Tracker--Imports-into-LA-Mixed-Over-Next-",
+    "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0003-18-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "海运数据在打架？LA",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "GS：跨境贸易与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis-260727.pdf",
+      "cleaned_source_title": "GS-US Tariff Impact Tracker- Imports into LA Mixed Over Next Two Weeks on a YOY Basis",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：USTariffImpactTracker",
+      "raw_candidates": [
+        "美国关税影响追踪：洛杉矶港进口未来两周同比表现分化",
+        "截至7月23日当周中国至美集装箱船运量同比降幅波动",
+        "GS高频框架追踪关税对供应链的周度影响"
+      ],
+      "cleaned_candidates": [
+        "GS：美国关税影响追踪，洛杉矶港进口未来两周同比表现分化",
+        "GS：截至7月23日当周中国至美集装箱船运量同比降幅波动",
+        "GS：GS高频框架追踪关税对供应链的周度影响",
+        "GS：USTariffImpactTracker",
+        "GS：截至7月23日当周"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：截至7月23日当周中国至美集装箱船运量同比降幅波动",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS高频框架追踪关税对供应链的周度影响",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：USTariffImpactTracker",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：截至7月23日当周",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：跨境贸易与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：美国关税影响追踪，洛杉矶港进口未来两周同比表现分化",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "GS：跨境贸易与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-Goldman-Sachs-Want-Want-China-0151.HK--Profit-Alert-1QFY26-Revenue-NI-un",
+    "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0004-19-GS-Want Want China-0151.HK--Profit Alert-1QFY26 Revenue NI under pressure on muted consumer sentiment-traditional channel weakness-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "旺旺Q1业绩为何低于",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x2",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：旺旺中国首季业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-Want Want China-0151.HK--Profit Alert-1QFY26 Revenue NI under pressure on muted consumer sentiment-traditional channel weakness-260727.pdf",
+      "cleaned_source_title": "GS-Want Want China-0151.HK--Profit Alert-1QFY26 Revenue NI under pressure on muted consumer sentiment-traditional channel weakness",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：WantWant中国",
+      "raw_candidates": [
+        "旺旺中国首季收入与净利润承压",
+        "旺旺中国首季收入降6%净利润降38%",
+        "旺旺中国首季消费疲软与渠道调整"
+      ],
+      "cleaned_candidates": [
+        "GS：旺旺中国首季收入与净利润承压",
+        "GS：旺旺中国首季收入降6%净利润降38%",
+        "GS：旺旺中国首季消费疲软与渠道调整",
+        "GS：WantWant中国",
+        "GS：旺旺中国（）于7月26日发布了2026财年第一季度初步业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：旺旺中国首季收入降6%净利润降38%",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        },
+        {
+          "title": "GS：旺旺中国首季消费疲软与渠道调整",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：WantWant中国",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：旺旺中国（）于7月26日发布了2026财年第一季度初步业绩",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：旺旺中国首季业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：旺旺中国首季收入与净利润承压",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：旺旺中国首季业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-Goldman-Sachs-Vodafone--VOD.L---Modest-1Q27-beat-and-Africa-driven-raise",
+    "source_pdf": "/tmp/pdf_batch_001_4fsel7a9/pdfs/0005-20-GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "沃达丰小超预期，非洲",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：沃达丰非洲业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues-260727.pdf",
+      "cleaned_source_title": "GS-Vodafone -VOD.L-- Modest 1Q27 beat and Africa-driven raise likely to reassure while limited Europe growth continues",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Vodafone",
+      "raw_candidates": [
+        "沃达丰非洲业务拉动集团指引上调",
+        "沃达丰2027财年一季度非洲业务驱动指引上调",
+        "沃达丰非洲业务与欧洲增长有限"
+      ],
+      "cleaned_candidates": [
+        "GS：沃达丰非洲业务拉动集团指引上调",
+        "GS：沃达丰2027财年一季度非洲业务驱动指引上调",
+        "GS：沃达丰非洲业务与欧洲增长有限",
+        "GS：Vodafone",
+        "GS：德国一季度有机服务收入增长1.2%，超出市场预期的0.1%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：沃达丰2027财年一季度非洲业务驱动指引上调",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "GS：沃达丰非洲业务与欧洲增长有限",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        },
+        {
+          "title": "GS：Vodafone",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：德国一季度有机服务收入增长1.2%，超出市场预期的0.1%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：沃达丰非洲业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：沃达丰非洲业务拉动集团指引上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：沃达丰非洲业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
