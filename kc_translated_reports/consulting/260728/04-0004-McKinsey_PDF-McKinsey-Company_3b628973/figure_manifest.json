@@ -1,0 +1,198 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/a9ed9de814c53c804058d87e3667bb13a534e51bb760b0f131b7467d54a86333.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=7;chart_context,odd_ratio:0.34,edge:0.28,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/590c691a6eb804458fa4cfdafb0a834a1aace5002ae0b6e4601bec6f79367d7d.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.13,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/6b19d1b01d13801349f7f69328484ea7452dc4a94da21287c32a4fb68c2d4b64.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/f263150a7fe87a2432ef88585d654c1f79f62a9bd4c49711b6492c661f3846d9.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=6;chart_context"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/f6d1985e5bd04ff63a9156740dd3efc2af8106921c919c2057372dcaea18ad40.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.11"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/db55fd2d1186b8a9a8254efe1b0dc990e147e7b4dbb8c4158274295dfc7095d3.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.15"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/678d9b29536a90002f7e7a3fb3f62df305861ca4575fba06330fa190403cb9e3.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.21,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_008]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/cc26bbc5a3e8984fa3dd1b69b238c6585af89547f04c802dbd78e24c93d4891f.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_008.jpg",
+    "relative_path": "fig_008.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.18,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_009]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/e0fd7fd84edeff990120e0a620e384641eed558ca00a1e97527553559de6ba83.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_009.jpg",
+    "relative_path": "fig_009.jpg",
+    "chart_filter": "score=8;chart_context,edge:0.12"
+  },
+  {
+    "token": "[[KC_IMAGE_010]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/8f1f811cab85320a36dec00c6ad6bac357d08c76e92000c767b4017343dcb930.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_010.jpg",
+    "relative_path": "fig_010.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.16,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_011]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/8f128cfa1113136e07e2cb785c99f50e31d6edbb1d69f70cec3684916cfbf94d.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_011.jpg",
+    "relative_path": "fig_011.jpg",
+    "chart_filter": "score=8;chart_context,edge:0.15"
+  },
+  {
+    "token": "[[KC_IMAGE_012]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/efda92beeaf5d6c965a128f35f61656e4d16a67fff1328f002e4db424e07f7b3.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_012.jpg",
+    "relative_path": "fig_012.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.40,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_013]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/03b8961441ec03e3fc569d5b1895896599b20ec2a64009500a009ae56637d198.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_013.jpg",
+    "relative_path": "fig_013.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.14,large"
+  },
+  {
+    "token": "[[KC_IMAGE_014]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/4683d83727370e5f16392df4fa06379719558e64a670ae17795994402e66a304.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_014.jpg",
+    "relative_path": "fig_014.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.25,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_015]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/6187627e22ad03eda8dcfbf6245d3f557d72dd3b0b7e350d62539cd60116971b.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_015.jpg",
+    "relative_path": "fig_015.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.24,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_016]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/c54d67a6c189728c7bff289da5e9963a2f0fe2044ea8009ae2a3ec468570c23c.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_016.jpg",
+    "relative_path": "fig_016.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.22,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_017]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/b91939e56676748bb7539f2e55e7ea962110ee90166cf58169894d2d11c4791b.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_017.jpg",
+    "relative_path": "fig_017.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.14,large"
+  },
+  {
+    "token": "[[KC_IMAGE_018]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/804e8c901300944110b3a676fef4a3f341eed319a50dbd9a569b71ba6d1d4cbb.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_018.jpg",
+    "relative_path": "fig_018.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.30,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_019]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/af5e215c5c8a5e118f0bb34b30256ae7fc7266c5122829e13175eb896c13c1cb.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_019.jpg",
+    "relative_path": "fig_019.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,large"
+  },
+  {
+    "token": "[[KC_IMAGE_020]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/ea79320f4cf6e3355bc04a1f0b6918cd7c6dd718637e9eb5ae3c0b748f681025.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_020.jpg",
+    "relative_path": "fig_020.jpg",
+    "chart_filter": "score=7;chart_context,chart_ratio"
+  },
+  {
+    "token": "[[KC_IMAGE_021]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/eb1ffa2dc887a8f3e5e2d790cc1db883ead46a1dc58d067164b9edec51df471c.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_021.jpg",
+    "relative_path": "fig_021.jpg",
+    "chart_filter": "score=7;chart_context,chart_ratio"
+  },
+  {
+    "token": "[[KC_IMAGE_022]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/d7463062ecc1e745b7b9ac4fc7617313b8c888b5a3a60cf187280a5d6c344575.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_022.jpg",
+    "relative_path": "fig_022.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.21,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_023]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/0dcfce9ef00a97914abb73dfecbe9965458161f9ac645a94219804f05e425346.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_023.jpg",
+    "relative_path": "fig_023.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.31,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_024]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/1bc0ce24149a9fada83ca80a3e209249ee202341ac9a8a9c5b98fdeb32c666bf.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_024.jpg",
+    "relative_path": "fig_024.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.26,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_025]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/d41d5749e1a2fc1228312173f6f5a970c8c340d379431028071e594b82f93f2a.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_025.jpg",
+    "relative_path": "fig_025.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.37,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_026]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/ad5b260f8ea9de09bc9bf6222abcd01e3840cdfc861ca9a4d3a976359ea3e140.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_026.jpg",
+    "relative_path": "fig_026.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.29,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_027]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/744b2eefa8f3e1eb6c3508645fc3ce5372296afff5bb46489c500b4badddaa16.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_027.jpg",
+    "relative_path": "fig_027.jpg",
+    "chart_filter": "score=6;chart_context"
+  },
+  {
+    "token": "[[KC_IMAGE_028]]",
+    "source_path": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973/mineru_raw/images/b43c73972edc2b32078045e269ed5f5bb631a2c2196f71ca90b84dc46efa7325.jpg",
+    "path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/assets/fig_028.jpg",
+    "relative_path": "fig_028.jpg",
+    "chart_filter": "score=8;chart_context,edge:0.12"
+  }
+]

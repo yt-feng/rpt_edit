@@ -1,0 +1,425 @@
+{
+  "date_folder": "260728",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "title_neutralized_count": 3,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260728/0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+      "title": "波士顿咨询：2026年二季度美国读者情绪调查",
+      "source_title": "0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+        "cleaned_source_title": "0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGBCGInvestorPer",
+        "raw_candidates": [
+          "波士顿咨询：投资者情绪系列",
+          "波士顿咨询：2026年二季度美国读者情绪调查",
+          "波士顿咨询：利率与通胀成首要宏观不确定性"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：参与者情绪系列",
+          "波士顿咨询：2026年二季度美国读者情绪调查",
+          "波士顿咨询：利率与通胀成首要宏观不确定性",
+          "波士顿咨询：0001BCGBCGInvestorPer",
+          "波士顿咨询：波士顿咨询在2026年6月22日至23日对管理约10万亿美"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：参与者情绪系列",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：利率与通胀成首要宏观不确定性",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0001BCGBCGInvestorPer",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询在2026年6月22日至23日对管理约10万亿美",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：2026年二季度美国读者情绪调查",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：2026年二季度美国读者情绪调查"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 10,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260728/01-0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+      "pdf_path": "kc_translated_reports/consulting/260728/01-0001-BCG_BCG-Investor-Perspectives-Series_d755518e/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260728/0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+      "title": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+      "source_title": "0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+        "cleaned_source_title": "0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGBCGsIntelligen",
+        "raw_candidates": [
+          "波士顿咨询：2026年智能城市指数",
+          "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+          "波士顿咨询：2026年智能城市指数-伦敦迪拜纽约华盛顿阿姆斯特丹前五"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：2026年智能城市指数",
+          "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+          "波士顿咨询：2026年智能城市指数-伦敦迪拜纽约华盛顿阿姆斯特丹前五",
+          "波士顿咨询：0002BCGBCGsIntelligen",
+          "波士顿咨询：2026年智能城市指数揭示AI部署与居民满意度关联"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0002BCGBCGsIntelligen",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "61"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 7,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260728/02-0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+      "pdf_path": "kc_translated_reports/consulting/260728/02-0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260728/0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+      "title": "波士顿咨询：AI技术与行业应用观察",
+      "source_title": "0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+        "cleaned_source_title": "0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：0003BCGTheAIPoweredTr",
+        "raw_candidates": [
+          "波士顿咨询：AI转型办公室将重塑企业变革执行模式",
+          "波士顿咨询：AI转型办公室实现项目治理与财务追踪动态化",
+          "波士顿咨询：AI转型办公室推动变革管理转向精准干预",
+          "波士顿咨询：AI驱动的转型办公室",
+          "波士顿咨询：AI转型办公室与2030年变革管理",
+          "波士顿咨询：AI转型办公室与项目治理财务追踪"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：AI转型办公室将重塑企业变革执行模式",
+          "波士顿咨询：AI转型办公室实现项目治理与财务追踪动态化",
+          "波士顿咨询：AI转型办公室推动变革管理转向精准干预",
+          "波士顿咨询：AI驱动的转型办公室",
+          "波士顿咨询：AI转型办公室与2030年变革管理",
+          "波士顿咨询：AI转型办公室与项目治资金规划务追踪",
+          "波士顿咨询：0003BCGTheAIPoweredTr",
+          "波士顿咨询：AI驱动的转型办公室将重塑企业变革执行模式"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：AI转型办公室实现项目治理与财务追踪动态化",
+            "reasons": [
+              "anchor_coverage=0.35"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI转型办公室推动变革管理转向精准干预",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI驱动的转型办公室",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI转型办公室与2030年变革管理",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI转型办公室与项目治资金规划务追踪",
+            "reasons": [
+              "anchor_coverage=0.35"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0003BCGTheAIPoweredTr",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "波士顿咨询：AI驱动的转型办公室将重塑企业变革执行模式",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "波士顿咨询：AI转型办公室将重塑企业变革执行模式",
+          "波士顿咨询：AI转型办公室实现项目治理与财务追踪动态化",
+          "波士顿咨询：AI转型办公室推动变革管理转向精准干预"
+        ],
+        "pre_neutralization_title": "波士顿咨询：AI转型办公室将重塑企业变革执行模式",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 1,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260728/03-0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+      "pdf_path": "kc_translated_reports/consulting/260728/03-0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260728/0004-McKinsey_PDF-McKinsey-Company_3b628973",
+      "title": "麦肯锡：研究主题与行业变化观察",
+      "source_title": "0004-McKinsey_PDF-McKinsey-Company_3b628973",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-McKinsey_PDF-McKinsey-Company_3b628973",
+        "cleaned_source_title": "0004-McKinsey_PDF-McKinsey-Company_3b628973",
+        "institution_name": "麦肯锡",
+        "required_terms": [],
+        "deterministic_fallback": "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+        "raw_candidates": [
+          "麦肯锡：银行业未来增长关键",
+          "麦肯锡：2024年全球银行业净利润1.2万亿美元",
+          "麦肯锡：银行业精准规模与AI重塑成本结构"
+        ],
+        "cleaned_candidates": [
+          "麦肯锡：银行业未来增长关键",
+          "麦肯锡：2024年全球银行业净利润1.2万亿美元",
+          "麦肯锡：银行业精准规模与AI重塑成本结构",
+          "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+          "麦肯锡：2024年全球银行业净利润达到约1.2万亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "麦肯锡：2024年全球银行业净利润1.2万亿美元",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：银行业精准规模与AI重塑成本结构",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：2024年全球银行业净利润达到约1.2万亿美元",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "麦肯锡：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "麦肯锡：银行业未来增长关键",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "麦肯锡：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "institution_name": "麦肯锡",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973",
+      "pdf_path": "kc_translated_reports/consulting/260728/04-0004-McKinsey_PDF-McKinsey-Company_3b628973/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260728/0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+      "title": "麦肯锡：2025年业务与近期数据观察",
+      "source_title": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+        "cleaned_source_title": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+        "institution_name": "麦肯锡",
+        "required_terms": [],
+        "deterministic_fallback": "麦肯锡：0005McKinseyPDFThedatad",
+        "raw_candidates": [
+          "麦肯锡：2025年数据驱动型企业特征",
+          "麦肯锡：2025年数据驱动型企业七大特征",
+          "麦肯锡：2025年数据驱动型企业数据实践"
+        ],
+        "cleaned_candidates": [
+          "麦肯锡：2025年数据驱动型企业特征",
+          "麦肯锡：2025年数据驱动型企业七大特征",
+          "麦肯锡：2025年数据驱动型企业数据实践",
+          "麦肯锡：0005McKinseyPDFThedatad",
+          "麦肯锡：2025年数据驱动型企业的七大特征"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "麦肯锡：0005McKinseyPDFThedatad",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "麦肯锡：2025年业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "麦肯锡：2025年数据驱动型企业特征",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "麦肯锡：2025年业务与近期数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "麦肯锡",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260728/05-0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+      "pdf_path": "kc_translated_reports/consulting/260728/05-0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486/kc_translated_report_05.pdf"
+    }
+  ]
+}
