@@ -1,0 +1,93 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界银行",
+  "cover_short_title": "创业补贴给钱还是选人",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界银行：筛选机制与资金规模对创业的影响",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2.pdf",
+    "cleaned_source_title": "0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2",
+    "institution_name": "世界银行",
+    "required_terms": [],
+    "deterministic_fallback": "世界银行：0005WorldBankSelection",
+    "raw_candidates": [
+      "世界银行：筛选机制与资金规模对创业的影响",
+      "世界银行：肯尼亚创业竞赛三年追踪数据",
+      "世界银行：筛选机制比资金规模更关键"
+    ],
+    "cleaned_candidates": [
+      "世界银行：筛选机制与资金规模对创业的影响",
+      "世界银行：肯尼亚创业竞赛三年追踪数据",
+      "世界银行：筛选机制比资金规模更关键",
+      "世界银行：0005WorldBankSelection",
+      "世界银行：多阶段筛选组的9000美元赠款使企业平均增加2.0名员工"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：肯尼亚创业竞赛三年追踪数据",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：筛选机制比资金规模更关键",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "世界银行：0005WorldBankSelection",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：多阶段筛选组的9000美元赠款使企业平均增加2.0名员工",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：筛选机制与资金规模对创业的影响",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：筛选机制与资金规模对创业的影响"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

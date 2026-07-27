@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0001-ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0004-IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

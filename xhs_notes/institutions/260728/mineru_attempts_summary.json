@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0001-ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0004-IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hoqbvw8t/pdfs/0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
