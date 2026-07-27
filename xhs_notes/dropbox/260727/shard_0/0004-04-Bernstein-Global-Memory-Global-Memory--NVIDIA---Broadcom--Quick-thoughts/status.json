@@ -1,0 +1,105 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_1for__oj/pdfs/0004-04-Bernstein-Global Memory Global Memory- NVIDIA - Broadcom- Quick thoughts on strategic partnerships-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "AI存储大单频出，三",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：全球存储-英伟达与博通战略合作",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bernstein-Global Memory Global Memory- NVIDIA - Broadcom- Quick thoughts on strategic partnerships-260727.pdf",
+    "cleaned_source_title": "Bernstein-Global Memory Global Memory- NVIDIA - Broadcom- Quick thoughts on strategic partnerships",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：全球Memory全球Memory",
+    "raw_candidates": [
+      "全球存储-英伟达与博通战略合作",
+      "全球存储-英伟达与博通签署大额存储协议",
+      "全球存储-三星与SK海力士获英伟达博通长期订单"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：全球存储-英伟达与博通战略合作",
+      "Bernstein：全球存储-英伟达与博通签署大额存储协议",
+      "Bernstein：全球存储-三星与SK海力士获英伟达博通长期订单",
+      "Bernstein：全球Memory全球Memory",
+      "Bernstein：1.存储年收入预期在2027至2028年达到约1.3万亿美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：全球存储-英伟达与博通签署大额存储协议",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "Bernstein：全球存储-三星与SK海力士获英伟达博通长期订单",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "Bernstein：全球Memory全球Memory",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：1.存储年收入预期在2027至2028年达到约1.3万亿美元",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：全球存储-英伟达与博通战略合作",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：全球存储-英伟达与博通战略合作"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "578",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
