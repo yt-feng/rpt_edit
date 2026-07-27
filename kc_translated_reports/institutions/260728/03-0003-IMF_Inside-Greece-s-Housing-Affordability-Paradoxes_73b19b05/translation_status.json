@@ -1,0 +1,70 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260728/0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+  "title": "IMF：研究主题与行业变化观察",
+  "source_title": "0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+    "cleaned_source_title": "0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0003IMFInsideGreecesHou",
+    "raw_candidates": [
+      "IMF：希腊住房可负担性悖论",
+      "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+      "IMF：希腊住房可负担性悖论-需求集中与供给错配"
+    ],
+    "cleaned_candidates": [
+      "IMF：希腊住房可负担性悖论",
+      "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+      "IMF：希腊住房可负担性悖论-需求集中与供给错配",
+      "IMF：0003IMFInsideGreecesHou",
+      "IMF：自2017年以来，希腊房价累计上涨约85%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0003IMFInsideGreecesHou",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：自2017年以来，希腊房价累计上涨约85%",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

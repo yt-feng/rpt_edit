@@ -1,0 +1,71 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260728/0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+  "title": "IMF：研究主题与行业变化观察",
+  "source_title": "0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+    "cleaned_source_title": "0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0002IMFExternalSectorDynamics",
+    "raw_candidates": [
+      "IMF：希腊外部部门动态与企业竞争力",
+      "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+      "IMF：希腊外部部门动态与企业竞争力-出口企业结构性障碍"
+    ],
+    "cleaned_candidates": [
+      "IMF：希腊外部部门动态与企业竞争力",
+      "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+      "IMF：希腊外部部门动态与企业竞争力-出口企业结构性障碍",
+      "IMF：0002IMFExternalSectorDynamics",
+      "IMF：国际货币产品组织（IMF）在2026年7月发布的希腊外部部门动"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0002IMFExternalSectorDynamics",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：国际货币产品组织（IMF）在2026年7月发布的希腊外部部门动",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      }
+    ],
+    "selected_title": "IMF：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2025"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 27,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
