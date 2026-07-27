@@ -2476,6 +2476,22 @@ function longerAccessChoice(left, right) {
   return accessChoiceTieRank(right) > accessChoiceTieRank(left) ? right : left;
 }
 
+function accessChoiceScopeRank(choice) {
+  const access = publicAccessGrant(choice && choice.access);
+  if (!access.active) return Number.NEGATIVE_INFINITY;
+  let rank = access.access_mode === "all" ? 4 : (access.access_mode === "filters" ? 2 : 0);
+  if (access.download_limit === 0) rank += 1;
+  return rank;
+}
+
+function broaderCurrentAccessChoice(left, right) {
+  const leftRank = accessChoiceScopeRank(left);
+  const rightRank = accessChoiceScopeRank(right);
+  if (rightRank > leftRank) return right;
+  if (leftRank > rightRank) return left;
+  return longerAccessChoice(left, right);
+}
+
 function accessAuthorityRank(row) {
   const source = String(row && row.source || "");
   const occurredAt = source === "stored"
@@ -2483,6 +2499,21 @@ function accessAuthorityRank(row) {
     : String(row && row.authority_occurred_at || "");
   const occurredMs = Date.parse(occurredAt);
   return Number.isFinite(occurredMs) ? occurredMs : Number.NEGATIVE_INFINITY;
+}
+
+function accessChoiceAllowedByAdminDecision(adminAccess, choice) {
+  const candidate = publicAccessGrant(choice && choice.access);
+  if (!candidate.active) return false;
+  if (adminAccess.source !== "stored" || adminAccess.active) return true;
+  return accessAuthorityRank(candidate) > accessAuthorityRank(adminAccess);
+}
+
+function mergedAccessChoiceSource(choices, fallbackSource) {
+  const kinds = new Set((choices || []).map((choice) => String(choice && choice.kind || "")));
+  if (kinds.has("entitlement") && kinds.has("admin")) return "entitlement+stored";
+  if (kinds.has("entitlement") && kinds.has("trial")) return "entitlement+vid2ppt_trial";
+  if (kinds.has("admin") && kinds.has("trial")) return "stored+vid2ppt_trial";
+  return fallbackSource;
 }
 
 function effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
@@ -2493,37 +2524,41 @@ function effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAcce
         email: normalizeEmail(user && user.email),
         source: "disabled",
       }),
+      choices: [],
     };
   }
-  if (isPrivilegedAccount(user)) return { kind: "role", access: roleAccessForUser(user) };
+  if (isPrivilegedAccount(user)) {
+    const roleChoice = { kind: "role", access: roleAccessForUser(user) };
+    return { ...roleChoice, choices: [roleChoice] };
+  }
   const access = publicAccessGrant(accessRow);
-  if (access.source === "error") return { kind: "error", access };
-
-  // An active administrator grant is authoritative. It must not be broadened
-  // or hidden by a shorter trial or another membership source.
-  if (access.active) return { kind: "admin", access };
+  if (access.source === "error") return { kind: "error", access, choices: [] };
 
   const trialAccess = publicAccessGrant(trialAccessRow);
-  if (trialAccess.source === "error") return { kind: "error", access: trialAccess };
+  if (trialAccess.source === "error") return { kind: "error", access: trialAccess, choices: [] };
   const entitlementAccess = entitlementAccessForUser(user, entitlementRow);
-  const fallbackChoice = longerAccessChoice(
-    { kind: entitlementAccess.active ? "entitlement" : "none", access: entitlementAccess },
-    { kind: trialAccess.active ? "trial" : "none", access: trialAccess },
-  );
+  const entitlementChoice = { kind: "entitlement", access: entitlementAccess };
+  const trialChoice = { kind: "trial", access: trialAccess };
+  const choices = [];
+  if (access.active) choices.push({ kind: "admin", access });
+  if (accessChoiceAllowedByAdminDecision(access, entitlementChoice)) choices.push(entitlementChoice);
+  if (accessChoiceAllowedByAdminDecision(access, trialChoice)) choices.push(trialChoice);
+
+  if (choices.length) {
+    const primary = choices.slice(1).reduce(broaderCurrentAccessChoice, choices[0]);
+    const source = mergedAccessChoiceSource(choices, primary.access.source);
+    return {
+      kind: primary.kind,
+      access: publicAccessGrant({ ...primary.access, source }),
+      choices,
+    };
+  }
 
   // An expired or explicitly closed administrator record continues to block
-  // older entitlement/trial rows. A genuinely later purchase or redemption
-  // can take effect only when its signed business-event time is newer than the
-  // administrator decision; delayed processing time is never enough. This
-  // prevents an old all-site membership from reappearing when a narrower
-  // administrator grant expires.
-  if (
-    access.source === "stored"
-    && accessAuthorityRank(fallbackChoice.access) <= accessAuthorityRank(access)
-  ) {
-    return { kind: "admin", access };
-  }
-  return fallbackChoice;
+  // older entitlement/trial rows. Each later purchase or redemption is checked
+  // independently so one older long-running record cannot hide a newer grant.
+  if (access.source === "stored") return { kind: "admin", access, choices: [] };
+  return { kind: "none", access: entitlementAccess, choices: [] };
 }
 
 function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow = null) {
@@ -2532,10 +2567,8 @@ function effectiveAccessForUser(user, entitlementRow, accessRow, trialAccessRow 
 
 function shouldConsumeAccessGrantDownload(accessResult) {
   if (!accessResult) return null;
-  const entitlementProvidesAccess = accessResult.effective_access
-    && String(accessResult.effective_access.source || "").includes("entitlement");
   const purchased = Boolean(accessResult.purchase);
-  if (entitlementProvidesAccess || purchased) return null;
+  if (accessResult.entitlement_access_matched || purchased) return null;
   if (accessResult.custom_access_matched) {
     return limitedAccessNeedsConsumption(accessResult.access)
       ? { storage_kind: "access", grant: accessResult.access }
@@ -2581,21 +2614,27 @@ async function reportAccessForUser(env, user, reportId, source) {
   const trialAccess = publicAccessGrant(trialAccessRow);
   const effectiveChoice = effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow);
   const effectiveAccess = effectiveChoice.access;
+  const activeChoices = Array.isArray(effectiveChoice.choices) ? effectiveChoice.choices : [];
+  const adminAccessAllowed = activeChoices.some((choice) => choice.kind === "admin");
   let customAccess = false;
-  if (effectiveChoice.kind === "admin") {
-    if (effectiveAccess.access_mode === "all") {
+  if (adminAccessAllowed) {
+    if (access.access_mode === "all") {
       customAccess = true;
     } else if (reportId && source === "catalog") {
       const catalog = await loadCatalog(env);
-      customAccess = accessGrantMatchesReport(effectiveAccess, findReport(catalog, reportId), source);
+      customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
     }
   }
-  const entitlementAccessMatched = effectiveChoice.kind === "entitlement"
-    && effectiveAccess.active
-    && effectiveAccess.access_mode === "all";
-  const trialAccessMatched = effectiveChoice.kind === "trial"
-    && effectiveAccess.active
-    && effectiveAccess.access_mode === "all";
+  const entitlementAccessMatched = activeChoices.some((choice) => (
+    choice.kind === "entitlement"
+    && choice.access.active
+    && choice.access.access_mode === "all"
+  ));
+  const trialAccessMatched = activeChoices.some((choice) => (
+    choice.kind === "trial"
+    && choice.access.active
+    && choice.access.access_mode === "all"
+  ));
   const accessVerificationFailed = effectiveChoice.kind === "disabled" || effectiveChoice.kind === "error";
   // A secondary purchase lookup must never block a verified membership or
   // custom grant. This also preserves legacy grants when the optional purchase
@@ -2612,6 +2651,7 @@ async function reportAccessForUser(env, user, reportId, source) {
     trial_access: trialAccess,
     effective_access: effectiveAccess,
     effective_access_kind: effectiveChoice.kind,
+    effective_access_components: activeChoices,
     purchase: purchased ? purchase : null,
     custom_access_matched: customAccess,
     entitlement_access_matched: entitlementAccessMatched,
@@ -2632,22 +2672,28 @@ function hotReportAccessMonths(accessResult) {
     ? result.effective_access
     : {};
   if (!effective.active) return 0;
-  if (effective.lifetime || String(effective.source || "") === "role") return Number.POSITIVE_INFINITY;
   const entitlement = result.entitlement && typeof result.entitlement === "object" ? result.entitlement : {};
   const kind = String(result.effective_access_kind || "");
-  if (kind === "entitlement") {
+  if (String(effective.source || "") === "role") return Number.POSITIVE_INFINITY;
+  const hasMatchFlags = Object.prototype.hasOwnProperty.call(result, "custom_access_matched")
+    || Object.prototype.hasOwnProperty.call(result, "entitlement_access_matched");
+  const adminMatched = result.custom_access_matched === true || (!hasMatchFlags && kind === "admin");
+  const entitlementMatched = result.entitlement_access_matched === true
+    || (!hasMatchFlags && kind === "entitlement");
+  let months = 0;
+  if (adminMatched) {
+    const adminAccess = result.access && result.access.active ? result.access : effective;
+    if (adminAccess.lifetime) return Number.POSITIVE_INFINITY;
+    const duration = Number(adminAccess.duration_value);
+    if (Number.isFinite(duration) && duration > 0) months = Math.max(months, duration);
+  }
+  if (entitlementMatched) {
     const planMonths = hotReportPlanMonths(entitlement.source_plan_code)
       || hotReportPlanMonths(effective.source_plan_code);
-    if (planMonths) return planMonths;
+    if (planMonths) months = Math.max(months, planMonths);
+    else if (entitlement.active && entitlement.plan === "annual") months = Math.max(months, 12);
   }
-  const duration = Number(effective.duration_value);
-  if (Number.isFinite(duration) && duration > 0) return duration;
-  // Older paid annual rows predate source_plan_code. Keep those users eligible,
-  // while NOVA-M is still rejected above because its explicit one-month code wins.
-  if (kind === "entitlement" && entitlement.active && entitlement.plan === "annual") {
-    return 12;
-  }
-  return 0;
+  return months;
 }
 
 function hotReportAccessQualifies(user, accessResult) {
@@ -2665,9 +2711,7 @@ function reportTextAccessQualifies(user, accessResult) {
   const entitlement = result.entitlement && typeof result.entitlement === "object"
     ? result.entitlement
     : {};
-  const kind = String(result.effective_access_kind || "");
-  const matched = (kind === "admin" && result.custom_access_matched === true)
-    || (kind === "entitlement" && result.entitlement_access_matched === true);
+  const matched = result.custom_access_matched === true || result.entitlement_access_matched === true;
   const sourcePlanCodes = [effective.source_plan_code, entitlement.source_plan_code]
     .map((value) => String(value || "").trim().toUpperCase());
   if (

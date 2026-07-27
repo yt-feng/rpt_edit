@@ -78,7 +78,11 @@ vm.runInNewContext(`
   ${extractFunction(worker, "accessGrantExpiryRank")}
   ${extractFunction(worker, "accessChoiceTieRank")}
   ${extractFunction(worker, "longerAccessChoice")}
+  ${extractFunction(worker, "accessChoiceScopeRank")}
+  ${extractFunction(worker, "broaderCurrentAccessChoice")}
   ${extractFunction(worker, "accessAuthorityRank")}
+  ${extractFunction(worker, "accessChoiceAllowedByAdminDecision")}
+  ${extractFunction(worker, "mergedAccessChoiceSource")}
   ${extractFunction(worker, "effectiveAccessChoiceForUser")}
   ${extractFunction(worker, "paddleEntitlementUpdateFields")}
 
@@ -95,6 +99,10 @@ vm.runInNewContext(`
   const monthEntitlement = {
     email: user.email, plan: "annual", status: "active", current_period_end: isoAfter(31),
     grant_source: "vid2ppt_nova", source_plan_code: "NOVA-M",
+  };
+  const allSiteAdmin = {
+    email: user.email, access_mode: "all", status: "active", lifetime: true,
+    duration_value: "lifetime", source: "stored",
   };
   const expiredAdmin = {
     ...admin,
@@ -156,8 +164,9 @@ vm.runInNewContext(`
     current_period_end: isoAfter(365),
   });
   result = {
-    adminBeatsTrial: effectiveAccessChoiceForUser(user, null, admin, trial),
-    adminBeatsLongerPurchase: effectiveAccessChoiceForUser(user, { ...monthEntitlement, current_period_end: isoAfter(365) }, admin, trial),
+    adminAndTrial: effectiveAccessChoiceForUser(user, null, admin, trial),
+    adminAndLongerPurchase: effectiveAccessChoiceForUser(user, { ...monthEntitlement, current_period_end: isoAfter(365) }, admin, trial),
+    allSiteAdminAndPurchase: effectiveAccessChoiceForUser(user, monthEntitlement, allSiteAdmin, null),
     longerPurchase: effectiveAccessChoiceForUser(user, monthEntitlement, null, trial),
     longerTrial: effectiveAccessChoiceForUser(user, { ...monthEntitlement, current_period_end: isoAfter(1) }, null, trial),
     lifetimePurchase: effectiveAccessChoiceForUser(user, { ...monthEntitlement, lifetime: true, current_period_end: null }, null, trial),
@@ -172,15 +181,32 @@ vm.runInNewContext(`
   };
 `, sandbox);
 
-assert.equal(sandbox.result.adminBeatsTrial.kind, "admin");
-assert.equal(sandbox.result.adminBeatsTrial.access.access_mode, "filters");
-assert.deepEqual(Array.from(sandbox.result.adminBeatsTrial.access.institutions), ["Bernstein · 伯恩斯坦"]);
-assert.equal(sandbox.result.adminBeatsLongerPurchase.kind, "admin", "active administrator access is authoritative");
-assert.equal(sandbox.result.longerPurchase.kind, "entitlement", "the later purchased membership must beat a shorter trial");
-assert.equal(sandbox.result.longerTrial.kind, "trial", "without administrator access, the later valid period wins");
+assert.equal(sandbox.result.adminAndTrial.kind, "trial", "the all-site trial is the broader current summary");
+assert.deepEqual(
+  Array.from(sandbox.result.adminAndTrial.choices, (choice) => choice.kind),
+  ["admin", "trial"],
+  "a filtered administrator grant and an all-site trial must both remain usable",
+);
+assert.equal(sandbox.result.adminAndLongerPurchase.kind, "entitlement");
+assert.equal(sandbox.result.adminAndLongerPurchase.access.access_mode, "all");
+assert.equal(sandbox.result.adminAndLongerPurchase.access.source, "entitlement+stored");
+assert.deepEqual(
+  Array.from(sandbox.result.adminAndLongerPurchase.choices, (choice) => choice.kind),
+  ["admin", "entitlement", "trial"],
+  "a NOVA membership must broaden a filtered administrator grant without deleting it",
+);
+assert.equal(sandbox.result.allSiteAdminAndPurchase.kind, "admin", "a lifetime all-site administrator grant remains the summary");
+assert.deepEqual(
+  Array.from(sandbox.result.allSiteAdminAndPurchase.choices, (choice) => choice.kind),
+  ["admin", "entitlement"],
+  "the shorter membership remains an independent component instead of replacing the administrator grant",
+);
+assert.equal(sandbox.result.longerPurchase.kind, "entitlement", "unlimited membership is preferred over the limited trial summary");
+assert.equal(sandbox.result.longerTrial.kind, "entitlement", "an unlimited membership remains the primary summary while both grants are active");
 assert.equal(sandbox.result.lifetimePurchase.kind, "entitlement", "lifetime access is the longest period");
 assert.equal(sandbox.result.expiredAdminBlocksOlderEntitlement.kind, "admin", "an expired admin decision must block an older all-site entitlement");
 assert.equal(sandbox.result.expiredAdminBlocksOlderEntitlement.access.active, false);
+assert.equal(sandbox.result.expiredAdminBlocksOlderEntitlement.choices.length, 0);
 assert.equal(sandbox.result.closedAdminBlocksOlderEntitlement.kind, "admin", "an explicit admin closure must block an older all-site entitlement");
 assert.equal(
   sandbox.result.closedAdminBlocksUnversionedDelayedEntitlement.kind,
@@ -238,10 +264,12 @@ assert.doesNotMatch(
 
 const reportAccess = worker.match(/async function reportAccessForUser[\s\S]+?(?=\nasync function accountDownloadDecision)/);
 assert.ok(reportAccess, "reportAccessForUser must exist");
-assert.match(reportAccess[0], /effectiveChoice\.kind === "admin"/);
-assert.match(reportAccess[0], /effectiveChoice\.kind === "entitlement"/);
-assert.match(reportAccess[0], /effectiveChoice\.kind === "trial"/);
-assert.match(reportAccess[0], /accessGrantMatchesReport\(effectiveAccess/);
+assert.match(reportAccess[0], /activeChoices\.some/);
+assert.match(reportAccess[0], /accessGrantMatchesReport\(access/);
+assert.match(reportAccess[0], /effective_access_components/);
+assert.match(reportAccess[0], /custom_access_matched/);
+assert.match(reportAccess[0], /entitlement_access_matched/);
+assert.match(reportAccess[0], /trial_access_matched/);
 
 const adminSnapshotRefresh = worker.match(/async function refreshAdminUsersSnapshot[\s\S]+?(?=\nfunction refreshAdminUsersSnapshotOnce)/);
 assert.ok(adminSnapshotRefresh, "refreshAdminUsersSnapshot must exist");
@@ -285,6 +313,160 @@ assert.equal(
 );
 
 (async () => {
+  const mergedAccessResult = await vm.runInNewContext(`
+    (async () => {
+      const VID2PPT_GIFT_SOURCES = new Set(["vid2ppt_nova", "vid2ppt_atlas"]);
+      const ACTIVE_STATUSES = new Set(["active", "trialing"]);
+      const SITE_ORIGIN = "kcdesk";
+      const GIFT_SOURCE_TIME_MARKER = "::grant_at=";
+      function normalizeEmail(value) { return String(value || "").trim().toLowerCase(); }
+      ${extractFunction(worker, "normalizeGrantOccurredAt")}
+      ${extractFunction(worker, "giftSourceReferenceParts")}
+      ${extractFunction(worker, "giftSourceReferenceId")}
+      ${extractFunction(worker, "giftSourceReferenceOccurredAt")}
+      ${extractFunction(worker, "periodIsCurrent")}
+      ${extractFunction(worker, "publicEntitlement")}
+      function activePeriod(row) {
+        return Boolean(row && ACTIVE_STATUSES.has(String(row.status || "inactive"))
+          && (row.lifetime || periodIsCurrent(row.current_period_end)));
+      }
+      function publicAccessGrant(row) {
+        const value = row || {};
+        return {
+          ...value,
+          email: value.email || "",
+          access_mode: ["all", "filters"].includes(value.access_mode) ? value.access_mode : "none",
+          status: value.status || "inactive",
+          lifetime: Boolean(value.lifetime),
+          current_period_end: value.current_period_end || null,
+          active: value.active === undefined ? activePeriod(value) : Boolean(value.active),
+          duration_value: String(value.duration_value || ""),
+          download_limit: Math.max(0, Number(value.download_limit || 0)),
+          institutions: Array.isArray(value.institutions) ? value.institutions : [],
+          industries: Array.isArray(value.industries) ? value.industries : [],
+          page_ranges: Array.isArray(value.page_ranges) ? value.page_ranges : [],
+          source: value.source || "",
+          grant_source: value.grant_source || "",
+          source_site: value.source_site || "",
+          source_plan_code: value.source_plan_code || "",
+          source_reference: value.source_reference || "",
+          authority_occurred_at: value.authority_occurred_at || "",
+          updated_at: value.updated_at || "",
+        };
+      }
+      function accountDisabled(user) { return Boolean(user && user.disabled); }
+      function isPrivilegedAccount(user) { return Boolean(user && user.privileged); }
+      function roleAccessForUser(user) {
+        return publicAccessGrant({ email: normalizeEmail(user && user.email), access_mode: "all", status: "active", lifetime: true, source: "role" });
+      }
+      function superEntitlement() { return { active: true, lifetime: true }; }
+      ${extractFunction(worker, "entitlementAccessForUser")}
+      ${extractFunction(worker, "accessGrantExpiryRank")}
+      ${extractFunction(worker, "accessChoiceTieRank")}
+      ${extractFunction(worker, "longerAccessChoice")}
+      ${extractFunction(worker, "accessChoiceScopeRank")}
+      ${extractFunction(worker, "broaderCurrentAccessChoice")}
+      ${extractFunction(worker, "accessAuthorityRank")}
+      ${extractFunction(worker, "accessChoiceAllowedByAdminDecision")}
+      ${extractFunction(worker, "mergedAccessChoiceSource")}
+      ${extractFunction(worker, "effectiveAccessChoiceForUser")}
+      ${extractFunction(worker, "shouldConsumeAccessGrantDownload")}
+
+      const isoAfter = (days) => new Date(Date.now() + days * 86400000).toISOString();
+      const user = { email: "banban@kcdesk.com" };
+      let currentEntitlement = {
+        email: user.email,
+        plan: "annual",
+        status: "active",
+        current_period_end: isoAfter(31),
+        grant_source: "vid2ppt_nova",
+        source_site: "vid2ppt",
+        source_plan_code: "NOVA-M",
+      };
+      const currentAccess = {
+        email: user.email,
+        access_mode: "filters",
+        status: "active",
+        current_period_end: isoAfter(365),
+        duration_value: "12",
+        institutions: ["Bernstein · 伯恩斯坦"],
+        source: "stored",
+      };
+      const reports = [
+        { id: "bernstein", bank_name: "Bernstein · 伯恩斯坦" },
+        { id: "nomura", bank_name: "NOM · 野村" },
+      ];
+      async function findEntitlement() { return currentEntitlement; }
+      async function findAccessGrant() { return currentAccess; }
+      async function findVid2PptTrialAccess() { return null; }
+      async function loadCatalog() { return reports; }
+      function findReport(catalog, id) { return catalog.find((report) => report.id === id) || null; }
+      function accessGrantMatchesReport(grant, report, source) {
+        const access = publicAccessGrant(grant);
+        if (!access.active) return false;
+        if (access.access_mode === "all") return true;
+        return Boolean(source === "catalog" && report && access.institutions.includes(report.bank_name));
+      }
+      async function findReportPurchase() { return null; }
+      function limitedAccessNeedsConsumption(value) {
+        const access = publicAccessGrant(value);
+        return access.active && access.download_limit > 0;
+      }
+      ${extractAsyncFunction(worker, "reportAccessForUser")}
+
+      const whilePaidOther = await reportAccessForUser({}, user, "nomura", "catalog");
+      const whilePaidBernstein = await reportAccessForUser({}, user, "bernstein", "catalog");
+      currentEntitlement = { ...currentEntitlement, current_period_end: isoAfter(-1) };
+      const afterExpiryOther = await reportAccessForUser({}, user, "nomura", "catalog");
+      const afterExpiryBernstein = await reportAccessForUser({}, user, "bernstein", "catalog");
+      const trial = publicAccessGrant({
+        access_mode: "all", status: "active", current_period_end: isoAfter(3),
+        download_limit: 10, source: "vid2ppt_trial",
+      });
+      return {
+        whilePaidOther,
+        whilePaidBernstein,
+        afterExpiryOther,
+        afterExpiryBernstein,
+        unlimitedMembershipConsumption: shouldConsumeAccessGrantDownload({
+          ...whilePaidOther,
+          trial_access: trial,
+          trial_access_matched: true,
+        }),
+        unlimitedAdminConsumption: shouldConsumeAccessGrantDownload({
+          purchase: null,
+          entitlement_access_matched: false,
+          custom_access_matched: true,
+          access: currentAccess,
+          trial_access: trial,
+          trial_access_matched: true,
+        }),
+        trialOnlyConsumption: shouldConsumeAccessGrantDownload({
+          purchase: null,
+          entitlement_access_matched: false,
+          custom_access_matched: false,
+          trial_access: trial,
+          trial_access_matched: true,
+        }),
+      };
+    })()
+  `, {});
+  assert.equal(mergedAccessResult.whilePaidOther.can_download, true, "NOVA-M must unlock non-Bernstein reports");
+  assert.equal(mergedAccessResult.whilePaidOther.entitlement_access_matched, true);
+  assert.equal(mergedAccessResult.whilePaidOther.custom_access_matched, false);
+  assert.deepEqual(
+    Array.from(mergedAccessResult.whilePaidOther.effective_access_components, (choice) => choice.kind),
+    ["admin", "entitlement"],
+  );
+  assert.equal(mergedAccessResult.whilePaidBernstein.can_download, true);
+  assert.equal(mergedAccessResult.whilePaidBernstein.entitlement_access_matched, true);
+  assert.equal(mergedAccessResult.whilePaidBernstein.custom_access_matched, true);
+  assert.equal(mergedAccessResult.afterExpiryOther.can_download, false, "NOVA expiry must not broaden the stored filtered grant");
+  assert.equal(mergedAccessResult.afterExpiryBernstein.can_download, true, "the original Bernstein grant must survive NOVA expiry");
+  assert.equal(mergedAccessResult.unlimitedMembershipConsumption, null, "NOVA access must not consume a trial quota");
+  assert.equal(mergedAccessResult.unlimitedAdminConsumption, null, "an unlimited administrator grant must not consume a trial quota");
+  assert.equal(mergedAccessResult.trialOnlyConsumption.storage_kind, "vid2ppt_trial");
+
   const persistenceSandbox = {};
   const persistenceResult = await vm.runInNewContext(`
     (async () => {

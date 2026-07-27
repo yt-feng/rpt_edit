@@ -19,7 +19,7 @@ const accessFunction = worker.match(
 );
 assert.ok(accessFunction, "reportAccessForUser must exist");
 const accessSource = accessFunction[0];
-const customGrantIndex = accessSource.indexOf("customAccess = accessGrantMatchesReport(effectiveAccess");
+const customGrantIndex = accessSource.indexOf("customAccess = accessGrantMatchesReport(access");
 const purchaseLookupIndex = accessSource.indexOf(
   "const purchase = reportId && !accessVerificationFailed && !baseAccess",
 );
