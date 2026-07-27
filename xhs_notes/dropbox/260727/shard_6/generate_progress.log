@@ -1,0 +1,17 @@
+Found 32 total PDFs; shard 6/40 has 2 PDFs, skips 0 already converted, will process 2 PDFs with batch_size=5.
+Running batch 1: 2 PDFs
+Found 2 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 2 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_uj4p3f9q/pdfs/0001-31-Nomura-USD CNY fix model-Projection-6.7685-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_uj4p3f9q/pdfs/0002-32-Nomura-WIN Semiconductors-3105.TWO-More positive narratives about optical-260726.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=c7dcddfc-3839-40ef-98f6-a1f188f0fce1
+MinerU states: pending, waiting-file
+MinerU states: done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a09550257da8f1dbef1373701876d5a40a155d5b4ea2dbc54b1b46af9630c635.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Skip non-chart visual asset ca9d264b61d8ee076e8c3311ad4f0e4a158c9e18da48ca89b10edd6cd46bf201.jpg: score=-100;too_small:437x195
+Skip non-chart visual asset fa6cc1206b6391ffd826616f2c4c7a91107c6f716b7ba02d645473b63364d0d8.jpg: score=0;odd_ratio:6.17,edge:0.28,contrast
+Skip non-chart visual asset 48330584243bfd9831a47c3aba70281006d11d0994b91327723fd74f681c536b.jpg: score=-100;too_small:1412x81
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260727/shard_6; successful_reports=2; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 2 report directories.
