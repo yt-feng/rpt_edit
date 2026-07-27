@@ -1,0 +1,481 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0001-BCG_BCG-Investor-Perspectives-Series_d755518e.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "别急着追AI，先看这",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x4",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x4",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x3",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x7",
+      "投资->研究 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x7",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：2026年6月读者情绪与AI预期调查",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_BCG-Investor-Perspectives-Series_d755518e.pdf",
+      "cleaned_source_title": "0001-BCG_BCG-Investor-Perspectives-Series_d755518e",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0001BCGBCGInvestorPer",
+      "raw_candidates": [
+        "波士顿咨询：投资者情绪系列",
+        "波士顿咨询：2026年6月读者情绪与AI预期调查",
+        "波士顿咨询：读者情绪修复与AI预期调查"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：参与者情绪系列",
+        "波士顿咨询：2026年6月读者情绪与AI预期调查",
+        "波士顿咨询：读者情绪修复与AI预期调查",
+        "波士顿咨询：0001BCGBCGInvestorPer"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "body_too_short"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：参与者情绪系列",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：读者情绪修复与AI预期调查",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0001BCGBCGInvestorPer",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：2026年6月读者情绪与AI预期调查",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026",
+          "6"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：2026年6月读者情绪与AI预期调查"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "2026全球智慧城市",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771.pdf",
+      "cleaned_source_title": "0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0002BCGBCGsIntelligen",
+      "raw_candidates": [
+        "波士顿咨询：2026年智能城市指数",
+        "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+        "波士顿咨询：2026年智能城市指数-伦敦居首，AI部署与生活质量关联"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：2026年智能城市指数",
+        "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+        "波士顿咨询：2026年智能城市指数-伦敦居首，AI部署与生活质量关联",
+        "波士顿咨询：0002BCGBCGsIntelligen",
+        "波士顿咨询：2026年智能城市指数中AI部署与居民满意度关联"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0002BCGBCGsIntelligen",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "61"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI重塑企业转型办：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a.pdf",
+      "cleaned_source_title": "0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：0003BCGTheAIPoweredTr",
+      "raw_candidates": [
+        "波士顿咨询：AI驱动的转型办公室",
+        "波士顿咨询：AI代理重塑转型办公室架构",
+        "波士顿咨询：AI代理驱动转型办公室至2030年"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：AI驱动的转型办公室",
+        "波士顿咨询：AI代理重塑转型办公室架构",
+        "波士顿咨询：AI代理驱动转型办公室至2030年",
+        "波士顿咨询：0003BCGTheAIPoweredTr",
+        "波士顿咨询：AI代理将重塑企业转型办公室的运作模式"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：AI代理重塑转型办公室架构",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0003BCGTheAIPoweredTr",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI代理将重塑企业转型办公室的运作模式",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：AI驱动的转型办公室",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0004-McKinsey_PDF-McKinsey-Company_3b628973.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "银行告别粗放时代，精",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "麦肯锡：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-McKinsey_PDF-McKinsey-Company_3b628973.pdf",
+      "cleaned_source_title": "0004-McKinsey_PDF-McKinsey-Company_3b628973",
+      "institution_name": "麦肯锡",
+      "required_terms": [],
+      "deterministic_fallback": "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+      "raw_candidates": [
+        "麦肯锡：全球银行业2025年报告",
+        "麦肯锡：全球银行业2025年报告-2024年净利润1.2万亿美元",
+        "麦肯锡：全球银行业2025年报告-精准战略替代规模扩张"
+      ],
+      "cleaned_candidates": [
+        "麦肯锡：全球银行业2025年报告",
+        "麦肯锡：全球银行业2025年报告-2024年净利润1.2万亿美元",
+        "麦肯锡：全球银行业2025年报告-精准战略替代规模扩张",
+        "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+        "麦肯锡：2024年全球银行业净利润达到约1.2万亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "麦肯锡：0004McKinseyPDFMcKinseyCompany3",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "麦肯锡：2024年全球银行业净利润达到约1.2万亿美元",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        }
+      ],
+      "selected_title": "麦肯锡：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "1.2",
+          "2024"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "麦肯锡：全球银行业2025年报告-2024年净利润1.2万亿美元",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "麦肯锡：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "数据驱动的企业，20",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "麦肯锡：2025年业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+      "cleaned_source_title": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+      "institution_name": "麦肯锡",
+      "required_terms": [],
+      "deterministic_fallback": "麦肯锡：0005McKinseyPDFThedatad",
+      "raw_candidates": [
+        "麦肯锡：2025年数据驱动企业的七个特征",
+        "麦肯锡：2025年数据驱动企业的七个特征与实时处理",
+        "麦肯锡：2025年数据驱动企业的数据运营与存储"
+      ],
+      "cleaned_candidates": [
+        "麦肯锡：2025年数据驱动企业的七个特征",
+        "麦肯锡：2025年数据驱动企业的七个特征与实时处理",
+        "麦肯锡：2025年数据驱动企业的数据运营与存储",
+        "麦肯锡：0005McKinseyPDFThedatad"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "麦肯锡：0005McKinseyPDFThedatad",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "麦肯锡：2025年业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "麦肯锡：2025年数据驱动企业的七个特征",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "麦肯锡：2025年业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

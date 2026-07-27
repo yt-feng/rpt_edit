@@ -1,0 +1,3340 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                279,
+                193,
+                769,
+                295
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rapidly accelerating technology advances, the recognized value of data, and increasing data literacy are changing what it means to be “data driven.”"
+                    }
+                ]
+            },
+            "bbox": [
+                279,
+                313,
+                781,
+                381
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0c0409f722e9f4ceb6e51e2ccaa51f191043edc0b756f9d1454f874a8185d363.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                0,
+                484,
+                1000,
+                900
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "McKinsey\nDigital"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                44,
+                272,
+                126
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "© Signal Noise"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                915,
+                937,
+                926
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "January 2022"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                936,
+                158,
+                953
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025, smart workflows and seamless interactions among humans and machines will likely be as standard as the corporate balance sheet, and most employees will use data to optimize nearly every aspect of their work."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                97,
+                544,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We know 2025 isn't too far off, but that's the point."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                195,
+                532,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Seven characteristics will define this new data-driven enterprise, and we've already seen many companies exhibit at least some of them, with many more beginning the journey to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                229,
+                537,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Those able to make the most progress fastest stand to capture the highest value from data-supported capabilities. Companies already seeing 20 percent of their earnings before interest and taxes (EBIT) contributed by artificial intelligence (AI), for example, are far more likely to engage in data practices that underpin these characteristics.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                310,
+                545,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This guide is intended to help executives understand the characteristics of the new data-driven enterprise and the capabilities they enable. It also provides resources to dive deeper on how to embed them in your organization."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                441,
+                544,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are the seven characteristics of the data-driven enterprise:"
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                97,
+                877,
+                131
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Data is embedded in every decision, interaction, and process."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                146,
+                838,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Data is processed and delivered in real time."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                195,
+                828,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Flexible data stores enable integrated, ready-to-use data."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                244,
+                852,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Data operating model treats data like a product."
+                    }
+                ]
+            },
+            "bbox": [
+                580,
+                294,
+                844,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. The chief data officer's role is expanded to generate value."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                343,
+                877,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. Data-ecosystem memberships are the norm."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                392,
+                831,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. Data management is prioritized and automated for privacy, security, and resiliency."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                441,
+                834,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Seven characteristics will define the new data-driven enterprise. Those companies able to make the most progress fastest stand to capture the highest value from data-supported capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                635,
+                893,
+                813
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  “The state of AI in 2021,” McKinsey, December 8, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                197,
+                910,
+                470,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                969,
+                73,
+                979
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                968,
+                383,
+                981
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Data is embedded in every decision, interaction, and process"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                95,
+                565,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                141,
+                287,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Organizations often apply data-driven approaches—from predictive systems to AI-driven automation—sporadically throughout the organization, leaving value on the table and creating inefficiencies."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                157,
+                580,
+                222
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Many business problems still get solved through traditional approaches and take months or years to resolve."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                223,
+                558,
+                270
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                287,
+                303,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nearly all employees naturally and regularly leverage data to support their work. Rather than defaulting to solving problems by developing lengthy—sometimes multiyear—road maps, they are empowered to ask how innovative data techniques could resolve challenges in hours, days, or weeks."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                304,
+                580,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Organizations are capable of better decision making as well as automating basic day-to-day activities and regularly occurring decisions. Employees are free to focus on more “human” domains, such as innovation, collaboration, and communication. The data-driven culture fosters continuous performance improvement to create truly differentiated customer and employee experiences and to enable the growth of sophisticated new applications that aren’t widely available today."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                419,
+                581,
+                584
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                599,
+                401,
+                614
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Store managers provide a differentiated shopping experience using real-time analytics to identify and direct loyalty-program customers to products they find interesting as they shop, and streamline or completely automate the checkout process."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                618,
+                580,
+                715
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Network operations staff at telecommunications companies leverage autonomous networks that automatically identify areas requiring"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                731,
+                581,
+                780
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "maintenance and highlight opportunities for building out the network based on usage."
+                    }
+                ]
+            },
+            "bbox": [
+                617,
+                98,
+                906,
+                131
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Procurement managers regularly apply data-driven processes to instantly triage purchases for approval so they can focus on building out a more effective partner strategy."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                147,
+                924,
+                213
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                229,
+                689,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— a vision and data strategy to highlight and prioritize transformational use cases for data"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                246,
+                911,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- technology enablers for sophisticated AI use cases, such as a cloud-based infrastructure; architectures that support real-time analytics; and flexible database/data-model tooling to support querying of unstructured data"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                294,
+                924,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— broad organizational data literacy and a data-driven culture, where all employees know and embrace the value of data"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                393,
+                916,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                459,
+                728,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Read \"Winning with AI is a state of mind\" for more about making the shift to an AI-enabled organization, and learn how to harness the power of data from AI leaders. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                474,
+                913,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Begin upskilling your employees for data use and AI, if you haven't started already. Analytics academies can help. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                556,
+                921,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Learn how to reimagine each workflow, journey, and function to leverage data and AI in “Getting AI to scale.”  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                623,
+                926,
+                670
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Articulate your vision for a data-driven organization."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                689,
+                828,
+                720
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Examples; not exhaustive."
+                    }
+                ]
+            },
+            "bbox": [
+                233,
+                835,
+                370,
+                848
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  See Thomas Meakin, Jeremy Palmer, Valentina Sartori, and Jamie Vickers, “Winning with AI is a state of mind,” McKinsey, April 30, 2021; and Mohammed Aaser, Jonathan Woetzel, and Kevin Russell, “Five insights about harnessing data and AI from leaders at the frontier,” McKinsey Global Institute, March 25, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                232,
+                847,
+                916,
+                880
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Solly Brown, Darshit Gandhi, Louise Herring, and Ankur Puri, “The analytics academy: Bridging the gap between human and artificial intelligence,” McKinsey Quarterly, September 25, 2019."
+                    }
+                ]
+            },
+            "bbox": [
+                230,
+                878,
+                880,
+                902
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Tim Fountaine, Brian McCarthy, and Tamim Saleh, “Getting AI to scale,” Harvard Business Review, May–June 2021, Volume 99, Number 3, pp 116–23."
+                    }
+                ]
+            },
+            "bbox": [
+                230,
+                900,
+                852,
+                922
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                240,
+                968,
+                421,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                969,
+                937,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Data is processed and delivered in real time"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                95,
+                496,
+                131
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                141,
+                250,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Only a fraction of data from connected devices is ingested, processed, queried, and analyzed in real time because of the limits of legacy technology structures, the challenges of adopting more modern architectural elements, and the high computational demands of intensive, real-time processing jobs. Companies often must choose between speed and computational intensity, which can delay more sophisticated analyses and inhibit the implementation of real-time use cases."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                157,
+                542,
+                321
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                337,
+                267,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vast networks of connected devices gather and transmit data and insights, often in real time. How data is generated, processed, analyzed, and visualized for end users is dramatically transformed by new and more ubiquitous technologies, such as kappa or lambda architectures for real-time analysis leading to faster and more powerful insights. Even the most sophisticated advanced analytics are reasonably available to all organizations as the cost of cloud computing continues to decline and more powerful “in-memory” data tools come online (for example, Redis, Memcached). Altogether, this enables many more advanced use cases for delivering insights to customers, employees, and partners."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                354,
+                540,
+                599
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                616,
+                357,
+                631
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Maintenance teams for physical assets, such as those in factories, regularly leverage networks of connected sensors to detect maintenance needs in real time."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                633,
+                542,
+                698
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Product developers use unstructured data and unleash unsupervised machine-learning algorithms on web data to detect deeply hidden patterns and develop a much richer understanding of customers than is possible today (for example, by using internet-protocol data and website behavior to personalize web experiences for specific customers in real time)."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                715,
+                540,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                578,
+                98,
+                892,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Financial analysts use alternative visualization tools, potentially leveraging augmented reality/virtual reality (AR/VR) to visualize analytics for strategic decisions involving multiple variables rather than being limited to the typical two-dimensional dashboards common today."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                162,
+                897,
+                262
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                279,
+                653,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— a view of the full business architecture to understand integration across assets, processes, insights, and interventions and to enable the identification of real-time opportunities"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                294,
+                900,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— more powerful edge-computing devices (IoT sensors, for example), so that even the most basic devices generate and analyze usable data “at the source”"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                377,
+                893,
+                441
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— advanced-connectivity infrastructures, such as 5G, to support high-bandwidth, low-latency data from connected devices"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                459,
+                898,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— in-memory computing for faster and more effective computations for intensive analytics jobs"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                523,
+                864,
+                573
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                590,
+                692,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Take advantage of a road-tested reference data architecture that enables the modularity, flexibility, and scalability needed to support these capabilities.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                607,
+                895,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Evolve to a cloud-enabled data platform to meet future data and analytical needs, such as real-time capabilities.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                689,
+                900,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Learn about the future of cellular-enabled computing devices.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                753,
+                857,
+                787
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Sven Blumberg, Jorge Machado, Henning Soller, and Asin Tavakoli, “Breaking through data-architecture gridlock to scale AI,” McKinsey, January 26, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                867,
+                862,
+                890
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  “Three actions CEOs can take to get value from cloud computing,” McKinsey Quarterly, July 21, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                888,
+                694,
+                902
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Ferry Grijpink, Kasia Jodlowska, Mark Patel, and Rutger Vrijen, “Reliably connecting the workforce of the future (which is now),” McKinsey, April 14, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                900,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                969,
+                71,
+                979
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                968,
+                383,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Flexible data stores enable integrated, ready-to-use data"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                236,
+                95,
+                584,
+                131
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                141,
+                287,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Though the proliferation of data is driven by unstructured or semistructured data, most usable data is still organized in a structured fashion using relational database tools. Data engineers often spend significant time manually exploring data sets, establishing relationships among them, and joining them together. They also frequently must refine data from its natural, unstructured state into a structured form using manual and bespoke processes that are time-consuming, not scalable, and error prone."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                157,
+                578,
+                338
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                354,
+                303,
+                368
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data practitioners increasingly leverage an array of database types—including time-series databases, graph databases, and NoSQL databases—enabling more flexible ways of organizing data. This allows teams to query and understand relationships between unstructured and semistructured data easier and faster, which accelerates development of new AI-driven capabilities and the discovery of new relationships in the data to drive innovation. Combining these flexible data stores with advances in real-time technology and architecture also enables organizations to develop data products, such as “customer 360” data platforms and digital twins—real-time-enabled data models of physical entities (such as a manufacturing facility, supply, or even the human body). This enables sophisticated simulations and what-if scenarios using traditional machine-learning capabilities or more advanced techniques such as reinforcement learning."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                371,
+                573,
+                699
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                715,
+                395,
+                729
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Financial institutions regularly use graph-database technology and a common data model to stream and integrate customer data from multiple sources (marketing systems, enterprise-resource-planning systems, web data) into a single, unified, 360-degree view of the customer that can be modeled in real time."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                732,
+                581,
+                845
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Transportation and logistics companies use real-time location data and sensors embedded into vehicles and transportation networks to develop digital twins of supply chains or transportation networks, enabling a range of potential use cases (such as what-if simulations, interaction monitoring, and real-time location insights)."
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                98,
+                931,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Construction teams crawl and query unstructured data from sensors on buildings to derive insights that allow them to streamline design, production, and operations; for instance, they can simulate the financial and operational impact of selecting different types of materials for construction projects."
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                246,
+                931,
+                359
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                377,
+                689,
+                392
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— a modern data architecture to support more flexible data stores"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                393,
+                908,
+                425
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— development of data models and digital twins to replicate real-world systems"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                441,
+                934,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                491,
+                728,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Implement culture and technology changes to modernize your data architecture.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                508,
+                923,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Identify critical data sets (such as customer purchase frequency, customer attributes) that could later be organized into data assets (for example, a complete view of the customer) and develop a taxonomy for these data assets (for example, a business-data product such as “customer 360”)."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                556,
+                923,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Explore flexible ontologies and knowledge graphs to map the relationship between different classes of data and data points."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                689,
+                903,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Upgrade existing digital simulators, replatforming them onto a cloud environment and updating APIs, to support more sophisticated AI capabilities such as reinforcement learning.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                753,
+                913,
+                835
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  “Breaking through data-architecture gridlock,” January 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                230,
+                900,
+                540,
+                912
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Jacomo Corbo, Oliver Fleming, and Nicolas Hohn, “It’s time for businesses to chart a course for reinforcement learning,” McKinsey, April 1, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                230,
+                911,
+                933,
+                924
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                240,
+                968,
+                421,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                969,
+                936,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Data operating model treats data like a product"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                95,
+                542,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                141,
+                250,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An organization's data function, if one exists outside of IT, manages data using top-down standards, rules, and controls. Data often has no true “owner” ensuring that it is updated and ready for use in various ways. Data sets are also stored—sometimes in duplication—across sprawling, siloed, and often costly environments, making it difficult for users within an organization (such as data scientists looking for data to build analytics models) to find, access, and integrate the data they need quickly."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                157,
+                542,
+                321
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                337,
+                267,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data assets are organized and supported as products, regardless of whether they are used by internal teams or external customers. These data products have dedicated teams, or “squads,” aligned against them to embed data security, evolve data engineering (for example, to transform data or continuously integrate new sources of data), and implement self-service access and analytics tools. Data products continuously evolve in an agile manner to meet the needs of consumers, leveraging DataOps (DevOps for data) and continuous integration and delivery processes and tools. Altogether, these products provide data solutions that can more easily and repeatedly be used to meet various business challenges and reduce the time and cost of delivering new AI-driven capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                354,
+                540,
+                617
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                98,
+                714,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Dedicated teams at retail companies develop data products, such as “product 360,” and ensure that the data asset continues to evolve to meet the needs of critical use cases."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                114,
+                897,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Healthcare organizations, including payers and healthcare analytics firms, stand up product teams to develop, maintain, and evolve “patient 360” data products to improve health outcomes."
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                196,
+                893,
+                262
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                279,
+                653,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— a data strategy that identifies and prioritizes business cases for data"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                294,
+                870,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— understanding of the organization's data sources and the types of data they hold"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                344,
+                846,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— an operating model that establishes a data-product owner and team—which could include analytics professionals, data engineers, information-security specialists, and other roles as needed"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                393,
+                893,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                491,
+                692,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Embed AI teams in the business and empower them to design, develop, deploy, and continually enhance new AI-driven products using these data products.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{11}"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                508,
+                893,
+                573
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Employ a data-governance operating model that ensures data quality and treats data like a product.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                590,
+                875,
+                638
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{11}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  “Getting AI to scale,” May–June 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                888,
+                390,
+                901
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Bryan Petzold, Matthias Roggendorf, Kayvaun Rowshankish, and Christoph Sporleder, “Designing data governance that delivers value,” McKinsey, June 26, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                898,
+                861,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                969,
+                73,
+                979
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                968,
+                383,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5. The chief data officer's role is expanded to generate value"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                95,
+                514,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                141,
+                287,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief data officers (CDOs) and their teams function as a cost center responsible for developing and tracking compliance with policies, standards, and procedures to manage data and ensure its quality."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                157,
+                571,
+                223
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                239,
+                303,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CDOs and their teams function as a business unit with profit-and-loss responsibilities. The unit, in partnership with business teams, is responsible for ideating new ways to use data, developing a holistic enterprise data strategy (and embedding it as part of a business strategy), and incubating new sources of revenue by monetizing data services and data sharing."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                255,
+                578,
+                387
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                404,
+                395,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Healthcare CDOs work in partnership with business units to deliver new subscription-based services for patients, payers, and providers that can improve patient outcomes. Such services might include tailoring treatment plans, more accurately flagging miscoded medical transactions, and improving drug safety."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                420,
+                578,
+                535
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Bank CDOs commercialize internal data-oriented services, such as fraud monitoring and anti-money-laundering services, on behalf of government agencies and other partners."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                551,
+                573,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Consumer-products CDOs partner with the sales team to use data to drive sales conversion and share responsibility for meeting target metrics."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                633,
+                573,
+                699
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                98,
+                689,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— data literacy among business-unit leads and their teams to create energy and urgency to engage with CDOs and their teams"
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                114,
+                906,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— an economic model, such as an automated profit-and-loss tracker, for recognizing and attributing data and costs"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                180,
+                901,
+                228
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— top data talent with an eye for innovation"
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                246,
+                883,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— adoption of venture-capital-style incubator operating models to support experimentation and innovation"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                279,
+                918,
+                325
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                344,
+                728,
+                358
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— For CDOs, begin conversations with business-unit leaders to identify opportunities for leveraging data to drive business value."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                359,
+                924,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Develop holistic priorities, underpinned by scorecards and metrics, that cover organizational health, talent, and culture, as well as data quality."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                426,
+                903,
+                491
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Reinforce the ethical use of data to ensure that new revenue-generating data services align with corporate values and culture.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                508,
+                934,
+                556
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Tech: Forward, “Ethical data usage in an era of digital technology and regulation,” blog entry by Ewa Janiszewska-Kiewra, Jannik Podlesny, and Henning Soller, McKinsey, August 26, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                230,
+                898,
+                931,
+                924
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                240,
+                968,
+                421,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                969,
+                936,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6. Data-ecosystem memberships are the norm"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                95,
+                513,
+                131
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                200,
+                141,
+                250,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data is often siloed, even within organizations. While data-sharing arrangements with external partners and competitors are increasing, they are still uncommon and often limited."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                157,
+                544,
+                222
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                239,
+                267,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Large, complex organizations use data-sharing platforms to facilitate collaboration on data-driven projects, both within and between organizations. Data-driven companies actively participate in a data economy that facilitates the pooling of data to create more valuable insights for all members. Data marketplaces enable the exchange, sharing, and supplementation of data, ultimately empowering companies to build truly unique and proprietary data products and gain insights from them. Altogether, barriers to the exchange and combining of data are greatly reduced, bringing together various data sources in such a way that the value generated is much greater than the sum of its parts."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                256,
+                542,
+                486
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                501,
+                357,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Manufacturers share data with their partners and peers through open manufacturing platforms to build a more holistic view of worldwide supply chains."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                518,
+                522,
+                584
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Pharmaceutical and healthcare organizations pool their respective data (for example, clinical-trial data gathered by pharmaceutical"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                599,
+                534,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "researchers and anonymized patient data collected by the healthcare provider) so that each company can better achieve its goals."
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                98,
+                875,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Financial-services organizations tap data exchanges to create new capabilities—for example, to support socially conscious investors by providing an environmental, social, and governance (ESG) score to publicly traded companies."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                162,
+                882,
+                261
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                279,
+                653,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— adoption of common data models to facilitate ease of data collaboration"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                294,
+                880,
+                327
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— development of data alliances and sharing agreements; several data-sharing platforms have emerged in recent years to facilitate the exchange of data both within and among institutions"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                344,
+                862,
+                426
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                558,
+                441,
+                692,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Read more about the different types of data ecosystems and best practices for a successful ecosystem. There are examples in financial services, retail, and healthcare.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{14}"
+                    }
+                ]
+            },
+            "bbox": [
+                557,
+                459,
+                890,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Choose the data-ecosystem archetypes that will be most important for your organization.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{15}"
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                541,
+                897,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Adopt data-sharing tools, protocols, and procedures."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                590,
+                818,
+                622
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{14}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  See Violet Chung, Miklós Dietz, Istvan Rab, and Zac Townsend, “Ecosystem 2.0: Climbing to the next level,” McKinsey Quarterly, September 11, 2020; “Financial data unbound: The value of open data for individuals and institutions,” McKinsey Global Institute, June 24, 2021; Julien Boudet, Jess Huang, Phyllis Rothschild, and Ryter von Difloe, “Preparing for loyalty’s next frontier: Ecosystems,” McKinsey, March 5, 2020; and Shubham Singhal, Basel Kayyali, Rob Levin, and Zachary Greenberg, “The next wave of healthcare innovation: The evolution of ecosystems,” McKinsey, June 23, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                845,
+                897,
+                901
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{15}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Mohammed Aaser, Kumar Kanagasabai, Marcus Roth, and Asin Tavakoli, “Four ways to accelerate the creation of data ecosystems,” November 23, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                900,
+                841,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                969,
+                73,
+                979
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                968,
+                383,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7. Data management is prioritized and automated for privacy, security, and resiliency"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                95,
+                531,
+                148
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                159,
+                285,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data security and privacy are often viewed as compliance issues, driven by nascent regulatory data-protection mandates and consumers beginning to realize how much of their information is collected and used. Data-security and -privacy protections are often either insufficient or monolithic, rather than tailored to individual data sets. Providing employees with secure data access is a highly manual process, making it error prone and lengthy. Manual data-resiliency processes make it difficult to recover data quickly and fully, creating risks for lengthy data outages that affect employee productivity."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                175,
+                580,
+                388
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "By 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                240,
+                404,
+                303,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Organizational mindsets have fully shifted toward treating data privacy, ethics, and security as areas of required competency, driven by evolving regulatory expectations such as the Virginia Consumer Data Protection Act (VCDPA), General Data Protection Regulation (GDPR), and California Consumer Privacy Act (CCPA); increasing consumer awareness of their data rights; and the increasingly high stakes of security incidents. Self-service provisioning portals manage and automate data provisioning using predefined “scripts” to safely and securely provide users with access to data in near real time, greatly improving user productivity."
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                421,
+                581,
+                635
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Automated, near-constant backup procedures ensure data resiliency; faster recovery procedures rapidly establish and recover the “last good copy” of data in minutes rather than days or weeks, thus minimizing risks when technological glitches occur. AI tools become available to more effectively manage data—for example, by automating the identification, correction, and remediation of"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                651,
+                571,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "data-quality issues. Altogether, these efforts enable organizations to build greater trust in both the data and how it's managed, ultimately accelerating adoption of new data-driven services."
+                    }
+                ]
+            },
+            "bbox": [
+                593,
+                98,
+                934,
+                162
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyday applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                180,
+                751,
+                194
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Retailers with an online presence specify the data from consumers that they collect and develop consumer portals to obtain consent from users and allow them to “opt in” to personalized services."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                196,
+                911,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Healthcare and governmental institutions with highly sensitive data institute advanced data-resiliency protocols that automatically back up data multiple times daily and, when needed, identify the “last good copy” and restore it seamlessly."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                295,
+                913,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— Retail banks automatically provision credit-card data needed to support customer-facing applications, specifically during development or testing, to improve developer productivity and provide access to data more efficiently and securely than is possible with traditionally manual efforts today."
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                409,
+                929,
+                523
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key enablers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                594,
+                541,
+                689,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— elevating the importance of data security throughout the organization"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                556,
+                892,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— rising consumer awareness of, and active involvement in, individual data-protection rights"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                607,
+                929,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— adoption of automated database-administration technologies for automated provisioning, processing, and information management"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                656,
+                934,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "— adoption of cloud-based data-resiliency and -storage tools to facilitate automatic backup and restoration of data"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                720,
+                929,
+                768
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                241,
+                969,
+                421,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                969,
+                936,
+                979
+            ]
+        }
+    ],
+    [
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "How to get started"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                98,
+                338,
+                113
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "— Consider adopting a data-ethics framework to understand and evaluate potential ethical and regulatory ramifications of data and analytics activity, especially involving consumer data.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{16}"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                114,
+                544,
+                180
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "— Consider leveraging cloud tools to store, manage, and secure priority data, and, for data already residing on the cloud, leverage automated backup and resiliency capabilities and tools as part of cybersecurity policies.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{17}"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                196,
+                535,
+                277
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "— Create a road map for migrating to new automatic provisioning and resiliency capabilities as they evolve."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                98,
+                839,
+                147
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "— Adopt a frequent, iterative approach to developing, reviewing, and revising governance and control protocols to take advantage of forthcoming opportunities to automate database administration—for example, by setting up a self-service provisioning portal and mandating automated backup and restoration procedures on compatible data platforms."
+                    }
+                ]
+            },
+            "bbox": [
+                555,
+                162,
+                900,
+                294
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Neil Assur is an associate partner in McKinsey's Philadelphia office, and Kayvaun Rowshankish is a partner in the New York office."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                335,
+                810,
+                362
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Designed by McKinsey Global Publishing\nCopyright © 2022 McKinsey & Company. All rights reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                390,
+                457,
+                412
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{16}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  See “Ethical data usage,” August 2020; and Venky Anant, Lisa Donchak, James Kaplan, and Henning Soller, “The consumer-data opportunity and the privacy imperative,” McKinsey, April 27, 2020."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                888,
+                885,
+                912
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{17}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  “Security as code: The best (and maybe only) path to securing cloud applications and systems,” McKinsey, July 22, 2021."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                911,
+                784,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                969,
+                76,
+                979
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The data-driven enterprise of 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                202,
+                968,
+                383,
+                979
+            ]
+        }
+    ]
+]

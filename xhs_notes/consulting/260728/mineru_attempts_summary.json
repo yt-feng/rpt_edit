@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0001-BCG_BCG-Investor-Perspectives-Series_d755518e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0004-McKinsey_PDF-McKinsey-Company_3b628973.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

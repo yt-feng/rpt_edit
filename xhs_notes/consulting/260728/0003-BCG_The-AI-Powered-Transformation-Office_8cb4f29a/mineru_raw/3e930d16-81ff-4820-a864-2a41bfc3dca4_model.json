@@ -1,0 +1,2543 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                0.999,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.262,
+                0.449
+            ],
+            "angle": 0,
+            "content": "BUSINESS TRANSFORMATION",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.479,
+                0.737,
+                0.577
+            ],
+            "angle": 0,
+            "content": "The AI-Powered\nTransformation Office"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.607,
+                0.672,
+                0.646
+            ],
+            "angle": 0,
+            "content": "By Simon Weinstein, Christian Gruß, Riddhish Dubal, Paul Catchlove, Emma McQueen, Justin Lim, Aman Chawla, and Natalia Pridacha",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.669,
+                0.353,
+                0.687
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 27, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.747,
+                0.93,
+                0.849
+            ],
+            "angle": 0,
+            "content": "In a 1935 piece for science fiction magazine Wonder Stories, David H. Keller described a future in which daily life would be reshaped by technology, and where cars would drive themselves. A recent Wall Street Journal article stated that in 2026, an estimated 36 million driverless taxi rides will be conducted in the US alone. Bold visions may take time to become reality, but when they do, they quickly become part of everyday life.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.861,
+                0.863,
+                0.922
+            ],
+            "angle": 0,
+            "content": "Enterprise transformation is approaching a similar inflection point. As AI evolves from a productivity tool into an agentic engine capable of coordinating work, it will enable the reinvention of the transformation office. The new agentic TO will execute change faster,",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.436,
+                0.257,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.478,
+                0.557,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.529,
+                0.735,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.61,
+                0.667,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.628,
+                0.521,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.673,
+                0.348,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.75,
+                0.924,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.77,
+                0.89,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.79,
+                0.926,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.81,
+                0.921,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.83,
+                0.462,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.864,
+                0.86,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.884,
+                0.848,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.902,
+                0.851,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.937,
+                0.127
+            ],
+            "angle": 0,
+            "content": "strengthen business ownership, and deliver stronger outcomes with greater precision. Forward-looking CEOs, chief transformation officers, and C-suite members should now be envisioning the agentic TO and plotting the steps required to build it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.141,
+                0.955,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Transformation offices are often resource-constrained, coordination-heavy, and slow to react. Teams spend significant time tracking progress, chasing updates, compiling reports, and manually identifying risks. In addition, many organizations lack a deep bench of experienced transformation practitioners, which means the TO staff often require upskilling in transformation methodologies and change delivery, lengthening the interval between the decision to transform and the realization of results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.274,
+                0.955,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Applying AI opens the way for rethinking the architecture of the TO, creating a stronger execution engine that amplifies human capability, surfaces insight in real time, and enables faster, more targeted interventions. The result is a model that remains firmly human-led and enables teams to work with greater speed, precision, and confidence.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.425,
+                0.734,
+                0.503
+            ],
+            "angle": 0,
+            "content": "A Look into the (Very Near)\nFuture of the TO"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.531,
+                0.958,
+                0.672
+            ],
+            "angle": 0,
+            "content": "The agentic transformation office of 2030 will apply AI to governance, updates, issue detection, upskilling, and sentiment analysis, quickly identifying and resolving barriers. Over time, this engine will greatly reduce the need for routine human intervention, enabling transformation staff to take on strategic roles and engage more deeply on issues that move the needle. In other words, transformation team members can partner directly with workstream leaders and initiative owners to develop targeted interventions for the opportunities with the greatest value, rather than limiting their role to monitoring performance and flagging issues for the business to resolve.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.685,
+                0.893,
+                0.745
+            ],
+            "angle": 0,
+            "content": "Transformation offices vary by organization, but typically focus on three core areas: program management, financial and impact tracking, and change management. Add (See exhibit.) AI is fundamentally reshaping how each of these domains will operate by 2030.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.923,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.933,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.537,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.144,
+                0.903,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.95,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.183,
+                0.812,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.94,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.93,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.32,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.277,
+                0.94,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.91,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.316,
+                0.949,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.337,
+                0.518,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.422,
+                0.733,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.464,
+                0.457,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.533,
+                0.924,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.553,
+                0.893,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.572,
+                0.947,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.594,
+                0.953,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.614,
+                0.952,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.634,
+                0.884,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.653,
+                0.897,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.687,
+                0.888,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.706,
+                0.845,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.732,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.064,
+                0.67,
+                0.103
+            ],
+            "angle": 0,
+            "content": "The Agentic Transformation Office Will Mix AI-Led and Human Interventions to Empower Business Ownership"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.115,
+                0.728,
+                0.317
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.374,
+                0.509,
+                0.41
+            ],
+            "angle": 0,
+            "content": "Program Management"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.958,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Once characterized by manual tracking and reactive reporting, this area will provide always-on detection led by AI. Transformation team members will have real-time visibility into risks, dependencies, and decisions, and AI will generate automated nudges to prompt action from workstream leaders and initiative owners. Actions, updates, and follow-ups will be sent automatically, reducing the effort TO team members spend on routine coordination. This will allow significant numbers of items to be resolved prior to meetings, leaving precious talk time for pressing matters while enabling team members to focus on higher value activities.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.659,
+                0.666,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Financial and Impact Tracking"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.721,
+                0.933,
+                0.92
+            ],
+            "angle": 0,
+            "content": "This function will shift from periodic validation to ongoing transparency into value delivery, enabled by dynamic forecasting and rapid course correction. AI-based predictive modeling can forecast the likely trajectory of impact realization and identify potential gaps in value delivery early based on data patterns from the existing transformation portfolio, deeper integration with enterprise resource planning and core finance systems, as well as trends from external benchmarks. This will give executives line of sight into the transformation and highlight where business attention is most needed. Finance will continue to play a critical role in validating the impact, ensuring consistency with P&L reporting and performance. As data and insights make transformations more predictable, organizations will also be better positioned to substantiate value creation narratives with investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.373,
+                0.509,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.437,
+                0.919,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.456,
+                0.869,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.475,
+                0.895,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.496,
+                0.848,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.515,
+                0.952,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.534,
+                0.892,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.556,
+                0.809,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.658,
+                0.664,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.884,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.744,
+                0.92,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.763,
+                0.915,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.782,
+                0.932,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.802,
+                0.859,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.82,
+                0.91,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.841,
+                0.923,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.861,
+                0.913,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.881,
+                0.92,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.902,
+                0.418,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.068,
+                0.488,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Change Management"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.13,
+                0.952,
+                0.309
+            ],
+            "angle": 0,
+            "content": "This aspect of transformation will no longer involve broad, generic interventions; instead it will focus on precision engagement, using real-time sentiment and targeted nudges to boost adoption and foster behavior change. The TO will leverage deeper insights to better manage change capacity, identifying where teams are overloaded, where fatigue is building, and where sequencing requires adjustment to protect adoption and momentum. It will develop and roll out rich, role-specific upskilling content and personalized coaching, and ensure that feedback loops are closed, building the institutional trust and resilience required to bring about real impact. This will make transformation outcomes deeply personal, motivating team members to push harder towards program objectives.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.378,
+                0.802,
+                0.458
+            ],
+            "angle": 0,
+            "content": "AI Doesn’t Replace Humans; It Fosters Business Ownership"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.485,
+                0.952,
+                0.584
+            ],
+            "angle": 0,
+            "content": "As leaders embed AI into their transformation offices, they should bear in mind that organizations positioning AI as a substitute for human roles risk diluting accountability, reducing review quality, and eroding trust, according to BCG research conducted with Harvard Business Review. AI adoption must be thoughtful, considered, and embedded within human-led systems, not positioned as a replacement for them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.598,
+                0.94,
+                0.699
+            ],
+            "angle": 0,
+            "content": "To accomplish this shift safely and responsibly, organizations must set in place minimum viable governance for AI tools: what they can draft and recommend, what requires human review, and what must remain a human decision. The transformation team can then focus on translating AI insights into action, nurturing change skills, and empowering sponsors, workstream leaders, and initiative owners to take greater ownership and make faster, better decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.768,
+                0.817,
+                0.847
+            ],
+            "angle": 0,
+            "content": "Getting Started with an Agentic\nTransformation Office"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.875,
+                0.941,
+                0.916
+            ],
+            "angle": 0,
+            "content": "Like any high-performing TO, an agentic transformation office should begin with a clearly defined strategic vision, mandate, and scope. Before introducing agentic capabilities, organizations must",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.488,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.133,
+                0.921,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.151,
+                0.949,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.171,
+                0.88,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.19,
+                0.946,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.21,
+                0.912,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.231,
+                0.884,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.251,
+                0.943,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.271,
+                0.889,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.29,
+                0.308,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.376,
+                0.803,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.419,
+                0.731,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.488,
+                0.949,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.507,
+                0.943,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.528,
+                0.935,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.547,
+                0.915,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.566,
+                0.255,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.601,
+                0.932,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.62,
+                0.915,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.64,
+                0.924,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.661,
+                0.935,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.681,
+                0.76,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.765,
+                0.819,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.809,
+                0.592,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.878,
+                0.937,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.898,
+                0.938,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.94,
+                0.147
+            ],
+            "angle": 0,
+            "content": "establish the office's role, the value it is expected to deliver, and the decisions and outcomes it will enable. In an AI-enabled environment, leaders shouldn't shy away from setting lofty ambitions—rather, they should establish stretch targets by default, based on the understanding that technology will provide opportunity for achievement beyond current expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.161,
+                0.953,
+                0.301
+            ],
+            "angle": 0,
+            "content": "With the objective established, leaders should design an operating model that includes team structure, governance, decision rights, and the roles that remain human-led versus those that will be augmented by AI. Clear ways of working, reporting cadences, and escalation pathways will ensure the discipline needed for effective execution. Identifying the right team is as critical as ever, because members will be responsible for blueprinting how to use technology to amplify impact. To succeed in this new context, transformation team members will need a combination of strategic vision and executional rigor that go beyond pure operational skills.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.314,
+                0.955,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Finally, organizations should invest early in capability building. Equip program teams with the tools they need to succeed. Provide access to cutting-edge AI technology, backed by strong transformation and change principles. Empower them to take risks and disrupt business as usual. Establishing these foundations early enables agentic transformation offices to scale capabilities across increasingly complex portfolios with confidence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.465,
+                0.934,
+                0.564
+            ],
+            "angle": 0,
+            "content": "By building on existing TO foundations and embedding agentic capabilities where they can have the biggest impact, organizations can reduce value leakage, improve decision velocity, deliver more consistent outcomes, and unlock greater value from their transformations. The strongest TOs will also set in motion learning loops between each chapter of the transformation journey, capturing what worked, what did not, and which interventions mattered.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.578,
+                0.936,
+                0.678
+            ],
+            "angle": 0,
+            "content": "In the same way that driverless cars moved from speculative fiction to everyday reality, the AI-powered transformation office will one day be an accepted part of the corporate landscape. Transformation teams will leverage technology to push the bounds of innovation and reach new horizons of capability. By embedding agentic AI into core transformation office activities, organizations will strengthen their capacity to change quickly and effectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.92,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.859,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.108,
+                0.934,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.852,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.162,
+                0.904,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.941,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.904,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.223,
+                0.909,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.243,
+                0.906,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.262,
+                0.95,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.282,
+                0.753,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.317,
+                0.909,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.886,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.356,
+                0.95,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.375,
+                0.943,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.395,
+                0.558,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.466,
+                0.933,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.486,
+                0.909,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.507,
+                0.921,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.525,
+                0.921,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.546,
+                0.707,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.581,
+                0.912,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.6,
+                0.895,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.617,
+                0.932,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.639,
+                0.864,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.658,
+                0.758,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.22,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.352,
+                0.22,
+                0.458
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.504,
+                0.22,
+                0.611
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.659,
+                0.22,
+                0.764
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.189,
+                0.436,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Simon Weinstein"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.223,
+                0.449,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner; Global Product Lead, BCG Transform\nSeattle",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.28,
+                0.275,
+                0.296
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.354,
+                0.416,
+                0.376
+            ],
+            "angle": 0,
+            "content": "Riddhish Dubal"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.387,
+                0.436,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nDetroit",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.433,
+                0.275,
+                0.449
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.513,
+                0.431,
+                0.537
+            ],
+            "angle": 0,
+            "content": "Emma McQueen"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.545,
+                0.404,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Director, BCG Vantage Dallas",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.58,
+                0.275,
+                0.597
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.666,
+                0.402,
+                0.688
+            ],
+            "angle": 0,
+            "content": "Aman Chawla"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.7,
+                0.367,
+                0.73
+            ],
+            "angle": 0,
+            "content": "Senior Manager\nACC – Gurugram",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.733,
+                0.275,
+                0.749
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.186,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.352,
+                0.683,
+                0.458
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.505,
+                0.683,
+                0.61
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.66,
+                0.681,
+                0.764
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.196,
+                0.872,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Christian Gruß"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.229,
+                0.9,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nCopenhagen",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.274,
+                0.737,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.709,
+                0.355,
+                0.872,
+                0.376
+            ],
+            "angle": 0,
+            "content": "Paul Catchlove"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.387,
+                0.86,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Senior Director – BCG\nTransform\nACC – Boston",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.433,
+                0.737,
+                0.45
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.707,
+                0.513,
+                0.823,
+                0.537
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.546,
+                0.864,
+                0.577
+            ],
+            "angle": 0,
+            "content": "Director\nLondon Canary Wharf",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.58,
+                0.737,
+                0.597
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.661,
+                0.892,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Natalia Pridacha"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.74,
+                0.737,
+                0.755
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.694,
+                0.9,
+                0.736
+            ],
+            "angle": 0,
+            "content": "Global Practice Area Senior Manager\nLondon Canary Wharf",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.191,
+                0.434,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.225,
+                0.445,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.236,
+                0.42,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.248,
+                0.316,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.263,
+                0.295,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.357,
+                0.415,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.389,
+                0.433,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.402,
+                0.3,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.415,
+                0.296,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.515,
+                0.428,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.548,
+                0.398,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.563,
+                0.292,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.667,
+                0.399,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.702,
+                0.355,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.716,
+                0.362,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.198,
+                0.869,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.232,
+                0.896,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.244,
+                0.763,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.256,
+                0.798,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.355,
+                0.869,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.389,
+                0.856,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.401,
+                0.779,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.415,
+                0.802,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.549,
+                0.766,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.563,
+                0.859,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.663,
+                0.889,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.696,
+                0.896,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.708,
+                0.772,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.722,
+                0.859,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

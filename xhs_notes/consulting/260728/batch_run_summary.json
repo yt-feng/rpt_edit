@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_BCG-Investor-Perspectives-Series_d755518e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0001-BCG_BCG-Investor-Perspectives-Series_d755518e.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0002-BCG_BCG-s-Intelligent-Cities-Index-2026_6ed88771.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-AI-Powered-Transformation-Office_8cb4f29a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0003-BCG_The-AI-Powered-Transformation-Office_8cb4f29a.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-McKinsey-Company_3b628973.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0004-McKinsey_PDF-McKinsey-Company_3b628973.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

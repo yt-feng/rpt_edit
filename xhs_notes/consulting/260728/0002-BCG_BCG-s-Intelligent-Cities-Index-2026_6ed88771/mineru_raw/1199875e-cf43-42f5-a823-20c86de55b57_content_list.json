@@ -1,0 +1,2693 @@
+[
+    {
+        "type": "text",
+        "text": "BCG's Intelligent Cities Index 2026",
+        "text_level": 1,
+        "bbox": [
+            63,
+            120,
+            685,
+            236
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "How AI Shapes Urban Living",
+        "bbox": [
+            63,
+            244,
+            574,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Akram Awad, Rami Mourtada, Cecilia Bousoño, Suresh Subudhi, Vladislav Boutenko, Ramsey Baker, and Ekaterina Shapochka",
+        "bbox": [
+            63,
+            353,
+            564,
+            386
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a3d0e764b0663f2eac13260572b48d9b65c6bbf219b351e010f84cbd0681fa8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            998,
+            376
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cities around the world are deploying AI and digital technology to deliver new levels of service to residents. Yet as these technologies evolve continuously, even the world's most advanced cities must also evolve to provide ever-greater services, meet growing expectations, and help drive resident outcomes and economic opportunities.",
+        "bbox": [
+            63,
+            426,
+            926,
+            599
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "BCG's inaugural Intelligent Cities Index (ICI) assesses how 61 of the world's biggest cities use technology to serve their residents and businesses. It offers a perspective on intelligent city maturity that is tech-focused, enabler-driven, and outcomes-oriented. We analyze maturity across five domains: outcomes, strategy, adoption, ways of working, and enablers. A city's overall maturity level reflects its combined domain maturity: leading, accelerating, emerging, or developing. (See “About the Intelligent Cities Index.”)",
+        "bbox": [
+            63,
+            636,
+            473,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The five leading cities are London, Dubai, New York City, Washington, and Amsterdam. All five show leading maturity across two or more of the five domains. However, no one city leads every domain; even cities at the cutting edge of technology implementation have areas to strengthen. (See Exhibit 1.)",
+        "bbox": [
+            512,
+            636,
+            910,
+            725
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Index also offers lessons from global pioneers like London, which tops the Index overall. The growth of intelligent city capability draws on the contributions of a diverse cast of participants, from city government leaders to private sector partners and ultimately residents themselves. A city's success requires a balanced approach to key enabling factors, especially digital technology and AI, across domains. The good news is that there are multiple pathways to success.",
+        "bbox": [
+            512,
+            736,
+            929,
+            853
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            895,
+            951,
+            912,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/37c520dec5df9ebcc12d7b1db3176c224d00da9baf54eb210d2689349b4740dd.jpg",
+        "table_caption": [
+            "The Intelligent Cities Index Leaderboard"
+        ],
+        "table_footnote": [
+            "Source: BCG's Intelligent Cities Index 2026.",
+            "Note: APAC = Asia-Pacific; MEA = Middle East and North Africa."
+        ],
+        "table_body": "<table><tr><td colspan=\"2\"></td><td>City</td><td>Total score</td><td>Outcomes</td><td>Strategy</td><td>Adoption</td><td>Ways of working</td><td>Enablers</td></tr><tr><td rowspan=\"5\">Leading</td><td>1</td><td>London</td><td>85</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>2</td><td>Dubai</td><td>80</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>3</td><td>New York City</td><td>80</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>4</td><td>Washington</td><td>80</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>5</td><td>Amsterdam</td><td>80</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td rowspan=\"28\">Accelerating</td><td>6</td><td>Berlin</td><td>78</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>7</td><td>San Francisco</td><td>77</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>8</td><td>Shanghai</td><td>77</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>9</td><td>Beijing</td><td>76</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>10</td><td>Seoul</td><td>76</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>11</td><td>Singapore</td><td>76</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>12</td><td>Vienna</td><td>75</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>13</td><td>Copenhagen</td><td>75</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>14</td><td>Shenzhen</td><td>75</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>15</td><td>Boston</td><td>74</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>16</td><td>Los Angeles</td><td>74</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>17</td><td>Stockholm</td><td>74</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>18</td><td>Zurich</td><td>74</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>19</td><td>Munich</td><td>73</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>20</td><td>Abu Dhabi</td><td>72</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>21</td><td>Oslo</td><td>72</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>22</td><td>Austin</td><td>71</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>23</td><td>Madrid</td><td>71</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>24</td><td>Dallas</td><td>71</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>25</td><td>Manchester</td><td>71</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>26</td><td>Dublin</td><td>70</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>27</td><td>Chicago</td><td>70</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>28</td><td>Toronto</td><td>70</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>29</td><td>Helsinki</td><td>70</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>30</td><td>Sydney</td><td>70</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>31</td><td>Paris</td><td>68</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>32</td><td>Barcelona</td><td>67</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>33</td><td>Riyadh</td><td>67</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td rowspan=\"23\">Emerging</td><td>34</td><td>Doha</td><td>64</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>35</td><td>Tokyo</td><td>63</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>36</td><td>Hong Kong</td><td>63</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>37</td><td>Medina</td><td>63</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>38</td><td>Almaty</td><td>62</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>39</td><td>Jakarta</td><td>61</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>40</td><td>Rome</td><td>61</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>41</td><td>Milan</td><td>61</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>42</td><td>Melbourne</td><td>60</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>43</td><td>Delhi</td><td>59</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>44</td><td>São Paulo</td><td>59</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>45</td><td>Jeddah</td><td>59</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>46</td><td>Bengaluru</td><td>59</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>47</td><td>Warsaw</td><td>58</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>48</td><td>Ho Chi Minh City</td><td>58</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>49</td><td>Mecca</td><td>58</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>50</td><td>Kuala Lumpur</td><td>58</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>51</td><td>Mumbai</td><td>57</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>52</td><td>Istanbul</td><td>55</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>53</td><td>Mexico City</td><td>55</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>54</td><td>Dammam</td><td>55</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>55</td><td>Buenos Aires</td><td>53</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>56</td><td>Osaka</td><td>52</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td rowspan=\"5\">Developing</td><td>57</td><td>Budapest</td><td>48</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>58</td><td>Johannesburg</td><td>47</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>59</td><td>Casablanca</td><td>46</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>60</td><td>Cairo</td><td>43</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>61</td><td>Lagos</td><td>34</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr></table>",
+        "bbox": [
+            68,
+            93,
+            929,
+            875
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "EXHIBIT 1",
+        "bbox": [
+            67,
+            46,
+            147,
+            61
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            894,
+            951,
+            912,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI Is a Key Foundation of the Intelligent City",
+        "text_level": 2,
+        "bbox": [
+            67,
+            43,
+            394,
+            96
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A striking pattern stands out: cities that are embedding AI into core services are delivering faster, better resident outcomes.",
+        "bbox": [
+            65,
+            110,
+            478,
+            140
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As shown in Exhibit 2, leading cities in AI adoption—about one-third—are delivering higher numbers of use cases and a high quality of life. These cities are making AI an integral part of public services and daily city operations. Yet the positioning of AI-driven challengers and AI-light performers suggests that progress is not linear; a city can drive resident outcomes by expanding AI deployment even if it starts with a lower number of use cases.",
+        "bbox": [
+            65,
+            152,
+            478,
+            267
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The message is important, especially for AI-light performers and AI-developing cities. The advancement and expansion of AI use cases can deliver better quality of life, and deployment of AI into more use cases overall is a necessary action—not the only action, but a vital one—for cities that seek to boost their overall intelligent city maturity.",
+        "bbox": [
+            512,
+            109,
+            931,
+            197
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 2",
+        "text_level": 2,
+        "bbox": [
+            67,
+            300,
+            147,
+            316
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "When Deployed in High Numbers, AI Use Cases Lift Resident Outcomes",
+        "text_level": 2,
+        "bbox": [
+            65,
+            322,
+            929,
+            344
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AI-enabled use cases score vs. outcomes score",
+        "bbox": [
+            67,
+            354,
+            405,
+            369
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/4612b69ad455a54bb6a49b310d0b6214bc9e43f99ba069e04c372b985914246b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            374,
+            919,
+            843
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Initially, progress is not linear, as a city can drive resident outcomes by expanding AI deployment even at a lower number of use cases.",
+        "bbox": [
+            571,
+            765,
+            833,
+            820
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026. Note: Quadrants are centered to average scores.",
+        "bbox": [
+            67,
+            863,
+            337,
+            888
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            895,
+            952,
+            910,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AI Adoption, User Optimism, and the Virtuous Circle of AI Value",
+        "text_level": 1,
+        "bbox": [
+            65,
+            43,
+            480,
+            120
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Positive sentiment toward AI provides a key element—confidence in the technology's future place in the world—that can shape how the intelligent city evolves.",
+        "bbox": [
+            65,
+            137,
+            475,
+            183
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Our research found a powerful link between how frequently residents use GenAI tools and how positively they view AI's role in their future. As shown in Exhibit 3, residents who have the highest use—AI enthusiasts—also have the highest sentiment. Pragmatic power users are engaging AI more opportunistically but still show a higher level of sentiment than residents who are cautious about their use of the technology.",
+        "bbox": [
+            65,
+            195,
+            482,
+            297
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Such widespread adoption signals a turning point. Citizens are beginning to see AI as a practical technology that can elevate opportunity, productivity, and quality of life. Several geographies especially share this outlook, with cities throughout Africa, Asia, and the Middle East reporting strong enthusiasm and adoption.",
+        "bbox": [
+            512,
+            137,
+            929,
+            212
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A virtuous circle forms in a setting where residents feel strongly about what AI means for their well-being. When residents feel good about how AI is serving them, city leaders have an opening to enable AI more fully and provide more value to beneficiaries. This value feeds more optimism, which is a driver of more engagement, innovation, scaling, and on and on.",
+        "bbox": [
+            510,
+            223,
+            931,
+            312
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 3",
+        "text_level": 2,
+        "bbox": [
+            67,
+            331,
+            147,
+            347
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GenAI Users Are Optimistic About the Technology",
+        "text_level": 2,
+        "bbox": [
+            65,
+            351,
+            687,
+            375
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/09adb6427a076293cecab83fb7967522f31021d719a30e06e49c1dadabef5bee.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Source: BCG's Intelligent Cities Index 2026."
+        ],
+        "content": "",
+        "bbox": [
+            68,
+            391,
+            900,
+            873
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Cities in Africa, the Middle East, and Asia show the strongest GenAI momentum, pairing high usage with high optimism.",
+        "bbox": [
+            480,
+            795,
+            663,
+            863
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Positive sentiment toward AI is a driver of more engagement, innovation, and citywide scaling.",
+        "bbox": [
+            702,
+            795,
+            880,
+            850
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            895,
+            952,
+            910,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Intelligent city app usage drives satisfaction. Cities whose residents use smart city apps more frequently also tend to score higher on satisfaction. This includes London and Dubai, leaders in the Index and high scorers in app user satisfaction. Resident satisfaction with smart city apps is quite low in cities where the frequency of usage is lower than average.",
+        "bbox": [
+            65,
+            52,
+            482,
+            141
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our study finds that use and satisfaction tend to be higher in younger cities. Several cities where more than half of the population is under age 35 fall in the standout cohort. (See Exhibit 4.)",
+        "bbox": [
+            512,
+            52,
+            905,
+            111
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Improving app performance will likely have a positive impact on satisfaction and open the door for more deployment and better outcomes. The same cycle of engagement and optimism that drives AI usage can also drive smart city app scaling.",
+        "bbox": [
+            512,
+            124,
+            929,
+            183
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 4",
+        "text_level": 2,
+        "bbox": [
+            67,
+            246,
+            147,
+            261
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Smart City App Usage and Satisfaction Are Aligned",
+        "text_level": 2,
+        "bbox": [
+            65,
+            266,
+            697,
+            290
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/fb89668f614930ce81a565d9cc5098c750a39fb60c5fd432298c0c697c461c6f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            297,
+            900,
+            788
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026.",
+        "bbox": [
+            67,
+            807,
+            309,
+            822
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            895,
+            952,
+            912,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A balance of hard and soft enablers drives a city",
+        "text_level": 2,
+        "bbox": [
+            65,
+            52,
+            423,
+            67
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "forward. The most mature cities in the Index are supported by an assortment of well-developed enablers. (See Exhibit 5.) These cities employ both hard enablers such as data, tech, and infrastructure and soft enablers like talent and funding. In all, 37 cities have found this balance, including Dublin.",
+        "bbox": [
+            65,
+            68,
+            484,
+            141
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Outside this set of balanced players, several other cities excel in hard enablers. For example, Sydney is strong in infrastructure and living labs. The Australian city enjoys accelerating maturity in part because of its focus on these elements.",
+        "bbox": [
+            65,
+            152,
+            484,
+            211
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A story forms: a city can build a strong infrastructure foundation without robust supplies of talent or funding. But technology isn't enough if a city wants to reach the highest levels of maturity.",
+        "bbox": [
+            512,
+            52,
+            902,
+            111
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "To do so, a city needs to build up its talent development and funding ecosystems, including venture capital and foreign direct investment, to match the quality of its hard enablers. This is no small task; a city will need to focus money and resources on strengthening funding and talent streams, but the equal focus will likely pay off down the road. Balance is key.",
+        "bbox": [
+            512,
+            124,
+            931,
+            212
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5",
+        "text_level": 2,
+        "bbox": [
+            67,
+            288,
+            147,
+            304
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Top Intelligent Cities Excel at Balancing Hard and Soft Enablers",
+        "text_level": 2,
+        "bbox": [
+            65,
+            309,
+            848,
+            332
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Scores from hard vs. soft enablers $^{1}$",
+        "bbox": [
+            67,
+            341,
+            321,
+            356
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/3d845acfc4b452ec8d13c29d5c47e807750a285f3960bc5f7f62ba7a044a10ba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            344,
+            905,
+            730
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A city can first build stronger hard enablers (e.g., infrastructure) with limited soft enablers (e.g., talent or funding), but a mix of both hard and soft enablers is most impactful.",
+        "bbox": [
+            258,
+            752,
+            537,
+            820
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Funding, talent, and ecosystems can be harder to build than infrastructure—as no city outperforms on soft enablers alone.",
+        "bbox": [
+            571,
+            752,
+            838,
+            806
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026. $^{1}$ Hard enablers include data and technology, infrastructure, and AI deployment. Soft enablers include ecosystem and funding and talent and skills.",
+        "bbox": [
+            65,
+            851,
+            776,
+            873
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            895,
+            952,
+            910,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Entrepreneurship and innovation ecosystems create economic opportunities for leading cities. Among the cities in the Index that lead in overall maturity, there's a solid link between the strength of entrepreneurship and innovation ecosystems and overall economic opportunities. Startups are important actors in the push to innovate with technology and deploy new AI and smart city apps. With sufficient capital, these businesses keep developing more powerful, faster, and more satisfying solutions that drive economic growth.",
+        "bbox": [
+            65,
+            53,
+            482,
+            183
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 6 shows that four of the Index's top cities score highest in both economic opportunities and ecosystem and funding assessments.",
+        "bbox": [
+            65,
+            195,
+            477,
+            239
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "It’s harder to find clear patterns among less mature cities. Weaker ecosystems do not guarantee poorer economic outcomes but instead show highly uneven performance. However, the performance of leading cities suggests that the focus of these locations on entrepreneurship and innovation has been key to their fulfillment of resident expectations.",
+        "bbox": [
+            512,
+            52,
+            910,
+            141
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 6",
+        "text_level": 2,
+        "bbox": [
+            67,
+            288,
+            147,
+            303
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3afd1f93897dfc26f161183775a00c6a3399542547c270b89f254b2d90defbb2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Smart City Funding and Startup Ecosystems Drive Economic Activity"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            68,
+            338,
+            897,
+            732
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026.",
+        "bbox": [
+            67,
+            852,
+            309,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Cities with stronger overall enablers convert ecosystem strength into economic opportunity more effectively, emerging as standout innovation transformers.",
+        "bbox": [
+            569,
+            751,
+            836,
+            820
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            895,
+            951,
+            910,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Where Each City Leads: A Domain-Level Analysis",
+        "text_level": 1,
+        "bbox": [
+            65,
+            43,
+            426,
+            96
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "As Exhibit 7 illustrates, leaders in each domain make up a broad group of cities with varying overall maturity levels. Their progress suggests that public sector and corporate decision makers have options in their approach, and they can develop many different areas to make an intelligent city stronger.",
+        "bbox": [
+            65,
+            109,
+            478,
+            184
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 7",
+        "text_level": 2,
+        "bbox": [
+            67,
+            217,
+            147,
+            231
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Leaders in Outcomes and Other Domains",
+        "text_level": 2,
+        "bbox": [
+            65,
+            237,
+            576,
+            260
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/24136a7386ef29812cdc55caa65c0b7332c1b0b9d5ba7484e29398248a6e05e6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's Intelligent Cities Index 2026."
+        ],
+        "bbox": [
+            65,
+            291,
+            924,
+            524
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Outcomes. Our analysis factors in outcomes. The top ten leaders in this domain are using technology to deliver results in livability, economic opportunities, social capital, and engagement with government.",
+        "bbox": [
+            65,
+            595,
+            482,
+            653
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "There's more. Some of the most mature intelligent cities in the study are leaders in this domain. The implication: improving intelligent city maturity levels translates into a better city experience for residents.",
+        "bbox": [
+            65,
+            665,
+            480,
+            725
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "London is the Index's leader in this area. The UK capital scored highest in resident outcomes related to quality of life and delivery of economic opportunities. The city's success here also helps it land as the Index's top city overall—more proof that maturity and outcomes are clearly linked.",
+        "bbox": [
+            65,
+            736,
+            482,
+            810
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Strategy. The Index assesses the depth and quality of each locale's intelligent cities strategy. This includes documentation of the strategy and any updates to keep pace with technology evolution and changing priorities. We also analyzed the number of smart city sectors covered by a city's strategy. Madrid tops this domain with a good balance of sector coverage and specificity in its strategy.",
+        "bbox": [
+            512,
+            594,
+            926,
+            697
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The clearer and more specific the strategic priorities, the more success a city will have in creating a sharper long-term direction for its intelligent technology maturity. With this future direction defined, government leaders and business partners can then steadily focus investment on the use cases that will deliver the greatest resident impact.",
+        "bbox": [
+            512,
+            708,
+            929,
+            796
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            895,
+            951,
+            912,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Adoption. The Index assessed adoption of smart city apps and AI technologies, which include business-oriented and resident-oriented e-government portals or digital platforms and apps. We also surveyed resident satisfaction with these technologies.",
+        "bbox": [
+            65,
+            52,
+            482,
+            111
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Adoption showed the highest overall scores of any domain in the Index. From our five leading cities to a city like Lagos, adoption is moving forward. It’s encouraging that cities can boost resident optimism with AI and apps even without strong infrastructure or funding; it goes a long way in building the momentum that can eventually bring a city to higher levels of maturity. However, while adoption is broadly achieved, it is often capped; many cities can push intelligent city or AI use cases only so far. At times, scaling falls short without enablers and ways of working in place. It’s vital to make the most of adoption while ramping up other areas.",
+        "bbox": [
+            65,
+            124,
+            478,
+            282
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The second highest city in the Index, Dubai, is joined as a leader in adoption by a notably diverse list of cities, including Mumbai, Manchester, and Boston. Interestingly, each rolls out more smart city use cases than most cities in the study. For Dubai, adoption is a key factor in its balanced approach to intelligent city implementation, which lands it in the highest overall maturity cohort.",
+        "bbox": [
+            65,
+            294,
+            477,
+            397
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ways of Working. The Index analyzed each city's implementation of governance, specifically institutional AI readiness.",
+        "bbox": [
+            512,
+            52,
+            897,
+            96
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Cities with stronger government readiness for AI tend to deploy more AI-enabled use cases. Yet the level of readiness alone does not directly determine results, whether good or bad. Some high-readiness cities still move slower in turning capability into action, while several cities with modest readiness manage to drive meaningful deployment.",
+        "bbox": [
+            512,
+            110,
+            929,
+            197
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We also captured the number of public-private partnerships linked to each location's intelligent city efforts.",
+        "bbox": [
+            512,
+            209,
+            907,
+            239
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Berlin lands in the leading group in this domain. The managing business development agency set up a dedicated unit to oversee smart city initiatives, which are strengthened by several partnerships between the corporate and public sectors.",
+        "bbox": [
+            512,
+            252,
+            929,
+            311
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Every city has a different starting point, with pioneers showing several pathways to success.",
+        "text_level": 1,
+        "bbox": [
+            115,
+            476,
+            873,
+            546
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Enablers. One of the study's recurring takeaways is that there are many elements that make intelligent city maturity grow and flourish. Our analysis considered technology and related factors, such as open data access or elements of infrastructure like the number of IoT endpoints or internet speed. But the intelligent city doesn't thrive on technology alone. Leaders can find advantage by looking at both soft enablers as well as hard, because technology innovation doesn't happen without money, and technology isn't engaged responsibly without people. When funding flows from venture capital and manifests in startups working on innovative smart city apps and AI, a city comes closest to the balance of enablers that the most mature cities in our study sustain.",
+        "bbox": [
+            63,
+            637,
+            482,
+            825
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "One of the top cities in the Index, Amsterdam leads this domain with a robust community of startups for a city of under a million residents; many larger cities count far fewer startups. Another key strength: the city reached the highest score in the existence of living labs; in other words, the city has advanced real-world testing and co-creation of new technologies with users and stakeholders, often through designated testbeds or districts, at a level that exceeds many other cities. A solid flow of venture capital supports the city's technology initiatives, proving that funding and innovation—soft enablers—are fuel for maturity.",
+        "bbox": [
+            512,
+            637,
+            927,
+            782
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            952,
+            870,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            892,
+            952,
+            914,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/0a5b4b7f17a14ee9f97099228260abb3d2e1a7bafb016e7b6d07c564b929f1f7.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Consistently accelerating across strategy, ways of working, adoption, and enablers"
+        ],
+        "content": "",
+        "bbox": [
+            757,
+            814,
+            774,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Choose the Right Pathway to Success",
+        "text_level": 2,
+        "bbox": [
+            65,
+            43,
+            440,
+            93
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Cities throughout the world can follow the example of the Index's leading performers, which do several things well.",
+        "bbox": [
+            65,
+            110,
+            440,
+            140
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "These leaders build momentum across both hard and soft enablers to power their intelligent city technologies long-term. They have achieved strong ecosystem and funding maturity, with vibrant innovation ecosystems and plenty of available capital. They also advance intelligent city use cases at scale, and they've made AI a foundation by integrating the technology into core city operations.",
+        "bbox": [
+            65,
+            152,
+            480,
+            254
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "However, every city has a different starting point. Several pathways forward are available, with strong outcomes and maturity stemming from either balanced strength across domains or targeted excellence in specific areas. (See Exhibit 8.)",
+        "bbox": [
+            65,
+            267,
+            482,
+            326
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Balanced Builders. Cities can boost maturity by choosing to balance their strengths.",
+        "bbox": [
+            512,
+            109,
+            922,
+            140
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Cities that are balanced to lead the Index reach accelerating scores across the board and achieve leading maturity with high scores on two or more domains.",
+        "bbox": [
+            514,
+            153,
+            922,
+            197
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Cities that are balanced to break into higher cohorts reach at least accelerating maturity in all capability domains with similar above-average scores.",
+        "bbox": [
+            514,
+            209,
+            917,
+            254
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Focused Specialists. Some cities appear in the Index's higher ranks by doubling down on one or two priority domains, often focusing on their strategy, ways of working, or strengthening enablers.",
+        "bbox": [
+            512,
+            267,
+            927,
+            326
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Build the blueprint: Cities are pushing capabilities in strategy and ways of working by building high-quality strategy, strong governance, and multiple public-private partnerships.",
+        "bbox": [
+            515,
+            338,
+            899,
+            397
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Strengthen enablers: Some cities have focused heavily on strengthening ecosystems and funding; data and tech; infrastructure and deployment; and talent and skills.",
+        "bbox": [
+            514,
+            409,
+            910,
+            453
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 8",
+        "text_level": 2,
+        "bbox": [
+            67,
+            474,
+            147,
+            489
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "More Than One Path to Intelligent Cities' Success",
+        "text_level": 2,
+        "bbox": [
+            65,
+            495,
+            670,
+            518
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/86df62ac8b9cc33b3c25ec6d84e52d161c954d55c248d77ab9ecaafa86841d47.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            533,
+            136,
+            573
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Balanced builders",
+        "text_level": 2,
+        "bbox": [
+            152,
+            535,
+            294,
+            550
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/8ede6c95457be5e7a73bd4ff9a0a8f0dd26dc4beec76c231371eac8150b7868b.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Focused specialists"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">Balance to lead</td><td colspan=\"2\">Domain maturity</td></tr><tr><td>LOWEST</td><td>HIGHEST</td></tr><tr><td>[24YK]</td><td>London</td><td>A</td><td>[25GDK]</td></tr><tr><td>[146DT]</td><td>Dubai</td><td>S</td><td>W</td></tr><tr><td>[50X53]</td><td>New York City</td><td>S</td><td>W</td></tr><tr><td>[16AKC]</td><td>Washington</td><td>A</td><td><img src=\"images/1274cb164ee46226fa9a14e70875c98474d6449a7a61e3202e6a6dabccbf5405.jpg\"/></td></tr><tr><td><img src=\"images/23df06cc4c522dc39cb9422a57537f7b0c1ac00282da01b306c5f45e01eb28f5.jpg\"/></td><td>Amsterdam</td><td>A</td><td>E</td></tr></table>",
+        "bbox": [
+            75,
+            589,
+            278,
+            736
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/4b26ed5ddbc1ed97a1b85f3b18dc7476862a678d7bb1b4fc077cdc04c843b9e3.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Making a targeted bet to strengthen one or two priority domains"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">Balance to break in1</td><td colspan=\"2\">Domain maturity</td></tr><tr><td>LOWEST</td><td>HIGHEST</td></tr><tr><td>[322X]</td><td>Vienna</td><td>W</td><td>S</td></tr><tr><td>[66WS]</td><td>Copenhagen</td><td>W</td><td>S</td></tr><tr><td>[DWBS]</td><td>Shenzhen</td><td>A</td><td>W</td></tr></table>",
+        "bbox": [
+            292,
+            590,
+            489,
+            692
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Build the blueprint $^{1}$",
+        "bbox": [
+            512,
+            594,
+            583,
+            619
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Domain maturity\nHIGHEST",
+        "bbox": [
+            643,
+            595,
+            695,
+            627
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "San Francisco",
+        "bbox": [
+            536,
+            634,
+            620,
+            646
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Strengthen enablers $^{1}$",
+        "bbox": [
+            727,
+            595,
+            806,
+            619
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Seoul",
+        "bbox": [
+            536,
+            653,
+            571,
+            667
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ddcde4e9d2abb54361e653efd6c46d8a9ab4bb9e10f7aa76db6b89a12050f07.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            499,
+            527,
+            927,
+            770
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Singapore",
+        "bbox": [
+            536,
+            676,
+            598,
+            689
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "8 Shanghai",
+        "bbox": [
+            729,
+            633,
+            808,
+            648
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Beijing",
+        "bbox": [
+            752,
+            653,
+            794,
+            669
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Stockholm",
+        "bbox": [
+            751,
+            676,
+            815,
+            689
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Domain maturity\nHIGHEST",
+        "bbox": [
+            858,
+            595,
+            910,
+            627
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Zurich",
+        "bbox": [
+            751,
+            697,
+            791,
+            709
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "E",
+        "bbox": [
+            873,
+            675,
+            895,
+            689
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Munich",
+        "bbox": [
+            751,
+            718,
+            798,
+            731
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "E",
+        "bbox": [
+            875,
+            697,
+            894,
+            709
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Abu Dhabi",
+        "bbox": [
+            751,
+            739,
+            816,
+            752
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "E",
+        "bbox": [
+            875,
+            718,
+            892,
+            731
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Underpinned by healthy adoption levels $^{2}$",
+        "bbox": [
+            342,
+            781,
+            655,
+            797
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ICI rank:",
+        "bbox": [
+            176,
+            813,
+            228,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/0c27489489463376fc4e976e44f8eca77f3cdda99f003b1734ffc6e345b2d15c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            233,
+            814,
+            248,
+            825
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Top 5",
+        "bbox": [
+            250,
+            814,
+            285,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/ef1fbf057697aade6f5c4c7285fda81450e60e859ed724182cadd93426ace457.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            295,
+            814,
+            310,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Top 10",
+        "bbox": [
+            312,
+            814,
+            357,
+            827
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/aeaa31dc3097695d827cb9e8a26627872dafa419fe4c5c66cfcc91eb65558b7c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            366,
+            814,
+            381,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Top 15",
+        "bbox": [
+            384,
+            814,
+            426,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/6a250fbe3958814682281c49b75134697a98d09da0285ef8e6b6b902ff0eeea0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            438,
+            814,
+            452,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Top 20",
+        "bbox": [
+            453,
+            814,
+            497,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ICI domain maturity:",
+        "bbox": [
+            519,
+            813,
+            643,
+            827
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/529c508a3e6950333f4b8d2f87ca7cfb5674ee082bf0b91be54cd2ab2f41cd9b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            650,
+            814,
+            668,
+            826
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Accelerating",
+        "bbox": [
+            670,
+            814,
+            747,
+            827
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Leading",
+        "bbox": [
+            757,
+            813,
+            826,
+            827
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A = Adoption    E = Enablers    S = Strategy    W = Ways of working",
+        "bbox": [
+            309,
+            829,
+            692,
+            843
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026.",
+        "bbox": [
+            67,
+            852,
+            309,
+            864
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ Twelve of the top 15 accelerating cities are on a path to success. $^{2}$ Sixteen of the top 20 cities are at, or above, average scores in adoption.",
+        "bbox": [
+            67,
+            862,
+            821,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            868,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            892,
+            952,
+            912,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Building the city's intelligent foundation requires a strategic roadmap that sequences and scales efforts collaboratively.",
+        "text_level": 1,
+        "bbox": [
+            115,
+            105,
+            848,
+            211
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A roadmap lays out the important steps toward stronger outcomes, no matter if a city is leading or lower in maturity.",
+        "bbox": [
+            65,
+            309,
+            453,
+            340
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Clarify long-term strategic priorities. Strategy should focus investment on the AI and digital technology uses that deliver the greatest resident impact. It is key to know where residents engage their government and economy—these are the areas to deploy smart city apps and AI technology.",
+        "bbox": [
+            67,
+            351,
+            484,
+            426
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Improve ways of working by tightening governance, empowering accountable owners, and mobilizing partnerships that accelerate real delivery. Public sector leaders and private sector counterparts can foster all sorts of collaboration, from R&D to skill training.",
+        "bbox": [
+            67,
+            438,
+            470,
+            511
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Scale adoption by expanding proven apps and AI solutions, strengthening digital service quality, and encouraging deeper resident and business engagement.",
+        "bbox": [
+            67,
+            523,
+            482,
+            568
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Build enablers by upgrading data and technology platforms, enhancing infrastructure, and developing the talent and ecosystem needed to sustain progress. Again, partnerships are valuable here. The high-maturity city is a place of ongoing collaboration between government, business, education, and the populace.",
+        "bbox": [
+            67,
+            580,
+            452,
+            667
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Conclusion",
+        "text_level": 2,
+        "bbox": [
+            514,
+            300,
+            673,
+            325
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Create momentum, move forward with urgency—these are crucial decisions for intelligent city stakeholders.",
+        "bbox": [
+            512,
+            347,
+            914,
+            447
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Building the city's foundation with AI and digital technology is a long-term process. City leaders and business partners don't need to try to do everything at once. Instead, they can plan ahead and look for incremental impact wherever residents' needs are most apparent, technology gets frequent usage, and adoption and optimism fuel momentum.",
+        "bbox": [
+            512,
+            466,
+            927,
+            554
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To succeed, leaders will need to gain a clear view of next steps through intelligent city assessment and explore where current capabilities lie and what priority outcomes are best to target. Focusing on the needs and contributions of city stakeholders is key. This includes understanding the needs of residents when prioritizing impact; the needs of government and business leaders when defining ambition and pathway; the needs of cross-city administration when enhancing ways of working; and the needs of the broader city ecosystem when deploying intelligent city enablers.",
+        "bbox": [
+            512,
+            565,
+            924,
+            711
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Every day, residents and businesses adopt AI and digital technology. There is no single path forward—some cities accelerate by focusing on a few critical areas while others strive for a balance of strength across key domains—but momentum comes from making intentional choices now and building for tomorrow.",
+        "bbox": [
+            512,
+            722,
+            917,
+            810
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            892,
+            951,
+            914,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "About the Intelligent Cities Index",
+        "text_level": 1,
+        "bbox": [
+            65,
+            51,
+            705,
+            85
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Intelligent Cities Index was developed through a rigorous five-step methodology designed to ensure robustness and comparability. We began by shortlisting 61 cities across 39 countries based on GDP and intelligent city relevance. We then defined five domains comprising 14 dimensions. Next, we identified a set of 35 indicators across the five domains, combining quantitative and qualitative measures to capture both capability and impact. (See the exhibit.)",
+        "bbox": [
+            63,
+            109,
+            484,
+            225
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To ensure comparability, we normalized six core indicators—two benchmark-based and four based on the 75th percentile—and assigned weights to reflect their relative importance. Finally, we consolidated results into four maturity levels (leading, accelerating, emerging, and developing), translating detailed scores into a clear, comparable view of overall city maturity.",
+        "bbox": [
+            512,
+            110,
+            922,
+            212
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Intelligent Cities Index Methodology",
+        "text_level": 2,
+        "bbox": [
+            65,
+            288,
+            512,
+            313
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Intelligent Cities Index domains",
+        "text_level": 2,
+        "bbox": [
+            107,
+            334,
+            248,
+            366
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Strategy declaration\n(official intelligent city strategy document, etc.)",
+        "bbox": [
+            329,
+            437,
+            584,
+            464
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/066382d38f499dd3ccea57eecf146bc6578f3ccb1631b93fc465a04e109b0bdc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            65,
+            332,
+            919,
+            678
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "15%\nWays of working",
+        "bbox": [
+            115,
+            570,
+            240,
+            602
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "25% Enablers",
+        "bbox": [
+            142,
+            631,
+            213,
+            659
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Resident outcomes (resident outcomes for quality of living and economic opportunities, etc.)",
+        "bbox": [
+            327,
+            376,
+            544,
+            414
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Intelligent Cities Index dimensions",
+        "text_level": 2,
+        "bbox": [
+            472,
+            341,
+            746,
+            359
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "GenAI (residents' sentiment toward and use of GenAI, etc.)",
+        "bbox": [
+            327,
+            495,
+            452,
+            542
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Governance\n(a dedicated intelligent city central government unit, etc.)",
+        "bbox": [
+            327,
+            557,
+            519,
+            595
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "G2C and G2B (government e-portal engagement, etc.)",
+        "bbox": [
+            473,
+            495,
+            594,
+            533
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Data and technology (citywide data integration platform, etc.)",
+        "bbox": [
+            329,
+            615,
+            450,
+            671
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Tech impacts\n(technology benefits across residents' city-related tasks, etc.)",
+        "bbox": [
+            616,
+            376,
+            826,
+            414
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ecosystem and funding",
+        "text_level": 2,
+        "bbox": [
+            473,
+            617,
+            579,
+            640
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Strategic details\n(specificity and sector coverage, etc.)",
+        "bbox": [
+            618,
+            438,
+            821,
+            463
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(number of funded startups in city-related sectors, etc.)",
+        "bbox": [
+            473,
+            640,
+            589,
+            671
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Smart city apps (app usage and satisfaction, etc.)",
+        "bbox": [
+            618,
+            495,
+            727,
+            532
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Use cases (number of active intelligent city use cases, etc.)",
+        "bbox": [
+            761,
+            495,
+            870,
+            542
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "PPPs\n(number of active intelligent city partnerships, etc.)",
+        "bbox": [
+            618,
+            557,
+            801,
+            595
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Infrastructure and deployment",
+        "text_level": 2,
+        "bbox": [
+            618,
+            615,
+            734,
+            636
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "and deployment (number of IoT devices and presence of living labs, etc.)",
+        "bbox": [
+            618,
+            633,
+            749,
+            671
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Talent and skills (number of tech graduates, etc.)",
+        "bbox": [
+            761,
+            617,
+            858,
+            664
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's Intelligent Cities Index 2026.\nNote: G2C = government to citizen; G2B = government to business; PPPs = public-private partnerships; IoT = Internet of Things.",
+        "bbox": [
+            65,
+            688,
+            766,
+            714
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            892,
+            951,
+            914,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "About the Authors",
+        "text_level": 1,
+        "bbox": [
+            67,
+            46,
+            504,
+            84
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/66e2c4d1d86f5c127d2f835549aa04c28aa6b58008f3892ef8eb57ca0e1c8221.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Akram Awad\nawad.akram@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            67,
+            105,
+            151,
+            165
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Akram is a managing director and partner in the Dubai office of Boston Consulting Group. He is a core member of BCG's Public Sector and Technology Advantage practices and has advised public sector leaders in the Middle East on the value of unlocking national data through AI.",
+        "bbox": [
+            65,
+            181,
+            484,
+            255
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ea08fc429c6242b5dc058d028a0156bcfee26f4581c8944ae9a3cee39a76e26.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            275,
+            152,
+            335
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Cecilia Bousoño bousono.cecilia@bcg.com",
+        "text_level": 2,
+        "bbox": [
+            166,
+            294,
+            346,
+            325
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Cecilia is a senior analyst, BCG Vantage, in BCG's Madrid office. She partners with travel, engineering, real estate, logistics, and city clients globally to improve their AI, data, and digital transformations by leveraging the power of technology, sustainability, and innovation.",
+        "bbox": [
+            65,
+            351,
+            480,
+            425
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/1be92d9b860f068997341541f077ca5c36e2b3e202b372543309748aa2d48077.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            447,
+            152,
+            506
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Vladislav Boutenko boutenko.vladislav@bcg.com",
+        "text_level": 2,
+        "bbox": [
+            166,
+            466,
+            366,
+            497
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Vladislav is a managing director and senior partner with BCG, where he leads BCG's work with cities globally. He has also directed cities research with the BCG Institute since 2019. His forthcoming book, The Way We Live Next, is due from Harper Business in Spring 2027.",
+        "bbox": [
+            65,
+            523,
+            473,
+            596
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/694d5f0b138abc668f4703f7f56b6482f84d1cfd1e971686aec132969d32e886.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            617,
+            152,
+            678
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ekaterina Shapochka shapochka.ekaterina@bcg.com",
+        "text_level": 2,
+        "bbox": [
+            166,
+            637,
+            381,
+            668
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ekaterina is a partner and associate director, Cities & Regions, in BCG's Riyadh office. She is an expert in regional policy, urban development, quality of life, and smart cities whose work spans projects in Europe, Asia, and the Middle East.",
+        "bbox": [
+            65,
+            695,
+            482,
+            753
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments",
+        "text_level": 2,
+        "bbox": [
+            67,
+            802,
+            290,
+            825
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The authors express their sincere gratitude for the extensive support of Mariana Chaverri, Eva González, Shravani Joshi, Maxim Khakhin, Margot Li, Poorti Sathe, and Lynn Zhuo from the BCG consulting and Vantage teams. They also acknowledge contributions from Faisal Alsaedi, Nishan Banerjee,",
+        "bbox": [
+            65,
+            837,
+            482,
+            910
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/17d7e0ea55784b377bfabbca9d9d289a39f53d53114daebb1beb41b41e397cd7.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Rami Mourtada\nmourtada.rami@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            517,
+            105,
+            600,
+            165
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Rami is a partner and director in BCG's Technology & Digital Advantage practice in the firm's Dubai office. He is a core member of BCG's Global Center for the Future of Cities and Center for Digital Government. Rami's work spans AI and smart city topics across private and public sectors.",
+        "bbox": [
+            512,
+            181,
+            915,
+            255
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/7cacc1197fefbc72d2029df9e06b14eed95a791e1c03bb0ebfb185daa48342ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            515,
+            275,
+            600,
+            335
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Suresh Subudhi subudhi.suresh@bcg.com",
+        "text_level": 2,
+        "bbox": [
+            613,
+            294,
+            791,
+            326
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Suresh is a managing director and senior partner in BCG's Dubai office. He is the global leader for the firm's Travel, Cities & Infrastructure practice. Suresh also co-leads BCG's Global Center for the Future of Cities and Center for Mobility Innovation.",
+        "bbox": [
+            512,
+            351,
+            926,
+            425
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/cb145ca72379cac870ee77627c7bf1bc1fd9a6f7d077bbbceb584609de8591ae.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            515,
+            448,
+            598,
+            508
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ramsey Baker\nbaker.ramsey@bcg.com",
+        "bbox": [
+            613,
+            466,
+            779,
+            497
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Ramsey is a managing director and partner in BCG's Atlanta office. An expert in travel and tourism, he is the global lead for the firm's work at the intersection of the Technology & Digital Advantage and Travel, Cities & Infrastructure practices.",
+        "bbox": [
+            512,
+            523,
+            924,
+            583
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Shubhika Bilgrami, Madawi Binghannam, Evan Bruning, Vanshika Gupta, Janit Pagaria, Lara Schober, Marcel Sieg, and Nadya Smakhtina. Their insights, feedback, and dedication were invaluable to this report.",
+        "bbox": [
+            512,
+            837,
+            921,
+            896
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BCG'S INTELLIGENT CITIES INDEX 2026",
+        "bbox": [
+            645,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            892,
+            951,
+            914,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BCG",
+        "text_level": 2,
+        "bbox": [
+            67,
+            46,
+            161,
+            76
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "About Boston Consulting Group",
+        "text_level": 2,
+        "bbox": [
+            67,
+            110,
+            299,
+            124
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change—bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            65,
+            139,
+            482,
+            269
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X.",
+        "bbox": [
+            65,
+            851,
+            478,
+            923
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "© Boston Consulting Group 2026. All rights reserved. 7/26",
+        "bbox": [
+            65,
+            936,
+            458,
+            951
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/d86ffe441ed1681361a5f8ea01e85fa5fb7423f76d07db9debdc4b8c68308acf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            1,
+            1000,
+            998
+        ],
+        "page_idx": 15
+    }
+]

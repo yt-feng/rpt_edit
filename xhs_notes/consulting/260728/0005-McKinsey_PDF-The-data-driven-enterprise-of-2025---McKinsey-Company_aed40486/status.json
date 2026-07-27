@@ -1,0 +1,88 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_vmktzfz9/pdfs/0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "麦肯锡",
+  "cover_short_title": "数据驱动的企业，20",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "麦肯锡：2025年业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486.pdf",
+    "cleaned_source_title": "0005-McKinsey_PDF-The-data-driven-enterprise-of-2025---McKinsey-Company_aed40486",
+    "institution_name": "麦肯锡",
+    "required_terms": [],
+    "deterministic_fallback": "麦肯锡：0005McKinseyPDFThedatad",
+    "raw_candidates": [
+      "麦肯锡：2025年数据驱动企业的七个特征",
+      "麦肯锡：2025年数据驱动企业的七个特征与实时处理",
+      "麦肯锡：2025年数据驱动企业的数据运营与存储"
+    ],
+    "cleaned_candidates": [
+      "麦肯锡：2025年数据驱动企业的七个特征",
+      "麦肯锡：2025年数据驱动企业的七个特征与实时处理",
+      "麦肯锡：2025年数据驱动企业的数据运营与存储",
+      "麦肯锡：0005McKinseyPDFThedatad"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "麦肯锡：0005McKinseyPDFThedatad",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "麦肯锡：2025年业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "麦肯锡：2025年数据驱动企业的七个特征",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "麦肯锡：2025年业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
