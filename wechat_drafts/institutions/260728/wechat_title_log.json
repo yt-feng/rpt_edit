@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "date_folder": "260728",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-27T23:17:57Z",
+  "article_count": 5,
+  "uploaded_count": 5,
+  "articles": [
+    {
+      "source_report_name": "ADB ADB-Green-and-Blue-Bonds-Newsletter-2026 c9cdd9b5",
+      "institution_name": "亚洲开发银行",
+      "title_before_upload": "亚洲开发银行：绿色与蓝色债券通讯2026",
+      "final_wechat_title": "亚洲开发银行：绿色与蓝色债券通讯2026",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260728/01-0001-ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5",
+      "generation_decision": {
+        "source_filename": "0001-ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5",
+        "cleaned_source_title": "0001-ADB_ADB-Green-and-Blue-Bonds-Newsletter-2026_c9cdd9b5",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBADBGreen和Blue",
+        "raw_candidates": [
+          "亚洲开发银行：绿色与蓝色债券通讯2026",
+          "亚洲开发银行：绿色与蓝色债券十年融资超150亿美元",
+          "亚洲开发银行：绿色与蓝色债券框架与气候融资承诺"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：绿色与蓝色债券通讯2026",
+          "亚洲开发银行：绿色与蓝色债券十年融资超150亿美元",
+          "亚洲开发银行：绿色与蓝色债券框架与气候融资承诺",
+          "亚洲开发银行：0001ADBADBGreen和Blue"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：绿色与蓝色债券十年融资超150亿美元",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：绿色与蓝色债券框架与气候融资承诺",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBADBGreen和Blue",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：绿色与蓝色债券通讯2026",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "亚洲开发银行：绿色与蓝色债券通讯2026",
+        "body_heading_neutralization_changes": [
+          "冰川到农田区域计划动员35亿美元，支持中亚和西亚气候韧性发展->气候与产业转型数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece 6abc4585",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：研究主题与行业变化观察，私人部门储蓄-研究失衡成为经常账户逆差",
+      "final_wechat_title": "IMF：研究主题与行业变化观察，私人部门储蓄-研究失衡成为经常账户逆差",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260728/02-0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+      "generation_decision": {
+        "source_filename": "0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+        "cleaned_source_title": "0002-IMF_External-Sector-Dynamics-and-Firms-Competitiveness-in-Greece_6abc4585",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFExternalSectorDynamics",
+        "raw_candidates": [
+          "IMF：希腊外部部门动态与企业竞争力",
+          "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+          "IMF：希腊外部部门动态与企业竞争力-出口企业结构性障碍"
+        ],
+        "cleaned_candidates": [
+          "IMF：希腊外部部门动态与企业竞争力",
+          "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+          "IMF：希腊外部部门动态与企业竞争力-出口企业结构性障碍",
+          "IMF：0002IMFExternalSectorDynamics",
+          "IMF：国际货币产品组织（IMF）在2026年7月发布的希腊外部部门动"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0002IMFExternalSectorDynamics",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）在2026年7月发布的希腊外部部门动",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2025"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：希腊外部部门动态与企业竞争力-2025年经常账户逆差扩大",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察",
+        "header_pre_neutralization_title": "私人部门储蓄-研究失衡成为经常账户逆差的主要驱动因素",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "私人部门储蓄-研究失衡成为经常账户逆差的主要驱动因素->研究主题与行业变化观察",
+          "出口集中于低附加值领域，国内生产缺口持续存在->跨境贸易数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF Inside-Greece-s-Housing-Affordability-Paradoxes 73b19b05",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：研究主题与行业变化观察，需求集中与供给错配加剧市场失衡",
+      "final_wechat_title": "IMF：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260728/03-0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+      "generation_decision": {
+        "source_filename": "0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+        "cleaned_source_title": "0003-IMF_Inside-Greece-s-Housing-Affordability-Paradoxes_73b19b05",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0003IMFInsideGreecesHou",
+        "raw_candidates": [
+          "IMF：希腊住房可负担性悖论",
+          "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+          "IMF：希腊住房可负担性悖论-需求集中与供给错配"
+        ],
+        "cleaned_candidates": [
+          "IMF：希腊住房可负担性悖论",
+          "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+          "IMF：希腊住房可负担性悖论-需求集中与供给错配",
+          "IMF：0003IMFInsideGreecesHou",
+          "IMF：自2017年以来，希腊房价累计上涨约85%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0003IMFInsideGreecesHou",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：自2017年以来，希腊房价累计上涨约85%",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：希腊住房可负担性悖论-高自有率与高成本负担",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察",
+        "pre_upload_neutralization_title": "IMF：研究主题与行业变化观察，需求集中与供给错配加剧市场失衡",
+        "header_pre_neutralization_title": "需求集中与供给错配加剧市场失衡",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "需求集中与供给错配加剧市场失衡->研究主题与行业变化观察",
+          "低收入群体承受不成比例的负担不确定性->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF The-Gambia-Enhancing-Property-Taxation b9d415ff",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：行业规则与主题变化观察，房产税收入仅占GDP约0.3%",
+      "final_wechat_title": "IMF：行业规则与相关数据观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260728/04-0004-IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff",
+      "generation_decision": {
+        "source_filename": "0004-IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff",
+        "cleaned_source_title": "0004-IMF_The-Gambia-Enhancing-Property-Taxation_b9d415ff",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0004IMFTheGambiaEnhancing地产",
+        "raw_candidates": [
+          "IMF：冈比亚房产税改革路径与收入空间",
+          "IMF：冈比亚房产税改革-收入缺口约0.75个百分点",
+          "IMF：冈比亚房产税改革-估值体系与法律框架现代化"
+        ],
+        "cleaned_candidates": [
+          "IMF：冈比亚房产税改革路径与收入空间",
+          "IMF：冈比亚房产税改革-收入缺口约0.75个百分点",
+          "IMF：冈比亚房产税改革-估值体系与法律框架现代化",
+          "IMF：0004IMFTheGambiaEnhancing地产",
+          "IMF：房产税收入仅占GDP约0.3%，潜在收入缺口达0.75个百分点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：冈比亚房产税改革-收入缺口约0.75个百分点",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "IMF：冈比亚房产税改革-估值体系与法律框架现代化",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "IMF：0004IMFTheGambiaEnhancing地产",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：房产税收入仅占GDP约0.3%，潜在收入缺口达0.75个百分点",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：行业规则与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：冈比亚房产税改革路径与收入空间",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "IMF：行业规则与主题变化观察",
+        "pre_upload_neutralization_title": "IMF：行业规则与主题变化观察，房产税收入仅占GDP约0.3%",
+        "header_pre_neutralization_title": "房产税收入仅占GDP约0.3%，潜在收入缺口达0.75个百分点",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "房产税收入仅占GDP约0.3%，潜在收入缺口达0.75个百分点->行业规则与相关数据观察",
+          "改革建议：短期行政优化与中长期立法技术现代化并进->改革建议：研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WorldBank Selection-or-More-Capital-Experimental-Evidence-on-High-Grow 1cb1",
+      "institution_name": "世界银行",
+      "title_before_upload": "世界银行：肯尼亚商业计划竞赛筛选与资金实验",
+      "final_wechat_title": "世界银行：肯尼亚商业计划竞赛筛选与资金实验",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260728/05-0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb1",
+      "generation_decision": {
+        "source_filename": "0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2",
+        "cleaned_source_title": "0005-WorldBank_Selection-or-More-Capital-Experimental-Evidence-on-High-Grow_1cb181c2",
+        "institution_name": "世界银行",
+        "required_terms": [],
+        "deterministic_fallback": "世界银行：0005WorldBankSelection",
+        "raw_candidates": [
+          "世界银行：肯尼亚商业计划竞赛筛选与资金实验",
+          "世界银行：肯尼亚商业计划竞赛筛选机制与2019年数据",
+          "世界银行：肯尼亚商业计划竞赛筛选强度与资本规模研究"
+        ],
+        "cleaned_candidates": [
+          "世界银行：肯尼亚商业计划竞赛筛选与资金实验",
+          "世界银行：肯尼亚商业计划竞赛筛选机制与2019年数据",
+          "世界银行：肯尼亚商业计划竞赛筛选强度与资本规模研究",
+          "世界银行：0005WorldBankSelection",
+          "世界银行：实验发现，经过多阶段筛选获得9,000美元赠款的企业"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界银行：肯尼亚商业计划竞赛筛选机制与2019年数据",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "世界银行：0005WorldBankSelection",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：实验发现，经过多阶段筛选获得9,000美元赠款的企业",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界银行：肯尼亚商业计划竞赛筛选与资金实验",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界银行：肯尼亚商业计划竞赛筛选与资金实验"
+      }
+    }
+  ]
+}
