@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0001-26-NOM-Contemporary Amperex Technology-300750-2Q26 in line- positive on share buyback-260726.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0002-27-NOM-China Internet - New Media-Takeaways from an LLM expert call-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0003-28-NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0004-29-NOM-Samsung Heavy Industries-010140.KS-2Q26 OP miss- now on reasonable level-260726.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0005-30-NOM-Tata Consumer Products-TACN.NS-Growth business outshines and changing the company-s DNA-260726.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

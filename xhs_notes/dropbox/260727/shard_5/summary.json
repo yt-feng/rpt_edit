@@ -1,0 +1,499 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0001-26-NOM-Contemporary Amperex Technology-300750-2Q26 in line- positive on share buyback-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "宁德时代二季度业绩全",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：宁德时代业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-NOM-Contemporary Amperex Technology-300750-2Q26 in line- positive on share buyback-260726.pdf",
+      "cleaned_source_title": "NOM-Contemporary Amperex Technology-300750-2Q26 in line- positive on share buyback",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：ContemporaryAmperex科技3007502Q26",
+      "raw_candidates": [
+        "宁德时代二季度利润与回购计划",
+        "宁德时代二季度利润增长36%及回购计划",
+        "宁德时代电池出货量增长与回购计划"
+      ],
+      "cleaned_candidates": [
+        "NOM：宁德时代二季度利润与回购计划",
+        "NOM：宁德时代二季度利润增长36%及回购计划",
+        "NOM：宁德时代电池出货量增长与回购计划",
+        "NOM：ContemporaryAmperex科技3007502Q26",
+        "NOM：CATL二季度利润增长36%，推出200-400亿元回购计划"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：宁德时代电池出货量增长与回购计划",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "NOM：ContemporaryAmperex科技3007502Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "malformed_numeric_range",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "NOM：CATL二季度利润增长36%，推出200-400亿元回购计划",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        }
+      ],
+      "selected_title": "NOM：宁德时代业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "36"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：宁德时代二季度利润增长36%及回购计划",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：宁德时代业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0002-27-NOM-China Internet - New Media-Takeaways from an LLM expert call-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "国产大模型，拼的不是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：中国互联网-新媒体-LLM专家交流，3万亿参数与效率竞争",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-NOM-China Internet - New Media-Takeaways from an LLM expert call-260727.pdf",
+      "cleaned_source_title": "NOM-China Internet - New Media-Takeaways from an LLM expert call",
+      "institution_name": "NOM",
+      "required_terms": [
+        "LLM"
+      ],
+      "deterministic_fallback": "NOM：LLM中国InternetNewMediaTakeaw",
+      "raw_candidates": [
+        "中国互联网-新媒体-LLM专家交流要点",
+        "中国互联网-新媒体-LLM专家交流：3万亿参数与效率竞争",
+        "中国互联网-新媒体-LLM专家交流：模型与智能体整合及成本优势"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国互联网-新媒体-LLM专家交流要点",
+        "NOM：中国互联网-新媒体-LLM专家交流，3万亿参数与效率竞争",
+        "NOM：中国互联网-新媒体-LLM专家交流，模型与智能体整合及成本优势",
+        "NOM：LLM中国InternetNewMediaTakeaw",
+        "NOM：自动评估、LLM-as-a-Judge、多模型评分和教师模型反馈"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：LLM中国InternetNewMediaTakeaw",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：自动评估、LLM-as-a-Judge、多模型评分和教师模型反馈",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：中国互联网-新媒体-LLM专家交流，3万亿参数与效率竞争",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：中国互联网-新媒体-LLM专家交流，3万亿参数与效率竞争"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0003-28-NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "携程被罚52亿，OT",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "证券->标的 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：携程被要求整改不当商业行为",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices-260727.pdf",
+      "cleaned_source_title": "NOM-Trip.com-TCOM.US-TCOM required to rectify improper business practices",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：TCOMrequiredtorectifyimp",
+      "raw_candidates": [
+        "携程被要求整改不当商业行为",
+        "携程反垄断处罚与酒店预订市场变化",
+        "携程排他协议取消后的竞争格局演变"
+      ],
+      "cleaned_candidates": [
+        "NOM：携程被要求整改不当商业行为",
+        "NOM：携程反垄断处罚与酒店预订市场变化",
+        "NOM：携程排他协议取消后的竞争格局演变",
+        "NOM：TCOMrequiredtorectifyimp",
+        "NOM：2026年7月25日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：携程反垄断处罚与酒店预订市场变化",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：携程排他协议取消后的竞争格局演变",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：TCOMrequiredtorectifyimp",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：2026年7月25日",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：携程被要求整改不当商业行为",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：携程被要求整改不当商业行为"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0004-29-NOM-Samsung Heavy Industries-010140.KS-2Q26 OP miss- now on reasonable level-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "三星重工跌了33%后",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：三星重工二季度营业利润低于共识13.2%-估值进入合理区间",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-NOM-Samsung Heavy Industries-010140.KS-2Q26 OP miss- now on reasonable level-260726.pdf",
+      "cleaned_source_title": "NOM-Samsung Heavy Industries-010140.KS-2Q26 OP miss- now on reasonable level",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：SamsungHeavyIndustries2Q26OPmiss",
+      "raw_candidates": [
+        "三星重工二季度营业利润低于预期-估值进入合理区间",
+        "三星重工二季度营业利润低于共识13.2%-估值进入合理区间",
+        "三星重工二季度营业利润低于预期-新订单增长115.7%"
+      ],
+      "cleaned_candidates": [
+        "NOM：三星重工二季度营业利润低于预期-估值进入合理区间",
+        "NOM：三星重工二季度营业利润低于共识13.2%-估值进入合理区间",
+        "NOM：三星重工二季度营业利润低于预期-新订单增长115.7%",
+        "NOM：SamsungHeavyIndustries2Q26OPmiss",
+        "NOM：三星重工报价自2026年4月高点已回调33.4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：三星重工二季度营业利润低于预期-新订单增长115.7%",
+          "reasons": [
+            "anchor_coverage=0.64",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：SamsungHeavyIndustries2Q26OPmiss",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：三星重工报价自2026年4月高点已回调33.4%",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：三星重工二季度营业利润低于共识13.2%-估值进入合理区间",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "13.2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：三星重工二季度营业利润低于共识13.2%-估值进入合理区间"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_cxf4q68o/pdfs/0005-30-NOM-Tata Consumer Products-TACN.NS-Growth business outshines and changing the company-s DNA-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "这家公司正在悄悄“换",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x3",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：消费行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-NOM-Tata Consumer Products-TACN.NS-Growth business outshines and changing the company-s DNA-260726.pdf",
+      "cleaned_source_title": "NOM-Tata Consumer Products-TACN.NS-Growth business outshines and changing the company-s DNA",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：Tata消费Products增长business",
+      "raw_candidates": [
+        "塔塔消费品：增长业务占比提升改变公司结构",
+        "塔塔消费品：增长业务占比36%且增速47%",
+        "塔塔消费品：增长业务驱动公司结构转型"
+      ],
+      "cleaned_candidates": [
+        "NOM：塔塔消费品，增长业务占比提升改变公司结构",
+        "NOM：塔塔消费品，增长业务占比36%且增速47%",
+        "NOM：塔塔消费品，增长业务驱动公司结构转型",
+        "NOM：Tata消费Products增长business",
+        "NOM：印度市场收入同比增长12%，营业利润率13.5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：塔塔消费品，增长业务占比36%且增速47%",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        },
+        {
+          "title": "NOM：塔塔消费品，增长业务驱动公司结构转型",
+          "reasons": [
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "NOM：Tata消费Products增长business",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：印度市场收入同比增长12%，营业利润率13.5%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：消费行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：塔塔消费品，增长业务占比提升改变公司结构",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：消费行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
