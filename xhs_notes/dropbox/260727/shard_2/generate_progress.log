@@ -1,0 +1,38 @@
+Found 32 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c7p2mhhg/pdfs/0001-11-Goldman Sachs-Japan Chemicals- Asia investor visit feedback- High interest in electronic materials companies and individual catalysts amid volatility-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c7p2mhhg/pdfs/0002-12-Goldman Sachs-Global Economics Comment- More Chinese Exports- Fewer Chinese Imports- Lower Global Inflation-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c7p2mhhg/pdfs/0003-13-Goldman Sachs-STMicroelectronics -STMPA.PA-- Improving demand visibility- with AI datacentres - optical connectivity the key growth drivers-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c7p2mhhg/pdfs/0004-14-Goldman Sachs-Nokia -NOKIA.HE-- Optical momentum builds alongside capacity investment progress- Neutral on valuation-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c7p2mhhg/pdfs/0005-15-Goldman Sachs-Moderna Inc. -MRNA.US-- 2Q earnings preview- Upcoming Phase 3 melanoma data is the primary catalyst-260727.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=99ac9650-e5fd-4b11-9efb-8fbf2a795db1
+MinerU states: pending, running, pending, waiting-file, waiting-file
+MinerU states: running, running, running, running, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset b2a3b44179b2dff83b824c4602796d9b03b2885683d5daaa8451ec728abba25f.jpg: score=-100;too_small:462x129
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 4ff91de1a8e456fd50df6ea16dcb3b6643335260b85dd4f0a61ed759b141f08f.jpg: score=-100;too_small:465x132
+Skip non-chart visual asset d1d396091d54e62164e53e25e2acbfcb28b057d729c489a9765701e9cdfed7fc.jpg: score=-100;too_small:1156x115
+Skip non-chart visual asset 7dd43496eb11d353bb26be5c6277fadd7e444fd8a0de7b020fda37827da05e8a.jpg: score=-100;too_small:459x162
+Skip non-chart visual asset ce34b891c8031941bd64c5808f26de6f974052052dabe133cbe9b3fa3009a27c.jpg: score=2;edge:0.28
+Neutralized WeChat title while keeping the report: 高盛：日本化工-亚洲参与者交流反馈-电子材料公司关注度与催化剂 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 8aac470b918bb9f5a6f5fcc64e508454c7b463b88e77c29af2b3aaeb6f5991ed.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 7a1f7a7053b1c614d33cf935980e58bbdda7cde32fa2d85c039dfd356b04d3d2.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Neutralized WeChat title while keeping the report: 高盛：全球宏观环境学评论-中国出口增长与进口减少对全球通胀的影响 -> 高盛：价格数据与市场变化观察
+Skip non-chart visual asset a153be2a2b7dd9592543522f1be04dad0473326fbdc155a1fbb7af6f84d0c113.jpg: score=-100;too_small:1021x90
+Skip non-chart visual asset cb28e3c761c3283c9d1dd51126c4cb8d18f9eaf338573df2a8e157dc6a152966.jpg: score=-100;too_small:298x126
+Skip non-chart visual asset 7d6846ae79463ceb3dc4a66fe033f138ad931ba43561065ba7c5fa74ec04cd6a.jpg: score=-100;too_small:1156x112
+Neutralized WeChat title while keeping the report: 高盛：意法半导体AI数据中心光互连需求可见性改善 -> 高盛：意法半导体AI与AI及近期数据观察
+Skip non-chart visual asset e6def58d67f609dacee719053f09a675b8d33a8cada82ba7fb0e1d80e205a337.jpg: score=-100;too_small:298x123
+Skip non-chart visual asset 8868be4bf4cb8ab7bfbc8db88c4a2e01d972b46a8ced9a04801f81f0ace1b491.jpg: score=-100;too_small:1021x89
+Skip non-chart visual asset 74e1dc11bd2be38b2a872dd48e237a3de75c6bd6813d810bd902884fa207afc7.jpg: score=-100;too_small:1159x112
+Neutralized WeChat title while keeping the report: 高盛：诺基亚光学订单加速与产能研究进展 -> 高盛：诺基亚光学业务与近期数据观察
+Skip non-chart visual asset f18769d05c4a8767c8997eed673afb831e81ee9bd48b304c954fdaa82ad252c0.jpg: score=-100;too_small:1156x107
+Skip non-chart visual asset 836f3bab76420001227a64245ed5d0da52415872aae603d022521a3d4dc77248.jpg: score=2;edge:0.30
+Skip non-chart visual asset 38c9649cc5eaccf0b1a110022a808f854821ca307ab24e56b71184664f2e60a6.jpg: score=0;odd_ratio:7.76,edge:0.26,contrast
+Neutralized WeChat title while keeping the report: 高盛：Moderna黑色素瘤三期数据为核心催化剂 -> 高盛：Moderna黑色素瘤三期业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260727/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
