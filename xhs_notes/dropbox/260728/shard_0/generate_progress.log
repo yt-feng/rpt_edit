@@ -1,0 +1,69 @@
+Found 31 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nas9z6oy/pdfs/0001-01-CITI-China Economics-Closing the Offshore Trust Tax Loophole-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nas9z6oy/pdfs/0002-02-Bernstein-Asia Semiconductors - Global Memory-UMC- Vanguard- Great expectations but on false assumptions--260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nas9z6oy/pdfs/0003-03-CITI-Aluminum Corporation of China -2600.HK- Key Takeaways from Site Visit-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nas9z6oy/pdfs/0004-04-CITI-Japan Electrical Equipment and Semiconductors-Feedback from our Asia investor tour-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nas9z6oy/pdfs/0005-05-CITI-Lens Tech -300433-Collaboration with Intel on Glass Substrate-260726.pdf
+MinerU attempt 1 using MINER_U batch_id=008fc50f-95e4-4a2d-b136-fdb20fc88ed8
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Neutralized WeChat title while keeping the report: 花旗：中国离岸信托税收漏洞关闭 -> 花旗：行业规则与相关数据观察
+Skip non-chart visual asset ca312126b120c7a820c2a2095304f5a28bbaa7484f4cedf70b69503554e2fc5d.jpg: score=1;square_without_chart_hint,edge:0.38,contrast,large
+Skip non-chart visual asset 4fae63c092bea0c20e94637ca7082206783aab5b7ccdeebb04759da58882ac44.jpg: score=0;square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset 6e288b98a9300ea636ca592808ae80aa5191809c5ddedc25fc433712a16c2efc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,contrast
+Skip non-chart visual asset a0f88006258b60a1646e3f07232f5644afe88f0749cad2b6b15ad518f933dd8e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
+Skip non-chart visual asset 17c80b0d7136092f7e08e0aaedfab49e209a2d6b3bf7d6920cc96a187667c3b0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,contrast
+Skip non-chart visual asset 9df8df9830504e6a4a5b594d6f98c1938522729cb238a5445de2105ebf9c9fd0.jpg: score=0;square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 51e0c9d014c623c9fe2e816144ce88337ba586cec1f8c61ca8b5faa1d618947a.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Skip non-chart visual asset dcfc37db6536f7b883bcc4b1b914af90b44feb1c11efc18f2f057bc3ae976fed.jpg: score=0;square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset d5ae4e7b86ff9bb973a5d5cb4bcbfa157e05b48f4e3fa32def31951c0f0a4d19.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset d69e3b421045a596c75c8346680352b80384cd6b5b07496f2ac6fb8b35302101.jpg: score=-100;too_small:93x93
+Skip non-chart visual asset 84140d822d442d3a48bd2bd0e099b493d0aaaf8d4c67c1da41129bd2d6b99902.jpg: score=1;odd_ratio:4.93,edge:0.22,contrast,large
+Skip non-chart visual asset 9202884e73f4cff4763254736173c89668e395f14fbd6f87e135e2526b7bb2e8.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 9f450678f570f687be572331f08b2e6b44be025fe6a068929fb658e5627b4ddf.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
+Skip non-chart visual asset 41a660caff3806596e943ef463647d379a2331361fe3c7b004f3da87713a2cb0.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset a63ef9387ba2ca746b842884e175dbc03594fc047ef8ee5fed7ed97f8fd4066f.jpg: score=-100;too_small:96x90
+Skip non-chart visual asset dccfd68e64b4db964c3542ec973412e80cc59d54a1fbdfe9de2808bac8bb4e17.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 967dfc09a32ef6f16f894ff044cf650370e7503d9d97f5a10623c970458c06ed.jpg: score=0;odd_ratio:5.43,edge:0.42,contrast
+Skip non-chart visual asset cbd6b8e9d59931cc4b08a70ec647e778919ff33b2d1bfdf890120d9343715661.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.39
+Skip non-chart visual asset 7ca54d179fc0d2f7f72618b1629a25bf1e383e1e9adb19330849d119921b417b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset a0049cba5b483af5950ade21c089a891fc9569316780df860ab7fd57dd3fcdf0.jpg: score=0;square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset 26314a5c940b3eb5efd17bca72551b85ead985051a92d9c9d4afe3f42437945a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.20,contrast,large
+Skip non-chart visual asset c359612b0446777cdea080acea6829e8498dda46effc380e38142195198192bf.jpg: score=-100;too_small:634x98
+Skip non-chart visual asset 5a258fedfce83d88a3c959e9e7ada43f76b3b04c70f9b8124ad1cee2b95f724d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset 1fe1a1ac050dc0f57a6b03f24f42d04ff114491ea2c9abad498172750ab782b4.jpg: score=1;square_without_chart_hint,edge:0.35,contrast,large
+Skip non-chart visual asset addc4c221eba606185fb5b5e70f543dfa11dc9cf711977e01f0250a0825ad3f8.jpg: score=1;square_without_chart_hint,edge:0.36,contrast,large
+Skip non-chart visual asset 62e654d7b5bf4614102834f7322c112e6ea983d2c540f7b7f16ff8d303887514.jpg: score=1;odd_ratio:4.91,edge:0.40,contrast,large
+Skip non-chart visual asset 1b0182fd7fea721a2728f4a1869a9008959f18809a652eb6a5aad318fd55e70d.jpg: score=1;odd_ratio:4.82,edge:0.42,contrast,large
+Skip non-chart visual asset e1d108df0104a522101695fd2496e4b75686e982e8fa857a00f470cccf04e710.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset 9ddc249ae609ba576980d94ebb6be63cb3e83aba8b967ae54560b05ecbd24c1b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.38,contrast
+Neutralized WeChat title while keeping the report: 伯恩斯坦：亚洲半导体-全球存储-联电-世界先进-高预期缺乏充分支撑 -> 伯恩斯坦：半导体与存储行业数据观察
+Skip non-chart visual asset e4c86222477d9b32730ad390feb0f3b3f81dbc039ab44b7d57eb612982920480.jpg: score=-100;too_small:1429x148
+Skip non-chart visual asset b13f48a80eab74531c9bcdeae8daa41d9921d31c0e17d6dd17eb37c3ddf7df2e.jpg: score=-100;too_small:431x151
+Skip non-chart visual asset e9e1e4d0dc3393e0eb2514e983f896f5fb0e1228b4de7c193d75a90410285134.jpg: score=-100;too_small:423x149
+Skip non-chart visual asset 1e77dcd8fa7c3b8e97b4270e5d4a501f22130070bff9468d2d86b0aa49feaede.jpg: score=-100;too_small:431x148
+Skip non-chart visual asset 27fa87cde4d23ff6a5315e1999a444a0d3ae74bfec732a8d66689de130e6f995.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.59,large
+Skip non-chart visual asset dc4e282b0c62d7742dc79c67990c41d05670c948e3af4e9a43e3e7ee6d2adf0a.jpg: score=-100;too_small:754x134
+Skip non-chart visual asset a43920852a7ee5db046c07b7fcf22859fa58ae99e209a94a616b07289330579b.jpg: score=-100;too_small:371x131
+Neutralized WeChat title while keeping the report: 花旗：中国铝业实地调研关键信息 -> 花旗：基础材料行业数据与主题变化观察
+Skip non-chart visual asset b4b83e1c1533db3a34cfb834185215d0b48f965d2be484cd71f0ae4d5c568169.jpg: score=-100;too_small:1431x29
+Skip non-chart visual asset ec54feff7d90c11df29857c4292c75ff256ec03980492f24b1ddeafedd16e0ec.jpg: score=-100;too_small:1431x120
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset d1e18b85f3f57f3e979e0abf4ff34886e0ab5e7155fb15ca8d2677a3e7bec555.jpg: score=-100;too_small:359x76
+Skip non-chart visual asset 8918e89b642aa124a21d83cb596da3b80b1b83204f4368d569338530e1a29089.jpg: score=1;odd_ratio:7.77,edge:0.28,contrast,large
+Skip non-chart visual asset d4965b363ed118e10b5fa6788046ff24e597486afd1eb2c10b6a0bb9da267f0a.jpg: score=1;odd_ratio:5.97,edge:0.23,contrast,large
+Skip non-chart visual asset 9aaa0cdbdc7b8cdca2106050d368228bd819b0432d50441b73daeb518a5d7a65.jpg: score=-100;too_small:365x129
+Skip non-chart visual asset dcd81bc25929d235809d78c65dc36193418f6c05694ec0e526e1b1830450f4e2.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 6cec7c1cee38185b183af53d4a1289ebd3493a43c24ddbb9b57773867d46368a.jpg: score=-100;too_small:373x82
+Skip non-chart visual asset ef15316549a6be3577c860e4e682f90147eec5db559cd80b010c244bfe76dd9c.jpg: score=-100;too_small:362x129
+Skip non-chart visual asset 2c5539299dd217c5418f95fcf7646cb270b907005cf333f25ac8c45632047356.jpg: score=-100;too_small:871x71
+Skip non-chart visual asset 53d60981e2529e1a88ca57ee7971afb83af193e4bfafe8197fdc87fdf86de08a.jpg: score=-100;too_small:373x129
+Skip non-chart visual asset 812fdddb4ac3f28780d664f211b035ccf4e28c3f7b27e85e56469763a961c15d.jpg: score=-100;too_small:1431x171
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260728/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
