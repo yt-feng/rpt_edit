@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_r__d6gkx/pdfs/0001-26-NOM-Asia Insights China- The contractionary fiscal policy stance in H1-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r__d6gkx/pdfs/0002-27-NOM-Indonesia CPO-Supercycle zone-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r__d6gkx/pdfs/0003-28-NOM-Naver Corporation-035420.KS-De-risked AIDC capex- subleasing visibility key-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r__d6gkx/pdfs/0004-29-NOM-Laopu Gold-6181.HK-Recalibrating expectation-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r__d6gkx/pdfs/0005-30-NOM-NetEase-NTES.OQ-Expect weaker 2Q26F profits on investment losses-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

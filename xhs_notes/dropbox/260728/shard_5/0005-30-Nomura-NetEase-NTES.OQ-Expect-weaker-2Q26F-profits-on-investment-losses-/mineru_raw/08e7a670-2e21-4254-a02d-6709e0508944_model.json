@@ -1,0 +1,5266 @@
+[
+    [
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.976,
+                0.813,
+                0.992
+            ],
+            "angle": 0,
+            "content": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.006,
+                0.298,
+                0.046
+            ],
+            "angle": 0,
+            "content": "NOM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.672,
+                0.0,
+                0.958,
+                0.099
+            ],
+            "angle": 0,
+            "content": "A"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.115,
+                0.327,
+                0.135
+            ],
+            "angle": 0,
+            "content": "NetEase NTES.OQ NTES US"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.743,
+                0.099,
+                0.959,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Global Markets Research"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.148,
+                0.27,
+                0.162
+            ],
+            "angle": 0,
+            "content": "EQUITY: INTERNET & NEW MEDIA",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.068,
+                0.176,
+                0.654,
+                0.199
+            ],
+            "angle": 0,
+            "content": "Expect weaker 2Q26F profits on investment losses"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.213,
+                0.56,
+                0.235
+            ],
+            "angle": 0,
+            "content": "New game performing in line; maintain Buy rating"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.251,
+                0.679,
+                0.313
+            ],
+            "angle": 0,
+            "content": "2Q26F: investment losses likely to derail an otherwise decent quarter; maintain Buy We anticipate NetEase (NTES) to report in-line revenue and better operating profit (OP), but net profit likely came in lower due to the bigger investment losses stemming from its holdings of Alibaba (BABA US, Buy) and Pinduoduo (PDD US, Neutral) shares.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.68,
+                0.405
+            ],
+            "angle": 0,
+            "content": "We have modeled for 5% y-y revenue growth to CNY29.3bn, which is largely in line with the Bloomberg consensus estimate of CNY29.4bn. 2Q was a quiet quarter for NTES' online gaming business due to a lack of new titles, but we estimate NTES' online game and VAS segment likely posted impressive growth of 6% y-y, despite a still-high base effect, driven by the resilient performance of evergreen titles such as PC FWJ, Eggy Party and WWM.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.409,
+                0.681,
+                0.47
+            ],
+            "angle": 0,
+            "content": "The gross margin (GM) of NTES' online gaming business likely expanded 2.8pp y-y to \\(73\\%\\) backed by an increased share of revenue from higher-margin self-developed PC games. As a result, the blended GM likely improved 2.5pp to \\(67.2\\%\\), better than the Street consensus of \\(66.9\\%\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.474,
+                0.676,
+                0.548
+            ],
+            "angle": 0,
+            "content": "We project GAAP operating profit (OP) likely increased a robust 20% y-y to CNY10.8bn, which is 2% above the consensus estimate of CNY10.6bn due to higher margins. Our projected GAAP operating profit margin (OPM) improved 4.5pp y-y to 37% on the back of GM expansion and spending discipline. Our non-GAAP OP likely rose 14% to CNY11.4bn.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.553,
+                0.675,
+                0.613
+            ],
+            "angle": 0,
+            "content": "While we are expecting better-than-expected OP, NTES' non-GAAP net profit likely came in at CNY9.4bn, which is 8% below consensus of CNY10.2bn due to its holdings of Alibaba and PDD shares. Based on our calculation, the mark-to-market investment loss related to these two holdings likely amounted to CNY663mn in 2Q26F.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.617,
+                0.677,
+                0.692
+            ],
+            "angle": 0,
+            "content": "NTES launched its widely-anticipated new game, Sea of Remnants (SoR) recently. The performance of this game has been in line with our expectations so far – and likely on track to generate CNY200-300mn/month in gross billing. While SoR is not a super blockbuster title like WWM, we believe its launch will still serve to accelerate NTES' game growth in 2H26F.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.696,
+                0.667,
+                0.725
+            ],
+            "angle": 0,
+            "content": "We maintain our Buy rating and TP of USD155, implying an unchanged 17x FY26F P/E, vs the current FY26F P/E of 13x.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.067,
+                0.725,
+                0.681,
+                0.928
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Year-end 31 Dec</td><td colspan=\"2\">FY25</td><td colspan=\"2\">FY26F</td><td colspan=\"2\">FY27F</td><td colspan=\"2\">FY28F</td></tr><tr><td>Currency (CNY)</td><td>Actual</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td></td></tr><tr><td>Revenue (mn)</td><td>112,626</td><td>119,723</td><td>119,723</td><td>128,358</td><td>128,358</td><td>134,258</td><td>134,258</td><td></td></tr><tr><td>Reported net profit (mn)</td><td>33,760</td><td>38,394</td><td>38,394</td><td>41,864</td><td>41,864</td><td>44,072</td><td>44,072</td><td></td></tr><tr><td>Normalised net profit (mn)</td><td>37,344</td><td>40,742</td><td>40,742</td><td>44,386</td><td>44,386</td><td>46,712</td><td>46,712</td><td></td></tr><tr><td>FD normalised EPS</td><td>58.02</td><td>63.62</td><td>63.62</td><td>69.66</td><td>69.66</td><td>73.68</td><td>73.68</td><td></td></tr><tr><td>FD norm. EPS growth (%)</td><td>11.9</td><td>9.6</td><td>9.6</td><td>9.5</td><td>9.5</td><td>5.8</td><td>5.8</td><td></td></tr><tr><td>FD normalised P/E (x)</td><td>14.7</td><td>-</td><td>12.8</td><td>-</td><td>11.7</td><td>-</td><td>11.1</td><td></td></tr><tr><td>EV/EBITDA (x)</td><td>12.8</td><td>-</td><td>9.5</td><td>-</td><td>8.6</td><td>-</td><td>7.2</td><td></td></tr><tr><td>Price/book (x)</td><td>3.3</td><td>-</td><td>2.7</td><td>-</td><td>2.4</td><td>-</td><td>2.1</td><td></td></tr><tr><td>Dividend yield (%)</td><td>2.5</td><td>-</td><td>3.0</td><td>-</td><td>3.3</td><td>-</td><td>3.4</td><td></td></tr><tr><td>ROE (%)</td><td>22.6</td><td>22.1</td><td>22.1</td><td>20.9</td><td>20.9</td><td>19.3</td><td>19.3</td><td></td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.069,
+                0.93,
+                0.266,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Source: Company data, NOM estimates"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.846,
+                0.12,
+                0.959,
+                0.138
+            ],
+            "angle": 0,
+            "content": "27 July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.696,
+                0.179,
+                0.959,
+                0.203
+            ],
+            "angle": 0,
+            "content": "Rating Remains Buy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.697,
+                0.209,
+                0.958,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Target price Remains USD 155.00",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.697,
+                0.238,
+                0.959,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Closing price 24 July 2026 USD 119.55",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.697,
+                0.271,
+                0.958,
+                0.292
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Implied upside</td><td>+29.7%</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.697,
+                0.302,
+                0.959,
+                0.333
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Market Cap (USD mn)</td><td>76,541.9</td></tr><tr><td>ADT (USD mn)</td><td>124.6</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.697,
+                0.354,
+                0.887,
+                0.369
+            ],
+            "angle": 0,
+            "content": "Relative performance chart"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.699,
+                0.367,
+                0.956,
+                0.535
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.698,
+                0.537,
+                0.828,
+                0.55
+            ],
+            "angle": 0,
+            "content": "Source: LSEG, NOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.697,
+                0.567,
+                0.847,
+                0.584
+            ],
+            "angle": 0,
+            "content": "Research Analysts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.696,
+                0.587,
+                0.904,
+                0.602
+            ],
+            "angle": 0,
+            "content": "China Internet & New Media",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.697,
+                0.602,
+                0.835,
+                0.618
+            ],
+            "angle": 0,
+            "content": "Jialong Shi - NIHK",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.696,
+                0.617,
+                0.848,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Jialong.shi@NOM.com +852 2252 1409",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.696,
+                0.646,
+                0.847,
+                0.688
+            ],
+            "angle": 0,
+            "content": "Rachel Guo - NIHK\nrachel.guo@NOM.com\n+852 2252 1400",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.75,
+                0.938,
+                0.959,
+                0.952
+            ],
+            "angle": 0,
+            "content": "Production Complete: 2026-07-27 10:52 UTC"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.149,
+                0.269,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.179,
+                0.649,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.215,
+                0.556,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.253,
+                0.676,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.268,
+                0.664,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.283,
+                0.66,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.298,
+                0.605,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.318,
+                0.662,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.333,
+                0.641,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.348,
+                0.655,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.362,
+                0.644,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.376,
+                0.675,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.391,
+                0.147,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.411,
+                0.65,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.426,
+                0.646,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.441,
+                0.677,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.456,
+                0.213,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.477,
+                0.663,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.491,
+                0.646,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.505,
+                0.673,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.519,
+                0.593,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.535,
+                0.155,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.555,
+                0.671,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.57,
+                0.629,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.659,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.599,
+                0.546,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.618,
+                0.66,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.635,
+                0.646,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.649,
+                0.623,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.664,
+                0.673,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.678,
+                0.189,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.663,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.713,
+                0.291,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.848,
+                0.121,
+                0.957,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.698,
+                0.179,
+                0.748,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.916,
+                0.181,
+                0.959,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.21,
+                0.763,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.844,
+                0.212,
+                0.956,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.698,
+                0.24,
+                0.769,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.845,
+                0.242,
+                0.956,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.7,
+                0.356,
+                0.884,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.569,
+                0.843,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.588,
+                0.903,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.697,
+                0.603,
+                0.832,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.619,
+                0.844,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.7,
+                0.632,
+                0.792,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.649,
+                0.833,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.663,
+                0.843,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.699,
+                0.676,
+                0.792,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.157,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.027,
+                0.338,
+                0.048
+            ],
+            "angle": 0,
+            "content": "Key data on NetEase"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.064,
+                0.071,
+                0.504,
+                0.134
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Performance(%)</td><td>1M</td><td>3M</td><td>12M</td><td></td><td></td></tr><tr><td>Absolute (USD)</td><td>1.6</td><td>8.1</td><td>-12.3</td><td>M cap (USDmn)</td><td>76,541.9</td></tr><tr><td>Absolute (USD)</td><td>1.6</td><td>8.1</td><td>-12.3</td><td>Free float (%)</td><td>55.6</td></tr><tr><td>Rel to NASDAQ COMPOSITE</td><td>3.6</td><td>7.6</td><td>-30.9</td><td>3-mth ADT (USDmn)</td><td>124.6</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.064,
+                0.155,
+                0.506,
+                0.685
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"6\">Income statement (CNYmn)</td></tr><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Revenue</td><td>105,295</td><td>112,626</td><td>119,723</td><td>128,358</td><td>134,258</td></tr><tr><td>Cost of goods sold</td><td>-38,302</td><td>-39,219</td><td>-39,549</td><td>-41,659</td><td>-43,428</td></tr><tr><td>Gross profit</td><td>66,993</td><td>73,406</td><td>80,173</td><td>86,700</td><td>90,830</td></tr><tr><td>SG&amp;A</td><td>-33,526</td><td>-33,924</td><td>-35,318</td><td>-37,481</td><td>-38,801</td></tr><tr><td>Employee share expense</td><td>-3,883</td><td>-3,648</td><td>-2,411</td><td>-2,585</td><td>-2,704</td></tr><tr><td>Operating profit</td><td>29,584</td><td>35,835</td><td>42,444</td><td>46,634</td><td>49,325</td></tr><tr><td>EBITDA</td><td>32,002</td><td>38,082</td><td>44,833</td><td>49,195</td><td>52,004</td></tr><tr><td>Depreciation</td><td>-2,418</td><td>-2,247</td><td>-2,389</td><td>-2,561</td><td>-2,679</td></tr><tr><td>Amortisation</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EBIT</td><td>29,584</td><td>35,835</td><td>42,444</td><td>46,634</td><td>49,325</td></tr><tr><td>Net interest expense</td><td>4,921</td><td>3,953</td><td>4,000</td><td>4,000</td><td>4,000</td></tr><tr><td>Associates &amp; JCEs</td><td>355</td><td>732</td><td>600</td><td>600</td><td>600</td></tr><tr><td>Other income</td><td>858</td><td>311</td><td>465</td><td>1,087</td><td>1,087</td></tr><tr><td>Earnings before tax</td><td>35,718</td><td>40,830</td><td>47,508</td><td>52,320</td><td>55,012</td></tr><tr><td>Income tax</td><td>-5,461</td><td>-6,033</td><td>-8,076</td><td>-9,418</td><td>-9,902</td></tr><tr><td>Net profit after tax</td><td>30,256</td><td>34,798</td><td>39,432</td><td>42,902</td><td>45,110</td></tr><tr><td>Minority interests</td><td>-559</td><td>-1,038</td><td>-1,038</td><td>-1,038</td><td>-1,038</td></tr><tr><td>Other items</td><td>3,813</td><td>3,584</td><td>2,348</td><td>2,522</td><td>2,641</td></tr><tr><td>Preferred dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Normalised NPAT</td><td>33,511</td><td>37,344</td><td>40,742</td><td>44,386</td><td>46,712</td></tr><tr><td>Extraordinary items</td><td>-3,813</td><td>-3,584</td><td>-2,348</td><td>-2,522</td><td>-2,641</td></tr><tr><td>Reported NPAT</td><td>29,698</td><td>33,760</td><td>38,394</td><td>41,864</td><td>44,072</td></tr><tr><td>Dividends</td><td>-11,879</td><td>-13,504</td><td>-15,358</td><td>-16,746</td><td>-17,629</td></tr><tr><td>Transfer to reserves</td><td>17,819</td><td>20,256</td><td>23,036</td><td>25,119</td><td>26,443</td></tr><tr><td>Valuations and ratios</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Reported P/E (x)</td><td>18.7</td><td>16.3</td><td>13.6</td><td>12.4</td><td>11.7</td></tr><tr><td>Normalised P/E (x)</td><td>16.6</td><td>14.7</td><td>12.8</td><td>11.7</td><td>11.1</td></tr><tr><td>FD normalised P/E (x)</td><td>16.6</td><td>14.7</td><td>12.8</td><td>11.7</td><td>11.1</td></tr><tr><td>Dividend yield (%)</td><td>2.2</td><td>2.5</td><td>3.0</td><td>3.3</td><td>3.4</td></tr><tr><td>Price/cashflow (x)</td><td>14.0</td><td>10.8</td><td>8.5</td><td>22.2</td><td>7.5</td></tr><tr><td>Price/book (x)</td><td>4.0</td><td>3.3</td><td>2.7</td><td>2.4</td><td>2.1</td></tr><tr><td>EV/EBITDA (x)</td><td>15.5</td><td>12.8</td><td>9.5</td><td>8.6</td><td>7.2</td></tr><tr><td>EV/EBIT (x)</td><td>16.7</td><td>13.6</td><td>10.0</td><td>9.0</td><td>7.6</td></tr><tr><td>Gross margin (%)</td><td>63.6</td><td>65.2</td><td>67.0</td><td>67.5</td><td>67.7</td></tr><tr><td>EBITDA margin (%)</td><td>30.4</td><td>33.8</td><td>37.4</td><td>38.3</td><td>38.7</td></tr><tr><td>EBIT margin (%)</td><td>28.1</td><td>31.8</td><td>35.5</td><td>36.3</td><td>36.7</td></tr><tr><td>Net margin (%)</td><td>28.2</td><td>30.0</td><td>32.1</td><td>32.6</td><td>32.8</td></tr><tr><td>Effective tax rate (%)</td><td>15.3</td><td>14.8</td><td>17.0</td><td>18.0</td><td>18.0</td></tr><tr><td>Dividend payout (%)</td><td>40.0</td><td>40.0</td><td>40.0</td><td>40.0</td><td>40.0</td></tr><tr><td>ROE (%)</td><td>22.6</td><td>22.6</td><td>22.1</td><td>20.9</td><td>19.3</td></tr><tr><td>ROA (pretax %)</td><td>19.7</td><td>23.5</td><td>26.3</td><td>27.9</td><td>28.6</td></tr><tr><td>Growth (%)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>1.8</td><td>7.0</td><td>6.3</td><td>7.2</td><td>4.6</td></tr><tr><td>EBITDA</td><td>4.0</td><td>19.0</td><td>17.7</td><td>9.7</td><td>5.7</td></tr><tr><td>Normalised EPS</td><td>3.4</td><td>11.9</td><td>9.6</td><td>9.5</td><td>5.8</td></tr><tr><td>Normalised FDEPS</td><td>3.4</td><td>11.9</td><td>9.6</td><td>9.5</td><td>5.8</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.686,
+                0.295,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Source: Company data, NOM estimates"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.516,
+                0.058,
+                0.956,
+                0.836
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"6\">Cashflow statement (CNYmn)</td></tr><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>EBITDA</td><td>32,002</td><td>38,082</td><td>44,833</td><td>49,195</td><td>52,004</td></tr><tr><td>Change in working capital</td><td>-9,958</td><td>-10,374</td><td>22,269</td><td>-18,478</td><td>24,297</td></tr><tr><td>Other operating cashflow</td><td>17,633</td><td>23,031</td><td>-5,821</td><td>-7,276</td><td>-7,495</td></tr><tr><td>Cashflow from operations</td><td>39,677</td><td>50,740</td><td>61,281</td><td>23,441</td><td>68,806</td></tr><tr><td>Capital expenditure</td><td>-2,206</td><td>-2,052</td><td>-1,133</td><td>-1,214</td><td>-1,270</td></tr><tr><td>Free cashflow</td><td>37,470</td><td>48,687</td><td>60,148</td><td>22,227</td><td>67,536</td></tr><tr><td>Reduction in investments</td><td>25,415</td><td>-17,198</td><td>-5,000</td><td>-5,000</td><td>-5,000</td></tr><tr><td>Net acquisitions</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Dec in other LT assets</td><td>1,011</td><td>1,773</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Inc in other LT liabilities</td><td>-169</td><td>112</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Adjustments</td><td>-6,134</td><td>-15,816</td><td>5,000</td><td>5,000</td><td>5,000</td></tr><tr><td>CF after investing acts</td><td>57,593</td><td>17,558</td><td>60,148</td><td>22,227</td><td>67,536</td></tr><tr><td>Cash dividends</td><td>-11,165</td><td>-13,826</td><td>-14,431</td><td>-16,052</td><td>-17,187</td></tr><tr><td>Equity issue</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Debt issue</td><td>-7,476</td><td>-5,799</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Convertible debt issue</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Others</td><td>-8,688</td><td>-917</td><td>0</td><td>0</td><td>0</td></tr><tr><td>CF from financial acts</td><td>-27,330</td><td>-20,541</td><td>-14,431</td><td>-16,052</td><td>-17,187</td></tr><tr><td>Net cashflow</td><td>30,264</td><td>-2,982</td><td>45,718</td><td>6,176</td><td>50,348</td></tr><tr><td>Beginning cash</td><td>24,206</td><td>54,470</td><td>51,487</td><td>97,205</td><td>103,380</td></tr><tr><td>Ending cash</td><td>54,470</td><td>51,487</td><td>97,205</td><td>103,380</td><td>153,729</td></tr><tr><td>Ending net debt</td><td>-54,470</td><td>-51,487</td><td>-97,205</td><td>-103,380</td><td>-153,729</td></tr><tr><td colspan=\"6\">Balance sheet (CNYmn)</td></tr><tr><td>As at 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Cash &amp; equivalents</td><td>54,470</td><td>51,487</td><td>97,205</td><td>103,380</td><td>153,729</td></tr><tr><td>Marketable securities</td><td>75,441</td><td>92,639</td><td>97,639</td><td>102,639</td><td>107,639</td></tr><tr><td>Accounts receivable</td><td>5,669</td><td>5,338</td><td>5,158</td><td>6,095</td><td>5,676</td></tr><tr><td>Inventories</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other current assets</td><td>17,745</td><td>31,151</td><td>14,770</td><td>34,463</td><td>17,033</td></tr><tr><td>Total current assets</td><td>153,325</td><td>180,615</td><td>214,773</td><td>246,578</td><td>284,077</td></tr><tr><td>LT investments</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Fixed assets</td><td>8,520</td><td>8,425</td><td>7,169</td><td>5,822</td><td>4,413</td></tr><tr><td>Goodwill</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other intangible assets</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other LT assets</td><td>34,147</td><td>32,374</td><td>32,374</td><td>32,374</td><td>32,374</td></tr><tr><td>Total assets</td><td>195,992</td><td>221,415</td><td>254,316</td><td>284,774</td><td>320,864</td></tr><tr><td>Short-term debt</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Accounts payable</td><td>721</td><td>643</td><td>2,694</td><td>823</td><td>2,844</td></tr><tr><td>Other current liabilities</td><td>48,947</td><td>51,726</td><td>55,384</td><td>59,407</td><td>63,833</td></tr><tr><td>Total current liabilities</td><td>49,668</td><td>52,369</td><td>58,078</td><td>60,230</td><td>66,677</td></tr><tr><td>Long-term debt</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Convertible debt</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other LT liabilities</td><td>3,830</td><td>3,942</td><td>3,942</td><td>3,942</td><td>3,942</td></tr><tr><td>Total liabilities</td><td>53,497</td><td>56,311</td><td>62,020</td><td>64,172</td><td>70,619</td></tr><tr><td>Minority interest</td><td>3,809</td><td>4,808</td><td>5,846</td><td>6,884</td><td>7,922</td></tr><tr><td>Preferred stock</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Common stock</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><td>Retained earnings</td><td>118,454</td><td>136,251</td><td>160,551</td><td>186,431</td><td>214,153</td></tr><tr><td>Proposed dividends</td><td>11,879</td><td>13,504</td><td>15,358</td><td>16,746</td><td>17,629</td></tr><tr><td>Other equity and reserves</td><td>8,350</td><td>10,538</td><td>10,538</td><td>10,538</td><td>10,538</td></tr><tr><td>Total shareholders&#x27; equity</td><td>138,686</td><td>160,296</td><td>186,450</td><td>213,718</td><td>242,323</td></tr><tr><td>Total equity &amp; liabilities</td><td>195,992</td><td>221,415</td><td>254,316</td><td>284,774</td><td>320,864</td></tr><tr><td colspan=\"6\">Liquidity (x)</td></tr><tr><td>Current ratio</td><td>3.09</td><td>3.45</td><td>3.70</td><td>4.09</td><td>4.26</td></tr><tr><td>Interest cover</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan=\"6\">Leverage</td></tr><tr><td>Net debt/EBITDA (x)</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr><tr><td colspan=\"6\">Per share</td></tr><tr><td>Reported EPS (CNY)</td><td>45.96</td><td>52.45</td><td>59.95</td><td>65.70</td><td>69.51</td></tr><tr><td>Norm EPS (CNY)</td><td>51.86</td><td>58.02</td><td>63.62</td><td>69.66</td><td>73.68</td></tr><tr><td>FD norm EPS (CNY)</td><td>51.86</td><td>58.02</td><td>63.62</td><td>69.66</td><td>73.68</td></tr><tr><td>BVPS (CNY)</td><td>216.67</td><td>251.53</td><td>294.04</td><td>338.73</td><td>386.00</td></tr><tr><td>DPS (CNY)</td><td>18.56</td><td>21.19</td><td>24.22</td><td>26.54</td><td>28.08</td></tr><tr><td colspan=\"6\">Activity (days)</td></tr><tr><td>Days receivable</td><td>21.0</td><td>17.8</td><td>16.0</td><td>16.0</td><td>16.0</td></tr><tr><td>Days inventory</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Days payable</td><td>7.6</td><td>6.3</td><td>15.4</td><td>15.4</td><td>15.5</td></tr><tr><td>Cash cycle</td><td>13.3</td><td>11.5</td><td>0.6</td><td>0.6</td><td>0.6</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.517,
+                0.836,
+                0.747,
+                0.848
+            ],
+            "angle": 0,
+            "content": "Source: Company data, NOM estimates"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.028,
+                0.336,
+                0.048
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.157,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.921,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.033,
+                0.203,
+                0.048
+            ],
+            "angle": 0,
+            "content": "Company profile"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.058,
+                0.922,
+                0.084
+            ],
+            "angle": 0,
+            "content": "NetEase is one of the largest game developers and publishers in China. The company also provides a variety of other services including music streaming, live broadcasting, news service, and education service, among others.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.09,
+                0.257,
+                0.106
+            ],
+            "angle": 0,
+            "content": "Valuation Methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.115,
+                0.932,
+                0.141
+            ],
+            "angle": 0,
+            "content": "We value the company's online gaming business at US73bn based on 17x FY26F P/E. We value NTES' music business at USD2bn based on its latest market cap. The resulting TP is USD155. The benchmark index for the company is Nasdaq Composite.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.148,
+                0.539,
+                0.163
+            ],
+            "angle": 0,
+            "content": "Risks that may impede the achievement of the target price",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.172,
+                0.861,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Downside risks: 1) bigger margin contraction from incubated business; and 2) lower-than-expected grossing of legacy titles like FWJ.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.215,
+                0.106,
+                0.229
+            ],
+            "angle": 0,
+            "content": "ESG"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.24,
+                0.682,
+                0.254
+            ],
+            "angle": 0,
+            "content": "NetEase's business is environment-friendly as it does not cause pollution or generate greenhouse gas.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.035,
+                0.201,
+                0.048
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.058,
+                0.919,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.072,
+                0.554,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.091,
+                0.253,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.116,
+                0.929,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.129,
+                0.719,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.149,
+                0.534,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.174,
+                0.858,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.217,
+                0.106,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.242,
+                0.679,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.157,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.072,
+                0.031,
+                0.324,
+                0.045
+            ],
+            "angle": 0,
+            "content": "Fig. 1: NTES: 2Q26F results preview"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.078,
+                0.052,
+                0.874,
+                0.212
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"8\">2Q26F results preview</td></tr><tr><td>CNYmn</td><td>2Q26F</td><td>1Q26</td><td>2Q25</td><td>YoY</td><td>QoQ</td><td>Cons.</td><td>vs Cons.</td></tr><tr><td>Revenues</td><td>29,291</td><td>30,591</td><td>27,892</td><td>5%</td><td>-4%</td><td>29,435</td><td>-0.5%</td></tr><tr><td>Gross profit</td><td>19,697</td><td>21,217</td><td>18,052</td><td>9%</td><td>-7%</td><td>19,706</td><td>0%</td></tr><tr><td>Gross margin</td><td>67.2%</td><td>69.4%</td><td>64.7%</td><td>2.5ppt</td><td>-2.1ppt</td><td>66.9%</td><td>0.3ppt</td></tr><tr><td>Operating profit</td><td>10,841</td><td>12,657</td><td>9,061</td><td>20%</td><td>-14%</td><td>10,628</td><td>2%</td></tr><tr><td>Operating margin</td><td>37.0%</td><td>41.4%</td><td>32.5%</td><td>4.5ppt</td><td>-4.4ppt</td><td>36.1%</td><td>0.9ppt</td></tr><tr><td>Non-GAAP op</td><td>11,431</td><td>13,273</td><td>10,007</td><td>14%</td><td>-14%</td><td>NA</td><td>NA</td></tr><tr><td>Non-GAAP op margin</td><td>39.0%</td><td>43.4%</td><td>35.9%</td><td>3.1ppt</td><td>-4.4ppt</td><td>NA</td><td>NA</td></tr><tr><td>Non-GAAP net profit</td><td>9,411</td><td>11,275</td><td>9,532</td><td>-1%</td><td>-17%</td><td>10,184</td><td>-8%</td></tr><tr><td>Non-GAAP net margin</td><td>32.1%</td><td>36.9%</td><td>34.2%</td><td>-2.0ppt</td><td>-4.7ppt</td><td>34.6%</td><td>-2.5ppt</td></tr><tr><td>Non-GAAP EPADS (CNY)</td><td>14.64</td><td>17.46</td><td>14.81</td><td>-1%</td><td>-16%</td><td>15.64</td><td>-6%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.218,
+                0.41,
+                0.231
+            ],
+            "angle": 0,
+            "content": "Source: Company data, Bloomberg Finance L.P., NOM estimates"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.072,
+                0.258,
+                0.352,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Fig. 2: NTES: Operating metrics preview"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.078,
+                0.278,
+                0.676,
+                0.529
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"6\">Segment results</td></tr><tr><td>CNYmn</td><td>2Q26F</td><td>1Q26</td><td>2Q25</td><td>YoY</td><td>QoQ</td></tr><tr><td>Revenue</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Game and related VAS</td><td>24,220</td><td>25,713</td><td>22,806</td><td>6.2%</td><td>-5.8%</td></tr><tr><td>Youdao</td><td>1,418</td><td>1,348</td><td>1,418</td><td>0.0%</td><td>5.2%</td></tr><tr><td>Cloud Music</td><td>1,988</td><td>1,981</td><td>1,969</td><td>1.0%</td><td>0.4%</td></tr><tr><td>Innovative businesses and others</td><td>1,665</td><td>1,549</td><td>1,699</td><td>-2.0%</td><td>7.5%</td></tr><tr><td>Total net revenue</td><td>29,291</td><td>30,591</td><td>27,892</td><td>5.0%</td><td>-4.2%</td></tr><tr><td>Gross profit</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Game and related VAS</td><td>17,681</td><td>19,231</td><td>16,014</td><td>10.4%</td><td>-8.1%</td></tr><tr><td>Youdao</td><td>610</td><td>602</td><td>609</td><td>0.0%</td><td>1.2%</td></tr><tr><td>Cloud Music</td><td>716</td><td>734</td><td>710</td><td>0.8%</td><td>-2.5%</td></tr><tr><td>Innovative businesses and others</td><td>691</td><td>650</td><td>719</td><td>-3.9%</td><td>6.3%</td></tr><tr><td>Total gross profit</td><td>19,697</td><td>21,217</td><td>18,052</td><td>9.1%</td><td>-7.2%</td></tr><tr><td>Gross profit margin</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Game and related VAS</td><td>73.0%</td><td>74.8%</td><td>70.2%</td><td>2.8ppt</td><td>-1.8ppt</td></tr><tr><td>Youdao</td><td>43.0%</td><td>44.7%</td><td>43.0%</td><td>0.0ppt</td><td>-1.7ppt</td></tr><tr><td>Cloud Music</td><td>36.0%</td><td>37.1%</td><td>36.1%</td><td>-0.1ppt</td><td>-1.1ppt</td></tr><tr><td>Innovative businesses and others</td><td>41.5%</td><td>42.0%</td><td>42.3%</td><td>-0.8ppt</td><td>-0.5ppt</td></tr><tr><td>Gross profit margin</td><td>67.2%</td><td>69.4%</td><td>64.7%</td><td>2.5ppt</td><td>-2.1ppt</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.073,
+                0.535,
+                0.286,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Source: Company data, NOM estimates"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.073,
+                0.574,
+                0.257,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Fig. 3: NTES: SOTP model"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.076,
+                0.591,
+                0.88,
+                0.789
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Valuation (USD bn)</td><td>Stake</td><td>Attributable valuation (USD bn)</td><td>Valuation methodology</td><td>Note</td></tr><tr><td>Online games</td><td>73</td><td>100%</td><td>73</td><td>17x FY26F P/E</td><td>10% discount to global peers&#x27; average</td></tr><tr><td>Cloud Music (9899 HK, not rated)</td><td>3.1</td><td>59%</td><td>1.8</td><td></td><td>In line with the latest market cap for Cloud Music</td></tr><tr><td>NetEase Youdao (DAO US, not rated)</td><td>1.5</td><td>57%</td><td>0.8</td><td></td><td>Based on Youdao&#x27;s latest market cap</td></tr><tr><td>Gross EV</td><td></td><td></td><td>76</td><td></td><td></td></tr><tr><td>Holding discount*</td><td></td><td></td><td>30%</td><td></td><td></td></tr><tr><td>Net EV</td><td></td><td></td><td>75.0</td><td></td><td></td></tr><tr><td>Net Cash</td><td></td><td></td><td>24</td><td></td><td></td></tr><tr><td>Market cap</td><td></td><td></td><td>99</td><td></td><td></td></tr><tr><td>TP (USD)</td><td></td><td></td><td>155</td><td></td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.792,
+                0.486,
+                0.803
+            ],
+            "angle": 0,
+            "content": "Note: The holding discount only applies to the Cloud Music and Youdao businesses."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.073,
+                0.812,
+                0.287,
+                0.823
+            ],
+            "angle": 0,
+            "content": "Source: Company data, NOM estimates"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.073,
+                0.802,
+                0.4,
+                0.812
+            ],
+            "angle": 0,
+            "content": "Note: Market cap for Cloud Music and Youdao as of 20 May 2026."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.158,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.848,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.039,
+                0.269,
+                0.064
+            ],
+            "angle": 0,
+            "content": "Appendix A-1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.076,
+                0.636,
+                0.105
+            ],
+            "angle": 0,
+            "content": "This report has been produced by NOM International (Hong Kong) Ltd. (NIHK), Hong Kong. See Disclaimers for NOM Group entity details.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.118,
+                0.271,
+                0.136
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.15,
+                0.93,
+                0.224
+            ],
+            "angle": 0,
+            "content": "We, Rachel Guo and Jialong Shi, hereby certify (1) that the views expressed in this Research report accurately reflect our personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of our compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of our compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.073,
+                0.242,
+                0.424,
+                0.259
+            ],
+            "angle": 0,
+            "content": "Issuer Specific Regulatory Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.072,
+                0.276,
+                0.901,
+                0.308
+            ],
+            "angle": 0,
+            "content": "The terms \"NOM\" and \"NOM Group\" used herein refer to NOM Holdings, Inc. and its affiliates and subsidiaries, including NOM Securities International, Inc. ('NSI') and Instinet, LLC ('ILLC'), U. S. registered broker dealers and members of SIPC.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.073,
+                0.321,
+                0.289,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Materially mentioned issuers"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.072,
+                0.334,
+                0.929,
+                0.384
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Issuer</td><td>Ticker</td><td>Price</td><td>Price date</td><td>Stock rating</td><td>Sector rating</td><td>Disclosures</td></tr><tr><td>NetEase</td><td>9999 HK</td><td>HKD 191.00</td><td>27-Jul-2026</td><td>Buy</td><td>N/A</td><td>A10</td></tr><tr><td>NetEase</td><td>NTES US</td><td>USD 119.55</td><td>24-Jul-2026</td><td>Buy</td><td>N/A</td><td>A10</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.41,
+                0.7,
+                0.423
+            ],
+            "angle": 0,
+            "content": "A10 The NOM Group is a registered market maker in the securities / related derivatives of the issuer.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.076,
+                0.444,
+                0.938,
+                0.759
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.761,
+                0.449,
+                0.773
+            ],
+            "angle": 0,
+            "content": "For explanation of ratings refer to the stock rating keys located after chart(s)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.774,
+                0.922,
+                0.808
+            ],
+            "angle": 0,
+            "content": "Valuation Methodology We value the company's online gaming business at US78bn based on 17x FY26F P/E. We value NTES' music business at USD4.2bn based on its latest market cap. The resulting TP is HKD249. The benchmark index for the company is the Hang Seng Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.807,
+                0.887,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Risks that may impede the achievement of the target price Downside risks include: 1) bigger margin contraction from incubated businesses; and 2) lower-than-expected grossing of legacy mobile titles like FWJ.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.039,
+                0.266,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.078,
+                0.633,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.092,
+                0.364,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.12,
+                0.267,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.153,
+                0.927,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.167,
+                0.899,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.182,
+                0.924,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.197,
+                0.901,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.211,
+                0.172,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.243,
+                0.42,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.278,
+                0.898,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.294,
+                0.766,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.411,
+                0.696,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.775,
+                0.893,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.786,
+                0.918,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.797,
+                0.299,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.806,
+                0.882,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.819,
+                0.689,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.157,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.921,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.506,
+                0.033,
+                0.816,
+                0.047
+            ],
+            "angle": 0,
+            "content": "USD 119.55 (24-Jul-2026) Buy (Sector rating: N/A)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.08,
+                0.048,
+                0.937,
+                0.337
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.345,
+                0.449,
+                0.356
+            ],
+            "angle": 0,
+            "content": "For explanation of ratings refer to the stock rating keys located after chart(s)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.357,
+                0.908,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Valuation Methodology We value the company's online gaming business at US73bn based on 17x FY26F P/E. We value NTES' music business at USD2bn based on its latest market cap. The resulting TP is USD155. The benchmark index for the company is Nasdaq Composite.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.39,
+                0.904,
+                0.416
+            ],
+            "angle": 0,
+            "content": "Risks that may impede the achievement of the target price Downside risks: 1) bigger margin contraction from incubated business; and 2) lower-than-expected grossing of legacy titles like FWJ.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.428,
+                0.27,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.456,
+                0.546,
+                0.47
+            ],
+            "angle": 0,
+            "content": "Online availability of research and conflict-of-interest disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.48,
+                0.741,
+                0.493
+            ],
+            "angle": 0,
+            "content": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.495,
+                0.927,
+                0.523
+            ],
+            "angle": 0,
+            "content": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.538,
+                0.928,
+                0.596
+            ],
+            "angle": 0,
+            "content": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.61,
+                0.933,
+                0.655
+            ],
+            "angle": 0,
+            "content": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.666,
+                0.354,
+                0.681
+            ],
+            "angle": 0,
+            "content": "Distribution of ratings (NOM Group)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.69,
+                0.642,
+                0.703
+            ],
+            "angle": 0,
+            "content": "The distribution of all ratings published by NOM Group Global Equity Research is as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.705,
+                0.928,
+                0.747
+            ],
+            "angle": 0,
+            "content": "58% have been assigned a Buy rating which, for purposes of mandatory disclosures, are classified as a Buy rating; 33% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services** by the NOM Group.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.748,
+                0.919,
+                0.792
+            ],
+            "angle": 0,
+            "content": "39% have been assigned a Neutral rating which, for purposes of mandatory disclosures, is classified as a Hold rating; 57% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.792,
+                0.919,
+                0.836
+            ],
+            "angle": 0,
+            "content": "3% have been assigned a Reduce rating which, for purposes of mandatory disclosures, are classified as a Sell rating; 15% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.851,
+                0.557,
+                0.864
+            ],
+            "angle": 0,
+            "content": "*The NOM Group as defined in the Disclaimer section at the end of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.865,
+                0.372,
+                0.879
+            ],
+            "angle": 0,
+            "content": "** As defined by the EU Market Abuse Regulation",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.892,
+                0.595,
+                0.907
+            ],
+            "angle": 0,
+            "content": "Definition of NOM Group's equity research rating system and sectors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.916,
+                0.921,
+                0.945
+            ],
+            "angle": 0,
+            "content": "The rating system is a relative system, indicating expected performance against a specific benchmark identified for each individual stock, subject to limited management discretion. An analyst's target price is an assessment of the current intrinsic fair value of the stock based on an",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.358,
+                0.893,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.37,
+                0.905,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.382,
+                0.283,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.39,
+                0.901,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.402,
+                0.554,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.43,
+                0.266,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.458,
+                0.543,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.481,
+                0.736,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.495,
+                0.924,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.51,
+                0.617,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.54,
+                0.925,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.554,
+                0.921,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.569,
+                0.924,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.914,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.613,
+                0.93,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.627,
+                0.888,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.642,
+                0.779,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.667,
+                0.351,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.693,
+                0.638,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.707,
+                0.924,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.722,
+                0.925,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.736,
+                0.495,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.751,
+                0.915,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.765,
+                0.915,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.779,
+                0.517,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.795,
+                0.915,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.809,
+                0.915,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.823,
+                0.522,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.852,
+                0.554,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.865,
+                0.368,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.893,
+                0.592,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.918,
+                0.886,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.932,
+                0.916,
+                0.942
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.158,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.848,
+                0.0,
+                0.921,
+                0.01
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.026,
+                0.922,
+                0.069
+            ],
+            "angle": 0,
+            "content": "appropriate valuation methodology determined by the analyst. Valuation methodologies include, but are not limited to, discounted cash flow analysis, expected return on equity and multiple analysis. Analysts may also indicate expected absolute upside/downside relative to the stated target price, defined as (target price - current price)/current price.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.082,
+                0.138,
+                0.095
+            ],
+            "angle": 0,
+            "content": "STOCKS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.106,
+                0.931,
+                0.237
+            ],
+            "angle": 0,
+            "content": "A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months. A rating of 'Suspended', indicates that the rating, target price and estimates have been suspended temporarily to comply with applicable regulations and/or firm policies. Securities and/or companies that are labelled as 'Not rated' or shown as 'No rating' are not in regular research coverage. Investors should not expect continuing or additional information from NOM relating to such securities and/or companies. Benchmarks are as follows: United States/Europe/Asia ex-Japan: please see valuation methodologies for explanations of relevant benchmarks for stocks, which can be accessed at: http://go.NOMnow.com/research/m/Disclosures; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia, unless otherwise stated in the valuation methodology; Japan: Russell/NOM Large Cap.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.249,
+                0.148,
+                0.263
+            ],
+            "angle": 0,
+            "content": "SECTORS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.273,
+                0.93,
+                0.346
+            ],
+            "angle": 0,
+            "content": "A 'Bullish' stance, indicates that the analyst expects the sector to outperform the Benchmark during the next 12 months. A 'Neutral' stance, indicates that the analyst expects the sector to perform in line with the Benchmark during the next 12 months. A 'Bearish' stance, indicates that the analyst expects the sector to underperform the Benchmark during the next 12 months. Sectors that are labelled as 'Not rated' or shown as 'N/A' are not assigned ratings. Benchmarks are as follows: United States: S&P 500; Europe: Dow Jones STOXX 600; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia. Japan/Asia ex-Japan: Sector ratings are not assigned.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.358,
+                0.162,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Target Price"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.382,
+                0.933,
+                0.426
+            ],
+            "angle": 0,
+            "content": "A Target Price, if discussed, indicates the analyst's forecast for the share price with a 12-month time horizon, reflecting in part the analyst's estimates for the company's earnings. The achievement of any target price may be impeded by general market and macroeconomic trends, and by other risks related to the company or the market, and may not occur if the company's earnings differ from estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.439,
+                0.169,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Disclaimers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.465,
+                0.934,
+                0.682
+            ],
+            "angle": 0,
+            "content": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.684,
+                0.908,
+                0.772
+            ],
+            "angle": 0,
+            "content": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.774,
+                0.934,
+                0.949
+            ],
+            "angle": 0,
+            "content": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.027,
+                0.901,
+                0.037
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.043,
+                0.917,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.057,
+                0.457,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.083,
+                0.136,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.107,
+                0.888,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.122,
+                0.918,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.136,
+                0.928,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.151,
+                0.914,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.166,
+                0.876,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.18,
+                0.917,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.195,
+                0.804,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.209,
+                0.91,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.224,
+                0.503,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.251,
+                0.146,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.275,
+                0.906,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.29,
+                0.927,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.304,
+                0.921,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.317,
+                0.893,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.333,
+                0.726,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.36,
+                0.159,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.385,
+                0.898,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.399,
+                0.929,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.413,
+                0.778,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.44,
+                0.167,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.466,
+                0.864,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.481,
+                0.894,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.495,
+                0.927,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.509,
+                0.862,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.525,
+                0.879,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.539,
+                0.903,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.553,
+                0.93,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.568,
+                0.908,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.582,
+                0.93,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.597,
+                0.898,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.611,
+                0.883,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.626,
+                0.836,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.64,
+                0.921,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.879,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.67,
+                0.497,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.685,
+                0.88,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.704,
+                0.864,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.722,
+                0.904,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.739,
+                0.864,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.759,
+                0.455,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.775,
+                0.92,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.789,
+                0.888,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.805,
+                0.893,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.819,
+                0.874,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.834,
+                0.925,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.848,
+                0.93,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.863,
+                0.917,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.878,
+                0.916,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.892,
+                0.917,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.907,
+                0.925,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.922,
+                0.924,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.936,
+                0.718,
+                0.945
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.158,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.026,
+                0.932,
+                0.096
+            ],
+            "angle": 0,
+            "content": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.099,
+                0.933,
+                0.199
+            ],
+            "angle": 0,
+            "content": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.201,
+                0.933,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.288,
+                0.93,
+                0.374
+            ],
+            "angle": 0,
+            "content": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.376,
+                0.935,
+                0.738
+            ],
+            "angle": 0,
+            "content": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.739,
+                0.933,
+                0.795
+            ],
+            "angle": 0,
+            "content": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.797,
+                0.932,
+                0.898
+            ],
+            "angle": 0,
+            "content": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.899,
+                0.928,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.028,
+                0.923,
+                0.04
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.041,
+                0.932,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.055,
+                0.913,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.072,
+                0.922,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.086,
+                0.189,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.099,
+                0.921,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.115,
+                0.918,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.129,
+                0.93,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.144,
+                0.918,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.157,
+                0.926,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.172,
+                0.924,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.188,
+                0.211,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.202,
+                0.93,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.216,
+                0.89,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.232,
+                0.882,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.246,
+                0.927,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.26,
+                0.924,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.275,
+                0.238,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.289,
+                0.927,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.304,
+                0.924,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.319,
+                0.919,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.334,
+                0.89,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.348,
+                0.921,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.362,
+                0.436,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.375,
+                0.902,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.39,
+                0.882,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.404,
+                0.903,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.42,
+                0.904,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.434,
+                0.9,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.448,
+                0.889,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.463,
+                0.907,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.478,
+                0.923,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.492,
+                0.921,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.507,
+                0.926,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.522,
+                0.911,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.536,
+                0.902,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.55,
+                0.9,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.565,
+                0.896,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.58,
+                0.931,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.594,
+                0.922,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.609,
+                0.913,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.623,
+                0.916,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.638,
+                0.93,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.653,
+                0.918,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.667,
+                0.854,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.682,
+                0.925,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.696,
+                0.927,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.711,
+                0.929,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.725,
+                0.688,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.922,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.754,
+                0.93,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.769,
+                0.891,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.784,
+                0.404,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.799,
+                0.89,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.812,
+                0.921,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.829,
+                0.888,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.841,
+                0.928,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.857,
+                0.921,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.871,
+                0.916,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.886,
+                0.589,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.9,
+                0.922,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.915,
+                0.922,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.928,
+                0.854,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.943,
+                0.901,
+                0.955
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.158,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.026,
+                0.905,
+                0.068
+            ],
+            "angle": 0,
+            "content": "illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.07,
+                0.928,
+                0.141
+            ],
+            "angle": 0,
+            "content": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.143,
+                0.926,
+                0.199
+            ],
+            "angle": 0,
+            "content": "The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.201,
+                0.919,
+                0.287
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.288,
+                0.928,
+                0.344
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (\"NFPE\"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.346,
+                0.923,
+                0.388
+            ],
+            "angle": 0,
+            "content": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.39,
+                0.848,
+                0.403
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.405,
+                0.527,
+                0.417
+            ],
+            "angle": 0,
+            "content": "This document has also been approved for distribution in Malaysia by NSM.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.419,
+                0.932,
+                0.636
+            ],
+            "angle": 0,
+            "content": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.637,
+                0.935,
+                0.767
+            ],
+            "angle": 0,
+            "content": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia ('Saudi Arabia') or a 'Market Counterparty' or a 'Professional Client' (as defined by the Dubai Financial Services Authority) in the United Arab Emirates ('UAE') or a 'Market Counterparty' or a 'Business Customer' (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar ('Qatar') by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a 'Market Counterparty' or a 'Professional Client' in the UAE or a 'Market Counterparty' or a 'Business Customer' in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.768,
+                0.687,
+                0.781
+            ],
+            "angle": 0,
+            "content": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.782,
+                0.929,
+                0.898
+            ],
+            "angle": 0,
+            "content": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.899,
+                0.934,
+                0.956
+            ],
+            "angle": 0,
+            "content": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.958,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.028,
+                0.882,
+                0.038
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.042,
+                0.901,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.057,
+                0.196,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.07,
+                0.927,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.086,
+                0.901,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.099,
+                0.916,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.115,
+                0.901,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.13,
+                0.771,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.143,
+                0.922,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.158,
+                0.922,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.173,
+                0.918,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.187,
+                0.257,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.202,
+                0.913,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.217,
+                0.899,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.232,
+                0.914,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.246,
+                0.914,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.261,
+                0.874,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.274,
+                0.458,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.289,
+                0.89,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.304,
+                0.925,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.317,
+                0.909,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.333,
+                0.12,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.348,
+                0.919,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.362,
+                0.919,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.377,
+                0.736,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.391,
+                0.843,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.406,
+                0.522,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.421,
+                0.903,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.435,
+                0.898,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.449,
+                0.905,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.464,
+                0.891,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.479,
+                0.922,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.493,
+                0.903,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.507,
+                0.926,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.522,
+                0.916,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.537,
+                0.878,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.551,
+                0.89,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.566,
+                0.929,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.581,
+                0.927,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.595,
+                0.906,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.609,
+                0.909,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.624,
+                0.213,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.638,
+                0.922,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.653,
+                0.932,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.668,
+                0.921,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.682,
+                0.911,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.929,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.711,
+                0.931,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.726,
+                0.861,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.916,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.755,
+                0.221,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.769,
+                0.683,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.783,
+                0.918,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.798,
+                0.901,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.812,
+                0.926,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.828,
+                0.893,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.843,
+                0.89,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.857,
+                0.913,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.871,
+                0.89,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.886,
+                0.788,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.9,
+                0.928,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.915,
+                0.93,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.928,
+                0.901,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.944,
+                0.898,
+                0.954
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.157,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | NetEase"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.921,
+                0.009
+            ],
+            "angle": 0,
+            "content": "27 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.026,
+                0.384,
+                0.038
+            ],
+            "angle": 0,
+            "content": "offering under the laws of the Republic of Indonesia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.04,
+                0.932,
+                0.201
+            ],
+            "angle": 0,
+            "content": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, \"Offshore Issuers\") that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.215,
+                0.927,
+                0.257
+            ],
+            "angle": 0,
+            "content": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.259,
+                0.93,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.303,
+                0.373,
+                0.315
+            ],
+            "angle": 0,
+            "content": "http://go.NOMnow.com/research/m/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.317,
+                0.609,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Copyright © 2026 NOM International (Hong Kong) Ltd., Hong Kong. All rights reserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.958,
+                0.939,
+                0.969
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.028,
+                0.381,
+                0.037
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.042,
+                0.913,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.056,
+                0.906,
+                0.065
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.071,
+                0.919,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.085,
+                0.931,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.1,
+                0.894,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.114,
+                0.914,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.128,
+                0.904,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.143,
+                0.875,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.158,
+                0.885,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.173,
+                0.901,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.187,
+                0.922,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.217,
+                0.924,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.232,
+                0.873,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.246,
+                0.18,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.26,
+                0.928,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.275,
+                0.919,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.29,
+                0.799,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.304,
+                0.368,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.318,
+                0.606,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
