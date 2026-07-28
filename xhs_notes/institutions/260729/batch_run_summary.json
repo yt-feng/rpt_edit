@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/BIS_AI-and-the-global-economy-implications-for-central-banks_267239e2.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0001-BIS_AI-and-the-global-economy-implications-for-central-banks_267239e2.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_South-Africa-Workshop-on-Fraud-and-Investigations-Involving-_86f5544c.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0002-IMF_South-Africa-Workshop-on-Fraud-and-Investigations-Involving-_86f5544c.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Economic-Surveys-Malaysia-2026_9691f04c.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0004-OECD_OECD-Economic-Surveys-Malaysia-2026_9691f04c.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Private-Finance-Mobilisation-Report-2026_71bdc76f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0005-OECD_Private-Finance-Mobilisation-Report-2026_71bdc76f.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5.pdf",
+          "batch_file": "/tmp/pdf_batch_002_9hnp1z_9/pdfs/0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

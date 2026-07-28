@@ -1,0 +1,80 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_002_9hnp1z_9/pdfs/0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "世界贸易组织",
+    "cover_short_title": "土耳其电动车额外关税",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "世界贸易组织：土耳其电动汽车措施被裁定违反GATT",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5.pdf",
+      "cleaned_source_title": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+      "institution_name": "世界贸易组织",
+      "required_terms": [],
+      "deterministic_fallback": "世界贸易组织：0006WTOWTOpanelissue",
+      "raw_candidates": [
+        "世界贸易组织：土耳其电动汽车措施被裁定违反GATT",
+        "世界贸易组织：土耳其电动汽车附加关税与本地化要求违反GATT",
+        "世界贸易组织：土耳其电动汽车措施违反GATT与最惠国待遇原则"
+      ],
+      "cleaned_candidates": [
+        "世界贸易组织：土耳其电动汽车措施被裁定违反GATT",
+        "世界贸易组织：土耳其电动汽车附加关税与本地化要求违反GATT",
+        "世界贸易组织：土耳其电动汽车措施违反GATT与最惠国待遇原则",
+        "世界贸易组织：0006WTOWTOpanelissue",
+        "世界贸易组织：1.区域贸易协定例外不适用于委内瑞拉"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "世界贸易组织：土耳其电动汽车附加关税与本地化要求违反GATT",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "世界贸易组织：0006WTOWTOpanelissue",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "世界贸易组织：1.区域贸易协定例外不适用于委内瑞拉",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "世界贸易组织：土耳其电动汽车措施被裁定违反GATT",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "世界贸易组织：土耳其电动汽车措施被裁定违反GATT"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

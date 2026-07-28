@@ -1,0 +1,3065 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.089,
+                0.082,
+                0.337,
+                0.141
+            ],
+            "angle": 0,
+            "content": "BIS"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.085,
+                0.382,
+                0.524,
+                0.446
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.728,
+                0.475,
+                0.95,
+                0.527
+            ],
+            "angle": 0,
+            "content": "No 130"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.084,
+                0.627,
+                0.685,
+                0.71
+            ],
+            "angle": 0,
+            "content": "AI and the global economy: implications for central banks",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.728,
+                0.939,
+                0.787
+            ],
+            "angle": 0,
+            "content": "Iñaki Aldasoro, Leonardo Gambacorta, Enisse Kharroubi and Matthias Rottner",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.096,
+                0.919,
+                0.27,
+                0.946
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.378,
+                0.529,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.476,
+                0.952,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.627,
+                0.646,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.671,
+                0.683,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.728,
+                0.936,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.759,
+                0.32,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.391,
+                0.876,
+                0.502
+            ],
+            "angle": 0,
+            "content": "BIS Bulletins are written by staff members of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks. The authors thank Pablo Hernández de Cos, Phurichai Rungcharoenkitkul, Olivier Sirello and Philip Wooldridge for helpful comments and suggestions, Adam Cap, Andrew Li and Emese Kuruc for excellent statistical assistance and Nicola Faessler for administrative support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.508,
+                0.617,
+                0.524
+            ],
+            "angle": 0,
+            "content": "The editor of the BIS Bulletin series are Gaston Gelos and Frank Smets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.714,
+                0.549,
+                0.731
+            ],
+            "angle": 0,
+            "content": "This publication is available on the BIS website (www.bis.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.783,
+                0.875,
+                0.815
+            ],
+            "angle": 0,
+            "content": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.09,
+                0.884,
+                0.347,
+                0.916
+            ],
+            "angle": 0,
+            "content": "ISSN: 2708-0420 (online)\nISBN: 978-92-9259-971-3 (online)"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.392,
+                0.871,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.407,
+                0.871,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.425,
+                0.871,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.44,
+                0.871,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.455,
+                0.871,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.471,
+                0.871,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.488,
+                0.29,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.509,
+                0.614,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.716,
+                0.547,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.945,
+                0.873,
+                0.956
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.086,
+                0.23,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Iñaki Aldasoro"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.285,
+                0.086,
+                0.458,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Leonardo Gambacorta"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.099,
+                0.107,
+                0.23,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Inaki.aldasoro@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.525,
+                0.085,
+                0.654,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Enisse Kharroubi"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.282,
+                0.107,
+                0.458,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Leonardo.Gambacorta@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.51,
+                0.107,
+                0.654,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Enisse.Kharroubi@bis.org"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.75,
+                0.086,
+                0.88,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Matthias Rottner"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.737,
+                0.107,
+                0.881,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Matthias.Rottner@bis.org"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.089,
+                0.187,
+                0.779,
+                0.211
+            ],
+            "angle": 0,
+            "content": "AI and the global economy: implications for central banks"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.257,
+                0.218,
+                0.275
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.281,
+                0.877,
+                0.316
+            ],
+            "angle": 0,
+            "content": "- The AI boom is driving a large, increasingly debt-financed investment surge and boosting trade and equity markets, generating sizeable terms-of-trade and wealth effects that differ across countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.322,
+                0.876,
+                0.356
+            ],
+            "angle": 0,
+            "content": "- The productivity payoff from AI, though potentially large, remains uncertain and uneven, across both sectors and countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.364,
+                0.877,
+                0.399
+            ],
+            "angle": 0,
+            "content": "- By simultaneously affecting demand and supply, AI blurs cyclical signals, complicating central banks' assessment of underlying economic conditions and monetary policy calibration.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.435,
+                0.875,
+                0.515
+            ],
+            "angle": 0,
+            "content": "The sustained boom in artificial intelligence (AI) has contributed to surprisingly resilient growth. AI's footprint on investment, trade and asset prices has grown large enough to shape the global outlook in real time. Moreover, it has acted as a powerful countervailing force to trade tensions and geopolitical shocks that have raised energy prices and weighed on growth. In this way, AI has supported aggregate demand, trade, financial market valuations and overall macroeconomic resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.522,
+                0.876,
+                0.681
+            ],
+            "angle": 0,
+            "content": "This Bulletin assesses how the AI boom is shaping near-term macroeconomic dynamics and the attendant implications for monetary policy and financial stability. It documents four sets of findings. First, AI is driving a large investment and financing impulse: spending on data centres, semiconductors and related infrastructure has reached around 1% of GDP in the most exposed economies, and the associated capital expenditures increasingly rely on public debt markets as well as private credit. Second, these forces are reshaping trade and equity markets, generating sizeable terms-of-trade and wealth effects that differ markedly across countries. Third, the productivity payoff, though potentially large, remains uncertain and uneven and is accompanied by some early signs of labour market softening in the economies most exposed to AI. Finally, by moving demand and supply at the same time, AI blurs the cyclical signals on which central banks rely, thereby complicating monetary policy calibration.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.09,
+                0.702,
+                0.574,
+                0.719
+            ],
+            "angle": 0,
+            "content": "AI as a driver of short-term macroeconomic dynamics"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.727,
+                0.876,
+                0.839
+            ],
+            "angle": 0,
+            "content": "AI affects economic activity through channels that operate via aggregate demand and supply. On the demand side, AI is driving a powerful investment cycle, lifting the valuations of AI-related firms and reshaping trade flows. On the supply side, AI promises to raise productivity over time. The demand side effects are already large and observable; the supply side effects, while potentially more consequential, remain uncertain in scale and timing. Because these forces affect growth, labour markets and inflation in different – and sometimes offsetting – directions, AI's net macroeconomic impact is unclear and will likely vary across countries and over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.845,
+                0.877,
+                0.909
+            ],
+            "angle": 0,
+            "content": "A broad investment boom and its financing. The promise of AI has unleashed a global investment boom. AI-related investment already accounts for a material share of GDP in some countries (Graph 1.A). This spending spans data centres, specialised chip manufacturing facilities, cloud infrastructure and hardware, and has also bolstered investment in information technology (IT) products and software more",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.189,
+                0.778,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.259,
+                0.214,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.284,
+                0.873,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.301,
+                0.83,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.324,
+                0.873,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.342,
+                0.283,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.365,
+                0.872,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.384,
+                0.701,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.437,
+                0.872,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.453,
+                0.872,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.469,
+                0.872,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.483,
+                0.871,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.5,
+                0.694,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.524,
+                0.871,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.538,
+                0.871,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.555,
+                0.872,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.571,
+                0.871,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.587,
+                0.871,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.602,
+                0.872,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.618,
+                0.872,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.633,
+                0.872,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.649,
+                0.872,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.666,
+                0.647,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.701,
+                0.573,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.729,
+                0.871,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.745,
+                0.872,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.76,
+                0.871,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.775,
+                0.871,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.793,
+                0.871,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.808,
+                0.871,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.824,
+                0.36,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.846,
+                0.872,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.861,
+                0.871,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.878,
+                0.872,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.892,
+                0.872,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.085,
+                0.875,
+                0.182
+            ],
+            "angle": 0,
+            "content": "broadly. \\( ^{1} \\)  Available estimates point to a sharp increase in AI-related investment: in the United States and Australia, where more granular investment data are available, estimated spending on data centres (including the IT equipment they house) and IT manufacturing facilities rose steeply to 0.8% and over 1% of GDP, respectively (purple and brown lines, right-hand scale). Industry participants expect global AI-related investment to grow further – from 500 billion today to 3–4 trillion by 2030 – while capital expenditures on data centres are projected to triple by 2030 (Graph 1.B).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.09,
+                0.202,
+                0.603,
+                0.22
+            ],
+            "angle": 0,
+            "content": "AI firms are growing rapidly and so are AI-related investments"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.225,
+                0.875,
+                0.496
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.089,
+                0.503,
+                0.874,
+                0.542
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  For EA, estimates for 2025. See the online annex for details.  \\( ^{2} \\)  Projections are for global spending on AI infrastructure and data centres. See the online annex for details.  \\( ^{3} \\)  Revisions to 2026 GDP growth forecasts and the contributions of some GDP components. Forecasts are displayed by publication month; survey cutoff precedes this by several weeks."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.089,
+                0.546,
+                0.874,
+                0.574
+            ],
+            "angle": 0,
+            "content": "Sources: Aldasoro et al (2026); Federal Reserve Bank of St Louis; IMF; US Census Bureau; Dell'Oro Group; Focus Economics; Gartner; Goldman Sachs; LSEG Datastream; Omdia; Reuters; Wind Economic Database; national data; BIS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.594,
+                0.876,
+                0.705
+            ],
+            "angle": 0,
+            "content": "AI investment has been a significant tailwind to growth. AI-related capital expenditures supported aggregate investment, which has been an important driver of upward revisions to growth forecasts across several countries (Graph 1.C). In line with this, business investment has grown faster in economies with higher scores in an AI preparedness index (AIPI) than in those with lower scores (Graph 2.A). \\( ^{2} \\)  The fact that total investment is also higher for countries with a high AIPI score suggests that business investment growth has not come at the expense of less investment elsewhere, ie housing or public sector investments (Graph 2.B).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.712,
+                0.875,
+                0.808
+            ],
+            "angle": 0,
+            "content": "The AI investment boom has also reshaped trade through supply chain linkages that run from semiconductors to data storage and digital infrastructure. These shifts are clearly visible in trade data, where goods with high AI content have recorded the fastest rates of export growth (Graph 3.A). Although volumes have risen, a large part of the increase in exports reflects higher prices. Granular data from the United States show that export prices for goods with high AI content climbed markedly over the past two years, even as prices for other goods fell or stayed broadly flat (Graph 3.B).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.873,
+                0.858,
+                0.889
+            ],
+            "angle": 0,
+            "content": "On the upstream side, the AI boom has also revived investment in energy infrastructure, in particular electricity generation."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.889,
+                0.874,
+                0.918
+            ],
+            "angle": 0,
+            "content": "2 The AIPi captures a broad range of AI-enabling conditions in 2023 and is strongly correlated with employment shares in AI-exposed, cognitively intensive sectors (Graph A.1 in the online annex). For details, see Cazzaniga et al (2024)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.944,
+                0.105,
+                0.956
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.807,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.088,
+                0.871,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.102,
+                0.872,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.119,
+                0.871,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.134,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.149,
+                0.872,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.166,
+                0.629,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.205,
+                0.599,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.596,
+                0.871,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.611,
+                0.872,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.627,
+                0.871,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.643,
+                0.872,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.658,
+                0.871,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.675,
+                0.871,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.69,
+                0.181,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.712,
+                0.872,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.728,
+                0.87,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.745,
+                0.871,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.762,
+                0.87,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.777,
+                0.871,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.793,
+                0.646,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.086,
+                0.753,
+                0.121
+            ],
+            "angle": 0,
+            "content": "AI preparedness raises business investment and supports total investment at the low end of the distribution \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.127,
+                0.481,
+                0.374
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.488,
+                0.127,
+                0.875,
+                0.364
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.379,
+                0.875,
+                0.456
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  AIPi = AI preparedness index. “High AIPi” refers to countries with AIPi scores above the sample median. AIPi scores reflect the capacity to adopt, develop and benefit from AI technologies. See the online annex for details.  \\( ^{2} \\)  The solid blue line plots the difference in cumulative business investment growth since Q4 2023 between countries with high and low AIPi scores. The dashed blue line shows projections based on OECD forecasts. Country sample: AU, CA, DE, DK, FI, FR, GB, JP, KR, NL, NO, NZ, SE and US.  \\( ^{3} \\)  Lines plot the distribution of gross fixed capital formation as a share of GDP, based on quarterly national accounts data for countries with an AIPi score above and below the sample median. Sample: 32 economies (24 advanced economies and eight emerging market economies) over Q4 2023–Q4 2025."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.092,
+                0.458,
+                0.311,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Sources: IMF; OECD; national data; BIS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.49,
+                0.875,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Strong AI-related investment has put upward pressure on AI investment input prices, not least because investment by AI firms has far exceeded that by semiconductor producers. As a result, the impact has been uneven along the AI supply chain. Upstream exporters of AI-related goods (eg semiconductors) – such as Korea, Chinese Taipei, Malaysia and Singapore – have seen export prices outpace import costs, delivering sizeable terms-of-trade gains. This has caused national income and purchasing power to increase by substantially more than real GDP, which measures production volumes.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.607,
+                0.62,
+                0.626
+            ],
+            "angle": 0,
+            "content": "AI delivers an export boom, but with price pressures building up"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.093,
+                0.632,
+                0.479,
+                0.858
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.487,
+                0.632,
+                0.875,
+                0.852
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.86,
+                0.874,
+                0.887
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Annual growth rate of exports for different categories of goods and total exports.  \\( ^{2} \\)  Lines plot the US export price indices for goods with high AI content and other goods, rebased to 100 in February 2023."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.891,
+                0.524,
+                0.906
+            ],
+            "angle": 0,
+            "content": "Sources: Waugh (2026); UN Comtrade; China Customs; Focus Economics; BIS."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.088,
+                0.749,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.106,
+                0.316,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.492,
+                0.872,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.507,
+                0.872,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.523,
+                0.871,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.539,
+                0.871,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.554,
+                0.871,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.571,
+                0.709,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.608,
+                0.617,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.181
+            ],
+            "angle": 0,
+            "content": "These gains have, however, been narrowly concentrated. In Korea, for example, five firms accounted for 43% of export earnings in the first quarter of 2026, up from 27% two years earlier. By contrast, countries expanding their digital infrastructure often need to import large quantities of AI-related goods, with the higher prices of these goods weighing on their terms of trade. In line with this, terms of trade have weakened in economies with higher AI digital infrastructure scores (Graph A.2.A in the online annex), partly because the cost of imported AI-related equipment and infrastructure has risen.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.187,
+                0.876,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Financial markets have amplified the demand impulse from AI, although here too the effects have been uneven across countries. The weight of AI firms in equity markets has risen sharply, supported by strong earnings. In the United States, their share of total market capitalisation climbed from 24% to 40% between 2022 and 2025, with similar, though less pronounced, developments in other economies integrated into the AI production chain (Graph A.3.A in the online annex). By contrast, equity markets with more limited exposure to AI production have generally recorded weaker performance. Higher valuations have generated wealth effects for asset-holding households, supporting consumption (notably in the United States and, to a lesser extent, the euro area).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.321,
+                0.876,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Beyond equity valuations, the scale of AI investments has implications for financial markets in terms of financing. As AI firms' capital expenditures have increased markedly in recent years, free cash flows have shrunk significantly (Graph A.3.B in the online annex, red arrows). This prompted a shift to debt financing, with two sources standing out. The first is private credit, which has grown particularly fast in the United States (Aldasoro et al (2026)). Outstanding private credit loans to AI-related firms grew from near zero in 2016 to $200 billion in 2025, while their share in total private credit loans rose from less than 2% to 8% over the same period (Graph A.3.C in online annex). The second financing source is bond markets. AI firms raised $243 billion through bonds in 2025, up from $79 billion in 2023 (against total non-financial corporate bond issuance of around $3.0 trillion and $2.1 trillion, respectively) (OECD (2026)). While US-based AI firms account for most of this, issuance is also increasing elsewhere, albeit from a lower base.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.486,
+                0.877,
+                0.646
+            ],
+            "angle": 0,
+            "content": "An uncertain productivity payoff. AI also affects activity through productivity, although the size and persistence of these effects remain highly uncertain. Early micro evidence suggests that generative AI can deliver sizeable productivity gains, particularly by automating components of non-routine cognitive tasks. Evidence also suggests that AI compresses performance differences, as less experienced workers often benefit more than senior ones (Graph A.4.A in the online annex). Whether these micro-level gains will translate into higher aggregate total factor productivity (TFP) remains uncertain. \\( ^{3} \\)  While the range of macro estimates is relatively wide, the median TFP growth gain is around 0.5 percentage points per year (Graph A.4.B in the online annex). Cross-country evidence suggests that some of these effects may already be materialising, with higher AI preparedness as of 2023 correlating positively with labour productivity growth over the subsequent two years (Graph A.5.A in the online annex).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.651,
+                0.876,
+                0.763
+            ],
+            "angle": 0,
+            "content": "Economic growth and the labour market. The growth effects of AI will reflect both the demand and supply side factors described above. Therefore, they currently vary substantially across countries, reflecting differences in economic structure, the scale of AI-related investment, the countries' capacity to adopt and deploy the technology, or the presence of demand bottlenecks that may constrain the growth benefits of AI (BIS (2026)). The available evidence suggests that advanced economies (AEs) are better positioned to capture the near-term gains, while outcomes across emerging market economies (EMEs) are more heterogeneous (Graph A.5.B in the online annex; Gambacorta et al (2025)).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.769,
+                0.876,
+                0.849
+            ],
+            "angle": 0,
+            "content": "Beyond its effects on GDP growth, AI could also reshape labour markets. Two broad forces are at work: complementarity between generative AI and tasks that benefit from human input, and substitution for routine cognitive tasks that can be fully or partially automated. So far, labour displacement has been limited, although some early signs are emerging in specific tasks and occupations (ie call centres, business centres). Many firms remain in a “wait-and-see” phase, experimenting with AI technologies but still facing",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.89,
+                0.874,
+                0.917
+            ],
+            "angle": 0,
+            "content": "3 Translating micro-level gains into aggregate productivity is uncertain. It depends on reallocation across firms and may build only gradually, consistent with a \"productivity J-curve\" (Brynjolfsson et al (2021))."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.094,
+                0.945,
+                0.105,
+                0.956
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.807,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.088,
+                0.871,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.104,
+                0.872,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.118,
+                0.872,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.135,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.151,
+                0.871,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.167,
+                0.684,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.189,
+                0.871,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.204,
+                0.871,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.221,
+                0.872,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.235,
+                0.871,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.253,
+                0.871,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.872,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.284,
+                0.871,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.3,
+                0.476,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.323,
+                0.871,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.339,
+                0.871,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.353,
+                0.871,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.37,
+                0.871,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.385,
+                0.872,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.401,
+                0.872,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.418,
+                0.871,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.434,
+                0.869,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.45,
+                0.869,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.465,
+                0.851,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.487,
+                0.872,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.503,
+                0.871,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.518,
+                0.871,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.535,
+                0.872,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.551,
+                0.871,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.566,
+                0.873,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.582,
+                0.871,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.598,
+                0.872,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.614,
+                0.871,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.63,
+                0.632,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.653,
+                0.871,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.668,
+                0.871,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.684,
+                0.872,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.701,
+                0.873,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.716,
+                0.871,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.732,
+                0.871,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.748,
+                0.644,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.771,
+                0.872,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.787,
+                0.871,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.802,
+                0.872,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.818,
+                0.872,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.834,
+                0.871,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.873,
+                0.118
+            ],
+            "angle": 0,
+            "content": "uncertainty regarding regulation, costs, organisational adaptation and the reliability of AI systems, consistent with the current “low hiring, low firing” dynamics observed in several jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.124,
+                0.876,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Even so, corporate behaviour points to an intensifying impact. In recent earnings calls, nearly 80% of firms indicated plans to automate a growing share of production processes and increase labour substitution (Graph 4.A). Consistent with these soft indicators, employment growth in the United States has been weaker in sectors with higher AI exposure: between the third quarter of 2023 and the third quarter of 2025, employment in high AI-exposure sectors grew around 0.8 percentage points less than in low AI-exposure sectors (Graph 4.B). Unemployment trends tell a similar story. Countries with a high AICI score saw unemployment rates increase by 0.75 percentage points on average between 2023 and 2025; those with low AICI scores saw flat unemployment rates (Graph 4.C).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.273,
+                0.45,
+                0.29
+            ],
+            "angle": 0,
+            "content": "AI could pose some risks to labour markets"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.09,
+                0.297,
+                0.35,
+                0.546
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.354,
+                0.298,
+                0.614,
+                0.556
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.816,
+                0.275,
+                0.875,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Graph 4"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.619,
+                0.297,
+                0.877,
+                0.53
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.09,
+                0.562,
+                0.876,
+                0.636
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Share of companies reporting the following in their earnings calls: early stage or advanced use of AI within the business, significant positive impact of AI on company productivity and actual or potential reduction in labour input due to AI or automation. Based on earnings call analysis using a large language model.  \\( ^{2} \\)  Estimates based on a cross-sectoral period-by-period regression where cumulative employment growth is regressed on the Q3 2024 log of employment and Q3 2024 sectoral exposure to AI in the United States. Sectoral exposure to AI measured as the fraction of data scientists in sectoral employment in Q3 2024.  \\( ^{3} \\)  Solid lines plot the median change in unemployment rate relative to 2023. Dotted lines display the respective interquartile ranges."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.64,
+                0.875,
+                0.667
+            ],
+            "angle": 0,
+            "content": "Sources: Kansal and Rungcharoenkitkul (2026); BIS (2026), IMF; OECD; US Bureau of Economic Analysis; US Bureau of Labor Statistics; S&P Global Market Intelligence; BIS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.687,
+                0.875,
+                0.768
+            ],
+            "angle": 0,
+            "content": "AI may also create skills mismatches by increasing demand for workers with AI-related and complementary skills. When the skills of unemployed workers do not match those required for newly created jobs, labour market matching efficiency may decline. Consistent with this mechanism, economies that are more advanced in AI adoption tend to exhibit a steeper vacancy-unemployment relationship than countries with lower AI preparedness (Graph A.6 in the online annex).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.774,
+                0.875,
+                0.869
+            ],
+            "angle": 0,
+            "content": "Impact on inflation. The channels discussed above point to opposing short-run inflation pressures. On the one hand, AI-related investment, trade and wealth-driven consumption can boost aggregate demand and add to price pressures. On the other hand, productivity gains, if they occur, would expand supply, helping to contain inflation. Concerns about AI-induced job losses could also curb demand, wages and, in turn, inflationary pressures. The relative strength and timing of these forces, however, remain uncertain.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.876,
+                0.875,
+                0.909
+            ],
+            "angle": 0,
+            "content": "Beyond the strength and direction of effects, there are differences in their timing. AI could exert upward pressure on inflation before becoming disinflationary as productivity gains broaden and supply",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.945,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.088,
+                0.87,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.104,
+                0.778,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.126,
+                0.873,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.141,
+                0.872,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.157,
+                0.871,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.174,
+                0.871,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.189,
+                0.871,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.204,
+                0.871,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.221,
+                0.872,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.237,
+                0.597,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.275,
+                0.446,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.644,
+                0.871,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.654,
+                0.267,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.69,
+                0.871,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.872,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.72,
+                0.871,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.738,
+                0.87,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.754,
+                0.606,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.775,
+                0.872,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.79,
+                0.872,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.807,
+                0.872,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.822,
+                0.872,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.839,
+                0.872,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.855,
+                0.169,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.877,
+                0.874,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.893,
+                0.872,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.197
+            ],
+            "angle": 0,
+            "content": "adjusts. Near-term inflationary effects may already be emerging, albeit modestly (Abecasis (2026)). Disinflationary effects from higher productivity or changes in workers' perceptions of their bargaining power are likely to emerge more gradually. Canonical macro models suggest AI tends to be inflationary, as households boost consumption in anticipation of stronger future income growth. And even if they do not anticipate the AI boom, financial markets may, in turn, lift household consumption through wealth effects. The effects on inflation are more muted (possibly even reversed) if the AI-led productivity boom exceeds expectations or if households restrain consumption against potential labour displacement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.09,
+                0.219,
+                0.36,
+                0.236
+            ],
+            "angle": 0,
+            "content": "Implications for central banks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.244,
+                0.875,
+                0.355
+            ],
+            "angle": 0,
+            "content": "The considerable uncertainty surrounding the effects of AI raises several challenges for monetary policy and financial stability. For one, AI simultaneously affects demand and supply, in both cyclical and structural ways. Moreover, the effects differ across sectors, complicating the assessment of underlying trends. Strong activity may reflect temporary demand factors (eg investment booms and wealth effects) rather than sustained increases in potential output, while productivity gains are uneven and hard to measure. The AI boom may thus alter key unobservable benchmarks, including the natural rates of interest and unemployment, frequently used in monetary policy analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.362,
+                0.875,
+                0.426
+            ],
+            "angle": 0,
+            "content": "Greater uncertainty increases the risk of policy miscalibration. If central banks overestimate supply improvements or underestimate the rise in underlying demand, policy may remain too accommodative; the opposite risk could lead to unnecessarily restrictive conditions. In this environment, a gradual and data-dependent approach may help reduce the risk of policy errors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.432,
+                0.875,
+                0.559
+            ],
+            "angle": 0,
+            "content": "The AI boom could also have important financial stability implications. For one, AI can disrupt the business models of specific sectors and generate negative spillovers to their stock prices and employment prospects, as experienced by software as a service (SaaS) companies in February 2026. In some jurisdictions, large export windfalls may also risk contributing to domestic asset price bubbles. More broadly, a key risk at the current juncture is that expectations about the transformative impact of AI may be overly optimistic, raising the risk of overinvestment, resource misallocation and weaker credit quality. A correction in asset prices could tighten financial conditions, dampen investment and weaken aggregate demand, as discussed at greater length in BIS (2026).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.58,
+                0.195,
+                0.597
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.606,
+                0.862,
+                0.621
+            ],
+            "angle": 0,
+            "content": "Abecasis, M (2026): \"AI and (measured) inflation: up then down\", Goldman Sachs, US Economics Analyst."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.628,
+                0.871,
+                0.658
+            ],
+            "angle": 0,
+            "content": "Aldasoro, I, S Doerr and D Rees (2026): \"Financing the AI boom: from cash flows to debt\", BIS Bulletin, no 120."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.667,
+                0.872,
+                0.698
+            ],
+            "angle": 0,
+            "content": "Bank for International Settlements (BIS) (2026): \"Progress and peril\", Annual Economic Report 2026, Chapter I."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.706,
+                0.872,
+                0.737
+            ],
+            "angle": 0,
+            "content": "Brynjolfsson, E, D Rock and C Syverson (2021): \"The productivity J-curve: how intangibles complement general purpose technologies\", American Economic Journal: Macroeconomics, vol 13, no 1."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.744,
+                0.872,
+                0.776
+            ],
+            "angle": 0,
+            "content": "Cazzaniga, M, F Jaumotte, L Li, G Melina, A Panton, C Pizzinelli, E Rockall and M Mendes Tavares (2024): \"Gen-Al: artificial intelligence and the future of work\", IMF Staff Discussion Notes, no 2024/1."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.783,
+                0.872,
+                0.815
+            ],
+            "angle": 0,
+            "content": "Gambacorta, L, E Kharroubi, A Mehrotra and T Oliviero (2025): \"Artificial intelligence and growth in advanced and emerging economies: short-run impact\", BIS Working Papers, no 1321."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.822,
+                0.833,
+                0.837
+            ],
+            "angle": 0,
+            "content": "Kansal, R and P Rungcharoenkitkul (2026): \"AI impacts on firms: insights from earning calls\", mimeo."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.845,
+                0.873,
+                0.876
+            ],
+            "angle": 0,
+            "content": "Organisation for Economic Co-operation and Development (OECD) (2026): Global debt report 2026: sustaining debt market resilience under growing pressure."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.883,
+                0.68,
+                0.899
+            ],
+            "angle": 0,
+            "content": "Waugh (2026): \"Trade in AI-related products\", NBER Working Papers, no 35053."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.945,
+                0.105,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.808,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.87,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.102,
+                0.871,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.119,
+                0.871,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.135,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.151,
+                0.872,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.166,
+                0.871,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.826,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.22,
+                0.357,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.245,
+                0.871,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.261,
+                0.872,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.277,
+                0.871,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.293,
+                0.872,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.308,
+                0.872,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.324,
+                0.872,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.34,
+                0.538,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.362,
+                0.872,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.379,
+                0.872,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.394,
+                0.87,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.411,
+                0.596,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.432,
+                0.87,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.448,
+                0.872,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.464,
+                0.872,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.48,
+                0.872,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.495,
+                0.872,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.511,
+                0.872,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.527,
+                0.872,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.544,
+                0.484,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.581,
+                0.193,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

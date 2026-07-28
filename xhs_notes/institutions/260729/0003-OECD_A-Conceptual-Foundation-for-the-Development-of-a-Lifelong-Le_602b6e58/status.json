@@ -1,0 +1,87 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ooigu1_r/pdfs/0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "你的学习数据，可能只",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_title": "经合组织：终身学习测量框架的概念基础",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58.pdf",
+    "cleaned_source_title": "0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0003OECDAConceptualFou",
+    "raw_candidates": [
+      "经合组织:终身学习测量框架的概念基础",
+      "经合组织:终身学习测量框架-年龄与数据局限",
+      "经合组织:终身学习测量框架-需求供给与协调"
+    ],
+    "cleaned_candidates": [
+      "经合组织：终身学习测量框架的概念基础",
+      "经合组织：终身学习测量框架-年龄与数据局限",
+      "经合组织：终身学习测量框架-需求供给与协调",
+      "经合组织：0003OECDAConceptualFou",
+      "经合组织：年龄覆盖过窄，多数国际调查聚焦25至64岁成年人"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：终身学习测量框架-年龄与数据局限",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "经合组织：终身学习测量框架-需求供给与协调",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "经合组织：0003OECDAConceptualFou",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：年龄覆盖过窄，多数国际调查聚焦25至64岁成年人",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：终身学习测量框架的概念基础",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：终身学习测量框架的概念基础"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
