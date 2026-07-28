@@ -1,0 +1,506 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "半导体材料需求有多强",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：日本化工，十家海外公司业绩影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+      "cleaned_source_title": "CITI-Japan Chemicals Implications from results at 10 overseas companies",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：日本ChemicalsImplicationsf",
+      "raw_candidates": [
+        "日本化工：十家海外公司业绩影响",
+        "日本化工：半导体与数据中心需求信号",
+        "日本化工：海外公司业绩与下游分化"
+      ],
+      "cleaned_candidates": [
+        "Citi：日本化工，十家海外公司业绩影响",
+        "Citi：日本化工，半导体与数据中心需求信号",
+        "Citi：日本化工，海外公司业绩与下游分化",
+        "Citi：日本ChemicalsImplicationsf",
+        "Citi：美光在6月25日的业绩会上表示"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：日本化工，半导体与数据中心需求信号",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：日本化工，海外公司业绩与下游分化",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "Citi：日本ChemicalsImplicationsf",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：美光在6月25日的业绩会上表示",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：日本化工，十家海外公司业绩影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：日本化工，十家海外公司业绩影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0002-07-GS-Apple Inc. -AAPL.US- F3Q26 preview- Expect beat driven by Products- iCloud - AppleCare- to offset App Store slowdown-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "苹果下季财报前瞻：产",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：AppleF业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-GS-Apple Inc. -AAPL.US- F3Q26 preview- Expect beat driven by Products- iCloud - AppleCare- to offset App Store slowdown-260727.pdf",
+      "cleaned_source_title": "GS-Apple Inc. -AAPL.US- F3Q26 preview- Expect beat driven by Products- iCloud - AppleCare- to offset App Store slowdown",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：AppleInc.",
+      "raw_candidates": [
+        "GS：Apple F3Q26预览-产品与服务收入增长路径分化",
+        "GS：Apple F3Q26营收1101亿美元超预期-iCloud与AppleCare支撑服务",
+        "GS：Apple F3Q26产品收入驱动增长-服务结构转型观察"
+      ],
+      "cleaned_candidates": [
+        "GS：AppleF3Q26预览-产品与服务收入增长路径分化",
+        "GS：AppleF3Q26营收1101亿美元超预期",
+        "GS：AppleF3Q26产品收入驱动增长-服务结构转型观察",
+        "GS：AppleInc.",
+        "GS：营收1101亿美元，高于共识的1088亿美元，同比增长17%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AppleF3Q26营收1101亿美元超预期",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AppleF3Q26产品收入驱动增长-服务结构转型观察",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "GS：AppleInc.",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：营收1101亿美元，高于共识的1088亿美元，同比增长17%",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：AppleF业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：AppleF3Q26预览-产品与服务收入增长路径分化",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：AppleF业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0003-08-GS-CHINA HEALTHCARE- MEDICAL DEVICE - SERVICES 2Q 1H26 Preview- Recovery Visibility Remains Uneven- Prefer Names with Globalization Optionality-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "医疗复苏的节奏，还看",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x3",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：医疗行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-GS-CHINA HEALTHCARE- MEDICAL DEVICE - SERVICES 2Q 1H26 Preview- Recovery Visibility Remains Uneven- Prefer Names with Globalization Optionality-260727.pdf",
+      "cleaned_source_title": "GS-CHINA HEALTHCARE- MEDICAL DEVICE - SERVICES 2Q 1H26 Preview- Recovery Visibility Remains Uneven- Prefer Names with Globalization Optionality",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国HEALTHCAREMEDICALDEVIC",
+      "raw_candidates": [
+        "中国医疗器械与服务2Q1H26预览",
+        "中国医疗器械与服务2Q1H26预览-板块报价下跌21%",
+        "中国医疗器械与服务2Q1H26预览-全球化能力成为区分因素"
+      ],
+      "cleaned_candidates": [
+        "GS：中国医疗器械与服务2Q1H26预览",
+        "GS：中国医疗器械与服务2Q1H26预览-板块报价下跌21%",
+        "GS：中国医疗器械与服务2Q1H26预览-全球化能力成为区分因素",
+        "GS：中国HEALTHCAREMEDICALDEVIC",
+        "GS：这份GS在2026年7月发布的研报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国HEALTHCAREMEDICALDEVIC",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这份GS在2026年7月发布的研报",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：医疗行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "21"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国医疗器械与服务2Q1H26预览-板块报价下跌21%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：医疗行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0004-09-GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer- How are market shares shifting--260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "半导体+65%，工业",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：机器人行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer- How are market shares shifting--260727.pdf",
+      "cleaned_source_title": "GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer- How are market shares shifting",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国INDUSTRIALTECH2Q26Robo",
+      "raw_candidates": [
+        "中国工业科技2Q26机器人自动化格局分析-市场份额如何转移",
+        "中国工业科技2Q26机器人自动化格局-市场份额转移与OEM驱动复苏",
+        "中国工业科技2Q26机器人自动化格局-汇川技术份额增长与国产集中化"
+      ],
+      "cleaned_candidates": [
+        "GS：中国工业科技2Q26机器人自动化格局分析-市场份额如何转移",
+        "GS：中国工业科技2Q26机器人自动化格局",
+        "GS：中国INDUSTRIALTECH2Q26Robo",
+        "GS：2Q26中国工业自动化市场整体同比增长6%，但结构分化明显"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国工业科技2Q26机器人自动化格局",
+          "reasons": [
+            "anchor_coverage=0.63",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国INDUSTRIALTECH2Q26Robo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2Q26中国工业自动化市场整体同比增长6%，但结构分化明显",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：机器人行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国工业科技2Q26机器人自动化格局分析-市场份额如何转移",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：机器人行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0005-10-GS-CSPC Pharma -1093.HK-- Profit alert- Earnings beat driven by BD income- Resilient finished drug sales amid policy headwinds-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "石药利润爆了，但不止",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：石药集团业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-GS-CSPC Pharma -1093.HK-- Profit alert- Earnings beat driven by BD income- Resilient finished drug sales amid policy headwinds-260728.pdf",
+      "cleaned_source_title": "GS-CSPC Pharma -1093.HK-- Profit alert- Earnings beat driven by BD income- Resilient finished drug sales amid policy headwinds",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：CSPCPharmaProfitalertEar",
+      "raw_candidates": [
+        "石药集团盈利预告-BD收入驱动与成品药销售韧性",
+        "石药集团2026上半年盈利预告-阿斯利康合作收入驱动",
+        "石药集团盈利预告-成品药销售与GLP-1合作收入"
+      ],
+      "cleaned_candidates": [
+        "GS：石药集团盈利预告-BD收入驱动与成品药销售韧性",
+        "GS：石药集团2026上半年盈利预告-阿斯利康合作收入驱动",
+        "GS：石药集团盈利预告-成品药销售与GLP-1合作收入",
+        "GS：CSPCPharmaProfitalertEar",
+        "GS：石药预计将在第二季度确认约8.4亿美元（约57.4亿元人民币）"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：石药集团2026上半年盈利预告-阿斯利康合作收入驱动",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：石药集团盈利预告-成品药销售与GLP-1合作收入",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "GS：CSPCPharmaProfitalertEar",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：石药预计将在第二季度确认约8.4亿美元（约57.4亿元人民币）",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：石药集团业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：石药集团盈利预告-BD收入驱动与成品药销售韧性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：石药集团业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

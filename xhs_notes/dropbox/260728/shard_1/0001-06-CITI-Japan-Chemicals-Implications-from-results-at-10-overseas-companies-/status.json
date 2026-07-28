@@ -1,0 +1,96 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "半导体材料需求有多强",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：日本化工，十家海外公司业绩影响",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+    "cleaned_source_title": "CITI-Japan Chemicals Implications from results at 10 overseas companies",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：日本ChemicalsImplicationsf",
+    "raw_candidates": [
+      "日本化工：十家海外公司业绩影响",
+      "日本化工：半导体与数据中心需求信号",
+      "日本化工：海外公司业绩与下游分化"
+    ],
+    "cleaned_candidates": [
+      "Citi：日本化工，十家海外公司业绩影响",
+      "Citi：日本化工，半导体与数据中心需求信号",
+      "Citi：日本化工，海外公司业绩与下游分化",
+      "Citi：日本ChemicalsImplicationsf",
+      "Citi：美光在6月25日的业绩会上表示"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：日本化工，半导体与数据中心需求信号",
+        "reasons": [
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：日本化工，海外公司业绩与下游分化",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "Citi：日本ChemicalsImplicationsf",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：美光在6月25日的业绩会上表示",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：日本化工，十家海外公司业绩影响",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Citi：日本化工，十家海外公司业绩影响"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "475",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

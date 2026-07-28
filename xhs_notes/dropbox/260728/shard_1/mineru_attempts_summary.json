@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0002-07-GS-Apple Inc. -AAPL.US- F3Q26 preview- Expect beat driven by Products- iCloud - AppleCare- to offset App Store slowdown-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0003-08-GS-CHINA HEALTHCARE- MEDICAL DEVICE - SERVICES 2Q 1H26 Preview- Recovery Visibility Remains Uneven- Prefer Names with Globalization Optionality-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0004-09-GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer- How are market shares shifting--260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2l9fko02/pdfs/0005-10-GS-CSPC Pharma -1093.HK-- Profit alert- Earnings beat driven by BD income- Resilient finished drug sales amid policy headwinds-260728.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

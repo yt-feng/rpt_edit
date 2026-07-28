@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 31,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2l9fko02/pdfs/0001-06-CITI-Japan Chemicals Implications from results at 10 overseas companies-260726.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-GS-Apple Inc. （AAPL.US） F3Q26 preview： Expect beat driven by Products， iCloud & AppleCare+ to offset App Store slowdown-260727.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2l9fko02/pdfs/0002-07-GS-Apple Inc. -AAPL.US- F3Q26 preview- Expect beat driven by Products- iCloud - AppleCare- to offset App Store slowdown-260727.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-GS-CHINA HEALTHCARE： MEDICAL DEVICE & SERVICES 2Q 1H26 Preview： Recovery Visibility Remains Uneven； Prefer Names with Globalization Optionality-260727.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2l9fko02/pdfs/0003-08-GS-CHINA HEALTHCARE- MEDICAL DEVICE - SERVICES 2Q 1H26 Preview- Recovery Visibility Remains Uneven- Prefer Names with Globalization Optionality-260727.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer： How are market shares shifting？-260727.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2l9fko02/pdfs/0004-09-GS-CHINA INDUSTRIAL TECH 2Q26 Robot Automation Landscape Analyzer- How are market shares shifting--260727.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-GS-CSPC Pharma （1093.HK）： Profit alert： Earnings beat driven by BD income； Resilient finished drug sales amid policy headwinds-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_2l9fko02/pdfs/0005-10-GS-CSPC Pharma -1093.HK-- Profit alert- Earnings beat driven by BD income- Resilient finished drug sales amid policy headwinds-260728.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
