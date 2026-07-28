@@ -1,0 +1,542 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0001-16-GS-Laopu Gold -6181.HK-Profit warning- 2Q26 missed with bigger-than-expected sales pressure and operating deleverage-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "老铺黄金Q2业绩为何",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：老铺黄金业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-Laopu Gold -6181.HK-Profit warning- 2Q26 missed with bigger-than-expected sales pressure and operating deleverage-260728.pdf",
+      "cleaned_source_title": "GS-Laopu Gold -6181.HK-Profit warning- 2Q26 missed with bigger-than-expected sales pressure and operating deleverage",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LaopuGoldProfitwarning",
+      "raw_candidates": [
+        "老铺黄金盈利预警与二季度业绩",
+        "老铺黄金二季度收入利润率低于预期",
+        "老铺黄金二季度线上销售与运营费用分析"
+      ],
+      "cleaned_candidates": [
+        "GS：老铺黄金盈利预警与二季度业绩",
+        "GS：老铺黄金二季度收入利润率低于预期",
+        "GS：老铺黄金二季度线上销售与运营费用分析",
+        "GS：LaopuGoldProfitwarning",
+        "GS：老铺黄金在7月27日发布盈利预警"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：老铺黄金二季度收入利润率低于预期",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：老铺黄金二季度线上销售与运营费用分析",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：LaopuGoldProfitwarning",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：老铺黄金在7月27日发布盈利预警",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        }
+      ],
+      "selected_title": "GS：老铺黄金业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：老铺黄金盈利预警与二季度业绩",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：老铺黄金业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0002-17-GS-JAPAN MACHINERY Semiconductor utility sector- Updating GSe- maintain bullish stance on the subsector-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本半导体设备：这轮",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "投资周期->研究周期 x1",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-GS-JAPAN MACHINERY Semiconductor utility sector- Updating GSe- maintain bullish stance on the subsector-260727.pdf",
+      "cleaned_source_title": "GS-JAPAN MACHINERY Semiconductor utility sector- Updating GSe- maintain bullish stance on the subsector",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本MACHINERY半导体utilitysector",
+      "raw_candidates": [
+        "日本机械设备半导体公用事业板块-GSe更新",
+        "日本机械设备半导体公用事业板块-2027财年盈利预测更新",
+        "日本机械设备半导体公用事业板块-NOM微科学美国项目驱动增长"
+      ],
+      "cleaned_candidates": [
+        "GS：日本机械设备半导体公用事业板块-GSe更新",
+        "GS：日本机械设备半导体公用事业板块-2027财年盈利预测更新",
+        "GS：日本机械设备半导体公用事业板块-NOM微科学美国项目驱动增长",
+        "GS：日本MACHINERY半导体utilitysector",
+        "GS：27）营业利润预测上调33%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本MACHINERY半导体utilitysector",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：27）营业利润预测上调33%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2027"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本机械设备半导体公用事业板块-2027财年盈利预测更新",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0003-18-GS-LG Innotek Co. -011070.KS- Earnings Review- 2Q26 above expectations- however expect limited margin expansion in 2H26- Neutral-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "LG Innotek",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：LGInnotek2Q26业绩回顾",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-LG Innotek Co. -011070.KS- Earnings Review- 2Q26 above expectations- however expect limited margin expansion in 2H26- Neutral-260728.pdf",
+      "cleaned_source_title": "GS-LG Innotek Co. -011070.KS- Earnings Review- 2Q26 above expectations- however expect limited margin expansion in 2H26- Neutral",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LGInnotekCo.",
+      "raw_candidates": [
+        "GS：LG Innotek 2Q26业绩回顾",
+        "GS：LG Innotek 2Q26营收与利润超预期",
+        "GS：LG Innotek 2Q26超预期但下半年利润率承压"
+      ],
+      "cleaned_candidates": [
+        "GS：LGInnotek2Q26业绩回顾",
+        "GS：LGInnotek2Q26营收与利润超预期",
+        "GS：LGInnotek2Q26超预期但下半年利润率承压",
+        "GS：LGInnotekCo.",
+        "GS：营收5.5万亿韩元，营业利润2460亿韩元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：LGInnotekCo.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：营收5.5万亿韩元，营业利润2460亿韩元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：LGInnotek2Q26业绩回顾",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：LGInnotek2Q26业绩回顾"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0004-19-GS-UMT -3491.TWO-- LEO satellite business in expansion- 3Q26 to see GM improvement- Buy-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "卫星连接进入加速期，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：UMTLEO卫星业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-UMT -3491.TWO-- LEO satellite business in expansion- 3Q26 to see GM improvement- Buy-260728.pdf",
+      "cleaned_source_title": "GS-UMT -3491.TWO-- LEO satellite business in expansion- 3Q26 to see GM improvement- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：UMTLEOsatellitebusinessi",
+      "raw_candidates": [
+        "UMT LEO卫星业务扩张与毛利率改善展望",
+        "UMT 2Q26收入低于预期-3Q26毛利率有望回升至59.8%",
+        "UMT LEO卫星业务收入占比2028年升至93%"
+      ],
+      "cleaned_candidates": [
+        "GS：UMTLEO卫星业务扩张与毛利率改善展望",
+        "GS：UMT2Q26收入低于预期-3Q26毛利率有望回升至59.8%",
+        "GS：UMTLEO卫星业务收入占比2028年升至93%",
+        "GS：UMTLEOsatellitebusinessi",
+        "GS：2Q26收入9.02亿新台币，较GS预期低7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：UMT2Q26收入低于预期-3Q26毛利率有望回升至59.8%",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：UMTLEO卫星业务收入占比2028年升至93%",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：UMTLEOsatellitebusinessi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：2Q26收入9.02亿新台币，较GS预期低7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：UMTLEO卫星业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：UMTLEO卫星业务扩张与毛利率改善展望",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：UMTLEO卫星业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0005-20-GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "信越化学：PVC弱但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards-260727.pdf",
+      "cleaned_source_title": "GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards",
+      "institution_name": "GS",
+      "required_terms": [
+        "PVC",
+        "AI"
+      ],
+      "deterministic_fallback": "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+      "raw_candidates": [
+        "信越化学Q1回顾-PVC前景走弱半导体材料支撑FY3/28起增长",
+        "信越化学PVC承压半导体材料AI需求占比近三成",
+        "信越化学PVC利润贡献降至18%半导体材料CAGR达19%"
+      ],
+      "cleaned_candidates": [
+        "GS：28起增长",
+        "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+        "GS：信越化学PVC利润贡献降至18%半导体材料CAGR达19%",
+        "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+        "GS：3.光刻胶和功能材料受益AI需求，PVC面临亚洲竞争不确定性"
+      ],
+      "faithful_candidate_missing_terms": [
+        "PVC",
+        "AI"
+      ],
+      "faithful_candidate_quality_issues": [
+        "body_too_short"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：28起增长",
+          "reasons": [
+            "missing_required_terms=PVC,AI",
+            "body_too_short",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：信越化学PVC利润贡献降至18%半导体材料CAGR达19%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：3.光刻胶和功能材料受益AI需求，PVC面临亚洲竞争不确定性",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：信越化学PVC承压半导体材料AI需求占比近三成"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

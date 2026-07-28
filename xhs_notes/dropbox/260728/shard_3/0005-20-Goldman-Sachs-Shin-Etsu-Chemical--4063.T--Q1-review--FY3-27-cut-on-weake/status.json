@@ -1,0 +1,137 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_monvn6pi/pdfs/0005-20-GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "信越化学：PVC弱但",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards-260727.pdf",
+    "cleaned_source_title": "GS-Shin-Etsu Chemical -4063.T- Q1 review- FY3 27 cut on weaker PVC outlook- but strong semiconductor and AI materials support FY3 28 onwards",
+    "institution_name": "GS",
+    "required_terms": [
+      "PVC",
+      "AI"
+    ],
+    "deterministic_fallback": "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+    "raw_candidates": [
+      "信越化学Q1回顾-PVC前景走弱半导体材料支撑FY3/28起增长",
+      "信越化学PVC承压半导体材料AI需求占比近三成",
+      "信越化学PVC利润贡献降至18%半导体材料CAGR达19%"
+    ],
+    "cleaned_candidates": [
+      "GS：28起增长",
+      "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+      "GS：信越化学PVC利润贡献降至18%半导体材料CAGR达19%",
+      "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+      "GS：3.光刻胶和功能材料受益AI需求，PVC面临亚洲竞争不确定性"
+    ],
+    "faithful_candidate_missing_terms": [
+      "PVC",
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [
+      "body_too_short"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：28起增长",
+        "reasons": [
+          "missing_required_terms=PVC,AI",
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：信越化学PVC利润贡献降至18%半导体材料CAGR达19%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "GS：PVC与AIShinEtsuChemicalQ1reviewFY",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：3.光刻胶和功能材料受益AI需求，PVC面临亚洲竞争不确定性",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：信越化学PVC承压半导体材料AI需求占比近三成",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：信越化学PVC承压半导体材料AI需求占比近三成"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "451",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
