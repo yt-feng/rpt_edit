@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0001-21-GS-Trip.com Group -TCOM.US-- Mgmt call takeaways- 1-2 qtrs to fully reflect business model transition- expects no impact on hotel take rate- Buy-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0002-22-JPM-Electronic Components Sector US marketing feedback-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0003-23-MS-Greater China Technology Hardware - Asia Pacific Progress for Glass in Advanced Packaging-260726.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0004-24-MS-Greater China Technology Semiconductors - Asia Pacific Greater China Cloud Semis-Read-across from INTC earnings call-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0005-25-NOM-CSPC-1093.HK-Positive profit alert- drug sales good- recurring earnings not-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

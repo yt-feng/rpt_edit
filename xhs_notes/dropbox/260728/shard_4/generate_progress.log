@@ -1,0 +1,32 @@
+Found 31 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ekh21b64/pdfs/0001-21-Goldman Sachs-Trip.com Group -TCOM.US-- Mgmt call takeaways- 1-2 qtrs to fully reflect business model transition- expects no impact on hotel take rate- Buy-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ekh21b64/pdfs/0002-22-JPM-Electronic Components Sector US marketing feedback-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ekh21b64/pdfs/0003-23-Morgan Stanley-Greater China Technology Hardware - Asia Pacific Progress for Glass in Advanced Packaging-260726.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ekh21b64/pdfs/0004-24-Morgan Stanley-Greater China Technology Semiconductors - Asia Pacific Greater China Cloud Semis-Read-across from INTC earnings call-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ekh21b64/pdfs/0005-25-Nomura-CSPC-1093.HK-Positive profit alert- drug sales good- recurring earnings not-260727.pdf
+MinerU attempt 1 using MINER_U batch_id=08687b75-bfa4-4fae-82ad-fc9924100e90
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset f44f5189660e690cb4ae01d7d9f2b1a86ab3560d0488b8ff343116bf897578f8.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset 4464f3b39e6d7b3878c5e9319b956c8bdc17e9d0da801d2abffc044561d2988f.jpg: score=-100;too_small:465x126
+Skip non-chart visual asset 3ef95d431826bdf80fa05a08781ce9b5b929b56769ef4fd9149e0d7fdbe2a5b5.jpg: score=-100;too_small:1021x92
+Skip non-chart visual asset 1202c59f7dab63327b8c2a49d907250b72a50b6292550c11aa0b224636b1d00f.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset c96ba9f86bec5e7f0b0fb6f6d5d61f38d7420e2fde8be7c45c0e76710ce8c683.jpg: score=-100;too_small:982x168
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 7dda118c6811ab7011b66f884e1418248efe16b1ea73627175fc98661d80ecea.jpg: score=-1;odd_ratio:5.02,edge:0.18
+Skip non-chart visual asset 0a57ed4845affb54f116b97b723ab87ae86ed8d3f47663863074b26406f2a86d.jpg: score=-100;too_small:518x137
+Skip non-chart visual asset 284a7ad44484cd507326f19bc576170db4c755dff0bcac4c6130dc4b620b6a47.jpg: score=1;large
+Skip non-chart visual asset 0ac265ec1ba3fcfeaa94e5b664aac49b0e6609c08b5993d3ff3c4bcb0cd6a41e.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 2474df5d81c415f624ef237d5b882f7de083a2b60e172e5866ad27dcb96ed21e.jpg: score=-100;too_small:515x134
+Skip non-chart visual asset 975fed07018723366edc3cd15a207f4c6b044d9c2508f931b7a8ef5a153c59cd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 8d87f56c14cd66a96d0a3cdf62f8564e71c21bce1979c8c69f1d3fb90583364e.jpg: score=1;large
+Skip non-chart visual asset 6c2f2a2186e12a06847971e074a0f186edf8938a40f6d74e8a7fabda771f5f2c.jpg: score=-100;too_small:1409x87
+Skip non-chart visual asset 420e4e7edc99c6488c249d4d660a2b5aeb3ebe828cd225031889f7cbf33926f2.jpg: score=-100;too_small:434x198
+Neutralized WeChat title while keeping the report: 野村：石药集团正面盈利预警-合作收入主导 -> 野村：石药集团正面业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260728/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

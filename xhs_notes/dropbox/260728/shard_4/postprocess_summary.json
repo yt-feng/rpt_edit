@@ -1,0 +1,521 @@
+[
+  {
+    "item": "0001-21-Goldman-Sachs-Trip.com-Group--TCOM.US---Mgmt-call-takeaways--1-2-qtrs-to",
+    "source_pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0001-21-GS-Trip.com Group -TCOM.US-- Mgmt call takeaways- 1-2 qtrs to fully reflect business model transition- expects no impact on hotel take rate- Buy-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "携程反垄断落地，1-",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：携程集团管理层电话会议要点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-Trip.com Group -TCOM.US-- Mgmt call takeaways- 1-2 qtrs to fully reflect business model transition- expects no impact on hotel take rate- Buy-260728.pdf",
+      "cleaned_source_title": "GS-Trip.com Group -TCOM.US-- Mgmt call takeaways- 1-2 qtrs to fully reflect business model transition- expects no impact on hotel take rate- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：GroupMgmtcalltakeaways12",
+      "raw_candidates": [
+        "携程集团管理层电话会议要点",
+        "携程反垄断调查结束-业务模式过渡需1-2季度",
+        "携程新酒店合作分层体系与市场定价分析"
+      ],
+      "cleaned_candidates": [
+        "GS：携程集团管理层电话会议要点",
+        "GS：携程反垄断调查结束-业务模式过渡需1-2季度",
+        "GS：携程新酒店合作分层体系与市场定价分析",
+        "GS：GroupMgmtcalltakeaways12",
+        "GS：引用了几个支撑数据，携程2025财年有效酒店佣金率为9.2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：携程反垄断调查结束-业务模式过渡需1-2季度",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：携程新酒店合作分层体系与市场定价分析",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GroupMgmtcalltakeaways12",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：引用了几个支撑数据，携程2025财年有效酒店佣金率为9.2%",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：携程集团管理层电话会议要点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：携程集团管理层电话会议要点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-22-JPM-Electronic-Components-Sector-US-marketing-feedback-260727",
+    "source_pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0002-22-JPM-Electronic Components Sector US marketing feedback-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "电子元器件板块，回调",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "投资者->读者 x3",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：电子元器件板块美股路演反馈",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-JPM-Electronic Components Sector US marketing feedback-260727.pdf",
+      "cleaned_source_title": "JPM-Electronic Components Sector US marketing feedback",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：ElectronicComponentsSe",
+      "raw_candidates": [
+        "电子元器件板块美股路演反馈",
+        "电子元器件板块美股路演反馈与MLCC定价信号",
+        "电子元器件板块美股路演反馈与MLCC定价博弈"
+      ],
+      "cleaned_candidates": [
+        "JPM：电子元器件板块美股路演反馈",
+        "JPM：电子元器件板块美股路演反馈与MLCC定价信号",
+        "JPM：电子元器件板块美股路演反馈与MLCC定价博弈",
+        "JPM：ElectronicComponentsSe",
+        "JPM：7月20日至24日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：ElectronicComponentsSe",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：7月20日至24日",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：电子元器件板块美股路演反馈",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：电子元器件板块美股路演反馈"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-23-Morgan-Stanley-Greater-China-Technology-Hardware---Asia-Pacific-Progress",
+    "source_pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0003-23-MS-Greater China Technology Hardware - Asia Pacific Progress for Glass in Advanced Packaging-260726.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "玻璃基板，先进封装的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华科技硬件-亚太玻璃基先进封装进展",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-MS-Greater China Technology Hardware - Asia Pacific Progress for Glass in Advanced Packaging-260726.pdf",
+      "cleaned_source_title": "MS-Greater China Technology Hardware - Asia Pacific Progress for Glass in Advanced Packaging",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国科技硬件AsiaPaci",
+      "raw_candidates": [
+        "大中华科技硬件-亚太玻璃基先进封装进展",
+        "大中华科技硬件-玻璃基先进封装：蓝思与英特尔合作",
+        "大中华科技硬件-玻璃基先进封装：多家企业进度梳理"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华科技硬件-亚太玻璃基先进封装进展",
+        "MS：大中华科技硬件-玻璃基先进封装，蓝思与英特尔合作",
+        "MS：大中华科技硬件-玻璃基先进封装，多家企业进度梳理",
+        "MS：Greater中国科技硬件AsiaPaci",
+        "MS：2026年7月，蓝思科技宣布与英特尔合作开发玻璃基板"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华科技硬件-玻璃基先进封装，蓝思与英特尔合作",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "MS：大中华科技硬件-玻璃基先进封装，多家企业进度梳理",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "MS：Greater中国科技硬件AsiaPaci",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2026年7月，蓝思科技宣布与英特尔合作开发玻璃基板",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华科技硬件-亚太玻璃基先进封装进展",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华科技硬件-亚太玻璃基先进封装进展"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-24-Morgan-Stanley-Greater-China-Technology-Semiconductors---Asia-Pacific-Gr",
+    "source_pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0004-24-MS-Greater China Technology Semiconductors - Asia Pacific Greater China Cloud Semis-Read-across from INTC earnings call-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "英特尔财报里的云芯片",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x3",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华区科技半导体-亚太云端半导体与英特尔财报关联",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-MS-Greater China Technology Semiconductors - Asia Pacific Greater China Cloud Semis-Read-across from INTC earnings call-260727.pdf",
+      "cleaned_source_title": "MS-Greater China Technology Semiconductors - Asia Pacific Greater China Cloud Semis-Read-across from INTC earnings call",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国科技半导体AsiaPac",
+      "raw_candidates": [
+        "大中华区科技半导体-亚太云端半导体与英特尔财报关联",
+        "大中华区云端半导体：英特尔财报信号与需求持续",
+        "大中华区云端半导体：供给约束与ASIC业务增长"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华区科技半导体-亚太云端半导体与英特尔财报关联",
+        "MS：大中华区云端半导体，英特尔财报信号与需求持续",
+        "MS：大中华区云端半导体，供给约束与ASIC业务增长",
+        "MS：Greater中国科技半导体AsiaPac",
+        "MS：信骅科技的成本股权假设为9.8%，中期增长率21.4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华区云端半导体，英特尔财报信号与需求持续",
+          "reasons": [
+            "anchor_coverage=0.52"
+          ]
+        },
+        {
+          "title": "MS：大中华区云端半导体，供给约束与ASIC业务增长",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Greater中国科技半导体AsiaPac",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：信骅科技的成本股权假设为9.8%，中期增长率21.4%",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华区科技半导体-亚太云端半导体与英特尔财报关联",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华区科技半导体-亚太云端半导体与英特尔财报关联"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-25-NOM-CSPC-1093.HK-Positive-profit-alert--drug-sales-good--recurring-ea",
+    "source_pdf": "/tmp/pdf_batch_001_ekh21b64/pdfs/0005-25-NOM-CSPC-1093.HK-Positive profit alert- drug sales good- recurring earnings not-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "石药利润暴增，但核心",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：石药集团正面业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-NOM-CSPC-1093.HK-Positive profit alert- drug sales good- recurring earnings not-260727.pdf",
+      "cleaned_source_title": "NOM-CSPC-1093.HK-Positive profit alert- drug sales good- recurring earnings not",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：CSPCPositiveprofitalert",
+      "raw_candidates": [
+        "石药集团正面盈利预警-合作收入主导",
+        "石药集团2026上半年利润预警-合作收入57.4亿元",
+        "石药集团上半年利润预警-成品药销售增10%"
+      ],
+      "cleaned_candidates": [
+        "NOM：石药集团正面盈利预警-合作收入主导",
+        "NOM：石药集团2026上半年利润预警-合作收入57.4亿元",
+        "NOM：石药集团上半年利润预警-成品药销售增10%",
+        "NOM：CSPCPositiveprofitalert",
+        "NOM：7月27日相关市场收盘后，石药集团（CSPC"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：石药集团2026上半年利润预警-合作收入57.4亿元",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "NOM：石药集团上半年利润预警-成品药销售增10%",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：CSPCPositiveprofitalert",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：7月27日相关市场收盘后，石药集团（CSPC",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：石药集团正面业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：石药集团正面盈利预警-合作收入主导",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：石药集团正面业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
