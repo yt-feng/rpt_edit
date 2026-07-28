@@ -1,0 +1,4232 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.037,
+                0.065,
+                0.118,
+                0.125
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.214,
+                0.306,
+                0.248
+            ],
+            "angle": 0,
+            "content": "2026 GLOBAL INVESTOR SURVEY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.037,
+                0.283,
+                0.641,
+                0.484
+            ],
+            "angle": 0,
+            "content": "Investors Believe in AI—\nNow They Want Results"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.536,
+                0.138,
+                0.57
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.216,
+                0.305,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.036,
+                0.282,
+                0.593,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.036,
+                0.386,
+                0.627,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.063,
+                0.534,
+                0.139,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.026,
+                0.048,
+                0.925,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Amid market uncertainty, investors shared their expectations for the global economy and the companies they invest in"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.028,
+                0.215,
+                0.702,
+                0.843
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.9,
+                0.346,
+                0.928
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG's ValueScience Center."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.925,
+                0.699,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific)."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.728,
+                0.24,
+                0.827,
+                0.274
+            ],
+            "angle": 0,
+            "content": "2026 survey"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.728,
+                0.288,
+                0.951,
+                0.378
+            ],
+            "angle": 0,
+            "content": "- Investors were surveyed roughly three weeks after the start of the conflict in the Middle East",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.729,
+                0.392,
+                0.941,
+                0.512
+            ],
+            "angle": 0,
+            "content": "- The S&P Global 1200 index was about 4,900 on March 23, 2026, approximately 6% below its January 2026 peak",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.729,
+                0.525,
+                0.935,
+                0.617
+            ],
+            "angle": 0,
+            "content": "- Since the survey closed, the S&P Global 1200 has reached new all-time highs",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.729,
+                0.633,
+                0.827,
+                0.665
+            ],
+            "angle": 0,
+            "content": "2024 survey"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.729,
+                0.68,
+                0.936,
+                0.769
+            ],
+            "angle": 0,
+            "content": "- Investors were surveyed immediately following the US presidential election",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.728,
+                0.783,
+                0.938,
+                0.905
+            ],
+            "angle": 0,
+            "content": "- The S&P Global 1200 index was about 4,180 in November 2024—near an all-time high at the time of the survey",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.05,
+                0.923,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.112,
+                0.673,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.728,
+                0.239,
+                0.828,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.734,
+                0.29,
+                0.95,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.318,
+                0.933,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.347,
+                0.94,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.73,
+                0.393,
+                0.921,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.422,
+                0.939,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.451,
+                0.939,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.481,
+                0.883,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.74,
+                0.525,
+                0.923,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.555,
+                0.934,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.584,
+                0.863,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.729,
+                0.631,
+                0.827,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.734,
+                0.68,
+                0.899,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.709,
+                0.934,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.739,
+                0.877,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.73,
+                0.783,
+                0.92,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.814,
+                0.937,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.842,
+                0.926,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.742,
+                0.87,
+                0.904,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.025,
+                0.047,
+                0.943,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Investor sentiment for the medium term remains bullish, especially in North America and Asia-Pacific",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.196,
+                0.417,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors' sentiment for the next three years (%)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.496,
+                0.195,
+                0.968,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Investors' sentiment for the next three years, by region (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.028,
+                0.254,
+                0.966,
+                0.824
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.851,
+                0.265,
+                0.879
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's global investor surveys."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.875,
+                0.918,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Bullishness measures the directional conviction of investors, not the magnitude of expected returns. Because of rounding, the percentages may not add up to 100."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.926,
+                0.638,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: Where would you place yourself on the bull-bear spectrum over the next three years?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.045,
+                0.939,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.109,
+                0.443,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.047,
+                0.955,
+                0.166
+            ],
+            "angle": 0,
+            "content": "However, investors' market-average TSR expectations for the next three years are muted"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.027,
+                0.195,
+                0.46,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Average TSR expected for the subsequent three years"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.03,
+                0.283,
+                0.459,
+                0.722
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.495,
+                0.195,
+                0.945,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Average TSR expected through year-end 2028, by region"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.489,
+                0.261,
+                0.963,
+                0.749
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.777,
+                0.333,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's global investor surveys, 2010–2026."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.802,
+                0.961,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Expected TSR through year-end 2028 is calculated as a weighted average of the midpoint of the return range selected by respondents, annualized over three years, and including the annual dividend yield for each index. Results are weighted by the number of responses. Data from 2010 through 2014 and from 2017 through 2026 is based on all respondents across 16 indices (with the S&P 500 being over-represented). Data from 2015 through 2016 is based only on respondents using the S&P 500 as their benchmark. Any discrepancies when compared with prior survey results are due to rounding."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.926,
+                0.678,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Survey question: At what level do you expect the [index] to be three years from now (through year-end 2028)?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.049,
+                0.954,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.114,
+                0.241,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.591,
+                0.744,
+                0.794,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Too pessimistic \\( ^{2} \\)  | Too optimistic \\( ^{2} \\)"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.026,
+                0.047,
+                0.878,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Investors see the market as too bullish across key market drivers, especially on the future impact of AI"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.027,
+                0.193,
+                0.968,
+                0.734
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"7\">Key geopolitical and macro factors influencing capital markets</td></tr><tr><td></td><td>Investors&#x27; top-three factors (%)</td><td>2026 vs. 2024 (pp)</td><td colspan=\"2\">Investors&#x27; evaluation of the market&#x27;s view (%)</td><td>Net optimism (%)1</td><td>2026 vs. 2024 (pp)</td></tr><tr><td>War in Ukraine and the conflict in the Middle East</td><td>60</td><td>+29</td><td>15</td><td>30</td><td>15</td><td>+3</td></tr><tr><td>Interest rate policy</td><td>54</td><td>-5</td><td>15</td><td>30</td><td>15</td><td>-7</td></tr><tr><td>US federal policies</td><td>49</td><td>+3</td><td>21</td><td>31</td><td>10</td><td>-6</td></tr><tr><td>AI development and regulation</td><td>45</td><td>+22</td><td>15</td><td>56</td><td>41</td><td>+7</td></tr><tr><td>Cost of capital</td><td>21</td><td>-7</td><td>16</td><td>19</td><td>3</td><td>-12</td></tr><tr><td>China GDP outlook</td><td>17</td><td>-15</td><td>18</td><td>26</td><td>8</td><td>+2</td></tr><tr><td>Structural changes in asset management and allocation</td><td>10</td><td>+1</td><td>10</td><td>17</td><td>7</td><td>+2</td></tr><tr><td>Rest-of-Asia trade and economic acceleration</td><td>10</td><td>-5</td><td>13</td><td>19</td><td>6</td><td>0</td></tr><tr><td>BRICS expansion</td><td>9</td><td>-6</td><td>11</td><td>19</td><td>8</td><td>-3</td></tr><tr><td>Labor relations and cost</td><td>9</td><td>-8</td><td>13</td><td>20</td><td>7</td><td>+1</td></tr><tr><td>M&amp;A activity and regulation</td><td>6</td><td>-3</td><td>10</td><td>15</td><td>5</td><td>+3</td></tr><tr><td>Green industrial policy</td><td>6</td><td>-8</td><td>10</td><td>22</td><td>12</td><td>-7</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.776,
+                0.501,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.802,
+                0.964,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Any discrepancies when compared with prior survey results are due to rounding."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.851,
+                0.969,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Net optimism is the share of investors who considered the market to be too optimistic minus the share who considered the market to be too pessimistic. \\( ^{2} \\) The market being too optimistic implies downside risk, whereas the market being too pessimistic implies upside opportunity."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.901,
+                0.943,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey questions: Which of the following factors do you believe will most influence the overall direction of your region's equity market for the remainder of 2026? How accurately do you believe investors have captured the following factors in market pricing?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.049,
+                0.875,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.109,
+                0.51,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.026,
+                0.048,
+                0.87,
+                0.165
+            ],
+            "angle": 0,
+            "content": "A significant share of investors expect a near-term recession and elevated inflation to continue"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.196,
+                0.464,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Investors who are seeing their region currently in a recession or anticipating one before year-end 2026 (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.029,
+                0.297,
+                0.453,
+                0.79
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.826,
+                0.285,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.496,
+                0.196,
+                0.935,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Investors' expected time period for inflation to remain elevated (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.499,
+                0.296,
+                0.973,
+                0.791
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.851,
+                0.952,
+                0.902
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, percentages may not add up to 100."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.9,
+                0.969,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey questions: When do you expect the next economic recession to start in [home country]? How long do you expect inflation (as measured by the Consumer Price Index) to remain elevated above the central bank's target level (e.g., roughly \\(2\\%\\) for the US)?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.031,
+                0.048,
+                0.865,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.11,
+                0.412,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.025,
+                0.047,
+                0.877,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Investors believe tariffs will negatively affect corporate margins, consumer spending, stock market performance, and GDP growth",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.027,
+                0.195,
+                0.969,
+                0.759
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.777,
+                0.285,
+                0.805
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.802,
+                0.961,
+                0.907
+            ],
+            "angle": 0,
+            "content": "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC). For consumer spending, a positive or negative impact reflects an increase or decrease in spending levels, respectively. For interest rates and consumer price levels, a negative impact reflects expectations that these will increase as a result of tariff policy, while a positive impact reflects expectations that these will decrease.\n\n\\( ^{1} \\)Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.902,
+                0.549,
+                0.928
+            ],
+            "angle": 0,
+            "content": "The regional results were calculated separately using investors' responses in each region."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.925,
+                0.819,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: How would you rate the impact of the US tariff policy on the below metrics in [region] over the next 12 to 24 months?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.048,
+                0.863,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.11,
+                0.874,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.025,
+                0.047,
+                0.969,
+                0.167
+            ],
+            "angle": 0,
+            "content": "Investors anticipate technology, health care, and exploration-based sectors to be macro beneficiaries, while consumer industries see macro headwinds",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.027,
+                0.196,
+                0.969,
+                0.815
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.826,
+                0.285,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.851,
+                0.913,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.877,
+                0.961,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.902,
+                0.549,
+                0.929
+            ],
+            "angle": 0,
+            "content": "The regional results were calculated separately using investors' responses in each region."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.925,
+                0.7,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Survey question: How do you expect the current economic climate and political agenda to affect different sectors?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.052,
+                0.966,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.112,
+                0.964,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.047,
+                0.951,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Investors have shifted toward long-term structural winners and sectors that benefit from economic trends, while holding more dry powder"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.027,
+                0.196,
+                0.597,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors' top changes to capital allocation and investing practices \\((\\%)^{1}\\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.028,
+                0.241,
+                0.954,
+                0.797
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.826,
+                0.288,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.851,
+                0.825,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). FCF = free cash flow."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.877,
+                0.907,
+                0.905
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) The percentage reflects the share of investors selecting each factor among their top five changes.  \\( ^{2} \\) For example, AI, energy, and the energy transition."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.902,
+                0.965,
+                0.955
+            ],
+            "angle": 0,
+            "content": "Survey question: How have your capital allocation and investing practices or recommendations changed compared with your choices 12 months ago? Select up to five changes and rank them by importance."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.049,
+                0.949,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.107,
+                0.899,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.047,
+                0.928,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Growth remains the clear-cut, number one investment consideration, but investors are also increasingly focused on returns on capital"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.027,
+                0.195,
+                0.387,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors' top investment considerations (%)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.026,
+                0.243,
+                0.972,
+                0.79
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"5\">2026 vs. 2024 (pp)</td><td></td></tr><tr><td></td><td>+2</td><td>+8</td><td>+5</td><td>-3</td><td>-2</td></tr><tr><td>Long-term organic growth outlook</td><td>54</td><td></td><td></td><td></td><td></td></tr><tr><td><img src=\"data:image/jpeg;base64,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/gEP/i6P+Ge4P+hlk/8AAIf/ABdHKw9nLseG0V7l/wAM9wf9DLJ/4BD/AOLo/wCGe4P+hlk/8Ah/8XRysPZy7HhtFe5f8M9wf9DLJ/4BD/4uj/hnuD/oZZP/AACH/wAXRysPZy7HhtFe5f8ADPcH/Qyyf+AQ/wDi6P8AhnuD/oZZP/AIf/F0crD2cux4bRXuX/DPcH/Qyyf+AQ/+Lo/4Z7g/6GWT/wAAh/8AF0crD2cux4bT4f8AXx/7w/nXt/8Awz3B/wBDLJ/4BD/4unJ+z7Akit/wkkhwQcfYh/8AF0crD2cux7SeppKD1oqzqCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK8a+Pl7dWcegfZbmaDcbjd5UhXOPLxnFD0Jk+VXPZaK+eNF+GfjTXdFtNUtvEUSQ3UYkRZLqYMAfXCkUmqeHfiZ4FtW1KPWLie0h+aR7e6aVEHqyOOnvg0rk873sfRFFedfC/4jv4yhmsNRjSPVLZN5aMYWZM43AdiCRke4x6D0WmWmmroKKKKBhRRXnXxN8eX3hS90ex0zyfPu5C0xkTdtjBAGPqSfyoE3ZXZ6LRRRQMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5a0+Ifhq+8TN4fgv918HMY+QhGcdVDdCeD/SuprzTSvg7YaX42GvrqUskEc5nhtDFgq5JIy+eQCfT/64TK/Q9LoqhrmppouhX+pyAFbWB5dp/iIGQPxPFcx8LvFGo+LfC8+oaoYjOl28I8pNo2hUI4/4EaB31sdtRRRQMKKKKAMTxD4u0LwqLY61ffZftO7yv3Tvu24z91Tj7w6+tatpdQ31lBeWz74J41ljfBG5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\"/></td><td>19</td><td>Short-term growth momentum</td><td>18</td><td>FCF conversion, generation, and/or yield</td><td>17</td></tr><tr><td>Potential for market share gains</td><td></td><td></td><td></td><td></td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.826,
+                0.502,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.851,
+                0.966,
+                0.905
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Only the five highest-rated considerations are shown; respondents ranked 20 factors. FCF = free cash flow. Any discrepancies when compared with prior survey results are due to rounding."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.901,
+                0.961,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: How important are the following metrics or characteristics for your investment decisions and recommendations regarding financially healthy companies over the next 12 to 18 months? Please indicate your five most important considerations."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.048,
+                0.924,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.11,
+                0.857,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.047,
+                0.925,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Roughly 60% of investors support activist investors, but fewer believe that shareholder activism drives stronger midterm or long-term TSR"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.028,
+                0.196,
+                0.426,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors' posture regarding activist investors (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.029,
+                0.242,
+                0.578,
+                0.785
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.62,
+                0.195,
+                0.962,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Investors who believe that activism drives stronger mid- or long-term TSR (\\%) \\( ^{1} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.652,
+                0.279,
+                0.936,
+                0.733
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.801,
+                0.503,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.827,
+                0.965,
+                0.878
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Any discrepancies when compared with prior survey results are due to rounding."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.876,
+                0.967,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) The results reflect investors who somewhat agreed or strongly agreed. For comparability, the 2024 result excludes respondents who selected the neutral response."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.902,
+                0.957,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Survey question and statement: Where would you place yourself on the range of activism-related postures? Most of the activist campaigns I have witnessed"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.927,
+                0.468,
+                0.956
+            ],
+            "angle": 0,
+            "content": "have helped drive stronger mid- or long-term TSR for shareholders overall."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.049,
+                0.922,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.109,
+                0.913,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.049,
+                0.937,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Investors want companies to balance near-term EPS with longer-term investments, but when they are forced to choose, growth wins"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.027,
+                0.196,
+                0.443,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Most investors consider it important for companies to deliver profitability and invest for growth...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.196,
+                0.959,
+                0.269
+            ],
+            "angle": 0,
+            "content": "...but when faced with a tradeoff, almost three times as many investors want companies to focus on growth",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.029,
+                0.286,
+                0.973,
+                0.757
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.777,
+                0.502,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.803,
+                0.847,
+                0.831
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). EPS = earning per share."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.83,
+                0.953,
+                0.958
+            ],
+            "angle": 0,
+            "content": "Survey questions and statements: It is important for healthy companies to deliver EPS over the current fiscal year that at least meets guidance or consensus. (The results reflect the share of investors who somewhat agreed and strongly agreed.) It is important for healthy companies to prioritize building key business capabilities (for example, digital or technology infrastructure) that create advantage, deliver attractive returns, and/or reduce risk longer term, even if it means guiding to lower EPS or delivering below consensus. (The results reflect the share of investors who somewhat agreed and strongly agreed.) Which of the following best describes your view? Companies should prioritize near-term EPS, thread the needle and try to deliver on both, or prioritize long-term growth."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.051,
+                0.931,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.108,
+                0.835,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.198,
+                0.439,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.231,
+                0.394,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.197,
+                0.957,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.232,
+                0.919,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.048,
+                0.931,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Investors want companies to invest organically, reshape the portfolio, avoid leverage, and pay consistent dividends"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.026,
+                0.195,
+                0.392,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Investors who agree with each statement (%)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.023,
+                0.273,
+                0.979,
+                0.86
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.874,
+                0.499,
+                0.904
+            ],
+            "angle": 0,
+            "content": "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.9,
+                0.969,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). The results shown reflect the share of investors who somewhat agreed and strongly agreed."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.05,
+                0.927,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.11,
+                0.603,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.195,
+                0.387,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.027,
+                0.049,
+                0.96,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Investors believe AI will affect corporate fundamentals in the near term..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.027,
+                0.133,
+                0.861,
+                0.172
+            ],
+            "angle": 0,
+            "content": "Investors' expectations for when AI will have a materially positive impact on corporate fundamentals (%)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.032,
+                0.218,
+                0.975,
+                0.801
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.827,
+                0.286,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.851,
+                0.965,
+                0.902
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, the percentages may not add up to 100."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.9,
+                0.965,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: When do you expect AI to have a materially positive impact on corporate fundamentals (growth, profitability) across most industries, excluding technology companies focused on AI infrastructure?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.047,
+                0.958,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.133,
+                0.856,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.027,
+                0.048,
+                0.963,
+                0.168
+            ],
+            "angle": 0,
+            "content": "...but a minority of investors view AI as a source of sustained competitive differentiation longer term"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.027,
+                0.195,
+                0.515,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Investors' perspectives on AI as a competitive advantage (%)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.031,
+                0.271,
+                0.963,
+                0.807
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.827,
+                0.286,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.851,
+                0.965,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, the percentages may not add up to 100."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.9,
+                0.961,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: What is your perspective on the AI investments being made by companies you invest in or cover that compete in industries where AI will likely play an important role, excluding technology companies focused on AI infrastructure, tools, etc.?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.046,
+                0.961,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.108,
+                0.369,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.031,
+                0.195,
+                0.512,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.025,
+                0.046,
+                0.953,
+                0.169
+            ],
+            "angle": 0,
+            "content": "The impact of AI is expected to be strongest on labor productivity, corporate fundamentals, and growth, but at the cost of jobs and wages",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.027,
+                0.18,
+                0.969,
+                0.791
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.801,
+                0.281,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.826,
+                0.902,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.853,
+                0.951,
+                0.88
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.878,
+                0.959,
+                0.927
+            ],
+            "angle": 0,
+            "content": "The regional results were calculated separately using investors' responses in each region. \\( ^{2} \\)A reduction in consumer price levels and unemployment is considered a positive impact."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.924,
+                0.722,
+                0.958
+            ],
+            "angle": 0,
+            "content": "Survey question: What impact do you expect AI to have in the following areas over the next 24 months in [your region]?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.047,
+                0.887,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.109,
+                0.95,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "bbox": [
+                0.257,
+                0.291,
+                0.383,
+                0.854
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.048,
+                0.963,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Investors believe the market is overly optimistic on AI's potential, raising concerns about market valuations and headwinds for future returns"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.196,
+                0.441,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Investors' views on how accurately AI development and regulation is reflected in market valuations (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.135,
+                0.292,
+                0.241,
+                0.853
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.523,
+                0.196,
+                0.893,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Investors who think market valuations and AI expectations are likely to hinder returns (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.525,
+                0.304,
+                0.763,
+                0.748
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.79,
+                0.365,
+                0.947,
+                0.69
+            ],
+            "angle": 0,
+            "content": "The potential compression of valuation multiples may cause companies' TSR to depend on improved fundamentals, such as growth, margin expansion, and free cash flow generation"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.9,
+                0.288,
+                0.928
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.925,
+                0.699,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific)."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.048,
+                0.96,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.11,
+                0.902,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "footer",
+            "bbox": [
+                0.025,
+                0.875,
+                0.946,
+                0.958
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey. Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). All survey statements excluded technology companies focused on AI, including infrastructure and tools. The results shown reflect the share of respondents who somewhat and strongly agreed."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.046,
+                0.928,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Most investors deliberately evaluate companies' AI strategies and see room for improvement"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.028,
+                0.196,
+                0.39,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors who agree with each statement (%)"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.026,
+                0.245,
+                0.97,
+                0.835
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.046,
+                0.928,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.113,
+                0.326,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.048,
+                0.96,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Investors are concerned about AI execution capabilities but see current AI investments as too aggressive and sizable margin dilution as unacceptable"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.027,
+                0.197,
+                0.39,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Investors who agree with each statement (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.026,
+                0.243,
+                0.969,
+                0.838
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.875,
+                0.285,
+                0.904
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.026,
+                0.9,
+                0.946,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). The results reflect investors who somewhat agreed and strongly agreed. The questions excluded technology companies focused on AI, including infrastructure and tools."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.05,
+                0.957,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.11,
+                0.957,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.025,
+                0.047,
+                0.957,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Investors ultimately expect AI to create meaningful value, especially in health care, technology, financial institutions, and industrials"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.027,
+                0.194,
+                0.968,
+                0.786
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.028,
+                0.801,
+                0.283,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.826,
+                0.906,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.853,
+                0.96,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure. The regional results were calculated separately using investors' responses in each region.  \\( ^{2} \\) Financial institutions includes insurance companies."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.901,
+                0.955,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Survey question: How do you expect the development of AI to affect the financial fundamentals (e.g., revenue growth, margins, profitability, and free cash flow generation) of companies across different sectors within the next three years (by year-end 2028)?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.047,
+                0.954,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.111,
+                0.824,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.025,
+                0.048,
+                0.911,
+                0.169
+            ],
+            "angle": 0,
+            "content": "In the current investment environment, it is critical for companies to align their business, financial, and investor strategies",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.213,
+                0.338,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Integrated TSR strategy"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.021,
+                0.295,
+                0.353,
+                0.85
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.027,
+                0.901,
+                0.219,
+                0.956
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: EPS = earnings per share."
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.373,
+                0.2,
+                0.423,
+                0.278
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.378,
+                0.299,
+                0.521,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Business strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.333,
+                0.552,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Growth, margins,\nportfolio, M&A, and risk",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.414,
+                0.538,
+                0.506
+            ],
+            "angle": 0,
+            "content": "- Deliver near-term EPS while investing for long-term growth",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.519,
+                0.547,
+                0.58
+            ],
+            "angle": 0,
+            "content": "- Invest in the core with a credible path to returns",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.593,
+                0.552,
+                0.684
+            ],
+            "angle": 0,
+            "content": "- Articulate how AI creates competitive advantage specific to the business",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.698,
+                0.555,
+                0.907
+            ],
+            "angle": 0,
+            "content": "- Actively reshape the portfolio by divesting noncore businesses and pursuing focused tuck-in M&A, but avoid transformative deals that stretch the balance sheet",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.578,
+                0.2,
+                0.626,
+                0.278
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.581,
+                0.298,
+                0.727,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Financial strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.581,
+                0.334,
+                0.757,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Capital structure,\ndividends, and buybacks",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.581,
+                0.414,
+                0.742,
+                0.534
+            ],
+            "angle": 0,
+            "content": "- Avoid high leverage by staying below three times net debt to EBITDA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.581,
+                0.548,
+                0.756,
+                0.699
+            ],
+            "angle": 0,
+            "content": "- Maintain dividends at historical levels, and buy back shares opportunistically, not aggressively",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.581,
+                0.712,
+                0.76,
+                0.892
+            ],
+            "angle": 0,
+            "content": "- Treat AI capex as an investment with accountable payback, but avoid diluting margins significantly or levering up to fund it",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.781,
+                0.2,
+                0.827,
+                0.278
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.781,
+                0.299,
+                0.914,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Investor strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.78,
+                0.332,
+                0.955,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Investor type, valuation multiple, and messaging",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.779,
+                0.413,
+                0.968,
+                0.564
+            ],
+            "angle": 0,
+            "content": "- Know your investor base, understanding how focused your shareholders are on growth versus profitability versus cash flow generation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.78,
+                0.577,
+                0.963,
+                0.786
+            ],
+            "angle": 0,
+            "content": "- Communicate a clear capital-allocation strategy, showcasing reinvestment discipline, limited leverage, and healthy cash returns through dividends and/or buybacks",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.78,
+                0.798,
+                0.972,
+                0.918
+            ],
+            "angle": 0,
+            "content": "- Expect increased activist scrutiny, and proactively strengthen near- and medium-term fundamentals",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.028,
+                0.047,
+                0.908,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.11,
+                0.709,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.38,
+                0.298,
+                0.519,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.38,
+                0.334,
+                0.5,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.38,
+                0.368,
+                0.549,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.393,
+                0.416,
+                0.533,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.445,
+                0.507,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.393,
+                0.476,
+                0.501,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.385,
+                0.52,
+                0.545,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.548,
+                0.541,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.383,
+                0.593,
+                0.551,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.624,
+                0.537,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.654,
+                0.54,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.699,
+                0.52,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.727,
+                0.526,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.759,
+                0.545,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.788,
+                0.546,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.393,
+                0.817,
+                0.492,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.847,
+                0.552,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.876,
+                0.553,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.583,
+                0.298,
+                0.725,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.584,
+                0.335,
+                0.704,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.583,
+                0.367,
+                0.755,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.582,
+                0.414,
+                0.737,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.445,
+                0.72,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.475,
+                0.705,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.504,
+                0.647,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.587,
+                0.548,
+                0.735,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.577,
+                0.753,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.608,
+                0.672,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.639,
+                0.729,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.668,
+                0.673,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.712,
+                0.725,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.744,
+                0.698,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.772,
+                0.757,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.595,
+                0.8,
+                0.737,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.831,
+                0.742,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.596,
+                0.861,
+                0.675,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.782,
+                0.299,
+                0.911,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.783,
+                0.333,
+                0.942,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.782,
+                0.364,
+                0.953,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.414,
+                0.948,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.444,
+                0.964,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.473,
+                0.948,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.503,
+                0.954,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.532,
+                0.964,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.579,
+                0.926,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.606,
+                0.954,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.636,
+                0.951,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.665,
+                0.96,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.696,
+                0.947,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.725,
+                0.949,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.755,
+                0.854,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.799,
+                0.948,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.83,
+                0.943,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.859,
+                0.924,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.795,
+                0.888,
+                0.97,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.028,
+                0.049,
+                0.255,
+                0.107
+            ],
+            "angle": 0,
+            "content": "About the survey"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.027,
+                0.234,
+                0.366,
+                0.477
+            ],
+            "angle": 0,
+            "content": "BCG's 2026 Global Investor Survey is the 14th edition and captures the views of 544 institutional investors. It was conducted March 23, 2026—April 10, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.026,
+                0.527,
+                0.37,
+                0.819
+            ],
+            "angle": 0,
+            "content": "The findings are presented at the global level, reflecting areas of broad consensus and those where investor perspectives vary. Select regional differences are noted where they are most meaningful.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.45,
+                0.078,
+                0.528,
+                0.213
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.45,
+                0.283,
+                0.529,
+                0.419
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.451,
+                0.488,
+                0.527,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.449,
+                0.691,
+                0.528,
+                0.827
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.547,
+                0.083,
+                0.615,
+                0.148
+            ],
+            "angle": 0,
+            "content": "544",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.545,
+                0.153,
+                0.616,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Investors\nsurveyed",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.548,
+                0.289,
+                0.593,
+                0.352
+            ],
+            "angle": 0,
+            "content": "16"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.545,
+                0.359,
+                0.622,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Countries globally",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.671,
+                0.098,
+                0.734,
+                0.215
+            ],
+            "angle": 0,
+            "content": "180\nNorth\nAmerica",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.546,
+                0.495,
+                0.621,
+                0.557
+            ],
+            "angle": 0,
+            "content": "91%"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.547,
+                0.696,
+                0.636,
+                0.765
+            ],
+            "angle": 0,
+            "content": "$35T"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.545,
+                0.563,
+                0.653,
+                0.628
+            ],
+            "angle": 0,
+            "content": "Buy-side\nprofessionals \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.671,
+                0.305,
+                0.734,
+                0.423
+            ],
+            "angle": 0,
+            "content": "2 North America",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.546,
+                0.769,
+                0.625,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Combined AUM \\( ^{2} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.673,
+                0.51,
+                0.727,
+                0.557
+            ],
+            "angle": 0,
+            "content": "94%"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.672,
+                0.563,
+                0.733,
+                0.626
+            ],
+            "angle": 0,
+            "content": "North America",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.671,
+                0.711,
+                0.735,
+                0.832
+            ],
+            "angle": 0,
+            "content": "$11T North America",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.761,
+                0.099,
+                0.809,
+                0.146
+            ],
+            "angle": 0,
+            "content": "184"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.758,
+                0.152,
+                0.871,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Europe and the Middle East",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.759,
+                0.358,
+                0.871,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Europe and the Middle East",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.761,
+                0.509,
+                0.816,
+                0.557
+            ],
+            "angle": 0,
+            "content": "88%"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.759,
+                0.563,
+                0.871,
+                0.627
+            ],
+            "angle": 0,
+            "content": "Europe and\nthe Middle East",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.757,
+                0.712,
+                0.872,
+                0.832
+            ],
+            "angle": 0,
+            "content": "$10T\nEurope and\nthe Middle East",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.891,
+                0.098,
+                0.943,
+                0.215
+            ],
+            "angle": 0,
+            "content": "180\nAsia-\nPacific",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.891,
+                0.306,
+                0.942,
+                0.422
+            ],
+            "angle": 0,
+            "content": "7 Asia-Pacific",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.891,
+                0.509,
+                0.95,
+                0.627
+            ],
+            "angle": 0,
+            "content": "90%\nAsia-\nPacific",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.89,
+                0.712,
+                0.956,
+                0.832
+            ],
+            "angle": 0,
+            "content": "$14T Asia-Pacific",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.433,
+                0.876,
+                0.933,
+                0.957
+            ],
+            "angle": 0,
+            "content": "Source: BCG's 2026 Global Investor Survey. \\( ^{1} \\) Portfolio managers and buy-side analysts. \\( ^{2} \\) AUM represents the assets managed by the respondents' firms in each region.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.039,
+                0.258,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.234,
+                0.365,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.283,
+                0.336,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.333,
+                0.35,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.384,
+                0.353,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.431,
+                0.161,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.529,
+                0.335,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.578,
+                0.367,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.628,
+                0.36,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.676,
+                0.337,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.029,
+                0.723,
+                0.366,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.773,
+                0.191,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.544,
+                0.079,
+                0.618,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.546,
+                0.155,
+                0.616,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.183,
+                0.615,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.284,
+                0.596,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.36,
+                0.622,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.389,
+                0.608,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.671,
+                0.092,
+                0.727,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.672,
+                0.15,
+                0.718,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.672,
+                0.181,
+                0.734,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.491,
+                0.624,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.543,
+                0.69,
+                0.641,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.546,
+                0.565,
+                0.612,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.546,
+                0.595,
+                0.652,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.671,
+                0.306,
+                0.695,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.67,
+                0.34,
+                0.723,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.671,
+                0.385,
+                0.734,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.546,
+                0.77,
+                0.624,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.545,
+                0.797,
+                0.592,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.671,
+                0.508,
+                0.729,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.673,
+                0.566,
+                0.715,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.672,
+                0.594,
+                0.733,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.67,
+                0.708,
+                0.738,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.673,
+                0.77,
+                0.716,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.673,
+                0.8,
+                0.733,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.097,
+                0.811,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.76,
+                0.153,
+                0.841,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.181,
+                0.871,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.359,
+                0.841,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.388,
+                0.871,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.507,
+                0.818,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.76,
+                0.564,
+                0.841,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.76,
+                0.594,
+                0.87,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.755,
+                0.71,
+                0.825,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.76,
+                0.77,
+                0.841,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.758,
+                0.798,
+                0.871,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.89,
+                0.092,
+                0.945,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.891,
+                0.15,
+                0.934,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.891,
+                0.178,
+                0.943,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.89,
+                0.304,
+                0.917,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.893,
+                0.358,
+                0.931,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.893,
+                0.39,
+                0.942,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.892,
+                0.508,
+                0.951,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.893,
+                0.563,
+                0.931,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.894,
+                0.595,
+                0.941,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.89,
+                0.708,
+                0.959,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.892,
+                0.769,
+                0.931,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.893,
+                0.799,
+                0.941,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.876,
+                0.688,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.436,
+                0.903,
+                0.931,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.435,
+                0.927,
+                0.628,
+                0.952
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

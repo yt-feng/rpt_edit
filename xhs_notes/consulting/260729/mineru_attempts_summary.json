@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ej2ltqb6/pdfs/0001-BCG_Investors-Believe-in-AI-Now-They-Want-Results_25e6d9f5.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

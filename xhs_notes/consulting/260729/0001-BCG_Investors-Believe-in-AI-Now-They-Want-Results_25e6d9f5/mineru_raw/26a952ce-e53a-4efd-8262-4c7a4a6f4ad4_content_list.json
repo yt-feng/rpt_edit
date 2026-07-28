@@ -1,0 +1,1516 @@
+[
+    {
+        "type": "text",
+        "text": "2026 GLOBAL INVESTOR SURVEY",
+        "bbox": [
+            37,
+            213,
+            305,
+            247
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Investors Believe in AI— Now They Want Results",
+        "text_level": 1,
+        "bbox": [
+            36,
+            282,
+            640,
+            483
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "July 2026",
+        "bbox": [
+            64,
+            535,
+            137,
+            569
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            36,
+            64,
+            117,
+            124
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Amid market uncertainty, investors shared their expectations for the global economy and the companies they invest in",
+        "text_level": 2,
+        "bbox": [
+            25,
+            47,
+            925,
+            168
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4aebb1f6d56083b5ef3d858afc141e6f6675bcc983d8285bb1c722d06bd6bb36.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; BCG's ValueScience Center.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific)."
+        ],
+        "bbox": [
+            27,
+            214,
+            701,
+            842
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2026 survey",
+        "text_level": 2,
+        "bbox": [
+            727,
+            239,
+            826,
+            273
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Investors were surveyed roughly three weeks after the start of the conflict in the Middle East",
+        "bbox": [
+            727,
+            287,
+            950,
+            377
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- The S&P Global 1200 index was about 4,900 on March 23, 2026, approximately 6% below its January 2026 peak",
+        "bbox": [
+            728,
+            391,
+            940,
+            511
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Since the survey closed, the S&P Global 1200 has reached new all-time highs",
+        "bbox": [
+            728,
+            524,
+            934,
+            616
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2024 survey",
+        "text_level": 2,
+        "bbox": [
+            728,
+            632,
+            826,
+            664
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Investors were surveyed immediately following the US presidential election",
+        "bbox": [
+            728,
+            679,
+            935,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- The S&P Global 1200 index was about 4,180 in November 2024—near an all-time high at the time of the survey",
+        "bbox": [
+            727,
+            782,
+            937,
+            904
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Investor sentiment for the medium term remains bullish, especially in North America and Asia-Pacific",
+        "bbox": [
+            25,
+            46,
+            942,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Investors' sentiment for the next three years (%)",
+        "bbox": [
+            26,
+            195,
+            416,
+            232
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Investors' sentiment for the next three years, by region (%)",
+        "bbox": [
+            495,
+            194,
+            967,
+            233
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/31f40e55fdd7886b9c8b8f32326457ad5d32ca0e568731a61ebae021f6da987a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG's global investor surveys.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Bullishness measures the directional conviction of investors, not the magnitude of expected returns. Because of rounding, the percentages may not add up to 100.",
+            "Survey question: Where would you place yourself on the bull-bear spectrum over the next three years?"
+        ],
+        "bbox": [
+            27,
+            253,
+            965,
+            823
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "However, investors' market-average TSR expectations for the next three years are muted",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            954,
+            165
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9b672960b084d2bdfb35aed441830cea1e1c8f271e3399e85c4044dd55f76eaa.jpg",
+        "content": "",
+        "chart_caption": [
+            "Average TSR expected for the subsequent three years"
+        ],
+        "chart_footnote": [
+            "Average TSR expected through year-end 2028, by region"
+        ],
+        "bbox": [
+            29,
+            282,
+            458,
+            721
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f04ee09b9d4dfcb4d9e99df34b70858bfbd601f42fec026b5a3738c0a2842110.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG's global investor surveys, 2010–2026.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Expected TSR through year-end 2028 is calculated as a weighted average of the midpoint of the return range selected by respondents, annualized over three years, and including the annual dividend yield for each index. Results are weighted by the number of responses. Data from 2010 through 2014 and from 2017 through 2026 is based on all respondents across 16 indices (with the S&P 500 being over-represented). Data from 2015 through 2016 is based only on respondents using the S&P 500 as their benchmark. Any discrepancies when compared with prior survey results are due to rounding.",
+            "Survey question: At what level do you expect the [index] to be three years from now (through year-end 2028)?"
+        ],
+        "bbox": [
+            488,
+            260,
+            962,
+            748
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Too pessimistic $^{2}$ | Too optimistic $^{2}$",
+        "bbox": [
+            590,
+            743,
+            793,
+            773
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Investors see the market as too bullish across key market drivers, especially on the future impact of AI",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            877,
+            167
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/67726dd7a67eb3d044e58002176501a5ad80f0a6f2950786fc188fd6547d789a.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Any discrepancies when compared with prior survey results are due to rounding.",
+            "$^{1}$ Net optimism is the share of investors who considered the market to be too optimistic minus the share who considered the market to be too pessimistic. $^{2}$ The market being too optimistic implies downside risk, whereas the market being too pessimistic implies upside opportunity.",
+            "Survey questions: Which of the following factors do you believe will most influence the overall direction of your region's equity market for the remainder of 2026? How accurately do you believe investors have captured the following factors in market pricing?"
+        ],
+        "table_body": "<table><tr><td colspan=\"7\">Key geopolitical and macro factors influencing capital markets</td></tr><tr><td></td><td>Investors&#x27; top-three factors (%)</td><td>2026 vs. 2024 (pp)</td><td colspan=\"2\">Investors&#x27; evaluation of the market&#x27;s view (%)</td><td>Net optimism (%)1</td><td>2026 vs. 2024 (pp)</td></tr><tr><td>War in Ukraine and the conflict in the Middle East</td><td>60</td><td>+29</td><td>15</td><td>30</td><td>15</td><td>+3</td></tr><tr><td>Interest rate policy</td><td>54</td><td>-5</td><td>15</td><td>30</td><td>15</td><td>-7</td></tr><tr><td>US federal policies</td><td>49</td><td>+3</td><td>21</td><td>31</td><td>10</td><td>-6</td></tr><tr><td>AI development and regulation</td><td>45</td><td>+22</td><td>15</td><td>56</td><td>41</td><td>+7</td></tr><tr><td>Cost of capital</td><td>21</td><td>-7</td><td>16</td><td>19</td><td>3</td><td>-12</td></tr><tr><td>China GDP outlook</td><td>17</td><td>-15</td><td>18</td><td>26</td><td>8</td><td>+2</td></tr><tr><td>Structural changes in asset management and allocation</td><td>10</td><td>+1</td><td>10</td><td>17</td><td>7</td><td>+2</td></tr><tr><td>Rest-of-Asia trade and economic acceleration</td><td>10</td><td>-5</td><td>13</td><td>19</td><td>6</td><td>0</td></tr><tr><td>BRICS expansion</td><td>9</td><td>-6</td><td>11</td><td>19</td><td>8</td><td>-3</td></tr><tr><td>Labor relations and cost</td><td>9</td><td>-8</td><td>13</td><td>20</td><td>7</td><td>+1</td></tr><tr><td>M&amp;A activity and regulation</td><td>6</td><td>-3</td><td>10</td><td>15</td><td>5</td><td>+3</td></tr><tr><td>Green industrial policy</td><td>6</td><td>-8</td><td>10</td><td>22</td><td>12</td><td>-7</td></tr></table>",
+        "bbox": [
+            26,
+            192,
+            967,
+            733
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A significant share of investors expect a near-term recession and elevated inflation to continue",
+        "text_level": 2,
+        "bbox": [
+            25,
+            47,
+            869,
+            164
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Investors who are seeing their region currently in a recession or anticipating one before year-end 2026 (%)",
+        "bbox": [
+            26,
+            195,
+            463,
+            267
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/55133f610dc58a70b59cc927372087d804e81b6f940603ff78dae574f3ae86c1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Investors' expected time period for inflation to remain elevated (%)"
+        ],
+        "bbox": [
+            28,
+            296,
+            452,
+            789
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/529bb1a03a6f8516764757531f30bc1364726207b447ee59d75f480a5b58e621.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, percentages may not add up to 100.",
+            "Survey questions: When do you expect the next economic recession to start in [home country]? How long do you expect inflation (as measured by the Consumer Price Index) to remain elevated above the central bank's target level (e.g., roughly $2\\%$ for the US)?"
+        ],
+        "bbox": [
+            498,
+            295,
+            972,
+            790
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Investors believe tariffs will negatively affect corporate margins, consumer spending, stock market performance, and GDP growth",
+        "bbox": [
+            25,
+            46,
+            876,
+            168
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5145965bbd7d481fb35cb91eafe3a7e97591ff40c36ccf94c542267a89a30f4e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC). For consumer spending, a positive or negative impact reflects an increase or decrease in spending levels, respectively. For interest rates and consumer price levels, a negative impact reflects expectations that these will increase as a result of tariff policy, while a positive impact reflects expectations that these will decrease. $^{1}$ Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure.",
+            "The regional results were calculated separately using investors' responses in each region.",
+            "Survey question: How would you rate the impact of the US tariff policy on the below metrics in [region] over the next 12 to 24 months?"
+        ],
+        "bbox": [
+            26,
+            194,
+            968,
+            758
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Investors anticipate technology, health care, and exploration-based sectors to be macro beneficiaries, while consumer industries see macro headwinds",
+        "bbox": [
+            25,
+            46,
+            968,
+            166
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2a6f0071d6cd9553892930cacd5544f382f6c515ac35f39c4c46e76245a679c8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC).",
+            "$^{1}$ Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure.",
+            "The regional results were calculated separately using investors' responses in each region.",
+            "Survey question: How do you expect the current economic climate and political agenda to affect different sectors?"
+        ],
+        "bbox": [
+            26,
+            195,
+            968,
+            814
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Investors have shifted toward long-term structural winners and sectors that benefit from economic trends, while holding more dry powder",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            950,
+            167
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5a3129e580a92fe049d96d4cb0bbf3dea8b3418bc1896d99c0b6b83c9635ece2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Investors' top changes to capital allocation and investing practices $(\\%)^{1}$"
+        ],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). FCF = free cash flow.",
+            "$^{1}$ The percentage reflects the share of investors selecting each factor among their top five changes. $^{2}$ For example, AI, energy, and the energy transition.",
+            "Survey question: How have your capital allocation and investing practices or recommendations changed compared with your choices 12 months ago? Select up to five changes and rank them by importance."
+        ],
+        "bbox": [
+            27,
+            240,
+            953,
+            796
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Growth remains the clear-cut, number one investment consideration, but investors are also increasingly focused on returns on capital",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            927,
+            168
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/c69ef3f7da0d0bb136ed5e8f55578fa789932f81e7adb4178a348bdc3e61ae27.jpg",
+        "table_caption": [
+            "Investors' top investment considerations (%)"
+        ],
+        "table_footnote": [
+            "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Only the five highest-rated considerations are shown; respondents ranked 20 factors. FCF = free cash flow. Any discrepancies when compared with prior survey results are due to rounding.",
+            "Survey question: How important are the following metrics or characteristics for your investment decisions and recommendations regarding financially healthy companies over the next 12 to 18 months? Please indicate your five most important considerations."
+        ],
+        "table_body": "<table><tr><td colspan=\"5\">2026 vs. 2024 (pp)</td><td></td></tr><tr><td></td><td>+2</td><td>+8</td><td>+5</td><td>-3</td><td>-2</td></tr><tr><td>Long-term organic growth outlook</td><td>54</td><td></td><td></td><td></td><td></td></tr><tr><td><img src=\"images/17202d9f3057d2b7316489d83cbcd9122fd943b335f7928dadf61e37e16cd7ea.jpg\"/></td><td>19</td><td>Short-term growth momentum</td><td>18</td><td>FCF conversion, generation, and/or yield</td><td>17</td></tr><tr><td>Potential for market share gains</td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            25,
+            242,
+            971,
+            789
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Roughly 60% of investors support activist investors, but fewer believe that shareholder activism drives stronger midterm or long-term TSR",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            925,
+            167
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5b920d46401685add80904c1b2bc048c78ba40a9887eb3e41b5949ba33e54f74.jpg",
+        "content": "",
+        "chart_caption": [
+            "Investors' posture regarding activist investors (%)"
+        ],
+        "chart_footnote": [
+            "Investors who believe that activism drives stronger mid- or long-term TSR (\\%) $^{1}$"
+        ],
+        "bbox": [
+            28,
+            241,
+            577,
+            784
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6b6fba60795a54de62edd408514e8a59efb62eed5f7e2b240d93e8bb92cac2b9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Any discrepancies when compared with prior survey results are due to rounding.",
+            "$^{1}$ The results reflect investors who somewhat agreed or strongly agreed. For comparability, the 2024 result excludes respondents who selected the neutral response.",
+            "Survey question and statement: Where would you place yourself on the range of activism-related postures? Most of the activist campaigns I have witnessed",
+            "have helped drive stronger mid- or long-term TSR for shareholders overall."
+        ],
+        "bbox": [
+            651,
+            278,
+            935,
+            732
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Investors want companies to balance near-term EPS with longer-term investments, but when they are forced to choose, growth wins",
+        "text_level": 2,
+        "bbox": [
+            25,
+            48,
+            936,
+            167
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Most investors consider it important for companies to deliver profitability and invest for growth...",
+        "bbox": [
+            26,
+            195,
+            442,
+            267
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "...but when faced with a tradeoff, almost three times as many investors want companies to focus on growth",
+        "bbox": [
+            505,
+            195,
+            958,
+            268
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e68a3815ec802c33619260518fc1f91c158aebb7b1284991d690d145e7dcd007.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). EPS = earning per share.",
+            "Survey questions and statements: It is important for healthy companies to deliver EPS over the current fiscal year that at least meets guidance or consensus. (The results reflect the share of investors who somewhat agreed and strongly agreed.) It is important for healthy companies to prioritize building key business capabilities (for example, digital or technology infrastructure) that create advantage, deliver attractive returns, and/or reduce risk longer term, even if it means guiding to lower EPS or delivering below consensus. (The results reflect the share of investors who somewhat agreed and strongly agreed.) Which of the following best describes your view? Companies should prioritize near-term EPS, thread the needle and try to deliver on both, or prioritize long-term growth."
+        ],
+        "bbox": [
+            28,
+            285,
+            972,
+            756
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Investors want companies to invest organically, reshape the portfolio, avoid leverage, and pay consistent dividends",
+        "text_level": 2,
+        "bbox": [
+            25,
+            47,
+            930,
+            167
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Investors who agree with each statement (%)",
+        "bbox": [
+            25,
+            194,
+            391,
+            233
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0876063f9645788aaceb449beaa45961e3e17c5d38b99178a472b2635a1dce82.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG's 2026 Global Investor Survey; BCG's 2024 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). The results shown reflect the share of investors who somewhat agreed and strongly agreed."
+        ],
+        "bbox": [
+            22,
+            272,
+            978,
+            859
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Investors believe AI will affect corporate fundamentals in the near term...",
+        "text_level": 2,
+        "bbox": [
+            26,
+            48,
+            959,
+            104
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Investors' expectations for when AI will have a materially positive impact on corporate fundamentals (%)",
+        "bbox": [
+            26,
+            132,
+            860,
+            171
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3cd3a8a9e9e2ceef6c656341895cc4fb4b984c3a7055ef0835a817bfdd599269.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, the percentages may not add up to 100.",
+            "Survey question: When do you expect AI to have a materially positive impact on corporate fundamentals (growth, profitability) across most industries, excluding technology companies focused on AI infrastructure?"
+        ],
+        "bbox": [
+            31,
+            217,
+            975,
+            800
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "...but a minority of investors view AI as a source of sustained competitive differentiation longer term",
+        "text_level": 2,
+        "bbox": [
+            26,
+            47,
+            962,
+            167
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Investors' perspectives on AI as a competitive advantage (%)",
+        "bbox": [
+            26,
+            194,
+            514,
+            234
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/acf7ba033222a15d1bac545dc8d0215c6992bfecd79bb3907d176301a37b0e67.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). Because of rounding, the percentages may not add up to 100.",
+            "Survey question: What is your perspective on the AI investments being made by companies you invest in or cover that compete in industries where AI will likely play an important role, excluding technology companies focused on AI infrastructure, tools, etc.?"
+        ],
+        "bbox": [
+            30,
+            270,
+            962,
+            806
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The impact of AI is expected to be strongest on labor productivity, corporate fundamentals, and growth, but at the cost of jobs and wages",
+        "bbox": [
+            25,
+            45,
+            952,
+            168
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2119eb4580f5778d0e2902fc53c06fc43629d8562f5f4d01406fbc1be83c5aa0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC).",
+            "$^{1}$ Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure.",
+            "The regional results were calculated separately using investors' responses in each region. $^{2}$ A reduction in consumer price levels and unemployment is considered a positive impact.",
+            "Survey question: What impact do you expect AI to have in the following areas over the next 24 months in [your region]?"
+        ],
+        "bbox": [
+            26,
+            179,
+            968,
+            790
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b94997988e5a645616442bfc3121b0e7f1b433a5349f5835d404c1c2a3a68d01.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Investors' views on how accurately AI development and regulation is reflected in market valuations (%)"
+        ],
+        "bbox": [
+            256,
+            290,
+            382,
+            853
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Investors believe the market is overly optimistic on AI's potential, raising concerns about market valuations and headwinds for future returns",
+        "text_level": 2,
+        "bbox": [
+            25,
+            47,
+            962,
+            165
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aabdb23b89e61f7b1fa1afb01a1a49d6eefeefba0ec7485b1740be9b4abb215e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Investors who think market valuations and AI expectations are likely to hinder returns (%)"
+        ],
+        "bbox": [
+            134,
+            291,
+            240,
+            852
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/784eff951cba3fbb854fe26642773c9ea4e876b171d48bba1492b63d6f836853.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The potential compression of valuation multiples may cause companies' TSR to depend on improved fundamentals, such as growth, margin expansion, and free cash flow generation",
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific)."
+        ],
+        "bbox": [
+            525,
+            303,
+            762,
+            747
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Most investors deliberately evaluate companies' AI strategies and see room for improvement",
+        "text_level": 2,
+        "bbox": [
+            25,
+            45,
+            927,
+            165
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/b69f6678fdfe277faf3a91ea1ac3182cef1a4bb6d7f87fe01988f3700f9b6098.jpg",
+        "image_caption": [
+            "Investors who agree with each statement (%)"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            25,
+            244,
+            969,
+            834
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG's 2026 Global Investor Survey. Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). All survey statements excluded technology companies focused on AI, including infrastructure and tools. The results shown reflect the share of respondents who somewhat and strongly agreed.",
+        "bbox": [
+            25,
+            874,
+            945,
+            957
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Investors are concerned about AI execution capabilities but see current AI investments as too aggressive and sizable margin dilution as unacceptable",
+        "text_level": 2,
+        "bbox": [
+            25,
+            47,
+            959,
+            168
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f1baaded59470b83a7905f2617f5fd0c8d79aea71dd08d2d27ca7bb4c2120fc7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Investors who agree with each statement (%)"
+        ],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: n = 544 global investors (180 in North America, 184 in Europe and the Middle East, and 180 in Asia-Pacific). The results reflect investors who somewhat agreed and strongly agreed. The questions excluded technology companies focused on AI, including infrastructure and tools."
+        ],
+        "bbox": [
+            25,
+            242,
+            968,
+            837
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Investors ultimately expect AI to create meaningful value, especially in health care, technology, financial institutions, and industrials",
+        "text_level": 2,
+        "bbox": [
+            25,
+            46,
+            956,
+            167
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6c44fe1373a998f4f46595d697a7bc722c1686519537a62849735c1f3e6d034c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG's 2026 Global Investor Survey.",
+            "Note: NA = North America; EME = Europe and the Middle East; APAC = Asia-Pacific. n = 544 global investors (180 in NA, 184 in EME, and 180 in APAC).",
+            "$^{1}$ Net perspective is the share of investors who expected a positive impact minus the share who expected a negative impact, excluding investors who were unsure. The regional results were calculated separately using investors' responses in each region. $^{2}$ Financial institutions includes insurance companies.",
+            "Survey question: How do you expect the development of AI to affect the financial fundamentals (e.g., revenue growth, margins, profitability, and free cash flow generation) of companies across different sectors within the next three years (by year-end 2028)?"
+        ],
+        "bbox": [
+            26,
+            193,
+            967,
+            785
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "In the current investment environment, it is critical for companies to align their business, financial, and investor strategies",
+        "bbox": [
+            25,
+            47,
+            910,
+            168
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Integrated TSR strategy",
+        "bbox": [
+            38,
+            212,
+            337,
+            271
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d2ba9352fd192c22b72064c1674e8dc8cc553f5242d0c603b5325021a9b36bd2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG analysis.\nNote: EPS = earnings per share."
+        ],
+        "bbox": [
+            20,
+            294,
+            352,
+            850
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a37574249bfb3a11fbb0cfd4d6cfe227ac8cb6b53aee20685ea5268c34401fc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            372,
+            200,
+            422,
+            277
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Business strategy",
+        "text_level": 2,
+        "bbox": [
+            377,
+            298,
+            520,
+            332
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Growth, margins,\nportfolio, M&A, and risk",
+        "bbox": [
+            376,
+            332,
+            551,
+            401
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Deliver near-term EPS while investing for long-term growth",
+        "bbox": [
+            376,
+            413,
+            537,
+            505
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Invest in the core with a credible path to returns",
+        "bbox": [
+            376,
+            518,
+            546,
+            579
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Articulate how AI creates competitive advantage specific to the business",
+        "bbox": [
+            376,
+            592,
+            551,
+            683
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Actively reshape the portfolio by divesting noncore businesses and pursuing focused tuck-in M&A, but avoid transformative deals that stretch the balance sheet",
+        "bbox": [
+            376,
+            697,
+            554,
+            906
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/14d3a322e7fb7acb8f1b9248269351e077a2441669227d8579434689dce5f352.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            577,
+            200,
+            625,
+            277
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Financial strategy",
+        "text_level": 2,
+        "bbox": [
+            580,
+            297,
+            726,
+            332
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Capital structure,\ndividends, and buybacks",
+        "bbox": [
+            580,
+            333,
+            756,
+            401
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Avoid high leverage by staying below three times net debt to EBITDA",
+        "bbox": [
+            580,
+            413,
+            741,
+            533
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Maintain dividends at historical levels, and buy back shares opportunistically, not aggressively",
+        "bbox": [
+            580,
+            547,
+            755,
+            698
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Treat AI capex as an investment with accountable payback, but avoid diluting margins significantly or levering up to fund it",
+        "bbox": [
+            580,
+            711,
+            759,
+            891
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/a883e96302094000bfd29c888d31b015127b2e5b95c57f576d2b6065f65435f9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            780,
+            200,
+            826,
+            277
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Investor strategy",
+        "text_level": 2,
+        "bbox": [
+            780,
+            298,
+            913,
+            330
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Investor type, valuation multiple, and messaging",
+        "bbox": [
+            779,
+            331,
+            954,
+            401
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Know your investor base, understanding how focused your shareholders are on growth versus profitability versus cash flow generation",
+        "bbox": [
+            778,
+            412,
+            967,
+            563
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Communicate a clear capital-allocation strategy, showcasing reinvestment discipline, limited leverage, and healthy cash returns through dividends and/or buybacks",
+        "bbox": [
+            779,
+            576,
+            962,
+            785
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Expect increased activist scrutiny, and proactively strengthen near- and medium-term fundamentals",
+        "bbox": [
+            779,
+            797,
+            971,
+            917
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "About the survey",
+        "text_level": 2,
+        "bbox": [
+            27,
+            48,
+            254,
+            106
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "BCG's 2026 Global Investor Survey is the 14th edition and captures the views of 544 institutional investors. It was conducted March 23, 2026—April 10, 2026.",
+        "bbox": [
+            26,
+            233,
+            365,
+            476
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The findings are presented at the global level, reflecting areas of broad consensus and those where investor perspectives vary. Select regional differences are noted where they are most meaningful.",
+        "bbox": [
+            25,
+            526,
+            369,
+            818
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/af76a86824685a44b988a7302581f467767d7e449f67bcfc87ecb30fe762049a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            450,
+            77,
+            527,
+            212
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/e04665978da054fc477602e8b84d9d396839fd77b89ff6a1ed69a46c1edeac8e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            450,
+            282,
+            528,
+            418
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/75de338f436b5ad2585ad1cf69d8c8606ce917ebc74f938d2b5f2712337f623e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            450,
+            487,
+            526,
+            621
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/39eb85ac4ecf72635f205dbce6eeb91869bf3d376e96dff865a6f0f817289f09.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            448,
+            690,
+            527,
+            826
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "544",
+        "bbox": [
+            546,
+            82,
+            614,
+            147
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Investors\nsurveyed",
+        "bbox": [
+            544,
+            152,
+            615,
+            216
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "16",
+        "text_level": 2,
+        "bbox": [
+            547,
+            288,
+            592,
+            351
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Countries globally",
+        "bbox": [
+            544,
+            358,
+            621,
+            424
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "180\nNorth\nAmerica",
+        "bbox": [
+            670,
+            97,
+            733,
+            214
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "91%",
+        "text_level": 2,
+        "bbox": [
+            545,
+            494,
+            620,
+            556
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\$35T",
+        "text_level": 2,
+        "bbox": [
+            546,
+            695,
+            635,
+            764
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Buy-side\nprofessionals $^{1}$",
+        "bbox": [
+            544,
+            562,
+            652,
+            627
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "2 North America",
+        "bbox": [
+            670,
+            304,
+            733,
+            422
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Combined AUM $^{2}$",
+        "bbox": [
+            545,
+            768,
+            625,
+            829
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "94%",
+        "text_level": 2,
+        "bbox": [
+            672,
+            509,
+            726,
+            556
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "North America",
+        "bbox": [
+            671,
+            562,
+            732,
+            625
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\$11T North America",
+        "bbox": [
+            670,
+            710,
+            734,
+            831
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "184",
+        "text_level": 2,
+        "bbox": [
+            760,
+            98,
+            808,
+            145
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Europe and the Middle East",
+        "bbox": [
+            757,
+            151,
+            870,
+            215
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Europe and the Middle East",
+        "bbox": [
+            758,
+            357,
+            870,
+            422
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "88%",
+        "text_level": 2,
+        "bbox": [
+            760,
+            508,
+            815,
+            556
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Europe and\nthe Middle East",
+        "bbox": [
+            758,
+            562,
+            870,
+            626
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\$10T\nEurope and\nthe Middle East",
+        "bbox": [
+            756,
+            711,
+            871,
+            831
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "180\nAsia-\nPacific",
+        "bbox": [
+            890,
+            97,
+            942,
+            214
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "7 Asia-Pacific",
+        "bbox": [
+            890,
+            305,
+            941,
+            421
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "90%\nAsia-\nPacific",
+        "bbox": [
+            890,
+            508,
+            950,
+            626
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\$14T Asia-Pacific",
+        "bbox": [
+            889,
+            711,
+            955,
+            831
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG's 2026 Global Investor Survey. $^{1}$ Portfolio managers and buy-side analysts. $^{2}$ AUM represents the assets managed by the respondents' firms in each region.",
+        "bbox": [
+            432,
+            875,
+            932,
+            956
+        ],
+        "page_idx": 21
+    }
+]
