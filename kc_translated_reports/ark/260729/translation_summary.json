@@ -1,0 +1,145 @@
+{
+  "date_folder": "260729",
+  "max_reports": "all",
+  "selected_count": 1,
+  "successful_count": 1,
+  "title_neutralized_count": 1,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260729/0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea642850",
+      "title": "木头姐ARK：特斯拉AI算力通过Megapod与AI及近期数据观察",
+      "source_title": "0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea642850",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea642850",
+        "cleaned_source_title": "0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea642850",
+        "institution_name": "木头姐ARK",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "木头姐ARK：0001ARK518TeslaRemai",
+        "raw_candidates": [
+          "木头姐ARK：特斯拉Robotaxi七城推进与Optimus研发平稳",
+          "木头姐ARK：特斯拉AI算力通过Megapod储能系统扩张",
+          "木头姐ARK：特斯拉Robotaxi城市拓展策略以安全验证为先",
+          "特斯拉在Robotaxi与Optimus保持耐心-AI野心随Megapod扩张",
+          "特斯拉Robotaxi七城推进-Megapod支撑AI算力",
+          "特斯拉Robotaxi与Optimus进展-Megapod储能与AI基础设施"
+        ],
+        "cleaned_candidates": [
+          "木头姐ARK：特斯拉Robotaxi七城推进与Optimus研发平稳",
+          "木头姐ARK：特斯拉AI算力通过Megapod储能系统扩张",
+          "木头姐ARK：特斯拉Robotaxi城市拓展策略以安全验证为先",
+          "木头姐ARK：特斯拉在Robotaxi与Optimus保持耐心",
+          "木头姐ARK：特斯拉Robotaxi七城推进",
+          "木头姐ARK：特斯拉Robotaxi与Optimus进展",
+          "木头姐ARK：0001ARK518TeslaRemai",
+          "木头姐ARK：AI技术与相关数据观察"
+        ],
+        "faithful_candidate_missing_terms": [
+          "AI"
+        ],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "木头姐ARK：特斯拉Robotaxi七城推进与Optimus研发平稳",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：特斯拉Robotaxi城市拓展策略以安全验证为先",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：特斯拉在Robotaxi与Optimus保持耐心",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：特斯拉Robotaxi七城推进",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：特斯拉Robotaxi与Optimus进展",
+            "reasons": [
+              "missing_required_terms=AI",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：0001ARK518TeslaRemai",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "木头姐ARK：AI技术与相关数据观察",
+            "reasons": [
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "木头姐ARK：特斯拉AI算力通过Megapod与AI及近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "木头姐ARK：AI技术与相关数据观察",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "木头姐ARK：特斯拉Robotaxi七城推进与Optimus研发平稳",
+          "木头姐ARK：特斯拉AI算力通过Megapod储能系统扩张",
+          "木头姐ARK：特斯拉Robotaxi城市拓展策略以安全验证为先"
+        ],
+        "pre_neutralization_title": "木头姐ARK：特斯拉AI算力通过Megapod储能系统扩张",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "木头姐ARK：特斯拉AI算力通过Megapod与AI及近期数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/ark/260729/01-0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea6428",
+      "pdf_path": "kc_translated_reports/ark/260729/01-0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea6428/kc_translated_report_01.pdf"
+    }
+  ]
+}
