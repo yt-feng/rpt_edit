@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "date_folder": "260729",
+  "source": "kc_translated_reports/institutions",
+  "generated_at_utc": "2026-07-28T23:33:59Z",
+  "article_count": 6,
+  "uploaded_count": 6,
+  "articles": [
+    {
+      "source_report_name": "BIS AI-and-the-global-economy-implications-for-central-banks 267239e2",
+      "institution_name": "国际清算银行",
+      "title_before_upload": "国际清算银行：AI与全球宏观环境对央行的启示",
+      "final_wechat_title": "国际清算银行：AI与全球宏观环境对央行的启示",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/01-0001-BIS_AI-and-the-global-economy-implications-for-central-banks_267239e2",
+      "generation_decision": {
+        "source_filename": "0001-BIS_AI-and-the-global-economy-implications-for-central-banks_267239e2",
+        "cleaned_source_title": "0001-BIS_AI-and-the-global-economy-implications-for-central-banks_267239e2",
+        "institution_name": "国际清算银行",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "国际清算银行：0001BISAI和the全球econo",
+        "raw_candidates": [
+          "国际清算银行：AI与全球经济对央行的启示",
+          "国际清算银行：AI研究热潮重塑全球宏观环境格局",
+          "国际清算银行：AI对央行政策与资金稳定的影响"
+        ],
+        "cleaned_candidates": [
+          "国际清算银行：AI与全球宏观环境对央行的启示",
+          "国际清算银行：AI研究热潮重塑全球宏观环境格局",
+          "国际清算银行：AI对央行政策与资金稳定的影响",
+          "国际清算银行：0001BISAI和the全球econo",
+          "国际清算银行：AI驱动的研究与融资浪潮已占部分地区GDP的1%以上"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "国际清算银行：AI研究热潮重塑全球宏观环境格局",
+            "reasons": [
+              "anchor_coverage=0.43"
+            ]
+          },
+          {
+            "title": "国际清算银行：AI对央行政策与资金稳定的影响",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "国际清算银行：0001BISAI和the全球econo",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "国际清算银行：AI驱动的研究与融资浪潮已占部分地区GDP的1%以上",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "国际清算银行：AI与全球宏观环境对央行的启示",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "国际清算银行：AI与全球宏观环境对央行的启示",
+        "header_pre_neutralization_title": "AI驱动的研究与融资浪潮已占部分地区GDP的1%以上",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "AI驱动的研究与融资浪潮已占部分地区GDP的1%以上->统计方法与相关数据观察",
+          "AI重塑贸易格局与劳动力市场，生产力回报仍不确定->AI与组织管理与生产率技术应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "IMF South-Africa-Workshop-on-Fraud-and-Investigations-Involving- 86f5544c",
+      "institution_name": "IMF",
+      "title_before_upload": "IMF：南非欺诈与调查研讨会，研讨会聚焦区块链技术与跨机构协作调查方法",
+      "final_wechat_title": "IMF：南非欺诈与调查研讨会，研讨会聚焦区块链技术与跨机构协作调查方法",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/02-0002-IMF_South-Africa-Workshop-on-Fraud-and-Investigations-Involving-_86f5544c",
+      "generation_decision": {
+        "source_filename": "0002-IMF_South-Africa-Workshop-on-Fraud-and-Investigations-Involving-_86f5544c",
+        "cleaned_source_title": "0002-IMF_South-Africa-Workshop-on-Fraud-and-Investigations-Involving-_86f5544c",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFSouthAfricaWorks",
+        "raw_candidates": [
+          "IMF：南非欺诈与调查研讨会",
+          "IMF：南非加密货币税务调查能力建设",
+          "IMF：南非区块链技术跨机构调查协作"
+        ],
+        "cleaned_candidates": [
+          "IMF：南非欺诈与调查研讨会",
+          "IMF：南非加密货币税务调查能力建设",
+          "IMF：南非区块链技术跨机构调查协作",
+          "IMF：0002IMFSouthAfricaWorks",
+          "IMF：南非约9%至12%的人口持有加密货币资产"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：南非加密货币税务调查能力建设",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：南非区块链技术跨机构调查协作",
+            "reasons": [
+              "anchor_coverage=0.22",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0002IMFSouthAfricaWorks",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：南非约9%至12%的人口持有加密货币资产",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：南非欺诈与调查研讨会",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：南非欺诈与调查研讨会",
+        "body_heading_neutralization_changes": [
+          "南非监管框架与国际标准接轨进程加速->行业规则与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "OECD A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le 602b6e58",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：终身学习测量框架的概念基础，现有数据系统存在四大结构性局限",
+      "final_wechat_title": "经合组织：终身学习测量框架的概念基础，现有数据系统存在四大结构性局限",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/03-0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58",
+      "generation_decision": {
+        "source_filename": "0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58",
+        "cleaned_source_title": "0003-OECD_A-Conceptual-Foundation-for-the-Development-of-a-Lifelong-Le_602b6e58",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0003OECDAConceptualFou",
+        "raw_candidates": [
+          "经合组织：终身学习测量框架的概念基础",
+          "经合组织：终身学习测量框架-四大数据局限与三大支柱",
+          "经合组织：终身学习测量框架-需求供给协调与全生命周期覆盖"
+        ],
+        "cleaned_candidates": [
+          "经合组织：终身学习测量框架的概念基础",
+          "经合组织：终身学习测量框架-四大数据局限与三大支柱",
+          "经合组织：终身学习测量框架-需求供给协调与全生命周期覆盖",
+          "经合组织：0003OECDAConceptualFou",
+          "经合组织：首先，生命全程覆盖不足，大多数国际测量聚焦25-64岁成年人"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：终身学习测量框架-四大数据局限与三大支柱",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "经合组织：终身学习测量框架-需求供给协调与全生命周期覆盖",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "经合组织：0003OECDAConceptualFou",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：首先，生命全程覆盖不足，大多数国际测量聚焦25-64岁成年人",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：终身学习测量框架的概念基础",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：终身学习测量框架的概念基础"
+      }
+    },
+    {
+      "source_report_name": "OECD OECD-Economic-Surveys-Malaysia-2026 9691f04c",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：马来西亚宏观环境调查2026，财政整顿需加速",
+      "final_wechat_title": "经合组织：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/04-0004-OECD_OECD-Economic-Surveys-Malaysia-2026_9691f04c",
+      "generation_decision": {
+        "source_filename": "0004-OECD_OECD-Economic-Surveys-Malaysia-2026_9691f04c",
+        "cleaned_source_title": "0004-OECD_OECD-Economic-Surveys-Malaysia-2026_9691f04c",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0004OECDOECDEconomicSu",
+        "raw_candidates": [
+          "经合组织：马来西亚经济调查2026",
+          "经合组织：马来西亚2028-2030高收入门槛政策转型",
+          "经合组织：马来西亚财政整顿与生产率增长改革"
+        ],
+        "cleaned_candidates": [
+          "经合组织：马来西亚宏观环境调查2026",
+          "经合组织：马来西亚2028-2030高收入门槛政策转型",
+          "经合组织：马来西亚财政整顿与生产率增长改革",
+          "经合组织：0004OECDOECDEconomicSu",
+          "经合组织：[[KC_IMAGE_001]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：马来西亚2028-2030高收入门槛政策转型",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "经合组织：马来西亚财政整顿与生产率增长改革",
+            "reasons": [
+              "anchor_coverage=0.23",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0004OECDOECDEconomicSu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：[[KC_IMAGE_001]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：马来西亚宏观环境调查2026",
+        "pre_upload_neutralization_title": "经合组织：马来西亚宏观环境调查2026，财政整顿需加速",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "header_pre_neutralization_title": "财政整顿需加速，补贴改革与税制重建并行",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "财政整顿需加速，补贴改革与税制重建并行->行业规则与主题变化观察",
+          "生产率增长节奏变化，教育成果下滑制约长期竞争力->组织管理与生产率数据与主题变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "OECD Private-Finance-Mobilisation-Report-2026 71bdc76f",
+      "institution_name": "经合组织",
+      "title_before_upload": "经合组织：私人融资动员报告2026，非洲和拉美是最大受益区域",
+      "final_wechat_title": "经合组织：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/05-0005-OECD_Private-Finance-Mobilisation-Report-2026_71bdc76f",
+      "generation_decision": {
+        "source_filename": "0005-OECD_Private-Finance-Mobilisation-Report-2026_71bdc76f",
+        "cleaned_source_title": "0005-OECD_Private-Finance-Mobilisation-Report-2026_71bdc76f",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0005OECDPrivateFinance",
+        "raw_candidates": [
+          "经合组织：私人融资动员报告2026",
+          "经合组织：2024年官方融资撬动超600亿美元私人资本",
+          "经合组织：担保机制撬动私人资本增长32%"
+        ],
+        "cleaned_candidates": [
+          "经合组织：私人融资动员报告2026",
+          "经合组织：2024年官方融资撬动超600亿美元私人资本",
+          "经合组织：担保机制撬动私人资本增长32%",
+          "经合组织：0005OECDPrivateFinance",
+          "经合组织：2024年官方发展融资撬动超600亿美元私人资本"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：2024年官方融资撬动超600亿美元私人资本",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "经合组织：担保机制撬动私人资本增长32%",
+            "reasons": [
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0005OECDPrivateFinance",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：2024年官方发展融资撬动超600亿美元私人资本",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：私人融资动员报告2026",
+        "pre_upload_neutralization_title": "经合组织：私人融资动员报告2026，非洲和拉美是最大受益区域",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "header_pre_neutralization_title": "非洲和拉美是最大受益区域，低收入国家仅获8%撬动资金",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "非洲和拉美是最大受益区域，低收入国家仅获8%撬动资金->研究主题与行业变化观察",
+          "担保、直接研究和银团贷款是三大核心杠杆工具->资金结构与相关数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "WTO WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an 999b9cb5",
+      "institution_name": "世界贸易组织",
+      "title_before_upload": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+      "final_wechat_title": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/institutions/260729/06-0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+      "generation_decision": {
+        "source_filename": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+        "cleaned_source_title": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+        "institution_name": "世界贸易组织",
+        "required_terms": [],
+        "deterministic_fallback": "世界贸易组织：0006WTOWTOpanelissue",
+        "raw_candidates": [
+          "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+          "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+          "世界贸易组织：WTO专家组认定土耳其电动汽车措施违反最惠国待遇与国民待遇"
+        ],
+        "cleaned_candidates": [
+          "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+          "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+          "世界贸易组织：WTO专家组认定土耳其电动汽车措施违反最惠国待遇与国民待",
+          "世界贸易组织：0006WTOWTOpanelissue",
+          "世界贸易组织：认定，土耳其通过2025年9月22日第10436号总统令"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+            "reasons": [
+              "anchor_coverage=0.45"
+            ]
+          },
+          {
+            "title": "世界贸易组织：0006WTOWTOpanelissue",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.09",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界贸易组织：认定，土耳其通过2025年9月22日第10436号总统令",
+            "reasons": [
+              "anchor_coverage=0.14",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+        "header_pre_neutralization_title": "土耳其对电动汽车的附加关税超出约束税率且违反最惠国待遇",
+        "header_neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "body_heading_neutralization_changes": [
+          "土耳其对电动汽车的附加关税超出约束税率且违反最惠国待遇->跨境贸易与行业变化观察",
+          "进口许可与本地化要求构成歧视性待遇且未获正当性->跨境贸易数据与主题变化观察"
+        ]
+      }
+    }
+  ]
+}
