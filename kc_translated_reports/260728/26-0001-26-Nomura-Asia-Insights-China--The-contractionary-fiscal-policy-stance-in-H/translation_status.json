@@ -1,0 +1,126 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260728/shard_5/0001-26-Nomura-Asia-Insights-China--The-contractionary-fiscal-policy-stance-in-H",
+  "title": "野村：行业规则与主题变化观察",
+  "source_title": "0001-26-NOM-Asia Insights China- The contractionary fiscal policy stance in H1-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-26-NOM-Asia Insights China- The contractionary fiscal policy stance in H1-260727",
+    "cleaned_source_title": "NOM-Asia Insights China- The contractionary fiscal policy stance in H1",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaInsights中国",
+    "raw_candidates": [
+      "野村：亚洲洞察中国-上半年紧缩性财政政策立场",
+      "野村：亚洲洞察中国-上半年广义财政支出同比下降2.9%",
+      "野村：亚洲洞察中国-上半年财政数据与下半年支出展望"
+    ],
+    "cleaned_candidates": [
+      "野村：亚洲洞察中国-上半年紧缩性财政政策立场",
+      "野村：亚洲洞察中国-上半年广义财政支出同比下降2.9%",
+      "野村：亚洲洞察中国-上半年财政数据与下半年支出展望",
+      "野村：AsiaInsights中国",
+      "野村：税收收入增速从2025年的0.8%升至2026年上半年的同比增长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：亚洲洞察中国-上半年广义财政支出同比下降2.9%",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：亚洲洞察中国-上半年财政数据与下半年支出展望",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：AsiaInsights中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：税收收入增速从2025年的0.8%升至2026年上半年的同比增长",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：亚洲洞察中国-上半年紧缩性财政政策立场",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "野村：行业规则与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 4,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "股票|个股->公司 x2",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "恶化->出现变化 x3",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

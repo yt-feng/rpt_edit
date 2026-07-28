@@ -1,0 +1,115 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260728/shard_2/0002-12-Goldman-Sachs-CHINA-SOLAR--TRACKING-PROFITABILITY-INFLECTION-Jul-26--Gla",
+  "title": "高盛：价格数据与市场变化观察",
+  "source_title": "0002-12-GS-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION Jul-26- Glass price increased while the remaining segments continued softness-2607",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-12-GS-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION Jul-26- Glass price increased while the remaining segments continued softness-2607",
+    "cleaned_source_title": "GS-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION Jul-26- Glass price increased while the remaining segments continued softness-2607",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国SOLAR",
+    "raw_candidates": [
+      "中国太阳能-追踪盈利拐点-玻璃价格上涨其余环节持续疲软",
+      "中国太阳能-7月玻璃价格月环比上涨6%其余环节持续疲软",
+      "中国太阳能-玻璃库存改善与盈利拐点追踪"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国太阳能-追踪盈利拐点-玻璃价格上涨其余环节持续疲软",
+      "高盛：中国太阳能-7月玻璃价格月环比上涨6%其余环节持续疲软",
+      "高盛：中国太阳能-玻璃库存改善与盈利拐点追踪",
+      "高盛：中国SOLAR",
+      "高盛：7月26日，玻璃价格上涨，其余环节持续疲软"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国太阳能-7月玻璃价格月环比上涨6%其余环节持续疲软",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国太阳能-玻璃库存改善与盈利拐点追踪",
+        "reasons": [
+          "anchor_coverage=0.38",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国SOLAR",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：7月26日，玻璃价格上涨，其余环节持续疲软",
+        "reasons": [
+          "anchor_coverage=0.54",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：价格数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：中国太阳能-追踪盈利拐点-玻璃价格上涨其余环节持续疲软",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：价格数据与市场变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_12.pdf",
+  "figure_count": 8,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

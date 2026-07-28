@@ -1,0 +1,74 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260728/shard_6/0001-31-Nomura-USD-CNY-fix-model-Projection--6.7724-260728",
+  "title": "野村：货币市场与相关指标观察",
+  "source_title": "0001-31-NOM-USD CNY fix model-Projection- 6.7724-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-31-NOM-USD CNY fix model-Projection- 6.7724-260728",
+    "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7724",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：USDCNYfixmodelProjection-6.7724",
+    "raw_candidates": [
+      "美元人民币中间价模型预测6.7724",
+      "美元人民币中间价模型预测6.7724-较前值低187基点",
+      "美元人民币中间价模型预测6.7724-隔夜权重贡献"
+    ],
+    "cleaned_candidates": [
+      "野村：美元人民币中间价模型预测6.7724",
+      "野村：美元人民币中间价模型预测6.7724-较前值低187基点",
+      "野村：美元人民币中间价模型预测6.7724-隔夜权重贡献",
+      "野村：USDCNYfixmodelProjection-6.7724",
+      "野村：图1，对预测变化贡献最大的前4个隔夜权重（不含逆周期因子）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：USDCNYfixmodelProjection-6.7724",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：图1，对预测变化贡献最大的前4个隔夜权重（不含逆周期因子）",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "187"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：美元人民币中间价模型预测6.7724-较前值低187基点",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "野村：货币市场与相关指标观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_31.pdf",
+  "figure_count": 3,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ]
+}
