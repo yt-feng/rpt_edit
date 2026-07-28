@@ -1,0 +1,71 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260729/0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+  "title": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+  "source_title": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+    "cleaned_source_title": "0006-WTO_WTO-panel-issues-report-regarding-Turkish-measures-on-EVs-an_999b9cb5",
+    "institution_name": "世界贸易组织",
+    "required_terms": [],
+    "deterministic_fallback": "世界贸易组织：0006WTOWTOpanelissue",
+    "raw_candidates": [
+      "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+      "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+      "世界贸易组织：WTO专家组认定土耳其电动汽车措施违反最惠国待遇与国民待遇"
+    ],
+    "cleaned_candidates": [
+      "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+      "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+      "世界贸易组织：WTO专家组认定土耳其电动汽车措施违反最惠国待遇与国民待",
+      "世界贸易组织：0006WTOWTOpanelissue",
+      "世界贸易组织：认定，土耳其通过2025年9月22日第10436号总统令"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界贸易组织：WTO裁定土耳其电动汽车附加关税及本地化要求违规",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "世界贸易组织：0006WTOWTOpanelissue",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界贸易组织：认定，土耳其通过2025年9月22日第10436号总统令",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界贸易组织：WTO专家组裁定土耳其电动汽车措施违反GATT"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 0,
+  "institution_name": "世界贸易组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
