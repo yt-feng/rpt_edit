@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_fibf0uyi/pdfs/0001-11-GS-China Property Weekly Wrap-Week 30 Wrap-Transactions gains extended while market activities broadly remained stable-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fibf0uyi/pdfs/0002-12-GS-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION Jul-26- Glass price increased while the remaining segments continued softness-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fibf0uyi/pdfs/0003-13-GS-China- Both industrial profits and revenue increased in June-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fibf0uyi/pdfs/0004-14-GS-China Resources Beer -0291.HK-- 1H26 Preview- Positive beer volume ASP growth out pf industry but more cost pressure- spirits still-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fibf0uyi/pdfs/0005-15-GS-China- Three things in China-260726 2.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+Found 31 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_fibf0uyi/pdfs/0001-11-Goldman Sachs-China Property Weekly Wrap-Week 30 Wrap-Transactions gains extended while market activities broadly remained stable-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_fibf0uyi/pdfs/0002-12-Goldman Sachs-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION Jul-26- Glass price increased while the remaining segments continued softness-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_fibf0uyi/pdfs/0003-13-Goldman Sachs-China- Both industrial profits and revenue increased in June-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_fibf0uyi/pdfs/0004-14-Goldman Sachs-China Resources Beer -0291.HK-- 1H26 Preview- Positive beer volume ASP growth out pf industry but more cost pressure- spirits still-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_fibf0uyi/pdfs/0005-15-Goldman Sachs-China- Three things in China-260726 2.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=f826ad6a-1ccd-4360-9c7f-58ad8f4112cc
+MinerU states: running, running, pending, pending, done
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 1fdf142b4d78f47c588162b6d832cad2064503dfd77f3cf6ea7f22446d355882.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：中国房地产第30周交易量环比增长12%市场活动稳定 -> 高盛：城市与住房数据变化观察
+Skip non-chart visual asset 943ce45d9c38c9c046fd415e6cf7bc47bf562f3c4f9acdbe7f77f05080d031ab.jpg: score=-100;too_small:523x126
+Skip non-chart visual asset bd25d5c98bd84b27917d0f668533634781777b5a737ad3fa9d197ac98cdb45c0.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset a3e2a6f34f01f73008475a83bd3a9e81dd6072b00e8a97802b3e77bcf90111e5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Neutralized WeChat title while keeping the report: 高盛：中国光伏-追踪利润拐点，玻璃价格回升其余环节持续疲软 -> 高盛：价格数据与市场变化观察
+Neutralized WeChat title while keeping the report: 高盛：中国6月工业企业利润环比增长1.5%收入环比增长3.1% -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 59e9a98e9cfc1825efdc6f1ea4ea41a9bc17f50474b10ea335c3b9bf22ef2cf2.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 7fe2904bbd0ccf2ad4a0dc31f0cd6196a4877d416b1b2e2d3677fb9f0e8ff13e.jpg: score=-1;square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 1b2480d51c07dba43aeeea65f42220f68d2f4d791f08fad3a8247a1f9e733eb0.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset 6fbe9074807bfa34fa754de7fa6ff4361a3388f138e85db46b2aa5031dd2b00e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Neutralized WeChat title while keeping the report: 高盛：华润啤酒1H26预览-量价增长优于行业但成本压力持续 -> 高盛：华润啤酒业务与近期数据观察
+Neutralized WeChat title while keeping the report: 高盛：中国宏观环境三件事 -> 高盛：近期数据与市场变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260728/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
