@@ -1,0 +1,125 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "财报逻辑拆解",
+  "cover_subtitle": "苹果压力减弱，但股息暂停是代价",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：Skyworks季度营收9.35亿美元-股息取消",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729.pdf",
+    "cleaned_source_title": "MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：SkyworksSolutionsIncS",
+    "raw_candidates": [
+      "Skyworks Solutions 季度业绩与股息取消",
+      "Skyworks 季度营收9.35亿美元-股息取消",
+      "Skyworks 移动与数据中心业务- Qorvo交易进展"
+    ],
+    "cleaned_candidates": [
+      "MS：SkyworksSolutions季度业绩与股息取消",
+      "MS：Skyworks季度营收9.35亿美元-股息取消",
+      "MS：Skyworks移动与数据中心业务-Qorvo交易进展",
+      "MS：SkyworksSolutionsIncS",
+      "MS：这份MS研报覆盖了Skyworks截至2026年6月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：SkyworksSolutions季度业绩与股息取消",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "MS：Skyworks移动与数据中心业务-Qorvo交易进展",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：SkyworksSolutionsIncS",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：这份MS研报覆盖了Skyworks截至2026年6月",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：Skyworks季度营收9.35亿美元-股息取消",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "9.35"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：Skyworks季度营收9.35亿美元-股息取消"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "488",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

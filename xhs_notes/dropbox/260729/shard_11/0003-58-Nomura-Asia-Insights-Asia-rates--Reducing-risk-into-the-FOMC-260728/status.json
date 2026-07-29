@@ -1,0 +1,131 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0003-58-NOM-Asia Insights-Asia rates- Reducing risk into the FOMC-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "FOMC前夕，亚洲利",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x3",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "NOM：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-NOM-Asia Insights-Asia rates- Reducing risk into the FOMC-260728.pdf",
+    "cleaned_source_title": "NOM-Asia Insights-Asia rates- Reducing risk into the FOMC",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：AsiaInsightsAsia利率",
+    "raw_candidates": [
+      "NOM亚洲利率：FOMC前降低韩国与台湾仓位",
+      "NOM亚洲利率：7月FOMC前调整韩国与台湾交易仓位",
+      "NOM亚洲利率：FOMC前降低仓位，维持香港与中国大陆头寸"
+    ],
+    "cleaned_candidates": [
+      "NOM：NOM亚洲利率，FOMC前降低韩国与台湾仓位",
+      "NOM：NOM亚洲利率，7月FOMC前调整韩国与台湾交易仓位",
+      "NOM：NOM亚洲利率，FOMC前降低仓位，维持香港与中国大陆头寸",
+      "NOM：AsiaInsightsAsia利率",
+      "NOM：这份7月27日发布的报告，核心判断并非方向性看多或看空亚洲利率"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：NOM亚洲利率，FOMC前降低仓位，维持香港与中国大陆头寸",
+        "reasons": [
+          "anchor_coverage=0.68"
+        ]
+      },
+      {
+        "title": "NOM：AsiaInsightsAsia利率",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：这份7月27日发布的报告，核心判断并非方向性看多或看空亚洲利率",
+        "reasons": [
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：NOM亚洲利率，7月FOMC前调整韩国与台湾交易仓位",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "NOM：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "465",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

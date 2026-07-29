@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0002-57-MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "日本航天公司，正在悄",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：日本太空公司覆盖四只公司",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-57-MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks-260727.pdf",
+    "cleaned_source_title": "MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：SpaceCompaniesSoaring",
+    "raw_candidates": [
+      "MS：日本太空公司覆盖四只股票",
+      "MS：日本太空产业2026年覆盖五家公司",
+      "MS：日本太空公司从卫星到组件供应链"
+    ],
+    "cleaned_candidates": [
+      "MS：日本太空公司覆盖四只公司",
+      "MS：日本太空产业2026年覆盖五家公司",
+      "MS：日本太空公司从卫星到组件供应链",
+      "MS：SpaceCompaniesSoaring",
+      "MS：MS在2026年7月发布的一份覆盖五家日本太空公司"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：日本太空产业2026年覆盖五家公司",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "MS：日本太空公司从卫星到组件供应链",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "MS：SpaceCompaniesSoaring",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：MS在2026年7月发布的一份覆盖五家日本太空公司",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      }
+    ],
+    "selected_title": "MS：日本太空公司覆盖四只公司",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：日本太空公司覆盖四只公司"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "503",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

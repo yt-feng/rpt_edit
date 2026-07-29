@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0002-57-MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0003-58-NOM-Asia Insights-Asia rates- Reducing risk into the FOMC-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0004-59-NOM-China consumer-Read-across from LVMH-s 2Q26 results-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0005-60-MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

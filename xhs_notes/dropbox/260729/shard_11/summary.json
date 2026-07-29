@@ -1,0 +1,485 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "财报逻辑拆解",
+    "cover_subtitle": "苹果压力减弱，但股息暂停是代价",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x2",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Skyworks季度营收9.35亿美元-股息取消",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729.pdf",
+      "cleaned_source_title": "MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SkyworksSolutionsIncS",
+      "raw_candidates": [
+        "Skyworks Solutions 季度业绩与股息取消",
+        "Skyworks 季度营收9.35亿美元-股息取消",
+        "Skyworks 移动与数据中心业务- Qorvo交易进展"
+      ],
+      "cleaned_candidates": [
+        "MS：SkyworksSolutions季度业绩与股息取消",
+        "MS：Skyworks季度营收9.35亿美元-股息取消",
+        "MS：Skyworks移动与数据中心业务-Qorvo交易进展",
+        "MS：SkyworksSolutionsIncS",
+        "MS：这份MS研报覆盖了Skyworks截至2026年6月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SkyworksSolutions季度业绩与股息取消",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "MS：Skyworks移动与数据中心业务-Qorvo交易进展",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：SkyworksSolutionsIncS",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：这份MS研报覆盖了Skyworks截至2026年6月",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Skyworks季度营收9.35亿美元-股息取消",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "9.35"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：Skyworks季度营收9.35亿美元-股息取消"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0002-57-MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "日本航天公司，正在悄",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：日本太空公司覆盖四只公司",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-57-MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks-260727.pdf",
+      "cleaned_source_title": "MS-Space Companies Soaring from the Land of the Rising Sun- Initiating on 4 Stocks",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SpaceCompaniesSoaring",
+      "raw_candidates": [
+        "MS：日本太空公司覆盖四只股票",
+        "MS：日本太空产业2026年覆盖五家公司",
+        "MS：日本太空公司从卫星到组件供应链"
+      ],
+      "cleaned_candidates": [
+        "MS：日本太空公司覆盖四只公司",
+        "MS：日本太空产业2026年覆盖五家公司",
+        "MS：日本太空公司从卫星到组件供应链",
+        "MS：SpaceCompaniesSoaring",
+        "MS：MS在2026年7月发布的一份覆盖五家日本太空公司"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：日本太空产业2026年覆盖五家公司",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：日本太空公司从卫星到组件供应链",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：SpaceCompaniesSoaring",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS在2026年7月发布的一份覆盖五家日本太空公司",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        }
+      ],
+      "selected_title": "MS：日本太空公司覆盖四只公司",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：日本太空公司覆盖四只公司"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0003-58-NOM-Asia Insights-Asia rates- Reducing risk into the FOMC-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "FOMC前夕，亚洲利",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "NOM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-58-NOM-Asia Insights-Asia rates- Reducing risk into the FOMC-260728.pdf",
+      "cleaned_source_title": "NOM-Asia Insights-Asia rates- Reducing risk into the FOMC",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：AsiaInsightsAsia利率",
+      "raw_candidates": [
+        "NOM亚洲利率：FOMC前降低韩国与台湾仓位",
+        "NOM亚洲利率：7月FOMC前调整韩国与台湾交易仓位",
+        "NOM亚洲利率：FOMC前降低仓位，维持香港与中国大陆头寸"
+      ],
+      "cleaned_candidates": [
+        "NOM：NOM亚洲利率，FOMC前降低韩国与台湾仓位",
+        "NOM：NOM亚洲利率，7月FOMC前调整韩国与台湾交易仓位",
+        "NOM：NOM亚洲利率，FOMC前降低仓位，维持香港与中国大陆头寸",
+        "NOM：AsiaInsightsAsia利率",
+        "NOM：这份7月27日发布的报告，核心判断并非方向性看多或看空亚洲利率"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：NOM亚洲利率，FOMC前降低仓位，维持香港与中国大陆头寸",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "NOM：AsiaInsightsAsia利率",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：这份7月27日发布的报告，核心判断并非方向性看多或看空亚洲利率",
+          "reasons": [
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：NOM亚洲利率，7月FOMC前调整韩国与台湾交易仓位",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "NOM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0004-59-NOM-China consumer-Read-across from LVMH-s 2Q26 results-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "LVMH最新财报，透",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：中国消费-LVMH二季度业绩关联分析",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-59-NOM-China consumer-Read-across from LVMH-s 2Q26 results-260728.pdf",
+      "cleaned_source_title": "NOM-China consumer-Read-across from LVMH-s 2Q26 results",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：中国消费ReadacrossfromLVMHs2Q26",
+      "raw_candidates": [
+        "中国消费-LVMH二季度业绩关联分析",
+        "中国消费-LVMH二季度亚太区有机收入增4%",
+        "中国消费-LVMH二季度业绩与消费结构观察"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国消费-LVMH二季度业绩关联分析",
+        "NOM：中国消费-LVMH二季度亚太区有机收入增4%",
+        "NOM：中国消费-LVMH二季度业绩与消费结构观察",
+        "NOM：中国消费ReadacrossfromLVMHs2Q26",
+        "NOM：LVMH二季度时装皮具部门收入89亿欧元，有机同比增长1%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：中国消费-LVMH二季度亚太区有机收入增4%",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "NOM：中国消费ReadacrossfromLVMHs2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：LVMH二季度时装皮具部门收入89亿欧元，有机同比增长1%",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：中国消费-LVMH二季度业绩关联分析",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：中国消费-LVMH二季度业绩关联分析"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_q3tfpfdh/pdfs/0005-60-MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "小米新品牌SkyNo",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：小米SkyNomad技术发布会7月30日北京举行",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-60-MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing-260727.pdf",
+      "cleaned_source_title": "MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：XiaomiCorpSkyNomads科技",
+      "raw_candidates": [
+        "小米SkyNomad技术发布会7月30日北京举行",
+        "小米SkyNomad技术发布会7月30日北京-路测428万公里",
+        "小米SkyNomad技术发布会7月30日北京-座舱生活空间定位"
+      ],
+      "cleaned_candidates": [
+        "MS：小米SkyNomad技术发布会7月30日北京举行",
+        "MS：小米SkyNomad技术发布会7月30日北京",
+        "MS：XiaomiCorpSkyNomads科技",
+        "MS：小米SkyNomad技术发布会将于7月30日在北京举行"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：XiaomiCorpSkyNomads科技",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.30"
+          ]
+        }
+      ],
+      "selected_title": "MS：小米SkyNomad技术发布会7月30日北京举行",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：小米SkyNomad技术发布会7月30日北京举行"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
