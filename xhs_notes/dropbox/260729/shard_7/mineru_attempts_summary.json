@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0001-36-JPM-Lost in translation-FX tracker-sensitivities and correlations-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0002-37-JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0003-38-JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0004-39-JPM-Snap Inc.-SNAP.US-Oh Snap- We Are Initiating at Neutral-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0005-40-JPM-Korea Equity Strategy Update on the de-leveraging process in Korea (2)-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

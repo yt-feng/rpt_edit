@@ -1,0 +1,2854 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                133,
+                22,
+                344,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Korea Equity Strategy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                133,
+                109,
+                473,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Update on the de-leveraging process in Korea (2)"
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                143,
+                602,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Korea market has undergone an intense period of de-leveraging since mid-June. The KOSPI index is now down almost -40% from the peak on 22 June in a highly volatile move. What was triggered by routine fundamental concerns and rotational flow was amplified by leveraged ETFs, and in recent days increasingly has the hallmarks of hedge fund positioning unwind. Following our update last week (where we estimated that leveraged ETF unwind was 75% through and equity H/F de-leveraging >50% through), we now believe that leveraged ETF unwind is complete and hedge funds are done with ~90% of de-leveraging (both to acceptable levels). While it is likely that the price damage we have seen this week has residual spillovers into further de-leveraging over the coming days, and that many investors continue to exercise caution into the FOMC this week (high risk of a rate hike) and hyperscaler earnings (high expectations), the positioning setup in Korea now appears attractive on balance – and complements the cheap valuations and earnings momentum."
+                    }
+                ]
+            },
+            "bbox": [
+                130,
+                204,
+                666,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- De-leveraging update: (1) Leveraged ETFs AUM has normalized: Leveraged ETFs with Korea underlyings grew to $50bn in AUM by late June. Relative to its market size, this was 4x larger than the US and led to very pronounced volatility (and forced de-leveraging on down-days – which then caused positioning unwinds from other investors). With the reversal of the market, this cohort is now down to $17bn. In addition, the previously rapid inflows into these products have stalled in recent days (not much dip buying). As a result, the VKOSPI to VIX ratio has started to decline and will likely fall further. (2) HF leverage has almost normalized: Swap capacity constraints kept a lid on HF leverage buildup in Korea. Still, L/S ratios in the JPM Prime book rose up to 5.7x. The process of normalization from there is now well advanced. This ratio dropped to 3.2x by 27 Jul, and given the unwind in the Price Momentum factor over 28 and 29 Jul, HF leverage has likely declined further, and not very far from the top end of 2025's range. (3) Retail leverage through margins less of a risk: Margin balances were never particularly high or witnessing rapid growth. Balances have moderated somewhat to ~$20bn now. And, unlike leveraged ETFs that undergo a process of forced de-leveraging on any spot price declines, margin lending comes with buffers and discretion. Korean retail investors still have ample equity gains, cash balances, higher incomes and overseas assets to tap into to absorb any margin calls should they want to keep the position. (4) Record foreign outflows are slowing: LO selling pressure has substantially eased as Korea (and particularly the memory names) has underperformed, meaning that the two heavyweights are now only 6.5% and 4.5% weights in MSCI EM (vs 9.5% and 8.3% in late June)."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                420,
+                665,
+                773
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Diversification trades remain in play: We continue to like: (1) “wealth effect” exposures (department stores, cosmetics, travel, brokers, construction) have a compelling tailwind; (2) Bio-pharma is a substantial laggard that potentially benefits from globally improving sentiment around the healthcare sector; (3) Pref share discounts are near record wides – with the resultant elevated yields offering good carry; (4) Banks look particularly attractive with a triple tailwind from improving asset quality with income growth, BOK rate hiking cycle a tailwind for NIMs, and heightened market volumes contributing to brokerage revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                777,
+                665,
+                911
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Macro Research"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                687,
+                204,
+                857,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                687,
+                223,
+                944,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stanley Yang  \n(82-2) 758-5712  \nstanley.yang@JPM.com  \nJPM Securities (Far East) Limited, Seoul Branch"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                286,
+                939,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rajiv Batra\n(65) 6882-8151\nrajiv.j.batra@JPM.com\nJPM Securities Singapore Private Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                687,
+                348,
+                942,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joy Wang\n(852) 2800-2322\njoy.y.wang@JPM.com\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                687,
+                401,
+                942,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See page 8 for analyst certification and important disclosures, including non-US analyst disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                933,
+                852,
+                953
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                1,
+                564,
+                94,
+                878
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                26,
+                864,
+                55
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0caab12a23e8f1c3b85f1423d995c5ae946dee02ea77e8a6cc9fc734506a6a5f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: KOSPI index has now declined ~40% from the peak of 22 Jun"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                199,
+                477,
+                386
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7387910d940ef34e3c93b8842c8c8f0ddb820f74ea1b8895bd3f202e38b9c9d8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: This week's move has brought index RSI to oversold levels"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                199,
+                926,
+                385
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d3e7fc891e77082230497bc01276e7b3412c914ce7bc1819db892ddb0748f1ec.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: KOSPI fwd P/E at 5x is cheap – even after adjusting for cyclicality"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                446,
+                480,
+                638
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e169de189b6b14b09a02fe249f8b2d6afd2dd694cc1c00b4a820cf6fccf92fbe.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4: 5x estimated FCF is, similarly, “crisis-level” valuation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                448,
+                916,
+                638
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8554e14aae64bafc456e9fe37397ba878a5247ff8b8a4d66468b6f7eb8a2b0bc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: Our simplistic modeling of memory price longevity suggests current market pricing implies memory prices start normalizing to pre-AI levels in early 2027; each extra year adds ~$150bn"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Key memory maker's valuation based on how long prices sustain at 2026-average levels. Please ask for details."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                223,
+                475,
+                409
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/748a541da3008f74226b999851ff00e1900b08b35d52096e723d97f472b97c93.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: Relative to this, spot memory prices on aggregate are still moving higher; contract prices up in 3Q too – albeit at slower pace q-q"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                509,
+                224,
+                913,
+                414
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c8ffa557edb9cbfd2427c4fefa2cbe65efaa945f31b4e567844577ee3cc865b4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7: Korea market concentration has been another problem – which led to very narrow breadth until recently\n% of stocks outperforming KOSPI on a rolling 6m basis"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                489,
+                485,
+                678
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d5cd73e678f82b0bed3d9d3d238e99c74366992013836c69d3d2946c33d9aadb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8: Notably, in the correction in July, market breadth (advance-declines) has actually held up relatively well – indicating losses were also concentrated in few names"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                494,
+                921,
+                676
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                54,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f4919c9c7256a72bcca4c317397860c8d9bf7f3c64d558be3c704a60a3c28599.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9: Indeed, KOSPI decline has matched with underperformance of memory names – but this appears to be stabilizing"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                183,
+                478,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b7fc1816b005d2c0da71dc98c7b39ba1aa5fb18623427836dd76d7d8ba4128d1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10: Similarly, in the US, the unwind of concentration has been violent, but likely healthy"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                183,
+                911,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/56ac47a9c314968cdc4cb0246996f22935043752bb792c917f909c1e0463124e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11: Relative performance of market segments in Korea – big catchup from laggards in Value and Defensive spaces relative to KOSPI"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                70,
+                433,
+                491,
+                638
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/07dc5b41c6549d0e67e8454035751821097be42c6c844582bb68cc5805d21c1b.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                503,
+                434,
+                924,
+                640
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0abf6070047a0d80d45d95ce19a0a9be6539158b3d82375de373bf9504f6469a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                656,
+                493,
+                862
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/70c7b8297abd836b4436ccb2c85f66e17c1b5dbcb49da3e9d47943d55edd87c4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                654,
+                924,
+                859
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                54,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d40f073e2bd7bf31cb8ba832fec30db8e786c2ab5b685d8d6dc39801ae592d03.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "X"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 12: In terms of leveraged ETFs, their AUM has now declined to levels we believe are no longer problematic\nAUM - USD mn"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                204,
+                475,
+                395
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1058e4d81c3a70b0b54cccb6902b909b268976e7520adae4eed60dcfdbece13a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13: Inflows into leveraged products has also stalled in recent days – with recent regulatory tightening potentially keeping inflows in check"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Cumulative inflows, USD mn"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                514,
+                209,
+                916,
+                383
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/51fa6f475497860ce38c78625d41882f7f96e8860a3934d152e0c3ea1c3ff9e9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14: As a result, KOSPI volatility has started to normalize and will likely continue to"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                78,
+                468,
+                478,
+                657
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/80951ac50372b1f41af3b086a3e25b0a766d9176a854315e26de9f9978d9f694.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15: The open interest of single stock futures (implementation channel of the leveraged ETFs) continues to moderate as well"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                455,
+                913,
+                657
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3295d8e29abf9ee252cc14665ec93bb8452fd13f501381d1a8c58093aab73c3f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16: L/S ratio for hedge funds in the JPM Prime book has declined from highs..."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Latest data as of 27 July"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: JPM Positioning Intelligence."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                71,
+                193,
+                473,
+                385
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/534f50b5f7e2575614c11cb668d70a52d2c730ce95d1b84b8fc98c8d89f41de2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 17: ... and has likely further normalized looking at the sharp underperformance of the Price Momentum factor over 28 and 29 July Indicative performance of L/S quintiles"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                196,
+                916,
+                383
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a3ec5ef7232a292408aff8d9d0d455f09ffcfc2f0f3d9e6a2482a43c007ced68.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 18: For retail investors, margin leverage is not too high and has not climbed very aggressively this year"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., KSD, JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                458,
+                478,
+                643
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b67433703457a99f1e94f84b6ef92e210e7828c39588b70de2156e4a4868e533.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 19: As a share of market cap, margin balances have actually been declining this year"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., KSD, JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                443,
+                919,
+                643
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 20: For foreign investors overall, they have sold >$110bn of Korean equities YTD, but most of this was due to mandate constraints for LOs on owning large-caps"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                148,
+                480,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cumulative flow, $mn, KRX data"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                191,
+                230,
+                205
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ca562cefbee3b8321eab6cb2d0e2368d88b8687d4efe1aff9052b3bd100eb06f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                209,
+                470,
+                396
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e622ed361d608656dd29d3bd70bd096709565125ac04ff710ccaebd394a501f1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 21: Indeed, 90% of the outflow is from the two memory names; the decline in EM index weights of these stocks has substantially slowed outflows"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Cumulative flow, $mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    },
+                    {
+                        "type": "text",
+                        "content": "USD mn, KRX data only"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                208,
+                916,
+                398
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 22: Foreign flows by market segments and key market regimes YTD – a lot of sectors seeing buying even during the latest KOSPI correction since 22 Jun"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                454,
+                924,
+                484
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1299713080555ecc25c26db54562aea966e2087a19b447212a82a281d999eeed.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Finance L.P., JPM Equity Macro Research."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">USD mn</td><td colspan=\"4\">Tech / AI exposure</td><td colspan=\"4\">Value exposure</td><td colspan=\"6\">Industrials and commodities</td><td colspan=\"5\">Others</td></tr><tr><td>Samsung</td><td>Hynix</td><td>Grid/Power</td><td>Tech supply chain</td><td>Autos</td><td>Banks</td><td>Non Bank Fin</td><td>Holdco</td><td>Battery</td><td>Oils/Che micals</td><td>Metals</td><td>Shipping /building</td><td>Defense</td><td>E&amp;C</td><td>Bio-Pharma</td><td>Internet/ Media</td><td>Consumer exports</td><td>Telco</td><td>Services</td></tr><tr><td>1 Jan - 27 Feb</td><td>-12987</td><td>-6419</td><td>459</td><td>988</td><td>-3854</td><td>-87</td><td>-485</td><td>92</td><td>1291</td><td>780</td><td>52</td><td>1642</td><td>-16</td><td>1296</td><td>967</td><td>324</td><td>456</td><td>146</td><td>45</td></tr><tr><td>27 Feb - 31 Mar</td><td>-12138</td><td>-5412</td><td>-170</td><td>-482</td><td>-2587</td><td>-451</td><td>-418</td><td>-136</td><td>-181</td><td>-205</td><td>-286</td><td>62</td><td>-616</td><td>-13</td><td>269</td><td>-342</td><td>-111</td><td>48</td><td>-29</td></tr><tr><td>31 Mar - 22 Jun</td><td>-17913</td><td>-17105</td><td>-1947</td><td>-1611</td><td>-4180</td><td>-97</td><td>50</td><td>-2073</td><td>1027</td><td>963</td><td>-79</td><td>-1190</td><td>833</td><td>-220</td><td>10</td><td>-892</td><td>81</td><td>-255</td><td>-330</td></tr><tr><td>22 Jun - now</td><td>-10362</td><td>-15536</td><td>-307</td><td>1023</td><td>85</td><td>-354</td><td>116</td><td>-2472</td><td>-47</td><td>-25</td><td>56</td><td>-244</td><td>-69</td><td>175</td><td>86</td><td>15</td><td>91</td><td>-177</td><td>-28</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                70,
+                498,
+                924,
+                614
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                926,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                167,
+                926,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                276,
+                901,
+                304
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                309,
+                232,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                334,
+                926,
+                412
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                419,
+                637,
+                431
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                431,
+                928,
+                599
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f6d586f3d51ab6aee273a6fe3833748d0efb73fbb2a9cd30d66ee3248367a26d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                68,
+                625,
+                645,
+                700
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*Please note that the percentages may not add to 100% because of rounding."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                709,
+                555,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "**Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                720,
+                866,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                744,
+                918,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://. This report also sets out within it the material underlying assumptions used."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                796,
+                913,
+                875
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "History of Investment Recommendations:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                880,
+                336,
+                893
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http:// where you can also search by analyst name, sector or financial instrument."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                892,
+                877,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                147,
+                918,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                179,
+                913,
+                234
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                238,
+                200,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                284,
+                897,
+                299
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                304,
+                921,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                337,
+                890,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                383,
+                918,
+                411
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                415,
+                924,
+                469
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                474,
+                893,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                506,
+                897,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                539,
+                926,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                622,
+                913,
+                674
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                674,
+                898,
+                700
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                705,
+                924,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                751,
+                926,
+                792
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                797,
+                926,
+                914
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                919,
+                506,
+                933
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                204,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                926,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                147,
+                897,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                180,
+                929,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                314,
+                906,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                347,
+                921,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                392,
+                589,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                412,
+                875,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                445,
+                916,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                503,
+                911,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                561,
+                924,
+                666
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                669,
+                928,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                753,
+                928,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                952,
+                88,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                147,
+                910,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                179,
+                924,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                238,
+                923,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                271,
+                916,
+                299
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                304,
+                918,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                349,
+                893,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                393,
+                924,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                426,
+                926,
+                531
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                536,
+                915,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                569,
+                926,
+                698
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                702,
+                926,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                748,
+                929,
+                890
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                893,
+                915,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                952,
+                926,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                147,
+                929,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                584,
+                924,
+                689
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                691,
+                923,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                763,
+                918,
+                842
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"Other Disclosures\" last revised July 04, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                847,
+                349,
+                862
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                871,
+                923,
+                926
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                952,
+                88,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Completed 29 Jul 2026 03:27 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                147,
+                310,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disseminated 29 Jul 2026 03:27 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                146,
+                929,
+                162
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixo Das AC\n(852) 2800-0511\nmixo.das@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                55,
+                205,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Strategy\n29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                55,
+                478,
+                78
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                51,
+                926,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                952,
+                928,
+                964
+            ]
+        }
+    ]
+]

@@ -1,0 +1,57 @@
+Found 64 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qbgtq46g/pdfs/0001-36-J.P. Morgan-Lost in translation-FX tracker-sensitivities and correlations-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qbgtq46g/pdfs/0002-37-J.P. Morgan-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qbgtq46g/pdfs/0003-38-J.P. Morgan-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qbgtq46g/pdfs/0004-39-J.P. Morgan-Snap Inc.-SNAP.US-Oh Snap- We Are Initiating at Neutral-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qbgtq46g/pdfs/0005-40-JPM-Korea Equity Strategy Update on the de-leveraging process in Korea (2)-260729.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=bda757ed-c31d-4d8d-83e7-aa61141c6156
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, running, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 8ed926319ef30c632fe2e8f5375954414ca137409dadfbd46e814dbc1bdbcf64.jpg: score=2;edge:0.16
+Skip non-chart visual asset 066ea9324fd5e76d7233ee1a6b16196a5bf5810b63b5bdde79a5eea1ed7a85ec.jpg: score=0;odd_ratio:5.44,edge:0.20,contrast
+Skip non-chart visual asset 72bf0e578a583ec1267f78fd1ce68a9bb69dc306098e77b9d5012832decfb9b0.jpg: score=0;square_without_chart_hint,edge:0.72,large
+Skip non-chart visual asset df9b46318cc9912b5dc19b513d6be5f58c6040e803dc855dc12338e526c4de07.jpg: score=-100;too_small:982x165
+Skip non-chart visual asset abffc0fb9ad683362a032f66e4f3975c7410ba81828a466234da90e7af099dd7.jpg: score=-100;too_small:962x137
+Skip non-chart visual asset 9db7a513e0ee54d8600e0c5fdbe0e005cbd4ea9b58f8db8a6ffd53e2191e2ba1.jpg: score=-100;too_small:967x162
+Skip non-chart visual asset b5df3ee0743ca0620054e3d4bf7ac9b7f5ae4be44db42ecc223e12626c15ac09.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 7a33a1ec268116b770f8222fff986e83046951623b3f5e21305d8ac7934f5b4b.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset e004e3de547c608e0462f105353bedbb64b8e14107fe8b69bceec47cf5319240.jpg: score=-100;too_small:451x85
+Skip non-chart visual asset 46a15927974f4137aee1f24a9c9f96b59fb58f76500990488fc44be2f1a54a3d.jpg: score=1;chart_ratio
+Skip non-chart visual asset aeb4dfdfc3209481b832ef1b90bd339be1a7e61063224cb06aae95406b5d913d.jpg: score=0;square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 88f0b1abf3ba17f3a411af8181a7f29b25777e454ba96fdf3f96d5023a31cb2a.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset b175d12629483148d5e822d6a1370e9dfa1f1f29357e7737859b99b17183a862.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset d357a4612fb253c54ae3b86a7a347d1d696ffe5a091532d9643a806ccc12ae58.jpg: score=-100;too_small:448x173
+Neutralized WeChat title while keeping the report: 摩根大通：WIN半导体，低轨卫星与光学引领转型 -> 摩根大通：半导体行业数据与主题变化观察
+Skip non-chart visual asset 87c6c685af1c55a066f6f1495aced0321c8ccbd9f1906142ad2810d8c218555d.jpg: score=-100;too_small:667x79
+Skip non-chart visual asset e4cdee151ae55682b13a39e9a4b74d88bd49037ea11e03604ff6ff6f48602ff1.jpg: score=-100;too_small:926x159
+Skip non-chart visual asset 5b607abe34bf37122eee0ffb3d268a29cb8bc82528d592c2148f6d2bef42a3f8.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 38f4b797a161c948cb231dc5ca95ae2c668adcb154e1b0bc7f3a8e472cc5c623.jpg: score=-100;too_small:437x92
+Skip non-chart visual asset a920b7912060fc4b46f9f41ab0a7a56da1b7c485428dd763a8f5b8cc7048e036.jpg: score=-100;too_small:434x187
+Skip non-chart visual asset 7cdc0cc68a9b878f4914987a47fdcb1e938cb3b89b118e5d7c98f2d23e95adb9.jpg: score=-100;too_small:434x187
+Skip non-chart visual asset 5e66e7b7fa76a34a569388c46e103172b178d805acef6ee145d0ee303a160b96.jpg: score=-100;too_small:670x79
+Skip non-chart visual asset f62ed7b6544b045d6775fa9a94a5895e3665de88e8dbb77b0ed6989c0ef14873.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset eb25a333ba8652a93d6caeee4411be301f29669781027e1ee4176d83b314e0f6.jpg: score=-100;too_small:437x90
+Skip non-chart visual asset 449e956839b87fa8598ba66f5c7033d0f5c26db5afd6bdddf182696895ced9bf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset c08090543b5dc68dde0ec0bdc2e97a2bb0d423bd02a00f6bac206d307ad8e6ab.jpg: score=1;chart_ratio
+Skip non-chart visual asset f652ccdc8e8d102fe1ce2605bbaaed50e3e03a8be8802337005b1f64a4c550ed.jpg: score=1;chart_ratio
+Skip non-chart visual asset a74e2a9f03c8a2bf60f92d21f869c266de71a0056e6d619cac55f0bdcb1e305c.jpg: score=-100;too_small:1398x142
+Skip non-chart visual asset dad9274d5a05ef1ef839f39d6c08536f32ce8f726ff9d3a21c33dfed01ea51b5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.30,large
+Neutralized WeChat title while keeping the report: 摩根大通：携程反垄断整改改变变现形式而非盈利能力 -> 摩根大通：携程反垄断整改改变变现形式而非业务与近期数据观察
+Skip non-chart visual asset 659437c4c9575eb6fe116c0fc4139af0e50c7d7286086db357458a25b3f3da9a.jpg: score=0;chart_ratio,low_edge:0.04,contrast
+Skip non-chart visual asset eaf033882eab32f9089f133103579ebe18e7f58413290f9e126e11d44913a71d.jpg: score=-100;too_small:982x109
+Skip non-chart visual asset 72fbf6a3099a301ac599e174ba2b833ad8b7427768dd88f7d89e3c591e0d3f91.jpg: score=1;square_without_chart_hint,edge:0.33,contrast,large
+Skip non-chart visual asset a8307b70b42834af96d71d7453d544adf02d42301f45aa0df17fe2f23c5f47f3.jpg: score=-100;too_small:1457x137
+Skip non-chart visual asset d40f073e2bd7bf31cb8ba832fec30db8e786c2ab5b685d8d6dc39801ae592d03.jpg: score=1;chart_ratio
+Skip non-chart visual asset 534f50b5f7e2575614c11cb668d70a52d2c730ce95d1b84b8fc98c8d89f41de2.jpg: score=1;chart_ratio
+Skip non-chart visual asset 80951ac50372b1f41af3b086a3e25b0a766d9176a854315e26de9f9978d9f694.jpg: score=1;chart_ratio
+Skip non-chart visual asset 1299713080555ecc25c26db54562aea966e2087a19b447212a82a281d999eeed.jpg: score=1;odd_ratio:5.68,edge:0.32,contrast,large
+Skip non-chart visual asset f6d586f3d51ab6aee273a6fe3833748d0efb73fbb2a9cd30d66ee3248367a26d.jpg: score=-100;too_small:982x167
+Neutralized WeChat title while keeping the report: 摩根大通：韩国市场去杠杆进程评估-杠杆ETF强制平仓完成 -> 摩根大通：相关产品规则与数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

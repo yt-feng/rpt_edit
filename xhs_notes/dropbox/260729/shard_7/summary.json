@@ -1,0 +1,552 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0001-36-JPM-Lost in translation-FX tracker-sensitivities and correlations-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "汇率波动，食品零售商",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资者->读者 x1",
+      "风险->不确定性 x4",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：欧洲食品零售外汇敞口与报价关联",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-JPM-Lost in translation-FX tracker-sensitivities and correlations-260728.pdf",
+      "cleaned_source_title": "JPM-Lost in translation-FX tracker-sensitivities and correlations",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LostintranslationFXtra",
+      "raw_candidates": [
+        "欧洲食品零售外汇敞口与报价关联",
+        "欧洲食品零售外汇敞口与报价关联-家乐福与Ahold Delhaize",
+        "欧洲食品零售外汇敞口与报价关联-敞口结构与敏感度框架"
+      ],
+      "cleaned_candidates": [
+        "JPM：欧洲食品零售外汇敞口与报价关联",
+        "JPM：欧洲食品零售外汇敞口与报价关联-敞口结构与敏感度框架",
+        "JPM：LostintranslationFXtra",
+        "JPM：1.家乐福报价与巴西雷亚尔汇率高度相关"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：LostintranslationFXtra",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：1.家乐福报价与巴西雷亚尔汇率高度相关",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：欧洲食品零售外汇敞口与报价关联",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：欧洲食品零售外汇敞口与报价关联"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0002-37-JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "这家做卫星通讯芯片的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资收益->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727.pdf",
+      "cleaned_source_title": "JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：WIN半导体Corp",
+      "raw_candidates": [
+        "WIN半导体：低轨卫星与光学引领转型",
+        "WIN半导体：2026年营收增长预测上调至30%",
+        "WIN半导体：光学与低轨卫星业务进入放量阶段"
+      ],
+      "cleaned_candidates": [
+        "JPM：WIN半导体，低轨卫星与光学引领转型",
+        "JPM：WIN半导体，2026年营收增长预测上调至30%",
+        "JPM：WIN半导体，光学与低轨卫星业务进入放量阶段",
+        "JPM：WIN半导体Corp",
+        "JPM：公司整体产能利用率在第二季度环比提升5个百分点至65%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：WIN半导体，2026年营收增长预测上调至30%",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：WIN半导体，光学与低轨卫星业务进入放量阶段",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        },
+        {
+          "title": "JPM：WIN半导体Corp",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：公司整体产能利用率在第二季度环比提升5个百分点至65%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：WIN半导体，低轨卫星与光学引领转型",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0003-38-JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "携程被罚后，市场可能",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf",
+      "cleaned_source_title": "JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Regulationchangesthefo",
+      "raw_candidates": [
+        "携程反垄断整改改变变现形式而非盈利能力",
+        "携程反垄断整改：二季度约4个百分点影响来自监管调整",
+        "携程反垄断整改：酒店变现能力基础为需求转化而非合同结构"
+      ],
+      "cleaned_candidates": [
+        "JPM：携程反垄断整改改变变现形式而非盈利能力",
+        "JPM：携程反垄断整改，二季度约4个百分点影响来自监管调整",
+        "JPM：携程反垄断整改，酒店变现能力基础为需求转化而非合同结构",
+        "JPM：Regulationchangesthefo",
+        "JPM：2026年7月27日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：携程反垄断整改，二季度约4个百分点影响来自监管调整",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "JPM：携程反垄断整改，酒店变现能力基础为需求转化而非合同结构",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "JPM：Regulationchangesthefo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2026年7月27日",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：携程反垄断整改改变变现形式而非盈利能力",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0004-39-JPM-Snap Inc.-SNAP.US-Oh Snap- We Are Initiating at Neutral-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "Snap 的生存游戏",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Snap公司信用基本面与现金流转化率分析",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-JPM-Snap Inc.-SNAP.US-Oh Snap- We Are Initiating at Neutral-260727.pdf",
+      "cleaned_source_title": "JPM-Snap Inc.-SNAP.US-Oh Snap- We Are Initiating at Neutral",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：SnapInc.-OhSnap",
+      "raw_candidates": [
+        "Snap公司信用基本面与现金流转化率分析",
+        "Snap公司2026年3月现金流转化率升至63%",
+        "Snap公司广告收入结构与用户粘性研究"
+      ],
+      "cleaned_candidates": [
+        "JPM：Snap公司信用基本面与现金流转化率分析",
+        "JPM：Snap公司2026年3月现金流转化率升至63%",
+        "JPM：Snap公司广告收入结构与用户粘性研究",
+        "JPM：SnapInc.-OhSnap",
+        "JPM：JPM在2026年3月发布的这份覆盖报告中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Snap公司2026年3月现金流转化率升至63%",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "JPM：Snap公司广告收入结构与用户粘性研究",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：SnapInc.-OhSnap",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM在2026年3月发布的这份覆盖报告中",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Snap公司信用基本面与现金流转化率分析",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Snap公司信用基本面与现金流转化率分析"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0005-40-JPM-Korea Equity Strategy Update on the de-leveraging process in Korea (2)-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "韩国市场去杠杆接近尾",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x2",
+      "收益率->回报表现 x1",
+      "危机->扰动 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x2",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x2",
+      "股票|个股->公司 x2",
+      "基金->产品 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "券商->机构 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：相关产品规则与数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-JPM-Korea Equity Strategy Update on the de-leveraging process in Korea (2)-260729.pdf",
+      "cleaned_source_title": "JPM-Korea Equity Strategy Update on the de-leveraging process in Korea (2)",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：KoreaEquity策略更新onthede",
+      "raw_candidates": [
+        "韩国市场去杠杆进程评估",
+        "韩国市场去杠杆进程评估-杠杆ETF强制平仓完成",
+        "韩国市场去杠杆进程评估-估值与仓位结构变化"
+      ],
+      "cleaned_candidates": [
+        "JPM：韩国市场去杠杆进程评估",
+        "JPM：韩国市场去杠杆进程评估-杠杆ETF强制平仓完成",
+        "JPM：韩国市场去杠杆进程评估-估值与仓位结构变化",
+        "JPM：KoreaEquity策略更新onthede",
+        "JPM：韩国综合指数自6月22日高点下跌约40%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：KoreaEquity策略更新onthede",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：韩国综合指数自6月22日高点下跌约40%",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：相关产品规则与数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：韩国市场去杠杆进程评估-杠杆ETF强制平仓完成",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：相关产品规则与数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

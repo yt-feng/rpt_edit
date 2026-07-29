@@ -1,0 +1,128 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qbgtq46g/pdfs/0003-38-JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "携程被罚后，市场可能",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-38-JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power-260728.pdf",
+    "cleaned_source_title": "JPM-Trip.com -TCOM.US-Regulation changes the form-not the earning power",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：Regulationchangesthefo",
+    "raw_candidates": [
+      "携程反垄断整改改变变现形式而非盈利能力",
+      "携程反垄断整改：二季度约4个百分点影响来自监管调整",
+      "携程反垄断整改：酒店变现能力基础为需求转化而非合同结构"
+    ],
+    "cleaned_candidates": [
+      "JPM：携程反垄断整改改变变现形式而非盈利能力",
+      "JPM：携程反垄断整改，二季度约4个百分点影响来自监管调整",
+      "JPM：携程反垄断整改，酒店变现能力基础为需求转化而非合同结构",
+      "JPM：Regulationchangesthefo",
+      "JPM：2026年7月27日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：携程反垄断整改，二季度约4个百分点影响来自监管调整",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "JPM：携程反垄断整改，酒店变现能力基础为需求转化而非合同结构",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "JPM：Regulationchangesthefo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：2026年7月27日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：携程反垄断整改改变变现形式而非盈利能力",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：携程反垄断整改改变变现形式而非业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "500",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
