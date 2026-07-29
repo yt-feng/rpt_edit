@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "亚洲开发银行",
+  "cover_short_title": "亚洲电商跨境贸易正在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "金融->资金 x4",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "亚洲开发银行：推进亚太数字贸易与跨境电子商务",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23.pdf",
+    "cleaned_source_title": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+    "raw_candidates": [
+      "亚洲开发银行：推进亚太数字贸易与跨境电子商务",
+      "亚洲开发银行：亚太数字贸易与跨境电子商务增长数据",
+      "亚洲开发银行：亚太数字贸易与跨境电子商务监管与资金科技"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：推进亚太数字贸易与跨境电子商务",
+      "亚洲开发银行：亚太数字贸易与跨境电子商务增长数据",
+      "亚洲开发银行：亚太数字贸易与跨境电子商务监管与资金科技",
+      "亚洲开发银行：0001ADBAdvancingDigital贸易",
+      "亚洲开发银行：这些村庄拥有29600家活跃网店，分布在5425个村庄"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：这些村庄拥有29600家活跃网店，分布在5425个村庄",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：推进亚太数字贸易与跨境电子商务",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "亚洲开发银行：推进亚太数字贸易与跨境电子商务"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

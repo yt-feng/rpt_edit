@@ -1,0 +1,388 @@
+## KEY POINTS
+
+\- Cross-border e-commerce is rapidly transforming trade, driving growth and productivity, and expanding market access across Asia and the Pacific.
+
+\- Its benefits remain uneven across economies, sectors, and firms due to varying digital readiness and facilitation initiatives.
+
+\- Micro, small, and medium-sized enterprises have strong potential but remain underrepresented in cross-border e-commerce.
+
+• Regulatory fragmentation, higher compliance costs, and lower trust hinder expansion of cross-border e-commerce.
+
+\- To enable inclusive cross-border e-commerce, governments should build adaptive and interoperable regulatory frameworks, strengthen digital trade agreements and trade facilitation, develop digital skills, and bridge digital divides.
+
+# Advancing Digital Trade and Cross-Border E-Commerce in Asia and the Pacific
+
+Sanchita Basu Das
+Senior Economist
+Economic Research and Development
+Impact Department (ERDI)
+Asian Development Bank (ADB)
+
+Angel Love Roque
+Operations Analyst
+ERDI, ADB
+
+Rachita Gulati
+
+Research Economist
+
+ADB Institute
+
+James Correia
+
+Consultant, ADB
+
+## INTRODUCTION
+
+Digitalization is reshaping trade and commerce across Asia and the Pacific. Digitally delivered services now account for more than half of all services trade (UNESCAP, 2024a). $^{1}$ Foreign direct investment (FDI) in the digital economy has tripled since 2020 (ADB, 2026). $^{2}$ In the Association of Southeast Asian Nations (ASEAN) alone, the digital economy is projected to triple by 2030, with every 1% increase in digital growth associated with a 0.8% rise in gross domestic product (GDP) per capita (UNESCAP, 2024a). At the core of this transformation is the expansion of cross-border e-commerce, where goods and services are exchanged across jurisdictions through digital platforms that integrate ordering, payments, and logistics (OECD, 2025).
+
+Notes: The index combines various indicators grouped into seven core pillars: digital economy, digital government, digital infrastructure, digital regulation, household digitalization, human capital and innovation, and production digitalization.
+Effective 1 February 2021, ADB placed a temporary hold on sovereign project disbursements and new contracts in Myanmar.
+Source: ADB, 2025e (58026-001: Digital Development Facility for Asia and the Pacific - Phase 2).
+
+Globally, e-commerce sales across 43 economies grew by nearly 60% between 2016 and 2022, reaching \$27 trillion (UNCTAD, 2024). Of the 10 fastest-growing e-commerce economies across the globe, seven are located in Asia and the Pacific (ADB, 2023). In ASEAN, e-commerce rose by 16% in 2025 alone (Nikkei Asia, 2025), reflecting the rapid adoption of digital platforms and online payments. Cross-border e-commerce is reshaping production and consumption patterns, expanding market access, and reshaping value chains.
+
+Asia and the Pacific is particularly well positioned to benefit from cross-border e-commerce. The region accounts for nearly two-thirds of global e-commerce sales, with online transactions forming over 60% of retail sales—far higher than in Europe or North America (ADB, 2024). Mobile payments facilitate around 70% of transactions (McKinsey Global Institute, 2024). Large economies such as the People’s Republic of China and India play a central role in global e-commerce, while emerging economies such as Indonesia, the Philippines, and Viet Nam lead in financial technology (fintech) adoption (ICRIER, 2024; ASEAN, 2023). Strong fundamentals support these trends, including a doubling of internet access since 2012, deepening trade integration, and a growing share in global manufacturing (East Asia Forum, 2025; Eastspring, 2024; ADBI, 2025).
+
+Despite these advantages, significant challenges persist. Digital divides remain pronounced in the region, with about one-third of the population still unconnected and half of those in rural areas (ITU, 2021). Market concentration is high, with a handful of economies accounting for the majority of digital exports, while least developed economies lag far behind (UNCTAD, 2024). The disparities among economies are also evident in Figure 1, which indicates that regional digitalization comprises of four stages of development—advanced, transitioning, emerging, and limited—with uneven levels of development. Micro, small and medium-sized enterprises (MSMEs) often lack the capabilities and resources to fully participate in cross-border e-commerce.
+
+Unlocking the full potential of the digital economy requires a strong enabling ecosystem. These include reliable digital infrastructure, interoperable payment systems, efficient logistics networks, trade facilitation measures, regulatory harmonization, and enhanced digital capabilities among businesses and consumers. However, regulatory fragmentation, rising trade restrictions, and limited interoperability across national digital frameworks continue to create significant structural barriers (ADBI, 2025; ITU, 2025). Growing cybersecurity threats, coupled with gaps in data protection and consumer trust, further constrain digital growth and cross-border digital integration (Aon, 2024).
+
+Figure 1: Digitalization Index, 2024  
+![](images/513a27c0b664860d9a850884f1a6db8af130b064abf7bb999fba0ed6ede582f7.jpg)
+
+This policy brief analyzes key trends, patterns, and impacts of digital trade and cross-border e-commerce in Asia and the Pacific and identifies regulatory challenges and opportunities. It draws on papers and discussions emerging from the Asian Think Tank Network 2025 and provides policy recommendations to support a more inclusive and resilient digital trade ecosystem.
+
+## TRENDS AND IMPACT IN DIGITAL TRADE AND CROSS-BORDER E-COMMERCE
+
+Global e-commerce sales have expanded significantly, and the growth trajectory of cross-border e-commerce has been strong and sustained. Digital exports in Asia and the Pacific have nearly quadrupled since 2005, as illustrated in Figure 2, and e-commerce has doubled since 2016 (Rahman and Rahman, 2022; CSIS, 2024). This has been supported by a rapidly evolving digital ecosystem encompassing online marketplaces, digital payments, logistics providers, and digitally enabled supply chains. New forms of commerce, such as social commerce, live-stream shopping, gamification, and app-based retail, are gaining traction, particularly among younger consumers (KPMG, 2024). These developments reduce information asymmetries by efficiently matching buyers and sellers, streamline administrative processes, such as customs and compliance, and lower transaction costs by expanding market access and scale (López González and Ferencz, 2018; ADB, 2025a).
+
+Cross-border e-commerce is rapidly transforming the scale and direction of trade across Asia and the Pacific and accounts for a higher share of the total than in other regions (Rahman and Rahman, 2025). Its importance varies significantly across economies, reflecting differences in levels of economic development, digital readiness, and institutional capacity. Advanced economies tend to derive greater value from the digital economy, with contributions to GDP reaching 6.1% in Taipei, China; 5.8% in the Republic of Korea; and 5.4% in Singapore, compared to just 2.5% in the Philippines and 1.8% in the Lao People's Democratic Republic and Cambodia (Ortiz and Manguera, Unpublished). A significant growth potential remains for e-commerce in emerging economies. In Indonesia, e-commerce already accounts for 72% of the digital economy and is projected to reach \$146 billion, or 9%–10% of GDP, by 2025 (Supriyadi et al., Unpublished). In the Philippines, e-commerce adoption expanded dramatically from 14% of firms in 2013 to 31.2% in 2021 (Ortiz and Manguera, Unpublished). These variations highlight the central role of infrastructure, digital literacy, and regulatory systems in shaping both domestic and cross-border e-commerce outcomes across economies and regions.
+
+Sectoral composition further illustrates these differences. Emerging economies tend to specialize in information and communications technology goods and basic electronics, while advanced economies are increasingly oriented toward higher-value, digitally delivered services, including finance, information technology, and cultural industries (Ghosh, Unpublished; Ortiz and Manguera, Unpublished). As a result, digitally delivered services trade is more prominent in advanced economies, whereas goods-based digital trade remains dominant in countries such as Malaysia, Thailand, and Viet Nam (Ortiz and Manguera, Unpublished; Ghosh, Unpublished). However, in recent years, there is a structural shift toward service-led growth and digital transformation, with knowledge-intensive services emerging as the fastest-growing segment across the region (Ghosh, Unpublished; Baker and Le, Unpublished).
+
+Figure 2: Trade in Digitally Delivered Services in Asia and the Pacific, 2010–2024  
+![](images/ca00f80b9e1a8ed1c509a591a6a053372166ddc78852b2c98913221ca6f02107.jpg)  
+Source: UNCTAD Statistics, 2026.
+
+Trade agreements are critical in providing an enabling regulatory environment for cross-border e-commerce. Multilateral and regional frameworks have increasingly shaped the governance of digital trade. The WTO Joint Statement Initiative (JSI) on E-Commerce has advanced negotiations on global rules for e-commerce, while agreements, such as the Regional Comprehensive Economic Partnership (RCEP) and the Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP), have incorporated e-commerce chapters and provisions on cross-border data flows, digital trade facilitation, and regulatory cooperation (Baker and Le, Unpublished; WTO, 2023). While these agreements have facilitated cross-border e-commerce, more can be done. For example, the RCEP provides broad regional coverage and significant scope for deepening digital trade commitments, while the CPTPP incorporates more advanced and comprehensive rules but continues to face implementation challenges among its members (CSIS, 2024; KPMG, 2021; Baker and Le, Unpublished).
+
+Nonetheless, empirical evidence suggests that such agreements significantly boost digitally delivered services trade, particularly in finance, IT, and cultural services (Ghosh, Unpublished). Singapore is pursuing a multifaceted approach to tap into the varied strengths of available trade channels, adopting six bilateral digital economy agreements $^{3}$ while participating in the broader ASEAN, RCEP, and CPTPP processes (Ministry of Trade and Industry, 2025). The rise and role of digital trade agreements and provisions in Asia and the Pacific is illustrated in Figure 3.
+
+Despite these positive trends, the benefits of cross-border e-commerce remain unevenly distributed across firms, sectors, and geographies. Larger firms are generally better positioned to participate due to greater access to finance, technology, and skilled labor, while smaller firms—especially those in rural, remote or less-developed areas—face persistent barriers of connectivity, capabilities, and scale (Chhorn et al., Unpublished; Ortiz and Manguera, Unpublished). This is particularly significant among the MSMEs, which are significant in the services sector and account for 97% of enterprises, 69% of employment, and 41% of GDP in the region (UNESCAP, 2024; Nikkei, 2025).
+
+Targeted interventions demonstrate that these constraints can be overcome. In the People's Republic of China, the development of Taobao villages has generated over
+
+RMB1 trillion in transactions, enabling small-scale rural producers to access national and global markets and diversify their economic activities (Cai and Tian, Unpublished). A case study of Taobao villages is provided in Box 1. Azerbaijan's export promotion portal has upgraded local firms' participation in international platforms and trade, with 3,500 companies reaching 122 economies (Huseyn and Gadashov, Unpublished). These examples underscore the potential of cross-border e-commerce to advance inclusive growth when supported by appropriate policies and infrastructure.
+
+Fintech is another critical enabler of cross-border e-commerce, particularly cross-border payments and expanding financial inclusion. Adoption rates are especially high in emerging economies such as the Philippines and Viet Nam, often surpassing those in more mature markets (PCMI, 2023). Platforms such as MBANK in the Kyrgyz Republic demonstrate how digital finance can broaden access to payment systems, facilitate cross-border transactions, and support innovative financial services. The platform has expanded rapidly and now serves approximately $80\%$ of the country's adult population (PR Newswire, 2024). However, the rapid expansion of fintech also introduces risks, including cybersecurity threats, fraud, and over-indebtedness. Moreover, significant disparities persist, with fintech usage in urban areas far exceeding that in rural regions, reflecting underlying inequalities in access and digital literacy (Morgan, 2022).
+
+## Box 1: Taobao Villages—A Decentralized Ecosystem for Rural E-Commerce in the People's Republic of China
+
+Taobao villages are localized rural e-commerce hubs that demonstrate the interplay between micro, small and medium-sized enterprises and large-scale online providers. These include 29,600 active online shops across 5,425 villages. Alibaba provides a platform and logistics network for connecting these firms to new consumers and markets, expanding the reach of their commercial activities while lowering transaction costs. This initiative has fostered rural development, boosted productivity and innovation, and improved community resilience, including by reducing agricultural sector dependence and shifting local economies toward higher-value manufacturing and services. These benefits have been particularly pronounced in economically disadvantaged areas.
+
+Source: M. Cai and S. Tian. Unpublished. Can Digital Platforms Boost Economic Growth? Evidence from the Taobao Villages. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Figure 3: Timeline of Digital Trade Agreements and Provisions in Asia and the Pacific  
+![](images/04f9c2674383041743b8ce4d43365858048bdaf836d8a00e61104ae4828a6994.jpg)  
+CEPA UK–JP = United Kingdom–Japan Comprehensive Economic Partnership Agreement, CPTPP = Comprehensive and Progressive Agreement for Trans-Pacific Partnership, CSFTA = China–Singapore Free Trade Agreement, CSFTA CL–SG = Chile–Singapore Free Trade Agreement, DEA = Digital Economy Agreement, DEPA = Digital Economy Partnership Agreement, EP = Economic Partnership, EPA = Economic Partnership Agreement, JSEPA = Japan–Singapore Economic Partnership Agreement, KSDPA = Korea–Singapore Digital Partnership Agreement, RCEP = Regional Comprehensive Economic Partnership, USMCA = United States–Mexico–Canada Agreement.  
+Notes: The list of economies and agreements is not exhaustive. The diagram is intended solely for illustrative purposes, highlighting relatively active economies in digital regulatory cooperation, with a focus on Asia and the Pacific, as well as post-COVID-19 developments in the growing importance of digital regulatory cooperation and digital trade agreements. Effective 1 February 2021, the Asian Development Bank (ADB) placed a temporary hold on sovereign project disbursements and new contracts in Myanmar.
+Source: ADB, 2025a
+
+![](images/fc00fec42f4f6bd226669c123def104ca450d0c2b0fdf1635d310125dbede2dc.jpg)  
+Source: UNCTAD Statistics, 2026.
+
+At a macroeconomic level, cross-border e-commerce is contributing to structural transformation by shifting the balance of economic activity toward services and digital trade (Bernardo, Unpublished). Trade in services has expanded rapidly since COVID-19, while the relative share of goods trade has declined (UNCTAD, 2024). These trajectories are shown in Figure 4. Services now account for more than half of employment in the region, driven by the growth of sectors closely linked to cross-border e-commerce such as finance, technology, and logistics (IMF, 2024). These offer substantial productivity gains. For example, financial services are, on average, four times more productive than manufacturing in Asia and the Pacific (IMF, 2024). Cross-border e-commerce also enhances economic resilience by diversifying sources of growth and reducing dependence on primary commodities, which are often vulnerable to price volatility and climate risks (Cai and Tian, Unpublished).
+
+At the same time, the rise of large digital platforms introduces new challenges. Market concentration, driven by network effects, can limit competition and create asymmetric dependencies between platforms and smaller firms. Four in five MSMEs in Asia and the Pacific view large platforms as critical infrastructure, and their role in sustaining operations, broadening customer bases and market access, and reducing costs can be a double-edged sword (Nikkei,
+
+2025; As'ad et al., 2022; ADB, 2024; ADB, 2025b). The expansion of the gig economy—now accounting for a significant share of the labor force in some countries—raises concerns about job quality, income stability, and social protection (WEF, 2025). These dynamics highlight the need for balanced policy approaches that support innovation while addressing emerging risks.
+
+Realizing the full potential of cross-border e-commerce requires a comprehensive and coordinated policy framework. Investing in infrastructure, which continues to loom large as a barrier to digital trade (Figure 5), interoperable payments, regulatory alignment, digital skills, and strong data, cybersecurity, and consumer protection frameworks are essential for inclusive and sustained cross-border e-commerce growth. These are discussed further in the next section.
+
+## CROSS-BORDER E-COMMERCE REGULATIONS AND CHALLENGES
+
+Regulatory gaps, fragmentation, and trade restrictions remain major barriers to the expansion of cross-border e-commerce in Asia and the Pacific. These challenges arise from the absence of comprehensive and binding regulatory frameworks; narrow and outdated legislation with significant gaps in coverage; overlapping and sometimes inconsistent laws governing e-commerce;
+
+■ Other Barriers to Trade in Digital Services
+
+Figure 5: Infrastructural and Regulatory Hurdles to Digital Trade in Asia and the Pacific, 2025  
+![](images/8047fbd96e383adac64a39d15723cd4bfcacc02025455eeca7c561da405a3ebb.jpg)  
+Source: OECD Digital Services Trade Restrictiveness Index (Digital STRI), 2025 (OECD Data Explorer • Digital Services Trade Restrictiveness Index).
+
+the largely “soft” nature of existing e-commerce rules; fragmented institutional responsibilities across government agencies; and limited regulatory interoperability and cooperation across borders (ADB, 2021).
+
+According to a survey of 210 firms, nearly half reported facing high levels of regulatory uncertainty, while compliance costs averaged 18.7% of revenues and consumer trust remained low (Farooq et al., Unpublished). Establishing clear, predictable, and enforceable regulatory frameworks is therefore a critical first step toward unlocking the benefits of cross-border e-commerce while mitigating associated risks. Greater adoption of international practices and standards, including those developed by the World Trade Organization (WTO) and the United Nations Commission on International Trade Law (UNCITRAL), can help improve regulatory interoperability and facilitate cross-border digital trade.
+
+Some countries have made progress in developing dedicated frameworks for cross-border e-commerce. Tajikistan and Uzbekistan have adopted Laws on Electronic Commerce (2022), requiring firm registration and combining consumer protection with innovation support (Enikeeva, Unpublished; Times of Central
+
+Asia, 2025). Kazakhstan has implemented the E-Commerce Development Plan to promote MSME participation, enhance digital literacy, and strengthen international partnerships. This enabled a joint venture with Alibaba and the national postal operator, driving a 50% rise in orders from the People's Republic of China in 2023–2024 (Enikeeva, Unpublished).
+
+However, many countries rely on short-term, broad and non-binding digital strategies and struggle to keep pace with rapid technological change. As a result, comprehensive, adaptive regulatory frameworks remain the exception rather than the norm. An increasingly diverse suite of digital policy measures has evolved to create an enabling environment for e-commerce, though this is predominantly focused on payments and often outstripped by the pace of technological change. The substantive composition of measures is outlined in Figure 6.
+
+Domestic readiness and digital public infrastructure form the foundation for effective cross-border e-commerce regulation. This includes interoperable systems for digital identity, payments, and data governance, as illustrated in Box 2. India's digital public infrastructure ecosystem illustrates the
+
+Figure 6: Micro, Small, and Medium-Sized Enterprise E-Commerce and Digital Policy Index, Asia and the Pacific, 2024  
+![](images/a1d7df007cae9f40c7e9d68c2768e380a4123ac7896720c7061cf775bacc330f.jpg)  
+FDI = foreign direct investment; MSME = micro, small, and medium-sized enterprises.  
+Note: Effective 1 February 2021, ADB placed a temporary hold on sovereign project disbursements and new contracts in Myanmar. Source: Alliance for E-Trade Development, 2024.
+
+potential of an integrated approach. Aadhaar enables biometric identification and authentication, the unified payments interface supports instant and interoperable transactions, electronic signatures facilitate contracting, and the Data Empowerment and Protection Architecture strengthens data governance (Desai and Manoharan, 2024; Alonso et al., 2023). A vast expansion of digital infrastructure underpins this. The country has laid 4.2 million kilometers of fiber-optic
+
+cables, achieved 82% 5G coverage, reached 1.2 billion mobile subscriptions, and reduced data costs by 97% during 2014–2025 (ADB, 2025c). Together, these systems enhance domestic readiness and support cross-border integration.
+
+Regulatory innovation and regional cooperation offer promising pathways forward. Indonesia's Financial Sector Development and Reinforcement Law (2023), for example, integrates fintech into
+
+## Box 2: Digital Public Infrastructure in Bhutan
+
+Bhutan has made significant strides in forging the foundational elements of its digital public infrastructure in recent years. These include:
+
+\- Legal anchor and framework: The country's digital public infrastructure approach is anchored in the National Digital Strategy.
+
+\- Coverage and integration: Bhutan's digital identity system has expanded to cover half the population and is integrated across $100+$ services and sectors.
+
+\- Data protection and exchange: The National Data Exchange enables data flows and mitigates risk through decentralized storage and privacy safeguards.
+
+Source: ADB, 2025.
+
+the broader financial regulatory framework, balancing innovation with regulatory oversight and consumer protection (Global Legal Insights, 2025). This is discussed in greater detail in Box 3.
+
+More broadly, deeper regional cooperation and integration, particularly through trade agreements, regulatory alignment, and knowledge sharing, will be essential to addressing regulatory fragmentation and ensuring that cross-border e-commerce contributes to inclusive, sustainable, and resilient economic development across Asia and the Pacific (Baker and Le, Unpublished). In Central Asia, shared customs and trade facilitation systems have improved trade efficiency, while ASEAN's efforts to standardize e-signatures and payment systems have contributed to a 28% increase in cross-border e-commerce (Enikeeva, Unpublished; Farooq et al., Unpublished).
+
+## Box 3: Indonesia's Financial Sector Development and Reinforcement Law
+
+Indonesia's Law No. 4 on Financial Sector Development and Reinforcement was introduced in 2023 and is accompanied by a range of enabling regulations. This establishes a dedicated licensing, governance, and consumer protection framework for fintech, through new rules for emerging technologies and their integration within core financial services regulations. The law assigns responsibility for managing fintech to the Financial Services Authority and was developed in consultation with private sector providers. It aims to balance productivity and protection by promoting digital financial innovation through regulatory “sandboxes” that facilitate the piloting of novel products and services, while tightening regulations for licensing operators and debt collectors who use fintech and creating data protection protocols. This has contributed to a dramatic expansion in fintech use among micro, small, and medium-sized enterprises and rural communities.
+
+\- Digital payments ecosystem: The Bhutan Financial Switch and BhutanQR payments systems account for 43.27% of digital transactions.
+
+\- International interoperability: Bhutan has adopted several data protocols from India's unified payments interface and established cross-border digital corridors with payment systems in Japan, Singapore, and Thailand.
+
+The Bhutanese case also illustrates common structural challenges facing many countries across emerging Asia and the Pacific in digital public infrastructure adoption. This is constrained by infrastructural deficits in data centers and fiber-optic cables, shortfalls in technical capacity among policymakers and practitioners, and limited private sector participation.
+
+Despite this progress, cross-border e-commerce continues to face significant barriers to deeper regional integration, as illustrated by the Regional Digital Trade Integration Index (RDTII) shown in Figure 7. The RDTII measures regulatory alignment and the costs of conducting digital business across economies. Restrictive factors and costs are assessed through tariffs, non-tariff measures, and foreign investment restrictions, while enabling factors and regulatory harmonization are evaluated through domestic data protection frameworks, e-transaction regulations, and telecom competition.
+
+Consumer trust is another critical constraint, particularly amid rising cybersecurity risks. Cyber incidents in Asia and the Pacific have increased by 134% over the past 4 years, exacerbated by fragmented regulatory environments that hinder cross-border enforcement and information-sharing (Aon, 2024). In Bangladesh, a combination of limited regulatory oversight and regional cooperation has led to instances of consumer fraud affecting hundreds of thousands of users, particularly youth and unemployed graduates. (Barua and Abdullah, Unpublished). Even in less severe cases, trust deficits shape consumer behavior. In Indonesia, for example, reliance on cash-on-delivery and informal platforms such as WhatsApp reflects limited confidence in formal systems and digital public infrastructure gaps (Supriyadi et al., Unpublished).
+
+## Governments are responding with initiatives to strengthen trust and consumer protection, nationally and regionally.
+
+trust and consumer protection, nationally and regionally. Malaysia pioneered a national trust-mark in 2011, followed by a similar scheme in the Philippines in 2025, while Uzbekistan has streamlined e-commerce firm registration (Enikeeva, Unpublished). Regionally, the ASEAN Working Group on E-Commerce is exploring a common trust-mark framework, and the Asia-Pacific Economic Cooperation Cross-Border Privacy Rules offer a voluntary mechanism to facilitate data flows while protecting consumer rights (Ortiz and Manguera, Unpublished; Malaysian Reserve, 2024). Although non-binding, these frameworks establish interoperable standards, assign accountability to firms, and provide certification mechanisms that can enhance trust.
+
+Figure 7: Digital Trade Integration Index—Regulatory Restrictions and Enablers, 2025  
+![](images/dd01650d1e9c45bf04d08261d91ce919fd544d9fb5809b21bbddd4441939c8a4.jpg)  
+Source: UNESCAP Regional Digital Trade Integration Index (RDTII), 2025 (Regional Digital Trade Integration Index (Version 1): A Guide).
+
+Digital trade agreements and e-commerce chapters have proliferated in recent years, but their scope and ambition remain limited. Despite notable progress in areas, such as transparency, consumer protection, cross-border data flows, and electronic authentication, comparatively less attention has been given to measures that promote deeper regulatory alignment, improve logistics and payment systems, support MSMEs, and address emerging areas such as fintech and artificial intelligence (Baker and Le, Unpublished).
+
+Strengthening these agreements will require moving along a spectrum of ambition, i.e. from the adoption of common digital principles and standards to the implementation of single windows and electronic certification systems, mutual recognition arrangements, and ultimately, greater digital market integration (OECD, 2021; Rahman and Rahman, 2022). Advancing trade facilitation measures, ranging from greater transparency to paperless trade and integrated digital customs systems, will be particularly important in this regard (UNCTAD, 2024). ASEAN's evolving approach—including the ASEAN Agreement on Electronic Commerce (2019), the establishment of a dedicated working group, and the recently concluded negotiations on the Digital Economy Framework Agreement (DEFA)—reflects progress toward more comprehensive regional alignment (Ing et al., 2023; Rivera, Unpublished; Correia et al., 2025). These developments are discussed further in Box 4.
+
+## Box 4: ASEAN Digital Economy Framework Agreement
+
+The ASEAN Digital Economy Framework Agreement (DEFA) carries considerable promise in forging a regionally integrated approach to cross-border e-commerce, expanding digitally delivered services, and catalyzing the digital transformation to advance economic growth and development. While the Association of Southeast Asian Nations' (ASEAN) digital economy is due to triple from \$300 billion to \$1 trillion by 2030, DEFA is projected to double this contribution (ASEAN, 2023). The key pillars of DEFA encompass digital payments, data governance, and logistics and skills. The ASEAN DEFA is embedded within a broader ecosystem of technical dialogues, cooperation mechanisms, and regional frameworks on e-commerce, cybersecurity, and digital data governance that provide the foundation for greater regulatory convergence. These include the ASEAN Working Group on E-Commerce, the ASEAN Agreement on Electronic Commerce (2019), the adoption of a “negative list” approach under the ASEAN Trade in Services Agreement, and other initiatives aimed at advancing regional digital integration.
+
+Sources: Ing et al., 2023; J. P. Rivera. Unpublished. Digital trade for macroeconomic development: Evidence from ASEAN's cross-border e-commerce integration. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Finally, persistent digital divides continue to limit the inclusiveness of cross-border e-commerce. Gaps in internet access, affordability, infrastructure, and digital skills remain widespread. In several developing economies, mobile subscription rates are below 50%, while internet costs can be up to four times higher as a share of income than in advanced economies (UNCTAD, 2023; ITU, 2021). More than one-third of those in Asia and the Pacific remain offline, and rural internet usage is significantly lower than in urban areas (Figure 8) (ITU, 2025; Business Times, 2024). Around $40\%$ of people in the region lack basic digital skills, increasing vulnerability to cyber risks and limiting participation in digital trade. Least developed countries account for only $1\%$ of the region's digital economy (UNCTAD, 2023; UN News, 2024).
+
+Addressing these interconnected challenges—regulatory fragmentation, weak trust frameworks, limited digital readiness, and inequalities within and between countries—will be essential to realizing the full potential of cross-border e-commerce as a driver of inclusive and sustainable growth in Asia and the Pacific. This policy brief concludes with a set of recommendations with these objectives in mind.
+
+## CONCLUSIONS AND POLICY RECOMMENDATIONS
+
+Digitalization and cross-border e-commerce are transforming trade and development across Asia and the Pacific, creating new opportunities for growth, productivity, and inclusion. The rapid expansion of digital platforms and digitally delivered services has improved market access and enabled firms to participate in global value chains at lower cost. Evidence from countries such as the Cambodia, Indonesia, and the Philippines shows that digital adoption is linked to higher revenues, improved efficiency, and greater formalization. Strong and integrated regional fundamentals, including rising connectivity, mobile adoption, and digital ecosystems, further support this growth.
+
+Figure 8: Internet Use in Urban and Rural Areas in Asia and the Pacific and Globally, 2021–2024  
+![](images/b840bbd7b975e0b5ce13d8f6c771cafe26782dfe9a09ba02ecb4276b6924e2e5.jpg)  
+Source: ITU, 2025.
+
+## However, these benefits remain unevenly distributed.
+
+Differences in digital readiness and infrastructure continue to shape outcomes, with advanced economies specializing in higher-value digital services while emerging economies remain concentrated in lower-value segments. Despite their economic importance, MSMEs remain underrepresented in cross-border e-commerce due to capability, resource, and financing constraints. In addition, large and persistent digital divides across income groups, firm sizes, and rural–urban areas risk limiting the inclusiveness of digital transformation.
+
+Regulatory fragmentation remains a major constraint on the growth of cross-border e-commerce. Weak, fragmented, and often non-binding regulatory frameworks increase uncertainty, raise compliance costs, and undermine consumer and business trust. While progress has been made through investments in digital public infrastructure, trust-building mechanisms, and regional digital agreements, significant gaps in interoperability, regulatory alignment, and enforcement persist. Addressing these challenges will require greater harmonization of regulations and standards, particularly in areas such as electronic invoicing, digital tax payments, and other trade facilitation measures that can streamline customs clearance and cross-border transactions. Such efforts would complement ongoing paperless trade initiatives across Asia and the Pacific, including the ASEAN Single Window and the ASEAN Customs Transit System (ACTS). At the same time, rising cybersecurity risks and concerns over data protection continue to pose additional challenges.
+
+Unlocking the full potential of cross-border e-commerce will therefore require stronger digital infrastructure, more inclusive policies, and deeper regional cooperation to build coherent, trusted, and interoperable digital ecosystems. These are outlined below.
+
+## Creating Enabling Regulatory Ecosystems for Cross-Border E-Commerce
+
+Establishing a dedicated and legally binding regulatory framework for cross-border e-commerce is a fundamental prerequisite for domestic digital readiness. Such frameworks should be regularly reviewed and adaptively updated to keep pace with rapid technological change, developed in close consultation with the private sector, and designed to support MSME participation through targeted capacity-building and compliance measures. Regulatory approaches should also be proportionate and risk-based, reflecting the varying characteristics and risks associated with different sectors, technologies, and digital activities. Over time, these frameworks should be embedded within a broader digital public infrastructure ecosystem encompassing digital identity, payments, and data exchange systems, thereby creating the foundations for trusted and seamless digital transactions (ADB, 2025c; Alonso et al., 2023).
+
+At the same time, domestic regulatory frameworks should be designed with regional integration in mind. Governments should systematically incorporate international standards, definitions, and regulatory disciplines into national legislation, assess international best practices when developing new regulations, and pursue greater interoperability with regional partners. Proactive efforts to harmonize regulatory approaches, facilitate mutual recognition arrangements, and align digital governance frameworks can help reduce fragmentation, lower compliance costs, and support the development of integrated regional digital markets (Mukherjee, Gaikwad, and Srishti, 2024).
+
+## Deepening Digital Trade Cooperation and Trade Facilitation
+
+Digital trade agreements and e-commerce provisions should play a central role in expanding cross-border e-commerce and regional digital integration. However, the current landscape remains fragmented, with agreements often either broad in coverage but shallow in commitments or ambitious in scope but limited in membership (Asia Foundation, 2024). A key priority is reducing digital trade barriers and restrictions, which continue to impede digital services trade, data-driven business models, and cross-border transactions (Natanael, 2025; Tang et al., 2025; Gupta et al., 2022). Governments should also strengthen existing regional agreements through regular reviews and greater alignment of digital trade provisions to improve regulatory coherence and reduce fragmentation (Correia et al., 2025). Expanding successful bilateral digital economy partnerships into regional frameworks could further support digital market integration and regulatory convergence (Allen and Liao, 2025).
+
+At the same time, policymakers should strengthen trade facilitation systems for cross-border e-commerce. Beyond transparency and trust-building measures, greater emphasis is needed on interoperable single windows, electronic invoicing and certification, digital tax and payment systems, pre-arrival customs clearance, and paperless trade corridors. These measures can reduce transaction costs, improve interoperability, accelerate customs processes, and enable greater MSME participation, helping move the region toward deeper digital market integration (Rahman and Rahman, 2022).
+
+## Strengthening Digital Skills and Capacity for Inclusive Participation
+
+Maximizing the benefits of cross-border e-commerce while mitigating its risks requires a whole-of-society approach to digital skills development and capacity building. Policymakers, regulators, researchers, and private sector stakeholders should engage in regular knowledge-sharing, technical workshops, and institutionalized multi-stakeholder dialogues to strengthen understanding of rapidly evolving digital trade issues (ADBI, 2024). At the societal level, governments should integrate digital literacy and digital skills into education systems, establish minimum competency standards, and expand lifelong learning and workforce reskilling programs. These measures can improve resilience against online fraud and cybersecurity threats while strengthening the human capital needed for the digital economy. Targeted support for MSMEs is also essential. Governments should provide financial and technical assistance to help firms adopt digital technologies,
+
+digitalize business processes, and access online marketplaces. Partnerships with digital platforms, innovation hubs, and training providers can further enhance MSMEs' capabilities, enabling broader participation in cross-border e-commerce and ensuring that the benefits of digital trade are more widely shared.
+
+## Bridging Digital Divides Through Hard and Regulatory Digital Infrastructure
+
+Bridging digital divides is essential to ensuring that the benefits of cross-border e-commerce are widely shared. This requires a holistic approach that combines investments in the digital “hardware” of connectivity and infrastructure with the “software” of trade facilitation and digital services. Governments should prioritize the expansion of broadband networks, data centers, and cross-border digital infrastructure, while modernizing logistics systems, customs procedures, and supply chain management. Innovative approaches, such as co-deploying fiber-optic networks alongside transport and energy infrastructure and developing digital trade corridors, can further accelerate regional connectivity (ADB, 2025c; UNESCAP, 2022b). At the same time, policy efforts must move beyond expanding access to improving affordability, quality, and meaningful use of digital technologies. Targeted interventions are needed to address persistent disparities across rural and remote areas, income groups, genders, and older populations (ITU, 2025; ADB, 2025d). Strengthening cybersecurity, consumer protection, and cross-border regulatory cooperation will also be critical to protecting vulnerable users and fostering trust, thereby ensuring more inclusive and resilient digital development, promoting digital trade and cross-border e-commerce.
+
+## REFERENCES
+
+Asian Development Bank (ADB). 2021. E-Commerce in CAREC Countries: Laws and Policies. Manila: Asian Development Bank. https://www.adb.org/sites/default/files/publication/725671/e-commerce-carec-laws-policies.pdf.
+
+ADB. 2024. E-Commerce Evolution in Asia and the Pacific: Opportunities and Challenges. Manila: Asian Development Bank. https://www.adb.org/sites/default/files/publication/922086/e-commerce-evolution-asia-pacific-opportunities-challenges.pdf.
+
+ADB. 2025a. The Role and Future of Digital Economy Agreements in Asia and the Pacific. Manila: Asian Development Bank. https://www.adb.org/sites/default/files/publication/1053791/digital-economy-agreements-asia-pacific.pdf.
+
+ADB. 2025b. Harnessing Digital Transformation for Good: Asian Development Policy Report 2025. Manila: Asian Development Bank. https://www.adb.org/sites/default/files/publication/1050686/asian-development-policy-report-2025.pdf.
+
+ADB. 2025c. Digital Public Infrastructure: Landscape and Opportunities in South Asia. Manila: Asian Development Bank. https://www.adb.org/sites/default/files/publication/1114321/digital-public-infrastructure-south-asia.pdf.
+
+ADB. 2025d. The Other Half of the Internet: Closing Asia's Digital Gap. ADB Blog. 20 October. https://blogs.adb.org/blog/other-half-internet-closing-asia-s-digital-gap.
+
+ADB. 2025e. Digital Development Facility for Asia and the Pacific – Phase 2: The Asian Development Bank Digitalization Index: Final Index Results. 58026-001: Digital Development Facility for Asia and the Pacific - Phase 2.
+
+ADB. 2026. Global Value Chains and Inclusive Development: Asian Development Policy Report. https://www.adb.org/sites/default/files/publication/1143716/adpr-2026-main-report.pdf.
+
+Asian Development Bank Institute (ADBI). 2024. Transforming ASEAN for Sustainability: The Role of Regional Integration in Advancing ASEAN's Green Transition. Tokyo: Asian Development Bank Institute. https://www.adb.org/publications/transforming-asean-for-sustainability-the-role-of-regional-integration-in-advancing-asean-s-green-transition.
+
+ADBI. 2025. Transforming Industry for a Greener Future in Asia and the Pacific. Asia Pathways. https://www.asiapathways-adbi.org/2025/09/transforming-industry-for-a-greener-future-in-asia-and-the-pacific/.
+
+Allen, J.G. and Liao, Q.X.M. 2025. Digital Economy Innovation and Implementation in the Indo-Pacific: Towards a ‘Singapore Effect’?, Economic Research Institute for ASEAN and East Asia. https://www.eria.org/uploads/3\_ch\_3-Digital-Economy-Singapore-Effect.pdf.
+
+Alliance for E-Trade Development. 2024. MSME E-Commerce and Digital Policy Index. https://www.allianceforetradedevelopment.org/ecommerce-and-digital-policy-index.
+
+Alonso, C., T. Bhojwani, E. Hanedar, D. Prihardini, G. Una, and K. Zhabska. 2023. Stacking Up the Benefits: Lessons from India's Digital Journey. IMF Working Paper No. 23/78. Washington, DC: International Monetary Fund.
+
+Aon. 2024. Asia Pacific's Commitment to Cyber Security. https://www.aon.com/cyber-risk-report/asia-pacifics-commitment-to-cyber-security-pays-off.
+
+As'ad, A. I., Muhammad Alwi, Bestfy Anitasari, Alfry Aristo J. Sinlae, Fresy Nugroho, and Khairul Anwar. 2022. The Implementation of E-Commerce for Micro, Small and Medium Enterprises (MSMEs) in the COVID-19 Pandemic Era. Advances in Economics, Business and Management Research. 205: 42–45.
+
+Asia Foundation. 2024. Digital Trade Agreements in Asia and the Pacific. https://asiafoundation.org/wp-content/uploads/2024/05/Digital-Trade-Agreements-in-Asia-and-the-Pacific\_Tech-Policy.pdf.
+
+Baker, P. R., and L. Le. Unpublished. An Analytical Framework to Establish Convergences in Cross-Border Digital Trade Rules. International Economics. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Barua, S., and T. Abdullah. Unpublished. Regulating E-Commerce for Consumer Protection: Lessons from Bangladesh and Global Best Practices. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Bernardo, I.C. Unpublished. Trade in Transition: The Prospects of Developing Asia Towards Digital Trade. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Business Times. 2025. Bridging the digital divide in Asia-Pacific. https://www.businesstimes.com.sg/opinion-features/bridging-digital-divide-asia-pacific.
+
+Cai, M. and S. Tian. Unpublished. Can Digital Platforms Boost Economic Growth? Evidence from the Taobao Villages. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Center for Strategic and International Studies (CSIS). 2024. CPTPP 2.0: E-Commerce and Digital Trade Rules. By K. Suominen. Washington, DC: Center for Strategic and International Studies. https://csis-website-prod.s3.amazonaws.com/s3fs-public/2024-02/240213\_Suominen\_CPTPP2.0\_ECommerce.pdf.
+
+Chhorn, D., H. Sivly, and K. M. Nhim. Unpublished. The Role of Local-Foreign Platforms and Digital Trade in Shaping SMEs' Development in Cambodia. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Correia, J., J. Tijaja, N. Drury, S. K. Leong, and J. B. Sinay. 2025. Transforming ASEAN for Sustainability: The Role of Regional Integration in Advancing ASEAN's Green Transition. ADBI Working Paper. https://doi.org/10.56506/MSKG5757.
+
+Desai, A., and A. P. Manoharan. 2024. Digital Transformation and Public Administration: The Impacts of India's Digital Public Infrastructure. International Journal of Public Administration. 47 (9): 575–578. https://doi.org/10.1080/01900692.2024.2350762.
+
+East Asia Forum. 2025. Powering the Green Transition through EU–Asia Pacific Partnerships. 23 August.
+https://eastasiaforum.org/2025/08/23/powering-the-green-transition-through-eu-asia-pacific-partnerships/.
+
+Eastspring Investments. 2024. 30 Years of Asian Growth: A Story of Resilience and Untapped Potential. https://www.eastspring.com/insights/deep-dives/30-years-of-asian-growth-a-story-of-resilience-and-untapped-potential.
+
+Enikeeva, Z. Unpublished. Emerging Trends in Cross-Border E-Commerce in Central Asia: Towards Regional Cooperation? Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Farooq, M. S., J. Jing, N. Feroze, and C. Tongshun. Unpublished. Comparative Analysis of E-Commerce Regulations across Countries in Subregions and the Path Forward for Cross-Border E-Commerce. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Ghosh, A. Unpublished. Leveraging Regional Trade Agreements for Digital Trade Acceleration: An Empirical Analysis of Emerging Asian Economies. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Global Legal Insights. 2025. Fintech Laws and Regulations 2025: Indonesia. https://www.globallegalinsights.com/practice-areas/fintech-laws-and-regulations/indonesia/.
+
+Gupta, S., Ghosh, P. and Sridhar, V. 2022. Impact of data trade restrictions on IT services export: A cross-country analysis, Telecommunications Policy, 46(9). https://doi.org/10.1016/j.telpol.2022.102403.
+
+Huseyn, R., and A. Gadashov. Unpublished. How Government Leverages Digital Trade and E-Commerce to Boost Economic Growth: A Case Study from Azerbaijan. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+ICRIER. 2024. Towards Greater Regulatory Cooperation in Asia-Pacific for Boosting E-Commerce Trade. https://www.unescap.org/sites/default/d8files/event-documents/3\_PPT%20Slides%20-%20Towards%20Greater%20Regulatory%20Co-operation%20in%20Asia-Pacific%20for%20Boosting%20E-Commerce%20Trade%20%28Bangkok%20Event%29\_as%20on%20May%2031%2C%202024.pdf.
+
+Ing, L. Y., Vadila, Y., Markus, I., and Nazara, L. 2023. ASEAN Digital Community 2045. https://lkyspp.nus.edu.sg/docs/default-source/cag/1-asean-digital-community-2045.pdf.
+
+International Monetary Fund (IMF). 2024. Asia's Economies Can Embrace Services to Boost Growth and Productivity. IMF Blog. 31 October. https://www.imf.org/en/blogs/articles/2024/10/31/asias-economies-can-embrace-services-to-boost-growth-and-productivity.
+
+International Telecommunication Union (ITU). 2021. Digital Trends in Asia and the Pacific. Geneva: International Telecommunication Union. https://www.itu.int/hub/publication/d-ind-dig\_trends\_asp-01-2021/.
+
+ITU. 2025. State of Digital Development and Trends in Asia and the Pacific: Challenges and Opportunities. Geneva: International Telecommunication Union. https://www.itu.int/dms\_pub/itu-d/opb/ind/D-IND-SDDT\_ASP-2025-PDF-E.pdf.
+
+KPMG. 2021. Regional Comprehensive Economic Partnership (RCEP). https://assets.kpmg.com/content/dam/kpmg/th/pdf/2021/01/regional-comprehensive-economic-partnership-rcep.pdf.
+
+KPMG. 2024. Navigating the Future of Seamless Commerce in Asia Pacific. https://assets.kpmg.com/content/dam/kpmg/xx/pdf/2024/06/navigating-the-future-of-seamless-commerce-in-asia-pacific.pdf.
+
+López González, J., and J. Ferencz. 2018. Digital Trade and Market Openness, OECD Trade Policy Papers, OECD Publishing, Paris. http://dx.doi.org/10.1787/1bd89c9a-en.
+
+Malaysian Reserve. 2024. Asia Pacific Ecommerce Market Report 2023: Growth Surge Led by Expanding Digital Consumer Base – Forecasts to 2027. https://themalaysianreserve.com/2024/03/05/asia-pacific-ecommerce-market-report-2023-growth-surge-led-by-expanding-digital-consumer-base-forecasts-to-2027/.
+
+McKinsey Global Institute. 2024. Asia on the Cusp of a New Era. 22 September. https://www.mckinsey.com/mgi/our-research/asia-on-the-cusp-of-a-new-era.
+
+Ministry of Trade and Industry Singapore (MTI). n.d. Digital Economy Agreements. https://www.mti.gov.sg/trade-international-economic-relations/agreements/digital-economy-agreements-dea/.
+
+Morgan, P. J. 2022. Fintech and Financial Inclusion in Southeast Asia and India. Asian Economic Policy Review. 17 (2): pp. 183–208.
+
+Mukherjee, A., K. Gaikwad, and A. Srishti. 2024. Towards Greater Regulatory Cooperation in the Asia Pacific for Boosting E-Commerce Trade. ICRIER Working Paper 425. New Delhi: Indian Council for Research on International Economic Relations. https://icrier.org/pdf/Working\_Paper\_425.pdf.
+
+Mukherjee, D. Unpublished. Digital Provisions in Services Trade Agreements and Mode 1 Export Effects: A Study of Exports of Selected Sectors from Asian Economies. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Natanael, Y. 2025. Beyond borders and tangibility: understanding trade restrictions, institutional quality and digital services trade, International Journal of Development Issues, 24(3), pp. 396-415. https://doi.org/10.1108/IJDI-11-2024-0294.
+
+Nikkei Asia. 2025. ASEAN E-Commerce to Grow 16% in 2025 Driven by AI and Video. https://asia.nikkei.com/business/technology/asean-e-commerce-to-grow-16-in-2025-driven-by-ai-video-report.
+
+Organisation for Economic Co-operation and Development (OECD). 2021. OECD Best Practice Principles for International Regulatory Cooperation. https://www.oecd.org/en/publications/2021/07/international-regulatory-co-operation\_cf92bc88.html.
+
+OECD. 2025. The 2025 OECD Definition of E-Commerce and Guidelines for Interpretation. Paris: OECD Publishing. https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/10/the-2025-oecd-definition-of-e-commerce-and-guidelines-for-interpretation\_3e7e5a61/2254f1de-en.pdf.
+
+Ortiz, M. K., and M. C. R. Manguera. Unpublished. Connected for Growth: Analyzing the Impact of E-Commerce Adoption on Firm Performance and Labor Outcomes in the Philippines through Peer Effects.
+
+Payments CMI (PCMI). 2023. Understanding Asia-Pacific: Where the Future of Fintech Is Shaped. https://paymentscmi.com/insights/asia-pacific-fintech-industry/.
+
+PR Newswire. 2024. MBank Transforms Kyrgyzstan's Banking Landscape with Digital Ecosystem and Mobile App Milestones. https://www.prnewswire.com/news-releases/mbank-transforms-kyrgyzstans-banking-landscape-with-digital-ecosystem-and-mobile-app-milestones-302387195.html.
+
+Rahman, M. N., and B. Rahman. 2022. Exploring Digital Trade Provisions in Regional Trade Agreements in Times of Crisis: India and Asia-Pacific Countries. https://doi.org/10.1016/j.aglobe.2022.100036.
+
+Rivera, J. P. Unpublished. Digital Trade for Macroeconomic Resilience: Evidence from ASEAN's Cross-Border E-Commerce Integration. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Supriadi, A. Y., S. Rachmad, K. G. C. Dillena, H. Kardoyo, D. Asiati, and R. Elizabeth. Unpublished. Unlocking Economic Gains: How E-Commerce Enhances Efficiency, Productivity, and Market Access in Indonesia—Evidence from 2024 Survey. Paper presented at the Asian Think Tank Network Forum 2025, Tokyo, Japan.
+
+Tang, M., Jiang, L., Mao, Y. and Cao, L. 2025. Does the depth of digital trade rules promote bilateral value chain cooperation? International Review of Financial Analysis. https://doi.org/10.1016/j.irfa.2025.103952.
+
+Times of Central Asia. 2025. Uzbekistan Introduces New Rules for E-Commerce Platforms. https://timesca.com/uzbekistan-introduces-new-rules-for-e-commerce-platforms/.
+
+United Nations Conference on Trade and Development (UNCTAD). 2023. Digital Trade Fuels Asia-Pacific's Growth, but Progress Remains Uneven. https://unctad.org/news/digital-trade-fuels-asia-pacifics-growth-progress-uneven.
+
+UNCTAD. 2024. Digital Economy Report 2024. Geneva: United Nations Conference on Trade and Development. https://unctad.org/publication/digital-economy-report-2024.
+
+UNCTAD. 2026. UNCTADstat Data Centre. https://unctadstat.unctad.org/datacentre/.
+
+United Nations Economic and Social Commission for Asia and the Pacific (UNESCAP). 2022a. Asia-Pacific Digital Trade Regulatory Review 2022. Bangkok: United Nations Economic and Social Commission for Asia and the Pacific. https://www.unescap.org/sites/default/d8files/knowledge-products/Asia%20Pacific%20Digital%20Trade%20Regulatory%20Review%202022.pdf.
+
+UNESCAP. 2022b. Asia-Pacific Digital Transformation Report 2022: Shaping Digital Futures for All. Bangkok: United Nations Economic and Social Commission for Asia and the Pacific. https://www.unescap.org/sites/default/d8files/knowledge-products/ESCAP-2022-Flagship-Asia-Pacific-Digital-Transformation-Report.pdf.
+
+## About the Asian Development Bank
+
+ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Working with its members and partners to solve complex challenges together, ADB harnesses innovative financial tools and strategic partnerships to transform lives, build quality infrastructure, and safeguard our planet. Founded in 1966, ADB is owned by 69 members—50 from the region.
+
+ADB Briefs are based on papers or notes prepared by ADB staff and their resource persons. The series is designed to provide concise, nontechnical accounts of policy issues of topical interest, with a view to facilitating informed debate. The Department of Communications and Knowledge Management administers the series.
+
+www.adb.org/publications/series/adb-briefs
+
+UNESCAP. 2024a. Trends in Digital Trade and Investment in Asia and the Pacific. https://www.unescap.org/sites/default/d8files/event-documents/reading2.pdf.
+
+UNESCAP. 2024b. Overview of MSMEs in Asia and the Pacific. https://msmepolicy.unescap.org/overview-msmes-asia-pacific-regions.
+
+United Nations News. 2024. Digital Trade Can Boost Livelihoods and Economic Growth in Asia-Pacific. https://news.un.org/en/story/2024/09/1153931.
+
+World Bank. 2025. Individuals Using the Internet (% of Population). World Development Indicators. https://data.worldbank.org/indicator/IT.NET.USER.ZS.
+
+World Economic Forum (WEF). 2025. What We Learned about the Future of Work in Asia. https://www.weforum.org/stories/2025/07/what-we-learned-about-the-future-of-work-in-asia-at-amnc25-and-other-trends-in-jobs-and-skills-this-month/.
+
+World Trade Organization (WTO). 2023. Work Programme on Electronic Commerce. INF/ECOM/87. Geneva: World Trade Organization. https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/INF/ECOM/87.pdf.
+
+WTO. 2024. Trade in Services Database. https://data.wto.org.
+
+The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of ADB or its Board of Governors or the governments they represent. ADB does not guarantee the accuracy of the data included here and accepts no responsibility for any consequence of their use. The mention of specific companies or products of manufacturers does not imply that they are endorsed or recommended by ADB in preference to others of a similar nature that are not mentioned. By making any designation of or reference to a particular territory or geographic area in this document, ADB does not intend to make any judgments as to the legal or other status of any territory or area.
+
+Asian Development Bank
+6 ADB Avenue, Mandaluyong City
+1550 Metro Manila, Philippines
+www.adb.org
+
+![](images/4559988188b7c5d4fcf827fcfbf3090e355f30ab95e11e189564f382b80ab46f.jpg)
+
+## Creative Commons Attribution 3.0 IGO license (CC BY 3.0 IGO)

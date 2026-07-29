@@ -1,0 +1,430 @@
+[
+    {
+        "type": "text",
+        "text": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+        "bbox": [
+            140,
+            238,
+            745,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GHANA",
+        "bbox": [
+            140,
+            382,
+            334,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Report on Monthly Indicator of Economic Growth (July 7–18, 2025)",
+        "bbox": [
+            138,
+            424,
+            921,
+            494
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NOVEMBER 2025",
+        "bbox": [
+            138,
+            511,
+            395,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Prepared By",
+        "bbox": [
+            138,
+            584,
+            269,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Anthony Silungwe",
+        "bbox": [
+            138,
+            604,
+            292,
+            625
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Authoring Department:",
+        "bbox": [
+            138,
+            729,
+            372,
+            750
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Statistics Department",
+        "bbox": [
+            138,
+            756,
+            462,
+            780
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            143,
+            116,
+            264,
+            213
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "©[2026] International Monetary Fund [HLS/26/042]",
+        "text_level": 1,
+        "bbox": [
+            328,
+            89,
+            700,
+            107
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "High-Level Summary Technical Assistance Report Statistics Department",
+        "text_level": 1,
+        "bbox": [
+            300,
+            122,
+            697,
+            157
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Uganda: Report on Rebasing of Monthly Indicator of Economic Growth (July 7–18, 2025)\nPrepared by Anthony Silungwe",
+        "bbox": [
+            153,
+            176,
+            843,
+            213
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+        "bbox": [
+            111,
+            232,
+            834,
+            285
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: This capacity development (CD) project, financed by the Data for Decisions (D4D) Fund, $^{1}$ was initiated in response to a request from the Ghana Statistical Service (GSS) to provide technical assistance (TA) on developing a Monthly Indicator of Economic Growth (MIEG). The project aimed to establish a robust MIEG compilation framework aligned with the International Monetary Fund's Quarterly National Accounts Manual (2017), enhancing timeliness and quality of economic statistics. Key findings include the successful creation of a Value Added Tax (VAT) database critical for compiling both MIEG and quarterly GDP estimates, alongside training on data cleaning tools that improve data accuracy. The project revealed some discrepancies between MIEG and quarterly GDP figures, highlighting the need for harmonization. Recommendations focus on the phased adoption of the new VAT processing files, timely dissemination of experimental MIEG data, and closer integration of MIEG with quarterly GDP compilation to improve consistency and statistical quality.",
+        "bbox": [
+            111,
+            304,
+            875,
+            503
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers: J01, J16, J30, E001",
+        "bbox": [
+            120,
+            527,
+            480,
+            545
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords: Monthly Indicator of Economic Growth (MIEG), Index of Industrial Production (IIP), manufacturing, Value Added Tax (VAT) data, National Accounts.",
+        "bbox": [
+            120,
+            556,
+            803,
+            590
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information $^{2}$ ).",
+        "bbox": [
+            111,
+            627,
+            880,
+            717
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+        "bbox": [
+            321,
+            731,
+            674,
+            821
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            867,
+            957,
+            883,
+            970
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 https://www.imf.org/en/Capacity-Development/D4D.",
+        "bbox": [
+            112,
+            864,
+            465,
+            880
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Staff Operational Guidance on the Dissemination of Capacity Development Information",
+        "bbox": [
+            112,
+            885,
+            694,
+            902
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "High-Level Summary Technical Assistance Report",
+        "bbox": [
+            491,
+            955,
+            861,
+            972
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Background",
+        "text_level": 2,
+        "bbox": [
+            112,
+            92,
+            292,
+            117
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This capacity development (CD) project financed by the Data for Decisions (D4D) Fund, was created in response to a request by the Ghana Statistical Service (GSS) to provide technical assistance (TA) to develop a Monthly Indicator of Economic Growth (MIEG) for Ghana. The primary objective of the CD project was to support the GSS in developing the MIEG compilation framework, ensuring alignment with the guidelines outlined in the International Monetary Fund's (IMF) Quarterly National Accounts Manual (2017).",
+        "bbox": [
+            111,
+            132,
+            869,
+            238
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To complete this project, three missions were conducted. The first mission was conducted during July 2023 and introduced the MIEG compilation framework. It also involved assessment of monthly indicators for the compilation of MIEG. During this mission it was established that several activities were dependent on value added tax (VAT) records. These activities include manufacturing, wholesale and retail trade, transport and storage, real estate, and other services. The VAT data were not in a usable format at the time. The second mission was conducted in July 2024 to address the format of the VAT data. The mission worked very well with GSS staff to create a VAT database that supports time series analysis. The new database is critical not only for MIEG compilation but also for quarterly GDP compilation. The recent mission focused on analyzing the VAT data and integrating them into MIEG compilation.",
+        "bbox": [
+            109,
+            253,
+            883,
+            410
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary of Findings",
+        "text_level": 2,
+        "bbox": [
+            112,
+            426,
+            423,
+            452
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The MIEG project has contributed to enhancements in Ghana's national accounts compilation system. A key achievement was the development of a new VAT database that supports time series analysis, which is essential for compiling the MIEG as well as the quarterly GDP compilation process. This database represents a major advancement, enabling more detailed and consistent economic measurement across multiple sectors reliant on VAT data. The project also introduced the use of a \"matched pairs pruning tool\" to clean VAT sales data, which enhances the accuracy of the MIEG estimates by reducing noise and inconsistencies in the raw data.",
+        "bbox": [
+            111,
+            467,
+            883,
+            590
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Collaboration between IMF experts and GSS staff was effective, leading to the development of pruning tools for all activities dependent on VAT sales data. The results from the MIEG compilation generally align with previously published quarterly GDP figures, although some discrepancies were identified. These differences are mainly due to ad hoc adjustments in the quarterly GDP system, underscoring the need for harmonization between the two statistical products. The mission advised the national accounts team to gradually transition to using the new VAT files developed during the MIEG project to ensure consistency and improve the reliability of both monthly and quarterly economic indicators.",
+        "bbox": [
+            109,
+            604,
+            883,
+            728
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The integration of VAT sales data into both MIEG and quarterly GDP compilations is expected to improve the accuracy and scope of economic analysis in Ghana. Furthermore, the ongoing GDP rebasing project is an excellent opportunity to finalize the migration to these new processing files, which will further consolidate improvements in data quality. The GSS plans to begin monthly dissemination of experimental MIEG data, which is anticipated to raise awareness and usage of these new statistical products. The mission advised that the third month of MIEG be published alongside quarterly GDP to emphasize consistency, with an initial delay exceeding 60 days considered reasonable as GSS staff and data providers adapt to the new data collection and compilation schedule. The first experimental MIEG publication was released in October 2025, covering monthly data from January 2024 to July 2025.",
+        "bbox": [
+            109,
+            742,
+            880,
+            898
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "High-Level Summary Technical Assistance Report",
+        "bbox": [
+            491,
+            955,
+            861,
+            972
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            867,
+            957,
+            883,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary of Recommendations",
+        "text_level": 2,
+        "bbox": [
+            114,
+            90,
+            563,
+            117
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/91875e01728b938f09a78f01a174ed6edd29432c55fed97b0807046c2a9c3074.jpg",
+        "table_caption": [
+            "TABLE 1. Priority Recommendations"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>September 2025</td><td>Experimental MIEG at aggregate level (Agriculture, Industry and Services) shared with GSS management for internal use.</td><td>GSS</td></tr><tr><td>October 2025</td><td>First release of Experimental MIEG at aggregate level (Agriculture, Industry, Services and Total).</td><td>GSS</td></tr><tr><td>December 2025</td><td>National Accounts staff use the new VAT processing files that include the matched pairs pruning tool to compile quarterly GDP for Q2 2025.</td><td>GSS</td></tr></table>",
+        "bbox": [
+            116,
+            160,
+            880,
+            391
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "High-Level Summary Technical Assistance Report",
+        "bbox": [
+            493,
+            955,
+            861,
+            972
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            869,
+            957,
+            882,
+            970
+        ],
+        "page_idx": 3
+    }
+]

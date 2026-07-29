@@ -1,0 +1,2404 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        189,
+                        456,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                189,
+                                456,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        189,
+                                        456,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        303,
+                        205,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                303,
+                                205,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        303,
+                                        205,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "GHANA"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        336,
+                        564,
+                        392
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                336,
+                                564,
+                                392
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        336,
+                                        564,
+                                        392
+                                    ],
+                                    "type": "text",
+                                    "content": "Report on Monthly Indicator of Economic Growth (July 7–18, 2025)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        405,
+                        242,
+                        426
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                405,
+                                242,
+                                426
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        405,
+                                        242,
+                                        426
+                                    ],
+                                    "type": "text",
+                                    "content": "NOVEMBER 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        463,
+                        165,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                463,
+                                165,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        463,
+                                        165,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        479,
+                        179,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                479,
+                                179,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        479,
+                                        179,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Anthony Silungwe"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        578,
+                        228,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                578,
+                                228,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        578,
+                                        228,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "Authoring Department:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        599,
+                        283,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                599,
+                                283,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        599,
+                                        283,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "Statistics Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        88,
+                        92,
+                        162,
+                        169
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                92,
+                                162,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        92,
+                                        162,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "INTERNATIONAL MONETARY FUND"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        189,
+                        456,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                189,
+                                456,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        189,
+                                        456,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        303,
+                        205,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                303,
+                                205,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        303,
+                                        205,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "GHANA"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        336,
+                        564,
+                        392
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                336,
+                                564,
+                                392
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        336,
+                                        564,
+                                        392
+                                    ],
+                                    "type": "text",
+                                    "content": "Report on Monthly Indicator of Economic Growth (July 7–18, 2025)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        405,
+                        242,
+                        426
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                405,
+                                242,
+                                426
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        405,
+                                        242,
+                                        426
+                                    ],
+                                    "type": "text",
+                                    "content": "NOVEMBER 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        463,
+                        165,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                463,
+                                165,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        463,
+                                        165,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        479,
+                        179,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                479,
+                                179,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        479,
+                                        179,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Anthony Silungwe"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        578,
+                        228,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                578,
+                                228,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        578,
+                                        228,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "Authoring Department:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        599,
+                        283,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                599,
+                                283,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        599,
+                                        283,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "Statistics Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        201,
+                        71,
+                        429,
+                        85
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                201,
+                                71,
+                                429,
+                                85
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        201,
+                                        71,
+                                        429,
+                                        85
+                                    ],
+                                    "type": "text",
+                                    "content": "©[2026] International Monetary Fund [HLS/26/042]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        184,
+                        97,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                97,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        97,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Statistics Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        94,
+                        140,
+                        516,
+                        169
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                94,
+                                140,
+                                516,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        140,
+                                        516,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "Uganda: Report on Rebasing of Monthly Indicator of Economic Growth (July 7–18, 2025)\nPrepared by Anthony Silungwe"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        184,
+                        511,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                184,
+                                511,
+                                226
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        184,
+                                        511,
+                                        226
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        536,
+                        399
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                536,
+                                399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: This capacity development (CD) project, financed by the Data for Decisions (D4D) Fund,"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": " was initiated in response to a request from the Ghana Statistical Service (GSS) to provide technical assistance (TA) on developing a Monthly Indicator of Economic Growth (MIEG). The project aimed to establish a robust MIEG compilation framework aligned with the International Monetary Fund's Quarterly National Accounts Manual (2017), enhancing timeliness and quality of economic statistics. Key findings include the successful creation of a Value Added Tax (VAT) database critical for compiling both MIEG and quarterly GDP estimates, alongside training on data cleaning tools that improve data accuracy. The project revealed some discrepancies between MIEG and quarterly GDP figures, highlighting the need for harmonization. Recommendations focus on the phased adoption of the new VAT processing files, timely dissemination of experimental MIEG data, and closer integration of MIEG with quarterly GDP compilation to improve consistency and statistical quality."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        418,
+                        294,
+                        432
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                418,
+                                294,
+                                432
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        418,
+                                        294,
+                                        432
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers: J01, J16, J30, E001"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        441,
+                        492,
+                        468
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                441,
+                                492,
+                                468
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        441,
+                                        492,
+                                        468
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Monthly Indicator of Economic Growth (MIEG), Index of Industrial Production (IIP), manufacturing, Value Added Tax (VAT) data, National Accounts."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        497,
+                        539,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                497,
+                                539,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": " )."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        197,
+                        579,
+                        413,
+                        651
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                579,
+                                413,
+                                651
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        579,
+                                        413,
+                                        651
+                                    ],
+                                    "type": "text",
+                                    "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        531,
+                        758,
+                        541,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                531,
+                                758,
+                                541,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        531,
+                                        758,
+                                        541,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        69,
+                        685,
+                        285,
+                        697
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                685,
+                                285,
+                                697
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        685,
+                                        285,
+                                        697
+                                    ],
+                                    "type": "text",
+                                    "content": "1 https://www.imf.org/en/Capacity-Development/D4D."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "bbox": [
+                        69,
+                        701,
+                        425,
+                        715
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                701,
+                                425,
+                                715
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        701,
+                                        425,
+                                        715
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        69,
+                                        701,
+                                        425,
+                                        715
+                                    ],
+                                    "type": "text",
+                                    "content": "  Staff Operational Guidance on the Dissemination of Capacity Development Information"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                },
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        201,
+                        71,
+                        429,
+                        85
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                201,
+                                71,
+                                429,
+                                85
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        201,
+                                        71,
+                                        429,
+                                        85
+                                    ],
+                                    "type": "text",
+                                    "content": "©[2026] International Monetary Fund [HLS/26/042]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        184,
+                        97,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                97,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        97,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Statistics Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        94,
+                        140,
+                        516,
+                        169
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                94,
+                                140,
+                                516,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        140,
+                                        516,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "Uganda: Report on Rebasing of Monthly Indicator of Economic Growth (July 7–18, 2025)\nPrepared by Anthony Silungwe"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        184,
+                        511,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                184,
+                                511,
+                                226
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        184,
+                                        511,
+                                        226
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        536,
+                        399
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                536,
+                                399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: This capacity development (CD) project, financed by the Data for Decisions (D4D) Fund,"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        536,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": " was initiated in response to a request from the Ghana Statistical Service (GSS) to provide technical assistance (TA) on developing a Monthly Indicator of Economic Growth (MIEG). The project aimed to establish a robust MIEG compilation framework aligned with the International Monetary Fund's Quarterly National Accounts Manual (2017), enhancing timeliness and quality of economic statistics. Key findings include the successful creation of a Value Added Tax (VAT) database critical for compiling both MIEG and quarterly GDP estimates, alongside training on data cleaning tools that improve data accuracy. The project revealed some discrepancies between MIEG and quarterly GDP figures, highlighting the need for harmonization. Recommendations focus on the phased adoption of the new VAT processing files, timely dissemination of experimental MIEG data, and closer integration of MIEG with quarterly GDP compilation to improve consistency and statistical quality."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        418,
+                        294,
+                        432
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                418,
+                                294,
+                                432
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        418,
+                                        294,
+                                        432
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers: J01, J16, J30, E001"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        441,
+                        492,
+                        468
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                441,
+                                492,
+                                468
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        441,
+                                        492,
+                                        468
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Monthly Indicator of Economic Growth (MIEG), Index of Industrial Production (IIP), manufacturing, Value Added Tax (VAT) data, National Accounts."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        497,
+                        539,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                497,
+                                539,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        497,
+                                        539,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": " )."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        197,
+                        579,
+                        413,
+                        651
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                579,
+                                413,
+                                651
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        579,
+                                        413,
+                                        651
+                                    ],
+                                    "type": "text",
+                                    "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        105,
+                        532,
+                        189
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                105,
+                                532,
+                                189
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        105,
+                                        532,
+                                        189
+                                    ],
+                                    "type": "text",
+                                    "content": "This capacity development (CD) project financed by the Data for Decisions (D4D) Fund, was created in response to a request by the Ghana Statistical Service (GSS) to provide technical assistance (TA) to develop a Monthly Indicator of Economic Growth (MIEG) for Ghana. The primary objective of the CD project was to support the GSS in developing the MIEG compilation framework, ensuring alignment with the guidelines outlined in the International Monetary Fund's (IMF) Quarterly National Accounts Manual (2017)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        201,
+                        541,
+                        325
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                201,
+                                541,
+                                325
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        201,
+                                        541,
+                                        325
+                                    ],
+                                    "type": "text",
+                                    "content": "To complete this project, three missions were conducted. The first mission was conducted during July 2023 and introduced the MIEG compilation framework. It also involved assessment of monthly indicators for the compilation of MIEG. During this mission it was established that several activities were dependent on value added tax (VAT) records. These activities include manufacturing, wholesale and retail trade, transport and storage, real estate, and other services. The VAT data were not in a usable format at the time. The second mission was conducted in July 2024 to address the format of the VAT data. The mission worked very well with GSS staff to create a VAT database that supports time series analysis. The new database is critical not only for MIEG compilation but also for quarterly GDP compilation. The recent mission focused on analyzing the VAT data and integrating them into MIEG compilation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        338,
+                        259,
+                        358
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                338,
+                                259,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        338,
+                                        259,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        370,
+                        541,
+                        468
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                370,
+                                541,
+                                468
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        370,
+                                        541,
+                                        468
+                                    ],
+                                    "type": "text",
+                                    "content": "The MIEG project has contributed to enhancements in Ghana's national accounts compilation system. A key achievement was the development of a new VAT database that supports time series analysis, which is essential for compiling the MIEG as well as the quarterly GDP compilation process. This database represents a major advancement, enabling more detailed and consistent economic measurement across multiple sectors reliant on VAT data. The project also introduced the use of a \"matched pairs pruning tool\" to clean VAT sales data, which enhances the accuracy of the MIEG estimates by reducing noise and inconsistencies in the raw data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        479,
+                        541,
+                        577
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                479,
+                                541,
+                                577
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        479,
+                                        541,
+                                        577
+                                    ],
+                                    "type": "text",
+                                    "content": "Collaboration between IMF experts and GSS staff was effective, leading to the development of pruning tools for all activities dependent on VAT sales data. The results from the MIEG compilation generally align with previously published quarterly GDP figures, although some discrepancies were identified. These differences are mainly due to ad hoc adjustments in the quarterly GDP system, underscoring the need for harmonization between the two statistical products. The mission advised the national accounts team to gradually transition to using the new VAT files developed during the MIEG project to ensure consistency and improve the reliability of both monthly and quarterly economic indicators."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        588,
+                        539,
+                        712
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                588,
+                                539,
+                                712
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        588,
+                                        539,
+                                        712
+                                    ],
+                                    "type": "text",
+                                    "content": "The integration of VAT sales data into both MIEG and quarterly GDP compilations is expected to improve the accuracy and scope of economic analysis in Ghana. Furthermore, the ongoing GDP rebasing project is an excellent opportunity to finalize the migration to these new processing files, which will further consolidate improvements in data quality. The GSS plans to begin monthly dissemination of experimental MIEG data, which is anticipated to raise awareness and usage of these new statistical products. The mission advised that the third month of MIEG be published alongside quarterly GDP to emphasize consistency, with an initial delay exceeding 60 days considered reasonable as GSS staff and data providers adapt to the new data collection and compilation schedule. The first experimental MIEG publication was released in October 2025, covering monthly data from January 2024 to July 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        531,
+                        758,
+                        541,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                531,
+                                758,
+                                541,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        531,
+                                        758,
+                                        541,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        105,
+                        532,
+                        189
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                105,
+                                532,
+                                189
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        105,
+                                        532,
+                                        189
+                                    ],
+                                    "type": "text",
+                                    "content": "This capacity development (CD) project financed by the Data for Decisions (D4D) Fund, was created in response to a request by the Ghana Statistical Service (GSS) to provide technical assistance (TA) to develop a Monthly Indicator of Economic Growth (MIEG) for Ghana. The primary objective of the CD project was to support the GSS in developing the MIEG compilation framework, ensuring alignment with the guidelines outlined in the International Monetary Fund's (IMF) Quarterly National Accounts Manual (2017)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        201,
+                        541,
+                        325
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                201,
+                                541,
+                                325
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        201,
+                                        541,
+                                        325
+                                    ],
+                                    "type": "text",
+                                    "content": "To complete this project, three missions were conducted. The first mission was conducted during July 2023 and introduced the MIEG compilation framework. It also involved assessment of monthly indicators for the compilation of MIEG. During this mission it was established that several activities were dependent on value added tax (VAT) records. These activities include manufacturing, wholesale and retail trade, transport and storage, real estate, and other services. The VAT data were not in a usable format at the time. The second mission was conducted in July 2024 to address the format of the VAT data. The mission worked very well with GSS staff to create a VAT database that supports time series analysis. The new database is critical not only for MIEG compilation but also for quarterly GDP compilation. The recent mission focused on analyzing the VAT data and integrating them into MIEG compilation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        338,
+                        259,
+                        358
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                338,
+                                259,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        338,
+                                        259,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        370,
+                        541,
+                        468
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                370,
+                                541,
+                                468
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        370,
+                                        541,
+                                        468
+                                    ],
+                                    "type": "text",
+                                    "content": "The MIEG project has contributed to enhancements in Ghana's national accounts compilation system. A key achievement was the development of a new VAT database that supports time series analysis, which is essential for compiling the MIEG as well as the quarterly GDP compilation process. This database represents a major advancement, enabling more detailed and consistent economic measurement across multiple sectors reliant on VAT data. The project also introduced the use of a \"matched pairs pruning tool\" to clean VAT sales data, which enhances the accuracy of the MIEG estimates by reducing noise and inconsistencies in the raw data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        479,
+                        541,
+                        577
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                479,
+                                541,
+                                577
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        479,
+                                        541,
+                                        577
+                                    ],
+                                    "type": "text",
+                                    "content": "Collaboration between IMF experts and GSS staff was effective, leading to the development of pruning tools for all activities dependent on VAT sales data. The results from the MIEG compilation generally align with previously published quarterly GDP figures, although some discrepancies were identified. These differences are mainly due to ad hoc adjustments in the quarterly GDP system, underscoring the need for harmonization between the two statistical products. The mission advised the national accounts team to gradually transition to using the new VAT files developed during the MIEG project to ensure consistency and improve the reliability of both monthly and quarterly economic indicators."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        588,
+                        539,
+                        712
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                588,
+                                539,
+                                712
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        588,
+                                        539,
+                                        712
+                                    ],
+                                    "type": "text",
+                                    "content": "The integration of VAT sales data into both MIEG and quarterly GDP compilations is expected to improve the accuracy and scope of economic analysis in Ghana. Furthermore, the ongoing GDP rebasing project is an excellent opportunity to finalize the migration to these new processing files, which will further consolidate improvements in data quality. The GSS plans to begin monthly dissemination of experimental MIEG data, which is anticipated to raise awareness and usage of these new statistical products. The mission advised that the third month of MIEG be published alongside quarterly GDP to emphasize consistency, with an initial delay exceeding 60 days considered reasonable as GSS staff and data providers adapt to the new data collection and compilation schedule. The first experimental MIEG publication was released in October 2025, covering monthly data from January 2024 to July 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        72,
+                        345,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                72,
+                                345,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        72,
+                                        345,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        71,
+                        127,
+                        539,
+                        310
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                111,
+                                235,
+                                125
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        111,
+                                        235,
+                                        125
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                111,
+                                                235,
+                                                125
+                                            ],
+                                            "type": "text",
+                                            "content": "TABLE 1. Priority Recommendations"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                127,
+                                539,
+                                310
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        127,
+                                        539,
+                                        310
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                71,
+                                                127,
+                                                539,
+                                                310
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>September 2025</td><td>Experimental MIEG at aggregate level (Agriculture, Industry and Services) shared with GSS management for internal use.</td><td>GSS</td></tr><tr><td>October 2025</td><td>First release of Experimental MIEG at aggregate level (Agriculture, Industry, Services and Total).</td><td>GSS</td></tr><tr><td>December 2025</td><td>National Accounts staff use the new VAT processing files that include the matched pairs pruning tool to compile quarterly GDP for Q2 2025.</td><td>GSS</td></tr></table>",
+                                            "image_path": "91875e01728b938f09a78f01a174ed6edd29432c55fed97b0807046c2a9c3074.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        302,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                302,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        302,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        532,
+                        758,
+                        540,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                532,
+                                758,
+                                540,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        532,
+                                        758,
+                                        540,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        72,
+                        345,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                72,
+                                345,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        72,
+                                        345,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        71,
+                        127,
+                        539,
+                        310
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                111,
+                                235,
+                                125
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        111,
+                                        235,
+                                        125
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                111,
+                                                235,
+                                                125
+                                            ],
+                                            "type": "text",
+                                            "content": "TABLE 1. Priority Recommendations"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                127,
+                                539,
+                                310
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        127,
+                                        539,
+                                        310
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                71,
+                                                127,
+                                                539,
+                                                310
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>September 2025</td><td>Experimental MIEG at aggregate level (Agriculture, Industry and Services) shared with GSS management for internal use.</td><td>GSS</td></tr><tr><td>October 2025</td><td>First release of Experimental MIEG at aggregate level (Agriculture, Industry, Services and Total).</td><td>GSS</td></tr><tr><td>December 2025</td><td>National Accounts staff use the new VAT processing files that include the matched pairs pruning tool to compile quarterly GDP for Q2 2025.</td><td>GSS</td></tr></table>",
+                                            "image_path": "91875e01728b938f09a78f01a174ed6edd29432c55fed97b0807046c2a9c3074.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.4"
+}

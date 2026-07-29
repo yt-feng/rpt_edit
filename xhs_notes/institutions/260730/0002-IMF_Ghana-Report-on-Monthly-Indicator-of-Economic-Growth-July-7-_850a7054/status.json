@@ -1,0 +1,102 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "加纳经济有了“月度体",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "IMF：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054.pdf",
+    "cleaned_source_title": "0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0002IMFGhanaReportonMon",
+    "raw_candidates": [
+      "IMF：加纳月度宏观环境增长指标报告",
+      "IMF：加纳增值税数据库支撑月度增长指标",
+      "IMF：加纳月度增长指标编制与季度GDP协调"
+    ],
+    "cleaned_candidates": [
+      "IMF：加纳月度宏观环境增长指标报告",
+      "IMF：加纳增值税数据库支撑月度增长指标",
+      "IMF：加纳月度增长指标编制与季度GDP协调",
+      "IMF：0002IMFGhanaReportonMon",
+      "IMF：2025年11月，IMF发布技术援助报告"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：加纳增值税数据库支撑月度增长指标",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "IMF：加纳月度增长指标编制与季度GDP协调",
+        "reasons": [
+          "anchor_coverage=0.55"
+        ]
+      },
+      {
+        "title": "IMF：0002IMFGhanaReportonMon",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2025年11月，IMF发布技术援助报告",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：加纳月度宏观环境增长指标报告",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

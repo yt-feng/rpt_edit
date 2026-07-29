@@ -1,0 +1,1383 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.144,
+                0.117,
+                0.266,
+                0.214
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.239,
+                0.746,
+                0.356
+            ],
+            "angle": 0,
+            "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.383,
+                0.336,
+                0.419
+            ],
+            "angle": 0,
+            "content": "GHANA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.425,
+                0.923,
+                0.496
+            ],
+            "angle": 0,
+            "content": "Report on Monthly Indicator of Economic Growth (July 7–18, 2025)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.512,
+                0.396,
+                0.539
+            ],
+            "angle": 0,
+            "content": "NOVEMBER 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.585,
+                0.271,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Prepared By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.606,
+                0.293,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Anthony Silungwe",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.731,
+                0.373,
+                0.751
+            ],
+            "angle": 0,
+            "content": "Authoring Department:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.757,
+                0.464,
+                0.781
+            ],
+            "angle": 0,
+            "content": "Statistics Department",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.242,
+                0.693,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.282,
+                0.743,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.322,
+                0.34,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.382,
+                0.338,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.425,
+                0.921,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.463,
+                0.421,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.515,
+                0.392,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.582,
+                0.271,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.604,
+                0.292,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.73,
+                0.372,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.755,
+                0.464,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.971
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.329,
+                0.09,
+                0.702,
+                0.108
+            ],
+            "angle": 0,
+            "content": "©[2026] International Monetary Fund [HLS/26/042]"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.301,
+                0.123,
+                0.699,
+                0.159
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report\nStatistics Department"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.154,
+                0.178,
+                0.844,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Uganda: Report on Rebasing of Monthly Indicator of Economic Growth (July 7–18, 2025)\nPrepared by Anthony Silungwe",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.233,
+                0.836,
+                0.286
+            ],
+            "angle": 0,
+            "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.305,
+                0.876,
+                0.505
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: This capacity development (CD) project, financed by the Data for Decisions (D4D) Fund,\\(^{1}\\) was initiated in response to a request from the Ghana Statistical Service (GSS) to provide technical assistance (TA) on developing a Monthly Indicator of Economic Growth (MIEG). The project aimed to establish a robust MIEG compilation framework aligned with the International Monetary Fund's Quarterly National Accounts Manual (2017), enhancing timeliness and quality of economic statistics. Key findings include the successful creation of a Value Added Tax (VAT) database critical for compiling both MIEG and quarterly GDP estimates, alongside training on data cleaning tools that improve data accuracy. The project revealed some discrepancies between MIEG and quarterly GDP figures, highlighting the need for harmonization. Recommendations focus on the phased adoption of the new VAT processing files, timely dissemination of experimental MIEG data, and closer integration of MIEG with quarterly GDP compilation to improve consistency and statistical quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.528,
+                0.482,
+                0.546
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers: J01, J16, J30, E001",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.121,
+                0.557,
+                0.804,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Keywords: Monthly Indicator of Economic Growth (MIEG), Index of Industrial Production (IIP), manufacturing, Value Added Tax (VAT) data, National Accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.628,
+                0.882,
+                0.718
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information \\( ^{2} \\) ).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.322,
+                0.732,
+                0.675,
+                0.823
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.865,
+                0.467,
+                0.881
+            ],
+            "angle": 0,
+            "content": "1 https://www.imf.org/en/Capacity-Development/D4D."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.113,
+                0.886,
+                0.695,
+                0.903
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Staff Operational Guidance on the Dissemination of Capacity Development Information"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.493,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.093,
+                0.699,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.125,
+                0.695,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.421,
+                0.144,
+                0.579,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.179,
+                0.842,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.386,
+                0.199,
+                0.611,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.234,
+                0.834,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.253,
+                0.816,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.27,
+                0.348,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.306,
+                0.858,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.324,
+                0.834,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.343,
+                0.848,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.361,
+                0.868,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.379,
+                0.864,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.398,
+                0.851,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.415,
+                0.866,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.434,
+                0.872,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.452,
+                0.869,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.471,
+                0.875,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.488,
+                0.442,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.531,
+                0.478,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.56,
+                0.801,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.577,
+                0.592,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.629,
+                0.881,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.646,
+                0.876,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.664,
+                0.876,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.682,
+                0.874,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.702,
+                0.794,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.735,
+                0.666,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.754,
+                0.673,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.338,
+                0.771,
+                0.659,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.419,
+                0.79,
+                0.58,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.451,
+                0.808,
+                0.548,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.093,
+                0.293,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.133,
+                0.87,
+                0.239
+            ],
+            "angle": 0,
+            "content": "This capacity development (CD) project financed by the Data for Decisions (D4D) Fund, was created in response to a request by the Ghana Statistical Service (GSS) to provide technical assistance (TA) to develop a Monthly Indicator of Economic Growth (MIEG) for Ghana. The primary objective of the CD project was to support the GSS in developing the MIEG compilation framework, ensuring alignment with the guidelines outlined in the International Monetary Fund's (IMF) Quarterly National Accounts Manual (2017).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.254,
+                0.884,
+                0.411
+            ],
+            "angle": 0,
+            "content": "To complete this project, three missions were conducted. The first mission was conducted during July 2023 and introduced the MIEG compilation framework. It also involved assessment of monthly indicators for the compilation of MIEG. During this mission it was established that several activities were dependent on value added tax (VAT) records. These activities include manufacturing, wholesale and retail trade, transport and storage, real estate, and other services. The VAT data were not in a usable format at the time. The second mission was conducted in July 2024 to address the format of the VAT data. The mission worked very well with GSS staff to create a VAT database that supports time series analysis. The new database is critical not only for MIEG compilation but also for quarterly GDP compilation. The recent mission focused on analyzing the VAT data and integrating them into MIEG compilation.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.428,
+                0.424,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Summary of Findings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.468,
+                0.885,
+                0.591
+            ],
+            "angle": 0,
+            "content": "The MIEG project has contributed to enhancements in Ghana's national accounts compilation system. A key achievement was the development of a new VAT database that supports time series analysis, which is essential for compiling the MIEG as well as the quarterly GDP compilation process. This database represents a major advancement, enabling more detailed and consistent economic measurement across multiple sectors reliant on VAT data. The project also introduced the use of a \"matched pairs pruning tool\" to clean VAT sales data, which enhances the accuracy of the MIEG estimates by reducing noise and inconsistencies in the raw data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.605,
+                0.884,
+                0.729
+            ],
+            "angle": 0,
+            "content": "Collaboration between IMF experts and GSS staff was effective, leading to the development of pruning tools for all activities dependent on VAT sales data. The results from the MIEG compilation generally align with previously published quarterly GDP figures, although some discrepancies were identified. These differences are mainly due to ad hoc adjustments in the quarterly GDP system, underscoring the need for harmonization between the two statistical products. The mission advised the national accounts team to gradually transition to using the new VAT files developed during the MIEG project to ensure consistency and improve the reliability of both monthly and quarterly economic indicators.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.743,
+                0.881,
+                0.9
+            ],
+            "angle": 0,
+            "content": "The integration of VAT sales data into both MIEG and quarterly GDP compilations is expected to improve the accuracy and scope of economic analysis in Ghana. Furthermore, the ongoing GDP rebasing project is an excellent opportunity to finalize the migration to these new processing files, which will further consolidate improvements in data quality. The GSS plans to begin monthly dissemination of experimental MIEG data, which is anticipated to raise awareness and usage of these new statistical products. The mission advised that the third month of MIEG be published alongside quarterly GDP to emphasize consistency, with an initial delay exceeding 60 days considered reasonable as GSS staff and data providers adapt to the new data collection and compilation schedule. The first experimental MIEG publication was released in October 2025, covering monthly data from January 2024 to July 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.493,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.092,
+                0.292,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.136,
+                0.861,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.153,
+                0.844,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.17,
+                0.841,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.187,
+                0.866,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.205,
+                0.854,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.222,
+                0.17,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.255,
+                0.851,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.271,
+                0.871,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.289,
+                0.875,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.308,
+                0.847,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.325,
+                0.858,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.342,
+                0.822,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.36,
+                0.879,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.377,
+                0.875,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.395,
+                0.752,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.426,
+                0.422,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.471,
+                0.87,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.488,
+                0.869,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.506,
+                0.841,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.523,
+                0.872,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.54,
+                0.881,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.558,
+                0.844,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.575,
+                0.342,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.606,
+                0.859,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.623,
+                0.882,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.643,
+                0.845,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.66,
+                0.878,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.677,
+                0.859,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.694,
+                0.868,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.712,
+                0.671,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.742,
+                0.876,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.76,
+                0.874,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.779,
+                0.824,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.796,
+                0.877,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.814,
+                0.842,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.83,
+                0.825,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.849,
+                0.824,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.866,
+                0.819,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.884,
+                0.822,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.092,
+                0.565,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Summary of Recommendations"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.115,
+                0.141,
+                0.385,
+                0.158
+            ],
+            "angle": 0,
+            "content": "TABLE 1. Priority Recommendations"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.117,
+                0.161,
+                0.882,
+                0.392
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>September 2025</td><td>Experimental MIEG at aggregate level (Agriculture, Industry and Services) shared with GSS management for internal use.</td><td>GSS</td></tr><tr><td>October 2025</td><td>First release of Experimental MIEG at aggregate level (Agriculture, Industry, Services and Total).</td><td>GSS</td></tr><tr><td>December 2025</td><td>National Accounts staff use the new VAT processing files that include the matched pairs pruning tool to compile quarterly GDP for Q2 2025.</td><td>GSS</td></tr></table>"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.494,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.883,
+                0.971
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.093,
+                0.563,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

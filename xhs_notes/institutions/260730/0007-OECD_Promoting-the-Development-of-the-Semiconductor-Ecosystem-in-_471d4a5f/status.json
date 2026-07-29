@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_pjbpd7i3/pdfs/0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "巴拿马，半导体新机会",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：巴拿马半导体生态系统发展路径",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f.pdf",
+    "cleaned_source_title": "0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0007OECDPromotingtheDe",
+    "raw_candidates": [
+      "经合组织：巴拿马半导体生态系统发展路径",
+      "经合组织：巴拿马半导体生态系统现状与2024年实地调研",
+      "经合组织：巴拿马半导体生态系统区位与物流优势分析"
+    ],
+    "cleaned_candidates": [
+      "经合组织：巴拿马半导体生态系统发展路径",
+      "经合组织：巴拿马半导体生态系统现状与2024年实地调研",
+      "经合组织：巴拿马半导体生态系统区位与物流优势分析",
+      "经合组织：0007OECDPromotingtheDe",
+      "经合组织：基于2024年3月的实地调研和大量定量数据"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：巴拿马半导体生态系统现状与2024年实地调研",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "经合组织：巴拿马半导体生态系统区位与物流优势分析",
+        "reasons": [
+          "anchor_coverage=0.69"
+        ]
+      },
+      {
+        "title": "经合组织：0007OECDPromotingtheDe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：基于2024年3月的实地调研和大量定量数据",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：巴拿马半导体生态系统发展路径",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：巴拿马半导体生态系统发展路径"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

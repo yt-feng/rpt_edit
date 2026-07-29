@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_pjbpd7i3/pdfs/0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_pjbpd7i3/pdfs/0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

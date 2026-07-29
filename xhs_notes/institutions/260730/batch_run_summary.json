@@ -1,0 +1,69 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 7,
+  "pdf_count_before_skip": 7,
+  "pdf_count": 7,
+  "generated_report_count": 7,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o4hbug8n/pdfs/0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809.pdf",
+          "batch_file": "/tmp/pdf_batch_002_pjbpd7i3/pdfs/0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f.pdf",
+          "batch_file": "/tmp/pdf_batch_002_pjbpd7i3/pdfs/0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f.pdf",
+          "stable_index": "7"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
