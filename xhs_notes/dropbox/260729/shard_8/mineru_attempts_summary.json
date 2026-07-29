@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0001-41-JPM-XtalPi-H-2228.HK-1H26 profit warning expected- Focus on continued AI platform achievement-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0003-43-MS-China Property-Weekly Database Tracker -30-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0004-44-MS-A Comprehensive Framework Ahead of French Elections-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0005-45-MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

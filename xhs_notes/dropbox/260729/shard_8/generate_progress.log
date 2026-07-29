@@ -1,0 +1,63 @@
+Found 64 total PDFs; shard 8/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sqwk_bt4/pdfs/0001-41-J.P. Morgan-XtalPi-H-2228.HK-1H26 profit warning expected- Focus on continued AI platform achievement-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sqwk_bt4/pdfs/0002-42-J.P. Morgan-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sqwk_bt4/pdfs/0003-43-Morgan Stanley-China Property-Weekly Database Tracker -30-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sqwk_bt4/pdfs/0004-44-Morgan Stanley-A Comprehensive Framework Ahead of French Elections-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sqwk_bt4/pdfs/0005-45-Morgan Stanley-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf
+MinerU attempt 1 using MINER_U batch_id=7d6afd99-a017-4d1e-aea3-cf2396082d09
+MinerU states: pending, running, pending, running, waiting-file
+MinerU states: done, running, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset adb1d8affbf82f6077b3fac4fafe06bfee2a3c40be75d97aa1e2893e2cde5dc3.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 50e4eb54673f9edba927334b197a3a14fdb77636dd2ca3702338c10dde4f375a.jpg: score=-100;too_small:540x101
+Skip non-chart visual asset df93bffc93194d863cea1cbdcaa60695ee5a04963b8887c3a3675dc1f93917ff.jpg: score=-100;too_small:982x168
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 摩根大通：晶泰科技1H26盈利预警与AI平台进展 -> 摩根大通：晶泰科技与AI及近期数据观察
+Skip non-chart visual asset 677418348efc6097de7f300e4df99793d8d086bf7cb715760dae845b002ddc56.jpg: score=-100;too_small:448x87
+Skip non-chart visual asset e6f0ce8207453900834405cbab9bfc678d2053a28a110a66ad6f2b88467d1b74.jpg: score=-100;too_small:982x171
+Skip non-chart visual asset b00377f762a728a5e80012698c6f30f557b591d6158cf86461e06cf3fb88580e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 3c50181bb93025ae4e360f75bc3e7444abbb9154d9e17043b922ce74d563c4cd.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.43,contrast,large
+Skip non-chart visual asset 7b61f2829554344bb6580e060c7f7087ef721c971a3ceb1906031e5e342f6e3d.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 1d14c2ac2071a7bf93f33397736b40caef248d4ca3fdc28143e5d44fcf8b033f.jpg: score=-100;too_small:626x87
+Neutralized WeChat title while keeping the report: 摩根大通：苏泊尔二季度收入同比下滑3%-公司观点更新 -> 摩根大通：月度与季度数据变化观察
+Skip non-chart visual asset b09a0df8a701db5a49beb95c5bafb45c2fba079708addca373708f320419605f.jpg: score=-100;too_small:112x128
+Skip non-chart visual asset b5e317e40540bee7f46ffc5e3b129a2f876ee79052efccdd0d3c7f6a482fde73.jpg: score=1;large
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国50城新房周成交同比转跌-二手房延续正增长 -> 摩根士丹利：研究主题与行业变化观察
+Skip non-chart visual asset 43470e89c3bf8035f0b9ab0df0be6b4092e9942a3b7ba5cea6cfea3b546227ad.jpg: score=-100;too_small:712x148
+Skip non-chart visual asset 76c82b5826814330ece4aa5fd6a42d6980feb08670911562391043ed588e3d8e.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.19,contrast,large
+Skip non-chart visual asset db204dc6f8d5bc1a5ba543f917ca8975c775f6410d2e216a3b5b6aa6b72c8130.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.11,large
+Skip non-chart visual asset e407fd75fa08b0a8eefe2cb6330b4da09e7a8d2983510b297fa2d1cf95d50beb.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset 5cfa05e291a385f70093471c9c5e36eba3ad9e8624b298fdfff7fda41b85286f.jpg: score=1;chart_ratio
+Skip non-chart visual asset d4782f8e09f62780302186cf6d4840fe0788c047f9bd97f9b196ae830b4fa47c.jpg: score=1;chart_ratio
+Skip non-chart visual asset d66b37c03b7dab54a67b93bf56976ff9f293b5bc97fee12f03aca432a969941e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 769015464c8134782fe77061e8c8231bb73c85c94aa2d7b6cb96fe16cb9b7321.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 04678418bce71610f1a19d551fc239879279aded8800b5e2696b86b90916989c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,large
+Skip non-chart visual asset 6136124b3afc40823027897953d2f4d9a7cb4f3392e01a2446447fd24b2ebdeb.jpg: score=-100;too_small:531x84
+Skip non-chart visual asset 5515fd082501f00f155f3015b4582ff33efd1cc22fc9a8821b3bd96f27e4a057.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 68bb8e17261a65d1d06b3dad173852aa9f97c18fded634a81372530846d667c9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,large
+Skip non-chart visual asset a18cc72a2e3daaf8a00ff72226d1327a8d484f006e255b8368d0c35a426bbfb3.jpg: score=-100;too_small:531x84
+Skip non-chart visual asset 9b8efdcdddb78b58dc2c745d09ef40875589b708f1c54beb5a47295e8da09cc8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset 360057afd41ed09e08587d5c7ff5bf789ba8f5a8e6754aef3aa78527ad5d1661.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 99a731d5da116707bd25430e666ebc91c5212a17b320e25711da278f66de7a7b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset efb4d6c205a325f84a71e4756548f6d8356dbdd67c2c0f1ffa853e274f80cb9a.jpg: score=0;square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 9bfa626a58b0086027dd91790d77f1373b56c3c0914657e323313eff2bb618f2.jpg: score=-100;too_small:710x168
+Skip non-chart visual asset 848935d77e68e66b8bbeec45076674b101780432354e1bd4a0fbe778055607b3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset afc043a1e97f59c2e970b86a32d6f9c5e3b3237d2cd32b72efa28cbcd81c3913.jpg: score=-100;too_small:685x139
+Skip non-chart visual asset 3c7b6f7ef6b83fb8f5b544232901a46760626ca672d6fade6701fb2fdbccdd0b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 34b2b1a06c149ea17c50de0dc46b7589d06803084c5f34eb053301beec0bc084.jpg: score=-100;too_small:965x137
+Skip non-chart visual asset 60a90ae0ad45b4dbc855ccf6dad234df3680a75301344bc3b4389308a9756bc6.jpg: score=-100;too_small:709x120
+Skip non-chart visual asset 1167392a7f2a4d43598beb2f2ec92ed0fd8c27ad2776b6cf806624d42183ebcc.jpg: score=-1;chart_ratio,square_without_chart_hint,large
+Skip non-chart visual asset d6548fde6ab4113613f495fe0fde8d29c85b8d41ee2f8c770ebb486f5020f874.jpg: score=1;large
+Skip non-chart visual asset 57bae29738c7e2d274320eb8c698fd4f570b522b0dd161a4d7435c538a4f77c1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset 9c0a0a81683b54a7bf40e27d1121e6882878bc615bc33d9283d86a19727d8675.jpg: score=-100;too_small:712x140
+Skip non-chart visual asset bfca97212fe27ead416278159987bc4f37a5e92e09f56d8963e0bc8452f9914b.jpg: score=-100;too_small:578x176
+Neutralized WeChat title while keeping the report: 摩根士丹利：法国选举综合框架 -> 摩根士丹利：区域环境与行业变化观察
+Skip non-chart visual asset e8e595896ad6edeb0ebea41ffd0be12be09d84374157f4f38d7c7c12d8068b8f.jpg: score=1;large
+Skip non-chart visual asset f0baeca006d1c55e9234d3b9a60749bab2f9a766658c0056de34785a6aea2044.jpg: score=-100;too_small:521x170
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_8; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

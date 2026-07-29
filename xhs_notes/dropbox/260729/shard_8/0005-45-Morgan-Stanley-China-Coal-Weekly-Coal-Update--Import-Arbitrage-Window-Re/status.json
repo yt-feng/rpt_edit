@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0005-45-MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "煤炭进口窗口还在开",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf",
+    "cleaned_source_title": "MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国CoalWeeklyCoal更新",
+    "raw_candidates": [
+      "中国煤炭周度更新-印尼煤进口套利窗口开放",
+      "中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+      "中国煤炭周度更新-7月印尼煤进口套利窗口持续开放"
+    ],
+    "cleaned_candidates": [
+      "MS：中国煤炭周度更新-印尼煤进口套利窗口开放",
+      "MS：中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+      "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+      "MS：中国CoalWeeklyCoal更新",
+      "MS：印尼煤进口套利窗口在7月仍保持开放"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国CoalWeeklyCoal更新",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：印尼煤进口套利窗口在7月仍保持开放",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "402",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

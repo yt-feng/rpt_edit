@@ -1,0 +1,142 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "苏泊尔，出口拖后腿了",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：月度与季度数据变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf",
+    "cleaned_source_title": "JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：ZhejiangSuporA002032Ar",
+    "raw_candidates": [
+      "苏泊尔盈利与股息重置-评级下调至中性",
+      "苏泊尔二季度收入同比下滑3%-评级下调至中性",
+      "苏泊尔出口订单与成本不确定性影响盈利-评级下调至中性"
+    ],
+    "cleaned_candidates": [
+      "JPM：苏泊尔盈利与股息重置-公司观点更新",
+      "JPM：苏泊尔二季度收入同比下滑3%-公司观点更新",
+      "JPM：苏泊尔出口订单与成本不确定性影响盈利-公司观点更新",
+      "JPM：ZhejiangSuporA002032Ar",
+      "JPM：二季度收入同比下滑3%，低于JPM此前预期的增长4%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "generic_series_title"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：苏泊尔盈利与股息重置-公司观点更新",
+        "reasons": [
+          "generic_series_title",
+          "anchor_coverage=0.31",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：苏泊尔出口订单与成本不确定性影响盈利-公司观点更新",
+        "reasons": [
+          "anchor_coverage=0.31",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：ZhejiangSuporA002032Ar",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：二季度收入同比下滑3%，低于JPM此前预期的增长4%",
+        "reasons": [
+          "anchor_coverage=0.56"
+        ]
+      }
+    ],
+    "selected_title": "JPM：月度与季度数据变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：苏泊尔二季度收入同比下滑3%-公司观点更新",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：月度与季度数据变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "530",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

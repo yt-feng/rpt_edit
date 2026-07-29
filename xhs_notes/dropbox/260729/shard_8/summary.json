@@ -1,0 +1,543 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0001-41-JPM-XtalPi-H-2228.HK-1H26 profit warning expected- Focus on continued AI platform achievement-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "AI制药龙头：盈利承",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：晶泰科技与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-JPM-XtalPi-H-2228.HK-1H26 profit warning expected- Focus on continued AI platform achievement-260727.pdf",
+      "cleaned_source_title": "JPM-XtalPi-H-2228.HK-1H26 profit warning expected- Focus on continued AI platform achievement",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AIXtalPiH1H26profitwarni",
+      "raw_candidates": [
+        "晶泰科技1H26盈利预警与AI平台进展",
+        "晶泰科技1H26盈利预警-非BD收入增长超65%",
+        "晶泰科技AI平台进展与1H26盈利预警"
+      ],
+      "cleaned_candidates": [
+        "JPM：晶泰科技1H26盈利预警与AI平台进展",
+        "JPM：晶泰科技1H26盈利预警-非BD收入增长超65%",
+        "JPM：晶泰科技AI平台进展与1H26盈利预警",
+        "JPM：AIXtalPiH1H26profitwarni",
+        "JPM：市场应关注7月29日在上海举行的AI4SDemoDay"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：晶泰科技1H26盈利预警-非BD收入增长超65%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "JPM：AIXtalPiH1H26profitwarni",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：市场应关注7月29日在上海举行的AI4SDemoDay",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：晶泰科技与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：晶泰科技1H26盈利预警与AI平台进展",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：晶泰科技与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "苏泊尔，出口拖后腿了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：月度与季度数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728.pdf",
+      "cleaned_source_title": "JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：ZhejiangSuporA002032Ar",
+      "raw_candidates": [
+        "苏泊尔盈利与股息重置-评级下调至中性",
+        "苏泊尔二季度收入同比下滑3%-评级下调至中性",
+        "苏泊尔出口订单与成本不确定性影响盈利-评级下调至中性"
+      ],
+      "cleaned_candidates": [
+        "JPM：苏泊尔盈利与股息重置-公司观点更新",
+        "JPM：苏泊尔二季度收入同比下滑3%-公司观点更新",
+        "JPM：苏泊尔出口订单与成本不确定性影响盈利-公司观点更新",
+        "JPM：ZhejiangSuporA002032Ar",
+        "JPM：二季度收入同比下滑3%，低于JPM此前预期的增长4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：苏泊尔盈利与股息重置-公司观点更新",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：苏泊尔出口订单与成本不确定性影响盈利-公司观点更新",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：ZhejiangSuporA002032Ar",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：二季度收入同比下滑3%，低于JPM此前预期的增长4%",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        }
+      ],
+      "selected_title": "JPM：月度与季度数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：苏泊尔二季度收入同比下滑3%-公司观点更新",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：月度与季度数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0003-43-MS-China Property-Weekly Database Tracker -30-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "楼市回暖信号出现了吗",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-MS-China Property-Weekly Database Tracker -30-260727.pdf",
+      "cleaned_source_title": "MS-China Property-Weekly Database Tracker -30",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国地产WeeklyDatabaseTracker30",
+      "raw_candidates": [
+        "中国房地产周度数据库追踪-30期",
+        "中国50城新房周成交同比转跌-二手房延续正增长",
+        "中国50城新房与二手房周成交分化扩大"
+      ],
+      "cleaned_candidates": [
+        "MS：中国房地产周度数据库追踪-30期",
+        "MS：中国50城新房周成交同比转跌-二手房延续正增长",
+        "MS：中国50城新房与二手房周成交分化扩大",
+        "MS：中国地产WeeklyDatabaseTracker30",
+        "MS：同期10城二手房备案成交同比增长5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "incomplete_last_segment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国房地产周度数据库追踪-30期",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国50城新房与二手房周成交分化扩大",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国地产WeeklyDatabaseTracker30",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：同期10城二手房备案成交同比增长5%",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "50"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国50城新房周成交同比转跌-二手房延续正增长",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0004-44-MS-A Comprehensive Framework Ahead of French Elections-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "法国大选前，市场到底",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "资产定价->市场定价 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "MS：区域环境与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-MS-A Comprehensive Framework Ahead of French Elections-260728.pdf",
+      "cleaned_source_title": "MS-A Comprehensive Framework Ahead of French Elections",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：AComprehensiveFramewo",
+      "raw_candidates": [
+        "法国选举综合框架",
+        "法国选举周期预算与市场定价框架",
+        "法国选举三重事件叠加与资产影响框架"
+      ],
+      "cleaned_candidates": [
+        "MS：法国选举综合框架",
+        "MS：法国选举周期预算与市场定价框架",
+        "MS：法国选举三重事件叠加与资产影响框架",
+        "MS：AComprehensiveFramewo",
+        "MS：政府将在9月前完成草案，议会10月初开始审查"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：法国选举周期预算与市场定价框架",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "MS：法国选举三重事件叠加与资产影响框架",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "MS：AComprehensiveFramewo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：政府将在9月前完成草案，议会10月初开始审查",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：区域环境与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：法国选举综合框架",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "MS：区域环境与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0005-45-MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "煤炭进口窗口还在开",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal-260727.pdf",
+      "cleaned_source_title": "MS-China Coal-Weekly Coal Update- Import Arbitrage Window Remains Open for Indonesia Coal",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国CoalWeeklyCoal更新",
+      "raw_candidates": [
+        "中国煤炭周度更新-印尼煤进口套利窗口开放",
+        "中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+        "中国煤炭周度更新-7月印尼煤进口套利窗口持续开放"
+      ],
+      "cleaned_candidates": [
+        "MS：中国煤炭周度更新-印尼煤进口套利窗口开放",
+        "MS：中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+        "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+        "MS：中国CoalWeeklyCoal更新",
+        "MS：印尼煤进口套利窗口在7月仍保持开放"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国煤炭周度更新-6月进口环比增38.3%印尼占53.8%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国CoalWeeklyCoal更新",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：印尼煤进口套利窗口在7月仍保持开放",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国煤炭周度更新-7月印尼煤进口套利窗口持续开放"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_sqwk_bt4/pdfs/0003-43-MS-China Property-Weekly Database Tracker -30-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "楼市回暖信号出现了吗",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "MS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-China Property-Weekly Database Tracker -30-260727.pdf",
+    "cleaned_source_title": "MS-China Property-Weekly Database Tracker -30",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国地产WeeklyDatabaseTracker30",
+    "raw_candidates": [
+      "中国房地产周度数据库追踪-30期",
+      "中国50城新房周成交同比转跌-二手房延续正增长",
+      "中国50城新房与二手房周成交分化扩大"
+    ],
+    "cleaned_candidates": [
+      "MS：中国房地产周度数据库追踪-30期",
+      "MS：中国50城新房周成交同比转跌-二手房延续正增长",
+      "MS：中国50城新房与二手房周成交分化扩大",
+      "MS：中国地产WeeklyDatabaseTracker30",
+      "MS：同期10城二手房备案成交同比增长5%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "incomplete_last_segment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：中国房地产周度数据库追踪-30期",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国50城新房与二手房周成交分化扩大",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国地产WeeklyDatabaseTracker30",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：同期10城二手房备案成交同比增长5%",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      }
+    ],
+    "selected_title": "MS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "50"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：中国50城新房周成交同比转跌-二手房延续正增长",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "459",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
