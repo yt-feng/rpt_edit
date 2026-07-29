@@ -26,6 +26,10 @@ GITHUB_API = "https://api.github.com"
 TIMEZONE = ZoneInfo("Asia/Shanghai")
 DEFAULT_REMOTE_ROOT = "/我的坚果云/KCdesk/Ops"
 DATE_RE = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
+DAV = "{DAV:}"
+UPLOAD_MAX_ATTEMPTS = 3
+UPLOAD_RETRYABLE_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
+WEBDAV_ERROR_DETAIL_LIMIT = 300
 
 
 @dataclass(frozen=True)
@@ -277,39 +281,157 @@ class WebDavTarget:
         self.root_parts = [part for part in root.strip("/").split("/") if part]
         self.session = build_session()
         self.session.auth = (username, password)
+        self._confirmed_collections: set[tuple[str, ...]] = set()
 
     def url(self, parts: Iterable[str]) -> str:
         return self.base_url + "/".join(quote(part, safe="") for part in parts)
+
+    @staticmethod
+    def _response_detail(response: requests.Response) -> str:
+        details: list[str] = []
+        retry_after = str(response.headers.get("Retry-After") or "").strip()
+        if retry_after:
+            details.append(f"retry-after={retry_after}")
+        body = re.sub(r"\s+", " ", response.text or "").strip()
+        if body:
+            if len(body) > WEBDAV_ERROR_DETAIL_LIMIT:
+                body = body[: WEBDAV_ERROR_DETAIL_LIMIT - 3] + "..."
+            details.append(f"response={body}")
+        return "; ".join(details)
+
+    @classmethod
+    def _request_error(
+        cls,
+        operation: str,
+        response: requests.Response,
+        path: str,
+    ) -> RuntimeError:
+        reason = str(response.reason or "").strip()
+        status = f"{response.status_code}{f' {reason}' if reason else ''}"
+        detail = cls._response_detail(response)
+        suffix = f"; {detail}" if detail else ""
+        return RuntimeError(f"{operation} failed ({status}) for {path}{suffix}")
 
     def ensure_collection(self, extra_parts: Iterable[str] = ()) -> None:
         current: list[str] = []
         for part in [*self.root_parts, *extra_parts]:
             current.append(part)
+            key = tuple(current)
+            if key in self._confirmed_collections:
+                continue
             response = self.session.request("MKCOL", self.url(current), timeout=(15, 45))
             if response.status_code not in (201, 405):
-                raise RuntimeError(f"MKCOL failed ({response.status_code}) for {'/'.join(current)}")
+                raise self._request_error("MKCOL", response, "/".join(current))
+            self._confirmed_collections.add(key)
+
+    def remote_file_size(self, parts: list[str]) -> int | None:
+        body = b"""<?xml version="1.0" encoding="utf-8" ?>
+<d:propfind xmlns:d="DAV:"><d:prop><d:getcontentlength /></d:prop></d:propfind>"""
+        path = "/".join(parts)
+        response = self.session.request(
+            "PROPFIND",
+            self.url([*self.root_parts, *parts]),
+            headers={"Depth": "0", "Content-Type": "application/xml"},
+            data=body,
+            timeout=(15, 60),
+        )
+        if response.status_code == 404:
+            return None
+        if response.status_code != 207:
+            raise self._request_error("PROPFIND", response, path)
+
+        try:
+            root = ET.fromstring(response.content)
+        except ET.ParseError as error:
+            raise RuntimeError(f"PROPFIND returned invalid XML for {path}: {error}") from error
+
+        length_statuses: list[str] = []
+        for propstat in root.findall(f".//{DAV}propstat"):
+            prop = propstat.find(f"{DAV}prop")
+            length = prop.find(f"{DAV}getcontentlength") if prop is not None else None
+            if length is None:
+                continue
+            status_text = (propstat.findtext(f"{DAV}status") or "").strip()
+            length_statuses.append(status_text or "missing status")
+            matched = re.search(r"\s(\d{3})(?:\s|$)", status_text)
+            if not matched or not 200 <= int(matched.group(1)) < 300:
+                continue
+            raw_size = (length.text or "").strip()
+            try:
+                remote_size = int(raw_size)
+            except ValueError as error:
+                raise RuntimeError(
+                    f"PROPFIND returned invalid getcontentlength {raw_size!r} for {path}"
+                ) from error
+            if remote_size < 0:
+                raise RuntimeError(
+                    f"PROPFIND returned negative getcontentlength {remote_size} for {path}"
+                )
+            return remote_size
+
+        status_detail = ", ".join(length_statuses) or "property missing"
+        raise RuntimeError(
+            f"PROPFIND did not return a usable getcontentlength for {path} ({status_detail})"
+        )
 
     def has_same_size(self, parts: list[str], expected_size: int) -> bool:
-        response = self.session.head(self.url([*self.root_parts, *parts]), timeout=(15, 45))
-        if response.status_code == 404:
-            return False
-        if response.status_code >= 400:
-            response.raise_for_status()
-        remote_size = int(response.headers.get("Content-Length") or -1)
+        remote_size = self.remote_file_size(parts)
         return expected_size > 0 and remote_size == expected_size
+
+    @staticmethod
+    def _upload_retry_delay(attempt: int, response: requests.Response | None = None) -> float:
+        retry_after = (
+            str(response.headers.get("Retry-After") or "").strip() if response is not None else ""
+        )
+        try:
+            parsed = float(retry_after)
+        except ValueError:
+            parsed = -1
+        if parsed >= 0:
+            return min(parsed, 60.0)
+        return min(float(2 ** (attempt - 1)), 10.0)
 
     def upload(self, local_path: Path, parts: list[str]) -> None:
         size = local_path.stat().st_size
         headers = {"Content-Type": "video/mp4", "Content-Length": str(size)}
-        with local_path.open("rb") as handle:
-            response = self.session.put(
-                self.url([*self.root_parts, *parts]),
-                data=handle,
-                headers=headers,
-                timeout=(20, 900),
+        path = "/".join(parts)
+        for attempt in range(1, UPLOAD_MAX_ATTEMPTS + 1):
+            try:
+                with local_path.open("rb") as handle:
+                    response = self.session.put(
+                        self.url([*self.root_parts, *parts]),
+                        data=handle,
+                        headers=headers,
+                        timeout=(20, 900),
+                    )
+            except requests.RequestException as error:
+                if attempt == UPLOAD_MAX_ATTEMPTS:
+                    raise RuntimeError(
+                        f"PUT request failed after {UPLOAD_MAX_ATTEMPTS} attempts for {path}: "
+                        f"{type(error).__name__}: {error}"
+                    ) from error
+                delay = self._upload_retry_delay(attempt)
+                print(
+                    f"UPLOAD_RETRY error={type(error).__name__} attempt={attempt}/"
+                    f"{UPLOAD_MAX_ATTEMPTS} delay={delay:g}s path={path}",
+                    flush=True,
+                )
+                time.sleep(delay)
+                continue
+            if response.status_code in (200, 201, 204):
+                return
+            if (
+                response.status_code not in UPLOAD_RETRYABLE_STATUSES
+                or attempt == UPLOAD_MAX_ATTEMPTS
+            ):
+                raise self._request_error("PUT", response, path)
+            delay = self._upload_retry_delay(attempt, response)
+            print(
+                f"UPLOAD_RETRY status={response.status_code} attempt={attempt}/"
+                f"{UPLOAD_MAX_ATTEMPTS} delay={delay:g}s path={path}",
+                flush=True,
             )
-        if response.status_code not in (200, 201, 204):
-            raise RuntimeError(f"PUT failed ({response.status_code}) for {'/'.join(parts)}")
+            time.sleep(delay)
 
     def cleanup_old_dates(self, retention_days: int, today: date, dry_run: bool = False) -> list[str]:
         body = """<?xml version="1.0" encoding="utf-8" ?>
@@ -322,7 +444,7 @@ class WebDavTarget:
             timeout=(15, 60),
         )
         if response.status_code != 207:
-            raise RuntimeError(f"PROPFIND failed ({response.status_code}) for the operations root")
+            raise self._request_error("PROPFIND", response, "the operations root")
         cutoff = today - timedelta(days=max(1, retention_days) - 1)
         removed: list[str] = []
         root = ET.fromstring(response.content)
@@ -341,7 +463,7 @@ class WebDavTarget:
                 self.url([*self.root_parts, name]), timeout=(20, 180)
             )
             if delete_response.status_code not in (200, 204, 404):
-                raise RuntimeError(f"DELETE failed ({delete_response.status_code}) for {name}")
+                raise self._request_error("DELETE", delete_response, name)
         return sorted(removed)
 
 
