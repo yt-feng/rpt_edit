@@ -1,0 +1,32 @@
+Found 64 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_bdfz9aql/pdfs/0001-21-Goldman Sachs-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_bdfz9aql/pdfs/0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_bdfz9aql/pdfs/0003-23-Goldman Sachs-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_bdfz9aql/pdfs/0004-24-Goldman Sachs-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_bdfz9aql/pdfs/0005-25-J.P. Morgan-China Auto Industry-Management comments on 2Q and 2H26 expectations-260727.pdf
+MinerU attempt 1 using MINER_U batch_id=3b84f751-4f48-4496-93f5-f8e441888d1d
+MinerU states: running, done, running, running, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a856398dea9d153c628557f79096322c99fd0cbb8a45feb0d898488b84aa971d.jpg: score=-100;too_small:646x162
+Skip non-chart visual asset 7bd3b1284fc53ce756c3fc441a942d308978338aec6573d8de3dc2f2cf23e970.jpg: score=-100;too_small:884x98
+Skip non-chart visual asset afa1de115771f2432c077a8baa45475f5d5a0ba8b6dcd04ccf365d0b6f584abb.jpg: score=-1;square_without_chart_hint,edge:0.28
+Skip non-chart visual asset 69c7395eb2455f664b299c8254ce1712d845d5d7f0a0291a44f7b29e26e24deb.jpg: score=-100;too_small:1159x107
+Skip non-chart visual asset 038980b1e707a7a8dc7e1d6caf3a16c5b1f1fb1ea943a80e84a031043e3c6c2e.jpg: score=-100;too_small:884x123
+Skip non-chart visual asset 7801a4d0499778019590ca31f5c6888d18a51979e128fa109a4b7b65e19cd9fe.jpg: score=-100;too_small:1329x179
+Neutralized WeChat title while keeping the report: 高盛：1.6T硅光模块推动3Q26营收增长 -> 高盛：数字基础设施数据与主题变化观察
+Skip non-chart visual asset f8dc034797d4675fc291c0c7862c9a626bc0a3655aac2962d90f0bea112dae81.jpg: score=-100;too_small:1381x132
+Skip non-chart visual asset 153e6407a6f63b621bcaecbeb5b2b0ba5a3807e18bdea3e3d48a042097d69d78.jpg: score=-100;too_small:1429x96
+Skip non-chart visual asset c0db0789a0ad4a0461578224a8706389b248e30fb50343a7ce2a4c48e96aabcf.jpg: score=-1;square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 28801109733d445530707572675f9491684cb34579ef6cb3e766ef642eee2fb9.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset ae388cf211003618822b92d4a4c0f4e886bf1679e3b7e03bcf2e7ee780091679.jpg: score=-100;too_small:1023x45
+Skip non-chart visual asset 607ee297a3fdcfc545fab03f5e5cc510f64ef3bdb79aaa136f090d40347ad680.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 6805eccc8d24e79352ccfbfd4c4aafb4a6ca3979d68109f92d8b0d2c543822c1.jpg: score=-100;too_small:459x129
+Skip non-chart visual asset c3ea72093adcd1085708b70225359114d58a687dfa502eca063fe918c3e3393e.jpg: score=-100;too_small:924x162
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

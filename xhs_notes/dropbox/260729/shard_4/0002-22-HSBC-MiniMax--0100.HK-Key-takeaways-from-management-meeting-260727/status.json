@@ -1,0 +1,125 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "HSBC",
+  "cover_short_title": "MiniMax的AI",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+    "cleaned_source_title": "HSBC-MiniMax -0100.HK-Key takeaways from management meeting",
+    "institution_name": "HSBC",
+    "required_terms": [],
+    "deterministic_fallback": "HSBC：MiniMaxKeytakeawaysfromm",
+    "raw_candidates": [
+      "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+      "HSBC：MiniMax M3 Pro训练效率提升与多模态方向",
+      "HSBC：MiniMax自建算力集群与跨学科团队架构",
+      "HSBC：MiniMax管理层会面要点",
+      "HSBC：MiniMax模型效率与基础设施自建进展",
+      "HSBC：MiniMax M3 Pro训练效率提升与多模态方向"
+    ],
+    "cleaned_candidates": [
+      "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+      "HSBC：MiniMaxM3Pro训练效率提升与多模态方向",
+      "HSBC：MiniMax自建算力集群与跨学科团队架构",
+      "HSBC：MiniMax管理层会面要点",
+      "HSBC：MiniMax模型效率与基础设施自建进展",
+      "HSBC：MiniMaxKeytakeawaysfromm",
+      "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "HSBC：MiniMaxM3Pro训练效率提升与多模态方向",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：MiniMax自建算力集群与跨学科团队架构",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：MiniMax管理层会面要点",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "HSBC：MiniMax模型效率与基础设施自建进展",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "HSBC：MiniMaxKeytakeawaysfromm",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      }
+    ],
+    "selected_title": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+      "HSBC：MiniMax M3 Pro训练效率提升与多模态方向",
+      "HSBC：MiniMax自建算力集群与跨学科团队架构"
+    ],
+    "final_title_after_wording_guard": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "591",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,591 @@
+[
+  {
+    "item": "0001-21-Goldman-Sachs-LandMark--3081.TWO---3Q26-QoQ-growth-on-800G-1.6T-SiPh-ram",
+    "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0001-21-GS-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "800G/1.6T ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：数字基础设施数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy-260728.pdf",
+      "cleaned_source_title": "GS-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：LandMark3Q26QoQ增长on800G1.6",
+      "raw_candidates": [
+        "LandMark 800G/1.6T硅光模块推动3Q26营收增长",
+        "LandMark 2026年6月营收4.21亿新台币同比增128%",
+        "LandMark 硅光产品营收占比2026年预计达87%"
+      ],
+      "cleaned_candidates": [
+        "GS：1.6T硅光模块推动3Q26营收增长",
+        "GS：LandMark2026年6月营收4.21亿新台币同比增128%",
+        "GS：LandMark硅光产品营收占比2026年预计达87%",
+        "GS：LandMark3Q26QoQ增长on800G1.6",
+        "GS：LandMark2026年6月营收为4.21亿新台币"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：LandMark2026年6月营收4.21亿新台币同比增128%",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：LandMark硅光产品营收占比2026年预计达87%",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：LandMark3Q26QoQ增长on800G1.6",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "GS：LandMark2026年6月营收为4.21亿新台币",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：数字基础设施数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：1.6T硅光模块推动3Q26营收增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：数字基础设施数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-22-HSBC-MiniMax--0100.HK-Key-takeaways-from-management-meeting-260727",
+    "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "MiniMax的AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+      "cleaned_source_title": "HSBC-MiniMax -0100.HK-Key takeaways from management meeting",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：MiniMaxKeytakeawaysfromm",
+      "raw_candidates": [
+        "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+        "HSBC：MiniMax M3 Pro训练效率提升与多模态方向",
+        "HSBC：MiniMax自建算力集群与跨学科团队架构",
+        "HSBC：MiniMax管理层会面要点",
+        "HSBC：MiniMax模型效率与基础设施自建进展",
+        "HSBC：MiniMax M3 Pro训练效率提升与多模态方向"
+      ],
+      "cleaned_candidates": [
+        "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+        "HSBC：MiniMaxM3Pro训练效率提升与多模态方向",
+        "HSBC：MiniMax自建算力集群与跨学科团队架构",
+        "HSBC：MiniMax管理层会面要点",
+        "HSBC：MiniMax模型效率与基础设施自建进展",
+        "HSBC：MiniMaxKeytakeawaysfromm",
+        "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：MiniMaxM3Pro训练效率提升与多模态方向",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：MiniMax自建算力集群与跨学科团队架构",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：MiniMax管理层会面要点",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "HSBC：MiniMax模型效率与基础设施自建进展",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "HSBC：MiniMaxKeytakeawaysfromm",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "HSBC：HSBC团队在2026年7月与MiniMax管理层会面后",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "HSBC：MiniMax管理层会面更新模型效率与基础设施进展",
+        "HSBC：MiniMax M3 Pro训练效率提升与多模态方向",
+        "HSBC：MiniMax自建算力集群与跨学科团队架构"
+      ],
+      "final_title_after_wording_guard": "HSBC：MiniMax管理层会面更新模型效率与基础设施进展"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-23-Goldman-Sachs-Yili-Industrial--600887---Youran-Dairy-positive-profit-ale",
+    "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "上游回暖，下游承压",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资收益->回报表现 x2",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x3",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资收益->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：伊利与优然牧业及澳优业绩预告",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+      "cleaned_source_title": "GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：YiliIndustrial600887",
+      "raw_candidates": [
+        "伊利与优然牧业及澳优业绩预告",
+        "伊利关联公司优然牧业2026上半年扭亏",
+        "伊利关联公司优然牧业扭亏指向原奶供需拐点"
+      ],
+      "cleaned_candidates": [
+        "GS：伊利与优然牧业及澳优业绩预告",
+        "GS：伊利关联公司优然牧业2026上半年扭亏",
+        "GS：伊利关联公司优然牧业扭亏指向原奶供需拐点",
+        "GS：YiliIndustrial600887",
+        "GS：优然牧业预告2026年上半年净利润7.39亿至9.03亿元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：伊利关联公司优然牧业2026上半年扭亏",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "GS：伊利关联公司优然牧业扭亏指向原奶供需拐点",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "GS：YiliIndustrial600887",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：优然牧业预告2026年上半年净利润7.39亿至9.03亿元",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        }
+      ],
+      "selected_title": "GS：伊利与优然牧业及澳优业绩预告",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：伊利与优然牧业及澳优业绩预告"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-24-Goldman-Sachs-Resonac-Holdings--4004.T---Announces-additional-investment",
+    "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本材料商罕见操作：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+      "cleaned_source_title": "GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIResonacHoldings",
+      "raw_candidates": [
+        "GS：Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+        "GS：Resonac Holdings追加150亿日元HD媒体研究用于AI数据中心",
+        "GS：Resonac Holdings追加HD媒体研究并披露客户涨价协议",
+        "Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+        "Resonac Holdings追加150亿日元HD媒体研究-2029年分批投产",
+        "Resonac Holdings追加HD媒体研究-AI数据中心近线应用驱动"
+      ],
+      "cleaned_candidates": [
+        "GS：ResonacHoldings追加HD媒体研究并锁定客户涨价协议",
+        "GS：ResonacHoldings追加150亿日元HD媒体研究用于",
+        "GS：ResonacHoldings追加HD媒体研究并披露客户涨价协议",
+        "GS：ResonacHoldings追加150亿日元HD媒体研究",
+        "GS：ResonacHoldings追加HD媒体研究",
+        "GS：AIResonacHoldings",
+        "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AI"
+      ],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：ResonacHoldings追加HD媒体研究并锁定客户涨价协议",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ResonacHoldings追加150亿日元HD媒体研究用于",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ResonacHoldings追加HD媒体研究并披露客户涨价协议",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ResonacHoldings追加150亿日元HD媒体研究",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ResonacHoldings追加HD媒体研究",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIResonacHoldings",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.03",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+        "GS：Resonac Holdings追加150亿日元HD媒体研究用于AI数据中心",
+        "GS：Resonac Holdings追加HD媒体研究并披露客户涨价协议"
+      ],
+      "final_title_after_wording_guard": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-25-J.P.-Morgan-China-Auto-Industry-Management-comments-on-2Q-and-2H26-expec",
+    "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0005-25-JPM-China Auto Industry-Management comments on 2Q and 2H26 expectations-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "电动车下半年，谁能跑",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国汽车行业-管理层对二季度及2026下半年预期评论",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-JPM-China Auto Industry-Management comments on 2Q and 2H26 expectations-260727.pdf",
+      "cleaned_source_title": "JPM-China Auto Industry-Management comments on 2Q and 2H26 expectations",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国AutoIndustryManageme",
+      "raw_candidates": [
+        "中国汽车行业-管理层对二季度及2026下半年预期评论",
+        "中国汽车行业-管理层对二季度及2026下半年预期评论-600款新车型竞争",
+        "中国汽车行业-管理层对二季度及2026下半年预期评论-产品技术渠道综合能力"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国汽车行业-管理层对二季度及2026下半年预期评论",
+        "JPM：中国AutoIndustryManageme",
+        "JPM：中国车企2026下半年策略与竞争格局"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国AutoIndustryManageme",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国车企2026下半年策略与竞争格局",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国汽车行业-管理层对二季度及2026下半年预期评论",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国汽车行业-管理层对二季度及2026下半年预期评论"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

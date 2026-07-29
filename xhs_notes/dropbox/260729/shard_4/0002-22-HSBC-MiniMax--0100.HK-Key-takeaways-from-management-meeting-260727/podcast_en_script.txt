@@ -1,0 +1,24 @@
+EN_A: Today we are looking at a report on MiniMax. The company processes tens of trillions of inference tokens every day. Does that number sound crazy to you?
+EN_B: It is impressive. But what really caught my attention is how they manage to stay efficient while competing so fiercely.
+EN_A: So what is the core question this report is trying to answer?
+EN_B: Simply put, how MiniMax can pursue exceptional intelligence while also achieving extreme cost efficiency. They are not treating it as a trade-off. They want both.
+EN_A: How are they doing that? What is the first key insight?
+EN_B: Their model strategy is fascinating. Take the upcoming M3 Pro text model. It has 3 trillion parameters, but only 60 billion are activated. That is a 2% activation rate.
+EN_A: 2%? That means most parameters are not really doing much?
+EN_B: Exactly, but the results are better. They trained M3 Pro with 8 trillion data tokens, and it already reached the same intelligence level that previously required 40 trillion tokens. That is a 5x improvement in training efficiency.
+EN_A: What about the cost? That sounds like a money-burning exercise.
+EN_B: That brings us to the second key insight. Since last September, they started building their own computing clusters, managing over 10,000 chips themselves, instead of relying entirely on cloud providers.
+EN_A: Building your own cluster? Is not that more expensive?
+EN_B: In the short term, yes. But in the long run, it saves money. Chip and memory prices keep rising. By maximizing utilization, like running both training and inference tasks on almost all clusters, they spread the cost.
+EN_A: So it is about investing in infrastructure for long-term cost advantage?
+EN_B: Exactly. And they have an organizational edge too. The model training team and the algorithm team sit together, not in silos. Management believes this cross-disciplinary talent pool pushes the R&D ceiling higher.
+EN_A: What about multimodal models? Does the report cover that?
+EN_B: Yes, and it is a major focus. Multimodal models have higher gross margins than pure text models. They also boost user productivity, so the total addressable market is sizable.
+EN_A: So multimodal is both a product and a profit driver?
+EN_B: Right. And there is a cross-pollination benefit. Understanding multimodal inputs can improve text models. For example, M3 Pro uses some high-density multimodal data in its training.
+EN_A: That sounds very coherent. Are there any questions the report does not fully answer?
+EN_B: Yes. For instance, they are researching a 5 trillion parameter model, but the report does not go into details on its commercial timeline. Also, the long-term return on their self-built computing infrastructure needs more data to verify.
+EN_A: So if listeners want to dig deeper, what should they do?
+EN_B: Read the full report from June 2. It includes valuation analysis, risk factors, and more detailed model comparisons.
+EN_A: Great. Let us leave it there for today. If you want the full picture, check out the complete report.
+EN_B: Absolutely. See you next time.

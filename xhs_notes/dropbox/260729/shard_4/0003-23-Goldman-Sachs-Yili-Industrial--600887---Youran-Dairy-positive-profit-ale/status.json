@@ -1,0 +1,106 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "上游回暖，下游承压",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资收益->回报表现 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x3",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：伊利与优然牧业及澳优业绩预告",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+    "cleaned_source_title": "GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：YiliIndustrial600887",
+    "raw_candidates": [
+      "伊利与优然牧业及澳优业绩预告",
+      "伊利关联公司优然牧业2026上半年扭亏",
+      "伊利关联公司优然牧业扭亏指向原奶供需拐点"
+    ],
+    "cleaned_candidates": [
+      "GS：伊利与优然牧业及澳优业绩预告",
+      "GS：伊利关联公司优然牧业2026上半年扭亏",
+      "GS：伊利关联公司优然牧业扭亏指向原奶供需拐点",
+      "GS：YiliIndustrial600887",
+      "GS：优然牧业预告2026年上半年净利润7.39亿至9.03亿元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：伊利关联公司优然牧业2026上半年扭亏",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "GS：伊利关联公司优然牧业扭亏指向原奶供需拐点",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "GS：YiliIndustrial600887",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：优然牧业预告2026年上半年净利润7.39亿至9.03亿元",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      }
+    ],
+    "selected_title": "GS：伊利与优然牧业及澳优业绩预告",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：伊利与优然牧业及澳优业绩预告"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "422",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

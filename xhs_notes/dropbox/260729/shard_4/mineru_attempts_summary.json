@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0001-21-GS-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0005-25-JPM-China Auto Industry-Management comments on 2Q and 2H26 expectations-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

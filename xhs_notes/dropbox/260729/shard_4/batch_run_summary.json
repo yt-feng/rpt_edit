@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-GS-LandMark （3081.TWO）： 3Q26 QoQ growth on 800G 1.6T SiPh ramp up； Capacity expansion to capture the strong demand； Buy-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0001-21-GS-LandMark -3081.TWO-- 3Q26 QoQ growth on 800G 1.6T SiPh ramp up- Capacity expansion to capture the strong demand- Buy-260728.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-HSBC-MiniMax （0100.HK）Key takeaways from management meeting-260727.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0002-22-HSBC-MiniMax -0100.HK-Key takeaways from management meeting-260727.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-GS-Yili Industrial （600887）： Youran Dairy positive profit alert~positive to Yili and signal for S D rebalance； Ausnutria negative profit alert on-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative profit alert on-260729.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-Resonac Holdings （4004.T）： Announces additional investment in HD media for AI data centers， unusual price hike agreement-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-JPM-China Auto Industry：Management comments on 2Q and 2H26 expectations-260727.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0005-25-JPM-China Auto Industry-Management comments on 2Q and 2H26 expectations-260727.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

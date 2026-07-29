@@ -1,0 +1,167 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_bdfz9aql/pdfs/0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "日本材料商罕见操作：",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-24-GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement-260728.pdf",
+    "cleaned_source_title": "GS-Resonac Holdings -4004.T-- Announces additional investment in HD media for AI data centers- unusual price hike agreement",
+    "institution_name": "GS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "GS：AIResonacHoldings",
+    "raw_candidates": [
+      "GS：Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+      "GS：Resonac Holdings追加150亿日元HD媒体研究用于AI数据中心",
+      "GS：Resonac Holdings追加HD媒体研究并披露客户涨价协议",
+      "Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+      "Resonac Holdings追加150亿日元HD媒体研究-2029年分批投产",
+      "Resonac Holdings追加HD媒体研究-AI数据中心近线应用驱动"
+    ],
+    "cleaned_candidates": [
+      "GS：ResonacHoldings追加HD媒体研究并锁定客户涨价协议",
+      "GS：ResonacHoldings追加150亿日元HD媒体研究用于",
+      "GS：ResonacHoldings追加HD媒体研究并披露客户涨价协议",
+      "GS：ResonacHoldings追加150亿日元HD媒体研究",
+      "GS：ResonacHoldings追加HD媒体研究",
+      "GS：AIResonacHoldings",
+      "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：ResonacHoldings追加HD媒体研究并锁定客户涨价协议",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：ResonacHoldings追加150亿日元HD媒体研究用于",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：ResonacHoldings追加HD媒体研究并披露客户涨价协议",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：ResonacHoldings追加150亿日元HD媒体研究",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：ResonacHoldings追加HD媒体研究",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：AIResonacHoldings",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.03",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "GS：Resonac Holdings追加HD媒体研究并锁定客户涨价协议",
+      "GS：Resonac Holdings追加150亿日元HD媒体研究用于AI数据中心",
+      "GS：Resonac Holdings追加HD媒体研究并披露客户涨价协议"
+    ],
+    "final_title_after_wording_guard": "GS：这一时间安排反映了公司对市场需求节奏的审慎判断——既不想错过AI"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "635",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
