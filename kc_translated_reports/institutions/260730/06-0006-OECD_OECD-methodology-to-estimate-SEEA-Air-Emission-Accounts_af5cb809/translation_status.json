@@ -1,0 +1,67 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260730/0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+  "title": "经合组织：空气排放账户估算方法更新至1990年",
+  "source_title": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+    "cleaned_source_title": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0006OECDOECDmethodolog",
+    "raw_candidates": [
+      "经合组织：更新空气排放账户估算方法",
+      "经合组织：空气排放账户估算方法更新至1990年",
+      "经合组织：空气排放账户估算方法覆盖A*64行业"
+    ],
+    "cleaned_candidates": [
+      "经合组织：更新空气排放账户估算方法",
+      "经合组织：空气排放账户估算方法更新至1990年",
+      "经合组织：空气排放账户估算方法覆盖A64行业",
+      "经合组织：0006OECDOECDmethodolog",
+      "经合组织：[[KC_IMAGE_002]]"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：0006OECDOECDmethodolog",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：[[KC_IMAGE_002]]",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：空气排放账户估算方法更新至1990年",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1990"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：空气排放账户估算方法更新至1990年"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 21,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

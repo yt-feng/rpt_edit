@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260730/0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+  "title": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+  "source_title": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+    "cleaned_source_title": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+    "raw_candidates": [
+      "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+      "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+      "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+      "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+      "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究",
+      "亚洲开发银行：0001ADBAdvancingDigital贸易",
+      "亚洲开发银行：全球电子商务销售额在2016至2022年间增长近60%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：全球电子商务销售额在2016至2022年间增长近60%",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 8,
+  "institution_name": "亚洲开发银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

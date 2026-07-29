@@ -1,0 +1,81 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260730/0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+  "title": "经合组织：行业规则与相关数据观察",
+  "source_title": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+    "cleaned_source_title": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0003OECD全球ForumonTransparency",
+    "raw_candidates": [
+      "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+      "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+      "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估"
+    ],
+    "cleaned_candidates": [
+      "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+      "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+      "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估",
+      "经合组织：0003OECD全球ForumonTransparency",
+      "经合组织：坦桑尼亚在2026年7月获得全球税收透明度与信息交换论坛的“"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      },
+      {
+        "title": "经合组织：0003OECD全球ForumonTransparency",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：坦桑尼亚在2026年7月获得全球税收透明度与信息交换论坛的“",
+        "reasons": [
+          "anchor_coverage=0.47"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：行业规则与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "经合组织：行业规则与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 0,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,553 @@
+{
+  "date_folder": "260730",
+  "max_reports": "all",
+  "selected_count": 7,
+  "successful_count": 7,
+  "title_neutralized_count": 3,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+      "title": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+      "source_title": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+        "cleaned_source_title": "0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+        "raw_candidates": [
+          "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+          "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+          "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+          "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+          "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究",
+          "亚洲开发银行：0001ADBAdvancingDigital贸易",
+          "亚洲开发银行：全球电子商务销售额在2016至2022年间增长近60%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：2016-2022年全球电商增长近60%的亚太数据",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：亚太数字服务出口与电商监管碎片化研究",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBAdvancingDigital贸易",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：全球电子商务销售额在2016至2022年间增长近60%",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "亚洲开发银行：推进亚洲数字贸易与跨境电子商务"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 8,
+      "institution_name": "亚洲开发银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/01-0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23",
+      "pdf_path": "kc_translated_reports/institutions/260730/01-0001-ADB_Advancing-Digital-Trade-and-Cross-Border-E-Commerce-in-Asia-_3e213f23/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+      "title": "IMF：研究主题与行业变化观察",
+      "source_title": "0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+        "cleaned_source_title": "0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFGhanaReportonMon",
+        "raw_candidates": [
+          "IMF：加纳月度宏观环境增长指标编制进展",
+          "IMF：加纳MIEG编制进展与VAT数据库创建",
+          "IMF：加纳月度增长指标编制与VAT数据整合"
+        ],
+        "cleaned_candidates": [
+          "IMF：加纳月度宏观环境增长指标编制进展",
+          "IMF：加纳MIEG编制进展与VAT数据库创建",
+          "IMF：加纳月度增长指标编制与VAT数据整合",
+          "IMF：0002IMFGhanaReportonMon",
+          "IMF：首次任务于2023年7月开展"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：加纳MIEG编制进展与VAT数据库创建",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：加纳月度增长指标编制与VAT数据整合",
+            "reasons": [
+              "anchor_coverage=0.53"
+            ]
+          },
+          {
+            "title": "IMF：0002IMFGhanaReportonMon",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：首次任务于2023年7月开展",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：加纳月度宏观环境增长指标编制进展",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/02-0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054",
+      "pdf_path": "kc_translated_reports/institutions/260730/02-0002-IMF_Ghana-Report-on-Monthly-Indicator-of-Economic-Growth-July-7-_850a7054/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+      "title": "经合组织：行业规则与相关数据观察",
+      "source_title": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+        "cleaned_source_title": "0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0003OECD全球ForumonTransparency",
+        "raw_candidates": [
+          "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+          "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+          "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估"
+        ],
+        "cleaned_candidates": [
+          "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+          "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+          "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估",
+          "经合组织：0003OECD全球ForumonTransparency",
+          "经合组织：坦桑尼亚在2026年7月获得全球税收透明度与信息交换论坛的“"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：坦桑尼亚2026年7月获税收信息交换大体合规评级",
+            "reasons": [
+              "anchor_coverage=0.42"
+            ]
+          },
+          {
+            "title": "经合组织：坦桑尼亚税收信息交换透明度与法律框架评估",
+            "reasons": [
+              "anchor_coverage=0.63"
+            ]
+          },
+          {
+            "title": "经合组织：0003OECD全球ForumonTransparency",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：坦桑尼亚在2026年7月获得全球税收透明度与信息交换论坛的“",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：行业规则与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "经合组织：坦桑尼亚税收信息交换透明度第二轮同行评审",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "经合组织：行业规则与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/03-0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a",
+      "pdf_path": "kc_translated_reports/institutions/260730/03-0003-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_12fc556a/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9",
+      "title": "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告",
+      "source_title": "0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9",
+        "cleaned_source_title": "0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0004OECD全球ForumonTransparency",
+        "raw_candidates": [
+          "经合组织：纳米比亚税务信息交换合规评估为大致合规",
+          "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告",
+          "经合组织：纳米比亚税务信息交换合规评估-受益所有权与数据节点"
+        ],
+        "cleaned_candidates": [
+          "经合组织：纳米比亚税务信息交换合规评估为大致合规",
+          "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告",
+          "经合组织：纳米比亚税务信息交换合规评估-受益所有权与数据节点",
+          "经合组织：0004OECD全球ForumonTransparency",
+          "经合组织：经合组织全球论坛于2026年7月发布第二轮同行评审报告"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0004OECD全球ForumonTransparency",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：经合组织全球论坛于2026年7月发布第二轮同行评审报告",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026",
+            "7"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/04-0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9",
+      "pdf_path": "kc_translated_reports/institutions/260730/04-0004-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_163321b9/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477",
+      "title": "经合组织：行业规则与相关数据观察",
+      "source_title": "0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477",
+        "cleaned_source_title": "0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0005OECD全球ForumonTransparency",
+        "raw_candidates": [
+          "经合组织：库克群岛税收信息交换合规评估",
+          "经合组织：库克群岛2026年税收信息交换合规评估",
+          "经合组织：库克群岛税收信息交换合规与受益所有权框架"
+        ],
+        "cleaned_candidates": [
+          "经合组织：库克群岛税收信息交换合规评估",
+          "经合组织：库克群岛2026年税收信息交换合规评估",
+          "经合组织：库克群岛税收信息交换合规与受益所有权框架",
+          "经合组织：0005OECD全球ForumonTransparency",
+          "经合组织：基于截至2026年5月7日的法律框架"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0005OECD全球ForumonTransparency",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：基于截至2026年5月7日的法律框架",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：行业规则与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "经合组织：库克群岛2026年税收信息交换合规评估",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "经合组织：行业规则与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/05-0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477",
+      "pdf_path": "kc_translated_reports/institutions/260730/05-0005-OECD_Global-Forum-on-Transparency-and-Exchange-of-Information-for_d22f3477/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+      "title": "经合组织：空气排放账户估算方法更新至1990年",
+      "source_title": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+        "cleaned_source_title": "0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0006OECDOECDmethodolog",
+        "raw_candidates": [
+          "经合组织：更新空气排放账户估算方法",
+          "经合组织：空气排放账户估算方法更新至1990年",
+          "经合组织：空气排放账户估算方法覆盖A*64行业"
+        ],
+        "cleaned_candidates": [
+          "经合组织：更新空气排放账户估算方法",
+          "经合组织：空气排放账户估算方法更新至1990年",
+          "经合组织：空气排放账户估算方法覆盖A64行业",
+          "经合组织：0006OECDOECDmethodolog",
+          "经合组织：[[KC_IMAGE_002]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0006OECDOECDmethodolog",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：[[KC_IMAGE_002]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：空气排放账户估算方法更新至1990年",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1990"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：空气排放账户估算方法更新至1990年"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 21,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/06-0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809",
+      "pdf_path": "kc_translated_reports/institutions/260730/06-0006-OECD_OECD-methodology-to-estimate-SEEA-Air-Emission-Accounts_af5cb809/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260730/0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+      "title": "经合组织：巴拿马半导体生态系统发展路径",
+      "source_title": "0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+        "cleaned_source_title": "0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0007OECDPromotingtheDe",
+        "raw_candidates": [
+          "经合组织：巴拿马半导体生态系统发展路径",
+          "经合组织：巴拿马半导体生态系统2024年调研",
+          "经合组织：巴拿马半导体生态系统与物流枢纽优势"
+        ],
+        "cleaned_candidates": [
+          "经合组织：巴拿马半导体生态系统发展路径",
+          "经合组织：巴拿马半导体生态系统2024年调研",
+          "经合组织：巴拿马半导体生态系统与物流枢纽优势",
+          "经合组织：0007OECDPromotingtheDe",
+          "经合组织：数据显示，2022年巴拿马仅有约50家高技术制造企业"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：巴拿马半导体生态系统2024年调研",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "经合组织：巴拿马半导体生态系统与物流枢纽优势",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "经合组织：0007OECDPromotingtheDe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：数据显示，2022年巴拿马仅有约50家高技术制造企业",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：巴拿马半导体生态系统发展路径",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：巴拿马半导体生态系统发展路径"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 28,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260730/07-0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f",
+      "pdf_path": "kc_translated_reports/institutions/260730/07-0007-OECD_Promoting-the-Development-of-the-Semiconductor-Ecosystem-in-_471d4a5f/kc_translated_report_07.pdf"
+    }
+  ]
+}
