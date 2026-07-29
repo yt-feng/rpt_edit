@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "date_folder": "260730",
+  "source": "kc_translated_reports/consulting",
+  "generated_at_utc": "2026-07-29T23:47:03Z",
+  "article_count": 6,
+  "uploaded_count": 6,
+  "articles": [
+    {
+      "source_report_name": "BCG Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising 30015c2d",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：2026年航空需求展望-收入与成本双升",
+      "final_wechat_title": "波士顿咨询：2026年航空需求展望-收入与成本双升",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d",
+      "generation_decision": {
+        "source_filename": "0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d",
+        "cleaned_source_title": "0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGAirTravelDemand展望2026",
+        "raw_candidates": [
+          "波士顿咨询：2026年航空需求展望-收入与成本双升",
+          "波士顿咨询：2026年航空业展望-截至2025年11月数据",
+          "波士顿咨询：2026年航空业展望-新机型与AI应用"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：2026年航空需求展望-收入与成本双升",
+          "波士顿咨询：2026年航空业展望-截至2025年11月数据",
+          "波士顿咨询：2026年航空业展望-新机型与AI应用",
+          "波士顿咨询：0001BCGAirTravelDemand展望2026",
+          "波士顿咨询：基于截至2025年11月的数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2026年航空业展望-截至2025年11月数据",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：2026年航空业展望-新机型与AI应用",
+            "reasons": [
+              "anchor_coverage=0.41",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0001BCGAirTravelDemand展望2026",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：基于截至2025年11月的数据",
+            "reasons": [
+              "anchor_coverage=0.12",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：2026年航空需求展望-收入与成本双升",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：2026年航空需求展望-收入与成本双升",
+        "body_heading_neutralization_changes": [
+          "飞机制造商交付量预计2026年超越2018年峰值，但供应脆弱性犹存->飞机制造商交付量预计业务与近期数据观察",
+          "新机型进入市场重塑航线网络，AI应用成为结构性降本工具->AI与网络安全技术应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Built-to-Change-How-Cities-Compete-for-the-Future 3cb10d35",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：研究主题与行业变化观察，居民倡导度快速上升",
+      "final_wechat_title": "波士顿咨询：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/02-0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35",
+      "generation_decision": {
+        "source_filename": "0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35",
+        "cleaned_source_title": "0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGBuilttoChangeH",
+        "raw_candidates": [
+          "波士顿咨询：城市竞争力新标尺-变化速度重塑全球80城居民体验",
+          "波士顿咨询：城市竞争力新标尺-变化速度重塑全球80城居民体验-2024年报告",
+          "波士顿咨询：城市竞争力新标尺-变化速度重塑全球80城居民体验-中东与中国城市领先"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：城市竞争力新标尺-变化速度重塑全球80城居民体验",
+          "波士顿咨询：0002BCGBuilttoChangeH",
+          "波士顿咨询：城市竞争力新标尺——变化速度如何重塑全球80城居民体验"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0002BCGBuilttoChangeH",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：城市竞争力新标尺-变化速度重塑全球80城居民体验",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察",
+        "pre_upload_neutralization_title": "波士顿咨询：研究主题与行业变化观察，居民倡导度快速上升",
+        "header_pre_neutralization_title": "居民倡导度快速上升，欧洲和中亚城市增长显著",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "居民倡导度快速上升，欧洲和中亚城市增长显著->研究主题与行业变化观察",
+          "中东、中国和中亚城市在变化速度上领先，欧洲在宜居性上保持优势->研究主题与行业变化观察",
+          "技术渗透推动政府互动改善，在线活跃居民倡导度更高->区域环境与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can bd2faece",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：消费者承压与消费品企业应对，半数全球消费行业CEO此前成本",
+      "final_wechat_title": "波士顿咨询：消费者承压与消费品企业应对，半数全球消费行业CEO此前成本",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/03-0003-BCG_Consumers-Are-Feeling-Squeezed",
+      "generation_decision": {
+        "source_filename": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+        "cleaned_source_title": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0003BCGConsumersAreFe",
+        "raw_candidates": [
+          "波士顿咨询：消费者承压与消费品企业应对",
+          "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+          "波士顿咨询：消费品企业AI驱动全链条成本削减"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：消费者承压与消费品企业应对",
+          "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+          "波士顿咨询：消费品企业AI驱动全链条成本削减",
+          "波士顿咨询：0003BCGConsumersAreFe",
+          "波士顿咨询：AI驱动的全链条评估可消除5%至20%成本基础"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+            "reasons": [
+              "anchor_coverage=0.45"
+            ]
+          },
+          {
+            "title": "波士顿咨询：消费品企业AI驱动全链条成本削减",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0003BCGConsumersAreFe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI驱动的全链条评估可消除5%至20%成本基础",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：消费者承压与消费品企业应对",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：消费者承压与消费品企业应对",
+        "body_heading_neutralization_changes": [
+          "AI驱动的全链条评估可消除5%至20%成本基础->AI技术与行业应用观察",
+          "运营、职能与商业三大杠杆构成完整降本方案->资金结构与相关数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe ddd9c956",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：全球主要参与者报告2026，主权产品设立加速",
+      "final_wechat_title": "波士顿咨询：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/04-0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956",
+      "generation_decision": {
+        "source_filename": "0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956",
+        "cleaned_source_title": "0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0004BCG全球PrincipalInv",
+        "raw_candidates": [
+          "波士顿咨询：全球主要投资者报告2026",
+          "波士顿咨询：全球主要投资者管理资产2025年达43万亿美元",
+          "波士顿咨询：全球主要投资者主权产品加速布局与直接研究"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：全球主要参与者报告2026",
+          "波士顿咨询：全球主要参与者管理资产2025年达43万亿美元",
+          "波士顿咨询：全球主要参与者主权产品加速布局与直接研究",
+          "波士顿咨询：0004BCG全球PrincipalInv",
+          "波士顿咨询：全球主要读者管理资产2025年达43万亿美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：全球主要参与者管理资产2025年达43万亿美元",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "波士顿咨询：全球主要参与者主权产品加速布局与直接研究",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0004BCG全球PrincipalInv",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：全球主要读者管理资产2025年达43万亿美元",
+            "reasons": [
+              "anchor_coverage=0.42"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：全球主要参与者报告2026",
+        "pre_upload_neutralization_title": "波士顿咨询：全球主要参与者报告2026，主权产品设立加速",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "header_pre_neutralization_title": "主权产品设立加速，新产品更侧重战略研究与国内宏观环境影响",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording",
+          "neutralized:china_systemic_topic"
+        ],
+        "body_heading_neutralization_changes": [
+          "主权产品设立加速，新产品更侧重战略研究与国内宏观环境影响->近期数据与市场变化观察",
+          "家族办公室规模增长，大型机构向直接控制型研究转型->家族办公室规模业务与近期数据观察",
+          "私募市场配置扩大，但持有期延长导致流动性不确定性->研究主题与行业变化观察",
+          "直接交易与平台化趋势深化，地缘政治和AI重塑配置逻辑->AI技术与组织应用观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG The-Board-Can-Make-or-Break-a-Joint-Venture 09acebb0",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：合资企业董事会治理模式，所有权结构从根本上改变了董事会的职",
+      "final_wechat_title": "波士顿咨询：合资企业董事会治理模式，所有权结构从根本上改变了董事会的职",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/05-0005-BCG_The-Board-Can-Make-or-Break-a-Joint-Venture_09acebb0",
+      "generation_decision": {
+        "source_filename": "0005-BCG_The-Board-Can-Make-or-Break-a-Joint-Venture_09acebb0",
+        "cleaned_source_title": "0005-BCG_The-Board-Can-Make-or-Break-a-Joint-Venture_09acebb0",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0005BCGTheBoardCanMak",
+        "raw_candidates": [
+          "波士顿咨询：合资企业董事会治理模式",
+          "波士顿咨询：合资企业董事会治理的三种可借鉴模式",
+          "波士顿咨询：合资企业董事会治理与母公司利益协调"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：合资企业董事会治理模式",
+          "波士顿咨询：合资企业董事会治理的三种可借鉴模式",
+          "波士顿咨询：合资企业董事会治理与母公司利益协调",
+          "波士顿咨询：0005BCGTheBoardCanMak",
+          "波士顿咨询：例如，3M公司在2024年CEO交接中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0005BCGTheBoardCanMak",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：例如，3M公司在2024年CEO交接中",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：合资企业董事会治理模式",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：合资企业董事会治理模式",
+        "body_heading_neutralization_changes": [
+          "合资企业董事会面临独特的治理挑战->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "McKinsey PDF-The-state-of-AI---McKinsey-Company 5c560ac2",
+      "institution_name": "麦肯锡",
+      "title_before_upload": "麦肯锡：2024年AI调研-企业部署与治理",
+      "final_wechat_title": "麦肯锡：2024年AI调研-企业部署与治理",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260730/06-0006-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2",
+      "generation_decision": {
+        "source_filename": "0006-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2",
+        "cleaned_source_title": "0006-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2",
+        "institution_name": "麦肯锡",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "麦肯锡：0006McKinseyPDFThestateofAI",
+        "raw_candidates": [
+          "麦肯锡：AI现状",
+          "麦肯锡：2024年AI调研-企业部署与治理",
+          "麦肯锡：AI治理与工作流程重构"
+        ],
+        "cleaned_candidates": [
+          "麦肯锡：AI现状",
+          "麦肯锡：2024年AI调研-企业部署与治理",
+          "麦肯锡：AI治理与工作流程重构",
+          "麦肯锡：0006McKinseyPDFThestateofAI",
+          "麦肯锡：28%的受访者表示其CEO负责AI治理监督"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "麦肯锡：AI现状",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：AI治理与工作流程重构",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：0006McKinseyPDFThestateofAI",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "麦肯锡：28%的受访者表示其CEO负责AI治理监督",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "麦肯锡：2024年AI调研-企业部署与治理",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2024"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "麦肯锡：2024年AI调研-企业部署与治理",
+        "body_heading_neutralization_changes": [
+          "不确定性管控与人才结构同步调整->研究主题与行业变化观察",
+          "规模化部署仍处早期，大型企业领先采用管理实践->研究主题与行业变化观察"
+        ]
+      }
+    }
+  ]
+}
