@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260730/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/mineru_raw/images/a66fb1f732b37e1d71b169a8b4bd81ed7fd7d758e2832f346b6e7e26fbbc7773.jpg",
+    "path": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.14,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260730/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/mineru_raw/images/564b68320958fdc1bdbf9c959c46eace774f6261c9872b99c551526530f1a6bd.jpg",
+    "path": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.14,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260730/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/mineru_raw/images/7fb566a940c9a63c2b7197318392d543ad87bff47056f8343b8410e037de8e17.jpg",
+    "path": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.26,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260730/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/mineru_raw/images/94dfbf7e79abcc12871cd5a04227ae555356418d4453357415b75a9cad27b71a.jpg",
+    "path": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.30,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260730/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/mineru_raw/images/22fcfc1a3e2489685bc413657a31291207bb076a812a2e622eafe13a108e219e.jpg",
+    "path": "kc_translated_reports/consulting/260730/01-0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=7;chart_context,odd_ratio:6.50,edge:0.22,contrast,large"
+  }
+]

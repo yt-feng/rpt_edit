@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260730/0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+  "title": "波士顿咨询：消费者承压与消费品企业应对",
+  "source_title": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+    "cleaned_source_title": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGConsumersAreFe",
+    "raw_candidates": [
+      "波士顿咨询：消费者承压与消费品企业应对",
+      "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+      "波士顿咨询：消费品企业AI驱动全链条成本削减"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：消费者承压与消费品企业应对",
+      "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+      "波士顿咨询：消费品企业AI驱动全链条成本削减",
+      "波士顿咨询：0003BCGConsumersAreFe",
+      "波士顿咨询：AI驱动的全链条评估可消除5%至20%成本基础"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2026年1月报告-消费者承压与AI成本削减",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "波士顿咨询：消费品企业AI驱动全链条成本削减",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0003BCGConsumersAreFe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：AI驱动的全链条评估可消除5%至20%成本基础",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：消费者承压与消费品企业应对",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：消费者承压与消费品企业应对"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 0,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
