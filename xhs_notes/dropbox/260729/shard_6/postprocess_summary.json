@@ -1,0 +1,594 @@
+[
+  {
+    "item": "0001-31-J.P.-Morgan-Laopu-Gold-H-6181.HK-2Q-miss--underappreciated-efforts-to-dr",
+    "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0001-31-JPM-Laopu Gold-H-6181.HK-2Q miss- underappreciated efforts to drive 2H rebound- maintain OW-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "老铺黄金Q2业绩怎么",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：老铺黄金业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-JPM-Laopu Gold-H-6181.HK-2Q miss- underappreciated efforts to drive 2H rebound- maintain OW-260728.pdf",
+      "cleaned_source_title": "JPM-Laopu Gold-H-6181.HK-2Q miss- underappreciated efforts to drive 2H rebound- maintain OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LaopuGoldH2Qmiss",
+      "raw_candidates": [
+        "老铺黄金二季度业绩低于预期-维持增持",
+        "老铺黄金二季度净利润5.1亿至7.6亿元",
+        "老铺黄金下半年反弹措施被低估"
+      ],
+      "cleaned_candidates": [
+        "JPM：老铺黄金二季度业绩低于预期-更新公司观点",
+        "JPM：老铺黄金二季度净利润5.1亿至7.6亿元",
+        "JPM：老铺黄金下半年反弹措施被低估",
+        "JPM：LaopuGoldH2Qmiss",
+        "JPM：老铺黄金7月27日发布上半年盈利预告"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：老铺黄金二季度净利润5.1亿至7.6亿元",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "JPM：老铺黄金下半年反弹措施被低估",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：LaopuGoldH2Qmiss",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：老铺黄金7月27日发布上半年盈利预告",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：老铺黄金业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：老铺黄金二季度业绩低于预期-更新公司观点",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：老铺黄金业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-32-J.P.-Morgan-Hong-Kong-Property-Implications-of-China-s-taxation-on-offsh",
+    "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "离岸信托征税，香港楼",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "JPM：城市与住房数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf",
+      "cleaned_source_title": "JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：HongKong地产Implicationsof中国",
+      "raw_candidates": [
+        "香港房地产-中国离岸信托税务影响",
+        "香港房地产-中国离岸信托新税制影响不足2%",
+        "香港房地产-中国离岸信托税务与住宅交易数据"
+      ],
+      "cleaned_candidates": [
+        "JPM：香港房地产-中国离岸信托税务影响",
+        "JPM：香港房地产-中国离岸信托新税制影响不足2%",
+        "JPM：香港房地产-中国离岸信托税务与住宅交易数据",
+        "JPM：HongKong地产Implicationsof中国",
+        "JPM：1.新规追溯至2023年，反避税条款覆盖已获外国国籍者"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：HongKong地产Implicationsof中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：1.新规追溯至2023年，反避税条款覆盖已获外国国籍者",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：城市与住房数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：香港房地产-中国离岸信托新税制影响不足2%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "JPM：城市与住房数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-33-J.P.-Morgan-LVMH-LVMH.PA-F-LG-returns-to-small-growth--what-now--260728",
+    "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0003-33-JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "LVMH转正，但别急",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf",
+      "cleaned_source_title": "JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LVMHFLGreturnstosmall增长",
+      "raw_candidates": [
+        "LVMH时尚皮具回归小幅增长",
+        "LVMH第二季度有机销售增长3%",
+        "LVMH时尚皮具部门增长与区域分化"
+      ],
+      "cleaned_candidates": [
+        "JPM：LVMH时尚皮具回归小幅增长",
+        "JPM：LVMH第二季度有机销售增长3%",
+        "JPM：LVMH时尚皮具部门增长与区域分化",
+        "JPM：LVMHFLGreturnstosmall增长",
+        "JPM：LVMH在7月27日发布了2026年上半年财报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：LVMH第二季度有机销售增长3%",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "JPM：LVMH时尚皮具部门增长与区域分化",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "JPM：LVMHFLGreturnstosmall增长",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "JPM：LVMH在7月27日发布了2026年上半年财报",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：LVMH时尚皮具回归小幅增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-34-J.P.-Morgan-Lufax-Holding-LU.US-Operating-inflection-at-a-trough-valuati",
+    "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0004-34-JPM-Lufax Holding-LU.US-Operating inflection at a trough valuation- upgrade to Overweight-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "陆金所：底部反转信号",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "增持->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "收益率->回报表现 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-JPM-Lufax Holding-LU.US-Operating inflection at a trough valuation- upgrade to Overweight-260728.pdf",
+      "cleaned_source_title": "JPM-Lufax Holding-LU.US-Operating inflection at a trough valuation- upgrade to Overweight",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LufaxHoldingOperatingi",
+      "raw_candidates": [
+        "陆金所控股运营拐点与估值上调",
+        "陆金所控股Q2新增贷款同比增4.6%",
+        "陆金所控股资产质量指标改善与估值分析"
+      ],
+      "cleaned_candidates": [
+        "JPM：陆金所控股运营拐点与估值上调",
+        "JPM：陆金所控股Q2新增贷款同比增4.6%",
+        "JPM：陆金所控股资产质量指标改善与估值分析",
+        "JPM：LufaxHoldingOperatingi",
+        "JPM：贷款余额的季度环比调整幅度也从第一季度的6%收窄至3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：陆金所控股Q2新增贷款同比增4.6%",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "JPM：陆金所控股资产质量指标改善与估值分析",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "JPM：LufaxHoldingOperatingi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：贷款余额的季度环比调整幅度也从第一季度的6%收窄至3%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：陆金所控股运营拐点与估值上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-35-J.P.-Morgan-Lenovo-Group-Limited-0992.HK-ISG-upside-outweighs-PC-uncerta",
+    "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0005-35-JPM-Lenovo Group Limited-0992.HK-ISG upside outweighs PC uncertainty- u g to OW-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "联想服务器业务开始反",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "增持->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：联想集团业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-JPM-Lenovo Group Limited-0992.HK-ISG upside outweighs PC uncertainty- u g to OW-260728.pdf",
+      "cleaned_source_title": "JPM-Lenovo Group Limited-0992.HK-ISG upside outweighs PC uncertainty- u g to OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LenovoGroupLimitedISGu",
+      "raw_candidates": [
+        "联想集团-ISG利润改善超越PC不确定性-评级上调",
+        "联想集团-7月AI服务器收入占比超30%-评级上调",
+        "联想集团-ISG利润率目标5%-AI订单超210亿美元"
+      ],
+      "cleaned_candidates": [
+        "JPM：联想集团-ISG利润改善超越PC不确定性-评级上调",
+        "JPM：联想集团-7月AI服务器收入占比超30%-评级上调",
+        "JPM：联想集团-ISG利润率目标5%-AI订单超210亿美元",
+        "JPM：LenovoGroupLimitedISGu",
+        "JPM：这份研报发布于7月27日，距离联想3月季度业绩公布约两个月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：联想集团-7月AI服务器收入占比超30%-评级上调",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：联想集团-ISG利润率目标5%-AI订单超210亿美元",
+          "reasons": [
+            "anchor_coverage=0.36",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：LenovoGroupLimitedISGu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：这份研报发布于7月27日，距离联想3月季度业绩公布约两个月",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：联想集团业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：联想集团-ISG利润改善超越PC不确定性-评级上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：联想集团业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "离岸信托征税，香港楼",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive",
+    "neutralized:evaluative_or_adversarial_wording",
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "JPM：城市与住房数据变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf",
+    "cleaned_source_title": "JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：HongKong地产Implicationsof中国",
+    "raw_candidates": [
+      "香港房地产-中国离岸信托税务影响",
+      "香港房地产-中国离岸信托新税制影响不足2%",
+      "香港房地产-中国离岸信托税务与住宅交易数据"
+    ],
+    "cleaned_candidates": [
+      "JPM：香港房地产-中国离岸信托税务影响",
+      "JPM：香港房地产-中国离岸信托新税制影响不足2%",
+      "JPM：香港房地产-中国离岸信托税务与住宅交易数据",
+      "JPM：HongKong地产Implicationsof中国",
+      "JPM：1.新规追溯至2023年，反避税条款覆盖已获外国国籍者"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：HongKong地产Implicationsof中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：1.新规追溯至2023年，反避税条款覆盖已获外国国籍者",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：城市与住房数据变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：香港房地产-中国离岸信托新税制影响不足2%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "JPM：城市与住房数据变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "457",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0001-31-JPM-Laopu Gold-H-6181.HK-2Q miss- underappreciated efforts to drive 2H rebound- maintain OW-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0003-33-JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0004-34-JPM-Lufax Holding-LU.US-Operating inflection at a trough valuation- upgrade to Overweight-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0005-35-JPM-Lenovo Group Limited-0992.HK-ISG upside outweighs PC uncertainty- u g to OW-260728.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

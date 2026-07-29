@@ -1,0 +1,64 @@
+Found 64 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qk3_sctd/pdfs/0001-31-J.P. Morgan-Laopu Gold-H-6181.HK-2Q miss- underappreciated efforts to drive 2H rebound- maintain OW-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qk3_sctd/pdfs/0002-32-J.P. Morgan-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qk3_sctd/pdfs/0003-33-J.P. Morgan-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qk3_sctd/pdfs/0004-34-J.P. Morgan-Lufax Holding-LU.US-Operating inflection at a trough valuation- upgrade to Overweight-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qk3_sctd/pdfs/0005-35-J.P. Morgan-Lenovo Group Limited-0992.HK-ISG upside outweighs PC uncertainty- u g to OW-260728.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=141284e6-01cf-41cf-ab48-86cac771e179
+MinerU states: running, running, running, pending, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a7872c43e7b1718102963ede077b67ea52e1fa3656dda91522321b1489953ba4.jpg: score=-100;too_small:426x231
+Skip non-chart visual asset d094506dd75864dc8f29e1f47b7488024562fae3e90af7ecf73f346235d1f7bc.jpg: score=-100;too_small:678x87
+Skip non-chart visual asset 4a559e733fa96ee0b49b3ed5d51e413be048153def1e6228c7da3a3baaa6580a.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset a505e1e977240b1e51d809051abf3dd626808f4d7a34d8afdde31f047f509abe.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 2f872f12cb1091b680b26372ed2ab228c4bce3150b0447b5f8d2b9fb438d2ce9.jpg: score=-100;too_small:448x178
+Skip non-chart visual asset ff7d4a58d7685e09c50c151fb44b27d5c1048d83ccadbf033b004042abf29c94.jpg: score=-100;too_small:924x162
+Skip non-chart visual asset 8d3fd2de5b3cc3634eb587d7eb6886861d8847c5da85e0bb64dc3da417bf4694.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset e9a457d907478cf083ceb52b6e7d72e87a732165aa0eb621f629eec4b15e6358.jpg: score=-100;too_small:743x162
+Skip non-chart visual asset 3b672a7520afbf213e88510bc479ce94d36cfc7ac66090abc93399a0ab795774.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,contrast
+Neutralized WeChat title while keeping the report: 摩根大通：老铺黄金二季度业绩低于预期-更新公司观点 -> 摩根大通：老铺黄金业务与季度数据观察
+Skip non-chart visual asset 4adfca00d78fbb8afa4f5b800fd2cbaba03f4e7b0cfb018cc05abcb3fbaa15ad.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 8e43e1e89c8fed9b40809da028fd9835a44cc0fde63d79510dde6cfc83c22f17.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 5ace5480380d25675d9b68c76db0746101c8d96cdb4f9952ab920e1cc299d670.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Skip non-chart visual asset fcbe454701eed59572720e6f8cc4b7c36bc8c34877ac7eb3dfbc3ca73dada968.jpg: score=-100;too_small:982x167
+Neutralized WeChat title while keeping the report: 摩根大通：香港房地产-中国离岸信托新税制影响不足2% -> 摩根大通：城市与住房数据变化观察
+Skip non-chart visual asset 00dc6fee5f2a916fe0d6b586c78a30c7ed092e5b812110fc6fe3bfc38ec87f92.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 1035b45aac76a18249cf49bde730d381b87075eae5a3675fc12aab01e3aad280.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset 1c9b20129a965ef0bbf1103802e011cdc1abaaafe8015ecf31e7eca2a82c0e1b.jpg: score=1;square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset ba261c78110c288cdea058979a69a1a573e738335b4870b3ab1791150647d694.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 1ac49c3c27bb9206d91ef906a596caa327604d23c3c6a71c3c6d9d23e226aff3.jpg: score=-100;too_small:451x184
+Skip non-chart visual asset 0c9defc97d44373dee3ffb850482bc2d06265ed4d71231975913c6f3916e30ea.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 0dcf35b70b15d9deb55e0f2273c5ae3edf4a48f9713ec2edcbbf722f65b81784.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset decbf3d3d37672e98a3d9b849a3a361ee0a0b506c6d1b60b7f248db2ef10c890.jpg: score=-100;too_small:623x90
+Skip non-chart visual asset dda4bff325268f6bbd329cec09d054b3f0582a6f856249da8b969628fa1ea7db.jpg: score=0;odd_ratio:5.36,edge:0.28,contrast
+Neutralized WeChat title while keeping the report: 摩根大通：LVMH时尚皮具回归小幅增长 -> 摩根大通：LVMH时尚皮具回归小幅业务与近期数据观察
+Skip non-chart visual asset 1eae973384415b897a004f39e94fce2778bef8db1c5efda35d62813ff0f15909.jpg: score=-100;too_small:956x162
+Skip non-chart visual asset c85ca2f9f758fb8dbf17f4bcffabb6722fb85e7700004a6a508084714dd8992b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 3b8ebf2008871c80504c0a901d5de4a5bc11e2aa1b2aec94c195e4b0e2d3dbb8.jpg: score=-100;too_small:678x87
+Skip non-chart visual asset 70ef6c58469ddebdd55e845371c17c53ca53fa5e26050eb3bb9b975ae33d7a29.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.51,contrast
+Skip non-chart visual asset 3156b9da763dde3ddf2ed2620a6a19a0cb24a4b75dd6471d53da618e80606d68.jpg: score=-100;too_small:924x159
+Skip non-chart visual asset 2a0f3afee45351255b8d89e20834aaa10909ae605a904a06e940e1009a623aeb.jpg: score=0;square_without_chart_hint,edge:0.39,large
+Skip non-chart visual asset 5544d051baba07308a644c56ae1a1199a15e6aeeae4ebb99c8f1b9e23535f8aa.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 6938792f60261c3c1464e1a8ed4a324070c80fe1ae25df367de274a9e157d94e.jpg: score=-100;too_small:987x137
+Skip non-chart visual asset 98102254318cb128ee1e83c7d9db7a59b4e351d7d24dbee290e5b9af900e8056.jpg: score=-100;too_small:451x181
+Skip non-chart visual asset b08bf80ea797aea01f7d786d61278dd4cbcf410a83222359d73c225fe5169da8.jpg: score=1;chart_ratio
+Skip non-chart visual asset 987f0ecd7796895cc7027cfc86565312293fd1f8e45f9b287e6ef505da3a17aa.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 789d051934ee950725caf4d2d325cafddb1fd1851760327b4304a2b539021a0a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.38,large
+Neutralized WeChat title while keeping the report: 摩根大通：陆金所控股运营拐点与估值上调 -> 摩根大通：研究主题与行业变化观察
+Skip non-chart visual asset 631372603c42b13477daa6d106bc101e99636c3d121a3ab6d81e2cbbc9178e27.jpg: score=-100;too_small:442x187
+Skip non-chart visual asset 3661ac139079188fa26268ab7a47058fafd34cd7249eee1d439b295b03defc8a.jpg: score=-100;too_small:451x184
+Skip non-chart visual asset d8ff9c34ad33008312e185cc9fc81020d6fd165bfe5a4e159a25051bfc8f5584.jpg: score=1;chart_ratio
+Skip non-chart visual asset 5755f9ee0346a0796d69c12996c444f48b7f19065ad8563af2ecb5d6901a5d77.jpg: score=0;square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 1cd62041bcce56c33d8a1229650b1bddf444be2f7bc0b50a0cb3b242163e8150.jpg: score=-100;too_small:676x87
+Skip non-chart visual asset 93ca09429db83fcebfbb0070a9a4da6178bd06355a4625819a3f5cc20437c68a.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 47c2cb0891dd2d5bb8e507a9a15f594c30cc97382d82763d18790069d835052b.jpg: score=-100;too_small:924x162
+Neutralized WeChat title while keeping the report: 摩根大通：联想集团-ISG利润改善超越PC不确定性-评级上调 -> 摩根大通：联想集团业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

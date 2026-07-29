@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_qk3_sctd/pdfs/0003-33-JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "LVMH转正，但别急",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-33-JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now--260728.pdf",
+    "cleaned_source_title": "JPM-LVMH-LVMH.PA-F-LG returns to small growth- what now",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：LVMHFLGreturnstosmall增长",
+    "raw_candidates": [
+      "LVMH时尚皮具回归小幅增长",
+      "LVMH第二季度有机销售增长3%",
+      "LVMH时尚皮具部门增长与区域分化"
+    ],
+    "cleaned_candidates": [
+      "JPM：LVMH时尚皮具回归小幅增长",
+      "JPM：LVMH第二季度有机销售增长3%",
+      "JPM：LVMH时尚皮具部门增长与区域分化",
+      "JPM：LVMHFLGreturnstosmall增长",
+      "JPM：LVMH在7月27日发布了2026年上半年财报"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：LVMH第二季度有机销售增长3%",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "JPM：LVMH时尚皮具部门增长与区域分化",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "JPM：LVMHFLGreturnstosmall增长",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "JPM：LVMH在7月27日发布了2026年上半年财报",
+        "reasons": [
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：LVMH时尚皮具回归小幅增长",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：LVMH时尚皮具回归小幅业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "562",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
