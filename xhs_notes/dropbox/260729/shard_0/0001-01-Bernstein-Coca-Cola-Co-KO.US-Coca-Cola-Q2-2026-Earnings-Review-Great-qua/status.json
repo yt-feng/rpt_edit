@@ -1,0 +1,108 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0001-01-Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "可口可乐Q2财报超预",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：可口可乐二季度业绩回顾",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-01-Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged-260728.pdf",
+    "cleaned_source_title": "Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：CocaColaCoCocaColaQ22026",
+    "raw_candidates": [
+      "Bernstein：可口可乐二季度业绩回顾",
+      "Bernstein：可口可乐二季度销量增长5%超预期",
+      "Bernstein：可口可乐二季度业绩与估值框架"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：可口可乐二季度业绩回顾",
+      "Bernstein：可口可乐二季度销量增长5%超预期",
+      "Bernstein：可口可乐二季度业绩与估值框架",
+      "Bernstein：CocaColaCoCocaColaQ22026",
+      "Bernstein：当季每股收益0.97美元，比市场共识高出0.04美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：可口可乐二季度销量增长5%超预期",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "Bernstein：CocaColaCoCocaColaQ22026",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：当季每股收益0.97美元，比市场共识高出0.04美元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：可口可乐二季度业绩回顾",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：可口可乐二季度业绩回顾"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "444",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

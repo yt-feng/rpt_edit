@@ -1,0 +1,109 @@
+ZH_A: 最近有一份关于网络安全预算的研报，我觉得里面有些观点非常值得聊一聊。你看了吗？
+
+ZH_B: 我看了，是某外资投行举办的CISO电话会议纪要。说实话，里面几个信号挺强的。
+
+ZH_A: 那这份报告真正要回答的核心问题是什么？
+
+ZH_B: 它其实在问一件事：AI到底在怎样重塑网络安全战略？不是简单的预算增减，而是整个安全架构的逻辑都在变。
+
+ZH_A: 所以，AI到底是让企业多花钱，还是少花钱？
+
+ZH_B: 明确地说，网络安全支出依然跑赢整体IT支出。而且，AI是最大的新投资催化剂。原因有两个，一是要防御AI驱动的攻击，二是要安全地支持内部的AI应用。
+
+ZH_A: 这意味着企业的安全预算会持续增长？
+
+ZH_B: 是的，但更重要的是钱花在哪里。报告里有个关键洞察：身份已经成为新的安全边界。而且，非人类身份现在是头号关注点。
+
+ZH_A: 非人类身份？这是什么意思？
+
+ZH_B: 就是AI代理、自动化工作流这些。它们需要有自己的身份来访问数据和系统。CISO们现在最头疼的就是怎么给这些AI代理分配权限，并且确保它们遵循最小权限原则。
+
+ZH_A: 所以，传统那种给员工账号设置权限的框架，对AI代理不适用了？
+
+ZH_B: 完全正确。这直接引出了第二个洞察：企业在努力平衡AI采用和控制可见性。员工在用多个大模型，数据进了哪些模型，AI代理能访问什么系统，这些都需要监控。
+
+ZH_A: 那他们怎么解决这个问题？
+
+ZH_B: 报告提到，要么部署集中式的AI路由器，要么加强终端、网络和数据层的控制。目的不是限制AI使用，而是建立护栏。
+
+ZH_A: 听起来，这需要很多新工具？
+
+ZH_B: 不一定。报告里有个很有意思的发现：除了预算增加，供应商整合是主要资金来源。CISO们正在淘汰旧平台，从现有供应商那里添加功能，因为这样比买新的独立产品便宜得多。
+
+ZH_A: 那是不是意味着，大平台会越来越强？
+
+ZH_B: 但整合是有限度的。报告强调，供应商整合是在关键网络安全支柱层面，而不是端到端。比如，在身份、终端、云安全这些核心领域，企业还是倾向于保持专门的领导者。
+
+ZH_A: 也就是说，他们不会把所有鸡蛋放在一个篮子里？
+
+ZH_B: 对。而且，报告中还提到一个趋势：安全运营正在走向自动化。因为人类速度的响应已经不够了。AI攻击者加快了威胁节奏，企业必须考虑代理型SOC平台和自主响应能力。
+
+ZH_A: 这听起来有点像科幻电影里的场景。
+
+ZH_B: 但这是现实。报告里说，传统的SIEM正在变得不那么重要，取而代之的是代理型ITDR/SOC模型，把检测、调查、响应都整合成自动化工作流。
+
+ZH_A: 那这份报告有没有留下一些没有完全展开的问题？
+
+ZH_B: 有。比如，它提到了“瑞士”背景的初创公司受到青睐，但并没有深入分析这些公司在不同安全支柱之间的具体竞争格局。这需要继续验证。
+
+ZH_A: 那还有什么悬念？
+
+ZH_B: 还有一个问题是，当AI代理开始自主行动时，现有的治理框架和审计能力到底能不能跟上？报告提到了这个风险，但没有给出完整的答案。这些细节都在完整的会议纪要里。
+
+ZH_A: 看来想深入了解的话，还是得读完整报告。
+
+ZH_B: 没错。如果你对AI如何重塑网络安全战略感兴趣，这份报告绝对值得花时间看。我们也会在社群里有更深入的讨论。
+
+EN_A: So I just finished reading a really interesting research note on cybersecurity budgets. It’s based on a conference call with three CISOs.
+
+EN_B: I’ve seen that. It’s from a global investment bank. The key takeaway is pretty clear: AI is forcing a complete redesign of cybersecurity strategy.
+
+EN_A: Redesign? That sounds dramatic. What’s the core question they’re trying to answer?
+
+EN_B: It’s really about how AI is changing not just what companies spend on security, but how they think about the whole architecture. It’s not just about more money.
+
+EN_A: So, is AI making companies spend more or less?
+
+EN_B: More, actually. Cybersecurity spending is still outpacing overall IT spending. And AI is the biggest driver. Companies need to defend against AI-powered attacks and also enable their own AI projects securely.
+
+EN_A: That makes sense. But where is all that money actually going?
+
+EN_B: That’s the interesting part. One key insight is that identity has become the new security perimeter. And the big new concern is non-human identities.
+
+EN_A: Non-human? You mean like bots and automated systems?
+
+EN_B: Exactly. AI agents, autonomous workflows, that kind of thing. They need their own identities to access data and systems. The CISOs are worried about how to manage those identities and enforce the principle of least privilege.
+
+EN_A: So the old model of managing employee accounts just doesn’t work anymore?
+
+EN_B: Right. And that leads to the second insight: companies are struggling to balance AI adoption with control and visibility. Employees are experimenting with multiple LLMs, and nobody knows what data is going into those models or what the agents can do.
+
+EN_A: So how are they solving that?
+
+EN_B: They’re investing in AI governance. Some are using centralized AI routers, others are putting controls at the endpoint, network, or data layer. The goal is to set guardrails, not to block AI.
+
+EN_A: That sounds like a lot of new tools. Are they buying everything new?
+
+EN_B: Not necessarily. Here’s a counterintuitive finding: vendor consolidation is a key funding mechanism. They’re retiring old legacy platforms and adding features from existing vendors, because that’s much cheaper than buying best-of-breed standalone products.
+
+EN_A: So the big platforms are winning?
+
+EN_B: Only up to a point. The report says consolidation is happening at the pillar level, not end-to-end. So in core areas like identity, endpoint, or cloud security, they still want dedicated leaders. They don’t want one vendor for everything.
+
+EN_A: That makes sense. What about the security operations side?
+
+EN_B: That’s another big insight. They’re moving toward automation. Human-speed response is just too slow now. AI-powered attackers are accelerating the threat pace, so companies are looking at agentic SOC platforms and autonomous response capabilities.
+
+EN_B: The report suggests that traditional SIEM is becoming less strategic. The future is an agentic model that combines detection, investigation, and response into an automated workflow.
+
+EN_A: So what questions does the report leave unanswered?
+
+EN_B: A couple of things. It mentions that “Switzerland” startups are preferred because they can work across different pillars, but it doesn’t fully explore the competitive dynamics there. That still needs more validation.
+
+EN_A: Anything else?
+
+EN_B: Yes. The report talks about the risk of AI agents taking too much action, but it doesn’t fully answer how governance and auditing will keep up. That’s a key question that the full transcript might address.
+
+EN_A: Sounds like there’s more to dig into in the full report.
+
+EN_B: Absolutely. If you want to understand how AI is reshaping cybersecurity from the ground up, this is the report to read. And we’ll be discussing it more in our community.

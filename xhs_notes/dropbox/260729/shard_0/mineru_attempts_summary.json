@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0001-01-Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0003-03-Bernstein-Kering SA-KER.FP-Kering- Highlights from the 1H26 conference call-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0004-04-Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0005-05-Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact-260728.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

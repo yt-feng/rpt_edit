@@ -1,0 +1,488 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0001-01-Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "可口可乐Q2财报超预",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：可口可乐二季度业绩回顾",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged-260728.pdf",
+      "cleaned_source_title": "Bernstein-Coca-Cola Co-KO.US-Coca-Cola Q2 2026 Earnings Review-Great quarter- long-term forecast largely unchanged",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：CocaColaCoCocaColaQ22026",
+      "raw_candidates": [
+        "Bernstein：可口可乐二季度业绩回顾",
+        "Bernstein：可口可乐二季度销量增长5%超预期",
+        "Bernstein：可口可乐二季度业绩与估值框架"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：可口可乐二季度业绩回顾",
+        "Bernstein：可口可乐二季度销量增长5%超预期",
+        "Bernstein：可口可乐二季度业绩与估值框架",
+        "Bernstein：CocaColaCoCocaColaQ22026",
+        "Bernstein：当季每股收益0.97美元，比市场共识高出0.04美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：可口可乐二季度销量增长5%超预期",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "Bernstein：CocaColaCoCocaColaQ22026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：当季每股收益0.97美元，比市场共识高出0.04美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：可口可乐二季度业绩回顾",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：可口可乐二季度业绩回顾"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "BYD 首款轻自动车",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "仍在调整影响->仍在调整，并影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729.pdf",
+      "cleaned_source_title": "Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+      "raw_candidates": [
+        "Bernstein：比亚迪轻自动车BEV Racco进入日本市场",
+        "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+        "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+        "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+        "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导",
+        "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+        "Bernstein：扣除15万日元政府补贴后，入门版实际支付价低于200万日元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "Bernstein：扣除15万日元政府补贴后，入门版实际支付价低于200万日元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0003-03-Bernstein-Kering SA-KER.FP-Kering- Highlights from the 1H26 conference call-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Gucci 的翻身仗",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：开云集团业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-Bernstein-Kering SA-KER.FP-Kering- Highlights from the 1H26 conference call-260728.pdf",
+      "cleaned_source_title": "Bernstein-Kering SA-KER.FP-Kering- Highlights from the 1H26 conference call",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：KeringSAKering",
+      "raw_candidates": [
+        "开云集团1H26电话会议要点",
+        "开云集团1H26电话会议-2Q26 Gucci正增长",
+        "开云集团1H26电话会议-定价与门店优化"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：开云集团1H26电话会议要点",
+        "Bernstein：开云集团1H26电话会议-2Q26Gucci正增长",
+        "Bernstein：开云集团1H26电话会议-定价与门店优化",
+        "Bernstein：KeringSAKering",
+        "Bernstein：Gucci在连续12个季度负增长后，于2Q26首次录得正增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：KeringSAKering",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Gucci在连续12个季度负增长后，于2Q26首次录得正增长",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：开云集团业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：开云集团1H26电话会议-2Q26Gucci正增长",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：开云集团业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0004-04-Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "康宁：光通信+AI撑",
+    "cover_subtitle": "企业级光通信增长65%的隐忧",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200-260728.pdf",
+      "cleaned_source_title": "Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200",
+      "institution_name": "BofA",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "BofA：CorningInc.Optical和AIrem",
+      "raw_candidates": [
+        "康宁光通信与AI驱动因素-目标价调整",
+        "康宁光通信与AI驱动因素-三季度指引低于预期",
+        "康宁企业光通信与AI需求-估值与增长观察"
+      ],
+      "cleaned_candidates": [
+        "BofA：CorningInc.Optical和AIrem",
+        "BofA：康宁光通信与AI驱动因素-三季度指引低于预期",
+        "BofA：康宁企业光通信与AI需求-估值与增长观察",
+        "BofA：AI技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english",
+        "english_heavy_fragment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：CorningInc.Optical和AIrem",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：康宁企业光通信与AI需求-估值与增长观察",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：AI技术与相关数据观察",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：康宁光通信与AI驱动因素-三季度指引低于预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0005-05-Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "AI正在重写网络安全",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact-260728.pdf",
+      "cleaned_source_title": "Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact",
+      "institution_name": "Bernstein",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+      "raw_candidates": [
+        "美国中小盘软件与网络安全CISO电话会：预算趋势与AI影响",
+        "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+        "美国中小盘软件与网络安全：AI驱动预算增长与身份管理重构"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+        "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+        "Bernstein：美国中小盘软件与网络安全，AI驱动预算增长与身份管理重构",
+        "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+        "Bernstein：CISO圆桌讨论揭示AI正在重塑网络安全预算与架构"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：美国中小盘软件与网络安全，AI驱动预算增长与身份管理重构",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+          "reasons": [
+            "incomplete_last_segment",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：CISO圆桌讨论揭示AI正在重塑网络安全预算与架构",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

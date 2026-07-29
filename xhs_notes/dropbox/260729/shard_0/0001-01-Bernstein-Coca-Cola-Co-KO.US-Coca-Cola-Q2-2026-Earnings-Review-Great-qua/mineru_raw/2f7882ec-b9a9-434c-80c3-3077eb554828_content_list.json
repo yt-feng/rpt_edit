@@ -1,0 +1,3440 @@
+[
+    {
+        "type": "text",
+        "text": "Market-Perform",
+        "bbox": [
+            66,
+            181,
+            250,
+            203
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Price Target",
+        "bbox": [
+            65,
+            210,
+            151,
+            227
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "KO",
+        "bbox": [
+            65,
+            233,
+            116,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "93.00 USD (83.00 OLD)",
+        "bbox": [
+            292,
+            234,
+            441,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Coca-Cola Q2 2026 Earnings Review - Great quarter, long-term forecast largely unchanged",
+        "text_level": 1,
+        "bbox": [
+            65,
+            306,
+            875,
+            364
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "KO reported strong Q2 results, beating VA consensus EPS estimates of \\$0.93 by \\$0.04. With strong fundamental drivers behind the beat, there is nothing to pick at. Results were driven by a beat on Organic Sales Growth, which came in at 6.0% (vs. consensus of 3.5%). Organic growth was in turn powered by strong consumption as Global Unit Case Volumes grew 5%, making the beat even more compelling. Operating Income Margin also beat, delivering 35.6%, vs consensus of 35.1%. Yearly guidance for Organic Growth was updated to the top of the range, at 5%. The stock closed at \\$88, posting a 5% gain.",
+        "bbox": [
+            63,
+            386,
+            640,
+            494
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We update our model to incorporate the latest results, but keep our medium and long-term forecasts, which already reflected our view of KO as a resilient and high-quality compounder, mostly unchanged. We also update our target multiple, from 24.0x to 25.5x, to reflect recent appreciation, which we think will be sustained and has been driven, at least in part, from rotation into the sector (Consumer Staples closed \\~2% up during the session, i.e., contributed 2 out of the 5 percentage points of gain for KO). As a result, we have updated our target price. We believe KO will retain its well-earned premium relative to expected OSG, but also believe that the multiple currently has limited room for further expansion.",
+        "bbox": [
+            63,
+            503,
+            640,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/fd1ee75222a9085f6a59a62319362188103805c02bc764c98d8c9081bd8127b5.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Close Date</td><td>28 Jul 2026</td></tr><tr><td>KO Close Price (USD)</td><td>88.27</td></tr><tr><td>Price Target (USD)</td><td>93.00</td></tr><tr><td>Upside/(Downside)</td><td>5%</td></tr><tr><td>52-Week Range</td><td>90.22/65.35</td></tr><tr><td>SPX</td><td>7,428.78</td></tr><tr><td>FYE</td><td>Dec</td></tr><tr><td>Div Yield</td><td>2.4%</td></tr><tr><td>Market Cap (USD) (M)</td><td>379,780</td></tr><tr><td>EV (USD) (M)</td><td>409,117</td></tr></table>",
+        "bbox": [
+            653,
+            391,
+            923,
+            545
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/d77011202d414c0748d66782943c479d3e2ecf93a58aa4593ace5688e8505b54.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>26.3</td><td>6.8</td><td>20.8</td><td>29.6</td></tr><tr><td>SPX (%)</td><td>8.5</td><td>1.0</td><td>6.5</td><td>16.3</td></tr><tr><td>Relative (%)</td><td>17.7</td><td>5.8</td><td>14.4</td><td>13.4</td></tr></table>",
+        "bbox": [
+            653,
+            549,
+            924,
+            609
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(Continued on next page)",
+        "text_level": 2,
+        "bbox": [
+            65,
+            637,
+            240,
+            652
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Investment Implications",
+        "text_level": 2,
+        "bbox": [
+            65,
+            666,
+            245,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/09e8555e6eeee7d608b98894b8664ec00e6e7c7b16e5eeb8a0536aa031c18390.jpg",
+        "table_caption": [
+            "We rate Coca-Cola Market-Perform, with a PT of \\$93. Coke is a high-quality compounder, with compelling offers in Functional Beverages (Protein, Hydration). We forecast 5% and 7% YoY EPS growth NTM and NTM+1, respectively, making us bearish vs. consensus on NTM+1 EPS by 70 bps. We apply a target multiple of 25.5x (old 24.0x) to arrive at our target price."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Adjusted EPS</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>KO (USD)</td><td>3.01</td><td>3.32</td><td>3.50</td></tr><tr><td>OLD</td><td>--</td><td>3.25</td><td>3.42</td></tr></table>",
+        "bbox": [
+            66,
+            767,
+            339,
+            821
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9414734b0b0cae35b7d58da4e7d3394b076ab633b569076f2020c7db6b5cab07.jpg",
+        "content": "",
+        "chart_caption": [
+            "Price Performance, 1YR"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            651,
+            656,
+            880,
+            767
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/373f4c7270d818b5bd6bc0b469129d2124d743b1213147973a2c39a1c0d7da0c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td></tr><tr><td>Revenues (M)</td><td>47,941</td><td>49,698</td><td>49,353</td><td>1.5%</td></tr><tr><td>EBITDA (M)</td><td>14,812</td><td>17,273</td><td>18,314</td><td>11.2%</td></tr><tr><td>EBIT (M)</td><td>17,652</td><td>19,694</td><td>20,691</td><td>8.3%</td></tr><tr><td>FCF (M)</td><td>5,296</td><td>11,963</td><td>14,131</td><td>63.3%</td></tr><tr><td>ROIC (%)</td><td>21.5</td><td>22.3</td><td>22.1</td><td>--</td></tr><tr><td>Net Debt/EBITDA (x)</td><td>1.85</td><td>1.48</td><td>1.29</td><td>(16.4)%</td></tr><tr><td>Dividend Payout Ratio (%)</td><td>67.7</td><td>64.0</td><td>63.4</td><td>--</td></tr></table>",
+        "bbox": [
+            346,
+            767,
+            678,
+            911
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/924875344fadf4144d38a4bf16174ecc8b8a0ce8c08b2b11d17ce699a4ece473.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>Adjusted P/E (x)</td><td>29.4</td><td>26.6</td><td>25.2</td></tr><tr><td>PEG Adjusted (x)</td><td>7.0</td><td>2.5</td><td>4.7</td></tr><tr><td>EV/Sales (x)</td><td>8.5</td><td>8.2</td><td>8.3</td></tr><tr><td>EV/EBITDA (x)</td><td>27.6</td><td>23.7</td><td>22.3</td></tr><tr><td>EV/EBIT (x)</td><td>23.2</td><td>20.8</td><td>19.8</td></tr><tr><td>EV/FCF (x)</td><td>77.3</td><td>34.2</td><td>29.0</td></tr><tr><td>Div Yield (%)</td><td>2.3</td><td>2.4</td><td>2.5</td></tr></table>",
+        "bbox": [
+            684,
+            768,
+            919,
+            911
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            776,
+            935,
+            919,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            65,
+            32,
+            292,
+            80
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026\nEstimate Change",
+        "bbox": [
+            723,
+            54,
+            867,
+            94
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "U.S. Beverages, Household & Personal Care Products",
+        "bbox": [
+            65,
+            114,
+            411,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "bbox": [
+            655,
+            90,
+            710,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios\n+1 917 344 8615\ncristian.rios@bernsteinsg.com",
+        "bbox": [
+            723,
+            95,
+            875,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Coca-Cola Co",
+        "bbox": [
+            66,
+            135,
+            212,
+            155
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Rating",
+        "bbox": [
+            66,
+            164,
+            116,
+            180
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Yolanda Zhang\n+1 917 344 8346\nyolanda.zhang@bernsteinsg.com",
+        "bbox": [
+            723,
+            146,
+            888,
+            183
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "bbox": [
+            656,
+            141,
+            710,
+            183
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Source: Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            66,
+            914,
+            292,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.\nFirst Published: 29 Jul 2026 01:15 UTC Completion Date: 29 Jul 2026 01:09 UTC",
+        "bbox": [
+            65,
+            935,
+            700,
+            977
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            174,
+            85
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "... (continued)",
+        "text_level": 2,
+        "bbox": [
+            104,
+            99,
+            197,
+            114
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While today's results were partly enabled by one-time events, such as soft volume comps from a year ago and the impact of the World Cup, they also serve as a reminder of KO's advantaged strategic position. After all, the resiliency comes in the context of numerous headwinds – reduction in SNAP benefits, excise taxes in Mexico, pressured consumers, and commodity inflation, to name a few. But it is no coincidence that KO is successfully navigating these challenges; at the end of the day, you need unmatched global scale to justify that level of sponsorship at the World Cup, and the company's exclusive focus on Beverages continues to play a role in their ability to offer alternative subcategories that capture an ever-evolving consumer demand.",
+        "bbox": [
+            102,
+            128,
+            883,
+            219
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/27576db160d1e6a0505605cbc35afdd627f2827798a1138599c41d628a76955f.jpg",
+        "table_caption": [
+            "EXHIBIT 1: KO 2Q26 Segment Results: Actual vs. Bernstein vs. Consensus - EMEA"
+        ],
+        "table_footnote": [
+            "Source: Company, Visible Alpha, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Actual</td></tr><tr><td>2025 Q2</td><td>2026 Q1</td><td>2026 Q2</td><td>YoY Δ</td></tr><tr><td colspan=\"5\">Europe, Middle East and Africa</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 3,206</td><td>$ 3,004</td><td>$ 3,243</td><td>1.2%</td></tr><tr><td>Total growth</td><td>37.4%</td><td>12.5%</td><td>1.2%</td><td>-3627 bps</td></tr><tr><td>Organic growth</td><td>4.0%</td><td>10.7%</td><td>3.0%</td><td>-100 bps</td></tr><tr><td>Price/mix</td><td>3.0%</td><td>5.0%</td><td>1.0%</td><td>-200 bps</td></tr><tr><td>Volume growth</td><td>-1.0%</td><td>5.1%</td><td>1.0%</td><td>+200 bps</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>-1.0%</td><td>-1.8%</td><td>1.0%</td><td>+200 bps</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>6.9%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Forex impact</td><td>1.0%</td><td>5.8%</td><td>2.0%</td><td>+100 bps</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>-3.1%</td><td>-3.0%</td><td>-300 bps</td></tr><tr><td>EMEA - Operating income/(loss) - Operating</td><td>$ 1,358</td><td>$ 1,249</td><td>$ 1,312</td><td>-3.4%</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>42.4%</td><td>41.6%</td><td>40.5%</td><td>-190 bps</td></tr></table>",
+        "bbox": [
+            107,
+            248,
+            614,
+            415
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/e7eba3b5620f77cccfa90c36c01c13852f5cf1bbd474167bb1fde4318b17f6f3.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Visible Alpha Consensus</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs Cons</td></tr><tr><td>$</td><td>3,352</td><td>-3.2%</td></tr><tr><td></td><td>4.5%</td><td>-340 bps</td></tr><tr><td></td><td>3.9%</td><td>-86 bps</td></tr><tr><td></td><td>3.8%</td><td>-279 bps</td></tr><tr><td></td><td>0.1%</td><td>+93 bps</td></tr><tr><td></td><td>3.0%</td><td>-101 bps</td></tr><tr><td></td><td>-2.6%</td><td>-38 bps</td></tr><tr><td>$</td><td>1,427</td><td>-8.0%</td></tr><tr><td></td><td>42.6%</td><td>-211 bps</td></tr></table>",
+        "bbox": [
+            620,
+            250,
+            753,
+            415
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/7b6a1b6a4cacf7a5bcd4c20f7d357c7c6893ca110eb1fc06eb0e7a8c6433af88.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Bernstein Estimates</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs BERNe</td></tr><tr><td>$</td><td>3,351</td><td>-3.2%</td></tr><tr><td></td><td>4.5%</td><td>-336 bps</td></tr><tr><td></td><td>4.5%</td><td>-150 bps</td></tr><tr><td></td><td>3.5%</td><td>-250 bps</td></tr><tr><td></td><td>1.0%</td><td>+0 bps</td></tr><tr><td></td><td>1.0%</td><td>+0 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td></td><td>2.5%</td><td>-51 bps</td></tr><tr><td></td><td>-2.5%</td><td>-50 bps</td></tr><tr><td>$</td><td>1,457</td><td>-10.0%</td></tr><tr><td></td><td>43.5%</td><td>-303 bps</td></tr></table>",
+        "bbox": [
+            759,
+            250,
+            890,
+            415
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/05e249c4eabf7c048c104487385be759cce12697e646adb62337b89b353e71e5.jpg",
+        "table_caption": [
+            "EXHIBIT 2: KO 2Q26 Segment Results: Actual vs. Bernstein vs. Consensus - LATAM"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Actual</td></tr><tr><td>2025 Q2</td><td>2026 Q1</td><td>2026 Q2</td><td>YoY Δ</td></tr><tr><td colspan=\"5\">Latin America</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 1,611</td><td>$ 1,692</td><td>$ 1,827</td><td>13.4%</td></tr><tr><td>Total growth</td><td>-0.1%</td><td>11.4%</td><td>13.4%</td><td>+1353 bps</td></tr><tr><td>Organic growth</td><td>13.0%</td><td>8.7%</td><td>5.0%</td><td>-800 bps</td></tr><tr><td>Price/mix</td><td>15.0%</td><td>1.0%</td><td>3.0%</td><td>-1200 bps</td></tr><tr><td>Volume growth</td><td>2.0%</td><td>7.1%</td><td>1.0%</td><td>-100 bps</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>2.0%</td><td>0.2%</td><td>1.0%</td><td>-100 bps</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>6.9%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Forex impact</td><td>-17.0%</td><td>4.5%</td><td>11.0%</td><td>+2800 bps</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 1,012</td><td>$ 1,052</td><td>$ 1,165</td><td>15.1%</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>62.8%</td><td>62.2%</td><td>63.8%</td><td>+95 bps</td></tr></table>",
+        "bbox": [
+            107,
+            470,
+            614,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/31267f8ed72d39b40b9f65eecf3dc6d3be4c5047cb187b0f9d9e2f16479e0524.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Visible Alpha Consensus</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs Cons</td></tr><tr><td>$</td><td>1,754</td><td>4.2%</td></tr><tr><td></td><td>8.9%</td><td>+454 bps</td></tr><tr><td></td><td>5.0%</td><td>-0 bps</td></tr><tr><td></td><td>4.0%</td><td>-100 bps</td></tr><tr><td></td><td>1.0%</td><td>+0 bps</td></tr><tr><td></td><td>3.8%</td><td>+719 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td>$</td><td>1,103</td><td>5.6%</td></tr><tr><td></td><td>62.9%</td><td>+87 bps</td></tr></table>",
+        "bbox": [
+            620,
+            472,
+            753,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/a150807596a036ede5d01189399565c4a00f50b1009a83e23be8aa947cc32a77.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company, Visible Alpha, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">Bernstein Estimates</td></tr><tr><td>2026 Q2E</td><td>Δ vs BERNe</td></tr><tr><td>$ 1,716</td><td>6.5%</td></tr><tr><td>6.5%</td><td>+691 bps</td></tr><tr><td>1.5%</td><td>+350 bps</td></tr><tr><td>2.5%</td><td>+50 bps</td></tr><tr><td>-1.0%</td><td>+200 bps</td></tr><tr><td>-1.0%</td><td>+200 bps</td></tr><tr><td>0.0%</td><td>+0 bps</td></tr><tr><td>5.0%</td><td>+600 bps</td></tr><tr><td>0.0%</td><td>+0 bps</td></tr><tr><td>$ 1,073</td><td>8.5%</td></tr><tr><td>62.6%</td><td>+121 bps</td></tr></table>",
+        "bbox": [
+            759,
+            472,
+            892,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/6e78758790d09dc85fe1c27bd33b59faaa9379415af767724a8d67af1b1ea418.jpg",
+        "table_caption": [
+            "EXHIBIT 3: KO 2Q26 Segment Results: Actual vs. Bernstein vs. Consensus - NA"
+        ],
+        "table_footnote": [
+            "Source: Company, Visible Alpha, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Actual</td></tr><tr><td>2025 Q2</td><td>2026 Q1</td><td>2026 Q2</td><td>YoY Δ</td></tr><tr><td colspan=\"5\">North America</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 5,040</td><td>$ 4,889</td><td>$ 5,405</td><td>7.2%</td></tr><tr><td>Total growth</td><td>4.8%</td><td>12.0%</td><td>7.2%</td><td>+246 bps</td></tr><tr><td>Organic growth</td><td>3.0%</td><td>12.0%</td><td>7.0%</td><td>+400 bps</td></tr><tr><td>Price/mix</td><td>3.0%</td><td>1.0%</td><td>4.0%</td><td>+100 bps</td></tr><tr><td>Volume growth</td><td>-1.0%</td><td>11.0%</td><td>3.0%</td><td>+400 bps</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>-1.0%</td><td>4.1%</td><td>3.0%</td><td>+400 bps</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>6.9%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Forex impact</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 1,576</td><td>$ 1,531</td><td>$ 1,769</td><td>12.2%</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>31.3%</td><td>31.3%</td><td>32.7%</td><td>+146 bps</td></tr></table>",
+        "bbox": [
+            107,
+            694,
+            614,
+            861
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/91630090be9d5c1db2fb7851811a1f407dc64caddc1b94c5f3b4d8b861080cdc.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Visible Alpha Consensus</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs Cons</td></tr><tr><td>$</td><td>5,207</td><td>3.8%</td></tr><tr><td></td><td>3.3%</td><td>+394 bps</td></tr><tr><td></td><td>3.3%</td><td>+370 bps</td></tr><tr><td></td><td>2.9%</td><td>+109 bps</td></tr><tr><td></td><td>0.4%</td><td>+262 bps</td></tr><tr><td></td><td>0.0%</td><td>-1 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td>$</td><td>1,641</td><td>7.8%</td></tr><tr><td></td><td>31.5%</td><td>+120 bps</td></tr></table>",
+        "bbox": [
+            620,
+            696,
+            753,
+            861
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/a8e5991581ef8f81cd0306db61564c173cf329827b3d94823cb94e3c1931463b.jpg",
+        "table_caption": [
+            "Bernstein Estimates 2026 Q2E $\\Delta$ vs BERNe"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>$</td><td>5,267</td><td>2.6%</td></tr><tr><td></td><td>4.5%</td><td>+274 bps</td></tr><tr><td></td><td>4.5%</td><td>+250 bps</td></tr><tr><td></td><td>3.0%</td><td>+100 bps</td></tr><tr><td></td><td>1.5%</td><td>+150 bps</td></tr><tr><td></td><td>1.5%</td><td>+150 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td></td><td>0.0%</td><td>-0 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td>$</td><td>1,674</td><td>5.7%</td></tr><tr><td></td><td>31.8%</td><td>+95 bps</td></tr></table>",
+        "bbox": [
+            759,
+            728,
+            892,
+            861
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            37,
+            421,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/3dbbbf5a57a804277d7993ea786eca5283caac204f80231641e93a367e736387.jpg",
+        "table_caption": [
+            "EXHIBIT 4: KO 2Q26 Segment Results: Actual vs. Bernstein vs. Consensus - APAC"
+        ],
+        "table_footnote": [
+            "Source: Company, Visible Alpha, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Actual</td></tr><tr><td>2025 Q2</td><td>2026 Q1</td><td>2026 Q2</td><td>YoY Δ</td></tr><tr><td colspan=\"5\">Asia Pacific</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 1,589</td><td>$ 1,505</td><td>$ 1,586</td><td>-0.2%</td></tr><tr><td>Total growth</td><td>5.4%</td><td>4.9%</td><td>-0.2%</td><td>-563 bps</td></tr><tr><td>Organic growth</td><td>5.0%</td><td>4.6%</td><td>2.0%</td><td>-300 bps</td></tr><tr><td>Price/mix</td><td>10.0%</td><td>-5.9%</td><td>-9.0%</td><td>-1900 bps</td></tr><tr><td>Volume growth</td><td>-5.0%</td><td>10.1%</td><td>11.0%</td><td>+1600 bps</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>-5.0%</td><td>3.2%</td><td>11.0%</td><td>+1600 bps</td></tr><tr><td>Other/Calendar impact</td><td>-3.0%</td><td>6.9%</td><td>0.0%</td><td>+300 bps</td></tr><tr><td>Forex impact</td><td>-2.0%</td><td>1.7%</td><td>-1.0%</td><td>+100 bps</td></tr><tr><td>Structural change/other</td><td>-2.0%</td><td>-0.2%</td><td>0.0%</td><td>+200 bps</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 664</td><td>$ 533</td><td>$ 661</td><td>-0.5%</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>41.8%</td><td>35.4%</td><td>41.7%</td><td>-11 bps</td></tr></table>",
+        "bbox": [
+            107,
+            89,
+            614,
+            255
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/c26b63164fd1c54f4bb90ac02a02735a5210129adf2849c2ddcbfbfac4fbc5f6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Visible Alpha Consensus</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs Cons</td></tr><tr><td>$</td><td>1,617</td><td>-1.9%</td></tr><tr><td></td><td>1.8%</td><td>-197 bps</td></tr><tr><td></td><td>2.1%</td><td>-11 bps</td></tr><tr><td></td><td>-1.1%</td><td>-789 bps</td></tr><tr><td></td><td>3.2%</td><td>+778 bps</td></tr><tr><td></td><td>-0.3%</td><td>-69 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td>$</td><td>668</td><td>-1.0%</td></tr><tr><td></td><td>41.3%</td><td>+40 bps</td></tr></table>",
+        "bbox": [
+            620,
+            90,
+            753,
+            256
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/2d48b2a824cb00ce6ebc29ab08af27e4c67f6c6b5d06950ae8a8e6e8f05f5192.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Bernstein Estimates</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs BERNe</td></tr><tr><td>$</td><td>1,557</td><td>1.8%</td></tr><tr><td></td><td>-2.0%</td><td>+180 bps</td></tr><tr><td></td><td>0.5%</td><td>+150 bps</td></tr><tr><td></td><td>-2.0%</td><td>-700 bps</td></tr><tr><td></td><td>2.5%</td><td>+850 bps</td></tr><tr><td></td><td>2.5%</td><td>+850 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td></td><td>-2.5%</td><td>+149 bps</td></tr><tr><td></td><td>0.0%</td><td>+0 bps</td></tr><tr><td>$</td><td>654</td><td>1.1%</td></tr><tr><td></td><td>42.0%</td><td>-32 bps</td></tr></table>",
+        "bbox": [
+            759,
+            90,
+            890,
+            256
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/e66afedbb2d6f287a07185262dfa224bb0252d33966a03f9eb137f8e0816446d.jpg",
+        "table_caption": [
+            "EXHIBIT 5: KO 2Q26 Segment Results: Actual vs. Bernstein vs. Consensus - Bottling Investment"
+        ],
+        "table_footnote": [
+            "Source: Company, Visible Alpha, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Actual</td></tr><tr><td>2025 Q2</td><td>2026 Q1</td><td>2026 Q2</td><td>YoY Δ</td></tr><tr><td colspan=\"5\">Bottling Investment</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 1,411</td><td>$ 1,640</td><td>$ 1,527</td><td>8.2%</td></tr><tr><td>Total growth</td><td>-8.3%</td><td>12.1%</td><td>8.2%</td><td>+1654 bps</td></tr><tr><td>Organic growth</td><td>-2.0%</td><td>10.0%</td><td>10.0%</td><td>+1200 bps</td></tr><tr><td>Price/mix</td><td>0.0%</td><td>-1.0%</td><td>2.0%</td><td>+200 bps</td></tr><tr><td>Volume growth</td><td>0.0%</td><td>11.0%</td><td>8.0%</td><td>+800 bps</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>0.0%</td><td>4.1%</td><td>8.0%</td><td>+800 bps</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>6.9%</td><td>0.0%</td><td>+0 bps</td></tr><tr><td>Forex impact</td><td>-4.0%</td><td>4.0%</td><td>0.0%</td><td>+400 bps</td></tr><tr><td>Structural change/other</td><td>-3.0%</td><td>-2.0%</td><td>-2.0%</td><td>+100 bps</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 60</td><td>$ 189</td><td>$ 90</td><td>50.0%</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>4.3%</td><td>11.5%</td><td>5.9%</td><td>+164 bps</td></tr></table>",
+        "bbox": [
+            107,
+            311,
+            614,
+            478
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/fe5d50184322449f0a0fc7e9cfb70abbb07f2de0d3ad7766e78ae79c34753976.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Visible Alpha Consensus</td></tr><tr><td></td><td>2026 Q2E</td><td>Δ vs Cons</td></tr><tr><td>$</td><td>1,443</td><td>5.8%</td></tr><tr><td></td><td>2.8%</td><td>+547 bps</td></tr><tr><td></td><td>3.1%</td><td>+689 bps</td></tr><tr><td></td><td>1.4%</td><td>+56 bps</td></tr><tr><td></td><td>1.9%</td><td>+613 bps</td></tr><tr><td></td><td>2.0%</td><td>-205 bps</td></tr><tr><td></td><td>-3.0%</td><td>+96 bps</td></tr><tr><td>$</td><td>74</td><td>21.2%</td></tr><tr><td></td><td>5.1%</td><td>+75 bps</td></tr></table>",
+        "bbox": [
+            620,
+            311,
+            753,
+            479
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/8255501bf66347ed93c0875a6980f95f7996ae7b86ae5fb77094bfb2c6ec7452.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Bernstein Estimates</td></tr><tr><td>2026 Q2E</td><td>Δ vs BERNe</td></tr><tr><td>$ 1,356</td><td>12.6%</td></tr><tr><td>-3.9%</td><td>+1209 bps</td></tr><tr><td>4.0%</td><td>+600 bps</td></tr><tr><td>1.0%</td><td>+100 bps</td></tr><tr><td>3.0%</td><td>+500 bps</td></tr><tr><td>3.0%</td><td>+500 bps</td></tr><tr><td>0.0%</td><td>+0 bps</td></tr><tr><td>2.1%</td><td>-213 bps</td></tr><tr><td>-10.0%</td><td>+800 bps</td></tr><tr><td>$ 81</td><td>10.5%</td></tr><tr><td>6.0%</td><td>-11 bps</td></tr></table>",
+        "bbox": [
+            759,
+            313,
+            892,
+            479
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 6: 2026 Q2 Performance - KO",
+        "text_level": 2,
+        "bbox": [
+            104,
+            515,
+            357,
+            530
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Latest Period End: 2026-06-27",
+        "bbox": [
+            104,
+            534,
+            285,
+            549
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/81fbe7b1a033d0a7436ed231a2620c67cc05c96bc07695749eb6becffe03f53f.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Nielsen Total US Full View (Modeled) + Conv + Pet Retail + Costco (Model) + Rem Accounts, Bernstein Analysis"
+        ],
+        "table_body": "<table><tr><td></td><td>Sales ($M)</td><td>Volume(OZ, M)</td><td>Price ($/OZ)</td><td>YoY Sales Growth</td><td>YoY Volume Growth</td><td>YoY Price Growth</td><td>Sales Mix(%)</td><td>Market Share (%)</td><td>YoY Mkt Share Chg (pp)</td><td>Category Growth YoY</td></tr><tr><td>Soft Drinks</td><td>5,659</td><td>92,241</td><td>0.06</td><td>6.6%</td><td>2.0%</td><td>4.4%</td><td>57.6%</td><td>38.2%</td><td>1.1%</td><td>3.5%</td></tr><tr><td>Sport Drinks</td><td>786</td><td>12,289</td><td>0.06</td><td>5.5%</td><td>3.5%</td><td>2.0%</td><td>8.0%</td><td>24.6%</td><td>0.6%</td><td>2.9%</td></tr><tr><td>Fairlife</td><td>1,096</td><td>6,260</td><td>0.18</td><td>10.3%</td><td>2.4%</td><td>7.7%</td><td>11.1%</td><td>31.8%</td><td>-0.6%</td><td>12.4%</td></tr><tr><td>All other Beverages</td><td>2,291</td><td>36,875</td><td>0.06</td><td>-4.0%</td><td>-3.3%</td><td>-0.7%</td><td>23.3%</td><td>8.8%</td><td>-0.7%</td><td>3.3%</td></tr><tr><td>Total</td><td>9,831</td><td>147,665</td><td>0.07</td><td>4.2%</td><td>0.8%</td><td>3.4%</td><td>100.0%</td><td>20.8%</td><td>0.0%</td><td>4.0%</td></tr></table>",
+        "bbox": [
+            107,
+            551,
+            890,
+            652
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 7: 2026 Q1 Scanner Performance - KO",
+        "text_level": 2,
+        "bbox": [
+            104,
+            690,
+            413,
+            705
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/bcc171a6ee984f6ead63f010c761a61bc5f55b7d0727038f72bceceeff411767.jpg",
+        "table_caption": [
+            "Latest Period End: 2026-03-21"
+        ],
+        "table_footnote": [
+            "Source: Nielsen Total US Full View (Modeled) + Conv + Pet Retail + Costco (Model) + Rem Accounts, Bernstein Analysis"
+        ],
+        "table_body": "<table><tr><td></td><td>Sales ($M)</td><td>Volume(OZ, M)</td><td>Price ($/OZ)</td><td>YoY Sales Growth</td><td>YoY Volume Growth</td><td>YoY Price Growth</td><td>Sales Mix (%)</td><td>Market Share (%)</td><td>YoY Mkt Share Chg (pp)</td><td>Category Growth YoY</td></tr><tr><td>Soft Drinks</td><td>4,481</td><td>73,463</td><td>0.06</td><td>8.3%</td><td>3.0%</td><td>5.1%</td><td>58.1%</td><td>37.7%</td><td>1.4%</td><td>4.2%</td></tr><tr><td>Sport Drinks</td><td>524</td><td>7,978</td><td>0.07</td><td>8.4%</td><td>5.3%</td><td>3.0%</td><td>6.8%</td><td>25.3%</td><td>0.5%</td><td>6.1%</td></tr><tr><td>Fairlife</td><td>874</td><td>5,152</td><td>0.17</td><td>3.6%</td><td>-5.3%</td><td>9.4%</td><td>11.3%</td><td>30.6%</td><td>-2.4%</td><td>11.7%</td></tr><tr><td>All other Beverages</td><td>1,838</td><td>29,346</td><td>0.06</td><td>2.5%</td><td>4.0%</td><td>-1.5%</td><td>23.8%</td><td>8.9%</td><td>-0.3%</td><td>6.4%</td></tr><tr><td>Total</td><td>7,718</td><td>115,939</td><td>0.07</td><td>6.3%</td><td>3.0%</td><td>3.2%</td><td>100.0%</td><td>20.6%</td><td>0.1%</td><td>6.0%</td></tr></table>",
+        "bbox": [
+            107,
+            726,
+            890,
+            828
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: Company Reports, Bernstein analysis and estimates",
+        "bbox": [
+            104,
+            987,
+            398,
+            1000
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/3b6f83eb39ce4be4b606d9dbe3996d6cc16ec464cd872e0653ece5da919e5745.jpg",
+        "table_caption": [
+            "EXHIBIT 8: KO Segment Forecast Key Metrics FY26-FY27"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Segment Estimations</td><td>2026 Q3E</td><td>2026 Q4E</td><td>FY2026E</td><td>FY2027E</td></tr><tr><td colspan=\"5\">Europe, Middle east and Africa</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 3,065</td><td>$ 2,590</td><td>$ 11,902</td><td>$ 12,283</td></tr><tr><td>Total growth</td><td>2.7%</td><td>-3.5%</td><td>3.1%</td><td>3.2%</td></tr><tr><td>Organic growth</td><td>7.0%</td><td>-0.8%</td><td>4.9%</td><td>4.5%</td></tr><tr><td>Price/mix</td><td>3.0%</td><td>2.5%</td><td>2.8%</td><td>3.5%</td></tr><tr><td>Volume growth</td><td>4.0%</td><td>-3.3%</td><td>1.7%</td><td>1.0%</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>4.0%</td><td>3.0%</td><td>1.6%</td><td>1.0%</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>-6.3%</td><td>0.1%</td><td>0.0%</td></tr><tr><td>Forex impact</td><td>-1.3%</td><td>-1.8%</td><td>1.2%</td><td>-1.3%</td></tr><tr><td>Structural change/other</td><td>-3.0%</td><td>-1.0%</td><td>-2.6%</td><td>0.0%</td></tr><tr><td>EMEA - Operating income/(loss) - Operating</td><td>$ 1,145</td><td>$ 812</td><td>$ 4,518</td><td>$ 4,717</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>37.4%</td><td>31.4%</td><td>38.0%</td><td>38.4%</td></tr></table>",
+        "bbox": [
+            107,
+            89,
+            694,
+            268
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/788b373992034f11f28091ffc91a4f07ed48f455d22fbfab7adb1b15f9e287d0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"5\">Latin America</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 1,679</td><td>$ 1,683</td><td>$ 6,881</td><td>$ 7,293</td></tr><tr><td>Total growth</td><td>7.4%</td><td>0.2%</td><td>7.9%</td><td>6.0%</td></tr><tr><td>Organic growth</td><td>3.5%</td><td>-2.8%</td><td>3.5%</td><td>6.5%</td></tr><tr><td>Price/mix</td><td>2.5%</td><td>2.5%</td><td>2.3%</td><td>4.5%</td></tr><tr><td>Volume growth</td><td>1.0%</td><td>-5.3%</td><td>0.8%</td><td>2.0%</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>1.0%</td><td>1.0%</td><td>0.8%</td><td>2.0%</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>-6.3%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Forex impact</td><td>3.9%</td><td>2.9%</td><td>5.6%</td><td>-0.5%</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 1,037</td><td>$ 1,032</td><td>$ 4,286</td><td>$ 4,589</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>61.7%</td><td>61.3%</td><td>62.3%</td><td>62.9%</td></tr></table>",
+        "bbox": [
+            107,
+            287,
+            694,
+            445
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/7e4a32899c16ad298177a7ab4d8e5fb95e13b7efc9cdc1cd09f201c8b8fd574b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"5\">North America</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 5,585</td><td>$ 4,980</td><td>$ 20,859</td><td>$ 21,853</td></tr><tr><td>Total growth</td><td>6.4%</td><td>0.7%</td><td>6.4%</td><td>4.8%</td></tr><tr><td>Organic growth</td><td>6.5%</td><td>0.8%</td><td>6.4%</td><td>4.8%</td></tr><tr><td>Price/mix</td><td>4.5%</td><td>5.0%</td><td>3.7%</td><td>3.0%</td></tr><tr><td>Volume growth</td><td>2.0%</td><td>-4.3%</td><td>2.7%</td><td>1.8%</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>2.0%</td><td>2.0%</td><td>2.7%</td><td>1.8%</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>-6.3%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Forex impact</td><td>-0.1%</td><td>-0.1%</td><td>0.0%</td><td>-0.1%</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 1,773</td><td>$ 1,417</td><td>$ 6,490</td><td>$ 6,907</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>31.8%</td><td>28.5%</td><td>31.1%</td><td>31.6%</td></tr></table>",
+        "bbox": [
+            107,
+            462,
+            694,
+            622
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/e025500160d424fb838db56820bce1d041dfd4d9f2ef5400cd7e3269c1211b84.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"5\">Asia Pacific</td></tr><tr><td>Net operating revenues - Operating</td><td>$ 1,458</td><td>$ 1,067</td><td>$ 5,617</td><td>$ 5,843</td></tr><tr><td>Total growth</td><td>-2.1%</td><td>-7.0%</td><td>-0.9%</td><td>4.0%</td></tr><tr><td>Organic growth</td><td>1.0%</td><td>-5.3%</td><td>0.9%</td><td>4.9%</td></tr><tr><td>Price/mix</td><td>-5.0%</td><td>-5.0%</td><td>-6.4%</td><td>2.0%</td></tr><tr><td>Volume growth</td><td>6.0%</td><td>-0.3%</td><td>7.2%</td><td>2.9%</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>6.0%</td><td>6.0%</td><td>6.7%</td><td>3.0%</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>-6.3%</td><td>0.5%</td><td>-0.1%</td></tr><tr><td>Forex impact</td><td>-3.1%</td><td>-1.7%</td><td>-1.0%</td><td>-0.9%</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>0.0%</td><td>-0.1%</td><td>0.0%</td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 496</td><td>$ 277</td><td>$ 1,967</td><td>$ 2,132</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>34.0%</td><td>26.0%</td><td>35.0%</td><td>36.5%</td></tr></table>",
+        "bbox": [
+            107,
+            638,
+            694,
+            799
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/66e7b712730c4b16d7267e199419d36448e37b1a2930c936c5c06c4b3be1bef0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Net operating revenues - Operating</td><td>$ 1,415</td><td>$ 723</td><td>$ 5,305</td><td>$ 3,018</td></tr><tr><td>Total growth</td><td>5.1%</td><td>-52.3%</td><td>-7.5%</td><td>-43.1%</td></tr><tr><td>Organic growth</td><td>5.0%</td><td>-2.3%</td><td>5.6%</td><td>0.8%</td></tr><tr><td>Price/mix</td><td>2.0%</td><td>2.0%</td><td>1.2%</td><td>-2.0%</td></tr><tr><td>Volume growth</td><td>3.0%</td><td>-4.3%</td><td>4.4%</td><td>2.8%</td></tr><tr><td>Organic Concentrate Sales Growth</td><td>3.0%</td><td>2.0%</td><td>4.2%</td><td>3.0%</td></tr><tr><td>Other/Calendar impact</td><td>0.0%</td><td>-6.3%</td><td>0.1%</td><td>-0.2%</td></tr><tr><td>Forex impact</td><td>0.1%</td><td>0.0%</td><td>1.0%</td><td>-0.8%</td></tr><tr><td>Structural change/other</td><td>0.0%</td><td>-50.0%</td><td>-14.2%</td><td>-43.2%</td></tr><tr><td>U.S. BEVERAGES, HOUSEHOLD &amp; PERSONAL CARE PRODUCTS</td><td colspan=\"4\"></td></tr><tr><td>Operating income/(loss) - Operating</td><td>$ 71</td><td>$ 94</td><td>$ 444</td><td>$ 284</td></tr><tr><td>Operating income/(loss) - Operating Margin (%)</td><td>5.0%</td><td>13.0%</td><td>8.4%</td><td>9.4%</td></tr></table>",
+        "bbox": [
+            104,
+            816,
+            890,
+            974
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/bff7ac7ef7e4009f30dc55cd48db25086b737ff90b117c357ba37b09a29ee912.jpg",
+        "table_caption": [
+            "EXHIBIT 9: Financial Forecast for KO"
+        ],
+        "table_footnote": [
+            "Source: Company Reports, Bloomberg, Bernstein Analysis and Estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td>LTM</td><td colspan=\"3\">NTM</td><td colspan=\"3\">NTM +1</td></tr><tr><td>Actuals</td><td>BernE</td><td>Cons.</td><td>Δ</td><td>BernE</td><td>Cons.</td><td>Δ</td></tr><tr><td>Sales Growth %</td><td>6.1</td><td>-2.5</td><td>-1.6</td><td>(0.9)pp</td><td>3.2</td><td>4.3</td><td>(1.0)pp</td></tr><tr><td>Op. Income %</td><td>31.7</td><td>33.9</td><td>33.8</td><td>0.1 pp</td><td>35.2</td><td>34.8</td><td>0.3 pp</td></tr><tr><td>EPS</td><td>$3.23</td><td>$3.38</td><td>$3.40</td><td>(0.6%)</td><td>$3.64</td><td>$3.67</td><td>(0.7%)</td></tr><tr><td>YoY EPS Growth</td><td></td><td>5%</td><td>5%</td><td></td><td>7%</td><td>8%</td><td></td></tr><tr><td>Multiple</td><td></td><td></td><td>25.9x</td><td></td><td>25.5x</td><td></td><td></td></tr><tr><td>Implied Stock Price</td><td></td><td></td><td>$88</td><td>→</td><td>$93</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>5%</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            90,
+            888,
+            281
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c56c96892b7b2b5d7d5bb4de2be75fcf4761e050861196efc7227f3245765f15.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 10: Regression Analysis: P/E Multiple vs Organic Sales Growth as of Jul 28, 2026"
+        ],
+        "chart_footnote": [
+            "Source: Capital IQ and Bernstein Analysis"
+        ],
+        "bbox": [
+            107,
+            359,
+            777,
+            758
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "APPENDIX - FINANCIAL FORECASTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            385,
+            85
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/75d1a0616b4942abe66d097890daa1ecb8a190d6a7aa9f18abc4e53d18482349.jpg",
+        "table_caption": [
+            "EXHIBIT 11: KO Income Statement"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Income Statement(in US$ million)</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025Q1</td><td>2025Q2</td><td>2025Q3</td><td>2025Q4</td><td>2025</td><td>2026Q1</td><td>2026Q2</td><td>2026Q3E</td><td>2026Q4E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td></tr><tr><td>Net Operating Revenue</td><td>33,014</td><td>38,655</td><td>43,004</td><td>45,754</td><td>47,061</td><td>11,129</td><td>12,535</td><td>12,455</td><td>11,822</td><td>47,941</td><td>12,472</td><td>13,380</td><td>12,976</td><td>10,878</td><td>49,698</td><td>49,353</td><td>51,880</td><td>54,225</td><td>56,784</td><td>59,546</td></tr><tr><td>Cost of Goods Sold</td><td>13,433</td><td>15,357</td><td>18,000</td><td>18,520</td><td>18,324</td><td>4,163</td><td>4,714</td><td>4,797</td><td>4,723</td><td>18,397</td><td>4,620</td><td>4,965</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Gross Profit</td><td>19,581</td><td>23,298</td><td>25,004</td><td>27,234</td><td>28,737</td><td>6,966</td><td>7,821</td><td>7,658</td><td>7,099</td><td>29,544</td><td>7,852</td><td>8,415</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>SG&amp;A</td><td>9,731</td><td>12,144</td><td>12,880</td><td>13,972</td><td>14,582</td><td>3,234</td><td>3,470</td><td>3,618</td><td>4,199</td><td>14,521</td><td>3,472</td><td>3,720</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other Operating Charges</td><td>853</td><td>846</td><td>1,215</td><td>1,951</td><td>4,163</td><td>73</td><td>71</td><td>58</td><td>1,059</td><td>1,261</td><td>21</td><td>23</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Operating Profit</td><td>8,997</td><td>10,308</td><td>10,909</td><td>11,311</td><td>9,992</td><td>3,659</td><td>4,280</td><td>3,982</td><td>1,841</td><td>13,762</td><td>4,359</td><td>4,672</td><td>4,309</td><td>2,856</td><td>16,196</td><td>17,146</td><td>18,426</td><td>19,349</td><td>20,357</td><td>21,476</td></tr><tr><td>o/w Adjusted Operating Profit</td><td>9,770</td><td>11,109</td><td>12,345</td><td>13,336</td><td>14,085</td><td>3,787</td><td>4,381</td><td>3,957</td><td>2,888</td><td>15,013</td><td>4,300</td><td>4,758</td><td>4,309</td><td>2,856</td><td>16,223</td><td>17,146</td><td>18,426</td><td>19,349</td><td>20,357</td><td>21,476</td></tr><tr><td>Interest expense</td><td>1,437</td><td>1,597</td><td>882</td><td>1,527</td><td>1,656</td><td>387</td><td>445</td><td>391</td><td>431</td><td>1,654</td><td>375</td><td>369</td><td>392</td><td>392</td><td>1,528</td><td>1,742</td><td>1,742</td><td>1,742</td><td>1,742</td><td>1,742</td></tr><tr><td>Interest income</td><td>370</td><td>276</td><td>449</td><td>907</td><td>988</td><td>180</td><td>188</td><td>185</td><td>233</td><td>786</td><td>222</td><td>198</td><td>196</td><td>246</td><td>863</td><td>998</td><td>1,238</td><td>1,464</td><td>1,853</td><td>2,005</td></tr><tr><td>Equity Income (Loss), Net</td><td>978</td><td>1,438</td><td>1,472</td><td>1,691</td><td>1,770</td><td>351</td><td>561</td><td>644</td><td>475</td><td>2,031</td><td>384</td><td>604</td><td>637</td><td>476</td><td>2,101</td><td>2,251</td><td>2,329</td><td>5,838</td><td>2,309</td><td>2,355</td></tr><tr><td>Other Income (Loss), Net</td><td>841</td><td>2,000</td><td>(262)</td><td>570</td><td>1,992</td><td>254</td><td>212</td><td>(237)</td><td>844</td><td>1,073</td><td>21</td><td>370</td><td>78</td><td>65</td><td>534</td><td>296</td><td>311</td><td>325</td><td>341</td><td>357</td></tr><tr><td>Gain on Issuances of Stock by Equity Companies</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Equity Income-related One-time Charges (sam)</td><td>216</td><td>13</td><td>34</td><td>159</td><td>92</td><td>8</td><td>20</td><td>(7)</td><td>-</td><td>21</td><td>33</td><td>(11)</td><td>-</td><td>-</td><td>22</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other Interest/Income-related One-time Charge</td><td>(240)</td><td>(812)</td><td>221</td><td>(733)</td><td>(1,938)</td><td>(232)</td><td>(171)</td><td>300</td><td>(801)</td><td>(904)</td><td>90</td><td>(320)</td><td>-</td><td>-</td><td>(230)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Profit Before Taxes</td><td>9,749</td><td>12,425</td><td>11,686</td><td>12,952</td><td>13,086</td><td>4,057</td><td>4,796</td><td>4,183</td><td>2,962</td><td>15,998</td><td>4,611</td><td>5,475</td><td>4,829</td><td>3,251</td><td>18,166</td><td>18,950</td><td>20,562</td><td>25,234</td><td>23,118</td><td>24,451</td></tr><tr><td>Adj. Profit Before Taxes</td><td>10,498</td><td>12,427</td><td>13,377</td><td>14,403</td><td>15,333</td><td>3,961</td><td>4,746</td><td>4,451</td><td>3,208</td><td>16,366</td><td>4,675</td><td>5,230</td><td>4,829</td><td>3,251</td><td>17,985</td><td>18,950</td><td>20,562</td><td>25,234</td><td>23,118</td><td>24,451</td></tr><tr><td>Provision for Income Tax</td><td>1,981</td><td>2,621</td><td>2,115</td><td>2,249</td><td>2,437</td><td>722</td><td>993</td><td>500</td><td>646</td><td>2,861</td><td>645</td><td>1,037</td><td>962</td><td>648</td><td>3,292</td><td>3,824</td><td>4,149</td><td>5,092</td><td>4,665</td><td>4,934</td></tr><tr><td>Tax-related One-Time Charges</td><td>61</td><td>(313)</td><td>430</td><td>505</td><td>415</td><td>102</td><td>(6)</td><td>413</td><td>1</td><td>510</td><td>285</td><td>4</td><td>-</td><td>-</td><td>289</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Earnings of Discontinued Operations</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Gain on Sale of Discontinued Operations</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cumulative Effect of Accounting Changes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cumulative Effect of Accounting Changes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net Income Attributable to Noncontrolling Interests</td><td>21</td><td>33</td><td>29</td><td>(11)</td><td>18</td><td>5</td><td>(7)</td><td>(13)</td><td>45</td><td>30</td><td>42</td><td>13</td><td>14</td><td>10</td><td>79</td><td>57</td><td>62</td><td>76</td><td>69</td><td>73</td></tr><tr><td>Net Income</td><td>7,747</td><td>9,771</td><td>9,542</td><td>10,714</td><td>10,631</td><td>3,330</td><td>3,810</td><td>3,696</td><td>2,271</td><td>13,107</td><td>3,924</td><td>4,425</td><td>3,852</td><td>2,594</td><td>14,795</td><td>15,069</td><td>16,351</td><td>20,066</td><td>18,383</td><td>19,444</td></tr><tr><td>Net Income (adjusted)</td><td>8,435</td><td>10,086</td><td>10,803</td><td>11,660</td><td>12,463</td><td>3,132</td><td>3,766</td><td>3,551</td><td>2,516</td><td>12,965</td><td>3,703</td><td>4,176</td><td>3,852</td><td>2,594</td><td>14,325</td><td>15,069</td><td>16,351</td><td>20,066</td><td>18,383</td><td>19,444</td></tr><tr><td>Net Income Available to Common Shareholders</td><td>7,747</td><td>9,771</td><td>9,542</td><td>10,714</td><td>10,631</td><td>3,330</td><td>3,810</td><td>3,696</td><td>2,271</td><td>13,107</td><td>3,924</td><td>4,425</td><td>3,852</td><td>2,594</td><td>14,795</td><td>15,0 69</td><td>16,351</td><td>20,066</td><td>18,383</td><td>19,444</td></tr><tr><td>Cash Dividend Declared</td><td>1.64</td><td>1.68</td><td>1.76</td><td>1.84</td><td>1.97</td><td>0.51</td><td>0.51</td><td>0.51</td><td>0.51</td><td>2.04</td><td>0.53</td><td>0.53</td><td>0.54</td><td>0.54</td><td>2.13</td><td>2.23</td><td>2.33</td><td>2.43</td><td>2.54</td><td>2.65</td></tr><tr><td>Basic earnings per share</td><td>1.80</td><td>2.26</td><td>2.20</td><td>2.48</td><td>2.47</td><td>0.77</td><td>0.89</td><td>0.86</td><td>0.53</td><td>3.05</td><td>0.91</td><td>1.03</td><td>0.90</td><td>0.60</td><td>3.44</td><td>3.51</td><td>3.81</td><td>4.68</td><td>4.29</td><td>4.54</td></tr><tr><td>Diluted earnings per share</td><td>1.79</td><td>2.25</td><td>2.19</td><td>2.47</td><td>2.46</td><td>0.77</td><td>0.88</td><td>0.86</td><td>0.53</td><td>3.04</td><td>0.91</td><td>1.03</td><td>0.89</td><td>0.60</td><td>3.43</td><td>3.50</td><td>3.80</td><td>4.67</td><td>4.28</td><td>4.53</td></tr><tr><td>Adjusted diluted earnings per share</td><td>1.95</td><td>2.32</td><td>2.48</td><td>2.69</td><td>2.88</td><td>0.73</td><td>0.87</td><td>0.82</td><td>0.58</td><td>3.01</td><td>0.86</td><td>0.97</td><td>0.89</td><td>0.60</td><td>3.32</td><td>3.50</td><td>3.80</td><td>4.67</td><td>4.28</td><td>4.53</td></tr><tr><td>Basic Shares Outstanding</td><td>4,295</td><td>4,315</td><td>4,328</td><td>4,323</td><td>4,309</td><td>4,302</td><td>4,304</td><td>4,303</td><td>4,303</td><td>4,303</td><td>4,302</td><td>4,303</td><td>4,300</td><td>4,295</td><td>4,300</td><td>4,294</td><td>4,291</td><td>4,288</td><td>4,285</td><td>4,282</td></tr><tr><td>Diluted Shares Outstanding</td><td>4,323</td><td>4,340</td><td>4,350</td><td>4,339</td><td>4,320</td><td>4,313</td><td>4,315</td><td>4,313</td><td>4,313</td><td>4,313</td><td>4,314</td><td>4,313</td><td>4,310</td><td>4,305</td><td>4,311</td><td>4,304</td><td>4,301</td><td>4,299</td><td>4,296</td><td>4,293</td></tr></table>",
+        "bbox": [
+            106,
+            119,
+            890,
+            349
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, Bloomberg, Bernstein estimates and analysis",
+        "bbox": [
+            104,
+            364,
+            452,
+            376
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            940,
+            344,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            313,
+            85
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/a2bb6f2a522608fe9736d34a72293999e6bccc056e4254d08c81fe7174b7a017.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">28 Jul 2026</td><td>TTM</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td></tr><tr><td></td><td></td><td rowspan=\"2\">Closing Price</td><td rowspan=\"2\">Price Target</td><td rowspan=\"2\">Rel. Perf.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>KO (Coca-Cola Co)</td><td>M</td><td>USD</td><td>88.27</td><td>93.00</td><td>13.4%</td><td>USD</td><td>3.01</td><td>3.32</td><td>3.50</td><td>29.4</td><td>26.6</td><td>25.2</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>83.00</td><td></td><td></td><td></td><td>3.25</td><td>3.42</td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,428.78</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            99,
+            890,
+            189
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended Source: Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            208,
+            616,
+            236
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            882,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            112
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            893,
+            220
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            893,
+            273
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            300
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Coca-Cola Co",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            202,
+            328
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We value Coca-Cola using EPS of \\$3.64 (NTM+1) and a 25.5x P/E multiple (implying \\$93), cross-checked against EV/EBIT on \\$17,791 EBIT (NTM+1) at 26.4x (implying \\$102.13) and a DCF with 7.8% WACC and 2% terminal growth (implying \\$92.54), with valuation sensitivity primarily driven by Organic Sales Growth.",
+        "bbox": [
+            102,
+            342,
+            893,
+            387
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            398,
+            153,
+            412
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Coca-Cola Co",
+        "text_level": 2,
+        "bbox": [
+            104,
+            426,
+            200,
+            440
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We see the following downside risks to our KO Target Price:",
+        "bbox": [
+            104,
+            455,
+            473,
+            469
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Decreased consumer demand driven by economic pressure on consumers (e.g., inflation, unemployment)",
+        "bbox": [
+            104,
+            483,
+            769,
+            497
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Loss of market share to other companies",
+        "bbox": [
+            104,
+            510,
+            380,
+            523
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Stricter government regulations regarding soft drinks",
+        "bbox": [
+            104,
+            537,
+            457,
+            551
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- A change in consumer preferences, driven by health or environmental concerns",
+        "bbox": [
+            104,
+            565,
+            612,
+            579
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Commodity costs and/or FX fluctuations",
+        "bbox": [
+            104,
+            593,
+            377,
+            607
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Changes in Coca-Cola's stances towards M&A or the prioritization of cash in general",
+        "bbox": [
+            104,
+            621,
+            643,
+            635
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "And we see the following upside risks to our KO Price Target:",
+        "bbox": [
+            104,
+            648,
+            480,
+            662
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Faster-than-expected pricing and mix resilience, with limited volume elasticity, drives stronger organic growth and margin than a bear case assumes.",
+        "bbox": [
+            104,
+            676,
+            893,
+            704
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "bbox": [
+            104,
+            717,
+            508,
+            731
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            743,
+            320,
+            757
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            770,
+            218,
+            784
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            796,
+            893,
+            878
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            891,
+            429,
+            905
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            893,
+            84
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            71,
+            549,
+            85
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            99,
+            637,
+            113
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "• Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            126,
+            658,
+            140
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            152,
+            893,
+            181
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            193,
+            893,
+            234
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            247,
+            519,
+            261
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            273,
+            532,
+            287
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            299,
+            359,
+            313
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments, and the Bloomberg Japan Financials Large & Mid Cap Price Return Index (JPFILM) for Japanese Financials. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            325,
+            893,
+            435
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            448,
+            542,
+            460
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            474,
+            584,
+            488
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+        "bbox": [
+            104,
+            502,
+            604,
+            516
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            529,
+            694,
+            544
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            556,
+            892,
+            585
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            595,
+            893,
+            638
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            650,
+            784,
+            664
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            676,
+            519,
+            690
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            702,
+            607,
+            715
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            729,
+            364,
+            742
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            755,
+            547,
+            768
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            782,
+            892,
+            811
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            824,
+            893,
+            854
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            867,
+            892,
+            897
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            102,
+            70,
+            565,
+            84
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            95,
+            346,
+            109
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            123,
+            893,
+            152
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            162,
+            893,
+            218
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            229,
+            320,
+            244
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            256,
+            486,
+            271
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            282,
+            893,
+            313
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            325,
+            893,
+            356
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            369,
+            893,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            410,
+            504,
+            425
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            436,
+            892,
+            465
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            476,
+            893,
+            518
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/e35a88a2fe6dcd31eed517394ea209b94637cffea9ee2dcb0f9eef308eed3dd3.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+        "bbox": [
+            107,
+            580,
+            890,
+            702
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            890,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly.",
+        "bbox": [
+            102,
+            714,
+            890,
+            757
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            490,
+            84
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e2de350ae61e385dc877abc69d26f4a24fe030fa59bfceaa3e2d3152ae2d1b4d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Coca-Cola Co (KO) Rating History for Bernstein as of 07/28/2026",
+            "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            109,
+            867,
+            301
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            359,
+            282,
+            375
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from Coca-Cola Co.",
+        "bbox": [
+            102,
+            387,
+            892,
+            414
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Coca-Cola Co.",
+        "bbox": [
+            102,
+            426,
+            892,
+            455
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Coca-Cola Co.",
+        "bbox": [
+            102,
+            465,
+            893,
+            494
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Coca-Cola Co.",
+        "bbox": [
+            102,
+            506,
+            892,
+            534
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Coca-Cola Co.",
+        "bbox": [
+            102,
+            546,
+            797,
+            560
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Coca-Cola Co.",
+        "bbox": [
+            104,
+            573,
+            777,
+            585
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Coca-Cola Co.",
+        "bbox": [
+            104,
+            611,
+            861,
+            625
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of Coca-Cola Co.",
+        "bbox": [
+            102,
+            638,
+            848,
+            652
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            664,
+            228,
+            676
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            690,
+            893,
+            718
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            729,
+            514,
+            743
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            756,
+            383,
+            768
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            782,
+            584,
+            796
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            809,
+            328,
+            821
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            835,
+            331,
+            849
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            861,
+            441,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            888,
+            367,
+            901
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            70,
+            496,
+            84
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            95,
+            645,
+            111
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            123,
+            506,
+            138
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            148,
+            413,
+            162
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            175,
+            893,
+            273
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            284,
+            893,
+            325
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            337,
+            217,
+            351
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            363,
+            893,
+            419
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            429,
+            444,
+            444
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            455,
+            893,
+            500
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            508,
+            501,
+            523
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            104,
+            536,
+            638,
+            551
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            564,
+            893,
+            669
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            104,
+            681,
+            893,
+            741
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            753,
+            893,
+            795
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            806,
+            893,
+            849
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            859,
+            893,
+            916
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            519,
+            85
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            95,
+            893,
+            138
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            150,
+            893,
+            207
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            217,
+            893,
+            244
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            257,
+            893,
+            286
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            297,
+            893,
+            339
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            351,
+            895,
+            476
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            484,
+            893,
+            515
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            525,
+            893,
+            609
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            101,
+            619,
+            895,
+            732
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            742,
+            893,
+            785
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            796,
+            893,
+            824
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any",
+        "bbox": [
+            101,
+            835,
+            895,
+            919
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "applicable laws and regulations.",
+        "bbox": [
+            104,
+            70,
+            307,
+            84
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            95,
+            893,
+            179
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            191,
+            893,
+            248
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            258,
+            893,
+            328
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            340,
+            339,
+            354
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            104,
+            368,
+            308,
+            381
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- making a market for a financial product; and",
+        "bbox": [
+            104,
+            395,
+            398,
+            409
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            422,
+            390,
+            436
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            449,
+            893,
+            518
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            104,
+            531,
+            893,
+            590
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            603,
+            892,
+            633
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            646,
+            594,
+            661
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            674,
+            893,
+            704
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            717,
+            493,
+            731
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            744,
+            764,
+            758
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            772,
+            647,
+            786
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            799,
+            781,
+            814
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            827,
+            893,
+            857
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            869,
+            813,
+            883
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            84,
+            893,
+            113
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            126,
+            893,
+            155
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            169,
+            674,
+            184
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            196,
+            893,
+            257
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            268,
+            893,
+            299
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            311,
+            893,
+            340
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            354,
+            893,
+            383
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            397,
+            893,
+            441
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            454,
+            893,
+            523
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            534,
+            893,
+            619
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            628,
+            155,
+            643
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            655,
+            893,
+            698
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            709,
+            893,
+            763
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            101,
+            776,
+            895,
+            914
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            893,
+            127
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            137,
+            895,
+            262
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            273,
+            893,
+            383
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            393,
+            893,
+            422
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            434,
+            893,
+            518
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            529,
+            893,
+            570
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            101,
+            582,
+            895,
+            708
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            101,
+            717,
+            895,
+            856
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            866,
+            895,
+            922
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            890,
+            85
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            95,
+            893,
+            167
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            101,
+            176,
+            895,
+            287
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Cristian Rios +1 917 344 8615 cristian.rios@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            421,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "U.S. BEVERAGES, HOUSEHOLD & PERSONAL CARE PRODUCTS",
+        "bbox": [
+            104,
+            939,
+            344,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 16
+    }
+]

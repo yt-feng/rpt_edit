@@ -1,0 +1,111 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "BYD 首款轻自动车",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "仍在调整影响->仍在调整，并影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729.pdf",
+    "cleaned_source_title": "Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+    "raw_candidates": [
+      "Bernstein：比亚迪轻自动车BEV Racco进入日本市场",
+      "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+      "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+      "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+      "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导",
+      "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+      "Bernstein：扣除15万日元政府补贴后，入门版实际支付价低于200万日元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：比亚迪Racco定价199.5万日元，年销目标1万辆",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "Bernstein：比亚迪Racco进入日本轻自动车市场，铃木大发主导",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      },
+      {
+        "title": "Bernstein：Asian汽车-BYDsKeicarBEVRacco",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "Bernstein：扣除15万日元政府补贴后，入门版实际支付价低于200万日元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：比亚迪轻自动车BEVRacco进入日本市场"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "596",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

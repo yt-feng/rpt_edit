@@ -1,0 +1,114 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0005-05-Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "AI正在重写网络安全",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact-260728.pdf",
+    "cleaned_source_title": "Bernstein-U.S. SMID-Cap Software-Cybersecurity- mid--26 CISO conference call transcript covering budget trends and priorities-AI-impact",
+    "institution_name": "Bernstein",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+    "raw_candidates": [
+      "美国中小盘软件与网络安全CISO电话会：预算趋势与AI影响",
+      "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+      "美国中小盘软件与网络安全：AI驱动预算增长与身份管理重构"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+      "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+      "Bernstein：美国中小盘软件与网络安全，AI驱动预算增长与身份管理重构",
+      "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+      "Bernstein：CISO圆桌讨论揭示AI正在重塑网络安全预算与架构"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：CISO电话会揭示AI重塑网络安全预算与架构",
+        "reasons": [
+          "anchor_coverage=0.41",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：美国中小盘软件与网络安全，AI驱动预算增长与身份管理重构",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：AI.SMIDCap软件Cybersecurity-mid",
+        "reasons": [
+          "incomplete_last_segment",
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：CISO圆桌讨论揭示AI正在重塑网络安全预算与架构",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：美国中小盘软件与网络安全CISO电话会，预算趋势与AI影响"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "503",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

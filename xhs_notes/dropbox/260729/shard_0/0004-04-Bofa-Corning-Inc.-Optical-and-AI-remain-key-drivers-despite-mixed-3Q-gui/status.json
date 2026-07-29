@@ -1,0 +1,119 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fz9dyi_t/pdfs/0004-04-Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "BofA",
+  "cover_short_title": "康宁：光通信+AI撑",
+  "cover_subtitle": "企业级光通信增长65%的隐忧",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资周期->研究周期 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "BofA：AI技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200-260728.pdf",
+    "cleaned_source_title": "Bofa-Corning Inc. Optical and AI remain key drivers despite mixed 3Q guide- PO to -200",
+    "institution_name": "BofA",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "BofA：CorningInc.Optical和AIrem",
+    "raw_candidates": [
+      "康宁光通信与AI驱动因素-目标价调整",
+      "康宁光通信与AI驱动因素-三季度指引低于预期",
+      "康宁企业光通信与AI需求-估值与增长观察"
+    ],
+    "cleaned_candidates": [
+      "BofA：CorningInc.Optical和AIrem",
+      "BofA：康宁光通信与AI驱动因素-三季度指引低于预期",
+      "BofA：康宁企业光通信与AI需求-估值与增长观察",
+      "BofA：AI技术与相关数据观察"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english",
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "BofA：CorningInc.Optical和AIrem",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BofA：康宁企业光通信与AI需求-估值与增长观察",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "BofA：AI技术与相关数据观察",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "BofA：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "BofA：康宁光通信与AI驱动因素-三季度指引低于预期",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "BofA：AI技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "433",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
