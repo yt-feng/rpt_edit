@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0001-06-Bernstein-Unilever -ULVR.LN- 1H 2Q26- Light at the end of the tunnel--260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0002-07-Bofa-Seagate Technology Solid visibility- improving pricing trends drive upside- PO stays at -1-150-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0003-08-CITI-Tokenization 2030-Wall Street On-Chain-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0004-09-CITI-Laopu Gold -6181.HK- Severe miss in 2Q26-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0005-10-GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds-260728.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

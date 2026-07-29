@@ -1,0 +1,71 @@
+ZH_A: 今天我们要聊的这份报告，来自某外资投行，标题是《Tokenization 2030: Wall Street On-Chain》。它说，到2030年，全球代币化资产规模可能会达到5.5万亿美元。这个数字听起来很惊人，但我要先问一下，这份报告真正想回答的核心问题是什么？
+
+ZH_B: 其实很简单，它想回答的是：华尔街到底会不会真的上链？过去几年，代币化这个概念一直被提起，但进展很慢。这份报告的核心判断是，现在情况变了，代币化正在从实验阶段走向实际部署。
+
+ZH_A: 所以你说“情况变了”，那具体是什么在驱动这个变化？我觉得听众最关心的就是，为什么现在是这个时间点？
+
+ZH_B: 报告里提到了三个关键驱动力。第一，像DTCC、纽交所、纳斯达克这样的核心金融基础设施，已经开始把代币化整合到它们的主流程里，这不再是边缘实验。第二，监管在变清晰，尤其是美国那边，有一些法案在推进。第三，也是最关键的一点，就是链上有了真正的钱——稳定币和代币化存款。
+
+ZH_A: 链上有了钱，这听起来很关键。你解释一下，为什么之前没有这个，代币化就跑不起来？
+
+ZH_B: 对。之前的代币化尝试，结算还是要走传统银行系统，效率提升有限。但现在有了受监管的稳定币，预计到2030年规模能达到1.9万亿美元，再加上银行自己发的代币化存款，这就为代币化证券的结算提供了一个原生的、实时的流动性基础。
+
+ZH_A: 所以这意味着，代币化不再只是技术概念，而是有了实际的经济生态。那报告里有没有说，哪些资产会最先上链？
+
+ZH_B: 报告明确指出，最先起量的不是私募市场，而是公开市场的证券，尤其是美国股票和国债。它算了一笔账：如果到2030年，有10%的美国零售投资者使用链上解决方案，那就会产生大约2.6万亿美元的对代币化公开股票的需求。
+
+ZH_A: 2.6万亿，这已经是很大的数字了。但我也注意到，报告说这个转变是“演进”而不是“革命”。这怎么理解？
+
+ZH_B: 对，这一点很重要。报告强调，不会有一个突然的切换。未来很长一段时间，会是一个“混合模式”——代币化系统和传统系统并行运行。它用了一个比喻，就像高速公路的ETC通道，一开始是人工和自动车道并存，反而增加了复杂性和成本，直到最后才完全自动化。
+
+ZH_A: 所以这其实是个挺“乱”的过程，对吧？那报告里有没有提到，在这个过程中，谁会是赢家，谁又面临压力？
+
+ZH_B: 它提出了一个很有趣的概念，叫“结构性协调者”。就是那些既能控制资产发行，又能控制结算轨道的机构，比如某些大型银行、资产管理公司或者稳定币发行方。它们可以通过垂直整合来捕获更多价值。而传统的交易后中介，比如清算所，会面临结构性压力，因为结算变得更快、更自动化了。
+
+ZH_A: 这听起来像是整个金融市场的权力结构在重新分配。那报告有没有提到，这个转变过程中最大的风险是什么？
+
+ZH_B: 它指出，最大的限制因素已经不是技术了，而是监管的一致性、流动性的协调，以及处理混合模式复杂性的能力。特别是监管，如果不同地区出台不同的规则，反而会造成市场碎片化，增加合规成本。
+
+ZH_A: 这确实是个现实问题。那报告里有没有哪些问题，它自己都没有完全展开，或者说留下了悬念？
+
+ZH_B: 有两个非常关键的点，报告只是提了个头，没有深入。第一，是跨链互操作性。代币化资产如果都跑在不同的链上，那怎么交易？标准谁来定？第二，是链上身份和合规问题。在去中心化的环境里，如何做KYC和反洗钱？这些问题的答案，可能决定了代币化到底能走多远。
+
+ZH_A: 这两个问题确实非常核心。如果听众想深入了解这些悬念，以及完整的市场规模预测和案例，最好的方式还是去阅读这份完整的报告。我们今天的讨论就到这里，感谢收听。
+
+ZH_B: 谢谢大家，我们下期再见。
+
+EN_A: So today we are digging into a report from a global investment bank called "Tokenization 2030: Wall Street On-Chain." It projects the tokenized asset market could hit 5.5 trillion dollars by 2030. But before we get into the numbers, I want to ask you—what is the one big question this report is really trying to answer?
+
+EN_B: It’s pretty straightforward. The report is asking: is Wall Street actually going on-chain? We’ve been hearing about tokenization for years, but progress was slow. The big takeaway here is that things have changed. Tokenization is moving from pilot projects to real operational deployment.
+
+EN_A: So what changed? Why is this time different? I think our listeners want to know what the catalysts are.
+
+EN_B: The report points to three main drivers. First, the big market infrastructure players—like the DTCC, the NYSE, and Nasdaq—are now integrating tokenization into their core systems. This isn't a side project anymore. Second, regulatory clarity is improving, especially in the U.S. with some key bills moving forward. And third, and this is the most important one, we now have regulated on-chain money—stablecoins and tokenized deposits.
+
+EN_A: On-chain money. That sounds like the missing piece. Why was that such a bottleneck?
+
+EN_B: Exactly. Earlier attempts at tokenization had to settle through traditional banking rails. That limited the efficiency gains. Now, with regulated stablecoins, which the report projects to reach 1.9 trillion dollars by 2030, and tokenized deposits from major banks, you have a native, real-time liquidity base for settling tokenized securities. This enables what they call atomic settlement.
+
+EN_A: So it’s not just a tech story anymore; it’s becoming an economic ecosystem. Does the report say which asset classes will lead the charge?
+
+EN_B: Yes, and the answer might surprise you. It’s not private markets. The report says the growth will be led by public market securities, specifically U.S. equities and treasuries. They did a calculation: if just 10% of U.S. retail investors use on-chain solutions by 2030, that alone creates about 2.6 trillion dollars in demand for tokenized public equities.
+
+EN_A: That’s a massive number. But I also noticed the report emphasizes this is an evolution, not a revolution. What does that mean in practice?
+
+EN_B: It means there won’t be a sudden switch. For a long time, we’ll be in a hybrid model where tokenized systems and legacy systems run side-by-side. The report uses a great analogy—the E-ZPass tollbooth. You had manual lanes and automated lanes running in parallel for years, which actually added cost and complexity before you got to full automation.
+
+EN_A: So it’s going to be a messy transition. Who benefits in that process, and who gets squeezed?
+
+EN_B: The report introduces a concept called “Structural Orchestrators.” These are institutions that control both the issuance and the settlement rails—think big banks, asset managers, or stablecoin issuers. They can capture more value through vertical integration. On the flip side, traditional post-trade intermediaries like clearing houses face structural pressure, because settlement becomes faster and more automated.
+
+EN_A: So the power structure of finance is being reshuffled. What about the risks? What does the report see as the biggest hurdle?
+
+EN_B: It says the biggest constraint is no longer technology. It’s regulatory alignment, liquidity coordination, and the ability to manage the complexity of a hybrid system. The report warns that if different regions create different rules, you get market fragmentation, which actually increases compliance costs.
+
+EN_A: That’s a very real concern. Are there any big questions the report leaves unanswered? Things it hints at but doesn’t fully explore?
+
+EN_B: Yes, two big ones. First, interoperability between different blockchains. If tokenized assets live on different chains, how do you trade them? Who sets the standards? Second, on-chain identity and compliance. How do you do KYC and anti-money laundering in a decentralized environment? The report raises these issues but doesn’t give a definitive answer. The resolution of those questions might determine how far tokenization can really go.
+
+EN_A: Those are absolutely critical. If our listeners want to dive deeper into those questions, and see the full market forecasts and case studies, the best way is to read the complete report. Thanks for joining us today.
+
+EN_B: Thanks for having me. See you next time.

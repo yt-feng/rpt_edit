@@ -1,0 +1,1809 @@
+[
+    {
+        "type": "text",
+        "text": "Seagate Technology",
+        "text_level": 1,
+        "bbox": [
+            37,
+            64,
+            297,
+            92
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Solid visibility, improving pricing trends drive upside; PO stays at \\$1,150",
+        "text_level": 1,
+        "bbox": [
+            35,
+            104,
+            593,
+            160
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Reiterate Rating: BUY | PO: 1,150.00 USD | Price: 747.30 USD",
+        "bbox": [
+            37,
+            162,
+            419,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strong beat & raise; strength and durability intact",
+        "text_level": 2,
+        "bbox": [
+            37,
+            199,
+            540,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "STX shares traded higher after-hours as STX beat F4Q expectations & guided F1Q27 rev/EPS materially above BofA & Street ests. F4Q GM of 52.7% was above our est of 50.2%. F1Q guide implies GM of 57.3% (on mid-pt), & mgmt expects rev & margins to increase sequentially throughout F27 & expects F27 rev growth to exceed F26 (>34% y/y). Visibility continues to improve with build-to-order contracts through the end of F27, while vast majority of nearline EB is now allocated into C28 & customers are extending planning horizons into C29 & beyond. Reiterate Buy on secular demand from cloud, continued pricing & margin improvement, and STX's path toward higher-capacity HAMR HDDs.",
+        "bbox": [
+            35,
+            218,
+            630,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strong pricing supports continued margin expansion",
+        "text_level": 2,
+        "bbox": [
+            37,
+            359,
+            563,
+            378
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "STX delivered incremental GM of 83.2% y/y in F4Q, while F1Q guidance implies incremental GM of \\~88% y/y, reflecting favorable pricing, higher capacity nearline mix, and continued cost improvements. Mgmt noted the supply/demand gap has widened and incremental EBs available above contracted volumes are being sold at higher prices. While the expiration of preferential pricing for STX's initial HAMR customer provides a modest F1Q benefit, mgmt indicated this is not the primary driver of the pricing improvement. Broader demand & customers seeking volume are more meaningful.",
+        "bbox": [
+            35,
+            378,
+            627,
+            486
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Other takeaways from the earnings call",
+        "text_level": 2,
+        "bbox": [
+            37,
+            489,
+            434,
+            508
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "HAMR was \\~40% of nearline shipment run rate exiting F26. Mozaic 4+ was a contributor in F4Q, should contribute more in F1Q, and is expected to continue ramping through F27. 50% of HAMR EB is expected to be on Mozaic 4+ exiting C26, while Mozaic 5+ qual shipments remain on track for late C27. Nearline supply is largely allocated into C28, with customers extending planning into C29. STX reiterated mid-20% EB growth target. Longer term, data growth is broadening beyond traditional workloads as inference & agentic apps (and eventually physical AI) create and retain more unstructured data.",
+        "bbox": [
+            35,
+            508,
+            625,
+            616
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Adjusting estimates; PO stays at \\$1,150",
+        "text_level": 2,
+        "bbox": [
+            37,
+            619,
+            442,
+            638
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Our F27 revenue/EPS move to \\$17.5bn/\\$32.06 from \\$16.9bn/\\$26.88. Our PO stays at \\$1,150 on 19x (unchanged) C28 EPS of \\$61.42 (prior \\$61.24).",
+        "bbox": [
+            37,
+            638,
+            609,
+            669
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/01998633e98e3ccfecda88948ec3f9fce832afc06aeab8d09bbd41268d6bd21f.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\* For full definitions of iQmethod $^{SM}$ measures, see page 6."
+        ],
+        "table_body": "<table><tr><td>Estimates (Jun) (US$)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>EPS</td><td>8.11</td><td>15.59</td><td>32.06</td><td>54.06</td><td>71.64</td></tr><tr><td>GAAP EPS</td><td>6.87</td><td>14.03</td><td>31.28</td><td>52.73</td><td>69.85</td></tr><tr><td>EPS Change (YoY)</td><td>528.7%</td><td>92.2%</td><td>105.6%</td><td>68.6%</td><td>32.5%</td></tr><tr><td>Consensus EPS (Bloomberg)</td><td></td><td></td><td>27.76</td><td>41.61</td><td>NA</td></tr><tr><td>Consensus EPS (Visible Alpha)</td><td></td><td></td><td>28.40</td><td>48.31</td><td>67.81</td></tr><tr><td>DPS</td><td>2.84</td><td>2.94</td><td>2.96</td><td>2.96</td><td>2.96</td></tr><tr><td colspan=\"6\">Valuation (Jun)</td></tr><tr><td>P/E</td><td>92.1x</td><td>47.9x</td><td>23.3x</td><td>13.8x</td><td>10.4x</td></tr><tr><td>GAAP P/E</td><td>108.8x</td><td>53.3x</td><td>23.9x</td><td>14.2x</td><td>10.7x</td></tr><tr><td>Dividend Yield</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td></tr><tr><td>EV / EBITDA*</td><td>69.2x</td><td>34.8x</td><td>17.6x</td><td>10.6x</td><td>8.2x</td></tr><tr><td>Free Cash Flow Yield*</td><td>0.5%</td><td>1.9%</td><td>3.4%</td><td>4.8%</td><td>7.1%</td></tr></table>",
+        "bbox": [
+            42,
+            672,
+            620,
+            861
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.\nRefer to important disclosures on page 7 to 9. Analyst Certification on page 5. Price Objective Basis/Risk on page 5.",
+        "bbox": [
+            35,
+            891,
+            566,
+            963
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "28 July 2026",
+        "text_level": 2,
+        "bbox": [
+            702,
+            199,
+            787,
+            214
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Equity",
+        "bbox": [
+            704,
+            220,
+            753,
+            237
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key Changes",
+        "text_level": 2,
+        "bbox": [
+            712,
+            258,
+            794,
+            273
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/95909ff60464b1497d3b460e711a9bf24ffd35a659213d6a5038aca11f43cafa.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(US$)</td><td>Previous</td><td>Current</td></tr><tr><td>2027E Rev (m)</td><td>16,860.0</td><td>17,470.2</td></tr><tr><td>2028E Rev (m)</td><td>26,238.4</td><td>26,370.0</td></tr><tr><td>2029E Rev (m)</td><td>NA</td><td>33,629.1</td></tr><tr><td>2027E EPS</td><td>26.88</td><td>32.06</td></tr><tr><td>2028E EPS</td><td>50.75</td><td>54.06</td></tr><tr><td>2029E EPS</td><td>NA</td><td>71.64</td></tr><tr><td>2027E DPS</td><td>2.88</td><td>2.96</td></tr></table>",
+        "bbox": [
+            710,
+            277,
+            950,
+            398
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Wamsi Mohan",
+        "text_level": 2,
+        "bbox": [
+            704,
+            416,
+            787,
+            429
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analyst\nBofAS\n+1 646 855 3854\nwamsi.mohan@bofa.com",
+        "bbox": [
+            702,
+            428,
+            833,
+            468
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ruplu Bhattacharya",
+        "text_level": 2,
+        "bbox": [
+            704,
+            470,
+            815,
+            483
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analyst\nBofAS\n+1 646 855 0315\nruplu.bhattacharya@bofa.com",
+        "bbox": [
+            702,
+            481,
+            854,
+            522
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ryan Seungin Choi",
+        "text_level": 2,
+        "bbox": [
+            704,
+            525,
+            810,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analyst\nBofAS\n+1 646 743 0587\nryan.choi2@bofa.com",
+        "bbox": [
+            704,
+            536,
+            816,
+            575
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aisling Grueninger",
+        "text_level": 2,
+        "bbox": [
+            704,
+            579,
+            808,
+            590
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analyst\nBofAS\n+1 646 855 4273\naisling.grueninger@bofa.com",
+        "bbox": [
+            702,
+            590,
+            852,
+            631
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stock Data",
+        "text_level": 2,
+        "bbox": [
+            704,
+            667,
+            772,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/b7975eca428202209aab3d80a809c5454df93275a2c30defaa3c64ded5ec4bf6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Price</td><td>747.30 USD</td></tr><tr><td>Price Objective</td><td>1,150.00 USD</td></tr><tr><td>Date Established</td><td>1-Jul-2026</td></tr><tr><td>Investment Opinion</td><td>C-1-7</td></tr><tr><td>52-Week Range</td><td>138.30 USD - 1,145.00 USD</td></tr><tr><td>Mrkt Val (mn) / Shares Out (mn)</td><td>167,566 USD / 224.2</td></tr><tr><td>Free Float</td><td>99.8%</td></tr><tr><td>Average Daily Value (mn)</td><td>3889.34 USD</td></tr><tr><td>BofA Ticker / Exchange</td><td>STX / NAS</td></tr><tr><td>Bloomberg / Reuters</td><td>STX US / STX.OQ</td></tr><tr><td>ROE (2027E)</td><td>132.2%</td></tr><tr><td>Net Dbt to Eqty (Jun-2026A)</td><td>85.9%</td></tr></table>",
+        "bbox": [
+            702,
+            688,
+            957,
+            902
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abbreviations are on page 4",
+        "text_level": 2,
+        "bbox": [
+            704,
+            928,
+            846,
+            941
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Accessible version",
+        "bbox": [
+            37,
+            5,
+            130,
+            18
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            20,
+            281,
+            37
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BofA",
+        "bbox": [
+            684,
+            15,
+            903,
+            36
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            910,
+            7,
+            968,
+            35
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "12999992",
+        "bbox": [
+            545,
+            950,
+            596,
+            960
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Timestamp: 28 July 2026 08:42PM EDT",
+        "bbox": [
+            37,
+            969,
+            274,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "iQprofile $^{SM}$ Seagate Technology",
+        "text_level": 2,
+        "bbox": [
+            37,
+            60,
+            428,
+            87
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/bea8e7ec78b496a3e9bb6be4cdb05087cc60f520fdc0a4c50571698d0a027382.jpg",
+        "table_caption": [
+            "iQmethod $^{SM}$ – Bus Performance\\*"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(US$ Millions)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Return on Capital Employed</td><td>36.9%</td><td>61.0%</td><td>73.1%</td><td>64.4%</td><td>49.6%</td></tr><tr><td>Return on Equity</td><td>NM</td><td>412.9%</td><td>132.2%</td><td>83.5%</td><td>57.0%</td></tr><tr><td>Operating Margin</td><td>21.1%</td><td>34.7%</td><td>50.3%</td><td>56.1%</td><td>57.5%</td></tr><tr><td>Free Cash Flow</td><td>818</td><td>3,105</td><td>5,676</td><td>8,067</td><td>11,868</td></tr></table>",
+        "bbox": [
+            37,
+            109,
+            625,
+            178
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/0c0b29a4cdb26e83f0da089529ff93b3edc77a8c62f3d972bf808707b21587fd.jpg",
+        "table_caption": [
+            "iQmethod $^{SM}$ – Quality of Earnings\\*"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(US$ Millions)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Cash Realization Ratio</td><td>0.6x</td><td>1.0x</td><td>0.9x</td><td>0.7x</td><td>0.8x</td></tr><tr><td>Asset Replacement Ratio</td><td>1.1x</td><td>2.1x</td><td>3.1x</td><td>4.5x</td><td>5.4x</td></tr><tr><td>Tax Rate</td><td>3.8%</td><td>15.5%</td><td>16.0%</td><td>16.0%</td><td>16.0%</td></tr><tr><td>Net Debt-to-Equity Ratio</td><td>NM</td><td>85.9%</td><td>-31.6%</td><td>-47.6%</td><td>-56.0%</td></tr><tr><td>Interest Cover</td><td>6.6x</td><td>15.7x</td><td>43.5x</td><td>NM</td><td>NM</td></tr></table>",
+        "bbox": [
+            37,
+            218,
+            627,
+            297
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/c1d0d0dab56f86af722c2d3914ffbbb4496461ad936a27998886293e37b136ed.jpg",
+        "table_caption": [
+            "Income Statement Data (Jun)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(US$ Millions)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Sales</td><td>9,097</td><td>12,195</td><td>17,470</td><td>26,370</td><td>33,629</td></tr><tr><td>% Change</td><td>38.9%</td><td>34.1%</td><td>43.3%</td><td>50.9%</td><td>27.5%</td></tr><tr><td>Gross Profit</td><td>3,200</td><td>5,558</td><td>10,227</td><td>16,320</td><td>20,930</td></tr><tr><td>% Change</td><td>108.3%</td><td>73.7%</td><td>84.0%</td><td>59.6%</td><td>28.2%</td></tr><tr><td>EBITDA</td><td>2,378</td><td>4,726</td><td>9,333</td><td>15,476</td><td>20,148</td></tr><tr><td>% Change</td><td>152.7%</td><td>98.7%</td><td>97.5%</td><td>65.8%</td><td>30.2%</td></tr><tr><td>Net Interest &amp; Other Income</td><td>(325)</td><td>(264)</td><td>(119)</td><td>54</td><td>336</td></tr><tr><td>Net Income (Adjusted)</td><td>1,734</td><td>3,539</td><td>7,500</td><td>12,797</td><td>16,944</td></tr><tr><td>% Change</td><td>537.6%</td><td>104.1%</td><td>111.9%</td><td>70.6%</td><td>32.4%</td></tr></table>",
+        "bbox": [
+            37,
+            338,
+            627,
+            469
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Free Cash Flow Data (Jun)",
+        "text_level": 2,
+        "bbox": [
+            37,
+            484,
+            174,
+            500
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/8a631f19a0632e4acaf806fdf456bd179200b2d9e62770818b38625a9a3159ad.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>(US$ Millions)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Net Income from Cont Operations (GAAP)</td><td>1,733</td><td>3,538</td><td>7,500</td><td>12,797</td><td>16,945</td></tr><tr><td>Depreciation &amp; Amortization</td><td>251</td><td>276</td><td>285</td><td>296</td><td>311</td></tr><tr><td>Change in Working Capital</td><td>(965)</td><td>(159)</td><td>(1,316)</td><td>(3,787)</td><td>(3,787)</td></tr><tr><td>Deferred Taxation Charge</td><td>(8)</td><td>(34)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other Adjustments, Net</td><td>72</td><td>53</td><td>79</td><td>80</td><td>80</td></tr><tr><td>Capital Expenditure</td><td>(265)</td><td>(569)</td><td>(874)</td><td>(1,319)</td><td>(1,681)</td></tr><tr><td>Free Cash Flow</td><td>818</td><td>3,105</td><td>5,676</td><td>8,067</td><td>11,868</td></tr><tr><td>% Change</td><td>23.2%</td><td>279.6%</td><td>82.8%</td><td>42.1%</td><td>47.1%</td></tr><tr><td>Share / Issue Repurchase</td><td>72</td><td>(120)</td><td>(140)</td><td>(140)</td><td>(140)</td></tr><tr><td>Cost of Dividends Paid</td><td>(607)</td><td>(634)</td><td>(692)</td><td>(701)</td><td>(700)</td></tr><tr><td>Change in Debt</td><td>(678)</td><td>(1,442)</td><td>0</td><td>0</td><td>0</td></tr></table>",
+        "bbox": [
+            39,
+            502,
+            627,
+            657
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/4565644f6716a116294fbfb9ea2d757d5bc693d82961c87fc10922e471fba7c9.jpg",
+        "table_caption": [
+            "Balance Sheet Data (Jun)"
+        ],
+        "table_footnote": [
+            "\\* For full definitions of IQmethod $^{SM}$ measures, see page 6."
+        ],
+        "table_body": "<table><tr><td>(US$ Millions)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Cash &amp; Equivalents</td><td>891</td><td>1,704</td><td>6,554</td><td>13,786</td><td>24,820</td></tr><tr><td>Trade Receivables</td><td>959</td><td>1,534</td><td>2,088</td><td>4,323</td><td>6,200</td></tr><tr><td>Other Current Assets</td><td>1,803</td><td>1,983</td><td>2,873</td><td>5,220</td><td>6,745</td></tr><tr><td>Property, Plant &amp; Equipment</td><td>1,657</td><td>2,034</td><td>2,882</td><td>4,165</td><td>5,795</td></tr><tr><td>Other Non-Current Assets</td><td>2,713</td><td>2,717</td><td>2,717</td><td>2,717</td><td>2,717</td></tr><tr><td>Total Assets</td><td>8,023</td><td>9,972</td><td>17,115</td><td>30,212</td><td>46,278</td></tr><tr><td>Short-Term Debt</td><td>0</td><td>185</td><td>185</td><td>185</td><td>185</td></tr><tr><td>Other Current Liabilities</td><td>2,648</td><td>2,942</td><td>3,071</td><td>3,865</td><td>3,481</td></tr><tr><td>Long-Term Debt</td><td>4,995</td><td>3,380</td><td>3,465</td><td>3,380</td><td>3,380</td></tr><tr><td>Other Non-Current Liabilities</td><td>833</td><td>1,298</td><td>1,091</td><td>1,298</td><td>1,298</td></tr><tr><td>Total Liabilities</td><td>8,476</td><td>7,805</td><td>7,812</td><td>8,728</td><td>8,344</td></tr><tr><td>Total Equity</td><td>(453)</td><td>2,167</td><td>9,181</td><td>21,483</td><td>37,934</td></tr><tr><td>Total Equity &amp; Liabilities</td><td>8,023</td><td>9,972</td><td>16,993</td><td>30,212</td><td>46,278</td></tr></table>",
+        "bbox": [
+            39,
+            691,
+            627,
+            872
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Company Sector",
+        "text_level": 2,
+        "bbox": [
+            681,
+            95,
+            803,
+            114
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IT Hardware",
+        "bbox": [
+            681,
+            114,
+            745,
+            128
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Company Description",
+        "text_level": 2,
+        "bbox": [
+            666,
+            157,
+            803,
+            172
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Seagate Technology (STX) designs, manufactures and markets hard disk drives for use in enterprise storage, servers, desktops, laptop computers, and other consumer electronic devices. It also has a growing solid state drive and storage systems portfolio. The company sells its products directly to OEMs, as well as distributors and retailers, and its production capabilities are vertically integrated.",
+        "bbox": [
+            665,
+            172,
+            957,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Investment Rationale",
+        "text_level": 2,
+        "bbox": [
+            666,
+            305,
+            803,
+            319
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We expect revenue and earnings to inflect higher as legacy market headwinds become smaller and mass capacity needs increase net of any cannibalization from Flash. We expect overall industry margins to improve and strong shareholder returns to continue. We rate STX Buy.",
+        "bbox": [
+            666,
+            321,
+            950,
+            398
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Stock Data",
+        "text_level": 2,
+        "bbox": [
+            668,
+            460,
+            736,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/5d6ae0790201a04a24951b22f55b4ceee2987d0e3bcedeb5d5f0a5460c0e54b1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Average Daily Volume</td><td>5,204,519</td></tr></table>",
+        "bbox": [
+            666,
+            484,
+            954,
+            500
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Quarterly Earnings Estimates",
+        "text_level": 2,
+        "bbox": [
+            668,
+            527,
+            841,
+            542
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/b07e30ba8962783b7d6a172356bba937859e49f881ff9c12d5041a9d90160680.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>2026</td><td>2027</td></tr><tr><td>Q1</td><td>2.61A</td><td>7.40E</td></tr><tr><td>Q2</td><td>3.11A</td><td>7.99E</td></tr><tr><td>Q3</td><td>4.10A</td><td>7.77E</td></tr><tr><td>Q4</td><td>5.71A</td><td>8.88E</td></tr></table>",
+        "bbox": [
+            666,
+            551,
+            957,
+            628
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            23,
+            163,
+            34
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            37,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            91,
+            952,
+            287,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Model",
+        "text_level": 2,
+        "bbox": [
+            39,
+            58,
+            127,
+            79
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/044b772f5149a9308e31cee089da83c594de919197cb72cfe4bfa2c5971f7747.jpg",
+        "table_caption": [
+            "Figure 1: STX guided F1Q27 revs of \\$4.1bn and EPS of \\$7.30 (both at the mid-point)\nSTX Income Statement"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Seagate Technology Inc. (STX)($ Millions Except Per Share Data)</td><td colspan=\"4\">F2026E</td><td colspan=\"9\">F2027E</td></tr><tr><td>9/25A</td><td>12/25</td><td>3/26</td><td>6/26</td><td>9/26E</td><td>12/26E</td><td>3/27E</td><td>6/27E</td><td>F2024</td><td>F2025</td><td>F2026</td><td>F2027E</td><td>F2028E</td></tr><tr><td colspan=\"14\">Income Statement</td></tr><tr><td>Revenue</td><td>$2,629.0</td><td>$2,825.0</td><td>$3,112.0</td><td>$3,629.0</td><td>$4,150.0</td><td>$4,379.5</td><td>$4,242.5</td><td>$4,698.2</td><td>$6,551.0</td><td>$9,097.0</td><td>$12,195.0</td><td>$17,470.2</td><td>$26,370.0</td></tr><tr><td>Cost of Goods Sold (post options)</td><td>1,592.0</td><td>1,649.0</td><td>1,665.0</td><td>1,731.0</td><td>1,785.4</td><td>1,839.3</td><td>1,742.0</td><td>1,876.9</td><td>5,015.0</td><td>5,897.0</td><td>6,637.0</td><td>7,243.5</td><td>10,049.6</td></tr><tr><td>Gross Profit (Post Options Expense)</td><td>1,040.0</td><td>1,178.0</td><td>1,449.0</td><td>1,899.0</td><td>2,365.6</td><td>2,541.2</td><td>2,501.6</td><td>2,822.4</td><td>1,638.0</td><td>3,204.0</td><td>5,566.0</td><td>10,230.7</td><td>16,324.4</td></tr><tr><td>Total Operating Expenses (Post Options Expense)</td><td>319.0</td><td>330.0</td><td>336.0</td><td>334.0</td><td>346.9</td><td>355.8</td><td>366.5</td><td>375.4</td><td>1,088.0</td><td>1,277.0</td><td>1,319.0</td><td>1,444.7</td><td>1,539.6</td></tr><tr><td>R&amp;D (incl SBC)</td><td>186.0</td><td>187.0</td><td>194.0</td><td>188.0</td><td>195.5</td><td>201.4</td><td>207.4</td><td>211.6</td><td>654.0</td><td>724.0</td><td>755.0</td><td>815.9</td><td>867.7</td></tr><tr><td>SG&amp;A (Incl SBC)</td><td>144.0</td><td>143.0</td><td>143.0</td><td>147.0</td><td>151.4</td><td>154.4</td><td>159.1</td><td>163.8</td><td>460.0</td><td>561.0</td><td>577.0</td><td>628.8</td><td>671.9</td></tr><tr><td>Operating Income (Post Options Expense)</td><td>721.0</td><td>848.0</td><td>1,113.0</td><td>1,565.0</td><td>2,018.6</td><td>2,185.4</td><td>2,135.1</td><td>2,446.9</td><td>550.0</td><td>1,927.0</td><td>4,247.0</td><td>8,786.0</td><td>14,784.8</td></tr><tr><td>Operating Income (Pre Options Expense)</td><td>763.0</td><td>901.0</td><td>1,167.0</td><td>1,619.0</td><td>2,080.9</td><td>2,251.1</td><td>2,198.7</td><td>2,517.4</td><td>677.0</td><td>2,127.0</td><td>4,450.0</td><td>9,048.1</td><td>15,180.3</td></tr><tr><td>Total Interest and Other Income/(Expense)</td><td>(74.0)</td><td>(70.0)</td><td>(62.0)</td><td>(58.0)</td><td>(45.1)</td><td>(35.9)</td><td>(24.8)</td><td>(13.4)</td><td>(343.0)</td><td>(325.0)</td><td>(264.0)</td><td>(119.2)</td><td>54.0</td></tr><tr><td>Interest Income</td><td>7.0</td><td>7.0</td><td>6.0</td><td>10.0</td><td>14.9</td><td>24.1</td><td>35.2</td><td>46.6</td><td>15.0</td><td>25.0</td><td>30.0</td><td>120.8</td><td>294.0</td></tr><tr><td>Interest Expense</td><td>(80.0)</td><td>(72.0)</td><td>(68.0)</td><td>(64.0)</td><td>(52.0)</td><td>(52.0)</td><td>(52.0)</td><td>(52.0)</td><td>(332.0)</td><td>(321.0)</td><td>(284.0)</td><td>(208.0)</td><td>(208.0)</td></tr><tr><td>Other Income/(Expense)</td><td>(1.0)</td><td>(5.0)</td><td>0.0</td><td>(4.0)</td><td>(8.0)</td><td>(8.0)</td><td>(8.0)</td><td>(8.0)</td><td>(26.0)</td><td>(29.0)</td><td>(10.0)</td><td>(32.0)</td><td>(32.0)</td></tr><tr><td>Pretax Income (Pre Options Expense)</td><td>689.0</td><td>831.0</td><td>1,105.0</td><td>1,561.0</td><td>2,035.8</td><td>2,215.2</td><td>2,173.9</td><td>2,504.0</td><td>334.0</td><td>1,802.0</td><td>4,186.0</td><td>8,928.9</td><td>15,234.3</td></tr><tr><td>Income Taxes Expense/(Credit)</td><td>106.0</td><td>129.0</td><td>171.0</td><td>242.0</td><td>325.7</td><td>354.4</td><td>347.8</td><td>400.6</td><td>62.0</td><td>69.0</td><td>648.0</td><td>1,428.6</td><td>2,437.5</td></tr><tr><td>Net Income (Post Options Expense)</td><td>531.0</td><td>649.0</td><td>880.0</td><td>1,265.0</td><td>1,647.8</td><td>1,795.1</td><td>1,762.4</td><td>2,032.9</td><td>171.0</td><td>1,533.0</td><td>3,325.0</td><td>7,238.2</td><td>12,401.3</td></tr><tr><td>Options Expense (net of tax)</td><td>52.0</td><td>53.0</td><td>54.0</td><td>54.0</td><td>62.2</td><td>65.7</td><td>63.6</td><td>70.5</td><td>101.0</td><td>200.0</td><td>213.0</td><td>262.1</td><td>395.6</td></tr><tr><td>Net Income (Pre Options, Amort. Expense)</td><td>583.0</td><td>702.0</td><td>934.0</td><td>1,319.0</td><td>1,710.0</td><td>1,860.8</td><td>1,826.0</td><td>2,103.4</td><td>272.0</td><td>1,733.0</td><td>3,538.0</td><td>7,500.2</td><td>12,796.8</td></tr></table>",
+        "bbox": [
+            53,
+            119,
+            957,
+            433
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/1ede408f30938742ebc7398a01e02a11b69228ba89581472f1715909c9beaf7b.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company Reports, BofA Global Research estimates",
+            "BofA GLOBAL RESEARCH"
+        ],
+        "table_body": "<table><tr><td>Diluted EPS (Pre Options Expense)</td><td>$2.61</td><td>$3.11</td><td>$4.10</td><td>$5.71</td><td>$7.40</td><td>$7.99</td><td>$7.77</td><td>$8.88</td><td>$1.29</td><td>$8.11</td><td>$15.59</td><td>$32.06</td><td>$54.06</td></tr><tr><td>Diluted EPS (Post Options Expense)</td><td>$2.38</td><td>$2.87</td><td>$3.86</td><td>$5.48</td><td>$7.13</td><td>$7.71</td><td>$7.50</td><td>$8.58</td><td>$0.81</td><td>$7.17</td><td>$14.65</td><td>$30.94</td><td>$52.39</td></tr><tr><td>Diluted Weighted Average Shares</td><td>223.0</td><td>226.0</td><td>228.0</td><td>231.0</td><td>231.0</td><td>233.0</td><td>234.9</td><td>236.9</td><td>210.8</td><td>213.8</td><td>227.0</td><td>233.9</td><td>236.7</td></tr><tr><td colspan=\"14\">Income Statement (Cont&#x27;d)</td></tr><tr><td colspan=\"14\">% of Revenues</td></tr><tr><td>Gross Profit (30-33% range)</td><td>40.1%</td><td>42.2%</td><td>47.0%</td><td>52.7%</td><td>57.4%</td><td>58.4%</td><td>59.3%</td><td>60.4%</td><td>25.5%</td><td>35.8%</td><td>46.1%</td><td>58.9%</td><td>62.3%</td></tr><tr><td>Opex (13-15% range)</td><td>11.1%</td><td>10.3%</td><td>9.5%</td><td>8.1%</td><td>7.2%</td><td>7.0%</td><td>7.5%</td><td>6.9%</td><td>15.2%</td><td>12.4%</td><td>9.6%</td><td>7.1%</td><td>4.7%</td></tr><tr><td>R&amp;D</td><td>7.1%</td><td>6.6%</td><td>6.2%</td><td>5.2%</td><td>4.7%</td><td>4.6%</td><td>4.9%</td><td>4.5%</td><td>10.0%</td><td>8.0%</td><td>6.2%</td><td>4.7%</td><td>3.3%</td></tr><tr><td>SG&amp;A</td><td>5.5%</td><td>5.1%</td><td>4.6%</td><td>4.1%</td><td>3.6%</td><td>3.5%</td><td>3.7%</td><td>3.5%</td><td>7.0%</td><td>6.2%</td><td>4.7%</td><td>3.6%</td><td>2.5%</td></tr><tr><td>Operating Income (Post-options)</td><td>27.4%</td><td>30.0%</td><td>35.8%</td><td>43.1%</td><td>48.6%</td><td>49.9%</td><td>50.3%</td><td>52.1%</td><td>8.4%</td><td>21.2%</td><td>34.8%</td><td>50.3%</td><td>56.1%</td></tr><tr><td>Stock-Based Comp Expense</td><td>2.0%</td><td>1.9%</td><td>1.7%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>2.2%</td><td>1.7%</td><td>1.5%</td><td>1.5%</td></tr><tr><td>EBIT (Pre-options)</td><td>29.0%</td><td>31.9%</td><td>37.5%</td><td>44.6%</td><td>50.1%</td><td>51.4%</td><td>51.8%</td><td>53.6%</td><td>10.3%</td><td>23.4%</td><td>36.5%</td><td>51.8%</td><td>57.6%</td></tr><tr><td>Pretax Income</td><td>26.2%</td><td>29.4%</td><td>35.5%</td><td>43.0%</td><td>49.1%</td><td>50.6%</td><td>51.2%</td><td>53.3%</td><td>5.1%</td><td>19.8%</td><td>34.3%</td><td>51.1%</td><td>57.8%</td></tr><tr><td>Tax Rate</td><td>15.4%</td><td>15.5%</td><td>15.5%</td><td>15.5%</td><td>16.0%</td><td>16.0%</td><td>16.0%</td><td>16.0%</td><td>18.6%</td><td>3.8%</td><td>15.5%</td><td>16.0%</td><td>16.0%</td></tr><tr><td>Net Income (Operating, pre-options)</td><td>22.2%</td><td>24.8%</td><td>30.0%</td><td>36.3%</td><td>41.2%</td><td>42.5%</td><td>43.0%</td><td>44.8%</td><td>4.2%</td><td>19.1%</td><td>29.0%</td><td>42.9%</td><td>48.5%</td></tr><tr><td>Net Income (Operating, post-options)</td><td>20.2%</td><td>23.0%</td><td>28.3%</td><td>34.9%</td><td>39.7%</td><td>41.0%</td><td>41.5%</td><td>43.3%</td><td>2.6%</td><td>16.9%</td><td>27.3%</td><td>41.4%</td><td>47.0%</td></tr><tr><td colspan=\"14\">% Growth Rates</td></tr><tr><td>Revenues (Y/Y)</td><td>21%</td><td>22%</td><td>44%</td><td>48%</td><td>58%</td><td>55%</td><td>36%</td><td>29%</td><td>(11%)</td><td>39%</td><td>34%</td><td>43%</td><td>51%</td></tr><tr><td>Organic Growth (Y/Y)</td><td>21%</td><td>22%</td><td>44%</td><td>48%</td><td>58%</td><td>55%</td><td>36%</td><td>29%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Opex (Y/Y)</td><td>3%</td><td>2%</td><td>7%</td><td>1%</td><td>9%</td><td>8%</td><td>9%</td><td>12%</td><td>(12%)</td><td>17%</td><td>3%</td><td>10%</td><td>7%</td></tr><tr><td>R&amp;D (Y/Y)</td><td>3%</td><td>2%</td><td>8%</td><td>5%</td><td>5%</td><td>8%</td><td>7%</td><td>13%</td><td>(18%)</td><td>11%</td><td>4%</td><td>8%</td><td>6%</td></tr><tr><td>SG&amp;A (Y/Y)</td><td>12%</td><td>3%</td><td>3%</td><td>(5%)</td><td>5%</td><td>8%</td><td>11%</td><td>11%</td><td>(6%)</td><td>22%</td><td>3%</td><td>9%</td><td>7%</td></tr><tr><td>Op. Income Post Options (Y/Y)</td><td>78%</td><td>73%</td><td>146%</td><td>169%</td><td>180%</td><td>158%</td><td>92%</td><td>56%</td><td>85%</td><td>250%</td><td>120%</td><td>107%</td><td>68%</td></tr><tr><td>Pretax Income (Y/Y)</td><td>94%</td><td>84%</td><td>159%</td><td>175%</td><td>195%</td><td>167%</td><td>97%</td><td>60%</td><td>323%</td><td>440%</td><td>132%</td><td>113%</td><td>71%</td></tr><tr><td>Net Income (Y/Y)</td><td>73%</td><td>62%</td><td>129%</td><td>137%</td><td>193%</td><td>165%</td><td>96%</td><td>59%</td><td>580%</td><td>537%</td><td>104%</td><td>112%</td><td>71%</td></tr><tr><td>Op. EPS (Y/Y)</td><td>65%</td><td>53%</td><td>115%</td><td>121%</td><td>183%</td><td>157%</td><td>90%</td><td>56%</td><td>570%</td><td>528%</td><td>92%</td><td>106%</td><td>69%</td></tr><tr><td>Op. EPS Option adj (Y/Y)</td><td>70%</td><td>59%</td><td>134%</td><td>137%</td><td>200%</td><td>168%</td><td>94%</td><td>57%</td><td>(325%)</td><td>784%</td><td>104%</td><td>111%</td><td>69%</td></tr><tr><td>Diluted Shares (Y/Y)</td><td>5%</td><td>6%</td><td>7%</td><td>7%</td><td>4%</td><td>3%</td><td>3%</td><td>3%</td><td>1%</td><td>1%</td><td>6%</td><td>3%</td><td>1%</td></tr><tr><td>Revenues (Q/Q)</td><td>8%</td><td>7%</td><td>10%</td><td>17%</td><td>14%</td><td>6%</td><td>(3%)</td><td>11%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Organic Growth (Q/Q)</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Opex (Q/Q)</td><td>(4%)</td><td>3%</td><td>2%</td><td>(1%)</td><td>4%</td><td>3%</td><td>3%</td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>R&amp;D (Q/Q)</td><td>4%</td><td>1%</td><td>4%</td><td>(3%)</td><td>4%</td><td>3%</td><td>3%</td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SG&amp;A (Q/Q)</td><td>(6%)</td><td>(1%)</td><td>0%</td><td>3%</td><td>3%</td><td>2%</td><td>3%</td><td>3%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Op. Income Post options (Q/Q)</td><td>24%</td><td>18%</td><td>31%</td><td>41%</td><td>29%</td><td>8%</td><td>(2%)</td><td>15%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Diluted Shares (Q/Q)</td><td>4%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>1%</td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            50,
+            439,
+            957,
+            849
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            953,
+            954,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            39,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            722,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Abbreviations",
+        "text_level": 2,
+        "bbox": [
+            37,
+            58,
+            233,
+            79
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "GM: Gross Margin",
+        "bbox": [
+            37,
+            85,
+            161,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Rev: Revenue\nMn: Million\nMgmt: Management\nHAMR: Heat Assisted Magnetic Recording\nOM: Operating Margin\nQtr: Quarter\nOpex: Operating Expense\nHDD: Hard Disk Drive\nBn: Billion\nTB: Terabyte\nCMR: Conventional Magnetic Recording\nSMR: Shingled Magnetic Recording\nQtrly: Quarterly\nCSP: Cloud Service Provider\nAvg: Average\nBOM: Bill of materials\nNL: Nearline\nVWAP: volume weighted average price\nPt: Point\nEst: Estimate\nAI: Artificial Intelligence",
+        "bbox": [
+            37,
+            95,
+            310,
+            618
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            39,
+            954,
+            50,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            83,
+            952,
+            277,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Price objective basis & risk",
+        "text_level": 2,
+        "bbox": [
+            37,
+            63,
+            315,
+            80
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Seagate Technology (STX)",
+        "text_level": 2,
+        "bbox": [
+            37,
+            89,
+            233,
+            104
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Our PO of \\$1150 is based on 19x our C2028E EPS estimate of \\$61.42. This multiple compares to the historical P/E range of 6x-28x, with median 10x, and is warranted in our view as demand continues to outpace supply, pricing continues to go higher, and peak earnings can be higher than historical peaks. The multiple balances near-term headwinds against the return of a more rational HDD industry and return to revenue and EPS growth.",
+        "bbox": [
+            35,
+            104,
+            627,
+            196
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Downside risks to our price objective are: (1) any slowdown in cloud/data center spending, (2) worse than expected industry pricing, (3) increased usage of NAND flash vs. hard disk drives, (4) share loss to WDC in the enterprise HDD market, (5) further unit declines in desktops and notebooks, and (6) degradation of cash position and potential violation of credit facility covenants. Upside risks are: (1) higher than expected demand for HAMR drives, (2) better mix of high capacity/nearline HDDs, which could drive ASPs and gross margin higher, (3) improved technological advantage and total cost of ownership benefit over NAND flash so as to reduce SSD penetration, (4) consumer PC refresh cycle driving higher hard drive demand, and (5) improved free cash flow generation.",
+        "bbox": [
+            35,
+            210,
+            617,
+            364
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            37,
+            381,
+            248,
+            398
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "I, Wamsi Mohan, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.",
+        "bbox": [
+            35,
+            404,
+            614,
+            467
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/4f5c9181483342805f5832584b25947b6d6779de026dd5d4a2dcb5ffbc2d449c.jpg",
+        "table_caption": [
+            "US - IT Hardware and Technology Supply Chain Coverage Cluster"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan=\"5\">BUY</td></tr><tr><td></td><td>Amphenol</td><td>APH</td><td>APH US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Apple Inc.</td><td>AAPL</td><td>AAPL US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Bel Fuse Inc.</td><td>BELFB</td><td>BELFB US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Celestica Inc.</td><td>CLS</td><td>CLS US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Celestica Inc.</td><td>YCLS</td><td>CLS CN</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Corning Inc.</td><td>GLW</td><td>GLW US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Dell Technologies Inc.</td><td>DELL</td><td>DELL US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>DigitalOcean</td><td>DOCN</td><td>DOCN US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Flex Ltd.</td><td>FLEX</td><td>FLEX US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Hewlett-Packard Enterprise</td><td>HPE</td><td>HPE US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Ingram Micro Holding Corporation</td><td>INGM</td><td>INGM US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>International Business Machines Corp.</td><td>IBM</td><td>IBM US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Jabil Inc.</td><td>JBL</td><td>JBL US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Nutanix Inc</td><td>NTNX</td><td>NTNX US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Sandisk Corporation</td><td>SNDK</td><td>SNDK US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Seagate Technology</td><td>STX</td><td>STX US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>TD Synnex Corp</td><td>SNX</td><td>SNX US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>TE Connectivity Plc.</td><td>TEL</td><td>TEL US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Western Digital Corporation</td><td>WDC</td><td>WDC US</td><td>Wamsi Mohan</td></tr><tr><td colspan=\"5\">NEUTRAL</td></tr><tr><td></td><td>Arrow Electronics Inc.</td><td>ARW</td><td>ARW US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Avnet Inc.</td><td>AVT</td><td>AVT US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>CDW Corp</td><td>CDW</td><td>CDW US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Concentrix Corporation</td><td>CNXC</td><td>CNXC US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Enovix Corporation</td><td>ENVX</td><td>ENVX US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Everpure Inc</td><td>P</td><td>P US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>NetApp Inc.</td><td>NTAP</td><td>NTAP US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Sanmina Corporation</td><td>SANM</td><td>SANM US</td><td>Ruplu Bhattacharya</td></tr></table>",
+        "bbox": [
+            37,
+            522,
+            955,
+            919
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            37,
+            946,
+            81,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            722,
+            952,
+            918,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            953,
+            954,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/d7dbd229fe6db1d9e10b62fb271a3be6656619982cc9a22be639d64c29b1e1d3.jpg",
+        "table_caption": [
+            "US - IT Hardware and Technology Supply Chain Coverage Cluster"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td>Sensata Technologies Holdings Plc</td><td>ST</td><td>ST US</td><td>Wamsi Mohan</td></tr><tr><td colspan=\"5\">UNDERPERFORM</td></tr><tr><td></td><td>HP Inc.</td><td>HPQ</td><td>HPQ US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Super Micro Computer Inc.</td><td>SMCI</td><td>SMCI US</td><td>Ruplu Bhattacharya</td></tr><tr><td></td><td>Teradata Corporation</td><td>TDC</td><td>TDC US</td><td>Wamsi Mohan</td></tr><tr><td></td><td>Vishay Intertechnology, Inc.</td><td>VSH</td><td>VSH US</td><td>Ruplu Bhattacharya</td></tr></table>",
+        "bbox": [
+            37,
+            78,
+            954,
+            179
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "$iQ_{method}^{SM}$ Measures Definitions",
+        "text_level": 2,
+        "bbox": [
+            37,
+            215,
+            316,
+            234
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/2d92c0c97b08875c63dae9892933a33e8c4a4776ade6daf03931b84d37d48d92.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Business Performance</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Return On Capital Employed</td><td>NOPAT = (EBIT + Interest Income) × (1 - Tax Rate) + Goodwill Amortization</td><td>Total Assets – Current Liabilities + ST Debt + Accumulated Goodwill Amortization</td></tr><tr><td>Return On Equity</td><td>Net Income</td><td>Shareholders’ Equity</td></tr><tr><td>Operating Margin</td><td>Operating Profit</td><td>Sales</td></tr><tr><td>Earnings Growth</td><td>Expected 5 Year CAGR From Latest Actual</td><td>N/A</td></tr><tr><td>Free Cash Flow</td><td>Cash Flow From Operations – Total Capex</td><td>N/A</td></tr><tr><td>Quality of Earnings</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Cash Realization Ratio</td><td>Cash Flow From Operations</td><td>Net Income</td></tr><tr><td>Asset Replacement Ratio</td><td>Capex</td><td>Depreciation</td></tr><tr><td>Tax Rate</td><td>Tax Charge</td><td>Pre-Tax Income</td></tr><tr><td>Net Debt-To-Equity Ratio</td><td>Net Debt = Total Debt – Cash &amp; Equivalents</td><td>Total Equity</td></tr><tr><td>Interest Cover</td><td>EBIT</td><td>Interest Expense</td></tr><tr><td>Valuation Toolkit</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Price / Earnings Ratio</td><td>Current Share Price</td><td>Diluted Earnings Per Share (Basis As Specified)</td></tr><tr><td>Price / Book Value</td><td>Current Share Price</td><td>Shareholders’ Equity / Current Basic Shares</td></tr><tr><td>Dividend Yield</td><td>Annualised Declared Cash Dividend</td><td>Current Share Price</td></tr><tr><td>Free Cash Flow Yield</td><td>Cash Flow From Operations – Total Capex</td><td>Market Cap = Current Share Price × Current Basic Shares</td></tr><tr><td>Enterprise Value / Sales</td><td>EV = Current Share Price × Current Shares + Minority Equity + Net Debt + Other LT Liabilities</td><td>Sales</td></tr><tr><td>EV / EBITDA</td><td>Enterprise Value</td><td>Basic EBIT + Depreciation + Amortization</td></tr></table>",
+        "bbox": [
+            35,
+            239,
+            911,
+            526
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "IQdatabase® is our real-time global research database that is sourced directly from our equity analysts' earnings models and includes forecasted as well as historical data for income statements, balance sheets, and cash flow statements for companies covered by BofA Global Research.",
+        "bbox": [
+            37,
+            550,
+            937,
+            574
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "iQprofile $^{SM}$ , iQmethod $^{SM}$ are service marks of BofA Corporation. iQdatabase $^{®}$ is a registered service mark of BofA Corporation.",
+        "bbox": [
+            37,
+            574,
+            570,
+            587
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            37,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            39,
+            953,
+            50,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            83,
+            952,
+            277,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            911,
+            946,
+            954,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            59,
+            202,
+            80
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            85,
+            263,
+            103
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/bc05e6b24a0549fdcd9417da58bde8b1f9825f5e25f0ad3bac663d3a52be7b64.jpg",
+        "table_caption": [
+            "Seagate (STX) Price Chart"
+        ],
+        "table_footnote": [
+            "B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating"
+        ],
+        "table_body": "<table><tr><td rowspan=\"20\">28-Jul B MohanPO:US$67</td><td rowspan=\"20\">26-OctPO:US$80</td><td rowspan=\"20\">24-JanPO:US$100</td><td rowspan=\"20\">13-MarPO:US$110</td><td rowspan=\"20\">23-JulPO:US$125</td><td rowspan=\"20\">22-OctPO:US$130</td><td rowspan=\"20\">15-JanPO:US$124</td><td rowspan=\"7\">21-JanPO:US$130</td><td rowspan=\"7\">12-MarPO:US$112</td><td rowspan=\"7\">29-AprPO:US$120</td><td rowspan=\"7\">14-JulPO:US$165</td><td rowspan=\"7\">15-SepPO:US$215</td><td rowspan=\"7\">20-NovPO:US$320</td><td rowspan=\"7\">27-JanPO:US$450</td><td rowspan=\"7\">20-AprPO:US$605</td><td rowspan=\"7\">1-JulPO:US$1150</td><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1-Jan-24</td><td>1-Jan-25</td><td>21-JanPO:US$130</td><td>28-MayPO:US$125</td><td>29-JulPO:US$170</td><td>24-SepPO:US$255</td><td>28-OctPO:US$275</td><td>20-JanPO:US$400</td><td>27-AprPO:US$700</td><td>26-MayPO:US$900</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            71,
+            132,
+            924,
+            324
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Investment Opinion System is contained at the end of the report under the heading \"Fundamental Equity Opinion Key\". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.",
+        "bbox": [
+            39,
+            340,
+            952,
+            376
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/cdabda8c7f19f48afbcea664f798c3f256ef38b011e3f9192c0209bceb691f27.jpg",
+        "table_caption": [
+            "Equity Investment Rating Distribution: Technology Group (as of 30 Jun 2026)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>243</td><td>60.60%</td><td>Buy</td><td>123</td><td>50.62%</td></tr><tr><td>Hold</td><td>87</td><td>21.70%</td><td>Hold</td><td>45</td><td>51.72%</td></tr><tr><td>Sell</td><td>71</td><td>17.71%</td><td>Sell</td><td>21</td><td>29.58%</td></tr></table>",
+        "bbox": [
+            40,
+            407,
+            954,
+            460
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/e817030741ef6b126b55d511c9e2e2c536d9ed800aea9eb5bf04b54cccce53c9.jpg",
+        "table_caption": [
+            "Equity Investment Rating Distribution: Global Group (as of 30 Jun 2026)",
+            "$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1987</td><td>56.11%</td><td>Buy</td><td>1190</td><td>59.89%</td></tr><tr><td>Hold</td><td>797</td><td>22.51%</td><td>Hold</td><td>496</td><td>62.23%</td></tr><tr><td>Sell</td><td>757</td><td>21.38%</td><td>Sell</td><td>391</td><td>51.65%</td></tr></table>",
+        "bbox": [
+            40,
+            479,
+            954,
+            534
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/b6112b7d8aef0b419574e7424a42c5857b266215ada313bdb7d65400e624e1a3.jpg",
+        "table_caption": [
+            "FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).",
+            "Investment rating Total return expectation (within 12-month period of date of initial rating) Ratings dispersion guidelines for coverage cluster $^{R2}$"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>",
+        "bbox": [
+            68,
+            699,
+            810,
+            738
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.",
+        "bbox": [
+            39,
+            739,
+            939,
+            795
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.",
+        "bbox": [
+            39,
+            804,
+            751,
+            816
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofAS or one of its affiliates acts as a market maker for the equity securities recommended in the report: Seagate.",
+        "bbox": [
+            40,
+            816,
+            584,
+            828
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: Seagate Technology.",
+        "bbox": [
+            40,
+            827,
+            720,
+            839
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: Seagate Technology.",
+        "bbox": [
+            39,
+            839,
+            810,
+            852
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: Seagate Technology.",
+        "bbox": [
+            40,
+            849,
+            730,
+            862
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: Seagate Technology.",
+        "bbox": [
+            40,
+            861,
+            735,
+            875
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: Seagate Technology.",
+        "bbox": [
+            40,
+            872,
+            929,
+            895
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of",
+        "bbox": [
+            39,
+            895,
+            942,
+            920
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            165,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            944,
+            953,
+            955,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            40,
+            946,
+            83,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            723,
+            952,
+            919,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "the report: Seagate Technology.",
+        "text_level": 2,
+        "bbox": [
+            40,
+            60,
+            194,
+            71
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BofAS or one of its affiliates is willing to sell to, or buy from, clients the common equity of the issuer on a principal basis: Seagate.",
+        "bbox": [
+            39,
+            71,
+            656,
+            83
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The issuer is or was, within the last 12 months, a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: Seagate Technology.",
+        "bbox": [
+            40,
+            83,
+            834,
+            95
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.",
+        "bbox": [
+            39,
+            94,
+            911,
+            130
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            40,
+            146,
+            326,
+            162
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.",
+        "bbox": [
+            39,
+            167,
+            915,
+            190
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.",
+        "bbox": [
+            39,
+            191,
+            947,
+            236
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.",
+        "bbox": [
+            40,
+            237,
+            916,
+            250
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.",
+        "bbox": [
+            39,
+            258,
+            947,
+            281
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.",
+        "bbox": [
+            40,
+            281,
+            808,
+            292
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Refer to BofA Global Research policies relating to conflicts of interest.",
+        "bbox": [
+            40,
+            292,
+            372,
+            303
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\"BofA\" includes BofA, Inc. (\"BofAS\") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. \"BofA\" is a global brand for BofA Global Research.",
+        "bbox": [
+            39,
+            303,
+            946,
+            335
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:",
+        "text_level": 2,
+        "bbox": [
+            40,
+            337,
+            573,
+            349
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BofAS and/or BofA, Pierce, Fenner & Smith Incorporated (\"MLPF&S\") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA (\"BofASE\") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.",
+        "bbox": [
+            39,
+            349,
+            957,
+            724
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.",
+        "bbox": [
+            39,
+            723,
+            957,
+            806
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "General Investment Related Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            40,
+            804,
+            246,
+            815
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA.",
+        "bbox": [
+            39,
+            814,
+            947,
+            838
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the",
+        "bbox": [
+            40,
+            825,
+            941,
+            919
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            913,
+            946,
+            955,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            40,
+            954,
+            53,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            84,
+            953,
+            279,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "prospectus or other offering document issued in connection with such offering, and not on this document.",
+        "bbox": [
+            40,
+            60,
+            550,
+            71
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.",
+        "bbox": [
+            40,
+            71,
+            954,
+            151
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.",
+        "bbox": [
+            39,
+            151,
+            944,
+            196
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to \"short\" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting \"shortselling\" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.",
+        "bbox": [
+            39,
+            196,
+            939,
+            229
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.",
+        "bbox": [
+            40,
+            231,
+            923,
+            253
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.",
+        "bbox": [
+            40,
+            253,
+            955,
+            276
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Copyright and General Information:",
+        "text_level": 2,
+        "bbox": [
+            40,
+            368,
+            220,
+            378
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.",
+        "bbox": [
+            39,
+            378,
+            955,
+            493
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.",
+        "bbox": [
+            39,
+            492,
+            950,
+            584
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.",
+        "bbox": [
+            39,
+            583,
+            944,
+            628
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.",
+        "bbox": [
+            40,
+            628,
+            929,
+            651
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.",
+        "bbox": [
+            40,
+            651,
+            937,
+            674
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This",
+        "bbox": [
+            40,
+            674,
+            901,
+            686
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.",
+        "bbox": [
+            39,
+            686,
+            947,
+            731
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.",
+        "bbox": [
+            39,
+            731,
+            942,
+            765
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.",
+        "bbox": [
+            40,
+            765,
+            918,
+            787
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.",
+        "bbox": [
+            40,
+            787,
+            919,
+            810
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies. Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.",
+        "bbox": [
+            39,
+            810,
+            944,
+            878
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "BofA GLOBAL RESEARCH",
+        "bbox": [
+            40,
+            32,
+            163,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            944,
+            953,
+            957,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            40,
+            946,
+            84,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Seagate Technology | 28 July 2026",
+        "bbox": [
+            725,
+            953,
+            919,
+            965
+        ],
+        "page_idx": 8
+    }
+]

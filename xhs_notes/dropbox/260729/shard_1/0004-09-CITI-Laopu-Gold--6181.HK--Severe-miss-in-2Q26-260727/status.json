@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0004-09-CITI-Laopu Gold -6181.HK- Severe miss in 2Q26-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "老铺黄金Q2业绩暴雷",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股价->报价 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股价->报价 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_editorial_guard_changes": [
+    "removed_section:估值已反映部分悲观预期，但市场定价仍待验证"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Citi：老铺黄金业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-09-CITI-Laopu Gold -6181.HK- Severe miss in 2Q26-260727.pdf",
+    "cleaned_source_title": "CITI-Laopu Gold -6181.HK- Severe miss in 2Q26",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：LaopuGold-Severemissin2Q26",
+    "raw_candidates": [
+      "老铺黄金二季度业绩低于预期",
+      "老铺黄金二季度净利润低于预期30%",
+      "老铺黄金二季度业绩与下半年新品策略"
+    ],
+    "cleaned_candidates": [
+      "Citi：老铺黄金二季度业绩低于预期",
+      "Citi：老铺黄金二季度净利润低于预期30%",
+      "Citi：老铺黄金二季度业绩与下半年新品策略",
+      "Citi：LaopuGold-Severemissin2Q26",
+      "Citi：根据Citi7月27日发布的研报"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：老铺黄金二季度业绩与下半年新品策略",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "Citi：LaopuGold-Severemissin2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：根据Citi7月27日发布的研报",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：老铺黄金业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "30"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Citi：老铺黄金二季度净利润低于预期30%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Citi：老铺黄金业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "520",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

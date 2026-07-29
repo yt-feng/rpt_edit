@@ -1,0 +1,571 @@
+[
+  {
+    "item": "0001-06-Bernstein-Unilever--ULVR.LN--1H-2Q26--Light-at-the-end-of-the-tunnel--26",
+    "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0001-06-Bernstein-Unilever -ULVR.LN- 1H 2Q26- Light at the end of the tunnel--260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "联合利华，终于等来量",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：联合利华业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-Bernstein-Unilever -ULVR.LN- 1H 2Q26- Light at the end of the tunnel--260728.pdf",
+      "cleaned_source_title": "Bernstein-Unilever -ULVR.LN- 1H 2Q26- Light at the end of the tunnel",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：Unilever-1H2Q26",
+      "raw_candidates": [
+        "Bernstein：联合利华二季度销量增长加速",
+        "Bernstein：联合利华二季度销量增长5.5%超预期",
+        "Bernstein：联合利华核心日化业务销量增长超预期"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：联合利华二季度销量增长加速",
+        "Bernstein：联合利华二季度销量增长5.5%超预期",
+        "Bernstein：联合利华核心日化业务销量增长超预期",
+        "Bernstein：Unilever-1H2Q26",
+        "Bernstein：1.核心业务销量增长超预期400个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：联合利华核心日化业务销量增长超预期",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "Bernstein：Unilever-1H2Q26",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：1.核心业务销量增长超预期400个基点",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：联合利华业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：联合利华二季度销量增长加速",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：联合利华业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-07-Bofa-Seagate-Technology-Solid-visibility--improving-pricing-trends-drive",
+    "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0002-07-Bofa-Seagate Technology Solid visibility- improving pricing trends drive upside- PO stays at -1-150-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "这家存储巨头，业绩还",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BofA：希捷科技定价趋势业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-Bofa-Seagate Technology Solid visibility- improving pricing trends drive upside- PO stays at -1-150-260728.pdf",
+      "cleaned_source_title": "Bofa-Seagate Technology Solid visibility- improving pricing trends drive upside- PO stays at -1-150",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：Seagate科技Solidvisibility",
+      "raw_candidates": [
+        "BofA：希捷科技定价趋势改善与可见度延伸",
+        "BofA：希捷科技2027财年EPS上调至32.06美元",
+        "BofA：希捷科技HAMR硬盘产能分配至2028年后"
+      ],
+      "cleaned_candidates": [
+        "BofA：希捷科技定价趋势改善与可见度延伸",
+        "BofA：希捷科技2027财年EPS上调至32.06美元",
+        "BofA：希捷科技HAMR硬盘产能分配至2028年后",
+        "BofA：Seagate科技Solidvisibility",
+        "BofA：上调了2027财年营收预测至174.7亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：希捷科技2027财年EPS上调至32.06美元",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：希捷科技HAMR硬盘产能分配至2028年后",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：Seagate科技Solidvisibility",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：上调了2027财年营收预测至174.7亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：希捷科技定价趋势业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BofA：希捷科技定价趋势改善与可见度延伸",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BofA：希捷科技定价趋势业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-08-CITI-Tokenization-2030-Wall-Street-On-Chain-260728",
+    "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0003-08-CITI-Tokenization 2030-Wall Street On-Chain-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "华尔街资产上链，正在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "金融->资金 x1",
+      "股票|个股->公司 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "金融市场->市场 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "股票|个股->公司 x3",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：代币化2030-华尔街链上化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-CITI-Tokenization 2030-Wall Street On-Chain-260728.pdf",
+      "cleaned_source_title": "CITI-Tokenization 2030-Wall Street On-Chain",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：Tokenization2030WallStre",
+      "raw_candidates": [
+        "代币化2030-华尔街链上化",
+        "代币化资产2030年预计达5.5万亿美元",
+        "代币化2030-基础设施与链上货币驱动增长"
+      ],
+      "cleaned_candidates": [
+        "Citi：代币化2030-华尔街链上化",
+        "Citi：代币化资产2030年预计达5.5万亿美元",
+        "Citi：代币化2030-基础设施与链上货币驱动增长",
+        "Citi：Tokenization2030WallStre",
+        "Citi：代币化资产市场规模预计2030年达5.5万亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：代币化资产2030年预计达5.5万亿美元",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：代币化2030-基础设施与链上货币驱动增长",
+          "reasons": [
+            "anchor_coverage=0.58",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Tokenization2030WallStre",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：代币化资产市场规模预计2030年达5.5万亿美元",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：代币化2030-华尔街链上化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：代币化2030-华尔街链上化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-09-CITI-Laopu-Gold--6181.HK--Severe-miss-in-2Q26-260727",
+    "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0004-09-CITI-Laopu Gold -6181.HK- Severe miss in 2Q26-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "老铺黄金Q2业绩暴雷",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_editorial_guard_changes": [
+      "removed_section:估值已反映部分悲观预期，但市场定价仍待验证"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：老铺黄金业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-CITI-Laopu Gold -6181.HK- Severe miss in 2Q26-260727.pdf",
+      "cleaned_source_title": "CITI-Laopu Gold -6181.HK- Severe miss in 2Q26",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：LaopuGold-Severemissin2Q26",
+      "raw_candidates": [
+        "老铺黄金二季度业绩低于预期",
+        "老铺黄金二季度净利润低于预期30%",
+        "老铺黄金二季度业绩与下半年新品策略"
+      ],
+      "cleaned_candidates": [
+        "Citi：老铺黄金二季度业绩低于预期",
+        "Citi：老铺黄金二季度净利润低于预期30%",
+        "Citi：老铺黄金二季度业绩与下半年新品策略",
+        "Citi：LaopuGold-Severemissin2Q26",
+        "Citi：根据Citi7月27日发布的研报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：老铺黄金二季度业绩与下半年新品策略",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "Citi：LaopuGold-Severemissin2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：根据Citi7月27日发布的研报",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：老铺黄金业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "30"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：老铺黄金二季度净利润低于预期30%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：老铺黄金业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-10-Goldman-Sachs-ASIA-ECONOMICS-ANALYST-Gen-AI-in-India--Jobs-Crosswinds--P",
+    "source_pdf": "/tmp/pdf_batch_001_0pyfgbtf/pdfs/0005-10-GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI对印度就业：替代",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：亚洲宏观分析-印度生成式AI与就业交叉影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds-260728.pdf",
+      "cleaned_source_title": "GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：ASIAECONOMICSANALYSTGenAIinIndia",
+      "raw_candidates": [
+        "GS：亚洲宏观分析-印度生成式AI与就业交叉影响",
+        "GS：印度非农就业42-48%岗位或受生成式AI增强",
+        "GS：印度生成式AI对就业的互补与替代分化"
+      ],
+      "cleaned_candidates": [
+        "GS：亚洲宏观分析-印度生成式AI与就业交叉影响",
+        "GS：印度非农就业42-48%岗位或受生成式AI增强",
+        "GS：印度生成式AI对就业的互补与替代分化",
+        "GS：ASIAECONOMICSANALYSTGenAIinIndia",
+        "GS：印度非农就业中42-48%岗位可能被生成式AI增强"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：印度非农就业42-48%岗位或受生成式AI增强",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：印度生成式AI对就业的互补与替代分化",
+          "reasons": [
+            "anchor_coverage=0.37",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ASIAECONOMICSANALYSTGenAIinIndia",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：印度非农就业中42-48%岗位可能被生成式AI增强",
+          "reasons": [
+            "anchor_coverage=0.32",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：亚洲宏观分析-印度生成式AI与就业交叉影响",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：亚洲宏观分析-印度生成式AI与就业交叉影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
