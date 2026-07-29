@@ -1,0 +1,132 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "AI烧钱，巨头债比股",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "投资周期->研究周期 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资回报->回报表现 x1",
+    "投资->研究 x2",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资组合->组合观察 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+    "cleaned_source_title": "GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：全球MarketsDailyHyperscale",
+    "raw_candidates": [
+      "超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+      "超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+      "超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系"
+    ],
+    "cleaned_candidates": [
+      "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+      "GS：超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+      "GS：超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系",
+      "GS：全球MarketsDailyHyperscale",
+      "GS：1.长期信用利差走阔与自由现金流回报表现出现变化同步发生"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系",
+        "reasons": [
+          "anchor_coverage=0.37",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：全球MarketsDailyHyperscale",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：1.长期信用利差走阔与自由现金流回报表现出现变化同步发生",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "555",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

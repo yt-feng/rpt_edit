@@ -1,0 +1,1273 @@
+[
+    {
+        "type": "text",
+        "text": "Global Markets Daily: Hyperscaler Credit vs. Equity: More Issuance, a Higher Beta, and a Different Focus on Cash Flow",
+        "text_level": 1,
+        "bbox": [
+            78,
+            77,
+            801,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Heavy AI-related capex has reshaped how hyperscaler credit and equity co-move. As these firms increasingly fund investments with debt, equity values have become more tethered to fluctuating asset valuations, while structurally imposing a higher cost of credit.",
+        "bbox": [
+            78,
+            174,
+            686,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shamshad Ali  \n+1(212)902-6712 | shamshad.ali@gs.com GS & Co. LLC",
+        "bbox": [
+            722,
+            174,
+            847,
+            216
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Credit's beta to equity returns should increase with bond maturity, given an upward-sloping term premium. While elevated yield-based demand has dampened the beta for long-duration credit in the broader market, the AI capex cycle has lifted it for hyperscaler credit—especially as spread volatility has been felt acutely in the long-end of the curve.",
+        "bbox": [
+            78,
+            256,
+            696,
+            353
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Credit spreads have widened alongside a deterioration in forward free cash flow yield for hyperscalers. As a result, the path ahead for credit likely hinges on some improvement in forward estimates of free cash flow generation.",
+        "bbox": [
+            78,
+            360,
+            698,
+            416
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "That said, the manner of improvement matters more for credit vs. equity relative value. A scenario of free cash flow gains from declining capex would likely favor credit, while a scenario of rising net income and operating cash flow would likely favor equity, as investors may read it as an inflection point for additional value accrual across the AI stack (with equities more exposed to that potential upside).",
+        "bbox": [
+            78,
+            423,
+            698,
+            520
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Hyperscaler Credit vs. Equity: More Issuance, a Higher Beta, and a Different Focus on Cash Flow",
+        "bbox": [
+            77,
+            550,
+            698,
+            597
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Increasing focus on AI-related capex has driven a few themes in markets. In equities, rising capex estimates have begun to dominate future revenue generation leaving infrastructure and “picks and shovels” names such as energy providers, semiconductor and chip manufacturers more supported than the hyperscaler equities investing in capex and presumed ultimate beneficiaries. Credit markets have focused first on the scale and speed of investments, given they are increasingly funded by debt capital, and second on clarity over returns on investment that can offset the significant expenditure.",
+        "bbox": [
+            77,
+            621,
+            700,
+            767
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Credit is more senior to equities, has finite duration and has upside largely limited to payment of interest and repayment of principal. Historically, this has meant a departure from the longer-term terminal values increasingly dominating equity returns, as credit investors focus instead on near-term cash flow and earnings for debt service. Yet, large AI investments are increasingly changing that picture. In this Global Markets Daily, we take stock of the relationship between hyperscaler long",
+        "bbox": [
+            77,
+            778,
+            693,
+            887
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            5,
+            300,
+            45
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Economics Research 28 July 2026 | 8:14AM EDT",
+        "bbox": [
+            719,
+            7,
+            922,
+            46
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            923,
+            860,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "bonds and their equity, using a range of metrics including the beta of spread changes to equity returns. We find that hyperscaler long-end spreads have widened in tandem with the dramatic decline in cash flow yield, underperforming an evolving equity beta in periods of heavy supply. Recently, this underperformance has been more pronounced in the long-end of credit spread curves, compared to shorter tenors. Improvement in cash flow may lead to a rally in spreads, but the manner—for example, if the improved cash flow is driven by a paring back of spend, or an acceleration in",
+        "bbox": [
+            270,
+            42,
+            916,
+            167
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "monetization/profitability—will likely matter more for credit/equity relative value.",
+        "bbox": [
+            272,
+            167,
+            873,
+            185
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI is changing the credit-equity relationship for hyperscalers",
+        "text_level": 2,
+        "bbox": [
+            272,
+            210,
+            729,
+            225
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "An upward-sloping credit term premium and increasing spread duration typically mean that long-duration credit co-moves more with equity prices—mechanically, a higher beta. However, the rise of liability-driven investors searching for yield, together with elevated policy rate volatility during the 2022-2023 Fed hiking cycle, has lowered long-end credit beta, predominantly through lower volatility (Exhibit 1).",
+        "bbox": [
+            270,
+            228,
+            909,
+            318
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: Long-end credit spread beta to equity returns has moved lower in recent years, predominantly because of lower volatility",
+        "bbox": [
+            272,
+            335,
+            690,
+            376
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Monthly beta regressing USD IG spread changes across tenors on S&P 500, italicized decomposes beta into correlation and volatility ratios",
+        "bbox": [
+            272,
+            376,
+            686,
+            416
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/86635ea2f4801ad55eb8aca5841db2ec815017223de4cc00db29b9fd69a7227e.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: iBoxx, Bloomberg, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Sample</td><td>3-5 years</td><td>7-10 years</td><td>15+ years</td></tr><tr><td>2015-2019</td><td>-2.5</td><td>-3.1</td><td>-2.6</td></tr><tr><td>correlation</td><td>-0.7</td><td>-0.8</td><td>-0.7</td></tr><tr><td>volatility ratio</td><td>2.0</td><td>2.3</td><td>2.2</td></tr><tr><td>2021-2025</td><td>-1.7</td><td>-1.9</td><td>-1.7</td></tr><tr><td>correlation</td><td>-0.6</td><td>-0.7</td><td>-0.7</td></tr><tr><td>volatility ratio</td><td>1.6</td><td>1.6</td><td>1.4</td></tr></table>",
+        "bbox": [
+            286,
+            420,
+            680,
+            583
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Heavy investment in AI has further altered the credit vs. equity relationship for these credits. Credit investors are effectively short a put option on firm solvency while equity holders are long, which helps explain why heavy investment is increasingly driving return differentials across the capital structure. As hyperscalers have committed more to investment, equity values have become more tethered to increasingly uncertain asset valuations, and, through the structural model of equity, so too has the price of credit.",
+        "bbox": [
+            270,
+            612,
+            916,
+            721
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI-related spreads have therefore seen a modest rise in their beta, echoing the broader trend we’ve noted in the credit/equity relationship. Mirroring the broader trend, long-end betas have increased on the back of higher long-end spread volatility—particularly relative to the more muted front-end (Exhibit 2).",
+        "bbox": [
+            270,
+            731,
+            911,
+            803
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            25
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f2855cef0b83d8ed7c8f3e9590611b5d4da8168f5261a6bc006f769dfeb3dd0f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 2: Long-end hyperscaler bonds have a higher beta, given the elevated volatility in back-end spreads Trailing 2-year beta of monthly changes in hyperscaler credit spreads by tenor on monthly hyperscaler equity returns"
+        ],
+        "chart_footnote": [
+            "Source: iBoxx, Bloomberg, GS Global Investment Research",
+            "This acute widening in back-end hyperscaler spreads has coincided with an eroding forward free cash flow yield across the cohort, a signal of growing funding needs (Exhibit 3).",
+            "Exhibit 3: Hyperscaler credit has sold off as the aggregate free cash flow yield advantage has eroded"
+        ],
+        "bbox": [
+            86,
+            87,
+            900,
+            305
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/015c1ce8451e0140c09f90f8dd818954cedc104a560a76dc0ba045725f785624.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: iBoxx, Bloomberg, GS Global Investment Research"
+        ],
+        "bbox": [
+            275,
+            440,
+            696,
+            640
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The drivers of improving free cash flow matter",
+        "text_level": 2,
+        "bbox": [
+            272,
+            680,
+            622,
+            696
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Credit has, on average, underperformed its historical equity beta this year, with the most acute underperformance recently felt in the long-end (Exhibit 4). That much of this has come during waves of new debt issuance over the past few quarters is not surprising. We anticipate more credit curve steepening for AI-related issuers, as this multi-year issuance cycle extends.",
+        "bbox": [
+            270,
+            698,
+            921,
+            788
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            25
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            969
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            909,
+            956,
+            921,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 4: Credit spreads have underperformed their beta to equities recently",
+        "text_level": 2,
+        "bbox": [
+            272,
+            54,
+            691,
+            82
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Rolling 3-month average residual of weekly spread change time-varying beta to hyperscaler equity returns",
+        "bbox": [
+            272,
+            82,
+            637,
+            110
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/367d9a82b2f41fccb4360d9dee099c45604474a031bc137d86d7cf8871a02ab9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: iBoxx, Bloomberg, GS Global Investment Research"
+        ],
+        "bbox": [
+            275,
+            122,
+            688,
+            309
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Still, cross-asset investors are increasingly focused on the path from here for long-end credit and equity relative valuations, especially as hyperscaler earnings multiples are now at multi-year lows relative to the broader index. The volatility-suppressing technical for back-end hyperscaler bonds is firmly in the rear-view mirror, given heavier supply and marginally softer demand as debates around portfolio concentration take on greater importance. We think an improvement in free cash flow generation would support the case for spread tightening, but the manner of that improvement will likely drive the relative value between owning hyperscaler equity vs. credit.",
+        "bbox": [
+            270,
+            343,
+            919,
+            489
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Free cash flow improvement achieved by reducing capex and scaling back investment would likely depress terminal values for hyperscalers, as investors might fear that returns will not validate the investment—an outcome that would tend to favor credit. On the other hand, growth in net income and operating cash flow while investment spending remains robust could favor equities, as returns become more visible and signal an inflection point in where value is accruing across the AI stack.",
+        "bbox": [
+            270,
+            499,
+            921,
+            607
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "TRADE IDEAS",
+        "text_level": 2,
+        "bbox": [
+            280,
+            629,
+            449,
+            669
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Best Trade Ideas Across Assets",
+        "text_level": 2,
+        "bbox": [
+            272,
+            701,
+            506,
+            717
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For pricing, charts, and a list of previous recommendations, please visit our Trade Ideas page.",
+        "bbox": [
+            270,
+            720,
+            911,
+            754
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Stay short SGD/MYR, opened January 24, 2026, at 3.13, with a target at 2.90 and a stop at 3.30, currently trading at 3.17.",
+        "bbox": [
+            273,
+            767,
+            906,
+            803
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Stay long TRY, NGN and KZT against the USD, as an equally weighted basket, opened February 18, 2026, at 0%, with a total return target of 7.5%, and a revised stop of 1.5%, currently trading at 4.8%.",
+        "bbox": [
+            272,
+            811,
+            916,
+            868
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Stay long 3y SOFR swap spread, opened 17 April 2026, at -22.6bp, with a revised target at -15bp inclusive of carry; and a revised stop at -20bp, currently trading at -18.8bp.",
+        "bbox": [
+            272,
+            876,
+            901,
+            930
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            25
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "ref_text",
+        "text": "4. Stay short USD/EGP, opened 24 April 2026, at 0%, with a revised total return target at 12% and a revised stop at 5%, currently trading at 7.4%.",
+        "bbox": [
+            272,
+            42,
+            911,
+            78
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "5. Stay long 5y Receivers on 3m 2s5s10s Receiver Fly (bp running), opened 09 May 2026, at 1bp, with a target at 10bp and a stop at -5bp, currently trading at 0bp.",
+        "bbox": [
+            273,
+            86,
+            885,
+            122
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "6. 1y forward 2s10s GBP OIS steepeners, opened 29 May 2026, at 0.38, with a target at 0.55 and a stop at 0.25, currently trading at 0.29.",
+        "bbox": [
+            272,
+            130,
+            919,
+            166
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "7. Stay short THB/INR, opened 12 June 2026, at 2.91, with a target at 2.70 and a stop at 3.05, currently trading at 2.85.",
+        "bbox": [
+            273,
+            174,
+            908,
+            210
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "8. Stay long INR 30y bonds, opened 27 June 2026, at 7.34%, with a target at 6.90% and a stop at 7.65%, currently trading at 7.41%.",
+        "bbox": [
+            272,
+            219,
+            890,
+            255
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "9. 2s10s NZD steepeners, opened 03 July 2026, at 72bp, with a target at 90bp and a stop at 50bp, currently trading at 73bp.",
+        "bbox": [
+            272,
+            263,
+            900,
+            299
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "10. 2s10s CAD steepeners, opened 10 July 2026, at 53bp, with a target at 80bp and a revised stop at 50bp, currently trading at 52bp.",
+        "bbox": [
+            265,
+            307,
+            900,
+            343
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "11. Stay short AUD/NZD, via 6m (14 Jan 2027) 1.1650 puts, opened 14 July 2026, at 1.2000, currently trading at 1.2107.",
+        "bbox": [
+            263,
+            350,
+            890,
+            387
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "12. Stay long NIFTY Banks vs. short NIFTY Pharma, opened 15 July 2026, at 100 in local currency (INR), with a target at 115 and a stop at 90, currently trading at 99.",
+        "bbox": [
+            263,
+            394,
+            909,
+            432
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "ref_text",
+        "text": "13. Stay short GBP/USD, opened 17 July 2026, at 1.3452, with a target at 1.3250 and a stop at 1.3400, currently trading at 1.3289.",
+        "bbox": [
+            263,
+            440,
+            908,
+            474
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            780,
+            10,
+            921,
+            24
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            42,
+            254,
+            63
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            83,
+            139,
+            99
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "I, Shamshad Ali, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            77,
+            105,
+            895,
+            131
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            135,
+            890,
+            149
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Shamshad Ali GS & Co. LLC.",
+        "bbox": [
+            78,
+            154,
+            439,
+            167
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            172,
+            900,
+            197
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            207,
+            170,
+            223
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            227,
+            254,
+            243
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            247,
+            518,
+            261
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            78,
+            260,
+            911,
+            307
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            77,
+            310,
+            918,
+            393
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            403,
+            878,
+            416
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            77,
+            412,
+            918,
+            731
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are",
+        "bbox": [
+            77,
+            727,
+            919,
+            931
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            25
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            969
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "available from GS International on request.",
+        "bbox": [
+            78,
+            43,
+            390,
+            56
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            78,
+            61,
+            913,
+            141
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            77,
+            145,
+            919,
+            203
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            80,
+            215,
+            354,
+            229
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            227,
+            921,
+            353
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            357,
+            883,
+            381
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            78,
+            387,
+            908,
+            434
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            446,
+            229,
+            459
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            78,
+            458,
+            918,
+            516
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            78,
+            521,
+            919,
+            557
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            78,
+            561,
+            921,
+            597
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            78,
+            602,
+            893,
+            627
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            78,
+            630,
+            921,
+            656
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            78,
+            661,
+            916,
+            686
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            78,
+            690,
+            890,
+            714
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            78,
+            720,
+            870,
+            745
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            77,
+            749,
+            921,
+            819
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            77,
+            824,
+            911,
+            882
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.",
+        "bbox": [
+            78,
+            886,
+            909,
+            934
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            186,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            24
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            969
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            78,
+            43,
+            901,
+            101
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            78,
+            105,
+            901,
+            153
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            157,
+            891,
+            180
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            80,
+            187,
+            221,
+            200
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            77,
+            205,
+            916,
+            285
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            7,
+            185,
+            20
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Daily",
+        "bbox": [
+            781,
+            10,
+            921,
+            24
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "28 July 2026",
+        "bbox": [
+            81,
+            956,
+            159,
+            969
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            909,
+            957,
+            921,
+            967
+        ],
+        "page_idx": 7
+    }
+]

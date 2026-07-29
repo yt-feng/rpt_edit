@@ -1,0 +1,39 @@
+Found 64 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jedt5ctn/pdfs/0001-16-Goldman Sachs-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jedt5ctn/pdfs/0002-17-Goldman Sachs-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jedt5ctn/pdfs/0003-18-Goldman Sachs-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jedt5ctn/pdfs/0004-19-Goldman Sachs-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jedt5ctn/pdfs/0005-20-Goldman Sachs-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching-260729.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=d0d29905-1e12-4f25-8e6f-29e6757c21a9
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 9b34da726ee84e85c0229b52a882b81896a7cacc2cd35a3d9b7ee25dd43a4161.jpg: score=-100;too_small:704x79
+Skip non-chart visual asset 31790f2c7c8ea4e0c34b617b024c59e913c2c0f562ed8072d6e2936d3080fc93.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 9aa96a8d1ad3642ae0e738ed876198afd9c921f1d49524fc10646eb188862797.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset e271426b25a2864c0216b4768004aee08c62ea9f4957725c7d9aa4d843dce868.jpg: score=-100;too_small:546x57
+Skip non-chart visual asset f182a62574a7aafa33efc016f7ac49bf21f2e7e1b6a77a9bd36ef85dbfc55d99.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset cf3d0385667df05b9b148e9111ba7232e45bdce73c8051247991aaecfcb7a075.jpg: score=-100;too_small:1162x106
+Neutralized WeChat title while keeping the report: 高盛：可口可乐二季度量价表现支撑全年指引上调 -> 高盛：可口可乐业务与季度数据观察
+Skip non-chart visual asset 9e4947696243d39f1ac142618022db9398ea342e143cba192d6b7ed4baf9599f.jpg: score=-100;too_small:1156x110
+Skip non-chart visual asset ea9ed89add7b584ee1f7364bc80f4377dd0270fcfbe751e3460c5259154fb5a7.jpg: score=-100;too_small:65x59
+Skip non-chart visual asset f8d208f98aa320366e0c396e8ab7e957617f793c33493cb5ab3cd10721e1f963.jpg: score=-100;too_small:79x73
+Skip non-chart visual asset f4432de3fda17920bb3fa8d0252387341e75ea853b20f52887d5bf26f74714f2.jpg: score=-100;too_small:70x79
+Skip non-chart visual asset c5766e2630569a65c97bd21df6067b9cd1b650eec6c1fe0031f252306a8c0b57.jpg: score=-100;too_small:84x71
+Neutralized WeChat title while keeping the report: 高盛：人口结构变化与需求驱动因素探讨 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 62ff8bc048d729189d43c95065feff67f0efe034687859c315ce5cdff3491575.jpg: score=-1;square_without_chart_hint,edge:0.27
+Skip non-chart visual asset d09cbd6c1a3e271b4bbba585c01e8f6031ba95f5ae9f802b1a5ef78c6f82f201.jpg: score=2;edge:0.15
+Skip non-chart visual asset f5bcbfcfa279ddb7a74e1d1027fb805e3ac7d21f814e3ff1aac0f72bb1f17308.jpg: score=2;edge:0.29
+Skip non-chart visual asset 22911f1212ce78a4279d7f4892d84f04ac40fdbd425105909fa36c67f6424f2e.jpg: score=-100;too_small:1156x106
+Neutralized WeChat title while keeping the report: 高盛：日本科技硬件与工业电子-康宁第二季度数据中心需求强劲 -> 高盛：月度与季度数据变化观察
+Skip non-chart visual asset 2b2cfde3c9954dbdfb2fadbd4a430f7afb4cb149cc3d231b48206ac40479b57c.jpg: score=-1;square_without_chart_hint,edge:0.27
+Skip non-chart visual asset e91de530ab491c61728df310d6226af4d770523c868fe98958cadcd97269f8ed.jpg: score=-100;too_small:1156x112
+Skip non-chart visual asset 79688505de9f7abe2ac0fd590eafe31e637674cc2fcef35f9f35c56135e7efd9.jpg: score=2;edge:0.29
+Skip non-chart visual asset 460bbd5b58f55fa522597999d4ed529a195ee6c26ea338b07b840ec3b388ca78.jpg: score=-100;too_small:459x190
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

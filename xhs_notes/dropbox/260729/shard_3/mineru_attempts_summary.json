@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0002-17-GS-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0005-20-GS-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

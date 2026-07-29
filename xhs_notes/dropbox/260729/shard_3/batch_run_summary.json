@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-Global Markets Daily：Hyperscaler Credit vs.Equity：More Issuance，a Higher Beta，and a Different Focus on Cash Flow-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-Coca~Cola Co. （KO.US） Impressive volume~led Q2 beat & FY26 guidance raise， which could yet again prove conservative-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0002-17-GS-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative-260728.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-GS-GS SUSTAIN Insights：Demographics to Demand： Takeaways from call on drivers， myths and impacts of aging & declining populations-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-GS-Japan Technology： Hardware~Industrial Electronics： GLW 2Q： DC demand strong； valuation gap with Japanese peers to narrow-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-GS-Japan Technology： Hardware~Industrial Electronics： CARR 2Q： Favorable implications for MELCO and Pana， cost rises bear watching-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0005-20-GS-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

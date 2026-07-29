@@ -1,0 +1,554 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI烧钱，巨头债比股",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "投资周期->研究周期 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资回报->回报表现 x1",
+      "投资->研究 x2",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资组合->组合观察 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728.pdf",
+      "cleaned_source_title": "GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：全球MarketsDailyHyperscale",
+      "raw_candidates": [
+        "超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+        "超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+        "超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系"
+      ],
+      "cleaned_candidates": [
+        "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+        "GS：超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+        "GS：超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系",
+        "GS：全球MarketsDailyHyperscale",
+        "GS：1.长期信用利差走阔与自由现金流回报表现出现变化同步发生"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：超大规模企业信用与权益-长期利差走阔与自由现金流下降同步",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：超大规模企业信用与权益-AI资本开支重塑信用与权益定价关系",
+          "reasons": [
+            "anchor_coverage=0.37",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：全球MarketsDailyHyperscale",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.长期信用利差走阔与自由现金流回报表现出现变化同步发生",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：超大规模企业信用与权益-更多发行与更高贝塔-现金流关注点变化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0002-17-GS-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "可乐Q2成绩单，藏着",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：可口可乐业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-GS-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative-260728.pdf",
+      "cleaned_source_title": "GS-Coca-Cola Co. -KO.US- Impressive volume-led Q2 beat - FY26 guidance raise- which could yet again prove conservative",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：CocaColaCo.",
+      "raw_candidates": [
+        "可口可乐二季度量价表现支撑全年指引上调",
+        "可口可乐二季度销量增长5%创17年新高",
+        "可口可乐品牌激活与渠道执行驱动增长"
+      ],
+      "cleaned_candidates": [
+        "GS：可口可乐二季度量价表现支撑全年指引上调",
+        "GS：可口可乐二季度销量增长5%创17年新高",
+        "GS：可口可乐品牌激活与渠道执行驱动增长",
+        "GS：CocaColaCo.",
+        "GS：管理层同时将全年有机收入增长指引从4-5%上调至约5%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：可口可乐二季度销量增长5%创17年新高",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "GS：可口可乐品牌激活与渠道执行驱动增长",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CocaColaCo.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：管理层同时将全年有机收入增长指引从4-5%上调至约5%",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：可口可乐业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：可口可乐二季度量价表现支撑全年指引上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：可口可乐业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球人口拐点，比你想",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+      "cleaned_source_title": "GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SUSTAINInsightsDemograph",
+      "raw_candidates": [
+        "GS：人口结构变化与需求驱动因素探讨",
+        "GS：全球人口峰值或早于联合国预期到来",
+        "GS：低生育率扩散与产业需求分化分析"
+      ],
+      "cleaned_candidates": [
+        "GS：人口结构变化与需求驱动因素探讨",
+        "GS：全球人口峰值或早于联合国预期到来",
+        "GS：低生育率扩散与产业需求分化分析",
+        "GS：SUSTAINInsightsDemograph",
+        "GS：核心发现是，发达地区退休人口（65岁以上）每年增加约400万"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：全球人口峰值或早于联合国预期到来",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：低生育率扩散与产业需求分化分析",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：SUSTAINInsightsDemograph",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：核心发现是，发达地区退休人口（65岁以上）每年增加约400万",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：人口结构变化与需求驱动因素探讨",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "数据中心光学需求强劲",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资周期->研究周期 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：月度与季度数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729.pdf",
+      "cleaned_source_title": "GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本科技硬件IndustrialElectronicsGLW2",
+      "raw_candidates": [
+        "日本科技硬件与工业电子-康宁第二季度数据中心需求强劲-与日本同行的估值差距有望收窄",
+        "日本科技硬件与工业电子-康宁第二季度数据中心需求强劲-与日本同行估值差距有望收窄",
+        "日本科技硬件与工业电子-康宁第二季度数据中心需求强劲-日本光通信股估值折价收窄"
+      ],
+      "cleaned_candidates": [
+        "GS：日本科技硬件与工业电子-康宁第二季度数据中心需求强劲",
+        "GS：日本科技硬件IndustrialElectronicsGLW2",
+        "GS：康宁在7月28日公布了2026财年第二季度业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本科技硬件IndustrialElectronicsGLW2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：康宁在7月28日公布了2026财年第二季度业绩",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：月度与季度数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本科技硬件与工业电子-康宁第二季度数据中心需求强劲",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：月度与季度数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0005-20-GS-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "数据中心热泵双驱动，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：GS日本科技硬件工业电子-CARR2Q",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching-260729.pdf",
+      "cleaned_source_title": "GS-Japan Technology- Hardware-Industrial Electronics- CARR 2Q- Favorable implications for MELCO and Pana- cost rises bear watching",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本科技硬件IndustrialElectronicsCARR2",
+      "raw_candidates": [
+        "GS日本科技硬件工业电子-CARR 2Q-对三菱电机与松下控股的正面信号-成本上升值得关注",
+        "GS：Carrier 2Q业绩超预期-订单增长40%对三菱电机与松下控股的正面信号",
+        "GS：Carrier 2Q数据中心冷却订单增300%-对三菱电机与松下控股的正面信号"
+      ],
+      "cleaned_candidates": [
+        "GS：GS日本科技硬件工业电子-CARR2Q",
+        "GS：Carrier2Q业绩超预期",
+        "GS：Carrier2Q数据中心冷却订单增300%",
+        "GS：日本科技硬件IndustrialElectronicsCARR2",
+        "GS：Carrier2026财年第二季度业绩于7月28日公布"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：Carrier2Q业绩超预期",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "GS：Carrier2Q数据中心冷却订单增300%",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本科技硬件IndustrialElectronicsCARR2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "GS：Carrier2026财年第二季度业绩于7月28日公布",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：GS日本科技硬件工业电子-CARR2Q",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：GS日本科技硬件工业电子-CARR2Q"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

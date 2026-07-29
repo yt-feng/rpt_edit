@@ -1,0 +1,133 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_jedt5ctn/pdfs/0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "全球人口拐点，比你想",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-18-GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations-260729.pdf",
+    "cleaned_source_title": "GS-GS SUSTAIN Insights-Demographics to Demand- Takeaways from call on drivers- myths and impacts of aging - declining populations",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：SUSTAINInsightsDemograph",
+    "raw_candidates": [
+      "GS：人口结构变化与需求驱动因素探讨",
+      "GS：全球人口峰值或早于联合国预期到来",
+      "GS：低生育率扩散与产业需求分化分析"
+    ],
+    "cleaned_candidates": [
+      "GS：人口结构变化与需求驱动因素探讨",
+      "GS：全球人口峰值或早于联合国预期到来",
+      "GS：低生育率扩散与产业需求分化分析",
+      "GS：SUSTAINInsightsDemograph",
+      "GS：核心发现是，发达地区退休人口（65岁以上）每年增加约400万"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：全球人口峰值或早于联合国预期到来",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：低生育率扩散与产业需求分化分析",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：SUSTAINInsightsDemograph",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：核心发现是，发达地区退休人口（65岁以上）每年增加约400万",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：人口结构变化与需求驱动因素探讨",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "469",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
