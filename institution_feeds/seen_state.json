@@ -2320,6 +2320,42 @@
     "wto:https://www.wto.org/english/news_e/news26_e/trip_22jul26_467_e.htm": {
       "first_seen": "2026-07-28",
       "status": "no_pdf"
+    },
+    "imf:be34e026400dc73a97be9d03ffdc4cd20337f5915daaef0299d41bd10d1e": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "imf:2225617de56707f55e44e626b584805c8d52061ff3f71d43470d2c9a9281": {
+      "first_seen": "2026-07-29",
+      "status": "too_old"
+    },
+    "imf:a763473821a742f64e9c6418420c0070693792d2bd00027c0bdafba0c88d": {
+      "first_seen": "2026-07-29",
+      "status": "too_old"
+    },
+    "oecd:https://www.oecd.org/en/publications/oecd-methodology-to-estimate-seea-air-emission-accounts_6fc092d8-en.html": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/promoting-the-development-of-the-semiconductor-ecosystem-in-panama_50f1e10d-en.html": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-tanzania-2026-second-round_55831c5b-en.html": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-namibia-2026-second-round_60b2024d-en.html": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/global-forum-on-transparency-and-exchange-of-information-for-tax-purposes-cook-islands-2026-second-round_6eb14e18-en.html": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "adb:1164711": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
     }
   }
 }
