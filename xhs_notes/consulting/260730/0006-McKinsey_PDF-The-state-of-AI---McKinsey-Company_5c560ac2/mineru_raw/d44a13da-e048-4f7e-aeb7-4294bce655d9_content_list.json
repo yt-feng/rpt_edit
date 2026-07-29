@@ -1,0 +1,3010 @@
+[
+    {
+        "type": "text",
+        "text": "The state of AI",
+        "text_level": 1,
+        "bbox": [
+            55,
+            181,
+            738,
+            256
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "How organizations are rewiring to capture value",
+        "bbox": [
+            65,
+            268,
+            689,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Alex Singla  \nAlexander Sukharevsky  \nLareina Yee  \nMichael Chui  \nBryce Hall",
+        "bbox": [
+            66,
+            335,
+            210,
+            411
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "March 2025",
+        "bbox": [
+            66,
+            424,
+            158,
+            443
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/00abe614f19d434dc86ddbc74db43b4bfd036ebeb5ae21f62de057418c2d3770.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            334,
+            1000,
+            991
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "QuantumBlack AI by McKinsey",
+        "bbox": [
+            58,
+            46,
+            387,
+            101
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Organizations are beginning to create the structures and processes that lead to meaningful value from gen AI. While still in early days, companies are redesigning workflows, elevating governance, and mitigating more risks.",
+        "bbox": [
+            81,
+            69,
+            673,
+            299
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/eb7684cb3c0cc2bad00ef2fc5b287c15cbdabf0bea3f5f58b70bab46f821b8b7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            395,
+            285,
+            681
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/756111a7c61024f1cb95de58808948ed4f9d2c8544e87a534ebc45a07732542c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            305,
+            400,
+            480,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "organizations are starting to make organizational changes designed to generate future value from gen AI, and large companies are leading the way. The latest McKinsey Global Survey on AI finds",
+        "bbox": [
+            491,
+            404,
+            923,
+            536
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "that organizations are beginning to take steps that drive bottom-line impact—for example, redesigning workflows as they deploy gen AI and putting senior leaders in critical roles, such as overseeing AI governance. The findings also show that organizations are working to mitigate a growing set of gen-AI-related risks and are hiring for new AI-related roles while they retrain employees to participate in AI deployment. Companies with at least \\$500 million in annual revenue are changing more quickly than smaller organizations. Overall, the use of AI—that is, gen AI as well as analytical AI—continues to build momentum: More than three-quarters of respondents now say that their organizations use AI in at least one business function. The use of gen AI in particular is rapidly increasing.",
+        "bbox": [
+            297,
+            539,
+            924,
+            917
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            557,
+            969,
+            883,
+            983
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            908,
+            970,
+            919,
+            982
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "How companies are organizing their gen AI deployment—and who’s in charge",
+        "text_level": 1,
+        "bbox": [
+            292,
+            65,
+            877,
+            179
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Our survey analyses show that a CEO's oversight of AI governance—that is, the policies, processes, and technology necessary to develop and deploy AI systems responsibly—is one element most correlated with higher self-reported bottom-line impact from an organization's gen AI use. $^{1}$ That's particularly true at larger companies, where CEO oversight is the element with the most impact on EBIT attributable to gen AI. Twenty-eight percent of respondents whose organizations use AI report that their CEO is responsible for overseeing AI governance, though the share is smaller at larger organizations with \\$500 million or more in annual revenues, and 17 percent say AI governance is overseen by their board of directors. In many cases, AI governance is jointly owned: On average, respondents report that two leaders are in charge.",
+        "bbox": [
+            290,
+            196,
+            913,
+            345
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The value of AI comes from rewiring how companies run, and the latest survey shows that, out of 25 attributes tested for organizations of all sizes, the redesign of workflows has the biggest effect on an organization's ability to see EBIT impact from its use of gen AI. Organizations are beginning to reshape their workflows as they deploy gen AI. Twenty-one percent of respondents reporting gen AI use by their organizations say their organizations have fundamentally redesigned at least some workflows.",
+        "bbox": [
+            290,
+            361,
+            915,
+            460
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Twenty-eight percent of respondents whose organizations use AI report that their CEO is responsible for overseeing AI governance.",
+        "text_level": 1,
+        "bbox": [
+            76,
+            517,
+            790,
+            672
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ The correlation analyses considered 25 attributes and the reported effect of gen AI use on organizations' EBIT, and using the Johnson's Relative Weights regression analysis yielded an R-squared of 0.20. The attributes included which leaders oversee AI governance at organizations, how organizations are managing the time saved by gen AI deployment (for example, assigning completely new activities and fewer hours to employees, reducing head count), whether organizations have fundamentally redesigned at least some of their workflows as a result of gen AI deployment, and whether they have adopted each of 12 gen AI adoption and scaling best practices: 1) establishing a dedicated team to drive gen AI adoption (for example, a project management office, transformation office, or dedicated adoption and scaling team); 2) having regular internal communications about the value created by their gen AI solutions to build awareness and momentum; 3) having senior leaders who are actively engaged in driving gen AI adoption, including role modeling the use of gen AI; 4) embedding gen AI solutions into business processes effectively (for example, changing frontline employees' processes, creating user interfaces to incorporate gen AI solutions); 5) establishing role-based capability training courses to make sure employees at each level know how to use gen AI capabilities appropriately; 6) creating a comprehensive approach to foster trust among employees in our use of gen AI (for example, understanding primary sources, mitigating inaccuracies); 7) having a mechanism to incorporate feedback on the performance of gen AI solutions and improve them over time; 8) establishing a clearly defined road map to drive adoption of gen AI solutions (for example, with phased rollouts across teams and business units); 9) establishing a compelling change story about the need for gen AI adoption; 10) tracking well-defined KPIs for gen AI solutions, enabling insights into their adoption and ROI; 11) establishing employee incentives that reinforce gen AI adoption; and 12) creating a comprehensive approach to foster trust among customers in our use of gen AI (for example, transparency on regulatory compliance, use of customer data).",
+        "bbox": [
+            295,
+            734,
+            911,
+            933
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Twenty-one percent of respondents reporting gen AI use by their organizations say their organizations have fundamentally redesigned at least some workflows.",
+        "text_level": 1,
+        "bbox": [
+            76,
+            78,
+            759,
+            272
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/e821c97ecaaef5c1244a8632091fcb8ff2afb11f4c5f9094f30123434e1ffa0f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            319,
+            300,
+            801
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "McKinsey commentary Alexander Sukharevsky Senior partner and global coleader of QuantumBlack, AI by McKinsey",
+        "text_level": 2,
+        "bbox": [
+            341,
+            392,
+            874,
+            460
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The more we see organizations using AI, the more we recognize that it takes a top-down process to really move the needle. Effective AI implementation starts with a fully committed C-suite and, ideally, an engaged board. Many companies' instinct is to delegate implementation to the IT or digital department, but over and over again, this turns out to be a recipe for failure.",
+        "bbox": [
+            343,
+            474,
+            911,
+            556
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "There are several reasons for this. The first is that getting real value out of AI requires transformation, not just new technology. It’s a question of successful change management and mobilization, which is why C-suite leadership is essential. It’s also a potentially expensive transformation, requiring intensive use of sometimes scarce resources and talent. A lot rides on how those resources are made available, and that’s an executive-level call requiring nuanced decision-making that reflects the balance organizations must strike between efficient resource use and broad empowerment—a balance that must be constantly reevaluated as the technology and organization evolve.",
+        "bbox": [
+            343,
+            566,
+            913,
+            699
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As organizations become more fluent with AI, it will essentially become embedded in all functions, leaving leadership to focus on higher-level tasks like impact monitoring and talent development rather than on implementation.",
+        "bbox": [
+            343,
+            708,
+            911,
+            758
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            557,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            969,
+            918,
+            981
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Organizations are selectively centralizing elements of their AI deployment",
+        "text_level": 2,
+        "bbox": [
+            290,
+            82,
+            836,
+            123
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The survey findings also shed light on how organizations are structuring their AI deployment efforts. Some essential elements for deploying AI tend to be fully or partially centralized (Exhibit 1). For risk and compliance, as well as data governance, organizations often use a fully centralized model such as a center of excellence. For tech talent and adoption of AI solutions, on the other hand, respondents most often report using a hybrid or partially centralized model, with some resources handled centrally and others distributed across functions or business units—though respondents at organizations with less than \\$500 million in annual revenues are more likely than others to report fully centralizing these elements.",
+        "bbox": [
+            290,
+            130,
+            900,
+            263
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1",
+        "bbox": [
+            220,
+            324,
+            279,
+            340
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Risk and data governance are two of the most centralized elements of deploying AI solutions, whereas tech talent is often hybrid.",
+        "bbox": [
+            220,
+            348,
+            852,
+            386
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Degree of centralization of AI deployment, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            398,
+            619,
+            415
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/96db87b310ea75f90688beeeaca4bbdcf35b8e7c0ce3da15573819dea742b6da.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            223,
+            414,
+            911,
+            715
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Question was asked only of respondents whose organizations use AI in at least 1 function, n = 1,229. Figures were calculated after removing the share who said “don’t know/not applicable.”",
+        "bbox": [
+            220,
+            738,
+            898,
+            757
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "Source: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024",
+        "bbox": [
+            223,
+            753,
+            725,
+            767
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            782,
+            321,
+            795
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            970,
+            916,
+            981
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Twenty-seven percent of respondents say employees at their organizations review all content created by gen AI before it is used, and a similar share says that 20 percent or less of gen-AI-produced content is checked.",
+        "bbox": [
+            76,
+            59,
+            697,
+            330
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Organizations vary widely in how they monitor gen AI outputs",
+        "text_level": 2,
+        "bbox": [
+            290,
+            421,
+            854,
+            441
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Organizations have employees overseeing the quality of gen AI outputs, though the extent of that oversight varies widely. Twenty-seven percent of respondents whose organizations use gen AI say that employees review all content created by gen AI before it is used—for example, before a customer sees a chatbot’s response or before an AI-generated image is used in marketing materials (Exhibit 2). A similar share says that 20 percent or less of gen-AI-produced content is checked before use. Respondents working in business, legal, and other professional services are much more likely than those in other industries to say that all outputs are reviewed.",
+        "bbox": [
+            290,
+            445,
+            883,
+            578
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2",
+        "bbox": [
+            222,
+            638,
+            285,
+            654
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Respondents are about equally likely to say their organizations review all gen AI outputs as they are to say few are reviewed.",
+        "bbox": [
+            220,
+            664,
+            872,
+            702
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Share of gen AI outputs reviewed before usage, $^{1}$ % of respondents",
+        "bbox": [
+            218,
+            714,
+            663,
+            729
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/82f9470a442d221f819c131b8167d18641c50d47f56ef19e19668ea6f323a986.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            223,
+            734,
+            903,
+            785
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ Only asked of respondents whose organizations regularly use gen AI in at least 1 function. Figures were calculated after removing the share who said “don’t know”; n = 830.\nSource: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024",
+        "bbox": [
+            220,
+            801,
+            882,
+            832
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            220,
+            845,
+            321,
+            859
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            970,
+            916,
+            981
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Regulatory compliance",
+        "bbox": [
+            544,
+            378,
+            614,
+            407
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Organizations are addressing more gen-AI-related risks",
+        "text_level": 2,
+        "bbox": [
+            290,
+            84,
+            810,
+            104
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Many organizations are ramping up their efforts to mitigate gen-AI-related risks. Respondents are more likely than in early 2024 to say their organizations are actively managing risks related to inaccuracy, cybersecurity, and intellectual property infringement (Exhibit 3)—three of the gen-AI-related risks that respondents most commonly say have caused negative consequences for their organizations. $^{2}$",
+        "bbox": [
+            290,
+            109,
+            913,
+            191
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 3",
+        "text_level": 2,
+        "bbox": [
+            222,
+            261,
+            285,
+            277
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Respondents report increasing mitigation of inaccuracy, intellectual property infringement, and privacy risks related to use of gen AI.",
+        "bbox": [
+            220,
+            285,
+            836,
+            325
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Gen-AI-related risks that organizations are working to mitigate, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            335,
+            776,
+            354
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Intellectual property infringement",
+        "bbox": [
+            444,
+            369,
+            517,
+            407
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f3a350bbd3a00791546458bc1dfc481b2a146fd2ce5f20a40396ac2c22449223.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "$^{1}$ Only asked of respondents whose organizations use AI in at least 1 business function. Respondents who said “don’t know/not applicable” are not shown. Source: McKinsey Global Surveys on the state of AI, 2023–24"
+        ],
+        "bbox": [
+            220,
+            364,
+            910,
+            700
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "text_level": 2,
+        "bbox": [
+            223,
+            753,
+            323,
+            767
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ The findings show little change since early 2024 in the share of respondents reporting negative consequences from gen AI use. Forty-seven percent say their organizations have experienced at least one consequence, compared with 44 percent in early 2024.",
+        "bbox": [
+            292,
+            854,
+            893,
+            890
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Respondents at larger organizations report mitigating more risks than respondents from other organizations do. They are much more likely than others to say their organizations are managing potential cybersecurity and privacy risks, for example, but they are not any more likely to be addressing risks relating to the accuracy or explainability of AI outputs.",
+        "bbox": [
+            290,
+            89,
+            908,
+            157
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/9e6e7f0f37848f3a71b006b64219571cff63dc0ac57fc7853f5cebcfb63d4eca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            167,
+            297,
+            659
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "McKinsey commentary",
+        "text_level": 2,
+        "bbox": [
+            344,
+            239,
+            524,
+            258
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Alex Singla",
+        "text_level": 2,
+        "bbox": [
+            344,
+            263,
+            455,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Senior partner and global coleader of QuantumBlack, AI by McKinsey",
+        "text_level": 2,
+        "bbox": [
+            344,
+            287,
+            872,
+            306
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We've learned a lot about generative AI over the past two years. But perhaps the most important lesson is this: It pays to think big. The organizations that are building a genuine and lasting competitive advantage from their AI efforts are the ones that are thinking in terms of wholesale transformative change that stands to alter their business models, cost structures, and revenue streams—rather than proceeding incrementally.",
+        "bbox": [
+            344,
+            321,
+            918,
+            405
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our experience helping organizations create and deploy gen AI systems also shows that it pays to be ambitious from the outset—pursuing end-to-end solutions to transform entire domains, rather than taking a piecemeal, use-case-by-use-case approach. Beginning with an overarching, enterprise-level transformative vision opens up possibilities down the line. That’s because a clear picture of where you’re going influences the data you capture and the models you build. You’re thinking about things like access control; security; reusability of code at the front end, not as an afterthought; and creating a foundational infrastructure that is well beyond any individual use case or domain. This allows further functionality to be deployed faster and more cheaply than if you go use case by use case—which, in turn, becomes a competitive advantage that others will have a hard time keeping up with.",
+        "bbox": [
+            344,
+            414,
+            924,
+            580
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Transformative thinking also forces the CEO and top team to be aligned—something that use case thinking does not. This is critical because successful transformations require siloed parts of the enterprise to come together in a single orchestrated effort—and that can typically only happen when the CEO and other top leaders are involved.",
+        "bbox": [
+            344,
+            588,
+            921,
+            655
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Respondents at larger organizations report mitigating more gen-AI-related risks than other respondents do.",
+        "text_level": 1,
+        "bbox": [
+            220,
+            744,
+            923,
+            859
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            557,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            969,
+            918,
+            981
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Best practices for adoption and scaling can enable value, and companies are beginning to follow them",
+        "text_level": 1,
+        "bbox": [
+            290,
+            314,
+            854,
+            467
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Most respondents have yet to see organization-wide, bottom-line impact from gen AI use—and most aren't yet implementing the adoption and scaling practices that we know from earlier research help create value when deploying new technologies. In a complementary survey in a set of developed markets, only 1 percent of company executives describe their gen AI rollouts as “mature.” Even though these remain early days for deployment, we are beginning to see the impact when these practices are employed to capture value.",
+        "bbox": [
+            290,
+            484,
+            877,
+            585
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We asked respondents about 12 adoption- and scaling-related practices for gen AI and found that there are positive correlations on EBIT impact from each. The one with the most impact on the bottom line is tracking well-defined KPIs for gen AI solutions, while at larger organizations, establishing a clearly defined road map to drive adoption of gen AI also has one of the biggest impacts.",
+        "bbox": [
+            290,
+            599,
+            875,
+            684
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Less than one-third of respondents report that their organizations are following most of the 12 adoption and scaling practices for gen AI.",
+        "bbox": [
+            98,
+            85,
+            777,
+            243
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            969,
+            918,
+            981
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Overall, companies are in the early stages of putting these practices in place. So far, less than one-third of respondents report that their organizations are following most of the 12 adoption and scaling practices, with less than one in five saying their organizations are tracking KPIs for gen AI solutions. Respondents working for larger organizations are more likely to report using at least some of these practices (Exhibit 4). Those at larger organizations, for example, are more than twice as likely as their small-company peers to say their organizations have established clearly defined road maps to drive adoption of gen AI solutions (such as through phased rollouts across teams and business units) and to have established a dedicated team (such as a project management or transformation office) to drive gen AI adoption. Responses show larger organizations are also ahead on building awareness and momentum through internal communications about the value created by gen AI solutions, creating role-based capability training courses to make sure employees at each level know how to use gen AI capabilities appropriately, and having comprehensive approaches to foster trust among customers in their use of gen AI.",
+        "bbox": [
+            290,
+            84,
+            893,
+            314
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 4",
+        "text_level": 2,
+        "bbox": [
+            223,
+            377,
+            285,
+            392
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Larger organizations are following more adoption and scaling best practices for gen AI deployment than are smaller organizations.",
+        "text_level": 1,
+        "bbox": [
+            220,
+            402,
+            820,
+            441
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Organizations engaging in given gen AI practices, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            454,
+            679,
+            470
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Organizations with \\$500 million or more in annual revenue",
+        "bbox": [
+            222,
+            476,
+            557,
+            491
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Smaller organizations",
+        "bbox": [
+            594,
+            476,
+            730,
+            491
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/55de85cee80560e9f3e987bf4aea11db687e9e1e899094d4957b4e346587d684.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ Only asked of respondents whose organizations use AI in at least 1 business function. Figures were calculated after removing the share who said “don’t know.” Respondents who said “None of the above” are not shown.\nSource: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024"
+        ],
+        "content": "",
+        "bbox": [
+            220,
+            500,
+            911,
+            813
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            863,
+            323,
+            875
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac49ce059ff8b22a36a5e95d2d379befae4f926fbaa290925a59f23bbda972c5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            27,
+            292,
+            507
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "McKinsey commentary Bryce Hall Associate partner",
+        "text_level": 2,
+        "bbox": [
+            339,
+            99,
+            519,
+            167
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The initial wave of excitement and novelty around generative AI is evolving into an intentional focus on how to create value from these technologies. Executives are rightfully looking for a return on their AI investments; in many cases, they are paring back their strategies from trying to apply gen AI everywhere to prioritizing the domains that have the greatest potential.",
+        "bbox": [
+            339,
+            181,
+            895,
+            263
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We're now far enough into the gen AI era to see patterns among companies that are capturing value. One significant difference is that these companies focus as much on driving adoption and scaling as they do on the up-front technology development. This is not just hand-waving. Instead, they are following specific management practices that enable them to be successful—such as developing a clear road map for scaling, establishing and tracking KPIs, and driving change management by ensuring senior leaders are actively engaged in driving gen AI adoption. The fact that so many companies continue to struggle with these management practices is a testament to the fact that they're not so simple to get right.",
+        "bbox": [
+            339,
+            273,
+            908,
+            407
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In addition, companies that report capturing value from gen AI are “rewiring” their business processes to effectively embed gen AI solutions while appropriately incorporating human-in-the-loop mechanisms to validate models and outputs and effectively mitigating risks associated with the technology.",
+        "bbox": [
+            339,
+            414,
+            898,
+            482
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI is shifting the skills that organizations need",
+        "text_level": 1,
+        "bbox": [
+            290,
+            569,
+            787,
+            643
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This survey also examines the state of AI-related hiring and other ways AI affects the workforce. Respondents working for organizations that use AI are about as likely as they were in the early 2024 survey to say their organizations hired individuals for AI-related roles in the past 12 months. The only roles that differ this year are data-visualization and design specialists, which respondents are significantly less likely than in the previous survey to report hiring. The findings also indicate several new risk-related roles that are becoming part of organizations' AI deployment processes. Thirteen percent of respondents say their organizations have hired AI compliance specialists, and 6 percent report hiring AI ethics specialists. Respondents at larger companies are more likely than their peers at smaller organizations to report hiring a broad range of AI-related roles, with the largest gaps seen in hiring AI data scientists, machine learning engineers, and data engineers.",
+        "bbox": [
+            287,
+            662,
+            913,
+            844
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            903,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Half of respondents whose organizations use AI say their employers will need more data scientists over the next year.",
+        "text_level": 1,
+        "bbox": [
+            124,
+            61,
+            691,
+            215
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Respondents continue to see these roles as largely challenging to fill, though a smaller share of respondents than in the past two years describe hiring for many roles as “difficult” or “very difficult” (Exhibit 5). One exception is AI data scientists, who will continue to be in high demand in the year ahead: Half of respondents whose organizations use AI say their employers will need more data scientists than they have now.",
+        "bbox": [
+            290,
+            286,
+            875,
+            369
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 5",
+        "text_level": 2,
+        "bbox": [
+            222,
+            428,
+            285,
+            443
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Smaller shares of respondents report difficulty in hiring for AI-related roles, compared with previous years.",
+        "bbox": [
+            220,
+            452,
+            872,
+            488
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Share of respondents reporting difficulty in organizations' hiring of AI-related roles, $^{1}$ % of respondents",
+        "bbox": [
+            222,
+            500,
+            893,
+            515
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/a58122406e17b8ed2cdf233bf4de53633165d52eacc1146f5138495198a2900a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ Only asked of respondents who said their organizations use AI in at least 1 function and who said their organization hired the given role in the past 12 months. Figures were calculated after removing the share who said “don’t know.” Respondents who described hiring for given role as “easy” or “neither difficult nor easy” are not shown.",
+            "$^{2}$ Not asked of respondents in 2022.",
+            "$^{3}$ Not asked of respondents in 2022 or 2023.",
+            "Source: McKinsey Global Surveys on the state of AI, 2022–24"
+        ],
+        "content": "",
+        "bbox": [
+            245,
+            518,
+            903,
+            813
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            893,
+            323,
+            906
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            905,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Many respondents expect to undertake more AI-related reskilling in the next three years than they conducted in the past year.",
+        "text_level": 1,
+        "bbox": [
+            78,
+            56,
+            748,
+            212
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Many respondents also say that their organizations have reskilled portions of their workforces as part of their AI deployment over the past year and that they expect to undertake more reskilling in the years ahead (Exhibit 6).",
+        "bbox": [
+            292,
+            292,
+            834,
+            343
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Our latest survey also shows how organizations are managing the time saved by their deployment of gen AI. Respondents most often report that employees are spending the time saved via automation on entirely new activities. They also often say that employees are spending more time on existing responsibilities that have not been automated. Respondents at larger organizations, however, are more likely than others to say their organizations have reduced the number of employees as a result of time saved. Our analyses find that head count reductions are one of the organizational attributes with the largest impact on bottom-line value realized from gen AI.",
+        "bbox": [
+            292,
+            358,
+            888,
+            491
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 6",
+        "bbox": [
+            220,
+            549,
+            284,
+            565
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Respondents' organizations have begun reskilling employees due to AI use, and respondents expect increased reskilling in the next three years.",
+        "bbox": [
+            218,
+            574,
+            898,
+            613
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/38f36c8d81cb10e629e8a092214344b06d216ccd0f556b8c077f1073679c8dd7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            218,
+            625,
+            900,
+            830
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ Only asked of respondents whose organizations use AI in at least 1 function. Figures were calculated after removing respondents who said “don’t know.” The question asked, “What share of employees in your organization’s workforce have been reskilled in the past year as a result of AI adoption?” $^{2}$ Only asked of respondents whose organizations use AI in at least 1 function. Figures were calculated after removing respondents who said “don’t know.” The questions asked, “What share of employees in your organization’s workforce do you expect will be reskilled over the next 3 years as a result of AI adoption?”\n\nSource: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024",
+        "bbox": [
+            218,
+            784,
+            888,
+            830
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            220,
+            845,
+            321,
+            858
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            903,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Overall, though, a plurality of respondents (38 percent) whose organizations use AI predict that use of gen AI will have little effect on the size of their organization's workforce in the next three years. Looking at expectations by industry, survey respondents working in financial services are the only ones much more likely to expect a workforce reduction than no change. The findings show that C-level executives' expectations for the workforce impact of gen AI are not significantly different from those of senior managers and midlevel managers. That said, when it comes to the head count impact of AI—including gen AI and analytical AI—C-level executives are more likely than middle managers to predict increasing head count.",
+        "bbox": [
+            290,
+            87,
+            869,
+            234
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Looking at the expected effects of gen AI deployment by business function, respondents most often predict decreasing head count in service operations, such as customer care and field services, as well as in supply chain and inventory management (Exhibit 7). In IT and product development, however, respondents are more likely to expect increasing than decreasing head count.",
+        "bbox": [
+            292,
+            250,
+            867,
+            333
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 7",
+        "text_level": 2,
+        "bbox": [
+            220,
+            392,
+            284,
+            407
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Respondents most often predict that gen AI use will lead to decreased head count in service operations and supply chain management.",
+        "bbox": [
+            220,
+            415,
+            875,
+            452
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Expected change in business function's number of employees as a result of gen AI use, next 3 years, $^{1}$ % of respondents reporting gen AI use in the given function",
+        "bbox": [
+            218,
+            463,
+            880,
+            492
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/bcb112532803bafaf4f196a2a2db65ea192c63d8d01fa0b6cf0833e5955d401d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ Asked only of respondents who said their organizations use gen AI in the given business function. Figures may not sum to 100%, because of rounding. Source: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024"
+        ],
+        "content": "",
+        "bbox": [
+            220,
+            497,
+            911,
+            851
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            220,
+            898,
+            321,
+            912
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            903,
+            970,
+            918,
+            982
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/b444e1f001ee483cf4213db4e2b0fe49380e1a0d0714968c63ee10de7beeaad4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            27,
+            294,
+            463
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "McKinsey commentary",
+        "text_level": 2,
+        "bbox": [
+            341,
+            99,
+            519,
+            118
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Lareina Yee",
+        "text_level": 2,
+        "bbox": [
+            341,
+            122,
+            455,
+            140
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Senior partner and McKinsey Global Institute director",
+        "text_level": 2,
+        "bbox": [
+            339,
+            148,
+            750,
+            166
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Although we remain in the early stages of gen AI, we're beginning to get a glimpse into the ways the technology is affecting the workforce. A common fear about the technology is that it will be a job killer, as organizations offload tasks historically done by employees to increasingly powerful AI platforms. But our survey suggests that this is not necessarily the case. In fact, a plurality of respondents anticipate no immediate change to the size of their workforces. And while respondents expect lower head counts in some functions—such as service operations and supply chain/inventory management—in other functions—including software engineering and product development—respondents are actually anticipating an increase in the number of employees.",
+        "bbox": [
+            339,
+            181,
+            901,
+            330
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Meantime, the difficulty of finding AI talent, while still considerable, is beginning to ease. Perhaps more people are taking the initiative to enhance their own capabilities. Or it could be that corporate investments in upskilling are beginning to bear fruit. Both of these somewhat counterintuitive trends serve to reinforce the fact that we are still in the early days of the AI revolution—the long-term workforce effects are still only beginning to take shape.",
+        "bbox": [
+            339,
+            339,
+            911,
+            422
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI use continues to climb",
+        "text_level": 2,
+        "bbox": [
+            292,
+            511,
+            769,
+            545
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Reported use of AI increased in 2024. $^{3}$ In the latest survey, 78 percent of respondents say their organizations use AI in at least one business function, up from 72 percent in early 2024 and 55 percent a year earlier (Exhibit 8). Respondents most often report using the technology in the IT and marketing and sales functions, followed by service operations. The business function that saw the largest increase in AI use in the past six months is IT, where the share of respondents reporting AI use jumped from 27 percent to 36 percent.",
+        "bbox": [
+            290,
+            561,
+            895,
+            661
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Organizations are also using AI in more business functions than in the previous State of AI survey. For the first time, most survey respondents report the use of AI in more than one business function (Exhibit 9). Responses show organizations using AI in an average of three business functions—an increase from early 2024, but still a minority of functions.",
+        "bbox": [
+            290,
+            676,
+            882,
+            742
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ The survey question asked, “In which business functions has your organization adopted AI (for example, machine learning, computer vision, natural-language processing)?” Eleven business functions were offered as answer choices. Organizations using AI are those that, according to respondents, have adopted AI in at least one business function. For the purposes of our research, we left “adopted” undefined. Use of AI, therefore, spans from early experimentation by a few employees to AI being embedded across multiple business units that have entirely redesigned their business processes.",
+        "bbox": [
+            292,
+            777,
+            900,
+            835
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            903,
+            970,
+            916,
+            981
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 9",
+        "text_level": 2,
+        "bbox": [
+            223,
+            530,
+            285,
+            546
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Organizations are increasingly using AI in multiple functions.",
+        "bbox": [
+            222,
+            554,
+            771,
+            575
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Business functions at respondents' organizations that are using AI, $^{1}$ % of respondents",
+        "bbox": [
+            222,
+            585,
+            797,
+            603
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/661d39ed114c2af931fcd6d12350f91f7de4dc01ad83aa0a2b83eaf218df2c4e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "$^{1}$ In 2021, n = 1,843; in 2022, n = 1,492; in 2023, n = 1,684; in Feb–Mar 2024, n = 1,363; in July 2024, n = 1,491. The survey question asks about 11 functions: HR; IT; manufacturing; marketing and sales; product and/or service development; risk, legal, and compliance; service operations; software engineering; strategy and corporate finance; supply chain/inventory management; and other corporate functions (eg, knowledge management).\n\nSource: McKinsey Global Surveys on the state of AI, 2021–24"
+        ],
+        "bbox": [
+            228,
+            632,
+            913,
+            863
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            921,
+            323,
+            934
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Exhibit 8",
+        "bbox": [
+            223,
+            75,
+            287,
+            92
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Organizations' use of AI has accelerated markedly in the past year, after years of little meaningful change.",
+        "bbox": [
+            220,
+            101,
+            870,
+            140
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Organizations that use AI in at least 1 business function, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            155,
+            723,
+            172
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "20\n47\n58\n50\n56\n50\n55\n33\n65\n72\n78\n71",
+        "bbox": [
+            227,
+            176,
+            887,
+            425
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "$^{1}$ In 2017, the definition for AI use was using AI in a core part of the organization's business or at scale. In 2018–19, the definition was embedding at least 1 AI capability in business processes or products. Since 2020, the definition has been that the organization has adopted AI in at least 1 function.\n\nSource: McKinsey Global Surveys on the state of AI",
+        "bbox": [
+            223,
+            430,
+            883,
+            460
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            474,
+            323,
+            487
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            882,
+            982
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            903,
+            970,
+            916,
+            981
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The use of gen AI has seen a similar jump since early 2024: 71 percent of respondents say their organizations regularly use gen AI in at least one business function, up from 65 percent in early 2024. $^{4}$ (Individuals' use of gen AI has also grown. See sidebar, \"C-level executives are using gen AI more than others.\") Responses show that organizations are most often using gen AI in marketing and sales, product and service development, service operations, and software engineering—business functions where gen AI deployment would likely generate the most value, according to previous McKinsey research—as well as in IT.",
+        "bbox": [
+            290,
+            71,
+            893,
+            186
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "While organizations in all sectors are most likely to use gen AI in marketing and sales, deployment within other functions varies greatly according to industry (Exhibit 10). Organizations are applying the technology where it can generate the most value—for example, service operations for media and telecommunication companies, software engineering for technology companies, and knowledge management for professional-services organizations. $^{5}$ Gen AI deployment also varies by company size. Responses show that companies with more than 500 million in annual revenues are using gen AI throughout more of their organizations than smaller companies are.",
+        "bbox": [
+            290,
+            203,
+            887,
+            335
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Survey responses show that organizations are most often using gen AI in marketing and sales, product and service development, service operations, and software engineering.",
+        "text_level": 1,
+        "bbox": [
+            151,
+            422,
+            864,
+            619
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ The survey asked, “In which of the following business functions is your organization regularly using generative AI—that is, machine learning algorithms such as ChatGPT that can create new content, including audio, code, text, and images?” $^{5}$ The survey asked about use of gen AI in “Other corporate functions (for example, knowledge management),” but because most of the use cases described fell under “knowledge management,” we refer to this selection as such.",
+        "bbox": [
+            290,
+            710,
+            911,
+            757
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            903,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Organizations across industries have begun to use gen AI in marketing and sales, though other uses vary by industry.",
+        "bbox": [
+            220,
+            103,
+            898,
+            142
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Business functions in which respondents' organizations are regularly using gen AI, by industry, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            157,
+            864,
+            185
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/104f719e24fcc8188b4da136a1359d23b346e0ef319e2c4f4acfea3ea9e76439.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            218,
+            186,
+            913,
+            669
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ For technology, n = 199; for business, legal, and professional services, n = 179; for media and telecom, n = 77; for advanced industries (includes advanced electronics, aerospace and defense, automotive and assembly, and semiconductors), n = 97; for financial services, n = 193; for consumer goods and retail, n = 111; for healthcare, pharma, and medical products, n = 113; and for energy and materials, n = 142.\nSource: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024",
+        "bbox": [
+            220,
+            686,
+            880,
+            724
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            739,
+            325,
+            752
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Exhibit 10",
+        "bbox": [
+            223,
+            80,
+            292,
+            95
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            557,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            903,
+            970,
+            918,
+            982
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "C-level executives are using gen AI more than others",
+        "text_level": 1,
+        "bbox": [
+            80,
+            70,
+            429,
+            183
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Individual use of gen AI by our respondents also increased significantly in 2024, with C-level executives leading the way (exhibit). Fifty-three percent of surveyed executives say they are regularly using gen AI at work, compared with 44 percent of midlevel managers. While we see variation in individuals' use of gen AI across industries and regions, the data largely show widening use across the board.",
+        "bbox": [
+            78,
+            202,
+            467,
+            319
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/6530968b4203d7698651d37f86f3111fcf46b5477bd1001a82e331a367661f4e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            509,
+            13,
+            1000,
+            367
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Exhibit",
+        "text_level": 2,
+        "bbox": [
+            81,
+            371,
+            133,
+            386
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Respondents are much more likely now than in 2023 and in early 2024 to say they are using gen AI.",
+        "bbox": [
+            78,
+            393,
+            880,
+            434
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Personal experience with gen AI tools, in 2023, first half of 2024, and second half of 2024, $^{1}$ % of respondents",
+        "bbox": [
+            78,
+            446,
+            857,
+            464
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Regularly use for work",
+        "bbox": [
+            89,
+            470,
+            179,
+            496
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/53efe63e3fd17af3cc9df980711ef687ad61c2ae42b2afe56b1b820d799ac4ab.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Regularly use for work and outside of work"
+        ],
+        "bbox": [
+            89,
+            500,
+            200,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/900a7d2fe1b788cf56661522eecd8e445ca37a2697afb4bfcc2bc5fba4134ea4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Regularly use outside of work"
+        ],
+        "bbox": [
+            253,
+            518,
+            343,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0002e2decde0a2f869b4526ad81ba7c6f26026075a15a2df8847c7f83b7b8c11.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Have tried at least once"
+        ],
+        "bbox": [
+            352,
+            517,
+            442,
+            785
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/38e35a5b9e2048c88e98eaa16b4a796eae8db87797f6595366f4558f2e0bbe32.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "No exposure",
+            "Don't know"
+        ],
+        "bbox": [
+            454,
+            517,
+            544,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4fb599b156ac1138f0c66b47004e7959afcf0bececce107ce8e8a36926130591.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            609,
+            518,
+            697,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d2aaa75db465649cc4492cf8e1684ac36290c295378536fb3bcec5d4e05e5005.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            709,
+            516,
+            797,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f653a57b4944bfbafbc2ee1772e75b7405917fcc35781a63832e76d7c6aa4982.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Figures may not sum to 100%, because of rounding.",
+            "$^{1}$ In 2023, n = 1,684; in part 1 of 2024, n = 1,363; in part 2 of 2024, n = 1,491.",
+            "$^{2}$ In 2023, C-level respondents, n = 541; senior managers, n = 437; and midlevel managers, n = 339. In Feb–Mar 2024, C-level respondents, n = 474; senior managers, n = 406; and midlevel managers, n = 206. In July 2024, C-level respondents, n = 555; senior managers, n = 371; and midlevel managers, n = 264. $^{3}$ In 2023, for respondents born in 1964 or earlier, n = 143; for respondents born 1965–80, n = 268; and for respondents born 1981–96, n = 80. In 2024, for respondents born in 1964 or earlier, n = 158; for respondents born 1965–80, n = 331; and for respondents born 1981–96, n = 184. In 2024 part 2, for respondents born in 1964 or earlier, n = 171; for respondents born 1965–80, n = 398; and for respondents born 1981–96, n = 218. Age details were not available for all respondents.\n\nSource: McKinsey Global Surveys on the state of AI, 2023–24"
+        ],
+        "bbox": [
+            810,
+            513,
+            903,
+            784
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            84,
+            896,
+            184,
+            907
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            903,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Healthcare, pharma, and medical products",
+        "bbox": [
+            813,
+            439,
+            911,
+            474
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Respondents are much more likely now than in 2023 and in early 2024 to say they are using gen AI.",
+        "bbox": [
+            83,
+            64,
+            883,
+            104
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Personal experience with gen AI tools, in 2023, first half of 2024, and second half of 2024, $^{1}$ % of respondents",
+        "bbox": [
+            83,
+            117,
+            862,
+            133
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "I Regularly use for work",
+        "bbox": [
+            94,
+            147,
+            187,
+            174
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/155b432c96a78512dab912bb4f3f764959e3a6207c2081a7e59c4b237c4ea321.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Regularly use for work and outside of work"
+        ],
+        "bbox": [
+            94,
+            181,
+            204,
+            465
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a3d69fdfb89fcfa8ad5954c67da9f93a473a796285f8291cb5ae988fc84a2f4b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Regularly use outside of work"
+        ],
+        "bbox": [
+            207,
+            200,
+            292,
+            458
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ffefc939acc0b3844f6589cb6ac6f7627141486344374c213f383e31b5e7aa01.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Have tried at least once"
+        ],
+        "bbox": [
+            303,
+            200,
+            398,
+            474
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2c21146343f786b66d28ce1981a16c695afa497ae13fd0d1b1a9039f1b9e24b8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            406,
+            200,
+            496,
+            476
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de5e63e3960ca2dd2138613772eae56787dea34d52d95fd9fbf706133cdaf166.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "No exposure",
+            "Don't know"
+        ],
+        "bbox": [
+            508,
+            200,
+            596,
+            468
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de2ed715f2f5ebe2577d1cf470dafd8ae0799ccc1bb0768cca5824fc32d37010.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            609,
+            200,
+            697,
+            476
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/178dbe72003801b9ff544731a92d26893ba13b67fdebfc2793258e8f0c5b0785.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            710,
+            200,
+            797,
+            468
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e2fbc758cb95228bf81a6bea3dce8c6e6f1690123f6ec4e15eab05a548bc4443.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Figures may not sum to 100%, because of rounding.",
+            "$^{1}$ In 2023, media, entertainment, and telecommunications, n = 69; technology, n = 175; business, legal, and professional services, n = 215; energy and materials, n = 152; advanced industries (includes automotive and assembly, aerospace and defense, advanced electronics, and semiconductors), n = 112; consumer goods and retail, n = 128; financial services, n = 248; healthcare, pharmaceuticals, and medical products, n = 130. In Feb–Mar 2024, media, entertainment, and telecommunications, n = 70; technology, n = 184; business, legal, and professional services, n = 166; energy and materials, n = 113; advanced industries, n = 86; consumer goods and retail, n = 100; financial services, n = 201; healthcare, pharmaceuticals, and medical products, n = 109. Analyses for 2023 were updated to include additional industries within advanced industries and energy and materials. In July 2024, media, entertainment, and telecommunications, n = 77; technology, n = 199; business, legal, and professional services, n = 179; energy and materials, n = 142; advanced industries, n = 97; consumer goods and retail, n = 111; financial services, n = 193; healthcare, pharmaceuticals, and medical products, n = 113."
+        ],
+        "bbox": [
+            810,
+            200,
+            911,
+            470
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Personal experience with gen AI tools, in 2023, first half of 2024, and second half of 2024, $^{1}$ % of respondents",
+        "bbox": [
+            84,
+            582,
+            864,
+            599
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac99c0bc92177fb75a019eacdb6cc5745e87a0d72e8a40a8f405905eaa6f9ea1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            132,
+            614,
+            220,
+            877
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/536830b86d7bb2c53310856c90d5e7611defb74a6c71b3ad727dd4d9c9f0cc5b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            297,
+            614,
+            390,
+            877
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6d36685c7274b035fca145126c28d4f2f729f55c9a12bd7c33920bdecb00f3c3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Figures may not sum to 100%, because of rounding."
+        ],
+        "bbox": [
+            462,
+            613,
+            560,
+            878
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ead8c60ca3ce5fcc6415e4dd661a8bcb7978c48ca15fc6c6b9d76d05d56f77ea.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            795,
+            614,
+            883,
+            867
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9a1f73433bf8619f82c0a256a9bc7ea173b4b01452250e770f9340a9f0bc7ff9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "$^{1}$ In 2023, Asia–Pacific, n = 164; Europe, n = 515; North America, n = 392; Greater China (includes Hong Kong and Taiwan), n = 337; and developing markets (includes India, Latin America, Middle East, and North Africa), n = 276. In Feb–Mar 2024, Asia–Pacific, n = 116; Europe, n = 457; North America, n = 401; Greater China (includes Hong Kong and Taiwan), n = 153; and developing markets (includes India, Latin America, Middle East, and North Africa), n = 234. In July 2024, Asia–Pacific, n = 152; Europe, n = 463; North America, n = 355; Greater China (includes Hong Kong and Taiwan), n = 200; and developing markets (includes India, Latin America, Middle East, and North Africa), n = 321. Source: McKinsey Global Surveys on the state of AI, 2023–24"
+        ],
+        "bbox": [
+            630,
+            614,
+            718,
+            877
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            903,
+            967,
+            918,
+            977
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Exhibit (continued)",
+        "bbox": [
+            86,
+            42,
+            212,
+            58
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            86,
+            965,
+            184,
+            978
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            965,
+            883,
+            978
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "More than one-third of respondents say their organizations use gen AI to create images, and more than one-quarter use it to create computer code.",
+        "text_level": 1,
+        "bbox": [
+            76,
+            65,
+            808,
+            220
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Most respondents reporting use of gen AI—63 percent—say that their organizations are using gen AI to create text outputs, but organizations are also experimenting with other modalities. More than one-third of respondents say their organizations are generating images, and more than one-quarter use it to create computer code (Exhibit 11). Respondents in the technology sector report the widest range of gen AI outputs, while respondents in advanced industries (such as automotive, aerospace, and semiconductors) are more likely than others to use gen AI to create images and audio.",
+        "bbox": [
+            290,
+            309,
+            919,
+            425
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 11",
+        "text_level": 2,
+        "bbox": [
+            220,
+            474,
+            287,
+            489
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "While text is the type of content that organizations are most commonly creating with gen AI, they are also experimenting with other modalities.",
+        "bbox": [
+            220,
+            497,
+            862,
+            536
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Types of content generated by gen AI at respondents' organizations, $^{1}$ % of respondents",
+        "bbox": [
+            220,
+            547,
+            805,
+            564
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/1430ce34ac75e42d40e546ac03168235bc79715c83f66337214f5f906a64e674.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ Only asked of respondents whose organizations regularly use gen AI in at least one function. Figures were calculated after removing the respondents who said “don’t know.”\nSource: McKinsey Global Survey on the state of AI, 1,491 participants at all levels of the organization, July 16–31, 2024"
+        ],
+        "content": "",
+        "bbox": [
+            223,
+            579,
+            903,
+            675
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            222,
+            727,
+            323,
+            739
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            900,
+            970,
+            916,
+            981
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "An increasing share of respondents report value creation within the business units using gen AI. Compared with early 2024, larger shares of respondents say that their organizations' gen AI use cases have increased revenue within the business units deploying them (Exhibit 12). Respondents report similar revenue increases from gen AI as they did from analytical AI activities in the previous survey. This emphasizes the need for companies to have a comprehensive approach across both AI and gen AI solutions to capture the full potential value.",
+        "bbox": [
+            290,
+            90,
+            906,
+            191
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 12",
+        "bbox": [
+            223,
+            255,
+            290,
+            271
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Organizations increasingly see gen AI's effects on revenues in the business units using the technology.",
+        "bbox": [
+            222,
+            277,
+            862,
+            314
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Revenue increase within business units from gen AI use, past 12 months, by function, $^{1}$ % of respondents",
+        "bbox": [
+            223,
+            324,
+            895,
+            340
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7f306628f618821b0380eaa77cbc51e80b9b1d530992e5754259d900ee557f08.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            220,
+            347,
+            625,
+            547
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0b787661a93e6edb187bf4ec907f398c776bcedf896acd0c83e14b2d4375b201.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            663,
+            369,
+            903,
+            547
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ Questions were asked only of respondents who said their organizations regularly use gen AI in a given function. Respondents who said “no change,” “decreased revenue,” “don’t know,” and “not applicable,” as well as business functions that are cost centers, are not shown. Segments may not sum to the total shown, because of rounding. The first 2024 survey was in the field from Feb 22 to Mar 5, and the second was fielded from July 16 to July 31.\nSource: McKinsey Global Surveys on the state of AI, 2024",
+        "bbox": [
+            223,
+            563,
+            895,
+            602
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "bbox": [
+            223,
+            617,
+            323,
+            631
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Overall, respondents are also more likely than in the previous survey to say they are seeing meaningful cost reductions within the business units using gen AI (Exhibit 13). In early 2024, among respondents reporting use of gen AI in specific business functions, a minority saw cost reductions from its use. $^{6}$ The latest survey finds that, for use of gen AI in most business functions, a majority of respondents report cost reductions. Yet gen AI's reported effects on bottom-line impact are not yet material at the enterprise-wide level. More than 80 percent of respondents say their organizations aren't seeing a tangible impact on enterprise-level EBIT from their use of gen AI. $^{7}$",
+        "bbox": [
+            290,
+            702,
+            890,
+            834
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ Use in HR was the exception, with half of respondents who reported gen AI use in HR saying it had reduced costs. $^{7}$ Seventeen percent of respondents say 5 percent or more of their organization's EBIT in the past 12 months is attributable to the use of gen AI.",
+        "bbox": [
+            294,
+            876,
+            895,
+            912
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            903,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Respondents increasingly report cost reductions from gen AI within business units using the technology.",
+        "bbox": [
+            78,
+            78,
+            910,
+            117
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Cost decrease within business units from gen AI use, past 12 months, by function, $^{1}$ % of respondents",
+        "bbox": [
+            76,
+            130,
+            784,
+            148
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/097d9c5bb4a5385a401fd811eeb44e5dfdf331799f76a0fc1c4aed536ed4978e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            84,
+            159,
+            813,
+            453
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e88c221b833ea3052210232b70902cccbfc88890c835427369c0cb8e724bc607.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            86,
+            496,
+            910,
+            762
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Exhibit 13",
+        "bbox": [
+            80,
+            54,
+            148,
+            70
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Question was asked only of respondents who said their organizations use gen AI in a given function. Respondents who said “cost increase,” “no change,” “not applicable,” or “don’t know” are not shown. Data for gen AI use in manufacturing is not shown, because the base sizes were too small to meet the reporting threshold. The first 2024 survey was in the field from Feb 22 to Mar 5, and the second was fielded from July 16 to July 31.",
+        "bbox": [
+            81,
+            784,
+            910,
+            811
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Answer choice was “Other corporate functions (eg, knowledge management),” but in a follow-up question, most respondents indicated gen AI use in knowledge management. Source: McKinsey Global Surveys on the state of AI, 2024",
+        "bbox": [
+            81,
+            811,
+            826,
+            830
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            83,
+            845,
+            183,
+            857
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            970,
+            883,
+            982
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            900,
+            970,
+            918,
+            981
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/2282a0efe54065ad7cb2e00d30f563c8d1e3411a0a6171467d64024c9de1ed6a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            27,
+            294,
+            448
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "McKinsey commentary Michael Chui Senior fellow",
+        "text_level": 2,
+        "bbox": [
+            339,
+            99,
+            519,
+            167
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Things are moving fast in the field of AI. But even as we try to keep up with the pace of technological advancements, we are also learning that AI only makes an impact in the real world when enterprises adapt to the new capabilities that these technologies enable. That's what we are hearing in our individual conversations with business leaders—and it is also reflected in the global data we have collected in our latest survey.",
+        "bbox": [
+            339,
+            181,
+            906,
+            265
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Since our previous state of AI survey, the use of AI has continued to increase. More companies are using AI in a growing number of business functions. They are using gen AI to reinvent aspects of their enterprises: marketing and sales, product and service development, service operations, corporate IT, and software engineering. More of our survey respondents are reporting top-line and cost benefits from deploying gen AI solutions. And more respondents say they are using gen AI in their daily lives. Interestingly, it's C-level executives who are leading in their own use, but their employees could be much more ready to use gen AI at work than their C-suite leaders expect.",
+        "bbox": [
+            339,
+            273,
+            916,
+            407
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Organizations have been experimenting with gen AI tools. Use continues to surge, but from a value capture standpoint, these are still early days—few are experiencing meaningful bottom-line impacts. Larger companies are doing more organizationally to help realize that value. They invest more heavily in AI talent. They mitigate more gen-AI-related risks. We have seen organizations move since early last year, and the technology also continues to evolve, with a view toward agentic AI as the next frontier for AI innovation. It will be interesting to see what happens when more companies begin to follow the road map for successful gen AI implementation in 2025 and beyond.",
+        "bbox": [
+            290,
+            534,
+            890,
+            667
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Alex Singla and Alexander Sukharevsky are the global coleaders of QuantumBlack, AI by McKinsey, and senior partners in McKinsey's Chicago and London offices, respectively; Lareina Yee is a director of the McKinsey Global Institute and a senior partner in the Bay Area office, where Michael Chui is a senior fellow; and Bryce Hall is an associate partner in the Washington, DC, office.",
+        "bbox": [
+            290,
+            707,
+            882,
+            761
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "They wish to thank Erika Byun, Kaitlin Noe, Larry Kanter, Nicole Lindley, Robert Levin, Roger Roberts, and Tara Balakrishnan for their contributions to this work.",
+        "bbox": [
+            292,
+            773,
+            875,
+            803
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "This article was edited by Heather Hanselman, a senior editor in McKinsey's Atlanta office.",
+        "bbox": [
+            294,
+            816,
+            787,
+            830
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "The state of AI: How organizations are rewiring to capture value",
+        "bbox": [
+            558,
+            969,
+            883,
+            982
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            900,
+            970,
+            916,
+            982
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "About the research",
+        "text_level": 2,
+        "bbox": [
+            78,
+            54,
+            272,
+            128
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/844aef6a48916ce2d05f1d2df54cc3ce073a8ab099b62b876f94b95dc6ac4ebd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            1,
+            0,
+            1000,
+            1000
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The online survey was in the field from July 16 to July 31, 2024, and garnered responses from 1,491 participants in 101 nations representing the full range of regions, industries, company sizes, functional specialties, and tenures. Forty-two percent of respondents say they work for organizations with more than \\$500 million in annual revenues. To adjust for differences in response rates, the data are weighted by the contribution of each respondent's nation to global GDP.",
+        "bbox": [
+            78,
+            146,
+            354,
+            347
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "March 2025  \nCopyright © McKinsey & Company  \nDesigned by McKinsey Global Publishing",
+        "bbox": [
+            76,
+            847,
+            346,
+            897
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Find more content like this on the McKinsey Insights App",
+        "bbox": [
+            758,
+            775,
+            923,
+            801
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/895f3dad910ac20379134c2354cdacc21a744cd7bca1b24b64f152892163268e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            774,
+            805,
+            906,
+            909
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "Scan • Download • Personalize",
+        "bbox": [
+            772,
+            921,
+            908,
+            931
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey.com",
+        "bbox": [
+            78,
+            904,
+            176,
+            919
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "in X f YouTube",
+        "bbox": [
+            78,
+            930,
+            176,
+            946
+        ],
+        "page_idx": 25
+    }
+]

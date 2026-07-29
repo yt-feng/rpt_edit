@@ -1,0 +1,1245 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/afd5ef7b9ec367951ccd9b8d8ac773bcf413388bdd2caa136f53e668c27e3119.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            395
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CONSUMER PRODUCTS INDUSTRY",
+        "bbox": [
+            50,
+            431,
+            287,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Consumers Are Feeling Squeezed. Here's How CPG Companies Can Adapt.",
+        "text_level": 1,
+        "bbox": [
+            40,
+            479,
+            747,
+            678
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Alicia Pittman, David Webb, Luke Pototschnik, Geraldine Rhodes, Anastasia Kouvela, Amy Kondo, and Amber Chourasia",
+        "bbox": [
+            40,
+            707,
+            698,
+            744
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE JANUARY 07, 2026 8 MIN READ",
+        "bbox": [
+            40,
+            769,
+            382,
+            787
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Consumer packaged goods (CPG) companies are facing a brutal environment. Consumer spending is slowing as households cut back, trade down, and turn to private-label products. At the same time, inflation is eroding spending power and pushing CPG costs up, while tariff volatility creates",
+        "bbox": [
+            38,
+            847,
+            952,
+            908
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            967,
+            249,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "additional uncertainty. These conditions aren't going away, and how companies respond will separate the winners from the rest.",
+        "bbox": [
+            40,
+            67,
+            887,
+            107
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Many CPG companies are countering these disruptions with supply chain productivity initiatives, price tweaks, and promotional shifts—but these tactics are not enough. To stay ahead, companies must go bigger and bolder with cross-functional, cross-product, and cross-company cost-reduction programs. Leadership teams need to focus on the most relevant and impactful areas, and—critically—they need to leverage analytics and AI (including GenAI) in a way that delivers returns.",
+        "bbox": [
+            40,
+            121,
+            942,
+            222
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In our work with leading CPG businesses around the world, we’ve seen how those that act decisively and holistically win on cost while reigniting growth.",
+        "bbox": [
+            40,
+            235,
+            954,
+            275
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Why Most Cost Programs Fail",
+        "text_level": 2,
+        "bbox": [
+            40,
+            347,
+            747,
+            388
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In a recent BCG survey, 60% of global CEOs in the consumer sector cite cost management as a top priority moving forward, along with other strategic goals like managing prices and growing volume. But launching a cost program is the easy part; generating value and making it last is not. In the same survey, half of global consumer CEOs said their previous cost efforts failed to deliver sustainable savings—or worse, they cut spending in areas critical to growth.",
+        "bbox": [
+            40,
+            413,
+            952,
+            513
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Why do most cost programs fail? Our experience turning around underperforming efforts points to some common missteps:",
+        "bbox": [
+            40,
+            526,
+            946,
+            565
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- False Victories. Companies often claim success when they hit their cost-reduction targets (such as better asset utilization, eliminating some IT applications, or reducing overhead), but these don’t translate to sustained gains in the profit and loss statement.",
+        "bbox": [
+            40,
+            596,
+            914,
+            657
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Siloed Targets. Leaders focus on familiar, and often functionally specific, cost levers, while neglecting the cross-business moves that will generate a bigger impact.",
+        "bbox": [
+            40,
+            670,
+            890,
+            711
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Weeding Instead of Mulching. Companies chase short-term savings only to see costs grow back like weeds. Lasting impact requires holistic, structural solutions—mulching to keep costs from growing in the first place.",
+        "bbox": [
+            40,
+            725,
+            922,
+            785
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Outdated Processes. Organizations rely on outdated, often manual decision-making processes and incentive systems that handicap productivity and competitiveness.",
+        "bbox": [
+            40,
+            797,
+            846,
+            839
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Insufficient Resources. Too often we see cost programs that have a leader but lack sufficient resources or buy-in from teams. Companies kick off projects but don’t see them through to the finish line.",
+        "bbox": [
+            40,
+            854,
+            929,
+            912
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "A Smarter Approach: AI-Powered Holistic Cost Reduction",
+        "text_level": 1,
+        "bbox": [
+            42,
+            288,
+            824,
+            366
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To unlock sustainable value, companies must adopt a holistic approach that pulls from the full suite of cost levers across the value chain. But the same breadth that makes holistic cost reduction so powerful also makes it challenging—these efforts require deep expertise across functions, product lines, and markets, plus the scale to execute globally.",
+        "bbox": [
+            40,
+            394,
+            952,
+            475
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Successful programs share several key attributes. They are strongly linked to strategy, with cost targets aligned to the company's overall strategy and plans for total shareholder return. This in turn directs resources to the highest areas for return on investment.",
+        "bbox": [
+            40,
+            488,
+            915,
+            550
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Winning programs also feature AI-powered spend assessment and reduction. With today's real-time data, digital, and AI tools, and the right agile governance around decision-making, CPG companies can quickly assess cost drivers to pinpoint the biggest structural costs, leveraging GenAI to accelerate analysis and move faster from insight to action. Through this approach, companies can eliminate $5\\%$ to $20\\%$ of the cost base, depending on the function, while also improving the speed to market and service levels.",
+        "bbox": [
+            40,
+            562,
+            954,
+            683
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The most successful cost-reduction programs are led by activist transformation management offices with dedicated resources, whose people have a seat at the executive table.",
+        "bbox": [
+            53,
+            731,
+            599,
+            810
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Programs that work through cross-functional sprint teams also come out ahead because cost initiatives span key areas of spend. That way, teams across functions, including end-to-end cost practitioners, deep functional experts, and AI specialists, work in lockstep to complement and reinforce each other.",
+        "bbox": [
+            40,
+            881,
+            917,
+            922
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "“Half of global consumer CEOs said their previous cost efforts failed to deliver sustainable savings—or worse, they cut spending in areas critical to growth.",
+        "bbox": [
+            55,
+            99,
+            584,
+            181
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            902,
+            105
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Another attribute separating winners from losers is the right kind of transformation office. The most successful cost-reduction programs are led by activist transformation management offices with dedicated resources, whose people have a seat at the executive table to ensure delivery, swiftly address emerging issues, and provide leaders transparency about program status.",
+        "bbox": [
+            40,
+            120,
+            924,
+            200
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Finally, successful programs require decisive implementation. Leaders are held accountable to move quickly to execute and wire into the budget a portfolio of initiatives. These are prioritized by return on investment (ROI) and benchmarked against evolving competitor cost structures. Initiatives include both quick wins to fund the journey and longer-term initiatives that deliver bigger gains.",
+        "bbox": [
+            40,
+            215,
+            946,
+            296
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Full Solution Map: Three Comprehensive Cost Levers",
+        "text_level": 1,
+        "bbox": [
+            42,
+            414,
+            739,
+            495
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Companies should pull cost levers across operational, functional, and commercial areas to drive margin impact. (See “Transforming a Global Beverage Leader for Breakthrough Performance.”) Which levers to pull, how to pull them, and in what order depends on each company’s position and priorities.",
+        "bbox": [
+            40,
+            523,
+            944,
+            602
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "- Transforming a Global Beverage Leader for Breakthrough Performance",
+        "text_level": 2,
+        "bbox": [
+            47,
+            631,
+            728,
+            690
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Facing cost pressure, a multibillion-dollar global beverage company launched an ambitious, enterprise-wide transformation to reduce costs and improve performance across supply chain, commercial, and functional support areas. By taking a cross-enterprise view and sequencing initiatives for maximum impact, the program dramatically increased efficiency in operations, in metrics like higher manufacturing OEE, increased warehouse throughput, and stronger service levels for priority parts of the business. Overall, the program led to a 20% profit increase within a few years, while also positioning the company for sustained growth and competitiveness in a rapidly evolving market.",
+        "bbox": [
+            75,
+            727,
+            835,
+            904
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Operational Levers. The first set of measures addresses how organizations buy and produce goods:",
+        "bbox": [
+            42,
+            185,
+            952,
+            205
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Manufacturing. Reduce costs and boost productivity through lean operations, digital upgrades, and frontline GenAI enablement. Improve overall equipment effectiveness and optimize production capacity to lower fixed costs. Use advanced analytics to evaluate total landed costs across sourcing and manufacturing models under varying trade and labor scenarios. Explore partnership options—such as comanufacturing—to reduce costs and make operations more resilient.",
+        "bbox": [
+            40,
+            235,
+            934,
+            353
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Supply Chain. Rethink the full network and optimize within: right-size the network footprint and partnerships across warehouse, logistics, and distribution functions to improve service levels and productivity. Optimize within the footprint, bringing digital lean beyond manufacturing into warehouses, and leverage real-time analytics and digital twins for optimal, cost-efficient routing. Step up end-to-end, AI-enabled planning capabilities to minimize waste and lost orders.",
+        "bbox": [
+            40,
+            368,
+            929,
+            486
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Procurement. Improve sourcing and negotiation across direct and indirect procurement. Use AI to increase spend transparency, refine contract policies, and scale supplier negotiations. Rethink business needs and operating model changes to drive down indirect spend. (For example, different sales models can bring sales teams closer to the customer while reducing travel costs.)",
+        "bbox": [
+            42,
+            502,
+            920,
+            601
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Reduce costs and boost productivity through lean operations, digital upgrades, and frontline GenAI enablement.",
+        "bbox": [
+            55,
+            665,
+            580,
+            725
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Functional Levers. The second set of measures addresses how organizations manage core business functions:",
+        "bbox": [
+            42,
+            796,
+            875,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Marketing Spend. Use ROI to reallocate marketing spend, plan effective activations, and optimize retail media. Leverage consumer data to stay aligned with evolving trends and tailor marketing by channel.",
+        "bbox": [
+            40,
+            866,
+            922,
+            925
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Go-to-Market and Sales. Review the sales strategy, operations, execution, and operating model to improve top-line growth while managing commercial spend.",
+        "bbox": [
+            40,
+            67,
+            880,
+            107
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Organizational Costs. Fundamentally rethink how work gets done and the operating model needed to sustain it. Build GenAI capabilities to improve productivity, reduce complexity, and streamline decision making.",
+        "bbox": [
+            40,
+            121,
+            917,
+            180
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- IT Costs. Streamline tech, digital, and data spend by cutting redundant applications and using fit-for-purpose or second-tier solutions. Leverage automation and AI in recompetes for outsourced IT services to obtain savings up to 20%. Move up to 70% of tech roles to hubs in low-cost regions in India, Latin America, and Eastern Europe.",
+        "bbox": [
+            40,
+            195,
+            930,
+            275
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Leverage consumer data to stay aligned with evolving trends and tailor marketing by channel.",
+        "bbox": [
+            55,
+            338,
+            577,
+            380
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Commercial Levers. The third set of measures addresses how organizations price products and manage trade:",
+        "bbox": [
+            40,
+            451,
+            917,
+            492
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Trade Terms. Tie customer trade funding to specific behaviors (for example, distribution, feature, and display support) that improve sales velocity at the shelf. Rightsize nonworking trade levers like bracket pricing, payment terms, and logistics allowances.",
+        "bbox": [
+            40,
+            521,
+            890,
+            582
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Promotions. Adjust promo calendars to prioritize the highest ROI and lift-driving tactics. Use AI-powered engines and predictive models to simulate thousands of promotion scenarios and pinpoint the optimal timing, mechanics, and mix.",
+        "bbox": [
+            40,
+            595,
+            924,
+            657
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Price-Pack Architecture. Offer different pack sizes and formats to meet relevant demand occasions and maximize customers’ willingness to pay. Rationalize the long tail by deprioritizing low-value SKUs and focusing on high-impact core items.",
+        "bbox": [
+            40,
+            670,
+            890,
+            731
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Where to Hunt: Imperatives Across Levers",
+        "text_level": 1,
+        "bbox": [
+            42,
+            801,
+            877,
+            877
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Across the full map of levers, we’ve found several measures that can help give companies a clear cost advantage.",
+        "bbox": [
+            40,
+            67,
+            929,
+            107
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Balance savings and investment. Many CEOs feel pressure to go into austerity mode right now, but companies can't cut their way to growth. The challenge is finding space to invest even when budgets tighten. The winning organizations strike the right equilibrium between disciplined efficiency and targeted reinvestment in capabilities that sustain long-term momentum.",
+        "bbox": [
+            40,
+            121,
+            927,
+            200
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Deploy de-averaged revenue growth strategies. Move beyond one-size-fits-all approaches by leveraging granular data, advanced analytics, and dynamic portfolio management to capture incremental growth and margin.",
+        "bbox": [
+            40,
+            215,
+            900,
+            275
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Harness digital and GenAI. Embed intelligent automation and generative copilots to amplify human capacity at scale, from procurement negotiations that optimize spend in real time to AI-assisted promotional and demand planning aimed at sharpening ROI. (See “Reducing Costs with Digital and GenAI.”)",
+        "bbox": [
+            40,
+            288,
+            930,
+            369
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "- Reducing Costs with Digital and GenAI",
+        "text_level": 2,
+        "bbox": [
+            47,
+            399,
+            668,
+            426
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A leading CPG manufacturer launched a program to automate core business processes using digital tools and GenAI, leading to substantial efficiency and performance gains. Initiatives focused on reducing waste and low-value work across functions—optimizing labor and streamlining logistics—while simultaneously improving service levels. Overall, the program reduced costs related to penalties and fees by more than 20%, freed up labor hours in key processes by 10%, and improved the customer experience by providing faster response time and more consistent service levels. Through this approach, the company freed up resources that it could reinvest to fuel future growth.",
+        "bbox": [
+            77,
+            463,
+            792,
+            642
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Redesign supply chains and operations for the new normal. In a world of geopolitical uncertainty, unlock the full power of AI that is currently dormant in expensive IT investments through people and process excellence. Reassess network footprints and sourcing—and build internal capability to keep doing it, because volatility on trade and policy direction is here to stay.",
+        "bbox": [
+            40,
+            788,
+            934,
+            869
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The global chessboard has changed, and traditional cost programs and siloed workstreams will not cut it in today's macroenvironment. To stay competitive, leaders must pursue bolder, broader, and holistic cost transformations. Those that move decisively will protect margins and reshape their position. Those that wait for conditions to improve may face checkmate.",
+        "bbox": [
+            40,
+            67,
+            942,
+            146
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            42,
+            103,
+            235,
+            142
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/cb31ce92efe89aad4fd388a9cee6134e9f92c29fce520ba43ea95b30c974a311.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            189,
+            218,
+            292
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/9bb2aa75828123333961bb748a287b376139a63e677bd3a5650198fe9ff2a534.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            365,
+            217,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/645174f91deb84875a0379b2c4120849a81c0de453fb4ca6ad444f5bb5b591a3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            514,
+            218,
+            621
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/e9fc3ee49d9fd81168f2783dcdfaa9ba0b3b35139649270969bbb6fb8bdf1153.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Managing Director & Senior Partner; Global People Chair\nWashington, DC"
+        ],
+        "content": "",
+        "bbox": [
+            70,
+            671,
+            218,
+            775
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Alicia Pittman",
+        "text_level": 2,
+        "bbox": [
+            244,
+            200,
+            402,
+            223
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/7ca4984722a27d3702321eeae42fbe58b7cd05cff6b93de1f57186920428d1e3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            279,
+            274,
+            294
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Luke Pototschnik",
+        "text_level": 2,
+        "bbox": [
+            245,
+            365,
+            434,
+            388
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nNashville",
+        "bbox": [
+            242,
+            398,
+            436,
+            439
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/a2646d93b08be0a1d201e29d16f07746eb6e969df83eba33c152b2889c03eb05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            444,
+            274,
+            460
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Anastasia Kouvela",
+        "text_level": 2,
+        "bbox": [
+            242,
+            524,
+            446,
+            546
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner London",
+        "bbox": [
+            242,
+            557,
+            444,
+            586
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/dcbb386dd5ddef59d8be9105f0f061c6a80529811f3ff68082de9620ad7f3742.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            590,
+            274,
+            608
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/e21cde75a3b0aa397bea9489ca618161726a862dd23cf733cd1d6b35ce93c34f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            363,
+            681,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/c232296b2cb2ed144d0e7062141a694b7070657c96792864bba7e1bea2d87430.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            186,
+            681,
+            292
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Amber Chourasia",
+        "text_level": 2,
+        "bbox": [
+            242,
+            677,
+            439,
+            700
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Senior Manager - BCG Vantage\nLondon Canary Wharf",
+        "bbox": [
+            242,
+            711,
+            454,
+            740
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "David Webb",
+        "text_level": 2,
+        "bbox": [
+            707,
+            187,
+            843,
+            211
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/99369265b1617d391a996b7a290132088d1703173c61d4d1899425b6d49e12a2.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Managing Director & Senior Partner, Chief Sustainability Officer, Managing Director of North American Systems\nPhiladelphia"
+        ],
+        "content": "",
+        "bbox": [
+            245,
+            745,
+            274,
+            760
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/e1f6b2f503d8f5632afacf68ee9ebf47b097c31cf41f32ff7f0b418f070eae39.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            291,
+            735,
+            307
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/32479d87a09ae4e3de1d8fffc04cce63e77809a9c658ed4de0accb453bdd4fc0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            514,
+            681,
+            621
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Geraldine Rhodes",
+        "text_level": 2,
+        "bbox": [
+            707,
+            370,
+            905,
+            394
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/d3ca42901d89437d2f276c4d2a2708afe17229808d9eb7a1ab4e6cf3a3b23026.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            439,
+            735,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nWashington, DC",
+        "bbox": [
+            705,
+            404,
+            905,
+            434
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Amy Kondo",
+        "text_level": 2,
+        "bbox": [
+            705,
+            525,
+            838,
+            548
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Partner\nWashington, DC",
+        "bbox": [
+            705,
+            558,
+            819,
+            588
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/9fb63498a987aabac24d84ee227f9c714b65606073df66315d9b91fc2b8cfb61.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            592,
+            735,
+            608
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            102,
+            430,
+            120
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders—empowering organizations to grow, build sustainable competitive advantage, and drive positive societal impact.",
+        "bbox": [
+            40,
+            137,
+            925,
+            237
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, fueled by the goal of helping our clients thrive and enabling them to make the world a better place.",
+        "bbox": [
+            40,
+            250,
+            951,
+            351
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "© Boston Consulting Group 2026. All rights reserved.",
+        "text_level": 2,
+        "bbox": [
+            42,
+            363,
+            528,
+            384
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on Facebook and X (formerly Twitter).",
+        "bbox": [
+            40,
+            398,
+            946,
+            458
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 9
+    }
+]

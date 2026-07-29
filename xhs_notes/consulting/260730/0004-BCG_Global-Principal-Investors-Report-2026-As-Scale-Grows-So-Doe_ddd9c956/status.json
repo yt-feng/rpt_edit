@@ -1,0 +1,139 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "全球最大金主们，正在",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "基金->产品 x2",
+    "资产定价->市场定价 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "国内经济->国内宏观环境 x1",
+    "投资->研究 x1",
+    "基金->产品 x3",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "基金->产品 x3",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x5",
+    "基金->产品 x3",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956.pdf",
+    "cleaned_source_title": "0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0004BCG全球PrincipalInv",
+    "raw_candidates": [
+      "波士顿咨询：全球主要读者报告2026-规模增长伴随影响扩大",
+      "波士顿咨询：全球主权读者管理资产达43万亿美元-2025年数据",
+      "波士顿咨询：主权读者转型与私募市场格局变化"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：全球主要读者报告2026-规模增长伴随影响扩大",
+      "波士顿咨询：全球主权读者管理资产达43万亿美元-2025年数据",
+      "波士顿咨询：主权读者转型与私募市场格局变化",
+      "波士顿咨询：0004BCG全球PrincipalInv",
+      "波士顿咨询：2025年，全球新设立的主权财富产品达到10只"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：全球主权读者管理资产达43万亿美元-2025年数据",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：主权读者转型与私募市场格局变化",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0004BCG全球PrincipalInv",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：2025年，全球新设立的主权财富产品达到10只",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：全球主要读者报告2026-规模增长伴随影响扩大",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

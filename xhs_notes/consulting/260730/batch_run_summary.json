@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0001-BCG_Air-Travel-Demand-Outlook-2026-Revenues-And-Costs-Are-Rising_30015c2d.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0004-BCG_Global-Principal-Investors-Report-2026-As-Scale-Grows-So-Doe_ddd9c956.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Board-Can-Make-or-Break-a-Joint-Venture_09acebb0.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0005-BCG_The-Board-Can-Make-or-Break-a-Joint-Venture_09acebb0.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2.pdf",
+          "batch_file": "/tmp/pdf_batch_002_fxlhe3hm/pdfs/0006-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

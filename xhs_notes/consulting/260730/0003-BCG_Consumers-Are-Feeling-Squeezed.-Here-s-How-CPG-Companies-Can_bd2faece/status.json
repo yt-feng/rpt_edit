@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "CPG行业正在经历“",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：消费者承压与CPG企业应对",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece.pdf",
+    "cleaned_source_title": "0003-BCG_Consumers-Are-Feeling-Squeezed.-Here-s-How-CPG-Companies-Can_bd2faece",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGConsumersAreFe",
+    "raw_candidates": [
+      "波士顿咨询：消费者承压与CPG企业应对",
+      "波士顿咨询：2026年1月CPG企业成本削减与AI方案",
+      "波士顿咨询：CPG企业成本削减与AI驱动的整体方案"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：消费者承压与CPG企业应对",
+      "波士顿咨询：2026年1月CPG企业成本削减与AI方案",
+      "波士顿咨询：CPG企业成本削减与AI驱动的整体方案",
+      "波士顿咨询：0003BCGConsumersAreFe",
+      "波士顿咨询：调研显示，60%的CEO将成本管理列为优先事项"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2026年1月CPG企业成本削减与AI方案",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "波士顿咨询：CPG企业成本削减与AI驱动的整体方案",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0003BCGConsumersAreFe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：调研显示，60%的CEO将成本管理列为优先事项",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：消费者承压与CPG企业应对",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：消费者承压与CPG企业应对"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

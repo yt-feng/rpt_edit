@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_fxlhe3hm/pdfs/0006-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5c560ac2.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

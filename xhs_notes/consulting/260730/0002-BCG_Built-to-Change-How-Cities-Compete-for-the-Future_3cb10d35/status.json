@@ -1,0 +1,114 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_mzzqgsuq/pdfs/0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "全球城市新排名，变化",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：城市竞争转向居民体验与变革速度",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35.pdf",
+    "cleaned_source_title": "0002-BCG_Built-to-Change-How-Cities-Compete-for-the-Future_3cb10d35",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0002BCGBuilttoChangeH",
+    "raw_candidates": [
+      "波士顿咨询：城市竞争转向居民体验与变革速度",
+      "波士顿咨询：80城调查显示居民体验成城市竞争新标尺",
+      "波士顿咨询：深圳利雅得塔什干领跑城市变革速度排名"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：城市竞争转向居民体验与变革速度",
+      "波士顿咨询：80城调查显示居民体验成城市竞争新标尺",
+      "波士顿咨询：深圳利雅得塔什干领跑城市变革速度排名",
+      "波士顿咨询：0002BCGBuilttoChangeH",
+      "波士顿咨询：结果显示，深圳以92分位居榜首，利雅得91分紧随其后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：80城调查显示居民体验成城市竞争新标尺",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "波士顿咨询：深圳利雅得塔什干领跑城市变革速度排名",
+        "reasons": [
+          "anchor_coverage=0.29",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0002BCGBuilttoChangeH",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：结果显示，深圳以92分位居榜首，利雅得91分紧随其后",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：城市竞争转向居民体验与变革速度",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：城市竞争转向居民体验与变革速度"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
