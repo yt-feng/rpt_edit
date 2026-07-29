@@ -1,0 +1,33 @@
+Found 64 total PDFs; shard 12/40 has 4 PDFs, skips 0 already converted, will process 4 PDFs with batch_size=5.
+Running batch 1: 4 PDFs
+Found 4 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 4 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xlins432/pdfs/0001-61-Nomura-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xlins432/pdfs/0002-62-Nomura-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xlins432/pdfs/0003-63-Nomura-Korea Strategy-Korea-s next re-rating-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xlins432/pdfs/0004-64-Nomura-USD CNY fix model -Projection- 6.7640-260729.pdf
+MinerU attempt 1 using MINER_U batch_id=384a71a8-9907-4d64-83a7-bb414a1def5f
+MinerU states: done, running, running, waiting-file
+MinerU states: done, done, running, done
+MinerU states: done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Neutralized WeChat title while keeping the report: 野村：半导体封装行业更新-加速器路线图假设调整 -> 野村：半导体行业数据与主题变化观察
+Skip non-chart visual asset 755015175ff526658ed046988a4bb148e6791ff8bf35d34a82447416d11afa53.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.26,contrast,large
+Skip non-chart visual asset 5381a9bfc93a931e0fe79d7eec9635f315de5911f5b4979fecffc7cc905c256d.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset 93007ae72fea6cea82cb67ac8c933e6c3349451189ea82a89d87965508ba6d88.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.32,contrast,large
+Skip non-chart visual asset 483d4104a0b254633b4868c2094f7cc9b9cfba319e25ad4f8a29ce32e5f44f2a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset 57a4f730ea02b90f3765fe19fc4ae1117fe233b401149027364a6256f0d33b53.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.34,contrast,large
+Skip non-chart visual asset 959856c1ce8d393a6b61cfe5f4ff6d4803a1d42efdb8e376f70a4dc26475cec7.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset b38e47d40253491b4e7f234dec58d4351ef38b45648022128b72da9da68b8398.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.24,contrast,large
+Skip non-chart visual asset aa94199ffd2304aaf0cc2bb6a0e640213f9e622413e9a30294372d0ae71e4eaf.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset a2e048da37cd26f4ab5a82599faf3ab569bca7e08611ea3567fdd766a478a4a6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.44,contrast
+Skip non-chart visual asset 9a53611030b72fe5fd200dca77066d765ba0b7fe766c040b619cdffdff8e813a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.43,contrast
+Skip non-chart visual asset d84a86d25c650bbf895eb51f59df15337c00ae83a3159ca354372380ef8e1fcc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.45,contrast
+Skip non-chart visual asset 2cb6617e8740793d4437d1a101a781d4a177170515ca658b1d9382a5f8905891.jpg: score=-100;too_small:1409x173
+Skip non-chart visual asset 9b52bbb3eaf368fc6f76cb84a6f90f60eb222172a32130fda02b3fb17d6d7c61.jpg: score=0;odd_ratio:5.95,edge:0.45,contrast
+Skip non-chart visual asset 572c7af3c4ee8a82beae86489f2090c2edb464dbb8c742dde189b61b224e37f0.jpg: score=0;square_without_chart_hint,edge:0.48,contrast
+Neutralized WeChat title while keeping the report: 野村：韩国市场再定价，从流动性驱动转向回购驱动 -> 野村：研究主题与行业变化观察
+Skip non-chart visual asset 09c419409598096c6bce66e7561be6f11fd35c413e8453ddc8a4f0f626bf8ca4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_12; successful_reports=4; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 4 report directories.

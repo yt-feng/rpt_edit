@@ -1,0 +1,458 @@
+[
+  {
+    "item": "0001-61-NOM-Semiconductor-packaging-industry-update-We-revise-assumptions-for",
+    "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "芯片封装变局：2片还",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+      "cleaned_source_title": "NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：半导体packaging",
+      "raw_candidates": [
+        "半导体封装行业更新-加速器路线图假设调整",
+        "半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+        "半导体封装行业更新-Rubin架构调整与EMIB-T出货提前"
+      ],
+      "cleaned_candidates": [
+        "NOM：半导体封装行业更新-加速器路线图假设调整",
+        "NOM：半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+        "NOM：半导体封装行业更新-Rubin架构调整与EMIB-T出货提前",
+        "NOM：半导体packaging",
+        "NOM：NOM估算，2027财年第一季度（2026年1"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：半导体封装行业更新-Rubin架构调整与EMIB-T出货提前",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：半导体packaging",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：NOM估算，2027财年第一季度（2026年1",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：半导体封装行业更新-加速器路线图假设调整",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-62-NOM-Economic-Insights-US--Will-AI-driven-productivity-lead-to-disinfl",
+    "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "AI真能降通胀？别太",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "通缩->价格变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "通缩->价格变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融条件->资金条件 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "通缩->价格变化 x1",
+      "sanitize_wechat_stock_line",
+      "通缩->价格变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "金融->资金 x1",
+      "危机->扰动 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "通缩->价格变化 x1",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+      "cleaned_source_title": "NOM-Economic Insights US- Will AI-driven productivity lead to disinflation",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：AIEconomicInsightsUS",
+      "raw_candidates": [
+        "美国经济洞察：AI驱动的生产率与通胀关系",
+        "美国经济洞察：AI生产率与通胀关系-6月FOMC视角",
+        "美国经济洞察：AI生产率对通胀的历史与理论分析"
+      ],
+      "cleaned_candidates": [
+        "NOM：美国宏观环境洞察，AI驱动的生产率与通胀关系",
+        "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+        "NOM：美国宏观环境洞察，AI生产率对通胀的历史与理论分析",
+        "NOM：AIEconomicInsightsUS",
+        "NOM：AI驱动的生产率增长未必带来通胀节奏变化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：美国宏观环境洞察，AI生产率对通胀的历史与理论分析",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "NOM：AIEconomicInsightsUS",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：AI驱动的生产率增长未必带来通胀节奏变化",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "6"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-63-NOM-Korea-Strategy-Korea-s-next-re-rating-260728",
+    "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0003-63-NOM-Korea Strategy-Korea-s next re-rating-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "韩国市场要变天了？回",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资->研究 x1",
+      "股票|个股->公司 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "股票市场|股市->市场 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股票|个股->公司 x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-NOM-Korea Strategy-Korea-s next re-rating-260728.pdf",
+      "cleaned_source_title": "NOM-Korea Strategy-Korea-s next re-rating",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：Korea策略Koreasnextrerating",
+      "raw_candidates": [
+        "韩国市场再定价：从流动性驱动转向回购驱动",
+        "韩国市场再定价：KOSPI回调27%后依赖回购",
+        "韩国市场再定价：企业回购与政策催化展望"
+      ],
+      "cleaned_candidates": [
+        "NOM：韩国市场再定价，从流动性驱动转向回购驱动",
+        "NOM：韩国市场再定价，KOSPI回调27%后依赖回购",
+        "NOM：韩国市场再定价，企业回购与政策催化展望",
+        "NOM：Korea策略Koreasnextrerating",
+        "NOM：韩国综合报价指数从2026年6月22日的9"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：韩国市场再定价，KOSPI回调27%后依赖回购",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：韩国市场再定价，企业回购与政策催化展望",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：Korea策略Koreasnextrerating",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：韩国综合报价指数从2026年6月22日的9",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：韩国市场再定价，从流动性驱动转向回购驱动",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-64-NOM-USD-CNY-fix-model--Projection--6.7640-260729",
+    "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0004-64-NOM-USD CNY fix model -Projection- 6.7640-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币中间价模型，透",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：CNY中间价模型-7月29日定价6.7640",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-NOM-USD CNY fix model -Projection- 6.7640-260729.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model -Projection- 6.7640",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7640",
+      "raw_candidates": [
+        "USD/CNY中间价模型预测-6.7640",
+        "USD/CNY中间价模型-7月29日定价6.7640",
+        "USD/CNY中间价模型-隔夜市场与逆周期因子框架"
+      ],
+      "cleaned_candidates": [
+        "NOM：CNY中间价模型预测-6.7640",
+        "NOM：CNY中间价模型-7月29日定价6.7640",
+        "NOM：CNY中间价模型-隔夜市场与逆周期因子框架",
+        "NOM：USDCNYfixmodelProjection-6.7640",
+        "NOM：这一预测值较前一日的模型预测值6.7928下降了288个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：CNY中间价模型-隔夜市场与逆周期因子框架",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.7640",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：这一预测值较前一日的模型预测值6.7928下降了288个基点",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：CNY中间价模型-7月29日定价6.7640",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "29",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：CNY中间价模型-7月29日定价6.7640"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

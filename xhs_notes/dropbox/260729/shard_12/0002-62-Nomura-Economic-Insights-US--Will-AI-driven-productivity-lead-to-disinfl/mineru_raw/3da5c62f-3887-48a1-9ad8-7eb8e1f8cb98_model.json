@@ -1,0 +1,6474 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.068,
+                0.003,
+                0.298,
+                0.041
+            ],
+            "angle": 0,
+            "content": "NOM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.673,
+                0.0,
+                0.958,
+                0.092
+            ],
+            "angle": 0,
+            "content": "A"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.1,
+                0.411,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.743,
+                0.092,
+                0.958,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Global Markets Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.846,
+                0.112,
+                0.958,
+                0.13
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.14,
+                0.231,
+                0.154
+            ],
+            "angle": 0,
+            "content": "Economics - North America",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.163,
+                0.528,
+                0.204
+            ],
+            "angle": 0,
+            "content": "US: Will AI-driven productivity lead to disinflation?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.216,
+                0.657,
+                0.247
+            ],
+            "angle": 0,
+            "content": "- We view Chair Warsh's optimism on the disinflationary impact of productivity as an important signal of his dovish inclination.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.252,
+                0.678,
+                0.297
+            ],
+            "angle": 0,
+            "content": "- In theory, productivity can have either a positive or negative impact on inflation. Historically, there is some negative correlation, but the relationship is inconsistent and has performed especially poorly in recent decades.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.301,
+                0.681,
+                0.36
+            ],
+            "angle": 0,
+            "content": "- The policy implications of productivity trends are subtle. In real time, strong productivity growth is a good reason to tolerate hawkish signals from growth or wages. This is different from assuming future productivity growth will drive incremental disinflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.701,
+                0.166,
+                0.853,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Research Analysts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.7,
+                0.186,
+                0.893,
+                0.242
+            ],
+            "angle": 0,
+            "content": "North America Economics  \nJeremy Schwartz - NSI  \njeremy.schwartz@NOM.com  \n+1 212 667 9637",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.7,
+                0.245,
+                0.87,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Ruchir Sharma - NSI\nruchir.sharma@NOM.com\n+1 212 667 9186",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.7,
+                0.289,
+                0.874,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Aichi Amemiya - NSI  \naichi.amemiya@NOM.com  \n+1 212 667 9347",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.365,
+                0.671,
+                0.412
+            ],
+            "angle": 0,
+            "content": "- Warsh has not convinced other Fed officials that AI will be predictably disinflationary. His repeated emphasis on productivity and supply growth makes us skeptical that he will turn hawkish and support pre-emptive rate hikes though.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.425,
+                0.536,
+                0.454
+            ],
+            "angle": 0,
+            "content": "Fig. 1: Data point to little evidence for \"disinflationary productivity\" Correlation between trend productivity and headline CPI"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.085,
+                0.461,
+                0.92,
+                0.705
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.071,
+                0.72,
+                0.928,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Note: Labor productivity is real output per hour of all persons. Following Gordon (2005), we define trend productivity growth as the HP trend of the 8 qtr change (with smoothing parameter as 6400, based on Gordon (2003))  \nSource: BLS, BEA, Haver, NOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.774,
+                0.677,
+                0.849
+            ],
+            "angle": 0,
+            "content": "As Fed Chair, Kevin Warsh consistently emphasizes productivity growth, suggesting this should be an important driver of policy decisions. One of his five task forces will focus on \"productivity and jobs in an era of transformation.\" And despite aggressive editing through most of the June FOMC statement, one conspicuous addition was a reference to strong productivity growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.853,
+                0.677,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Warsh claims that technological progress is a reason to expect disinflation. Before his nomination, he wrote that “AI will be a significant disinflationary force.” In his Humphrey-Hawkins testimony he added that “productivity improvements over time will be structurally disinflationary,” and that “everything technology touches ultimately gets cheaper.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.917,
+                0.667,
+                0.964
+            ],
+            "angle": 0,
+            "content": "In this note, we argue that productivity is not inherently disinflationary. In the near term, technological progress is driving investment higher, likely boosting inflation. Many (including Warsh) argue that relief is on the way from a future productivity payoff, but we",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.75,
+                0.939,
+                0.958,
+                0.952
+            ],
+            "angle": 0,
+            "content": "Production Complete: 2026-07-28 18:55 UTC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.976,
+                0.812,
+                0.993
+            ],
+            "angle": 0,
+            "content": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.139,
+                0.231,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.164,
+                0.525,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.186,
+                0.222,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.218,
+                0.652,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.233,
+                0.369,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.254,
+                0.629,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.269,
+                0.674,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.283,
+                0.441,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.303,
+                0.601,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.317,
+                0.678,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.332,
+                0.628,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.347,
+                0.175,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.703,
+                0.168,
+                0.848,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.188,
+                0.89,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.703,
+                0.203,
+                0.863,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.703,
+                0.218,
+                0.88,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.23,
+                0.8,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.248,
+                0.848,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.261,
+                0.865,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.275,
+                0.801,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.292,
+                0.848,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.703,
+                0.306,
+                0.87,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.704,
+                0.319,
+                0.8,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.367,
+                0.665,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.383,
+                0.667,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.397,
+                0.502,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.776,
+                0.664,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.791,
+                0.669,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.805,
+                0.674,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.819,
+                0.666,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.834,
+                0.203,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.855,
+                0.646,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.869,
+                0.664,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.885,
+                0.672,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.899,
+                0.617,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.92,
+                0.655,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.935,
+                0.618,
+                0.946
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.948,
+                0.663,
+                0.961
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.209,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.027,
+                0.408,
+                0.042
+            ],
+            "angle": 0,
+            "content": "do not see evidence for a clear directional impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.048,
+                0.65,
+                0.092
+            ],
+            "angle": 0,
+            "content": "In real time, productivity can be a helpful benchmark for gauging inflation trends – if productivity accelerates, it should make policymakers more willing to tolerate stronger growth in output and wages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.097,
+                0.68,
+                0.171
+            ],
+            "angle": 0,
+            "content": "This is different from assuming future productivity growth will drive incremental disinflation though. Productivity itself tends to drive output and wage growth trends. Consequently, even if it seems certain that there would be an acceleration in labor productivity in the future, this would not be a sufficient reason to forecast a gap between wage growth and productivity or between actual output and potential.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.176,
+                0.365,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Is productivity disinflationary in theory?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.19,
+                0.674,
+                0.221
+            ],
+            "angle": 0,
+            "content": "There are early signs that AI diffusion is leading to productivity gains. That said, the read-through to inflation and interest rates is not clear.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.226,
+                0.606,
+                0.241
+            ],
+            "angle": 0,
+            "content": "In theory, productivity can have either a positive or negative impact on inflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.247,
+                0.678,
+                0.35
+            ],
+            "angle": 0,
+            "content": "Intuition tends to point to a disinflationary impact. For any particular business or industry, productivity growth typically leads to cost cutting and falling prices. Economic history adds to the intuition for “disinflationary productivity.” Under certain policy regimes – like a gold standard – productivity growth tends to be disinflationary. A managed money supply will tend to keep nominal GDP steady – implying faster real growth will lead to cooling inflation. Indeed, strong productivity growth is often cited by economic historians as a factor behind deflationary episodes in the late-19 \\( ^{th} \\) century \\( ^{[1]} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.355,
+                0.681,
+                0.443
+            ],
+            "angle": 0,
+            "content": "What we think this intuition misses is the dynamic impact of productivity on demand. Productivity raises real income, and more importantly, can incentivize business capex. This implies that even if the most productive sectors see cost relief from productivity gains, the economy-wide effect could be inflationary. Again, the policy regime matters. This demand channel could be especially prevalent for modern central banks, which target interest rates and manage financial conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.448,
+                0.383,
+                0.462
+            ],
+            "angle": 0,
+            "content": "Inflation pressure has already materialized"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.463,
+                0.677,
+                0.507
+            ],
+            "angle": 0,
+            "content": "This inflationary impact of technological progress is already on clear display. Capex in AI is booming (Fig. 2), driving up tech component prices and leading to inflation pressure for consumer electronics (Fig. 4).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.523,
+                0.447,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Fig. 2: Earnings calls and anecdotal evidence indicate businesses are increasingly willing to spend on capex\nHyperscalers' capex plans"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.078,
+                0.571,
+                0.503,
+                0.827
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.833,
+                0.302,
+                0.846
+            ],
+            "angle": 0,
+            "content": "Source: Company filings, Bloomberg, NOM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.524,
+                0.523,
+                0.93,
+                0.548
+            ],
+            "angle": 0,
+            "content": "Fig. 3: Strong capex appears to be broadening out to other industries"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.528,
+                0.563,
+                0.956,
+                0.821
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.829,
+                0.755,
+                0.842
+            ],
+            "angle": 0,
+            "content": "Source: BEA, Census Bureau, Haver, NOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.872,
+                0.648,
+                0.917
+            ],
+            "angle": 0,
+            "content": "With the Fed remaining on hold, there is no circuit breaker for this strong demand. Financial conditions have remained easy, and rather than crowding out other sectors, strong capex appears to be broadening out to other industries (Fig. 3).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.922,
+                0.674,
+                0.937
+            ],
+            "angle": 0,
+            "content": "From the perspective of a hyperscaler, policy likely appears procyclical. Given rapid price",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.956,
+                0.931,
+                0.968
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.029,
+                0.405,
+                0.041
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.05,
+                0.633,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.065,
+                0.647,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.079,
+                0.262,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.1,
+                0.677,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.114,
+                0.655,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.129,
+                0.644,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.143,
+                0.663,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.157,
+                0.414,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.178,
+                0.361,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.193,
+                0.671,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.207,
+                0.4,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.229,
+                0.603,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.248,
+                0.666,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.264,
+                0.675,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.277,
+                0.663,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.292,
+                0.661,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.306,
+                0.621,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.321,
+                0.643,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.335,
+                0.488,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.357,
+                0.635,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.371,
+                0.649,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.385,
+                0.679,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.401,
+                0.638,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.415,
+                0.647,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.43,
+                0.386,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.45,
+                0.379,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.463,
+                0.667,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.48,
+                0.674,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.493,
+                0.275,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.874,
+                0.621,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.889,
+                0.644,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.904,
+                0.546,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.923,
+                0.67,
+                0.935
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.209,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.85,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.027,
+                0.674,
+                0.087
+            ],
+            "angle": 0,
+            "content": "increases for tech equipment, the “real interest rate” for pulling forward debt-financed investment is likely deeply negative (and becoming even more negative as demand strengthens) (Fig. 5). Earnings calls indicate businesses are increasingly willing to spend on capex, with activity only constrained by supply and availability of equipment.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.101,
+                0.471,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Fig. 4: Booming capex in AI is driving up tech component prices"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.085,
+                0.136,
+                0.502,
+                0.378
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.398,
+                0.22,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Source: BLS, Haver, NOM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.524,
+                0.101,
+                0.925,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Fig. 5: Rising equipment costs incentivize hyperscalers to frontload orders"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.527,
+                0.131,
+                0.95,
+                0.401
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.412,
+                0.731,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, inSpectrum, NOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.451,
+                0.262,
+                0.466
+            ],
+            "angle": 0,
+            "content": "Is there relief on the way?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.466,
+                0.672,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Warsh has acknowledged the demand impulse from AI, but he has also suggested that a disinflationary impulse from productivity is still likely to occur with a lag.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.501,
+                0.681,
+                0.561
+            ],
+            "angle": 0,
+            "content": "At the June FOMC press conference, he said “it may well be an intuition the supply side is going to expand, but it’ll take longer.” In the Humphrey-Hawkins testimony, Warsh went even further to say that this lagged disinflationary impact was sufficient reason to discount the demand-driven inflation already evident in current data.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.565,
+                0.517,
+                0.579
+            ],
+            "angle": 0,
+            "content": "Evaluating potential channels for productivity led disinflation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.58,
+                0.68,
+                0.655
+            ],
+            "angle": 0,
+            "content": "In our view, productivity growth on its own is insufficient reason to expect meaningful inflation relief. Strong productivity can coincide with disinflation in some scenarios, but the relationship is inconsistent and has weakened in recent decades. In particular, it is important to consider both inflationary and disinflationary pressure from productivity growth, as well as potential attenuating factors like wage growth and margins adjustments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.659,
+                0.676,
+                0.776
+            ],
+            "angle": 0,
+            "content": "Beyond the theoretical reasons to be skeptical of “disinflationary productivity,” historical data also point to ambiguity (Fig. 1). There was some negative correlation between labor productivity and inflation from the mid-1960s through the early 1990s. However, the relationship has weakened since then though and has especially broken down post-GFC. Weak productivity growth in the 2010s coincided with a period of low inflation (at the time, theories of ‘secular stagnation’ often cited the era’s low productivity growth as a cause of sluggish inflation). In contrast, inflation has surged post-pandemic alongside an acceleration in trend productivity.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.782,
+                0.411,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Can productivity growth cause an output gap?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.802,
+                0.674,
+                0.846
+            ],
+            "angle": 0,
+            "content": "Productivity growth is often viewed as a positive shock to aggregate supply – which could in theory lead to a negative output gap (actual growth lower than potential) and therefore disinflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.852,
+                0.618,
+                0.882
+            ],
+            "angle": 0,
+            "content": "In practice though, there is almost no correlation between productivity trends and economic slack measures (Fig. 6).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.887,
+                0.678,
+                0.946
+            ],
+            "angle": 0,
+            "content": "And at least some of the limited relationship between productivity and slack is likely driven by reverse causality. Productivity often rises early in recessions as businesses prioritize their most essential workers (and remaining workers increase their efforts) during periods of slack demand and layoffs. The recent pandemic also saw a technical spike in",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.956,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.029,
+                0.646,
+                0.039
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.044,
+                0.632,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.058,
+                0.671,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.073,
+                0.603,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.452,
+                0.258,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.468,
+                0.669,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.483,
+                0.546,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.503,
+                0.679,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.517,
+                0.658,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.532,
+                0.676,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.547,
+                0.468,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.567,
+                0.514,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.582,
+                0.64,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.597,
+                0.673,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.612,
+                0.624,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.625,
+                0.632,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.64,
+                0.678,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.661,
+                0.657,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.675,
+                0.671,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.69,
+                0.632,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.704,
+                0.67,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.719,
+                0.672,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.733,
+                0.671,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.748,
+                0.604,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.762,
+                0.294,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.783,
+                0.407,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.803,
+                0.671,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.819,
+                0.665,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.833,
+                0.149,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.854,
+                0.615,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.869,
+                0.306,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.888,
+                0.676,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.903,
+                0.66,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.918,
+                0.674,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.932,
+                0.607,
+                0.943
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.209,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.027,
+                0.682,
+                0.086
+            ],
+            "angle": 0,
+            "content": "productivity as shutdowns tended to impact lower-productivity service sectors. Adjusting for cyclical fluctuations, measures such as trend labor productivity and utilization-adjusted total factor productivity offer no evidence that productivity is associated with disinflationary slack (Fig. 7).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.101,
+                0.476,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Fig. 6: There is almost no correlation between productivity trends and economic slack measures"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.086,
+                0.136,
+                0.499,
+                0.376
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.07,
+                0.398,
+                0.509,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Note: Labor slack refers to the difference between realized u-rate and CBO's estimate of the noncyclical rate of unemployment (formerly called NAIRU)  \nSource: CBO, BLS, BEA, Haver, NOM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.523,
+                0.102,
+                0.957,
+                0.139
+            ],
+            "angle": 0,
+            "content": "Fig. 7: Adjusting for cyclical fluctuations, alternative measures offer no evidence that productivity is associated with disinflationary slack"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.533,
+                0.147,
+                0.954,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.524,
+                0.412,
+                0.923,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Note: The utilization adjustments follows Basu, Fernald, and Kimball (BFK, 2006)  \nSource: SF Fed, BLS, Haver, NOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.463,
+                0.681,
+                0.508
+            ],
+            "angle": 0,
+            "content": "It is true that strong growth is less likely to be inflationary if it is driven by productivity gains rather than cyclical tightening. This is close to the argument Chair Greenspan made in the 1990s, when inflation was subdued and the Fed was debating pre-emptive tightening.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.513,
+                0.677,
+                0.557
+            ],
+            "angle": 0,
+            "content": "It's more difficult to explain why ex ante productivity growth would be a reason to expect disinflation though, specifically when inflation has remained elevated and above the Fed's target for five years.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.562,
+                0.677,
+                0.607
+            ],
+            "angle": 0,
+            "content": "One possibility is that AI is a uniquely disruptive technology for labor markets, causing productivity growth mostly through a reduction in hours worked, rather than through faster output growth. We see little evidence in recent labor data to support this view though.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.612,
+                0.191,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Unit labor costs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.632,
+                0.671,
+                0.721
+            ],
+            "angle": 0,
+            "content": "Another channel linking productivity to inflation is unit labor costs (ULC). This measures the ratio of total-economy compensation and output, which can also be expressed as the ratio of average wages and labor productivity. ULC has a strong contemporaneous correlation to inflation, so this appears to be a channel for productivity to put downward pressure on inflation. However, despite a strong intuitive connection, we see two shortcomings with this framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.725,
+                0.678,
+                0.859
+            ],
+            "angle": 0,
+            "content": "First, productivity trends do not consistently drive ULC growth. Although productivity is the denominator in the formula for unit labor costs, it does not follow that ULC mechanically slows when productivity accelerates (Fig. 8). (This would be like saying a baseball player's batting average inevitably falls as they get more at bats, or a stock's P/E ratio declines whenever there is faster earnings growth.) The implicit assumption behind this formulaic interpretation is that the numerator, wage growth, is held constant. This is reasonable for short-run forecasts, but over a longer time horizon, productivity growth is one of the strongest drivers of real wages (Fig. 9). Empirically, the relationship between productivity and ULC varies over time and has tended to be weak in recent decades (Fig. 8).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.956,
+                0.93,
+                0.968
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.03,
+                0.661,
+                0.04
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.044,
+                0.675,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.058,
+                0.679,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.073,
+                0.166,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.465,
+                0.678,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.48,
+                0.675,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.493,
+                0.645,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.514,
+                0.662,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.529,
+                0.674,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.544,
+                0.207,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.564,
+                0.648,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.579,
+                0.674,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.593,
+                0.646,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.613,
+                0.188,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.635,
+                0.66,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.649,
+                0.666,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.663,
+                0.627,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.678,
+                0.655,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.693,
+                0.612,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.708,
+                0.299,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.726,
+                0.675,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.741,
+                0.658,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.757,
+                0.673,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.771,
+                0.663,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.785,
+                0.663,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.8,
+                0.667,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.815,
+                0.63,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.829,
+                0.67,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.843,
+                0.615,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.208,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.072,
+                0.032,
+                0.748,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Fig. 8: Productivity does not mechanically reduce ULC, since wage growth also changes over time Correlation between trend productivity and ULC"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.09,
+                0.068,
+                0.923,
+                0.313
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.073,
+                0.324,
+                0.222,
+                0.337
+            ],
+            "angle": 0,
+            "content": "Source: BEA, Haver, NOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.358,
+                0.667,
+                0.432
+            ],
+            "angle": 0,
+            "content": "Second, the causal relationship between ULC and inflation tends to be overstated. Profit margins often adjust to limit the pass-through of labor costs to final prices especially, if labor productivity improves due to capital deepening (Fig. 10). A large share of the consumer basket is also relatively insensitive to labor costs – including imported goods and housing services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.438,
+                0.671,
+                0.467
+            ],
+            "angle": 0,
+            "content": "In practice, while ULC has a reasonable contemporaneous correlation to inflation, it adds little or no value as a forecast of future inflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.07,
+                0.483,
+                0.51,
+                0.509
+            ],
+            "angle": 0,
+            "content": "Fig. 9: Over a longer time horizon, productivity growth is one of the strongest drivers of real wages"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.083,
+                0.518,
+                0.496,
+                0.771
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.072,
+                0.787,
+                0.248,
+                0.799
+            ],
+            "angle": 0,
+            "content": "Source: BEA, BLS, Haver, NOM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.523,
+                0.483,
+                0.957,
+                0.509
+            ],
+            "angle": 0,
+            "content": "Fig. 10: Profit margins often adjust to limit the pass-through of labor costs to final prices"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.535,
+                0.519,
+                0.955,
+                0.756
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.779,
+                0.672,
+                0.792
+            ],
+            "angle": 0,
+            "content": "Source: BLS, Haver, NOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.827,
+                0.301,
+                0.841
+            ],
+            "angle": 0,
+            "content": "Productivity in inflation models"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.847,
+                0.665,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Some macro inflation forecast equations will incorporate trend productivity growth with a negative coefficient.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.882,
+                0.664,
+                0.927
+            ],
+            "angle": 0,
+            "content": "In most cases though, these models are capturing a partial or conditional impact of productivity growth. For instance, Robert Gordon's \"Goldilocks\" inflation model includes trend productivity growth in addition to demand indicators and lagged inflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.932,
+                0.678,
+                0.947
+            ],
+            "angle": 0,
+            "content": "In other words, these models do not consider the full impact of productivity on inflation but",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.956,
+                0.93,
+                0.968
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.361,
+                0.665,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.375,
+                0.651,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.39,
+                0.627,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.404,
+                0.654,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.418,
+                0.219,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.44,
+                0.668,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.454,
+                0.393,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.829,
+                0.298,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.849,
+                0.663,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.864,
+                0.206,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.884,
+                0.628,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.899,
+                0.66,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.914,
+                0.595,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.934,
+                0.675,
+                0.945
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.208,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.85,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.028,
+                0.362,
+                0.042
+            ],
+            "angle": 0,
+            "content": "instead take demand indicators as a given.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.048,
+                0.677,
+                0.092
+            ],
+            "angle": 0,
+            "content": "This is a reasonable approach for short-term inflation forecasting and can help to shed some light on real-time policymaking. Faster trend productivity should make officials more willing to tolerate a strong labor market or above-trend GDP growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.098,
+                0.683,
+                0.171
+            ],
+            "angle": 0,
+            "content": "In our opinion, these models are less helpful when analyzing productivity from a forward-looking perspective though. The main channel for productivity growth to be inflationary is by boosting demand (because of faster real income growth or by increasing incentives to invest). A policymaker who expects future productivity strength would want to consider the unconditional impact, not a partial relationship which takes demand growth as a given.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.176,
+                0.384,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Productivity surprises and policy mistakes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.191,
+                0.646,
+                0.235
+            ],
+            "angle": 0,
+            "content": "One possibility is that productivity does not drive inflation in general, but productivity surprises can. This could help explain why productivity and inflation are correlated at times, but inconsistently.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.241,
+                0.669,
+                0.314
+            ],
+            "angle": 0,
+            "content": "The narrative record of the 1970s inflation episode demonstrated Fed officials' slowness in realizing that trend productivity had shifted (the reasons for the slowdown were still being debated well into the subsequent decades). This, in turn, contributed to overly dovish policy as inflation was attributed to cost shocks rather than an overheated economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.32,
+                0.68,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Considering the current context, it seems unlikely that policymakers would be caught off guard by an AI-driven productivity boom. (The Fed chair described the productivity impact of AI as the most important narrative in his adult life). While mismeasurement and misperception of growth trends are always risks, we do not expect faster productivity growth to lead the Warsh Fed into persistent hawkish policy errors that drive inflation lower.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.412,
+                0.213,
+                0.426
+            ],
+            "angle": 0,
+            "content": "Policy implications"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.427,
+                0.678,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Economic theory and history do not make a strong case for disinflationary productivity. Recent price pressure in IT goods suggest the near-term impact of technological progress may be inflationary. And we do not see strong evidence to expect disinflationary relief in the longer run.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.492,
+                0.677,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Most Fed officials do not appear convinced by Warsh's argument that AI will lead to disinflation. The June FOMC meeting minutes showed \"many participants\" concerned about the inflationary impact of AI investment, while only \"some\" expected offsetting downward pressure from productivity growth. (The June minutes also show disinflationary productivity optimists pushing out their expected timing for inflation relief, claiming \"this effect would likely take time to materialize.\")",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.585,
+                0.665,
+                0.673
+            ],
+            "angle": 0,
+            "content": "Warsh's repeated emphasis on productivity and supply growth has led to our skepticism that he will turn hawkish and support pre-emptive rate hikes. His views on the impact of productivity growth appear deeply held – he has de scribed these in terms of his \"intuition,\" and has continued to emphasize the importance of supply growth, even while noting it is difficult to measure. And given Warsh's criticism of official government statistics, it appears unlikely that near-term data would dissuade him from this view.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.678,
+                0.679,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Incidentally, the near-term inflation trajectory is also likely to be encouraging for FOMC doves. Inflation momentum appears to have peaked. Headline inflation has cooled, and we expect a gradual slowdown in monthly core readings driven by waning tariff pass-through and residual seasonality. We do not expect disinflationary productivity growth, but “disinflation and productivity” should be enough to keep policy on hold.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.083,
+                0.774,
+                0.647,
+                0.789
+            ],
+            "angle": 0,
+            "content": "1. For example, see \"The Myth of the Great Depression (1873-1896)\" by S.B. Saul"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.957,
+                0.93,
+                0.968
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.029,
+                0.359,
+                0.041
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.05,
+                0.652,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.064,
+                0.674,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.079,
+                0.526,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.098,
+                0.666,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.113,
+                0.666,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.128,
+                0.668,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.143,
+                0.681,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.158,
+                0.65,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.177,
+                0.382,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.193,
+                0.635,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.207,
+                0.643,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.221,
+                0.237,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.241,
+                0.667,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.257,
+                0.644,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.27,
+                0.638,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.286,
+                0.614,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.301,
+                0.139,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.322,
+                0.663,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.335,
+                0.677,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.35,
+                0.62,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.365,
+                0.638,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.38,
+                0.639,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.394,
+                0.114,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.413,
+                0.21,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.429,
+                0.65,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.444,
+                0.675,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.458,
+                0.664,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.472,
+                0.17,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.493,
+                0.632,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.507,
+                0.646,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.522,
+                0.633,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.537,
+                0.674,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.552,
+                0.653,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.567,
+                0.367,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.586,
+                0.661,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.601,
+                0.658,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.615,
+                0.612,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.629,
+                0.661,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.645,
+                0.616,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.66,
+                0.632,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.679,
+                0.654,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.695,
+                0.658,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.71,
+                0.643,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.723,
+                0.675,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.738,
+                0.544,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.0,
+                0.209,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.01
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.039,
+                0.269,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Appendix A-1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.076,
+                0.559,
+                0.09
+            ],
+            "angle": 0,
+            "content": "This report has been produced by NOM Securities International, Inc.(NSI), US.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.091,
+                0.368,
+                0.105
+            ],
+            "angle": 0,
+            "content": "See Disclaimers for NOM Group entity details.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.118,
+                0.271,
+                0.135
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.15,
+                0.928,
+                0.224
+            ],
+            "angle": 0,
+            "content": "We, Jeremy Schwartz, Ruchir Sharma and Aichi Amemiya, hereby certify (1) that the views expressed in this Research report accurately reflect our personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of our compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of our compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.236,
+                0.271,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.263,
+                0.547,
+                0.277
+            ],
+            "angle": 0,
+            "content": "Online availability of research and conflict-of-interest disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.287,
+                0.742,
+                0.3
+            ],
+            "angle": 0,
+            "content": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.302,
+                0.929,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.345,
+                0.929,
+                0.404
+            ],
+            "angle": 0,
+            "content": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.418,
+                0.934,
+                0.462
+            ],
+            "angle": 0,
+            "content": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.474,
+                0.17,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Disclaimers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.501,
+                0.935,
+                0.718
+            ],
+            "angle": 0,
+            "content": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.72,
+                0.909,
+                0.808
+            ],
+            "angle": 0,
+            "content": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.809,
+                0.934,
+                0.955
+            ],
+            "angle": 0,
+            "content": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.957,
+                0.93,
+                0.968
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.04,
+                0.265,
+                0.062
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.078,
+                0.556,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.092,
+                0.364,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.119,
+                0.268,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.152,
+                0.927,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.167,
+                0.92,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.182,
+                0.89,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.196,
+                0.919,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.21,
+                0.32,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.236,
+                0.267,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.265,
+                0.544,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.289,
+                0.737,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.303,
+                0.925,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.318,
+                0.618,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.347,
+                0.925,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.361,
+                0.921,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.376,
+                0.924,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.391,
+                0.914,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.419,
+                0.931,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.433,
+                0.888,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.449,
+                0.78,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.475,
+                0.167,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.501,
+                0.865,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.517,
+                0.894,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.531,
+                0.927,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.546,
+                0.862,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.56,
+                0.879,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.574,
+                0.903,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.589,
+                0.931,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.603,
+                0.908,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.618,
+                0.932,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.633,
+                0.898,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.647,
+                0.883,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.662,
+                0.836,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.677,
+                0.921,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.691,
+                0.88,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.705,
+                0.496,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.721,
+                0.88,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.741,
+                0.863,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.757,
+                0.905,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.776,
+                0.863,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.795,
+                0.454,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.81,
+                0.922,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.825,
+                0.889,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.84,
+                0.894,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.854,
+                0.875,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.869,
+                0.927,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.883,
+                0.931,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.898,
+                0.917,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.913,
+                0.917,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.927,
+                0.917,
+                0.936
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.942,
+                0.925,
+                0.951
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.209,
+                0.009
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.026,
+                0.928,
+                0.053
+            ],
+            "angle": 0,
+            "content": "report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.054,
+                0.932,
+                0.125
+            ],
+            "angle": 0,
+            "content": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.127,
+                0.933,
+                0.228
+            ],
+            "angle": 0,
+            "content": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.229,
+                0.933,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.931,
+                0.402
+            ],
+            "angle": 0,
+            "content": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.404,
+                0.907,
+                0.432
+            ],
+            "angle": 0,
+            "content": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.433,
+                0.91,
+                0.476
+            ],
+            "angle": 0,
+            "content": "accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.474,
+                0.93,
+                0.592
+            ],
+            "angle": 0,
+            "content": "legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.595,
+                0.936,
+                0.708
+            ],
+            "angle": 0,
+            "content": "legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.709,
+                0.933,
+                0.766
+            ],
+            "angle": 0,
+            "content": "completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.767,
+                0.933,
+                0.824
+            ],
+            "angle": 0,
+            "content": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.826,
+                0.933,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.927,
+                0.929,
+                0.955
+            ],
+            "angle": 0,
+            "content": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.957,
+                0.93,
+                0.968
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.027,
+                0.924,
+                0.036
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.041,
+                0.718,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.055,
+                0.923,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.071,
+                0.932,
+                0.083
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.084,
+                0.911,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.1,
+                0.923,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.116,
+                0.188,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.129,
+                0.922,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.143,
+                0.919,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.157,
+                0.931,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.171,
+                0.917,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.187,
+                0.927,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.201,
+                0.925,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.216,
+                0.213,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.23,
+                0.93,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.245,
+                0.891,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.26,
+                0.882,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.275,
+                0.927,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.289,
+                0.924,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.304,
+                0.239,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.317,
+                0.927,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.332,
+                0.925,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.347,
+                0.92,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.361,
+                0.891,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.376,
+                0.921,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.391,
+                0.436,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.405,
+                0.903,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.418,
+                0.885,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.435,
+                0.904,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.449,
+                0.905,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.464,
+                0.901,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.478,
+                0.89,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.493,
+                0.907,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.507,
+                0.924,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.521,
+                0.921,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.536,
+                0.925,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.55,
+                0.91,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.565,
+                0.903,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.58,
+                0.901,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.595,
+                0.896,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.609,
+                0.931,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.623,
+                0.924,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.638,
+                0.914,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.653,
+                0.916,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.667,
+                0.931,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.681,
+                0.919,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.695,
+                0.857,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.711,
+                0.925,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.724,
+                0.928,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.929,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.755,
+                0.687,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.769,
+                0.922,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.782,
+                0.93,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.799,
+                0.891,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.813,
+                0.402,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.827,
+                0.891,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.841,
+                0.922,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.856,
+                0.89,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.869,
+                0.93,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.884,
+                0.922,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.899,
+                0.917,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.914,
+                0.59,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.929,
+                0.924,
+                0.939
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.944,
+                0.924,
+                0.953
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.209,
+                0.009
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.849,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.026,
+                0.907,
+                0.096
+            ],
+            "angle": 0,
+            "content": "forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.099,
+                0.928,
+                0.17
+            ],
+            "angle": 0,
+            "content": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.171,
+                0.927,
+                0.227
+            ],
+            "angle": 0,
+            "content": "The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.229,
+                0.921,
+                0.315
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.928,
+                0.373
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (\"NFPE\"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.375,
+                0.924,
+                0.416
+            ],
+            "angle": 0,
+            "content": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.418,
+                0.848,
+                0.431
+            ],
+            "angle": 0,
+            "content": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.433,
+                0.527,
+                0.446
+            ],
+            "angle": 0,
+            "content": "This document has also been approved for distribution in Malaysia by NSM.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.448,
+                0.933,
+                0.665
+            ],
+            "angle": 0,
+            "content": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.666,
+                0.936,
+                0.795
+            ],
+            "angle": 0,
+            "content": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia ('Saudi Arabia') or a 'Market Counterparty' or a 'Professional Client' (as defined by the Dubai Financial Services Authority) in the United Arab Emirates ('UAE') or a 'Market Counterparty' or a 'Business Customer' (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar ('Qatar') by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a 'Market Counterparty' or a 'Professional Client' in the UAE or a 'Market Counterparty' or a 'Business Customer' in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.796,
+                0.688,
+                0.809
+            ],
+            "angle": 0,
+            "content": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.811,
+                0.93,
+                0.927
+            ],
+            "angle": 0,
+            "content": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.927,
+                0.934,
+                0.956
+            ],
+            "angle": 0,
+            "content": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.958,
+                0.93,
+                0.967
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.027,
+                0.854,
+                0.037
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.041,
+                0.902,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.883,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.071,
+                0.902,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.086,
+                0.198,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.1,
+                0.927,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.114,
+                0.902,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.129,
+                0.916,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.143,
+                0.902,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.158,
+                0.773,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.171,
+                0.924,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.186,
+                0.924,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.201,
+                0.919,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.216,
+                0.257,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.231,
+                0.914,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.245,
+                0.899,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.26,
+                0.914,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.274,
+                0.916,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.289,
+                0.874,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.303,
+                0.459,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.318,
+                0.89,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.332,
+                0.925,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.347,
+                0.908,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.36,
+                0.122,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.377,
+                0.919,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.391,
+                0.919,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.406,
+                0.737,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.418,
+                0.845,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.435,
+                0.523,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.449,
+                0.903,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.463,
+                0.899,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.477,
+                0.904,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.492,
+                0.893,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.507,
+                0.922,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.522,
+                0.903,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.535,
+                0.927,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.551,
+                0.916,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.565,
+                0.878,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.578,
+                0.891,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.594,
+                0.93,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.609,
+                0.928,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.623,
+                0.906,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.637,
+                0.91,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.652,
+                0.214,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.667,
+                0.922,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.682,
+                0.931,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.696,
+                0.922,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.711,
+                0.911,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.725,
+                0.929,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.739,
+                0.93,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.755,
+                0.862,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.768,
+                0.916,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.783,
+                0.221,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.797,
+                0.684,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.811,
+                0.917,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.827,
+                0.901,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.84,
+                0.927,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.856,
+                0.894,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.871,
+                0.89,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.885,
+                0.913,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.899,
+                0.891,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.915,
+                0.789,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.929,
+                0.93,
+                0.939
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.944,
+                0.93,
+                0.953
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.0,
+                0.208,
+                0.01
+            ],
+            "angle": 0,
+            "content": "NOM | Economic Insights"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.85,
+                0.0,
+                0.922,
+                0.009
+            ],
+            "angle": 0,
+            "content": "28 July 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.026,
+                0.904,
+                0.068
+            ],
+            "angle": 0,
+            "content": "laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.069,
+                0.933,
+                0.23
+            ],
+            "angle": 0,
+            "content": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, \"Offshore Issuers\") that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.241,
+                0.272,
+                0.255
+            ],
+            "angle": 0,
+            "content": "NOM Securities Co., Ltd."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.265,
+                0.647,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Financial instruments firm registered with the Kanto Local Finance Bureau (registration No. 142)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.28,
+                0.927,
+                0.309
+            ],
+            "angle": 0,
+            "content": "Member associations: Japan Securities Dealers Association; Investment Management Association of Japan; The Financial Futures Association of Japan; Type II Financial Instruments Firms Association; and Japan Security Token Offering Association.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.323,
+                0.927,
+                0.365
+            ],
+            "angle": 0,
+            "content": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.367,
+                0.931,
+                0.41
+            ],
+            "angle": 0,
+            "content": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.412,
+                0.373,
+                0.424
+            ],
+            "angle": 0,
+            "content": "http://go.NOMnow.com/research/m/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.425,
+                0.547,
+                0.439
+            ],
+            "angle": 0,
+            "content": "Copyright © 2026 NOM Securities International, Inc., US. All rights reserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.919,
+                0.956,
+                0.939,
+                0.968
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.027,
+                0.901,
+                0.037
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.042,
+                0.898,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.057,
+                0.381,
+                0.065
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.071,
+                0.914,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.085,
+                0.907,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.099,
+                0.919,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.114,
+                0.931,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.129,
+                0.894,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.143,
+                0.914,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.157,
+                0.906,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.171,
+                0.875,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.187,
+                0.886,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.202,
+                0.902,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.216,
+                0.922,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.242,
+                0.271,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.267,
+                0.644,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.281,
+                0.924,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.296,
+                0.707,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.326,
+                0.924,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.34,
+                0.874,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.355,
+                0.18,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.368,
+                0.927,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.384,
+                0.92,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.398,
+                0.8,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.412,
+                0.369,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.427,
+                0.544,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

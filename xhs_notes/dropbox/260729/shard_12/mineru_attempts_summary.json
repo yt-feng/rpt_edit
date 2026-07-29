@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0003-63-NOM-Korea Strategy-Korea-s next re-rating-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0004-64-NOM-USD CNY fix model -Projection- 6.7640-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

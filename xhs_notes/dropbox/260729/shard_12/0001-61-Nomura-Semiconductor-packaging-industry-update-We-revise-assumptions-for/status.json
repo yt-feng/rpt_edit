@@ -1,0 +1,111 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "芯片封装变局：2片还",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "NOM：半导体行业数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+    "cleaned_source_title": "NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：半导体packaging",
+    "raw_candidates": [
+      "半导体封装行业更新-加速器路线图假设调整",
+      "半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+      "半导体封装行业更新-Rubin架构调整与EMIB-T出货提前"
+    ],
+    "cleaned_candidates": [
+      "NOM：半导体封装行业更新-加速器路线图假设调整",
+      "NOM：半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+      "NOM：半导体封装行业更新-Rubin架构调整与EMIB-T出货提前",
+      "NOM：半导体packaging",
+      "NOM：NOM估算，2027财年第一季度（2026年1"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：半导体封装行业更新-2026年GPU基板月均出货247亿日元",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：半导体封装行业更新-Rubin架构调整与EMIB-T出货提前",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：半导体packaging",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：NOM估算，2027财年第一季度（2026年1",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：半导体行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：半导体封装行业更新-加速器路线图假设调整",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "NOM：半导体行业数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "560",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_xlins432/pdfs/0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "AI真能降通胀？别太",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "通缩->价格变化 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融条件->资金条件 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "危机->扰动 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "通缩->价格变化 x1",
+    "下行|放缓->节奏变化 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+    "cleaned_source_title": "NOM-Economic Insights US- Will AI-driven productivity lead to disinflation",
+    "institution_name": "NOM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "NOM：AIEconomicInsightsUS",
+    "raw_candidates": [
+      "美国经济洞察：AI驱动的生产率与通胀关系",
+      "美国经济洞察：AI生产率与通胀关系-6月FOMC视角",
+      "美国经济洞察：AI生产率对通胀的历史与理论分析"
+    ],
+    "cleaned_candidates": [
+      "NOM：美国宏观环境洞察，AI驱动的生产率与通胀关系",
+      "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+      "NOM：美国宏观环境洞察，AI生产率对通胀的历史与理论分析",
+      "NOM：AIEconomicInsightsUS",
+      "NOM：AI驱动的生产率增长未必带来通胀节奏变化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：美国宏观环境洞察，AI生产率对通胀的历史与理论分析",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "NOM：AIEconomicInsightsUS",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：AI驱动的生产率增长未必带来通胀节奏变化",
+        "reasons": [
+          "anchor_coverage=0.40",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：美国宏观环境洞察，AI生产率与通胀关系-6月FOMC视角"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "474",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,46 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 4,
+  "pdf_count": 4,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 12,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 4,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/61-NOM-Semiconductor packaging industry update：We revise assumptions for accelerator roadmaps-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_xlins432/pdfs/0001-61-NOM-Semiconductor packaging industry update-We revise assumptions for accelerator roadmaps-260728.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/62-NOM-Economic Insights US： Will AI~driven productivity lead to disinflation？-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_xlins432/pdfs/0002-62-NOM-Economic Insights US- Will AI-driven productivity lead to disinflation--260728.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/63-NOM-Korea Strategy：Korea’s next re~rating-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_xlins432/pdfs/0003-63-NOM-Korea Strategy-Korea-s next re-rating-260728.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/64-NOM-USD CNY fix model ：Projection： 6.7640-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_xlins432/pdfs/0004-64-NOM-USD CNY fix model -Projection- 6.7640-260729.pdf",
+          "stable_index": "4"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
