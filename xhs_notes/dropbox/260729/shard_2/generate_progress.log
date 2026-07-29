@@ -1,0 +1,54 @@
+Found 64 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5gra6dti/pdfs/0001-11-Goldman Sachs-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5gra6dti/pdfs/0002-12-CITI-US IT Services-All Eyes on Outlook-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5gra6dti/pdfs/0003-13-Goldman Sachs-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5gra6dti/pdfs/0004-14-Goldman Sachs-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5gra6dti/pdfs/0005-15-Goldman Sachs-China Musings-Investor FAQs on Large-Scale IPOs-260728.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=1565af56-ca90-4a04-9922-f20ece9ab149
+MinerU states: running, running, running, waiting-file, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset afe2e84289dd785c46dc135a32af10aea8b4c8704801711d80b8ee2d8a463fe4.jpg: score=-1;square_without_chart_hint,edge:0.27
+Skip non-chart visual asset 7bee8c147417f261ad2fd7e9eeb89148d0b04650ed4f27b0fd566dc2edd934be.jpg: score=-100;too_small:1156x104
+Skip non-chart visual asset bc8dfd99afa17797a048f9f8233632ad215f1e8424a230045532ff454a93b731.jpg: score=-100;too_small:681x73
+Neutralized WeChat title while keeping the report: 高盛：ASMPTTCB技术受益于AI基础设施周期 -> 高盛：AI技术与行业应用观察
+Skip non-chart visual asset 944f00c2ef5eb8cc47098ff93410c87f1bfd1e64ebe729f49f6a8d5a226d82fc.jpg: score=-100;too_small:367x157
+Skip non-chart visual asset b7b0a12533abde2dd6f2ec92c5738703f10867dc46d781a98cc63d03852fc0c5.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 40467fa3cea638783d8397269125eb8ff868ec20a52acae96e90e3c5419630c2.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.33,contrast,large
+Skip non-chart visual asset a6d69273a2dd5a9e6934fe53106ac5ac6d819d73ee9561f40d36fb2a86c3818e.jpg: score=-100;too_small:48x51
+Skip non-chart visual asset 90e721430462978a3636cc00e0018dabfd6d2a154f01205ab3eafd315a0edada.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 3445248bf826305d3dcf011217de7cb72707627046143a7b4fc5447278e8f9df.jpg: score=-100;too_small:40x51
+Skip non-chart visual asset 7eb9ae765490489421ce9f00b1d6c2392e08d33154b4e2f0e7dc5297523c2115.jpg: score=-100;too_small:370x128
+Skip non-chart visual asset d514e11ddddd07e1b920da94ceb44cc3e85919469de2c862684e1f60f2606e8d.jpg: score=-100;too_small:1431x145
+Skip non-chart visual asset a8db57f90e3c5a606e4dc0546eb236469828dd3cdaa875fff0d14ec67a670376.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.26,contrast,large
+Skip non-chart visual asset 90840de9d1bb515cd9a06542d6ee4514e6e239fa2d3a4f53463443ec44cc6993.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.36,contrast,large
+Skip non-chart visual asset 96c5c04bf1df02e0eb049e27fb4ff404d86b46709dd362787715bf8977ef7dcd.jpg: score=-100;too_small:481x129
+Skip non-chart visual asset fce59d91cab3838a0840a87e4cf2eebeeb71cfcebe03a41f62ffe1160ebaae60.jpg: score=-100;too_small:706x162
+Skip non-chart visual asset 539a8022657c042f784109bd1ab366a9640ddfdcfb214c0c8cea45e869b87a56.jpg: score=-100;too_small:43x51
+Skip non-chart visual asset d4a1b857707dd50b2e84467d6b55756583ce9096936ea72812273261bb4d15b0.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset a056beb56bc8e053c8fae45512236af224980d991cc35e15488bb1b0cba47bcc.jpg: score=-100;too_small:359x160
+Skip non-chart visual asset af0b412e60ec51e7464368f66f2aeccd38f600e05b5ff4bd33505a71bb5d74ae.jpg: score=-100;too_small:51x48
+Skip non-chart visual asset efed43f57e970329cb08e6b0e7b437b7d6ff02eef4dfbe6200bd0159076c7cd5.jpg: score=-100;too_small:706x162
+Skip non-chart visual asset 0564d2d1de2fd4471330737e5ffad5bc71089da1bb9505a3db1a6eea33e3f126.jpg: score=-100;too_small:48x48
+Skip non-chart visual asset f6ee5eb2de21493856b3b0763701b12bd32f32d2f67a1d40974ff52186bf28b0.jpg: score=-100;too_small:365x129
+Skip non-chart visual asset 2cad66b2eee972c793664af965d410661f3fe7293685be7fbd3db488f8c4844b.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 5cc9077e4d92eafa01ffef2cf109153e0298bac7c5aac0a97e4202eb69c7f69c.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 2e94863f13d652f64569dc6ac97511745117a5cb41ea443f9f8ed069c68af37c.jpg: score=1;odd_ratio:7.78,edge:0.25,contrast,large
+Skip non-chart visual asset 4773fb68f1a77d10dcc520db1e215947718219990cf386ebd4ce04e3eab73d8c.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 14627cf6319bde89b8e9f0621973ab1f9e1b1008ae276f93e412615ab1dda055.jpg: score=-100;too_small:365x160
+Skip non-chart visual asset ce3f1ee7605d57453cd4606e8a647a04e5718442d163381ea567b1b860df69e5.jpg: score=-100;too_small:45x49
+Skip non-chart visual asset 3e34721e4652e2800afc53cd6d19407ad41f488f867f626c635d9163be4f4e02.jpg: score=-100;too_small:359x126
+Skip non-chart visual asset 9db1dab612b0cc1a98ce6ee7cb6a1e9d65ebffdcd839ddd33c6b213e4508ec22.jpg: score=-100;too_small:1156x109
+Neutralized WeChat title while keeping the report: 高盛：中国手术机器人海外商业化加速支撑业绩兑现 -> 高盛：机器人行业数据与主题变化观察
+Skip non-chart visual asset 1e2c1f13b34ec51ba886f2d3ab0acd12df660b9b85dd97b1da52d4ab07f78619.jpg: score=-1;square_without_chart_hint,edge:0.31
+Skip non-chart visual asset d80f5ea61efbd8ea0820ef1da533f038d9b571697719f90227dd69fd06472699.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：工业商业务定价也从一季度的3.4%提升至5.0%，两个信号叠加 -> 高盛：工业商业务与季度数据观察
+Skip non-chart visual asset ff166194c92a5466828e8525d6e1636b201a6262002e38c00ac52df01df7afbf.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset d9b0ee8241a80c927ded5ec3c566468161cb81d9320278ad380245c78b2469f4.jpg: score=1;square_without_chart_hint,edge:0.17,contrast,large
+Skip non-chart visual asset 41b40d1138b69c33027c67f565dd64b06f287ebd494ac205003830200d884bab.jpg: score=0;odd_ratio:4.82,edge:0.39,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

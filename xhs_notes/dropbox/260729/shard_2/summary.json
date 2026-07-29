@@ -1,0 +1,588 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "ASMPT 业绩超预",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf",
+      "cleaned_source_title": "GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIASMPT3Q26revenuestogrowat0to9",
+      "raw_candidates": [
+        "ASMPT 3Q26营收指引环比增长0%-9%",
+        "ASMPT 2Q26营收超预期-3Q26指引中值高于共识",
+        "ASMPT TCB技术受益于AI基础设施周期"
+      ],
+      "cleaned_candidates": [
+        "GS：ASMPT3Q26营收指引环比增长0%-9%",
+        "GS：ASMPT2Q26营收超预期-3Q26指引中值高于共识",
+        "GS：ASMPTTCB技术受益于AI基础设施周期",
+        "GS：AIASMPT3Q26revenuestogrowat0to9",
+        "GS：ASMPT3Q26营收指引超预期，TCB受益于AI基础设施周期"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AI"
+      ],
+      "faithful_candidate_quality_issues": [
+        "incomplete_last_segment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：ASMPT3Q26营收指引环比增长0%-9%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "incomplete_last_segment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ASMPT2Q26营收超预期-3Q26指引中值高于共识",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIASMPT3Q26revenuestogrowat0to9",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：ASMPTTCB技术受益于AI基础设施周期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0002-12-CITI-US IT Services-All Eyes on Outlook-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "IT服务研报划重点：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：美国IT服务-聚焦业绩展望",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-CITI-US IT Services-All Eyes on Outlook-260727.pdf",
+      "cleaned_source_title": "CITI-US IT Services-All Eyes on Outlook",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：USITServicesAllEyeson展望",
+      "raw_candidates": [
+        "美国IT服务-聚焦业绩展望",
+        "美国IT服务-EPAM与Globant财报前瞻",
+        "美国IT服务-AI原生能力与增长瓶颈"
+      ],
+      "cleaned_candidates": [
+        "Citi：美国IT服务-聚焦业绩展望",
+        "Citi：美国IT服务-EPAM与Globant财报前瞻",
+        "Citi：美国IT服务-AI原生能力与增长瓶颈",
+        "Citi：USITServicesAllEyeson展望",
+        "Citi：2026年一季度，前50大客户贡献了5.2%的收入增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：美国IT服务-EPAM与Globant财报前瞻",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：美国IT服务-AI原生能力与增长瓶颈",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：USITServicesAllEyeson展望",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：2026年一季度，前50大客户贡献了5.2%的收入增长",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：美国IT服务-聚焦业绩展望",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：美国IT服务-聚焦业绩展望"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0003-13-GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "中国手术机器人，海外",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：机器人行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf",
+      "cleaned_source_title": "GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国SURGICALROBOTS3",
+      "raw_candidates": [
+        "中国手术机器人海外商业化加速支撑业绩兑现",
+        "中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+        "中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行"
+      ],
+      "cleaned_candidates": [
+        "GS：中国手术机器人海外商业化加速支撑业绩兑现",
+        "GS：中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+        "GS：中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行",
+        "GS：中国SURGICALROBOTS3",
+        "GS：与此同时，国内招标量在1H26同比小幅下滑至约30台"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "GS：中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "GS：中国SURGICALROBOTS3",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：与此同时，国内招标量在1H26同比小幅下滑至约30台",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：机器人行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国手术机器人海外商业化加速支撑业绩兑现",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：机器人行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0004-14-GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "法液空上半年：电子气",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：工业商业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728.pdf",
+      "cleaned_source_title": "GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：AirLiquide",
+      "raw_candidates": [
+        "GS：Air Liquide二季度电子气业务增速跃升至9.5%",
+        "GS：Air Liquide工业商定价连续两季回升至5.0%",
+        "GS：Air Liquide上半年项目储备创48亿欧元新高",
+        "Air Liquide上半年业绩符合预期-电子气增长与工业商定价提升",
+        "Air Liquide二季度气体与服务增长3.3%-电子气增速跃升至9.5%",
+        "Air Liquide上半年业绩-电子气项目储备创48亿欧元新高"
+      ],
+      "cleaned_candidates": [
+        "GS：AirLiquide二季度电子气业务增速跃升至9.5%",
+        "GS：AirLiquide工业商定价连续两季回升至5.0%",
+        "GS：AirLiquide上半年项目储备创48亿欧元新高",
+        "GS：AirLiquide上半年业绩符合预期",
+        "GS：AirLiquide二季度气体与服务增长3.3%",
+        "GS：AirLiquide上半年业绩-电子气项目储备创48亿欧元新高",
+        "GS：AirLiquide",
+        "GS：工业商业务定价也从一季度的3.4%提升至5.0%，两个信号叠加"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AirLiquide二季度电子气业务增速跃升至9.5%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide工业商定价连续两季回升至5.0%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide上半年项目储备创48亿欧元新高",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide上半年业绩符合预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide二季度气体与服务增长3.3%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide上半年业绩-电子气项目储备创48亿欧元新高",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AirLiquide",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：工业商业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "3.4",
+          "5.0"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：工业商业务定价也从一季度的3.4%提升至5.0%，两个信号叠加",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：Air Liquide二季度电子气业务增速跃升至9.5%",
+        "GS：Air Liquide工业商定价连续两季回升至5.0%",
+        "GS：Air Liquide上半年项目储备创48亿欧元新高"
+      ],
+      "pre_neutralization_title": "GS：工业商业务定价也从一季度的3.4%提升至5.0%，两个信号叠加",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：工业商业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0005-15-GS-China Musings-Investor FAQs on Large-Scale IPOs-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "长鑫上市，A股大盘怎",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x3",
+      "股价->报价 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x4",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x3",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "股票|个股->公司 x1",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：长鑫存储IPO后中国大型新股历史表现",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-GS-China Musings-Investor FAQs on Large-Scale IPOs-260728.pdf",
+      "cleaned_source_title": "GS-China Musings-Investor FAQs on Large-Scale IPOs",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国MusingsInvestorFAQsonL",
+      "raw_candidates": [
+        "中国思考-大型新股投资者常见问题",
+        "长鑫存储IPO后中国大型新股历史表现",
+        "中国大型新股上市后市场影响与流动性节奏"
+      ],
+      "cleaned_candidates": [
+        "GS：中国思考-大型新股参与者常见问题",
+        "GS：长鑫存储IPO后中国大型新股历史表现",
+        "GS：中国大型新股上市后市场影响与流动性节奏",
+        "GS：中国MusingsInvestorFAQsonL",
+        "GS：长鑫存储（CXMT）于7月27日在科创板完成上市"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "generic_series_title"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国思考-大型新股参与者常见问题",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国大型新股上市后市场影响与流动性节奏",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国MusingsInvestorFAQsonL",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：长鑫存储（CXMT）于7月27日在科创板完成上市",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：长鑫存储IPO后中国大型新股历史表现",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：长鑫存储IPO后中国大型新股历史表现"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

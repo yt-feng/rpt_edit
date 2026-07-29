@@ -1,0 +1,115 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0003-13-GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "中国手术机器人，海外",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：机器人行业数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-13-GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf",
+    "cleaned_source_title": "GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：中国SURGICALROBOTS3",
+    "raw_candidates": [
+      "中国手术机器人海外商业化加速支撑业绩兑现",
+      "中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+      "中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行"
+    ],
+    "cleaned_candidates": [
+      "GS：中国手术机器人海外商业化加速支撑业绩兑现",
+      "GS：中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+      "GS：中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行",
+      "GS：中国SURGICALROBOTS3",
+      "GS：与此同时，国内招标量在1H26同比小幅下滑至约30台"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：中国手术机器人海外商业化加速-1H26海外收入增速超450%",
+        "reasons": [
+          "anchor_coverage=0.68"
+        ]
+      },
+      {
+        "title": "GS：中国手术机器人海外商业化加速-微创机器人与精锋医疗海外订单执行",
+        "reasons": [
+          "anchor_coverage=0.68"
+        ]
+      },
+      {
+        "title": "GS：中国SURGICALROBOTS3",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：与此同时，国内招标量在1H26同比小幅下滑至约30台",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：机器人行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：中国手术机器人海外商业化加速支撑业绩兑现",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：机器人行业数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "536",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

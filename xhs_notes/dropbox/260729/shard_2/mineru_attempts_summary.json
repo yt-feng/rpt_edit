@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0002-12-CITI-US IT Services-All Eyes on Outlook-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0003-13-GS-CHINA SURGICAL ROBOTS -3- Accelerating Overseas Commercialization Supports Guidance Delivery- Domestic Softness Largely Expected-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0004-14-GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0005-15-GS-China Musings-Investor FAQs on Large-Scale IPOs-260728.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

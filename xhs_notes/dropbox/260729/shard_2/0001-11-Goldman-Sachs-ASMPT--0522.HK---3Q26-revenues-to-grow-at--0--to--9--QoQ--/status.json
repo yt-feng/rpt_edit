@@ -1,0 +1,119 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_5gra6dti/pdfs/0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "ASMPT 业绩超预",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资周期->研究周期 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：AI技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729.pdf",
+    "cleaned_source_title": "GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle",
+    "institution_name": "GS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "GS：AIASMPT3Q26revenuestogrowat0to9",
+    "raw_candidates": [
+      "ASMPT 3Q26营收指引环比增长0%-9%",
+      "ASMPT 2Q26营收超预期-3Q26指引中值高于共识",
+      "ASMPT TCB技术受益于AI基础设施周期"
+    ],
+    "cleaned_candidates": [
+      "GS：ASMPT3Q26营收指引环比增长0%-9%",
+      "GS：ASMPT2Q26营收超预期-3Q26指引中值高于共识",
+      "GS：ASMPTTCB技术受益于AI基础设施周期",
+      "GS：AIASMPT3Q26revenuestogrowat0to9",
+      "GS：ASMPT3Q26营收指引超预期，TCB受益于AI基础设施周期"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [
+      "incomplete_last_segment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：ASMPT3Q26营收指引环比增长0%-9%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "incomplete_last_segment",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：ASMPT2Q26营收超预期-3Q26指引中值高于共识",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：AIASMPT3Q26revenuestogrowat0to9",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：ASMPTTCB技术受益于AI基础设施周期",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：AI技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "492",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
