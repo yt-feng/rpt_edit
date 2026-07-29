@@ -1,0 +1,476 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0001-51-MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "中国AI芯片竞争，从",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国AI超节点规模互联技术演进",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-51-MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes-260727.pdf",
+      "cleaned_source_title": "MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：Greater中国半导体AINetworking",
+      "raw_candidates": [
+        "中国AI超节点规模互联技术演进",
+        "中国AI超节点规模互联技术加速演进",
+        "中国AI超节点规模互联技术系统方案竞争"
+      ],
+      "cleaned_candidates": [
+        "MS：中国AI超节点规模互联技术演进",
+        "MS：中国AI超节点规模互联技术加速演进",
+        "MS：中国AI超节点规模互联技术系统方案竞争",
+        "MS：Greater中国半导体AINetworking"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Greater中国半导体AINetworking",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国AI超节点规模互联技术演进",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国AI超节点规模互联技术演进"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0002-52-MS-Huaming Power Equipment-002270-Priced for Fear-Built for Growth-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "涨了50%后又跌了5",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：华明装备业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-52-MS-Huaming Power Equipment-002270-Priced for Fear-Built for Growth-260727.pdf",
+      "cleaned_source_title": "MS-Huaming Power Equipment-002270-Priced for Fear-Built for Growth",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：HuamingPowerEquipment002270",
+      "raw_candidates": [
+        "华明装备估值回调与长期增长基础",
+        "华明装备估值回调54%后海外扩张与电网需求",
+        "华明装备海外扩张与电网需求构成增长基础"
+      ],
+      "cleaned_candidates": [
+        "MS：华明装备估值回调与长期增长基础",
+        "MS：华明装备估值回调54%后海外扩张与电网需求",
+        "MS：华明装备海外扩张与电网需求构成增长基础",
+        "MS：HuamingPowerEquipment002270",
+        "MS：华明装备报价自2026年初历史高点已回调约54%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：华明装备估值回调54%后海外扩张与电网需求",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：华明装备海外扩张与电网需求构成增长基础",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        },
+        {
+          "title": "MS：HuamingPowerEquipment002270",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：华明装备报价自2026年初历史高点已回调约54%",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：华明装备业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：华明装备估值回调与长期增长基础",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：华明装备业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0003-53-MS-Internet-Where Are We Trading Now-Micro vs AI vs Macro-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "互联网巨头集体回调，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：北美互联网板块，微观与AI及宏观对比",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-53-MS-Internet-Where Are We Trading Now-Micro vs AI vs Macro-260728.pdf",
+      "cleaned_source_title": "MS-Internet-Where Are We Trading Now-Micro vs AI vs Macro",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AIInternetWhereAreWeTra",
+      "raw_candidates": [
+        "北美互联网板块：微观与AI及宏观对比",
+        "北美互联网板块7月24日当周跌幅与估值分化",
+        "北美互联网板块：AI叙事与宏观预期下的估值分化"
+      ],
+      "cleaned_candidates": [
+        "MS：北美互联网板块，微观与AI及宏观对比",
+        "MS：北美互联网板块7月24日当周跌幅与估值分化",
+        "MS：北美互联网板块，AI叙事与宏观预期下的估值分化",
+        "MS：AIInternetWhereAreWeTra",
+        "MS：它提醒我们，在AI与宏观叙事之外"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：北美互联网板块7月24日当周跌幅与估值分化",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：北美互联网板块，AI叙事与宏观预期下的估值分化",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：AIInternetWhereAreWeTra",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：它提醒我们，在AI与宏观叙事之外",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：北美互联网板块，微观与AI及宏观对比",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：北美互联网板块，微观与AI及宏观对比"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0004-54-MS-Luxury-Updating our tax rate assumptions-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "法国奢侈品税改，谁最",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：奢侈品牌税率假设更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-54-MS-Luxury-Updating our tax rate assumptions-260728.pdf",
+      "cleaned_source_title": "MS-Luxury-Updating our tax rate assumptions",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：LuxuryUpdatingourtaxr",
+      "raw_candidates": [
+        "奢侈品牌税率假设更新",
+        "法国附加税或延续-奢侈品牌盈利影响",
+        "LVMH与爱马仕远期税率调整"
+      ],
+      "cleaned_candidates": [
+        "MS：奢侈品牌税率假设更新",
+        "MS：法国附加税或延续-奢侈品牌盈利影响",
+        "MS：LVMH与爱马仕远期税率调整",
+        "MS：LuxuryUpdatingourtaxr",
+        "MS：爱马仕约74%的产品在法国制造，LVMH约50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：法国附加税或延续-奢侈品牌盈利影响",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        },
+        {
+          "title": "MS：LVMH与爱马仕远期税率调整",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：LuxuryUpdatingourtaxr",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：爱马仕约74%的产品在法国制造，LVMH约50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：奢侈品牌税率假设更新",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：奢侈品牌税率假设更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0005-55-MS-SpaceX-SPCX.US-Starship Flight 13 Report Card-A Clear Positive in a Tide of Cautious Sentiment-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Starship 第",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_title": "MS：SpaceX星舰第13次飞行测试报告",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-55-MS-SpaceX-SPCX.US-Starship Flight 13 Report Card-A Clear Positive in a Tide of Cautious Sentiment-260727.pdf",
+      "cleaned_source_title": "MS-SpaceX-SPCX.US-Starship Flight 13 Report Card-A Clear Positive in a Tide of Cautious Sentiment",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SpaceXStarshipFlight13",
+      "raw_candidates": [
+        "MS：SpaceX星舰第13次飞行测试报告",
+        "MS：SpaceX星舰第13次飞行测试A-评价",
+        "MS：SpaceX星舰第13次飞行测试与星链V3部署"
+      ],
+      "cleaned_candidates": [
+        "MS：SpaceX星舰第13次飞行测试报告",
+        "MS：SpaceX星舰第13次飞行测试A-评价",
+        "MS：SpaceX星舰第13次飞行测试与星链V3部署",
+        "MS：SpaceXStarshipFlight13",
+        "MS：星舰第13次飞行测试（Flight13）在2026年7月2"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SpaceX星舰第13次飞行测试A-评价",
+          "reasons": [
+            "incomplete_last_segment"
+          ]
+        },
+        {
+          "title": "MS：SpaceXStarshipFlight13",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：星舰第13次飞行测试（Flight13）在2026年7月2",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        }
+      ],
+      "selected_title": "MS：SpaceX星舰第13次飞行测试报告",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：SpaceX星舰第13次飞行测试报告"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

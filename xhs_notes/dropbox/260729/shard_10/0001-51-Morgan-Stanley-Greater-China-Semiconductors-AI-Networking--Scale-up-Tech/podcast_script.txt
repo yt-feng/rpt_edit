@@ -1,0 +1,67 @@
+ZH_A: 最近有一份关于中国AI网络互联的研报，特别提到了“scale-up”这个概念。这到底是什么意思？跟普通的网络连接有什么不同？
+
+ZH_B: 简单来说，scale-up 就是让一个机柜内或者相邻几个机柜里的AI加速器，像一台超级计算机一样协同工作。它和 scale-out 的区别在于，scale-out 是连接更多的服务器来扩大集群规模，而 scale-up 是让单个计算单元内的加速器之间直接高速通信，共享内存和处理任务。
+
+ZH_A: 那为什么这份报告要特别关注中国的 scale-up 技术？现在有什么新变化吗？
+
+ZH_B: 报告的核心判断是，因为中国AI芯片在芯片级工艺上受到限制，所以竞争焦点正在从单芯片性能转向系统级解决方案。在今年的WAIC展会上，芯片发布少了，但超级节点方案明显多了。很多国内厂商都展示了能连接64个甚至更多加速器的机柜级或多机柜超级节点。
+
+ZH_A: 所以这意味着，中国厂商正在用系统架构的优势来弥补芯片工艺的短板？
+
+ZH_B: 没错。比如华为的Atlas 950，用自研的UnifiedBus 2.0技术，已经能连接1024个NPU，目标设计是扩展到8192个。还有壁仞科技的新一代BR2xx架构，目标是支持1024个GPU。这些数字都说明，scale-up 正在成为中国AI算力的核心战场。
+
+ZH_A: 这些超级节点具体是怎么连接起来的？传统铜缆够用吗？
+
+ZH_B: 这就要提到报告里的第二个关键洞察了。在单个机柜内部，电互联还是主流，因为成本低、集成简单。比如摩尔线程的C256就用了全铜缆设计。但是，当 scale-up 扩展到跨机柜时，铜缆的传输距离、信号损耗和功耗就成了问题。这时候，光互联就变得非常重要。
+
+ZH_A: 所以光互联是跨机柜 scale-up 的关键？报告里提到了哪些具体案例？
+
+ZH_B: 是的。华为的Atlas 950 SuperPoD 在跨机柜连接时，就用了光互联。更值得注意的是，在WAIC上，曦智科技展示了新的NPO/CPO光交换方案，和国内一家我们认为可能是盛科通信的厂商合作。另外，燧原科技和壁仞科技也分别展示了基于NPO光互联的服务器方案，目标都是支持几百甚至上千个加速器的大规模超级节点。
+
+ZH_A: 这么看来，光互联的渗透会带动一批国内供应商？报告里有没有点名哪些公司会受益？
+
+ZH_B: 报告认为，澜起科技会受益于更大规模超级节点中PCIe互联内容增加。比如PCIe重定时器和PCIe交换芯片的需求会上升。另外，海光信息及其生态伙伴中科曙光，还有寒武纪、芯原股份这些AI GPU厂商，都可能通过引入或利用scale-up技术来提升服务器性能。
+
+ZH_A: 除了这些，报告中还有什么特别值得关注的悬念吗？就是那种“报告里没完全讲透，但非常关键”的问题。
+
+ZH_B: 有两个悬念。第一，虽然中国在光互联技术上进步很快，但NPO和CPO方案在 scale-up 系统中的实际部署成熟度到底如何？报告指出，目前大部分方案还是原型或展示阶段，大规模量产和成本控制仍然需要验证。第二，报告提到了美国scale-up网络生态和TAM预测，但对中国市场的具体TAM规模没有给出量化估算。这意味着，中国scale-up市场的爆发时间点和天花板，还需要结合后续的capex数据和客户采购节奏来判断。
+
+ZH_A: 这两个问题确实很关键。如果听众想了解更详细的估值模型和风险分析，或者想知道具体哪些供应商已经进入量产阶段，是不是需要去读完整的报告？
+
+ZH_B: 对，完整报告里有更详细的表格，包括各家厂商的带宽、延迟、可扩展性对比，还有澜起科技、海光信息等公司的估值方法论和风险提示。这些内容我们只是点了题，没有展开。如果大家对投资逻辑和具体标的感兴趣，强烈建议去翻阅原报告。
+
+ZH_A: 好的，感谢你的深度解读。如果你想获取这份完整研报，或者加入我们的行业讨论社群，可以在节目详情页或评论区找到入口。我们下期再见。
+
+EN_A: So there's this new report on China's AI networking, and it keeps talking about something called "scale-up." What exactly is that, and why should we care?
+
+EN_B: Scale-up is basically about making multiple AI accelerators inside a single rack or across a few racks work together like one giant supercomputer. It's different from scale-out, which is about connecting more servers to grow a cluster. Scale-up focuses on high-speed, direct communication between accelerators so they share memory and process the same workload.
+
+EN_A: Got it. So why is this report specifically zooming in on China's scale-up technology right now?
+
+EN_B: The key thesis is that because Chinese AI chips are constrained at the wafer process level, the competition is shifting from standalone chip specs to system-level solutions. At this year's WAIC, we saw fewer chip launches and way more supernode solutions. Leading domestic vendors showed rack-scale or multi-rack supernodes that can connect 64 or more accelerators, mostly using their own proprietary scale-up tech.
+
+EN_A: So they're using system architecture to work around the chip process limitations?
+
+EN_B: Exactly. For example, Huawei's Atlas 950 uses its own UnifiedBus 2.0 to connect 1,024 NPUs, and it's designed to scale to 8,192. Biren's next-gen BR2xx architecture targets up to 1,024 GPUs. These numbers show that scale-up is becoming the main battleground for China's AI computing.
+
+EN_A: How are these supernodes actually connected? Is traditional copper cabling enough?
+
+EN_B: That's the second big insight. Inside a single rack, electrical interconnect is still preferred because it's cheaper and simpler. Moore Threads' C256 uses an all-copper cable tray design. But when scale-up goes across racks, copper hits limits on reach, signal loss, and power. That's where optical interconnect becomes critical.
+
+EN_A: So optics is the key for cross-rack scale-up? Any concrete examples from the report?
+
+EN_B: Yes. Huawei's Atlas 950 SuperPoD uses optical interconnect across racks. More notably, at WAIC, Lightelligence showed new NPO and CPO switch solutions, partnering with a domestic switch vendor we believe is Centec. Also, Enflame and Biren both unveiled NPO-based server solutions targeting 512 or more accelerators. These are real signs that optical tech is being integrated at both the accelerator I/O layer and the distributed switching layer.
+
+EN_A: That sounds like it would create opportunities for a bunch of domestic suppliers. Did the report name any specific companies that could benefit?
+
+EN_B: Yes. The report thinks Montage Technology will benefit from higher PCIe interconnect content in larger supernodes, meaning more demand for PCIe retimers and switch chips. It also expects AI GPU vendors like Hygon, along with its ecosystem partner Sugon, plus Cambricon and Iluvatar, to leverage scale-up tech to improve their rack performance.
+
+EN_A: Are there any big open questions the report didn't fully answer? Like, what's still uncertain?
+
+EN_B: Two big ones. First, how mature are these NPO and CPO solutions really for scale-up deployment? Most are still prototypes or demos. Mass production and cost control are unproven. Second, the report gives a TAM forecast for the US scale-up market but doesn't quantify the China market specifically. So we still need to watch actual capex data and customer procurement to figure out when and how big this market will get.
+
+EN_A: Those are definitely the key unknowns. If someone wants to dig into the full valuation models, risk factors, and detailed vendor comparisons, they'd need to read the complete report, right?
+
+EN_B: Absolutely. The full report has detailed tables comparing bandwidth, latency, and scalability across vendors, plus valuation methodologies and risk analysis for companies like Montage and Hygon. We only scratched the surface here.
+
+EN_A: Great. Thanks for breaking it down. If you want to get the full report or join our industry discussion group, check the show notes or comments. See you next time.

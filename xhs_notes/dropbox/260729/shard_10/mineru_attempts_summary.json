@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0001-51-MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0002-52-MS-Huaming Power Equipment-002270-Priced for Fear-Built for Growth-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0003-53-MS-Internet-Where Are We Trading Now-Micro vs AI vs Macro-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0004-54-MS-Luxury-Updating our tax rate assumptions-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ut7_p1pm/pdfs/0005-55-MS-SpaceX-SPCX.US-Starship Flight 13 Report Card-A Clear Positive in a Tide of Cautious Sentiment-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
