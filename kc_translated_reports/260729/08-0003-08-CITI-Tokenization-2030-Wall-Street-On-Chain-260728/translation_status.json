@@ -1,0 +1,106 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_1/0003-08-CITI-Tokenization-2030-Wall-Street-On-Chain-260728",
+  "title": "花旗：代币化2030-华尔街上链-市场规模预测",
+  "source_title": "0003-08-CITI-Tokenization 2030-Wall Street On-Chain-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-CITI-Tokenization 2030-Wall Street On-Chain-260728",
+    "cleaned_source_title": "CITI-Tokenization 2030-Wall Street On-Chain",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：Tokenization2030WallStre",
+    "raw_candidates": [
+      "花旗：代币化2030-华尔街上链",
+      "花旗：代币化2030-华尔街上链-市场规模预测",
+      "花旗：代币化2030-华尔街上链-资本市场重构"
+    ],
+    "cleaned_candidates": [
+      "花旗：代币化2030-华尔街上链",
+      "花旗：代币化2030-华尔街上链-市场规模预测",
+      "花旗：代币化2030-华尔街上链-资本市场重构",
+      "花旗：Tokenization2030WallStre",
+      "花旗：19代币化为何滞后24私募市场是否天然适合代币化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：Tokenization2030WallStre",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：19代币化为何滞后24私募市场是否天然适合代币化",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：代币化2030-华尔街上链-市场规模预测",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "花旗：代币化2030-华尔街上链-市场规模预测"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 28,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x3",
+    "金融->资金 x1",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "金融机构->机构 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

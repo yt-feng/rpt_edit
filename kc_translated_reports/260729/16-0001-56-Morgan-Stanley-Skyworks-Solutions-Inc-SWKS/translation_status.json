@@ -1,0 +1,128 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_11/0001-56-Morgan-Stanley-Skyworks-Solutions-Inc-SWKS.US-Solid-quarter--deal-closin",
+  "title": "摩根士丹利：Skyworks季度业务与季度数据观察",
+  "source_title": "0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension-260729",
+    "cleaned_source_title": "MS-Skyworks Solutions Inc-SWKS.US-Solid quarter- deal closing early- offset by dividend suspension",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：SkyworksSolutionsIncS",
+    "raw_candidates": [
+      "Skyworks Solutions季度业绩与交易进展",
+      "Skyworks季度业绩稳健-苹果内容逆风收窄",
+      "Skyworks季度业绩-移动需求稳定与数据中心增长"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：SkyworksSolutions季度业绩与交易进展",
+      "摩根士丹利：Skyworks季度业绩稳健-苹果内容逆风收窄",
+      "摩根士丹利：Skyworks季度业绩-移动需求稳定与数据中心增长",
+      "摩根士丹利：SkyworksSolutionsIncS",
+      "摩根士丹利：9月毛利率指引为44%-45%，而6月约为45%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：SkyworksSolutions季度业绩与交易进展",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：Skyworks季度业绩-移动需求稳定与数据中心增长",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：SkyworksSolutionsIncS",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：9月毛利率指引为44%-45%，而6月约为45%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：Skyworks季度业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：Skyworks季度业绩稳健-苹果内容逆风收窄",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：Skyworks季度业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_16.pdf",
+  "figure_count": 5,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "股价->报价 x1",
+    "收益率->回报表现 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1"
+  ]
+}

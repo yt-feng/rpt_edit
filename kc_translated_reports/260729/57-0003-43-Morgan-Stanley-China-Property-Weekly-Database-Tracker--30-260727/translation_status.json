@@ -1,0 +1,84 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_8/0003-43-Morgan-Stanley-China-Property-Weekly-Database-Tracker--30-260727",
+  "title": "摩根士丹利：城市与住房数据变化观察",
+  "source_title": "0003-43-MS-China Property-Weekly Database Tracker -30-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-China Property-Weekly Database Tracker -30-260727",
+    "cleaned_source_title": "MS-China Property-Weekly Database Tracker -30",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：中国地产WeeklyDatabaseTracker30",
+    "raw_candidates": [
+      "中国房地产每周数据库追踪第30期",
+      "中国房地产第30期：新房成交同比降4%",
+      "中国房地产第30期：50城新房与10城二手房数据"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国房地产每周数据库追踪第30期",
+      "摩根士丹利：中国房地产第30期，新房成交同比降4%",
+      "摩根士丹利：中国房地产第30期，50城新房与10城二手房数据",
+      "摩根士丹利：中国地产WeeklyDatabaseTracker30",
+      "摩根士丹利：二线城市成交同比下降11%（前一周同比+14%）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国房地产第30期，新房成交同比降4%",
+        "reasons": [
+          "anchor_coverage=0.47"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国房地产第30期，50城新房与10城二手房数据",
+        "reasons": [
+          "anchor_coverage=0.53"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国地产WeeklyDatabaseTracker30",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：二线城市成交同比下降11%（前一周同比+14%）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：城市与住房数据变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：中国房地产每周数据库追踪第30期",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：城市与住房数据变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_57.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ]
+}

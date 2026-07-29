@@ -1,0 +1,112 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_2/0001-11-Goldman-Sachs-ASMPT--0522.HK---3Q26-revenues-to-grow-at--0--to--9--QoQ--",
+  "title": "高盛：AI技术与行业应用观察",
+  "source_title": "0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-11-GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle-260729",
+    "cleaned_source_title": "GS-ASMPT -0522.HK-- 3Q26 revenues to grow at -0- to -9- QoQ- 2Q26 beat- TCB to ride on AI infrastructure upcycle",
+    "institution_name": "高盛",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "高盛：AIASMPT3Q26revenuestogrowat0to9",
+    "raw_candidates": [
+      "ASMPT 3Q26营收环比增长0%至9%及2Q26超预期",
+      "ASMPT 3Q26营收指引6.3至6.9亿美元及2Q26业绩超预期",
+      "ASMPT TCB受益于AI基础设施上升周期及3Q26营收增长"
+    ],
+    "cleaned_candidates": [
+      "高盛：ASMPT3Q26营收环比增长0%至9%及2Q26超预期",
+      "高盛：ASMPT3Q26营收指引6.3至6.9亿美元及2Q26业绩超预",
+      "高盛：ASMPTTCB受益于AI基础设施上升周期及3Q26营收增长",
+      "高盛：AIASMPT3Q26revenuestogrowat0to9",
+      "高盛：TCB将受益于AI基础设施上升周期"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：ASMPT3Q26营收环比增长0%至9%及2Q26超预期",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.34"
+        ]
+      },
+      {
+        "title": "高盛：ASMPT3Q26营收指引6.3至6.9亿美元及2Q26业绩超预",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "高盛：AIASMPT3Q26revenuestogrowat0to9",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TCB将受益于AI基础设施上升周期",
+        "reasons": [
+          "anchor_coverage=0.48"
+        ]
+      }
+    ],
+    "selected_title": "高盛：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：ASMPTTCB受益于AI基础设施上升周期及3Q26营收增长",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：AI技术与行业应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_25.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

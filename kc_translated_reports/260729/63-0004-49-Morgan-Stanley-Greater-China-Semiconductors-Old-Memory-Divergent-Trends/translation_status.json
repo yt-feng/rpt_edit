@@ -1,0 +1,90 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_9/0004-49-Morgan-Stanley-Greater-China-Semiconductors-Old-Memory-Divergent-Trends-",
+  "title": "摩根士丹利：大中华区半导体-旧款存储-短期趋势分化",
+  "source_title": "0004-49-MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-49-MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727",
+    "cleaned_source_title": "MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：Greater中国半导体OldMemory",
+    "raw_candidates": [
+      "大中华区半导体-旧款存储-短期趋势分化",
+      "大中华区半导体-旧款存储-DDR4季度涨幅预估超20%",
+      "大中华区半导体-旧款存储-传统DRAM与NAND定价周期"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：大中华区半导体-旧款存储-短期趋势分化",
+      "摩根士丹利：大中华区半导体-旧款存储-DDR4季度涨幅预估超20%",
+      "摩根士丹利：大中华区半导体-旧款存储-传统DRAM与NAND定价周期",
+      "摩根士丹利：Greater中国半导体OldMemory",
+      "摩根士丹利：我们认为1.0倍2028年预期每股账面价值提供了良好的节奏"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：大中华区半导体-旧款存储-DDR4季度涨幅预估超20%",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：大中华区半导体-旧款存储-传统DRAM与NAND定价周期",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：Greater中国半导体OldMemory",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：我们认为1.0倍2028年预期每股账面价值提供了良好的节奏",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：大中华区半导体-旧款存储-短期趋势分化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：大中华区半导体-旧款存储-短期趋势分化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_63.pdf",
+  "figure_count": 9,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "减持->观点偏谨慎 x1",
+    "股票|个股->公司 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_7/0002-37-J.P.-Morgan-WIN-Semiconductors-Corp-3105.TWO--Undergoing-transformation-",
+  "title": "摩根大通：半导体行业数据与主题变化观察",
+  "source_title": "0002-37-JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-37-JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical-260727",
+    "cleaned_source_title": "JPM-WIN Semiconductors Corp-3105.TWO- Undergoing transformation led by LEO and optical",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：WIN半导体Corp",
+    "raw_candidates": [
+      "WIN半导体在LEO与光通信引领下转型",
+      "WIN半导体2Q26光通信超预期-3Q动能可观",
+      "WIN半导体LEO与光通信驱动产能利用率回升"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：WIN半导体在LEO与光通信引领下转型",
+      "摩根大通：WIN半导体2Q26光通信超预期-3Q动能可观",
+      "摩根大通：WIN半导体LEO与光通信驱动产能利用率回升",
+      "摩根大通：WIN半导体Corp",
+      "摩根大通：总体而言，Win的产能利用率在2Q环比上升5个百分点至65%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：WIN半导体2Q26光通信超预期-3Q动能可观",
+        "reasons": [
+          "anchor_coverage=0.39"
+        ]
+      },
+      {
+        "title": "摩根大通：WIN半导体LEO与光通信驱动产能利用率回升",
+        "reasons": [
+          "anchor_coverage=0.61",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "摩根大通：WIN半导体Corp",
+        "reasons": [
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：总体而言，Win的产能利用率在2Q环比上升5个百分点至65%",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：半导体行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：WIN半导体在LEO与光通信引领下转型",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：半导体行业数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_51.pdf",
+  "figure_count": 5,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1"
+  ]
+}

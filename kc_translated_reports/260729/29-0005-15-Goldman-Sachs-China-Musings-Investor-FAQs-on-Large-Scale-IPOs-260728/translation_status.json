@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_2/0005-15-Goldman-Sachs-China-Musings-Investor-FAQs-on-Large-Scale-IPOs-260728",
+  "title": "高盛：存储行业数据与主题变化观察",
+  "source_title": "0005-15-GS-China Musings-Investor FAQs on Large-Scale IPOs-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-15-GS-China Musings-Investor FAQs on Large-Scale IPOs-260728",
+    "cleaned_source_title": "GS-China Musings-Investor FAQs on Large-Scale IPOs",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国MusingsInvestorFAQsonL",
+    "raw_candidates": [
+      "中国沉思录-大规模IPO投资者常见问题解答",
+      "中国沉思录-长鑫存储86亿美元IPO投资者常见问题解答",
+      "中国沉思录-大规模IPO历史表现与市场影响"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国沉思录-大规模IPO参与者常见问题解答",
+      "高盛：中国沉思录-长鑫存储86亿美元IPO参与者常见问题解答",
+      "高盛：中国沉思录-大规模IPO历史表现与市场影响",
+      "高盛：中国MusingsInvestorFAQsonL",
+      "高盛：以86亿美元的发行规模和4840亿美元的市值（基于2026年7月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国沉思录-大规模IPO历史表现与市场影响",
+        "reasons": [
+          "anchor_coverage=0.53"
+        ]
+      },
+      {
+        "title": "高盛：中国MusingsInvestorFAQsonL",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：以86亿美元的发行规模和4840亿美元的市值（基于2026年7月",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：存储行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "86"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：中国沉思录-长鑫存储86亿美元IPO参与者常见问题解答",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：存储行业数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_29.pdf",
+  "figure_count": 15,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x2",
+    "股票市场|股市->市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "卖出->观点偏谨慎 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x4",
+    "市场市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1"
+  ]
+}

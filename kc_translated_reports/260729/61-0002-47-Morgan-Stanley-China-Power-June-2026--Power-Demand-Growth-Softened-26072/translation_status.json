@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_9/0002-47-Morgan-Stanley-China-Power-June-2026--Power-Demand-Growth-Softened-26072",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727",
+    "cleaned_source_title": "MS-China-Power-June 2026- Power Demand Growth Softened",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：中国PowerJune2026",
+    "raw_candidates": [
+      "中国电力-2026年6月-电力需求增速放缓",
+      "中国电力-2026年6月-电力需求增速放缓至3.7%",
+      "中国电力-2026年6月-电力需求增速与可再生能源装机"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国电力-2026年6月-电力需求增速放缓",
+      "摩根士丹利：中国电力-2026年6月-电力需求增速放缓至3.7%",
+      "摩根士丹利：中国电力-2026年6月-电力需求增速与可再生能源装机",
+      "摩根士丹利：中国PowerJune2026",
+      "摩根士丹利：2026年6月，电力需求增长节奏变化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国PowerJune2026",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：2026年6月，电力需求增长节奏变化",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "3.7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：中国电力-2026年6月-电力需求增速放缓至3.7%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_61.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

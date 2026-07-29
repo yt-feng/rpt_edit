@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_6/0002-32-J.P.-Morgan-Hong-Kong-Property-Implications-of-China-s-taxation-on-offsh",
+  "title": "摩根大通：行业规则与相关数据观察",
+  "source_title": "0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-32-JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts-260727",
+    "cleaned_source_title": "JPM-Hong Kong Property-Implications of China-s taxation on offshore trusts",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：HongKong地产Implicationsof中国",
+    "raw_candidates": [
+      "香港地产-中国对离岸信托征税影响",
+      "香港地产-中国对离岸信托征税20%税率与追溯条款",
+      "香港地产-中国离岸信托新税对住宅市场影响"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：香港地产-中国对离岸信托征税影响",
+      "摩根大通：香港地产-中国对离岸信托征税20%税率与追溯条款",
+      "摩根大通：香港地产-中国离岸信托新税对住宅市场影响",
+      "摩根大通：HongKong地产Implicationsof中国",
+      "摩根大通：以及(2)对转售资本利得缴纳20%的税（注意"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：香港地产-中国离岸信托新税对住宅市场影响",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "摩根大通：HongKong地产Implicationsof中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：以及(2)对转售资本利得缴纳20%的税（注意",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：行业规则与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "20"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：香港地产-中国对离岸信托征税20%税率与追溯条款",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "摩根大通：行业规则与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_46.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_2/0004-14-Goldman-Sachs-Air-Liquide--AIRP.PA---1H26-comes-in-line-with-step-up-in-",
+  "title": "高盛：液化空气集团业务与近期数据观察",
+  "source_title": "0004-14-GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-14-GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street-260728",
+    "cleaned_source_title": "GS-Air Liquide -AIRP.PA-- 1H26 comes in line with step up in EL growth and IM pricing- 2H commentary light vs. Street",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：AirLiquide",
+    "raw_candidates": [
+      "液化空气集团上半年业绩符合预期-电子气体增长与工业气体定价提升",
+      "液化空气集团2026上半年业绩-第二季度气体与服务可比增长3.3%",
+      "液化空气集团上半年业绩-电子气体增长加速至9.5%与工业气体定价提升"
+    ],
+    "cleaned_candidates": [
+      "高盛：液化空气集团上半年业绩符合预期-电子气体增长与工业气体定价提升",
+      "高盛：液化空气集团2026上半年业绩",
+      "高盛：液化空气集团上半年业绩",
+      "高盛：AirLiquide",
+      "高盛：液化空气集团今早（7月28日）公布2026年上半年业绩"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：液化空气集团2026上半年业绩",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：液化空气集团上半年业绩",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：AirLiquide",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：液化空气集团今早（7月28日）公布2026年上半年业绩",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：液化空气集团业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：液化空气集团上半年业绩符合预期-电子气体增长与工业气体定价提升",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：液化空气集团业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_28.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

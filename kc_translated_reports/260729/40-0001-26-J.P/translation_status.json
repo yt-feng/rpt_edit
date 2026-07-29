@@ -1,0 +1,61 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_5/0001-26-J.P.-Morgan-China-Banks-101-Banking-begins-with-the-balance-sheet-260727",
+  "title": "摩根大通：中国银行业入门-银行业始于资产负债表",
+  "source_title": "0001-26-JPM-China Banks 101-Banking begins with the balance sheet-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-26-JPM-China Banks 101-Banking begins with the balance sheet-260727",
+    "cleaned_source_title": "JPM-China Banks 101-Banking begins with the balance sheet",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国Banks101Bankingbegin",
+    "raw_candidates": [
+      "中国银行业入门-银行业始于资产负债表"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国银行业入门-银行业始于资产负债表",
+      "摩根大通：中国Banks101Bankingbegin",
+      "摩根大通：请参见本演示文稿末页的分析师认证和重要披露"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国Banks101Bankingbegin",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：请参见本演示文稿末页的分析师认证和重要披露",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：中国银行业入门-银行业始于资产负债表",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：中国银行业入门-银行业始于资产负债表"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_40.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": []
+}

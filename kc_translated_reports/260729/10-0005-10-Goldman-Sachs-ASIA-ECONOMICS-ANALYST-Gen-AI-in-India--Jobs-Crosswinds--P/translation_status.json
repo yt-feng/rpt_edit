@@ -1,0 +1,122 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_1/0005-10-Goldman-Sachs-ASIA-ECONOMICS-ANALYST-Gen-AI-in-India--Jobs-Crosswinds--P",
+  "title": "高盛：亚洲宏观环境分析师-印度生成式AI就业逆风与生产率顺风",
+  "source_title": "0005-10-GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds-260728",
+    "cleaned_source_title": "GS-ASIA ECONOMICS ANALYST Gen-AI in India- Jobs Crosswinds- Productivity Tailwinds",
+    "institution_name": "高盛",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "高盛：ASIAECONOMICSANALYSTGenAIinIndia",
+    "raw_candidates": [
+      "高盛：亚洲宏观环境分析师-印度生成式AI就业逆风与生产率顺风",
+      "高盛：印度生成式AI对非农就业影响-9%-17%任务可完成",
+      "高盛：印度生成式AI-生产率提升与劳动力市场重塑"
+    ],
+    "cleaned_candidates": [
+      "高盛：亚洲宏观环境分析师-印度生成式AI就业逆风与生产率顺风",
+      "高盛：印度生成式AI对非农就业影响-9%-17%任务可完成",
+      "高盛：印度生成式AI-生产率提升与劳动力市场重塑",
+      "高盛：ASIAECONOMICSANALYSTGenAIinIndia",
+      "高盛：印度生成式AI，就业逆风，生产率顺风"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：印度生成式AI对非农就业影响-9%-17%任务可完成",
+        "reasons": [
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：印度生成式AI-生产率提升与劳动力市场重塑",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：ASIAECONOMICSANALYSTGenAIinIndia",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：印度生成式AI，就业逆风，生产率顺风",
+        "reasons": [
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：亚洲宏观环境分析师-印度生成式AI就业逆风与生产率顺风",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：亚洲宏观环境分析师-印度生成式AI就业逆风与生产率顺风"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_10.pdf",
+  "figure_count": 17,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x4",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1"
+  ]
+}

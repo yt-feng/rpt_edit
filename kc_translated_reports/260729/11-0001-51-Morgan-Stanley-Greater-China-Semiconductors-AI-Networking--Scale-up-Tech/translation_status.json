@@ -1,0 +1,106 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_10/0001-51-Morgan-Stanley-Greater-China-Semiconductors-AI-Networking--Scale-up-Tech",
+  "title": "摩根士丹利：大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点",
+  "source_title": "0001-51-MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-51-MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes-260727",
+    "cleaned_source_title": "MS-Greater China Semiconductors-AI Networking- Scale-up Technology Enables China-s AI Supernodes",
+    "institution_name": "摩根士丹利",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "摩根士丹利：Greater中国半导体AINetworking",
+    "raw_candidates": [
+      "大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点",
+      "大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点-WAIC 2026",
+      "大中华半导体-AI网络-纵向扩展技术与中国AI互连供应链"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点",
+      "摩根士丹利：大中华半导体-AI网络-纵向扩展技术与中国AI互连供应链",
+      "摩根士丹利：Greater中国半导体AINetworking",
+      "摩根士丹利：AI网络，纵向扩展技术助力中国AI超级节点"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：Greater中国半导体AINetworking",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：AI网络，纵向扩展技术助力中国AI超级节点",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：大中华半导体-AI网络-纵向扩展技术助力中国AI超级节点"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_11.pdf",
+  "figure_count": 13,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

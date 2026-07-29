@@ -1,0 +1,116 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_4/0003-23-Goldman-Sachs-Yili-Industrial--600887---Youran-Dairy-positive-profit-ale",
+  "title": "高盛：研究主题与行业变化观察",
+  "source_title": "0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative pr",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative pr",
+    "cleaned_source_title": "GS-Yili Industrial -600887-- Youran Dairy positive profit alert-positive to Yili and signal for S D rebalance- Ausnutria negative pr",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：YiliIndustrial600887",
+    "raw_candidates": [
+      "伊利股份与优然牧业盈利预告及澳优预警",
+      "伊利股份：优然牧业2026上半年盈利预告与澳优预警",
+      "伊利股份：上游供需再平衡与婴幼儿奶粉板块影响"
+    ],
+    "cleaned_candidates": [
+      "高盛：伊利股份与优然牧业盈利预告及澳优预警",
+      "高盛：伊利股份，优然牧业2026上半年盈利预告与澳优预警",
+      "高盛：伊利股份，上游供需再平衡与婴幼儿奶粉板块影响",
+      "高盛：YiliIndustrial600887",
+      "高盛：优然牧业（未覆盖）于7月28日发布正面盈利预告"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：伊利股份，优然牧业2026上半年盈利预告与澳优预警",
+        "reasons": [
+          "anchor_coverage=0.71"
+        ]
+      },
+      {
+        "title": "高盛：伊利股份，上游供需再平衡与婴幼儿奶粉板块影响",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：YiliIndustrial600887",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：优然牧业（未覆盖）于7月28日发布正面盈利预告",
+        "reasons": [
+          "anchor_coverage=0.35"
+        ]
+      }
+    ],
+    "selected_title": "高盛：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：伊利股份与优然牧业盈利预告及澳优预警",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_37.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x4",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

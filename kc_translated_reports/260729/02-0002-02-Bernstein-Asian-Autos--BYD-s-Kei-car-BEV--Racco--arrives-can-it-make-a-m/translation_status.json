@@ -1,0 +1,102 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_0/0002-02-Bernstein-Asian-Autos--BYD-s-Kei-car-BEV--Racco--arrives-can-it-make-a-m",
+  "title": "伯恩斯坦：比亚迪轻自动车BEVRacco登陆日本市场",
+  "source_title": "0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market--260729",
+    "cleaned_source_title": "Bernstein-Asian Autos- BYD-s Kei-car BEV -Racco- arrives-can it make a meaningful impact on Japan-s auto market",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：Asian汽车-BYDsKeicarBEVRacco",
+    "raw_candidates": [
+      "比亚迪轻自动车BEV Racco登陆日本市场",
+      "比亚迪Racco补贴后低于200万日元年销目标1万辆",
+      "比亚迪轻自动车BEV Racco对日本汽车市场影响分析"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：比亚迪轻自动车BEVRacco登陆日本市场",
+      "伯恩斯坦：比亚迪Racco补贴后低于200万日元年销目标1万辆",
+      "伯恩斯坦：比亚迪轻自动车BEVRacco对日本汽车市场影响分析",
+      "伯恩斯坦：Asian汽车-BYDsKeicarBEVRacco",
+      "伯恩斯坦：该车型提供三个配置等级——200、300Plus和300"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：比亚迪Racco补贴后低于200万日元年销目标1万辆",
+        "reasons": [
+          "anchor_coverage=0.30"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：Asian汽车-BYDsKeicarBEVRacco",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：该车型提供三个配置等级——200、300Plus和300",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：比亚迪轻自动车BEVRacco登陆日本市场",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：比亚迪轻自动车BEVRacco登陆日本市场"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 13,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

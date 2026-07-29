@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_8/0002-42-J.P.-Morgan-Zhejiang-Supor-A-002032-A-reset-in-earnings-and-dividend--do",
+  "title": "摩根大通：浙江苏泊尔业务与近期数据观察",
+  "source_title": "0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-42-JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral-260728",
+    "cleaned_source_title": "JPM-Zhejiang Supor-A-002032-A reset in earnings and dividend- downgrade to Neutral",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：ZhejiangSuporA002032Ar",
+    "raw_candidates": [
+      "浙江苏泊尔盈利与股息调整-下调至中性",
+      "浙江苏泊尔二季度营收同比转负-盈利与股息调整",
+      "浙江苏泊尔出口与成本不确定性-盈利与股息调整"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：浙江苏泊尔盈利与股息调整-下调至中性",
+      "摩根大通：浙江苏泊尔二季度营收同比转负-盈利与股息调整",
+      "摩根大通：浙江苏泊尔出口与成本不确定性-盈利与股息调整",
+      "摩根大通：ZhejiangSuporA002032Ar",
+      "摩根大通：调整后，我们对2026-27年每股盈利的预测表明"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：浙江苏泊尔二季度营收同比转负-盈利与股息调整",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：浙江苏泊尔出口与成本不确定性-盈利与股息调整",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：ZhejiangSuporA002032Ar",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：调整后，我们对2026-27年每股盈利的预测表明",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：浙江苏泊尔业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：浙江苏泊尔盈利与股息调整-下调至中性",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：浙江苏泊尔业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_56.pdf",
+  "figure_count": 4,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "收益率->回报表现 x2",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "压力->不确定性 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "风险->不确定性 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "风险->不确定性 x3",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1"
+  ]
+}

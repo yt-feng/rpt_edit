@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_3/0004-19-Goldman-Sachs-Japan-Technology--Hardware-Industrial-Electronics--GLW-2Q-",
+  "title": "高盛：日本科技硬件工业电子",
+  "source_title": "0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-19-GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow-260729",
+    "cleaned_source_title": "GS-Japan Technology- Hardware-Industrial Electronics- GLW 2Q- DC demand strong- valuation gap with Japanese peers to narrow",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：日本科技硬件IndustrialElectronicsGLW2",
+    "raw_candidates": [
+      "日本科技硬件工业电子-康宁第二季度数据中心需求强劲与日本同行估值差距将缩小",
+      "康宁第二季度核心销售额47.38亿美元超预期数据中心需求强劲",
+      "康宁第二季度企业网络销售额同比增长65%估值差距与日本同行将缩小"
+    ],
+    "cleaned_candidates": [
+      "高盛：日本科技硬件工业电子",
+      "高盛：康宁第二季度核心销售额47.38亿美元超预期数据中心需求强劲",
+      "高盛：康宁第二季度企业网络销售额同比增长65%估值差距与日本同行将缩小",
+      "高盛：日本科技硬件IndustrialElectronicsGLW2",
+      "高盛：康宁（未覆盖）于7月28日（日本时间21"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：康宁第二季度核心销售额47.38亿美元超预期数据中心需求强劲",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：康宁第二季度企业网络销售额同比增长65%估值差距与日本同行将缩小",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：日本科技硬件IndustrialElectronicsGLW2",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.56"
+        ]
+      },
+      {
+        "title": "高盛：康宁（未覆盖）于7月28日（日本时间21",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：日本科技硬件工业电子",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：日本科技硬件工业电子"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_33.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x2",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x3",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x2",
+    "下行|放缓->节奏变化 x3",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x4",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1"
+  ]
+}

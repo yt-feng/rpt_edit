@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_3/0001-16-Goldman-Sachs-Global-Markets-Daily-Hyperscaler-Credit-vs.Equity-More-Iss",
+  "title": "高盛：全球市场日报，超大规模企业信贷与公司",
+  "source_title": "0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-16-GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow-260728",
+    "cleaned_source_title": "GS-Global Markets Daily-Hyperscaler Credit vs.Equity-More Issuance-a Higher Beta-and a Different Focus on Cash Flow",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：全球MarketsDailyHyperscale",
+    "raw_candidates": [
+      "全球市场日报：超大规模企业信贷与公司",
+      "超大规模企业信贷与公司：更多发行与更高贝塔",
+      "超大规模企业信贷与公司：现金流与AI资本支出"
+    ],
+    "cleaned_candidates": [
+      "高盛：全球市场日报，超大规模企业信贷与公司",
+      "高盛：超大规模企业信贷与公司，更多发行与更高贝塔",
+      "高盛：超大规模企业信贷与公司，现金流与AI资本支出",
+      "高盛：全球MarketsDailyHyperscale",
+      "高盛：马来西亚林吉特，于2026年1月24日开仓，点位3.13"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：超大规模企业信贷与公司，更多发行与更高贝塔",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：超大规模企业信贷与公司，现金流与AI资本支出",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：全球MarketsDailyHyperscale",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：马来西亚林吉特，于2026年1月24日开仓，点位3.13",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：全球市场日报，超大规模企业信贷与公司",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：全球市场日报，超大规模企业信贷与公司"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_30.pdf",
+  "figure_count": 3,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "投资->研究 x3",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "股票|个股->公司 x6",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1"
+  ]
+}

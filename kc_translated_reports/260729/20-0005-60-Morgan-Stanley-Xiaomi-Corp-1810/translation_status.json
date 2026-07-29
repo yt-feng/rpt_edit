@@ -1,0 +1,76 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260729/shard_11/0005-60-Morgan-Stanley-Xiaomi-Corp-1810.HK-SkyNomad-s-Technology-Launch-on-July-",
+  "title": "摩根士丹利：小米SkyNomad技术发布会7月30日北京",
+  "source_title": "0005-60-MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing-260727",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-60-MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing-260727",
+    "cleaned_source_title": "MS-Xiaomi Corp-1810.HK-SkyNomad-s Technology Launch on July 30 in Beijing",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：XiaomiCorpSkyNomads科技",
+    "raw_candidates": [
+      "小米SkyNomad技术发布会",
+      "小米SkyNomad技术发布会7月30日北京",
+      "小米SkyNomad技术发布会与WLTC续航数据"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：小米SkyNomad技术发布会",
+      "摩根士丹利：小米SkyNomad技术发布会7月30日北京",
+      "摩根士丹利：小米SkyNomad技术发布会与WLTC续航数据",
+      "摩根士丹利：XiaomiCorpSkyNomads科技",
+      "摩根士丹利：7月30日北京“SkyNomad”技术发布会"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：XiaomiCorpSkyNomads科技",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.50"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：小米SkyNomad技术发布会7月30日北京",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "30",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：小米SkyNomad技术发布会7月30日北京"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_20.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
