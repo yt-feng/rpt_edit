@@ -1,0 +1,233 @@
+{
+  "created_at_utc": "2026-07-29T20:36:03.271354+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260729",
+  "output_dir": "publish_ready_zips/260729",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 13,
+  "skipped_shards": [],
+  "total_files": 1194,
+  "total_renamed_markdown_count": 320,
+  "total_raw_file_bytes": 172996763,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260729/publish_ready_260729_part001.zip",
+      "size_bytes": 87962851,
+      "file_count": 660,
+      "renamed_markdown_count": 175,
+      "raw_file_bytes": 94343226,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260729/publish_ready_260729_part002.zip",
+      "size_bytes": 73253147,
+      "file_count": 534,
+      "renamed_markdown_count": 145,
+      "raw_file_bytes": 78653537,
+      "shards": [
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13760961,
+      "reports": [
+        "0001-01-Bernstein-Coca-Cola-Co-KO.US-Coca-Cola-Q2-2026-Earnings-Review-Great-qua",
+        "0002-02-Bernstein-Asian-Autos--BYD-s-Kei-car-BEV--Racco--arrives-can-it-make-a-m",
+        "0003-03-Bernstein-Kering-SA-KER.FP-Kering--Highlights-from-the-1H26-conference-c",
+        "0004-04-Bofa-Corning-Inc.-Optical-and-AI-remain-key-drivers-despite-mixed-3Q-gui",
+        "0005-05-Bernstein-U.S.-SMID-Cap-Software-Cybersecurity--mid--26-CISO-conference-"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16276097,
+      "reports": [
+        "0001-06-Bernstein-Unilever--ULVR.LN--1H-2Q26--Light-at-the-end-of-the-tunnel--26",
+        "0002-07-Bofa-Seagate-Technology-Solid-visibility--improving-pricing-trends-drive",
+        "0003-08-CITI-Tokenization-2030-Wall-Street-On-Chain-260728",
+        "0004-09-CITI-Laopu-Gold--6181.HK--Severe-miss-in-2Q26-260727",
+        "0005-10-Goldman-Sachs-ASIA-ECONOMICS-ANALYST-Gen-AI-in-India--Jobs-Crosswinds--P"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13498695,
+      "reports": [
+        "0001-51-Morgan-Stanley-Greater-China-Semiconductors-AI-Networking--Scale-up-Tech",
+        "0002-52-Morgan-Stanley-Huaming-Power-Equipment-002270-Priced-for-Fear-Built-for-",
+        "0003-53-Morgan-Stanley-Internet-Where-Are-We-Trading-Now-Micro-vs-AI-vs-Macro-26",
+        "0004-54-Morgan-Stanley-Luxury-Updating-our-tax-rate-assumptions-260728",
+        "0005-55-Morgan-Stanley-SpaceX-SPCX.US-Starship-Flight-13-Report-Card-A-Clear-Pos"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12060801,
+      "reports": [
+        "0001-56-Morgan-Stanley-Skyworks-Solutions-Inc-SWKS.US-Solid-quarter--deal-closin",
+        "0002-57-Morgan-Stanley-Space-Companies-Soaring-from-the-Land-of-the-Rising-Sun--",
+        "0003-58-Nomura-Asia-Insights-Asia-rates--Reducing-risk-into-the-FOMC-260728",
+        "0004-59-Nomura-China-consumer-Read-across-from-LVMH-s-2Q26-results-260728",
+        "0005-60-Morgan-Stanley-Xiaomi-Corp-1810.HK-SkyNomad-s-Technology-Launch-on-July-"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 4,
+      "file_count": 62,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 8636869,
+      "reports": [
+        "0001-61-Nomura-Semiconductor-packaging-industry-update-We-revise-assumptions-for",
+        "0002-62-Nomura-Economic-Insights-US--Will-AI-driven-productivity-lead-to-disinfl",
+        "0003-63-Nomura-Korea-Strategy-Korea-s-next-re-rating-260728",
+        "0004-64-Nomura-USD-CNY-fix-model--Projection--6.7640-260729"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14256574,
+      "reports": [
+        "0001-11-Goldman-Sachs-ASMPT--0522.HK---3Q26-revenues-to-grow-at--0--to--9--QoQ--",
+        "0002-12-CITI-US-IT-Services-All-Eyes-on-Outlook-260727",
+        "0003-13-Goldman-Sachs-CHINA-SURGICAL-ROBOTS--3--Accelerating-Overseas-Commercial",
+        "0004-14-Goldman-Sachs-Air-Liquide--AIRP.PA---1H26-comes-in-line-with-step-up-in-",
+        "0005-15-Goldman-Sachs-China-Musings-Investor-FAQs-on-Large-Scale-IPOs-260728"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12577922,
+      "reports": [
+        "0001-16-Goldman-Sachs-Global-Markets-Daily-Hyperscaler-Credit-vs.Equity-More-Iss",
+        "0002-17-Goldman-Sachs-Coca-Cola-Co.--KO.US--Impressive-volume-led-Q2-beat---FY26",
+        "0003-18-Goldman-Sachs-GS-SUSTAIN-Insights-Demographics-to-Demand--Takeaways-from",
+        "0004-19-Goldman-Sachs-Japan-Technology--Hardware-Industrial-Electronics--GLW-2Q-",
+        "0005-20-Goldman-Sachs-Japan-Technology--Hardware-Industrial-Electronics--CARR-2Q"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 61,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 7863145,
+      "reports": [
+        "0001-21-Goldman-Sachs-LandMark--3081.TWO---3Q26-QoQ-growth-on-800G-1.6T-SiPh-ram",
+        "0002-22-HSBC-MiniMax--0100.HK-Key-takeaways-from-management-meeting-260727",
+        "0003-23-Goldman-Sachs-Yili-Industrial--600887---Youran-Dairy-positive-profit-ale",
+        "0004-24-Goldman-Sachs-Resonac-Holdings--4004.T---Announces-additional-investment",
+        "0005-25-J.P.-Morgan-China-Auto-Industry-Management-comments-on-2Q-and-2H26-expec"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12236651,
+      "reports": [
+        "0001-26-J.P.-Morgan-China-Banks-101-Banking-begins-with-the-balance-sheet-260727",
+        "0002-27-J.P.-Morgan-Akeso-9926.HK--One-more-interim-OS-look-added-to-HARMONi-3--",
+        "0003-28-J.P.-Morgan-China--Two-speed-industrial-profit-growth-in-1H-260727",
+        "0004-29-J.P.-Morgan-China-Bubble---Brew-Franchisee-Temperature-Check-Expert-Call",
+        "0005-30-J.P.-Morgan-Doosan-Enerbility-034020.KS-2Q-beat-Orders-on-track-with-str"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17776184,
+      "reports": [
+        "0001-31-J.P.-Morgan-Laopu-Gold-H-6181.HK-2Q-miss--underappreciated-efforts-to-dr",
+        "0002-32-J.P.-Morgan-Hong-Kong-Property-Implications-of-China-s-taxation-on-offsh",
+        "0003-33-J.P.-Morgan-LVMH-LVMH.PA-F-LG-returns-to-small-growth--what-now--260728",
+        "0004-34-J.P.-Morgan-Lufax-Holding-LU.US-Operating-inflection-at-a-trough-valuati",
+        "0005-35-J.P.-Morgan-Lenovo-Group-Limited-0992.HK-ISG-upside-outweighs-PC-uncerta"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15712889,
+      "reports": [
+        "0001-36-J.P.-Morgan-Lost-in-translation-FX-tracker-sensitivities-and-correlation",
+        "0002-37-J.P.-Morgan-WIN-Semiconductors-Corp-3105.TWO--Undergoing-transformation-",
+        "0003-38-J.P.-Morgan-Trip.com--TCOM.US-Regulation-changes-the-form-not-the-earnin",
+        "0004-39-J.P.-Morgan-Snap-Inc.-SNAP.US-Oh-Snap--We-Are-Initiating-at-Neutral-2607",
+        "0005-40-JPM-Korea-Equity-Strategy-Update-on-the-de-leveraging-process-in-Korea-2"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 79,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12679704,
+      "reports": [
+        "0001-41-J.P.-Morgan-XtalPi-H-2228.HK-1H26-profit-warning-expected--Focus-on-cont",
+        "0002-42-J.P.-Morgan-Zhejiang-Supor-A-002032-A-reset-in-earnings-and-dividend--do",
+        "0003-43-Morgan-Stanley-China-Property-Weekly-Database-Tracker--30-260727",
+        "0004-44-Morgan-Stanley-A-Comprehensive-Framework-Ahead-of-French-Elections-26072",
+        "0005-45-Morgan-Stanley-China-Coal-Weekly-Coal-Update--Import-Arbitrage-Window-Re"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15660271,
+      "reports": [
+        "0001-46-Morgan-Stanley-Coca-Cola-Co.-KO.US-Pouring-It-On--Reiterate-OW-as-Top-Pi",
+        "0002-47-Morgan-Stanley-China-Power-June-2026--Power-Demand-Growth-Softened-26072",
+        "0003-48-Morgan-Stanley-Contemporary-Amperex-Technology-Co.-Ltd.-300750-New-Marke",
+        "0004-49-Morgan-Stanley-Greater-China-Semiconductors-Old-Memory-Divergent-Trends-",
+        "0005-50-Morgan-Stanley-Greater-China-Technology-Hardware-PC-demand-and-IDC-2Q-PC"
+      ]
+    }
+  ]
+}
