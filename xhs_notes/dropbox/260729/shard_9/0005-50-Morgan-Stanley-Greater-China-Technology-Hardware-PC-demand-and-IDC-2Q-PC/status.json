@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0005-50-MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "PC下半年要变天？芯",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-50-MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf",
+    "cleaned_source_title": "MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：Greater中国科技硬件PCdemand和IDC2",
+    "raw_candidates": [
+      "大中华科技硬件：PC需求与IDC二季度出货数据",
+      "大中华科技硬件：二季度PC出货量同比降5%",
+      "大中华科技硬件：PC出货量下滑与供应链瓶颈延续"
+    ],
+    "cleaned_candidates": [
+      "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+      "MS：大中华科技硬件，二季度PC出货量同比降5%",
+      "MS：大中华科技硬件，PC出货量下滑与供应链瓶颈延续",
+      "MS：Greater中国科技硬件PCdemand和IDC2",
+      "MS：PC出货量首次下滑，供应链瓶颈延续至2027年"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：大中华科技硬件，二季度PC出货量同比降5%",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：大中华科技硬件，PC出货量下滑与供应链瓶颈延续",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Greater中国科技硬件PCdemand和IDC2",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：PC出货量首次下滑，供应链瓶颈延续至2027年",
+        "reasons": [
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：大中华科技硬件，PC需求与IDC二季度出货数据"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "543",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

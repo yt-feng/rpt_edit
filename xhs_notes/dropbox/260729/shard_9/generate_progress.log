@@ -1,0 +1,67 @@
+Found 64 total PDFs; shard 9/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_13j9zgy8/pdfs/0001-46-Morgan Stanley-Coca-Cola Co.-KO.US-Pouring It On- Reiterate OW as Top Pick Post a Strong Q2-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_13j9zgy8/pdfs/0002-47-Morgan Stanley-China-Power-June 2026- Power Demand Growth Softened-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_13j9zgy8/pdfs/0003-48-Morgan Stanley-Contemporary Amperex Technology Co. Ltd.-300750-New Market Share Strategy-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_13j9zgy8/pdfs/0004-49-Morgan Stanley-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_13j9zgy8/pdfs/0005-50-Morgan Stanley-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=79ad8877-4ddb-4742-882c-5b94faefc72a
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 586588ace475098e712b60a7784b676139a7d109f9c326196335dda7032b6ca2.jpg: score=-100;too_small:531x157
+Skip non-chart visual asset 3ab33e240783077d598ea75f1b39312f660b32d60d2d47e7e376c60935be8b21.jpg: score=-100;too_small:531x173
+Skip non-chart visual asset e759375bacd0c6ffc748441baa670c388e2dd8c6e24ccc0440cd3bdfed25a600.jpg: score=1;large
+Skip non-chart visual asset 64923b5f8ed0ba470496bdd2d2f188263b1a33bbe5e732238937ab7c409f8572.jpg: score=-100;too_small:449x165
+Skip non-chart visual asset ac0656dddc4e4182587c13e92236c3e93ca19fac768a99968dc5181e330ac71f.jpg: score=-100;too_small:437x179
+Skip non-chart visual asset 6add064d851fdf0268d0dadd2ab7a21428691fdec6504be862650765c48ffb49.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.16
+Skip non-chart visual asset 6e4d3eff44c9018c3a6aeb08695ad47293672854015280088914d249f5916f73.jpg: score=-100;too_small:901x106
+Skip non-chart visual asset c3c3fd1ad81bda3e9504ff08dcca2d6ce03a9569301d94f4a129475ee57f58dc.jpg: score=-100;too_small:437x109
+Skip non-chart visual asset 876b8d45c45fc12d84c2e7388f00cb8e4cc59e76171e5cfd41d0cec8b5b3e034.jpg: score=-100;too_small:179x112
+Skip non-chart visual asset 9dd84a45d2a230a15a42be2b638686f39360833321c0008e6288dbc972c86ad7.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ab53646cd358724f3fa9e58b3feae910fdf2a643453c3c1815ba1ffc00db8cab.jpg: score=-100;too_small:501x114
+Skip non-chart visual asset 404929889ab07f18f23e505b7155d7968cb27ec7cb34e57cb43e5edd7fae82cd.jpg: score=-100;too_small:453x70
+Skip non-chart visual asset 2a7d127345fb081adcd33f722eab2d769a6556d827661a93d20ba66d0891f8e5.jpg: score=-100;too_small:526x106
+Skip non-chart visual asset 16e1c4b6f13db9fd5773f26c9a6e24de3255b29de4e5ef6ee598d44610d2c868.jpg: score=1;chart_ratio
+Skip non-chart visual asset a11b4582d3448332af6651dfb6e37d84fc1bc4e8eca5af2651df87f1aa1953f7.jpg: score=-100;too_small:899x178
+Skip non-chart visual asset 6625f16178a94eb6b1436117858f929f87643915eebc2920fad8f87622b66951.jpg: score=1;square_without_chart_hint,edge:0.54,contrast,large
+Skip non-chart visual asset 8b8a8841ddbc18c5e73bea47b13dc1ec6c055ec5d0d3fdefa9133c1bb118ff30.jpg: score=-100;too_small:437x176
+Neutralized WeChat title while keeping the report: 摩根士丹利：可口可乐二季度业绩-重申超配首选 -> 摩根士丹利：可口可乐业务与季度数据观察
+Skip non-chart visual asset f8567e4a2989e879956aab5df52fe75029a0913f1f772f23feedd5863f6a90ce.jpg: score=-100;too_small:503x145
+Skip non-chart visual asset cdd4312f7f20d3c902bf0b31960a1b89263972f757162613ff6e35c574a6fcd6.jpg: score=-100;too_small:454x62
+Skip non-chart visual asset 68ff6250ab73d0aa4723194006f1b5bf43df8a5b85424726c374b2b4150b97b1.jpg: score=2;chart_ratio,large
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国电力需求增速放缓-2026年6月 -> 摩根士丹利：研究主题与行业变化观察
+Skip non-chart visual asset a1c53f96bcb27ba3851681498b3901c3a507f45b2ca1b0b92567b67e7fab72d2.jpg: score=-100;too_small:748x159
+Skip non-chart visual asset 909309f454b1cb92f43d12df94ffd83279f5f68dfb8eacb410d7b9d413c2fb20.jpg: score=-100;too_small:437x37
+Skip non-chart visual asset 8c2725a959a44889359e604af9018acb4d08901008505ceac1a468caf0fcdcd5.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 0e3dfe7857da477ce1bd6997f6998ae18f58fad830ba3356278da4bd0bad87d4.jpg: score=-100;too_small:837x76
+Skip non-chart visual asset 06303baf04bd0f549ed13a76da211abc610bf0890a70ec94405195d5fead64bd.jpg: score=-100;too_small:307x87
+Skip non-chart visual asset 75dea9f107301d6695e64def617d4c46915a2c8de50cf1ccebaf7218773cdc41.jpg: score=-100;too_small:379x143
+Skip non-chart visual asset 701159d2bb0b1d5569e89ff92425b24c93fc5f9f5af76faeb7d1db09d7f246bd.jpg: score=-1;square_without_chart_hint,edge:0.13
+Skip non-chart visual asset 91e1c85c7a0a574b672425a741ff0d4bc76cff50d81803fa2a8d9454a228c9b8.jpg: score=-100;too_small:345x123
+Skip non-chart visual asset eca0147efe67d18116eb15d6a80e86c7e92c0241262eae5dcaa3c960b97f1a2f.jpg: score=-100;too_small:449x201
+Skip non-chart visual asset f5b616f54af682a7cd74bcc084b357075cefa487588af87317347617be8888a2.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 1a10343e461872b1423b72a17c717ae5be20eafda2a507d7505fd3c700bae952.jpg: score=-100;too_small:532x109
+Skip non-chart visual asset 129232a4a198b130937b4db8c958cf9623b47c5df214dab847ae661d01b1e09c.jpg: score=-100;too_small:521x137
+Skip non-chart visual asset e43b0489650c60efb6c6699f90200a42cc9afc7079a61691708ce9204fb000a9.jpg: score=-100;too_small:449x129
+Skip non-chart visual asset b2ca42bfc159f14a5b4ff144d50cc81a656fa3d578a1e760b563abe3a52427e9.jpg: score=-100;too_small:521x114
+Skip non-chart visual asset 3095ef677eabe2c476e40ec77554739ae3265af55190151107d09d4c0988c5bb.jpg: score=-100;too_small:345x126
+Skip non-chart visual asset bdec35f973b0a570b3e5e1fab2ec53ac61fc3e8d672533b62f71836a67413e47.jpg: score=1;large
+Skip non-chart visual asset 0bfc92af55fa9d73f6f03e0b756fa39d2164288b807b13d4682abcb02eaa9b55.jpg: score=-100;too_small:745x87
+Skip non-chart visual asset f090551aa8bed2ed5aaa79ac2420b1178c7f5828b730d3f38bae0372b47f2adf.jpg: score=-100;too_small:1301x37
+Skip non-chart visual asset afe0aa7073e03caed12b6159c6b8147dee6674ec4c536c1e31f036805f8d4d8d.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset 1d2d655a343ed9f574c7dc8244683bbf630ab5d6c2ff45d134cacc440b06cf07.jpg: score=-100;too_small:437x37
+Skip non-chart visual asset 0a35f02df35f7f53cbbf307f65abda5e3edd39a1b44eca5e941db00dc4166a50.jpg: score=1;large
+Skip non-chart visual asset 46ece527c540a569870056d2cddeb4bad71c5187eec0fbe84b731d0c1e16b013.jpg: score=-100;too_small:518x140
+Skip non-chart visual asset 75028c3e62cee135ee28959c59ec39fe6e95a988bf6faf9f481aee1e5db96278.jpg: score=-100;too_small:520x151
+Skip non-chart visual asset 186d6bdbe081d600f95799c86d81995db3a695bad4c8136d1e7997a4f0ab0f8a.jpg: score=0;odd_ratio:5.00,edge:0.35,contrast
+Skip non-chart visual asset 05dc7035c7630074a8486c8cccfc2cee7517200a1d23c64f8c0483961c1b56c9.jpg: score=0;odd_ratio:5.11,edge:0.38,contrast
+Skip non-chart visual asset 2e17d0f5f4d55ede0c4ee04e1f1ede7c95094bf9a966a89a47ac576a61e305f8.jpg: score=-100;too_small:518x134
+Skip non-chart visual asset d99d5648a749d2e23de9f9d3e98e1a49f7291445abe4b2233338cd18fd94111b.jpg: score=1;large
+Skip non-chart visual asset 30b2dc8ddf0c348839691e25c3381f02c391544ffa24b98c234e251eeffece61.jpg: score=-1;odd_ratio:5.01,edge:0.19
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_9; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

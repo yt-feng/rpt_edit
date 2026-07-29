@@ -1,0 +1,567 @@
+[
+  {
+    "item": "0001-46-Morgan-Stanley-Coca-Cola-Co.-KO.US-Pouring-It-On--Reiterate-OW-as-Top-Pi",
+    "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0001-46-MS-Coca-Cola Co.-KO.US-Pouring It On- Reiterate OW as Top Pick Post a Strong Q2-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "可口可乐Q2：增长逻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：可口可乐业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-MS-Coca-Cola Co.-KO.US-Pouring It On- Reiterate OW as Top Pick Post a Strong Q2-260729.pdf",
+      "cleaned_source_title": "MS-Coca-Cola Co.-KO.US-Pouring It On- Reiterate OW as Top Pick Post a Strong Q2",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：CocaColaCo.-PouringItOn",
+      "raw_candidates": [
+        "可口可乐二季度业绩-重申超配首选",
+        "可口可乐二季度单位销量增长5%超预期",
+        "可口可乐有机销售增速与同业差距扩大"
+      ],
+      "cleaned_candidates": [
+        "MS：可口可乐二季度业绩-重申超配首选",
+        "MS：可口可乐二季度单位销量增长5%超预期",
+        "MS：可口可乐有机销售增速与同业差距扩大",
+        "MS：CocaColaCo.-PouringItOn",
+        "MS：公司同时将全年有机销售增长指引上调至5%，处于此前4"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：可口可乐二季度单位销量增长5%超预期",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：可口可乐有机销售增速与同业差距扩大",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：CocaColaCo.-PouringItOn",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：公司同时将全年有机销售增长指引上调至5%，处于此前4",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：可口可乐业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：可口可乐二季度业绩-重申超配首选",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：可口可乐业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-Morgan-Stanley-China-Power-June-2026--Power-Demand-Growth-Softened-26072",
+    "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月用电增速放缓，但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727.pdf",
+      "cleaned_source_title": "MS-China-Power-June 2026- Power Demand Growth Softened",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国PowerJune2026",
+      "raw_candidates": [
+        "中国电力需求增速放缓-2026年6月",
+        "中国电力需求增速放缓-6月增速3.7%",
+        "中国电力需求增速放缓-高技术制造与充电服务支撑"
+      ],
+      "cleaned_candidates": [
+        "MS：中国电力需求增速放缓-2026年6月",
+        "MS：中国电力需求增速放缓-6月增速3.7%",
+        "MS：中国电力需求增速放缓-高技术制造与充电服务支撑",
+        "MS：中国PowerJune2026",
+        "MS：中国电力需求在2026年上半年录得5.3%的同比增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国电力需求增速放缓-6月增速3.7%",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国电力需求增速放缓-高技术制造与充电服务支撑",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国PowerJune2026",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国电力需求在2026年上半年录得5.3%的同比增长",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国电力需求增速放缓-2026年6月",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-Morgan-Stanley-Contemporary-Amperex-Technology-Co.-Ltd.-300750-New-Marke",
+    "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0003-48-MS-Contemporary Amperex Technology Co. Ltd.-300750-New Market Share Strategy-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "CATL 的新策略：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x4",
+      "股票|个股->公司 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x1",
+      "股票市场|股市->市场 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：宁德时代新市场份额策略",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-MS-Contemporary Amperex Technology Co. Ltd.-300750-New Market Share Strategy-260728.pdf",
+      "cleaned_source_title": "MS-Contemporary Amperex Technology Co. Ltd.-300750-New Market Share Strategy",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：ContemporaryAmperex科技Co.Ltd.",
+      "raw_candidates": [
+        "宁德时代新市场份额策略",
+        "宁德时代2026年储能出货量上调至218GWh",
+        "宁德时代低端市场扩张与储能增量利润"
+      ],
+      "cleaned_candidates": [
+        "MS：宁德时代新市场份额策略",
+        "MS：宁德时代2026年储能出货量上调至218GWh",
+        "MS：宁德时代低端市场扩张与储能增量利润",
+        "MS：ContemporaryAmperex科技Co.Ltd.",
+        "MS：2027年和2028年的储能出货量也分别上调24.5%和2"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：宁德时代2026年储能出货量上调至218GWh",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "MS：宁德时代低端市场扩张与储能增量利润",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：ContemporaryAmperex科技Co.Ltd.",
+          "reasons": [
+            "listing_suffix",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2027年和2028年的储能出货量也分别上调24.5%和2",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：宁德时代新市场份额策略",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：宁德时代新市场份额策略"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-Morgan-Stanley-Greater-China-Semiconductors-Old-Memory-Divergent-Trends-",
+    "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0004-49-MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "DDR4 涨价超预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "减持->观点偏谨慎 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华区半导体-传统存储-近期分化趋势",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727.pdf",
+      "cleaned_source_title": "MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国半导体OldMemory",
+      "raw_candidates": [
+        "大中华区半导体-传统存储-近期分化趋势",
+        "大中华区传统存储：三季度DDR4定价弹性超预期",
+        "大中华区传统存储：DDR4与SLC/MLC NAND结构性涨价"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华区半导体-传统存储-近期分化趋势",
+        "MS：大中华区传统存储，三季度DDR4定价弹性超预期",
+        "MS：MLCNAND结构性涨价",
+        "MS：Greater中国半导体OldMemory",
+        "MS：1.0倍2028年预期每股账面价值对相关公司构成支撑"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华区传统存储，三季度DDR4定价弹性超预期",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "MS：MLCNAND结构性涨价",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Greater中国半导体OldMemory",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：1.0倍2028年预期每股账面价值对相关公司构成支撑",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华区半导体-传统存储-近期分化趋势",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华区半导体-传统存储-近期分化趋势"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-Morgan-Stanley-Greater-China-Technology-Hardware-PC-demand-and-IDC-2Q-PC",
+    "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0005-50-MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "PC下半年要变天？芯",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf",
+      "cleaned_source_title": "MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国科技硬件PCdemand和IDC2",
+      "raw_candidates": [
+        "大中华科技硬件：PC需求与IDC二季度出货数据",
+        "大中华科技硬件：二季度PC出货量同比降5%",
+        "大中华科技硬件：PC出货量下滑与供应链瓶颈延续"
+      ],
+      "cleaned_candidates": [
+        "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+        "MS：大中华科技硬件，二季度PC出货量同比降5%",
+        "MS：大中华科技硬件，PC出货量下滑与供应链瓶颈延续",
+        "MS：Greater中国科技硬件PCdemand和IDC2",
+        "MS：PC出货量首次下滑，供应链瓶颈延续至2027年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：大中华科技硬件，二季度PC出货量同比降5%",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：大中华科技硬件，PC出货量下滑与供应链瓶颈延续",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Greater中国科技硬件PCdemand和IDC2",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：PC出货量首次下滑，供应链瓶颈延续至2027年",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：大中华科技硬件，PC需求与IDC二季度出货数据",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：大中华科技硬件，PC需求与IDC二季度出货数据"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

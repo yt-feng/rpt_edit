@@ -1,0 +1,123 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "6月用电增速放缓，但",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "MS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727.pdf",
+    "cleaned_source_title": "MS-China-Power-June 2026- Power Demand Growth Softened",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国PowerJune2026",
+    "raw_candidates": [
+      "中国电力需求增速放缓-2026年6月",
+      "中国电力需求增速放缓-6月增速3.7%",
+      "中国电力需求增速放缓-高技术制造与充电服务支撑"
+    ],
+    "cleaned_candidates": [
+      "MS：中国电力需求增速放缓-2026年6月",
+      "MS：中国电力需求增速放缓-6月增速3.7%",
+      "MS：中国电力需求增速放缓-高技术制造与充电服务支撑",
+      "MS：中国PowerJune2026",
+      "MS：中国电力需求在2026年上半年录得5.3%的同比增长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：中国电力需求增速放缓-6月增速3.7%",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国电力需求增速放缓-高技术制造与充电服务支撑",
+        "reasons": [
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国PowerJune2026",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国电力需求在2026年上半年录得5.3%的同比增长",
+        "reasons": [
+          "anchor_coverage=0.56"
+        ]
+      }
+    ],
+    "selected_title": "MS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：中国电力需求增速放缓-2026年6月",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "497",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

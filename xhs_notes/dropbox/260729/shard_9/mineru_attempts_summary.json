@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0001-46-MS-Coca-Cola Co.-KO.US-Pouring It On- Reiterate OW as Top Pick Post a Strong Q2-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0002-47-MS-China-Power-June 2026- Power Demand Growth Softened-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0003-48-MS-Contemporary Amperex Technology Co. Ltd.-300750-New Market Share Strategy-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0004-49-MS-Greater China Semiconductors-Old Memory-Divergent Trends in the Near Term-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_13j9zgy8/pdfs/0005-50-MS-Greater China Technology Hardware-PC demand and IDC 2Q PC Shipment Data-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
