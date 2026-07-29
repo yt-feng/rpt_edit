@@ -1,0 +1,117 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0005-30-JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "韩国斗山，一个被低估",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：斗山能源业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-30-JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf",
+    "cleaned_source_title": "JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：DoosanEnerbility2Qbeat",
+    "raw_candidates": [
+      "斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+      "斗山能源二季度营业利润3140亿韩元-燃气轮机订单完成进度53%",
+      "斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长"
+    ],
+    "cleaned_candidates": [
+      "JPM：斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+      "JPM：斗山能源二季度营业利润3140亿韩元",
+      "JPM：斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长",
+      "JPM：DoosanEnerbility2Qbeat",
+      "JPM：JPM将2026-2028年营业利润预测上调1%至7%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：斗山能源二季度营业利润3140亿韩元",
+        "reasons": [
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      },
+      {
+        "title": "JPM：DoosanEnerbility2Qbeat",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：JPM将2026-2028年营业利润预测上调1%至7%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：斗山能源业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：斗山能源业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "513",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

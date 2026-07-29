@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0001-26-JPM-China Banks 101-Banking begins with the balance sheet-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0002-27-JPM-Akeso-9926.HK--One more interim OS look added to HARMONi-3- new US-380mn ATM filed by Summit-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0003-28-JPM-China- Two-speed industrial profit growth in 1H-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0004-29-JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0005-30-JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

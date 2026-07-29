@@ -1,0 +1,112 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0004-29-JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "咖啡加盟商真实反馈：",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：中国现制饮品加盟商电话会纪要",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-29-JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf",
+    "cleaned_source_title": "JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：中国BubbleBrewFranchisee",
+    "raw_candidates": [
+      "中国现制饮品加盟商电话会纪要",
+      "2026年二季度门店毛利率约35%",
+      "瑞幸加盟商GMV同比下降10%-15%"
+    ],
+    "cleaned_candidates": [
+      "JPM：中国现制饮品加盟商电话会纪要",
+      "JPM：2026年二季度门店毛利率约35%",
+      "JPM：瑞幸加盟商GMV同比下降10%-15%",
+      "JPM：中国BubbleBrewFranchisee",
+      "JPM：外卖占比已从去年价格战期间最高80%回落至约50%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：2026年二季度门店毛利率约35%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：瑞幸加盟商GMV同比下降10%-15%",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：中国BubbleBrewFranchisee",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：外卖占比已从去年价格战期间最高80%回落至约50%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：中国现制饮品加盟商电话会纪要",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：中国现制饮品加盟商电话会纪要"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "611",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

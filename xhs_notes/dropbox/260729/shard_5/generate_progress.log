@@ -1,0 +1,38 @@
+Found 64 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_j0v2cj7r/pdfs/0001-26-J.P. Morgan-China Banks 101-Banking begins with the balance sheet-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_j0v2cj7r/pdfs/0002-27-J.P. Morgan-Akeso-9926.HK--One more interim OS look added to HARMONi-3- new US-380mn ATM filed by Summit-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_j0v2cj7r/pdfs/0003-28-J.P. Morgan-China- Two-speed industrial profit growth in 1H-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_j0v2cj7r/pdfs/0004-29-J.P. Morgan-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_j0v2cj7r/pdfs/0005-30-J.P. Morgan-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=4334c752-f5ca-4e81-a3bc-6b2282268cc2
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a0b9773addc9ca072cda5ec0e3734b5597cc2715f19d41a4f23fd2534b79e5a8.jpg: score=-100;too_small:1314x168
+Skip non-chart visual asset 81c9231577b4eee305bfbf37670eb75417150473a5f320ce0eaa9863aef5da60.jpg: score=0;square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset e661ec32b9029671a103e105d9b632a847a54b6f07f1c59f83350ef4ef94a70c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset fd4c1c37e9ee13831105812862640d5eb2721fbff2ba54599b572f885e6e7abc.jpg: score=-100;too_small:982x164
+Skip non-chart visual asset acce612ee3b88b99388a39915ecfa8f9401be0a6d239e8d106f1d3669dd8582f.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Neutralized WeChat title while keeping the report: 摩根大通：中国工业利润双速增长-2026上半年18.7% -> 摩根大通：研究主题与行业变化观察
+Skip non-chart visual asset c168109a4c5deef9e374bb01a0c6955d5c3d3977b6e77229ada4f8b0c4ff2c97.jpg: score=-100;too_small:542x165
+Skip non-chart visual asset fbfbb7b1c1ceba0c054101506ab696466fa5632fc30168f52302d88c0fee694c.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset f40e17d798ac12da8ba79447b777f41962cb9336a56c623ff9acff3cf831e58b.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset d7407eadaeb3a2f34af04787851c816c96d70354bfb3291bfe08e16fe66dfe84.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 24285004514c9fec81c7a8dd2cd08eeb0f18f6a176b7fb63cb61ca9626cedec9.jpg: score=-100;too_small:448x98
+Skip non-chart visual asset cae7cc18f53d4f1cc2735ee233c82172a5824c4ac7cf3af24f7ae7e06fdb288b.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 8292a94d4c66006ab93403016a81986f9d8d95f78d4893d4ea46c2a23fd1041c.jpg: score=-100;too_small:626x59
+Skip non-chart visual asset 22f9ce4b3219b27ddc1e5bbdf7e1d3586bd8e8d8b497e3958e7c211e5916b716.jpg: score=1;odd_ratio:5.43,edge:0.31,contrast,large
+Skip non-chart visual asset 9981f3213bb54eea8970c08e1d84081ee9092c1fa7a18635f021bf024ef87f32.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 9a86c30248b96992f7c9e422e9b990601634c121772f134055dadea8dab0413e.jpg: score=-100;too_small:448x176
+Skip non-chart visual asset acdeecb9997d3a7b4315dcaa6b06151cf32ffbe7ed4e3d515fcd1bf20e994c21.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset bbbd67362b2838df361cf3ef004abcbbe2391a84adae3fbc1bf8ca6f9ae30a0d.jpg: score=-100;too_small:984x168
+Skip non-chart visual asset 15b3fae8d6a8597bf43768644e812d209944d77962f89827f36e441ddf60bbca.jpg: score=1;chart_ratio
+Skip non-chart visual asset 2e88bb643d75f8bd598e1449f409e0bbb5ee99a3a459cceba7718f69d035b764.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Neutralized WeChat title while keeping the report: 摩根大通：斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标 -> 摩根大通：斗山能源业务与季度数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260729/shard_5; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

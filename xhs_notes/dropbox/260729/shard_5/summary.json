@@ -1,0 +1,505 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0001-26-JPM-China Banks 101-Banking begins with the balance sheet-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "看懂银行股，先搞懂三",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "资产定价->市场定价 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国银行业资产负债表基础框架",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-JPM-China Banks 101-Banking begins with the balance sheet-260727.pdf",
+      "cleaned_source_title": "JPM-China Banks 101-Banking begins with the balance sheet",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国Banks101Bankingbegin",
+      "raw_candidates": [
+        "中国银行业资产负债表基础框架",
+        "亚洲11市场银行ROA结构性分化",
+        "中国与印度银行业净息差及信用成本对比"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国银行业资产负债表基础框架",
+        "JPM：亚洲11市场银行ROA结构性分化",
+        "JPM：中国与印度银行业净息差及信用成本对比",
+        "JPM：中国Banks101Bankingbegin",
+        "JPM：而同期印度银行业ROA从0.46%的低点回升至1.41%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：亚洲11市场银行ROA结构性分化",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国与印度银行业净息差及信用成本对比",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国Banks101Bankingbegin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：而同期印度银行业ROA从0.46%的低点回升至1.41%",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国银行业资产负债表基础框架",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国银行业资产负债表基础框架"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0002-27-JPM-Akeso-9926.HK--One more interim OS look added to HARMONi-3- new US-380mn ATM filed by Summit-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "依沃西单抗全球临床再",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：康方生物合作伙伴Summit披露HARMONi",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-JPM-Akeso-9926.HK--One more interim OS look added to HARMONi-3- new US-380mn ATM filed by Summit-260727.pdf",
+      "cleaned_source_title": "JPM-Akeso-9926.HK--One more interim OS look added to HARMONi-3- new US-380mn ATM filed by Summit",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Akeso",
+      "raw_candidates": [
+        "康方生物合作伙伴Summit披露HARMONi-3 OS分析时间表与融资计划",
+        "康方生物：HARMONi-3 OS分析时间表更新与Summit 3.8亿美元融资",
+        "康方生物：HARMONi-3试验事件率低于预期，Summit启动新融资"
+      ],
+      "cleaned_candidates": [
+        "JPM：康方生物合作伙伴Summit披露HARMONi",
+        "JPM：康方生物，HARMONi",
+        "JPM：康方生物，HARMONi-3试验事件率低于预期",
+        "JPM：Akeso",
+        "JPM：Summit在2Q26末持有约6.907亿美元现金"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：康方生物，HARMONi",
+          "reasons": [
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "JPM：康方生物，HARMONi-3试验事件率低于预期",
+          "reasons": [
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "JPM：Akeso",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Summit在2Q26末持有约6.907亿美元现金",
+          "reasons": [
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：康方生物合作伙伴Summit披露HARMONi",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：康方生物合作伙伴Summit披露HARMONi"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0003-28-JPM-China- Two-speed industrial profit growth in 1H-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "工业利润冰火两重天，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-JPM-China- Two-speed industrial profit growth in 1H-260727.pdf",
+      "cleaned_source_title": "JPM-China- Two-speed industrial profit growth in 1H",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国-Twospeedindustrialprofit增长",
+      "raw_candidates": [
+        "中国工业利润双速增长-2026上半年",
+        "中国工业利润双速增长-2026上半年18.7%",
+        "中国工业利润双速增长-技术与原材料主导"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国工业利润双速增长-2026上半年",
+        "JPM：中国工业利润双速增长-2026上半年18.7%",
+        "JPM：中国工业利润双速增长-技术与原材料主导",
+        "JPM：中国-Twospeedindustrialprofit增长",
+        "JPM：2026年上半年中国规模以上工业企业利润同比增长18.7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国工业利润双速增长-技术与原材料主导",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国-Twospeedindustrialprofit增长",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2026年上半年中国规模以上工业企业利润同比增长18.7%",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "18.7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：中国工业利润双速增长-2026上半年18.7%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0004-29-JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "咖啡加盟商真实反馈：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：中国现制饮品加盟商电话会纪要",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways-260727.pdf",
+      "cleaned_source_title": "JPM-China Bubble - Brew-Franchisee Temperature Check-Expert Call Takeaways",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国BubbleBrewFranchisee",
+      "raw_candidates": [
+        "中国现制饮品加盟商电话会纪要",
+        "2026年二季度门店毛利率约35%",
+        "瑞幸加盟商GMV同比下降10%-15%"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国现制饮品加盟商电话会纪要",
+        "JPM：2026年二季度门店毛利率约35%",
+        "JPM：瑞幸加盟商GMV同比下降10%-15%",
+        "JPM：中国BubbleBrewFranchisee",
+        "JPM：外卖占比已从去年价格战期间最高80%回落至约50%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：2026年二季度门店毛利率约35%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：瑞幸加盟商GMV同比下降10%-15%",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国BubbleBrewFranchisee",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：外卖占比已从去年价格战期间最高80%回落至约50%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：中国现制饮品加盟商电话会纪要",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：中国现制饮品加盟商电话会纪要"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_j0v2cj7r/pdfs/0005-30-JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "韩国斗山，一个被低估",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：斗山能源业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick-260727.pdf",
+      "cleaned_source_title": "JPM-Doosan Enerbility-034020.KS-2Q beat-Orders on track with strong GT orders-Doosan our top pick",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：DoosanEnerbility2Qbeat",
+      "raw_candidates": [
+        "斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+        "斗山能源二季度营业利润3140亿韩元-燃气轮机订单完成进度53%",
+        "斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长"
+      ],
+      "cleaned_candidates": [
+        "JPM：斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+        "JPM：斗山能源二季度营业利润3140亿韩元",
+        "JPM：斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长",
+        "JPM：DoosanEnerbility2Qbeat",
+        "JPM：JPM将2026-2028年营业利润预测上调1%至7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：斗山能源二季度营业利润3140亿韩元",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：斗山能源二季度业绩超预期-燃气轮机与核能订单驱动增长",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "JPM：DoosanEnerbility2Qbeat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM将2026-2028年营业利润预测上调1%至7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：斗山能源业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：斗山能源二季度业绩超预期-燃气轮机订单支撑全年目标",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：斗山能源业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
