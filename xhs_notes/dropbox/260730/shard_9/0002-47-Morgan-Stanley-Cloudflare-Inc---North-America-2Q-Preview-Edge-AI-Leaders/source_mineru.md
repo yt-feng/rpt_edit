@@ -1,0 +1,502 @@
+# 2Q Preview: Edge AI Leadership and Platform Strength Driving Durable Momentum
+
+Channel checks point to another solid qtr for Cloudflare, driven by durable CDN/AppSec and Developer Platform strength. Our recent Edge AI survey further reinforces NET's leadership in distributed AI inference and supports an even more constructive 2H26 outlook.
+
+## Key Takeaways
+
+\- Channel checks again screened positive, with Cloudflare remaining one of the fastest-growing vendors across partner software practices.
+
+■ Growth continues to be led by CDN/AppSec and Developer Services, while Cloudflare continues gaining share in Zero Trust.
+
+\- Expect another Q2 revenue beat and FY26 raise, with an even stronger setup into 2H supported by platform and AI momentum.
+
+\- Our recent Edge AI survey positions Cloudflare as the clear leader in distributed AI inference, reinforcing our long-term thesis.
+
+■ Continued large-deal activity, expanding Pool of Funds consumption, and AI monetization likely support further consensus estimate revisions throughout FY26. Remain OW.
+
+Best Athlete in Software Continues to Execute Across the Platform. Our latest channel checks suggest continued strong momentum for Cloudflare, with partners again coming in above expectations and reinforcing its position as one of the fastest-growing vendors across their software practices. From a demand perspective, growth continues to be driven by durable strength in the core platform, particularly around CDN / Application Security and Edge AI / developer-related offerings, where partners continue to see increasing utilization and consumption (namely Workers) alongside rising traffic volumes. These trends, combined with broader industry tailwinds tied to AI inference and edge computing, continue to position Cloudflare as a key beneficiary of the next phase of enterprise AI deployments. More broadly, partners highlighted healthy demand across API management, data security, and broader developer services, while continuing to note Cloudflare's strong developer ecosystem as a key competitive advantage, particularly as enterprise AI adoption accelerates. While Cloudflare One / SASE remains an increasingly important part of the broader platform story, our conversations suggest it is not the primary driver of growth, though partners continue to see Cloudflare competing in an increasing number of Zero Trust and network modernization opportunities, supporting our view that the company is steadily gaining share in the enterprise security market.
+
+<table><tr><td colspan="2">Sanjit K Singh</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Sanjit.Singh@morganstanley.com</td><td>+1 415 576-2060</td></tr></table>
+
+<table><tr><td colspan="2">Adam Wood</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Adam.Wood@morganstanley.com</td><td>+1 212 761-3656</td></tr><tr><td colspan="2">Jonathan Eisenson</td></tr><tr><td colspan="2">Research Associate</td></tr><tr><td>Jonathan.Eisenson@morganstanley.com</td><td>+1 212 761-2808</td></tr></table>
+
+<table><tr><td>Stock Rating</td><td>Overweight</td></tr><tr><td>Industry View</td><td>Attractive</td></tr><tr><td>Price target</td><td>$322.00</td></tr><tr><td>Shr price, close (Jul 28, 2026)</td><td>$264.10</td></tr><tr><td>Mkt cap, curr (mm)</td><td>$97,716</td></tr><tr><td>52-Week Range</td><td>$290.82-158.84</td></tr></table>
+
+<table><tr><td>Fiscal Year Ending</td><td>12/25</td><td>12/26e</td><td>12/27e</td><td>12/28e</td></tr><tr><td>EPS ($)**</td><td>0.93</td><td>1.20</td><td>1.41</td><td>1.70</td></tr><tr><td>Prior EPS ($)**</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>P/E</td><td>NM</td><td>NM</td><td>NM</td><td>NM</td></tr><tr><td>EPS ($)§</td><td>0.92</td><td>1.21</td><td>1.61</td><td>2.30</td></tr><tr><td>Div yld (%)</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></table>
+
+Unless otherwise noted, all metrics are based on MS ModelWare framework
+\*\* = Based on consensus methodology
+§ = Consensus data is provided by Refinitiv Estimates
+e = MS estimates
+
+<table><tr><td>Quarter</td><td>2025</td><td>2026e Prior</td><td>2026e Current</td><td>2027e Prior</td><td>2027e Current</td></tr><tr><td>Q1</td><td>0.16</td><td>-</td><td>0.25a</td><td>-</td><td>0.27</td></tr><tr><td>Q2</td><td>0.21</td><td>-</td><td>0.27</td><td>-</td><td>0.32</td></tr><tr><td>Q3</td><td>0.27</td><td>-</td><td>0.33</td><td>-</td><td>0.40</td></tr><tr><td>Q4</td><td>0.28</td><td>-</td><td>0.35</td><td>-</td><td>0.41</td></tr></table>
+
+e = MS estimates, a = Actual Company reported data
+
+Similar to recent quarters, we also picked up signs of healthy large enterprise activity, with Cloudflare participating in an increasing number of strategic infra modernization and AI-related deployments. These trends also align with management's commentary around accelerating developer adoption, improving enterprise sales productivity, and record large-deal activity, which we believe continue to support durable platform demand. Bottom line, our latest checks reinforce sustained momentum across the platform, healthy pipeline visibility, and continued large-deal traction, supporting our view that Cloudflare remains one of the best-positioned vendors across software.
+
+From a numbers perspective, expecting upside to Q2 consensus' \~29.8% YoY revenue growth, with a typical \~2-3% beat, driven by multiple product cycles, improving platform momentum, and increasing AI tailwinds, with the FY26 guide likely raised by the magnitude of the Q2 beat. Similarly, expecting current RPO (cRPO) YoY growth to beat consensus' expectations for \~31.8%. While Cloudflare has consistently put up better-than-expected results in the past several quarters, we believe the setup into 2H26 appears even more constructive, supported by continued Pool of Funds consumption, improving enterprise sales execution, accelerating large-deal activity, and increasing monetization across Developer Services, AI infrastructure, and the broader platform. Recall that Q1 revenue growth came in slightly below higher buy-side expectations, reflecting the lag inherent in ramping newer Pool of Funds deals and the broader revenue-recognition drag tied to the ramping usage-based model, both of which should modestly improve in Q2 (and in 2H and beyond). Similarly, RPO growth decelerated in Q1 against a difficult comp, as the prior-year period benefited from the initial signing of the company's largest-ever deal (\~\$130mn TCV). Taken together, we continue to lean positive ahead of Q2 results, expecting Cloudflare to deliver another quarter of 30%+ topline growth, with strong bookings momentum and an expanding mix of the higher-growth Acts likely supporting further upward consensus estimate revisions through the remainder of the year. In terms of the fairly mixed survey results for Cloudflare (see Security Reseller Survey Results), we flag that our live channel conversations (several with partners with >\$50mn in annual Cloudflare sales) were incrementally bullish across the entire Cloudflare platform, while most of the resellers from our below VAR survey results were smaller and largely security-focused. In our view, these security resellers likely have smaller non-security practices and may not accurately reflect the strength of Cloudflare's broader portfolio.
+
+## Our Recent Edge AI Survey Further Reinforces Our OW Thesis on Cloudflare.
+
+While enterprise Edge AI adoption remains in the early innings, our inaugural Edge AI survey (see As Inference Expands Beyond the Hyperscalers, New Leaders Begin to Emerge (16 Jul 2026)) suggests Cloudflare has already established itself as the clear leader in distributed AI inference, with 55% of partners identifying the company as gaining the most share in edge inference over the past three months (Exhibit 9) and 63% selecting Cloudflare as the preferred platform for edge AI compute (Exhibit 8), well ahead of other edge infrastructure vendors. We were also encouraged by continued momentum across the Developer Platform, where Workers AI screened as Cloudflare's fastest-growing developer product, while partners consistently cited AI inference at the edge, edge compute, and agentic AI workloads as the primary drivers of adoption. Importantly, although the majority of partners expect
+
+meaningful enterprise Edge AI deployments to occur in 2027, current demand trends suggest Cloudflare is already benefiting from increasing developer adoption and early inference workloads, positioning the company well ahead of what we believe will be a multi-year deployment cycle. Overall, our Edge AI survey results closely align with our latest channel conversations and further strengthen our conviction that Cloudflare's differentiated edge architecture, developer ecosystem, and multi-product platform position the company as one of the best ways to play the next phase of enterprise AI infrastructure spending across software.
+
+Exhibit 1: While AWS, Azure, and Cloudflare dominate current AI inference share...  
+Amongst your customer base, which vendors/platforms has the largest share for executing AI inference currently?  
+![](images/b4c2b6223307bf16c36662245846fdf732590ac88073b222630b418bf425330a.jpg)  
+Source: MS estimates, n=38
+
+Exhibit 2: ... Cloudflare and other challengers have been gaining share from AWS in inference over the past three months  
+Amongst your customer base, which of the following vendors/platforms has seen the largest share gains in the AI inferencing market over the past 3 months?  
+![](images/59f9de2c5ea77e6ac9ca64e027ee3fd5d65be3b098e2a213042ffccc1b90fc86.jpg)  
+Source: MS estimates, n=38
+
+Exhibit 3: NET: MSe vs. Consensus
+
+<table><tr><td rowspan="2">NET</td><td colspan="2">2Q26e</td><td colspan="2">3Q26e</td><td colspan="2">FY26e</td><td colspan="2">FY27e</td></tr><tr><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td></tr><tr><td>Total Revenue</td><td>$665.0</td><td>$664.8</td><td>$722.2</td><td>$721.6</td><td>$2,809.6</td><td>$2,810.9</td><td>$3,574.4</td><td>$3,590.3</td></tr><tr><td>YoY Growth</td><td>29.8%</td><td>29.8%</td><td>28.5%</td><td>28.4%</td><td>29.6%</td><td>29.7%</td><td>27.2%</td><td>27.7%</td></tr><tr><td>QoQ Growth</td><td>3.9%</td><td>3.9%</td><td>8.6%</td><td>8.5%</td><td></td><td></td><td></td><td></td></tr><tr><td>cRPO</td><td>$1,735.1</td><td>$1,718.9</td><td>$1,803.4</td><td>$1,814.2</td><td>$2,072.9</td><td>$2,046.8</td><td>$2,705.1</td><td>$2,619.4</td></tr><tr><td>YoY Growth</td><td>33.0%</td><td>31.8%</td><td>31.5%</td><td>32.3%</td><td>31.0%</td><td>30.2%</td><td>30.5%</td><td>28.0%</td></tr><tr><td>QoQ Growth</td><td>5.8%</td><td>5.6%</td><td>3.9%</td><td>5.5%</td><td></td><td></td><td></td><td></td></tr><tr><td>Op. Income</td><td>$90.5</td><td>$90.6</td><td>$125.2</td><td>$117.9</td><td>$419.5</td><td>$419.9</td><td>$534.4</td><td>$624.5</td></tr><tr><td>Op. Margin</td><td>13.6%</td><td>13.6%</td><td>17.3%</td><td>16.3%</td><td>14.9%</td><td>14.9%</td><td>15.0%</td><td>17.4%</td></tr><tr><td>EPS</td><td>$0.27</td><td>$0.27</td><td>$0.33</td><td>$0.32</td><td>$1.20</td><td>$1.20</td><td>$1.41</td><td>$1.60</td></tr><tr><td>FCF</td><td>$100.0</td><td>$54.0</td><td>$101.6</td><td>$92.2</td><td>$365.2</td><td>$370.9</td><td>$500.4</td><td>$552.0</td></tr></table>
+
+Source: Company data, MS estimates, Visible Alpha
+
+Exhibit 4: NET: Beat vs. Consensus
+
+<table><tr><td colspan="17">% Beat vs. Consensus</td></tr><tr><td></td><td>NET</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4 Qtr. Avg.</td></tr><tr><td>Total Revenue Beat</td><td></td><td>0.2%</td><td>-0.2%</td><td>1.0%</td><td>1.6%</td><td>2.7%</td><td>1.4%</td><td>1.7%</td><td>1.5%</td><td>1.8%</td><td>2.1%</td><td>2.3%</td><td>3.2%</td><td>4.1%</td><td>3.0%</td><td>3.1%</td></tr><tr><td>Non-GAAP Op. Margin Beat</td><td></td><td>139.5bps</td><td>254.5bps</td><td>180.4bps</td><td>642.9bps</td><td>275.7bps</td><td>193.8bps</td><td>518.0bps</td><td>271.4bps</td><td>205.5bps</td><td>4.9bps</td><td>145.3bps</td><td>134.8bps</td><td>37.2bps</td><td>1.5bps</td><td>79.0bps</td></tr><tr><td>Non-GAAP EPS Beat</td><td></td><td>$0.02</td><td>$0.05</td><td>$0.03</td><td>$0.06</td><td>$0.03</td><td>$0.03</td><td>$0.06</td><td>$0.02</td><td>$0.01</td><td>-$0.01</td><td>$0.03</td><td>$0.04</td><td>$0.01</td><td>$0.02</td><td>$0.02</td></tr><tr><td>#RPO Beat</td><td></td><td>-3.5%</td><td>-1.0%</td><td>-2.4%</td><td>-3.9%</td><td>1.1%</td><td>0.3%</td><td>-1.7%</td><td>2.4%</td><td>-0.2%</td><td>0.4%</td><td>0.1%</td><td>0.1%</td><td>3.2%</td><td>-1.2%</td><td>0.5%</td></tr><tr><td>Total RPO Beat</td><td></td><td>0.7%</td><td>0.8%</td><td>-0.9%</td><td>-2.9%</td><td>4.9%</td><td>5.3%</td><td>1.6%</td><td>2.1%</td><td>0.6%</td><td>6.0%</td><td>3.3%</td><td>3.3%</td><td>6.1%</td><td>-2.1%</td><td>2.6%</td></tr><tr><td>FCF Beat</td><td></td><td>49%</td><td>NM</td><td>NM</td><td>65%</td><td>8%</td><td>71%</td><td>5%</td><td>17%</td><td>6%</td><td>40%</td><td>-33%</td><td>-33%</td><td>0%</td><td>8%</td><td>-14.4%</td></tr></table>
+
+Source: Company data, MS, Refinitiv, Visible Alpha
+
+Preview to earnings
+
+<table><tr><td>Focus KPI</td><td>Focus KPI Surprise</td><td>Likely impact to consensus EPS*</td></tr><tr><td colspan="3">Cloudflare Inc NET.N</td></tr><tr><td>Total Revenue</td><td>↑Very likely upside surprise</td><td>↑Modest revision higher</td></tr></table>
+
+\*Likely impact to consensus EPS is for the next 12 months
+
+Source: Company data, MS
+
+## Risk Reward – Cloudflare Inc (NET.N)
+
+A Multi-Product Platform Expansion Story Warrants Premium Multiple
+
+## PRICE TARGET \$322.00
+
+We project FCF through CY2034, apply a 51X EV/FCF multiple and discount back at an 11% weighted average cost of capital, resulting in our base case price target of \$322. 51X is a premium to peers, reflecting Cloudflare's higher growth and improving margin profile.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/65281c344c7912c26a1aba5d0be8b73aec1ffda7d622fc5cc9522cf65857234e.jpg)
+
+## RISK REWARD CHART
+
+![](images/b97c6da79c59fdff6871752c549626f3b84f010fdfd063ee0f1014616babcc4d.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS
+
+## BULL CASE
+
+\$428.00
+
+55X 2034e FCF \~\$6.4B (Implies \~44X EV/27e Sales)
+
+Competitive Security Positioning for Enterprise Use Cases and Monetization of Edge AI Drive Durable Long-term Revenue Growth. With a better enterprise revenue mix, rev growth sustains at \~27% CAGR thru 2034. Operating margins scale to \~30% in CY34 to generate \~\$6.4B of FCF on \~\$18.6B rev. We apply a 55X EV/FCF multiple (1.7x EV/FCF/G).
+
+BASE CASE
+
+\$322.00
+
+51X 2034e FCF \~\$5.1B (Implies \~35X EV/27e Sales)
+
+Further Progress Upmarket and Go-to-Market Execution Drive Growth and Margin Expansion. Rev growth slows from \~52% in CY21 to \~20% in 2034. Operating Margins scale from (1%) in 2021 to \~26% in 2034 to generate \~\$5.1B FCF on \~\$15.6B rev. We apply a 51X EV/FCF multiple in CY34 (1.6x EV/FCF/G).
+
+## OVERWEIGHT THESIS
+
+■ Cloudflare's purpose-built cloud solutions address the complex security and website performance needs of a broad customer base. Penetration into attractive \$116B+ TAM by 2028e depends on the strength of security and a swiftly expanding solution portfolio, including AI-related solutions like Workers/R2 for the emerging edge computing opportunity and Access/Cloudflare for Teams for remote access.
+
+We see a long runway of durable 20%+ growth as Cloudflare becomes a key Edge AI enabler for AI inference workloads. This should sustain a premium multiple vs peers, in our view.
+
+![](images/149f8d6de5a57162d92e3dd8ea362f7dc594d07e7240b9238b216bc7f95a8b79.jpg)  
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+Disruption: Secular Growth:
+
+View descriptions of Risk Rewards Themes here
+
+## BEAR CASE
+
+\$185.00
+
+44X 2034e FCF \~\$3.4B (Implies \~51X EV/27e Sales)
+
+Competitive Environment Limits Upmarket Expansion and Conversion From Free to Paid is Not As Seamless. Revenue growth slows to \~15% in CY34. Operating Margins reach \~22% in CY34 to generate \~\$3.4B in FCF on \~\$12.0B in revenue. We apply a 44X EV/FCF multiple (2.0x EV/FCF/Growth).
+
+\- Mean
+- MS Estimates
+Source: Refinitiv, MS
+
+## Risk Reward – Cloudflare Inc (NET.N)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>Dec 2025</td><td>Dec 2026e</td><td>Dec 2027e</td><td>Dec 2028e</td></tr><tr><td>Total Revenue Growth (%)</td><td>29.8</td><td>29.6</td><td>27.2</td><td>26.0</td></tr><tr><td>Total Billings Growth (%)</td><td>32.6</td><td>29.6</td><td>27.4</td><td>0.0</td></tr><tr><td>Total Customer Count Growth (%)</td><td>39.9</td><td>34.9</td><td>34.9</td><td>0.0</td></tr><tr><td>Dollar-based Net Retention Rate (%)</td><td>116.0</td><td>118.0</td><td>118.0</td><td>0.0</td></tr><tr><td>Operating Margin (%)</td><td>14.0</td><td>14.9</td><td>15.0</td><td>15.0</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+\- Net retention rate
+
+\- Growth in customers >\$100K in Annualized Revenue
+
+\- New paid customer additions/conversions
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/2ce4f3dbcdedf90e02b956a8a14af21128c8d6637b3c60e97e77aa4c195b1300.jpg)  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+<table><tr><td>5/5BEST</td><td>24 MonthHorizon</td><td>4/5MOST</td><td>3 MonthHorizon</td></tr></table>
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+\- Developer products like Cloudflare Workers AI and R2 are monetized into a large installed base
+
+\- Traction in large enterprise under new sales leadership
+
+## RISKS TO DOWNSIDE
+
+\- Competition from pure play security vendors, public cloud providers, and larger vendors
+
+• Difficulty moving upmarket - Long-term margin expansion more difficult than initially perceived
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>66.7%</td><td></td><td></td><td></td></tr><tr><td>HF Sector Long/Short Ratio</td><td>2.1x</td><td></td><td></td><td></td></tr><tr><td>HF Sector Net Exposure</td><td>29.5%</td><td></td><td></td><td></td></tr></table>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+MS ESTIMATES VS. CONSENSUS  
+![](images/6c633c745df1d0100fcb09baed15ff9abc8ced3f9e7c8fe5d2c34ff4cdd8a711.jpg)
+
+## Security Reseller Survey Results
+
+Exhibit 5: Our June Survey Shows 84% of Resellers In line or Above Target, Slightly Below Last Quarter
+
+![](images/354388064664c394deca337a4915a4f302230db93c9ec1fd96ea2b5fd0aa5d6e.jpg)  
+Source: MS, n=19 \* Excluded March 2025 Survey Results due to n<5 \*
+
+Exhibit 6: Our Latest Survey Suggests That Cloudflare's Penetration in SASE Remains Fairly Early Days Overall  
+![](images/c6830a3ed4f05f9057f14da81f188c076c8583bc5ddf658d0590880f5962fb70.jpg)  
+Source: MS, n=19 \* Excluded March 2025 Survey Results due to n<5 \*
+
+Exhibit 7: NET Job Postings  
+![](images/db889b6048b7d0b3c9b1da4adafed794552a102f5068222a9d43735d727160d2.jpg)  
+Source: MS, Company Data
+
+## Edge AI Reseller Survey Results
+
+See Edge AI Survey: As Inference Expands Beyond the Hyperscalers, New Leaders Begin to Emerge (16 Jul 2026) for additional color.
+
+Exhibit 8: In Edge Computing, Cloudflare Has Dominant Market Share...
+
+Amongst your customer base, which of the following vendors/platforms has the largest share for executing edge compute / edge inference?
+
+![](images/a1c5d927cc3fdea586d730ae7ee96273b2df03173e5c2020e509d789178a3786.jpg)  
+Source: MS estimates, n=38  
+Amongst your customer base, which of the following vendors/platforms has seen the largest share gains in edge compute / edge inference market over the past 3 months?
+
+Exhibit 9: ... While Also Gaining the Most Share, Followed by Akamai and Vercel
+
+![](images/b19854ff5f7d7becd34bf5e0595eebb39e1ce58246aa8c1cca9b2d62bd970de1.jpg)  
+Source: MS estimates, n=38
+
+Exhibit 10: 74% of Partners Cite AI/ML-Specific Budgets as the Primary Source of Cloudflare Developer Platform Spending
+
+Where is budget for Cloudflare developer platform spending primarily coming from?
+
+![](images/0d93c828c37dc393e12936bdb1d26d7113eb9b5eb22c038ecb8a6eeaf2a12909.jpg)  
+Source: MS estimates, n=23  
+What percentage of your Cloudflare-related revenue is derived from developer platform products (Workers, R2, Workers AI, etc.)?
+
+Exhibit 11: 65% of Partners Derive Less Than 20% of Total Cloudflare Revenue From Developer Platform Products, Underscoring Early Innings of the Growth Opportunity
+
+![](images/c9dc545b54f4dfaceb68545b60b6157c80e9478ad4b305f54c51fe1087726ced.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 12: 65% of Partners Noted Workers AI as Cloudflare's Fastest-Growing Developer Product, Followed by Workers at 43%
+
+Which Cloudflare developer products are currently growing the fastest in your experience?
+
+![](images/4a09a587eb23040c328d11ea32b4e9847a14ff65a0fa5eec8187103f851bb9bb.jpg)  
+Source: MS estimates, n=23  
+What are the primary use cases driving adoption of Cloudflare developer products?
+
+Exhibit 13: 65% of Partners Cite AI Inference at the Edge as the Leading Use Case Driving Cloudflare Developer Product Adoption
+
+![](images/f59079e43d66023ab95847c611aa4e3fa807a61cec1ee40ecce277f2758acb1f.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 14: Workers AI Posts the Highest Above-Expectations Rate (52%) of Any Cloudflare Developer Platform Product, While 100% of Partners Were Above/Inline with Plan for their Cloudflare Developer Platform Practices Overall  
+How was product-level performance for Cloudflare developer platform products over the last 3 months?  
+![](images/4ddc348f111d39bd37824d28b18c1e22a3de073f81b10b153f7a6ae8e0391ec5.jpg)  
+Below expectations In line with expectations Above expectations Not applicable / Cannot discuss  
+Source: MS estimates, n=23
+
+Exhibit 15: 33% of Partners Indicate Their Organization Has Only Deployed Cloudflare's Workers AI in Limited Production Use Cases, Coupled with 19% Still in the Evaluation Phase, Suggesting a Long Runway Ahead
+
+What is your organization's current level of adoption of Cloudflare Workers AI?
+
+![](images/15d4c8e7c95c48ce216f56bfcf4d6d189b350204e5e70e29b6718e72d697e30e.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 16: 60% of Partners Cite Real-Time Edge Inference and Agentic Workflows as the Leading Workers AI Use Cases
+
+What are the primary use cases for Workers AI?
+
+![](images/8e768bb32bee3530496ed8ce4b5f18f848332b7253e1e3b01aa78510d5b2909e.jpg)  
+Source: MS estimates, n=23  
+Exhibit 17: 48% of Partners Report Recent Cloudflare AI/Model Initiatives Have Directly Driven Increased Adoption  
+What impact have recent Cloudflare AI/model platform initiatives (e.g., new model releases, inference optimizations) had on your sales (if any)?
+
+![](images/09ef7b249426d00d572de58368cc9186cde33c8c843610f6059866a0f34a37ff.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 18: Only 31% of Partners Expect Enterprise Edge AI Inference to Scale in 2026 or Sooner, With 52% Pointing to 2027
+
+When do you expect enterprise adoption of AI inference at the edge (e.g., Workers AI) to meaningfully scale?
+
+![](images/aa82bb37725d9287bb803b61181e5b370f6b3d065312cb849e1a0949a660370b.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 19: 74% of Partners Cite Performance/Latency as the Primary Reason Cloudflare Wins Developer Platform Deals, With Developer Experience, Price/Cost Advantages, and Platform Offering as the Next Leading Drivers
+
+What are the primary reasons Cloudflare wins developer platform deals?
+
+![](images/2d0e5f7c3d6c941a8bd8104265b34c7fde60e4e867f69f8b739656dfb66f6502.jpg)  
+Source: MS estimates, n=23  
+What percentage of your Cloudflare developer platform sales represent workloads migrated from hyperscalers (AWS, GCP, Azure)?
+
+Exhibit 20: On Average,18% of Cloudflare Developer Platform Sales Represent Workloads Migrated from Hyperscalers
+
+![](images/3bdc1a0bf1b06ceca9b6359d6e06add4fa68ba9e49df625ac85ff1d0354f4d6e.jpg)  
+Source: MS estimates, n=23  
+What are the primary reasons Cloudflare loses developer platform deals?
+
+Exhibit 21: 43% of Partners Cite Enterprise Sales Execution as the Leading Reason Cloudflare Loses Developer Platform Deals
+
+![](images/419ad6745fc506e5719799a7dff34e73f21efc776fcbcad4ea9447640b2059fa.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 22: Hyperscalers Capture 66% of Displaced Cloudflare Workers Deals, With Akamai the Leading Non-Hyperscaler Alternative at 18%
+
+When Cloudflare Workers loses a prospective deal or is displaced in an existing workload, which platforms are most commonly selected instead?
+
+![](images/8bb2493e63410c294b0f92484c22a88aaa7420e831b07066a98fcd3467253514.jpg)  
+Source: MS estimates, n=23  
+What percentage of Cloudflare deals (in the last twelve months) included developer platform products?
+
+Exhibit 23: 77% of Cloudflare Deals in the LTM Included Developer Platform Products, Though Mostly Below 30% of Deal Value
+
+![](images/129075fddafad50423338870cce1cc8d99ce190e01734c1e4c9070248e417029.jpg)  
+Source: MS estimates, n=23
+
+Exhibit 24: 74% of Cloudflare Developer Platform Products Are Sold Bundled With CDN/Application Services
+
+How are Cloudflare developer platform products typically sold?
+
+![](images/8c215511af5db65161aad45cd0be0b6467c2af233c8e179ce2f42b5ee2e10221.jpg)  
+Source: MS estimates, n=23  
+What are the most important drivers of growth for Cloudflare's developer platform over the next 12-24 months?
+
+Exhibit 25: 57% of Partners Cite AI/Inference at the Edge as the Most Important Growth Driver for Cloudflare's Developer Platform Over the Next 12–24 Months
+
+![](images/91efee0c403d642c648b90464d67208b380bc3506c6f8d34e006b897f4f31faa.jpg)  
+Source: MS estimates, n=23
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -
+
+Options\_Probabilities\_Exhibit\_Link.pdf
+
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf
+
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf
+
+4. View explanation of Theme/Exposure methodology -
+
+ESG\_Sustainable\_Solutions\_External\_Link.pdf
+
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, "MS" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Sanjit K Singh; Adam Wood.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+The analyst or strategist (or a household member) identified below owns the following securities (or related derivatives): Jonathan Eisenson - Adobe Inc.(common or preferred stock), Sprout Social Inc(common or preferred stock).
+
+As of June 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Adobe Inc., Akamai Technologies, Inc., Amplitude Inc., Appian Corp, Asana Inc, Atlassian Corporation PLC, Autodesk, BILL Holdings Inc, Blackline Inc, Box Inc, C3.ai, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Cloudflare Inc, CoreWeave, CrowdStrike Holdings Inc, Datadog, Inc., Descartes Systems Group Inc, DocuSign Inc, Elastic NV, Figma Inc, Five9 Inc, Fortinet Inc., Freshworks Inc, Gen Digital Inc., GitLab Inc, GoDaddy Inc, HubSpot, Inc., Intuit, Klaviyo, Inc, LegalZoom.com Inc, Lightspeed Commerce Inc., Liveramp Holdings Inc, Manhattan Associates Inc., Microsoft, monday.com Ltd, MongoDB Inc, Nebius Group NV, NICE Ltd., Okta, Inc., Oracle Corporation, PagerDuty, Inc., Palantir Technologies Inc., Palo Alto Networks Inc, Qualys Inc, Rapid7 Inc, RingCentral Inc, Sabre Corp, Salesforce, Inc., Samsara Inc, SentinelOne, Inc., ServiceNow Inc, ServiceTitan Inc, Shopify Inc, Snowflake Inc., Sprinklr Inc, Sprout Social Inc, SPS Commerce Inc, Tenable Holdings Inc, Toast, Inc., Twilio Inc, UiPath Inc, Vertex Inc., Wix.Com Ltd, Workday Inc, Zeta Global Holdings Corp, ZoomInfo Technologies Inc.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Akamai Technologies, Inc., Check Point Software Technologies Ltd., CoreWeave, DigitalOcean Holdings Inc, Figma Inc, Intuit, Navan Inc, Nebius Group NV, Netskope, Inc., Salesforce, Inc., ServiceNow Inc, Via Transportation Inc, Wix.Com Ltd.
+
+Within the last 12 months, MS has received compensation for investment banking services from Akamai Technologies, Inc., Autodesk, Blackline Inc, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., CoreWeave, DigitalOcean Holdings Inc, Figma Inc, HubSpot, Inc., Intuit, Microsoft, Navan Inc, Nebius Group NV, Netskope, Inc., NICE Ltd., RingCentral Inc, Salesforce, Inc., ServiceNow Inc, Via Transportation Inc, Wix.Com Ltd, Workday Inc, Zeta Global Holdings Corp.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Adobe Inc., Akamai Technologies, Inc., Amplitude Inc., Appian Corp, Asana Inc, Atlassian Corporation PLC, Autodesk, BILL Holdings Inc, Blackline Inc, Box Inc, C3.ai, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Cloudflare Inc, Commerce.com Inc., CoreWeave, Coursera, Inc., CrowdStrike Holdings Inc, Datadog, Inc., Descartes Systems Group Inc, DigitalOcean Holdings Inc, Docebo Inc., DocuSign Inc, Elastic NV, Figma Inc, Five9 Inc, Fortinet Inc., Freshworks Inc, Gen Digital Inc., GitLab Inc, GoDaddy Inc, HubSpot, Inc., Intuit, JFrog Ltd., Klaviyo, Inc, LegalZoom.com Inc, Lightspeed Commerce Inc., Liveramp Holdings Inc, Microsoft, monday.com Ltd, MongoDB Inc, Navan Inc, Nebius Group NV, Netskope, Inc., NICE Ltd., Okta, Inc., Oracle Corporation, PagerDuty, Inc., Palantir Technologies Inc., Palo Alto Networks Inc, Qualys Inc, Rapid7 Inc, RingCentral Inc, Sabre Corp, SailPoint Inc, Salesforce, Inc., Samsara Inc, SentinelOne, Inc., ServiceNow Inc, ServiceTitan Inc, Shopify Inc, Snowflake Inc., Sprinklr Inc, Sprout Social Inc, SPS Commerce Inc, Tenable Holdings Inc, Toast, Inc., Twilio Inc, UiPath Inc, Varonis Systems, Inc., Vertex Inc., Via Transportation Inc, Wix.Com Ltd, Workday Inc, Zeta Global Holdings Corp, Zoom Communications, Zscaler Inc.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from Adobe Inc., Akamai Technologies, Inc., Amplitude Inc., Asana Inc, Atlassian Corporation PLC, Autodesk, Blackline Inc, Box Inc, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Cloudflare Inc, CoreWeave, CrowdStrike Holdings Inc, DigitalOcean Holdings Inc, Docebo Inc., DocuSign Inc, Dynatrace Inc, Figma Inc, Five9 Inc, Freshworks Inc, Gen Digital Inc., GitLab Inc, HubSpot, Inc., Intuit, JFrog Ltd., Klaviyo, Inc, LegalZoom.com Inc, Microsoft, monday.com Ltd, MongoDB Inc, NICE Ltd., Oracle Corporation, Palantir Technologies Inc., Palo Alto Networks Inc, RingCentral Inc, Sabre Corp, SailPoint Inc, Salesforce, Inc., SentinelOne, Inc., ServiceNow Inc, ServiceTitan Inc, Snowflake Inc., Tenable Holdings Inc, Toast, Inc., UiPath Inc, Varonis Systems, Inc., Workday Inc, Zeta Global Holdings Corp, Zoom Communications, Zscaler Inc.
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Adobe Inc., Akamai Technologies, Inc., Amplitude Inc., Appian Corp, Asana Inc, Atlassian Corporation PLC, Autodesk, BILL Holdings Inc, Blackline Inc, Box Inc, C3.ai, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Cloudflare Inc, Commerce.com Inc., CoreWeave, Coursera, Inc., CrowdStrike Holdings Inc, Datadog, Inc., Descartes Systems Group Inc, DigitalOcean Holdings Inc, Docebo Inc., DocuSign Inc, Elastic NV, Figma Inc, Five9 Inc, Fortinet Inc., Freshworks Inc, Gen Digital Inc., GitLab Inc, GoDaddy Inc, HubSpot, Inc., Intuit, JFrog Ltd., Klaviyo, Inc, LegalZoom.com Inc, Lightspeed Commerce Inc., Liveramp Holdings Inc, Microsoft, monday.com Ltd, MongoDB Inc, Navan Inc, Nebius Group NV, Netskope, Inc., NICE Ltd., Okta, Inc., Oracle Corporation, PagerDuty, Inc., Palantir Technologies Inc., Palo Alto Networks Inc, Qualys Inc, Rapid7 Inc, RingCentral Inc, Sabre Corp, SailPoint Inc, Salesforce, Inc., Samsara Inc, SentinelOne, Inc., ServiceNow Inc, ServiceTitan Inc, Shopify Inc, Snowflake Inc., Sprinklr Inc, Sprout Social Inc, SPS Commerce Inc, Tenable Holdings Inc, Toast, Inc., Twilio Inc, UiPath Inc, Varonis Systems, Inc., Vertex Inc., Via Transportation Inc, Wix.Com Ltd, Workday Inc, Zeta Global Holdings Corp, Zoom Communications, Zscaler Inc.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Adobe Inc., Akamai Technologies, Inc., Amplitude Inc., Asana Inc, Atlassian Corporation PLC, Autodesk, Blackline Inc, Box Inc, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Cloudflare Inc, Commerce.com Inc., CoreWeave, CrowdStrike Holdings Inc, Datadog, Inc., DigitalOcean Holdings Inc, Docebo Inc., DocuSign Inc, Dynatrace Inc, Figma Inc, Five9 Inc, Fortinet Inc., Freshworks Inc, Gen Digital Inc., GitLab Inc, GoDaddy Inc, HubSpot, Inc., Intuit, JFrog Ltd., Klaviyo, Inc, LegalZoom.com Inc, Microsoft, monday.com Ltd, MongoDB Inc, Nebius Group NV, NICE Ltd., Oracle Corporation, PagerDuty, Inc., Palantir Technologies Inc., Palo Alto Networks Inc, Qualys Inc, RingCentral Inc,
+
+Sabre Corp, SailPoint Inc, Salesforce, Inc., SentinelOne, Inc., ServiceNow Inc, ServiceTitan Inc, Shopify Inc, Snowflake Inc., Tenable Holdings Inc, Toast, Inc., Twilio Inc, UiPath Inc, Varonis Systems, Inc., Wix.Com Ltd, Workday Inc, Zeta Global Holdings Corp, Zoom Communications, Zscaler Inc.
+
+An employee, director or consultant of MS is a director of Elastic NV, Tenable Holdings Inc. This person is not a research analyst or a member of a research analyst's household. MS & Co. LLC makes a market in the securities of Amplitude Inc., Appian Corp, Asana Inc, Autodesk, Blackline Inc, Box Inc, C3.ai, CCC Intelligent Solutions Holdings Inc, Check Point Software Technologies Ltd., Elastic NV, Five9 Inc, LegalZoom.com Inc, Liveramp Holdings Inc, Manhattan Associates Inc., PagerDuty, Inc., Qualys Inc, Rapid7 Inc, RingCentral Inc, Sprinklr Inc, Sprout Social Inc, SPS Commerce Inc, Twilio Inc, Varonis Systems, Inc., Vertex Inc., ZoomInfo Technologies Inc.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+## (as of June 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Stock Price, Price Target and Rating History (See Rating Definitions)
+
+Cloudflare Inc (NET.N) - As of 07/28/26 GMT in USD  
+Industry : Software  
+![](images/0edfbbaa539142cd660ab8c433056f9b503370cae22e4548316257080d81bdca.jpg)  
+Stock Rating History: 7/1/21 : E/A; 10/30/23 : E/A; 12/2/24 : O/A
+
+Price Target History: 5/7/21 : 91; 2/11/22 : 100; 8/5/22 : 76; 11/4/22 : 52; 1/23/23 : 47; 4/28/23 : 43; 10/30/23 : 55; 11/6/23 : 60; 1/10/24 : 66; 2/12/24 : 92; 12/2/24 : 130; 1/21/25 : 140; 2/7/25 : 154; 4/15/25 : 144; 5/9/25 : 150; 7/10/25 : 225; 8/1/25 : 235; 10/31/25 : 258; 2/11/26 : 245; 6/4/26 : 305; 7/16/26 : 322
+
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)
+
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)
+
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View
+
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)
+
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)
+
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.
+
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+A member of Research who had or could have had access to the research prior to completion owns securities (or related derivatives) in the Atlassian Corporation PLC, Microsoft, Workday Inc. This person is not a research analyst or a member of research analyst's household.
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/
+
+MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+## INDUSTRY COVERAGE: Software
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/28/2026)</td></tr><tr><td colspan="3">Adam Wood</td></tr><tr><td>Adobe Inc. (ADBE.O)</td><td>U (07/21/2026)</td><td>$249.18</td></tr><tr><td>Atlassian Corporation PLC (TEAM.O)</td><td>O (01/13/2020)</td><td>$99.98</td></tr><tr><td>Intuit (INTU.O)</td><td>E (07/21/2026)</td><td>$312.99</td></tr><tr><td>Microsoft (MSFT.O)</td><td>O (07/21/2026)</td><td>$393.35</td></tr><tr><td>Salesforce, Inc. (CRM.N)</td><td>E (07/21/2026)</td><td>$181.50</td></tr><tr><td>Samsara Inc (IOT.N)</td><td>E (03/23/2023)</td><td>$37.50</td></tr><tr><td>ServiceNow Inc (NOW.N)</td><td>O (09/24/2025)</td><td>$110.62</td></tr><tr><td>Shopify Inc (SHOP.O)</td><td>O (04/19/2024)</td><td>$130.28</td></tr><tr><td>Workday Inc (WDAY.O)</td><td>U (07/21/2026)</td><td>$159.69</td></tr><tr><td colspan="3">Chris Quintero</td></tr><tr><td>BILL Holdings Inc (BILL.N)</td><td>E (06/10/2025)</td><td>$46.36</td></tr><tr><td>Blackline Inc (BL.O)</td><td>E (07/21/2026)</td><td>$31.95</td></tr><tr><td>Descartes Systems Group Inc (DSGX.O)</td><td>O (01/15/2026)</td><td>$75.59</td></tr><tr><td>Manhattan Associates Inc. (MANH.O)</td><td>E (10/21/2025)</td><td>$168.17</td></tr><tr><td>Navan Inc (NAVN.O)</td><td>O (11/24/2025)</td><td>$26.35</td></tr><tr><td>SPS Commerce Inc (SPSC.O)</td><td>U (07/21/2026)</td><td>$68.50</td></tr><tr><td>Vertex Inc. (VERX.O)</td><td>E (07/21/2026)</td><td>$13.24</td></tr><tr><td colspan="3">Elizabeth Porter, CFA</td></tr><tr><td>Amplitude Inc. (AMPL.O)</td><td>O (01/15/2026)</td><td>$8.74</td></tr><tr><td>Autodesk (ADSK.O)</td><td>O (08/23/2024)</td><td>$237.38</td></tr><tr><td>Figma Inc (FIG.N)</td><td>E (08/25/2025)</td><td>$24.38</td></tr><tr><td>Five9 Inc (FIVN.O)</td><td>E (10/10/2022)</td><td>$27.12</td></tr><tr><td>Freshworks Inc (FRSH.O)</td><td>E (10/18/2021)</td><td>$11.18</td></tr><tr><td>GoDaddy Inc (GDDY.N)</td><td>E (07/19/2021)</td><td>$102.92</td></tr><tr><td>HubSpot, Inc. (HUBS.N)</td><td>O (03/21/2023)</td><td>$238.05</td></tr><tr><td>Klaviyo, Inc (KVYO.N)</td><td>O (04/29/2026)</td><td>$18.89</td></tr><tr><td>LegalZoom.com Inc (LZ.O)</td><td>U (07/28/2022)</td><td>$8.08</td></tr><tr><td>Liveramp Holdings Inc (RAMP.N)</td><td>E (01/13/2025)</td><td>$37.75</td></tr><tr><td>NICE Ltd. (NICE.O)</td><td>E (07/21/2026)</td><td>$101.41</td></tr><tr><td>RingCentral Inc (RNG.N)</td><td>E (08/08/2023)</td><td>$56.93</td></tr><tr><td>Sprinklr Inc (CXM.N)</td><td>E (07/19/2021)</td><td>$6.31</td></tr><tr><td>Sprout Social Inc (SPT.O)</td><td>E (11/17/2020)</td><td>$8.69</td></tr><tr><td>Twilio Inc (TWLO.N)</td><td>O (02/24/2025)</td><td>$194.33</td></tr><tr><td>Wix.Com Ltd (WIX.O)</td><td>E (07/21/2026)</td><td>$58.55</td></tr><tr><td>Zeta Global Holdings Corp (ZETA.N)</td><td>E (08/01/2024)</td><td>$21.89</td></tr><tr><td>ZoomInfo Technologies Inc (GTM.O)</td><td>E (02/01/2024)</td><td>$3.28</td></tr><tr><td colspan="3">Josh Baer, CFA</td></tr><tr><td>Asana Inc (ASAN.N)</td><td>U (05/20/2025)</td><td>$8.19</td></tr><tr><td>Box Inc (BOX.N)</td><td>E (05/21/2024)</td><td>$31.50</td></tr><tr><td>CCC Intelligent Solutions Holdings Inc (CCC.O)</td><td>O (11/13/2024)</td><td>$6.12</td></tr><tr><td>Commerce.com Inc. (CMRC.O)</td><td>++</td><td>$3.20</td></tr><tr><td>CoreWeave (CRWV.O)</td><td>E (04/22/2025)</td><td>$67.30</td></tr><tr><td>Coursera, Inc. (COUR.N)</td><td>E (04/22/2026)</td><td>$5.85</td></tr><tr><td>DigitalOcean Holdings Inc (DOCN.N)</td><td>O (01/16/2025)</td><td>$112.51</td></tr><tr><td>Docebo Inc. (DCBO.O)</td><td>E (05/12/2025)</td><td>$20.99</td></tr><tr><td>DocuSign Inc (DOCU.O)</td><td>E (01/16/2024)</td><td>$55.97</td></tr><tr><td>Lightspeed Commerce Inc. (LSPD.N)</td><td>E (02/18/2021)</td><td>$10.72</td></tr><tr><td>monday.com Ltd (MNDY.O)</td><td>O (08/12/2025)</td><td>$87.09</td></tr><tr><td>Nebius Group NV (NBIS.O)</td><td>E (01/15/2026)</td><td>$169.69</td></tr><tr><td>Sabre Corp (SABR.O)</td><td>E (03/16/2021)</td><td>$1.88</td></tr><tr><td>ServiceTitan Inc (TTAN.O)</td><td>O (01/20/2026)</td><td>$78.39</td></tr><tr><td>Toast, Inc. (TOST.N)</td><td>O (12/16/2021)</td><td>$32.34</td></tr><tr><td>Via Transportation Inc (VIA.N)</td><td>O (01/20/2026)</td><td>$20.59</td></tr><tr><td>Zoom Communications (ZM.O)</td><td>E (10/11/2022)</td><td>$91.48</td></tr><tr><td colspan="3">Meta A Marshall</td></tr><tr><td>Check Point Software Technologies Ltd. (CHKP.O)</td><td>E (10/16/2023)</td><td>$137.64</td></tr><tr><td>CrowdStrike Holdings Inc (CRWD.O)</td><td>O (03/10/2026)</td><td>$181.80</td></tr><tr><td>Fortinet Inc. (FTNT.O)</td><td>E (07/21/2026)</td><td>$149.98</td></tr><tr><td>Gen Digital Inc. (GEN.O)</td><td>E (06/07/2024)</td><td>$27.58</td></tr><tr><td>Netskope, Inc. (NTSK.O)</td><td>O (10/13/2025)</td><td>$11.98</td></tr><tr><td>Okta, Inc. (OKTA.O)</td><td>O (12/02/2024)</td><td>$136.21</td></tr><tr><td>Palo Alto Networks Inc (PANW.O)</td><td>O (10/10/2017)</td><td>$319.00</td></tr><tr><td>Qualys Inc (QLYS.O)</td><td>U (02/09/2021)</td><td>$135.75</td></tr><tr><td>Rapid7 Inc (RPD.O)</td><td>U (07/21/2026)</td><td>$9.61</td></tr><tr><td>SailPoint Inc (SAIL.O)</td><td>O (09/02/2025)</td><td>$15.78</td></tr><tr><td>SentinelOne, Inc. (S.N)</td><td>E (12/02/2024)</td><td>$18.34</td></tr><tr><td>Tenable Holdings Inc (TENB.O)</td><td>E (12/02/2024)</td><td>$31.37</td></tr><tr><td>Varonis Systems, Inc. (VRNS.O)</td><td>E (01/26/2026)</td><td>$44.67</td></tr><tr><td>Zscaler Inc (ZS.O)</td><td>E (04/22/2026)</td><td>$151.63</td></tr><tr><td colspan="3">Sanjit K Singh</td></tr><tr><td>Akamai Technologies, Inc. (AKAM.O)</td><td>O (01/12/2026)</td><td>$111.79</td></tr><tr><td>Appian Corp (APPN.O)</td><td>E (04/30/2026)</td><td>$27.35</td></tr><tr><td>C3.ai (AI.N)</td><td>U (01/04/2021)</td><td>$8.90</td></tr><tr><td>Cloudflare Inc (NET.N)</td><td>O (12/02/2024)</td><td>$264.10</td></tr><tr><td>Datadog, Inc. (DDOG.O)</td><td>O (01/12/2026)</td><td>$250.88</td></tr><tr><td>Dynatrace Inc (DT.N)</td><td>E (02/13/2024)</td><td>$43.90</td></tr><tr><td>Elastic NV (ESTC.N)</td><td>E (07/21/2026)</td><td>$62.10</td></tr><tr><td>GitLab Inc (GTLB.O)</td><td>E (01/12/2026)</td><td>$32.97</td></tr><tr><td>JFrog Ltd. (FROG.O)</td><td>E (07/21/2026)</td><td>$76.43</td></tr><tr><td>MongoDB Inc (MDB.O)</td><td>O (04/12/2023)</td><td>$310.62</td></tr><tr><td>Oracle Corporation (ORCL.N)</td><td>E (01/15/2019)</td><td>$119.96</td></tr><tr><td>PagerDuty, Inc. (PD.N)</td><td>U (07/21/2026)</td><td>$10.31</td></tr><tr><td>Palantir Technologies Inc. (PLTR.O)</td><td>E (02/04/2025)</td><td>$123.53</td></tr><tr><td>Snowflake Inc. (SNOW.N)</td><td>O (06/24/2025)</td><td>$270.36</td></tr><tr><td>UiPath Inc (PATH.N)</td><td>E (09/07/2022)</td><td>$12.19</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.
+
+\* Historical prices are not split adjusted.
+
+© 2026 MS

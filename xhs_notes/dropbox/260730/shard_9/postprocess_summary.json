@@ -1,0 +1,602 @@
+[
+  {
+    "item": "0001-46-Morgan-Stanley-China-Autos---Shared-Mobility--Launch-tailwinds-fade-befo",
+    "source_pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0001-46-MS-China Autos - Shared Mobility- Launch tailwinds fade before next product cycle-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "新车交付后，订单开始",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国汽车-共享出行，新车发布效应消退，等待下一产品周期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-MS-China Autos - Shared Mobility- Launch tailwinds fade before next product cycle-260728.pdf",
+      "cleaned_source_title": "MS-China Autos -- Mobility- Launch tailwinds fade before next product cycle",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国汽车-Mobility",
+      "raw_candidates": [
+        "中国汽车-共享出行：新车发布效应消退，等待下一产品周期",
+        "中国汽车-共享出行：7月第三周订单分化，理想小鹏逆势增长",
+        "中国汽车-共享出行：订单脉冲消退，关注比亚迪吉利新车型周期"
+      ],
+      "cleaned_candidates": [
+        "MS：中国汽车-共享出行，新车发布效应消退，等待下一产品周期",
+        "MS：中国汽车-共享出行，7月第三周订单分化，理想小鹏逆势增长",
+        "MS：中国汽车-共享出行，订单脉冲消退，关注比亚迪吉利新车型周期",
+        "MS：中国汽车-Mobility",
+        "MS：7月下旬中国车企订单周度数据出现分化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国汽车-共享出行，7月第三周订单分化，理想小鹏逆势增长",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国汽车-共享出行，订单脉冲消退，关注比亚迪吉利新车型周期",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国汽车-Mobility",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：7月下旬中国车企订单周度数据出现分化",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国汽车-共享出行，新车发布效应消退，等待下一产品周期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国汽车-共享出行，新车发布效应消退，等待下一产品周期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-Morgan-Stanley-Cloudflare-Inc---North-America-2Q-Preview-Edge-AI-Leaders",
+    "source_pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0002-47-MS-Cloudflare Inc - North America 2Q Preview-Edge AI Leadership and Platform Strength Driving Durable Momentum-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "边缘AI龙头，Q2继",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-MS-Cloudflare Inc - North America 2Q Preview-Edge AI Leadership and Platform Strength Driving Durable Momentum-260729.pdf",
+      "cleaned_source_title": "MS-Cloudflare Inc - North America 2Q Preview-Edge AI Leadership and Platform Strength Driving Durable Momentum",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AICloudflareIncNorthAmerica2",
+      "raw_candidates": [
+        "MS：Cloudflare边缘AI推理份额领先与平台需求支撑下半年展望",
+        "MS：Cloudflare边缘AI调查显示分布式推理领先与开发者平台增长",
+        "MS：Cloudflare第二季度营收预期超共识与边缘AI部署加速",
+        "Cloudflare北美2Q预览-边缘AI领导力与平台动能",
+        "Cloudflare北美2Q预览-边缘AI推理份额领先与平台需求",
+        "Cloudflare北美2Q预览-边缘AI领导力与下半年展望"
+      ],
+      "cleaned_candidates": [
+        "MS：Cloudflare边缘AI推理份额领先与平台需求支撑下半",
+        "MS：Cloudflare边缘AI调查显示分布式推理领先与开发者",
+        "MS：Cloudflare第二季度营收预期超共识与边缘AI部署加",
+        "MS：Cloudflare北美2Q预览-边缘AI领导力与平台动能",
+        "MS：Cloudflare北美2Q预览",
+        "MS：AICloudflareIncNorthAmerica2",
+        "MS：2.边缘AI调查确认分布式推理领先地位"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Cloudflare边缘AI推理份额领先与平台需求支撑下半",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Cloudflare边缘AI调查显示分布式推理领先与开发者",
+          "reasons": [
+            "long_untranslated_english"
+          ]
+        },
+        {
+          "title": "MS：Cloudflare第二季度营收预期超共识与边缘AI部署加",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Cloudflare北美2Q预览-边缘AI领导力与平台动能",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Cloudflare北美2Q预览",
+          "reasons": [
+            "missing_required_terms=AI",
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：AICloudflareIncNorthAmerica2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：2.边缘AI调查确认分布式推理领先地位",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：Cloudflare边缘AI推理份额领先与平台需求支撑下半年展望",
+        "MS：Cloudflare边缘AI调查显示分布式推理领先与开发者平台增长",
+        "MS：Cloudflare第二季度营收预期超共识与边缘AI部署加速"
+      ],
+      "pre_neutralization_title": "MS：2.边缘AI调查确认分布式推理领先地位",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-Morgan-Stanley-KLA-Corp---North-America-Mixed-Bag-again--260729",
+    "source_pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0003-48-MS-KLA Corp - North America Mixed Bag (again)-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "KLA的“冰火两重天",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：KLA北美业务表现好坏参半",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-MS-KLA Corp - North America Mixed Bag (again)-260729.pdf",
+      "cleaned_source_title": "MS-KLA Corp - North America Mixed Bag (again)",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：KLACorpNorthAmericaMixedBag(",
+      "raw_candidates": [
+        "KLA北美业务表现好坏参半",
+        "KLA北美业务2026年WFE预测上调",
+        "KLA北美业务2027年工艺控制强度回升"
+      ],
+      "cleaned_candidates": [
+        "MS：KLA北美业务表现好坏参半",
+        "MS：KLA北美业务2026年WFE预测上调",
+        "MS：KLA北美业务2027年工艺控制强度回升",
+        "MS：KLACorpNorthAmericaMixedBag(",
+        "MS：将KLA的2026年WFE（含先进封装）预测从1400亿美"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：KLA北美业务2026年WFE预测上调",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：KLA北美业务2027年工艺控制强度回升",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "MS：KLACorpNorthAmericaMixedBag(",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：将KLA的2026年WFE（含先进封装）预测从1400亿美",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：KLA北美业务表现好坏参半",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：KLA北美业务表现好坏参半"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-Morgan-Stanley-Microsoft---North-America-4Q26-Results---Growth-Thesis-Ta",
+    "source_pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0004-49-MS-Microsoft - North America 4Q26 Results - Growth Thesis Taking Shape-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "微软的AI故事，终于",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资回报->回报表现 x1",
+      "投资周期->研究周期 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：微软北美业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-MS-Microsoft - North America 4Q26 Results - Growth Thesis Taking Shape-260730.pdf",
+      "cleaned_source_title": "MS-Microsoft - North America 4Q26 Results - Growth Thesis Taking Shape",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：MicrosoftNorthAmerica4Q26",
+      "raw_candidates": [
+        "微软北美4Q26业绩-增长主题成形",
+        "微软北美4Q26业绩-Azure增速43%与Copilot席位超3000万",
+        "微软北美4Q26业绩-Azure与Copilot增长从预期进入数据验证阶段"
+      ],
+      "cleaned_candidates": [
+        "MS：微软北美4Q26业绩-增长主题成形",
+        "MS：微软北美4Q26业绩",
+        "MS：MicrosoftNorthAmerica4Q26",
+        "MS：超过5万席位的客户数量同比增长7倍以上"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：微软北美4Q26业绩",
+          "reasons": [
+            "anchor_coverage=0.60",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MicrosoftNorthAmerica4Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：超过5万席位的客户数量同比增长7倍以上",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：微软北美业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：微软北美4Q26业绩-增长主题成形",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：微软北美业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-Morgan-Stanley-Meta-Platforms-Inc---North-America-Core-Strong-Now--More-",
+    "source_pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0005-50-MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon--260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "META 36亿日活",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Meta核心社交业务用户规模与变现效率同步提升",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon--260730.pdf",
+      "cleaned_source_title": "MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：MetaPlatformsIncNorth",
+      "raw_candidates": [
+        "MS：Meta核心社交业务用户规模与变现效率同步提升",
+        "MS：Meta四项新产品期权有望在2026下半年兑现",
+        "MS：Meta资本开支周期与自由现金流阶段性变化",
+        "Meta Platforms-北美核心业务与新产品期权",
+        "Meta Platforms-北美核心业务扩张与2026下半年新产品期权",
+        "Meta Platforms-北美核心业务与2028年EPS上行空间"
+      ],
+      "cleaned_candidates": [
+        "MS：Meta核心社交业务用户规模与变现效率同步提升",
+        "MS：Meta四项新产品期权有望在2026下半年兑现",
+        "MS：Meta资本开支周期与自由现金流阶段性变化",
+        "MS：MetaPlatforms-北美核心业务与新产品期权",
+        "MS：MetaPlatforms",
+        "MS：MetaPlatformsIncNorth",
+        "MS：估算，四项新产品期权合计可为2028年每股收益带来约9美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Meta四项新产品期权有望在2026下半年兑现",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Meta资本开支周期与自由现金流阶段性变化",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MetaPlatforms-北美核心业务与新产品期权",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MetaPlatforms",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MetaPlatformsIncNorth",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：估算，四项新产品期权合计可为2028年每股收益带来约9美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Meta核心社交业务用户规模与变现效率同步提升",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：估算，四项新产品期权合计可为2028年每股收益带来约9美元",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：Meta核心社交业务用户规模与变现效率同步提升",
+        "MS：Meta四项新产品期权有望在2026下半年兑现",
+        "MS：Meta资本开支周期与自由现金流阶段性变化"
+      ],
+      "final_title_after_wording_guard": "MS：Meta核心社交业务用户规模与变现效率同步提升"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

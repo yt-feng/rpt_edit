@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0001-46-MS-China Autos - Shared Mobility- Launch tailwinds fade before next product cycle-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0002-47-MS-Cloudflare Inc - North America 2Q Preview-Edge AI Leadership and Platform Strength Driving Durable Momentum-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0003-48-MS-KLA Corp - North America Mixed Bag (again)-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0004-49-MS-Microsoft - North America 4Q26 Results - Growth Thesis Taking Shape-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g6_s9nut/pdfs/0005-50-MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon--260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
