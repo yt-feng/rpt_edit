@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "AI订单确认，这家公",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：MARUWA1Q与AI及近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+    "cleaned_source_title": "GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy",
+    "institution_name": "GS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "GS：AIMARUWAFirstTake1Qbelowex",
+    "raw_candidates": [
+      "MARUWA 1Q利润低于预期-全年指引上调由AI订单驱动",
+      "MARUWA 1Q利润63亿日元-全年指引上调至337亿日元",
+      "MARUWA AI订单确认推动全年指引上调-半导体复苏提前至2Q"
+    ],
+    "cleaned_candidates": [
+      "GS：MARUWA1Q利润低于预期-全年指引上调由AI订单驱动",
+      "GS：MARUWA1Q利润63亿日元-全年指引上调至337亿日元",
+      "GS：MARUWAAI订单确认推动全年指引上调-半导体复苏提前至2Q",
+      "GS：AIMARUWAFirstTake1Qbelowex",
+      "GS：公司明确表示，低利润率AI相关产品的库存已在1Q基本消化完毕"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：MARUWA1Q利润63亿日元-全年指引上调至337亿日元",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.54"
+        ]
+      },
+      {
+        "title": "GS：MARUWAAI订单确认推动全年指引上调-半导体复苏提前至2Q",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "GS：AIMARUWAFirstTake1Qbelowex",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：公司明确表示，低利润率AI相关产品的库存已在1Q基本消化完毕",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：MARUWA1Q与AI及近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：MARUWA1Q利润低于预期-全年指引上调由AI订单驱动",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：MARUWA1Q与AI及近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "461",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

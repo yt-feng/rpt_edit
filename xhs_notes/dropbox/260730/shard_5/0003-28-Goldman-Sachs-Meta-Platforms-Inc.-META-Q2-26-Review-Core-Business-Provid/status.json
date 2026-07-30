@@ -1,0 +1,131 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "Meta广告赚钱能力",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "投资->研究 x3",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：Meta业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+    "cleaned_source_title": "GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：MetaPlatformsInc.(META)Q226",
+    "raw_candidates": [
+      "Meta Q2-26业绩回顾-核心业务显示短期ROIC但长期计算支出缺乏透明度",
+      "Meta Q2-26业绩回顾-广告收入增长28%但2027-2028年资本支出路径不清晰",
+      "Meta Q2-26业绩回顾-AI投入短期回报可见但长期资本计划缺乏具体框架"
+    ],
+    "cleaned_candidates": [
+      "GS：MetaQ2-26业绩回顾",
+      "GS：MetaQ2-26业绩回顾-广告收入增长28%但2027",
+      "GS：MetaPlatformsInc.(META)Q226",
+      "GS：GS因此将2027-2028年累计资本支出预测上调约14%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：MetaPlatformsInc.(META)Q226",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.64",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：GS因此将2027-2028年累计资本支出预测上调约14%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：Meta业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2027",
+        "28"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：MetaQ2-26业绩回顾-广告收入增长28%但2027",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：Meta业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "416",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

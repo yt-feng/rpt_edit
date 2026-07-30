@@ -1,0 +1,42 @@
+Found 63 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rjtel97c/pdfs/0001-26-Goldman Sachs-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rjtel97c/pdfs/0002-27-Goldman Sachs-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rjtel97c/pdfs/0003-28-Goldman Sachs-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rjtel97c/pdfs/0004-29-Goldman Sachs-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rjtel97c/pdfs/0005-30-Goldman Sachs-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=fa172215-3aaf-4ec4-9041-a98f3bdcc078
+MinerU states: pending, running, pending, pending, waiting-file
+MinerU states: running, done, running, running, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset e5e2cfa51f8662037e9a18620193e639403a57f412b76fcc1c635d83fa0ea298.jpg: score=-100;too_small:1156x110
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 7a92d426cf3311a1764bd97389ab3a55dc4927414ed3f50d1e53a76a70307b13.jpg: score=-1;square_without_chart_hint,edge:0.22
+Neutralized WeChat title while keeping the report: 高盛：宏发股份2Q26业绩符合预期-订单可见度支撑增长 -> 高盛：宏发股份业务与季度数据观察
+Skip non-chart visual asset e8b54f55d52240a4713cf8772b9b94f20df71aadaa6d5a1cbc66a54d140bb675.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 61e2f60ecd195f1f3c0b558a48a8a20ff043b2cab3f9645244e78cf28a97dfc3.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset 23e71f92ed413e75f6b8d2bf5e00077894f753540d5ca218bf6b7a73d794b19e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Neutralized WeChat title while keeping the report: 高盛：日立第一财季业绩超预期并上调指引 -> 高盛：日立第一财季业务与近期数据观察
+Skip non-chart visual asset e9d44c6130702b580b9233d18c064a432f4d6a7476d133849fb63af5b79075f7.jpg: score=0;odd_ratio:5.96,edge:0.35,contrast
+Skip non-chart visual asset 1e88ef9070311e60c754786f80f62c819a5285b213256b40ce6c4eb4d493ab7f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 71787be6df4002555ed6ff9e32279c86d957f34d03207d0021571cbc100197d6.jpg: score=0;square_without_chart_hint,edge:0.39,large
+Skip non-chart visual asset c04e5b63a54d86a2005367b2a569219458575e295fbdbf547080469b4b8530b2.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset 2da0a15eb7cbf11ee730b10305d3e9309960af99d35aaaceda7e32ef81d76f24.jpg: score=-100;too_small:546x153
+Skip non-chart visual asset 9f63166eb5e551080ac54d28af3c9a284800dc3ae747fb17b124d26d36f7ff2f.jpg: score=-100;too_small:704x81
+Skip non-chart visual asset 091851aaa31bd28131633901eb7ca00be326613fb45267771a32b7fa97472e32.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset a5d31eb36a15815834cd687a112b96c7e44a0ca9392340ed7d8e278031e61077.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.43,contrast,large
+Skip non-chart visual asset c2a4bd8b48b3f293988c077ad4f4f72508fb3eab32c4e4acb8a58960ec5d4dae.jpg: score=-100;too_small:484x106
+Skip non-chart visual asset 312c8199bc967fecd3b918f5d7a20514148af2a733bfd5f5ca339945264fae97.jpg: score=2;edge:0.35
+Neutralized WeChat title while keeping the report: 高盛：MetaQ2-26业绩回顾-广告收入增长28%但2027 -> 高盛：Meta业务与近期数据观察
+Skip non-chart visual asset 6aad0c35e3e459f7a1d9c4c1b69ae86149106d3026a9af52826d9c33665db74c.jpg: score=-1;square_without_chart_hint,edge:0.29
+Skip non-chart visual asset b11a75c76788e4e432a344edf477c1301a966b1e72b2cab12c8a9efe2068f1b0.jpg: score=-100;too_small:1156x112
+Neutralized WeChat title while keeping the report: 高盛：川崎重工-Polaris二季度业绩参照与IEEPA关税退税入账 -> 高盛：跨境贸易与行业变化观察
+Skip non-chart visual asset a441f971c5ee423df6c4fbe91c894177e883c0eea60811f9f4802b3e7fb48902.jpg: score=-100;too_small:1156x106
+Skip non-chart visual asset 83a44e9b40e2ce44bab2094c0963c8c7ab83a1cbcfe6d68dc3407c127a32f077.jpg: score=2;edge:0.34
+Neutralized WeChat title while keeping the report: 高盛：MARUWA1Q利润低于预期-全年指引上调由AI订单驱动 -> 高盛：MARUWA1Q与AI及近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_5; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

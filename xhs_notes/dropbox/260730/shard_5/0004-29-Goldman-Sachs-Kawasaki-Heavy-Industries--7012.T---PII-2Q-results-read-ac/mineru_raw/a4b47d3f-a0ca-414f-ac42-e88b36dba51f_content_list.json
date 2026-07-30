@@ -1,0 +1,1524 @@
+[
+    {
+        "type": "text",
+        "text": "Kawasaki Heavy Industries (7012.T): PII 2Q results read-across: IEEPA tariff refunds booked; business environment improving ex-tariff refunds",
+        "text_level": 1,
+        "bbox": [
+            77,
+            73,
+            839,
+            130
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Polaris Inc. (PII; Not Covered) announced its 2Q FY12/26 results after the market close on July 28 (JST). Polaris is one of Kawasaki Heavy Industries' competitors in the four-wheel vehicle business, which sits within the powersports & engines (PS&E) segment. We briefly summarize the implications for KHI's PS&E segment.",
+        "bbox": [
+            75,
+            170,
+            697,
+            245
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yuichiro Isayama\n+81(3)4587-9806 |\nyuichiro.isayama@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            722,
+            172,
+            871,
+            216
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Takato Enoki  \n+81(3)4587-1739 |  \ntakato.enoki@gs.com  \nGS Japan Co., Ltd.",
+        "bbox": [
+            720,
+            219,
+            871,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chie Hu\n+81(3)4587-6330 | chie.hu@gs.com\nGS Japan Co., Ltd.",
+        "bbox": [
+            720,
+            267,
+            899,
+            302
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            2,
+            300,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research 29 July 2026 | 6:24AM JST",
+        "bbox": [
+            722,
+            3,
+            922,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            78,
+            877,
+            922,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d91064ab613c45a38619c4004c31eff045991fc09637faaf3a3187fd08350ec6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 1: KHI PS&E business profit margin vs. Polaris company-wide EBITDA margin"
+        ],
+        "chart_footnote": [
+            "As this compares business profit margin with EBITDA margin, it should be used as a directional guide only. KHI's latest quarterly figure reflects our estimates.",
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            87,
+            98,
+            479,
+            271
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e11fe849d4f564bed7c0a42557784bf5d1b5938bee822958316db156fb9ebdd.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 2: Polaris: Polaris Powersports & Off-Road segment revenue and gross margin trends"
+        ],
+        "chart_footnote": [
+            "Polaris introduced new reportable segments.",
+            "Source: Company data, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            522,
+            95,
+            909,
+            275
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/68ba1b8313555b02ff2009b50772c95b00e5bf344cdfe2f85323a90bf535575e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: Polaris: Adjusted EBITDA bridge"
+        ],
+        "chart_footnote": [
+            "Source: Company data, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            87,
+            398,
+            484,
+            567
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4a1199be220a7b32b5484b576a3f87a2f57267f959a1ff8865ab0d9d6260282e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 4: Polaris: Inventory levels and inventory turnover (months of sales)"
+        ],
+        "chart_footnote": [
+            "Source: Company data, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            522,
+            398,
+            904,
+            567
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/205b74bf3c102caaf35e27b32f96560717f77d8cf8a12d1bce063905538df717.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 5: KHI: North American motorcycle retail unit yoy trends (moving annual total)"
+        ],
+        "chart_footnote": [
+            "Overall market data is sourced from KHI company materials.",
+            "Source: Company data, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            87,
+            680,
+            484,
+            853
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d3feca7b00cd6ffcdaef69061ce320f04ec29e35a1e54848a567a90456218e44.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: KHI: Side-by-side yoy retail unit trends (moving annual total) vs. Polaris ORV yoy retail unit momentum"
+        ],
+        "chart_footnote": [
+            "Overall market data is sourced from KHI company materials. ORV: Off-Road Vehicle.",
+            "Source: Company data, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            518,
+            680,
+            911,
+            853
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "What happened?",
+        "text_level": 2,
+        "bbox": [
+            272,
+            40,
+            405,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Polaris' 2Q adjusted sales were \\$2,023 million (+9% yoy; +17% organic growth), and its adjusted EBITDA margin was 11.8% (+540 bp yoy). Profit growth was driven by higher volumes, an improved product mix, higher net pricing, and tariff refunds. Even when excluding the \\$74 million tariff refund, the company achieved yoy profit growth and margin improvement. Polaris raised full-year guidance, incorporating the strong 1H performance and recorded tariff refunds.",
+        "bbox": [
+            270,
+            56,
+            906,
+            166
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sales in the Polaris Powersports segment, which includes ORV (Off-Road Vehicles), were \\$1,715 million (+17% yoy), with a gross profit margin of 21.4% (+77 bp yoy). ORV retail unit sales were up +5% yoy (overall market: up low-single digits % yoy), and the company noted market share gains for a fifth consecutive quarter. It recorded double-digit yoy growth in utility ORV retail unit sales.",
+        "bbox": [
+            270,
+            177,
+            922,
+            267
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Implications for Kawasaki Heavy Industries",
+        "text_level": 2,
+        "bbox": [
+            270,
+            291,
+            597,
+            307
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We estimate 1Q3/27 KHI business profits of ¥28.0 bn vs. the LSEG StarMine SmartEstimate of ¥25.9 bn. Factoring in persistently high sales promotion expenses and the impact of tariffs, we forecast PS&E segment profits of ¥7 bn, a decline from ¥8 bn in 1Q3/26. Our estimates do not incorporate any IEEPA tariff refund impact, nor is there any IEEPA tariff refund impact factored into KHI's guidance.",
+        "bbox": [
+            270,
+            310,
+            914,
+            399
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "It is not yet clear whether KHI will also receive tariff refund benefits in 1Q3/27, but if it does, this could represent upside to our segment profit estimate. Polaris' management expects flat yoy sales in 2H, with an expected positive impact on net pricing from factors such as lower promotional expenses. If KHI's marketing of new models goes well, sales promotion expenses could come in below our estimates, potentially resulting in upside to our full-year segment profit estimate of ¥26 bn (vs. guidance of ¥30 bn). At the same time, given that Polaris appears to be gaining share in utility ORVs, we will also be watching closely for trends in Kawasaki Motors' market share. We maintain our Neutral rating.",
+        "bbox": [
+            270,
+            411,
+            919,
+            573
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Related reports",
+        "text_level": 2,
+        "bbox": [
+            272,
+            597,
+            395,
+            613
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Japan Aerospace & Defense: GE 2Q results read-across: Strong earnings continue amid increase in new engine shipments; H2 outlook raised (16 July 2026)",
+        "bbox": [
+            272,
+            617,
+            898,
+            653
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Japan Aerospace & Defense: GEV 2Q results read-across: Strong large gas turbine orders; maintain Buy on MHI/JSW (22 July 2026)",
+        "bbox": [
+            272,
+            661,
+            899,
+            697
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Japan Aerospace & Defense: RTX 2Q results read-across: GTF aftermarket strong; monitoring increase in OE engine shipments (24 July 2026)",
+        "bbox": [
+            272,
+            705,
+            899,
+            742
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Price Target Risks and Methodology - Kawasaki Heavy Industries (7012.T)",
+        "text_level": 2,
+        "bbox": [
+            270,
+            767,
+            821,
+            783
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Our 12-month target price of ¥3,500 is based on FY3/28E EV/EBITDA, applying the Japan Aerospace & Defense subsector-average multiple of 14X and a 30% sector-relative discount.",
+        "bbox": [
+            270,
+            785,
+            881,
+            838
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The key upside and downside risks include (1) yen depreciation/appreciation relative to our assumed exchange rate, (2) faster-/slower-than-expected expansion of defense order and revenue momentum, (3) lower-/higher-than-expected cost variability in PS&E, particularly promotional expenses in the North American four-wheeler business, and (4) faster-/slower-than-expected progress on portfolio restructuring and the turnaround of low-profitability segments, with implications for the conglomerate discount.",
+        "bbox": [
+            270,
+            851,
+            912,
+            923
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            684,
+            7,
+            921,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            270,
+            40,
+            868,
+            91
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/55f33e844462560a7d3e5248206728be284a5427144c91677e36372334259d86.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS estimates, FactSet. Price as of 28 Jul 2026 close."
+        ],
+        "table_body": "<table><tr><td>7012.T</td><td>12m Price Target: ¥3,500</td><td colspan=\"2\">Price: ¥2,675</td><td colspan=\"2\">Upside: 30.9%</td></tr><tr><td>Neutral</td><td colspan=\"5\">GS Forecast</td></tr><tr><td></td><td></td><td>3/26</td><td>3/27E</td><td>3/28E</td><td>3/29E</td></tr><tr><td rowspan=\"9\">Market cap: ¥2.2tr / $13.7bnEnterprise value: ¥2.8tr / $17.1bn3m ADTV: ¥41.9bn / $261.6mnJapanJapan IndustrialsM&amp;A Rank: 3Leases incl. in net debt &amp; EV?:Yes</td><td>Revenue (¥ bn)</td><td>2,311.3</td><td>2,610.0</td><td>2,920.0</td><td>3,180.0</td></tr><tr><td>Op. profit (¥ bn)</td><td>145.1</td><td>170.0</td><td>205.0</td><td>248.0</td></tr><tr><td>Op. profit CoE (¥ bn)</td><td>145.0</td><td>170.0</td><td>-</td><td>-</td></tr><tr><td>EPS (¥)</td><td>129.4</td><td>131.6</td><td>155.5</td><td>187.8</td></tr><tr><td>P/E (X)</td><td>17.3</td><td>20.3</td><td>17.2</td><td>14.2</td></tr><tr><td>P/B (X)</td><td>2.1</td><td>2.3</td><td>2.1</td><td>1.9</td></tr><tr><td>Dividend yield (%)</td><td>1.5</td><td>1.5</td><td>1.8</td><td>2.0</td></tr><tr><td>N debt/EBITDA (ex lease,X)</td><td>2.0</td><td>1.7</td><td>1.6</td><td>1.4</td></tr><tr><td>CROCI (%)</td><td>7.2</td><td>9.3</td><td>10.1</td><td>10.7</td></tr><tr><td></td><td></td><td>3/26</td><td>6/26E</td><td>9/26E</td><td>12/26E</td></tr><tr><td></td><td>EPS (¥)</td><td>50.6</td><td>21.7</td><td>24.0</td><td>33.3</td></tr></table>",
+        "bbox": [
+            275,
+            125,
+            878,
+            389
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            3,
+            185,
+            19
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            684,
+            7,
+            921,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            954,
+            160,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            909,
+            957,
+            922,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            40,
+            254,
+            60
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            81,
+            139,
+            97
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We, Yuichiro Isayama, Takato Enoki and Chie Hu, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            78,
+            103,
+            914,
+            139
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            144,
+            889,
+            157
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Yuichiro Isayama GS Japan Co., Ltd., Takato Enoki GS Japan Co., Ltd., Chie Hu GS Japan Co., Ltd..",
+        "bbox": [
+            78,
+            163,
+            901,
+            187
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            192,
+            899,
+            216
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            80,
+            228,
+            210,
+            241
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            78,
+            241,
+            921,
+            300
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            78,
+            304,
+            912,
+            373
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            78,
+            377,
+            914,
+            404
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            78,
+            408,
+            707,
+            421
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            80,
+            433,
+            164,
+            446
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            78,
+            446,
+            914,
+            516
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            80,
+            527,
+            157,
+            540
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            78,
+            539,
+            893,
+            565
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            576,
+            170,
+            589
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Kawasaki Heavy Industries is/are relative to the other companies in its/their coverage universe: AeroEdge, CKD, Daifuku, Daikin Industries, Fanuc, Harmonic Drive Systems, Hoshizaki, IHI, Japan Steel Works, Kawasaki Heavy Industries, Keyence, Makita, Misumi Group, Mitsubishi Heavy Industries, Okuma, Omron, SKY Perfect JSAT Corp, SMC, THK, Yaskawa Electric",
+        "bbox": [
+            78,
+            588,
+            912,
+            624
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            635,
+            387,
+            650
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+        "bbox": [
+            78,
+            649,
+            908,
+            673
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the month end preceding this report: Kawasaki Heavy Industries (¥2,675) and Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            677,
+            912,
+            703
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for investment banking services in the past 12 months: Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            708,
+            796,
+            721
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Kawasaki Heavy Industries (¥2,675) and Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            725,
+            901,
+            751
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Kawasaki Heavy Industries (¥2,675) and Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            756,
+            912,
+            781
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-investment banking securities-related services client relationship during the past 12 months with: Kawasaki Heavy Industries (¥2,675)",
+        "bbox": [
+            78,
+            785,
+            917,
+            809
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-securities services client relationship during the past 12 months with: Kawasaki Heavy Industries (¥2,675) and Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            815,
+            876,
+            839
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "GS makes a market in the securities or derivatives thereof: Polaris Industries Inc. (\\$71.59)",
+        "bbox": [
+            78,
+            844,
+            645,
+            858
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            869,
+            505,
+            896
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/b11a75c76788e4e432a344edf477c1301a966b1e72b2cab12c8a9efe2068f1b0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>59%</td><td>43%</td></tr></table>",
+        "bbox": [
+            78,
+            40,
+            761,
+            91
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            78,
+            103,
+            917,
+            161
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Price target and rating history chart(s)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            173,
+            369,
+            188
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8c2d25851556d8ca0e45da9ba9ac5d3244b3414686e8540e093518eb7ba7fc0f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "bbox": [
+            83,
+            201,
+            479,
+            389
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/54e3a429ce7a83cd3659b524e555f2956985737feee5fc8e5232b4bde9b0d236.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "bbox": [
+            513,
+            201,
+            911,
+            389
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Target price history table(s) Kawasaki Heavy Industries (7012.T)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            442,
+            330,
+            472
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/6aad0c35e3e459f7a1d9c4c1b69ae86149106d3026a9af52826d9c33665db74c.jpg",
+        "table_caption": [
+            "Date of report Target price (¥) Closing price (¥)"
+        ],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions."
+        ],
+        "table_body": "<table><tr><td>23-Jun-26</td><td>3,500</td><td>3,081</td></tr><tr><td>03-Apr-26</td><td>3,900</td><td>3,161</td></tr><tr><td>06-Mar-26</td><td>20,000</td><td>3,268</td></tr><tr><td>09-Feb-26</td><td>17,000</td><td>3,391</td></tr><tr><td>10-Oct-25</td><td>15,000</td><td>1,945</td></tr><tr><td>18-Jun-25</td><td>14,000</td><td>2,137</td></tr><tr><td>09-May-25</td><td>11,000</td><td>1,655</td></tr><tr><td>17-Apr-25</td><td>10,000</td><td>1,621</td></tr><tr><td>05-Mar-25</td><td>11,000</td><td>1,700</td></tr><tr><td>12-Jan-25</td><td>10,000</td><td>1,411</td></tr><tr><td>09-Nov-24</td><td>8,000</td><td>1,406</td></tr><tr><td>12-Sep-24</td><td>7,000</td><td>917</td></tr></table>",
+        "bbox": [
+            78,
+            485,
+            293,
+            663
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            702,
+            254,
+            717
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            721,
+            518,
+            736
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            78,
+            734,
+            912,
+            783
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            77,
+            786,
+            917,
+            868
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            878,
+            878,
+            893
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            77,
+            892,
+            914,
+            928
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            77,
+            40,
+            917,
+            320
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            78,
+            319,
+            919,
+            532
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            78,
+            536,
+            912,
+            617
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            77,
+            622,
+            919,
+            681
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            78,
+            692,
+            454,
+            705
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            77,
+            703,
+            922,
+            785
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            77,
+            790,
+            896,
+            826
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            830,
+            783,
+            855
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an",
+        "bbox": [
+            78,
+            860,
+            917,
+            930
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            78,
+            40,
+            904,
+            76
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            87,
+            354,
+            100
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            100,
+            921,
+            225
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            228,
+            883,
+            254
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            78,
+            258,
+            908,
+            306
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            318,
+            229,
+            331
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            78,
+            329,
+            919,
+            389
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            78,
+            393,
+            919,
+            430
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            78,
+            434,
+            921,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            77,
+            474,
+            921,
+            532
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            77,
+            538,
+            894,
+            562
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            78,
+            567,
+            921,
+            592
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            78,
+            597,
+            917,
+            620
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            77,
+            627,
+            921,
+            695
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            77,
+            701,
+            911,
+            759
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            77,
+            763,
+            908,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            77,
+            871,
+            901,
+            919
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            956,
+            159,
+            968
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            40,
+            891,
+            64
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            80,
+            69,
+            221,
+            82
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            78,
+            87,
+            916,
+            168
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            185,
+            18
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Kawasaki Heavy Industries (7012.T)",
+        "bbox": [
+            686,
+            7,
+            919,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "29 July 2026",
+        "bbox": [
+            80,
+            957,
+            159,
+            968
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            909,
+            957,
+            921,
+            968
+        ],
+        "page_idx": 8
+    }
+]

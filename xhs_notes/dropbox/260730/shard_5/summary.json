@@ -1,0 +1,522 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0001-26-GS-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "继电器龙头，订单能见",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：宏发股份业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf",
+      "cleaned_source_title": "GS-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Hongfa科技-2Q26inline",
+      "raw_candidates": [
+        "宏发股份2Q26业绩符合预期-订单可见度支撑增长",
+        "宏发股份2Q26收入59亿元-市场份额与定价能力驱动增长",
+        "宏发股份全球继电器龙头-结构性增长与AIDC布局"
+      ],
+      "cleaned_candidates": [
+        "GS：宏发股份2Q26业绩符合预期-订单可见度支撑增长",
+        "GS：宏发股份2Q26收入59亿元-市场份额与定价能力驱动增长",
+        "GS：宏发股份全球继电器龙头-结构性增长与AIDC布局",
+        "GS：Hongfa科技-2Q26inline",
+        "GS：GS在最新报告中指出，宏发2026年预计实现27%的同比增长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：宏发股份2Q26收入59亿元-市场份额与定价能力驱动增长",
+          "reasons": [
+            "anchor_coverage=0.36",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "GS：宏发股份全球继电器龙头-结构性增长与AIDC布局",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Hongfa科技-2Q26inline",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS在最新报告中指出，宏发2026年预计实现27%的同比增长",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：宏发股份业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：宏发股份2Q26业绩符合预期-订单可见度支撑增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：宏发股份业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0002-27-GS-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日立Q1超预期，能源",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：日立第一财季业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-GS-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w.pdf",
+      "cleaned_source_title": "GS-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Hitachi1Qaboveexpectatio",
+      "raw_candidates": [
+        "日立第一财季业绩超预期并上调指引",
+        "日立第一财季能源订单增长87%支撑上调",
+        "日立能源业务订单与利润率改善支撑全年指引"
+      ],
+      "cleaned_candidates": [
+        "GS：日立第一财季业绩超预期并上调指引",
+        "GS：日立第一财季能源订单增长87%支撑上调",
+        "GS：日立能源业务订单与利润率改善支撑全年指引",
+        "GS：Hitachi1Qaboveexpectatio",
+        "GS：1.能源业务订单同比增长87%，基础订单同样强劲"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日立第一财季能源订单增长87%支撑上调",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "GS：日立能源业务订单与利润率改善支撑全年指引",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Hitachi1Qaboveexpectatio",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.能源业务订单同比增长87%，基础订单同样强劲",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日立第一财季业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日立第一财季业绩超预期并上调指引",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：日立第一财季业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Meta广告赚钱能力",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：Meta业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+      "cleaned_source_title": "GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：MetaPlatformsInc.(META)Q226",
+      "raw_candidates": [
+        "Meta Q2-26业绩回顾-核心业务显示短期ROIC但长期计算支出缺乏透明度",
+        "Meta Q2-26业绩回顾-广告收入增长28%但2027-2028年资本支出路径不清晰",
+        "Meta Q2-26业绩回顾-AI投入短期回报可见但长期资本计划缺乏具体框架"
+      ],
+      "cleaned_candidates": [
+        "GS：MetaQ2-26业绩回顾",
+        "GS：MetaQ2-26业绩回顾-广告收入增长28%但2027",
+        "GS：MetaPlatformsInc.(META)Q226",
+        "GS：GS因此将2027-2028年累计资本支出预测上调约14%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：MetaPlatformsInc.(META)Q226",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.64",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS因此将2027-2028年累计资本支出预测上调约14%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：Meta业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2027",
+          "28"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：MetaQ2-26业绩回顾-广告收入增长28%但2027",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：Meta业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0004-29-GS-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "川崎重工：4轮车业务",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "GS：跨境贸易与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds-260729.pdf",
+      "cleaned_source_title": "GS-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：KawasakiHeavyIndustriesPII2",
+      "raw_candidates": [
+        "川崎重工-Polaris二季度业绩参照与IEEPA关税退税入账",
+        "川崎重工-Polaris二季度业绩参照-关税退税入账与业务环境改善",
+        "川崎重工-Polaris二季度业绩参照-北美四轮车市场定价与成本结构"
+      ],
+      "cleaned_candidates": [
+        "GS：川崎重工-Polaris二季度业绩参照与IEEPA关税退税入账",
+        "GS：川崎重工-Polaris二季度业绩参照",
+        "GS：KawasakiHeavyIndustriesPII2",
+        "GS：Polaris二季度调整后销售额20.23亿美元，同比增长9%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：川崎重工-Polaris二季度业绩参照",
+          "reasons": [
+            "anchor_coverage=0.59"
+          ]
+        },
+        {
+          "title": "GS：KawasakiHeavyIndustriesPII2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Polaris二季度调整后销售额20.23亿美元，同比增长9%",
+          "reasons": [
+            "anchor_coverage=0.31",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：跨境贸易与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：川崎重工-Polaris二季度业绩参照与IEEPA关税退税入账",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "GS：跨境贸易与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI订单确认，这家公",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：MARUWA1Q与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+      "cleaned_source_title": "GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIMARUWAFirstTake1Qbelowex",
+      "raw_candidates": [
+        "MARUWA 1Q利润低于预期-全年指引上调由AI订单驱动",
+        "MARUWA 1Q利润63亿日元-全年指引上调至337亿日元",
+        "MARUWA AI订单确认推动全年指引上调-半导体复苏提前至2Q"
+      ],
+      "cleaned_candidates": [
+        "GS：MARUWA1Q利润低于预期-全年指引上调由AI订单驱动",
+        "GS：MARUWA1Q利润63亿日元-全年指引上调至337亿日元",
+        "GS：MARUWAAI订单确认推动全年指引上调-半导体复苏提前至2Q",
+        "GS：AIMARUWAFirstTake1Qbelowex",
+        "GS：公司明确表示，低利润率AI相关产品的库存已在1Q基本消化完毕"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：MARUWA1Q利润63亿日元-全年指引上调至337亿日元",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "GS：MARUWAAI订单确认推动全年指引上调-半导体复苏提前至2Q",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：AIMARUWAFirstTake1Qbelowex",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：公司明确表示，低利润率AI相关产品的库存已在1Q基本消化完毕",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：MARUWA1Q与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：MARUWA1Q利润低于预期-全年指引上调由AI订单驱动",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：MARUWA1Q与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Hongfa Technology （600885.SS）： 2Q26 in line； Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjtel97c/pdfs/0001-26-GS-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-Hitachi （6501.T） 1Q above expectations guidance up： Energy contribution tops expectations； prep for 800V DC products progressing； DSS firm in Japan， w.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjtel97c/pdfs/0002-27-GS-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Meta Platforms Inc. (META) Q2’26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjtel97c/pdfs/0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-Kawasaki Heavy Industries （7012.T）： PII 2Q results read~across： IEEPA tariff refunds booked； business environment improving ex~tariff refunds-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjtel97c/pdfs/0004-29-GS-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds-260729.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-MARUWA （5344.T）： First Take： 1Q below expectations but no surprise， details raise expectations for earnings from 2Q led by AI； reiterate Buy-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjtel97c/pdfs/0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

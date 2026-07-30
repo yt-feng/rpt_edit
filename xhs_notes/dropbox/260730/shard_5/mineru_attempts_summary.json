@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0001-26-GS-Hongfa Technology -600885.SS-- 2Q26 in line- Buy on strong order visibility backed by market share gains and pricing power to support-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0002-27-GS-Hitachi -6501.T- 1Q above expectations guidance up- Energy contribution tops expectations- prep for 800V DC products progressing- DSS firm in Japan- w.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0003-28-GS-Meta Platforms Inc. (META) Q2-26 Review-Core Business Provides Evidence of Near-Term ROIC but Lack of Visibility into Long-Term Compute Spend Persists-270730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0004-29-GS-Kawasaki Heavy Industries -7012.T-- PII 2Q results read-across- IEEPA tariff refunds booked- business environment improving ex-tariff refunds-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rjtel97c/pdfs/0005-30-GS-MARUWA -5344.T-- First Take- 1Q below expectations but no surprise- details raise expectations for earnings from 2Q led by AI- reiterate Buy-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
