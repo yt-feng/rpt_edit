@@ -1,0 +1,543 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0001-51-MS-Muyuan Foodstuff Co. Ltd-002714--Longer Road to Recovery-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "猪周期延迟，龙头还在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-51-MS-Muyuan Foodstuff Co. Ltd-002714--Longer Road to Recovery-260728.pdf",
+      "cleaned_source_title": "MS-Muyuan Foodstuff Co. Ltd-002714--Longer Road to Recovery",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：MuyuanFoodstuffCo.Ltd002714",
+      "raw_candidates": [
+        "牧原股份产能去化与周期复苏展望",
+        "牧原股份：2026年猪价预期下调至每公斤11元",
+        "牧原股份：生产效率提升延缓供给收紧"
+      ],
+      "cleaned_candidates": [
+        "MS：牧原股份产能去化与周期复苏展望",
+        "MS：牧原股份，2026年猪价预期下调至每公斤11元",
+        "MS：牧原股份，生产效率提升延缓供给收紧",
+        "MS：MuyuanFoodstuffCo.Ltd002714",
+        "MS：该机构预计2026年行业生猪均价为每公斤11元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：牧原股份，2026年猪价预期下调至每公斤11元",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：牧原股份，生产效率提升延缓供给收紧",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MuyuanFoodstuffCo.Ltd002714",
+          "reasons": [
+            "listing_suffix",
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：该机构预计2026年行业生猪均价为每公斤11元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：牧原股份产能去化与周期复苏展望",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0002-52-MS-SpaceX - North America-2Q Earnings Preview--Approaching Max Q-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "SpaceX 的“最",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x2",
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资者->读者 x3",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：SpaceX北美业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-52-MS-SpaceX - North America-2Q Earnings Preview--Approaching Max Q-260728.pdf",
+      "cleaned_source_title": "MS-SpaceX - North America-2Q Earnings Preview--Approaching Max Q",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：SpaceXNorthAmerica2QE",
+      "raw_candidates": [
+        "SpaceX北美二季度财报前报价面临锁定期不确定性",
+        "SpaceX二季度财报前报价面临8月6日首批9.3亿股解禁",
+        "SpaceX二季度财报前报价面临锁定期与AI估值分歧"
+      ],
+      "cleaned_candidates": [
+        "MS：SpaceX北美二季度财报前报价面临锁定期不确定性",
+        "MS：SpaceX二季度财报前报价面临8月6日首批9.3亿股解禁",
+        "MS：SpaceX二季度财报前报价面临锁定期与AI估值分歧",
+        "MS：SpaceXNorthAmerica2QE",
+        "MS：自高点下跌近50%、较IPO发行价低约20%之后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SpaceX二季度财报前报价面临8月6日首批9.3亿股解禁",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "MS：SpaceX二季度财报前报价面临锁定期与AI估值分歧",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "MS：SpaceXNorthAmerica2QE",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：自高点下跌近50%、较IPO发行价低约20%之后",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：SpaceX北美业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：SpaceX北美二季度财报前报价面临锁定期不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：SpaceX北美业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "AI热潮，赢家只有几",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "中国经济->中国宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x2",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "中国经济->中国宏观环境 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729.pdf",
+      "cleaned_source_title": "NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：AsiaChartAlert中国",
+      "raw_candidates": [
+        "亚洲图表速览-中国地理K型分化证据",
+        "亚洲图表速览-中国地理K型分化-2026上半年数据",
+        "亚洲图表速览-中国智慧城市与其余地区增长分化"
+      ],
+      "cleaned_candidates": [
+        "NOM：亚洲图表速览-中国地理K型分化证据",
+        "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+        "NOM：亚洲图表速览-中国智慧城市与其余地区增长分化",
+        "NOM：AsiaChartAlert中国",
+        "NOM：七个智慧城市在2026年上半年贡献了全国增长的20%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：亚洲图表速览-中国智慧城市与其余地区增长分化",
+          "reasons": [
+            "anchor_coverage=0.53",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：AsiaChartAlert中国",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：七个智慧城市在2026年上半年贡献了全国增长的20%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0004-54-MS-Seagate Technology - North America F4Q26 Earnings - Differentiating From The Pack-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "HDD周期还在上半场",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Seagate定价与需求可见性持续增强-F4Q26财报",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-54-MS-Seagate Technology - North America F4Q26 Earnings - Differentiating From The Pack-260729.pdf",
+      "cleaned_source_title": "MS-Seagate Technology - North America F4Q26 Earnings - Differentiating From The Pack",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Seagate科技NorthAmericaF4Q26",
+      "raw_candidates": [
+        "Seagate Technology北美F4Q26财报-差异化表现",
+        "Seagate定价与需求可见性持续增强-F4Q26财报",
+        "Seagate HDD差异化表现-定价驱动超预期"
+      ],
+      "cleaned_candidates": [
+        "MS：SeagateTechnology北美F4Q26财报",
+        "MS：Seagate定价与需求可见性持续增强-F4Q26财报",
+        "MS：SeagateHDD差异化表现-定价驱动超预期",
+        "MS：Seagate科技NorthAmericaF4Q26",
+        "MS：基于F4Q26（2026年6月季度）业绩和F1Q27（20"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english",
+        "english_heavy_fragment"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：SeagateTechnology北美F4Q26财报",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "MS：SeagateHDD差异化表现-定价驱动超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Seagate科技NorthAmericaF4Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：基于F4Q26（2026年6月季度）业绩和F1Q27（20",
+          "reasons": [
+            "anchor_coverage=0.16",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "MS：Seagate定价与需求可见性持续增强-F4Q26财报",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：Seagate定价与需求可见性持续增强-F4Q26财报"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0005-55-NOM-China Internet - New Media-Monthly App Tracker - June 2026-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "6月App战报：AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：中国互联网新传媒月度App追踪-2026年6月",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-55-NOM-China Internet - New Media-Monthly App Tracker - June 2026-260729.pdf",
+      "cleaned_source_title": "NOM-China Internet - New Media-Monthly App Tracker - June 2026",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：中国InternetNewMediaMonthl",
+      "raw_candidates": [
+        "中国互联网新传媒月度App追踪-2026年6月",
+        "中国互联网6月App追踪-活跃用户12.8亿",
+        "中国互联网6月App追踪-AI应用流量向企业端转移"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国互联网新传媒月度App追踪-2026年6月",
+        "NOM：中国互联网6月App追踪-活跃用户12.8亿",
+        "NOM：中国互联网6月App追踪-AI应用流量向企业端转移",
+        "NOM：中国InternetNewMediaMonthl",
+        "NOM：中国移动互联网大盘在2026年6月保持稳定"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：中国互联网6月App追踪-活跃用户12.8亿",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：中国互联网6月App追踪-AI应用流量向企业端转移",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：中国InternetNewMediaMonthl",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：中国移动互联网大盘在2026年6月保持稳定",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：中国互联网新传媒月度App追踪-2026年6月",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：中国互联网新传媒月度App追踪-2026年6月"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

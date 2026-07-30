@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0001-51-MS-Muyuan Foodstuff Co. Ltd-002714--Longer Road to Recovery-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0002-52-MS-SpaceX - North America-2Q Earnings Preview--Approaching Max Q-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0004-54-MS-Seagate Technology - North America F4Q26 Earnings - Differentiating From The Pack-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0005-55-NOM-China Internet - New Media-Monthly App Tracker - June 2026-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

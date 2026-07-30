@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_fb7vvo9u/pdfs/0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "AI热潮，赢家只有几",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "中国经济->中国宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "下行|放缓->节奏变化 x2",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "中国经济->中国宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729.pdf",
+    "cleaned_source_title": "NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：AsiaChartAlert中国",
+    "raw_candidates": [
+      "亚洲图表速览-中国地理K型分化证据",
+      "亚洲图表速览-中国地理K型分化-2026上半年数据",
+      "亚洲图表速览-中国智慧城市与其余地区增长分化"
+    ],
+    "cleaned_candidates": [
+      "NOM：亚洲图表速览-中国地理K型分化证据",
+      "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+      "NOM：亚洲图表速览-中国智慧城市与其余地区增长分化",
+      "NOM：AsiaChartAlert中国",
+      "NOM：七个智慧城市在2026年上半年贡献了全国增长的20%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：亚洲图表速览-中国智慧城市与其余地区增长分化",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：AsiaChartAlert中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：七个智慧城市在2026年上半年贡献了全国增长的20%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：亚洲图表速览-中国地理K型分化-2026上半年数据"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "452",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
