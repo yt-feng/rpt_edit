@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0001-21-GS-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0002-22-GS-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL--260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0004-24-GS-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

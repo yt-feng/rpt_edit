@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-GS-BASF SE （BASFn.DE）： 2Q26 full release highlights structural transformation， focus on cash returns deleveraging， and rising-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kzli4uur/pdfs/0001-21-GS-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-Guming Holdings Ltd. （1364.HK） 1H26 preview： factoring in slower store additions， yet resilient margins； Buy （on CL）-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kzli4uur/pdfs/0002-22-GS-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL--260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-GS-Haidilao International Holding （6862.HK） 1H26 preview： Expect slower core business recovery while fast growing new business to dilute margins； Neutral-260.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kzli4uur/pdfs/0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-High~end CCL GM expansion on the way with potential pricing hike in 2H26+customers booking new capacity after 2028； recommend high quality CCL names； Buy on E.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kzli4uur/pdfs/0004-24-GS-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-GS-Japan Automobiles：Ford Earnings Implications：Resilient US pricing and robust ESS demand-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kzli4uur/pdfs/0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

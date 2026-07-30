@@ -1,0 +1,49 @@
+Found 63 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kzli4uur/pdfs/0001-21-Goldman Sachs-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kzli4uur/pdfs/0002-22-Goldman Sachs-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL--260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kzli4uur/pdfs/0003-23-Goldman Sachs-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kzli4uur/pdfs/0004-24-Goldman Sachs-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kzli4uur/pdfs/0005-25-Goldman Sachs-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729.pdf
+MinerU attempt 1 using MINER_U batch_id=6c159beb-8830-44ee-a31a-4942605752cb
+MinerU states: running, running, running, waiting-file, waiting-file
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 8d20b0cde29b0f0896a6c9c7c25c66781b86d694d0f9d03b9a874fefe496a3c9.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset d449641c0758b17f7673729e668a935763e902cddebc89242518727a60ff8fdd.jpg: score=-100;too_small:1162x106
+Skip non-chart visual asset 6d6e8f3b6ac03e8aa47d951e3d110b79274f146a4130db7e698a95b45fdb2073.jpg: score=2;edge:0.30
+Skip non-chart visual asset 07ab052096c0793d8256d48d6bfffb56c2d7006142f4599783913522b823d54a.jpg: score=0;square_without_chart_hint,edge:0.38,large
+Skip non-chart visual asset 65535e9389fde530c69984604cc60697856391a582d00535cd49ef284a514179.jpg: score=-100;too_small:1159x112
+Skip non-chart visual asset 96ccc13a34df0377e8d9ad24bdc187aa4d4884b3c278a2234c1853209d92cba6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 57ce875fe7a129fcb3645b1e76ca806f42bb8c9f268c25d2ad875c8b157a490c.jpg: score=-100;too_small:104x109
+Skip non-chart visual asset 9942724ca1e8d722be91f16bc2a04773f6f6d48055656115ae584ce62b3fab1e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 78e3edeb84b4915b63dda7452c2c544c26ca28e577652ab83e80deb3a65162d1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset fca20a51b2add6e14bf188e22b63a385fb6b833ed946f7dd9c4c9044852f9161.jpg: score=-100;too_small:704x79
+Neutralized WeChat title while keeping the report: 高盛：古茗控股2026年上半年营收增长30% -> 高盛：古茗控股业务与近期数据观察
+Skip non-chart visual asset 42d00a21908acfeb7f4cc13b46b0ee01cee0449e452e70e3d17cfe5f98d755d5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 5794c6d3eac2ef570170f7692ff04ffb327ef3b4500142e5310914b858129f7b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 58ea79d07e41346fe9926377a58ee5f883edac8ca686de65f0835482d47c2e1c.jpg: score=-100;too_small:1162x104
+Skip non-chart visual asset 57b178ad8084a7ad1ba0396713e70f6002ff723d484747ed4f620309d462a9a5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.42,large
+Skip non-chart visual asset 196c06d5de4b945e8329ed1328de38f748c7a99b7abb398736ac0a2a39327967.jpg: score=-100;too_small:104x109
+Skip non-chart visual asset 743725d865878e26364dc6eb124b4e96a8f4032afc323289475adf1074124b2a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 854a4e94dadf5dd56097359a70cef004df7262a95aeafb3b37550771a7893537.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 64930f1a5ff51735f256ecc81193c6242dbaf21e695c650cf3be83eec02d4448.jpg: score=-100;too_small:707x79
+Neutralized WeChat title while keeping the report: 高盛：海底捞1H26预览-核心业务恢复慢于预期，新业务稀释利润率 -> 高盛：海底捞业务与近期数据观察
+Skip non-chart visual asset 1230bafc3184a06424f50632e6de17c20b8c38d39182a43d4e990dd5e135e44e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.44
+Skip non-chart visual asset a5e7c4fdcd0196f2ec9f4e375e91710d05ab3de52c5a103f02169edaa4800762.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset eb8fad3380817617c66f29e2999cc53337dd2bc21e3609f5f53a8c243f2b278f.jpg: score=1;odd_ratio:5.32,edge:0.45,contrast,large
+Skip non-chart visual asset 5ee689a7ba7cf223a2448e60f9cb9773f7dbbbbcedf1e16e67d35ca9a1732116.jpg: score=0;odd_ratio:7.53,edge:0.62,contrast
+Skip non-chart visual asset 5c472a4920365f57da7530ae08fdd3e3ec115e6b0825786b6dc9c787eefb1040.jpg: score=1;chart_ratio
+Skip non-chart visual asset 9b60300f76f0c142c9a0560dea17336aa9966a4232609b16f1389e076fa733bb.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset c7e0d61916470f185a8978045e6f0d87e54b21d6a7bba2a17d29284524218af8.jpg: score=1;odd_ratio:5.24,edge:0.49,contrast,large
+Skip non-chart visual asset db5e31fba636fc9c167b89f22f63a468fa646959241ea89b1d84423090fdbd4a.jpg: score=0;odd_ratio:7.37,edge:0.59,contrast
+Skip non-chart visual asset 9a74429c4f8f4a99d38c097159dcc3543d6515b8cfa714e956547eac9faaca22.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.49,contrast
+Neutralized WeChat title while keeping the report: 高盛：高端CCL毛利率扩张与2028年后产能预订 -> 高盛：高端与CCL及近期数据观察
+Skip non-chart visual asset 782a52c1d5516796d32699cc26f0368b2507c07c1c32bd4a5952213e496ed5de.jpg: score=-100;too_small:1159x112
+Skip non-chart visual asset eab17f0863baa2b9affae3122bdf9dc158b818c9a771e15710058de373afd30f.jpg: score=-1;square_without_chart_hint,edge:0.25
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

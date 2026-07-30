@@ -1,0 +1,547 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0001-21-GS-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "BASF 二季度：量",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：巴斯夫二季度业绩与结构性转型",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising-260729.pdf",
+      "cleaned_source_title": "GS-BASF SE -BASFn.DE-- 2Q26 full release highlights structural transformation- focus on cash returns deleveraging- and rising",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：BASFSE2Q26fullreleasehig",
+      "raw_candidates": [
+        "GS：巴斯夫二季度业绩与结构性转型",
+        "GS：巴斯夫二季度销量增7.3%现金流下滑",
+        "GS：巴斯夫二季度量强价弱与转型成本"
+      ],
+      "cleaned_candidates": [
+        "GS：巴斯夫二季度业绩与结构性转型",
+        "GS：巴斯夫二季度销量增7.3%现金流下滑",
+        "GS：巴斯夫二季度量强价弱与转型成本",
+        "GS：BASFSE2Q26fullreleasehig",
+        "GS：7月29日，BASF发布完整二季度财报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：巴斯夫二季度销量增7.3%现金流下滑",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：巴斯夫二季度量强价弱与转型成本",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "GS：BASFSE2Q26fullreleasehig",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月29日，BASF发布完整二季度财报",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：巴斯夫二季度业绩与结构性转型",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：巴斯夫二季度业绩与结构性转型"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0002-22-GS-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL--260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "古茗开店放缓，但利润",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：古茗控股业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-GS-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL--260729.pdf",
+      "cleaned_source_title": "GS-Guming Holdings Ltd. -1364.HK- 1H26 preview- factoring in slower store additions- yet resilient margins- Buy -on CL",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：GumingHoldingsLtd.",
+      "raw_candidates": [
+        "GS：古茗控股2026年上半年营收增长30%",
+        "GS：古茗控股开店节奏调整至2000家",
+        "GS：古茗控股同店销售与利润率变化",
+        "GS：古茗控股2026年上半年业绩预览",
+        "GS：古茗控股2026年上半年营收增长30%",
+        "GS：古茗控股开店节奏与利润率韧性"
+      ],
+      "cleaned_candidates": [
+        "GS：古茗控股2026年上半年营收增长30%",
+        "GS：古茗控股开店节奏调整至2000家",
+        "GS：古茗控股同店销售与利润率变化",
+        "GS：古茗控股2026年上半年业绩预览",
+        "GS：古茗控股开店节奏与利润率韧性",
+        "GS：GumingHoldingsLtd.",
+        "GS：古茗控股（）预计在8月下旬披露2026年上半年业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：古茗控股开店节奏调整至2000家",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：古茗控股同店销售与利润率变化",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：古茗控股2026年上半年业绩预览",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "GS：古茗控股开店节奏与利润率韧性",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GumingHoldingsLtd.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：古茗控股（）预计在8月下旬披露2026年上半年业绩",
+          "reasons": [
+            "anchor_coverage=0.59"
+          ]
+        }
+      ],
+      "selected_title": "GS：古茗控股业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：古茗控股（）预计在8月下旬披露2026年上半年业绩",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：古茗控股2026年上半年营收增长30%",
+        "GS：古茗控股开店节奏调整至2000家",
+        "GS：古茗控股同店销售与利润率变化"
+      ],
+      "pre_neutralization_title": "GS：古茗控股2026年上半年营收增长30%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：古茗控股业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "海底捞中期业绩前瞻：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x1",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：海底捞业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260.pdf",
+      "cleaned_source_title": "GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to dilute margins- Neutral-260",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：HaidilaoInternationalHolding1H26",
+      "raw_candidates": [
+        "GS：海底捞1H26预览-核心业务恢复慢于预期，新业务稀释利润率",
+        "GS：海底捞1H26预览-收入增长8%但利润率承压",
+        "GS：海底捞1H26预览-核心业务恢复与新业务稀释的平衡"
+      ],
+      "cleaned_candidates": [
+        "GS：海底捞1H26预览-核心业务恢复慢于预期，新业务稀释利润率",
+        "GS：海底捞1H26预览-收入增长8%但利润率承压",
+        "GS：海底捞1H26预览-核心业务恢复与新业务稀释的平衡",
+        "GS：HaidilaoInternationalHolding1H26",
+        "GS：1.1H26预期，收入增长8%但利润率承压"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：海底捞1H26预览-收入增长8%但利润率承压",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：海底捞1H26预览-核心业务恢复与新业务稀释的平衡",
+          "reasons": [
+            "anchor_coverage=0.68"
+          ]
+        },
+        {
+          "title": "GS：HaidilaoInternationalHolding1H26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.1H26预期，收入增长8%但利润率承压",
+          "reasons": [
+            "anchor_coverage=0.28",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "GS：海底捞业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：海底捞1H26预览-核心业务恢复慢于预期，新业务稀释利润率",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：海底捞业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0004-24-GS-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "高端CCL的涨价逻辑",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：高端与CCL及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E.pdf",
+      "cleaned_source_title": "GS-High-end CCL GM expansion on the way with potential pricing hike in 2H26-customers booking new capacity after 2028- recommend high quality CCL names- Buy on E",
+      "institution_name": "GS",
+      "required_terms": [
+        "CCL"
+      ],
+      "deterministic_fallback": "GS：HighendCCLGMexpansionont",
+      "raw_candidates": [
+        "GS：高端CCL毛利率扩张与2028年后产能预订",
+        "GS：高端CCL毛利率扩张与2Q26财报数据",
+        "GS：高端CCL毛利率扩张与AI服务器需求驱动"
+      ],
+      "cleaned_candidates": [
+        "GS：高端CCL毛利率扩张与2028年后产能预订",
+        "GS：高端CCL毛利率扩张与2Q26财报数据",
+        "GS：高端CCL毛利率扩张与AI服务器需求驱动",
+        "GS：HighendCCLGMexpansionont",
+        "GS：高端CCL厂商毛利率扩张路径与2028年后产能预订情况"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：高端CCL毛利率扩张与2Q26财报数据",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "GS：高端CCL毛利率扩张与AI服务器需求驱动",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：HighendCCLGMexpansionont",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：高端与CCL及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：高端CCL毛利率扩张与2028年后产能预订",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：高端与CCL及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_kzli4uur/pdfs/0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "福特财报后，日本汽车",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本汽车-福特财报启示，美国定价与储能需求",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729.pdf",
+      "cleaned_source_title": "GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本AutomobilesFordEarning",
+      "raw_candidates": [
+        "日本汽车-福特财报启示：美国定价与储能需求",
+        "日本汽车-福特财报启示：美国定价稳定与储能订单积累",
+        "日本汽车-福特财报启示：美国市场定价与储能需求信号"
+      ],
+      "cleaned_candidates": [
+        "GS：日本汽车-福特财报启示，美国定价与储能需求",
+        "GS：日本汽车-福特财报启示，美国定价稳定与储能订单积累",
+        "GS：日本汽车-福特财报启示，美国市场定价与储能需求信号",
+        "GS：日本AutomobilesFordEarning",
+        "GS：福特汽车在7月29日发布的第二季度财报中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本AutomobilesFordEarning",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：福特汽车在7月29日发布的第二季度财报中",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本汽车-福特财报启示，美国定价与储能需求",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本汽车-福特财报启示，美国定价与储能需求"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
