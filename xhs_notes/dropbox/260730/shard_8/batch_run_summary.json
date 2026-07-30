@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 8,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-JPM-GSK PLC（GSK.L）Core EBIT margin target implies c. 1% upside to 2030 Consensus， pipeline opportunities highlighted encouraging， though still early with clinic.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- though still early with clinic.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/42-JPM-Flows & Liquidity Deleveraging likely behind us-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0002-42-JPM-Flows - Liquidity Deleveraging likely behind us-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/43-MS-Beijing Kingsoft Office Software Inc（688111）2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/44-MS-2Q26 SaaS Preview – Resilient， But Not Re~Rating-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0004-44-MS-2Q26 SaaS Preview - Resilient- But Not Re-Rating-260728.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/45-MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat & Surprise Guidance Raise-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0005-45-MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat - Surprise Guidance Raise-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "WPS 2Q26 收",
+  "cover_subtitle": "收入增长 21-28%，利润稳定",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x1",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "不确定性提示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "MS：金山办公与AI及季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+    "cleaned_source_title": "MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern",
+    "institution_name": "MS",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "MS：AIBeijingKingsoftOffice软件Inc6",
+    "raw_candidates": [
+      "金山办公2Q26收入增长强劲AI冲击担忧缓解",
+      "金山办公2Q26收入预计增长18-33%",
+      "金山办公2Q26业绩-WPS个人与企业订阅驱动增长"
+    ],
+    "cleaned_candidates": [
+      "MS：金山办公2Q26收入增长强劲AI冲击担忧缓解",
+      "MS：金山办公2Q26收入预计增长18-33%",
+      "MS：金山办公2Q26业绩-WPS个人与企业订阅驱动增长",
+      "MS：AIBeijingKingsoftOffice软件Inc6",
+      "MS：金山办公2Q26收入增长强劲，AI冲击担忧有所缓解"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：金山办公2Q26收入预计增长18-33%",
+        "reasons": [
+          "missing_required_terms=AI",
+          "incomplete_last_segment",
+          "anchor_coverage=0.48"
+        ]
+      },
+      {
+        "title": "MS：金山办公2Q26业绩-WPS个人与企业订阅驱动增长",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "MS：AIBeijingKingsoftOffice软件Inc6",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：金山办公与AI及季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：金山办公2Q26收入增长强劲AI冲击担忧缓解",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "MS：金山办公与AI及季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "532",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,527 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- though still early with clinic.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "GSK的2031目标",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：GSK核心业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- though still early with clinic.pdf",
+      "cleaned_source_title": "JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- though still early with clinic",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：GSKPLCCoreEBITmarginta",
+      "raw_candidates": [
+        "GSK核心利润率目标对2030年共识有约1%上行空间",
+        "GSK成本节约对2030年核心利润贡献约1%",
+        "GSK管线数据集中在2028至2030年读出"
+      ],
+      "cleaned_candidates": [
+        "JPM：GSK核心利润率目标对2030年共识有约1%上行空间",
+        "JPM：GSK成本节约对2030年核心利润贡献约1%",
+        "JPM：GSK管线数据集中在2028至2030年读出",
+        "JPM：GSKPLCCoreEBITmarginta",
+        "JPM：GSK成本节约计划对2030年核心利润贡献约1%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：GSK成本节约对2030年核心利润贡献约1%",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "JPM：GSK管线数据集中在2028至2030年读出",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：GSKPLCCoreEBITmarginta",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：GSK成本节约计划对2030年核心利润贡献约1%",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        }
+      ],
+      "selected_title": "JPM：GSK核心业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：GSK核心利润率目标对2030年共识有约1%上行空间",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：GSK核心业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0002-42-JPM-Flows - Liquidity Deleveraging likely behind us-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "科技去杠杆，接近尾声",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x2",
+      "基金->产品 x2",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "证券->标的 x1",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：资金结构与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-JPM-Flows - Liquidity Deleveraging likely behind us-260729.pdf",
+      "cleaned_source_title": "JPM-Flows - Liquidity Deleveraging likely behind us",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：FlowsLiquidityDelevera",
+      "raw_candidates": [
+        "资金流与流动性去杠杆进程",
+        "科技与半导体去杠杆接近尾声",
+        "跨资产资金流与仓位监测报告"
+      ],
+      "cleaned_candidates": [
+        "JPM：资金流与流动性去杠杆进程",
+        "JPM：科技与半导体去杠杆接近尾声",
+        "JPM：跨资产资金流与仓位监测报告",
+        "JPM：FlowsLiquidityDelevera",
+        "JPM：唯一尚未确认的数据是保证金账户杠杆——6月份纽约标的交易所"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：科技与半导体去杠杆接近尾声",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：跨资产资金流与仓位监测报告",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：FlowsLiquidityDelevera",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：唯一尚未确认的数据是保证金账户杠杆——6月份纽约标的交易所",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：资金结构与相关数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：资金流与流动性去杠杆进程",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：资金结构与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "WPS 2Q26 收",
+    "cover_subtitle": "收入增长 21-28%，利润稳定",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资收益->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x1",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：金山办公与AI及季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+      "cleaned_source_title": "MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern",
+      "institution_name": "MS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "MS：AIBeijingKingsoftOffice软件Inc6",
+      "raw_candidates": [
+        "金山办公2Q26收入增长强劲AI冲击担忧缓解",
+        "金山办公2Q26收入预计增长18-33%",
+        "金山办公2Q26业绩-WPS个人与企业订阅驱动增长"
+      ],
+      "cleaned_candidates": [
+        "MS：金山办公2Q26收入增长强劲AI冲击担忧缓解",
+        "MS：金山办公2Q26收入预计增长18-33%",
+        "MS：金山办公2Q26业绩-WPS个人与企业订阅驱动增长",
+        "MS：AIBeijingKingsoftOffice软件Inc6",
+        "MS：金山办公2Q26收入增长强劲，AI冲击担忧有所缓解"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：金山办公2Q26收入预计增长18-33%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "incomplete_last_segment",
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "MS：金山办公2Q26业绩-WPS个人与企业订阅驱动增长",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "MS：AIBeijingKingsoftOffice软件Inc6",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：金山办公与AI及季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：金山办公2Q26收入增长强劲AI冲击担忧缓解",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：金山办公与AI及季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0004-44-MS-2Q26 SaaS Preview - Resilient- But Not Re-Rating-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "SaaS 2Q：需求",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "买入->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "恶化->出现变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：SaaS与软件行业技术应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-MS-2Q26 SaaS Preview - Resilient- But Not Re-Rating-260728.pdf",
+      "cleaned_source_title": "MS-2Q26 SaaS Preview - Resilient- But Not Re-Rating",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：2Q26SaaSPreviewResilient",
+      "raw_candidates": [
+        "2Q26 SaaS预览-需求稳定但缺乏重估催化剂"
+      ],
+      "cleaned_candidates": [
+        "MS：2Q26SaaS预览-需求稳定但缺乏重估催化剂",
+        "MS：2Q26SaaSPreviewResilient",
+        "MS：S约为7倍，而中小型软件同业约为4倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：2Q26SaaSPreviewResilient",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：S约为7倍，而中小型软件同业约为4倍",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：SaaS与软件行业技术应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：2Q26SaaS预览-需求稳定但缺乏重估催化剂",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：SaaS与软件行业技术应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0005-45-MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat - Surprise Guidance Raise-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Bloom 二季度财",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Bloom能源Corp.",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat - Surprise Guidance Raise-260729.pdf",
+      "cleaned_source_title": "MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat - Surprise Guidance Raise",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Bloom能源Corp.",
+      "raw_candidates": [
+        "Bloom Energy北美业绩超预期上调全年指引",
+        "Bloom Energy二季度营收10.65亿美元上调指引",
+        "Bloom Energy营收与利润改善运营杠杆显现"
+      ],
+      "cleaned_candidates": [
+        "MS：BloomEnergy北美业绩超预期上调全年指引",
+        "MS：BloomEnergy二季度营收10.65亿美元上调指引",
+        "MS：BloomEnergy营收与利润改善运营杠杆显现",
+        "MS：Bloom能源Corp.",
+        "MS：公司首次实现单季营收超过10亿美元，达到10.65亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：BloomEnergy北美业绩超预期上调全年指引",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：BloomEnergy二季度营收10.65亿美元上调指引",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：BloomEnergy营收与利润改善运营杠杆显现",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：公司首次实现单季营收超过10亿美元，达到10.65亿美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Bloom能源Corp.",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：Bloom能源Corp."
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

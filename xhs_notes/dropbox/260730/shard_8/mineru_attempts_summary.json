@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- though still early with clinic.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0002-42-JPM-Flows - Liquidity Deleveraging likely behind us-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0003-43-MS-Beijing Kingsoft Office Software Inc-688111-2Q26 Growth Solid Amid AI Disruption Concern-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0004-44-MS-2Q26 SaaS Preview - Resilient- But Not Re-Rating-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nf9q65zf/pdfs/0005-45-MS-Bloom Energy Corp. - North America Easing Concerns with Strong Results-Earnings Beat - Surprise Guidance Raise-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
