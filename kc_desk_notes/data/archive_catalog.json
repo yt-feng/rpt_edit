@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-07-29 12:46:18 +0800",
+  "updated_at_bjt": "2026-07-30 12:33:19 +0800",
   "item_count": 28,
   "sources": {
-    "previous_archive_items": 27,
-    "bank_catalog_titles": 1197,
-    "archive_items_added": 1,
-    "archive_items_updated": 11,
-    "live_matches_skipped": 1185
+    "previous_archive_items": 28,
+    "bank_catalog_titles": 1073,
+    "archive_items_added": 0,
+    "archive_items_updated": 9,
+    "live_matches_skipped": 1064
   },
   "items": [
     {
@@ -15,16 +15,17 @@
       "title": "GS-China： Three things in China-260726 2",
       "title_zh": "",
       "filename": "GS-China： Three things in China-260726 2.pdf",
-      "date_folder": "260728",
+      "date_folder": "260729",
       "date_folders": [
-        "260728"
+        "260728",
+        "260729"
       ],
       "bank_code": "GS",
       "bank_name": "GS",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-29 12:46:18 +0800",
-      "last_seen_at_bjt": "2026-07-29 12:46:18 +0800",
+      "last_seen_at_bjt": "2026-07-30 12:33:19 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -54,7 +55,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-24 12:47:42 +0800",
-      "last_seen_at_bjt": "2026-07-29 12:46:18 +0800",
+      "last_seen_at_bjt": "2026-07-30 12:33:19 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -84,7 +85,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-24 12:47:42 +0800",
-      "last_seen_at_bjt": "2026-07-29 12:46:18 +0800",
+      "last_seen_at_bjt": "2026-07-30 12:33:19 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -114,7 +115,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-24 12:47:42 +0800",
-      "last_seen_at_bjt": "2026-07-29 12:46:18 +0800",
+      "last_seen_at_bjt": "2026-07-30 12:33:19 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -144,7 +145,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-23 12:48:57 +0800",
-      "last_seen_at_bjt": "2026-07-29 12:46:18 +0800",
+      "last_seen_at_bjt": "2026-07-30 12:33:19 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
