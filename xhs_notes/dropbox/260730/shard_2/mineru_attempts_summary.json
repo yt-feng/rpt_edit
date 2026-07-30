@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0001-11-Bernstein-Mercedes-Benz Group AG-MBG.GR-Mercedes- Some positive notes amidst a cacophony of challenges-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0002-12-Bernstein-Meta Platforms Inc.-META.US-Meta 2Q26- Avoiding TikTok 2.0-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0003-13-Bernstein-adidas AG-ADS.GR-Adidas Q2- Small sales beat- but margins disappoint-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0004-14-Bernstein-Nike Inc-NKE.US-Nike- What does the China reset mean for the business--260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0005-15-Bernstein-US Consumer Tracker -2Q26-- Resilient but value seeking consumer amid continued inflation-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

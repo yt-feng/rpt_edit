@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-Bernstein-Mercedes~Benz Group AG（MBG.GR）Mercedes： Some positive notes amidst a cacophony of challenges-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0001-11-Bernstein-Mercedes-Benz Group AG-MBG.GR-Mercedes- Some positive notes amidst a cacophony of challenges-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-Bernstein-Meta Platforms Inc.（META.US）Meta 2Q26： Avoiding TikTok 2.0-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0002-12-Bernstein-Meta Platforms Inc.-META.US-Meta 2Q26- Avoiding TikTok 2.0-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-Bernstein-adidas AG（ADS.GR）Adidas Q2： Small sales beat， but margins disappoint-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0003-13-Bernstein-adidas AG-ADS.GR-Adidas Q2- Small sales beat- but margins disappoint-260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-Bernstein-Nike Inc（NKE.US）Nike： What does the China reset mean for the business？-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0004-14-Bernstein-Nike Inc-NKE.US-Nike- What does the China reset mean for the business--260729.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-Bernstein-US Consumer Tracker （2Q26）： Resilient but value seeking consumer amid continued inflation-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_tw1b4l7e/pdfs/0005-15-Bernstein-US Consumer Tracker -2Q26-- Resilient but value seeking consumer amid continued inflation-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
