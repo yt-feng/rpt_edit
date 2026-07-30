@@ -156,7 +156,7 @@ const HOT_REPORT_MAX_ITEMS = 200;
 const HOT_REPORT_MAX_COMMENTS = 500;
 const HOT_REPORT_MAX_PDF_BYTES = 95 * 1024 * 1024;
 const HOT_REPORT_MIN_MONTHS = 3;
-const HOT_REPORT_REQUIRED_PLAN = "NOVA-Q";
+const HOT_REPORT_REQUIRED_PLAN = "3个月会员";
 const CATALOG_PDF_OVERRIDE_PREFIX = "_catalog-pdf-overrides";
 const CATALOG_PDF_OVERRIDE_ITEM_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/items`;
 const CATALOG_PDF_OVERRIDE_PDF_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/pdfs`;
@@ -379,10 +379,22 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, X-Vid2PPT-Signature, Range, X-KC-Timestamp, X-KC-Signature",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Range, X-KC-Timestamp, X-KC-Signature",
     "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
     "Vary": "Origin",
   };
+}
+
+function accessContactMessage(request, zhPrefix = "", enPrefix = "") {
+  const language = String(request.headers.get("Accept-Language") || "").trim().toLowerCase();
+  if (language.startsWith("zh")) {
+    return `${zhPrefix}如需开通或调整下载权限，请联系微信 MacroGate。`;
+  }
+  return `${enPrefix}To activate or update download access, email econ.scroll@gmail.com.`;
+}
+
+function legacyCrossSiteLinkEnabled(env) {
+  return ["1", "true", "yes", "on"].includes(cleanEnv(env.KCDESK_VID2PPT_LINK_ENABLED).toLowerCase());
 }
 
 function jsonResponse(request, env, status, body) {
@@ -5819,7 +5831,11 @@ async function handleHotReportPdf(request, env) {
     const access = await hotReportAccessForUser(env, user);
     if (!access.can_download) {
       return jsonResponse(request, env, 402, {
-        error: "近期热门报告需开通 NOVA-Q（3个月）或更长期套餐后下载全文。",
+        error: accessContactMessage(
+          request,
+          "近期热门报告需至少 3 个月会员。",
+          "Recent featured reports require at least three months of membership. ",
+        ),
         required_plan: HOT_REPORT_REQUIRED_PLAN,
         required_months: HOT_REPORT_MIN_MONTHS,
       });
@@ -12761,6 +12777,9 @@ export default {
     }
 
     if (pathname === "/vid2ppt/redeem-code" && request.method === "POST") {
+      if (!legacyCrossSiteLinkEnabled(env)) {
+        return jsonResponse(request, env, 410, { detail: accessContactMessage(request) });
+      }
       return handleVid2PptRedeemCode(request, env);
     }
 
@@ -12806,17 +12825,20 @@ export default {
 
     if (pathname === "/paddle-config" && request.method === "GET") {
       return jsonResponse(request, env, 410, {
-        detail: "KCdesk checkout is closed. Vid2PPT NOVA sponsor checkout handles payment and may gift KCdesk.com membership time.",
+        detail: accessContactMessage(request, "KCdesk 不提供在线支付。", "KCdesk does not provide online checkout. "),
       });
     }
 
     if (pathname === "/paddle-webhook" && request.method === "POST") {
       return jsonResponse(request, env, 410, {
-        detail: "KCdesk Paddle webhook is closed. Payment events are handled by Vid2PPT.",
+        detail: "KCdesk does not accept payment webhooks.",
       });
     }
 
     if (["/vid2ppt/nova-grant", "/vid2ppt/atlas-grant"].includes(pathname) && request.method === "POST") {
+      if (!legacyCrossSiteLinkEnabled(env)) {
+        return jsonResponse(request, env, 410, { detail: accessContactMessage(request) });
+      }
       return handleVid2PptGiftGrant(request, env);
     }
 

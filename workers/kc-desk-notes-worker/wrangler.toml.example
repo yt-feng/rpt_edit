@@ -29,7 +29,8 @@ GH_REPO = "yt-feng/rpt_edit"
 # wrangler secret put CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
 # wrangler secret put CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
 # Internal Vid2PPT -> kcdesk ATLAS gift grant signing secret:
-# wrangler secret put VID2PPT_KCDESK_GRANT_SECRET
+# Keep KCDESK_VID2PPT_LINK_ENABLED unset in production. The legacy handler
+# structure remains available for a future, separately reviewed reactivation.
 # [[send_email]]
 # name = "EMAIL"
 

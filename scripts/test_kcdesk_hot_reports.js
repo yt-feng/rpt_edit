@@ -132,7 +132,7 @@ assert.equal(searchSandbox.result.allZero.hidden, false, "recommendations may re
 assert.match(searchSandbox.result.allZero.html, /latest-report/);
 
 assert.match(indexHtml, /id="hotReportsSection"[\s\S]*?id="hotReportsResults"/, "the home page must expose the hot-report section");
-assert.match(indexHtml, /NOVA-Q（3个月）及以上用户可下载全文/);
+assert.match(indexHtml, /3个月及以上会员可下载全文/);
 assert.match(app, /fetch\(`\$\{workerUrl\}\/hot-reports`, \{ cache: "no-store" \}\)/, "the home/admin UI must load hot reports");
 assert.match(app, /id="accountAdminHotReportForm"[\s\S]*?name="pdf"/, "the admin UI must expose PDF upload fields");
 assert.match(app, /fetch\(`\$\{workerUrl\}\/account-admin\/hot-report`, \{[\s\S]*?body: formData/, "the admin upload form must call the protected upload endpoint");

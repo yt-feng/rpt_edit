@@ -2,8 +2,6 @@
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "MacroGate";
   const CONTACT_EMAIL = "econ.scroll@gmail.com";
-  const VID2PPT_SPONSOR_URL = "https://vid2ppt.com/sponsor/?from=kcdesk";
-  const VID2PPT_SPONSOR_DISPLAY_URL = "https://vid2ppt.com/sponsor/";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
   const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
@@ -123,15 +121,30 @@
       : `${escapeHtml(label)} <b>${value}</b>`;
   }
 
+  function accessContactGuidanceText() {
+    const contact = contactDetails();
+    return contact.isChinese
+      ? `如需开通或调整下载权限，请联系微信 ${contact.value}。`
+      : `To activate or update download access, email ${contact.value}.`;
+  }
+
+  function accessContactGuidanceHtml() {
+    const contact = contactDetails();
+    if (contact.isChinese) {
+      return `如需开通或调整下载权限，请联系微信 <b>${escapeHtml(contact.value)}</b>。`;
+    }
+    return `To activate or update download access, email <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>.`;
+  }
+
   function registrationNoticeText(mode = "login") {
     if (!contactDetails().isChinese) {
       return mode === "register"
-        ? `Use an email address you check regularly. An administrator will activate your account by email within 5 business days. Questions: ${CONTACT_EMAIL}.`
-        : `New here? Register with an email address you check regularly. Account activation is completed by email within 5 business days.`;
+        ? `Use an email address you check regularly. Registration creates a login only. For download access, email ${CONTACT_EMAIL}.`
+        : `New here? Register with an email address you check regularly. For download access, email ${CONTACT_EMAIL}.`;
     }
     return mode === "register"
-      ? `请填写常用邮箱。注册完成后，管理员会在 5 个工作日内通过邮件开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。`
-      : "没有账号？请注册并填写常用邮箱。管理员会在 5 个工作日内通过邮件开通账号。";
+      ? `请填写常用邮箱。注册仅创建登录账号；如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`
+      : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
   }
 
   function registrationCompleteText(emailDestination = {}) {
@@ -142,9 +155,9 @@
       const reminder = emailDestination.status === "pending"
         ? " Please also check your inbox and complete email verification."
         : "";
-      return `Registration complete. An administrator will activate your account by email within 5 business days. Questions: ${CONTACT_EMAIL}.${reminder}`;
+      return `Registration complete. For download access, email ${CONTACT_EMAIL}.${reminder}`;
     }
-    return `注册成功。管理员将在 5 个工作日内通过邮件为你开通账号；任何疑问请联系邮箱 ${CONTACT_EMAIL}。${verifyReminder}`;
+    return `注册成功。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。${verifyReminder}`;
   }
 
   function localizedContactText(value) {
@@ -155,14 +168,6 @@
       .replace(/WeChat\s*:\s*MacroGate/gi, `email ${CONTACT_EMAIL}`)
       .replace(/联系微信号?\s*[:：]?\s*MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`)
       .replace(/联系\s+MacroGate/gi, `联系邮箱 ${CONTACT_EMAIL}`);
-  }
-
-  function vid2pptSponsorLinkHtml(session = loadAuthSession()) {
-    return `<a class="vid2ppt-sponsor-link" href="${escapeHtml(vid2pptSponsorUrlForSession(session))}" target="_blank" rel="noopener">${escapeHtml(VID2PPT_SPONSOR_DISPLAY_URL)}</a>`;
-  }
-
-  function novaSponsorGuidanceHtml(prefix = "", session = loadAuthSession()) {
-    return `${escapeHtml(prefix)}${vid2pptSponsorLinkHtml(session)} NOVA-3D赠送3天体验（限下载10篇）；无限量下载全站报告，NOVA-M单月，<b>NOVA-Q季度，NOVA-Y年度，NOVA-2Y两年</b>`;
   }
 
   function normalize(value) {
@@ -393,14 +398,6 @@
     return user.username || user.email || "账号";
   }
 
-  function isLegacyKcdeskSession(session = loadAuthSession()) {
-    const user = session && session.user;
-    const origin = String(user && (user.site_origin || user.registered_site || user.source_site) || "")
-      .trim()
-      .toLowerCase();
-    return Boolean(user) && (!origin || origin === "legacy-unknown" || origin.startsWith("legacy-"));
-  }
-
   function accountRightLabel(row = {}) {
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
@@ -414,7 +411,7 @@
       if (industries.length) return `行业报告下载权限（${industries.slice(0, 3).join("、")}）`;
       return "条件报告下载权限";
     }
-    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(row.source) || ["vid2ppt_nova", "vid2ppt_atlas"].includes(row.grant_source)) return "KCdesk.com 赠送会员权益";
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(row.source) || ["vid2ppt_nova", "vid2ppt_atlas"].includes(row.grant_source)) return "历史会员下载权益";
     if (row.plan === "annual") return "会员下载权限";
     if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
     return "下载权限";
@@ -544,16 +541,9 @@
   function accountModalMarkup(context = {}) {
     const session = loadAuthSession();
     const signedIn = Boolean(session);
-    const legacyCustomer = isLegacyKcdeskSession(session);
     const reportTitle = context.item ? titleText(context.item) : "";
     const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
-    const reportHelp = legacyCustomer
-      ? `<span>已有下载权限会继续按原授权范围使用；如需协助请联系${contactMethodHtml()}。</span>`
-      : `<span>${novaSponsorGuidanceHtml("", session)}</span>
-            <div class="account-redeem-row">
-              <input id="accountVid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
-              <button class="secondary-button" id="accountRedeemVid2pptCode" type="button">兑换</button>
-            </div>`;
+    const reportHelp = `<span>${accessContactGuidanceHtml()}</span>`;
     return `
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
         <div class="admin-dialog account-dialog">
@@ -596,7 +586,7 @@
               <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
             </form>
           </div>
-          <div class="contact-card" id="accountContactCard" ${legacyCustomer ? "hidden" : ""}>
+          <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
             ${reportHelp}
@@ -657,8 +647,6 @@
     const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
     const passwordSubmit = document.getElementById("accountPasswordSubmit");
     const contactCard = document.getElementById("accountContactCard");
-    const redeemInput = document.getElementById("accountVid2pptRedeemCode");
-    const redeemButton = document.getElementById("accountRedeemVid2pptCode");
     const status = document.getElementById("accountModalStatus");
     let mode = "login";
     let captchaToken = "";
@@ -674,7 +662,7 @@
       const signedIn = Boolean(session);
       form.hidden = signedIn;
       summary.hidden = !signedIn;
-      if (contactCard) contactCard.hidden = signedIn && isLegacyKcdeskSession(session);
+      if (contactCard) contactCard.hidden = false;
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
@@ -740,49 +728,6 @@
     }
     if (adminOpen) {
       adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
-    }
-    if (redeemButton && redeemInput) {
-      redeemButton.addEventListener("click", async () => {
-        const session = loadAuthSession();
-        if (!session) {
-          setStatus("请先登录 KCdesk 账号，再兑换 Vid2PPT 代码。", "error");
-          if (username) username.focus();
-          return;
-        }
-        const code = String(redeemInput.value || "").trim().toUpperCase();
-        if (!code) {
-          setStatus("请先输入 Vid2PPT 兑换代码。", "error");
-          redeemInput.focus();
-          return;
-        }
-        redeemButton.disabled = true;
-        setStatus("正在校验 Vid2PPT 兑换代码…");
-        try {
-          const response = await fetch(`${workerUrl}/vid2ppt/redeem-code`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", ...authHeaders() },
-            body: JSON.stringify({ code }),
-          });
-          const data = await response.json().catch(() => ({}));
-          if (!response.ok || !data.ok) throw new Error(data.detail || "兑换失败。");
-          redeemInput.value = "";
-          const entitlementSummary = accountRightSummary({ effective_access: data.entitlement || {} });
-          const successMessage = entitlementSummary
-            ? `兑换成功，已开通：${entitlementSummary}。`
-            : "兑换成功，KCdesk.com 赠送会员权益已开通。";
-          refreshUi({ statusOverride: successMessage });
-          document.dispatchEvent(new CustomEvent("kcdesk-auth-change"));
-        } catch (error) {
-          setStatus(error.message || "兑换失败，请稍后重试。", "error");
-        } finally {
-          redeemButton.disabled = false;
-        }
-      });
-      redeemInput.addEventListener("keydown", (event) => {
-        if (event.key !== "Enter") return;
-        event.preventDefault();
-        redeemButton.click();
-      });
     }
     if (passwordForm) {
       passwordForm.addEventListener("submit", async (event) => {
@@ -950,7 +895,7 @@
                 <input id="accountAdminHotReportPdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
               </label>
               <div class="account-admin-hot-actions">
-                <span>NOVA-Q（3个月）及以上用户可下载全文。</span>
+                <span>3个月及以上会员可下载全文。</span>
                 <button class="primary" type="submit">上传到近期热门报告</button>
               </div>
             </form>
@@ -1117,11 +1062,11 @@
     const entitlement = user && user.entitlement || {};
     if (access.source === "role") return "账号角色";
     if (access.source === "disabled") return "账号已禁用";
-    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(access.source)) return `Vid2PPT NOVA 赠送${access.source_plan_code ? ` · ${access.source_plan_code}` : ""}`;
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(access.source)) return "历史会员权益";
     if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
     if (access.source === "entitlement") {
       return ["vid2ppt_nova", "vid2ppt_atlas"].includes(entitlement.grant_source)
-        ? `Vid2PPT NOVA 赠送${entitlement.source_plan_code ? ` · ${entitlement.source_plan_code}` : ""}`
+        ? "历史会员权益"
         : "会员权益";
     }
     if (access.source === "stored") return "后台授权";
@@ -1131,14 +1076,19 @@
 
   function adminUserViewModel(user) {
     const disabled = Boolean(user && user.disabled);
+    const rawSiteOrigin = String(user && (user.site_origin || user.registered_site) || "kcdesk");
+    const rawRegisteredSite = String(user && (user.registered_site || user.site_origin) || "kcdesk");
+    const rawSourceSite = String(user && user.entitlement && user.entitlement.source_site || "");
+    const rawGrantSource = String(user && user.entitlement && user.entitlement.grant_source || "");
+    const historicalLinkedEntitlement = rawSourceSite === "vid2ppt" || ["vid2ppt_nova", "vid2ppt_atlas"].includes(rawGrantSource);
     return {
       username: String(user && user.username || ""),
       email: String(user && user.email || ""),
-      site_origin: String(user && (user.site_origin || user.registered_site) || "kcdesk"),
-      registered_site: String(user && (user.registered_site || user.site_origin) || "kcdesk"),
-      entitlement_source_site: String(user && user.entitlement && user.entitlement.source_site || ""),
-      entitlement_grant_source: String(user && user.entitlement && user.entitlement.grant_source || ""),
-      entitlement_plan_code: String(user && user.entitlement && user.entitlement.source_plan_code || ""),
+      site_origin: rawSiteOrigin === "vid2ppt" ? "historical" : rawSiteOrigin,
+      registered_site: rawRegisteredSite === "vid2ppt" ? "historical" : rawRegisteredSite,
+      entitlement_source_site: historicalLinkedEntitlement ? "historical" : rawSourceSite,
+      entitlement_grant_source: historicalLinkedEntitlement ? "historical_member" : rawGrantSource,
+      entitlement_plan_code: historicalLinkedEntitlement ? "" : String(user && user.entitlement && user.entitlement.source_plan_code || ""),
       status: disabled ? "已禁用" : "正常",
       account: adminUserEntitlementLabel(user),
       access: adminUserAccessLabel(user),
@@ -4329,7 +4279,7 @@
       item.institution,
       item.date,
       formatSize(item.size_bytes),
-      item.required_plan ? `${item.required_plan} 及以上` : "NOVA-Q 及以上",
+      "3个月及以上会员",
     ].map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     return `
@@ -5707,8 +5657,8 @@
         <p class="subtle">这份报告目前没有可下载 PDF。登录后，会员时长达到 1 个月且报告在账号授权范围内，即可分页查看已保存的提取文本。</p>
         <div class="text-only-text-actions">
           <button class="primary" id="viewTextOnlyText" type="button">查看原始文本</button>
-          <a class="secondary-button" id="openTextOnlySponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener">开通 NOVA-M</a>
         </div>
+        <p class="subtle">${accessContactGuidanceHtml()}</p>
         <div id="textOnlyTextStatus" class="status-line" aria-live="polite"></div>
         <div id="textOnlyTextContent" class="text-only-text-content" hidden>
           <div id="textOnlyTextSource" class="text-only-text-source"></div>
@@ -5722,13 +5672,12 @@
   function initTextOnlyTextAccess(item, workerUrl) {
     const panel = document.getElementById("textOnlyTextAccess");
     const openButton = document.getElementById("viewTextOnlyText");
-    const sponsorLink = document.getElementById("openTextOnlySponsor");
     const status = document.getElementById("textOnlyTextStatus");
     const content = document.getElementById("textOnlyTextContent");
     const source = document.getElementById("textOnlyTextSource");
     const body = document.getElementById("textOnlyTextBody");
     const loadMore = document.getElementById("loadMoreTextOnlyText");
-    if (!panel || !openButton || !sponsorLink || !status || !content || !source || !body || !loadMore || !workerUrl) return;
+    if (!panel || !openButton || !status || !content || !source || !body || !loadMore || !workerUrl) return;
 
     let nextCursor = "";
     let requestGeneration = 0;
@@ -5775,7 +5724,6 @@
       activeSessionIdentity = identity;
       if (identityChanged) resetText();
       openButton.textContent = session ? "查看原始文本" : "注册 / 登录后查看";
-      sponsorLink.href = vid2pptSponsorUrlForSession(session);
       if (identityChanged) {
         status.className = "status-line";
         status.textContent = session
@@ -5824,7 +5772,7 @@
           const fallback = response.status === 401
             ? "登录状态已更新，请重新点击查看。"
             : response.status === 403
-              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。开通 NOVA-M 或更长期全站套餐后可查看。"
+              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。如需开通或调整权限，请联系微信 MacroGate。"
               : response.status === 404
                 ? "这份报告暂时没有可读取的原始文本。"
                 : response.status === 400
@@ -5898,16 +5846,6 @@
     loadMore.addEventListener("click", () => {
       if (nextCursor) loadText(nextCursor);
     });
-    sponsorLink.addEventListener("click", () => {
-      trackEvent(workerUrl, "vid2ppt_nova_sponsor_click", {
-        ...analyticsReportPayload(item, "catalog"),
-        site_origin: "kcdesk",
-        target_site: "vid2ppt",
-        purchase_site: "vid2ppt.com",
-        gift_benefit_site: "kcdesk.com",
-        required_plan: "NOVA-M",
-      });
-    });
     document.addEventListener("kcdesk-auth-change", refreshSession);
     refreshSession();
   }
@@ -5979,27 +5917,11 @@
         <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
-          <a class="secondary-button" id="openVid2pptSponsor" href="${escapeHtml(VID2PPT_SPONSOR_URL)}" target="_blank" rel="noopener" hidden>开通 NOVA</a>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
-        </div>
-        <div class="account-redeem-row" id="vid2pptRedeemRow" hidden>
-          <input id="vid2pptRedeemCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Vid2PPT 兑换代码">
-          <button class="secondary-button" id="redeemVid2pptCode" type="button">兑换</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
       </section>
     `;
-  }
-
-  function vid2pptSponsorUrlForSession(session = loadAuthSession()) {
-    const url = new URL(VID2PPT_SPONSOR_URL);
-    url.searchParams.set("from", "kcdesk");
-    const user = session && session.user || {};
-    const email = String(user.email || "").trim();
-    const username = String(user.username || "").trim();
-    if (email) url.searchParams.set("email", email);
-    if (username) url.searchParams.set("username", username);
-    return url.toString();
   }
 
   function setLineStatus(target, text, kind) {
@@ -6069,10 +5991,6 @@
     if (!panel || !workerUrl) return;
     const openAccount = document.getElementById("openAccountPanel");
     const accountDownload = document.getElementById("accountDownloadReport");
-    const sponsorLink = document.getElementById("openVid2pptSponsor");
-    const redeemRow = document.getElementById("vid2pptRedeemRow");
-    const redeemInput = document.getElementById("vid2pptRedeemCode");
-    const redeemButton = document.getElementById("redeemVid2pptCode");
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
     const passwordForm = document.getElementById("unlockForm");
@@ -6089,26 +6007,15 @@
 
     async function refresh() {
       const session = loadAuthSession();
-      const showSponsorOptions = !isLegacyKcdeskSession(session);
       panel.hidden = false;
-      if (sponsorLink) {
-        sponsorLink.hidden = !showSponsorOptions;
-        if (showSponsorOptions) {
-          sponsorLink.href = vid2pptSponsorUrlForSession(session);
-          if (isHotReport) sponsorLink.textContent = "开通 NOVA-Q";
-        }
-      }
-      if (redeemRow) redeemRow.hidden = !showSponsorOptions;
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
       openAccount.hidden = Boolean(session);
       if (!session) {
         hint.innerHTML = isHotReport
-          ? "登录后可查看热门报告下载权限；NOVA-Q（3个月）及以上可下载全文。"
-          : `${novaSponsorGuidanceHtml("登录后可查看账号下载权限；", session)}。`;
-        statusTargetHtml(isHotReport
-          ? `请先注册或登录；下载全文需要前往 ${vid2pptSponsorLinkHtml(session)} 开通 NOVA-Q（3个月）或更长期套餐。`
-          : `未登录时可先注册或登录账号；需要会员权益请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA。其它问题可联系 ${escapeHtml(CONTACT_EMAIL)}。`);
+          ? "登录后可查看热门报告下载权限；需至少 3 个月会员。"
+          : "登录后可查看账号下载权限。";
+        statusTargetHtml(`请先注册或登录。${accessContactGuidanceHtml()}`);
         return;
       }
       hint.textContent = `当前账号：${authUserLabel(session)}`;
@@ -6124,15 +6031,11 @@
         } else {
           if (passwordForm) passwordForm.hidden = false;
           if (isHotReport) {
-            statusTargetHtml(`当前权益未达到 3 个月。近期热门报告全文需要开通 ${vid2pptSponsorLinkHtml(session)} 的 NOVA-Q（3个月）或更长期套餐。`);
-          } else if (isLegacyKcdeskSession(session)) {
-            statusTarget(summary
-              ? `当前账号有${summary}，但不包含此报告。如需调整授权范围，请联系${contactMethodText()}。`
-              : `当前账号尚未解锁此报告。如需协助，请联系${contactMethodText()}。`);
+            statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
           } else {
-            statusTargetHtml(summary
-              ? `当前账号有${escapeHtml(summary)}，但不包含此报告。${novaSponsorGuidanceHtml("", session)}。`
-              : `当前账号尚未解锁此报告。请前往 ${vid2pptSponsorLinkHtml(session)} 选择 NOVA；支付完成后，会赠送 KCdesk.com 对应时长会员权益。`);
+            statusTarget(summary
+              ? `当前账号有${summary}，但不包含此报告。${accessContactGuidanceText()}`
+              : `当前账号尚未解锁此报告。${accessContactGuidanceText()}`);
           }
         }
       } catch (error) {
@@ -6142,53 +6045,6 @@
     }
 
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
-    if (sponsorLink) {
-      sponsorLink.addEventListener("click", () => {
-        trackEvent(workerUrl, "vid2ppt_nova_sponsor_click", {
-          ...analyticsReportPayload(item, source),
-          site_origin: "kcdesk",
-          target_site: "vid2ppt",
-          purchase_site: "vid2ppt.com",
-          gift_benefit_site: "kcdesk.com",
-        });
-      });
-    }
-    if (redeemButton && redeemInput) {
-      redeemButton.addEventListener("click", async () => {
-        const session = loadAuthSession();
-        if (!session) {
-          statusTarget("请先登录 KCdesk 账号，再兑换 Vid2PPT 代码。", "error");
-          showAccountModal(workerUrl, context);
-          return;
-        }
-        const code = String(redeemInput.value || "").trim().toUpperCase();
-        if (!code) {
-          statusTarget("请先输入 Vid2PPT 兑换代码。", "error");
-          redeemInput.focus();
-          return;
-        }
-        redeemButton.disabled = true;
-        statusTarget("正在校验 Vid2PPT 兑换代码…");
-        try {
-          const response = await fetch(`${workerUrl}/vid2ppt/redeem-code`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", ...authHeaders() },
-            body: JSON.stringify({ code }),
-          });
-          const data = await response.json().catch(() => ({}));
-          if (!response.ok || !data.ok) throw new Error(data.detail || "兑换失败。");
-          redeemInput.value = "";
-          const entitlement = data.entitlement || {};
-          const summary = accountRightSummary({ effective_access: entitlement });
-          statusTarget(summary ? `兑换成功，已开通：${summary}。` : "兑换成功，KCdesk.com 赠送会员权益已开通。", "ok");
-          refresh();
-        } catch (error) {
-          statusTarget(error.message || "兑换失败，请稍后重试。", "error");
-        } finally {
-          redeemButton.disabled = false;
-        }
-      });
-    }
     accountDownload.addEventListener("click", async () => {
       accountDownload.disabled = true;
       try {
@@ -6830,7 +6686,7 @@
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("PDF", formatSize(item.size_bytes) || "Available")}
-        ${field("全文权限", `${item.required_plan || "NOVA-Q"} 及以上`)}
+        ${field("全文权限", "3个月及以上会员")}
       ` : (isThinkTankItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
@@ -6849,7 +6705,7 @@
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
         <p class="subtle">${isContactOnlyItem(item)
           ? `${docSourceLabel(item)}检索线索。`
-          : (isHotReportItem(item) ? "NOVA-Q（3个月）及以上用户可下载全文。" : "Password-protected report delivery.")}</p>
+          : (isHotReportItem(item) ? "3个月及以上会员可下载全文。" : "Password-protected report delivery.")}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}

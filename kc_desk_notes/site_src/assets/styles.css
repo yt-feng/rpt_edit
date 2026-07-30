@@ -797,22 +797,6 @@ button.primary:disabled {
   gap: 10px;
 }
 
-.account-redeem-row {
-  display: grid;
-  grid-template-columns: minmax(190px, 1fr) auto;
-  gap: 10px;
-  align-items: center;
-}
-
-.account-redeem-row input {
-  min-height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0 12px;
-  font: inherit;
-  font-weight: 750;
-}
-
 .secondary-button {
   min-height: 44px;
   border: 1px solid var(--line);
@@ -2323,17 +2307,6 @@ a.secondary-button {
 .legal-panel a[href^="mailto:"] {
   color: var(--accent-strong);
   overflow-wrap: anywhere;
-}
-
-.vid2ppt-sponsor-link {
-  color: #0f766e;
-  font-weight: 800;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.vid2ppt-sponsor-link:hover {
-  color: #0d9488;
 }
 
 .admin-close {

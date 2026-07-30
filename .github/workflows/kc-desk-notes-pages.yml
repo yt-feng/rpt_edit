@@ -319,12 +319,6 @@ jobs:
           AUTH_SECRET: ${{ secrets.AUTH_SECRET || secrets.PASSWORD_SECRET || 'unconfigured' }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL || 'unconfigured' }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'unconfigured' }}
-          PADDLE_ENV: ${{ secrets.PADDLE_ENV || vars.PADDLE_ENV || 'production' }}
-          PADDLE_CLIENT_TOKEN: ${{ secrets.PADDLE_CLIENT_TOKEN || vars.PADDLE_CLIENT_TOKEN || 'unconfigured' }}
-          PADDLE_PRICE_CNY_CENT: ${{ secrets.PADDLE_PRICE_CNY_CENT || vars.PADDLE_PRICE_CNY_CENT || 'unconfigured' }}
-          PADDLE_PRICE_REPORT_CNY_CENT: ${{ secrets.PADDLE_PRICE_REPORT_CNY_CENT || vars.PADDLE_PRICE_REPORT_CNY_CENT || 'unconfigured' }}
-          PADDLE_PRICE_YEARLY: ${{ secrets.PADDLE_PRICE_YEARLY || vars.PADDLE_PRICE_YEARLY || 'unconfigured' }}
-          PADDLE_WEBHOOK_SECRET: ${{ secrets.PADDLE_WEBHOOK_SECRET || 'unconfigured' }}
           GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || 'unconfigured' }}
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
@@ -351,12 +345,6 @@ jobs:
             AUTH_SECRET
             SUPABASE_URL
             SUPABASE_SERVICE_ROLE_KEY
-            PADDLE_ENV
-            PADDLE_CLIENT_TOKEN
-            PADDLE_PRICE_CNY_CENT
-            PADDLE_PRICE_REPORT_CNY_CENT
-            PADDLE_PRICE_YEARLY
-            PADDLE_WEBHOOK_SECRET
             GH_READ_TOKEN
             DEEPSEEK_API_KEY
             DEEPSEEK_BASE_URL
