@@ -1,0 +1,25 @@
+Found 63 total PDFs; shard 11/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_97ujobs2/pdfs/0001-56-Nomura-China consumer-Read-across from Hermès- 2Q26 results-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_97ujobs2/pdfs/0002-57-Nomura-China consumer-Read-across from Kering-s 2Q26 results-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_97ujobs2/pdfs/0003-58-Nomura-Industrial electronics sector-Results at overseas companies- Seagate Technology-s 26 6 Q4 results-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_97ujobs2/pdfs/0004-59-Nomura-China healthcare-MNCs- June-quarter results read-through-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_97ujobs2/pdfs/0005-60-Nomura-Sungrow Power Supply-300274-FCC covered list likely caps US growth-260729.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=840cc1c1-d85e-43cd-88de-82d6ea0890e4
+MinerU states: done, running, waiting-file, pending, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 34c28914cfaf7bf45847b3f778d2ceeafbcad15414de48de9aa0e5976fb5cd56.jpg: score=-100;too_small:1409x81
+Skip non-chart visual asset 3bcc76f11fd2dbba3bf5c0be6b1b1e2add20e21005a2f691ac3fafbca2f97446.jpg: score=-100;too_small:1409x112
+MinerU result contained no standalone chart images; creating title card only.
+MinerU result contained no standalone chart images; creating title card only.
+Skip non-chart visual asset 40dd1cf2fab271c4c940d54413dae298a9ec071af89a1f7cd0070d3b51eb988c.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.31
+Skip non-chart visual asset d1b46fd0fb7fd5e8acfdcb303ea780217db99aee7e4db5bb7d8cd6bee0666d79.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset d92f19c040e381961d33f16e95b5f608600bfd453661c5407b223d8f655f195d.jpg: score=-100;too_small:1412x84
+Neutralized WeChat title while keeping the report: 野村：阳光电源-FCC覆盖清单限制美国增长-2026年7月 -> 野村：阳光电源业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_11; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

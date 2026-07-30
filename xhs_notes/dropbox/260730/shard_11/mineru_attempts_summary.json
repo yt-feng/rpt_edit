@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_97ujobs2/pdfs/0001-56-NOM-China consumer-Read-across from Hermès- 2Q26 results-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_97ujobs2/pdfs/0002-57-NOM-China consumer-Read-across from Kering-s 2Q26 results-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_97ujobs2/pdfs/0003-58-NOM-Industrial electronics sector-Results at overseas companies- Seagate Technology-s 26 6 Q4 results-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_97ujobs2/pdfs/0004-59-NOM-China healthcare-MNCs- June-quarter results read-through-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_97ujobs2/pdfs/0005-60-NOM-Sungrow Power Supply-300274-FCC covered list likely caps US growth-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
