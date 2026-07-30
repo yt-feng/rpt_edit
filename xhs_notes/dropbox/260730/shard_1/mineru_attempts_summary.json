@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0001-06-Bernstein-Hermes International-RMS.FP-Hermes- 1H26 organic sales in line- EBIT 2- above-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0002-07-Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good--260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0003-08-Bernstein-Honeywell International Inc-HON.US-HON 2Q26 Post Earnings- The -show me- story is looking increasingly credible- raising TP to 264.-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0004-09-Bernstein-Hermes International-RMS.FP-Hermès- Highlights from the 1H26 conference call-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

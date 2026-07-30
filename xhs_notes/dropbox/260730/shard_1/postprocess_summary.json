@@ -1,0 +1,587 @@
+[
+  {
+    "item": "0001-06-Bernstein-Hermes-International-RMS.FP-Hermes--1H26-organic-sales-in-line",
+    "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0001-06-Bernstein-Hermes International-RMS.FP-Hermes- 1H26 organic sales in line- EBIT 2- above-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "爱马仕半年报：利润超",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：爱马仕业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-Bernstein-Hermes International-RMS.FP-Hermes- 1H26 organic sales in line- EBIT 2- above-260729.pdf",
+      "cleaned_source_title": "Bernstein-Hermes International-RMS.FP-Hermes- 1H26 organic sales in line- EBIT 2- above",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：HermesInternationalHermes1H26",
+      "raw_candidates": [
+        "爱马仕2026上半年有机销售符合预期-利润率超预期",
+        "爱马仕2026上半年有机销售增6.7%-利润率41.1%超预期",
+        "爱马仕2026上半年财报-区域与品类表现分化"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：爱马仕2026上半年有机销售符合预期-利润率超预期",
+        "Bernstein：爱马仕2026上半年有机销售增6.7%",
+        "Bernstein：爱马仕2026上半年财报-区域与品类表现分化",
+        "Bernstein：HermesInternationalHermes1H26",
+        "Bernstein：这份财报发布时，爱马仕报价在过去12个月已下跌约29%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：爱马仕2026上半年有机销售增6.7%",
+          "reasons": [
+            "anchor_coverage=0.59",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：爱马仕2026上半年财报-区域与品类表现分化",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：HermesInternationalHermes1H26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：这份财报发布时，爱马仕报价在过去12个月已下跌约29%",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：爱马仕业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：爱马仕2026上半年有机销售符合预期-利润率超预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：爱马仕业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-07-Bernstein-Lam-Research-LRCX-FQ426-recap---Pretty-darn-good--260730",
+    "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0002-07-Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good--260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Lam Resear",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：营收67.2亿美元、每股收益1.82美元，均高于市场预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good--260730.pdf",
+      "cleaned_source_title": "Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：LamResearch(LRCX)FQ426",
+      "raw_candidates": [
+        "Bernstein：Lam Research季度营收67.2亿美元超预期",
+        "Bernstein：Lam Research下季营收指引81亿美元上调WFE预期",
+        "Bernstein：Lam Research长期毛利率目标上调至55%",
+        "Lam Research FQ426业绩回顾",
+        "Lam Research FQ426营收67.2亿美元超预期",
+        "Lam Research FQ426半导体设备需求与利润率展望"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：LamResearch季度营收67.2亿美元超预期",
+        "Bernstein：LamResearch下季营收指引81亿美元上调WFE预期",
+        "Bernstein：LamResearch长期毛利率目标上调至55%",
+        "Bernstein：LamResearchFQ426业绩回顾",
+        "Bernstein：LamResearchFQ426营收67.2亿美元超预期",
+        "Bernstein：LamResearchFQ426半导体设备需求与利润率展望",
+        "Bernstein：LamResearch(LRCX)FQ426",
+        "Bernstein：营收67.2亿美元、每股收益1.82美元，均高于市场预期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：LamResearch季度营收67.2亿美元超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.36",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearch下季营收指引81亿美元上调WFE预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearch长期毛利率目标上调至55%",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearchFQ426业绩回顾",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearchFQ426营收67.2亿美元超预期",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.36",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearchFQ426半导体设备需求与利润率展望",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：LamResearch(LRCX)FQ426",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：营收67.2亿美元、每股收益1.82美元，均高于市场预期",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1.82"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Bernstein：营收67.2亿美元、每股收益1.82美元，均高于市场预期",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Bernstein：Lam Research季度营收67.2亿美元超预期",
+        "Bernstein：Lam Research下季营收指引81亿美元上调WFE预期",
+        "Bernstein：Lam Research长期毛利率目标上调至55%"
+      ],
+      "final_title_after_wording_guard": "Bernstein：营收67.2亿美元、每股收益1.82美元，均高于市场预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-08-Bernstein-Honeywell-International-Inc-HON.US-HON-2Q26-Post-Earnings--The",
+    "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0003-08-Bernstein-Honeywell International Inc-HON.US-HON 2Q26 Post Earnings- The -show me- story is looking increasingly credible- raising TP to 264.-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "霍尼韦尔这次真的不一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：霍尼韦尔业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-Bernstein-Honeywell International Inc-HON.US-HON 2Q26 Post Earnings- The -show me- story is looking increasingly credible- raising TP to 264.-260730.pdf",
+      "cleaned_source_title": "Bernstein-Honeywell International Inc-HON.US-HON 2Q26 Post Earnings- The -show me- story is looking increasingly credible- raising TP to 264.",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：HoneywellInternationalIncHON2Q",
+      "raw_candidates": [
+        "Bernstein：霍尼韦尔二季度业绩与增长叙事可信度",
+        "Bernstein：霍尼韦尔二季度有机收入增4%每股收益1.95美元",
+        "Bernstein：霍尼韦尔二季度业绩超预期增长叙事可信度提升"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：霍尼韦尔二季度业绩与增长叙事可信度",
+        "Bernstein：霍尼韦尔二季度有机收入增4%每股收益1.95美元",
+        "Bernstein：霍尼韦尔二季度业绩超预期增长叙事可信度提升",
+        "Bernstein：HoneywellInternationalIncHON2Q",
+        "Bernstein：调整后每股收益1.95美元，超出共识约7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：霍尼韦尔二季度有机收入增4%每股收益1.95美元",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "Bernstein：HoneywellInternationalIncHON2Q",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：调整后每股收益1.95美元，超出共识约7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：霍尼韦尔业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：霍尼韦尔二季度业绩与增长叙事可信度",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：霍尼韦尔业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-09-Bernstein-Hermes-International-RMS.FP-Herm-s--Highlights-from-the-1H26-c",
+    "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0004-09-Bernstein-Hermes International-RMS.FP-Hermès- Highlights from the 1H26 conference call-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "爱马仕的慢，为什么是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "股票市场|股市->市场 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：爱马仕1H26电话会议要点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-Bernstein-Hermes International-RMS.FP-Hermès- Highlights from the 1H26 conference call-260729.pdf",
+      "cleaned_source_title": "Bernstein-Hermes International-RMS.FP-Hermès- Highlights from the 1H26 conference call",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：HermesInternationalHermès",
+      "raw_candidates": [
+        "爱马仕1H26电话会议要点",
+        "爱马仕1H26电话会议-品类组合与产能扩张",
+        "爱马仕1H26电话会议-增长算法与区域表现"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：爱马仕1H26电话会议要点",
+        "Bernstein：爱马仕1H26电话会议-品类组合与产能扩张",
+        "Bernstein：爱马仕1H26电话会议-增长算法与区域表现",
+        "Bernstein：HermesInternationalHermès",
+        "Bernstein：爱马仕1H26电话会议揭示的增长路径与市场误读"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：HermesInternationalHermès",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：爱马仕1H26电话会议要点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：爱马仕1H26电话会议要点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-10-Bernstein-NXP-Semiconductors-NV-NXPI.US-NXP-Semiconductors--NXPI---Q226-",
+    "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "半导体大厂NXP：便",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：NXP半导体二季度业绩回顾",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+      "cleaned_source_title": "Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：NXP半导体NVNXP半导体NXPI",
+      "raw_candidates": [
+        "Bernstein：NXP半导体二季度业绩回顾",
+        "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+        "Bernstein：NXP半导体二季度通信与工业物联网超预期"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：NXP半导体二季度业绩回顾",
+        "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+        "Bernstein：NXP半导体二季度通信与工业物联网超预期",
+        "Bernstein：NXP半导体NVNXP半导体NXPI",
+        "Bernstein：营收34.96亿美元，每股收益3.61美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "Bernstein：NXP半导体二季度通信与工业物联网超预期",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "Bernstein：NXP半导体NVNXP半导体NXPI",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "Bernstein：营收34.96亿美元，每股收益3.61美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：NXP半导体二季度业绩回顾",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：NXP半导体二季度业绩回顾"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

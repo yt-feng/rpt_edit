@@ -1,0 +1,104 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__qtk03vw/pdfs/0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "半导体大厂NXP：便",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：NXP半导体二季度业绩回顾",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+    "cleaned_source_title": "Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：NXP半导体NVNXP半导体NXPI",
+    "raw_candidates": [
+      "Bernstein：NXP半导体二季度业绩回顾",
+      "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+      "Bernstein：NXP半导体二季度通信与工业物联网超预期"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：NXP半导体二季度业绩回顾",
+      "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+      "Bernstein：NXP半导体二季度通信与工业物联网超预期",
+      "Bernstein：NXP半导体NVNXP半导体NXPI",
+      "Bernstein：营收34.96亿美元，每股收益3.61美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：NXP半导体二季度营收34.96亿美元超预期",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "Bernstein：NXP半导体二季度通信与工业物联网超预期",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "Bernstein：NXP半导体NVNXP半导体NXPI",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "Bernstein：营收34.96亿美元，每股收益3.61美元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：NXP半导体二季度业绩回顾",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：NXP半导体二季度业绩回顾"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "496",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

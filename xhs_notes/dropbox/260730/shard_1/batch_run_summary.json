@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Bernstein-Hermes International（RMS.FP）Hermes： 1H26 organic sales in line； EBIT 2% above-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001__qtk03vw/pdfs/0001-06-Bernstein-Hermes International-RMS.FP-Hermes- 1H26 organic sales in line- EBIT 2- above-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good!-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001__qtk03vw/pdfs/0002-07-Bernstein-Lam Research (LRCX) FQ426 recap - Pretty darn good--260730.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-Bernstein-Honeywell International Inc（HON.US）HON 2Q26 Post Earnings： The -show me- story is looking increasingly credible； raising TP to 264.-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001__qtk03vw/pdfs/0003-08-Bernstein-Honeywell International Inc-HON.US-HON 2Q26 Post Earnings- The -show me- story is looking increasingly credible- raising TP to 264.-260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-Bernstein-Hermes International（RMS.FP）Hermès： Highlights from the 1H26 conference call-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001__qtk03vw/pdfs/0004-09-Bernstein-Hermes International-RMS.FP-Hermès- Highlights from the 1H26 conference call-260729.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-Bernstein-NXP Semiconductors NV（NXPI.US）NXP Semiconductors （NXPI）： Q226 recap~Do you like cheap dates？-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001__qtk03vw/pdfs/0005-10-Bernstein-NXP Semiconductors NV-NXPI.US-NXP Semiconductors -NXPI-- Q226 recap-Do you like cheap dates--260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
