@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260731/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a/mineru_raw/images/9a7d652c4e563f7fd3189b9d36287bd27a91366d398671eb7858f3a996d46ae8.jpg",
+    "path": "kc_translated_reports/consulting/260731/02-0002-BCG_Biopharma-Carve-Outs-Are-Tricky/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=6;chart_context"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260731/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a/mineru_raw/images/66ec3f863b37928fd11774575d230ae6e0299a26349753114b92ec71890e3823.jpg",
+    "path": "kc_translated_reports/consulting/260731/02-0002-BCG_Biopharma-Carve-Outs-Are-Tricky/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=7;chart_context,chart_ratio"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260731/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a/mineru_raw/images/651b153d2c4e39b43622fcac6f2772d9ea1dfb9fd9021429539bdaa4a148d882.jpg",
+    "path": "kc_translated_reports/consulting/260731/02-0002-BCG_Biopharma-Carve-Outs-Are-Tricky/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  }
+]
