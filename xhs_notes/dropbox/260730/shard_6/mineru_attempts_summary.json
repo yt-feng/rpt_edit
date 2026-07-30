@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0001-31-GS-Microsoft Corp. (MSFT)_ 4QFY_ Microsoft-s role is increasingly strategic as enterprises move from frontier models to frontier-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0002-32-GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0003-33-GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0004-34-GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0005-35-GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

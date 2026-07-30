@@ -1,0 +1,48 @@
+Found 63 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_edtieqat/pdfs/0001-31-Goldman Sachs-Microsoft Corp. (MSFT)_ 4QFY_ Microsoft-s role is increasingly strategic as enterprises move from frontier models to frontier-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_edtieqat/pdfs/0002-32-Goldman Sachs-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_edtieqat/pdfs/0003-33-Goldman Sachs-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_edtieqat/pdfs/0004-34-Goldman Sachs-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_edtieqat/pdfs/0005-35-Goldman Sachs-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=72b090c4-628d-4854-a6f2-dc7e72bd0d2d
+MinerU states: done, pending, running, pending, waiting-file
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 360cd4440d3f5bbb0c762b6d3a837dcb9b673f06f7856d9ce723bf0d24c21914.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset 45547c6f2a565c6aed72bd7da12469462f51c50a5958b2f5c1bd0c91192a8749.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 336957700c40b2ab6ec6a2058985c9d2ea2a257b4d964bc8f10b0aecaa4034ee.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 9dc68cd2ca1fce71850e21ddc8a4c48a658a7255f958520c6e6caf8bef4414b1.jpg: score=-100;too_small:704x81
+Skip non-chart visual asset 625fb6bc02b9b152c812523e4e51a0f82a9ddd21b70a37ebff39361024b5bc9f.jpg: score=-100;too_small:543x150
+Skip non-chart visual asset 16d5e97aa056a5181333b7a8a79b90804bd5756c96376ffbc0079f8e0a53ef97.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Skip non-chart visual asset b5c0d5b8e776fdd308f6b8f6227021fb8393f04cd2439607e346418ea67f02eb.jpg: score=0;square_without_chart_hint,edge:0.39,large
+Skip non-chart visual asset eb3d3d27c40dc74cf4fd72885fba598de458b4cbc0f618fe9b035745b306c3a5.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset 18d7668066f9778e166ba990fd76791273561d4cc5db26a13f9c3993c8cdde1d.jpg: score=-1;square_without_chart_hint,edge:0.27
+Skip non-chart visual asset e610cced5d073410ad328d329c167ae8483de302e0f22b81011ff7237484e551.jpg: score=-100;too_small:1156x109
+Neutralized WeChat title while keeping the report: 高盛：保时捷2Q26利润率超预期-汽车净现金流高于预期 -> 高盛：保时捷业务与季度数据观察
+Skip non-chart visual asset 9f9f3b4db0c21ae38bf77b7e912dcf01444a63db450cd7c0a75e9dfeade45f2c.jpg: score=-100;too_small:423x181
+Skip non-chart visual asset 44a92515a3f3c1f9695d8e1f96726bd1549a37f61379b2ca5b03019d0f4c370c.jpg: score=0;odd_ratio:0.33,edge:0.36,large
+Skip non-chart visual asset 67724f6cc29ab61a2f32a1425fc447141101623db1b38d0f75d2c746d256b131.jpg: score=0;odd_ratio:6.26,edge:0.32,contrast
+Skip non-chart visual asset 969f82c0d25e0568ab160619d00f6c8d4bd8c5edb20fb0e5328bad71652952f4.jpg: score=-100;too_small:1156x109
+Skip non-chart visual asset eb9017caf1d7d1805005b338cd101dcff2d440375cfcd656a127fc41938700d3.jpg: score=-1;odd_ratio:5.91,edge:0.23
+Skip non-chart visual asset 649f0a29c746377f87265f53d4071543da362eb39eefd65841cc5980a92e568b.jpg: score=-100;too_small:426x142
+Skip non-chart visual asset aaa8c669e9558c60378a403e7ef5b8a36028f9af172411a51055b3d5a48d0e22.jpg: score=-100;too_small:1423x165
+Skip non-chart visual asset 14ab5f2e108339ca0c9b5c10f98fdbb0c5d1b8929cc005cd342f8a86c59c09fd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.42,large
+Neutralized WeChat title while keeping the report: 高盛：力拓2026上半年业绩-简化战略加速与铜产量增长 -> 高盛：力拓业务与近期数据观察
+Skip non-chart visual asset 7dd766ad62fe5b84a3cf4e07b10e0b01dd4934a1b141dc36599841a895bfe26c.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset a4e26c942b5fdf6583e5f2a428df1f5cbfad2d4039ff01136f8cd8da83ca5bb8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 5c84bd66d771eace820d94ac73813aa8fa18f3c37d4eb48c12291a11d52fb884.jpg: score=-1;chart_ratio,square_without_chart_hint,contrast
+Skip non-chart visual asset a42560c59f536fee3148e4122d82be6c043a8f3cc35f3e1e59b7a31ceb394de6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.38,large
+Skip non-chart visual asset ea3856629a6dc9390d77a5ca2209bb6b999c39c3a2df59039b6ec033677066f0.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset ebd6b19663adc1da816bdb9648697aef4b9e482a50b2f595efbf9fae52235c2b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset b550fe1a3808b3ca52a6bca5f0828fdc7abe2703740fae9ae7f24323eaa195af.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset bf7b15e03e091cace0e5ed87a7eed370bd2640fa7c2d7f9fd5652176a8e85bf5.jpg: score=-100;too_small:1159x115
+Skip non-chart visual asset 5a1df53023affd4bc0a30c0cc70446771c999c5a781caa60185b5643f5fe7464.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.39,large
+Skip non-chart visual asset 07484239fdd2ce71f432f8f0567a53cce8cedb70f3c746bd1d945250c94ce3f7.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 1407cefe5356d1a9a2c5f24a104e6ea5d270f3873b270bccfa4a0b540fbf4841.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.24
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

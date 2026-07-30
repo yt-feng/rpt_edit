@@ -1,0 +1,106 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0005-35-GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "MLCC产能吃紧，A",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：国巨产能利用率提升与2H26需求展望",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-35-GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf",
+    "cleaned_source_title": "GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：YageoCorp.",
+    "raw_candidates": [
+      "国巨产能利用率提升与2H26需求展望",
+      "国巨2026年第二季度AI营收占比达16%",
+      "国巨MLCC与钽电容产能扩张及定价调整"
+    ],
+    "cleaned_candidates": [
+      "GS：国巨产能利用率提升与2H26需求展望",
+      "GS：国巨2026年第二季度AI营收占比达16%",
+      "GS：国巨MLCC与钽电容产能扩张及定价调整",
+      "GS：YageoCorp.",
+      "GS：国巨在7月29日举行的2026年第二季度业绩说明会上"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：国巨2026年第二季度AI营收占比达16%",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：国巨MLCC与钽电容产能扩张及定价调整",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：YageoCorp.",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：国巨在7月29日举行的2026年第二季度业绩说明会上",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：国巨产能利用率提升与2H26需求展望",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：国巨产能利用率提升与2H26需求展望"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "493",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

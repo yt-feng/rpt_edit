@@ -1,0 +1,484 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0001-31-GS-Microsoft Corp. (MSFT)_ 4QFY_ Microsoft-s role is increasingly strategic as enterprises move from frontier models to frontier-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "微软财报超预期，AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：微软在企业AI生态角色从模型转向生态中枢",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-GS-Microsoft Corp. (MSFT)_ 4QFY_ Microsoft-s role is increasingly strategic as enterprises move from frontier models to frontier-260729.pdf",
+      "cleaned_source_title": "GS-Microsoft Corp. (MSFT)_ 4QFY_ Microsoft-s role is increasingly strategic as enterprises move from frontier models to frontier",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：MicrosoftCorp.(MSFT)4QFY",
+      "raw_candidates": [
+        "微软在企业AI生态角色从模型转向生态中枢",
+        "微软4QFY26营收900亿美元超预期3%",
+        "微软Azure加速增长与Copilot货币化路径观察"
+      ],
+      "cleaned_candidates": [
+        "GS：微软在企业AI生态角色从模型转向生态中枢",
+        "GS：微软4QFY26营收900亿美元超预期3%",
+        "GS：微软Azure加速增长与Copilot货币化路径观察",
+        "GS：MicrosoftCorp.(MSFT)4QFY",
+        "GS：微软4QFY26财报公布后，盘后报价上涨约7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：微软4QFY26营收900亿美元超预期3%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：微软Azure加速增长与Copilot货币化路径观察",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：MicrosoftCorp.(MSFT)4QFY",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：微软4QFY26财报公布后，盘后报价上涨约7%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：微软在企业AI生态角色从模型转向生态中枢",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：微软在企业AI生态角色从模型转向生态中枢"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0002-32-GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "保时捷Q2业绩超预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：保时捷业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729.pdf",
+      "cleaned_source_title": "GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：PorscheAGP911",
+      "raw_candidates": [
+        "保时捷2Q26利润率超预期-汽车净现金流高于预期",
+        "保时捷2Q26利润率超预期-911车型组合支撑盈利",
+        "保时捷2Q26利润率超预期-运营改善抵消重组支出"
+      ],
+      "cleaned_candidates": [
+        "GS：保时捷2Q26利润率超预期-汽车净现金流高于预期",
+        "GS：保时捷2Q26利润率超预期-911车型组合支撑盈利",
+        "GS：保时捷2Q26利润率超预期-运营改善抵消重组支出",
+        "GS：PorscheAGP911",
+        "GS：保时捷2Q26利润率超预期，911车型组合支撑盈利"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：保时捷2Q26利润率超预期-911车型组合支撑盈利",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：保时捷2Q26利润率超预期-运营改善抵消重组支出",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：PorscheAGP911",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：保时捷2Q26利润率超预期，911车型组合支撑盈利",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：保时捷业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：保时捷2Q26利润率超预期-汽车净现金流高于预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：保时捷业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0003-33-GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "力拓半年报拆解：铜+",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：力拓业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth-260730.pdf",
+      "cleaned_source_title": "GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：RioTintoLtd.",
+      "raw_candidates": [
+        "力拓简化战略加速与铜产量增长前景",
+        "力拓2026上半年业绩-简化战略加速与铜产量增长",
+        "力拓简化战略加速-铜产量增长支撑估值重估"
+      ],
+      "cleaned_candidates": [
+        "GS：力拓简化战略加速与铜产量增长前景",
+        "GS：力拓2026上半年业绩-简化战略加速与铜产量增长",
+        "GS：力拓简化战略加速-铜产量增长支撑估值重估",
+        "GS：RioTintoLtd.",
+        "GS：超预期部分主要来自约25%的有效税率，低于此前30%的指引"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：RioTintoLtd.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：超预期部分主要来自约25%的有效税率，低于此前30%的指引",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：力拓业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：力拓2026上半年业绩-简化战略加速与铜产量增长",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：力拓业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0004-34-GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "DRAM涨价还没结束",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：韩国科技-半导体-存储-存储专家会议要点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf",
+      "cleaned_source_title": "GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SouthKorea科技-半导体Memory",
+      "raw_candidates": [
+        "韩国科技-半导体-存储-存储专家会议要点",
+        "韩国存储专家会议：DRAM定价与HBM结构性变化",
+        "韩国存储专家会议：DRAM定价与HBM定价前景"
+      ],
+      "cleaned_candidates": [
+        "GS：韩国科技-半导体-存储-存储专家会议要点",
+        "GS：韩国存储专家会议，DRAM定价与HBM结构性变化",
+        "GS：韩国存储专家会议，DRAM定价与HBM定价前景",
+        "GS：SouthKorea科技-半导体Memory",
+        "GS：GS在7月28日举办了一场韩国存储专家线上会议"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：韩国存储专家会议，DRAM定价与HBM结构性变化",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "GS：韩国存储专家会议，DRAM定价与HBM定价前景",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "GS：SouthKorea科技-半导体Memory",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS在7月28日举办了一场韩国存储专家线上会议",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        }
+      ],
+      "selected_title": "GS：韩国科技-半导体-存储-存储专家会议要点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：韩国科技-半导体-存储-存储专家会议要点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0005-35-GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "MLCC产能吃紧，A",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：国巨产能利用率提升与2H26需求展望",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280-260730.pdf",
+      "cleaned_source_title": "GS-Yageo Corp. -2327.TW- Elevated UTR to meet with strong demand in 2H26- along with ongoing capacity expansion- Buy- with new TP of NT-1-280",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：YageoCorp.",
+      "raw_candidates": [
+        "国巨产能利用率提升与2H26需求展望",
+        "国巨2026年第二季度AI营收占比达16%",
+        "国巨MLCC与钽电容产能扩张及定价调整"
+      ],
+      "cleaned_candidates": [
+        "GS：国巨产能利用率提升与2H26需求展望",
+        "GS：国巨2026年第二季度AI营收占比达16%",
+        "GS：国巨MLCC与钽电容产能扩张及定价调整",
+        "GS：YageoCorp.",
+        "GS：国巨在7月29日举行的2026年第二季度业绩说明会上"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：国巨2026年第二季度AI营收占比达16%",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：国巨MLCC与钽电容产能扩张及定价调整",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：YageoCorp.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：国巨在7月29日举行的2026年第二季度业绩说明会上",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：国巨产能利用率提升与2H26需求展望",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：国巨产能利用率提升与2H26需求展望"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

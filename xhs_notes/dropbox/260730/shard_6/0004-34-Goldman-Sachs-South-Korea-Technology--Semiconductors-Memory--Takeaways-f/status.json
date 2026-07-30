@@ -1,0 +1,96 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_edtieqat/pdfs/0004-34-GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "DRAM涨价还没结束",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：韩国科技-半导体-存储-存储专家会议要点",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-34-GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call-260729.pdf",
+    "cleaned_source_title": "GS-South Korea Technology- Semiconductors-Memory- Takeaways from Korea memory expert call",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：SouthKorea科技-半导体Memory",
+    "raw_candidates": [
+      "韩国科技-半导体-存储-存储专家会议要点",
+      "韩国存储专家会议：DRAM定价与HBM结构性变化",
+      "韩国存储专家会议：DRAM定价与HBM定价前景"
+    ],
+    "cleaned_candidates": [
+      "GS：韩国科技-半导体-存储-存储专家会议要点",
+      "GS：韩国存储专家会议，DRAM定价与HBM结构性变化",
+      "GS：韩国存储专家会议，DRAM定价与HBM定价前景",
+      "GS：SouthKorea科技-半导体Memory",
+      "GS：GS在7月28日举办了一场韩国存储专家线上会议"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：韩国存储专家会议，DRAM定价与HBM结构性变化",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "GS：韩国存储专家会议，DRAM定价与HBM定价前景",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "GS：SouthKorea科技-半导体Memory",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：GS在7月28日举办了一场韩国存储专家线上会议",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      }
+    ],
+    "selected_title": "GS：韩国科技-半导体-存储-存储专家会议要点",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：韩国科技-半导体-存储-存储专家会议要点"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "403",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
