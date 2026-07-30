@@ -1,0 +1,366 @@
+[
+  {
+    "item": "0001-61-UBS-SK-Hynix-Significant-de-rating-unwarranted---reiterate-Buy-260729",
+    "source_pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "SK海力士跌了52%",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "UBS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf",
+      "cleaned_source_title": "UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：SKHynixSignificantderati",
+      "raw_candidates": [
+        "SK海力士报价回调后基本面未变",
+        "SK海力士：2026年6月高点回调52%后基本面未变",
+        "SK海力士：智能体AI与长期协议改变存储盈利结构"
+      ],
+      "cleaned_candidates": [
+        "UBS：SK海力士报价回调后基本面未变",
+        "UBS：SK海力士，2026年6月高点回调52%后基本面未变",
+        "UBS：SK海力士，智能体AI与长期协议改变存储盈利结构",
+        "UBS：SKHynixSignificantderati",
+        "UBS：SK海力士报价自2026年6月22日高点已下跌52%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：SK海力士，2026年6月高点回调52%后基本面未变",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "UBS：SK海力士，智能体AI与长期协议改变存储盈利结构",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：SKHynixSignificantderati",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：SK海力士报价自2026年6月22日高点已下跌52%",
+          "reasons": [
+            "anchor_coverage=0.43"
+          ]
+        }
+      ],
+      "selected_title": "UBS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：SK海力士报价回调后基本面未变",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "UBS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-62-UBS-ASEAN-Equity-Strategy-Can-ASEAN-benefit-beyond-AI--260728",
+    "source_pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0002-62-UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI--260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "东盟市场：AI浪潮下",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "UBS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI--260728.pdf",
+      "cleaned_source_title": "UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI",
+      "institution_name": "UBS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "UBS：AIASEANEquity策略CanASEANben",
+      "raw_candidates": [
+        "ASEAN市场策略-AI主题之外的ASEAN受益机会",
+        "ASEAN市场策略-AI主题集中化下的ASEAN再平衡机会",
+        "ASEAN市场策略-AI主题集中化与ASEAN估值分化"
+      ],
+      "cleaned_candidates": [
+        "UBS：ASEAN市场策略-AI主题之外的ASEAN受益机会",
+        "UBS：ASEAN市场策略-AI主题集中化下的ASEAN再平衡机会",
+        "UBS：ASEAN市场策略-AI主题集中化与ASEAN估值分化",
+        "UBS：AIASEANEquity策略CanASEANben",
+        "UBS：ASEAN市场在AI主题集中化背景下的再平衡机会"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：ASEAN市场策略-AI主题集中化与ASEAN估值分化",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "UBS：AIASEANEquity策略CanASEANben",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.30"
+          ]
+        },
+        {
+          "title": "UBS：ASEAN市场在AI主题集中化背景下的再平衡机会",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        }
+      ],
+      "selected_title": "UBS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：ASEAN市场策略-AI主题之外的ASEAN受益机会",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "UBS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-63-NOM-USD-CNY-fix-model-Projection--6.7536-260730",
+    "source_pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币汇率模型指向这",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：逆周期因子对中间价模型修正约191个基点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7536",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7536",
+      "raw_candidates": [
+        "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+        "NOM：逆周期因子对中间价模型修正约191个基点",
+        "NOM：中间价模型误差近期连续同向偏离幅度放大",
+        "美元兑人民币中间价模型预测值下调至6.7536",
+        "美元兑人民币中间价模型预测值下调至6.7536-逆周期因子修正约191基点",
+        "NOM：美元兑人民币中间价模型预测值下调至6.7536"
+      ],
+      "cleaned_candidates": [
+        "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+        "NOM：逆周期因子对中间价模型修正约191个基点",
+        "NOM：中间价模型误差近期连续同向偏离幅度放大",
+        "NOM：USDCNYfixmodelProjection-6.7536",
+        "NOM：逆周期因子对模型预测的修正幅度约为191个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "bare_trailing_number"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：中间价模型误差近期连续同向偏离幅度放大",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.7536",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：逆周期因子对模型预测的修正幅度约为191个基点",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        }
+      ],
+      "selected_title": "NOM：逆周期因子对中间价模型修正约191个基点",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "191"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "NOM：逆周期因子对模型预测的修正幅度约为191个基点",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+        "NOM：逆周期因子对中间价模型修正约191个基点",
+        "NOM：中间价模型误差近期连续同向偏离幅度放大"
+      ],
+      "final_title_after_wording_guard": "NOM：逆周期因子对中间价模型修正约191个基点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

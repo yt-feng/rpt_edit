@@ -1,0 +1,124 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "人民币汇率模型指向这",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：逆周期因子对中间价模型修正约191个基点",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+    "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7536",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7536",
+    "raw_candidates": [
+      "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+      "NOM：逆周期因子对中间价模型修正约191个基点",
+      "NOM：中间价模型误差近期连续同向偏离幅度放大",
+      "美元兑人民币中间价模型预测值下调至6.7536",
+      "美元兑人民币中间价模型预测值下调至6.7536-逆周期因子修正约191基点",
+      "NOM：美元兑人民币中间价模型预测值下调至6.7536"
+    ],
+    "cleaned_candidates": [
+      "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+      "NOM：逆周期因子对中间价模型修正约191个基点",
+      "NOM：中间价模型误差近期连续同向偏离幅度放大",
+      "NOM：USDCNYfixmodelProjection-6.7536",
+      "NOM：逆周期因子对模型预测的修正幅度约为191个基点"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "bare_trailing_number"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+        "reasons": [
+          "bare_trailing_number",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：中间价模型误差近期连续同向偏离幅度放大",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：USDCNYfixmodelProjection-6.7536",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：逆周期因子对模型预测的修正幅度约为191个基点",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      }
+    ],
+    "selected_title": "NOM：逆周期因子对中间价模型修正约191个基点",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "191"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "NOM：逆周期因子对模型预测的修正幅度约为191个基点",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "NOM：美元兑人民币中间价模型预测值下调至6.7536",
+      "NOM：逆周期因子对中间价模型修正约191个基点",
+      "NOM：中间价模型误差近期连续同向偏离幅度放大"
+    ],
+    "final_title_after_wording_guard": "NOM：逆周期因子对中间价模型修正约191个基点"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "443",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

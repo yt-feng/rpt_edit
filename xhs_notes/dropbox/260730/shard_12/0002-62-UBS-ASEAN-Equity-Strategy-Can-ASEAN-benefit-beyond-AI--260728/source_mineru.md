@@ -1,0 +1,656 @@
+# ASEAN Equity Strategy Can ASEAN benefit beyond AI?
+
+## Looking beyond the underperformance
+
+ASEAN's underperformance relative to Asia ex Japan reflects macro headwinds, policy uncertainty and limited direct exposure to the AI theme that has driven regional equity returns. Tech accounts for just 4% of MSCI ASEAN, yet drove 25% of index returns YTD. Growth expectations and investor sentiment are subdued, leaving the region largely overlooked. While aggregate valuations have been lifted to 2SD above the 20-year average by a handful of index heavyweights, valuations across the broader market remain compelling, with 55% of MSCI ASEAN stocks trading below historical averages. Capital market reforms and domestic policy initiatives are gaining traction, creating potential re-rating catalysts. As investors diversify beyond increasingly concentrated AI-related holdings, ASEAN markets could warrant renewed attention.
+
+## Selective flows and positioning could broaden on AI diversification
+
+Limited large-scale AI beneficiaries have resulted in uneven participation across ASEAN. Foreign investors have been net buyers of Thailand and Malaysia, reflecting interest in reform momentum and tech-related themes, while Indonesia and the Philippines continue to see net outflows amid policy uncertainty and macro concerns. Singapore remains the only ASEAN market where global funds are overweight, while the rest are broadly neutral. We expect AI to remain the dominant driver of investor allocations, favouring markets with direct and indirect exposure to the theme, including Thailand, Malaysia and Singapore. As market leadership broadens beyond a narrow group of AI winners, however, ASEAN could attract incremental inflows particularly into markets offering earnings visibility, reform momentum and valuation support. Recent performance may be an early indication of a shift, with ASEAN outperforming broader EM and Asia by 16% since KOSPI's June 2026 peak.
+
+## Key themes that will drive markets in H226
+
+1) Direct AI exposure remains limited at 8% of ASEAN (versus 31% for EM/APAC), but the region provides selective opportunities and diversification benefits. 2) Oil and food inflation will be a key swing factor for growth, earnings and margins, with the Philippines, Thailand and Indonesia most vulnerable. El Niño adds a further layer of risk, with ASEAN equities underperforming by 7% on average during past cycles. 3) While the bulk of the tightening cycle is likely behind us, higher-for-longer rates remain a headwind. Philippines is the most sensitive to US rates, while local rates matter more for Indonesia. 4) Policy and political uncertainty are key overhangs for Indonesia and the Philippines, while election-related risks are building in Malaysia. 5) Value-up initiatives in Singapore, Malaysia and Thailand could create scope for a sustained re-rating.
+
+## How are we positioned within ASEAN?
+
+Our ASEAN market ratings are based on the EM & APAC Equity strategy framework. We are overweight Malaysia and Vietnam, where supportive structural and policy catalysts outweigh overall macro risks. Malaysia benefits from a stable macro backdrop and re-rating potential from MY Value Up as well as tech-related opportunities, despite emerging election risk. Vietnam remains the premier growth market, with ongoing reforms and potential index inclusion catalysts. We are neutral Singapore and Thailand. Singapore's capital market reforms, safe-haven characteristics and structural demand drivers particularly in banking and tech support resilience. Thailand offers recovery potential through tourism and domestic policy support offset by continued macro challenges. We are underweight Indonesia and Philippines, where policy uncertainty, earnings risks and macro pressures continue to outweigh attractive valuations. Figure 15 presents our preferred stocks across ASEAN markets.
+
+## Equity Strategy
+
+Asia
+
+Karen Hizon
+Strategist
+karen.hizon@ubs.com
++852-2971 6741
+
+Sunil Tirumalai
+Strategist
+sunil.tirumalai@ubs.com
++91-22-6155 6080
+
+Grace Lim
+Economist
+grace-k.lim@ubs.com
++65-6495 5965
+
+Joshua Tanja, CFA
+Analyst
+joshua.tanja@ubs.com
++62-21-2554 7030
+
+Permada Darmono
+Analyst
+permada.darmono@ubs.com
++65-6495 3137
+
+Nicole Goh
+Analyst
+nicole.goh@ubs.com
++603-2781 1133
+
+Alex Manoonpol
+Analyst
+alex.manoonpol@ubs.com
++662-613 5770
+
+John Te, CFA
+Analyst
+john.te@ubs.com
++632-8784 8814
+
+Kruti Shah, CFA
+Strategist
+kruti.shah@ubs.com
++91-22-6155 6031
+
+Claire Long
+Economist
+claire.long@ubs.com
++65 6495 7426
+
+## ASEAN AT A GLANCE
+
+Figure 1: ASEAN markets have been largely overlooked due to limited exposure to large-scale AI beneficiaries  
+![](images/9729118554cdea901038ea8d5c398a0f94412bad3ce1c84677c373012cf15aa7.jpg)  
+Source: UBS
+
+Figure 2: While IT only accounts for 4% of MSCI ASEAN, it has driven 25% of returns YTD  
+![](images/23963ef30600974f1c070f7b5c808a2ff13b3b2e1f219d9bfb9933e7c91a63f9.jpg)  
+Source: IBES, MSCI, Datastream
+
+Figure 3: ASEAN valuations are largely skewed by a handful of index heavyweights  
+![](images/de3652d7a540daef80780eded40d7e2ac4583a429259ecc4d065067b69808591.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology (video link)
+
+Figure 4: 55% of MSCI ASEAN stocks are trading below their respective 10y average valuations  
+![](images/1de2a79c4426e4212a7a91a2aa69b9e2c2be08af204861c873d67b70f86d1ea3.jpg)  
+Source: IBES, MSCI, Datastream
+
+Figure 5: 2026 EPS evolution: Downgrades across the region, except for Thailand and Malaysia  
+![](images/65bec8ad73f7c06901ec285ebdfd125ffe163843193f1519a36925fb3beac6c4.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 6: 2027 EPS evolution: Thailand is seeing upgrades, alongside Vietnam amid big 2026 cuts  
+![](images/2e0d42293842ad28fcf97a20c55a08bae099dfbb5a7426c85f5c149481f32ee2.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 7: EPS revisions were strongest in Korea and Taiwan, with Thailand also seeing modest upgrades. The rest of the region generally saw downgrades  
+![](images/9825bdb0ffe9f2b7a81bf103a8ee4f121c3e76d236308ae7420563da77a360f6.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 8: EPS momentum by sector contribution: Financials, which account for 50% of MSCI ASEAN, are leading downgrades, followed by consumer staples  
+![](images/4adc982600bfa2b4417f159e5b6d137775b82b063f331703374697bc2252aee8.jpg)  
+Source: IBES, MSCI, Datastream, UBS
+
+Figure 9: Within ASEAN, foreigners are net buyers of Thailand and Malaysia and net sellers of Indonesia and Philippines  
+![](images/d09390980dbeca52ac4a7f68c049dd8e14dfd96bd79435019bddb9353f253f26.jpg)  
+Source: Bloomberg, UBS
+
+Figure 10: Global funds are overweight Singapore, while the rest of ASEAN are largely at benchmark as of 1Q26  
+![](images/9d1485c243f1357f0736f3228662ef635bfa0c075a861be718a9e97978e7a0bf.jpg)  
+Source: Bloomberg, MSCI, Datastream, UBS
+
+Figure 11: ASEAN total return attribution: PE expansion has been the primary driven of total returns since 2025, followed by dividends and currency  
+![](images/a8bb0cfd39ded5b4aeac3d3bb54cc16857f1f43b9875acfb23c61970543d277c.jpg)  
+Source: IBES, MSCI, Datastream, UBS
+
+Figure 12: But over the last 10 years, EPS growth has been the biggest driver of returns, followed by PE expansion  
+![](images/c4f94afb8bedfd9af9e0b5007733f755946bdd63840f8e1022f5fe15a20e51dc.jpg)  
+Source: IBES, MSCI, Datastream, UBS
+
+Figure 13: Similar to broader regional trends, ASEAN markets have high concentration at the single-stock level  
+![](images/0b7c4eba68567aa0850acf919c3dfc1d13f88d20845d75b3f7592a7896b06dab.jpg)  
+Source: IBES, MSCI, Datastream. Note: based on free-float adjusted market cap
+
+Figure 14: Excluding Indonesia, over 50% of YTD returns in each market were driven by the single largest stock  
+![](images/b9d4001085ab6ef9f6b31b9d0e00372ece9ad61620fdd5b89865c34538d8e86e.jpg)  
+Source: IBES, MSCI, Datastream. Note: based on free-float adjusted market cap
+
+Figure 15: Our preferred stocks in ASEAN
+
+<table><tr><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Div yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>BCA</td><td>ID</td><td>BBCA.JK</td><td>43.1</td><td>6275.0</td><td>7150.0</td><td>13.3</td><td>12.8</td><td>2.6</td><td>2.4</td><td>5.4</td><td>5.4</td><td>0.6</td><td>4.0</td></tr><tr><td>AIS</td><td>TH</td><td>ADVANC.BK</td><td>33.2</td><td>376.0</td><td>400.0</td><td>21.4</td><td>20.3</td><td>19.5</td><td>18.2</td><td>4.5</td><td>4.9</td><td>13.4</td><td>5.4</td></tr><tr><td>Gulf Development</td><td>TH</td><td>GULF.BK</td><td>29.2</td><td>66.0</td><td>82.0</td><td>29.4</td><td>27.1</td><td>3.0</td><td>2.8</td><td>2.2</td><td>2.4</td><td>16.6</td><td>8.4</td></tr><tr><td>ST Engineering</td><td>SG</td><td>STEG.SI</td><td>25.6</td><td>10.6</td><td>12.6</td><td>31.6</td><td>25.6</td><td>11.0</td><td>9.2</td><td>1.9</td><td>2.1</td><td>126.1</td><td>23.3</td></tr><tr><td>Tenaga</td><td>MY</td><td>TENA.KL</td><td>20.4</td><td>14.4</td><td>17.0</td><td>17.0</td><td>16.1</td><td>1.6</td><td>1.6</td><td>3.8</td><td>4.0</td><td>19.3</td><td>5.9</td></tr><tr><td>CIMB Group</td><td>MY</td><td>CIMB.KL</td><td>20.3</td><td>7.7</td><td>9.2</td><td>10.5</td><td>9.8</td><td>1.1</td><td>1.1</td><td>6.1</td><td>6.2</td><td>0.0</td><td>6.8</td></tr><tr><td>Jardine Matheson</td><td>SG</td><td>JARD.SI</td><td>18.7</td><td>63.6</td><td>80.0</td><td>12.2</td><td>10.1</td><td>0.7</td><td>0.6</td><td>3.9</td><td>4.1</td><td>-9.0</td><td>21.2</td></tr><tr><td>Kasikornbank</td><td>TH</td><td>KBANK.BK</td><td>16.9</td><td>240.0</td><td>255.0</td><td>11.3</td><td>11.7</td><td>1.0</td><td>0.9</td><td>5.8</td><td>5.5</td><td>1.5</td><td>-3.6</td></tr><tr><td>Amman</td><td>ID</td><td>AMMN.JK</td><td>16.3</td><td>4040.0</td><td>6100.0</td><td>19.6</td><td>10.7</td><td>2.6</td><td>2.1</td><td>0.0</td><td>0.0</td><td>242.7</td><td>78.5</td></tr><tr><td>Telkom Indonesia</td><td>ID</td><td>TLKM.JK</td><td>14.5</td><td>2630.0</td><td>3400.0</td><td>12.0</td><td>10.7</td><td>2.0</td><td>1.9</td><td>8.1</td><td>8.1</td><td>-3.8</td><td>11.5</td></tr><tr><td>True Corp</td><td>TH</td><td>TRUE.BK</td><td>14.3</td><td>14.0</td><td>19.3</td><td>19.0</td><td>17.8</td><td>5.9</td><td>5.5</td><td>3.9</td><td>4.2</td><td>33.3</td><td>7.0</td></tr><tr><td>CP All</td><td>TH</td><td>CPALL.BK</td><td>12.3</td><td>46.5</td><td>61.0</td><td>13.7</td><td>12.4</td><td>2.7</td><td>2.4</td><td>3.4</td><td>3.7</td><td>7.6</td><td>10.4</td></tr><tr><td>Meralco</td><td>PH</td><td>MER.PS</td><td>10.9</td><td>600.0</td><td>750.0</td><td>13.5</td><td>12.3</td><td>3.6</td><td>3.2</td><td>4.8</td><td>4.9</td><td>-2.2</td><td>9.6</td></tr><tr><td>Banco de Oro</td><td>PH</td><td>BDO.PS</td><td>10.6</td><td>123.0</td><td>180.0</td><td>7.7</td><td>6.5</td><td>1.0</td><td>0.9</td><td>3.7</td><td>4.1</td><td>-2.5</td><td>17.8</td></tr><tr><td>Petronas Chemicals</td><td>MY</td><td>PCGB.KL</td><td>9.6</td><td>4.9</td><td>6.9</td><td>21.2</td><td>23.6</td><td>1.1</td><td>1.0</td><td>2.6</td><td>2.3</td><td>-269.2</td><td>-10.1</td></tr><tr><td>Bangkok Dusit</td><td>TH</td><td>BDMS.BK</td><td>8.9</td><td>18.9</td><td>23.0</td><td>19.1</td><td>17.7</td><td>2.8</td><td>2.7</td><td>4.5</td><td>4.9</td><td>-0.7</td><td>7.6</td></tr><tr><td>BPI</td><td>PH</td><td>BPI.PS</td><td>8.8</td><td>102.5</td><td>145.0</td><td>8.3</td><td>7.1</td><td>1.1</td><td>1.0</td><td>4.9</td><td>4.8</td><td>-1.9</td><td>16.8</td></tr><tr><td>TECHCOMBank</td><td>VN</td><td>TCB.HM</td><td>7.7</td><td>28600.0</td><td>45000.0</td><td>7.2</td><td>5.6</td><td>1.1</td><td>1.0</td><td>2.5</td><td>5.6</td><td>10.7</td><td>29.0</td></tr><tr><td>HPG</td><td>VN</td><td>HPG.HM</td><td>6.7</td><td>20800.0</td><td>31500.0</td><td>8.8</td><td>6.8</td><td>1.1</td><td>0.9</td><td>0.5</td><td>1.3</td><td>32.2</td><td>28.7</td></tr><tr><td>UOL Group</td><td>SG</td><td>UTOS.SI</td><td>6.2</td><td>9.4</td><td>12.7</td><td>16.8</td><td>12.7</td><td>n/a</td><td>n/a</td><td>2.1</td><td>2.3</td><td>20.6</td><td>31.8</td></tr><tr><td>City Developments</td><td>SG</td><td>CTDM.SI</td><td>5.2</td><td>7.5</td><td>11.6</td><td>15.2</td><td>13.3</td><td>n/a</td><td>n/a</td><td>2.7</td><td>2.7</td><td>-39.1</td><td>14.1</td></tr><tr><td>Asia Commercial Bank</td><td>VN</td><td>ACB.HM</td><td>4.4</td><td>22500.0</td><td>36000.0</td><td>6.1</td><td>4.9</td><td>1.1</td><td>0.9</td><td>3.1</td><td>5.0</td><td>21.3</td><td>23.8</td></tr><tr><td>Mobile World</td><td>VN</td><td>MWG.HM</td><td>3.8</td><td>68000.0</td><td>118000.0</td><td>11.9</td><td>10.6</td><td>3.2</td><td>3.0</td><td>1.8</td><td>2.0</td><td>18.4</td><td>12.5</td></tr><tr><td>Mr D.I.Y.</td><td>MY</td><td>MRDI.KL</td><td>3.7</td><td>1.6</td><td>2.15</td><td>21.1</td><td>18.8</td><td>8.0</td><td>8.0</td><td>5.7</td><td>5.3</td><td>11.7</td><td>11.8</td></tr><tr><td>Alamtri Minerals</td><td>ID</td><td>ADMR.JK</td><td>3.4</td><td>1480.0</td><td>2500.0</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>Vale Indonesia</td><td>ID</td><td>INCO.JK</td><td>2.7</td><td>4870.0</td><td>8400.0</td><td>11.2</td><td>6.2</td><td>0.9</td><td>0.8</td><td>1.1</td><td>3.7</td><td>224.3</td><td>75.2</td></tr><tr><td>Jollibee</td><td>PH</td><td>JFC.PS</td><td>2.6</td><td>144.0</td><td>220.0</td><td>16.0</td><td>11.1</td><td>1.9</td><td>1.7</td><td>2.3</td><td>3.3</td><td>-4.2</td><td>44.1</td></tr><tr><td>Maynilad</td><td>PH</td><td>MYNLD.PS</td><td>2.3</td><td>19.5</td><td>25.5</td><td>8.7</td><td>8.6</td><td>1.2</td><td>1.1</td><td>5.8</td><td>6.4</td><td>-13.3</td><td>1.7</td></tr><tr><td>AEM Holdings</td><td>SG</td><td>AEM.SI</td><td>2.2</td><td>9.0</td><td>16.0</td><td>38.5</td><td>22.9</td><td>5.1</td><td>4.3</td><td>0.5</td><td>0.9</td><td>332.9</td><td>68.3</td></tr><tr><td>Cimory</td><td>ID</td><td>CMRY.JK</td><td>2.0</td><td>4580.0</td><td>6800.0</td><td>16.1</td><td>13.1</td><td>4.9</td><td>4.3</td><td>4.4</td><td>4.9</td><td>12.3</td><td>23.0</td></tr><tr><td>Monde Nissin</td><td>PH</td><td>MONDE.PS</td><td>2.0</td><td>6.7</td><td>8.4</td><td>10.9</td><td>10.4</td><td>2.0</td><td>1.9</td><td>8.9</td><td>6.9</td><td>13.7</td><td>4.9</td></tr><tr><td>Vincom Retail</td><td>VN</td><td>VRE.HM</td><td>1.9</td><td>21900.0</td><td>41100.0</td><td>9.0</td><td>8.3</td><td>n/a</td><td>n/a</td><td>4.6</td><td>0.0</td><td>-13.8</td><td>8.0</td></tr><tr><td>Kelington Group</td><td>MY</td><td>KELG.KL</td><td>1.5</td><td>8.0</td><td>9.0</td><td>34.2</td><td>26.8</td><td>8.4</td><td>7.4</td><td>1.7</td><td>2.1</td><td>10.4</td><td>27.7</td></tr><tr><td>Gemadept</td><td>VN</td><td>GMD.HM</td><td>1.2</td><td>73200.0</td><td>92000.0</td><td>15.3</td><td>14.5</td><td>2.3</td><td>2.2</td><td>4.6</td><td>4.8</td><td>19.7</td><td>5.5</td></tr><tr><td>FPT Retail</td><td>VN</td><td>FRT.HM</td><td>0.7</td><td>107800.0</td><td>200000.0</td><td>18.1</td><td>14.1</td><td>3.7</td><td>3.0</td><td>1.1</td><td>1.4</td><td>27.9</td><td>27.7</td></tr><tr><td>Nam Long Investment</td><td>VN</td><td>NLG.HM</td><td>0.4</td><td>21350.0</td><td>37000.0</td><td>11.7</td><td>12.2</td><td>n/a</td><td>n/a</td><td>4.7</td><td>4.7</td><td>13.6</td><td>-4.4</td></tr></table>
+
+Source: UBS estimates. Note: Sorted by market cap. Pricing data as of 24 July 2026.
+
+MSCI Asia ex Japan sector breakdown by market cap
+
+## Key themes
+
+We believe five key themes could shape ASEAN markets for the rest of the year.
+
+## 1. The AI (and anti-AI) trade
+
+Over the last three years, ASEAN markets have lagged regional peers as investors favoured markets with stronger exposure to the AI investment cycle, largely concentrated in North Asia. While ASEAN has seen increasing investments driven by the tech upcycle, equity markets remain more closely tied to domestic growth drivers such as financials, industrials and consumption. With AI-related holdings becoming increasingly concentrated, investors are starting to diversify into areas which are less correlated with the AI theme. This could support renewed interest in ASEAN equities, as investors look to broaden allocations.
+
+At the same time, we continue to view AI as a key theme in 2026. As the AI cycle now extends beyond tech into the supporting infrastructure supply chain—including data centers, power and materials—ASEAN still offers some opportunities. While exposures are uneven across the markets, Thailand is relatively well-positioned due to Delta Thailand, while Malaysia and Singapore also offer some exposure. As such, we think ASEAN may benefit not only from diversification flows from more crowded AI trades, but also from selective exposures in the AI supply chain.
+
+Figure 16: The tech upcycle has led to an investment upcycle in ASEAN, particularly for Malaysia and Thailand  
+![](images/863117ff503e58fcb089d509a07f373b5b14d036d29bbec3e8d908b9b5c9e78c.jpg)
+
+![](images/118dea158c1f0d89c8b94f07d0facef9a41224aa03e1391bdd78a033ed12f270.jpg)
+
+![](images/bd8d9a6d37d95e602143c4188134605a4d72791750db2a163d604ce9aca25409.jpg)  
+Source: UBS. Notes: (1) MEQ refers to machinery & equipment investment. For Vietnam, construction in GVA is used as a proxy for construction GFCF; capital goods imports is used as a proxy for MEQ. All data in constant prices. (2) For Thailand, investments in the Digital sector are mostly from large data centers.
+
+Figure 17: MSCI ASEAN is dominated by domestic and traditional sectors such as financials (50%), industrials (13%) and consumer (9%)  
+![](images/c4577428d7f466f1533cde737bfbc2f0bb757eff63e83a8aa6864561749d9017.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 18: Tech now accounts for 48% of MSCI Asia ex Japan, benefitting from stronger AI exposure, compared to only 4% in ASEAN  
+![](images/c7f371853c229d8bb4f7025cba3b7e782858b63fafac60343adf1bdb7bd1e200.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 19: ASEAN offers better diversification to US (and broader EM) equities  
+![](images/cff91b5a0e11601d955283bd0ac0f63636777c650e3a2a2e65fd4196349b7911.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 20: MSCI returns since KOSPI's 22 June 2026 peak  
+![](images/703d5027295fa05d3a89f4e6b38bca6f6c1d858b40769798b394d4d144644410.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 21: AI revenue exposure  
+![](images/5cad5439d842a717aff15a6c65de4e24464fd00db056d16b0ae6054a597b083d.jpg)  
+Source: UBS  
+As we've highlighted here, EM equities have historically provided diversification from US equities. But as AI-related stocks have come to dominate EM, EM return drivers have become increasingly aligned with those of the US. ASEAN has traditionally been highly correlated with EM, but that has since weakened in the last two years. As a result, ASEAN now offers better diversification not only relative to US equities, but also within EM itself.  
+Since KOSPI peaked on 22 June 2026, ASEAN markets have generally outperformed broader EM and Asia. This supports the region's potential as a diversification trade.
+
+Nevertheless, we believe AI will remain the dominant driver of returns. ASEAN may benefit not only from AI diversification, but also from selective exposures in the AI supply chain. We worked with UBS analysts to identify stocks that see potential incremental upside of at least 15% over the next 3-5 years. Overall, these account for 31% of EM/APAC led by North Asia, although select ASEAN markets not too far behind.
+
+## 2. Inflation risk
+
+Broad-based growth slowdown and rising inflation create a challenging set-up for ASEAN equities. Risks around Middle East oil flows remain unresolved, but any easing could provide some relief, although longer tail risks from weather-related disruptions due to a likely strengthening El Niño remain. This could be a drag on already below-trend economic growth. Within ASEAN, Indonesia, Philippines, Vietnam and Thailand are particularly vulnerable.
+
+Figure 22: Headline inflation by contribution: Philippines has historically been among the most sensitive to food and energy inflation  
+![](images/6f8c4cc36afd4ea135dab0880cff66eb2758051a058f53c406c8772512083bfc.jpg)  
+Source: CEIC, UBS estimates
+
+Figure 23: Thailand, Philippines and Vietnam are the most exposed to food inflation by CPI weight. Including fuel and utilities, Thailand and Philippines are most vulnerable  
+![](images/bb509c54f40e9b9bcc4fe1d350b2f3215ee1973aec76235c288381d2fc29aca1.jpg)  
+Source: CEIC, government & central bank websites, UBS
+
+Figure 24: ASEAN GDP growth vs inflation forecasts vs 10y history (%ile rank)  
+![](images/d72c0697edf23b64067a0122e068a2245a7843ec152efa7b68104fecde1bdb6d.jpg)  
+Source: UBS
+
+Growth across ASEAN are at the 50th percentile vs 10y trend, with the exception of Vietnam, whereas inflation are above the 50th percentile, with the exception of Malaysia thanks to fuel subsidies. Philippines looks most vulnerable, with 2026-27E average GDP growth at the 9th percentile, whereas inflation is at the 76th percentile. Thailand's growth also sits in the 42nd percentile, while inflation is at the higher end of its 10y trend.
+
+Figure 25: Real GDP growth and headline inflation forecasts  
+![](images/091453727240c66ef4d2cbd79803b887663985f12ab464727c00d6e94fb24348.jpg)  
+Source: Haver, CEIC, National Statistics, UBS forecasts
+
+![](images/e9ace9fd8c3198d1535f6451b4152cc41bf1d41387a42dc02ce6ecad5df45592.jpg)
+
+Figure 26: ASEAN indices performance around El Niño phases (2014-16, 2018-19 & 2023-24)  
+![](images/60210b8354e283a9e8abcc038720f1fb45adb70e950d9d097ff5e558b670e0a8.jpg)
+
+![](images/e32f51a27ecdfc0767ecfe3f50596c47fc5805a62bf6d7dd2a8b1a29dbedf829.jpg)
+
+![](images/43eceb46a7639b002887da8b2424167d72d26178b7b8ad9f2fca1efe7b0a2266.jpg)
+
+![](images/363501f9e00ba7d068ce1b955b89fcb868fff71df73fdb1eac4ab80425e9e064.jpg)  
+Source: MSCI, Datastream, UBS
+
+![](images/52f9484d19dc7b9690826b8bae70225852629cf7d2f0f2ff460f894b8c720b00.jpg)
+
+![](images/de7f4e9a18313ebb46793e19d3f7bfa96faf64a6b8d25a489b46f0822df8fb1d.jpg)
+
+Figure 27: Average relative returns around Super El Niño (2014-16 & 2023-24)
+
+<table><tr><td></td><td>-6m</td><td>-3m</td><td>-1m</td><td>Super El Niño</td><td>+1m</td><td>+3m</td><td>+6m</td></tr><tr><td>Indonesia</td><td>1.3%</td><td>7.7%</td><td>0.6%</td><td>-11.2%</td><td>-1.1%</td><td>0.3%</td><td>-5.0%</td></tr><tr><td>Malaysia</td><td>-6.3%</td><td>-2.2%</td><td>-0.8%</td><td>-7.8%</td><td>1.3%</td><td>-1.9%</td><td>-6.7%</td></tr><tr><td>Philippines</td><td>2.8%</td><td>2.8%</td><td>1.4%</td><td>3.8%</td><td>-3.8%</td><td>-6.2%</td><td>-11.7%</td></tr><tr><td>Singapore</td><td>-0.7%</td><td>0.9%</td><td>-0.7%</td><td>-4.2%</td><td>1.4%</td><td>-3.4%</td><td>0.3%</td></tr><tr><td>Thailand</td><td>2.6%</td><td>4.1%</td><td>2.4%</td><td>-13.7%</td><td>-2.1%</td><td>-1.5%</td><td>1.5%</td></tr><tr><td>Vietnam</td><td>-1.5%</td><td>6.1%</td><td>1.7%</td><td>-7.5%</td><td>0.4%</td><td>-5.6%</td><td>-12.6%</td></tr><tr><td>MSCI ASEAN</td><td>-0.8%</td><td>2.1%</td><td>0.2%</td><td>-8.2%</td><td>-0.2%</td><td>-2.3%</td><td>-3.2%</td></tr><tr><td>Average</td><td>-0.3%</td><td>3.2%</td><td>0.8%</td><td>-6.7%</td><td>-0.7%</td><td>-3.1%</td><td>-5.7%</td></tr><tr><td>Cons Disc</td><td>-3.0%</td><td>-2.4%</td><td>-2.6%</td><td>-13.1%</td><td>1.8%</td><td>-3.0%</td><td>-5.3%</td></tr><tr><td>Cons Staples</td><td>-3.7%</td><td>-1.7%</td><td>0.4%</td><td>-2.1%</td><td>-0.1%</td><td>-0.5%</td><td>-0.3%</td></tr><tr><td>Energy</td><td>-7.7%</td><td>-3.1%</td><td>-1.8%</td><td>-5.9%</td><td>-0.7%</td><td>3.0%</td><td>6.2%</td></tr><tr><td>Financials</td><td>2.7%</td><td>2.5%</td><td>1.4%</td><td>5.7%</td><td>-0.7%</td><td>0.5%</td><td>1.4%</td></tr><tr><td>Health Care</td><td>10.8%</td><td>6.4%</td><td>-0.1%</td><td>6.2%</td><td>-1.7%</td><td>-4.0%</td><td>-0.6%</td></tr><tr><td>Industrials</td><td>1.8%</td><td>-0.3%</td><td>0.9%</td><td>-1.5%</td><td>-1.5%</td><td>-5.0%</td><td>-4.9%</td></tr><tr><td>Materials</td><td>-9.2%</td><td>-6.3%</td><td>-1.1%</td><td>-2.3%</td><td>0.3%</td><td>-2.9%</td><td>-11.0%</td></tr><tr><td>Real Estate</td><td>-4.9%</td><td>-4.2%</td><td>-1.3%</td><td>2.6%</td><td>1.5%</td><td>0.5%</td><td>-1.6%</td></tr><tr><td>Comm Svcs</td><td>-0.5%</td><td>-2.0%</td><td>-4.8%</td><td>0.3%</td><td>3.1%</td><td>3.7%</td><td>7.2%</td></tr><tr><td>Utilities</td><td>-2.6%</td><td>-1.9%</td><td>-0.5%</td><td>-2.6%</td><td>0.9%</td><td>-0.3%</td><td>-4.7%</td></tr></table>
+
+Source: MSCI, Datastream, UBS. Note: Market returns are relative to MSCI Asia ex Japan, while sector returns are relative to MSCI ASEAN.
+
+During the Super El Niño cycles in 2014-16 (the second strongest on record) and 2023-24, ASEAN markets underperformed by an average of 7% during El Niño (from the start until the end of the cycle). During these two instances, Thailand and Indonesia lagged the most. Philippine equities surprisingly looked through it during the El Niño period, but underperformed 1-6 months thereafter. Within sectors, consumer discretionary had the biggest underperformance.
+
+![](images/dfd7c7677d247914727ed0efae220d27046686c424906aea26ab9aac753ea3ed.jpg)
+
+![](images/78e1ed912bf97c5a80ce9a8558fe8c58c5a776c73a2e662b9c37d2a08550e33e.jpg)
+
+Figure 28: EBIT margin trends across El Niño phases have been mixed. ASEAN margins deteriorated in 2014-16 and 2018-19 but expanded in 2023-24 on post-pandemic reopening. Indonesia and Thailand saw greater margin volatility, while Singapore was weighed by internet names. Consumer discretionary margins declined toward the latter part of 2014-16 and again in 2018-19, while consumer staples remained relatively resilient.
+
+![](images/17b6746d08bd4f290d387a136639f71da5496c7fcb31ba04849c104c1c5c25eb.jpg)  
+Source: Company data, UBS. Note: Based on UBS coverage aggregated using free-float adj market caps.
+
+Figure 29: A de-escalation in the Middle East conflict could see markets that have been sold off and rely heavily on oil flows from the region rebound as oil prices ease, led by Philippines, Malaysia and Indonesia  
+![](images/928b9335f990aa74af56348f29e43a73fe4b997e0e54acd007175e2ebf13279f.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 30: In such a scenario, sectors that are sensitive to oil dynamics should recover, including ASEAN consumer and airlines on the back of lower oil prices
+
+![](images/d84b8ea8ca91a912c63cb0871138e4ac47cee53e7722298134c34709a115e269.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 31: If oil prices stay at \$100/bbl, a further 10% increase presents higher downside risks to Thailand, Singapore and Indonesia earnings  
+![](images/3df6b80dee4dfb65736b75d1214123ec050589fee89b36b06e8d9b0e892328f9.jpg)  
+Source: UBS estimates
+
+Figure 32: In ASEAN, Thailand and Philippines are most vulnerable as the biggest net exporters of oil and gas, while Malaysia is more resilient  
+![](images/91e1117319193d88104438abc1ff406e5e98114e9c9366ec6eb88578c4c379d6.jpg)  
+Source: Haver, CEIC, UBS
+
+## 3. Higher-for-longer rates
+
+With elevated inflation risks in the region, central banks have been relatively more hawkish, particularly in Indonesia and Philippines. We expect the bulk of the tightening in this cycle is already done, assuming oil prices and upside risks to inflation fall back as risks around the Middle East ease. Similarly, UBS expects the FOMC to remain on hold until June 2027, given rising inflation expectations. ASEAN equities typically see negative returns when bond yields rise and are more sensitive to changes in real yields than nominal yields. Philippines is the most sensitive to US yields on its exposure to external financing, while Indonesia is the most sensitive to its respective local bond yield.
+
+Figure 33: Changes in policy rates  
+![](images/8892fec95f878ffe3c628bb3dc77b97209ea58a5c07e1dbbc021c42d5132f920.jpg)  
+Bank Indonesia (BI) has tightened by a total of 100bp so far this year, with potentially one more hike in August. The Bangko Sentral ng Pilipinas (BSP) also raised its policy rate by 50bp so far this year and we expect another hike in Q3. We expect the Bank of Thailand (BoT) to remain on hold before hiking in December to begin normalising its still-accommodative stance. We also now expect Bank Negara Malaysia (BNM) to hike in November 2026.  
+Source: CEIC, UBS. Note: Indonesia (7-day reverse repo rate); Philippines (repo rate); Vietnam (refinancing rate); Malaysia (overnight policy rate); Thailand (1 day repo rate)
+
+Figure 34: MSCI returns sensitivity to US nominal and real yields, and respective local bond yields  
+![](images/52f593aa5acd4916ed3a91b48fa799bdfebeb1655f2f123fa5e0190b48b90133.jpg)  
+Source: MSCI, Datastream, UBS. Note: (\*) statistically significant relationship at 5% p-value level.
+
+## 4. Policy and political uncertainty
+
+Across ASEAN, shifts in policy and political dynamics often play an outsized role in driving market performance, influencing investor sentiment, reform trajectories and the broader economic outlook.
+
+Indonesia has been weighed by concerns around government policies and execution, resulting in subdued investor sentiment. Recent policy backtracking involving the mining sector, including the export centralisation initiatives and RKAB quota, should help improve the investment climate. While fiscal slippage is risk, recent signals suggest the government is prioritizing fiscal discipline. The scaling back of the free lunch programme, with further cuts expected this year, provide greater fiscal room.
+
+In the Philippines, we expect political uncertainty to remain heightened in H226, with flood control investigations over the next 6-8 months and the VP impeachment trial outcomes as key signposts. Against a backdrop of below-trend growth and elevated inflation, fiscal room for countercyclical support exists, although persistent political uncertainty could weigh on policy execution. Signs of greater political stability, in turn, should support governing durability, which could facilitate reforms and underpin a more sustained growth recovery.
+
+While the next general election is not due until early 2028, Malaysia is increasingly heading into the pre-election cycle. Election-related uncertainty could affect market sentiment, with local equities typically underperforming one month before elections and seeing net foreign selling. We see policy- and regulatory-sensitive sectors such as construction, property and telcos lagging sharply, particularly during disruptive election outcomes. Investors remain focused on cost-of-living pressures, subsidy costs and oil price risks ahead of GE16, but the macro backdrop remains resilient—growth is more balanced and inflation remains benign, with modest fiscal space for targeted transfers.
+
+In Thailand, political conditions have become more stable following the February 2026 election, marking a shift from a period of political uncertainty and leadership changes. This should support policy continuity, improve investor confidence and provide a more stronger backdrop for economic recovery.
+
+Figure 35: Equity risk premium (earnings yield - local bond yield)  
+![](images/9bfed9f67c223b329bd191de2f4a3a14ce6c1c8e1c668582879b0ad21af388c7.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Based on our equity risk premium proxy using EY-BY spreads, Indonesia equities are screening as inexpensive, as the market may have priced in rising political uncertainty. While investors have likewise been concerned around political stability in the Philippines, it is close to most expensive levels, mainly driven by index heavy-weight ICTSI. For Malaysia, its risk premium is close to its 10y average, implying that the market has yet to meaningfully reflect election-related risks. Thailand has re-rated, likely reflecting a more stable political environment.
+
+Figure 36: Valuation perception: Indonesia is at a significant discount vs historical average. Thailand is close to peak levels, Malaysia may be starting to reflect election risk, and Philippines has recovered from its lows closer to its 15y average.  
+![](images/8accd0596885897c7164aa93c6982bf5af77d28d7afa575af6245cbe3177ef73.jpg)
+
+![](images/482b345a97aecac919581eba4678c15e6b260ffbb6826b59c4404c4429df9d43.jpg)
+
+![](images/382a0ef1ca5a64d21e8a7b742269b3f1b6bc1b9c161e9949f02b50156259766a.jpg)
+
+![](images/f3db2a23d24a66cbea60eb26860864ab828d5e54acbb8ac40f86c2c155aa001b.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: Perception premium explained here.
+
+![](images/b64b311657763c86eb0d3445098e7bae4fc17a3dfaa6edadb85a0be37c04a84e.jpg)
+
+![](images/04074b9c504bd39324ed49e68c3c34177d020845f7f791627366e633ef1f3bed.jpg)
+
+## 5. Value-up and capital market reforms
+
+Following similar initiatives in North Asia, ASEAN markets have begun rolling out their own value-up programmes to revive investor interest and address valuation discounts. ASEAN regulators have leaned towards incentives, guidance and market-based mechanisms rather than mandates. While the approaches differ across markets, a common focus is on strengthening corporate governance—including accountability, transparency and disclosure standards—and improving capital allocation and efficiency. If successfully implemented, and combined with policy-supported investor flows, these value-up programmes could help lift corporate returns (ROE/ROIC) over time and act as a meaningful catalyst for a valuation re-rating.
+
+In 2025, Singapore launched the Equity Market Development Programme (EQDP) and the Value Unlock initiative. EQDP channels S\$6.5bn of capital through asset managers to improve market liquidity, broaden the investor base and support quality listings, particularly among small- and mid-cap stocks. Meanwhile, Value Unlock provides grants and advisory support to help undervalued companies enhance shareholder value by refining corporate strategy and communication, optimising capital allocation and improving investor engagement.
+
+Thailand also launched Corporate Value Up and Jump+ which aim to improve corporate visibility, strengthen market discipline and restore investor confidence. The Corporate Value Up program emphasises governance, transparency and value-enhancement strategies, while Jump+ encourages companies to disclose three-year growth plans and provide regular progress updates.
+
+Malaysia followed suit with the launch of MY Value Up programme, targeting 88 of its largest listed companies, which represent \~80% of Bursa Malaysia's market cap. This seeks to encourage companies to effectively communicate long-term growth strategies, enhance disclosures and deepen shareholder engagement. Following the release of the MY Value-Up Programme Guidebook this year, companies could start publicly disclosing their value-up plans by 2027. To reinforce the initiative, government linked investment companies (GLICs) are encouraged to channel capital towards companies that demonstrate such efforts.
+
+Figure 37: PB vs ROE: Singapore has re-rated alongside the improvement in ROEs since 2023, while Malaysia has been relatively steady  
+![](images/c662681a2bb4d483b157c97fab919f612c671b5f117502e726af147fa5a108d8.jpg)
+
+![](images/4c9d8b4b883f9d8773821d84210c57d20b1997128abea4ed527cdeb0b60fadef.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 38: Japan built on its earlier governance reforms—TSE called on listed companies to improve capital efficiency and shareholder value in March 2023, with MSCI Japan outperforming the region by 14% in the following 12 months  
+![](images/4c6581a94fb98911ea02b47e0c6e6fa13ae25505f3ae0b274d66b5d553733527.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 39: Korea launched the Corporate Value-Up Program in February 2024, following Japan's experience as it aims to address the long-standing 'Korea discount.' But due to its voluntary nature and political uncertainty, it did not drive an immediate broader market re-rating  
+![](images/de64cf765574b5c05d8b91b06b804c8744e00eb0fad61f63c5eb3494af7aa483.jpg)  
+Source: MSCI, Datastream, UBS
+
+Figure 40: Japan delivered steady improvement in ROE and ROIC since TSE's initiative was launched. Korea saw a significant jump over the last two years, albeit largely driven by the memory upcycle  
+![](images/0b6286c0b3014df53b9a1d12ba6ebec733827253b7ada4f04181d1f64c9dfd76.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+![](images/800208f2f5f0b28b176bd0dc34f1cc6b650e84aa78574341743f981e18c03dfb.jpg)
+
+## Our market views
+
+Figure 41: UBS EM & APAC market ratings scorecard  
+![](images/85943169fdcfb546a58cc182fd9ac16fb3154a0177e93d4faf3cad67c581aa3d.jpg)  
+Our scorecard is a guide to help rate markets within our broader EM & APAC universe. It consists of 1) thematic factors that change through time depending on what we think could drive markets; and 2) equity fundamentals which take into account earnings and valuation factors.  
+Source: UBS
+
+Figure 42: EM & APAC markets themes scorecard
+
+<table><tr><td></td><td>Theme #1 - AI revenue exposure (20% weight)</td><td>Rank</td><td>Theme #2a - Oil price sensitivity (10% weight)</td><td>Rank</td><td>Theme #2b - Higher-for-longer rates (10% weight)</td><td>Rank</td><td>Theme #3 - Macro growth shifts (20% weight)</td><td>Rank</td><td>Theme #4 - UBS ratings bottom-up vs. 5y history (%ile, 20% weight)</td><td>Rank</td><td>Theme #5 - Narrative compass (20% weight)</td><td>Rank</td><td>AVERAGE RANK</td></tr><tr><td>Korea</td><td>51.2%</td><td>2</td><td>0.08%</td><td>12</td><td>-9.3%</td><td>19</td><td>1.31</td><td>5</td><td>81%</td><td>3</td><td>0</td><td>6</td><td>+6.3</td></tr><tr><td>China</td><td>31.3%</td><td>3</td><td>0.06%</td><td>15</td><td>-2.8%</td><td>1</td><td>1.54</td><td>3</td><td>38%</td><td>13</td><td>0</td><td>6</td><td>+6.6</td></tr><tr><td>Australia</td><td>18.7%</td><td>6</td><td>0.15%</td><td>5</td><td>-7.5%</td><td>17</td><td>2.33</td><td>1</td><td>81%</td><td>3</td><td>-1</td><td>13</td><td>+6.8</td></tr><tr><td>Malaysia</td><td>4.1%</td><td>10</td><td>0.09%</td><td>11</td><td>-5.0%</td><td>10</td><td>1.47</td><td>4</td><td>52%</td><td>10</td><td>1</td><td>1</td><td>+7.1</td></tr><tr><td>Saudi Arabia</td><td>0.4%</td><td>14</td><td>0.23%</td><td>2</td><td>-3.2%</td><td>2</td><td>-0.01</td><td>7</td><td>76%</td><td>7</td><td>0</td><td>6</td><td>+7.2</td></tr><tr><td>Taiwan</td><td>81.5%</td><td>1</td><td>0.06%</td><td>14</td><td>-7.5%</td><td>16</td><td>-1.21</td><td>13</td><td>95%</td><td>2</td><td>0</td><td>6</td><td>+7.4</td></tr><tr><td>Japan</td><td>19.6%</td><td>5</td><td>0.06%</td><td>16</td><td>-7.0%</td><td>14</td><td>-0.23</td><td>10</td><td>100%</td><td>1</td><td>0</td><td>6</td><td>+7.4</td></tr><tr><td>Thailand</td><td>22.3%</td><td>4</td><td>0.13%</td><td>8</td><td>-5.8%</td><td>11</td><td>-2.11</td><td>16</td><td>67%</td><td>8</td><td>1</td><td>1</td><td>+7.7</td></tr><tr><td>Poland</td><td>12.6%</td><td>7</td><td>0.18%</td><td>3</td><td>-6.8%</td><td>13</td><td>-0.20</td><td>9</td><td>24%</td><td>15</td><td>0</td><td>6</td><td>+9.0</td></tr><tr><td>Singapore</td><td>1.4%</td><td>12</td><td>0.13%</td><td>9</td><td>-4.0%</td><td>3</td><td>-0.08</td><td>8</td><td>5%</td><td>19</td><td>1</td><td>1</td><td>+9.2</td></tr><tr><td>Indonesia</td><td>0.0%</td><td>16</td><td>0.08%</td><td>13</td><td>-4.1%</td><td>4</td><td>1.74</td><td>2</td><td>67%</td><td>8</td><td>-1</td><td>13</td><td>+9.5</td></tr><tr><td>Mexico</td><td>12.2%</td><td>8</td><td>0.17%</td><td>4</td><td>-7.1%</td><td>15</td><td>-1.97</td><td>15</td><td>81%</td><td>3</td><td>-1</td><td>13</td><td>+9.7</td></tr><tr><td>South Africa</td><td>4.5%</td><td>9</td><td>0.13%</td><td>7</td><td>-8.3%</td><td>18</td><td>-0.35</td><td>11</td><td>52%</td><td>10</td><td>0</td><td>6</td><td>+9.7</td></tr><tr><td>Vietnam</td><td>0.0%</td><td>16</td><td>0.11%</td><td>10</td><td>-6.0%</td><td>12</td><td>1.24</td><td>6</td><td>14%</td><td>17</td><td>1</td><td>1</td><td>+10.2</td></tr><tr><td>UAE</td><td>0.8%</td><td>13</td><td>0.14%</td><td>6</td><td>-4.3%</td><td>6</td><td>-2.43</td><td>18</td><td>25%</td><td>14</td><td>1</td><td>1</td><td>+10.4</td></tr><tr><td>Brazil</td><td>3.3%</td><td>11</td><td>0.31%</td><td>1</td><td>-4.8%</td><td>9</td><td>-1.52</td><td>14</td><td>19%</td><td>16</td><td>-1</td><td>13</td><td>+11.8</td></tr><tr><td>Philippines</td><td>0.0%</td><td>16</td><td>0.05%</td><td>18</td><td>-4.7%</td><td>8</td><td>-2.18</td><td>17</td><td>81%</td><td>3</td><td>-1</td><td>13</td><td>+12.4</td></tr><tr><td>India</td><td>0.0%</td><td>16</td><td>0.03%</td><td>19</td><td>-4.2%</td><td>5</td><td>-0.72</td><td>12</td><td>10%</td><td>18</td><td>-1</td><td>13</td><td>+14.2</td></tr><tr><td>Hong Kong</td><td>0.3%</td><td>15</td><td>0.05%</td><td>17</td><td>-4.3%</td><td>7</td><td>-3.03</td><td>19</td><td>48%</td><td>12</td><td>-1</td><td>13</td><td>+14.2</td></tr><tr><td>Asia ex Japan</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>+8.2</td></tr><tr><td>APAC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>+7.8</td></tr><tr><td>EM</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>+8.2</td></tr></table>
+
+Source: IBES, MSCI, Datastream, UBS
+
+Figure 43: EM & APAC markets fundamentals scorecard
+
+<table><tr><td></td><td>P/Book relative vs. 10y avg (std devs)</td><td>Rank</td><td>Fwd P/E relative vs. 10y avg (std devs)</td><td>Rank</td><td>24m fwd EPS growth vs. 10y avg (std devs)</td><td>Rank</td><td>Fwd ROE vs. 10y avg (std devs)</td><td>Rank</td><td>EY-BY spread vs. 10y avg (std devs)</td><td>Rank</td><td>Valuation perception score (std devs)</td><td>Rank</td><td>AVERAGE RANK</td></tr><tr><td>Korea</td><td>1.85</td><td>17</td><td>-0.91</td><td>8</td><td>-0.03</td><td>6</td><td>3.49</td><td>1</td><td>-0.02</td><td>4</td><td>-2.78</td><td>1</td><td>6.2</td></tr><tr><td>Indonesia</td><td>-2.79</td><td>1</td><td>-2.32</td><td>2</td><td>-0.43</td><td>9</td><td>-0.66</td><td>17</td><td>2.16</td><td>2</td><td>-0.95</td><td>4</td><td>6.6</td></tr><tr><td>China</td><td>-1.74</td><td>4</td><td>-1.01</td><td>6</td><td>-0.23</td><td>8</td><td>-0.23</td><td>16</td><td>1.06</td><td>3</td><td>-0.49</td><td>8</td><td>8.1</td></tr><tr><td>South Africa</td><td>-1.34</td><td>7</td><td>-0.99</td><td>7</td><td>-1.50</td><td>18</td><td>2.19</td><td>5</td><td>2.35</td><td>1</td><td>-0.50</td><td>7</td><td>8.2</td></tr><tr><td>Saudi Arabia</td><td>-1.36</td><td>6</td><td>-1.57</td><td>3</td><td>-0.59</td><td>12</td><td>0.36</td><td>15</td><td>-0.67</td><td>9</td><td>-1.60</td><td>2</td><td>8.2</td></tr><tr><td>Hong Kong</td><td>-2.40</td><td>2</td><td>-1.27</td><td>4</td><td>-1.58</td><td>19</td><td>0.98</td><td>12</td><td>-0.60</td><td>7</td><td>-1.09</td><td>3</td><td>8.3</td></tr><tr><td>Brazil</td><td>-2.34</td><td>3</td><td>-1.13</td><td>5</td><td>-0.96</td><td>16</td><td>1.65</td><td>9</td><td>-0.87</td><td>12</td><td>-0.74</td><td>5</td><td>8.3</td></tr><tr><td>Poland</td><td>0.01</td><td>14</td><td>-0.73</td><td>10</td><td>0.06</td><td>4</td><td>2.04</td><td>6</td><td>-0.80</td><td>10</td><td>-0.39</td><td>9</td><td>8.6</td></tr><tr><td>UAE</td><td>-0.44</td><td>13</td><td>-0.46</td><td>13</td><td>0.66</td><td>3</td><td>1.52</td><td>10</td><td>-0.93</td><td>13</td><td>-0.66</td><td>6</td><td>9.0</td></tr><tr><td>Japan</td><td>2.17</td><td>18</td><td>1.96</td><td>17</td><td>0.69</td><td>2</td><td>3.03</td><td>2</td><td>-2.77</td><td>19</td><td>-</td><td>9</td><td>9.8</td></tr><tr><td>Singapore</td><td>-0.70</td><td>11</td><td>1.64</td><td>16</td><td>0.02</td><td>5</td><td>1.87</td><td>8</td><td>-1.35</td><td>15</td><td>-0.15</td><td>10</td><td>9.9</td></tr><tr><td>Mexico</td><td>-0.94</td><td>10</td><td>-0.74</td><td>9</td><td>-1.19</td><td>17</td><td>1.93</td><td>7</td><td>-0.65</td><td>8</td><td>0.33</td><td>11</td><td>10.7</td></tr><tr><td>India</td><td>-1.22</td><td>8</td><td>-4.81</td><td>1</td><td>-0.89</td><td>15</td><td>0.73</td><td>13</td><td>-0.57</td><td>6</td><td>1.25</td><td>17</td><td>11.3</td></tr><tr><td>Taiwan</td><td>3.19</td><td>19</td><td>3.30</td><td>19</td><td>4.18</td><td>1</td><td>2.44</td><td>3</td><td>-2.60</td><td>18</td><td>1.10</td><td>16</td><td>11.5</td></tr><tr><td>Thailand</td><td>0.62</td><td>15</td><td>0.88</td><td>15</td><td>-0.43</td><td>10</td><td>2.23</td><td>4</td><td>-0.87</td><td>11</td><td>1.40</td><td>18</td><td>12.0</td></tr><tr><td>Australia</td><td>-1.20</td><td>9</td><td>0.09</td><td>14</td><td>-0.45</td><td>11</td><td>1.24</td><td>11</td><td>-1.67</td><td>16</td><td>0.65</td><td>14</td><td>12.0</td></tr><tr><td>Malaysia</td><td>-1.67</td><td>5</td><td>-0.52</td><td>12</td><td>-0.77</td><td>14</td><td>-1.03</td><td>18</td><td>-0.03</td><td>5</td><td>0.92</td><td>15</td><td>12.1</td></tr><tr><td>Philippines</td><td>1.64</td><td>16</td><td>-0.59</td><td>11</td><td>-0.76</td><td>13</td><td>0.51</td><td>14</td><td>-1.02</td><td>14</td><td>0.33</td><td>12</td><td>13.5</td></tr><tr><td>Vietnam</td><td>-0.45</td><td>12</td><td>1.98</td><td>18</td><td>-0.09</td><td>7</td><td>-1.07</td><td>19</td><td>-1.87</td><td>17</td><td>0.63</td><td>13</td><td>13.7</td></tr><tr><td>Asia ex Japan</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>9.3</td></tr><tr><td>APAC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>9.7</td></tr><tr><td>EM</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>9.2</td></tr></table>
+
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Our preferences are based on: 1) AI revenue exposure; 2) beneficiaries of higher-for-longer rates and oil prices as energy risks remain; 3) beneficiaries of macro growth shifts; 4) markets where UBS analysts' ratings have a more positive bias; and 5) our narrative compass, which aims to capture idiosyncratic factors that are not fully reflected in the aforementioned themes, as well as earnings and valuations. Within ASEAN, Malaysia and Thailand look better positioned, while Philippines less so.
+
+We also look at a combination of valuation and fundamental factors. We look at 12m fwd PE, PB, ROE, the spread between earnings yield and local bond yields (ERP proxy), 24m fwd EPS growth and our proprietary valuation perception score. Within ASEAN, Indonesia screens most attractive, while Vietnam and Philippines are the least attractive.
+
+Figure 44: UBS EM & APAC market ratings: ASEAN
+
+<table><tr><td>Overweight</td><td>Neutral</td><td>Underweight</td></tr><tr><td>Korea</td><td>Taiwan</td><td>Australia</td></tr><tr><td>China</td><td>South Africa</td><td>India</td></tr><tr><td>Brazil</td><td>Singapore</td><td>Hong Kong</td></tr><tr><td>UAE</td><td>Saudi Arabia</td><td>Mexico</td></tr><tr><td>Malaysia</td><td>Poland</td><td>Indonesia</td></tr><tr><td>Vietnam</td><td>Thailand</td><td>Philippines</td></tr></table>
+
+Source: UBS
+
+## Overweight Malaysia: Stable macro and MY Value Up support re-rating
+
+Malaysia has one of the most stable macro/political situations in the ASEAN region. Fiscal reform could help macro narrative, alongside continue inflows from local pension funds into local equities. FDI inflows to data centres and the Johor-Singapore Special Economic Zone (JS-SEZ) should support economic growth, which could drive a re-rating. MY Value Up Programme could help sustain positive market narrative and act as a further positive catalyst, reinforced by policy-supported inflows. We prefer exposure to the domestic investment cycle, consumption growth, tech-related opportunities and value-up.
+
+Figure 45: Malaysia is trading at a discount to ASEAN despite its relatively stable outlook. If successfully implemented, MY Value Up could help drive a re-rating  
+![](images/5adef02c24cfa40d521985fe1cfcdb1fa35e8855cd8d6ae33083622081ee5bf6.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 46: Excluding the pandemic years, Malaysia growth has been largely stable and resilient  
+![](images/dc23ffb8114d02e717c342356c58c545cbcddece141f2d4ceb0c44a82febdcc8.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 47: Key to watch is the upcoming elections—while the timing is still uncertain, foreign investors have typically been net sellers around election periods  
+![](images/431d919310ed6b5ccade248b4463e0b81aaa702456a70561de7c8ffa674ca91a.jpg)  
+Source: Dibots, UBS
+
+![](images/1676d5fa355250019b1390265354c5716eab7851cbd869409635ef222924f25e.jpg)
+
+Figure 48: Preferred stocks in Malaysia
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>Tenaga</td><td>TENA.KL</td><td>20.4</td><td>14.4</td><td>17.0</td><td>17.0</td><td>16.1</td><td>1.6</td><td>1.6</td><td>3.8</td><td>4.0</td><td>19.3</td><td>5.9</td></tr><tr><td>CIMB Group</td><td>CIMB.KL</td><td>20.3</td><td>7.7</td><td>9.2</td><td>10.5</td><td>9.8</td><td>1.1</td><td>1.1</td><td>6.1</td><td>6.2</td><td>0.0</td><td>6.8</td></tr><tr><td>Petronas Chemicals</td><td>PCGB.KL</td><td>9.6</td><td>4.9</td><td>6.9</td><td>21.2</td><td>23.6</td><td>1.1</td><td>1.0</td><td>2.6</td><td>2.3</td><td>-269.2</td><td>-10.1</td></tr><tr><td>Mr D.I.Y.</td><td>MRDI.KL</td><td>3.7</td><td>1.6</td><td>2.15</td><td>21.1</td><td>18.8</td><td>8.0</td><td>8.0</td><td>5.7</td><td>5.3</td><td>11.7</td><td>11.8</td></tr><tr><td>Kelington Group</td><td>KELG.KL</td><td>1.5</td><td>8.0</td><td>9.0</td><td>34.2</td><td>26.8</td><td>8.4</td><td>7.4</td><td>1.7</td><td>2.1</td><td>10.4</td><td>27.7</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+## Overweight Vietnam: Premier growth story with EM upgrade upside
+
+Structural drivers remain intact, with the ongoing integration into global supply chains continuing to support FDI flows. Vietnam remains the fastest growing economy within ASEAN, albeit with higher sensitivity to shifts in global growth and trade. Key risks include higher interest rates and tight liquidity. Meanwhile, capital market reforms, which aim to improve market access and align with international standards, as well as the impending FTSE inclusion into the secondary EM index starting September 2026 and targeted MSCI EM inclusion by 2030 could be further catalysts for equity inflows and market upside. Our preferred stocks are plays to the macro growth story, including consumer, banks and industrials.
+
+Figure 49: Vietnam remains at a discount relative to the rest of ASEAN, but this could change as momentum builds towards EM inclusion  
+![](images/f82bacda0460f7972e69463670956d99fa971ab21442425aa3740ae7aa998e42.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 50: Vietnam still trades at the same valuation perception discount as 10 years ago, indicating the EM index inclusion may not be fully reflected in valuations yet  
+![](images/5522598bb3545bfba408762161660fffd702b84ca622b352e1df8e452a78d23b.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 51: Preferred stocks in Vietnam
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>TECHCOMBank</td><td>TCB.HM</td><td>7.7</td><td>28600.0</td><td>45000.0</td><td>7.2</td><td>5.6</td><td>1.1</td><td>1.0</td><td>2.5</td><td>5.6</td><td>10.7</td><td>29.0</td></tr><tr><td>HPG</td><td>HPG.HM</td><td>6.7</td><td>20800.0</td><td>31500.0</td><td>8.8</td><td>6.8</td><td>1.1</td><td>0.9</td><td>0.5</td><td>1.3</td><td>32.2</td><td>28.7</td></tr><tr><td>Asia Commercial Bank</td><td>ACB.HM</td><td>4.4</td><td>22500.0</td><td>36000.0</td><td>6.1</td><td>4.9</td><td>1.1</td><td>0.9</td><td>3.1</td><td>5.0</td><td>21.3</td><td>23.8</td></tr><tr><td>Mobile World</td><td>MWG.HM</td><td>3.8</td><td>68000.0</td><td>118000.0</td><td>11.9</td><td>10.6</td><td>3.2</td><td>3.0</td><td>1.8</td><td>2.0</td><td>18.4</td><td>12.5</td></tr><tr><td>Vincom Retail</td><td>VRE.HM</td><td>1.9</td><td>21900.0</td><td>41100.0</td><td>9.0</td><td>8.3</td><td>n/a</td><td>n/a</td><td>4.6</td><td>0.0</td><td>-13.8</td><td>8.0</td></tr><tr><td>Gemadept</td><td>GMD.HM</td><td>1.2</td><td>73200.0</td><td>92000.0</td><td>15.3</td><td>14.5</td><td>2.3</td><td>2.2</td><td>4.6</td><td>4.8</td><td>19.7</td><td>5.5</td></tr><tr><td>FPT Retail</td><td>FRT.HM</td><td>0.7</td><td>107800.0</td><td>200000.0</td><td>18.1</td><td>14.1</td><td>3.7</td><td>3.0</td><td>1.1</td><td>1.4</td><td>27.9</td><td>27.7</td></tr><tr><td>Nam Long Investment</td><td>NLG.HM</td><td>0.4</td><td>21350.0</td><td>37000.0</td><td>11.7</td><td>12.2</td><td>n/a</td><td>n/a</td><td>4.7</td><td>4.7</td><td>13.6</td><td>-4.4</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+## Neutral Singapore: Reforms and safe-haven flows underpin resilience
+
+While higher-for-longer rates are typically a headwind, Singapore is a relative beneficiary due to the banks, which are index heavyweights (c60% of MSCI Singapore). The market is also supported by long-term structural demand drivers, particularly in financial services given increasing focus on wealth management in a market increasingly emerging as a regional 'safe haven' and tech. In addition, the Monetary Authority of Singapore's (MAS) market reform measures should help improve market depth and liquidity, supporting market performance. We prefer names that are high-quality and undervalued with company-specific catalysts.
+
+Figure 52: Singapore remains at a valuation discount relative to peers  
+![](images/f441e41f020125e9a921ac83d57aa923ce36229abeb04ff26f10efef2c19d71a.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 53: Even as ROEs have been closing in to the rest of ASEAN  
+![](images/8830d3f3c1b74690988a7c3176078ffb84dcfbb10220a2cb8883fbd070b0cc6c.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 54: Singapore banks' WM business is benefiting from strong AUM growth and safe haven inflows...  
+![](images/556722e4898736d2bd4a0967245569ac64d88214b3e625571db8f3029546b1f2.jpg)  
+Source: Company data, UBS
+
+Figure 55: ...driving fee income, which support group ROE and profitability  
+![](images/0014eabe393ddab371037e5382eba9275ad729f0612f3191001be9d77eec6474.jpg)  
+Source: Company data, UBS
+
+Figure 56: Preferred stocks in Singapore
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>ST Engineering</td><td>STEG.SI</td><td>25.6</td><td>10.6</td><td>12.6</td><td>31.6</td><td>25.6</td><td>11.0</td><td>9.2</td><td>1.9</td><td>2.1</td><td>126.1</td><td>23.3</td></tr><tr><td>Jardine Matheson</td><td>JARD.SI</td><td>18.7</td><td>63.6</td><td>80.0</td><td>12.2</td><td>10.1</td><td>0.7</td><td>0.6</td><td>3.9</td><td>4.1</td><td>-9.0</td><td>21.2</td></tr><tr><td>UOL Group</td><td>UTOS.SI</td><td>6.2</td><td>9.4</td><td>12.7</td><td>16.8</td><td>12.7</td><td>n/a</td><td>n/a</td><td>2.1</td><td>2.3</td><td>20.6</td><td>31.8</td></tr><tr><td>City Developments</td><td>CTDM.SI</td><td>5.2</td><td>7.5</td><td>11.6</td><td>15.2</td><td>13.3</td><td>n/a</td><td>n/a</td><td>2.7</td><td>2.7</td><td>-39.1</td><td>14.1</td></tr><tr><td>AEM Holdings</td><td>AEM.SI</td><td>2.2</td><td>9.0</td><td>16.0</td><td>38.5</td><td>22.9</td><td>5.1</td><td>4.3</td><td>0.5</td><td>0.9</td><td>332.9</td><td>68.3</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+## Neutral Thailand: Recovery potential tempered by macro headwinds
+
+The general election in 2026 is a positive development given a more stable government. While it remains one of the weakest macro outlooks in the ASEAN region with a relatively high exposure to the energy shock, key things to watch include the execution of government policies (i.e. fiscal stimulus), tourism recovery and a turn in the K-shaped consumption recovery. Valuations are expensive largely driven by Delta which is a beneficiary of robust AI demand. Ex-Delta, valuations for the rest of the market are approximating 20-year lows.
+
+Figure 57: Thailand's valuations are skewed by index heavyweight Delta Electronics. Ex-Delta, valuations are near decade lows.  
+![](images/a740be105cb50d1201152f6bbc46584cd92c0c3b9332042674634f72c22a7a54.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 58: Thailand has been seeing upgrades so far this year, unlike the rest of ASEAN  
+![](images/7d80d54cd90c0e497ca3c29fc922e40a88c7c33b4719150f40df2eb7a1dac573.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 59: Visitors to Thailand have yet to recover to pre-pandemic levels; Chinese visitors at 52% of 2019 levels  
+![](images/32ba452ebd76db6c71c8d63cc1c8edadab34e62849f6df7f3c24d34fffdc7782.jpg)  
+Source: Ministry of Tourism and Sports
+
+Figure 60: Consumer confidence index vs retail sales index: Thailand consumer confidence remains weak  
+![](images/a35028237679e81a9533b0c9ce09c57e77cdb9505c6b05bce61cbc196dff5153.jpg)  
+Source: Bank of Thailand. Note: Retail Sales Index is as of April 2026, while CCI is as of May 2026.
+
+Figure 61: Preferred stocks in Thailand
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>AIS</td><td>ADVANC.BK</td><td>33.2</td><td>376.0</td><td>400.0</td><td>21.4</td><td>20.3</td><td>19.5</td><td>18.2</td><td>4.5</td><td>4.9</td><td>13.4</td><td>5.4</td></tr><tr><td>Gulf Development</td><td>GULF.BK</td><td>29.2</td><td>66.0</td><td>82.0</td><td>29.4</td><td>27.1</td><td>3.0</td><td>2.8</td><td>2.2</td><td>2.4</td><td>16.6</td><td>8.4</td></tr><tr><td>Kasikornbank</td><td>KBANK.BK</td><td>16.9</td><td>240.0</td><td>255.0</td><td>11.3</td><td>11.7</td><td>1.0</td><td>0.9</td><td>5.8</td><td>5.5</td><td>1.5</td><td>-3.6</td></tr><tr><td>True Corp</td><td>TRUE.BK</td><td>14.3</td><td>14.0</td><td>19.3</td><td>19.0</td><td>17.8</td><td>5.9</td><td>5.5</td><td>3.9</td><td>4.2</td><td>33.3</td><td>7.0</td></tr><tr><td>CP All</td><td>CPALL.BK</td><td>12.3</td><td>46.5</td><td>61.0</td><td>13.7</td><td>12.4</td><td>2.7</td><td>2.4</td><td>3.4</td><td>3.7</td><td>7.6</td><td>10.4</td></tr><tr><td>Bangkok Dusit</td><td>BDMS.BK</td><td>8.9</td><td>18.9</td><td>23.0</td><td>19.1</td><td>17.7</td><td>2.8</td><td>2.7</td><td>4.5</td><td>4.9</td><td>-0.7</td><td>7.6</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+## Underweight Indonesia: Deep value, but awaiting stronger catalysts
+
+While recent easing of policies and greater fiscal discipline are positive developments, uncertainties around government policies and execution are likely to continue to weigh on overall sentiment. The earnings downgrade cycle could still continue—in particular, consensus has yet to fully reflect the banks' asset quality and earnings risks, with UBS forecasting flat sector earnings in 2027 or c12% below consensus. While MSCI's ongoing market accessibility review (extended to November 2026) poses risk of further outflows, UBS Indonesia strategy team thinks the probability a downgrade to frontier market status is low. Any easing of these concerns could drive a near-term relief rally. Valuations are at 20-year lows and positioning is light, but as structural issues remain, further catalysts for a sustained re-rating may be limited.
+
+Figure 62: Indonesia's PE is now at decade lows due to continued uncertainties including policy, earnings and FX  
+![](images/50f926cc74610a3646fdea03ab6e26f35d51da9ffce2f7100decd567aa3148b8.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 63: Similarly, PB has de-rated to more than 2SD below 10y averages, both on an absolute and relative basis  
+![](images/193a716202e1584e787e735d6af381b95fccb9644ea97a3b0b62484e3c72c5eb.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 64: Earnings momentum has been weak, with cuts likely to continue driven primarily by the banks  
+![](images/3929acbf688f856f43e10256beb2654f899eaf0c2a11d67fe1ee0c237742fe7a.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 65: Equity risk premium has increased since 2025, reflecting rising political uncertainty combined with the possible MSCI downgrade to frontier market  
+![](images/eb1d02c59bb01be8f0d7f2aa6e629618fdb7ec2aac194a8e1c8752d8283e9c60.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 66: Preferred stocks in Indonesia
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>BCA</td><td>BBCA.JK</td><td>43.1</td><td>6275.0</td><td>7150.0</td><td>13.3</td><td>12.8</td><td>2.6</td><td>2.4</td><td>5.4</td><td>5.4</td><td>0.6</td><td>4.0</td></tr><tr><td>Amman</td><td>AMMN.JK</td><td>16.3</td><td>4040.0</td><td>6100.0</td><td>19.6</td><td>10.7</td><td>2.6</td><td>2.1</td><td>0.0</td><td>0.0</td><td>242.7</td><td>78.5</td></tr><tr><td>Telkom Indonesia</td><td>TLKM.JK</td><td>14.5</td><td>2630.0</td><td>3400.0</td><td>12.0</td><td>10.7</td><td>2.0</td><td>1.9</td><td>8.1</td><td>8.1</td><td>-3.8</td><td>11.5</td></tr><tr><td>Alamtri Minerals</td><td>ADMR.JK</td><td>3.4</td><td>1480.0</td><td>2500.0</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>Vale Indonesia</td><td>INCO.JK</td><td>2.7</td><td>4870.0</td><td>8400.0</td><td>11.2</td><td>6.2</td><td>0.9</td><td>0.8</td><td>1.1</td><td>3.7</td><td>224.3</td><td>75.2</td></tr><tr><td>Cimory</td><td>CMRY.JK</td><td>2.0</td><td>4580.0</td><td>6800.0</td><td>16.1</td><td>13.1</td><td>4.9</td><td>4.3</td><td>4.4</td><td>4.9</td><td>12.3</td><td>23.0</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+## Underweight Philippines: Macro risks outweigh valuation support
+
+Despite trough valuations, we are underweight Philippines given rising macro headwinds. While easing oil prices could provide some reprieve, higher inflation risks from El Niño-related supply pressures, combined with tighter financial conditions and political uncertainty, may likely lead to further underperformance relative to peers. Elevated rates could dampen domestic demand and credit growth, posing further downside risks to earnings—consensus estimates already at below-trend growth, while H126 earnings are likely to be challenged on weak consumer spending and cost pressures weighing on margins. Meanwhile, domestic institutions' ongoing reallocation from domestic to global equities poses further risks to the market. While valuations are close to 20-year lows, macro risks, low earnings visibility and political noise may limit market performance. We adopt a barbell approach combining undervalued cyclicals
+
+with defensives offering dividend support.
+
+Figure 67: The Philippines is trading close to trough valuations as macro risks, political uncertainty and low earnings visibility weigh on sentiment  
+![](images/165019384142f8303dc06f55fd923d69cd031d20a4caf3f7a2c75f3e30094545.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 68: One of the most sensitive to food and energy inflation, leaving it vulnerable to supply risks from the Middle East tensions and El Niño  
+![](images/e526ff0dfeb0b2c936fbe3a9ddab64f2ba2f93a101090ff7ecc1b73f36cc4174.jpg)  
+Source: CEIC, UBS estimates
+
+Figure 69: Earnings growth remains below trend and has yet to see a sustained recovery back to pre-pandemic levels  
+![](images/8ebf6e9f164b3b48495499f6ef1ae596758285eb4471ef9b0fe9e41f88a6f451.jpg)  
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 70: Local institutions' ongoing rotation into global equities also likely contributes to index underperformance  
+![](images/7a4fbf2503d5d8089c5c787851b7cd7fc9e25d66fcd801b0d59f80495e587314.jpg)  
+Source: Refinitiv, UBS. Note: We compiled AUM data across the largest equity ETFs, excluding VULs and IMAs due to limited disclosure.
+
+Figure 71: Preferred stocks in the Philippines
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Mkt Cap (US$ bn)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Price Target (LC)</td><td colspan="2">P/E (x)</td><td colspan="2">P/BV (x)</td><td colspan="2">Dividend yield (%)</td><td colspan="2">EPS growth (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>Banco de Oro</td><td>BDO.PS</td><td>10.6</td><td>123.0</td><td>180.0</td><td>7.7</td><td>6.5</td><td>1.0</td><td>0.9</td><td>3.7</td><td>4.1</td><td>-2.5</td><td>17.8</td></tr><tr><td>Meralco</td><td>MER.PS</td><td>10.9</td><td>600.0</td><td>750.0</td><td>13.5</td><td>12.3</td><td>3.6</td><td>3.2</td><td>4.8</td><td>4.9</td><td>-2.2</td><td>9.6</td></tr><tr><td>BPI</td><td>BPI.PS</td><td>8.8</td><td>102.5</td><td>145.0</td><td>8.3</td><td>7.1</td><td>1.1</td><td>1.0</td><td>4.9</td><td>4.8</td><td>-1.9</td><td>16.8</td></tr><tr><td>Jollibee</td><td>JFC.PS</td><td>2.6</td><td>144.0</td><td>220.0</td><td>16.0</td><td>11.1</td><td>1.9</td><td>1.7</td><td>2.3</td><td>3.3</td><td>-4.2</td><td>44.1</td></tr><tr><td>Maynilad</td><td>MYNLD.PS</td><td>2.3</td><td>19.5</td><td>25.5</td><td>8.7</td><td>8.6</td><td>1.2</td><td>1.1</td><td>5.8</td><td>6.4</td><td>-13.3</td><td>1.7</td></tr><tr><td>Monde Nissin</td><td>MONDE.PS</td><td>2.0</td><td>6.7</td><td>8.4</td><td>10.9</td><td>10.4</td><td>2.0</td><td>1.9</td><td>8.9</td><td>6.9</td><td>13.7</td><td>4.9</td></tr></table>
+
+Source: UBS. Pricing data as of 24 July 2026.
+
+Figure 72: ASEAN markets' performance and valuation
+
+<table><tr><td rowspan="2"></td><td colspan="5">Performance (US$)</td><td colspan="3">12m fwd P/E (x)</td><td colspan="3">EPS growth (%)</td><td colspan="3">12m fwd P/B (x)</td><td colspan="2">12m fwd ROE</td><td colspan="2">12m fwd dividend yield</td></tr><tr><td>YTD 2026</td><td>1m</td><td>3m</td><td>2025</td><td>2024</td><td>Latest</td><td>YoY change</td><td>10y avg</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Latest</td><td>YoY change</td><td>10y avg</td><td>Latest</td><td>10y avg</td><td>Latest</td><td>10y avg</td></tr><tr><td>Singapore</td><td>18.1%</td><td>8.5%</td><td>16%</td><td>32%</td><td>32%</td><td>19.6</td><td>11%</td><td>14.0</td><td>7.5</td><td>13.0</td><td>10.8</td><td>2.9</td><td>10%</td><td>2.7</td><td>14%</td><td>12%</td><td>3.6%</td><td>4.3%</td></tr><tr><td>Thailand</td><td>26.4%</td><td>4.1%</td><td>6%</td><td>7%</td><td>2%</td><td>34.3</td><td>39%</td><td>26.6</td><td>13.6</td><td>12.7</td><td>13.2</td><td>8.0</td><td>53%</td><td>5.1</td><td>24%</td><td>18%</td><td>3.4%</td><td>3.1%</td></tr><tr><td>Malaysia</td><td>3.2%</td><td>2.7%</td><td>-4%</td><td>15%</td><td>21%</td><td>15.3</td><td>6%</td><td>15.1</td><td>6.1</td><td>6.3</td><td>4.5</td><td>1.7</td><td>8%</td><td>1.9</td><td>11%</td><td>12%</td><td>4.6%</td><td>4.2%</td></tr><tr><td>Vietnam</td><td>-3.6%</td><td>-9.6%</td><td>-8%</td><td>67%</td><td>-6%</td><td>44.4</td><td>138%</td><td>25.0</td><td>9.5</td><td>22.5</td><td>-14.8</td><td>3.4</td><td>38%</td><td>2.9</td><td>12%</td><td>15%</td><td>1.3%</td><td>1.3%</td></tr><tr><td>Indonesia</td><td>-34.8%</td><td>5.7%</td><td>-16%</td><td>-2%</td><td>-12%</td><td>11.6</td><td>-4%</td><td>15.0</td><td>-2.4</td><td>10.2</td><td>12.1</td><td>1.8</td><td>-15%</td><td>2.6</td><td>17%</td><td>17%</td><td>7.7%</td><td>3.7%</td></tr><tr><td>Philippines</td><td>7.9%</td><td>7.3%</td><td>10%</td><td>1%</td><td>0%</td><td>15.4</td><td>26%</td><td>16.5</td><td>2.1</td><td>10.6</td><td>9.7</td><td>5.7</td><td>32%</td><td>3.5</td><td>28%</td><td>21%</td><td>3.4%</td><td>2.7%</td></tr><tr><td>ASEAN</td><td>7.9%</td><td>6.5%</td><td>7%</td><td>17%</td><td>12%</td><td>22.2</td><td>25%</td><td>17.1</td><td>7.2</td><td>11.5</td><td>10.2</td><td>3.6</td><td>24%</td><td>3.0</td><td>16%</td><td>14%</td><td>3.9%</td><td>3.8%</td></tr><tr><td>EM</td><td>17.5%</td><td>-5.6%</td><td>2%</td><td>34%</td><td>8%</td><td>18.6</td><td>10%</td><td>17.3</td><td>28.4</td><td>23.7</td><td>15.3</td><td>4.2</td><td>32%</td><td>3.1</td><td>25%</td><td>17%</td><td>2.4%</td><td>2.9%</td></tr><tr><td>Japan</td><td>14.3%</td><td>-1.3%</td><td>5%</td><td>25%</td><td>9%</td><td>21.6</td><td>26%</td><td>17.2</td><td>10.4</td><td>14.3</td><td>11.3</td><td>3.6</td><td>45%</td><td>2.1</td><td>16%</td><td>12%</td><td>2.1%</td><td>2.6%</td></tr><tr><td>USA</td><td>8.9%</td><td>0.8%</td><td>4%</td><td>18%</td><td>25%</td><td>27.0</td><td>0%</td><td>26.5</td><td>24.8</td><td>15.8</td><td>14.7</td><td>9.1</td><td>-5%</td><td>8.2</td><td>39%</td><td>35%</td><td>1.1%</td><td>1.5%</td></tr><tr><td>World</td><td>9.2%</td><td>1.0%</td><td>4%</td><td>22%</td><td>19%</td><td>24.1</td><td>2%</td><td>23.3</td><td>21.9</td><td>14.6</td><td>13.3</td><td>7.4</td><td>0%</td><td>6.4</td><td>33%</td><td>28%</td><td>1.7%</td><td>2.1%</td></tr></table>
+
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+Figure 73: ASEAN sectors' performance and valuation
+
+<table><tr><td rowspan="2"></td><td colspan="4">Performance</td><td colspan="3">12m fwd PE</td><td colspan="2">EPS growth (y/y)</td><td colspan="3">12m fwd PB</td><td colspan="2">ROE</td><td colspan="2">12m fwd dividend yield</td></tr><tr><td>YTD 2026</td><td>1m</td><td>6m</td><td>2025</td><td>Latest</td><td>10y avg</td><td>PE YoY change</td><td>2026</td><td>2027</td><td>Latest</td><td>10y avg</td><td>PB YoY change</td><td>Latest</td><td>10y avg</td><td>Latest</td><td>10y avg</td></tr><tr><td colspan="17">Indonesia</td></tr><tr><td>ID:Banks</td><td>-21.3%</td><td>5.3%</td><td>-20.0%</td><td>-10.0%</td><td>9.1</td><td>15.6</td><td>-30.8%</td><td>-3%</td><td>7%</td><td>1.8</td><td>2.7</td><td>-25%</td><td>20%</td><td>17%</td><td>6.5%</td><td>3.3%</td></tr><tr><td>ID:Telcom_svc</td><td>-24.1%</td><td>5.1%</td><td>-29.4%</td><td>33.4%</td><td>11.3</td><td>14.7</td><td>1.4%</td><td>11%</td><td>9%</td><td>1.9</td><td>3.1</td><td>0%</td><td>16%</td><td>21%</td><td>5.8%</td><td>5.0%</td></tr><tr><td>ID:Materials</td><td>-57.5%</td><td>10.6%</td><td>-57.2%</td><td>16.4%</td><td>44.5</td><td>NA</td><td>NA</td><td>6%</td><td>12%</td><td>3.5</td><td>NA</td><td>1150%</td><td>9%</td><td>NA</td><td>0.0%</td><td>NA</td></tr><tr><td>ID:Energy</td><td>-67.9%</td><td>15.8%</td><td>-65.2%</td><td>5.8%</td><td>6.7</td><td>8.4</td><td>45.3%</td><td>-17%</td><td>25%</td><td>0.9</td><td>1.4</td><td>11%</td><td>13%</td><td>17%</td><td>6.6%</td><td>5.7%</td></tr><tr><td>ID:Food/Bev/Tbc</td><td>-30.0%</td><td>3.5%</td><td>-28.4%</td><td>-15.6%</td><td>9.1</td><td>20.1</td><td>-50.7%</td><td>-20%</td><td>4%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td colspan="17">Malaysia</td></tr><tr><td>MY:Banks</td><td>4.7%</td><td>3.4%</td><td>-1.2%</td><td>20.5%</td><td>11.2</td><td>11.3</td><td>12.7%</td><td>2%</td><td>6%</td><td>1.2</td><td>1.2</td><td>11%</td><td>11%</td><td>10%</td><td>5.9%</td><td>5.0%</td></tr><tr><td>MY:Util</td><td>6.6%</td><td>1.3%</td><td>2.7%</td><td>2.2%</td><td>17.0</td><td>13.9</td><td>3.8%</td><td>4%</td><td>7%</td><td>1.7</td><td>1.4</td><td>9%</td><td>10%</td><td>10%</td><td>3.6%</td><td>4.4%</td></tr><tr><td>MY:Materials</td><td>16.4%</td><td>2.1%</td><td>13.4%</td><td>27.3%</td><td>22.8</td><td>20.7</td><td>12.1%</td><td>23%</td><td>-3%</td><td>3.9</td><td>4.2</td><td>26%</td><td>17%</td><td>20%</td><td>1.7%</td><td>2.4%</td></tr><tr><td>MY:Cap_Gd</td><td>-10.6%</td><td>-0.2%</td><td>-6.7%</td><td>15.4%</td><td>21.6</td><td>15.7</td><td>-7.3%</td><td>15%</td><td>21%</td><td>1.8</td><td>1.2</td><td>-13%</td><td>9%</td><td>8%</td><td>1.9%</td><td>3.1%</td></tr><tr><td>MY:Food/Bev/Tbc</td><td>6.7%</td><td>5.0%</td><td>4.2%</td><td>9.4%</td><td>17.7</td><td>22.7</td><td>-0.4%</td><td>-1%</td><td>0%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>MY:Telcom_svc</td><td>-9.0%</td><td>6.3%</td><td>-11.6%</td><td>16.8%</td><td>17.6</td><td>21.5</td><td>-6.8%</td><td>2%</td><td>8%</td><td>3.0</td><td>7.4</td><td>-5%</td><td>17%</td><td>36%</td><td>4.3%</td><td>3.9%</td></tr><tr><td>MY:Health_Eqp_svc</td><td>-5.3%</td><td>-3.8%</td><td>-4.9%</td><td>34.0%</td><td>31.7</td><td>37.9</td><td>9.4%</td><td>5%</td><td>16%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>MY:Transp</td><td>4.7%</td><td>0.1%</td><td>2.3%</td><td>24.1%</td><td>13.3</td><td>15.3</td><td>-5.9%</td><td>49%</td><td>6%</td><td>0.9</td><td>0.9</td><td>10%</td><td>7%</td><td>6%</td><td>5.0%</td><td>4.2%</td></tr><tr><td colspan="17">Philippines</td></tr><tr><td>PH:Transp</td><td>66.7%</td><td>13.3%</td><td>52.4%</td><td>49.9%</td><td>25.3</td><td>18.2</td><td>64.4%</td><td>15%</td><td>14%</td><td>11.8</td><td>5.7</td><td>46%</td><td>47%</td><td>32%</td><td>3.2%</td><td>3.1%</td></tr><tr><td>PH:Banks</td><td>-10.8%</td><td>1.1%</td><td>-12.3%</td><td>-3.1%</td><td>7.0</td><td>11.5</td><td>-21.6%</td><td>-4%</td><td>9%</td><td>0.9</td><td>1.3</td><td>-23%</td><td>12%</td><td>11%</td><td>4.2%</td><td>2.2%</td></tr><tr><td>PH:Cap_Gd</td><td>-9.7%</td><td>8.4%</td><td>-14.5%</td><td>-23.8%</td><td>6.5</td><td>17.3</td><td>-28.4%</td><td>-11%</td><td>12%</td><td>0.7</td><td>1.9</td><td>-45%</td><td>11%</td><td>11%</td><td>2.2%</td><td>1.1%</td></tr><tr><td>PH:Util</td><td>2.2%</td><td>4.2%</td><td>1.0%</td><td>21.4%</td><td>11.8</td><td>15.1</td><td>1.7%</td><td>0%</td><td>6%</td><td>3.1</td><td>3.8</td><td>-6%</td><td>27%</td><td>25%</td><td>4.7%</td><td>5.0%</td></tr><tr><td>PH:Telcom_svc</td><td>-3.5%</td><td>5.6%</td><td>-9.9%</td><td>3.0%</td><td>7.5</td><td>11.2</td><td>0.5%</td><td>8%</td><td>5%</td><td>1.7</td><td>2.3</td><td>-15%</td><td>23%</td><td>21%</td><td>8.0%</td><td>6.0%</td></tr><tr><td colspan="17">Singapore</td></tr><tr><td>Banks</td><td>37.4%</td><td>13.3%</td><td>27.8%</td><td>33.3%</td><td>15.9</td><td>10.4</td><td>49%</td><td>5%</td><td>6%</td><td>2.3</td><td>1.2</td><td>45%</td><td>14%</td><td>12%</td><td>4.3%</td><td>5.0%</td></tr><tr><td>Cap_Gd</td><td>19.8%</td><td>4.1%</td><td>12.7%</td><td>64.1%</td><td>21.0</td><td>15.0</td><td>18%</td><td>34%</td><td>14%</td><td>5.2</td><td>2.6</td><td>29%</td><td>23%</td><td>15%</td><td>3.7%</td><td>4.1%</td></tr><tr><td>Telcom_svc</td><td>-3.9%</td><td>0.2%</td><td>-2.1%</td><td>63.5%</td><td>22.7</td><td>16.6</td><td>3%</td><td>-45%</td><td>13%</td><td>2.5</td><td>1.8</td><td>0%</td><td>11%</td><td>11%</td><td>4.5%</td><td>5.1%</td></tr><tr><td>Transp</td><td>-13.5%</td><td>-1.9%</td><td>-9.4%</td><td>8.3%</td><td>23.6</td><td>19.0</td><td>64%</td><td>16%</td><td>39%</td><td>1.4</td><td>1.0</td><td>9%</td><td>6%</td><td>7%</td><td>3.7%</td><td>2.8%</td></tr><tr><td>Fin_serv</td><td>40.5%</td><td>0.1%</td><td>35.1%</td><td>44.8%</td><td>33.1</td><td>21.7</td><td>41%</td><td>11%</td><td>8%</td><td>9.6</td><td>6.8</td><td>37%</td><td>29%</td><td>31%</td><td>2.0%</td><td>3.7%</td></tr><tr><td>Food/Bev/Tbc</td><td>29.1%</td><td>5.8%</td><td>21.9%</td><td>10.4%</td><td>11.4</td><td>11.7</td><td>17%</td><td>12%</td><td>8%</td><td>0.7</td><td>0.9</td><td>-3%</td><td>6%</td><td>8%</td><td>4.4%</td><td>3.9%</td></tr><tr><td colspan="17">Thailand</td></tr><tr><td>TH:Tech_Hw/Eqp</td><td>66.4%</td><td>-2.9%</td><td>44.0%</td><td>23.5%</td><td>87.8</td><td>42.5</td><td>58.3%</td><td>50%</td><td>29%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>TH:Energy</td><td>23.0%</td><td>12.6%</td><td>15.7%</td><td>13.9%</td><td>9.3</td><td>10.5</td><td>11.2%</td><td>14%</td><td>-3%</td><td>1.0</td><td>1.1</td><td>30%</td><td>11%</td><td>10%</td><td>6.6%</td><td>4.8%</td></tr><tr><td>TH:Telcom_svc</td><td>20.9%</td><td>5.2%</td><td>10.3%</td><td>16.6%</td><td>19.7</td><td>20.9</td><td>-3.9%</td><td>15%</td><td>9%</td><td>14.0</td><td>7.8</td><td>95%</td><td>69%</td><td>41%</td><td>4.3%</td><td>4.1%</td></tr><tr><td>TH:Banks</td><td>30.4%</td><td>15.4%</td><td>30.1%</td><td>44.2%</td><td>12.0</td><td>8.6</td><td>52.1%</td><td>-10%</td><td>3%</td><td>1.1</td><td>0.8</td><td>55%</td><td>9%</td><td>9%</td><td>6.8%</td><td>4.6%</td></tr><tr><td>TH:Transp</td><td>12.1%</td><td>3.8%</td><td>13.7%</td><td>3.9%</td><td>34.1</td><td>NA</td><td>62.9%</td><td>50%</td><td>10%</td><td>5.4</td><td>6.1</td><td>69%</td><td>16%</td><td>NA</td><td>1.7%</td><td>1.3%</td></tr><tr><td>TH:Util</td><td>56.3%</td><td>6.6%</td><td>38.2%</td><td>-20.4%</td><td>25.8</td><td>NA</td><td>8.7%</td><td>-50%</td><td>11%</td><td>2.7</td><td>NA</td><td>54%</td><td>11%</td><td>NA</td><td>2.9%</td><td>NA</td></tr><tr><td>TH:Materials</td><td>31.1%</td><td>4.7%</td><td>13.4%</td><td>16.6%</td><td>20.5</td><td>12.7</td><td>8.3%</td><td>-26%</td><td>30%</td><td>0.9</td><td>1.3</td><td>61%</td><td>4%</td><td>11%</td><td>3.1%</td><td>3.9%</td></tr><tr><td>TH:Food/Bev/Tbc</td><td>-5.2%</td><td>12.2%</td><td>-2.6%</td><td>10.5%</td><td>8.8</td><td>14.9</td><td>-0.5%</td><td>-25%</td><td>12%</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>TH:Cons_Svcs</td><td>-12.4%</td><td>-9.6%</td><td>-8.0%</td><td>3.8%</td><td>13.5</td><td>NA</td><td>-6.3%</td><td>3%</td><td>12%</td><td>1.5</td><td>2.5</td><td>-3%</td><td>11%</td><td>NA</td><td>2.9%</td><td>1.3%</td></tr></table>
+
+Source: IBES, MSCI, Datastream, UBS. Note: calculated on the basis of index-weighted methodology
+
+## Valuation Method and Risk Statement
+
+Equity investing has many uncertainties, but generally, economic and policy surprises pose the most consistent and constant risks. Economic growth can be volatile, leading to earnings uncertainty. Inflation volatility can likewise lead to interest rate uncertainty. The direction and level of policy rates have a substantial impact on equity valuations. Political events can also have a significant impact, both on growth and risk premiums.
+
+Country specific risks include slowing economic growth; rising inflation; increasing unemployment; adverse political developments leading to instability; trade war leading to trade restrictions; adverse weather and natural disasters that may impact consumption such as flooding.
+
+Company specific risks include competition, regulation risk, high operating cost, currency depreciation, declining purchasing power, excessive credit growth, NPL issues, provision risk, recapitalization risk, availability of financing for buyers, changes in consumer preferences, e-commerce disruption, market share loss, and ease of logistics.
+
+## Required Disclosures
+
+This document has been prepared by UBS Asia Limited, an affiliate of UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as "UBS".
+
+For information on the ways in which UBS manages conflicts and maintains independence of its UBS Global Research product; historical performance information; certain additional disclosures concerning UBS Global Research recommendations; and terms and conditions for certain third party data used in research report, please visit https://www.ubs.com/disclosures. Unless otherwise indicated, information and data in this report are based on company disclosures including but not limited to annual, interim, quarterly reports and other company announcements. The figures contained in performance charts refer to the past; past performance is not a reliable indicator of future results. Additional information will be made available upon request. UBS Co. Limited is licensed to conduct securities investment consultancy businesses by the China Securities Regulatory Commission. UBS acts or may act as principal in the debt securities (or in related derivatives) that may be the subject of this report. This recommendation was finalized on: 27 July 2026 10:34 AM GMT. UBS has designated certain UBS Global Research department members as Derivatives Research Analysts where those department members publish research principally on the analysis of the price or market for a derivative, and provide information reasonably sufficient upon which to base a decision to enter into a derivatives transaction. Where Derivatives Research Analysts co-author research reports with Equity Research Analysts or Economists, the Derivatives Research Analyst is responsible for the derivatives investment views, forecasts, and/or recommendations. Quantitative Research Review: UBS Global Research publishes a quantitative assessment of its analysts' responses to certain questions about the likelihood of an occurrence of a number of short term factors in a product known as the 'Quantitative Research Review'. Views contained in this assessment on a particular stock reflect only the views on those short term factors which are a different timeframe to the 12-month timeframe reflected in any equity rating set out in this note. For the latest responses, please see the Quantitative Research Review Addendum at the back of this report, where applicable. For previous responses please make reference to (i) previous UBS Global Research reports; and (ii) where no applicable research report was published that month, the Quantitative Research Review which can be found at https://neo.ubs.com/quantitative, or contact your UBS sales representative for access to the report or the Quantitative Research Team on ubs-quant-answers@ubs.com. A consolidated report which contains all responses is also available and again you should contact your UBS sales representative for details and pricing or the Quantitative Research team on the email above.
+
+## Analyst Certification:
+
+Each research analyst primarily responsible for the content of this research report, in whole or in part, certifies that with respect to each security or issuer that the analyst covered in this report: (1) all of the views expressed accurately reflect his or her personal views about those securities or issuers and were prepared in an independent manner, including with respect to UBS, and (2) no part of his or her compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in the research report.
+
+UBS Global Research: Global Equity Rating Definitions
+
+<table><tr><td>12-Month Rating</td><td>Definition</td><td>Coverage $^{1}$ </td><td>IB Services $^{2}$ </td></tr><tr><td>Buy</td><td>FSR is &gt; 6% above the MRA.</td><td>55%</td><td>24%</td></tr><tr><td>Neutral</td><td>FSR is between -6% and 6% of the MRA.</td><td>40%</td><td>21%</td></tr><tr><td>Sell</td><td>FSR is &gt; 6% below the MRA.</td><td>6%</td><td>21%</td></tr></table>
+
+Source: UBS. Rating allocations are as of 30 June 2026.  
+1: Percentage of companies under coverage globally within the 12-month rating category.
+
+2: Percentage of companies within the 12-month rating category for which investment banking (IB) services were provided within the past 12 months.
+
+KEY DEFINITIONS: Forecast Stock Return (FSR) is defined as expected percentage price appreciation plus gross dividend yield over the next 12 months. In some cases, this yield may be based on accrued dividends. Market Return Assumption (MRA) is defined as the one-year local market interest rate plus 5% (a proxy for, and not a forecast of, the equity risk premium). Under Review (UR) Stocks may be flagged as UR by the analyst, indicating that the stock's price target and/or rating are subject to possible change in the near term, usually in response to an event that may affect the investment case or valuation. Equity Price Targets have an investment horizon of 12 months.
+
+EXCEPTIONS AND SPECIAL CASES:UK and European Investment Fund ratings and definitions are: Buy: Positive on factors such as structure, management, performance record, discount; Neutral: Neutral on factors such as structure, management, performance record, discount; Sell: Negative on factors such as structure, management, performance record, discount. Core Banding Exceptions (CBE): Exceptions to the standard +/-6% bands may be granted by the Investment Review Consultation (IRC). Factors considered by the IRC include the stock's volatility and the credit spread of the respective company's debt. As a result, stocks deemed to be very high or low risk may be subject to higher or lower bands as they relate to the rating. When such exceptions apply, they will be identified in the Company Disclosures table in the relevant research piece.
+
+Research analysts contributing to this report who are employed by any non-US affiliate of UBS LLC are not registered/qualified as research analysts with FINRA. Such analysts may not be associated persons of UBS LLC and therefore are not subject to the FINRA restrictions on communications with a subject company, public appearances, and trading securities held by a research analyst account. The name of each affiliate and analyst employed by that affiliate contributing to this report, if any, follows.
+
+PT UBS Sekuritas Indonesia: Joshua Tanja, CFA. UBS AG, Singapore Branch: Claire Long, Grace Lim, Permada Darmono. UBS AG Hong Kong Branch: Karen Hizon. UBS (Thailand) Ltd.: Alex Manoonpol. UBS India Private Ltd: Kruti Shah, CFA, Sunil Tirumalai. UBS Malaysia Sdn Bhd.: Nicole Goh. UBS Philippines Inc.: John Te, CFA.
+
+## Company Disclosures
+
+<table><tr><td>Company Name</td><td>Reuters</td><td>12-month rating</td><td>Price</td><td>Price date</td></tr><tr><td>AEM  $Holdings^{13,28}$ </td><td>AEM.SI</td><td>Buy</td><td>S$8.79</td><td>27 Jul 2026</td></tr><tr><td> $Advanced Info Service^{2,4,6c}$ </td><td>ADVANC.BK</td><td>Buy</td><td>Bt376.00</td><td>24 Jul 2026</td></tr><tr><td> $Alamtri Minerals^{20}$ </td><td>ADMR.JK</td><td>Buy (CBE)</td><td>Rp1,475</td><td>27 Jul 2026</td></tr><tr><td> $Amman Mineral Internasional^{28,20}$ </td><td>AMMN.JK</td><td>Buy (CBE)</td><td>Rp4,030</td><td>27 Jul 2026</td></tr><tr><td> $Asia Commercial Joint Stock Bank^7$ </td><td>ACB.HM</td><td>Buy</td><td>D22,300</td><td>27 Jul 2026</td></tr><tr><td> $Banco de Oro Universal Bank^{28,7}$ </td><td>BDO.PS</td><td>Buy</td><td>P125.20</td><td>27 Jul 2026</td></tr><tr><td> $Bangkok Dusit Medical Services^{28}$ </td><td>BDMS.BK</td><td>Buy</td><td>Bt18.90</td><td>24 Jul 2026</td></tr><tr><td>Bank Central Asia</td><td>BBCA.JK</td><td>Buy</td><td>Rp6,300</td><td>27 Jul 2026</td></tr><tr><td> $Bank of the Philippine Islands^{4,7,6a,6c}$ </td><td>BPI.PS</td><td>Buy</td><td>P102.00</td><td>27 Jul 2026</td></tr><tr><td> $CIMB Group Holdings Berhad^{28,7,6a,6b}$ </td><td>CIMB.KL</td><td>Buy</td><td>RM7.80</td><td>27 Jul 2026</td></tr><tr><td> $CP All^{28}$ </td><td>CPALL.BK</td><td>Buy</td><td>Bt46.50</td><td>24 Jul 2026</td></tr><tr><td> $Cisarua Mountain Dairy^{28}$ </td><td>CMRY.JK</td><td>Buy</td><td>Rp4,740</td><td>27 Jul 2026</td></tr><tr><td> $City Developments^{28}$ </td><td>CTDM.SI</td><td>Buy</td><td>S$7.53</td><td>27 Jul 2026</td></tr><tr><td>FPT Digital Retail JSC</td><td>FRT.HM</td><td>Buy</td><td>D107,800</td><td>27 Jul 2026</td></tr><tr><td>Gemadept</td><td>GMD.HM</td><td>Buy</td><td>D72,300</td><td>27 Jul 2026</td></tr><tr><td> $Gulf Development^{2,28,6c}$ </td><td>GULF.BK</td><td>Buy</td><td>Bt66.00</td><td>24 Jul 2026</td></tr><tr><td>Hoa Phat Group</td><td>HPG.HM</td><td>Buy</td><td>D20,350</td><td>27 Jul 2026</td></tr><tr><td> $Jardine Matheson^{4,28,7,6c}$ </td><td>JARD.SI</td><td>Buy</td><td>US$64.07</td><td>27 Jul 2026</td></tr><tr><td>Jollibee</td><td>JFC.PS</td><td>Buy</td><td>P144.30</td><td>27 Jul 2026</td></tr><tr><td> $Kasikornbank^{4,7,6c}$ </td><td>KBANK.BK</td><td>Buy</td><td>Bt240.00</td><td>24 Jul 2026</td></tr><tr><td> $Kelington Group Berhad^{13}$ </td><td>KELG.KL</td><td>Buy</td><td>RM8.21</td><td>27 Jul 2026</td></tr><tr><td> $Manila Electric^{4,6c}$ </td><td>MER.PS</td><td>Buy</td><td>P589.50</td><td>27 Jul 2026</td></tr><tr><td> $Maynilad Water Services^{2,4,28,6c}$ </td><td>MYNLD.PS</td><td>Buy</td><td>P19.68</td><td>27 Jul 2026</td></tr><tr><td>Mobile World Investment</td><td>MWG.HM</td><td>Buy</td><td>D63,300</td><td>27 Jul 2026</td></tr><tr><td>Monde Nissin</td><td>MONDE.PS</td><td>Buy</td><td>P7.09</td><td>27 Jul 2026</td></tr><tr><td> $Mr D.I.Y.^{4,28,6c}$ </td><td>MRDI.KL</td><td>Buy</td><td>RM1.59</td><td>27 Jul 2026</td></tr><tr><td>Nam Long Investment Corporation</td><td>NLG.HM</td><td>Buy</td><td>D20,000</td><td>27 Jul 2026</td></tr><tr><td>Petronas Chemicals Group BHD</td><td>PCGB.KL</td><td>Buy</td><td>RM4.75</td><td>27 Jul 2026</td></tr><tr><td> $ST Engineering^{28}$ </td><td>STEG.SI</td><td>Buy</td><td>S$10.59</td><td>27 Jul 2026</td></tr><tr><td>Techcombank</td><td>TCB.HM</td><td>Buy</td><td>D28,250</td><td>27 Jul 2026</td></tr><tr><td> $Telkom Indonesia^{16}$ </td><td>TLKM.JK</td><td>Buy</td><td>Rp2,590</td><td>27 Jul 2026</td></tr><tr><td> $Tenaga Nasional^{1,2,5,28,7,6c}$ </td><td>TENA.KL</td><td>Buy</td><td>RM14.46</td><td>27 Jul 2026</td></tr><tr><td> $True Corporation^{13,28}$ </td><td>TRUE.BK</td><td>Buy</td><td>Bt14.00</td><td>24 Jul 2026</td></tr><tr><td> $UOL Group^{28}$ </td><td>UTOS.SI</td><td>Buy</td><td>S$9.51</td><td>27 Jul 2026</td></tr><tr><td>Vale Indonesia Tbk</td><td>INCO.JK</td><td>Buy</td><td>Rp4,770</td><td>27 Jul 2026</td></tr><tr><td>Vincom Retail Joint Stock Company</td><td>VRE.HM</td><td>Buy</td><td>D21,350</td><td>27 Jul 2026</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon. All prices as of local market close. Ratings in this table are the most current
+
+published ratings prior to this report. They may be more recent than the stock pricing date.
+
+1. UBS is acting as manager/co-manager, underwriter, placement or sales agent in regard to an offering of securities (in Portuguese, Coordenador de Ofertas e/au Participante Especial), under the terms of Rule CVM 160m of MAGALUPAY - SOCIEDADE DE CREDITO, FINANCIAMENTO E INVESTIMENTO S.A or one of its affiliates.
+
+2. UBS has acted as manager/co-manager in the underwriting or placement of securities of this company/entity or one of its affiliates within the past 12 months.
+
+4. Within the past 12 months, UBS has received compensation for investment banking services from this company/entity or one of its affiliates.
+
+5. UBS expects to receive or intend to seek compensation for investment banking services from this company/entity within the next three months.
+
+6a. This company/entity is, or within the past 12 months has been, a client of UBS LLC, and non-investment banking securities-related services are being, or have been, provided.
+
+6b. This company/entity is, or within the past 12 months has been, a client of UBS LLC, and non-securities services are being, or have been, provided.
+
+6c. This company/entity is, or within the past 12 months has been, a client of UBS LLC and/or its affiliates, and investment banking services are being, or have been, provided.
+
+7. Within the past 12 months, UBS has received compensation for products and services other than investment banking services from this company/entity.
+
+13. UBS beneficially owned 1% or more of a class of this company's common equity securities as of last month's end (or the prior month's end if this report is dated less than 10 days after the most recent month's end).
+
+16. UBS LLC makes a market in the securities and/or ADRs of this company.
+
+20. Because this security exhibits higher-than-average volatility, the FSR has been set at 15% above the MRA for a Buy
+
+28. UBS holds a long position of 0.5% or more of the listed shares of this company.
+
+Unless otherwise indicated, please refer to the Valuation and Risk sections within the body of this report. For a complete set of disclosure statements associated with the companies discussed in this report, including information on valuation and risk, please contact UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research.
+
+## UBS Global Research Disclaimer
+
+This document has been prepared by UBS Asia Limited, an affiliate of UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as "UBS".
+
+Any opinions expressed in this document may change without notice and are only current as of the date of publication. Different areas, groups, and personnel within UBS may produce and distribute separate research products independently of each other. For example, research publications from UBS CIO are produced by UBS Global Wealth Management. UBS Global Research is produced by UBS Investment Bank. Research methodologies and rating systems of each separate research organization may differ, for example, in terms of investment recommendations, investment horizon, model assumptions, and valuation methods. As a consequence, except for certain economic forecasts (for which UBS CIO and UBS Global Research may collaborate), investment recommendations, ratings, price targets, and valuations provided by each of the separate research organizations may be different, or inconsistent. You should refer to each relevant research product for the details as to their methodologies and rating system. Not all clients may have access to all products from every organization. Each research product is subject to the policies and procedures of the organization that produces it.
+
+This document is provided solely to recipients who are expressly authorized by UBS to receive it. If you are not so authorized you must immediately destroy the document.
+
+UBS Global Research is provided to our clients through UBS Neo, and in certain instances, UBS.com and any other system or distribution method specifically identified in one or more communications distributed through UBS Neo or UBS.com (each a system) as an approved means for distributing UBS Global Research. It may also be made available through third party vendors and distributed by UBS and/or third parties via e-mail or alternative electronic means.
+
+All UBS Global Research is available on UBS Neo. Please contact your UBS sales representative if you wish to discuss your access to UBS Neo. Where UBS Global Research refers to "UBS Evidence Lab Inside" or has made use of data provided by UBS Evidence Lab and you would like to access that data please contact your UBS sales representative. UBS Evidence Lab data is available on UBS Neo. The level and types of services provided by UBS Global Research and UBS Evidence Lab to a client may vary depending upon various factors such as a client's individual preferences as to the frequency and manner of receiving communications, a client's risk profile and investment focus and perspective (e.g., market wide, sector specific, long-term, short-term, etc.), the size and scope of the overall client relationship with UBS Global Research and UBS Evidence Lab and legal and regulatory constraints. UBS HOLT and UBS Pharma Values are offerings of UBS Global Research. HOLT Lens is a corporate performance platform offering that provides an objective accounting-led framework for comparing and valuing companies and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. In particular, HOLT has a variety of warranted prices based on the scenario chosen; please mail UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research, if you are interested in the warranted price on a particular company, again subject to commercial considerations. UBS Pharma Values is an analytical tool that involves the creation of a number of individual product net present value calculations, based on published forecasts of sales for pharmaceuticals, and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. For all other specific disclaimers, please see https://www.ubs.com/disclosures.
+
+When you receive UBS Global Research through a system, your access and/or use of such UBS Global Research is subject to this UBS Global Research Disclaimer and to the UBS Neo Platform Use Agreement (the "Neo Terms") together with any other relevant terms of use governing the applicable System.
+
+When you receive UBS Global Research via a third party vendor, e-mail or other electronic means, you agree that use shall be subject to this UBS Global Research Disclaimer, the Neo Terms and where applicable the UBS Investment Bank terms of business (https://www.ubs.com/global/en/investment-bank/regulatory.html) and to UBS's Terms of Use/Disclaimer (https://www.ubs.com/global/en/legalinfo2/disclaimer.html). In addition, you consent to UBS processing your personal data and using cookies in accordance with our Privacy Statement (https://www.ubs.com/global/en/legalinfo2/privacy.html) and cookie notice (https://www.ubs.com/global/en/legal/privacy/users.html).
+
+If you receive UBS Global Research, whether through a System or by any other means, you agree that you shall not copy, revise, amend, create a derivative work, provide to any third party, or in any way commercially exploit any UBS provided via UBS Global Research or otherwise, and that you shall not extract data from any research or estimates provided to you via UBS Global Research or otherwise, without the prior written consent of UBS. You agree not to use UBS Global Research in any artificial intelligence system, without the prior written consent of UBS.
+
+In certain circumstances you may receive UBS Global Research otherwise than in the capacity of a client of UBS and you understand and agree that under these circumstances (i) the UBS Global Research is provided to you for information purposes only; (ii) for the purposes of receiving it you are not intended to be and will not be treated as a “client” of UBS for any legal or regulatory purpose; (iii) the UBS Global Research must not be relied on or acted upon for any purpose; and (iv) such content is subject to the relevant disclaimers that follow.
+
+This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject UBS to any registration or licensing requirement within such jurisdiction.
+
+This document is a general communication and is educational in nature; it is not an advertisement nor is it a solicitation or an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Nothing in this document constitutes a representation that any investment strategy or recommendation is suitable or appropriate to an investor's individual circumstances or otherwise constitutes a personal recommendation. By providing this document, none of UBS or its representatives has any responsibility or authority to provide or have provided investment advice in a fiduciary capacity or otherwise. Investments involve risks, and investors should exercise prudence and their own judgment in making their investment decisions. None of UBS or its representatives is suggesting that the recipient or any other person take a specific course of action or any action at all. The recipient should carefully read this document in its entirety and not draw inferences or conclusions from the rating alone. By receiving this document, the recipient acknowledges and agrees with the intended purpose described above and further disclaims any expectation or belief that the information constitutes investment advice to the recipient or otherwise purports to meet the investment objectives of the recipient. The financial instruments described in the document may not be eligible for sale in all jurisdictions or to certain categories of investors.
+
+Options, structured derivative products and futures (including OTC derivatives) are not suitable for all investors. Trading in these instruments is considered risky and may be appropriate only for sophisticated investors. Prior to buying or selling an option, and for the complete risks relating to options, you must receive a copy of "The Characteristics and Risks of Standardized Options." You may read the document at https://www.theocc.com/publications/risks/riskchap1.jsp or ask your salesperson for a copy. Various theoretical explanations of the risks associated with these instruments have been published. Supporting documentation for any claims, comparisons, recommendations, statistics or other technical data will be supplied upon request. Past performance is not necessarily indicative of future results. Transaction costs may be significant in option strategies calling for multiple purchases and sales of options, such as spreads and straddles. Because of the importance of tax considerations to many options transactions, the investor considering options should consult with his/her tax advisor as to how taxes affect the outcome of contemplated options transactions.
+
+Mortgage and asset-backed securities may involve a high degree of risk and may be highly volatile in response to fluctuations in interest rates or other market conditions. Foreign currency rates of exchange may adversely affect the value, price or income of any security or related instrument referred to in the document. For investment advice, trade execution or other enquiries, clients should contact their local sales representative.
+
+UBS notes that no globally accepted framework or definition (legal, regulatory or otherwise) currently exists, nor is there a market consensus as to what constitutes an “ESG” (Environmental, Social or Governance) or an equivalent-label, or as to what precise attributes are required for the Information (as defined below) to be defined as ESG or equivalently-labelled. Any information, data or other content including from a third party source contained, referred to herein or used for whatsoever purpose by UBS or a third party (“Information”), in relation to any actual or potential ESG objective, issue or consideration is not intended to be relied upon for ESG classification, regulatory regime or industry initiative purposes (“ESG Regimes”). Nothing in these materials is intended to convey, suggest or indicate that UBS considers or represents any product, service, person or body mentioned in these materials as meeting or qualifying for any ESG classification, labelling or similar standards that may exist under the ESG Regimes. UBS has not conducted any assessment of compliance with ESG Regimes. Parties are reminded to make their own assessments for these purposes.
+
+The value of any investment or income may go down as well as up, and investors may not get back the full (or any) amount invested. Past performance is not necessarily a guide to future performance. Neither UBS nor any of its directors, employees or agents accepts any liability for any loss (including investment loss) or damage arising out of the use of all or any of the Information.
+
+Prior to making any investment or financial decisions, any recipient of this document or the information should take steps to understand the risk and return of the investment and seek individualized advice from his or her personal financial, legal, tax and other professional advisors that takes into account all the particular facts and circumstances of his or her investment objectives.
+
+Any prices stated in this document are for information purposes only and do not represent valuations for individual securities or other financial instruments. There is no representation that any transaction can or could have been effected at those prices, and any prices do not necessarily reflect UBS's internal books and records or theoretical model-based valuations and may be based on certain assumptions. Different assumptions by UBS or any other source may yield substantially different results.
+
+No representation or warranty, either expressed or implied, is provided in relation to the accuracy, completeness or reliability of the information contained in any materials to which this document relates (the "Information"), except with respect to Information concerning UBS. The Information is not intended to be a complete statement or summary of the securities, markets or developments referred to in the document. UBS does not undertake to update or keep current the
+
+Information. Any statements contained in this report attributed to a third party represent UBS's interpretation of the data, information and/or opinions provided by that third party either publicly or through a subscription service, and such use and interpretation have not been reviewed by the third party. In no circumstances may this document or any of the Information (including any forecast, value, index or other calculated amount ("Values")) be used for any of the following purposes:
+
+(i) valuation or accounting purposes;
+
+(ii) to determine the amounts due or payable, the price or the value of any financial instrument or financial contract; or
+
+(iii) to measure the performance of any financial instrument including, without limitation, for the purpose of tracking the return or performance of any Value or of defining the asset allocation of portfolio or of computing performance fees.
+
+By receiving this document and the Information you will be deemed to represent and warrant to UBS that you will not use this document or any of the Information for any of the above purposes or otherwise rely upon this document or any of the Information.
+
+UBS has policies and procedures, which include, without limitation, independence policies and permanent information barriers, that are intended, and upon which UBS relies, to manage potential conflicts of interest and control the flow of information within divisions of UBS and among its subsidiaries, branches and affiliates. UBS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For further information on the ways in which UBS Global Research manages conflicts and maintains independence of its research products, historical performance information and certain additional disclosures concerning UBS Global Research recommendations, please visit https://www.ubs.com/disclosures.
+
+UBS Global Research will initiate, update and cease coverage solely at the discretion of UBS Global Research Management, which will also have sole discretion on the timing and frequency of any published research product. The analysis contained in this document is based on numerous assumptions. All material information in relation to published research reports, such as valuation methodology, risk statements, underlying assumptions (including sensitivity analysis of those assumptions), ratings history etc. as required by the Market Abuse Regulation, can be found on UBS Neo. Different assumptions could result in materially different results.
+
+UBS Global Research may utilise artificial intelligence tools (“AI Tools”) in the preparation of this document. Notwithstanding any such use of AI Tools, this document has undergone human review.
+
+The analyst(s) responsible for the preparation of this document may interact with trading desk personnel, sales personnel and other parties for the purpose of gathering, applying and interpreting market information. UBS relies on information barriers to control the flow of information contained in one or more areas within UBS into other areas, units, groups or affiliates of UBS. The compensation of the analyst who prepared this document is determined exclusively by UBS Global Research management and senior management (not including investment banking). Analyst compensation is not based on investment banking revenues; however, compensation may relate to the revenues of UBS and/or its divisions as a whole, of which investment banking, sales and trading are a part, and UBS as a whole.
+
+For financial instruments admitted to trading on an EU regulated market: UBS (excluding UBS LLC) acts as a market maker or liquidity provider (in accordance with the interpretation of these terms under English law or, if not carried out by UBS in the UK the law of the relevant jurisdiction in which UBS determines it carries out the activity) in the financial instruments of the issuer save that where the activity of liquidity provider is carried out in accordance with the definition given to it by the laws and regulations of any other EU jurisdictions, such information is separately disclosed in this document. For financial instruments admitted to trading on a non-EU regulated market: UBS may act as a market maker save that where this activity is carried out in the US in accordance with the definition given to it by the relevant laws and regulations, such activity will be specifically disclosed in this document. UBS may have issued a warrant the value of which is based on one or more of the financial instruments referred to in the document. UBS and its affiliates and employees may have long or short positions, trade as principal and buy and sell in instruments or derivatives identified herein; such transactions or positions may be inconsistent with the opinions expressed in this document.
+
+Within the past 12 months UBS may have received or provided investment services and activities or ancillary services as per MiFID II which may have given rise to a payment or promise of a payment in relation to these services from or to this company.
+
+Please note that all transactions conducted by UBS are consistent with sanctions regulations imposed by Switzerland, the European Union, the United Nations, the United Kingdom and the United States, per UBS' global sanctions policy. UBS opinion as to future investment worthiness assumes no new sanctions are imposed.
+
+US persons are prohibited from purchasing or selling securities of certain companies designated as being associated with the Chinese Military in accordance with the amended US Presidential Executive Order 13959.
+
+United Kingdom: This material is distributed by UBS AG, London Branch to persons who are eligible counterparties or professional clients. UBS AG, London Branch is authorised by the Prudential Regulation Authority and subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Europe: Except as otherwise specified herein, these materials are distributed by UBS Europe SE, a subsidiary of UBS AG, to persons who are eligible counterparties or professional clients (as detailed in the Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) Rules and according to MIFID) and are only available to such persons. The information does not apply to, and should not be relied upon by, retail clients. UBS Europe SE is authorised by the European Central Bank (ECB) and regulated by the BaFin and the ECB. Germany, Luxembourg, the Netherlands, Belgium and Ireland: Where an analyst of UBS Europe SE has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE. In all cases it is distributed by UBS Europe SE and UBS AG, London Branch. Turkey: Distributed by UBS AG, London Branch. No information in this document is provided for the purpose of offering, marketing and sale by any means of any capital market instruments and services in the Republic of Turkey. Therefore, this document may not be considered as an offer made or to be made to residents of the Republic of Turkey. UBS AG, London Branch is not licensed by the Turkish Capital Market Board under the provisions of the Capital Market Law (Law No. 6362). Accordingly, neither this document nor any other offering material related to the instruments/services may be utilized in connection with providing any capital market services to persons within the Republic of Turkey without the prior approval of the Capital Market Board. However, according to article 15 (d) (ii) of the Decree No. 32, there is no restriction on the purchase or sale of the securities abroad by residents of the Republic of Turkey. Poland: Distributed by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Where an analyst of UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Russia: Prepared and distributed by UBS Bank (OOO). Should not be construed as an individual Investment Recommendation for the purpose of the Russian Law - Federal Law #39-FZ ON THE SECURITIES MARKET Articles 6.1-6.2. Switzerland: Distributed by UBS AG to persons who are institutional investors only. UBS AG is regulated by the Swiss Financial Market Supervisory Authority (FINMA). Italy: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Italy Branch. Where an analyst of UBS Europe SE, Italy Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Italy Branch. France: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, France Branch. Where an analyst of UBS Europe SE, France Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, France Branch. Spain: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Spain Branch. Where an analyst of UBS Europe SE, Spain Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Spain Branch. Sweden: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Sweden Branch. Sweden Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Sweden Branch. South Africa: Distributed by UBS South Africa (Pty) Limited (Registration No. 1995/011140/07), an authorised user of the JSE and an authorised Financial Services Provider (FSP 7328). Saudi Arabia: This document has been issued by UBS AG (and/or any of its subsidiaries, branches or affiliates), a public company limited by shares, incorporated in Switzerland with its registered offices at Aeschenvorstadt 1, CH-4051 Basel and Bahnhofstrasse 45, CH-8001 Zurich. This publication has been approved by UBS Saudi Arabia (a subsidiary of UBS AG), a Saudi closed joint stock company incorporated in the Kingdom of Saudi Arabia under commercial register number 1010257812 having its registered office at Tatweer Towers, P.O. Box 75724, Riyadh 11588, Kingdom of Saudi Arabia. UBS Saudi Arabia is authorized and regulated by the Capital Market Authority to conduct securities business under license number 08113-37. UAE / Dubai: The information distributed by UBS AG Dubai Branch is only intended for Professional Clients and/or Market Counterparties, as classified under the DFSA rulebook. No other person should act upon this material/communication. The information is not for further distribution within the United Arab Emirates. UBS AG Dubai Branch is regulated by the DFSA in the DIFC. UBS is not licensed to provide banking services in the UAE by the Central Bank of the UAE, nor is it licensed by the UAE Securities and Commodities Authority. Israel: This Material is distributed by UBS AG, London Branch. UBS Israel Ltd is a licensed Investment Marketer that is supervised by the Israel Securities Authority (ISA). UBS AG, London Branch and its affiliates incorporated outside Israel are not licensed under the Israeli Advisory Law. UBS may engage among others in issuance of Financial Assets or in distribution of Financial Assets of other issuers for fees or other benefits. UBS AG, London Branch and its affiliates may prefer various Financial Assets to which they have or may have an Affiliation (as such term is defined under the Israeli Advisory Law). Nothing in this Material should be considered as investment advice under the Israeli Advisory Law. This Material is being issued only to and/or is directed only at persons who are Eligible Clients within the meaning of the Israeli Advisory Law, and this Material must not be furnished to, relied on or acted upon by any other persons. United States: Distributed to US persons by either UBS LLC or by UBS Financial Services Inc., subsidiaries of UBS AG; or by a group, subsidiary or affiliate of UBS AG that is not registered as a US broker-dealer (a 'non-US affiliate') to major US institutional investors only. UBS LLC or UBS Financial Services Inc. accepts responsibility for the content of a report prepared by another non-US affiliate when distributed to US persons by UBS LLC or UBS Financial Services Inc. All transactions by a US person in the securities mentioned in this report must be effected through UBS LLC or UBS Financial Services Inc., and not through a non-US affiliate. UBS LLC is not acting as a municipal advisor to any municipal entity or obligated person within the meaning of Section 15B of the Securities Exchange Act (the "Municipal Advisor Rule"), and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of the Municipal Advisor Rule. Canada: Distributed by UBS Canada Inc., a registered investment dealer in Canada and a Member-Canadian Investor Protection Fund, or by another affiliate of UBS AG that is registered to conduct business in Canada or is otherwise exempt from registration. Brazil: Except as otherwise specified herein, this Material is prepared by UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (UBS BB CCTV) to persons who are eligible investors residing in Brazil, which are considered to be Professional Investors (Investidores Profissionais), as designated by the applicable regulation, mainly the CVM Resolution No. 30 from the 11th of May 2021 (determines the duty to verify the suitability of products, services and transactions with regards to the client's profile). UBS BB CCTV is a subsidiary of UBS BB Servicos de Assessoria Financeira e Participacoes S.A. ("UBS BB"). UBS BB is an association between UBS AG and Banco do Brasil (through its subsidiary BB – Banco de Investimentos S.A.), of which UBS AG is the majority owner and which provides investment banking services and coverage in Brazil, Argentina, Chile, Paraguay, Peru and Uruguay. UBS BB CCTV is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman: 0800-940-0266/ https://www.ubs.com/br/pt/ubsbb-investment-bank/ombudsman.html. UBS may hold relevant financial and commercial interest in relation to the company subject to this Research report. Hong Kong: Distributed by UBS Asia Limited. Please contact local licensed persons of UBS Asia Limited in respect of any matters arising from, or in connection with, the analysis or document Singapore: Distributed by UBS Pte. Ltd. [Co. Reg. No.: 198500648C] or UBS AG, Singapore Branch. Please contact UBS Pte. Ltd., an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110); or UBS AG, Singapore Branch, an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110) and a wholesale bank licensed under the Singapore Banking Act (Cap. 19) regulated by the Monetary Authority of Singapore, in respect of any matters arising from, or in connection with, the analysis or document. The recipients of this document represent and warrant that they are accredited and institutional investors as defined in the Securities and Futures Act (Cap. 289). Japan: Distributed by UBS Japan Co., Ltd. to professional investors (except as otherwise permitted). Where this report has been prepared by UBS Japan Co., Ltd., UBS Japan Co., Ltd. is the author, publisher and distributor of the report. Distributed by UBS AG, Tokyo Branch to Professional Investors (except as otherwise permitted) in relation to foreign exchange and other banking businesses when relevant. Australia: Clients of UBS AG: Distributed by UBS AG (ABN 47 088 129 613 and holder of Australian Financial Services License No. 231087). For all other recipients: Distributed by UBS Australia Ltd (ABN 62 008 586 481 and holder of Australian Financial Services License No. 231098). This document contains general information and/or general advice only and does not constitute personal financial product advice. As such, the Information in this document has been prepared without taking into account any investor's objectives, financial situation or needs, and investors should, before acting on the Information, consider the appropriateness of the Information, having regard to their objectives, financial situation and needs. If the Information contained in this document relates to the acquisition, or potential acquisition of a particular financial product by a 'Retail' client as defined by section 761G of the Corporations Act 2001 where a Product Disclosure Statement would be required, the retail client should obtain and consider the Product Disclosure Statement relating to the product before making any decision about whether to acquire the product. New Zealand: Distributed by UBS New Zealand Ltd. UBS New Zealand Ltd is not a registered bank in New Zealand. You are being provided with this publication or material because you have indicated to UBS that you are a "wholesale client" within the meaning of clause 4 of schedule 5 of the Financial Markets Conduct Act 2013 of New Zealand (Permitted Client). This publication or material is not intended for clients who are not Permitted Clients (non-permitted Clients). If you are a non-permitted Client you must not rely on this publication or material. If despite this warning you nevertheless rely on this publication or material, you hereby (i) acknowledge that you may not rely on the content of this publication or material and that any recommendations or opinions in such this publication or material are not made or provided to you, and (ii) to the maximum extent permitted by law (a) indemnify UBS and its associates or related entities (and their respective Directors, officers, agents and Advisors) (each a 'Relevant Person') for any loss, damage, liability or claim any of them may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material and (b) waive any rights or remedies you may have against any Relevant Person for (or in respect of) any loss, damage, liability or claim you may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material. Korea: Distributed in Korea by UBS Pte. Ltd., Seoul Branch. This report may have been edited or contributed to from time to time by affiliates of UBS Pte. Ltd., Seoul Branch. This material is intended for professional/institutional clients only and not for distribution to any retail clients. Malaysia: This material is authorized to be distributed in Malaysia by UBS Malaysia Sdn. Bhd (Capital Markets Services License No.: CMSL/A0063/2007). This material is intended for professional/institutional clients only and not for distribution to any retail clients. India: Distributed by UBS India Private Ltd. (Corporate Identity Number U67120MH1996PTC097299) Unit 2901, Level 29 Altimus, Pandurang Budhkar Road, Worli, Mumbai – 400 018. It provides brokerage services bearing SEBI Registration Number: INZ000259830; Merchant Banking services bearing SEBI Registration Number: INM000013101; and Research Analyst services bearing SEBI Registration Number: INH000001204. Name of Compliance Officer Mr Parameshwaran Shivaramakrishnan, Phone : +912261556151, Email : parameshwaran.s@ubs.com, Name of Grievance Officer Parameshwaran Shivaramakrishnan, Phone : +912261556151, Email: ol-ubs-sec-compliance@ubs.com Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. UBS may have debt holdings or positions in the subject Indian company/companies. UBS may have financial interests (e.g. loan/derivative products, rights to or interests in investments, etc.) in the subject Indian company / companies from time to time. Within the past 12 months, UBS may have received compensation for non-investment banking securities-related services and/or non-securities services from the subject Indian company/companies. The subject company/companies may have been a client/clients of UBS during the 12 months preceding the date of distribution of the research report with respect to investment banking and/or non-investment banking securities-related services and/or non-securities services. With regard to information on associates, please refer to the Annual Report at: https://www.ubs.com/global/en/about\_ubs/investor\_relations/annualreporting.html The Research Annual Compliance Report for UBS India Private Limited is available on www.ubs.com/ubssi under Research tab. Taiwan: Except as otherwise specified herein, this material may not be distributed in Taiwan. Information and material on securities/instruments that are traded in a Taiwan organized exchange is deemed to be issued and distributed by UBS Pte. LTD., Taipei Branch to professional institutional investors and/or persons permitted under applicable regulation. Unless permitted by applicable Taiwan laws and regulations, this material is for reference and information only and should not constitute "recommendation" to clients or recipients in Taiwan for the covered companies or any companies mentioned in this document. No portion of the document may be reprinted, reproduced or quoted by the press or any other person without authorisation from UBS. Indonesia: This report is being distributed by PT UBS Sekuritas Indonesia and is delivered by its licensed employee(s), including marketing/sales person, to its client. PT UBS Sekuritas Indonesia, having its registered office at Sequis Tower Level 22 unit 22-1,Jl Jend. Sudirman, kav.71, SCBD lot 11B, Jakarta 12190. Indonesia, is a subsidiary company of UBS AG and licensed under Capital Market Law no. 8 year 1995, a holder of broker-dealer and underwriter licenses issued by the Capital Market and Financial Institution Supervisory Agency (now Otoritas Jasa Keuangan/OJK). PT UBS Sekuritas Indonesia is also a member of Indonesia Stock Exchange and supervised by Otoritas Jasa Keuangan (OJK). Neither this report nor any copy hereof may be distributed in Indonesia or to any Indonesian citizens except in compliance with applicable Indonesian capital market laws and regulations. This report is not an offer of securities in Indonesia and may not be distributed within the territory of the Republic of Indonesia or to Indonesian citizens in circumstance which constitutes an offering within the meaning of Indonesian capital market laws and regulations.
+
+The disclosures contained in research documents produced by UBS AG, London Branch or UBS Europe SE shall be governed by and construed in accordance with English law.
+
+UBS specifically prohibits the redistribution of this document in whole or in part without the written permission of UBS and in any event UBS accepts no liability whatsoever for any redistribution of this document or its contents or the actions of third parties in this respect. Images may depict objects or elements that are protected by third party copyright, trademarks and other intellectual property rights. © UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved.
+
+![](images/b90ab6b3bede5f4164d3ac74bdd1221cdab18403a2094e66aba49de8c2c45565.jpg)

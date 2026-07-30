@@ -1,0 +1,62 @@
+Found 63 total PDFs; shard 12/40 has 3 PDFs, skips 0 already converted, will process 3 PDFs with batch_size=5.
+Running batch 1: 3 PDFs
+Found 3 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 3 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o_2ud_43/pdfs/0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o_2ud_43/pdfs/0002-62-UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI--260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o_2ud_43/pdfs/0003-63-Nomura-USD CNY fix model-Projection- 6.7536-260730.pdf
+MinerU attempt 1 using MINER_U batch_id=c1795bb1-169b-423a-b04b-1cdbb8d7178b
+MinerU states: running, waiting-file, waiting-file
+MinerU states: running, running, done
+MinerU states: done, done, done
+Skip non-chart visual asset f0c6544f94e045a78367131bf3cd70822ba39df0590ec434d6ec085966384c71.jpg: score=-100;too_small:442x87
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a2a4f7a6a8b87bf04436395c2c3c42a1ec8ab1d5ac2b1971998b14b2cb39fca0.jpg: score=-100;too_small:1068x167
+Skip non-chart visual asset 00baed13428019467f61ac0c4d1250f9ea05250ab51fcfa50dd160d286de5cee.jpg: score=0;odd_ratio:5.41,edge:0.17,large
+Skip non-chart visual asset 213d7d7a6cbc03a52d2af5c50944db6f3b69a288e43a9784e87c7dfbcabfbbaa.jpg: score=-100;too_small:454x123
+Skip non-chart visual asset fc61324645cac811cbca8ee7a83dafc8ae907bf2d8e6ed05b35e00245c14349f.jpg: score=2;edge:0.11
+Skip non-chart visual asset cc9451f9d7b3f52888050d634c3c540dbcc8fc08734d597514d8d9cf7742acd2.jpg: score=2;edge:0.12
+Skip non-chart visual asset f2a7107ac9b11684dbb9fd90e3398da33253bac41c058e61307adfb737704ecc.jpg: score=-1;odd_ratio:7.46,edge:0.28
+Skip non-chart visual asset 493acc9e7b563fed958becd729c91d286a5dde088b48a6eb7f3de434986f63f1.jpg: score=-100;too_small:223x84
+Skip non-chart visual asset 062ecfa06d2c87dbca02896a9b7c45817ebe2b7275abf5ae9207d0a5f4cfb6a0.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset 1dd4a9253d535a6784b9c423b8d4446bcd37309e617c9d5d6d1b89e85291269a.jpg: score=0;square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 83721482c1565a72249cd8832b6127936880ecbcb6a647dda4944d3acdb6e102.jpg: score=-1;odd_ratio:6.45,edge:0.26
+Skip non-chart visual asset 3b64e3bac7f66164bf2806aa829dfef01092e9f05bff541dd4b93487cf690b4a.jpg: score=2;edge:0.10
+Skip non-chart visual asset 94d648bcea1b67ea96842dd6314e468f61dee48426bc969ae3d59dc1c640ae22.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.30
+Skip non-chart visual asset e6e32958a9627bb6d357c76a58b3113423c60e5f30d44cf5a5fe38b66c5a6bb5.jpg: score=-1;odd_ratio:7.79,edge:0.21
+Skip non-chart visual asset 8261a5fc6886fa33ebb6092da91e152acfd2e3a128aa603394784a836557a87a.jpg: score=-100;too_small:1412x104
+Skip non-chart visual asset 84b80d39f05eea2d2ae095813ff597f484e93970c5289dd0959a68c015ff9b74.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 7b70b2eb50d52ff1783d2b42e487978a0e8d2758f098c0bda508f02781296f38.jpg: score=-1;odd_ratio:7.04,edge:0.28
+Neutralized WeChat title while keeping the report: 瑞银：SK海力士报价回调后基本面未变 -> 瑞银：研究主题与行业变化观察
+Skip non-chart visual asset 33b403cd8300381a83317c1c131faf0f4f42554f1c39c80ee99430d476f8c7d6.jpg: score=0;odd_ratio:4.83,edge:0.23,large
+Skip non-chart visual asset 3736bb5907688409ba50bb48695442e0994ecbbfb6bf667a2aecc224885ad35c.jpg: score=-1;odd_ratio:6.57,edge:0.22
+Skip non-chart visual asset 3929acbf688f856f43e10256beb2654f899eaf0c2a11d67fe1ee0c237742fe7a.jpg: score=1;chart_ratio
+Skip non-chart visual asset 78e1ed912bf97c5a80ce9a8558fe8c58c5a776c73a2e662b9c37d2a08550e33e.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset 0b6286c0b3014df53b9a1d12ba6ebec733827253b7ada4f04181d1f64c9dfd76.jpg: score=1;chart_ratio
+Skip non-chart visual asset 989b796f717c7af5eab57a47d32048beb396b446405631c6817989fa7627b8af.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 7a4fbf2503d5d8089c5c787851b7cd7fc9e25d66fcd801b0d59f80495e587314.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset b90ab6b3bede5f4164d3ac74bdd1221cdab18403a2094e66aba49de8c2c45565.jpg: score=-100;too_small:220x87
+Skip non-chart visual asset 9d1485c243f1357f0736f3228662ef635bfa0c075a861be718a9e97978e7a0bf.jpg: score=1;chart_ratio
+Skip non-chart visual asset 17b6746d08bd4f290d387a136639f71da5496c7fcb31ba04849c104c1c5c25eb.jpg: score=-1;square_without_chart_hint,edge:0.10
+Skip non-chart visual asset c7f371853c229d8bb4f7025cba3b7e782858b63fafac60343adf1bdb7bd1e200.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,contrast
+Skip non-chart visual asset bd4b4af0f6cf6ab4ce436ccde2f65fc3952d562dfec756d6827bf6240d5ba513.jpg: score=-1;odd_ratio:6.54,edge:0.17
+Skip non-chart visual asset 8fd5259cd9adc78d7f02246aeb9e2213a93263cf9988a8ab034bf23cf45ed0ad.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset b9d4001085ab6ef9f6b31b9d0e00372ece9ad61620fdd5b89865c34538d8e86e.jpg: score=1;chart_ratio
+Skip non-chart visual asset dfd7c7677d247914727ed0efae220d27046686c424906aea26ab9aac753ea3ed.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset dc23ffb8114d02e717c342356c58c545cbcddece141f2d4ceb0c44a82febdcc8.jpg: score=1;chart_ratio
+Skip non-chart visual asset bd8d9a6d37d95e602143c4188134605a4d72791750db2a163d604ce9aca25409.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset 8ebf6e9f164b3b48495499f6ef1ae596758285eb4471ef9b0fe9e41f88a6f451.jpg: score=1;chart_ratio
+Skip non-chart visual asset 92316374cc1c516cbde450c6035795cb8568bb9fce420a7826459715d0d65da3.jpg: score=-1;odd_ratio:5.80,edge:0.22
+Skip non-chart visual asset 118dea158c1f0d89c8b94f07d0facef9a41224aa03e1391bdd78a033ed12f270.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset 800208f2f5f0b28b176bd0dc34f1cc6b650e84aa78574341743f981e18c03dfb.jpg: score=1;chart_ratio
+Skip non-chart visual asset 2813b370a2ac8f69ae9811d0ecd948248de009490643d0d6339ab3ad26d2567c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 863117ff503e58fcb089d509a07f373b5b14d036d29bbec3e8d908b9b5c9e78c.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 6f15d6c3e1af51a71612ccc2ba2ae0edd6fa22690f1aacffebaa8ff45ce9e8ee.jpg: score=-1;odd_ratio:5.80,edge:0.21
+Skip non-chart visual asset fa3ea103083fe7ef78ea9dcda521377ebf5ab9f58b3e5e31792dfd245b1674e7.jpg: score=-1;odd_ratio:5.68,edge:0.21
+Skip non-chart visual asset c662681a2bb4d483b157c97fab919f612c671b5f117502e726af147fa5a108d8.jpg: score=1;chart_ratio
+Skip non-chart visual asset d72c0697edf23b64067a0122e068a2245a7843ec152efa7b68104fecde1bdb6d.jpg: score=2;chart_ratio,large
+Neutralized WeChat title while keeping the report: 瑞银：ASEAN市场策略-AI主题之外的ASEAN受益机会 -> 瑞银：AI技术与行业应用观察
+Skip non-chart visual asset c5fb32cca626233a9bdcf53bc44c3ea5fc97a647b3a20d8c32399fcba33604e4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_12; successful_reports=3; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 3 report directories.

@@ -1,0 +1,41 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 3,
+  "pdf_count": 3,
+  "generated_report_count": 3,
+  "batch_size": 5,
+  "shard_index": 12,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/62-UBS-ASEAN Equity Strategy：Can ASEAN benefit beyond AI？-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0002-62-UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI--260728.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/63-NOM-USD CNY fix model：Projection： 6.7536-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+          "stable_index": "3"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

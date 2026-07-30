@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0002-62-UBS-ASEAN Equity Strategy-Can ASEAN benefit beyond AI--260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o_2ud_43/pdfs/0003-63-NOM-USD CNY fix model-Projection- 6.7536-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
