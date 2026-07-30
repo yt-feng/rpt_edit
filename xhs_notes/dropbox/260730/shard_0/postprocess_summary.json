@@ -1,0 +1,653 @@
+[
+  {
+    "item": "0001-01-BARC-Mercedes-Benz-Group--MBGGR.US--Cash-generation-faces-H2-headwin",
+    "source_pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "奔驰的现金流入，下半",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x2",
+      "投资->研究 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "remove_stock_parenthetical x1",
+      "减持->观点偏谨慎 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "负面->谨慎 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729.pdf",
+      "cleaned_source_title": "BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：MercedesBenzGroup",
+      "raw_candidates": [
+        "梅赛德斯-奔驰集团下半年现金流面临不确定性",
+        "梅赛德斯-奔驰集团2026年第二季度自由现金流同比下滑41%",
+        "梅赛德斯-奔驰集团下半年乘用车利润率承压与成本削减"
+      ],
+      "cleaned_candidates": [
+        "BARC：梅赛德斯-奔驰集团下半年现金流面临不确定性",
+        "BARC：梅赛德斯-奔驰集团2026年第二季度自由现金流同比下滑41%",
+        "BARC：梅赛德斯-奔驰集团下半年乘用车利润率承压与成本削减",
+        "BARC：MercedesBenzGroup",
+        "BARC：1.中国业务利润预期下调，估值调整达8.44亿欧元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：梅赛德斯-奔驰集团2026年第二季度自由现金流同比下滑41%",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "BARC：梅赛德斯-奔驰集团下半年乘用车利润率承压与成本削减",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "BARC：MercedesBenzGroup",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：1.中国业务利润预期下调，估值调整达8.44亿欧元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：梅赛德斯-奔驰集团下半年现金流面临不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-02-Bernstein-Air-Liquide-SA-AI.FP-Air-Liquide-1H26-Speed-bump--but-remain-O",
+    "source_pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Air Liquid",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：AI技术与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729.pdf",
+      "cleaned_source_title": "Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform",
+      "institution_name": "Bernstein",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Bernstein：AirLiquideSAAirLiquide1H26",
+      "raw_candidates": [
+        "Bernstein：Air Liquide 1H26业绩波动与订单积压创纪录",
+        "Bernstein：Air Liquide 1H26电子业务增长与氦气供应影响",
+        "Bernstein：Air Liquide 1H26工业商业务定价稳定与估值回归",
+        "Air Liquide 1H26业绩波动与增长基础",
+        "Air Liquide 1H26业绩波动-订单积压创纪录",
+        "Air Liquide 1H26业绩波动-电子业务与氦气影响"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：AirLiquide1H26业绩波动与订单积压创纪录",
+        "Bernstein：AirLiquide1H26电子业务增长与氦气供应影响",
+        "Bernstein：AirLiquide1H26工业商业务定价稳定与估值回归",
+        "Bernstein：AirLiquide1H26业绩波动与增长基础",
+        "Bernstein：AirLiquide1H26业绩波动-订单积压创纪录",
+        "Bernstein：AirLiquide1H26业绩波动-电子业务与氦气影响",
+        "Bernstein：AirLiquideSAAirLiquide1H26",
+        "Bernstein：AI技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：AirLiquide1H26业绩波动与订单积压创纪录",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquide1H26电子业务增长与氦气供应影响",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquide1H26工业商业务定价稳定与估值回归",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquide1H26业绩波动与增长基础",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquide1H26业绩波动-订单积压创纪录",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquide1H26业绩波动-电子业务与氦气影响",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirLiquideSAAirLiquide1H26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：AI技术与相关数据观察",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Bernstein：AI技术与相关数据观察",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Bernstein：Air Liquide 1H26业绩波动与订单积压创纪录",
+        "Bernstein：Air Liquide 1H26电子业务增长与氦气供应影响",
+        "Bernstein：Air Liquide 1H26工业商业务定价稳定与估值回归"
+      ],
+      "final_title_after_wording_guard": "Bernstein：AI技术与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-03-BARC-Equity-Strategy---Who-Owns-What-Positioning-risk--but-Europe-no",
+    "source_pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0003-03-BARC-Equity Strategy - Who Owns What-Positioning risk- but Europe not in a bad spot-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "全球资金正在悄悄搬家",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x2",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金->产品 x4",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融条件->资金条件 x1",
+      "风险->不确定性 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-BARC-Equity Strategy - Who Owns What-Positioning risk- but Europe not in a bad spot-260729.pdf",
+      "cleaned_source_title": "BARC-Equity Strategy - Who Owns What-Positioning risk- but Europe not in a bad spot",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：Equity策略WhoOwnsWhatPosi",
+      "raw_candidates": [
+        "BARC：权益策略-谁在持有-持仓风险与欧洲位置",
+        "BARC：权益策略-谁在持有-7月资金流入创纪录",
+        "BARC：权益策略-谁在持有-欧洲相对位置与资金扩散"
+      ],
+      "cleaned_candidates": [
+        "BARC：权益策略-谁在持有-持仓风险与欧洲位置",
+        "BARC：权益策略-谁在持有-7月资金流入创纪录",
+        "BARC：权益策略-谁在持有-欧洲相对位置与资金扩散",
+        "BARC：Equity策略WhoOwnsWhatPosi",
+        "BARC：7月全球权益产品净流入达1290亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：权益策略-谁在持有-7月资金流入创纪录",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：权益策略-谁在持有-欧洲相对位置与资金扩散",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：Equity策略WhoOwnsWhatPosi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：7月全球权益产品净流入达1290亿美元",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：权益策略-谁在持有-持仓风险与欧洲位置",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-04-Bernstein-China-Consumer-China-Consumer-Pulse-2Q26--Premium-resilience-a",
+    "source_pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "消费回暖了吗？先看这",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "通缩->价格变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730.pdf",
+      "cleaned_source_title": "Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：中国消费中国消费Pulse2Q26",
+      "raw_candidates": [
+        "Bernstein：中国消费二季度高端韧性但整体需求偏弱",
+        "Bernstein：中国消费二季度高端韧性但零售增速仅0.2%",
+        "Bernstein：中国消费二季度高端韧性但大众消费仍面临阻力"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：中国消费二季度高端韧性但整体需求偏弱",
+        "Bernstein：中国消费二季度高端韧性但零售增速仅0.2%",
+        "Bernstein：中国消费二季度高端韧性但大众消费仍面临阻力",
+        "Bernstein：中国消费中国消费Pulse2Q26",
+        "Bernstein：4.汽车销售大幅下滑，电动车渗透率突破60%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：中国消费二季度高端韧性但零售增速仅0.2%",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "Bernstein：中国消费二季度高端韧性但大众消费仍面临阻力",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "Bernstein：中国消费中国消费Pulse2Q26",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：4.汽车销售大幅下滑，电动车渗透率突破60%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：中国消费二季度高端韧性但整体需求偏弱",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-05-Bernstein-Equinix--Inc.-EQIX.US-2Q26--Watt-a-guide--260729",
+    "source_pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0005-05-Bernstein-Equinix- Inc.-EQIX.US-2Q26- Watt a guide--260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Equinix：数据",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-Bernstein-Equinix- Inc.-EQIX.US-2Q26- Watt a guide--260729.pdf",
+      "cleaned_source_title": "Bernstein-Equinix- Inc.-EQIX.US-2Q26- Watt a guide",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：EquinixInc.2Q26Wattaguide",
+      "raw_candidates": [
+        "Equinix上调长期指引-资本开支翻倍至每年50-70亿美元",
+        "Equinix上调AFFO增长预期至9%-12%-资本开支翻倍",
+        "Equinix资本开支翻倍-聚焦25个核心市场开发回报25%"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：Equinix上调长期指引-资本开支翻倍至每年50",
+        "Bernstein：Equinix上调AFFO增长预期至9%-12%",
+        "Bernstein：Equinix资本开支翻倍-聚焦25个核心市场开发回报25%",
+        "Bernstein：EquinixInc.2Q26Wattaguide",
+        "Bernstein：Equinix上调长期指引，资本开支翻倍至每年50"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：Equinix上调AFFO增长预期至9%-12%",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Equinix资本开支翻倍-聚焦25个核心市场开发回报25%",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "Bernstein：EquinixInc.2Q26Wattaguide",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：Equinix上调长期指引-资本开支翻倍至每年50",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

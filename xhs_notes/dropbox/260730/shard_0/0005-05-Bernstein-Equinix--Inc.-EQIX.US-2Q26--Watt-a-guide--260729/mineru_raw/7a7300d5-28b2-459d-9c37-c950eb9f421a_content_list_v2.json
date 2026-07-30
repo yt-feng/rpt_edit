@@ -1,0 +1,5532 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "US Communications Infrastructure\nEquinix, Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                114,
+                297,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                164,
+                116,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Outperform"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                181,
+                202,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Price Target"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                210,
+                151,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1,270.00 USD (1,222.00 OLD)"
+                    }
+                ]
+            },
+            "bbox": [
+                292,
+                234,
+                478,
+                251
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c89657956b036aca2fd41891feace54a6b8c7721d00d1579cdb0af1704499d0a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                656,
+                90,
+                710,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei\n+1 917 344 8622\nmadison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                723,
+                95,
+                890,
+                133
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/20443955d1c245c5379d5e787d2e918ef81543737effceeb690df073efc72d76.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                655,
+                141,
+                710,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EQIX"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                233,
+                130,
+                251
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1 917 344 8545"
+                    }
+                ]
+            },
+            "bbox": [
+                723,
+                159,
+                818,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nancy Wu"
+                    }
+                ]
+            },
+            "bbox": [
+                723,
+                146,
+                787,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "nancy.wu@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                723,
+                170,
+                864,
+                183
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix (EQIX) 2Q26: Watt a guide!"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                308,
+                527,
+                335
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EQIX reported a strong beat and raise this quarter, most notably updating long-term guidance for 2027-2029. The company has raised its annual AFFO per share growth from 5-9% to 9-12%. Correspondingly, they have also raised their capex guide: from $3-4B annually to $5-7B. We think EQIX has a good chance of achieving this ambitious guide given its build plans, price-up opportunities (particularly in interconnect), and increased cost takeouts; we maintain our Outperform and take our Price Target up to $1270."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                358,
+                640,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We can't say the upped guidance is entirely new news... in our Q1 callback note we pointed out that the build plans had gone from an incremental ~2GW to an incremental ~5GW (including atNorth, scheduled to close later this year and NOT included in today's guide)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                474,
+                630,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The capex numbers will absolutely get some side-eyes, but we're okay with them. EQIX is building to extremely attractive development yields (mid-20s, well ahead of peers). ~80% of that capex is going to 25 top markets where they already have facilities. While there is a 3-4 year lag between capex and stabilized assets, top markets are extremely tight and will be secure for decades. The company doesn't need to issue equity to fund it, and incremental debt will be limited (<1 turn of leverage through end of 2029) - we don't see a ton of downside. Nevertheless, there is a swath of investors who won't like it."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                532,
+                625,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In terms of the quarter itself, performance was strong. This is EQIX's third consecutive quarter of double-digit MRR growth, with many deals driven by AI workloads. A record 9,700 interconnections were added, driving interconnection revenue up ~9% YoY at very high margins (we love this business). Churn remains below the guided range, installed cabinets are coming off the development conveyor, and Adjusted EBITDA margin hit a record 53%, with some more room to run."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                650,
+                637,
+                743
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Especially in an environment with AI question marks, we believe EQIX represents an asymmetric risk/reward, particularly over the long-term. It does benefit from AI tailwinds, but underneath, enterprise colo demand is durable and sticky. We reiterate our Outperform."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                753,
+                638,
+                801
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investment Implications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                811,
+                245,
+                828
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We value EQIX on a Price to Adjusted Funds From Operations (AFFO) per share multiple. Our $1,270 price target is based on ~25x NTM+1 AFFO per share of $51.19 (prev $48.63)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                828,
+                635,
+                858
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/39983d3cd7409d1cae0c686419201714a922fada611c82e3196fc20b4aab481c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Close Date</td><td>29 Jul 2026</td></tr><tr><td>EQIX Close Price (USD)</td><td>1,008.02</td></tr><tr><td>Price Target (USD)</td><td>1,270.00</td></tr><tr><td>Upside/(Downside)</td><td>26%</td></tr><tr><td>52-Week Range</td><td>1,128.68/720.62</td></tr><tr><td>SPX</td><td>7,316.15</td></tr><tr><td>FYE</td><td>Dec</td></tr><tr><td>Div Yield</td><td>2.0%</td></tr><tr><td>Market Cap (USD) (M)</td><td>99,463</td></tr><tr><td>EV (USD) (M)</td><td>119,767</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                653,
+                363,
+                923,
+                516
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0449c5c9ec6a57dc0e5918a8dfd167bf2113124856ac0ccd21e01e212bc719bb.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Bernstein estimates and analysis."
+                    }
+                ],
+                "html": "<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>31.6</td><td>(7.1)</td><td>22.0</td><td>24.3</td></tr><tr><td>SPX (%)</td><td>6.9</td><td>(1.7)</td><td>5.0</td><td>14.8</td></tr><tr><td>Relative (%)</td><td>24.7</td><td>(5.4)</td><td>17.0</td><td>9.4</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                653,
+                521,
+                924,
+                580
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4dc0c75bfcc76273e3cbee4272d98d6a8b8a4fe678b7d6bb0971e564d4104164.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Price Performance, 1YR"
+                    }
+                ]
+            },
+            "bbox": [
+                651,
+                626,
+                887,
+                739
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a86be6e11bd693cacbbf423d0004644d05c2571af3c29b327e5ec40ecbbe7cd6.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Bernstein estimates and analysis."
+                    }
+                ],
+                "html": "<table><tr><td>Adjusted EPS</td><td>F25A</td><td>F26E</td><td>F27E</td><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>EQIX (USD)</td><td>14.96</td><td>17.79</td><td>20.87</td><td>EBITDA (M)</td><td>3,914</td><td>4,765</td><td>5,629</td><td>--</td><td>Adjusted P/E (x)</td><td>67.4</td><td>56.7</td><td>48.3</td></tr><tr><td>OLD</td><td>--</td><td>17.88</td><td>21.36</td><td></td><td></td><td></td><td></td><td></td><td>EV/EBITDA (x)</td><td>30.6</td><td>25.1</td><td>21.3</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                66,
+                856,
+                919,
+                912
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN\nSG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                32,
+                292,
+                80
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026\nPrice Target Change"
+                    }
+                ]
+            },
+            "bbox": [
+                723,
+                54,
+                887,
+                94
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.\nFirst Published: 30 Jul 2026 01:34 UTC Completion Date: 30 Jul 2026 01:34 UTC"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                935,
+                700,
+                978
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "www.bernsteinresearch.com"
+                    }
+                ]
+            },
+            "bbox": [
+                776,
+                935,
+                919,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DETAILS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                69,
+                174,
+                85
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "WHAT WE LEARNED."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                114,
+                256,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix delivered an exceptionally strong second quarter, marked by accelerating double-digit recurring revenue growth, record profitability, and the largest single guidance raise in company history, alongside a significantly upsized long-term outlook through 2029. Management emphasized broad-based and durable AI-driven demand, record bookings and backlog, and continued operating leverage, raising full-year 2026 revenue, adjusted EBITDA, and AFFO guidance for the second consecutive quarter while nearly doubling its 2027-29 CapEx plan to capture what it called a materially stronger market opportunity than a year ago."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                135,
+                882,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underlying demand accelerated further across the core retail colocation and interconnection franchise. 2Q26 revenues totaled $2.625B (+2% vs $2.585B consensus), up 16% YoY on both an as-reported and normalized and constant-currency basis, reflecting strong underlying performance plus one-time xScale fees, including 134 megawatts of xScale leases (including Hampton and Anton) that contributed approximately $120M in nonrecurring fees. Recurring revenues of $2.377B grew 11% YoY on a normalized and constant-currency basis, marking the third consecutive quarter of double-digit monthly recurring revenue (MRR) growth. In-quarter, Equinix delivered $424M of annualized gross bookings, up 23% YoY and its second-highest volume on record, along with approximately $110M of presales activity, for total sales activity growth of over 30% and a record backlog. Management noted the Hampton xScale lease, previously expected in 1Q26, closed in 2Q26 as anticipated with no change to the full-year outlook, and that excluding Hampton, the Americas region still posted low-teens double-digit recurring revenue growth. Management did not attribute any variance to demand softness, instead pointing to very firm pricing, record bookings, and resilient customer spending across regions and verticals."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                222,
+                888,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Total interconnection revenue increased 9% YoY on a normalized and constant-currency basis to $453M, with cloud router (Fabric Cloud Router) bookings up approximately 170% YoY, driven by higher attach rates and rising enterprise demand for virtual connectivity. Net interconnection additions totaled a record 9,700 in the quarter, the most ever, with management emphasizing that interconnection growth is increasingly tied to AI workloads, multi-cloud networking complexity, and demand for low-latency, sovereign connectivity."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                400,
+                854,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- AI-related demand became even more prominent and structurally embedded in 2Q26. The vast majority of the company's largest deals were AI-related, consistent with prior quarters, as customer conversations matured across four distinct AI use cases: \"stack\" (open models on private AI infrastructure to reduce token costs), \"sovereign\" (data residency and compliance-driven deployments), \"batch\" (AI factories for model training and batch inferencing, aided by liquid cooling), and \"latency-sensitive\" (agentic workloads requiring metro-level proximity). Management highlighted that 8 of the top 10 AI model providers and 8 of the top 10 neoclouds are already running key networking workloads on Equinix, and that its ecosystem is approximately twice the size of the next-largest provider. Fabric Geo Zones, a new network-level data sovereignty offering, expanded to approximately 80 enterprises in preview, up from roughly 20 the prior quarter."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                488,
+                883,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Adjusted EBITDA reached $1.396B (+3% vs $1.358B consensus), a record margin of 53%, up 22% YoY on a normalized and constant-currency basis (24% as-reported), driven by continued cost discipline, scaling operating leverage, and xScale leasing fees; excluding scale leasing fees, the adjusted EBITDA margin still expanded approximately 150 basis points YoY. AFFO totaled $1.168B, up 19% YoY on a normalized and constant-currency basis (20% as-reported), while AFFO per share rose to $11.78 (+4% vs $11.29 consensus), up 18% YoY on a normalized and constant-currency basis. Churn was 1.8% in the quarter, primarily reflecting renewal process execution and some delayed churn, with management guiding toward the low end of its typical 2%-2.5% target range for the back half of the year."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                619,
+                890,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Capacity expansion and capital deployment accelerated meaningfully under the Build Bolder strategy. Equinix ended the quarter with 52 major projects underway across 33 markets (up from 46 projects across 32 markets in 1Q26), including new projects added in Madrid, Milan, Silicon Valley, Chicago, Istanbul, and Johor, and accelerated more than 7,000 cabinets from 2027 into 4Q26. Approximately 30% of remaining 2026 retail capacity expansion has already been pre-sold, and 194 stabilized assets are collectively 82% utilized, generating a 27% cash-on-cash yield on gross PP&E. Second-quarter capital expenditures totaled approximately $1.6B, with roughly 90% directed toward growth and capacity expansion. Net leverage stood at 3.6x annualized adj. EBITDA, with approximately $7.7B of available liquidity including an upsized revolving credit facility."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                737,
+                867,
+                858
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix raised full-year 2026 guidance for the second consecutive quarter, reflecting outperformance and a stronger outlook for the remainder of the year:"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                869,
+                893,
+                900
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                880,
+                941,
+                892,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                893,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Revenue: Raised by $100M to $10.205-$10.285B, representing 11%-12% growth (up from the prior 10%-13% range from 1Q26)"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                71,
+                864,
+                101
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- MRR growth: Expected around 10%, at the high end of the prior range"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                114,
+                565,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Adjusted EBITDA: Raised by $62M to $5.210-$5.270B, reflecting an adjusted EBITDA margin of approximately 51%, a 200bps improvement YoY"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                141,
+                864,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- AFFO: Raised by approximately $50 million to $4.240-$4.300B, with AFFO per share growth guidance increased to 10%-12%"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                184,
+                838,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- CapEx: Raised to $5.0-$6.0B (excluding real estate acquisitions and xScale), up materially as the company accelerates capacity expansion, including doubling the cabinets delivered in the second half of the year"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                226,
+                854,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Churn: Expected to trend toward the lower end of the typical  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2\\% - 2.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " target range for the back half of 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                268,
+                800,
+                284
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "THE LONG VIEW"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                311,
+                223,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EQIX is the juggernaut of the enterprise data center market, with sticky, durable revenue. Interconnection, major metro locations, and service continue to be important to enterprise buyers, and on those metrics, EQIX is hard to beat. In recent years, EQIX has not built apace with the market, putting a ceiling on near-term growth opportunity. For reference, EQIX implied share of market supply has fallen from ~8% in 2020 to ~5% in 2025. However, EQIX is working to course-correct, and is bringing cabinets online at an impressive rate, particularly demonstrated in the last couple of quarters."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                330,
+                883,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We model a multi-year lag from large-scale build to revenue, with elevated capex in the interm. While we were initially skeptical of xScale, EQIX's hyperscale-focused fund (\\$15B, EQIX has 25\\% share), we think there may be some upside here. We are not optimistic that it will outperform the hyperscaler data center market, but that market is growing quickly and EQIX has seen some early traction. We are therefore modeling ~\\$500M of net income contribution by 2030."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                419,
+                890,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For catalysts, we are watching EQIX's available and billing cabinets across geographies, capacity online, and xScale commentary, in addition to the closing of their atNorth acquisition later this year, which is expected to be immediately accretive."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                491,
+                885,
+                522
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                882,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/91191a74d0fb4659f9bc85c2ecd67108ca8bb12984bd56537708d0e6fe9e2b0e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1: EQIX 2Q26 Variance Table"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company Disclosures, Bernstein Analysis and Estimates"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"3\"></td><td colspan=\"7\">EQIX 2Q26 Variance Table</td></tr><tr><td rowspan=\"2\">Actual2Q26</td><td rowspan=\"2\">Estimate2Q26</td><td rowspan=\"2\">Consensus2Q26</td><td rowspan=\"2\">ForecastVariance</td><td rowspan=\"2\">Actual2Q25</td><td colspan=\"2\">Annual Growth</td></tr><tr><td>Actual</td><td>Forecast</td></tr><tr><td>Recurring Revenue</td><td>2,377</td><td>2,444</td><td>2,399</td><td>-0.9%</td><td>2,143</td><td>10.9%</td><td>11.9%</td></tr><tr><td>Colocation</td><td>1,772</td><td>1,809</td><td>1,782</td><td>-0.6%</td><td>1,585</td><td>11.8%</td><td>12.4%</td></tr><tr><td>Interconnection</td><td>453</td><td>455</td><td>458</td><td>-1.0%</td><td>407</td><td>11.3%</td><td>12.5%</td></tr><tr><td>Managed Infrastructure</td><td>112</td><td>137</td><td>120</td><td>-6.7%</td><td>117</td><td>-4.3%</td><td>2.6%</td></tr><tr><td>Other</td><td>40</td><td>43</td><td>39</td><td>2.4%</td><td>34</td><td>17.6%</td><td>14.9%</td></tr><tr><td>Non-Recurring Revenue</td><td>248</td><td>128</td><td>186</td><td>33.2%</td><td>113</td><td>119.5%</td><td>64.8%</td></tr><tr><td>Total Revenue</td><td>$2,625</td><td>$2,572</td><td>$2,585</td><td>1.5%</td><td>$2,256</td><td>16.4%</td><td>14.6%</td></tr><tr><td>Adj. EBITDA</td><td>$1,396</td><td>$1,332</td><td>$1,358</td><td>2.8%</td><td>$1,129</td><td>23.6%</td><td>20.3%</td></tr><tr><td>Adj. EBITDA Margin</td><td>53.2%</td><td>51.8%</td><td>52.5%</td><td>63bps</td><td>50.0%</td><td>314bps</td><td>250bps</td></tr><tr><td>Net Income</td><td>$477</td><td>$438</td><td>$464</td><td>2.8%</td><td>$367</td><td>30.0%</td><td>26.5%</td></tr><tr><td>Adj. Funds from Operations</td><td>1,168</td><td>1,107</td><td>1,118</td><td>4.5%</td><td>972</td><td>20.2%</td><td>15.0%</td></tr><tr><td>AFFO Per Share</td><td>$11.78</td><td>$11.23</td><td>$11.29</td><td>4.3%</td><td>$9.94</td><td>18.6%</td><td>13.7%</td></tr><tr><td>EPS Diluted</td><td>$4.83</td><td>$4.43</td><td>$4.66</td><td>3.6%</td><td>$3.75</td><td>28.7%</td><td>24.2%</td></tr><tr><td>Adj. Diluted EPS</td><td>$5.12</td><td>$4.43</td><td>$4.69</td><td>9.2%</td><td>$3.81</td><td>34.3%</td><td>23.0%</td></tr><tr><td>Recurring CapEx</td><td>49</td><td>53</td><td>60</td><td>-18.4%</td><td>55</td><td>-10.9%</td><td>9.2%</td></tr><tr><td>Non-Recurring CapEx</td><td>1,529</td><td>768</td><td>933</td><td>63.8%</td><td>-604</td><td>-353.3%</td><td>-254.6%</td></tr><tr><td>Free Cash Flow</td><td>-116</td><td>296</td><td>831</td><td>-113.9%</td><td>-989</td><td>-88.3%</td><td>-184.0%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                90,
+                888,
+                424
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2: EQIX FY26 Guidance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                463,
+                315,
+                478
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b9e7913fa1cf9ccc2cb150c6ff6813fa578a09a6b6b707aafa126d23d0e22b74.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company Filings, Bernstein Analysis and Estimates"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">FY26 Guidance</td></tr><tr><td>Midpoint Given 2Q26</td><td>Midpoint Given 1Q26</td><td>Consensus FY 2026</td><td>Estimate FY 2026</td></tr><tr><td>Revenue</td><td>10,245</td><td>10,239</td><td>10,218</td><td>10,303</td></tr><tr><td>Adj. EBITDA</td><td>$5,240</td><td>$5,221</td><td>$5,189</td><td>$5,340</td></tr><tr><td>Adj. EBITDA Margin</td><td>51.1%</td><td>51.0%</td><td>50.8%</td><td>51.8%</td></tr><tr><td>Recurring CapEx</td><td>300</td><td>292</td><td>286</td><td>336</td></tr><tr><td>Non-Recurring CapEx</td><td>5,200</td><td>3,990</td><td>3,905</td><td>5,219</td></tr><tr><td>AFFO</td><td>4,270</td><td>4,273</td><td>4,223</td><td>4,313</td></tr><tr><td>AFFO per share</td><td>$42.99</td><td>$43.04</td><td>$42.65</td><td>$43.82</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                264,
+                483,
+                732,
+                674
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                880,
+                941,
+                892,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dc832b7707f5d92e3a01b35a6c4711070f94f3259995b8acb6a68f7594f71d22.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3: EQIX Long Term Guidance"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "CAPEX Excludes M&A activity, real estate acquisitions and xScale Source: Company Filings, Bernstein Analysis"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Revenue Growth by Segment"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"5\">Long Term 2027-2029 Guidance</td></tr><tr><td></td><td>Prior OutlookJune 2025 Analyst Day</td><td>Midpoint</td><td>Updated Outlook2Q26</td><td>Midpoint</td></tr><tr><td>Total Revenue Growth (Annual Range)</td><td>7% - 10%</td><td>9%</td><td>10% - 13%</td><td>12%</td></tr><tr><td>Adjusted EBITDA Margin (in 2029)</td><td>52%+</td><td>52%+</td><td>53%+</td><td>53%+</td></tr><tr><td>Total Capital Expenditures (Annual Range)</td><td>$3 - $4B</td><td>$3.5B</td><td>$5 - $7B</td><td>$6.0B</td></tr><tr><td>AFFO per Share Growth (Annual Range)</td><td>5% - 9%</td><td>7%</td><td>9% - 12%</td><td>11%</td></tr><tr><td>Dividend per Share Growth (Annual Range)</td><td>8%+</td><td>8%+</td><td>Approximately AFFO per Share Growth</td><td>11%</td></tr><tr><td>Net Leverage Ratio (In 2029)</td><td colspan=\"2\">In-line with Current Investment Grade Ratings</td><td colspan=\"2\">In-line with Current Investment Grade Ratings</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                153,
+                89,
+                843,
+                247
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/261a931d92ba881431e69efa706c5fb9cbaf34ca21b4676dad45ce16c57903a4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                125,
+                353,
+                477,
+                590
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f09c3934794bfb2ba09656bab37f12ee06c3c11450f7eda0f095d0ea062a53f8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 4: EQIX Revenue YoY Growth by Segment (%)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 5: EQIX EBIT Margin"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                324,
+                875,
+                590
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                882,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 6: EQIX Diluted EPS ($, %)"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                69,
+                338,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EQIX Diluted EPS"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                99,
+                362,
+                114
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5e2d7a8dc8036c69c4e20274d9ed4d9459948734c96f88c52dab662ec7ca58ea.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EQIX AFFO Growth"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                135,
+                136,
+                450,
+                359
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c7b04c866f7b6b85e65bb21b4de74cacaa54ee8c1a038351c12f910c972335c4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 7: EQIX AFFO YoY Growth (\\$M, %)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company Filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                128,
+                867,
+                391
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a83347a58f93cb9768973a76898a23ea424847e2cd4149e6ab7ff32915b45dca.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 8: EQIX Adj. EBITDA YoY Growth (\\$M, %)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Adj. EBITDA"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 9: EQIX Diluted Dividend per Share ($, %)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Diluted Dividend per share"
+                    }
+                ]
+            },
+            "bbox": [
+                120,
+                500,
+                470,
+                743
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1d53a4d90913db77a9619d5d88158ab96be23e4659b9b6ee852d27f53ef6c785.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                500,
+                862,
+                758
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                880,
+                941,
+                892,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/13e04dbe2f56b5c53879ab79526b60cf124225ba5fb48dc5c50ba171b07ab83d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 10: EQIX Leverage Ratio"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Leverage Ratio"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Calculates as Net debt including fin leases and Q Annualized Adj. EBITDA Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                120,
+                131,
+                480,
+                363
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1b5d307afd384e1b4dfbb9350710433befc9b7cb755dd0686f2c50860443d29a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 11: EQIX Cabinet Capacity (k, %)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Annualized Gross Bookings"
+                    }
+                ]
+            },
+            "bbox": [
+                519,
+                95,
+                862,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 12: EQIX Annualized Gross Bookings ($M)"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                419,
+                439,
+                435
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f4bbd3e19cd99168764cf740d820d3d91189d3d04bbc7287c82a53090e2ecabe.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 13: EQIX Cash-on-cash yield"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Cash-on-cash yield"
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                516,
+                470,
+                693
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fda7c845e4bb031dce7c165bc975509e915d83ca9bff3192dd00ef693cf3fa8a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Cash Generated on Gross PP&E investment calculated as: Cash gross profit for the trailing four quarters on a constant currency basis divided by gross PP&E Source: Company filings, Bernstein Analysis"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                474,
+                875,
+                714
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                882,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fedd16363dd64e08acfbae23a5b7e60559f9c00af1251c40358c8cffd7ab43c3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 14: EQIX Stabilized DC Revs (\\$M, %)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "YoY Growth calculated on a constant currency basis  \nSource: Company filings, Bernstein Analysis"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                116,
+                475,
+                356
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3b50c2acc2bed10971c21255fc938b5e5c4e6d13d45c5df6dfbfdd6b42d3471b.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 15: EQIX Stabilized DC Utilization Rate (%)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                122,
+                874,
+                366
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/55cb99fcb75dd5bc9f49254a7c921719a6748470940222c179fa494dfdbb3912.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 16: EQIX Interconnection's Overview (K, %)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "EQIX Interconnection Revenue"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                132,
+                463,
+                473,
+                702
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                880,
+                941,
+                892,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "APPENDIX - FINANCIAL FORECASTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                70,
+                385,
+                85
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 17: EQIX Income Statement Overview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                99,
+                411,
+                114
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/648cd5aaaa78aa1d9bd02ae64be0461979dfa194524c7d9738a90dfd00ad82dd.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"9\">All values in millions, except per share data</td></tr><tr><td></td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td></tr><tr><td>Recurring Revenues</td><td>2,215</td><td>2,294</td><td>2,331</td><td>2,377</td><td>2,472</td><td>2,500</td><td>2,595</td><td>2,651</td></tr><tr><td>Non-Recurring Revenues</td><td>101</td><td>126</td><td>113</td><td>248</td><td>130</td><td>131</td><td>137</td><td>140</td></tr><tr><td>Total Revenues</td><td>2,316</td><td>2,420</td><td>2,444</td><td>2,625</td><td>2,602</td><td>2,632</td><td>2,732</td><td>2,791</td></tr><tr><td>Cost of revenues</td><td>1,142</td><td>1,198</td><td>1,186</td><td>1,230</td><td>1,297</td><td>1,366</td><td>1,322</td><td>1,350</td></tr><tr><td>Gross profit</td><td>1,174</td><td>1,222</td><td>1,258</td><td>1,395</td><td>1,306</td><td>1,266</td><td>1,410</td><td>1,441</td></tr><tr><td>Total operating expenses</td><td>700</td><td>800</td><td>681</td><td>730</td><td>718</td><td>719</td><td>742</td><td>753</td></tr><tr><td>Income from operations</td><td>474</td><td>422</td><td>577</td><td>665</td><td>587</td><td>547</td><td>668</td><td>689</td></tr><tr><td>Income before income taxes</td><td>399</td><td>312</td><td>471</td><td>523</td><td>455</td><td>407</td><td>512</td><td>519</td></tr><tr><td>Income tax expense</td><td>(25)</td><td>(48)</td><td>(56)</td><td>(46)</td><td>(57)</td><td>(51)</td><td>(64)</td><td>(65)</td></tr><tr><td>xScale contribution to Net income</td><td>-</td><td>-</td><td>-</td><td>-</td><td>42</td><td>42</td><td>66</td><td>66</td></tr><tr><td>Net income</td><td>374</td><td>264</td><td>415</td><td>477</td><td>440</td><td>398</td><td>514</td><td>520</td></tr><tr><td>Net (income) / loss attributable to non-controlling interests</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net income attributable to common stockholders</td><td>374</td><td>265</td><td>415</td><td>479</td><td>440</td><td>398</td><td>514</td><td>520</td></tr><tr><td>(+) Adjustments</td><td>11</td><td>85</td><td>(4)</td><td>29</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Adjusted Net Income</td><td>385</td><td>350</td><td>411</td><td>508</td><td>440</td><td>398</td><td>514</td><td>520</td></tr><tr><td colspan=\"9\">Earnings per share (EPS)</td></tr><tr><td>EPS (basic)</td><td>3.82</td><td>2.70</td><td>4.22</td><td>4.86</td><td>4.46</td><td>4.04</td><td>5.21</td><td>5.27</td></tr><tr><td>EPS (diluted)</td><td>3.81</td><td>2.69</td><td>4.20</td><td>4.83</td><td>4.43</td><td>4.02</td><td>5.18</td><td>5.24</td></tr><tr><td>Adjusted EPS (diluted)</td><td>3.92</td><td>3.56</td><td>4.16</td><td>5.12</td><td>4.43</td><td>4.02</td><td>5.18</td><td>5.24</td></tr><tr><td>Adjusted FFO (AFFO) per share (basic)</td><td>9.85</td><td>8.93</td><td>10.82</td><td>11.84</td><td>11.09</td><td>10.00</td><td>12.54</td><td>12.32</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                104,
+                126,
+                663,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company filings, Bernstein Analysis and Estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                364,
+                390,
+                376
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ee4778fd7049f83b4a1aa49ad72a64cf5bede892a87523f10830dfc03d7d6e68.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>FY 2025</td><td>FY 2026</td><td>FY 2027</td><td>FY 2028</td><td>FY 2029</td></tr><tr><td>8,739</td><td>9,681</td><td>10,725</td><td>12,014</td><td>13,797</td></tr><tr><td>478</td><td>622</td><td>565</td><td>633</td><td>728</td></tr><tr><td>9,217</td><td>10,303</td><td>11,290</td><td>12,647</td><td>14,525</td></tr><tr><td>4,508</td><td>5,079</td><td>5,466</td><td>6,106</td><td>6,882</td></tr><tr><td>4,709</td><td>5,225</td><td>5,824</td><td>6,541</td><td>7,643</td></tr><tr><td>2,861</td><td>2,848</td><td>3,042</td><td>3,385</td><td>3,888</td></tr><tr><td>1,848</td><td>2,377</td><td>2,782</td><td>3,156</td><td>3,755</td></tr><tr><td>1,508</td><td>1,856</td><td>2,063</td><td>2,174</td><td>2,491</td></tr><tr><td>(160)</td><td>(210)</td><td>(258)</td><td>(272)</td><td>(311)</td></tr><tr><td>-</td><td>83</td><td>263</td><td>345</td><td>452</td></tr><tr><td>1,348</td><td>1,730</td><td>2,069</td><td>2,247</td><td>2,632</td></tr><tr><td>2</td><td>2</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,350</td><td>1,732</td><td>2,069</td><td>2,247</td><td>2,632</td></tr><tr><td>118</td><td>25</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,468</td><td>1,757</td><td>2,069</td><td>2,247</td><td>2,632</td></tr><tr><td>13.79</td><td>17.60</td><td>20.97</td><td>22.78</td><td>26.68</td></tr><tr><td>13.76</td><td>17.54</td><td>20.87</td><td>22.67</td><td>26.55</td></tr><tr><td>14.96</td><td>17.79</td><td>20.87</td><td>22.67</td><td>26.55</td></tr><tr><td>38.42</td><td>43.82</td><td>48.42</td><td>53.94</td><td>61.08</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                678,
+                128,
+                892,
+                347
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                880,
+                941,
+                890,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                50
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                940,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                941,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN TICKER TABLE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                70,
+                313,
+                85
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/142e4f517fff9ba236e811d3f25b5c10abd80907d0699c30d24b12eeaac34ecf.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">29 Jul 2026</td><td rowspan=\"2\">TTMRel.</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td></tr><tr><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>EQIX (Equinix)</td><td>O</td><td>USD</td><td>1,008.02</td><td>1,270.00</td><td>9.4%</td><td>USD</td><td>14.96</td><td>17.79</td><td>20.87</td><td>67.4</td><td>56.7</td><td>48.3</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>1,222.00</td><td></td><td></td><td></td><td>17.88</td><td>21.36</td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,316.15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                99,
+                890,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended Source: Bloomberg, Bernstein estimates and analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                208,
+                616,
+                236
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                890,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                50
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                940,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                941,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "I. REQUIRED DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                98,
+                297,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                125,
+                893,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                232,
+                893,
+                273
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "VALUATION METHODOLOGY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                286,
+                300,
+                300
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix, Inc."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                314,
+                191,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We value EQIX on a forward Price-to-Adjusted Funds From Operations (AFFO) per share multiple. Our $1,270 price target is based on ~25x NTM+1 AFFO per share of $51.19."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                342,
+                893,
+                371
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                383,
+                153,
+                398
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equinix, Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                412,
+                192,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The main downside risks to our price target/Outperform rating on EQIX are 1) Slowdown in enterprise demand for data center capacity, 2) Increased competition in the interconnection space, and 3) Continuing decline in market share of data center supply may elevate pricing pressures"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                439,
+                893,
+                484
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                496,
+                508,
+                511
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EQUITY RATINGS DEFINITIONS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                522,
+                320,
+                537
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein brand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                549,
+                218,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                575,
+                893,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Bernstein brand has three categories of ratings:"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                670,
+                429,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Outperform: Stock will outpace the market index by more than 15 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                696,
+                549,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                724,
+                637,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Underperform: Stock will trail the performance of the market index by more than 15 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                752,
+                658,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                779,
+                893,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                819,
+                893,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Covered (NC) denotes companies that are not under coverage."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                873,
+                517,
+                887
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "DISCLOSURE APPENDIX"
+                    }
+                ]
+            },
+            "bbox": [
+                727,
+                69,
+                893,
+                84
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein brand stock ratings are based on a 12-month time horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                70,
+                532,
+                84
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Autonomous brand – common stocks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                97,
+                359,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments, and the Bloomberg Japan Financials Large & Mid Cap Price Return Index (JPFILM) for Japanese Financials. Ratings are stated relative to the sector (not the market)."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                123,
+                893,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Autonomous brand has three categories of common stock ratings:"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                244,
+                542,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                272,
+                584,
+                286
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                299,
+                604,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                327,
+                694,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                354,
+                893,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                393,
+                893,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                446,
+                782,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Covered (NC) denotes companies that are not under coverage."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                474,
+                519,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Autonomous brand common stock ratings are based on a 12-month time horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                500,
+                607,
+                513
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Autonomous brand – preferred stocks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                526,
+                364,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Autonomous brand has three categories of preferred stock ratings:"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                551,
+                547,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                579,
+                893,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                621,
+                893,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                664,
+                893,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Autonomous preferred stock ratings are based on a 6-month time horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                705,
+                565,
+                720
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AUTONOMOUS CREDIT RESEARCH"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                732,
+                346,
+                746
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                758,
+                893,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                799,
+                893,
+                854
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CREDIT RATINGS DEFINITIONS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                864,
+                320,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Autonomous brand has three categories of credit ratings:"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                893,
+                486,
+                906
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                890,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                893,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                71,
+                893,
+                101
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                114,
+                893,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                156,
+                893,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Autonomous credit ratings are based on a 6-month time horizon."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                198,
+                504,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                224,
+                893,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                263,
+                893,
+                306
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                342,
+                591,
+                357
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dbee75e12fb6722cca015d9f83800e59e568fa7753247d4ce5a25013f7eb42f3.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly."
+                    }
+                ],
+                "html": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                367,
+                890,
+                489
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                568,
+                490,
+                583
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/46d9cfa12b380e6ccd9d202b065d96054ae043e66247b94b8dfa393d224137a1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                124,
+                601,
+                867,
+                796
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CONFLICTS OF INTEREST"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                858,
+                282,
+                872
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SG and/or its affiliates beneficially own 0.5% or more of [the total issued share capital/any class of common equity securities] with a net [long/short] position of: Equinix, Inc.."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                70,
+                893,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Equinix, Inc.."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                123,
+                893,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Equinix, Inc.."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                162,
+                893,
+                191
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Equinix, Inc.."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                203,
+                764,
+                217
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OTHER MATTERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                241,
+                228,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                268,
+                893,
+                295
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1 Bernstein Institutional Services LLC; New York, New York, USA"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                308,
+                514,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+44 Bernstein Autonomous LLP; London UK"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                334,
+                385,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+212 SG Africa Technologies & Services; Casablanca, Morocco"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                359,
+                584,
+                375
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+33 BSG France S.A.; Paris, France"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                386,
+                328,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+34 BSG France S.A.; Madrid, Spain"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                412,
+                331,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+41 Bernstein Autonomous LLP; Geneva, Switzerland"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                439,
+                441,
+                452
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+49 BSG France S.A.; Frankfurt, Germany"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                465,
+                367,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+91 Bernstein (India) Private Limited; Mumbai, India"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                491,
+                495,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                517,
+                643,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+65 Bernstein (Singapore) Private Limited; Singapore"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                544,
+                506,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+81 Bernstein Japan KK; Tokyo, Japan"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                570,
+                413,
+                584
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                597,
+                893,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                705,
+                893,
+                747
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CERTIFICATION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                758,
+                217,
+                771
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                784,
+                893,
+                839
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                104,
+                851,
+                444,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side)"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                878,
+                893,
+                906
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                890,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                940,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                70,
+                658,
+                85
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                102,
+                95,
+                503,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Separate branding is maintained for “Bernstein” and “Autonomous” research products."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                123,
+                638,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                150,
+                895,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                267,
+                893,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                339,
+                893,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                393,
+                893,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                446,
+                893,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                527,
+                893,
+                570
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                580,
+                893,
+                637
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                648,
+                893,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                688,
+                893,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                727,
+                893,
+                770
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                781,
+                895,
+                906
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                454,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                893,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF)."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                70,
+                893,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong."
+                    }
+                ]
+            },
+            "bbox": [
+                101,
+                109,
+                893,
+                194
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000."
+                    }
+                ]
+            },
+            "bbox": [
+                101,
+                204,
+                895,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                325,
+                893,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                378,
+                893,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                419,
+                895,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                527,
+                893,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                622,
+                893,
+                679
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                689,
+                893,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• providing financial product advice;"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                771,
+                341,
+                786
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• dealing in a financial product;"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                799,
+                310,
+                813
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- making a market for a financial product; and"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                825,
+                398,
+                840
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• providing a custodial or depository service."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                854,
+                390,
+                869
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                880,
+                893,
+                924
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                70,
+                893,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401)."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                111,
+                893,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                184,
+                892,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• SCB India does not have any disciplinary history as on the date of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                226,
+                594,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                253,
+                893,
+                284
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• do not have any financial interest in the subject company"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                296,
+                493,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                324,
+                764,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- is not engaged in any investment banking activities for Indian companies, as such;"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                352,
+                647,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                378,
+                779,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                407,
+                893,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• have not received compensation for brokerage services from the subject company in the past twelve months;"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                449,
+                813,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                477,
+                893,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report."
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                520,
+                893,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- do not have any conflict of interest in the subject company as of the date of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                563,
+                674,
+                577
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                590,
+                893,
+                650
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                662,
+                893,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                705,
+                893,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                748,
+                893,
+                777
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing."
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                791,
+                893,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                847,
+                893,
+                904
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                892,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                102,
+                69,
+                767,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                95,
+                893,
+                180
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "LEGAL"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                102,
+                190,
+                155,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                217,
+                893,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                270,
+                893,
+                327
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                338,
+                895,
+                531
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal."
+                    }
+                ]
+            },
+            "bbox": [
+                101,
+                541,
+                895,
+                666
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                676,
+                895,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                799,
+                893,
+                827
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported"
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                839,
+                895,
+                909
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                454,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                893,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "information or in the opinions herein."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                70,
+                334,
+                84
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                95,
+                893,
+                138
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                150,
+                893,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                285,
+                893,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                434,
+                893,
+                503
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                513,
+                893,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands."
+                    }
+                ]
+            },
+            "bbox": [
+                102,
+                595,
+                895,
+                707
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                941,
+                892,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@bernsteinsg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                39,
+                452,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "29 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                823,
+                39,
+                893,
+                50
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "US COMMUNICATIONS INFRASTRUCTURE"
+                    }
+                ]
+            },
+            "bbox": [
+                104,
+                939,
+                267,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BERNSTEIN | SG GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                679,
+                940,
+                861,
+                952
+            ]
+        }
+    ]
+]

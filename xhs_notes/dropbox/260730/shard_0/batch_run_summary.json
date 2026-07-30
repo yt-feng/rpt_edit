@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-BARC-Mercedes~Benz Group （MBGGR.US） Cash generation faces H2 headwinds-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-Air Liquide SA（AI.FP）Air Liquide 1H26~Speed bump， but remain Outperform-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-BARC-Equity Strategy ~ Who Owns What：Positioning risk， but Europe not in a bad spot-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0003-03-BARC-Equity Strategy - Who Owns What-Positioning risk- but Europe not in a bad spot-260729.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-Bernstein-China Consumer：China Consumer Pulse 2Q26： Premium resilience against a persistent weak consumer backdrop-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-Equinix， Inc.（EQIX.US）2Q26： Watt a guide！-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0005-05-Bernstein-Equinix- Inc.-EQIX.US-2Q26- Watt a guide--260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0003-03-BARC-Equity Strategy - Who Owns What-Positioning risk- but Europe not in a bad spot-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ltcemdkk/pdfs/0005-05-Bernstein-Equinix- Inc.-EQIX.US-2Q26- Watt a guide--260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
