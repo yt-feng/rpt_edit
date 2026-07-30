@@ -1,0 +1,80 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_9/0001-46-Morgan-Stanley-China-Autos---Shared-Mobility--Launch-tailwinds-fade-befo",
+  "title": "摩根士丹利：中国汽车与共享出行-新车上市动能消退，等待下一产品周期",
+  "source_title": "0001-46-MS-China Autos - Shared Mobility- Launch tailwinds fade before next product cycle-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-46-MS-China Autos - Shared Mobility- Launch tailwinds fade before next product cycle-260728",
+    "cleaned_source_title": "MS-China Autos -- Mobility- Launch tailwinds fade before next product cycle",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：中国汽车-Mobility",
+    "raw_candidates": [
+      "中国汽车与共享出行-新车上市动能消退，等待下一产品周期",
+      "中国汽车与共享出行-7月周度订单走软，新车催化看汉L与银河E5",
+      "中国汽车与共享出行-小鹏MONA M03与理想L6订单环比正增长"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国汽车与共享出行-新车上市动能消退，等待下一产品周期",
+      "摩根士丹利：中国汽车与共享出行-7月周度订单走软",
+      "摩根士丹利：中国汽车与共享出行",
+      "摩根士丹利：中国汽车-Mobility",
+      "摩根士丹利：基于渠道反馈，7月20-26日当周订单趋势如下"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：中国汽车与共享出行-7月周度订单走软",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国汽车与共享出行",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：中国汽车-Mobility",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：基于渠道反馈，7月20-26日当周订单趋势如下",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：中国汽车与共享出行-新车上市动能消退，等待下一产品周期",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：中国汽车与共享出行-新车上市动能消退，等待下一产品周期"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_59.pdf",
+  "figure_count": 1,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

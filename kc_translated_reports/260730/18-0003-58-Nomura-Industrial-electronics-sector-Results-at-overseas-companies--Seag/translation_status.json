@@ -1,0 +1,90 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_11/0003-58-Nomura-Industrial-electronics-sector-Results-at-overseas-companies--Seag",
+  "title": "野村：工业电子行业-海外公司业绩-希捷科技第四季度业绩",
+  "source_title": "0003-58-NOM-Industrial electronics sector-Results at overseas companies- Seagate Technology-s 26 6 Q4 results-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-NOM-Industrial electronics sector-Results at overseas companies- Seagate Technology-s 26 6 Q4 results-260729",
+    "cleaned_source_title": "NOM-Industrial electronics sector-Results at overseas companies- Seagate Technology-s 26 6 Q4 results",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：Industrialelectronicssec",
+    "raw_candidates": [
+      "工业电子行业-海外公司业绩-希捷科技第四季度业绩",
+      "工业电子行业-希捷科技26/6第四季度销售额36.29亿美元",
+      "工业电子行业-希捷科技第四季度业绩与27/6第一季度指引"
+    ],
+    "cleaned_candidates": [
+      "野村：工业电子行业-海外公司业绩-希捷科技第四季度业绩",
+      "野村：6第四季度销售额36.29亿美元",
+      "野村：6第一季度指引",
+      "野村：Industrialelectronicssec",
+      "野村：这家美国公司第四季度销售额为36.29亿美元（环比增长17%）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：6第四季度销售额36.29亿美元",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：6第一季度指引",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：Industrialelectronicssec",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：这家美国公司第四季度销售额为36.29亿美元（环比增长17%）",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：工业电子行业-海外公司业绩-希捷科技第四季度业绩",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：工业电子行业-海外公司业绩-希捷科技第四季度业绩"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_18.pdf",
+  "figure_count": 0,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

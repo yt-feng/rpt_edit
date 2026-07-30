@@ -1,0 +1,118 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_4/0003-23-Goldman-Sachs-Haidilao-International-Holding--6862.HK--1H26-preview--Exp",
+  "title": "高盛：海底捞国际控股业务与近期数据观察",
+  "source_title": "0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to di",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-23-GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to di",
+    "cleaned_source_title": "GS-Haidilao International Holding -6862.HK- 1H26 preview- Expect slower core business recovery while fast growing new business to di",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：HaidilaoInternationalHolding",
+    "raw_candidates": [
+      "海底捞国际控股1H26预览：核心业务复苏与新业务增长",
+      "海底捞1H26预览：销售额同比增8%净利润增5%",
+      "海底捞1H26预览：翻台率增长约2%门店扩张节奏变化"
+    ],
+    "cleaned_candidates": [
+      "高盛：海底捞国际控股1H26预览，核心业务复苏与新业务增长",
+      "高盛：海底捞1H26预览，销售额同比增8%净利润增5%",
+      "高盛：海底捞1H26预览，翻台率增长约2%门店扩张节奏变化",
+      "高盛：HaidilaoInternationalHolding",
+      "高盛：海底捞预计将于8月下旬发布1H26业绩"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：海底捞1H26预览，销售额同比增8%净利润增5%",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：海底捞1H26预览，翻台率增长约2%门店扩张节奏变化",
+        "reasons": [
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：HaidilaoInternationalHolding",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：海底捞预计将于8月下旬发布1H26业绩",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：海底捞国际控股业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：海底捞国际控股1H26预览，核心业务复苏与新业务增长",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：海底捞国际控股业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_36.pdf",
+  "figure_count": 3,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x3",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "增持->观点偏积极 x1",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

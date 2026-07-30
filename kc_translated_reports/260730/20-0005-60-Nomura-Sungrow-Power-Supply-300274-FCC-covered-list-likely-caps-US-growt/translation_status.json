@@ -1,0 +1,98 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_11/0005-60-Nomura-Sungrow-Power-Supply-300274-FCC-covered-list-likely-caps-US-growt",
+  "title": "野村：阳光电源业务与近期数据观察",
+  "source_title": "0005-60-NOM-Sungrow Power Supply-300274-FCC covered list likely caps US growth-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-60-NOM-Sungrow Power Supply-300274-FCC covered list likely caps US growth-260729",
+    "cleaned_source_title": "NOM-Sungrow Power Supply-300274-FCC covered list likely caps US growth",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：SungrowPowerSupply300274",
+    "raw_candidates": [
+      "阳光电源-FCC受限清单限制美国增长",
+      "阳光电源-FCC受限清单限制美国增长-2026年7月",
+      "阳光电源-FCC受限清单限制美国增长-逆变器认证与产品线"
+    ],
+    "cleaned_candidates": [
+      "野村：阳光电源-FCC受限清单限制美国增长",
+      "野村：阳光电源-FCC受限清单限制美国增长-2026年7月",
+      "野村：阳光电源-FCC受限清单限制美国增长-逆变器认证与产品线",
+      "野村：SungrowPowerSupply300274",
+      "野村：美国联邦通信委员会（FCC）公共安全与国土安全局于2026年7月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：SungrowPowerSupply300274",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：美国联邦通信委员会（FCC）公共安全与国土安全局于2026年7月",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：阳光电源业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：阳光电源-FCC受限清单限制美国增长-2026年7月",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "野村：阳光电源业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_20.pdf",
+  "figure_count": 3,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

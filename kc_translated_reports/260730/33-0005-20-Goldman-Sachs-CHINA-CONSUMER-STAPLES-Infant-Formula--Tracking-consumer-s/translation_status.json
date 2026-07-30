@@ -1,0 +1,88 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_3/0005-20-Goldman-Sachs-CHINA-CONSUMER-STAPLES-Infant-Formula--Tracking-consumer-s",
+  "title": "高盛：中国消费品-婴幼儿配方奶粉，追踪消费者情绪与Cabio更新",
+  "source_title": "0005-20-GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue",
+    "cleaned_source_title": "GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国消费STAPLESInfantFormulaTracking",
+    "raw_candidates": [
+      "中国消费品-婴幼儿配方奶粉：追踪消费者情绪与Cabio更新",
+      "中国消费品-婴幼儿配方奶粉：美素佳儿铅含量事件与Cabio盈利预警",
+      "中国消费品-婴幼儿配方奶粉：消费者情绪追踪与行业动态"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国消费品-婴幼儿配方奶粉，追踪消费者情绪与Cabio更新",
+      "高盛：中国消费品-婴幼儿配方奶粉",
+      "高盛：中国消费品-婴幼儿配方奶粉，消费者情绪追踪与行业动态",
+      "高盛：中国消费STAPLESInfantFormulaTracking",
+      "高盛：Cabio的盈利预警，继1月26日ARA问题后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国消费品-婴幼儿配方奶粉",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：中国消费品-婴幼儿配方奶粉，消费者情绪追踪与行业动态",
+        "reasons": [
+          "anchor_coverage=0.65"
+        ]
+      },
+      {
+        "title": "高盛：中国消费STAPLESInfantFormulaTracking",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：Cabio的盈利预警，继1月26日ARA问题后",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：中国消费品-婴幼儿配方奶粉，追踪消费者情绪与Cabio更新",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：中国消费品-婴幼儿配方奶粉，追踪消费者情绪与Cabio更新"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_33.pdf",
+  "figure_count": 3,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "证券->标的 x1",
+    "风险->不确定性 x3",
+    "公司公司->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

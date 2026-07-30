@@ -1,0 +1,159 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_0/0002-02-Bernstein-Air-Liquide-SA-AI.FP-Air-Liquide-1H26-Speed-bump--but-remain-O",
+  "title": "伯恩斯坦：液化空气集团与AI及近期数据观察",
+  "source_title": "0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform-260729",
+    "cleaned_source_title": "Bernstein-Air Liquide SA-AI.FP-Air Liquide 1H26-Speed bump- but remain Outperform",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "伯恩斯坦：AirLiquideSAAirLiquide1H26",
+    "raw_candidates": [
+      "伯恩斯坦：液化空气集团1H26业绩减速带但AI业务增长预期上调",
+      "伯恩斯坦：液化空气集团1H26积压订单创纪录电子与工业商贩增长",
+      "伯恩斯坦：液化空气集团1H26氦气供应限制影响利润率改善",
+      "液化空气集团1H26业绩-减速带但维持评级",
+      "液化空气集团1H26-积压订单创纪录维持评级",
+      "液化空气集团1H26-电子与工业商贩增长预期上调"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：液化空气集团1H26业绩减速带但AI业务增长预期上调",
+      "伯恩斯坦：液化空气集团1H26积压订单创纪录电子与工业商贩增长",
+      "伯恩斯坦：液化空气集团1H26氦气供应限制影响利润率改善",
+      "伯恩斯坦：液化空气集团1H26业绩-减速带但更新公司观点",
+      "伯恩斯坦：液化空气集团1H26-积压订单创纪录更新公司观点",
+      "伯恩斯坦：液化空气集团1H26-电子与工业商贩增长预期上调",
+      "伯恩斯坦：AirLiquideSAAirLiquide1H26",
+      "伯恩斯坦：AI技术与相关数据观察"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：液化空气集团1H26积压订单创纪录电子与工业商贩增长",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.40"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：液化空气集团1H26氦气供应限制影响利润率改善",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：液化空气集团1H26业绩-减速带但更新公司观点",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：液化空气集团1H26-积压订单创纪录更新公司观点",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：液化空气集团1H26-电子与工业商贩增长预期上调",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.56"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：AirLiquideSAAirLiquide1H26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：AI技术与相关数据观察",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：液化空气集团与AI及近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "伯恩斯坦：AI技术与相关数据观察",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "伯恩斯坦：液化空气集团1H26业绩减速带但AI业务增长预期上调",
+      "伯恩斯坦：液化空气集团1H26积压订单创纪录电子与工业商贩增长",
+      "伯恩斯坦：液化空气集团1H26氦气供应限制影响利润率改善"
+    ],
+    "pre_neutralization_title": "伯恩斯坦：液化空气集团1H26业绩减速带但AI业务增长预期上调",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：液化空气集团与AI及近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 13,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->公司观点更新 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->公司观点更新 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->报告观点 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

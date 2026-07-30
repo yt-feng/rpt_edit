@@ -1,0 +1,122 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_7/0004-39-HSBC-STMicroelectronics--STMPA.FP-Buy--Guidance-wobbles--demand-roars-26",
+  "title": "汇丰：半导体行业数据与主题变化观察",
+  "source_title": "0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728",
+    "cleaned_source_title": "HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars",
+    "institution_name": "汇丰",
+    "required_terms": [],
+    "deterministic_fallback": "汇丰：STMicroelectronics报告观点",
+    "raw_candidates": [
+      "意法半导体：业绩指引波动，需求强劲",
+      "意法半导体：2Q26业绩与3Q26指引，订单出货比近2",
+      "意法半导体：AI与光学需求驱动，分销库存低于目标"
+    ],
+    "cleaned_candidates": [
+      "汇丰：意法半导体，业绩指引波动，需求强劲",
+      "汇丰：意法半导体，2Q26业绩与3Q26指引，订单出货比近2",
+      "汇丰：意法半导体，AI与光学需求驱动，分销库存低于目标",
+      "汇丰：STMicroelectronics报告观点",
+      "汇丰：AI乐观情绪（参见从低谷到加速，2026年6月29日）相比"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "汇丰：意法半导体，2Q26业绩与3Q26指引，订单出货比近2",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "汇丰：意法半导体，AI与光学需求驱动，分销库存低于目标",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "汇丰：STMicroelectronics报告观点",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "汇丰：AI乐观情绪（参见从低谷到加速，2026年6月29日）相比",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "汇丰：半导体行业数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "汇丰：意法半导体，业绩指引波动，需求强劲",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "汇丰：半导体行业数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_52.pdf",
+  "figure_count": 3,
+  "institution_name": "汇丰",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

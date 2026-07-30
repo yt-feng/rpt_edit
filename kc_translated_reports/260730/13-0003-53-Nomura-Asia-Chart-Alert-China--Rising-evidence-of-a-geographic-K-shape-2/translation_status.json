@@ -1,0 +1,83 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_10/0003-53-Nomura-Asia-Chart-Alert-China--Rising-evidence-of-a-geographic-K-shape-2",
+  "title": "野村：研究主题与行业变化观察",
+  "source_title": "0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-53-NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape-260729",
+    "cleaned_source_title": "NOM-Asia Chart Alert-China- Rising evidence of a geographic K-shape",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaChartAlert中国",
+    "raw_candidates": [
+      "亚洲图表警报：中国地理K型分化证据增多",
+      "亚洲图表警报：中国地理K型分化-2026上半年智慧城市GDP增速5.6%",
+      "亚洲图表警报：中国地理K型分化-AI驱动增长集中于七个智慧城市"
+    ],
+    "cleaned_candidates": [
+      "野村：亚洲图表警报，中国地理K型分化证据增多",
+      "野村：亚洲图表警报，中国地理K型分化",
+      "野村：亚洲图表警报，中国地理K型分化-AI驱动增长集中于七个智慧城市",
+      "野村：AsiaChartAlert中国",
+      "野村：尽管2026年上半年全国实际GDP增速从2025年的5.0%节奏"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：AsiaChartAlert中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：尽管2026年上半年全国实际GDP增速从2025年的5.0%节奏",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：亚洲图表警报，中国地理K型分化证据增多",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "野村：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_13.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x3",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

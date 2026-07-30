@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_6/0002-32-Goldman-Sachs-Porsche-AG--P911_p.DE---2Q26-margin-beat-with-strong-under",
+  "title": "高盛：保时捷股份公司业务与季度数据观察",
+  "source_title": "0002-32-GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-32-GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe-260729",
+    "cleaned_source_title": "GS-Porsche AG -P911_p.DE-- 2Q26 margin beat with strong underlying performance- auto cashflow above GSe",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：PorscheAGP911",
+    "raw_candidates": [
+      "保时捷股份公司2Q26利润率超预期-基础业务强劲",
+      "保时捷股份公司2Q26利润率8.5%-汽车自由现金流高于预期",
+      "保时捷股份公司2Q26业绩-911车型组合推动基础业务走强"
+    ],
+    "cleaned_candidates": [
+      "高盛：保时捷股份公司2Q26利润率超预期-基础业务强劲",
+      "高盛：保时捷股份公司2Q26利润率8.5%-汽车自由现金流高于预期",
+      "高盛：保时捷股份公司2Q26业绩-911车型组合推动基础业务走强",
+      "高盛：PorscheAGP911",
+      "高盛：保时捷股份公司今日（7月29日）公布了2Q26业绩"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：保时捷股份公司2Q26利润率8.5%-汽车自由现金流高于预期",
+        "reasons": [
+          "anchor_coverage=0.64",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：保时捷股份公司2Q26业绩-911车型组合推动基础业务走强",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      },
+      {
+        "title": "高盛：PorscheAGP911",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：保时捷股份公司今日（7月29日）公布了2Q26业绩",
+        "reasons": [
+          "anchor_coverage=0.41",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：保时捷股份公司业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：保时捷股份公司2Q26利润率超预期-基础业务强劲",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：保时捷股份公司业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_45.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

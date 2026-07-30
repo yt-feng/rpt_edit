@@ -1,0 +1,124 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_12/0001-61-UBS-SK-Hynix-Significant-de-rating-unwarranted---reiterate-Buy-260729",
+  "title": "瑞银：研究主题与行业变化观察",
+  "source_title": "0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy-260729",
+    "cleaned_source_title": "UBS-SK Hynix Significant de-rating unwarranted - reiterate Buy",
+    "institution_name": "瑞银",
+    "required_terms": [],
+    "deterministic_fallback": "瑞银：SKHynixSignificantderati",
+    "raw_candidates": [
+      "SK海力士：大幅估值下调不合理",
+      "SK海力士：估值下调后基本面仍稳固",
+      "SK海力士：AI存储需求驱动位增长至2027年"
+    ],
+    "cleaned_candidates": [
+      "瑞银：SK海力士，大幅估值下调不合理",
+      "瑞银：SK海力士，估值下调后基本面仍稳固",
+      "瑞银：SK海力士，AI存储需求驱动位增长至2027年",
+      "瑞银：SKHynixSignificantderati",
+      "瑞银：SKHynix报价自6月22日高点已下跌52%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "瑞银：SK海力士，估值下调后基本面仍稳固",
+        "reasons": [
+          "anchor_coverage=0.54"
+        ]
+      },
+      {
+        "title": "瑞银：SK海力士，AI存储需求驱动位增长至2027年",
+        "reasons": [
+          "anchor_coverage=0.31",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：SKHynixSignificantderati",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "瑞银：SKHynix报价自6月22日高点已下跌52%",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "瑞银：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "瑞银：SK海力士，大幅估值下调不合理",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "瑞银：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 1,
+  "institution_name": "瑞银",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "股票|个股->公司 x1",
+    "股价->报价 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "评级\\s*(?:上调|下调|维持|重申|恢复)?\\s*(?:至|为)?\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)->公司观点更新 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

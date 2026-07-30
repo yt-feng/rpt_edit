@@ -1,0 +1,89 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_11/0001-56-Nomura-China-consumer-Read-across-from-Herm-s--2Q26-results-260729",
+  "title": "野村：研究主题与行业变化观察",
+  "source_title": "0001-56-NOM-China consumer-Read-across from Hermès- 2Q26 results-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-NOM-China consumer-Read-across from Hermès- 2Q26 results-260729",
+    "cleaned_source_title": "NOM-China consumer-Read-across from Hermès- 2Q26 results",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：中国消费ReadacrossfromHermès",
+    "raw_candidates": [
+      "中国消费-爱马仕2026年第二季度业绩参考",
+      "中国消费-爱马仕2026年第二季度收入增长6.7%",
+      "中国消费-爱马仕亚太地区收入增速2.5%"
+    ],
+    "cleaned_candidates": [
+      "野村：中国消费-爱马仕2026年第二季度业绩参考",
+      "野村：中国消费-爱马仕2026年第二季度收入增长6.7%",
+      "野村：中国消费-爱马仕亚太地区收入增速2.5%",
+      "野村：中国消费ReadacrossfromHermès",
+      "野村：爱马仕2026年第二季度在亚太（除日本）地区收入同比增长2.5%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：中国消费-爱马仕亚太地区收入增速2.5%",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：中国消费ReadacrossfromHermès",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.16",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：爱马仕2026年第二季度在亚太（除日本）地区收入同比增长2.5%",
+        "reasons": [
+          "anchor_coverage=0.58",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "6.7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：中国消费-爱马仕2026年第二季度收入增长6.7%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "野村：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_16.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "宏观环境环境->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

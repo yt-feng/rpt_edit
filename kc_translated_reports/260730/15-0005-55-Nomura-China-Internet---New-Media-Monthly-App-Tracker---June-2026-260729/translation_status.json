@@ -1,0 +1,118 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_10/0005-55-Nomura-China-Internet---New-Media-Monthly-App-Tracker---June-2026-260729",
+  "title": "野村：中国互联网与新媒体月度App追踪-2026年6月",
+  "source_title": "0005-55-NOM-China Internet - New Media-Monthly App Tracker - June 2026-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-NOM-China Internet - New Media-Monthly App Tracker - June 2026-260729",
+    "cleaned_source_title": "NOM-China Internet - New Media-Monthly App Tracker - June 2026",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：中国InternetNewMediaMonthl",
+    "raw_candidates": [
+      "中国互联网与新媒体月度App追踪-2026年6月",
+      "中国互联网与新媒体月度App追踪-6月MAS同比增1.2%",
+      "中国互联网与新媒体月度App追踪-聚焦AI智能体与跨境电商"
+    ],
+    "cleaned_candidates": [
+      "野村：中国互联网与新媒体月度App追踪-2026年6月",
+      "野村：中国互联网与新媒体月度App追踪-6月MAS同比增1.2%",
+      "野村：中国互联网与新媒体月度App追踪-聚焦AI智能体与跨境电商",
+      "野村：中国InternetNewMediaMonthl",
+      "野村：月度App追踪–2026年6月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：中国互联网与新媒体月度App追踪-6月MAS同比增1.2%",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：中国互联网与新媒体月度App追踪-聚焦AI智能体与跨境电商",
+        "reasons": [
+          "anchor_coverage=0.68",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：中国InternetNewMediaMonthl",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：月度App追踪–2026年6月",
+        "reasons": [
+          "anchor_coverage=0.59"
+        ]
+      }
+    ],
+    "selected_title": "野村：中国互联网与新媒体月度App追踪-2026年6月",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：中国互联网与新媒体月度App追踪-2026年6月"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 28,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

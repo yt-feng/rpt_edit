@@ -1,0 +1,85 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_4/0005-25-Goldman-Sachs-Japan-Automobiles-Ford-Earnings-Implications-Resilient-US-",
+  "title": "高盛：ESS与电池储能技术应用观察",
+  "source_title": "0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-25-GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand-260729",
+    "cleaned_source_title": "GS-Japan Automobiles-Ford Earnings Implications-Resilient US pricing and robust ESS demand",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：日本AutomobilesFordEarning",
+    "raw_candidates": [
+      "日本汽车-福特财报启示-美国定价韧性及ESS需求强劲",
+      "日本汽车-福特财报启示-美国定价韧性及ESS需求强劲-福特上调全年EBIT指引至100-110亿美元",
+      "日本汽车-福特财报启示-美国定价韧性及ESS需求强劲-本田美国ESS业务关注度提升"
+    ],
+    "cleaned_candidates": [
+      "高盛：日本汽车-福特财报启示-美国定价韧性及ESS需求强劲",
+      "高盛：日本AutomobilesFordEarning",
+      "高盛：福特于7月29日（日本时间）公布的第二季度财报中"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：日本AutomobilesFordEarning",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.09",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：福特于7月29日（日本时间）公布的第二季度财报中",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：ESS与电池储能技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：日本汽车-福特财报启示-美国定价韧性及ESS需求强劲",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：ESS与电池储能技术应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_38.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x3",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_8/0001-41-J.P.-Morgan-GSK-PLC-GSK.L-Core-EBIT-margin-target-implies-c.-1--upside-t",
+  "title": "摩根大通：GSK核心营业业务与近期数据观察",
+  "source_title": "0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- th",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-41-JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- th",
+    "cleaned_source_title": "JPM-GSK PLC-GSK.L-Core EBIT margin target implies c. 1- upside to 2030 Consensus- pipeline opportunities highlighted encouraging- th",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：GSKPLCCoreEBITmarginta",
+    "raw_candidates": [
+      "GSK核心营业利润率目标与2030年共识预期",
+      "GSK核心营业利润率目标与2030年共识预期1%上行空间",
+      "GSK核心营业利润率目标与管线数据读出时间"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：GSK核心营业利润率目标与2030年共识预期",
+      "摩根大通：GSK核心营业利润率目标与2030年共识预期1%上行空间",
+      "摩根大通：GSK核心营业利润率目标与管线数据读出时间",
+      "摩根大通：GSKPLCCoreEBITmarginta",
+      "摩根大通：核心营业利润率目标暗示2030年共识预期存在约1%的上行空间"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：GSK核心营业利润率目标与管线数据读出时间",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "摩根大通：GSKPLCCoreEBITmarginta",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：GSK核心营业业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：GSK核心营业利润率目标与2030年共识预期1%上行空间",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：GSK核心营业业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_54.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

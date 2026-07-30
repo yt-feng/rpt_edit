@@ -1,0 +1,116 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_0/0004-04-Bernstein-China-Consumer-China-Consumer-Pulse-2Q26--Premium-resilience-a",
+  "title": "伯恩斯坦：研究主题与行业变化观察",
+  "source_title": "0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-04-Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop-260730",
+    "cleaned_source_title": "Bernstein-China Consumer-China Consumer Pulse 2Q26- Premium resilience against a persistent weak consumer backdrop",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：中国消费中国消费Pulse2Q26",
+    "raw_candidates": [
+      "中国消费脉搏2026年第二季度-高端市场韧性",
+      "中国消费脉搏2026年第二季度-高端市场韧性及GDP与零售数据",
+      "中国消费脉搏2026年第二季度-高端市场韧性及消费板块分析"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：中国消费脉搏2026年第二季度-高端市场韧性",
+      "伯恩斯坦：中国消费脉搏2026年第二季度",
+      "伯恩斯坦：中国消费脉搏2026年第二季度-高端市场韧性及消费板块分析",
+      "伯恩斯坦：中国消费中国消费Pulse2Q26",
+      "伯恩斯坦：第二季度GDP增速从第一季度的5.0%节奏变化至同比4.3%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：中国消费脉搏2026年第二季度",
+        "reasons": [
+          "anchor_coverage=0.70",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：中国消费中国消费Pulse2Q26",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：第二季度GDP增速从第一季度的5.0%节奏变化至同比4.3%",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "伯恩斯坦：中国消费脉搏2026年第二季度-高端市场韧性",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 28,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "通缩->价格变化 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "下行|放缓->节奏变化 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x3",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3"
+  ]
+}

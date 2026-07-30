@@ -1,0 +1,165 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_9/0005-50-Morgan-Stanley-Meta-Platforms-Inc---North-America-Core-Strong-Now--More-",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0005-50-MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon--260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-50-MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon--260730",
+    "cleaned_source_title": "MS-Meta Platforms Inc - North America Core Strong Now- More Call Options -Soon",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：MetaPlatformsIncNorth",
+    "raw_candidates": [
+      "摩根士丹利：Meta核心社交平台用户参与度持续扩大",
+      "摩根士丹利：Meta第三季度营收指引上限640亿美元",
+      "摩根士丹利：Meta新产品看涨期权或为28财年每股收益增9美元",
+      "Meta Platforms北美核心业务强劲与看涨期权展望",
+      "Meta Platforms：26年三季度营收指引上限640亿美元",
+      "Meta Platforms核心社交平台与新产品看涨期权分析"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：Meta核心社交平台用户参与度持续扩大",
+      "摩根士丹利：Meta第三季度营收指引上限640亿美元",
+      "摩根士丹利：Meta新产品看涨期权或为28财年每股收益增9美元",
+      "摩根士丹利：MetaPlatforms北美核心业务强劲与看涨期权展望",
+      "摩根士丹利：MetaPlatforms",
+      "摩根士丹利：MetaPlatforms核心社交平台与新产品看涨期权分析",
+      "摩根士丹利：MetaPlatformsIncNorth",
+      "摩根士丹利：图表1，我们认为4个可能的上涨节点可为我们的28财年"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：Meta第三季度营收指引上限640亿美元",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：Meta新产品看涨期权或为28财年每股收益增9美元",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：MetaPlatforms北美核心业务强劲与看涨期权展望",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：MetaPlatforms",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：MetaPlatforms核心社交平台与新产品看涨期权分析",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.44"
+        ]
+      },
+      {
+        "title": "摩根士丹利：MetaPlatformsIncNorth",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：图表1，我们认为4个可能的上涨节点可为我们的28财年",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根士丹利：图表1，我们认为4个可能的上涨节点可为我们的28财年",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "摩根士丹利：Meta核心社交平台用户参与度持续扩大",
+      "摩根士丹利：Meta第三季度营收指引上限640亿美元",
+      "摩根士丹利：Meta新产品看涨期权或为28财年每股收益增9美元"
+    ],
+    "pre_neutralization_title": "摩根士丹利：Meta核心社交平台用户参与度持续扩大",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_63.pdf",
+  "figure_count": 4,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

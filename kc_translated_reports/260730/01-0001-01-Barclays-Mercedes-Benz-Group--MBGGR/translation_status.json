@@ -1,0 +1,120 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_0/0001-01-Barclays-Mercedes-Benz-Group--MBGGR.US--Cash-generation-faces-H2-headwin",
+  "title": "巴克莱：梅赛德斯-奔驰集团，下半年现金流面临逆风",
+  "source_title": "0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-01-BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds-260729",
+    "cleaned_source_title": "BARC-Mercedes-Benz Group -MBGGR.US- Cash generation faces H2 headwinds",
+    "institution_name": "巴克莱",
+    "required_terms": [],
+    "deterministic_fallback": "巴克莱：MercedesBenzGroup",
+    "raw_candidates": [
+      "梅赛德斯-奔驰集团：下半年现金流面临逆风",
+      "梅赛德斯-奔驰集团：26财年第二季度营收下降3%",
+      "梅赛德斯-奔驰集团：中国市场疲软影响现金流"
+    ],
+    "cleaned_candidates": [
+      "巴克莱：梅赛德斯-奔驰集团，下半年现金流面临逆风",
+      "巴克莱：梅赛德斯-奔驰集团，26财年第二季度营收下降3%",
+      "巴克莱：梅赛德斯-奔驰集团，中国市场疲软影响现金流",
+      "巴克莱：MercedesBenzGroup",
+      "巴克莱：集团营收同比下降3%至321亿欧元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "巴克莱：梅赛德斯-奔驰集团，26财年第二季度营收下降3%",
+        "reasons": [
+          "anchor_coverage=0.41",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "巴克莱：梅赛德斯-奔驰集团，中国市场疲软影响现金流",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "巴克莱：MercedesBenzGroup",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "巴克莱：集团营收同比下降3%至321亿欧元",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "巴克莱：梅赛德斯-奔驰集团，下半年现金流面临逆风",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "巴克莱：梅赛德斯-奔驰集团，下半年现金流面临逆风"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 1,
+  "institution_name": "巴克莱",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "减持->观点偏谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "股票|个股->公司 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "金融->资金 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "风险->不确定性 x2",
+    "负面->谨慎 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1"
+  ]
+}

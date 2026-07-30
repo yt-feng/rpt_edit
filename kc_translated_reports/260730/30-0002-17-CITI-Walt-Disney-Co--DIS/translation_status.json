@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_3/0002-17-CITI-Walt-Disney-Co--DIS.US--Potential-Risk-to-FY26-Guide-260728",
+  "title": "花旗：华特迪士尼公司业务与近期数据观察",
+  "source_title": "0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728",
+    "cleaned_source_title": "CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：WaltDisneyCo",
+    "raw_candidates": [
+      "华特迪士尼公司：FY26指引潜在风险",
+      "华特迪士尼公司：FY26指引不确定性及3Q26数据",
+      "华特迪士尼公司：FY26指引与体验业务入园人数趋势"
+    ],
+    "cleaned_candidates": [
+      "花旗：华特迪士尼公司，FY26指引潜在风险",
+      "花旗：华特迪士尼公司，FY26指引不确定性及3Q26数据",
+      "花旗：华特迪士尼公司，FY26指引与体验业务入园人数趋势",
+      "花旗：WaltDisneyCo",
+      "花旗：对于4Q26，我们预计息税前利润为51.3亿美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：WaltDisneyCo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：对于4Q26，我们预计息税前利润为51.3亿美元",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：华特迪士尼公司业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "花旗：华特迪士尼公司，FY26指引潜在风险",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "花旗：华特迪士尼公司业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_30.pdf",
+  "figure_count": 24,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "买入->观点偏积极 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1"
+  ]
+}

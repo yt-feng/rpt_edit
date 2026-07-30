@@ -1,0 +1,114 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260730/shard_6/0003-33-Goldman-Sachs-Rio-Tinto-Ltd.--RIO.AX---1H26-result--Simplification-strat",
+  "title": "高盛：力拓集团，2026年上半年业绩与简化战略推进",
+  "source_title": "0003-33-GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-33-GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth",
+    "cleaned_source_title": "GS-Rio Tinto Ltd. -RIO.AX-- 1H26 result- Simplification strategy accelerating- upgrade to Buy on valuation - compelling Cu Eq growth",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：RioTintoLtd.",
+    "raw_candidates": [
+      "力拓集团：2026年上半年业绩与简化战略推进",
+      "力拓集团：2026年上半年EBITDA与净利润超预期",
+      "力拓集团：铜当量增长与成本削减目标上调"
+    ],
+    "cleaned_candidates": [
+      "高盛：力拓集团，2026年上半年业绩与简化战略推进",
+      "高盛：力拓集团，2026年上半年EBITDA与净利润超预期",
+      "高盛：力拓集团，铜当量增长与成本削减目标上调",
+      "高盛：RioTintoLtd.",
+      "高盛：盈利超预期主要得益于较低的基础税率约25%（报告预期30%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：力拓集团，2026年上半年EBITDA与净利润超预期",
+        "reasons": [
+          "anchor_coverage=0.55"
+        ]
+      },
+      {
+        "title": "高盛：力拓集团，铜当量增长与成本削减目标上调",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：RioTintoLtd.",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：盈利超预期主要得益于较低的基础税率约25%（报告预期30%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：力拓集团，2026年上半年业绩与简化战略推进",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：力拓集团，2026年上半年业绩与简化战略推进"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_46.pdf",
+  "figure_count": 4,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资组合->组合观察 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
