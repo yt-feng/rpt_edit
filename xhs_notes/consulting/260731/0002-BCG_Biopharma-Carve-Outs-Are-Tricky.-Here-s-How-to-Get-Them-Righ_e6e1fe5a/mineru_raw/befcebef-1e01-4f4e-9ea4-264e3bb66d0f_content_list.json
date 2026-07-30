@@ -1,0 +1,803 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/8a2edcf7b8727806196ea5d9b670fa152950e18c64d0784911b4919e8e69e59b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BIOPHARMA",
+        "bbox": [
+            52,
+            464,
+            144,
+            480
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Biopharma Carve-Outs Are Tricky. Here's How to Get Them Right.",
+        "text_level": 1,
+        "bbox": [
+            42,
+            510,
+            799,
+            661
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Hob Brooks, Ben Aylor, Megan DeFauw, Chrissy O'Brien, and André Kronimus",
+        "bbox": [
+            40,
+            689,
+            713,
+            708
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE FEBRUARY 28, 2022",
+        "bbox": [
+            40,
+            733,
+            284,
+            749
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "“Through carve-outs, companies can create value, streamline portfolios, and reduce complexity. But the ultimate success of a deal hinges on focused, proactive execution.",
+        "text_level": 2,
+        "bbox": [
+            43,
+            136,
+            587,
+            217
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "As the health care environment evolves at an accelerating rate, biopharma companies increasingly respond through carve-outs. By reshaping their portfolios, firms can focus on fast-growing business units and unlock value from assets that add unnecessary complexity or might perform better with a different owner. Yet these transactions won’t achieve their full potential unless companies take the right approach to deal execution. Carve-outs are more challenging in biopharma than in other industries, leading to greater value creation for businesses that execute deals well—and greater risks of destroying value for those that don’t.",
+        "bbox": [
+            40,
+            287,
+            932,
+            428
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "From our experience helping biopharma leadership teams execute large-scale carve-outs, we’ve learned that companies can proactively manage the complexity of these deals by keeping a laser focus on strategy from the outset and following a few clear supporting principles. In doing so, biopharma players can avoid unexpected one-time costs and ongoing entanglements—getting to the finish line faster. This is a more deliberate and thoughtful approach but yields superior value in the long run.",
+        "bbox": [
+            40,
+            441,
+            942,
+            561
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Deal Execution Is Where Value Is Gained—or Lost",
+        "text_level": 2,
+        "bbox": [
+            43,
+            631,
+            826,
+            708
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Across industries, carve-outs are on the rise. From July 2020 through June 2021, the quarterly average deal value was \\$309 billion, 25% higher than the five-year average (\\$247 billion per quarter). There is a clear logic behind this trend: carve-outs create value. From 2003 through mid-2021, returns for the Bloomberg Spin-Off Index more than doubled those of the S&P 500. Yet performance varies widely between the winners and losers. Only about 50% of deals create value in the medium term, and poor performers can lose significant value, producing total shareholder return that’s more than 100 percentage points below the leaders. (See Exhibit 1.)",
+        "bbox": [
+            40,
+            738,
+            934,
+            877
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1 - Carve-Outs Offer Significant Value, but Performance Varies Widely",
+        "text_level": 2,
+        "bbox": [
+            48,
+            71,
+            673,
+            107
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9a7d652c4e563f7fd3189b9d36287bd27a91366d398671eb7858f3a996d46ae8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; Refinitiv Datastream; BCG analysis."
+        ],
+        "bbox": [
+            55,
+            126,
+            331,
+            313
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/66ec3f863b37928fd11774575d230ae6e0299a26349753114b92ec71890e3823.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: The Bloomberg Spin-Off Index tracks US spinoffs for the first three years of their independent operation. For the TSR chart, N = 195 spinoffs completed from 2010 through 2020. TSR = total shareholder return; p.p. = percentage points."
+        ],
+        "bbox": [
+            348,
+            127,
+            712,
+            319
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Often, the differentiating factor is deal execution. No matter how strategically sound a carve-out may seem on paper, if it is not executed in a thoughtful, deliberate way—considering and planning for all contingencies—it will likely fall short of expectations.",
+        "bbox": [
+            40,
+            404,
+            947,
+            464
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The carve-out trend in biopharma is just as strong as it is in other industries. Activity in 2020 was artificially low because of the pandemic, but 2019 was an all-time high, with \\$44 billion in deal value, including four carve-outs of more than \\$5 billion. (See Exhibit 2.) All signs suggest that divestitures will resume as the business environment slowly returns to normal. Strong valuations, the continued impacts from loss of exclusivity, and pricing pressures are together spurring an increase in carve-outs, as biopharma companies reshape their portfolios to better meet the needs of the market and create value for shareholders.",
+        "bbox": [
+            40,
+            478,
+            944,
+            618
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2 - Biopharma Divestitures Reached an All-Time High in 2019",
+        "text_level": 2,
+        "bbox": [
+            48,
+            656,
+            671,
+            675
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/651b153d2c4e39b43622fcac6f2772d9ea1dfb9fd9021429539bdaa4a148d882.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; company reports; BCG analysis.",
+            "Note: Includes both spinoffs and corporate divestitures; deals with unknown values not counted; numbers rounded."
+        ],
+        "bbox": [
+            111,
+            695,
+            681,
+            884
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Why Biopharma Deals Are More Complex",
+        "text_level": 1,
+        "bbox": [
+            42,
+            67,
+            813,
+            147
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The challenge is that executing carve-outs in biopharma is not easy, for several reasons.",
+        "bbox": [
+            40,
+            173,
+            851,
+            193
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Global Footprints with Local Operations. Most biopharma companies are multinational firms, yet they require highly localized operations because of the complex licensing required to import, distribute, and sell pharmaceuticals in different markets around the world. Any carve-out strategy must first define a local commercial strategy for each region (aligned to the overall global strategy) and then disentangle the local operations in every impacted market. This can result in dozens of local workstreams to separate the businesses.",
+        "bbox": [
+            40,
+            208,
+            951,
+            328
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Complex and Ever-Changing Regulations. Health care faces far stricter regulatory oversight than many other industries, and most biopharma carve-outs trigger thousands of regulatory implications, from manufacturing-site name changes to marketing-authorization transfers, many of which have potential supply implications. For a business being sold off, every product requires dozens—if not hundreds—of changes to marketing authorizations and artwork in each market where the products are sold. Executing these modifications while maintaining continuous supply is incredibly challenging and often takes several years to complete. During this time, the parent company and carve-out business remain entangled and rely upon one another’s compliance resources.",
+        "bbox": [
+            40,
+            341,
+            956,
+            519
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Integrated Supply Chains. Most multinational biopharma firms are exceedingly efficient in their operations, through tightly integrated global supply chains. Products for the carve-out business will likely be commingled with the parent company's products across the supply chain, including manufacturing sites, distribution centers, and third-party suppliers or contract manufacturing organizations (CMOs). The carve-out process needs to separate those production streams and consider the tax, legal, and regulatory implications of each decision.",
+        "bbox": [
+            40,
+            533,
+            942,
+            653
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Combined IT Systems. Like manufacturing processes, biopharma IT systems are validated and audited by regulators around the world. Separating the systems and data that the carve-out will need to operate—and ensuring that each system is not only operational but approved by all relevant health authorities—takes time and will almost certainly require transitional service agreements (TSAs) after the deal closes, to ensure business continuity.",
+        "bbox": [
+            40,
+            665,
+            922,
+            766
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Patient-Critical Products. Biopharma companies sell medically necessary products that carry life-and-death implications for patients. Unlike in other industries—where production errors or out-of-stock items may be a minor annoyance for customers—business continuity is mandatory in health care.",
+        "bbox": [
+            40,
+            781,
+            954,
+            862
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Key Areas to Get Right During Execution",
+        "text_level": 1,
+        "bbox": [
+            45,
+            67,
+            760,
+            143
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Mitigating the complexities requires significant forethought and planning. In our work helping biopharma companies execute large and successful carve-outs, we have identified five core areas for management teams to prioritize during the execution phase (corresponding to the five challenges discussed in the previous section).",
+        "bbox": [
+            40,
+            173,
+            937,
+            254
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Mitigating the complexities of biopharma carve-outs requires significant forethought and planning.",
+        "bbox": [
+            43,
+            300,
+            582,
+            344
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Structure governance to address global and local considerations. It’s essential to set up an agile governance model—a global, centralized workstream to oversee all local separation activities and coordinate the work of lawyers and other advisors. In this way, companies can ensure that separation activities are conducted consistently around the world.",
+        "bbox": [
+            40,
+            414,
+            947,
+            495
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Build a program to address regulatory and supply implications. At an early stage of the program, management teams need to assess the regulatory consequences of a carve-out; doing so can dramatically reduce the timeline as well as the costs incurred from inventory buildups and write-offs. This workstream is highly technical, inherently cross-functional, and very dynamic given that the regulatory environment and supply requirements evolve over the course of the divestiture process.",
+        "bbox": [
+            40,
+            508,
+            954,
+            627
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Develop a clear upfront strategy to disentangle supply chains. Decisions made early in the program about the acceptable level of supply chain entanglement at close can have a material impact on the timeline, tax implications, and overall cost of the carve-out process. Carefully designing long-term supply agreements between the two entities can mitigate some—though not all—challenges of commingled supply chains.",
+        "bbox": [
+            40,
+            642,
+            942,
+            743
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Engage the business early in separating IT systems. A robust and strategic inventory of IT systems—and the options for dividing them—is essential at the outset of a carve-out program. This needs to be a collaboration between the IT experts and business owners for all key systems. For example, some carve-out programs entail developing systems for highly complex, critical technology. That approach improves information flow and data security once the parent company and divested business begin to operate independently and provides additional time to stand up the long-term IT solutions for the unit being sold or spun off.",
+        "bbox": [
+            40,
+            756,
+            944,
+            896
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Prioritize the continuity of supply for medically necessary products. Because biopharma products are so critical to patients, carve-out programs need to factor in all potential effects on supply. Companies must coordinate cross-functional governance—including regulatory, supply chain, and commercial considerations—to ensure that the project plans will enable continuous supply throughout the carve-out timeline. Activities and workstreams related to separating the business need to be isolated from the activities and workstreams required to run the business—though any separation activity with potential supply implications must be clearly identified and flagged to the business owner well in advance.",
+        "bbox": [
+            40,
+            67,
+            922,
+            225
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Carve-outs are a highly attractive means for biopharma companies to create value, streamline portfolios, and reduce complexity. But merely deciding to conduct a deal is not enough; the ultimate success of a deal hinges on its execution. By understanding the challenges in advance and thinking through the potential ramifications of key decisions, management teams can make sure that they get to the close on time and with a clear plan to capture all possible value.",
+        "bbox": [
+            40,
+            275,
+            932,
+            376
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            40,
+            103,
+            235,
+            142
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/21671a928e85df2d0128bcb91034efa3151c075655408c78def5a3bc64adbba3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            185,
+            220,
+            293
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f13d06ffd36d764a60b5814126decc3030b01bbc7bea397c5dc657069b97cec.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            338,
+            218,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/59cdd37fcfb15bc084fbd1843655f19130b99e0090ecb80c8a8177735aeb1907.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Hob Brooks",
+            "Alumnus"
+        ],
+        "content": "",
+        "bbox": [
+            72,
+            492,
+            213,
+            599
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/2eb099f3449e2665f67d99f61fec82c7af706d4933db327aa2f8a398dd38a09d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Ben Aylor",
+            "Alumnus",
+            "Megan DeFauw"
+        ],
+        "content": "",
+        "bbox": [
+            530,
+            186,
+            683,
+            294
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner Dallas",
+        "bbox": [
+            242,
+            380,
+            444,
+            410
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/e50e50f8d6b7dbefaeda1a2b7d8df328c922223af6450505750032c3f04d97f4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            414,
+            274,
+            432
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "André Kronimus",
+        "text_level": 2,
+        "bbox": [
+            242,
+            495,
+            427,
+            518
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nFrankfurt",
+        "bbox": [
+            242,
+            527,
+            436,
+            570
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/30e477d5c9f40fd71b9acfa6fe493aaa86cee6e52b31b18501997a0b7f582ec2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            574,
+            274,
+            590
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/ada7aa7f16e9df66e3ab88fcf564afc794b96adbe46940960f8bf2ccdfc4e204.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            530,
+            340,
+            681,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Chrissy O'Brien",
+        "text_level": 2,
+        "bbox": [
+            705,
+            341,
+            882,
+            365
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/ef92af334b1cc6c9805a079f3e77097c84493b72dc373c1a3bb685ec426db40a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Managing Director & Senior Partner\nBoston"
+        ],
+        "content": "",
+        "bbox": [
+            708,
+            420,
+            735,
+            437
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            102,
+            430,
+            120
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders—empowering organizations to grow, build sustainable competitive advantage, and drive positive societal impact.",
+        "bbox": [
+            40,
+            137,
+            925,
+            237
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, fueled by the goal of helping our clients thrive and enabling them to make the world a better place.",
+        "bbox": [
+            40,
+            250,
+            951,
+            351
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "© Boston Consulting Group 2025. All rights reserved.",
+        "text_level": 2,
+        "bbox": [
+            42,
+            363,
+            528,
+            384
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on Facebook and X (formerly Twitter).",
+        "bbox": [
+            40,
+            399,
+            946,
+            458
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2025 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    }
+]

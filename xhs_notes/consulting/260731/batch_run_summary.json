@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_AI-First-Field-Service-Operations_cdbadc38.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0001-BCG_AI-First-Field-Service-Operations_cdbadc38.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0003-BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0004-BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

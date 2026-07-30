@@ -1,0 +1,523 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0001-BCG_AI-First-Field-Service-Operations_cdbadc38.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI正把现场服务变成",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_AI-First-Field-Service-Operations_cdbadc38.pdf",
+      "cleaned_source_title": "0001-BCG_AI-First-Field-Service-Operations_cdbadc38",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：0001BCGAIFirstFieldSe",
+      "raw_candidates": [
+        "波士顿咨询：AI优先现场服务运营",
+        "波士顿咨询：AI现场服务运营-2026年技师短缺与24亿美元损失",
+        "波士顿咨询：AI现场服务运营-三重技术变革与实施路径"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：AI优先现场服务运营",
+        "波士顿咨询：AI现场服务运营-2026年技师短缺与24亿美元损失",
+        "波士顿咨询：AI现场服务运营-三重技术变革与实施路径",
+        "波士顿咨询：0001BCGAIFirstFieldSe",
+        "波士顿咨询：应用型AI和AI智能体能够在这一领域实现15%以上的收入增"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0001BCGAIFirstFieldSe",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：应用型AI和AI智能体能够在这一领域实现15%以上的收入增",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026",
+          "24"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：AI现场服务运营-2026年技师短缺与24亿美元损失",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "生物医药分拆交易，怎",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：生物制药业务剥离的执行复杂性",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+      "cleaned_source_title": "0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0002BCGBiopharmaCarve",
+      "raw_candidates": [
+        "波士顿咨询：生物制药业务剥离的执行复杂性",
+        "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+        "波士顿咨询：生物制药剥离的五重执行挑战与优先事项"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：生物制药业务剥离的执行复杂性",
+        "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+        "波士顿咨询：生物制药剥离的五重执行挑战与优先事项",
+        "波士顿咨询：0002BCGBiopharmaCarve",
+        "波士顿咨询：从2020年7月到2021年6月"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "波士顿咨询：生物制药剥离的五重执行挑战与优先事项",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0002BCGBiopharmaCarve",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：从2020年7月到2021年6月",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：生物制药业务剥离的执行复杂性",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：生物制药业务剥离的执行复杂性"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0003-BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "为什么大公司都在悄悄",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融->资金 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "投资组合->组合观察 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：最大化价值-选择正确退出路径",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb.pdf",
+      "cleaned_source_title": "0003-BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0003BCGMaximizingValu",
+      "raw_candidates": [
+        "波士顿咨询：最大化价值-选择正确退出路径",
+        "波士顿咨询：2014年并购市场资产剥离策略与价值创造",
+        "波士顿咨询：资产剥离路径选择与市场回报差异"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：最大化价值-选择正确退出路径",
+        "波士顿咨询：2014年并购市场资产剥离策略与价值创造",
+        "波士顿咨询：资产剥离路径选择与市场回报差异",
+        "波士顿咨询：0003BCGMaximizingValu",
+        "波士顿咨询：2013年全球并购市场令多数参与者失望——交易量下降6%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2014年并购市场资产剥离策略与价值创造",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：资产剥离路径选择与市场回报差异",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0003BCGMaximizingValu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：2013年全球并购市场令多数参与者失望——交易量下降6%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：最大化价值-选择正确退出路径",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：最大化价值-选择正确退出路径"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0004-BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "别只盯着全资收购，少",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "危机->扰动 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889.pdf",
+      "cleaned_source_title": "0004-BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0004BCGThe2020MARepor",
+      "raw_candidates": [
+        "波士顿咨询：2020年并购报告-替代性交易占比上升",
+        "波士顿咨询：2020年并购报告-替代性交易占比升至35%",
+        "波士顿咨询：2020年并购报告-替代性交易在扰动中占比攀升"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：2020年并购报告-替代性交易占比上升",
+        "波士顿咨询：2020年并购报告-替代性交易占比升至35%",
+        "波士顿咨询：2020年并购报告-替代性交易在扰动中占比攀升",
+        "波士顿咨询：0004BCGThe2020MARepor",
+        "波士顿咨询：2020年并购报告显示少数股权交易占比升至35%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0004BCGThe2020MARepor",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：2020年并购报告显示少数股权交易占比升至35%",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "35"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：2020年并购报告-替代性交易占比升至35%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "全球并购正在悄悄回暖",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+      "cleaned_source_title": "0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0005BCGThe2025MARepor",
+      "raw_candidates": [
+        "波士顿咨询：2025年并购报告-不确定性中的机遇",
+        "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+        "波士顿咨询：2025年并购报告-北美主导与亚太十年低点"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：2025年并购报告-不确定性中的机遇",
+        "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+        "波士顿咨询：2025年并购报告-北美主导与亚太十年低点",
+        "波士顿咨询：0005BCGThe2025MARepor",
+        "波士顿咨询：前九个月中，价值超过100亿美元的超级交易达到27宗"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：2025年并购报告-北美主导与亚太十年低点",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0005BCGThe2025MARepor",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：前九个月中，价值超过100亿美元的超级交易达到27宗",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：2025年并购报告-不确定性中的机遇",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "生物医药分拆交易，怎",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：生物制药业务剥离的执行复杂性",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+    "cleaned_source_title": "0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0002BCGBiopharmaCarve",
+    "raw_candidates": [
+      "波士顿咨询：生物制药业务剥离的执行复杂性",
+      "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+      "波士顿咨询：生物制药剥离的五重执行挑战与优先事项"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：生物制药业务剥离的执行复杂性",
+      "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+      "波士顿咨询：生物制药剥离的五重执行挑战与优先事项",
+      "波士顿咨询：0002BCGBiopharmaCarve",
+      "波士顿咨询：从2020年7月到2021年6月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2022年生物制药剥离交易执行差距超100个百分点",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "波士顿咨询：生物制药剥离的五重执行挑战与优先事项",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0002BCGBiopharmaCarve",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：从2020年7月到2021年6月",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：生物制药业务剥离的执行复杂性",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：生物制药业务剥离的执行复杂性"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

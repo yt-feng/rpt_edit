@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0001-BCG_AI-First-Field-Service-Operations_cdbadc38.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0002-BCG_Biopharma-Carve-Outs-Are-Tricky.-Here-s-How-to-Get-Them-Righ_e6e1fe5a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0003-BCG_Maximizing-Value-Choose-the-Right-Exit-Route_8f1f52fb.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0004-BCG_The-2020-M-A-Report-Alternative-Deals-Gain-Traction_21ef0889.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

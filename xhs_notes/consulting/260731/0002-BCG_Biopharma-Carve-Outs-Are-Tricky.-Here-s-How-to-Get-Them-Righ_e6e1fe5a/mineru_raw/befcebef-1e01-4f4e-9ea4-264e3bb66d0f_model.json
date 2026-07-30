@@ -1,0 +1,2476 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.428
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.053,
+                0.465,
+                0.145,
+                0.481
+            ],
+            "angle": 0,
+            "content": "BIOPHARMA",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.511,
+                0.8,
+                0.662
+            ],
+            "angle": 0,
+            "content": "Biopharma Carve-Outs Are Tricky. Here's How to Get Them Right."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.69,
+                0.715,
+                0.709
+            ],
+            "angle": 0,
+            "content": "By Hob Brooks, Ben Aylor, Megan DeFauw, Chrissy O'Brien, and André Kronimus",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.734,
+                0.286,
+                0.75
+            ],
+            "angle": 0,
+            "content": "ARTICLE FEBRUARY 28, 2022",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.469,
+                0.14,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.509,
+                0.748,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.56,
+                0.803,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.611,
+                0.552,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.693,
+                0.711,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.736,
+                0.282,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.137,
+                0.589,
+                0.218
+            ],
+            "angle": 0,
+            "content": "“Through carve-outs, companies can create value, streamline portfolios, and reduce complexity. But the ultimate success of a deal hinges on focused, proactive execution."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.288,
+                0.934,
+                0.429
+            ],
+            "angle": 0,
+            "content": "As the health care environment evolves at an accelerating rate, biopharma companies increasingly respond through carve-outs. By reshaping their portfolios, firms can focus on fast-growing business units and unlock value from assets that add unnecessary complexity or might perform better with a different owner. Yet these transactions won’t achieve their full potential unless companies take the right approach to deal execution. Carve-outs are more challenging in biopharma than in other industries, leading to greater value creation for businesses that execute deals well—and greater risks of destroying value for those that don’t.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.442,
+                0.943,
+                0.562
+            ],
+            "angle": 0,
+            "content": "From our experience helping biopharma leadership teams execute large-scale carve-outs, we’ve learned that companies can proactively manage the complexity of these deals by keeping a laser focus on strategy from the outset and following a few clear supporting principles. In doing so, biopharma players can avoid unexpected one-time costs and ongoing entanglements—getting to the finish line faster. This is a more deliberate and thoughtful approach but yields superior value in the long run.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.632,
+                0.827,
+                0.709
+            ],
+            "angle": 0,
+            "content": "Deal Execution Is Where Value Is Gained—or Lost"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.739,
+                0.936,
+                0.878
+            ],
+            "angle": 0,
+            "content": "Across industries, carve-outs are on the rise. From July 2020 through June 2021, the quarterly average deal value was $309 billion, 25% higher than the five-year average ($247 billion per quarter). There is a clear logic behind this trend: carve-outs create value. From 2003 through mid-2021, returns for the Bloomberg Spin-Off Index more than doubled those of the S&P 500. Yet performance varies widely between the winners and losers. Only about 50% of deals create value in the medium term, and poor performers can lose significant value, producing total shareholder return that’s more than 100 percentage points below the leaders. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.14,
+                0.097,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.139,
+                0.587,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.179,
+                0.586,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.2,
+                0.31,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.291,
+                0.84,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.31,
+                0.901,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.33,
+                0.915,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.35,
+                0.902,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.371,
+                0.923,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.39,
+                0.928,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.41,
+                0.673,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.444,
+                0.92,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.464,
+                0.935,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.482,
+                0.889,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.501,
+                0.939,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.521,
+                0.938,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.543,
+                0.165,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.631,
+                0.828,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.673,
+                0.44,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.74,
+                0.889,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.76,
+                0.878,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.779,
+                0.933,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.798,
+                0.895,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.819,
+                0.929,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.838,
+                0.927,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.858,
+                0.786,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.05,
+                0.072,
+                0.675,
+                0.108
+            ],
+            "angle": 0,
+            "content": "Exhibit 1 - Carve-Outs Offer Significant Value, but Performance Varies Widely"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.057,
+                0.127,
+                0.333,
+                0.315
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.05,
+                0.325,
+                0.33,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; Refinitiv Datastream; BCG analysis."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.35,
+                0.128,
+                0.713,
+                0.321
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.049,
+                0.338,
+                0.709,
+                0.359
+            ],
+            "angle": 0,
+            "content": "Note: The Bloomberg Spin-Off Index tracks US spinoffs for the first three years of their independent operation. For the TSR chart, N = 195 spinoffs completed from 2010 through 2020. TSR = total shareholder return; p.p. = percentage points."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.405,
+                0.948,
+                0.465
+            ],
+            "angle": 0,
+            "content": "Often, the differentiating factor is deal execution. No matter how strategically sound a carve-out may seem on paper, if it is not executed in a thoughtful, deliberate way—considering and planning for all contingencies—it will likely fall short of expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.479,
+                0.946,
+                0.619
+            ],
+            "angle": 0,
+            "content": "The carve-out trend in biopharma is just as strong as it is in other industries. Activity in 2020 was artificially low because of the pandemic, but 2019 was an all-time high, with $44 billion in deal value, including four carve-outs of more than $5 billion. (See Exhibit 2.) All signs suggest that divestitures will resume as the business environment slowly returns to normal. Strong valuations, the continued impacts from loss of exclusivity, and pricing pressures are together spurring an increase in carve-outs, as biopharma companies reshape their portfolios to better meet the needs of the market and create value for shareholders.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.05,
+                0.657,
+                0.672,
+                0.676
+            ],
+            "angle": 0,
+            "content": "Exhibit 2 - Biopharma Divestitures Reached an All-Time High in 2019"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.112,
+                0.696,
+                0.683,
+                0.885
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.05,
+                0.886,
+                0.313,
+                0.898
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; company reports; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.05,
+                0.899,
+                0.57,
+                0.912
+            ],
+            "angle": 0,
+            "content": "Note: Includes both spinoffs and corporate divestitures; deals with unknown values not counted; numbers rounded."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.073,
+                0.672,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.09,
+                0.117,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.406,
+                0.927,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.426,
+                0.944,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.445,
+                0.589,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.48,
+                0.924,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.501,
+                0.897,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.52,
+                0.885,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.542,
+                0.933,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.56,
+                0.894,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.581,
+                0.941,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.6,
+                0.488,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.659,
+                0.668,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.068,
+                0.814,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Why Biopharma Deals Are More Complex"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.174,
+                0.852,
+                0.195
+            ],
+            "angle": 0,
+            "content": "The challenge is that executing carve-outs in biopharma is not easy, for several reasons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.209,
+                0.952,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Global Footprints with Local Operations. Most biopharma companies are multinational firms, yet they require highly localized operations because of the complex licensing required to import, distribute, and sell pharmaceuticals in different markets around the world. Any carve-out strategy must first define a local commercial strategy for each region (aligned to the overall global strategy) and then disentangle the local operations in every impacted market. This can result in dozens of local workstreams to separate the businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.342,
+                0.957,
+                0.52
+            ],
+            "angle": 0,
+            "content": "Complex and Ever-Changing Regulations. Health care faces far stricter regulatory oversight than many other industries, and most biopharma carve-outs trigger thousands of regulatory implications, from manufacturing-site name changes to marketing-authorization transfers, many of which have potential supply implications. For a business being sold off, every product requires dozens—if not hundreds—of changes to marketing authorizations and artwork in each market where the products are sold. Executing these modifications while maintaining continuous supply is incredibly challenging and often takes several years to complete. During this time, the parent company and carve-out business remain entangled and rely upon one another’s compliance resources.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.535,
+                0.943,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Integrated Supply Chains. Most multinational biopharma firms are exceedingly efficient in their operations, through tightly integrated global supply chains. Products for the carve-out business will likely be commingled with the parent company's products across the supply chain, including manufacturing sites, distribution centers, and third-party suppliers or contract manufacturing organizations (CMOs). The carve-out process needs to separate those production streams and consider the tax, legal, and regulatory implications of each decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.667,
+                0.923,
+                0.768
+            ],
+            "angle": 0,
+            "content": "Combined IT Systems. Like manufacturing processes, biopharma IT systems are validated and audited by regulators around the world. Separating the systems and data that the carve-out will need to operate—and ensuring that each system is not only operational but approved by all relevant health authorities—takes time and will almost certainly require transitional service agreements (TSAs) after the deal closes, to ensure business continuity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.782,
+                0.955,
+                0.863
+            ],
+            "angle": 0,
+            "content": "Patient-Critical Products. Biopharma companies sell medically necessary products that carry life-and-death implications for patients. Unlike in other industries—where production errors or out-of-stock items may be a minor annoyance for customers—business continuity is mandatory in health care.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.814,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.109,
+                0.261,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.176,
+                0.848,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.21,
+                0.947,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.232,
+                0.892,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.251,
+                0.934,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.271,
+                0.946,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.29,
+                0.931,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.311,
+                0.466,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.345,
+                0.942,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.364,
+                0.836,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.385,
+                0.954,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.404,
+                0.895,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.422,
+                0.917,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.442,
+                0.944,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.464,
+                0.899,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.483,
+                0.894,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.502,
+                0.142,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.935,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.557,
+                0.94,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.576,
+                0.886,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.596,
+                0.898,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.616,
+                0.907,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.635,
+                0.664,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.67,
+                0.918,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.689,
+                0.917,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.71,
+                0.891,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.73,
+                0.888,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.749,
+                0.693,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.783,
+                0.946,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.804,
+                0.94,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.824,
+                0.949,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.845,
+                0.094,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.047,
+                0.068,
+                0.762,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Key Areas to Get Right During Execution"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.174,
+                0.939,
+                0.255
+            ],
+            "angle": 0,
+            "content": "Mitigating the complexities requires significant forethought and planning. In our work helping biopharma companies execute large and successful carve-outs, we have identified five core areas for management teams to prioritize during the execution phase (corresponding to the five challenges discussed in the previous section).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.302,
+                0.583,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Mitigating the complexities of biopharma carve-outs requires significant forethought and planning.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.416,
+                0.948,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Structure governance to address global and local considerations. It’s essential to set up an agile governance model—a global, centralized workstream to oversee all local separation activities and coordinate the work of lawyers and other advisors. In this way, companies can ensure that separation activities are conducted consistently around the world.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.51,
+                0.955,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Build a program to address regulatory and supply implications. At an early stage of the program, management teams need to assess the regulatory consequences of a carve-out; doing so can dramatically reduce the timeline as well as the costs incurred from inventory buildups and write-offs. This workstream is highly technical, inherently cross-functional, and very dynamic given that the regulatory environment and supply requirements evolve over the course of the divestiture process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.643,
+                0.943,
+                0.744
+            ],
+            "angle": 0,
+            "content": "Develop a clear upfront strategy to disentangle supply chains. Decisions made early in the program about the acceptable level of supply chain entanglement at close can have a material impact on the timeline, tax implications, and overall cost of the carve-out process. Carefully designing long-term supply agreements between the two entities can mitigate some—though not all—challenges of commingled supply chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.757,
+                0.946,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Engage the business early in separating IT systems. A robust and strategic inventory of IT systems—and the options for dividing them—is essential at the outset of a carve-out program. This needs to be a collaboration between the IT experts and business owners for all key systems. For example, some carve-out programs entail developing systems for highly complex, critical technology. That approach improves information flow and data security once the parent company and divested business begin to operate independently and provides additional time to stand up the long-term IT solutions for the unit being sold or spun off.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.064,
+                0.765,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.11,
+                0.279,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.177,
+                0.9,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.196,
+                0.935,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.216,
+                0.869,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.235,
+                0.459,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.301,
+                0.561,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.319,
+                0.583,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.418,
+                0.943,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.439,
+                0.944,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.458,
+                0.864,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.479,
+                0.65,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.512,
+                0.95,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.532,
+                0.901,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.55,
+                0.928,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.57,
+                0.93,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.592,
+                0.906,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.611,
+                0.122,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.645,
+                0.896,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.666,
+                0.917,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.684,
+                0.881,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.705,
+                0.938,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.725,
+                0.464,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.76,
+                0.885,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.778,
+                0.915,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.797,
+                0.929,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.817,
+                0.891,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.838,
+                0.943,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.857,
+                0.918,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.876,
+                0.593,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.924,
+                0.227
+            ],
+            "angle": 0,
+            "content": "Prioritize the continuity of supply for medically necessary products. Because biopharma products are so critical to patients, carve-out programs need to factor in all potential effects on supply. Companies must coordinate cross-functional governance—including regulatory, supply chain, and commercial considerations—to ensure that the project plans will enable continuous supply throughout the carve-out timeline. Activities and workstreams related to separating the business need to be isolated from the activities and workstreams required to run the business—though any separation activity with potential supply implications must be clearly identified and flagged to the business owner well in advance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.277,
+                0.933,
+                0.377
+            ],
+            "angle": 0,
+            "content": "Carve-outs are a highly attractive means for biopharma companies to create value, streamline portfolios, and reduce complexity. But merely deciding to conduct a deal is not enough; the ultimate success of a deal hinges on its execution. By understanding the challenges in advance and thinking through the potential ramifications of key decisions, management teams can make sure that they get to the close on time and with a clear plan to capture all possible value.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.877,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.913,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.107,
+                0.908,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.918,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.906,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.168,
+                0.923,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.189,
+                0.913,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.209,
+                0.469,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.279,
+                0.91,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.299,
+                0.874,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.319,
+                0.913,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.339,
+                0.929,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.358,
+                0.855,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.104,
+                0.237,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.186,
+                0.221,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.34,
+                0.22,
+                0.446
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.074,
+                0.493,
+                0.215,
+                0.6
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.216,
+                0.379,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Hob Brooks"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.249,
+                0.313,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Alumnus"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.531,
+                0.187,
+                0.684,
+                0.295
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.217,
+                0.819,
+                0.24
+            ],
+            "angle": 0,
+            "content": "Ben Aylor"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.249,
+                0.776,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Alumnus"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.348,
+                0.419,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Megan DeFauw"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.381,
+                0.445,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Dallas",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.416,
+                0.275,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.496,
+                0.429,
+                0.519
+            ],
+            "angle": 0,
+            "content": "André Kronimus"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.529,
+                0.437,
+                0.571
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nFrankfurt",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.575,
+                0.276,
+                0.591
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.531,
+                0.341,
+                0.682,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.342,
+                0.883,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Chrissy O'Brien"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.422,
+                0.737,
+                0.438
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.375,
+                0.901,
+                0.417
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nBoston"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.104,
+                0.237,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.385,
+                0.44,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.398,
+                0.289,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.497,
+                0.425,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.531,
+                0.433,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.544,
+                0.299,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.558,
+                0.313,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.345,
+                0.878,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.431,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.926,
+                0.238
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we work closely with clients to embrace a transformational approach aimed at benefiting all stakeholders—empowering organizations to grow, build sustainable competitive advantage, and drive positive societal impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.252,
+                0.952,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Our diverse, global teams bring deep industry and functional expertise and a range of perspectives that question the status quo and spark change. BCG delivers solutions through leading-edge management consulting, technology and design, and corporate and digital ventures. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, fueled by the goal of helping our clients thrive and enabling them to make the world a better place.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.365,
+                0.529,
+                0.385
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2025. All rights reserved."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.4,
+                0.947,
+                0.46
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on Facebook and X (formerly Twitter).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2025 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.428,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.14,
+                0.876,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.16,
+                0.923,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.834,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.2,
+                0.918,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.219,
+                0.788,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.254,
+                0.947,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.274,
+                0.88,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.94,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.315,
+                0.923,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.332,
+                0.947,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.368,
+                0.527,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.402,
+                0.944,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.422,
+                0.907,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.441,
+                0.685,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

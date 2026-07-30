@@ -1,0 +1,125 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_lmbyooi1/pdfs/0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "全球并购正在悄悄回暖",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db.pdf",
+    "cleaned_source_title": "0005-BCG_The-2025-M-A-Report-The-Upside-of-Uncertainty_770f60db",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0005BCGThe2025MARepor",
+    "raw_candidates": [
+      "波士顿咨询：2025年并购报告-不确定性中的机遇",
+      "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+      "波士顿咨询：2025年并购报告-北美主导与亚太十年低点"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：2025年并购报告-不确定性中的机遇",
+      "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+      "波士顿咨询：2025年并购报告-北美主导与亚太十年低点",
+      "波士顿咨询：0005BCGThe2025MARepor",
+      "波士顿咨询：前九个月中，价值超过100亿美元的超级交易达到27宗"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2025年并购报告-前九月交易额同比增10%",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：2025年并购报告-北美主导与亚太十年低点",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0005BCGThe2025MARepor",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：前九个月中，价值超过100亿美元的超级交易达到27宗",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：2025年并购报告-不确定性中的机遇",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
