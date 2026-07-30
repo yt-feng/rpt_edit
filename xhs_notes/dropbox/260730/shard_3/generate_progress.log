@@ -1,0 +1,52 @@
+Found 63 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f0tt4vzi/pdfs/0001-16-Goldman Sachs-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f0tt4vzi/pdfs/0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f0tt4vzi/pdfs/0003-18-Goldman Sachs-ASMPT -0522.HK-- TCB - Photonics tools to ride on AI trend- Booking value expected to grow in 3Q26- Neutral-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f0tt4vzi/pdfs/0004-19-Goldman Sachs-China Grid Tech- Power Transformer Export Tracker- June China transformer total exports at 47- yoy- with exports to US at -172- yoy-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f0tt4vzi/pdfs/0005-20-Goldman Sachs-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue of elevated Lead levels.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=cbc1589b-7099-424a-9858-0257f4fc57fa
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 6d0a23968df525c0a572ddc9fc2749c222e0d38f8fb8c79eb972e85d71444292.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 87b1a097a5323ddbcf322eb97384cb92cb4f7018979251cdea9f07408a161083.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 4ef9a5a46aa01bf8429ae26ee78a46ba73341045e74f489a8e616cffe8e47c1e.jpg: score=0;square_without_chart_hint,edge:0.48,large
+Skip non-chart visual asset c117d6c1b8fc2592ea5614a307b817df63716dd20252d612f3afc01efb785e47.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset c972cdd9aa4b568c00d04f978e865a0079afd3a209e17364d804c6bae68ad8c3.jpg: score=0;square_without_chart_hint,edge:0.40,large
+Neutralized WeChat title while keeping the report: 高盛：爱德万测试业绩超预期并上调全年指引 -> 高盛：爱德万测试业务与近期数据观察
+Skip non-chart visual asset 5a5266ba7cdb5fadc1ea20541832eaee0c9ace778cca4a39c58e622dfbd625d1.jpg: score=0;square_without_chart_hint,edge:0.16,contrast
+Skip non-chart visual asset 5862d9c3774ef208b98f1c0ec8a85279a06096576cb60e4612b146023637b11a.jpg: score=-100;too_small:365x132
+Skip non-chart visual asset 8b58e4ae86e453895ccb3fcf2fd8e07b9a857af8ed7345b493f653b65d8a44c6.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 14c46281076d19aeda301a3a54e9f76d87bc38cddefb4ce07f30e0e75f3bdd02.jpg: score=-100;too_small:426x67
+Skip non-chart visual asset e8ee1e1dc2bad7e3fe21a9073fca1221bfbeabce06b29ff511b36dc2381f88f3.jpg: score=1;chart_ratio
+Skip non-chart visual asset 8debb7a8bec2cc130ced55232f60cb44d869c0df0e613af2bc7cf3e6a1f28804.jpg: score=-100;too_small:365x132
+Skip non-chart visual asset b3fd9807113f1487a9961cd8197341f9c2f8212543549fa0cfc244c477b95163.jpg: score=0;square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset f44d8090c22d96d961a5fd68f92ab33a51464221ef66670ea50b161dd6650506.jpg: score=-100;too_small:43x56
+Skip non-chart visual asset 0ea6fd53cd543c5fa68917a1cc2e46622f4842c9ff7d34d4e23ef74f522ab302.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.61,large
+Skip non-chart visual asset 7d10d88d941df444e429018c4ab5494f772f0f91368b8e77631ec2b54bbe7766.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.34,contrast,large
+Skip non-chart visual asset 99045f06209b719cbcf905625cd0cf598f1625fadb9001d56dc47bda90314714.jpg: score=0;square_without_chart_hint,edge:0.16,contrast
+Skip non-chart visual asset 02eb06c5aca146aeffc00b4abfd0bd90236a4e0c47ff8b5dbf0d0b741268134b.jpg: score=0;square_without_chart_hint,edge:0.17,contrast
+Skip non-chart visual asset d69c698b6991742031c78e7e916c5052699c56df423f400f0d224def389c6b6a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.28,contrast,large
+Skip non-chart visual asset cc3572dc913a2e91021e854e1f8608fbfeadd6ae104d6f910e2163f8cf464758.jpg: score=-100;too_small:51x60
+Skip non-chart visual asset ca3b083a0a8169ae7e3fb811a6febfcb795e5a5a1ae9a9a37b3b68c9cf31b04f.jpg: score=0;square_without_chart_hint,edge:0.13,contrast
+Skip non-chart visual asset edabe7a152371db2ee795d8d468965378ead7b8f2d6c238be49ffe349cdf81f7.jpg: score=-100;too_small:45x53
+Skip non-chart visual asset 9ef69f06e7560dfb0956a42d193df722df73d179300efe8b0b00ee841d7fd798.jpg: score=-100;too_small:373x131
+Skip non-chart visual asset 863c172e905876cbe78514327911154abc8c9a9b058e772c26727b41e827a317.jpg: score=-1;square_without_chart_hint,edge:0.15
+Skip non-chart visual asset 3c79417e2361b95bd50a5cb6a0418679f19aafe3d478b01b59f3ce3b7637fab4.jpg: score=-100;too_small:437x73
+Skip non-chart visual asset 63af2c9aa04e71f2a20ef2834f0f81c93fd83084e983b554f6ce355d2ac4495d.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 8c73a9d669ea5e1b8a0494a91b69ac6812185cf3c0466eb249badebebb533885.jpg: score=-100;too_small:706x160
+Skip non-chart visual asset e1df6c527755464fd0582f77e82f7fb48c741f0175b0228aedd21f16c4fa458c.jpg: score=-100;too_small:1429x148
+Neutralized WeChat title while keeping the report: 花旗：迪士尼2026财年指引面临不确定性 -> 花旗：迪士尼业务与近期数据观察
+Skip non-chart visual asset 810abdf4063e280eda1f97b9c6f4ef8af45397c3c2eb93cb0644394cd1f3a2d7.jpg: score=-100;too_small:1156x107
+Skip non-chart visual asset fd9a864535f1c2e0bfdc3b1d8349b56738a7ebe9d5f5c79eb849f842488a3dec.jpg: score=-1;square_without_chart_hint,edge:0.27
+Neutralized WeChat title while keeping the report: 高盛：ASMPTTCB与光通讯工具订单增长，AI趋势驱动先进封装需求 -> 高盛：AI技术与行业应用观察
+Skip non-chart visual asset 7469434471dc28ef1f90780859e6b6c6bb8cbf522917a01d2c27eeab67d44739.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 52ba2c092227433936e57077cbf4d2a9ccf7ac0e5881558777f849747ecb6e74.jpg: score=-1;low_edge:0.03,large
+Skip non-chart visual asset 2129456a070692d6850a9d1e0f4927c69db5061f70e2dbde543e50907ae6039e.jpg: score=-100;too_small:1156x107
+Skip non-chart visual asset ac1968d3790851a5ba9595ed19fcc39f94c6cd272e63b49286442d7e784a4e5c.jpg: score=-1;low_edge:0.03,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

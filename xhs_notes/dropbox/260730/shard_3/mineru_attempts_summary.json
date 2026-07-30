@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0001-16-GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0003-18-GS-ASMPT -0522.HK-- TCB - Photonics tools to ride on AI trend- Booking value expected to grow in 3Q26- Neutral-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0004-19-GS-China Grid Tech- Power Transformer Export Tracker- June China transformer total exports at 47- yoy- with exports to US at -172- yoy-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0005-20-GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue of elevated Lead levels.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

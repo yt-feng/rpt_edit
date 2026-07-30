@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0001-16-GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "芯片检测龙头财报大超",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：爱德万测试业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-16-GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf",
+    "cleaned_source_title": "GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：AdvantestEarningsReviewA",
+    "raw_candidates": [
+      "爱德万测试业绩超预期并上调全年指引",
+      "爱德万测试2026财年Q1营业利润1900亿日元超预期",
+      "爱德万测试AI芯片测试需求驱动SoC设备扩产"
+    ],
+    "cleaned_candidates": [
+      "GS：爱德万测试业绩超预期并上调全年指引",
+      "GS：爱德万测试2026财年Q1营业利润1900亿日元超预期",
+      "GS：爱德万测试AI芯片测试需求驱动SoC设备扩产",
+      "GS：AdvantestEarningsReviewA",
+      "GS：爱德万测试2026财年第一季度营业利润1900亿日元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：爱德万测试2026财年Q1营业利润1900亿日元超预期",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "GS：爱德万测试AI芯片测试需求驱动SoC设备扩产",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：AdvantestEarningsReviewA",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：爱德万测试2026财年第一季度营业利润1900亿日元",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：爱德万测试业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：爱德万测试业绩超预期并上调全年指引",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：爱德万测试业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "411",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

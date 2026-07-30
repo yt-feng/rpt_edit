@@ -1,0 +1,531 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0001-16-GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "芯片检测龙头财报大超",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：爱德万测试业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain.pdf",
+      "cleaned_source_title": "GS-Advantest -6857.T- Earnings Review- Above expectations- very positive- including mention of further expediting production capacity increase- maintain",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：AdvantestEarningsReviewA",
+      "raw_candidates": [
+        "爱德万测试业绩超预期并上调全年指引",
+        "爱德万测试2026财年Q1营业利润1900亿日元超预期",
+        "爱德万测试AI芯片测试需求驱动SoC设备扩产"
+      ],
+      "cleaned_candidates": [
+        "GS：爱德万测试业绩超预期并上调全年指引",
+        "GS：爱德万测试2026财年Q1营业利润1900亿日元超预期",
+        "GS：爱德万测试AI芯片测试需求驱动SoC设备扩产",
+        "GS：AdvantestEarningsReviewA",
+        "GS：爱德万测试2026财年第一季度营业利润1900亿日元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：爱德万测试2026财年Q1营业利润1900亿日元超预期",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "GS：爱德万测试AI芯片测试需求驱动SoC设备扩产",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AdvantestEarningsReviewA",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：爱德万测试2026财年第一季度营业利润1900亿日元",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：爱德万测试业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：爱德万测试业绩超预期并上调全年指引",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：爱德万测试业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "迪士尼财报前瞻",
+    "cover_subtitle": "6个关键风险点拆解",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x2",
+      "仍在调整影响->仍在调整，并影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：迪士尼业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide-260728.pdf",
+      "cleaned_source_title": "CITI-Walt Disney Co -DIS.US- Potential Risk to FY26 Guide",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：WaltDisneyCo",
+      "raw_candidates": [
+        "Citi：迪士尼2026财年指引面临不确定性",
+        "Citi：迪士尼2026财年每股收益指引增速约16%",
+        "Citi：迪士尼2026财年指引受票房与乐园客流影响"
+      ],
+      "cleaned_candidates": [
+        "Citi：迪士尼2026财年指引面临不确定性",
+        "Citi：迪士尼2026财年每股收益指引增速约16%",
+        "Citi：迪士尼2026财年指引受票房与乐园客流影响",
+        "Citi：WaltDisneyCo",
+        "Citi：公司2026财年调整后每股收益16%的同比增长指引存在节奏变化不"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：迪士尼2026财年每股收益指引增速约16%",
+          "reasons": [
+            "anchor_coverage=0.56"
+          ]
+        },
+        {
+          "title": "Citi：迪士尼2026财年指引受票房与乐园客流影响",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "Citi：WaltDisneyCo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：公司2026财年调整后每股收益16%的同比增长指引存在节奏变化不",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "Citi：迪士尼业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：迪士尼2026财年指引面临不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：迪士尼业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0003-18-GS-ASMPT -0522.HK-- TCB - Photonics tools to ride on AI trend- Booking value expected to grow in 3Q26- Neutral-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI先进封装，这家设",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x2",
+      "买入->观点偏积极 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-GS-ASMPT -0522.HK-- TCB - Photonics tools to ride on AI trend- Booking value expected to grow in 3Q26- Neutral-260729.pdf",
+      "cleaned_source_title": "GS-ASMPT -0522.HK-- TCB - Photonics tools to ride on AI trend- Booking value expected to grow in 3Q26- Neutral",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIASMPTTCBPhotonicstoolsto",
+      "raw_candidates": [
+        "ASMPT TCB与光通讯工具订单增长，3Q26预期环比高个位数增长",
+        "ASMPT订单增长由TCB与光通讯工具驱动，3Q26预期环比高个位数增长",
+        "ASMPT TCB与光通讯工具订单增长，AI趋势驱动先进封装需求"
+      ],
+      "cleaned_candidates": [
+        "GS：ASMPTTCB与光通讯工具订单增长",
+        "GS：ASMPT订单增长由TCB与光通讯工具驱动",
+        "GS：ASMPTTCB与光通讯工具订单增长，AI趋势驱动先进封装需求",
+        "GS：AIASMPTTCBPhotonicstoolsto",
+        "GS：其次是算力提升和代理型AI需求推动高端CPU和HBM的订单"
+      ],
+      "faithful_candidate_missing_terms": [
+        "AI"
+      ],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：ASMPTTCB与光通讯工具订单增长",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.59",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ASMPT订单增长由TCB与光通讯工具驱动",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.55",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIASMPTTCBPhotonicstoolsto",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：其次是算力提升和代理型AI需求推动高端CPU和HBM的订单",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：ASMPTTCB与光通讯工具订单增长，AI趋势驱动先进封装需求",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0004-19-GS-China Grid Tech- Power Transformer Export Tracker- June China transformer total exports at 47- yoy- with exports to US at -172- yoy-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "变压器出口激增，美国",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国电网技术-电力变压器出口追踪",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-GS-China Grid Tech- Power Transformer Export Tracker- June China transformer total exports at 47- yoy- with exports to US at -172- yoy-260729.pdf",
+      "cleaned_source_title": "GS-China Grid Tech- Power Transformer Export Tracker- June China transformer total exports at 47- yoy- with exports to US at -172- yoy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国GridTechPowerTransform",
+      "raw_candidates": [
+        "中国电网技术-电力变压器出口追踪-六月总出口同比增长47%对美出口增长172%",
+        "中国变压器出口追踪-六月总出口同比增47%对美出口增172%",
+        "中国变压器出口追踪-六月总出口增速回落至47%对美出口持续高增"
+      ],
+      "cleaned_candidates": [
+        "GS：中国电网技术-电力变压器出口追踪",
+        "GS：中国变压器出口追踪-六月总出口同比增47%对美出口增172%",
+        "GS：中国变压器出口追踪-六月总出口增速回落至47%对美出口持续高增",
+        "GS：中国GridTechPowerTransform",
+        "GS：GS最新出口追踪显示，当月总出口（大于10MVA）同比增长47%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国变压器出口追踪-六月总出口同比增47%对美出口增172%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国变压器出口追踪-六月总出口增速回落至47%对美出口持续高增",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国GridTechPowerTransform",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS最新出口追踪显示，当月总出口（大于10MVA）同比增长47%",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国电网技术-电力变压器出口追踪",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国电网技术-电力变压器出口追踪"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_f0tt4vzi/pdfs/0005-20-GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue of elevated Lead levels.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "奶粉行业，最近有点乱",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国婴幼儿配方奶粉行业-2026年7月消费者信心追踪",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue of elevated Lead levels.pdf",
+      "cleaned_source_title": "GS-CHINA CONSUMER STAPLES-Infant Formula- Tracking consumer sentiment -2- Cabio updates post Nestle IMF recall incident- Friso issue of elevated Lead levels",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国消费STAPLESInfantFormulaTracking",
+      "raw_candidates": [
+        "中国婴幼儿配方奶粉行业-消费者信心追踪-Cabio更新与Friso铅含量事件",
+        "中国婴幼儿配方奶粉行业-2026年7月消费者信心追踪-Cabio盈利预警与Friso铅含量事件",
+        "中国婴幼儿配方奶粉行业-消费者信心与品牌力分化-Cabio与Friso事件影响"
+      ],
+      "cleaned_candidates": [
+        "GS：中国婴幼儿配方奶粉行业-消费者信心追踪",
+        "GS：中国婴幼儿配方奶粉行业-2026年7月消费者信心追踪",
+        "GS：中国婴幼儿配方奶粉行业-消费者信心与品牌力分化",
+        "GS：中国消费STAPLESInfantFormulaTracking",
+        "GS：Cabio在1月ARA问题后，于7月发布盈利预警"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国消费STAPLESInfantFormulaTracking",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Cabio在1月ARA问题后，于7月发布盈利预警",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国婴幼儿配方奶粉行业-2026年7月消费者信心追踪",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国婴幼儿配方奶粉行业-2026年7月消费者信心追踪"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
