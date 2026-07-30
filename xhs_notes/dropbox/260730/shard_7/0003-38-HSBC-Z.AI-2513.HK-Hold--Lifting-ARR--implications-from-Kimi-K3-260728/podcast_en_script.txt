@@ -1,0 +1,15 @@
+EN_A: So, the biggest news in AI right now is the Kimi K3 launch, right? But this report we are looking at today is actually about a different company, Z.ai, or Zhipu AI.
+EN_B: Exactly. A global investment bank just published a note on Z.ai. The headline is that their annual recurring revenue hit one billion dollars ahead of schedule. But here is the twist: the target price was cut from 1900 Hong Kong dollars to 1500.
+EN_A: Wait, hitting the ARR target early is great news. Why would they cut the price target?
+EN_B: Because the report argues that in the long run, competition will squeeze margins. Plus, the company issued new shares, which dilutes existing shareholders. But the real question the report is trying to answer is this: can Z.ai keep up after the launch of Kimi K3, which is a much more powerful model?
+EN_A: So what is so special about Kimi K3? Why is it such a big deal?
+EN_B: The report points out that K3's parameter count jumped from one trillion in the previous version to 2.8 trillion. This is a massive leap. It confirms that the scaling law is still alive. Bigger models still mean more intelligence. And Z.ai's current best model, GLM-5.2, only has 744 billion parameters. So the gap is real.
+EN_A: That sounds like bad news for Z.ai. Is there any hope?
+EN_B: The report thinks there is. Z.ai could catch up with their next model, possibly GLM-6. But more importantly, Z.ai has a key advantage: computing power. K3 was so slow that it had to pause new user subscriptions right after launch. That tells you Kimi is constrained by compute.
+EN_A: So what about Z.ai's compute situation?
+EN_B: The report mentions Z.ai is already running a one gigawatt data center. They also made a breakthrough in using domestic chips for inference. And they just bought a company called XCore Sigma, which helps manage different types of chips. So Z.ai seems to have a much stronger compute buffer than Kimi.
+EN_A: So the core argument is that while model competition is heating up, compute power is becoming a moat for Z.ai?
+EN_B: Exactly. But the report also leaves some big questions open. For example, when exactly will Z.ai launch their next model? How big will it be? And there is a geopolitical risk: the US might ban Chinese frontier models. The report does not fully answer how serious that could be.
+EN_A: Those are huge uncertainties. And the report also flags that 38% of Z.ai's shares could be unlocked in early 2027, which is a potential overhang.
+EN_B: Right. So the overall rating is "Hold", not "Buy". The report acknowledges Z.ai's growth potential, but the risks are significant. If you want the full list of catalysts and risks, you really need to read the original report.
+EN_A: Good point. That is all for today. If you want the full report, join our community. We share deep dive research on a regular basis.

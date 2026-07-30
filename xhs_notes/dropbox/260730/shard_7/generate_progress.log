@@ -1,0 +1,66 @@
+Found 63 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3jsqf7ch/pdfs/0001-36-Goldman Sachs-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3jsqf7ch/pdfs/0002-37-J.P. Morgan-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3jsqf7ch/pdfs/0003-38-HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3jsqf7ch/pdfs/0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3jsqf7ch/pdfs/0005-40-JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses-260729.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=c261ea38-8040-4079-b5bd-70407af560e0
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, done, done, running, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 88cacef8dbf022741b3193a3b43c80b62a7ccbe5fd3eecc4eb4477ffbfdbb023.jpg: score=-100;too_small:256x123
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset de9af391a4172e8d27f73c012725549ea6a5eb7953436b7bd60db66262ab07da.jpg: score=-100;too_small:1159x106
+Skip non-chart visual asset 116dba6cadf6bc3462dbb8ab489f521a784c009d644f1900fe1e5216e19c9a8b.jpg: score=2;edge:0.32
+Skip non-chart visual asset 2658214b0d7954861f68c802246b8fb8f885d33a7fcf476bd472c745581ff071.jpg: score=-100;too_small:139x56
+Neutralized WeChat title while keeping the report: 高盛：施耐德电气2026年EPS共识预期上调 -> 高盛：施耐德电气业务与近期数据观察
+Skip non-chart visual asset 05b4935a9a92f82b893377e5455ce407c3e809660bea65ba873cc7a215dff30f.jpg: score=-100;too_small:542x165
+Skip non-chart visual asset 2ab91399b3e7e442c186085c244ba81d73d7a11150d02008e90859488619efac.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 2f89a2aa36a4778703998b32c12c3046a717a0f5a4f3bdfb5b6b78971eb117a7.jpg: score=1;odd_ratio:5.45,edge:0.32,contrast,large
+Skip non-chart visual asset dfd8a75493697f49eb0deae6b6105e8661b4306f133b88b5f97a946b97788cdb.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset b090d092aeb9b652f33e10699d32d5b0733eb0425bcdfe7cd075be191b34a6f1.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 50efc1c76f631fea677c27310df703a47d2f410ab3def8f4a8d13a2013013b2d.jpg: score=0;odd_ratio:4.93,edge:0.29,contrast
+Neutralized WeChat title while keeping the report: 摩根大通：中国保险市场两极分化加速-中小险企面临资本不确定性 -> 摩根大通：保险与养老服务数据与主题变化观察
+Skip non-chart visual asset 3e865cef7a84dafdcb0fdd5fda22ff0fa93b18fe44be59d339cbfb0a37b32960.jpg: score=-100;too_small:337x190
+Skip non-chart visual asset 87ee5df5fdafa6d484c6ffcf7f38c09d519e3291df15bdda6a6674f7133bb06c.jpg: score=-1;odd_ratio:7.30,edge:0.10
+Skip non-chart visual asset 28f784b10ed5c8ac7be49e54defd299708e0a6c190f499d7fd35ce6c6520fad8.jpg: score=-100;too_small:1428x95
+Skip non-chart visual asset 069f65e24bb345fbf4ef0e645db479c6187e01343a38134e3b1bec7f812e490f.jpg: score=-100;too_small:492x178
+Skip non-chart visual asset 1338a36d1b348a01eb81d864a0ad053610e3e4e25124cb6685ab38eeaf7b8592.jpg: score=-100;too_small:1384x129
+Skip non-chart visual asset b00b52d3903805a465a97c795ab98ab5707cbb069aee867e2956661e1867a28a.jpg: score=1;chart_ratio
+Skip non-chart visual asset 61463295d5e4f7be3b2e914d75a02ac0e1fddfeb4238d9f0d6cfd9c1ad9a109b.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 487a6c7acf92bd0f17dffd9658011e607f2bdeb18b4de06d8f757a3e02c5feac.jpg: score=0;square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 7afbba4463784b5bef1fef617e4059a130f25e48ebdfb271843a33169d84e998.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 07e0f1623c6d9553676bcef63ca9ece3d92154146a09a247217a8651325c94e4.jpg: score=-100;too_small:334x159
+Skip non-chart visual asset 848ebdc6c86e5bc676cbae219876783864a7eace0f42617359c68f97957c4b36.jpg: score=-100;too_small:243x78
+Skip non-chart visual asset 54992c5983a1d7154d7a50bb68d80c5e6ac2857888363817f138f3e71dc5672a.jpg: score=-100;too_small:68x70
+Neutralized WeChat title while keeping the report: 汇丰：智谱AI年化收入提前突破10亿美元 -> 汇丰：智谱AI年化与AI及近期数据观察
+Skip non-chart visual asset 2ce14c7c0c4619ed7d1c6052aaca83a07be290d07022b8ff6db3d70197ae3271.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset dc8d0995272488b2f4c6def6dda0b281823d8592c41f39b160a20a4c7a9cff3b.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset d130c32baf1464b49b33b506ee112646dea71bb9254cecd81cd8a6d36362069d.jpg: score=-100;too_small:71x70
+Skip non-chart visual asset 252a62d3046edbd83726dc73103e5be73e2193af055adbfcf8167963b59d3f12.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset 5523ef82bb3383746844e6c84b20e5b4a11df0d7c596a3d230400aa7cf9ed9e3.jpg: score=-100;too_small:1428x168
+Skip non-chart visual asset 46120d22026b72860f95df72ee28a3a8357bfa1b10a254e16d7e504e823a4db5.jpg: score=-100;too_small:1384x129
+Skip non-chart visual asset f1644d5dfcb293790cc208af0a73f26966b0f5bea4d255210492452456877d18.jpg: score=-100;too_small:334x151
+Skip non-chart visual asset 1d3f7be1d0a25e531896e0e7ef615972a6380f2ae44c3f83159a1d39c422e3d6.jpg: score=-100;too_small:340x154
+Skip non-chart visual asset 6f6a33fbd48f69920ebb40bca232bbe4dc46e9e2ba6be87ae367840141d6b754.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset ef666c2ff1c8d9246c035cfeb10eeefd0a8b74f88ab92fddb1ac756c77f68d18.jpg: score=-100;too_small:268x76
+Skip non-chart visual asset 32b87fad8f1f8593aa7aee51053f542c9adaccf0f563df94c938f631823761ef.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 970112da7002a1e80f76e8d49f85b3a001bc12aa40dd262920e4b68500cd9c89.jpg: score=-100;too_small:484x171
+Skip non-chart visual asset 7bceab60e0afc4b474ec20a5b10eeec88d427c740c968a69cc2d3038c16cf743.jpg: score=0;odd_ratio:5.45,edge:0.27,large
+Skip non-chart visual asset 25c8fd8f00bddef2af260eead89bbad330697968c87d55966b38b84348b7b312.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.43,contrast,large
+Skip non-chart visual asset dd1fae37d8bbfcc6dfece1b9296245a8b007f1260001337ef496573885f87bf1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.43,large
+Skip non-chart visual asset ae4e915186db0616faa87dde0a2e45e2d162483af0efaad9513af018a458d649.jpg: score=-100;too_small:1431x79
+Skip non-chart visual asset ca13745a80e29b73dd26214ecc83e0415e61e4e05c817a4fe5311a44fe072083.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.47,large
+Skip non-chart visual asset 40c9203ff8be82e4f2a38a8f52cf219ee3ba44964a0df10f9fe90c1bf9aeb9f2.jpg: score=-100;too_small:243x82
+Neutralized WeChat title while keeping the report: 汇丰：意法半导体，指引波动与需求强劲 -> 汇丰：半导体行业数据与主题变化观察
+Skip non-chart visual asset 10d1405a5bbd78d34ecc0d88550cb324cde56f108dfd81a5eae15abc76475181.jpg: score=1;chart_ratio
+Skip non-chart visual asset 14c63bb774a21e22bbb674347c2b52f0a8b64eb2dcf7a6a459fa16997c4b20a4.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset 9fde3b4cebab1c8c2d8f6199cbb040068fa3ef82c998e09d0fa83990c4149bcd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,large
+Skip non-chart visual asset fd5233b0b52ba060ebd808abf0aad453be40702cd566661ce83c0b64f54ce587.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.10,large
+Skip non-chart visual asset 4b9bf0c2dc8148b501129522c25fff0806f8e5d950fb4e30ecf46d7662a4a2ef.jpg: score=1;chart_ratio
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260730/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

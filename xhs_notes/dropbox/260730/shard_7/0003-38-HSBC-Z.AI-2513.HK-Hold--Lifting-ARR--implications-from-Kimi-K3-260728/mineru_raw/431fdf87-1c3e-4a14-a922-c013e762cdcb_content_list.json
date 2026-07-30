@@ -1,0 +1,2106 @@
+[
+    {
+        "type": "text",
+        "text": "Z.AI (2513 HK)",
+        "bbox": [
+            55,
+            96,
+            372,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Hold: Lifting ARR; implications from Kimi K3",
+        "bbox": [
+            60,
+            164,
+            537,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Raise ARR assumptions; cut TP on lower margins in long term amid competition and higher share count",
+        "bbox": [
+            43,
+            218,
+            586,
+            257
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Competition intensifies, but Z.ai can potentially catch up with higher parameter size models",
+        "bbox": [
+            43,
+            263,
+            613,
+            302
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Maintain Hold, cut TP to HKD1,500 (from HKD1,900)",
+        "bbox": [
+            43,
+            309,
+            546,
+            328
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Estimate, TP changes: Z.ai (Zhipu) ARR reached USD1bn in July (per Bloomberg News on 17 July 2026), ahead of the guidance by December 2026. We raise ARR estimates to USD2bn (from USD1bn) in December 2026 and USD6.5bn (from USD2.4bn) in December 2027. Though the revenue mix shift to lower-margin API will dilute margins, we expect Z.ai to turn profitable in 2027 instead of 2028. However, we lower our TP to HKD1,500 (from HKD1,900), factoring in lower FCF assumptions to reflect more intense competition in pricing, higher share count after the HKD31bn H-share follow-on offerings in July 2026, and changes in exchange rate (USD-HKD). Our TP implies 14x P/ARR in December 2027 vs Anthropic's 8x (based on HSBC's global tech platforms team estimates on Anthropic's ARR and USD1.2trn valuation in secondary market transactions (Business Insider, 9 July 2026)). The premium is justified by faster ARR growth of $220\\%$ for Z.ai vs Anthropic $(50\\%)$ . Maintain Hold.",
+        "bbox": [
+            40,
+            338,
+            622,
+            529
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Implications from the Kimi K3 launch: (1) Scaling law continues: We think K3's intelligence leap is due to higher parameter size (rises from 1trn for K2.7 to 2.8trn). Z.ai could potentially catch up with the next model as GLM-5.2 only has 744bn parameters. (2) Competition intensifies: K3's launch suggests that Chinese open weight models could step up with 3trn parameter size models in 3Q26, including MiniMax and DeepSeek. We notice the iteration frequency from frontier labs has further accelerated in recent weeks, e.g., five leading US players (Anthropic, OpenAI, Google, SpaceXAI, Meta) all released model updates in July to date (exhibit 2). This shows that leadership in model capability has turned more temporary and frontier labs need to stay invested. (3) Computing power matters for ARR: K3 has much slower token throughput than peers and paused new to-C subscription two days after the launch. This suggests it lacks computing power. On the other hand, Z.ai has begun operating a 1GW data center (several clusters, each with over 10k domestic chips), with breakthrough in using domestic chips for inferencing (Bloomberg News, 21 July 2026) buffering compute power constraint. In addition, per Sina News on 21 July 2026, Z.ai acquired XCore Sigma (a heterogeneous AI compute software provider) to improve utilization of various types of chips. We believe these measures can support Z.ai to grow its ARR continuously amid robust user demand.",
+        "bbox": [
+            40,
+            531,
+            622,
+            817
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Catalysts and risks: (1) Launch of a new GLM in 3Q26 (+ve), (2) model iterations from competitors (-ve), (3) geopolitical risks related to potential ban of Chinese frontier models in the US market (-ve), (4) lock-up expiry (-ve): c38% of Z.ai's shares could be unlocked in early January 2027, and (5) fundraising/IPO of frontier labs could reduce the scarcity premium.",
+        "bbox": [
+            40,
+            819,
+            618,
+            900
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Disclosures & Disclaimer",
+        "text_level": 2,
+        "bbox": [
+            43,
+            919,
+            252,
+            934
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it.",
+        "bbox": [
+            40,
+            933,
+            622,
+            965
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Equities",
+        "text_level": 2,
+        "bbox": [
+            655,
+            97,
+            748,
+            115
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Internet Software & Services",
+        "bbox": [
+            655,
+            114,
+            940,
+            135
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China",
+        "bbox": [
+            655,
+            169,
+            704,
+            184
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/54992c5983a1d7154d7a50bb68d80c5e6ac2857888363817f138f3e71dc5672a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            645,
+            221,
+            686,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MAINTAIN HOLD",
+        "bbox": [
+            709,
+            229,
+            838,
+            245
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "TARGET PRICE (HKD)",
+        "bbox": [
+            644,
+            262,
+            765,
+            278
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "PREVIOUS TARGET (HKD)",
+        "bbox": [
+            799,
+            262,
+            944,
+            277
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1,500.00",
+        "bbox": [
+            645,
+            278,
+            762,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1,900.00",
+        "bbox": [
+            801,
+            278,
+            917,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SHARE PRICE (HKD) UPSIDE/DOWNSIDE",
+        "bbox": [
+            644,
+            309,
+            912,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1,281.00 +17.1%",
+        "bbox": [
+            644,
+            324,
+            905,
+            347
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(as of 27 Jul 2026)",
+        "bbox": [
+            644,
+            346,
+            721,
+            358
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MARKET DATA",
+        "text_level": 2,
+        "bbox": [
+            644,
+            367,
+            730,
+            379
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Market cap (HKDm) 586,584\nMarket cap (USDm) 74,796\n3m ADTV (USDm) 648",
+        "bbox": [
+            644,
+            379,
+            806,
+            412
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/848ebdc6c86e5bc676cbae219876783864a7eace0f42617359c68f97957c4b36.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Free float</td><td>10%</td></tr><tr><td>BBG</td><td>2513 HK</td></tr><tr><td>RIC</td><td>2513.HK</td></tr></table>",
+        "bbox": [
+            814,
+            377,
+            961,
+            411
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/55f5a9ca41b69eec2ad5192cdcc14b441739d6de20ae7f1eb404f2eb767c39f0.jpg",
+        "table_caption": [
+            "FINANCIALS AND RATIOS (CNY)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td>HSBC EPS</td><td>-19.95</td><td>-5.37</td><td>3.72</td><td>18.83</td></tr><tr><td>HSBC EPS (prev)</td><td>-19.95</td><td>-7.08</td><td>-4.46</td><td>0.99</td></tr><tr><td>Change (%)</td><td>0.0</td><td>24.2</td><td>nm</td><td>1,799.8</td></tr><tr><td>Consensus EPS</td><td>-10.80</td><td>-9.70</td><td>-8.81</td><td>-3.04</td></tr><tr><td>PE (x)</td><td>nm</td><td>nm</td><td>297.7</td><td>58.7</td></tr><tr><td>Dividend yield (%)</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>EV/EBITDA (x)</td><td>nm</td><td>nm</td><td>198.6</td><td>34.6</td></tr><tr><td>ROE (%)</td><td>52.8</td><td>-19.2</td><td>5.5</td><td>25.8</td></tr></table>",
+        "bbox": [
+            642,
+            434,
+            959,
+            529
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/069f65e24bb345fbf4ef0e645db479c6187e01343a38134e3b1bec7f812e490f.jpg",
+        "content": "",
+        "chart_caption": [
+            "52-WEEK PRICE (HKD)"
+        ],
+        "chart_footnote": [
+            "Source: LSEG IBES, HSBC estimates"
+        ],
+        "bbox": [
+            650,
+            558,
+            949,
+            636
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ritchie Sun\\*, CFA",
+        "text_level": 2,
+        "bbox": [
+            644,
+            667,
+            752,
+            680
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Analyst, Internet Research\nThe Hongkong and Shanghai Banking Corporation Limited\nritchie.k.h.sun@hsbc.com.hk\n+852 2822 4392",
+        "bbox": [
+            642,
+            684,
+            957,
+            721
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Charlene Liu\\*",
+        "text_level": 2,
+        "bbox": [
+            644,
+            725,
+            726,
+            738
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Head of Internet and Gaming Research, Asia Pacific  \nThe Hongkong and Shanghai Banking Corporation  \nLimited, Singapore Branch  \ncharlene.r.liu@hsbc.com.sg  \n+65 6658 0615",
+        "bbox": [
+            642,
+            734,
+            942,
+            788
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Peishan Wang\\*",
+        "text_level": 2,
+        "bbox": [
+            644,
+            791,
+            736,
+            804
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Analyst, Internet Research\nThe Hongkong and Shanghai Banking Corporation Limited\npeishan.wang@hsbc.com.hk\n+852 3941 7008",
+        "bbox": [
+            642,
+            804,
+            957,
+            845
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations",
+        "bbox": [
+            642,
+            855,
+            954,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Issuer of report: The Hongkong and Shanghai Banking Corporation Limited",
+        "bbox": [
+            640,
+            917,
+            930,
+            942
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "View HSBC Global Investment Research at:",
+        "text_level": 2,
+        "bbox": [
+            640,
+            952,
+            925,
+            965
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "https://www.research.hsbc.com",
+        "bbox": [
+            640,
+            968,
+            853,
+            981
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "HSBC Global Investment Research",
+        "bbox": [
+            43,
+            14,
+            451,
+            45
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "28 July 2026",
+        "bbox": [
+            870,
+            20,
+            962,
+            35
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Financials & valuation: Z.AI",
+        "text_level": 2,
+        "bbox": [
+            67,
+            116,
+            338,
+            133
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/61463295d5e4f7be3b2e914d75a02ac0e1fddfeb4238d9f0d6cfd9c1ad9a109b.jpg",
+        "table_caption": [
+            "Financial statements",
+            "Ratio, growth and per share analysis"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td colspan=\"5\">Profit &amp; loss summary (CNYm)</td></tr><tr><td>Revenue</td><td>724</td><td>7,206</td><td>29,176</td><td>66,237</td></tr><tr><td>EBITDA</td><td>-3,517</td><td>-3,186</td><td>2,291</td><td>12,687</td></tr><tr><td>Depreciation &amp; amortisation</td><td>-270</td><td>-721</td><td>-2,042</td><td>-2,981</td></tr><tr><td>Operating profit/EBIT</td><td>-3,787</td><td>-3,906</td><td>249</td><td>9,706</td></tr><tr><td>Net interest</td><td>-74</td><td>-84</td><td>-84</td><td>-84</td></tr><tr><td>PBT</td><td>-4,718</td><td>-3,930</td><td>229</td><td>9,690</td></tr><tr><td>HSBC PBT</td><td>-4,718</td><td>-3,930</td><td>229</td><td>9,690</td></tr><tr><td>Taxation</td><td>0</td><td>0</td><td>0</td><td>-969</td></tr><tr><td>Net profit</td><td>-1,918</td><td>-3,910</td><td>249</td><td>8,741</td></tr><tr><td>HSBC net profit</td><td>-3,182</td><td>-2,628</td><td>2,001</td><td>11,154</td></tr><tr><td colspan=\"5\">Cash flow summary (CNYm)</td></tr><tr><td>Cash flow from operations</td><td>-2,246</td><td>-690</td><td>6,300</td><td>19,311</td></tr><tr><td>Capex</td><td>-23</td><td>-735</td><td>-2,013</td><td>-3,113</td></tr><tr><td>Cash flow from investment</td><td>-376</td><td>-735</td><td>-2,013</td><td>-3,113</td></tr><tr><td>Dividends</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Change in net debt</td><td>-98</td><td>-44,694</td><td>-4,281</td><td>-16,192</td></tr><tr><td>FCF equity</td><td>-2,269</td><td>-1,425</td><td>4,287</td><td>16,198</td></tr><tr><td colspan=\"5\">Balance sheet summary (CNYm)</td></tr><tr><td>Intangible fixed assets</td><td>90</td><td>90</td><td>90</td><td>90</td></tr><tr><td>Tangible fixed assets</td><td>854</td><td>868</td><td>839</td><td>972</td></tr><tr><td>Current assets</td><td>3,571</td><td>48,395</td><td>52,896</td><td>69,028</td></tr><tr><td>Cash &amp; others</td><td>2,745</td><td>47,440</td><td>51,721</td><td>67,913</td></tr><tr><td>Total assets</td><td>4,854</td><td>49,753</td><td>54,288</td><td>70,621</td></tr><tr><td>Operating liabilities</td><td>12,275</td><td>13,598</td><td>16,054</td><td>21,154</td></tr><tr><td>Gross debt</td><td>605</td><td>605</td><td>605</td><td>605</td></tr><tr><td>Net debt</td><td>-2,140</td><td>-46,835</td><td>-51,116</td><td>-67,308</td></tr><tr><td>Shareholders&#x27; funds</td><td>-8,093</td><td>35,508</td><td>37,608</td><td>48,861</td></tr><tr><td>Invested capital</td><td>-10,505</td><td>-11,683</td><td>-13,950</td><td>-18,977</td></tr></table>",
+        "bbox": [
+            67,
+            161,
+            489,
+            510
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Hold",
+        "text_level": 2,
+        "bbox": [
+            883,
+            118,
+            935,
+            133
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/efe2aafc92567c2b5b46770bdcd3b8633da78652d30c767db9cc75ea17766cde.jpg",
+        "table_caption": [
+            "Valuation data"
+        ],
+        "table_footnote": [
+            "\\* Based on HSBC EPS (diluted)"
+        ],
+        "table_body": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td>EV/sales</td><td>695.9</td><td>63.7</td><td>15.6</td><td>6.6</td></tr><tr><td>EV/EBITDA</td><td>nm</td><td>nm</td><td>198.6</td><td>34.6</td></tr><tr><td>EV/IC</td><td></td><td></td><td></td><td></td></tr><tr><td>PE*</td><td>nm</td><td>nm</td><td>297.7</td><td>58.7</td></tr><tr><td>PB</td><td></td><td>15.3</td><td>15.8</td><td>13.4</td></tr><tr><td>FCF yield (%)</td><td>-0.4</td><td>-0.3</td><td>0.8</td><td>3.2</td></tr><tr><td>Dividend yield (%)</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr></table>",
+        "bbox": [
+            514,
+            165,
+            935,
+            259
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/b98ccf0b7f5647a6c72eefcb78ef075284a59da30886b6998dcd3d4506879545.jpg",
+        "table_caption": [
+            "ESG metrics"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Environmental Indicators</td><td>12/2025a</td><td>Governance Indicators</td><td>12/2025a</td></tr><tr><td>GHG emission intensity*</td><td>5.9</td><td>No. of board members</td><td>9</td></tr><tr><td>Energy intensity*</td><td>11.2</td><td>Average board tenure (years)</td><td>1.1</td></tr><tr><td>CO2 reduction policy</td><td>Yes</td><td>Female board members (%)</td><td>22.2</td></tr><tr><td>Social Indicators</td><td>12/2025a</td><td>Board members independence (%)</td><td>33.3</td></tr><tr><td>Employee costs as % of revenues</td><td>188.2</td><td></td><td></td></tr><tr><td>Employee turnover (%)</td><td>n.a</td><td></td><td></td></tr><tr><td>Diversity policy</td><td>Yes</td><td></td><td></td></tr></table>",
+        "bbox": [
+            512,
+            302,
+            935,
+            414
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/7afbba4463784b5bef1fef617e4059a130f25e48ebdfb271843a33169d84e998.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, HSBC",
+            "\\* GHG intensity and energy intensity are measured in kg and kWh respectively against revenue in USD '000s"
+        ],
+        "table_body": "<table><tr><td>Year to</td><td>12/2025a</td><td>12/2026e</td><td>12/2027e</td><td>12/2028e</td></tr><tr><td colspan=\"5\">Y-o-y % change</td></tr><tr><td>Revenue</td><td>131.9</td><td>894.9</td><td>304.9</td><td>127.0</td></tr><tr><td>EBITDA</td><td></td><td></td><td></td><td>453.8</td></tr><tr><td>Operating profit</td><td></td><td></td><td></td><td>3,804.0</td></tr><tr><td>PBT</td><td></td><td></td><td></td><td>4,131.7</td></tr><tr><td>HSBC EPS</td><td></td><td></td><td></td><td>406.8</td></tr><tr><td colspan=\"5\">Ratios (%)</td></tr><tr><td>Revenue/IC (x)</td><td>-0.1</td><td>-0.6</td><td>-2.3</td><td>-4.0</td></tr><tr><td>ROIC</td><td>45.1</td><td>35.2</td><td>-1.9</td><td>-53.1</td></tr><tr><td>ROE</td><td>52.8</td><td>-19.2</td><td>5.5</td><td>25.8</td></tr><tr><td>ROA</td><td>-102.2</td><td>-14.4</td><td>0.4</td><td>14.0</td></tr><tr><td>EBITDA margin</td><td>-485.5</td><td>-44.2</td><td>7.9</td><td>19.2</td></tr><tr><td>Operating profit margin</td><td>-522.8</td><td>-54.2</td><td>0.9</td><td>14.7</td></tr><tr><td>EBITDA/net interest (x)</td><td></td><td></td><td>27.2</td><td>150.4</td></tr><tr><td>Net debt/equity</td><td>0.0</td><td>-132.0</td><td>-136.1</td><td>-138.0</td></tr><tr><td>Net debt/EBITDA (x)</td><td>0.6</td><td>14.7</td><td>-22.3</td><td>-5.3</td></tr><tr><td colspan=\"5\">CF from operations/net debt</td></tr><tr><td colspan=\"5\">Per share data (CNY)</td></tr><tr><td>EPS Rep (diluted)</td><td>-12.03</td><td>-7.99</td><td>0.46</td><td>14.76</td></tr><tr><td>HSBC EPS (diluted)</td><td>-19.95</td><td>-5.37</td><td>3.72</td><td>18.83</td></tr><tr><td>DPS</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>Book value</td><td>-50.73</td><td>72.53</td><td>69.84</td><td>82.48</td></tr></table>",
+        "bbox": [
+            67,
+            543,
+            489,
+            813
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/3e865cef7a84dafdcb0fdd5fda22ff0fa93b18fe44be59d339cbfb0a37b32960.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Issuer information</td></tr><tr><td>Share price (HKD)</td><td>1,281.00</td></tr><tr><td>Target price (HKD)</td><td>1,500.00</td></tr><tr><td>RIC (Equity)</td><td>2513.HK</td></tr><tr><td>Bloomberg (Equity)</td><td>2513 HK</td></tr><tr><td>Market cap (USDm)</td><td>74,796</td></tr></table>",
+        "bbox": [
+            514,
+            450,
+            718,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/07e0f1623c6d9553676bcef63ca9ece3d92154146a09a247217a8651325c94e4.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Free float</td><td>4%</td></tr><tr><td>Sector</td><td colspan=\"2\">Internet Software &amp; Services</td></tr><tr><td>Country/Region</td><td></td><td>China</td></tr><tr><td>Analyst</td><td></td><td>Ritchie Sun, CFA</td></tr><tr><td>Contact</td><td></td><td>+852 2822 4392</td></tr></table>",
+        "bbox": [
+            733,
+            463,
+            935,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d04a5a70145cd7079ef3763ff5ae9e58e3841b0d4aec97ce7b5ca227952faa7b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Price relative"
+        ],
+        "chart_footnote": [
+            "Source: HSBC",
+            "Note: Priced at close of 27 Jul 2026"
+        ],
+        "bbox": [
+            526,
+            571,
+            917,
+            709
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            9,
+            935,
+            36
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            67,
+            967,
+            80,
+            978
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Competition",
+        "text_level": 2,
+        "bbox": [
+            283,
+            115,
+            406,
+            133
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/20e8e297c61c57960340da0e68905898775f75a85e357e12b8b506a273ddb14f.jpg",
+        "table_caption": [
+            "Exhibit 1: Comparison between Z.ai and Moonshot on key metrics"
+        ],
+        "table_footnote": [
+            "Source: Company data, Bloomberg, Artificial Analysis (data as of 27 July 2026). Note: share price is as of 27 July 2026"
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Z.ai</td><td>Moonshot</td></tr><tr><td colspan=\"3\">Key model metrics</td></tr><tr><td>Flagship model</td><td>GLM-5.2</td><td>Kimi K3</td></tr><tr><td>Release date</td><td>13-Jun-26</td><td>16-Jul-26</td></tr><tr><td>Core architecture</td><td>DeepSeek Sparse Attention (DSA) + IndexShare</td><td>Kimi Delta Attention (KDA) + Attention Residuals (AttnRes) + Stable LatentMoE</td></tr><tr><td>Total parameters (bn)</td><td>744</td><td>2,800</td></tr><tr><td>Activated parameters (bn)</td><td>40</td><td>104</td></tr><tr><td>Activation ratio (%)</td><td>5.4%</td><td>3.7%</td></tr><tr><td>Experts</td><td>8 out of 256 experts</td><td>16 out of 896 experts</td></tr><tr><td>Training data scale (trn tokens)</td><td>30</td><td>n.a.</td></tr><tr><td>Context window (m)</td><td>1</td><td>1</td></tr><tr><td>Modality</td><td>Text</td><td>Native multi-modal</td></tr><tr><td colspan=\"3\">Cost vs. Intelligence vs. Speed</td></tr><tr><td colspan=\"3\">API pricing (USD)</td></tr><tr><td>Input (Cache hit)</td><td>0.26</td><td>0.3</td></tr><tr><td>Input (Cache miss)</td><td>1.4</td><td>3</td></tr><tr><td>Output</td><td>4.4</td><td>15</td></tr><tr><td>Cost per task (USD)</td><td>0.32</td><td>0.72</td></tr><tr><td>Artificial Analysis Intelligence Index</td><td>51</td><td>57</td></tr><tr><td>Output speed (tps)</td><td>211</td><td>33</td></tr><tr><td colspan=\"3\">Financial metrics</td></tr><tr><td>Latest ARR (USDbn)</td><td>1</td><td>0.3</td></tr><tr><td>Latest ARR date</td><td>Jul-26</td><td>Jun-26</td></tr><tr><td>Latest valuation (USDbn)</td><td>76</td><td>50</td></tr><tr><td>P/ARR (x)</td><td>76</td><td>167</td></tr></table>",
+        "bbox": [
+            281,
+            167,
+            932,
+            461
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/807f02ed690dffd5cefca3b26e20eee26d8ef6510febb4b866b30648c101b2af.jpg",
+        "table_caption": [
+            "Exhibit 2: More companies have launched model iterations in July 2026"
+        ],
+        "table_footnote": [
+            "Source: Company data, HSBC"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"20\">Major product launch since 2025</td></tr><tr><td>Launch time</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td><td>Jul-26</td></tr><tr><td rowspan=\"13\">Foundation model</td><td>GLM</td><td>Realtime</td><td colspan=\"5\">Z1-Rumination</td><td>4.5</td><td>4.5v</td><td>4.6</td><td></td><td></td><td>4.7</td><td></td><td>5.0</td><td>5.0 Turbo</td><td>5.1/5v-turbo</td><td>5.1-highspeed</td><td>5.2</td><td></td></tr><tr><td>Opus</td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td><td>4.1</td><td></td><td></td><td>4.5</td><td></td><td></td><td>4.6</td><td></td><td>4.7</td><td>4.8</td><td></td><td>5</td></tr><tr><td>Fable</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Fable 5</td><td></td></tr><tr><td>Sonnet</td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td><td></td><td>4.5</td><td></td><td></td><td></td><td></td><td>4.6</td><td></td><td></td><td></td><td>5</td><td></td></tr><tr><td>Gemini</td><td></td><td></td><td>2.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td></td><td></td><td>3.1</td><td></td><td></td><td>3.5 flash</td><td></td><td>3.6 flash</td></tr><tr><td>GPT</td><td></td><td>4.5</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td><td>5.1</td><td>5.2</td><td></td><td>5.3-Codex</td><td>5.4</td><td>5.5</td><td></td><td></td><td>5.6</td></tr><tr><td>Grok</td><td></td><td>3</td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.20 0309</td><td>4.3</td><td colspan=\"2\">Build 0.1 0616</td><td>4.5</td></tr><tr><td>Meta</td><td></td><td></td><td colspan=\"4\">Llama 4 Maverick</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Muse Spark</td><td></td><td colspan=\"2\">Muse Spark 1.1</td></tr><tr><td>MiniMax</td><td>01</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>M2</td><td></td><td>M2.1</td><td></td><td>M2.5</td><td>M2.7</td><td></td><td></td><td>M3</td><td></td></tr><tr><td>DeepSeek</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>V3.1</td><td></td><td></td><td></td><td>V3.2</td><td></td><td></td><td></td><td>V4</td><td></td><td></td><td></td></tr><tr><td>Qwen</td><td>2.5-Max</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3-Max</td><td></td><td></td><td>3-Max thinking</td><td></td><td>3.5</td><td>3.5-Max preview</td><td>3.6 Plus/3.6 Max preview</td><td>3.7-Max</td><td>3.7-Plus</td><td>3.8-Max preview</td></tr><tr><td>Kimi</td><td>K1.5</td><td></td><td></td><td></td><td></td><td></td><td>K2</td><td></td><td></td><td></td><td></td><td></td><td>K2.5</td><td></td><td></td><td>K2.6</td><td></td><td>K2.7 Code</td><td>K3</td></tr><tr><td>HY</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>HY3 preview</td><td></td><td></td><td>HY3</td></tr><tr><td rowspan=\"6\">Agent</td><td>GLM</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Auto GLM-2</td><td>GLM Coding Plan</td><td></td><td colspan=\"3\">ZCode</td><td colspan=\"3\">AutoClaw/ZCode update</td><td></td><td colspan=\"2\">ZCode 3.0</td></tr><tr><td>MiniMax</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td colspan=\"3\">MiniMax Agent</td><td>MaxClaw</td><td>MaxHermes</td><td></td><td></td><td></td></tr><tr><td>Kimi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Kimi Work</td><td></td></tr><tr><td>Google</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td colspan=\"3\">Antigravity</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Anthropic</td><td></td><td>Claude Code</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Cowork</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>OpenAI</td><td></td><td></td><td></td><td></td><td>Codex</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td colspan=\"2\">ChatGPT Work</td></tr></table>",
+        "bbox": [
+            67,
+            507,
+            934,
+            675
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6fa006d893fcb4d8d12785e6496a480e304a65a40db5e953fb1d7095b9a05c2a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: Zhipu has been constantly catching up with top US and China models"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis. Note: Latest data as of 27 July 2026"
+        ],
+        "bbox": [
+            298,
+            725,
+            915,
+            903
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            922,
+            967,
+            934,
+            976
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/413a946755d20e292b58e6964f3a8efd8f63f2fdc94f292ad101a4cada79af65.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 4: GLM-5.2's price performance stays attractive compared to some western models"
+        ],
+        "chart_footnote": [
+            "Source: Artificial Analysis; Note: Cost per task using average cost per task in the index. Costs are split by input, cache hit, cache write, reasoning, and answer token pricing where canonical token counts are available."
+        ],
+        "bbox": [
+            288,
+            135,
+            913,
+            356
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/77875273df4362e91d9b4dc2e570a07df2961382dd710bc1296345bd63f81844.jpg",
+        "table_caption": [
+            "Exhibit 5: Parameter size for open weight models has increased significantly"
+        ],
+        "table_footnote": [
+            "Source: Company data, Artificial Analysis, Huggingface. Note: K3 and Qwen 3.8 Max are reported to be open weight but details will announce later by companies."
+        ],
+        "table_body": "<table><tr><td>Key latest models</td><td>Context Window (k)</td><td>Parameters (bn)</td><td>Activated parameters (bn)</td><td>Open/Proprietary</td></tr><tr><td>GLM-5.2</td><td>1,000</td><td>744</td><td>40</td><td>Open</td></tr><tr><td>Kimi-K3</td><td>c1,000</td><td>2,800</td><td>104</td><td>Open*</td></tr><tr><td>Kimi-K2.7 Code</td><td>256</td><td>1,000</td><td>32</td><td>Open</td></tr><tr><td>MiniMax-M3</td><td>1,000</td><td>428</td><td>23</td><td>Open</td></tr><tr><td>Claude Fable 5</td><td>1,000</td><td>n.a.</td><td>n.a.</td><td>Proprietary</td></tr><tr><td>GLM-5.1</td><td>c200</td><td>c750</td><td>40</td><td>Open</td></tr><tr><td>Kimi-K2.6</td><td>256</td><td>1,000</td><td>32</td><td>Open</td></tr><tr><td>MiniMax-M2.7</td><td>205</td><td>230</td><td>10</td><td>Open</td></tr><tr><td>DeepSeek-V4 Pro</td><td>1,000</td><td>1,600</td><td>49</td><td>Open</td></tr><tr><td>Qwen 3.8 Max preview</td><td>n.a</td><td>2,400</td><td>n.a.</td><td>Open*</td></tr><tr><td>Claude Opus 5</td><td>1,000</td><td>n.a.</td><td>n.a.</td><td>Proprietary</td></tr><tr><td>GPT-5.6</td><td>1,000</td><td>n.a.</td><td>n.a.</td><td>Proprietary</td></tr><tr><td>Gemini 3.1 Pro Preview</td><td>1,000</td><td>n.a.</td><td>n.a.</td><td>Proprietary</td></tr><tr><td>HY3</td><td>256</td><td>295</td><td>21</td><td>Open</td></tr></table>",
+        "bbox": [
+            281,
+            433,
+            932,
+            604
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/87ee5df5fdafa6d484c6ffcf7f38c09d519e3291df15bdda6a6674f7133bb06c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: The key positive and negative share price catalysts for Zhipu in rest of the year"
+        ],
+        "chart_footnote": [
+            "Source: Company filings, Hang Seng Index, HSBC. Note: % numbers in chart are as % of total company shares. Green highlights represent positive catalysts, red highlights represent negative catalysts"
+        ],
+        "bbox": [
+            70,
+            673,
+            925,
+            757
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            193,
+            36
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            67,
+            968,
+            80,
+            976
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ARR",
+        "text_level": 2,
+        "bbox": [
+            281,
+            115,
+            335,
+            132
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/32dbda3d8a22af09e4f4da97856f8ee5fa0d85b4fc20d6b0c3b31521606586e6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: We expect Zhipu MaaS's ARR to reach USD2bn in December 2026 (51x yoy)"
+        ],
+        "chart_footnote": [
+            "Source: Company data, HSBC estimates"
+        ],
+        "bbox": [
+            286,
+            181,
+            913,
+            358
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5f930d073cdcdb0a0946afe91c6c61d1eeab25008316bd2151ebd7af5ad75439.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 8: We expect Zhipu MaaS's ARR to grow faster than Anthropic's ARR"
+        ],
+        "chart_footnote": [
+            "Source: Company data, HSBC estimates"
+        ],
+        "bbox": [
+            288,
+            439,
+            932,
+            619
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1c7f053ba7b84b90799badc02773dcd7ae61a1ab02c7e964a7d91fd115da1aa3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9: Z.ai's P/latest ARR ratio vs. peers"
+        ],
+        "chart_footnote": [
+            "Source: Company data, HSBC estimates, Sina News, 36Kr News, Bloomberg News, Bloomberg. Note: Share price is as of 27 July 2026"
+        ],
+        "bbox": [
+            293,
+            706,
+            934,
+            895
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            922,
+            967,
+            934,
+            976
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Token consumption trends",
+        "text_level": 2,
+        "bbox": [
+            283,
+            116,
+            548,
+            133
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4fd6d2d7b147cacd578a8c4dbd6ee3a050fc3888ef6bf3240da4702123406620.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 10: Zhipu's average daily token on OpenRouter saw healthy growth in June and July to date"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, HSBC. Note: Tencent has low base in Jan-Mar before HY3 on OpenRouter; July data using daily average up to 26 July 2026"
+        ],
+        "bbox": [
+            286,
+            195,
+            908,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b176132fb7ef2055a8a3a798d7ecdbd2bb91f84b87944aa60ccf8e81bd32e5b9.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 11: Zhipu's token usage saw meaningful uptick post GLM-5.2 launch"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, company data, HSBC"
+        ],
+        "bbox": [
+            293,
+            458,
+            912,
+            635
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2b9edba6225eb3632b39f2dc082df277897ba59891de9ecc52224e7f02b7de81.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 12: Daily token usage trend on OpenRouter post each model launch – Zhipu"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, HSBC. Note: Token volume showing total token from the provider not only new model; cross sign showing the token volume day right before the launch date"
+        ],
+        "bbox": [
+            284,
+            706,
+            895,
+            881
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            69,
+            967,
+            80,
+            978
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bb4638780138d33fdb0111641b4c8fb5d7f9802a8bbe0904d0c770e158baeb94.jpg",
+        "content": "",
+        "chart_caption": [
+            "Daily token on OpenRouter since each model launch (bn)",
+            "Exhibit 13: Daily token trend on OpenRouter post each model launch – MiniMax",
+            "Source: OpenRouter, HSBC. Note: Token volume showing total token from the provider not only new model; cross sign showing the token volume day right before the launch date"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            284,
+            139,
+            895,
+            316
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/297f1eef349c8a8c15c64598742b1e9493081bf06a7afa64abd7e5a981e96e80.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 14: Daily token trend on OpenRouter post each model launch – Kimi"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, HSBC. Note: Token volume showing total token from the provider not only new model; cross sign showing the token volume day right before the launch date"
+        ],
+        "bbox": [
+            286,
+            425,
+            898,
+            588
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/950955cc07297d91ca4d9c02de7528877e2c6f84093b535b7e740fe306355bec.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 15: Daily token trend on OpenRouter post each model launch – DeepSeek"
+        ],
+        "chart_footnote": [
+            "Source: OpenRouter, HSBC. Note: Token volume showing total token from the provider not only new model; cross sign showing the token volume day right before the launch date"
+        ],
+        "bbox": [
+            286,
+            684,
+            895,
+            860
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            922,
+            967,
+            934,
+            976
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Estimate changes",
+        "text_level": 2,
+        "bbox": [
+            281,
+            115,
+            460,
+            133
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Z.ai ARR reached USD1bn in July (per Bloomberg News on 17 July 2026), ahead of the guidance by December 2026. We raise ARR estimates to USD2bn (from USD1bn) in December 2026 and USD6.5bn (from USD2.4bn) in December 2027. Though the revenue mix shift to lower-margin API will dilute margins, we expect Z.ai to turn profitable in 2027 instead of 2028. Our TP cut to HKD1,500 (from HKD1,900) factors in lower FCF assumptions to reflect more intense competition in pricing, higher share count after the HKD31bn H-share follow-on offerings in July 2026, and changes in exchange rate (USD-HKD).",
+        "bbox": [
+            279,
+            148,
+            932,
+            260
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/487a6c7acf92bd0f17dffd9658011e607f2bdeb18b4de06d8f757a3e02c5feac.jpg",
+        "table_caption": [
+            "Exhibit 16: Estimate changes"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>RMBm</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td colspan=\"4\">New</td></tr><tr><td>Revenue</td><td>7,206</td><td>29,176</td><td>66,237</td></tr><tr><td>y-o-y</td><td>895%</td><td>305%</td><td>127%</td></tr><tr><td>Gross margin</td><td>26%</td><td>28%</td><td>31%</td></tr><tr><td>OP</td><td>(3,906)</td><td>249</td><td>9,706</td></tr><tr><td>OPM</td><td>-54%</td><td>1%</td><td>15%</td></tr><tr><td>Non-IFRS OP</td><td>(2,604)</td><td>2,020</td><td>12,139</td></tr><tr><td>Non-IFRS OPM</td><td>-36%</td><td>7%</td><td>18%</td></tr><tr><td>Net income</td><td>(3,910)</td><td>249</td><td>8,741</td></tr><tr><td>NM %</td><td>-54%</td><td>1%</td><td>13%</td></tr><tr><td>Net income non-IFRS</td><td>(2,628)</td><td>2,001</td><td>11,154</td></tr><tr><td>Non-IFRS NM %</td><td>-36%</td><td>7%</td><td>17%</td></tr><tr><td>EPS (RMB)</td><td>(7.99)</td><td>0.46</td><td>14.76</td></tr><tr><td>Non-IFRS EPS (RMB)</td><td>(5.37)</td><td>3.72</td><td>18.83</td></tr><tr><td colspan=\"4\">Old</td></tr><tr><td>Revenue</td><td>4,328</td><td>12,760</td><td>26,612</td></tr><tr><td>y-o-y</td><td>497%</td><td>195%</td><td>109%</td></tr><tr><td>Gross margin</td><td>29%</td><td>29%</td><td>32%</td></tr><tr><td>OP</td><td>(4,646)</td><td>(4,338)</td><td>(1,968)</td></tr><tr><td>OPM</td><td>-107%</td><td>-34%</td><td>-7%</td></tr><tr><td>Non-IFRS OP</td><td>(3,302)</td><td>(2,287)</td><td>580</td></tr><tr><td>Non-IFRS OPM</td><td>-76%</td><td>-18%</td><td>2%</td></tr><tr><td>Net income</td><td>(4,650)</td><td>(4,338)</td><td>(1,964)</td></tr><tr><td>NM %</td><td>-107%</td><td>-34%</td><td>-7%</td></tr><tr><td>Net income non-IFRS</td><td>(3,325)</td><td>(2,307)</td><td>563</td></tr><tr><td>Non-IFRS NM %</td><td>-77%</td><td>-18%</td><td>2%</td></tr><tr><td>EPS (RMB)</td><td>(9.90)</td><td>(8.39)</td><td>(3.46)</td></tr><tr><td>Non-IFRS EPS (RMB)</td><td>(7.08)</td><td>(4.46)</td><td>0.99</td></tr><tr><td colspan=\"4\">Changes</td></tr><tr><td>Revenue</td><td>66.5%</td><td>128.6%</td><td>148.9%</td></tr><tr><td>Gross margin</td><td>-2.3ppt</td><td>-1.6ppt</td><td>-1.3ppt</td></tr><tr><td>OP</td><td>16%</td><td>n.a.</td><td>n.a.</td></tr><tr><td>OPM</td><td>53.2ppt</td><td>34.8ppt</td><td>22.0ppt</td></tr><tr><td>Non-IFRS OP</td><td>21%</td><td>n.a.</td><td>n.m</td></tr><tr><td>Non-IFRS OPM</td><td>40.2ppt</td><td>24.8ppt</td><td>16.1ppt</td></tr><tr><td>Net income</td><td>16%</td><td>n.a.</td><td>n.a.</td></tr><tr><td>NM %</td><td>53.2ppt</td><td>34.8ppt</td><td>20.6ppt</td></tr><tr><td>Net income non-IFRS</td><td>21%</td><td>n.a.</td><td>n.m</td></tr><tr><td>Non-IFRS NM %</td><td>40.4ppt</td><td>24.9ppt</td><td>14.7ppt</td></tr><tr><td>EPS (RMB)</td><td>19%</td><td>n.a.</td><td>n.a.</td></tr><tr><td>Non-IFRS EPS (RMB)</td><td>24%</td><td>n.a.</td><td>n.m</td></tr></table>",
+        "bbox": [
+            281,
+            299,
+            935,
+            801
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            193,
+            36
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            9,
+            935,
+            36
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            69,
+            967,
+            80,
+            978
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: HSBC estimates",
+        "bbox": [
+            67,
+            414,
+            165,
+            424
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/0b210d2647fd7f60b44fb6e2be2a2f17545fc94f55cafe1582ff2fc311d0aaea.jpg",
+        "table_caption": [
+            "Valuation and risks"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\"></td><td>Valuation</td><td>Risks to our view</td></tr><tr><td>Z.AI2513 HK</td><td>Current price:HKD1,281.00Target price:HKD1,500.00Up/downside:+17.1%</td><td>Methodology: DCFAssumptions: We have a Hold rating on Zhipu, with a HKD1,500.00 target price (from HKD1,900.00). This is based on a 10-year discounted cash flow (DCF) model, based on 11.8% WACC and 3% terminal growth rate. WACC is based on a 4.25% risk-free rate and 4.75% market risk premium (based on HSBC&#x27;s global equity strategy team views), a 0.5% regulatory risk premium (due to being on the BIS Entity list), 1.45 beta, and 0.3% debt-to-debt &amp; equity ratio.We raise ARR estimates to USD2bn and USD6.5bn in December 2026 and December 2027, from USD1bn and USD2.4bn. Though the revenue mix shift to lower-margin API will dilute margins, we expect Z.ai to turn profitable in 2027 instead of 2028. Our TP cut to HKD1,500.00 factors in lower FCF assumptions to reflect more intense competition in pricing, higher share count after the HKD31bn H-share follow-on offerings in July 2026, and changes in exchange rate (USD-HKD).Our target price implies c17% upside; we have a Hold rating given intensified competition in the LLM market.</td><td>Upside risks:◆ Resolving the computing bottleneck (i.e., limited access to high-performance AI compute)◆ GLM iterations◆ Faster-than-expected pace to break even◆ Endorsement from major industry playersDownside risks:◆ The launch of new models from competitors which may dilute token usage growth◆ Potential IPO of competitors (e.g., Anthropic, OpenAI, Kimi) that would reduce its scarcity premium◆ Lock-up periods to end on 7 January 2027◆ Weaker-than-expected model performance after iterations◆ Slower-than-expected pace to break even◆ Heavy cash burn and refinancing needs◆ Geopolitical risks</td></tr></table>",
+        "bbox": [
+            64,
+            132,
+            929,
+            397
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            10,
+            934,
+            36
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            922,
+            967,
+            934,
+            976
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosure appendix",
+        "text_level": 1,
+        "bbox": [
+            69,
+            121,
+            519,
+            156
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            65,
+            192,
+            222,
+            206
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Ritchie Sun, CFA, Charlene Liu and Peishan Wang",
+        "bbox": [
+            64,
+            208,
+            937,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Important disclosures",
+        "text_level": 2,
+        "bbox": [
+            65,
+            327,
+            232,
+            341
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Equities: Stock ratings and basis for financial analysis",
+        "text_level": 2,
+        "bbox": [
+            65,
+            345,
+            468,
+            360
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating.",
+        "bbox": [
+            64,
+            361,
+            937,
+            473
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "HSBC assigns ratings on the following basis:",
+        "text_level": 2,
+        "bbox": [
+            65,
+            479,
+            401,
+            493
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than $20\\%$ above the current share price, the stock will be classified as a Buy; when it is between $5\\%$ and $20\\%$ above the current share price, the stock may be classified as a Buy or a Hold; when it is between $5\\%$ below and $5\\%$ above the current share price, the stock will be classified as a Hold; when it is between $5\\%$ and $20\\%$ below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than $20\\%$ below the current share price, the stock will be classified as a Reduce.",
+        "bbox": [
+            64,
+            495,
+            937,
+            590
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates).",
+        "bbox": [
+            65,
+            597,
+            935,
+            628
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Upside/Downside is the percentage difference between the target price and the share price.",
+        "bbox": [
+            65,
+            636,
+            689,
+            650
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Rating distribution for long-term investment opportunities",
+        "text_level": 2,
+        "bbox": [
+            65,
+            659,
+            492,
+            673
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "As of 30 June 2026, the distribution of all independent ratings published by HSBC is as follows:",
+        "bbox": [
+            65,
+            678,
+            763,
+            692
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/1338a36d1b348a01eb81d864a0ad053610e3e4e25124cb6685ab38eeaf7b8592.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Buy</td><td>61%</td><td>(13% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>34%</td><td>(10% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>5%</td><td>(8% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>",
+        "bbox": [
+            67,
+            692,
+            907,
+            748
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above.",
+        "bbox": [
+            65,
+            754,
+            935,
+            817
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures.",
+        "bbox": [
+            65,
+            824,
+            935,
+            856
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            9,
+            935,
+            36
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            69,
+            967,
+            87,
+            978
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Share price and rating changes for long-term investment opportunities",
+        "bbox": [
+            67,
+            119,
+            583,
+            133
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Z.AI (2513.HK) share price performance HKD Vs HSBC rating history",
+        "bbox": [
+            74,
+            135,
+            477,
+            166
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b00b52d3903805a465a97c795ab98ab5707cbb069aee867e2956661e1867a28a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            77,
+            167,
+            489,
+            358
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/1e690ac3c191fc11192fda9cfb5296dd297987f896233f0c5ed70dc60e389166.jpg",
+        "table_caption": [
+            "Rating & target price history"
+        ],
+        "table_footnote": [
+            "Source: HSBC"
+        ],
+        "table_body": "<table><tr><td>From</td><td>To</td><td>Date</td><td>Analyst</td></tr><tr><td>N/A</td><td>Hold</td><td>01 Apr 2026</td><td>Ritchie Sun, CFA</td></tr><tr><td>Target price</td><td>Value</td><td>Date</td><td>Analyst</td></tr><tr><td>Price 1</td><td>920</td><td>01 Apr 2026</td><td>Ritchie Sun, CFA</td></tr><tr><td>Price 2</td><td>1900</td><td>25 Jun 2026</td><td>Ritchie Sun, CFA</td></tr></table>",
+        "bbox": [
+            522,
+            160,
+            937,
+            239
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:",
+        "bbox": [
+            65,
+            375,
+            935,
+            423
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures",
+        "bbox": [
+            67,
+            430,
+            615,
+            445
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "All other clients: www.research.hsbc.com/A/Disclosures",
+        "bbox": [
+            65,
+            453,
+            448,
+            468
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "HSBC & Analyst disclosures",
+        "text_level": 2,
+        "bbox": [
+            67,
+            476,
+            279,
+            490
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/28f784b10ed5c8ac7be49e54defd299708e0a6c190f499d7fd35ce6c6520fad8.jpg",
+        "table_caption": [
+            "Disclosure checklist"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Company</td><td>Ticker</td><td>Recent price</td><td>Price date</td><td>Disclosure</td></tr><tr><td>Z.AI</td><td>2513.HK</td><td>1281.00</td><td>27 Jul 2026</td><td>11</td></tr><tr><td colspan=\"5\">Source: HSBC</td></tr></table>",
+        "bbox": [
+            67,
+            513,
+            934,
+            554
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1 HSBC has managed or co-managed a public offering of securities for this company within the past 12 months.",
+        "bbox": [
+            69,
+            566,
+            846,
+            582
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2 HSBC expects to receive or intends to seek compensation for investment banking services from this company in the next 3 months.",
+        "bbox": [
+            69,
+            583,
+            934,
+            614
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3 At the time of publication of this report, HSBC Securities (USA) Inc. is a Market Maker in securities issued by this company.",
+        "bbox": [
+            67,
+            616,
+            866,
+            647
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "4 As of 30 June 2026, HSBC beneficially owned $1\\%$ or more of a class of common equity securities of this company.",
+        "bbox": [
+            70,
+            650,
+            876,
+            665
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of investment banking services.",
+        "bbox": [
+            69,
+            667,
+            844,
+            697
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "6 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-investment banking securities-related services.",
+        "bbox": [
+            69,
+            700,
+            843,
+            729
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "7 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-securities services.",
+        "bbox": [
+            69,
+            733,
+            843,
+            762
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "8 A covering analyst/s has received compensation from this company in the past 12 months.",
+        "bbox": [
+            69,
+            766,
+            718,
+            781
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "9 A covering analyst/s or a member of his/her household has a financial interest in the securities of this company, as detailed below.",
+        "bbox": [
+            69,
+            784,
+            878,
+            812
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "10 A covering analyst/s or a member of his/her household is an officer, director or supervisory board member of this company, as detailed below.",
+        "bbox": [
+            70,
+            816,
+            866,
+            846
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "11 At the time of publication of this report, HSBC is a non-US Market Maker in securities issued by this company and/or in securities in respect of this company.",
+        "bbox": [
+            70,
+            849,
+            905,
+            878
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "12 As of 22 July 2026, HSBC beneficially held a net long position of more than $0.5\\%$ of this company's total issued share capital, calculated according to the SSR methodology.",
+        "bbox": [
+            70,
+            881,
+            898,
+            911
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            917,
+            967,
+            934,
+            978
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "13 As of 22 July 2026, HSBC beneficially held a net short position of more than $0.5\\%$ of this company's total issued share capital, calculated according to the SSR methodology.",
+        "bbox": [
+            69,
+            120,
+            903,
+            149
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "14 HSBC Qianhai Securities Limited holds 1% or more of a class of common equity securities of this company.",
+        "bbox": [
+            69,
+            152,
+            831,
+            167
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report.",
+        "bbox": [
+            65,
+            171,
+            935,
+            218
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues.",
+        "bbox": [
+            65,
+            226,
+            934,
+            257
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance.",
+        "bbox": [
+            65,
+            265,
+            780,
+            279
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts.",
+        "bbox": [
+            65,
+            288,
+            935,
+            334
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws.",
+        "bbox": [
+            65,
+            341,
+            935,
+            405
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst.",
+        "bbox": [
+            65,
+            413,
+            935,
+            476
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "HSBC may use Artificial Intelligence (AI) tools approved for adoption within HSBC in the development of its research reports, utilizing these technologies to analyse large volumes of data, enhance efficiency and improve the overall user experience. This includes but is not limited to paraphrasing, developing suitable captions and supporting data visualisation. It is important to note that while AI tools assist in various aspects of report creation, all investment recommendations and opinions presented herein are formulated and approved exclusively by our research analysts. The final content of the report reflects the professional judgement and expertise of our research analysts, ensuring compliance with regulatory standards and maintaining the integrity of our research process.",
+        "bbox": [
+            64,
+            482,
+            937,
+            593
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures",
+        "text_level": 2,
+        "bbox": [
+            67,
+            602,
+            237,
+            615
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "1 This report is dated as at 28 July 2026.",
+        "bbox": [
+            69,
+            618,
+            370,
+            633
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2 All market data included in this report are dated as at close 27 July 2026, unless a different date and/or a specific time of day is indicated in the report.",
+        "bbox": [
+            67,
+            636,
+            920,
+            665
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner.",
+        "bbox": [
+            67,
+            667,
+            929,
+            742
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund.",
+        "bbox": [
+            67,
+            745,
+            920,
+            804
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Production & distribution disclosures",
+        "text_level": 2,
+        "bbox": [
+            67,
+            811,
+            345,
+            824
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "1. This report was produced and signed off by the author on 27 Jul 2026 13:23 GMT.",
+        "bbox": [
+            65,
+            827,
+            655,
+            841
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/J6Qh9vX",
+        "bbox": [
+            65,
+            850,
+            763,
+            880
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services\n28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            69,
+            967,
+            87,
+            978
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclaimer",
+        "text_level": 1,
+        "bbox": [
+            70,
+            122,
+            305,
+            150
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Legal entities as at 13 May 2026:",
+        "bbox": [
+            70,
+            156,
+            231,
+            166
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA",
+        "bbox": [
+            67,
+            166,
+            667,
+            244
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Issuer of report  \nThe Hongkong and Shanghai Banking Corporation Limited  \nLevel 16, 1 Queen's Road Central  \nHong Kong SAR  \nTelephone: +852 2843 9111  \nFax: +852 2596 0200  \nWebsite: www.research.hsbc.com",
+        "bbox": [
+            672,
+            156,
+            932,
+            243
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This document has been issued by The Hongkong and Shanghai Banking Corporation Limited (\"HSBC\") in the conduct of its Hong Kong regulated business for the information of its institutional and professional investor (as defined by Securities and Future Ordinance (Chapter 571)) customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited is regulated by the Hong Kong Monetary Authority. All enquires by recipients in Hong Kong must be directed to your HSBC contact in Hong Kong. If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. Expressions of opinion are those of the Research Division of HSBC only and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. HSBC and its affiliates and/or their officers, directors and employees may have positions in any securities mentioned in this document (or in any related investment) and may from time to time add to or dispose of any such securities (or investment). HSBC and its affiliates may act as market maker or have assumed an underwriting commitment in the securities of companies discussed in this document (or in related investments), may sell them to or buy them from customers on a principal basis and may also perform or seek to perform investment banking or underwriting services for or relating to those companies. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document.",
+        "bbox": [
+            67,
+            246,
+            934,
+            389
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority.",
+        "bbox": [
+            67,
+            389,
+            932,
+            431
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services.",
+        "bbox": [
+            69,
+            433,
+            892,
+            442
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient.",
+        "bbox": [
+            67,
+            442,
+            934,
+            618
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All US persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\".",
+        "bbox": [
+            67,
+            618,
+            932,
+            695
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB. Should you wish to use AI technology (computational, statistical, machine-learning or other artificial intelligence techniques to infer or learn from data to find patterns, take actions, make decisions, or generate output) to help you analyse, summarise or evaluate this publication and/or any other research materials provided to you by HSBC, you shall seek HSBC consent in advance of any such use and not upload this publication and/or any other research materials produced by HSBC to an AI system or otherwise use AI technology in connection with the research services HSBC provides to you without our consent.",
+        "bbox": [
+            67,
+            695,
+            934,
+            804
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "© Copyright 2026, The Hongkong and Shanghai Banking Corporation Limited, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of The Hongkong and Shanghai Banking Corporation Limited.",
+        "bbox": [
+            67,
+            804,
+            932,
+            836
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "HSBC",
+        "bbox": [
+            72,
+            10,
+            192,
+            36
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Equities • Internet Software & Services 28 July 2026",
+        "bbox": [
+            659,
+            10,
+            935,
+            36
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "[1283629]",
+        "bbox": [
+            861,
+            852,
+            934,
+            867
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            917,
+            967,
+            935,
+            978
+        ],
+        "page_idx": 12
+    }
+]

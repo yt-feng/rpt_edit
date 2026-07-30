@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 63,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-GS-Schneider Electric （SCHN.PA）： 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0001-36-GS-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-JPM-China Insurance Summer Series： Market polarization risk rising as smaller players face capital pressure-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0002-37-JPM-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure-260728.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-HSBC-Z.AI（2513.HK）Hold： Lifting ARR； implications from Kimi K3-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0003-38-HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3-260728.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-HSBC-STMicroelectronics （STMPA.FP）Buy： Guidance wobbles， demand roars-260728.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-JPM-Retail Radar Jul 29 – Momentum Unwind, Cutting Tech Losses-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0005-40-JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses-260729.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

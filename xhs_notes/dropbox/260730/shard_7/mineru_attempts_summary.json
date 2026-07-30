@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0001-36-GS-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0002-37-JPM-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0003-38-HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0005-40-JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

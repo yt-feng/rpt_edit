@@ -1,0 +1,609 @@
+[
+  {
+    "item": "0001-36-Goldman-Sachs-Schneider-Electric--SCHN.PA---2026-EPS-consensus-is-likely",
+    "source_pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0001-36-GS-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "施耐德2Q26：数据",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：施耐德电气业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-GS-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise-260730.pdf",
+      "cleaned_source_title": "GS-Schneider Electric -SCHN.PA-- 2026 EPS consensus is likely to move up at least LSD on the 2Q26 beat and raise",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SchneiderElectric",
+      "raw_candidates": [
+        "施耐德电气2026年EPS共识预期上调",
+        "施耐德电气二季度业绩超预期-2026年EPS共识上调",
+        "施耐德电气数据中心与工业自动化驱动业绩上调"
+      ],
+      "cleaned_candidates": [
+        "GS：施耐德电气2026年EPS共识预期上调",
+        "GS：施耐德电气二季度业绩超预期-2026年EPS共识上调",
+        "GS：施耐德电气数据中心与工业自动化驱动业绩上调",
+        "GS：SchneiderElectric",
+        "GS：第二季度自由现金流达到16.31亿欧元，较市场预期高出16.8%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：施耐德电气数据中心与工业自动化驱动业绩上调",
+          "reasons": [
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：SchneiderElectric",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：第二季度自由现金流达到16.31亿欧元，较市场预期高出16.8%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：施耐德电气业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：施耐德电气2026年EPS共识预期上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：施耐德电气业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-37-J.P.-Morgan-China-Insurance-Summer-Series--Market-polarization-risk-risi",
+    "source_pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0002-37-JPM-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "保险业正在两极分化",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x2",
+      "sanitize_wechat_stock_line",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：保险与养老服务数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-JPM-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure-260728.pdf",
+      "cleaned_source_title": "JPM-China Insurance Summer Series- Market polarization risk rising as smaller players face capital pressure",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：中国InsuranceSummerSeries",
+      "raw_candidates": [
+        "中国保险市场两极分化加速-中小险企面临资本不确定性",
+        "中国保险市场两极分化加速-中小险企资本缓冲差距扩大",
+        "中国保险市场两极分化加速-头部险企份额与中小险企劣势"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国保险市场两极分化加速-中小险企面临资本不确定性",
+        "JPM：中国保险市场两极分化加速-中小险企资本缓冲差距扩大",
+        "JPM：中国保险市场两极分化加速-头部险企份额与中小险企劣势",
+        "JPM：中国InsuranceSummerSeries",
+        "JPM：JPM在一份覆盖163家保险公司（75家寿险、88家非寿险"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：中国保险市场两极分化加速-中小险企资本缓冲差距扩大",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "JPM：中国保险市场两极分化加速-头部险企份额与中小险企劣势",
+          "reasons": [
+            "anchor_coverage=0.61",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：中国InsuranceSummerSeries",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM在一份覆盖163家保险公司（75家寿险、88家非寿险",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：保险与养老服务数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：中国保险市场两极分化加速-中小险企面临资本不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：保险与养老服务数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-38-HSBC-Z.AI-2513.HK-Hold--Lifting-ARR--implications-from-Kimi-K3-260728",
+    "source_pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0003-38-HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "智谱ARR破10亿，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：智谱AI年化与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3-260728.pdf",
+      "cleaned_source_title": "HSBC-Z.AI-2513.HK-Hold- Lifting ARR- implications from Kimi K3",
+      "institution_name": "HSBC",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "HSBC：AI观点-LiftingARR",
+      "raw_candidates": [
+        "智谱AI年化收入提前突破10亿美元",
+        "智谱AI 2026年7月ARR达10亿美元",
+        "智谱AI模型迭代与算力布局观察"
+      ],
+      "cleaned_candidates": [
+        "HSBC：智谱AI年化收入提前突破10亿美元",
+        "HSBC：智谱AI2026年7月ARR达10亿美元",
+        "HSBC：智谱AI模型迭代与算力布局观察",
+        "HSBC：AI观点-LiftingARR",
+        "HSBC：AI技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：智谱AI2026年7月ARR达10亿美元",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "HSBC：智谱AI模型迭代与算力布局观察",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：AI观点-LiftingARR",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：AI技术与相关数据观察",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：智谱AI年化与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：智谱AI年化收入提前突破10亿美元",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：智谱AI年化与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-39-HSBC-STMicroelectronics--STMPA.FP-Buy--Guidance-wobbles--demand-roars-26",
+    "source_pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "意法半导体：复苏节奏",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "HSBC：半导体行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars-260728.pdf",
+      "cleaned_source_title": "HSBC-STMicroelectronics -STMPA.FP-Buy- Guidance wobbles- demand roars",
+      "institution_name": "HSBC",
+      "required_terms": [],
+      "deterministic_fallback": "HSBC：STMicroelectronics报告观点",
+      "raw_candidates": [
+        "意法半导体：指引波动与需求强劲",
+        "意法半导体：订单出货比近2与营收指引下调",
+        "意法半导体：需求复苏节奏与制造转型观察"
+      ],
+      "cleaned_candidates": [
+        "HSBC：意法半导体，指引波动与需求强劲",
+        "HSBC：意法半导体，订单出货比近2与营收指引下调",
+        "HSBC：意法半导体，需求复苏节奏与制造转型观察",
+        "HSBC：STMicroelectronics报告观点",
+        "HSBC：2026年的0.5美元和1.4美元仍有数倍增长空间"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "HSBC：意法半导体，订单出货比近2与营收指引下调",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：意法半导体，需求复苏节奏与制造转型观察",
+          "reasons": [
+            "anchor_coverage=0.38",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：STMicroelectronics报告观点",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "HSBC：2026年的0.5美元和1.4美元仍有数倍增长空间",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "HSBC：半导体行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "HSBC：意法半导体，指引波动与需求强劲",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "HSBC：半导体行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-40-JPM-Retail-Radar-Jul-29---Momentum-Unwind--Cutting-Tech-Losses-260729",
+    "source_pdf": "/tmp/pdf_batch_001_3jsqf7ch/pdfs/0005-40-JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "散户正在急速撤离科技",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "增持->观点偏积极 x1",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x2",
+      "股票|个股->公司 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：零售雷达7月29日-动量反转与科技股减仓",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses-260729.pdf",
+      "cleaned_source_title": "JPM-Retail Radar Jul 29 - Momentum Unwind- Cutting Tech Losses",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：RetailRadarJul29MomentumUnwind",
+      "raw_candidates": [
+        "零售雷达7月29日-动量反转与科技股减仓",
+        "零售雷达7月29日-散户资金流降至年内最弱水平",
+        "零售雷达7月29日-科技硬件股创最大单周资金流出"
+      ],
+      "cleaned_candidates": [
+        "JPM：零售雷达7月29日-动量反转与科技股减仓",
+        "JPM：零售雷达7月29日-散户资金流降至年内最弱水平",
+        "JPM：零售雷达7月29日-科技硬件股创最大单周资金流出",
+        "JPM：RetailRadarJul29MomentumUnwind",
+        "JPM：当周科技ETF净流出规模仅次于6月10日当周"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：零售雷达7月29日-散户资金流降至年内最弱水平",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：零售雷达7月29日-科技硬件股创最大单周资金流出",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：RetailRadarJul29MomentumUnwind",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：当周科技ETF净流出规模仅次于6月10日当周",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：零售雷达7月29日-动量反转与科技股减仓",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：零售雷达7月29日-动量反转与科技股减仓"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

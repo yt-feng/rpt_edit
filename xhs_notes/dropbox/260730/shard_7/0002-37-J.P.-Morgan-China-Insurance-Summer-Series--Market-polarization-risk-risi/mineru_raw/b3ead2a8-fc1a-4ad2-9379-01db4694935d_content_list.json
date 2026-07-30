@@ -1,0 +1,2668 @@
+[
+    {
+        "type": "text",
+        "text": "This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.",
+        "bbox": [
+            133,
+            66,
+            906,
+            94
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China Insurance",
+        "text_level": 2,
+        "bbox": [
+            133,
+            138,
+            388,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Summer Series: Market polarization risk rising as smaller players face capital pressure",
+        "text_level": 2,
+        "bbox": [
+            133,
+            174,
+            599,
+            215
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this note, we analyze 163 insurers, comprising 75 life and 88 non-life companies, with a focus on solvency capital, risk management and shareholder returns. Since 2005, the number of insurance legal entities has more than doubled, from 97 in Dec-05 to 238 in Jun-25, including 13 insurance groups, 75 life insurers, 88 non-life insurers, 7 reinsurers, 9 pension insurers, 7 health insurers, and 39 policy insurers and asset management arms. However, total insurance premium, across life and non-life combined, has grown only modestly, while insurance penetration improved to 4.4% in 2025 from 3.5% in 2015. Our initial view is that market polarization across both life and non-life insurance is likely to accelerate, particularly among small insurers that require repeated capital injections. This should widen the investment distinction between scale leaders and capital-constrained smaller players. Within our SMid insurance coverage, we see China Taiping and China Re as potential beneficiaries of industry restructuring. In the regional banking sector, we see a similar debate emerging, and Bank of Ningbo is our preferred name with better growth potential.",
+        "bbox": [
+            132,
+            234,
+            665,
+            444
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Market structure. China's insurance is an oligopolistic market at the top but fragmented below, with top 5 insurers holding $45\\% / 68\\%$ of life/non-life premiums. While GDP per capita above US\\$10,000 supports the long-term penetration story, insurance remains highly capital intensive, requiring upfront spending on distribution, customer acquisition, claims infrastructure and risk management. Ongoing bancassurance channel reforms disproportionately favor large-cap insurers with better client access, hindering SMid insurers from generating organic earnings. Scale, therefore, becomes the key differentiator, raising the question of how many players may survive in the foreseeable future.",
+        "bbox": [
+            133,
+            448,
+            665,
+            583
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Life insurers. The overview of 75 life insurers shows a widening gap between large caps and SMids in capital efficiency, core solvency buffers and regulatory risk ratings. Listed insurers continue to maintain core solvency $>100\\%$ , while 17 unlisted insurers are below $100\\%$ , including 4 insurers $<70\\%$ (vs. min.: $50\\%$ ), the threshold that might potentially trigger capital calls. Many SMid life insurers face weaker brand recognition, sluggish new sales growth and rising capital risks. For most, market capital appears reluctant to flow into small players on a sustainable basis, exerting further pressure for business model retrenchment, as weak returns fail to cover long-term capital costs. We expect them to gradually cede market share amid intensifying structural competition.",
+        "bbox": [
+            133,
+            584,
+            665,
+            734
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Non-life insurers. Our review of 88 non-life insurers points to intensifying competition, particularly in auto insurance, where pricing pressure continues to weigh on underwriting profitability. Roughly 55% of non-life insurers reported underwriting losses in 2025. Only seven non-life insurers sustained their Mar-26 core solvency below 150%, vs. 180% across the top 5 non-life insurers. We believe large non-life insurers benefit from claims scale, data, reinsurance access and diversified risk pools, while SMid players remain exposed to narrow regional lines, single-product segments, catastrophe losses and cyclical pricing pressure.",
+        "bbox": [
+            133,
+            736,
+            665,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Regional banks. A similar split is unfolding in the regional banking sector, as consolidation thins out SMid players with weak capital, asset quality and operating efficiencies, while quality franchises with credit growth compound.",
+        "bbox": [
+            133,
+            873,
+            665,
+            920
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Insurance",
+        "bbox": [
+            687,
+            234,
+            767,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited",
+        "bbox": [
+            687,
+            253,
+            942,
+            315
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Dan Wang\n(86-21) 6106-6349\ndan.wang@JPM.com\nSAC Registration Number: S1730524080001\nJPM Securities (China) Company Limited",
+        "bbox": [
+            687,
+            316,
+            942,
+            380
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Haomin Chen\n(86-21) 6106 6347\nhaomin.chen@JPM.com\nSAC Registration Number: S1730524080002\nJPM Securities (China) Company Limited",
+        "bbox": [
+            687,
+            381,
+            942,
+            445
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Katherine Lei\n(852) 2800-8552\nkatherine.lei@JPM.com\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited",
+        "bbox": [
+            687,
+            446,
+            944,
+            508
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 13 for analyst certification and important disclosures, including non-US analyst disclosures.",
+        "bbox": [
+            133,
+            934,
+            859,
+            953
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "JPM",
+        "bbox": [
+            1,
+            563,
+            96,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            133,
+            23,
+            344,
+            60
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            689,
+            26,
+            895,
+            54
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Investment thesis",
+        "text_level": 2,
+        "bbox": [
+            341,
+            154,
+            575,
+            176
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "China's insurance sector has benefited from structurally supportive regulatory policies. The central government rolled out a suite of supportive measures lowering entry barriers for insurance participants. After 2005, the number of licensed insurance legal entities rose materially, from 97 (Dec-2005), peaking at 240 (Dec-2019), and then edging down slightly to 238 (Jun-2025). The sector comprises 13 insurance groups, 75 life insurers, 88 non-life insurers, 7 reinsurers, 9 pension insurers, 7 health insurers and 39 policy-focused insurers and asset management arms.",
+        "bbox": [
+            339,
+            194,
+            926,
+            301
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We divide China's insurance sector development into two phases. The expansion phase spanned 2005–2019, underpinned by liberalized licensing rules designed to expand insurance supply to meet rising consumption demand. This trend was reflected in industry premiums, where combined life and non-life premiums recorded a 17% CAGR over this period. The subsequent phase (2020–2025) prioritized high-quality development over scale expansion. Regulators pushed insurers to strengthen underwriting discipline and build capacity to manage macro and micro risks, supporting sustainable competitiveness against global peers. Authorities also relaxed FDI restrictions in phases, starting with life insurers in 2020, lifting foreign ownership caps gradually to 100% from the previous 51% (link). To compete in an open landscape, domestic insurers need to upgrade risk management frameworks. Policymakers now permit greater foreign participation via wholly-owned subsidiaries or joint ventures. Even so, total insurance premiums (life + non-life), a proxy for market size, have delivered just a 6% CAGR over the past five years, pushing up the insurance penetration (= premium over GDP) to 4.4% of GDP in 2025, versus 3.5% in 2015.",
+        "bbox": [
+            339,
+            314,
+            926,
+            545
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "China's insurance market operates under an oligopolistic structure: the top five players have captured $45\\%$ and $68\\%$ market share within life and non-life segments, respectively. Our analysis covers 163 insurers (75 life and 88 non-life), focusing on solvency capital, risk management practices and shareholder return potential. While all large non-life insurers maintain core solvency ratios above $100\\%$ , $28\\%$ of life insurers reported core solvency below $100\\%$ as of Mar-26, signaling weaker capital adequacy to absorb risks. From an equity investor standpoint, this weighs on expectations for sustainable excess capital distributions to shareholders. By contrast, large-cap insurers consistently maintain solvency above $120\\%$ with a track record of steady dividend distribution.",
+        "bbox": [
+            339,
+            556,
+            921,
+            710
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In short, we expect market polarization to widen between large-cap and small-medium cap insurers over the medium term. Key drivers include capital constraints, uneven channel access and asymmetric macro risk resilience. Our initial view is that polarization across life and non-life segments will intensify, as market capital appears reluctant to flow into small players on a sustainable basis, given weak returns fail to cover long-term capital costs, especially amid risks of recurring capital calls. As a result, we expect SMid insurers to gradually cede market share amid intensifying structural competition.",
+        "bbox": [
+            339,
+            724,
+            926,
+            847
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Positioning (Insurance): Within our SMid Insurance coverage, China Taiping and China Re look well positioned to emerge as winners amid rising market concentration. Hampered by thin capital buffers, limited distribution reach and sluggish internal earnings, many SMid insurers face a sustained risk of losing market share. Distribution reforms channel high-quality resources toward established industry players. Supported by mature participating insurance operations and balanced capital allocation, Taiping stands to capture organically migrating business flows, independent of M&A activity.",
+        "bbox": [
+            339,
+            859,
+            919,
+            938
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            339,
+            148,
+            906,
+            181
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For China Re, capital pressure pushes SMid insurers to explore capital supplementation avenues. Given limited internal capital generation and higher costs for external capital raising, financial reinsurance emerges as a viable tool to ease solvency strains. Even as regulators tighten the rules that govern financial reinsurance, such instruments will gradually lift reinsurance coverage demand for primary insurers with thin solvency buffers, driving market share gains amid broader industry polarization.",
+        "bbox": [
+            339,
+            194,
+            921,
+            287
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We see a similar debate and set of observations in the China's regional banking sector. Following a decade of license-driven expansion, regulators have pivoted decisively from scale growth towards risk resolution and ‘reduce quantity, improve quality’ since 2020, catalyzed by Baoshang Bank’s failure. The consolidation has been most pronounced among village banks. According to a media report (link), in 2025, 310 village banks completed merger-driven restructuring or dissolution, and 134 village banks have exited, as of 9 July 2026.",
+        "bbox": [
+            339,
+            301,
+            924,
+            407
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "NFRA data suggest there are 124 city commercial banks and 3,381 rural financial institutions as of 1H25. In aggregate, they represent 27% of banking system assets as of 1H26, which we believe are the weaker link in the banking system, as they carry higher NPL ratios, lower provision coverage, weaker ROA and capital ratios relative to larger peers (Table 2).",
+        "bbox": [
+            339,
+            422,
+            924,
+            500
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Positioning (Banks): Although our coverage is concentrated in leading regional banks that carry lower risks and higher operating efficiencies, investors remain cautious about the vulnerabilities that characterize the SMid players across the sector – less stable EPS growth, thinner capital buffer and consequently lower dividend visibility. As a result, among regional banks, the market ascribes a dividend-reliability discount to high-yield SMid banks, favoring those whose valuations are underpinned by credible growth stories. We prefer Bank of Ningbo among our regional banks on the back of its fee growth potential in FY26 and stable asset quality.",
+        "bbox": [
+            339,
+            513,
+            921,
+            636
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d3968cf14f9b5c28fc23e3a5c8b64943eade26648d94aff9e3e6ccfeabf84334.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: China – time series data for licensed insurers\nNumber of legal entities"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            349,
+            684,
+            923,
+            839
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: National Financial Regulatory Administration (NFRA), Statistics Bureau of China. The number of licensed insurers from 2005 to 2018 is based on each year's China statistics book published by the Statistics Bureau of China, while data from 2019 to 2025 are based on the full list of financial institution legal entities disclosed by NFRA for each year. These data are as of each fiscal year end. The total number of insurer legal entities includes insurance groups, P&C insurers, life insurers, health insurers, pension insurers, reinsurers, asset management companies, policy insurers, and mutual insurance corporations.",
+        "bbox": [
+            339,
+            845,
+            923,
+            902
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            79
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/6538e75241ddaaf30e7e79c7320b4271da19a18ff022b70c36de5866f7d97ece.jpg",
+        "table_caption": [
+            "Table 1: China – license insurers tracked over the past six years\nNumber of legal entities"
+        ],
+        "table_footnote": [
+            "Source: NFRA. Data from 2019 to 2025 is based on the full list of financial institution legal entities disclosed by NFRA for each year."
+        ],
+        "table_body": "<table><tr><td></td><td>Dec-19</td><td>Dec-20</td><td>Dec-21</td><td>Dec-22</td><td>Dec-23</td><td>Dec-24</td><td>Jun-25</td></tr><tr><td>Insurance Group/Holding co.</td><td>14</td><td>14</td><td>13</td><td>13</td><td>13</td><td>13</td><td>13</td></tr><tr><td>P&amp;C insurers</td><td>88</td><td>87</td><td>87</td><td>88</td><td>88</td><td>89</td><td>88</td></tr><tr><td>Life Insurers</td><td>81</td><td>75</td><td>75</td><td>75</td><td>75</td><td>75</td><td>75</td></tr><tr><td>Pension insurers</td><td>8</td><td>9</td><td>9</td><td>10</td><td>9</td><td>9</td><td>9</td></tr><tr><td>Health Insurers</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td></tr><tr><td>Reinsurers</td><td>12</td><td>14</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td></tr><tr><td>Insurance asset management</td><td>26</td><td>28</td><td>33</td><td>33</td><td>35</td><td>35</td><td>35</td></tr><tr><td>Policy insurers</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>Mutual insurance corporation</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr><tr><td>Total</td><td>240</td><td>238</td><td>235</td><td>237</td><td>238</td><td>239</td><td>238</td></tr></table>",
+        "bbox": [
+            343,
+            179,
+            926,
+            329
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/2f89a2aa36a4778703998b32c12c3046a717a0f5a4f3bdfb5b6b78971eb117a7.jpg",
+        "table_caption": [
+            "Table 2: Overview and key ratios of China banking system by institutional type"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Number of institutions in 1H25</td><td colspan=\"3\">as % of banking system in 1H26</td><td colspan=\"5\">Key ratios in 1Q26</td></tr><tr><td>Assets</td><td>Liabilities</td><td>Equities</td><td>CAR</td><td>NPL ratio</td><td>NPL coverage</td><td>ROA</td><td>NIM</td></tr><tr><td>SOE banks</td><td>6</td><td>44%</td><td>44%</td><td>41%</td><td>17.54%</td><td>1.22%</td><td>240.70%</td><td>0.60%</td><td>1.29%</td></tr><tr><td>Joint-stock banks</td><td>12</td><td>16%</td><td>16%</td><td>17%</td><td>13.14%</td><td>1.22%</td><td>204.60%</td><td>0.74%</td><td>1.54%</td></tr><tr><td>City commercial banks</td><td>124</td><td>14%</td><td>14%</td><td>12%</td><td>12.09%</td><td>1.85%</td><td>171.20%</td><td>0.57%</td><td>1.38%</td></tr><tr><td>Rural Fis</td><td>3,381</td><td>13%</td><td>13%</td><td>11%</td><td>12.85%</td><td>2.79%</td><td>156.90%</td><td>0.45%</td><td>1.58%</td></tr><tr><td>Others*</td><td>547</td><td>13%</td><td>13%</td><td>19%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total banking system</td><td>4,070</td><td>100%</td><td>100%</td><td>100%</td><td>15.00%</td><td>1.51%</td><td>203.10%</td><td>0.60%</td><td>1.40%</td></tr></table>",
+        "bbox": [
+            70,
+            402,
+            924,
+            523
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Source: NFRA [1H25's list of legal persons of financial institutions in the banking industry (link); Table of Main Indicators of Commercial Banks (link)], People's Bank of China (PBOC), CEIC [banking asset/liability data accessed from the CEIC web site on 27 July 2026; the CEIC shows the original source as being the PBOC]. \\*Others includes policy banks, China Development Bank, private banks, foreign banks, non-bank financial institutions, financial asset investment corps, and wealth management companies; the number of institutions data is as of end-1H25.",
+        "bbox": [
+            66,
+            529,
+            908,
+            564
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Oligopolistic market at the top but fragmented below",
+        "text_level": 1,
+        "bbox": [
+            341,
+            152,
+            781,
+            205
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "China's aggregate insurance premium reached Rmb6.1T, or US\\$870B, in 2025, representing more than threefold growth since 2005. The market is characterized by an oligopolistic structure among leading players, alongside significant fragmentation among smaller participants. As of 2025, the top five insurers accounted for $45\\%$ of life insurance premiums and $68\\%$ of non-life premiums.",
+        "bbox": [
+            339,
+            220,
+            918,
+            299
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Market share trends have diverged sharply across segments. In life insurance, the combined share of the top five insurers gradually declined from 51.7% in 2021 to 45.3% in 2025, while the top five non-life insurers maintained a stable share of around 68% over the same period. Notably, the number of licensed life insurers has stabilized at 75 over the past five years. This suggests that the gradual erosion of large life insurers' market share is more likely attributable to intensified competition from existing small and mid-sized participants. Supported by the industry shift towards participating products, many small and mid-sized life insurers achieved short-term premium expansion, although this growth carries material capital consumption risks.",
+        "bbox": [
+            339,
+            311,
+            926,
+            450
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Data from the National Financial Regulatory Administration (NFRA) show that the total number of licensed insurance legal entities edged down modestly from 240 at end-2019 to 238 in June 2025. After years of rapid expansion, regulators have shifted towards stricter oversight, while new license growth has plateaued. Although per capita GDP above US\\$10,000 supports the long-term upside for insurance penetration, the sector remains highly capital-intensive. Insurers face substantial upfront costs across distribution networks, customer acquisition, digital infrastructure, claims servicing and risk management frameworks.",
+        "bbox": [
+            339,
+            463,
+            924,
+            587
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In line with other developed markets, China's life insurance business relies heavily on agency and bancassurance channels, with in-person engagement supporting stable policy conversion. The agency channel is generally less favorable for small and mid-sized insurers, which lack scale and experienced sales force. Historically, smaller insurers have prioritized bancassurance to generate new business, leveraging attractive bank commission rates. Ongoing bancassurance reforms, however, are weakening this traditional advantage and widening the structural divergence across participants. With caps now imposed on bank commission fees, competition has shifted towards product differentiation and service quality, rather than channel remuneration. Banks are increasingly incentivized to apply stricter counterparty selection, disproportionately favoring large-cap insurers with stronger brand recognition and broader customer reach over small and mid-sized peers.",
+        "bbox": [
+            339,
+            599,
+            919,
+            784
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Agency channels have also become increasingly competitive, leaving limited scope for small and mid-sized carriers to scale sustainable new business. As a result, scale advantage should emerge as the key competitive differentiator. We expect persistent competitive pressure, capital constraints and fragile new-business momentum to accelerate structural reshuffling across both life and non-life insurance segments over the medium term.",
+        "bbox": [
+            339,
+            797,
+            916,
+            888
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4db8b1f9ed3cea1e051b57727137f64fb21c9680dc479884189b1b214f7f7b8e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: China Insurance – life insurers and P&C insurers' premium trend\nRmb in billions, %"
+        ],
+        "chart_footnote": [
+            "Source: NFRA. Data as of 23 July 2026. Note: Life and P&C insurers' premiums represent the combined written premium of life insurer companies and non-life insurer companies, disclosed by NFRA on an annual basis."
+        ],
+        "bbox": [
+            351,
+            181,
+            926,
+            363
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/9f9c0ccfab356ea39c94bf2a9c17baf970a1376ab1ad1110a9532fdeedb42407.jpg",
+        "table_caption": [
+            "Table 3: China Life Insurers – market shares of the top 5 players vs. the rest %,%p"
+        ],
+        "table_footnote": [
+            "Source: NFRA and each individual insurer's annual report from 2021 to 2025. Note: Market shares are calculated based on individual insurer gross written premium as a percentage of life insurer companies' consolidated written premium, as disclosed by the NFRA."
+        ],
+        "table_body": "<table><tr><td></td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>%Change</td></tr><tr><td>China Life</td><td>19.90%</td><td>19.20%</td><td>18.10%</td><td>16.80%</td><td>16.70%</td><td>0.0%p</td></tr><tr><td>PingAn Life</td><td>14.60%</td><td>13.70%</td><td>13.20%</td><td>12.60%</td><td>12.70%</td><td>0.1%p</td></tr><tr><td>CPIC Life</td><td>6.70%</td><td>6.90%</td><td>6.60%</td><td>6.00%</td><td>5.90%</td><td>0.0%p</td></tr><tr><td>New China Life</td><td>5.20%</td><td>5.10%</td><td>4.70%</td><td>4.30%</td><td>4.50%</td><td>0.2%p</td></tr><tr><td>Taikang Life</td><td>5.30%</td><td>5.30%</td><td>5.70%</td><td>5.70%</td><td>5.50%</td><td>-0.2%p</td></tr><tr><td>Top 5 Life Insurers</td><td>51.70%</td><td>50.20%</td><td>48.30%</td><td>45.20%</td><td>45.30%</td><td>0.0%p</td></tr><tr><td>Rest</td><td>48.30%</td><td>49.80%</td><td>51.70%</td><td>54.80%</td><td>54.70%</td><td>0.0%p</td></tr></table>",
+        "bbox": [
+            344,
+            465,
+            924,
+            589
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/10cb57bf171fb49fe7340adb7afc82f4b57f1d70f63ad4f47aba02b1e2a2be64.jpg",
+        "table_caption": [
+            "Table 4: China Non-Life Insurers – market shares of the top 5 insurers vs. the rest %, %p"
+        ],
+        "table_footnote": [
+            "Source: NFRA and each individual insurer's annual report from 2021 to 2025. Note: Market shares are calculated based on individual insurer gross written premium as a percentage of non-life insurer companies' consolidated written premium, as disclosed by the NFRA"
+        ],
+        "table_body": "<table><tr><td></td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>%Change</td></tr><tr><td>PICC P&amp;C</td><td>32.80%</td><td>32.70%</td><td>32.50%</td><td>31.80%</td><td>31.60%</td><td>-0.2%p</td></tr><tr><td>PingAn P&amp;C</td><td>19.70%</td><td>20.00%</td><td>19.00%</td><td>19.00%</td><td>19.50%</td><td>0.5%p</td></tr><tr><td>CPIC Property</td><td>6.70%</td><td>6.60%</td><td>6.70%</td><td>6.60%</td><td>6.40%</td><td>-0.2%p</td></tr><tr><td>China Life P&amp;C</td><td>6.70%</td><td>6.60%</td><td>6.70%</td><td>6.60%</td><td>6.40%</td><td>-0.2%p</td></tr><tr><td>China United</td><td>4.10%</td><td>4.10%</td><td>4.10%</td><td>4.00%</td><td>4.00%</td><td>0.0%p</td></tr><tr><td>Top 5 Non-Life Insurers</td><td>70.00%</td><td>70.00%</td><td>69.10%</td><td>68.00%</td><td>68.00%</td><td>0.0%p</td></tr><tr><td>Rest</td><td>30.00%</td><td>30.00%</td><td>30.90%</td><td>32.00%</td><td>32.00%</td><td>0.0%p</td></tr></table>",
+        "bbox": [
+            343,
+            686,
+            924,
+            810
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Macro headwinds raise solvency risk",
+        "text_level": 2,
+        "bbox": [
+            341,
+            152,
+            825,
+            178
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "As of Jun-25, China had 75 licensed life insurers and 88 non-life insurers. We assess solvency profiles based on the latest individual regulatory disclosures, noting that not all insurers have published solvency data through Mar-26. Our sample covers 60 life insurers and 86 non-life insurers that have released quarterly reports.",
+        "bbox": [
+            339,
+            193,
+            928,
+            257
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "All listed life insurers have sustained their core solvency ratio above 100%. Even so, around 28% of the sampled life insurers, or 17 unlisted companies, are operating with a core solvency ratio below 100%. This includes four unlisted insurers with ratios below 70%, versus the minimum regulatory requirement of 50%. Non-life insurers have generally maintained stronger capital buffers than life peers. As at Mar-26, only seven non-life insurers recorded core solvency ratios below 150%, compared with an average of 180% among the top five non-life insurers.",
+        "bbox": [
+            339,
+            268,
+            921,
+            378
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Insurance is a capital-intensive sector, with new business expansion continuously consuming capital. Although the life sub-sector has shifted towards less interest-rate-sensitive participating products, life insurers with a weak capitalization, especially the small and mid-sized players, face mounting pressure to fund the capital outlay required for growth. This could trigger near-term capital calls. Similarly, non-life insurers face intensifying competition, particularly in auto insurance, where persistent pricing pressure is weighing on underwriting profitability. Organic earnings are likely to struggle to generate meaningful capital replenishment, as reflected in the fact that around 55% of the non-life insurers reported underwriting losses in 2025.",
+        "bbox": [
+            339,
+            391,
+            918,
+            530
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Large non-life insurers look better positioned to benefit from scale advantages, robust data infrastructure, reinsurance access and diversified risk pools, supported by solid solvency positions. By contrast, small and mid-sized insurers remain exposed to more concentrated business portfolios. Given their limited capital buffers, they may be forced to narrow their product ranges and scale back reinsurance coverage in response to unexpected catastrophe events and cyclical pricing headwinds.",
+        "bbox": [
+            339,
+            542,
+            924,
+            636
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fccd49e596e093b96699886c3ee2cbb85dc714835620c702fbfdb2d843c73340.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: China life insurers – core solvency ratio distribution %"
+        ],
+        "chart_footnote": [
+            "Source: Insurance Association of China. Note: All solvency data are as of Mar-26. Among 75 life insurers, a total of 60 insurers had solvency disclosures in their respective 1Q26 solvency report whilst the remaining insurers have not updated their solvency report since 2025 or earlier."
+        ],
+        "bbox": [
+            349,
+            683,
+            926,
+            847
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            503,
+            79
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/13d0e07ce364085118a0fb9abd48ecb5a4be65fb793b7038675927dfbf60306a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: China non-life insurers – core solvency ratio distribution"
+        ],
+        "chart_footnote": [
+            "Source: Insurance Association of China. Note: All solvency data are as of Mar-26. Among 88 non-life insurers, a total of 86 had solvency disclosures in their respective 1Q26 solvency report whilst the remaining have not updated their solvency report since 2025 or earlier."
+        ],
+        "bbox": [
+            346,
+            210,
+            926,
+            349
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Risk management score and insurance risk rating",
+        "text_level": 2,
+        "bbox": [
+            341,
+            417,
+            810,
+            434
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We have illustrated the divergence in core solvency ratios between large and small and mid-sized insurers. That said, we believe core solvency adequacy on a standalone basis is insufficient to evaluate an insurer's overall solvency profile. A comprehensive assessment of sustainable operational resilience requires supplementary indicators, most notably the SARMRA score and Insurance Risk Rating, or IRR, under China's C-ROSS Phase II solvency regime.",
+        "bbox": [
+            339,
+            439,
+            924,
+            532
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "SARMRA, Solvency Aligned Risk Management Requirements and Assessment",
+        "text_level": 2,
+        "bbox": [
+            341,
+            545,
+            897,
+            561
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "SARMRA is a qualitative Pillar 2 supervisory assessment, scored out of 100 and conducted by regulators on a rolling cycle. It evaluates an insurer's enterprise-wide risk management framework across insurance, market, credit, operational, liquidity, strategic and reputational risks. It also assesses both the completeness of risk policies and the effectiveness of implementation.",
+        "bbox": [
+            339,
+            561,
+            924,
+            640
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The score has tangible capital implications. Weaker SARMRA outcomes increase the minimum required capital for operational risk. In other words, lower SARMRA scores raise capital charges and increase capital consumption for new business expansion. While solvency ratios reflect static capital buffers, SARMRA captures the sustainability of an insurer's risk governance framework.",
+        "bbox": [
+            339,
+            654,
+            923,
+            731
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The key threshold is 80 out of 100. Scores above 80 can reduce minimum capital requirements for operational risk and improve capital efficiency. Conversely, a score below 80 triggers higher capital surcharges. Large insurers generally report SARMRA scores above 80, whereas many smaller carriers record scores between 70 and 80. Insurers scoring below 70 typically show substantial deficiencies in risk governance.",
+        "bbox": [
+            339,
+            744,
+            913,
+            821
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Based on disclosed SARMRA filings from 60 life insurers and 79 non-life insurers, around 12%, or 16 insurers, recorded scores below 70, while a further 24%, or 34 insurers, fell within the 70 to 75 range. Within our coverage universe, major large-cap insurers consistently maintain SARMRA scores above 80, signaling robust risk management capabilities.",
+        "bbox": [
+            339,
+            835,
+            911,
+            912
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Many small and mid-sized insurers operate with limited risk infrastructure. Low SARMRA scores exacerbate capital pressure amid the rapid expansion of capital-heavy participating policies, reinforcing the link between business growth, capital depletion and constrained shareholder returns.",
+        "bbox": [
+            339,
+            148,
+            921,
+            210
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/50efc1c76f631fea677c27310df703a47d2f410ab3def8f4a8d13a2013013b2d.jpg",
+        "table_caption": [
+            "Table 5: China Insurers – SARMRA scores\nOut of 100"
+        ],
+        "table_footnote": [
+            "Source: Insurance Association of China. Note: All SARMRA scores are from the individual insurer's 1Q26 solvency report. Among 75 life insurers, a total of 60 insurers had SARMRA score disclosure in their respective 1Q26 solvency report whilst the remaining insurers have not updated their solvency report since 2025 or earlier. Among 88 non-life insurers, a total of 79 had SARMRA score disclosure in their respective 1Q26 solvency report whilst the remaining have not updated their solvency report since 2025 or earlier."
+        ],
+        "table_body": "<table><tr><td>Score</td><td>Number of Life insurers</td><td>% Weight</td><td>Number of Non-Life insurers</td><td>% Weight</td><td>Combined</td><td>% Weight</td></tr><tr><td>&gt;=85</td><td>0</td><td>0%</td><td>3</td><td>4%</td><td>3</td><td>2%</td></tr><tr><td>80-85</td><td>23</td><td>38%</td><td>14</td><td>18%</td><td>37</td><td>27%</td></tr><tr><td>75-80</td><td>22</td><td>37%</td><td>27</td><td>34%</td><td>49</td><td>35%</td></tr><tr><td>70-75</td><td>9</td><td>15%</td><td>25</td><td>32%</td><td>34</td><td>24%</td></tr><tr><td>&lt;70</td><td>6</td><td>10%</td><td>10</td><td>13%</td><td>16</td><td>12%</td></tr><tr><td>Total</td><td>60</td><td>100%</td><td>79</td><td>100%</td><td>139</td><td>100%</td></tr></table>",
+        "bbox": [
+            343,
+            255,
+            924,
+            345
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Insurance Risk Rating",
+        "text_level": 2,
+        "bbox": [
+            341,
+            406,
+            506,
+            421
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Insurance Risk Rating, or IRR, is a quarterly holistic risk classification system with eight tiers ranging from AAA to D, namely AAA, AA, A, BBB, BB, B, C and D. It enables differentiated regulatory oversight by integrating core and comprehensive solvency ratios, SARMRA scores, corporate governance, liquidity status, compliance records and latent operational risks to assess an insurer's overall solvency risk. Regulators impose strict corrective actions on insurers rated C or D, including restrictions on new business, distribution and investment activities.",
+        "bbox": [
+            339,
+            424,
+            923,
+            532
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "IRR addresses the limitations of standalone solvency metrics. Some insurers may report adequate capital ratios, yet still face hidden governance or liquidity risks, which the IRR framework is designed to capture. Persistent IRR downgrades serve as an early warning signal of stress and may trigger shareholder restructuring or accelerate market polarization.",
+        "bbox": [
+            339,
+            545,
+            924,
+            622
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Within our sample of 60 life insurers and 85 non-life insurers, all large listed players under our coverage have an IRR rating of BB or above. By contrast, one life insurer and three non-life insurers carry a C rating, indicating the need for urgent regulatory intervention to contain solvency risks.",
+        "bbox": [
+            339,
+            635,
+            926,
+            698
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This multi-dimensional risk management toolkit provides critical insights for equity investors. SARMRA reflects internal risk governance capabilities, while IRR provides a consolidated and holistic risk assessment. Assessing insurers purely by solvency ratios therefore gives an incomplete view. A thorough evaluation requires a three-pillar lens: solvency ratios, SARMRA scores and IRR results. Against this backdrop, many smaller insurers face sustained existential pressure over the medium term, constrained by weak risk controls, volatile IRR profiles and only marginal solvency buffers.",
+        "bbox": [
+            339,
+            712,
+            924,
+            820
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            503,
+            79
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/5ea1e7a2d1ac07725b20ea341b2095afe9370dacee98452ac6ebf32ff6ec04aa.jpg",
+        "table_caption": [
+            "Table 6: China Insurers – Insurance Risk Rating (IRR)"
+        ],
+        "table_footnote": [
+            "Source: Insurance Association of China. Note: All Insurance Risk ratings are as of 3Q25 or 2Q25, as disclosed in individual insurers' 1Q26 solvency reports. Among 75 life insurers, a total of 60 insurers have the IRR disclosure in their respective 1Q26 solvency report whilst the remaining have not updated their solvency report since 2025 or earlier. Among 88 non-life insurers, a total of 85 have the IRR disclosure in their respective 1Q26 solvency report whilst the remaining insurers have not updated their solvency report since 2025 or earlier."
+        ],
+        "table_body": "<table><tr><td>Ratings</td><td>Number of Life insurers</td><td>% Weight</td><td>Number of Non-Life insurers</td><td>% Weight</td><td>Combined</td><td>% Weight</td></tr><tr><td>AAA</td><td>5</td><td>8%</td><td>6</td><td>7%</td><td>11</td><td>8%</td></tr><tr><td>AA</td><td>12</td><td>20%</td><td>13</td><td>15%</td><td>25</td><td>17%</td></tr><tr><td>A</td><td>6</td><td>10%</td><td>10</td><td>12%</td><td>16</td><td>11%</td></tr><tr><td>BBB</td><td>10</td><td>17%</td><td>14</td><td>16%</td><td>24</td><td>17%</td></tr><tr><td>BB</td><td>17</td><td>28%</td><td>22</td><td>26%</td><td>39</td><td>27%</td></tr><tr><td>B</td><td>9</td><td>15%</td><td>17</td><td>20%</td><td>26</td><td>18%</td></tr><tr><td>C</td><td>1</td><td>2%</td><td>3</td><td>4%</td><td>4</td><td>3%</td></tr><tr><td>D</td><td>0</td><td>0%</td><td>0</td><td>0%</td><td>0</td><td>0%</td></tr><tr><td>Total</td><td>60</td><td>100%</td><td>85</td><td>100%</td><td>145</td><td>100%</td></tr></table>",
+        "bbox": [
+            343,
+            178,
+            924,
+            318
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1b4857940cb1d1f5b9af63ee5cfa2157afaa275717ffad37c1292fb5b30e50e0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: China life insurers – pilot chart on core solvency vs. SARMRA score",
+            "x-axis is SARMRA score, y-axis is Mar-26 core solvency ratio"
+        ],
+        "chart_footnote": [
+            "Source: Insurance Association of China. Each individual insurer's 1Q26 solvency report."
+        ],
+        "bbox": [
+            73,
+            454,
+            480,
+            592
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7081a8228de64abe64a96f978635290bc5e282f538327fe1ff773bded5253aea.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: China non-life insurers – pilot chart on core solvency vs. SARMRA score",
+            "x-axis is SARMRA score, y-axis is Mar-26 core solvency ratio"
+        ],
+        "chart_footnote": [
+            "Source: Insurance Association of China. Each individual insurer's 1Q26 solvency report."
+        ],
+        "bbox": [
+            511,
+            452,
+            919,
+            588
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Capital constraints deepen the divide between scale leaders and SMid insurers",
+        "text_level": 1,
+        "bbox": [
+            341,
+            152,
+            882,
+            205
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Small insurers exhibit limited capital buffers, reflected in weaker core solvency adequacy ratios, lower SARMRA scores and weaker Insurance Risk Ratings. The shift towards participating insurance products, together with rising demand for protection-focused coverage, makes the sector inherently capital-intensive. Against this backdrop, we believe small life insurers lack sufficient capital capacity to scale new business. Less well-capitalized non-life insurers may also need to curb growth or streamline business lines to preserve capital.",
+        "bbox": [
+            339,
+            220,
+            924,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Capital constraints are compounded by structural headwinds in distribution. According to the China Insurance Yearbook 2024, brokers and intermediaries contribute only around $7\\%$ of life premiums, while agents and bancassurance account for $93\\%$ . This suggests that China's life insurance distribution remains structurally dependent on traditional agency and bancassurance channels. Life insurance remains people-driven, yet small and mid-sized players typically operate smaller and less experienced agency teams, while relying more heavily on bancassurance.",
+        "bbox": [
+            339,
+            342,
+            915,
+            450
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "These dynamics are fueling pronounced market polarization. Large insurers are better positioned to capture greater market share, while small and mid-sized players face gradual share erosion as business expansion falls short of expectations. Insurers' net profits are generated from underwriting and investment returns. For smaller players, stalled business growth restricts endogenous earnings generation on the underwriting side. Separately, solvency constraints limit aggressive capital deployment. Without sufficient premium inflow on the liability side, they cannot achieve meaningful expansion on the asset investment side.",
+        "bbox": [
+            339,
+            464,
+            908,
+            587
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Ultimately, small and mid-sized insurers may become trapped in a negative loop: they cannot generate adequate internal earnings to fund business expansion, while insufficient business growth, in turn, limits organic capital creation.",
+        "bbox": [
+            339,
+            599,
+            911,
+            647
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e927a1892e086337f45a53905f46705c9122ac0ce1c81326558b68af4ae1b8ee.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: China Insurance – life insurers' premium breakdown by distribution channel (2024) %"
+        ],
+        "chart_footnote": [
+            "Source: China Insurance Yearbook, 2024."
+        ],
+        "bbox": [
+            450,
+            693,
+            777,
+            835
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            911,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Shareholder return visibility",
+        "text_level": 2,
+        "bbox": [
+            341,
+            152,
+            700,
+            178
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Shareholder returns are a core metric for equity investors evaluating China's insurance sector. An insurer's capacity to deliver sustainable shareholder returns is fundamentally constrained by two critical factors: solvency position and the ability to generate organic earnings, both of which we have outlined earlier.",
+        "bbox": [
+            339,
+            194,
+            921,
+            256
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "These constraints weigh heavily on small and mid-sized insurers from multiple angles. First, persistent capital pressure forces most small and mid-sized carriers to retain nearly all generated profits to strengthen solvency buffers, leaving limited cash available for shareholder distributions. Second, unlike large listed insurance groups, which typically have transparent and consistent dividend frameworks, alongside regular public disclosure, most small and mid-sized insurers offer limited visibility on capital plans and profit allocation policies. Many are unlisted entities with no mandatory requirement to publish dividend schedules, creating greater uncertainty for external investors.",
+        "bbox": [
+            339,
+            268,
+            926,
+            393
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "By contrast, large-cap insurers maintain stable capital buffers, scalable business models and more predictable dividend payout strategies. They are better placed to balance capital retention for growth with cash returns to shareholders.",
+        "bbox": [
+            341,
+            406,
+            921,
+            454
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "From an investment perspective, this divergence creates a clear valuation gap. While large insurers offer visible shareholder return pathways, the ambiguous dividend outlook and limited disclosure among small and mid-sized insurers add an additional risk premium. Taken together, weaker capital buffers, sluggish endogenous earnings growth and opaque shareholder return profiles reduce the investment appeal of smaller insurers, accelerating industry polarization and consolidation over the medium term.",
+        "bbox": [
+            339,
+            465,
+            928,
+            559
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/e0bf32452c6424fe68d4fc52985361addffc9b44ab5df8ae6f5074e2aff70b51.jpg",
+        "table_caption": [
+            "Table 7: China Insurance – shareholder return policy summary"
+        ],
+        "table_footnote": [
+            "Source: Each insurer's 2025 annual report and presentation."
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Mid-to-long-term capital management guidance</td></tr><tr><td>China Life</td><td>China Life announced an interim dividend of Rmb0.238 and a final total dividend of Rmb0.86, implying 16%/18% payout ratio in 2025.</td></tr><tr><td>Ping An Group</td><td>In 2024-2026, the company&#x27;s annual distributable profit in each profitable year will be positive. In compliance with the solvency adequacy ratio requirements of the national laws and regulations, the company&#x27;s annual dividend amount will be 20-50% of the audited net profit attributable to the parent. Ping An Group has also historically paid out interim dividend. The company has grown cash dividends for 14 consecutive years.</td></tr><tr><td>CPIC</td><td>CPIC affirmed its intention to introduce interim dividend commencing in 2026. The company determines interim and final dividend based on OPAT and investment performance. As per management, the initial payout ratio is expected to be set prudently, reflecting management&#x27;s focus on sustaining both the flexibility and long-term credibility of the dividend policy.</td></tr><tr><td>PICC Group</td><td>PICC Group announced an interim dividend of Rmb0.075 and a final total dividend of Rmb0.22, implying 13%/21% payout ratio in 2025.</td></tr><tr><td>New China Life</td><td>NCI has proposed an interim dividend of Rmb0.67 and a final total dividend of Rmb2.73, implying 14%/23% payout ratio in 2025.</td></tr><tr><td>PICC P&amp;C</td><td>PICC P&amp;C announced an interim dividend of Rmb0.24 and a final total dividend of Rmb0.68, implying 22%/37% payout ratio in 2025.</td></tr></table>",
+        "bbox": [
+            344,
+            590,
+            924,
+            750
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Companies Discussed in This Report (all prices in this report as of market close on 28 July 2026, unless otherwise indicated) Bank of Ningbo - A(002142.SZ/Rmb31.82/OW), China Reinsurance Group - H(1508.HK/HK\\$1.37/N), China Taiping Insurance - H(0966.HK/HK\\$22.00/OW)",
+        "bbox": [
+            68,
+            147,
+            926,
+            189
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            66,
+            215,
+            924,
+            318
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            68,
+            324,
+            901,
+            351
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            356,
+            230,
+            372
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Bank of Ningbo - A, China Reinsurance Group - H, China Taiping Insurance - H or related entities.",
+        "bbox": [
+            66,
+            393,
+            913,
+            422
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Market Maker/ Liquidity Provider (Hong Kong): JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited and/or an affiliate is a market maker and/or liquidity provider in the securities of China Taiping Insurance - H or related entities and/or warrants or options thereon, which are listed or traded on The Stock Exchange of Hong Kong Limited.",
+        "bbox": [
+            66,
+            425,
+            916,
+            464
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Bank of Ningbo - A, China Reinsurance Group - H, China Taiping Insurance - H or related entities.",
+        "bbox": [
+            68,
+            467,
+            857,
+            494
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Bank of Ningbo - A, China Reinsurance Group - H or related entities.",
+        "bbox": [
+            68,
+            496,
+            913,
+            536
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: Bank of Ningbo - A or related entities.",
+        "bbox": [
+            68,
+            539,
+            890,
+            566
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Bank of Ningbo - A or related entities.",
+        "bbox": [
+            66,
+            569,
+            893,
+            595
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "• Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Bank of Ningbo - A, China Reinsurance Group - H or related entities.",
+        "bbox": [
+            68,
+            598,
+            908,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Debt Position: JPM may hold a position in the debt securities of Bank of Ningbo - A, China Reinsurance Group - H, China Taiping Insurance - H or related entities, if any.",
+        "bbox": [
+            68,
+            628,
+            903,
+            655
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            66,
+            664,
+            926,
+            743
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            911,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7082168795d28b8270a869bc729c2729772aeddac2beec37fdd5dc797224d533.jpg",
+        "content": "",
+        "chart_caption": [
+            "Bank of Ningbo - A (002142.SZ, 002142 CH) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            73,
+            167,
+            604,
+            378
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/c262a0bf0f37e9b7f73c06a5ba9ffc6144c52a72492c6734d78257a0e5db2491.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (Rmb)</td><td>Price Target (Rmb)</td></tr><tr><td>10-Oct-23</td><td>OW</td><td>27.13</td><td>37.9</td></tr><tr><td>05-Jun-24</td><td>OW</td><td>24.21</td><td>30</td></tr><tr><td>24-Mar-25</td><td>OW</td><td>25.99</td><td>33.8</td></tr><tr><td>21-Apr-25</td><td>OW</td><td>24.60</td><td>32</td></tr><tr><td>10-Sep-25</td><td>OW</td><td>29.31</td><td>36.2</td></tr><tr><td>09-Dec-25</td><td>OW</td><td>28.18</td><td>35.8</td></tr><tr><td>23-Jan-26</td><td>OW</td><td>29.50</td><td>38.2</td></tr><tr><td>19-May-26</td><td>OW</td><td>31.08</td><td>38.8</td></tr></table>",
+        "bbox": [
+            607,
+            143,
+            926,
+            287
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2ab91399b3e7e442c186085c244ba81d73d7a11150d02008e90859488619efac.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Mar 23, 2020. All share prices are as of market close on the previous business day.",
+            "China Reinsurance Group - H (1508.HK, 1508 HK) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            73,
+            431,
+            604,
+            642
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/4e4a0d40a0aa8f9d0b0dfcff85125aedd7a9a74aa96426e775692231ae2f38ea.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>22-Jun-25</td><td>OW</td><td>1.14</td><td>1.4</td></tr><tr><td>18-Aug-25</td><td>OW</td><td>1.68</td><td>2.1</td></tr><tr><td>16-Jan-26</td><td>N</td><td>1.69</td><td>1.8</td></tr><tr><td>10-Apr-26</td><td>N</td><td>1.39</td><td>1.6</td></tr><tr><td>12-May-26</td><td>N</td><td>1.28</td><td>1.4</td></tr></table>",
+        "bbox": [
+            607,
+            406,
+            926,
+            508
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b090d092aeb9b652f33e10699d32d5b0733eb0425bcdfe7cd075be191b34a6f1.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jun 22, 2025. All share prices are as of market close on the previous business day.",
+            "China Taiping Insurance - H (0966.HK, 966 HK) Price Chart"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            73,
+            693,
+            606,
+            904
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/05b4935a9a92f82b893377e5455ce407c3e809660bea65ba873cc7a215dff30f.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jun 18, 2010. All share prices are as of market close on the previous business day. Break in coverage May 30, 2019 - Jun 22, 2025."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target(HK$)</td></tr><tr><td>22-Jun-25</td><td>UW</td><td>14.14</td><td>8.2</td></tr><tr><td>23-Sep-25</td><td>UW</td><td>15.12</td><td>9.4</td></tr><tr><td>16-Jan-26</td><td>OW</td><td>20.84</td><td>30</td></tr></table>",
+        "bbox": [
+            607,
+            669,
+            926,
+            743
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            71,
+            953,
+            88,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated",
+        "bbox": [
+            66,
+            147,
+            910,
+            175
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            180,
+            638,
+            194
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            66,
+            193,
+            926,
+            359
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Kim, MW : AIA Group Ltd (1299) (1299.HK), Bangkok Life (BLA.BK), China Life Insurance - A (601628.SS), China Life Insurance - H (2628.HK), China Pacific Insurance Group - A (601601.SS), China Pacific Insurance Group - H (2601.HK), DB Insurance Co Ltd (005830.KS), FWD Group Holdings (1828.HK), Hanwha Life Insurance (088350.KS), Hyundai Marine & Fire Insurance (001450.KS), Korean Reinsurance Company (003690.KS), LPI Capital (LOND.KL), New China Life Insurance - A (601336.SS), New China Life Insurance - H (1336.HK), PICC Group - A (601319.SS), PICC Group - H (1339.HK), PICC Property and Casualty (2328) (2328.HK), Ping An Insurance Group - A (601318.SS), Ping An Insurance Group - H (2318.HK), Samsung Fire & Marine Insurance (000810.KS), Samsung Life Insurance (032830.KS), Seoul Guarantee Insurance (031210.KS), Thai Life Insurance (TLI.BK)",
+        "bbox": [
+            66,
+            364,
+            924,
+            455
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/dfd8a75493697f49eb0deae6b6105e8661b4306f133b88b5f97a946b97788cdb.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding.",
+            "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            68,
+            483,
+            645,
+            559
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            66,
+            602,
+            918,
+            640
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            66,
+            654,
+            913,
+            732
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            738,
+            336,
+            751
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            66,
+            750,
+            877,
+            779
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            66,
+            782,
+            919,
+            811
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            66,
+            816,
+            913,
+            869
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            875,
+            200,
+            888
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            66,
+            919,
+            897,
+            935
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            910,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            66,
+            147,
+            923,
+            175
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            66,
+            180,
+            892,
+            220
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            66,
+            224,
+            918,
+            253
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            66,
+            258,
+            924,
+            311
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            66,
+            316,
+            893,
+            344
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            68,
+            349,
+            897,
+            377
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            66,
+            382,
+            926,
+            460
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or",
+        "bbox": [
+            68,
+            465,
+            913,
+            518
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            68,
+            516,
+            900,
+            542
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            66,
+            549,
+            926,
+            589
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            66,
+            594,
+            926,
+            635
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            66,
+            640,
+            928,
+            756
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            761,
+            506,
+            773
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            68,
+            773,
+            897,
+            801
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            66,
+            806,
+            929,
+            935
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            68,
+            147,
+            905,
+            175
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            68,
+            180,
+            921,
+            220
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            68,
+            224,
+            589,
+            239
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            68,
+            246,
+            875,
+            273
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            66,
+            279,
+            916,
+            330
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            68,
+            337,
+            910,
+            388
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            66,
+            393,
+            923,
+            498
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            66,
+            503,
+            926,
+            582
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            68,
+            585,
+            926,
+            753
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            68,
+            758,
+            908,
+            786
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            68,
+            791,
+            924,
+            844
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            68,
+            849,
+            923,
+            877
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            68,
+            882,
+            913,
+            909
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana",
+        "bbox": [
+            68,
+            914,
+            916,
+            930
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            910,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "de Valores\") and the Institutional Stock Exchange (\"Bolsa Institucional de Valores\"), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (\"Comisión Nacional Bancaria y de Valores\").",
+        "bbox": [
+            66,
+            147,
+            875,
+            175
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            66,
+            179,
+            893,
+            220
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            66,
+            224,
+            924,
+            253
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            66,
+            258,
+            926,
+            362
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            66,
+            367,
+            915,
+            395
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            66,
+            400,
+            926,
+            529
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            66,
+            532,
+            928,
+            574
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            66,
+            579,
+            929,
+            722
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            66,
+            724,
+            915,
+            753
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without",
+        "bbox": [
+            65,
+            758,
+            929,
+            939
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            504,
+            78
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            66,
+            147,
+            928,
+            402
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            407,
+            924,
+            512
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            66,
+            516,
+            923,
+            582
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            587,
+            919,
+            664
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            68,
+            669,
+            349,
+            684
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            695,
+            923,
+            750
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "MW Kim AC\n(852) 2800-8517\nmw.kim@JPM.com",
+        "bbox": [
+            68,
+            55,
+            197,
+            89
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n28 July 2026",
+        "bbox": [
+            341,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Completed 28 Jul 2026 08:15 PM HKT",
+        "bbox": [
+            68,
+            753,
+            308,
+            767
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Disseminated 28 Jul 2026 08:16 PM HKT",
+        "bbox": [
+            674,
+            753,
+            928,
+            767
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            911,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 18
+    }
+]
