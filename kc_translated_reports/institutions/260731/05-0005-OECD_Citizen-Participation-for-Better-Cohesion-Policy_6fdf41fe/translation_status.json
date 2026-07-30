@@ -1,0 +1,111 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+  "title": "经合组织：行业规则与主题变化观察",
+  "source_title": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+    "cleaned_source_title": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0005OECDCitizenPartici",
+    "raw_candidates": [
+      "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+      "经合组织：2026年报告分析公民参与机制改善政策精准度",
+      "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+      "经合组织：公民参与提升凝聚政策效果",
+      "经合组织：11个试点揭示公民参与提升政策效果",
+      "经合组织：2026年报告分析公民参与与凝聚政策"
+    ],
+    "cleaned_candidates": [
+      "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+      "经合组织：2026年报告分析公民参与机制改善政策精准度",
+      "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+      "经合组织：公民参与提升凝聚政策效果",
+      "经合组织：11个试点揭示公民参与提升政策效果",
+      "经合组织：2026年报告分析公民参与与凝聚政策",
+      "经合组织：0005OECDCitizenPartici",
+      "经合组织：11个试点项目揭示公民参与如何提升欧盟凝聚政策效果"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：2026年报告分析公民参与机制改善政策精准度",
+        "reasons": [
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+        "reasons": [
+          "anchor_coverage=0.41"
+        ]
+      },
+      {
+        "title": "经合组织：公民参与提升凝聚政策效果",
+        "reasons": [
+          "anchor_coverage=0.45"
+        ]
+      },
+      {
+        "title": "经合组织：11个试点揭示公民参与提升政策效果",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "经合组织：2026年报告分析公民参与与凝聚政策",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：0005OECDCitizenPartici",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "经合组织：11个试点项目揭示公民参与如何提升欧盟凝聚政策效果",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+      "经合组织：2026年报告分析公民参与机制改善政策精准度",
+      "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果"
+    ],
+    "pre_neutralization_title": "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "经合组织：行业规则与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 1,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

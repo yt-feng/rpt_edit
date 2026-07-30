@@ -1,0 +1,67 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+  "title": "IMF：科索沃住宅价格指数计划2025年底发布",
+  "source_title": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+    "cleaned_source_title": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0002IMFKosovoReportonRe",
+    "raw_candidates": [
+      "IMF：科索沃住宅价格指数编制报告",
+      "IMF：科索沃住宅价格指数计划2025年底发布",
+      "IMF：科索沃住宅价格指数采用特征回归模型"
+    ],
+    "cleaned_candidates": [
+      "IMF：科索沃住宅价格指数编制报告",
+      "IMF：科索沃住宅价格指数计划2025年底发布",
+      "IMF：科索沃住宅价格指数采用特征回归模型",
+      "IMF：0002IMFKosovoReportonRe",
+      "IMF：2025年10月27日至31日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0002IMFKosovoReportonRe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2025年10月27日至31日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：科索沃住宅价格指数计划2025年底发布",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2025"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：科索沃住宅价格指数计划2025年底发布"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 0,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

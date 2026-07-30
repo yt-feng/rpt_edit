@@ -1,0 +1,51 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/d16952c7bb46ee44ef1c64f64c6dd516fc917864fd645bf231aa39d970cdccc7.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.43,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/8fff4070a2f67497472e6101e9df7110bf9c29322b81655210292cde6f0e56ec.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.40,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/9dd7ccb4fe43258b9ae3c1f841169b49eb149dfdafe7e94b6dfa40d8803a0a3b.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.38,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/5a4f6d2a2ad69c01a6681e581c5f302af6fbf44c84410b333326dd5c29467029.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.32,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/7f7ea4d73c392b4481d5f150bc738fa6b60774d316bd60a0707900144838ab1b.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.44,large"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/03c0fc0a3e2c255bde5c465c39123a136f36fc8b7effe6fc223495e1dcee0573.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.20,large"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/mineru_raw/images/0515a67389d269ba0073150e47cf036c73663a78b88399aa80840e37f4f1ccbb.jpg",
+    "path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.22,large"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2",
+  "title": "世界银行：加纳可扩展识字干预项目证据",
+  "source_title": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+    "cleaned_source_title": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+    "institution_name": "世界银行",
+    "required_terms": [],
+    "deterministic_fallback": "世界银行：0008WorldBankHowtoBuil",
+    "raw_candidates": [
+      "世界银行：加纳可扩展识字干预项目证据",
+      "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+      "世界银行：加纳识字项目对基础阅读技能影响显著"
+    ],
+    "cleaned_candidates": [
+      "世界银行：加纳可扩展识字干预项目证据",
+      "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+      "世界银行：加纳识字项目对基础阅读技能影响显著",
+      "世界银行：0008WorldBankHowtoBuil",
+      "世界银行：到2029年，预算模型预测成本将降至每名学生6美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：加纳识字项目对基础阅读技能影响显著",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：0008WorldBankHowtoBuil",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界银行：到2029年，预算模型预测成本将降至每名学生6美元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界银行：加纳可扩展识字干预项目证据",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界银行：加纳可扩展识字干预项目证据"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_08.pdf",
+  "figure_count": 25,
+  "institution_name": "世界银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

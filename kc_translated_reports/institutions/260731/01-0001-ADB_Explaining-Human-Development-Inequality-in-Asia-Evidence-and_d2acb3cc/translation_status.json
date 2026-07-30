@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+  "title": "亚洲开发银行：亚洲人类发展不平等成因与证据",
+  "source_title": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+    "cleaned_source_title": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBExplainingHum",
+    "raw_candidates": [
+      "亚洲开发银行：亚洲人类发展不平等成因与证据",
+      "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+      "亚洲开发银行：教育和收入不平等驱动亚洲发展损失"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：亚洲人类发展不平等成因与证据",
+      "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+      "亚洲开发银行：教育和收入不平等驱动亚洲发展损失",
+      "亚洲开发银行：0001ADBExplainingHum",
+      "亚洲开发银行：教育不平等在南亚（36.9%）是东亚和太平洋地区（11."
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：教育和收入不平等驱动亚洲发展损失",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0001ADBExplainingHum",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：教育不平等在南亚（36.9%）是东亚和太平洋地区（11.",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：亚洲人类发展不平等成因与证据",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "亚洲开发银行：亚洲人类发展不平等成因与证据"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 7,
+  "institution_name": "亚洲开发银行",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

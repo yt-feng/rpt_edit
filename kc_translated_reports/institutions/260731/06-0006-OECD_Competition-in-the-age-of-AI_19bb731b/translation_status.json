@@ -1,0 +1,84 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+  "title": "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+  "source_title": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+    "cleaned_source_title": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "经合组织：AI0006OECDCompetitionint",
+    "raw_candidates": [
+      "经合组织：人工智能时代的竞争",
+      "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+      "经合组织：AI专利集中度与市场集中度关联"
+    ],
+    "cleaned_candidates": [
+      "经合组织：人工智能时代的竞争",
+      "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+      "经合组织：AI专利集中度与市场集中度关联",
+      "经合组织：AI0006OECDCompetitionint",
+      "经合组织：在法国，AI使用者的平均市场份额为0.21%"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：人工智能时代的竞争",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI专利集中度与市场集中度关联",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI0006OECDCompetitionint",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：在法国，AI使用者的平均市场份额为0.21%",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：AI时代竞争-法国与葡萄牙企业数据"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 21,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

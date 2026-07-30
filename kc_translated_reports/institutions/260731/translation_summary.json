@@ -1,0 +1,659 @@
+{
+  "date_folder": "260731",
+  "max_reports": "all",
+  "selected_count": 8,
+  "successful_count": 8,
+  "title_neutralized_count": 2,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+      "title": "亚洲开发银行：亚洲人类发展不平等成因与证据",
+      "source_title": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+        "cleaned_source_title": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+        "institution_name": "亚洲开发银行",
+        "required_terms": [],
+        "deterministic_fallback": "亚洲开发银行：0001ADBExplainingHum",
+        "raw_candidates": [
+          "亚洲开发银行：亚洲人类发展不平等成因与证据",
+          "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+          "亚洲开发银行：教育和收入不平等驱动亚洲发展损失"
+        ],
+        "cleaned_candidates": [
+          "亚洲开发银行：亚洲人类发展不平等成因与证据",
+          "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+          "亚洲开发银行：教育和收入不平等驱动亚洲发展损失",
+          "亚洲开发银行：0001ADBExplainingHum",
+          "亚洲开发银行：教育不平等在南亚（36.9%）是东亚和太平洋地区（11."
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "亚洲开发银行：22地区HDI损失从9.7%到35.3%",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：教育和收入不平等驱动亚洲发展损失",
+            "reasons": [
+              "anchor_coverage=0.31"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：0001ADBExplainingHum",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "亚洲开发银行：教育不平等在南亚（36.9%）是东亚和太平洋地区（11.",
+            "reasons": [
+              "anchor_coverage=0.15",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          }
+        ],
+        "selected_title": "亚洲开发银行：亚洲人类发展不平等成因与证据",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "亚洲开发银行：亚洲人类发展不平等成因与证据"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 7,
+      "institution_name": "亚洲开发银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+      "pdf_path": "kc_translated_reports/institutions/260731/01-0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+      "title": "IMF：科索沃住宅价格指数计划2025年底发布",
+      "source_title": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+        "cleaned_source_title": "0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0002IMFKosovoReportonRe",
+        "raw_candidates": [
+          "IMF：科索沃住宅价格指数编制报告",
+          "IMF：科索沃住宅价格指数计划2025年底发布",
+          "IMF：科索沃住宅价格指数采用特征回归模型"
+        ],
+        "cleaned_candidates": [
+          "IMF：科索沃住宅价格指数编制报告",
+          "IMF：科索沃住宅价格指数计划2025年底发布",
+          "IMF：科索沃住宅价格指数采用特征回归模型",
+          "IMF：0002IMFKosovoReportonRe",
+          "IMF：2025年10月27日至31日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0002IMFKosovoReportonRe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2025年10月27日至31日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：科索沃住宅价格指数计划2025年底发布",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2025"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：科索沃住宅价格指数计划2025年底发布"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/02-0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad",
+      "pdf_path": "kc_translated_reports/institutions/260731/02-0002-IMF_Kosovo-Report-on-Residential-Property-Price-Index-October-27_e289f4ad/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+      "title": "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+      "source_title": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+        "cleaned_source_title": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0003IMFUkraineReportonR",
+        "raw_candidates": [
+          "IMF：乌克兰住宅价格指数编制任务报告",
+          "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+          "IMF：乌克兰住宅价格指数编制与2026年发布计划"
+        ],
+        "cleaned_candidates": [
+          "IMF：乌克兰住宅价格指数编制任务报告",
+          "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+          "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+          "IMF：0003IMFUkraineReportonR",
+          "IMF：国际货币产品组织（IMF）技术援助团队于2025年9月15日至"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+            "reasons": [
+              "anchor_coverage=0.67"
+            ]
+          },
+          {
+            "title": "IMF：0003IMFUkraineReportonR",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）技术援助团队于2025年9月15日至",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：乌克兰住宅价格指数编制与2026年发布计划"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/03-0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+      "pdf_path": "kc_translated_reports/institutions/260731/03-0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+      "title": "经合组织：AI辅助分析泰国PISA2022数学能力",
+      "source_title": "0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+        "cleaned_source_title": "0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+        "institution_name": "经合组织",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "经合组织：0004OECDAnAIenhancedgr",
+        "raw_candidates": [
+          "经合组织：AI辅助分析泰国PISA 2022数学能力",
+          "经合组织：AI辅助分析泰国PISA 2022数学细粒度画像",
+          "经合组织：AI辅助分析泰国PISA 2022数学能力与课程改革"
+        ],
+        "cleaned_candidates": [
+          "经合组织：AI辅助分析泰国PISA2022数学能力",
+          "经合组织：AI辅助分析泰国PISA2022数学细粒度画像",
+          "经合组织：AI辅助分析泰国PISA2022数学能力与课程改革",
+          "经合组织：0004OECDAnAIenhancedgr",
+          "经合组织：AI辅助分析揭示泰国PISA2022数学能力细粒度画像"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：0004OECDAnAIenhancedgr",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.05",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：AI辅助分析泰国PISA2022数学能力",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：AI辅助分析泰国PISA2022数学能力"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 9,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/04-0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+      "pdf_path": "kc_translated_reports/institutions/260731/04-0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+      "title": "经合组织：行业规则与主题变化观察",
+      "source_title": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+        "cleaned_source_title": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0005OECDCitizenPartici",
+        "raw_candidates": [
+          "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+          "经合组织：2026年报告分析公民参与机制改善政策精准度",
+          "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+          "经合组织：公民参与提升凝聚政策效果",
+          "经合组织：11个试点揭示公民参与提升政策效果",
+          "经合组织：2026年报告分析公民参与与凝聚政策"
+        ],
+        "cleaned_candidates": [
+          "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+          "经合组织：2026年报告分析公民参与机制改善政策精准度",
+          "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+          "经合组织：公民参与提升凝聚政策效果",
+          "经合组织：11个试点揭示公民参与提升政策效果",
+          "经合组织：2026年报告分析公民参与与凝聚政策",
+          "经合组织：0005OECDCitizenPartici",
+          "经合组织：11个试点项目揭示公民参与如何提升欧盟凝聚政策效果"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：2026年报告分析公民参与机制改善政策精准度",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "经合组织：公民参与提升凝聚政策效果",
+            "reasons": [
+              "anchor_coverage=0.45"
+            ]
+          },
+          {
+            "title": "经合组织：11个试点揭示公民参与提升政策效果",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          },
+          {
+            "title": "经合组织：2026年报告分析公民参与与凝聚政策",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：0005OECDCitizenPartici",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": true,
+        "initial_selection": {
+          "title": "经合组织：11个试点项目揭示公民参与如何提升欧盟凝聚政策效果",
+          "reason": "evidence_or_emergency_fallback",
+          "quality_issues": []
+        },
+        "repair_candidates": [
+          "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+          "经合组织：2026年报告分析公民参与机制改善政策精准度",
+          "经合组织：7国11地试点测试公民参与在凝聚政策中的实际效果"
+        ],
+        "pre_neutralization_title": "经合组织：11个试点项目揭示公民参与提升欧盟凝聚政策效果",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "经合组织：行业规则与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 1,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/05-0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+      "pdf_path": "kc_translated_reports/institutions/260731/05-0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+      "title": "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+      "source_title": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+        "cleaned_source_title": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+        "institution_name": "经合组织",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "经合组织：AI0006OECDCompetitionint",
+        "raw_candidates": [
+          "经合组织：人工智能时代的竞争",
+          "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+          "经合组织：AI专利集中度与市场集中度关联"
+        ],
+        "cleaned_candidates": [
+          "经合组织：人工智能时代的竞争",
+          "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+          "经合组织：AI专利集中度与市场集中度关联",
+          "经合组织：AI0006OECDCompetitionint",
+          "经合组织：在法国，AI使用者的平均市场份额为0.21%"
+        ],
+        "faithful_candidate_missing_terms": [
+          "AI"
+        ],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：人工智能时代的竞争",
+            "reasons": [
+              "missing_required_terms=AI",
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：AI专利集中度与市场集中度关联",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：AI0006OECDCompetitionint",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：在法国，AI使用者的平均市场份额为0.21%",
+            "reasons": [
+              "anchor_coverage=0.13",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：AI时代竞争-法国与葡萄牙企业数据",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "经合组织：AI时代竞争-法国与葡萄牙企业数据"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 21,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/06-0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+      "pdf_path": "kc_translated_reports/institutions/260731/06-0006-OECD_Competition-in-the-age-of-AI_19bb731b/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+      "title": "世界贸易组织：跨境贸易与行业变化观察",
+      "source_title": "0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+        "cleaned_source_title": "0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+        "institution_name": "世界贸易组织",
+        "required_terms": [],
+        "deterministic_fallback": "世界贸易组织：0007WTOBrazilinitiat",
+        "raw_candidates": [
+          "世界贸易组织：巴西就美国额外关税启动争端磋商",
+          "世界贸易组织：巴西就美国37.5%关税启动WTO磋商",
+          "世界贸易组织：巴西就美国301关税启动争端磋商程序"
+        ],
+        "cleaned_candidates": [
+          "世界贸易组织：巴西就美国额外关税启动争端磋商",
+          "世界贸易组织：巴西就美国37.5%关税启动WTO磋商",
+          "世界贸易组织：巴西就美国301关税启动争端磋商程序",
+          "世界贸易组织：0007WTOBrazilinitiat",
+          "世界贸易组织：2026年7月27日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界贸易组织：巴西就美国37.5%关税启动WTO磋商",
+            "reasons": [
+              "anchor_coverage=0.57"
+            ]
+          },
+          {
+            "title": "世界贸易组织：0007WTOBrazilinitiat",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界贸易组织：2026年7月27日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界贸易组织：跨境贸易与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "301"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "世界贸易组织：巴西就美国301关税启动争端磋商程序",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "世界贸易组织：跨境贸易与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 0,
+      "institution_name": "世界贸易组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/07-0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+      "pdf_path": "kc_translated_reports/institutions/260731/07-0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260731/0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2",
+      "title": "世界银行：加纳可扩展识字干预项目证据",
+      "source_title": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+        "cleaned_source_title": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+        "institution_name": "世界银行",
+        "required_terms": [],
+        "deterministic_fallback": "世界银行：0008WorldBankHowtoBuil",
+        "raw_candidates": [
+          "世界银行：加纳可扩展识字干预项目证据",
+          "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+          "世界银行：加纳识字项目对基础阅读技能影响显著"
+        ],
+        "cleaned_candidates": [
+          "世界银行：加纳可扩展识字干预项目证据",
+          "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+          "世界银行：加纳识字项目对基础阅读技能影响显著",
+          "世界银行：0008WorldBankHowtoBuil",
+          "世界银行：到2029年，预算模型预测成本将降至每名学生6美元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界银行：加纳识字项目九个月阅读分数提升0.5标准差",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：加纳识字项目对基础阅读技能影响显著",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：0008WorldBankHowtoBuil",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "世界银行：到2029年，预算模型预测成本将降至每名学生6美元",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界银行：加纳可扩展识字干预项目证据",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界银行：加纳可扩展识字干预项目证据"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 25,
+      "institution_name": "世界银行",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260731/08-0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2",
+      "pdf_path": "kc_translated_reports/institutions/260731/08-0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2/kc_translated_report_08.pdf"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260731/0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+  "title": "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+  "source_title": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+    "cleaned_source_title": "0003-IMF_Ukraine-Report-on-Residential-Property-Price-Index-Mission-S_92b2b974",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0003IMFUkraineReportonR",
+    "raw_candidates": [
+      "IMF：乌克兰住宅价格指数编制任务报告",
+      "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+      "IMF：乌克兰住宅价格指数编制与2026年发布计划"
+    ],
+    "cleaned_candidates": [
+      "IMF：乌克兰住宅价格指数编制任务报告",
+      "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+      "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+      "IMF：0003IMFUkraineReportonR",
+      "IMF：国际货币产品组织（IMF）技术援助团队于2025年9月15日至"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：乌克兰住宅价格指数进入数据验证与发布准备阶段",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "IMF：0003IMFUkraineReportonR",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：国际货币产品组织（IMF）技术援助团队于2025年9月15日至",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：乌克兰住宅价格指数编制与2026年发布计划",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：乌克兰住宅价格指数编制与2026年发布计划"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 0,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
