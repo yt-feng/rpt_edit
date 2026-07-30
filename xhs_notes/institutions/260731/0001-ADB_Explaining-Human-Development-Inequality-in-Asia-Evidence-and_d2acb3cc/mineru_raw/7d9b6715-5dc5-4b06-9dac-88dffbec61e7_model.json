@@ -1,0 +1,5802 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.03,
+                0.322,
+                0.12
+            ],
+            "angle": 0,
+            "content": "ADBInstitute"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.646,
+                0.028,
+                0.915,
+                0.168
+            ],
+            "angle": 0,
+            "content": "policy\nbrief"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.158,
+                0.224,
+                0.174
+            ],
+            "angle": 0,
+            "content": "No. 2026-12 (July)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.086,
+                0.197,
+                0.166,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Key Points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.216,
+                0.287,
+                0.299
+            ],
+            "angle": 0,
+            "content": "- Human development inequality remains substantial across Asian economies, with inequality-related Human Development Index losses ranging from below 10% to over 35%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.3,
+                0.284,
+                0.394
+            ],
+            "angle": 0,
+            "content": "- Education and income inequalities are the largest contributors to inequality-related human development losses, particularly in South Asia, where both remain higher than in East Asia and the Pacific.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.395,
+                0.281,
+                0.478
+            ],
+            "angle": 0,
+            "content": "- Gender equality is associated with lower human development losses, highlighting the importance of women's education, labor force participation, and empowerment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.478,
+                0.267,
+                0.56
+            ],
+            "angle": 0,
+            "content": "- Countries with stronger government effectiveness tend to experience lower levels of human development inequality, underscoring the role of institutional quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.561,
+                0.268,
+                0.62
+            ],
+            "angle": 0,
+            "content": "- Regional comparisons show that South Asia faces substantially greater challenges than East Asia and the Pacific.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.62,
+                0.277,
+                0.693
+            ],
+            "angle": 0,
+            "content": "- Reducing educational and income disparities, promoting gender-inclusive development, and strengthening governance should be central priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.315,
+                0.199,
+                0.888,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Explaining Human Development\nInequality in Asia: Evidence\nand Policy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.316,
+                0.326,
+                0.794,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Deepak Kumar Behera, Lecturer, Economics and Finance Department, The Business School, RMIT University Viet Nam",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.316,
+                0.354,
+                0.778,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Dil B. Rahul, Vice Chair of Research and Senior Research Economist, Asian Development Bank Institute (ADBI)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.317,
+                0.383,
+                0.909,
+                0.413
+            ],
+            "angle": 0,
+            "content": "Thi Thu Tra Pham, Professor, Economics and Finance Department, The Business School, RMIT University Viet Nam",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.317,
+                0.455,
+                0.594,
+                0.475
+            ],
+            "angle": 0,
+            "content": "1. Background and Data"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.313,
+                0.487,
+                0.914,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Asia has experienced remarkable progress in human development over recent decades, driven by improvements in health, education, and income. However, aggregate measures of development often conceal substantial inequalities within societies. To address this limitation, the Inequality-adjusted Human Development Index (IHDI) incorporates disparities in life expectancy, education, and income, providing a more comprehensive assessment of human development achievements. Studies have shown that inequality can substantially reduce effective human development outcomes, even in countries with relatively high levels of development (Grimm et al. 2010; Permanyer and Smits 2020).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.313,
+                0.629,
+                0.914,
+                0.719
+            ],
+            "angle": 0,
+            "content": "The importance of addressing inequality has become increasingly evident in the global development agenda. According to the Human Development Report 2025, global human development progress has slowed markedly in recent years, highlighting the need for more inclusive and resilient development pathways (UNDP 2025). Within this context, understanding the sources and consequences of human development inequality has become a critical policy priority.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.313,
+                0.729,
+                0.914,
+                0.846
+            ],
+            "angle": 0,
+            "content": "Beyond disparities in health, education, and income, gender inequality and institutional quality are increasingly recognized as important determinants of development outcomes. Gender inequalities in education, health, political representation, and labor market participation can constrain both individual opportunities and broader socioeconomic progress (Gaye et al. 2010; Klasen 2018). Similarly, effective governance plays a crucial role in delivering public services, promoting social inclusion, and ensuring that development gains are distributed more equitably across populations (Ferreira et al. 2022).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.313,
+                0.858,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Against this backdrop, this policy brief examines the extent and drivers of human development inequality across Asian economies using data from the Human Development Report 2025. Particular attention is given to the roles of gender inequality and government effectiveness, together with regional differences between East Asia and the Pacific and South Asia. The analysis provides evidence-based insights to",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.794,
+                0.255,
+                0.858
+            ],
+            "angle": 0,
+            "content": "© 2026 Asian Development Bank Institute\nISSN 2411-6734\nDOI: https://doi.org/10.56506/BECE2901"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.089,
+                0.86,
+                0.213,
+                0.891
+            ],
+            "angle": 0,
+            "content": "CC BY NC SA"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.893,
+                0.261,
+                0.94
+            ],
+            "angle": 0,
+            "content": "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.156,
+                0.225,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.199,
+                0.163,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.218,
+                0.237,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.23,
+                0.219,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.249,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.253,
+                0.274,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.264,
+                0.284,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.276,
+                0.263,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.288,
+                0.253,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.301,
+                0.243,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.312,
+                0.267,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.324,
+                0.266,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.336,
+                0.281,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.348,
+                0.271,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.36,
+                0.254,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.372,
+                0.276,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.384,
+                0.174,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.396,
+                0.218,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.407,
+                0.238,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.419,
+                0.277,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.431,
+                0.278,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.443,
+                0.278,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.454,
+                0.248,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.467,
+                0.201,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.478,
+                0.251,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.49,
+                0.264,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.501,
+                0.223,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.514,
+                0.241,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.526,
+                0.255,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.537,
+                0.255,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.549,
+                0.229,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.562,
+                0.241,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.573,
+                0.235,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.584,
+                0.265,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.598,
+                0.259,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.61,
+                0.199,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.621,
+                0.24,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.633,
+                0.246,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.645,
+                0.225,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.657,
+                0.274,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.669,
+                0.269,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.681,
+                0.271,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.198,
+                0.889,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.236,
+                0.794,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.316,
+                0.27,
+                0.5,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.327,
+                0.792,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.336,
+                0.342,
+                0.652,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.354,
+                0.775,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.337,
+                0.371,
+                0.615,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.32,
+                0.385,
+                0.905,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.336,
+                0.399,
+                0.509,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.456,
+                0.593,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.49,
+                0.911,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.503,
+                0.91,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.518,
+                0.909,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.532,
+                0.91,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.546,
+                0.909,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.561,
+                0.909,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.575,
+                0.909,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.589,
+                0.91,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.603,
+                0.652,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.631,
+                0.909,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.646,
+                0.91,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.661,
+                0.909,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.674,
+                0.909,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.689,
+                0.909,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.703,
+                0.742,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.732,
+                0.91,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.746,
+                0.91,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.76,
+                0.909,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.775,
+                0.909,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.789,
+                0.909,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.803,
+                0.909,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.818,
+                0.909,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.832,
+                0.461,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.319,
+                0.86,
+                0.909,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.874,
+                0.909,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.888,
+                0.909,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.903,
+                0.909,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.916,
+                0.909,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.173,
+                0.489,
+                0.205
+            ],
+            "angle": 0,
+            "content": "inform policies aimed at promoting more inclusive and equitable human development across the region.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.216,
+                0.49,
+                0.448
+            ],
+            "angle": 0,
+            "content": "This policy brief draws primarily on data from the Human Development Report 2025 database published by the United Nations Development Programme (UNDP 2025). The principal outcome measure is the percentage loss in the Human Development Index (HDI) due to inequality, which is derived by comparing the HDI with the Inequality-adjusted Human Development Index (IHDI). The IHDI adjusts the HDI for inequalities in the distribution of achievements in life expectancy, education, and income within each country, while the percentage loss in HDI quantifies the reduction in potential human development attributable to these inequalities. The analysis also uses the Human Inequality Coefficient and dimension-specific inequality measures for life expectancy, education, and income to identify the major sources of inequality-related losses in human development.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.459,
+                0.49,
+                0.732
+            ],
+            "angle": 0,
+            "content": "To examine broader institutional and social conditions associated with variations in human development inequality across countries, the analysis incorporates indicators from the Gender Inequality Index (GII), including reproductive health (maternal mortality ratio and adolescent birth rate), empowerment (female secondary educational attainment and women's representation in national parliaments), and labor market participation (female labor force participation). Institutional quality is measured using the Government Effectiveness indicator from the Worldwide Governance Indicators (WGI) database, which reflects perceptions of public service quality, policy implementation, civil service effectiveness, and the credibility of government policies. The analysis employs descriptive analysis, graphical comparisons, and regional benchmarking to examine patterns of human development inequality across Asian economies and their associations with gender inclusion and government effectiveness.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.754,
+                0.482,
+                0.794
+            ],
+            "angle": 0,
+            "content": "2. Patterns and Dimensions of Human Development Inequality"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.801,
+                0.49,
+                0.918
+            ],
+            "angle": 0,
+            "content": "Human development inequality remains a significant challenge across Asian economies. Figure 1 reveals substantial cross-country variation in inequality-related losses in human development. HDI loss due to inequality ranges from 9.7% in Brunei Darussalam to 35.3% in Afghanistan, indicating that some countries forfeit more than one-third of their potential human development gains due to unequal outcomes in health, education,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.173,
+                0.914,
+                0.305
+            ],
+            "angle": 0,
+            "content": "and income. High levels of HDI loss are also observed in Pakistan (33.1%), Bhutan (31.5%), India (30.7%), Nepal (29.7%), and Bangladesh (29.6%), whereas Singapore (13.0%), Malaysia (13.7%), Mongolia (13.4%), and Tonga (11.3%) record comparatively lower levels of human development inequality. A similar pattern is reflected in the Human Inequality Coefficient, suggesting that both indicators consistently capture disparities in the distribution of development achievements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.316,
+                0.915,
+                0.533
+            ],
+            "angle": 0,
+            "content": "To better understand the sources of these inequalities, Figure 2 decomposes human development inequality into its three core dimensions: life expectancy, education, and income. The results reveal considerable variation across countries and dimensions. Education inequality is the most severe source of disparity across several economies, reaching 48.8% in Afghanistan, 48.2% in Bhutan, 44.9% in Timor-Leste, and 43.5% in Pakistan. Income inequality is also substantial, exceeding 35% in countries such as Palau (40.9%), India (37.4%), Sri Lanka (36.6%), Bangladesh (35.9%), and Cambodia (35.8%). In contrast, life expectancy inequality is generally lower, although Pakistan (26.0%), Afghanistan (25.2%), Kiribati (24.7%), and Timor-Leste (22.2%) continue to experience notable life expectancy disparities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.544,
+                0.915,
+                0.675
+            ],
+            "angle": 0,
+            "content": "Overall, the evidence suggests that human development inequality in Asia is driven primarily by disparities in education and income rather than inequalities in life expectancy. Persistent inequalities in educational attainment and economic opportunities remain key constraints to inclusive human development (Grimm et al. 2010; Permanyer and Smits 2020). Addressing these disparities should therefore be a central policy priority across the region.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.687,
+                0.915,
+                0.918
+            ],
+            "angle": 0,
+            "content": "While Figures 1 and 2 examine inequalities in health, education, and income as constituent components of human development inequality, Figure 3 explores their association with the Gender Inequality Index (GII), a separate composite measure of gender disparities in reproductive health, empowerment, and labor market participation (Gaye et al. 2010). Although the two indices are conceptually related, they capture different dimensions of human development. A clear positive association is observed between the GII and HDI loss due to inequality, suggesting that countries with greater gender disparities also tend to experience larger inequality-related human development losses. Such an analysis aims to uncover how broader institutional and social environments are associated with human development inequalities across countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.087,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-12 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.955,
+                0.971
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.176,
+                0.485,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.191,
+                0.438,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.219,
+                0.485,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.232,
+                0.486,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.247,
+                0.486,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.26,
+                0.486,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.275,
+                0.486,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.289,
+                0.486,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.487,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.319,
+                0.487,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.333,
+                0.487,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.346,
+                0.486,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.361,
+                0.487,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.376,
+                0.485,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.39,
+                0.485,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.405,
+                0.486,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.419,
+                0.486,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.432,
+                0.359,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.46,
+                0.486,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.476,
+                0.487,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.49,
+                0.486,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.503,
+                0.486,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.518,
+                0.486,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.532,
+                0.487,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.546,
+                0.487,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.561,
+                0.485,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.575,
+                0.485,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.59,
+                0.486,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.603,
+                0.487,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.618,
+                0.487,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.632,
+                0.487,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.646,
+                0.485,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.661,
+                0.487,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.675,
+                0.487,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.689,
+                0.486,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.704,
+                0.485,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.718,
+                0.308,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.755,
+                0.432,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.775,
+                0.479,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.802,
+                0.487,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.818,
+                0.485,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.832,
+                0.486,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.845,
+                0.485,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.86,
+                0.486,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.875,
+                0.485,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.888,
+                0.487,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.903,
+                0.485,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.176,
+                0.909,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.189,
+                0.91,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.204,
+                0.91,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.218,
+                0.909,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.233,
+                0.91,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.247,
+                0.91,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.26,
+                0.911,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.276,
+                0.909,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.289,
+                0.819,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.318,
+                0.909,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.333,
+                0.909,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.346,
+                0.909,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.361,
+                0.909,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.376,
+                0.909,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.389,
+                0.909,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.405,
+                0.909,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.419,
+                0.909,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.433,
+                0.909,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.447,
+                0.908,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.461,
+                0.909,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.475,
+                0.909,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.49,
+                0.909,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.503,
+                0.91,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.518,
+                0.758,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.547,
+                0.909,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.561,
+                0.909,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.576,
+                0.909,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.589,
+                0.909,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.603,
+                0.91,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.618,
+                0.911,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.632,
+                0.909,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.646,
+                0.91,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.661,
+                0.639,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.689,
+                0.909,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.703,
+                0.911,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.909,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.909,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.761,
+                0.909,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.775,
+                0.909,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.789,
+                0.909,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.803,
+                0.909,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.817,
+                0.91,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.831,
+                0.909,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.846,
+                0.909,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.86,
+                0.909,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.874,
+                0.909,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.888,
+                0.909,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.903,
+                0.814,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.156,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBI"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.151,
+                0.093,
+                0.215,
+                0.108
+            ],
+            "angle": 0,
+            "content": "nstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.085,
+                0.172,
+                0.596,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Figure 1: Human Development Inequality Across Asian Economies"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.358,
+                0.206,
+                0.641,
+                0.222
+            ],
+            "angle": 0,
+            "content": "A. HDI Loss due to Inequality (%), 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.12,
+                0.225,
+                0.877,
+                0.443
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.364,
+                0.453,
+                0.635,
+                0.469
+            ],
+            "angle": 0,
+            "content": "B. Human Inequality Coefficient, 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.12,
+                0.473,
+                0.877,
+                0.69
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.698,
+                0.689,
+                0.711
+            ],
+            "angle": 0,
+            "content": "HDI = human development index, Lao PDR = Lao People's Democratic Republic; PRC = People's Republic of China."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.713,
+                0.912,
+                0.746
+            ],
+            "angle": 0,
+            "content": "Note: Panel A presents HDI loss due to inequality (%), measuring the reduction in potential human development arising from unequal achievements in health, education, and income. Panel B reports the Human Inequality Coefficient, a composite measure summarizing inequality across these dimensions. Higher values in both panels indicate greater human development inequality."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.746,
+                0.486,
+                0.76
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations and illustration using data from UNDP (2025)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.801,
+                0.49,
+                0.93
+            ],
+            "angle": 0,
+            "content": "The upper-right quadrant (\"high vulnerability\") is dominated by countries such as Afghanistan, Pakistan, Bangladesh, Cambodia, and Papua New Guinea, which simultaneously exhibit relatively high gender inequality and substantial HDI losses. Afghanistan, for example, records the highest GII value (0.661) and the largest HDI loss (35.3%), highlighting how gender disparities may reinforce broader inequalities in health, education, and income.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.801,
+                0.914,
+                0.931
+            ],
+            "angle": 0,
+            "content": "In contrast, the lower-left quadrant (\"strong performers\") includes economies such as Singapore, the People's Republic of China (PRC), Malaysia, Brunei Darussalam, Thailand, and Viet Nam, which combine lower gender inequality with comparatively smaller human development losses. Singapore, which records the lowest GII value (0.031), also experiences a relatively low HDI loss (13.0%), illustrating the potential benefits of gender inclusion for equitable development outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.958,
+                0.508,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Explaining Human Development Inequality in Asia: Evidence and Policy"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.802,
+                0.486,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.818,
+                0.486,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.832,
+                0.486,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.845,
+                0.486,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.86,
+                0.485,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.874,
+                0.487,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.889,
+                0.486,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.903,
+                0.485,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.917,
+                0.178,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.802,
+                0.91,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.817,
+                0.909,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.832,
+                0.909,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.844,
+                0.911,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.86,
+                0.911,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.874,
+                0.91,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.888,
+                0.91,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.903,
+                0.91,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.917,
+                0.903,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.155,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBI"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.152,
+                0.093,
+                0.215,
+                0.108
+            ],
+            "angle": 0,
+            "content": "nstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.085,
+                0.172,
+                0.708,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Figure 2: Dimensions of Human Development Inequality Across Asian Economies"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.38,
+                0.198,
+                0.625,
+                0.214
+            ],
+            "angle": 0,
+            "content": "A. Inequality in Life Expectancy, 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.153,
+                0.214,
+                0.845,
+                0.413
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.403,
+                0.422,
+                0.602,
+                0.438
+            ],
+            "angle": 0,
+            "content": "B. Inequality in Education, 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.153,
+                0.44,
+                0.845,
+                0.636
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.407,
+                0.644,
+                0.596,
+                0.659
+            ],
+            "angle": 0,
+            "content": "C. Inequality in Income, 2023"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.151,
+                0.662,
+                0.844,
+                0.856
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.087,
+                0.867,
+                0.268,
+                0.88
+            ],
+            "angle": 0,
+            "content": "PRC = People's Republic of China."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.085,
+                0.882,
+                0.912,
+                0.924
+            ],
+            "angle": 0,
+            "content": "Note: Panel A reports inequality in life expectancy, Panel B presents inequality in education, and Panel C shows inequality in income across Asian economies. The indicators are derived from the inequality-adjusted Human Development Index (IHDI) framework and range from 0 to 100, where higher values indicate greater inequality within each dimension. Larger values, therefore, reflect wider disparities in health outcomes, educational attainment, and income distribution among individuals within a country."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.925,
+                0.486,
+                0.938
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations and illustration using data from UNDP (2025)."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.088,
+                0.958,
+                0.297,
+                0.972
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-12 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.073,
+                0.216,
+                0.124
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.085,
+                0.172,
+                0.683,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Figure 3: Gender Inequality and Human Development Inequality in Asia, 2023"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.241,
+                0.201,
+                0.758,
+                0.464
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.475,
+                0.689,
+                0.488
+            ],
+            "angle": 0,
+            "content": "HDI = human development index, Lao PDR = Lao People's Democratic Republic, PRC = People's Republic of China."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.49,
+                0.913,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Note: Dashed lines represent the median values of the Gender Inequality Index (GII) and HDI loss due to inequality (%), a measure of human development inequality. The lower-left quadrant (“strong performers”) includes countries with relatively low gender and human development inequality, while the upper-right quadrant (“high vulnerability”) reflects countries facing high inequality in both gender and human development. The lower-right quadrant (“transitional economies”) represents countries with relatively high gender inequality but comparatively lower human development inequality, suggesting ongoing progress toward inclusive development. Conversely, the upper-left quadrant (“uneven development”) captures countries with lower gender inequality but relatively higher human development inequality, indicating that improvements in gender outcomes alone may not fully address broader socioeconomic disparities."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.087,
+                0.552,
+                0.239,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Source: Authors' illustration."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.602,
+                0.49,
+                0.789
+            ],
+            "angle": 0,
+            "content": "Several economies, including Indonesia, Solomon Islands, Samoa, Tonga, and Vanuatu, fall within the “transitional economies” quadrant. These countries continue to experience relatively higher gender inequality but maintain comparatively moderate HDI losses, suggesting ongoing structural transitions and gradual progress toward more inclusive development. Meanwhile, the “uneven development” quadrant includes countries such as Bhutan and the Maldives, where relatively lower gender inequality coexists with comparatively high human development losses. This pattern indicates that improvements in gender outcomes alone may not be sufficient to address broader socioeconomic inequalities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.801,
+                0.49,
+                0.889
+            ],
+            "angle": 0,
+            "content": "Figure 4 complements the gender perspective by examining the role of institutional quality. A generally negative association is observed between government effectiveness and HDI loss due to inequality, indicating that countries with stronger governance tend to experience lower levels of human development inequality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.9,
+                0.49,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The lower-right quadrant (\"strong performers\") includes economies such as Singapore, Brunei Darussalam,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.602,
+                0.914,
+                0.689
+            ],
+            "angle": 0,
+            "content": "Malaysia, PRC, Thailand, and Samoa, which combine relatively effective governance with comparatively low HDI losses. Singapore records the highest government effectiveness score (2.26) alongside a relatively low HDI loss (13.0%), demonstrating how effective institutions can contribute to more inclusive development outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.701,
+                0.914,
+                0.832
+            ],
+            "angle": 0,
+            "content": "In contrast, the upper-left quadrant (\"high vulnerability\") includes countries such as Afghanistan, Pakistan, Nepal, Bangladesh, Lao PDR, and Papua New Guinea, where weaker governance is accompanied by substantial development losses related to inequality. Afghanistan, which records the weakest government effectiveness score (-2.09), also experiences the highest HDI loss (35.3%), suggesting that institutional constraints may limit the capacity to deliver inclusive development outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.843,
+                0.914,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The upper-right quadrant (“transitional governance”) includes countries such as Bhutan and India, which exhibit relatively stronger government effectiveness but continue to experience high human development losses. These cases indicate that governance improvements alone may not be sufficient to overcome entrenched",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.958,
+                0.508,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Explaining Human Development Inequality in Asia: Evidence and Policy"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.958,
+                0.956,
+                0.972
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.603,
+                0.486,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.617,
+                0.485,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.631,
+                0.486,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.647,
+                0.487,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.66,
+                0.485,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.675,
+                0.486,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.689,
+                0.485,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.703,
+                0.486,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.717,
+                0.486,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.732,
+                0.485,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.747,
+                0.485,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.761,
+                0.486,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.774,
+                0.486,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.802,
+                0.486,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.817,
+                0.486,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.831,
+                0.487,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.846,
+                0.487,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.861,
+                0.486,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.874,
+                0.421,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.903,
+                0.485,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.917,
+                0.485,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.603,
+                0.91,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.617,
+                0.909,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.631,
+                0.911,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.647,
+                0.909,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.661,
+                0.909,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.675,
+                0.91,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.703,
+                0.909,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.91,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.91,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.76,
+                0.909,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.775,
+                0.909,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.789,
+                0.91,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.803,
+                0.91,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.818,
+                0.909,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.845,
+                0.91,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.86,
+                0.91,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.874,
+                0.911,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.889,
+                0.91,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.902,
+                0.91,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.917,
+                0.911,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.073,
+                0.216,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.085,
+                0.172,
+                0.743,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Figure 4: Government Effectiveness and Human Development Inequality in Asia, 2023"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.239,
+                0.199,
+                0.761,
+                0.463
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.475,
+                0.689,
+                0.488
+            ],
+            "angle": 0,
+            "content": "HDI = human development index, Lao PDR = Lao People's Democratic Republic, PRC = People's Republic of China."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.49,
+                0.913,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Note: Dashed lines represent the median values of the government effectiveness score and HDI loss due to inequality (%), a measure of human development inequality. The lower-right quadrant (“strong performers”) includes countries with relatively effective governance and lower human development inequality, whereas the upper-left quadrant (“high vulnerability”) includes countries with weaker governance and greater human development inequality. The upper-right quadrant (“transitional governance”) represents countries with relatively strong governance but still comparatively high levels of human development inequality, suggesting that institutional improvements have not yet fully translated into inclusive development outcomes. The lower-left quadrant (“uneven institutional development”) captures countries with weaker governance but relatively lower human development inequality, indicating that factors beyond governance may also influence development outcomes."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.087,
+                0.562,
+                0.241,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Source: Authors' illustration."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.616,
+                0.49,
+                0.732
+            ],
+            "angle": 0,
+            "content": "socioeconomic disparities. Meanwhile, the lower-left quadrant (“uneven institutional development”) contains economies such as Mongolia, Tonga, Marshall Islands, and Tuvalu, where comparatively weaker governance coexists with moderate HDI losses. This suggests that factors beyond institutional quality, including demographic characteristics, social policies, and economic structures, may also influence human development outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.744,
+                0.489,
+                0.847
+            ],
+            "angle": 0,
+            "content": "Overall, the findings suggest that stronger government effectiveness and greater gender inclusion are associated with lower levels of human development inequality across Asian economies. Although the analysis is descriptive, the observed patterns highlight the potential importance of institutional quality and gender inclusion in promoting more equitable human development.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.858,
+                0.49,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Regional comparisons reveal substantial disparities in human development inequality across Asia (Table 1). South Asia records considerably higher inequality-related HDI losses (30.2%) than East Asia and the Pacific (16.3%) and exceeds the global average (22.0%). A similar",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.616,
+                0.912,
+                0.661
+            ],
+            "angle": 0,
+            "content": "pattern is observed for the Human Inequality Coefficient, indicating that inequality remains a more significant constraint on development outcomes in South Asia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.673,
+                0.914,
+                0.817
+            ],
+            "angle": 0,
+            "content": "The differences are particularly pronounced across the dimensions of inequality. Education inequality is more than three times higher in South Asia (36.9%) than in East Asia and the Pacific (11.8%), while income inequality (35.4% versus 27.9%) and life expectancy inequality (16.5% versus 7.8%) are also substantially higher. These patterns are consistent with the country-level evidence presented in Figures 1 and 2, highlighting education and income disparities as the principal drivers of inequality-related HDI losses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.829,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Regional disparities are also evident in gender inclusion and governance. South Asia records a higher Gender Inequality Index (0.458) than East Asia and the Pacific (0.315), alongside weaker outcomes in reproductive health, female educational attainment, political representation, and labor force participation. Similarly, East Asia and the Pacific exhibit a positive average",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.087,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-12 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.972
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.618,
+                0.487,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.633,
+                0.485,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.647,
+                0.485,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.661,
+                0.486,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.675,
+                0.486,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.69,
+                0.486,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.703,
+                0.486,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.718,
+                0.452,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.746,
+                0.487,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.76,
+                0.485,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.774,
+                0.485,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.789,
+                0.486,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.803,
+                0.486,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.818,
+                0.485,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.832,
+                0.451,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.86,
+                0.485,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.875,
+                0.485,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.888,
+                0.486,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.903,
+                0.486,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.917,
+                0.486,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.618,
+                0.909,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.632,
+                0.91,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.646,
+                0.879,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.674,
+                0.909,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.69,
+                0.91,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.703,
+                0.909,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.717,
+                0.909,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.731,
+                0.91,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.746,
+                0.91,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.761,
+                0.91,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.775,
+                0.91,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.789,
+                0.909,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.803,
+                0.643,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.831,
+                0.911,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.846,
+                0.91,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.861,
+                0.91,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.874,
+                0.91,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.888,
+                0.911,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.903,
+                0.909,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.917,
+                0.91,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.086,
+                0.073,
+                0.216,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIInstitute"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.087,
+                0.174,
+                0.723,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Table 1: Human Development Inequality, Gender, and Governance by Region, 2023"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.126,
+                0.193,
+                0.871,
+                0.526
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Country</td><td>East Asia and the Pacific</td><td>South Asia</td><td>World</td></tr><tr><td colspan=\"4\">Human Development Inequality</td></tr><tr><td>Human development inequality loss (%)</td><td>16.3</td><td>30.2</td><td>22.0</td></tr><tr><td>Human Inequality Coefficient</td><td>15.8</td><td>29.6</td><td>21.6</td></tr><tr><td>Life expectancy inequality (%)</td><td>7.8</td><td>16.5</td><td>12.9</td></tr><tr><td>Education inequality (%)</td><td>11.8</td><td>36.9</td><td>21.5</td></tr><tr><td>Income inequality (%)</td><td>27.9</td><td>35.4</td><td>30.4</td></tr><tr><td colspan=\"4\">Gender Inclusion and Equality</td></tr><tr><td>Gender Inequality Index (GII)</td><td>0.3</td><td>0.5</td><td>0.5</td></tr><tr><td colspan=\"4\">Reproductive Health</td></tr><tr><td>Maternal mortality ratio (MMR)</td><td>78.1</td><td>131.7</td><td>216.1</td></tr><tr><td>Adolescent birth rate (ABR)</td><td>15.5</td><td>26.1</td><td>39.1</td></tr><tr><td colspan=\"4\">Empowerment</td></tr><tr><td>Female secondary education (%)</td><td>64.6</td><td>42.5</td><td>62.0</td></tr><tr><td>Women in parliament (%)</td><td>21.7</td><td>17.9</td><td>26.5</td></tr><tr><td colspan=\"4\">Labor Market Participation</td></tr><tr><td>Female labor force participation (%)</td><td>55.0</td><td>33.5</td><td>48.5</td></tr><tr><td colspan=\"4\">Governance</td></tr><tr><td>Government effectiveness</td><td>0.3</td><td>-0.5</td><td>0.1</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.085,
+                0.529,
+                0.912,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Note: MMR is measured as maternal deaths per 100,000 live births. ABR is measured as births per 1,000 women aged 15–19 years. Government effectiveness ranges from -2.5 (weakest) to +2.5 (strongest)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.086,
+                0.553,
+                0.24,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Source: Authors' estimation."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.602,
+                0.489,
+                0.646
+            ],
+            "angle": 0,
+            "content": "government effectiveness score (0.3), whereas South Asia records a negative score (-0.5), indicating weaker institutional capacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.658,
+                0.49,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Overall, East Asia and the Pacific outperform South Asia across most indicators of human development inequality, gender inclusion, and governance. The findings suggest that reducing educational and income disparities, promoting gender equality, and strengthening institutional effectiveness remain central to achieving more inclusive human development outcomes across Asia.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.087,
+                0.796,
+                0.347,
+                0.835
+            ],
+            "angle": 0,
+            "content": "3. Policy Priorities and Future Directions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.844,
+                0.49,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The findings identify education and income inequality as the principal drivers of human development losses across Asian economies. South Asia records substantially higher levels of educational and income inequality than East Asia and the Pacific, suggesting that unequal access to quality education and economic opportunities remains a major",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.602,
+                0.914,
+                0.746
+            ],
+            "angle": 0,
+            "content": "constraint to inclusive development. Investments in education enhance human capabilities and productivity while reducing long-term socioeconomic disparities (Becker 1993; Lanzi 2007). Policymakers should therefore prioritize equitable access to quality education, particularly at the secondary level, while strengthening skills development and lifelong learning opportunities. Reducing educational disparities can also help narrow income gaps and promote more inclusive development outcomes (Sylwester 2002; Machin and Vignoles 2004).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.758,
+                0.914,
+                0.932
+            ],
+            "angle": 0,
+            "content": "The positive association between gender inequality and human development losses highlights the importance of gender-inclusive policies. Countries with lower levels of gender inequality generally experience lower development losses from inequality, while economies characterized by weaker gender outcomes tend to face greater development challenges. Previous studies show that gender inequality constrains economic performance and limits broader development outcomes (Klasen 2018; Carlsen 2020). Expanding female educational attainment, improving reproductive health outcomes, increasing women's labor force participation, and strengthening",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.086,
+                0.958,
+                0.508,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Explaining Human Development Inequality in Asia: Evidence and Policy"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.958,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.603,
+                0.485,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.617,
+                0.486,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.631,
+                0.241,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.661,
+                0.485,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.674,
+                0.487,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.689,
+                0.485,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.703,
+                0.487,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.718,
+                0.486,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.732,
+                0.487,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.746,
+                0.487,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.761,
+                0.245,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.797,
+                0.345,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.817,
+                0.317,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.844,
+                0.487,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.859,
+                0.487,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.873,
+                0.487,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.889,
+                0.485,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.902,
+                0.486,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.917,
+                0.487,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.604,
+                0.91,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.618,
+                0.909,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.632,
+                0.91,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.646,
+                0.909,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.661,
+                0.909,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.675,
+                0.909,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.69,
+                0.91,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.704,
+                0.91,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.717,
+                0.91,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.732,
+                0.9,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.759,
+                0.909,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.774,
+                0.91,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.788,
+                0.909,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.803,
+                0.91,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.817,
+                0.909,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.832,
+                0.91,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.846,
+                0.91,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.86,
+                0.91,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.874,
+                0.909,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.888,
+                0.909,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.903,
+                0.91,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.917,
+                0.909,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.087,
+                0.073,
+                0.216,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBIstitute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.174,
+                0.49,
+                0.262
+            ],
+            "angle": 0,
+            "content": "women's representation in decision-making institutions can therefore contribute to more inclusive development (Kabeer 2010; Duflo 2012). Such measures are particularly relevant for South Asia, where female educational attainment and labor force participation remain below regional and global averages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.274,
+                0.49,
+                0.491
+            ],
+            "angle": 0,
+            "content": "The findings further suggest that stronger government effectiveness is associated with lower human development inequality. Effective institutions play a critical role in delivering education, health, and social protection services and ensuring that development benefits reach vulnerable populations. Evidence indicates that stronger governance can support both human development and the reduction of inequality (Ferreira et al. 2022). Governments should therefore focus on improving institutional capacity, strengthening accountability mechanisms, enhancing public service delivery, and increasing the effectiveness of social programs. Recent evidence also suggests that government effectiveness can directly reduce inequality and improve development outcomes (Barra et al. 2023).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.501,
+                0.489,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Despite substantial progress in human development, significant inequalities persist across Asian economies. The evidence presented in this policy brief indicates that",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.507,
+                0.174,
+                0.914,
+                0.419
+            ],
+            "angle": 0,
+            "content": "education and income disparities remain the primary drivers of inequality-related human development losses, while greater gender inclusion and stronger government effectiveness are consistently associated with more equitable human development outcomes. Regional comparisons further show that South Asia faces greater challenges than East Asia and the Pacific across multiple dimensions of inequality. Addressing these challenges requires integrated policy approaches that promote equitable access to education, advance gender equality, and strengthen institutional effectiveness. Future research could extend this analysis by examining trends over time, exploring subnational disparities, and investigating how government effectiveness is associated with specific dimensions of human development inequality, including inequalities in education, income, and life expectancy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.509,
+                0.445,
+                0.618,
+                0.46
+            ],
+            "angle": 0,
+            "content": "AI Declaration"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.508,
+                0.473,
+                0.913,
+                0.533
+            ],
+            "angle": 0,
+            "content": "We declare that ChatGPT (OpenAI) was used only to improve language, including grammar, spelling, and reference formatting. No part of the analysis or original intellectual contribution was generated by the tool.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.088,
+                0.958,
+                0.297,
+                0.973
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Brief No. 2026-12 (July)"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.175,
+                0.487,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.19,
+                0.487,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.204,
+                0.486,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.218,
+                0.486,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.233,
+                0.485,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.247,
+                0.299,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.274,
+                0.487,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.289,
+                0.487,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.486,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.319,
+                0.487,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.333,
+                0.486,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.347,
+                0.487,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.361,
+                0.486,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.375,
+                0.486,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.39,
+                0.486,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.403,
+                0.486,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.418,
+                0.487,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.433,
+                0.487,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.447,
+                0.487,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.461,
+                0.485,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.476,
+                0.482,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.503,
+                0.485,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.518,
+                0.485,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.532,
+                0.486,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.174,
+                0.911,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.19,
+                0.911,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.204,
+                0.911,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.218,
+                0.91,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.233,
+                0.91,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.247,
+                0.91,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.261,
+                0.91,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.276,
+                0.91,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.29,
+                0.911,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.304,
+                0.91,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.319,
+                0.91,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.333,
+                0.909,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.347,
+                0.909,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.361,
+                0.91,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.375,
+                0.911,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.39,
+                0.91,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.404,
+                0.655,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.446,
+                0.614,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.475,
+                0.91,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.49,
+                0.91,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.503,
+                0.91,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.518,
+                0.876,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.088,
+                0.073,
+                0.215,
+                0.123
+            ],
+            "angle": 0,
+            "content": "ADBInstitute"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.102,
+                0.182,
+                0.227,
+                0.2
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.211,
+                0.896,
+                0.236
+            ],
+            "angle": 0,
+            "content": "Barra, C., A. Papaccio, and N. Ruggiero. 2023. Government Effectiveness and Inequality in Italian Regions. Economic Change and Restructuring. 56 (2). pp. 781–801."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.238,
+                0.895,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Becker, G. S. 1993. Human Capital: A Theoretical and Empirical Analysis, with Special Reference to Education (3rd ed.). University of Chicago Press."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.265,
+                0.712,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Carlsen, L. 2020. Gender Inequality and Development. Sustainability Science. 15 (3). pp. 759–780."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.281,
+                0.869,
+                0.295
+            ],
+            "angle": 0,
+            "content": "Duflo, E. 2012. Women Empowerment and Economic Development. Journal of Economic Literature. 50 (4). pp. 1051–1079."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.297,
+                0.895,
+                0.321
+            ],
+            "angle": 0,
+            "content": "Ferreira, I. A., R. M. Gisselquist, and F. Tarp. 2022. On the Impact of Inequality on Growth, Human Development, and Governance. International Studies Review. 24 (1), viab058."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.324,
+                0.895,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Gaye, A., J. Klugman, M. Kovacevic, S. Twigg, and E. Zambrano. 2010. Measuring Key Disparities in Human Development: The Gender Inequality Index. Human Development Research Paper. United Nations Development Programme."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.35,
+                0.896,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Grimm, M., K. Harttgen, S. Klasen, M. Misselhorn, T. Munzi, and T. Smeeding. 2010. Inequality in Human Development: An Empirical Assessment of 32 Countries. Social Indicators Research. 97 (2). pp. 191–211."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.377,
+                0.895,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Kabeer, N. 2010. Women's Empowerment, Development Interventions and the Management of Information Flows. IDS Bulletin. 41 (6). pp. 105–113."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.404,
+                0.896,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Klasen, S. 2018. The Impact of Gender Inequality on Economic Performance in Developing Countries. Annual Review of Resource Economics. 10 (1). pp. 279–298."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.102,
+                0.431,
+                0.774,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Lanzi, D. 2007. Capabilities, Human Capital and Education. Journal of Socio-Economics. 36 (3). pp. 424–435."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.446,
+                0.895,
+                0.46
+            ],
+            "angle": 0,
+            "content": "Machin, S. and A. Vignoles. 2004. Educational Inequality: The Widening Socioeconomic Gap. Fiscal Studies. 25 (2). pp. 107–128."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.463,
+                0.896,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Permanyer, I. and J. Smits. 2020. Inequality in Human Development Across the Globe. Population and Development Review. 46 (3). pp. 583–601."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.489,
+                0.888,
+                0.503
+            ],
+            "angle": 0,
+            "content": "Sylwester, K. 2002. Can Education Expenditures Reduce Income Inequality? Economics of Education Review. 21 (1). pp. 43–52."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.103,
+                0.505,
+                0.897,
+                0.528
+            ],
+            "angle": 0,
+            "content": "United Nations Development Programme (UNDP). 2025. Human Development Report 2025: A Matter of Choice: People and Possibilities in the Age of AI. UNDP."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.099,
+                0.789,
+                0.294,
+                0.801
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank Institute"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.803,
+                0.493,
+                0.84
+            ],
+            "angle": 0,
+            "content": "ADBI, located in Tokyo, is the think tank of the Asian Development Bank (ADB). Its mission is to identify effective development strategies and improve development management in ADB's developing member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.848,
+                0.492,
+                0.885
+            ],
+            "angle": 0,
+            "content": "ADBI Policy Briefs are based on events organized or co-organized by ADBI. The series is designed to provide concise, nontechnical accounts of policy issues of topical interest, with a view to facilitating informed debate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.894,
+                0.493,
+                0.93
+            ],
+            "angle": 0,
+            "content": "The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of ADBI, ADB, or its Board or Governors or the governments they represent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.792,
+                0.901,
+                0.839
+            ],
+            "angle": 0,
+            "content": "ADBI encourages printing or copying information exclusively for personal and noncommercial use with proper acknowledgment of ADBI. Users are restricted from reselling, redistributing, or creating derivative works for commercial purposes without the express, written consent of ADBI.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.849,
+                0.702,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank Institute\nKasumigaseki Building 8F\n3-2-5 Kasumigaseki, Chiyoda-ku\nTokyo 100-6008\nJapan\nTel: +813 3593 5500\nwww.adbi.org",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.088,
+                0.959,
+                0.507,
+                0.973
+            ],
+            "angle": 0,
+            "content": "Explaining Human Development Inequality in Asia: Evidence and Policy"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.959,
+                0.956,
+                0.971
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.18,
+                0.227,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.792,
+                0.29,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.805,
+                0.49,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.817,
+                0.49,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.829,
+                0.49,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.85,
+                0.49,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.862,
+                0.49,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.874,
+                0.451,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.897,
+                0.49,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.907,
+                0.49,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.919,
+                0.342,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.794,
+                0.898,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.805,
+                0.898,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.817,
+                0.898,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.829,
+                0.859,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.851,
+                0.699,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.863,
+                0.64,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.874,
+                0.674,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.885,
+                0.593,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.507,
+                0.896,
+                0.541,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.908,
+                0.612,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.507,
+                0.918,
+                0.583,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

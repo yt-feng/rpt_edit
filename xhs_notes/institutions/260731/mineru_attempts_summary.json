@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0006-OECD_Competition-in-the-age-of-AI_19bb731b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

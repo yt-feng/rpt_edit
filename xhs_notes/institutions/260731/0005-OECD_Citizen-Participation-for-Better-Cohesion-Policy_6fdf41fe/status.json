@@ -1,0 +1,96 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_v8x6lhgk/pdfs/0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "别让政策只停留在文件",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "经合组织：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe.pdf",
+    "cleaned_source_title": "0005-OECD_Citizen-Participation-for-Better-Cohesion-Policy_6fdf41fe",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0005OECDCitizenPartici",
+    "raw_candidates": [
+      "经合组织：公民参与提升凝聚政策价值",
+      "经合组织：11个试点验证公民参与对凝聚政策价值",
+      "经合组织：欧盟7国11个地区公民参与试点研究"
+    ],
+    "cleaned_candidates": [
+      "经合组织：公民参与提升凝聚政策价值",
+      "经合组织：11个试点验证公民参与对凝聚政策价值",
+      "经合组织：欧盟7国11个地区公民参与试点研究",
+      "经合组织：0005OECDCitizenPartici",
+      "经合组织：11个试点项目验证公民参与对凝聚政策的实际价值"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：欧盟7国11个地区公民参与试点研究",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：0005OECDCitizenPartici",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：11个试点项目验证公民参与对凝聚政策的实际价值",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "11"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "经合组织：11个试点验证公民参与对凝聚政策价值",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "经合组织：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

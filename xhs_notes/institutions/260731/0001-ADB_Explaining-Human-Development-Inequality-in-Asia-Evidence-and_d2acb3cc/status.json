@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_v8x6lhgk/pdfs/0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "亚洲开发银行",
+  "cover_short_title": "亚洲发展不均：谁掉队",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "亚洲开发银行：亚洲人力发展不平等成因分析",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc.pdf",
+    "cleaned_source_title": "0001-ADB_Explaining-Human-Development-Inequality-in-Asia-Evidence-and_d2acb3cc",
+    "institution_name": "亚洲开发银行",
+    "required_terms": [],
+    "deterministic_fallback": "亚洲开发银行：0001ADBExplainingHum",
+    "raw_candidates": [
+      "亚洲开发银行：亚洲人力发展不平等成因分析",
+      "亚洲开发银行：亚洲人力发展不平等源于教育和收入差距",
+      "亚洲开发银行：亚洲人力发展不平等与性别及治理关联"
+    ],
+    "cleaned_candidates": [
+      "亚洲开发银行：亚洲人力发展不平等成因分析",
+      "亚洲开发银行：亚洲人力发展不平等源于教育和收入差距",
+      "亚洲开发银行：亚洲人力发展不平等与性别及治理关联",
+      "亚洲开发银行：0001ADBExplainingHum",
+      "亚洲开发银行：阿富汗的教育不平等达到48.8%，不丹为48.2%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "亚洲开发银行：亚洲人力发展不平等源于教育和收入差距",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：亚洲人力发展不平等与性别及治理关联",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：0001ADBExplainingHum",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "亚洲开发银行：阿富汗的教育不平等达到48.8%，不丹为48.2%",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "亚洲开发银行：亚洲人力发展不平等成因分析",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "亚洲开发银行：亚洲人力发展不平等成因分析"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

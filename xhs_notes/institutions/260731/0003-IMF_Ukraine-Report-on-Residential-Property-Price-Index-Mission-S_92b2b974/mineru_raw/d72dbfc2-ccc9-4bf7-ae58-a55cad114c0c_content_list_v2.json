@@ -1,0 +1,654 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HIGH-LEVEL SUMMARY TECHNICAL ASSISTANCE REPORT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                140,
+                232,
+                745,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UKRAINE"
+                    }
+                ]
+            },
+            "bbox": [
+                148,
+                434,
+                375,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Report on Residential Property Price Index Mission (September 15 – 19, 2025)"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                473,
+                895,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JANUARY 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                547,
+                351,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared By"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                609,
+                277,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Barra Casey"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                631,
+                258,
+                651
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                121,
+                267,
+                219
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DISCLAIMER"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                222,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                157,
+                883,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 International Monetary Fund [HLS/26/044]"
+                    }
+                ]
+            },
+            "bbox": [
+                325,
+                318,
+                676,
+                335
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report Statistics Department"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                300,
+                376,
+                697,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Report on Residential Property Price Index Mission (September 15 – 19, 2025)\nPrepared by Barra Casey"
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                420,
+                803,
+                452
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                479,
+                859,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: This technical assistance mission, conducted from September 15 –19, 2025, aimed to support the State Statistical Service of Ukraine (SSSU) in advancing the compilation and dissemination of the House Price Index (HPI). The mission focused on finalizing methods for index compilation using listings data, assessing new administrative data sources, and designing a dissemination strategy. Findings highlighted that while administrative data from the State Registry of Real Rights and Unified Database of Valuation provide useful information, their quality and completeness currently limit their use for official HPI compilation. The mission recommended continuing reliance on listings data, refining hedonic modeling techniques, and securing methodological clearance to enable the planned publication of an updated HPI by May 2026. These efforts are critical for enhancing transparency in Ukraine’s real estate market, supporting financial market infrastructure, and aiding economic recovery and reconstruction."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                536,
+                880,
+                699
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEL Classification Numbers: C43, C55, D2, E31, E32"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                710,
+                501,
+                728
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: Residential Real Estate, Price Index, Financial Stability, Macroprudential Analysis"
+                    }
+                ]
+            },
+            "bbox": [
+                120,
+                746,
+                764,
+                763
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                804,
+                882,
+                883
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                    }
+                ]
+            },
+            "bbox": [
+                320,
+                106,
+                674,
+                198
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Background"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                90,
+                272,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The technical assistance (TA) mission to Ukraine was part of an ongoing project initiated in April 2024 to develop robust processes and methodologies for compiling a reliable House Price Index (HPI). This fourth mission was conducted amid challenging conditions due to the ongoing conflict in Ukraine, with meetings held at the IMF office in Vienna. The project's primary objective is to support the State Statistical Service of Ukraine (SSSU) in producing a high-quality, internationally comparable HPI that reflects real estate market dynamics accurately and transparently."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                125,
+                883,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The importance of this project is underscored by Ukraine's current economic context, where reliable property price indicators are essential for assessing market developments and risks. As Ukraine embarks on reconstruction and recovery, strengthening financial market infrastructure is vital to attract private investment and enhance transparency. The HPI forms a key component of this infrastructure, complementing reforms in land and cadastral records, property price registers, valuation standards, and credit registers. These reforms align with international best practices and are supported by International Financial Institutions (IFIs), including the IMF Extended Fund Facility (EFF) program. The mission's work is therefore closely linked to broader surveillance and program priorities, providing critical data for policy analysis, formulation, and monitoring."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                227,
+                879,
+                361
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Findings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                375,
+                388,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The mission found that the SSSU has made significant progress in compiling experimental quality-adjusted hedonic indices based on listings data, covering eight quarters for apartments and seven for houses. These indices reveal continued growth in residential property prices, driven primarily by apartment prices. The hedonic models used for index compilation demonstrate good explanatory power, with most regression models exhibiting R-squared values above 0.5, indicating robust statistical performance. The mission emphasized the importance of ongoing diagnostics to ensure model stability and accuracy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                407,
+                870,
+                512
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In parallel, the mission examined newly acquired administrative data from the State Registry of Real Rights and the Unified Database of Valuation, merged by the National Bank of Ukraine (NBU). While these sources provide valuable property characteristics and transaction details, the declared prices recorded in the Registry were found to be significantly lower and less plausible compared to asking prices from listings data, especially for houses. The administrative data also suffers from incomplete matching between databases, missing values, and lacks identifiers to distinguish new from existing properties, a requirement under European Union statistical regulations. These limitations currently preclude the use of administrative data for official HPI compilation without further quality improvements."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                523,
+                880,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The mission also supported the finalization of the HPI methodology document and the design of a dissemination strategy. The updated methodology incorporates refinements to the time-dummy hedonic model, strata-level index compilation, and aggregation procedures. The SSSU is developing a new statistics portal to improve data access and plans to issue quarterly HPI reports with narrative context to enhance user engagement. To facilitate timely analysis, the mission recommended publishing retrospective HPI data for 2024 and 2025 alongside the official release for the first quarter of 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                655,
+                870,
+                744
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                758,
+                514,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To strengthen Ukraine's capacity for producing a reliable and internationally comparable HPI, the mission recommended that the SSSU prioritize securing clearance of the updated HPI methodology from the cross-institutional Methodology Commission by March 2026. This step is critical to ensure the methodological soundness and institutional endorsement necessary for official publication. The SSSU should design and implement a quarterly reporting framework to announce HPI releases, modeled on existing Consumer Price Index (CPI) dissemination practices, to improve transparency and media engagement."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                792,
+                895,
+                883
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | High-Level Summary Technical Assistance Report – Ukraine"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                959,
+                602,
+                976
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "RPPI Report"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                959,
+                861,
+                976
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                867,
+                960,
+                883,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Given the current quality issues with administrative data, the mission advised continuing to use listings data as the primary source for official HPI compilation while applying rigorous data quality checks to maintain consistency and reliability. Concurrently, the SSSU should collaborate with the State Registry and other relevant agencies to enhance the quality, completeness, and matching processes of administrative data, aiming for eventual integration into the official HPI framework."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                90,
+                893,
+                165
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, the mission emphasized the importance of publishing retrospective experimental HPI data for 2024 and 2025 to provide users with a longer time series for analysis. This approach balances the need for timely market information with the integrity of the official statistics. Together, these recommendations will support Ukraine's efforts to build a transparent and robust real estate price monitoring system, contributing to informed policy-making and economic recovery."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                176,
+                898,
+                252
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/46ca3efb69b6f46c29bc615db4044dcaed52cfd7c6b4b835c0956b2482455de2.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1. Country: Priority Recommendations"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>March 2026</td><td>Get clearance from the Methodology Commission for the updated methods.</td><td>SSSU</td></tr><tr><td>May 2026</td><td>Design a report announcing the publication of the HPI data each quarter.</td><td>SSSU</td></tr><tr><td>May 2026</td><td>Publish the updated HPI, for reference quarter Q1 2026.</td><td>SSSU</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                279,
+                880,
+                393
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                960,
+                150,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report – Ukraine"
+                    }
+                ]
+            },
+            "bbox": [
+                156,
+                960,
+                602,
+                976
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "RPPI Report"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                959,
+                861,
+                976
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                960,
+                883,
+                974
+            ]
+        }
+    ]
+]

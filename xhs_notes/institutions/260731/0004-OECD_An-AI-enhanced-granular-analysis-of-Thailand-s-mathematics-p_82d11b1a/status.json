@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_v8x6lhgk/pdfs/0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "泰国学生数学哪强哪弱",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：AI辅助细粒度分析泰国数学能力",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a.pdf",
+    "cleaned_source_title": "0004-OECD_An-AI-enhanced-granular-analysis-of-Thailand-s-mathematics-p_82d11b1a",
+    "institution_name": "经合组织",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "经合组织：0004OECDAnAIenhancedgr",
+    "raw_candidates": [
+      "经合组织：AI辅助细粒度分析泰国数学能力",
+      "经合组织：泰国数学PISA 2022几何与程序任务表现突出",
+      "经合组织：AI分析泰国数学12个内容主题与17个认知维度"
+    ],
+    "cleaned_candidates": [
+      "经合组织：AI辅助细粒度分析泰国数学能力",
+      "经合组织：泰国数学PISA2022几何与程序任务表现突出",
+      "经合组织：AI分析泰国数学12个内容主题与17个认知维度",
+      "经合组织：0004OECDAnAIenhancedgr",
+      "经合组织：AI技术与相关数据观察"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：泰国数学PISA2022几何与程序任务表现突出",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI分析泰国数学12个内容主题与17个认知维度",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "经合组织：0004OECDAnAIenhancedgr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：AI技术与相关数据观察",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：AI辅助细粒度分析泰国数学能力",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "经合组织：AI辅助细粒度分析泰国数学能力"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

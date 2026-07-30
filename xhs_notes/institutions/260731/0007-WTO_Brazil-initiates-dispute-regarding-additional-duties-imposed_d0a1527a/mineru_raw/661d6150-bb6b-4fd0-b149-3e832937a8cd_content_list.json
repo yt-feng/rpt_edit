@@ -1,0 +1,1041 @@
+[
+    {
+        "type": "text",
+        "text": "(26-5459)",
+        "bbox": [
+            115,
+            146,
+            201,
+            161
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Page: 1/7",
+        "bbox": [
+            798,
+            146,
+            882,
+            161
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Original: English",
+        "bbox": [
+            747,
+            170,
+            882,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "UNITED STATES – ADDITIONAL DUTIES ON CERTAIN PRODUCTS FROM BRAZIL",
+        "text_level": 1,
+        "bbox": [
+            159,
+            227,
+            836,
+            244
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "REQUEST FOR CONSULTATIONS BY BRAZIL",
+        "text_level": 1,
+        "bbox": [
+            327,
+            262,
+            668,
+            278
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The following communication, dated 27 July 2026, from the delegation of Brazil to the delegation of the United States, is circulated to the Dispute Settlement Body in accordance with Article 4.4 of the DSU.",
+        "bbox": [
+            112,
+            297,
+            884,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "My authorities have instructed me to request consultations with the Government of the United States of America (\"United States\") pursuant to Article 4.4 of the Understanding on Rules and Procedures Governing the Settlement of Disputes (\"DSU\") and Article XXII:1 of the General Agreement on Tariffs and Trade 1994 (\"GATT 1994\"). This request concerns additional tariffs imposed by the United States on products originating in Brazil pursuant to two investigations initiated by the United States Trade Representative (\"USTR\") under Section 301 of the Trade Act of 1974, as amended (\"Trade Act\").",
+        "bbox": [
+            112,
+            376,
+            882,
+            460
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "I. Background",
+        "text_level": 2,
+        "bbox": [
+            112,
+            483,
+            270,
+            499
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Since February 2025, the United States has imposed a series of additional tariffs on imports from its trading partners, including Brazil, in response to acts, policies, and practices that the United States unilaterally characterizes as non-reciprocal, unfair, unreasonable, or discriminatory.",
+        "bbox": [
+            114,
+            525,
+            882,
+            581
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2. On 13 February 2025, the US President signed a Presidential Memorandum entitled \"Reciprocal Trade and Tariffs\", which ordered the development of a \"Fair and Reciprocal Plan\". The Presidential Memorandum announced that, under that plan, the United States would counter so-called \"non-reciprocal trading arrangements\" by determining and imposing an \"equivalent of a reciprocal tariff\" with respect to each trading partner. The Presidential Memorandum instructed named US agencies, including USTR, to investigate the alleged harm to the United States resulting from such arrangements and to propose remedies in pursuit of what the United States considered reciprocal trade relations. $^{1}$",
+        "bbox": [
+            112,
+            590,
+            882,
+            699
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3. On 2 April 2025, the US President issued Executive Order 14257, which imposed so-called \"reciprocal\" tariffs on imports from numerous trading partners, including Brazil. Under Executive Order 14257, imports from Brazil became subject to an additional ad valorem duty of 10 per cent. $^{2}$ On 30 July 2025, the US President further issued Executive Order 14323, imposing an additional ad valorem duty of 40 per cent on certain products of Brazilian origin. As a result, certain Brazilian products became subject to additional duties of 50 per cent upon importation into the United States. $^{3}$",
+        "bbox": [
+            114,
+            709,
+            882,
+            804
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            107,
+            54,
+            211,
+            123
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "WORLD TRADE\nORGANIZATION",
+        "bbox": [
+            223,
+            68,
+            431,
+            108
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1\nG/L/1630",
+        "bbox": [
+            759,
+            68,
+            880,
+            96
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            776,
+            120,
+            880,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Presidential Memorandum of 13 February 2025, Reciprocal Trade and Tariffs, 90 Fed. Reg. 9837, 9837-9838, Sections 2 and 3(a).",
+        "bbox": [
+            114,
+            831,
+            838,
+            857
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Executive Order 14257 of 2 April 2025, Regulating Imports With a Reciprocal Tariff To Rectify Trade Practices That Contribute to Large and Persistent Annual United States Goods Trade Deficits, 90 Fed. Reg. 15041, Section 3(a)-(b) and Annex I.",
+        "bbox": [
+            114,
+            854,
+            858,
+            891
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ Executive Order 14323 of 30 July 2025, Addressing Threats to the United States by the Government of Brazil, 90 Fed. Reg. 37739, Section 2 and Annex I.",
+        "bbox": [
+            114,
+            890,
+            882,
+            916
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "4. The United States purported to impose these additional duties under the International Emergency Economic Powers Act (\"IEEPA\"). On 20 February 2026, the US Supreme Court held that IEEPA does not authorize the President to impose tariffs. $^{4}$ As a result, the United States terminated the additional duties imposed under IEEPA $^{5}$ and imposed, instead, a temporary additional duty of 10 per cent under Section 122 of the Trade Act. $^{6}$ The additional duty imposed under Section 122 expired on 24 July 2026. $^{7}$",
+        "bbox": [
+            112,
+            99,
+            882,
+            180
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5. In parallel with these tariff actions, the United States initiated two investigations under Section 301 of the Trade Act concerning acts, policies, and practices of Brazil. These investigations, as detailed further below, resulted in additional tariffs on products originating in Brazil.",
+        "bbox": [
+            114,
+            191,
+            882,
+            234
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6. On 15 July 2025, at the direction of the US President, USTR initiated an investigation under Section 301 of the Trade Act into Brazil's acts, policies, and practices relating to digital trade and electronic payment services; allegedly unfair, preferential tariffs; anti-corruption enforcement; intellectual property protection; ethanol market access; and illegal deforestation (\"Brazil Section 301 Investigation\"). USTR initiated the investigation purportedly to determine whether the identified acts, policies, and practices were unreasonable or discriminatory, burdened or restricted US commerce, and were actionable under Section 301 of the Trade Act. $^{8}$",
+        "bbox": [
+            112,
+            244,
+            884,
+            351
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "7. While the Brazil Section 301 Investigation was ongoing, USTR initiated a separate investigation under Section 301 of the Trade Act concerning Brazil and 59 other economies. On 12 March 2026, USTR initiated investigations into the alleged failure of these economies to impose and effectively enforce a prohibition on the importation of goods produced wholly or in part with forced labor (\"Forced Labor Section 301 Investigation\"). USTR initiated the investigations purportedly to determine whether the alleged failure of each investigated economy to impose and effectively enforce such an import prohibition was unreasonable or discriminatory and burdened or restricted US commerce. $^{9}$",
+        "bbox": [
+            112,
+            363,
+            884,
+            470
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "8. On 1 June 2026, USTR determined in the Brazil Section 301 Investigation that certain acts, policies, and practices of Brazil were unreasonable or discriminatory, burdened or restricted US commerce, and were actionable under Section 301 of the Trade Act. In its Notice of Proposed Action, USTR proposed to impose an additional ad valorem duty of 25 per cent on all products originating in Brazil, subject to certain exemptions. $^{10}$",
+        "bbox": [
+            112,
+            481,
+            884,
+            550
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "9. On 2 June 2026, USTR issued determinations in the Forced Labor Section 301 Investigation. USTR determined that Brazil had failed to impose and effectively enforce a prohibition on the importation of goods produced with forced labor and that this alleged failure was unreasonable, burdened or restricted US commerce, and actionable under Section 301 of the Trade Act. USTR proposed to impose an additional ad valorem duty of 10 per cent on products of certain investigated economies that, according to USTR, had imposed a forced labor import prohibition, undertaken relevant commitments to the United States, or established a partial regime preventing certain imports of goods produced with forced labor. For Brazil and other investigated economies that USTR considered not to fall within these categories,",
+        "bbox": [
+            114,
+            560,
+            884,
+            681
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            400,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            489,
+            68,
+            509,
+            82
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ Learning Resources, Inc. v. Trump, Nos. 24-1287 and 25-250, slip op. at 20 (US Supreme Court, 20 February 2026).",
+        "bbox": [
+            114,
+            692,
+            863,
+            718
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ Executive Order 14389 of 20 February 2026, Ending Certain Tariff Actions, 91 Fed. Reg. 9437, Sections 1 and 2(a).",
+        "bbox": [
+            112,
+            715,
+            823,
+            741
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ Proclamation 11012 of 20 February 2026, Imposing a Temporary Import Surcharge To Address Fundamental International Payments Problems, 91 Fed. Reg. 9339, 9341-9343, para. 13 and clauses (1) and (7).",
+        "bbox": [
+            114,
+            741,
+            865,
+            776
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ Ibid., at 9343, clause (7).",
+        "bbox": [
+            159,
+            774,
+            357,
+            787
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ Initiation of Section 301 Investigation: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation; Hearing; and Request for Public Comments, 90 Fed. Reg. 34069, 34069-34072, Summary and Sections I-II.",
+        "bbox": [
+            114,
+            785,
+            853,
+            834
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ Initiation of Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure To Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced With Forced Labor, 91 Fed. Reg. 12884, 12884-12887, Summary and Sections I-II and Annex A.",
+        "bbox": [
+            114,
+            832,
+            875,
+            868
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ Notice of Determination and Request for Comments Concerning Action Pursuant to Section 301: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, 91 Fed. Reg. 33854, 33855 and 33861-33862, Sections II and IV and Annex.",
+        "bbox": [
+            114,
+            866,
+            873,
+            916
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "USTR proposed an additional ad valorem duty of 12.5 per cent. The proposed additional duties were subject to certain exemptions. $^{11}$",
+        "bbox": [
+            159,
+            99,
+            882,
+            128
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "10. On 15 July 2026, the US President issued a Presidential Memorandum in connection with the Brazil Section 301 Investigation, directing USTR to impose an additional ad valorem duty of 25 per cent on products of Brazil, subject to certain exemptions. $^{12}$",
+        "bbox": [
+            114,
+            140,
+            882,
+            181
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "11. On 20 July 2026, USTR published a Notice of Action in the Brazil Section 301 Investigation implementing the President's direction. The Notice of Action imposed an additional ad valorem duty of 25 per cent on products of Brazil, subject to specified exemptions, applicable to products entered for consumption, or withdrawn from warehouse for consumption, on or after 22 July 2026. $^{13}$",
+        "bbox": [
+            115,
+            193,
+            882,
+            260
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "12. On 23 July 2026, the US President issued a Presidential Memorandum in connection with the Forced Labor Section 301 Investigation, directing USTR to impose an additional ad valorem duty of 12.5 per cent on products of Brazil, subject to certain exemptions. $^{14}$",
+        "bbox": [
+            115,
+            272,
+            882,
+            313
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "13. On 23 July 2026, USTR published a Notice of Action in the Forced Labor Section 301 Investigation implementing the President's direction. The Notice of Action imposed an additional ad valorem duty of 12.5 per cent on products of Brazil, subject to specified exemptions, applicable to products entered for consumption, or withdrawn from warehouse for consumption, on or after 24 July 2026. $^{15}$",
+        "bbox": [
+            115,
+            326,
+            882,
+            393
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "14. As a result of these two Section 301 actions, products originating in Brazil are subject to additional tariffs upon importation into the United States, over and above the duties otherwise applicable under the Harmonized Tariff Schedule of the United States.",
+        "bbox": [
+            114,
+            405,
+            882,
+            447
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "II. Measures at Issue",
+        "text_level": 2,
+        "bbox": [
+            117,
+            458,
+            326,
+            473
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "15. The measures at issue in this request are:",
+        "bbox": [
+            115,
+            500,
+            492,
+            514
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "a. the determinations made by the United States concerning acts, policies, and practices of Brazil in the Brazil Section 301 Investigation, and the resulting tariff action imposing an additional ad valorem duty of 25 per cent on products originating in Brazil, subject to specified exemptions; and",
+        "bbox": [
+            174,
+            527,
+            882,
+            581
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "b. the determinations made by the United States concerning Brazil in the Forced Labor Section 301 Investigation, and the resulting tariff action imposing an additional ad valorem duty of 12.5 per cent on products originating in Brazil, subject to specified exemptions.",
+        "bbox": [
+            174,
+            607,
+            882,
+            636
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            400,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            490,
+            70,
+            507,
+            82
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{11}$ Notice of Determinations and Request for Comments Concerning Actions in Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure To Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced With Forced Labor, 91 Fed. Reg. 34272, 34273-34276, Sections III-IV and Annex A.",
+        "bbox": [
+            114,
+            646,
+            878,
+            694
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{12}$ Action by the United States in the Investigation Under Section 301 of the Trade Act of 1974 of Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, 91 Fed. Reg. 45619, 45620, Section 1(a)-(b) and Annex.",
+        "bbox": [
+            112,
+            693,
+            878,
+            741
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{13}$ Notice of Action: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, 91 Fed. Reg. 45516, 45516-45517 and Annex I.",
+        "bbox": [
+            114,
+            740,
+            873,
+            776
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{14}$ Presidential Memorandum of 23 July 2026, Actions by the United States in the Investigations under Section 301 of the Trade Act of 1974 of the Acts, Policies, and Practices of 60 Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor, available at: https://www.whitehouse.gov/presidential-actions/2026/07/actions-by-the-united-states-in-the-investigations-under-section-301-of-the-trade-act-of-1974-of-the-acts-policies-and-practices-of-60-economies-related-to-the-failure-of-each-economy-to-impose-and/ (last accessed on 27 July 2026).",
+        "bbox": [
+            114,
+            775,
+            875,
+            845
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{15}$ Notice of Actions in Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor, available at:",
+        "bbox": [
+            114,
+            844,
+            868,
+            879
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "https://ustr.gov/sites/default/files/files/Press/Releases/2026/FLIP%20301%20Investigation%20Final%20Action%20FRN%207-23-26%20FINAL.pdf (last accessed on 27 July 2026).",
+        "bbox": [
+            114,
+            878,
+            875,
+            904
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            203,
+            99,
+            882,
+            128
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "16. The measures at issue are purportedly authorized under, and/or are reflected in, implemented through, or maintained pursuant to, inter alia, the following instruments:",
+        "bbox": [
+            115,
+            154,
+            880,
+            183
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "a. Sections 301 and 304 of the Trade Act of 1974, as amended (19 U.S.C. §§ 2411 and 2414);",
+        "bbox": [
+            174,
+            193,
+            882,
+            222
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "b. with respect to the Brazil Section 301 Investigation:",
+        "bbox": [
+            174,
+            248,
+            611,
+            263
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "i. the Notice of Initiation of Section 301 Investigation: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, published in the US Federal Register on 18 July 2025 (90 Fed. Reg. 34069);",
+        "bbox": [
+            203,
+            290,
+            882,
+            357
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ii. the Notice of Determination and Request for Comments Concerning Action Pursuant to Section 301: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, published in the US Federal Register on 4 June 2026 (91 Fed. Reg. 33854);",
+        "bbox": [
+            205,
+            382,
+            884,
+            464
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "iii. the Presidential Memorandum of 15 July 2026 entitled Action by the United States in the Investigation Under Section 301 of the Trade Act of 1974 of Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, published in the US Federal Register on 20 July 2026 (91 Fed. Reg. 45619);",
+        "bbox": [
+            205,
+            489,
+            884,
+            571
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "iv. the Notice of Action: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation, published in the US Federal Register on 20 July 2026 (91 Fed. Reg. 45516), including the modifications to the Harmonized Tariff Schedule of the United States set out in Annexes I and II thereto; and",
+        "bbox": [
+            205,
+            596,
+            882,
+            677
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "v. any guidance or other instruments issued, or that may be issued, by US Customs and Border Protection or any other US authority implementing or administering the additional tariffs imposed pursuant to the Brazil Section 301 Investigation;",
+        "bbox": [
+            205,
+            703,
+            882,
+            745
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "c. with respect to the Forced Labor Section 301 Investigation:",
+        "bbox": [
+            174,
+            771,
+            667,
+            785
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "i. the Notice of Initiation of Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure to Impose and Effectively",
+        "bbox": [
+            203,
+            812,
+            882,
+            840
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            400,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            490,
+            68,
+            507,
+            80
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Enforce a Prohibition on the Importation of Goods Produced With Forced Labor, published in the US Federal Register on 17 March 2026 (91 Fed. Reg. 12884);",
+        "bbox": [
+            263,
+            99,
+            882,
+            129
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "ii. the USTR report of 2 June 2026 entitled Report in Section 301 Investigations: Acts, Policies, and Practices of Various Economies Related to the Failure to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor; $^{16}$",
+        "bbox": [
+            203,
+            153,
+            882,
+            208
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "iii. the Notice of Determinations and Request for Comments Concerning Actions in Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced With Forced Labor, published in the US Federal Register on 5 June 2026 (91 Fed. Reg. 34272);",
+        "bbox": [
+            205,
+            234,
+            884,
+            303
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "iv. the Presidential Memorandum of 23 July 2026 entitled Actions by the United States in the Investigations under Section 301 of the Trade Act of 1974 of the Acts, Policies, and Practices of 60 Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor; $^{17}$",
+        "bbox": [
+            203,
+            326,
+            884,
+            395
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "v. the Notice of Actions in Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor, including the modifications to the Harmonized Tariff Schedule of the United States set out in the annexes thereto; $^{18}$ and",
+        "bbox": [
+            205,
+            420,
+            884,
+            489
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "vi. any guidance or other instruments issued, or that may be issued, by US Customs and Border Protection or any other US authority implementing or administering the additional tariffs imposed pursuant to the Forced Labor Section 301 Investigation.",
+        "bbox": [
+            205,
+            514,
+            882,
+            569
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "17. This request also covers any amendments, supplements, extensions, replacement measures, renewal measures, implementing measures, or other related measures or instruments in respect of the measures identified above, including any subsequent measures that modify, replace, implement, administer, or give effect to the determinations or tariff actions described in this Section, and any related measures or instruments referred to by either party during consultations.",
+        "bbox": [
+            114,
+            595,
+            884,
+            676
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            400,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            490,
+            68,
+            509,
+            82
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{16}$ Available at:",
+        "bbox": [
+            161,
+            751,
+            270,
+            764
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "https://ustr.gov/sites/default/files/files/Press/Releases/2026/USTR%20Report%20Sec%20301%20FL%20301%206-2-26%20FINAL%20for%20upload.pdf (last accessed on 27 July 2026)",
+        "bbox": [
+            114,
+            762,
+            870,
+            787
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{17}$ Presidential Memorandum of 23 July 2026, Actions by the United States in the Investigations under Section 301 of the Trade Act of 1974 of the Acts, Policies, and Practices of 60 Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor, available at: https://www.whitehouse.gov/presidential-actions/2026/07/actions-by-the-united-states-in-the-investigations-under-section-301-of-the-trade-act-of-1974-of-the-acts-policies-and-practices-of-60-economies-related-to-the-failure-of-each-economy-to-impose-and/ (last accessed on 27 July 2026).",
+        "bbox": [
+            112,
+            785,
+            875,
+            857
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{18}$ Notice of Actions in Section 301 Investigations of Acts, Policies, and Practices of Various Economies Related to the Failure of Each Economy to Impose and Effectively Enforce a Prohibition on the Importation of Goods Produced with Forced Labor, available at:",
+        "bbox": [
+            114,
+            856,
+            868,
+            891
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "https://ustr.gov/sites/default/files/files/Press/Releases/2026/FLIP%20301%20Investigation%20Final%20Action%20FRN%207-23-26%20FINAL.pdf (last accessed on 27 July 2026).",
+        "bbox": [
+            114,
+            890,
+            875,
+            916
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "III. Legal Basis for the Complaint",
+        "text_level": 2,
+        "bbox": [
+            114,
+            99,
+            420,
+            114
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "18. The measures at issue, as described in Section II of this request, appear to be inconsistent with the obligations of the United States under the GATT 1994 and the DSU. In particular, Brazil considers that:",
+        "bbox": [
+            115,
+            141,
+            882,
+            181
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "a. the United States acts inconsistently with Article I:1 of the GATT 1994 because:",
+        "bbox": [
+            174,
+            193,
+            823,
+            209
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "i. by imposing additional tariffs on products originating in Brazil under the tariff action resulting from the Brazil Section 301 Investigation, while not imposing such tariffs on like products originating in other WTO Members, the United States fails to accord immediately and unconditionally to products originating in Brazil advantages, favours, privileges or immunities accorded to like products originating in other WTO Members; and",
+        "bbox": [
+            194,
+            236,
+            882,
+            316
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ii. by imposing additional tariffs on products originating in Brazil under the tariff action resulting from the Forced Labor Section 301 Investigation, while not imposing such tariffs on like products originating in certain other WTO Members, and by applying a lower additional tariff rate to like products originating in certain WTO Members than the rate applied to products originating in Brazil, the United States fails to accord immediately and unconditionally to products originating in Brazil advantages, favours, privileges or immunities accorded to like products originating in other WTO Members;",
+        "bbox": [
+            191,
+            342,
+            882,
+            448
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "b. the United States acts inconsistently with Article II:1(b) of the GATT 1994 by imposing ordinary customs duties on products originating in Brazil in excess of the bound rates set forth in the United States' Schedule of Concessions annexed to the GATT 1994, and/or by imposing other duties or charges of any kind on or in connection with the importation of products originating in Brazil in excess of those provided for in that Schedule;",
+        "bbox": [
+            174,
+            474,
+            882,
+            555
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "c. as a consequence of the inconsistency with Article II:1(b) of the GATT 1994, the United States acts inconsistently with Article II:1(a) of the GATT 1994 because the measures at issue fail to accord to the commerce of Brazil treatment no less favourable than that provided for in the United States' Schedule of Concessions annexed to the GATT 1994;",
+        "bbox": [
+            174,
+            582,
+            882,
+            648
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "d. the United States acts inconsistently with Article 23.1 of the DSU by seeking redress of purported violations of obligations or other nullification or impairment of benefits under the covered agreements, or impediments to the attainment of objectives of the covered agreements, through unilateral determinations and tariff actions, rather than by having recourse to and abiding by the rules and procedures of the DSU; and",
+        "bbox": [
+            174,
+            675,
+            882,
+            741
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "e. the United States acts inconsistently with Article 23.2(a) of the DSU by making determinations to the effect that violations have occurred, benefits have been nullified or impaired, or the attainment of objectives of the covered agreements has been impeded, except through recourse to dispute settlement in accordance with the rules and procedures of the DSU.",
+        "bbox": [
+            174,
+            768,
+            882,
+            835
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "19. Brazil considers that the measures at issue, as described in Section II of this request, nullify or impair, within the meaning of Article XXIII:1 of the GATT 1994, benefits accruing to Brazil under that Agreement.",
+        "bbox": [
+            115,
+            862,
+            882,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            400,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            490,
+            70,
+            507,
+            82
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "20. Brazil reserves the right to raise further related facts and claims, including claims under other provisions of the covered agreements, during the course of consultations and in any future request for the establishment of a panel under Article 6.2 of the DSU.",
+        "bbox": [
+            115,
+            99,
+            882,
+            141
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Brazil looks forward to receiving a reply from the United States to this request and to fixing a mutually convenient date for the holding of consultations.",
+        "bbox": [
+            114,
+            152,
+            880,
+            181
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "WT/DS646/1 • G/L/1630",
+        "bbox": [
+            401,
+            41,
+            596,
+            55
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            490,
+            68,
+            507,
+            82
+        ],
+        "page_idx": 6
+    }
+]

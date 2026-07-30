@@ -1,0 +1,262 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0006-OECD_Competition-in-the-age-of-AI_19bb731b.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "经合组织",
+    "cover_short_title": "AI 重塑竞争格局，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "经合组织：AI时代的竞争格局",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0006-OECD_Competition-in-the-age-of-AI_19bb731b.pdf",
+      "cleaned_source_title": "0006-OECD_Competition-in-the-age-of-AI_19bb731b",
+      "institution_name": "经合组织",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "经合组织：AI0006OECDCompetitionint",
+      "raw_candidates": [
+        "经合组织：AI时代的竞争格局",
+        "经合组织：AI竞争格局的微观数据初探",
+        "经合组织：AI竞争格局与生成式AI扩散"
+      ],
+      "cleaned_candidates": [
+        "经合组织：AI时代的竞争格局",
+        "经合组织：AI竞争格局的微观数据初探",
+        "经合组织：AI竞争格局与生成式AI扩散",
+        "经合组织：AI0006OECDCompetitionint"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "经合组织：AI竞争格局的微观数据初探",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "经合组织：AI竞争格局与生成式AI扩散",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "经合组织：AI0006OECDCompetitionint",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "经合组织：AI时代的竞争格局",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "经合组织：AI时代的竞争格局"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "世界贸易组织",
+    "cover_short_title": "美国对巴西加征37.",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "世界贸易组织：跨境贸易与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a.pdf",
+      "cleaned_source_title": "0007-WTO_Brazil-initiates-dispute-regarding-additional-duties-imposed_d0a1527a",
+      "institution_name": "世界贸易组织",
+      "required_terms": [],
+      "deterministic_fallback": "世界贸易组织：0007WTOBrazilinitiat",
+      "raw_candidates": [
+        "世界贸易组织：巴西就美国301关税启动WTO磋商",
+        "世界贸易组织：巴西就美国301关税启动WTO磋商-2026年7月",
+        "世界贸易组织：巴西就美国301关税启动WTO磋商-数字贸易与强迫劳动议题"
+      ],
+      "cleaned_candidates": [
+        "世界贸易组织：巴西就美国301关税启动WTO磋商",
+        "世界贸易组织：巴西就美国301关税启动WTO磋商-2026年7月",
+        "世界贸易组织：0007WTOBrazilinitiat",
+        "世界贸易组织：2026年7月27日，巴西向美国提交磋商请求"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "世界贸易组织：0007WTOBrazilinitiat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "世界贸易组织：2026年7月27日，巴西向美国提交磋商请求",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "世界贸易组织：跨境贸易与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2026",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "世界贸易组织：巴西就美国301关税启动WTO磋商-2026年7月",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "世界贸易组织：跨境贸易与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_002_rsc95dx1/pdfs/0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "世界银行",
+    "cover_short_title": "9个月，阅读成绩提高",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "世界银行：加纳阅读干预项目九个月提升成绩0.5个标准差",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b.pdf",
+      "cleaned_source_title": "0008-WorldBank_How-to-Build-a-Reader-Evidence-from-a-Scalable-Literacy-Inte_71b2c36b",
+      "institution_name": "世界银行",
+      "required_terms": [],
+      "deterministic_fallback": "世界银行：0008WorldBankHowtoBuil",
+      "raw_candidates": [
+        "世界银行：加纳阅读干预项目九个月提升成绩0.5个标准差",
+        "世界银行：加纳阅读干预九个月提升成绩0.5个标准差-随机对照试验",
+        "世界银行：加纳基础学习提升工具-阅读干预效果与可扩展性"
+      ],
+      "cleaned_candidates": [
+        "世界银行：加纳阅读干预项目九个月提升成绩0.5个标准差",
+        "世界银行：加纳阅读干预九个月提升成绩0.5个标准差-随机对照试验",
+        "世界银行：加纳基础学习提升工具-阅读干预效果与可扩展性",
+        "世界银行：0008WorldBankHowtoBuil",
+        "世界银行：加纳阅读干预项目在九个月内提升成绩0.5个标准差"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "世界银行：加纳基础学习提升工具-阅读干预效果与可扩展性",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "世界银行：0008WorldBankHowtoBuil",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "世界银行：加纳阅读干预项目九个月提升成绩0.5个标准差",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "世界银行：加纳阅读干预项目九个月提升成绩0.5个标准差"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
