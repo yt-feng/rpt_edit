@@ -552,6 +552,38 @@
     "bcg:https://www.bcg.com/publications/2026/as-scale-grows-so-does-investor-ambition": {
       "first_seen": "2026-07-29",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/industrial-ai-commercialization": {
+      "first_seen": "2026-07-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2025/the-upside-of-uncertainty-in-dealmaking": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2022/how-to-execute-biopharma-deals-successfully": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2014/dont-miss-the-exit": {
+      "first_seen": "2026-07-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2014/mergers-acquisitions-divestitures-maximizing-value": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/mergers-acquisitions-report-alternative-deals-gain-traction": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2014/mergers-acquisitions-divestitures-2014-m-a-report": {
+      "first_seen": "2026-07-30",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/reinventing-service-operations-with-ai": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
     }
   }
 }
