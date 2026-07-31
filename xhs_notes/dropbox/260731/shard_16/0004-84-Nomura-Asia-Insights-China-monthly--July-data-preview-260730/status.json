@@ -1,0 +1,122 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "7月经济：出口强，内",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：中国月度数据前瞻-7月数据预览",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+    "cleaned_source_title": "NOM-Asia Insights-China monthly- July data preview",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：AsiaInsights中国monthly",
+    "raw_candidates": [
+      "NOM：中国月度数据前瞻-7月数据预览",
+      "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+      "NOM：7月中国数据前瞻-制造业与非制造业PMI走势"
+    ],
+    "cleaned_candidates": [
+      "NOM：中国月度数据前瞻-7月数据预览",
+      "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+      "NOM：7月中国数据前瞻-制造业与非制造业PMI走势",
+      "NOM：AsiaInsights中国monthly",
+      "NOM：7月中国数据延续出口强、内需弱的分化"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+        "reasons": [
+          "bare_trailing_number",
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "NOM：7月中国数据前瞻-制造业与非制造业PMI走势",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "NOM：AsiaInsights中国monthly",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：7月中国数据延续出口强、内需弱的分化",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "NOM：中国月度数据前瞻-7月数据预览",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：中国月度数据前瞻-7月数据预览"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "535",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

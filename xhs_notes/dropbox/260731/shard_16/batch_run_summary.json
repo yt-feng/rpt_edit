@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 16,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/81-MS-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0001-81-MS-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/82-MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0002-82-MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/83-NOM-Asia Insights：China：The Politburo meeting indicated a shift to -countercyclical” policies-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/84-NOM-Asia Insights：China monthly： July data preview-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/85-NOM-Global AI Trend Tracker：META’s 2Q26 earnings read through-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

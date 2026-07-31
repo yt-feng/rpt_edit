@@ -1,0 +1,92 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "Meta这份财报，藏",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "不确定性提示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "NOM：Meta2Q26财报与AI资本开支",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+    "cleaned_source_title": "NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through",
+    "institution_name": "NOM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "NOM：全球AITrendTrackerMETAs2Q26",
+    "raw_candidates": [
+      "NOM：Meta 2Q26财报与AI资本开支",
+      "NOM：Meta 2Q26财报与AI资本开支指引",
+      "NOM：Meta 2Q26财报与AI资本开支及变现"
+    ],
+    "cleaned_candidates": [
+      "NOM：Meta2Q26财报与AI资本开支",
+      "NOM：Meta2Q26财报与AI资本开支指引",
+      "NOM：Meta2Q26财报与AI资本开支及变现",
+      "NOM：全球AITrendTrackerMETAs2Q26",
+      "NOM：Meta2Q26财报显示AI资本开支与变现同步推进"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：全球AITrendTrackerMETAs2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.44"
+        ]
+      }
+    ],
+    "selected_title": "NOM：Meta2Q26财报与AI资本开支",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "NOM：Meta2Q26财报与AI资本开支"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "582",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

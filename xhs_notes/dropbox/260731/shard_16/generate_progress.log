@@ -1,0 +1,59 @@
+Found 92 total PDFs; shard 16/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gsrnn5xn/pdfs/0001-81-Morgan Stanley-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gsrnn5xn/pdfs/0002-82-Morgan Stanley-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gsrnn5xn/pdfs/0003-83-Nomura-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gsrnn5xn/pdfs/0004-84-Nomura-Asia Insights-China monthly- July data preview-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gsrnn5xn/pdfs/0005-85-Nomura-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf
+MinerU attempt 1 using MINER_U batch_id=1b7c89fb-d101-407b-b8b5-492f77935596
+MinerU states: running, running, pending, running, waiting-file
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset b3243332e8c8b34b5c99a4a276130725f5d32a86d480726e478d1606f5f9a06a.jpg: score=-100;too_small:526x157
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 9f3f2e212d242cc210aa85f4cdb4f82f794793fcc1fdf2c53901042e6e27ed70.jpg: score=-100;too_small:1298x148
+Skip non-chart visual asset 06f664fd3f7b31dfb5d0873e27bd7faa1dccf146a2209e8bfe65718cd1dad5d1.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset bfa48a512f4c4e225479dd48fcef7a564915f189a5a4aa460bd0fb719a111e9e.jpg: score=-100;too_small:453x70
+Skip non-chart visual asset 3f091575e5bc5ff8180d423d741ca5667de7e005e9e2a7f65d2737bece936ceb.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.30,contrast,large
+Skip non-chart visual asset 18db70949a6bf98601547b34ae70a27a58126365018fa845d367ef0ca00f156d.jpg: score=-100;too_small:503x118
+Skip non-chart visual asset 2789f00e2711439b131f9fc9cc4cd914fa30252ab56aa9287fe37725c82d66c6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset 4ed7b73e07c22901cc0210e7aa39477ebb7a648bf026991d5df97930e1c3034b.jpg: score=-100;too_small:445x162
+Skip non-chart visual asset 33eadb38aabfdaa86e2c76d91d4551faa5866020c386943bb1bcbcfb85f2db17.jpg: score=-100;too_small:417x181
+Skip non-chart visual asset ddb6d036408ec4b7299f8d8bea80f9f40f2667eb3b34049b1cea17a54bab2945.jpg: score=-100;too_small:964x143
+Skip non-chart visual asset ee4bc62204b3b4b63695946560d4565d692a067da327ac15503084b5110469b0.jpg: score=1;odd_ratio:5.10,edge:0.48,contrast,large
+Skip non-chart visual asset 19b181642f47d5add869e3a4c2df40f0b57dd8201529962fbe6e90be49f72d56.jpg: score=1;large
+Skip non-chart visual asset cba799ea2fc469333977cd943a06d1fdb5488b9dd8cbd1f53baeb165847d17ca.jpg: score=-1;square_without_chart_hint,edge:0.11
+Skip non-chart visual asset 57a61c3cfac7b5575174ab726c9a615e32db44e24824c6cf07441044e592bbf4.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset cf4b21a76e4010a71482efa317691cb89618898fdd63530179627cf68530505d.jpg: score=-100;too_small:526x173
+Skip non-chart visual asset 3141c400d7d5d80e3993b8602fb1dfcda601ed48090a866d65ed24232a5c6fb2.jpg: score=-100;too_small:434x110
+Skip non-chart visual asset 0936dfb75dc7fe5f070227ff922e4c4289cdb877153d4267387f4e58c30068e5.jpg: score=1;odd_ratio:5.15,edge:0.52,contrast,large
+Neutralized WeChat title while keeping the report: 摩根士丹利：高通苹果退出加速多元化-2026年7月报价155.68美元 -> 摩根士丹利：研究主题与行业变化观察
+Skip non-chart visual asset f70426e1d7b83f7265264393713e6f37d025b3421b190d829425dbe9eab5adf9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.39,contrast
+Skip non-chart visual asset b048104537dcdb9193176318e8d01f92ebf026f5b4d217a66d2f2a4967577fcb.jpg: score=-100;too_small:418x154
+Skip non-chart visual asset 5953905aa3a72385f780e33c43f8a0f062b9974f00dd7893bd6ca7fdaff33b1f.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.13
+Skip non-chart visual asset 5e79d0825fea7c44f4d1354d21c580b2a831d51ec53b14635efe7475425ed751.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset a798d4e3642912bacd1f86aa59d52dfc0b40c122b869b38255e213fb7f49fc9b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,contrast
+Skip non-chart visual asset 7363c0f049d3c09910e7fc24fa041376ecd12cc201349d44a0dd84e7cbfeb8a0.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ee5947c8422091f424dc23055a51548094bfa8b2b7d7540f948f57519aca8692.jpg: score=-100;too_small:517x137
+Skip non-chart visual asset 1d5a8dad5fef6dbf9d61c389573fd500cc9a0dd3c65bcda714c4f0e0aafca576.jpg: score=-100;too_small:448x201
+Skip non-chart visual asset 2b7333f7a807ac109dcbd46f24d3fce94c51e8c60e92d46ff375d31d9614bee6.jpg: score=1;large
+Skip non-chart visual asset 07426779bad38c59ac4eb5b140e858338bc2f6189e4b15f914ed2f60456d8aa2.jpg: score=-100;too_small:964x176
+Skip non-chart visual asset 4ef3370cdec9d5398d8accbedbbdc7d3b75cb8c3eda73f7f2e85e4b985955159.jpg: score=-1;square_without_chart_hint,edge:0.13
+Skip non-chart visual asset 75697d2f1b9ece990afcd65ad5fcd39b1d4e16a7f0e8f6e2db345b2170c3aebf.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.32
+Skip non-chart visual asset 30610c22e639339b9dcffafb91a24f3e3f4f04d55da9fafc2ba977258d189469.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.39
+Skip non-chart visual asset d57d94a93bb5817c5bfb7571930b3e77a8dace54ebbd130b75376e3aad42acba.jpg: score=-100;too_small:531x114
+Skip non-chart visual asset 0408c28f39d9884643b05603444246e710db56755aa9fd83fe689722da28b887.jpg: score=1;chart_ratio
+Skip non-chart visual asset 02841773e733f43f52a7ce2626c8a9d514251f61933292ab9e47e49f8cb23ca2.jpg: score=-100;too_small:376x118
+Neutralized WeChat title while keeping the report: 摩根士丹利：国巨MLCC需求增强推动订单动能 -> 摩根士丹利：国巨MLCC与MLCC及近期数据观察
+MinerU result contained no standalone chart images; creating title card only.
+Neutralized WeChat title while keeping the report: 野村：政治局会议政策转向逆周期调节，下半年财政为主 -> 野村：行业规则与主题变化观察
+Skip non-chart visual asset 6701b1bcb7f34b7e8d3ec89090802c5b5f3b2d8ec82950c190bbc8808aa5c433.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.36,contrast,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset af75f0a824c128aed71ea4b98ba92cc2ef08541bc86c5acc8b22591f879d6ea9.jpg: score=-100;too_small:1412x112
+Skip non-chart visual asset 42514f6fe29821036266bc3406ecef92b519228dc2f9e45d861c5c378bd5aa99.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.30
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_16; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

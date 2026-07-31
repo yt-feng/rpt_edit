@@ -1,0 +1,115 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "NOM",
+  "cover_short_title": "政治局罕见提“贸易再",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "下行|放缓->节奏变化 x3",
+    "压力->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "NOM：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+    "cleaned_source_title": "NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies",
+    "institution_name": "NOM",
+    "required_terms": [],
+    "deterministic_fallback": "NOM：AsiaInsights中国ThePolitbu",
+    "raw_candidates": [
+      "NOM：政治局会议政策转向逆周期调节",
+      "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+      "NOM：政治局会议政策转向逆周期调节，下半年财政为主"
+    ],
+    "cleaned_candidates": [
+      "NOM：政治局会议政策转向逆周期调节",
+      "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+      "NOM：政治局会议政策转向逆周期调节，下半年财政为主",
+      "NOM：AsiaInsights中国ThePolitbu",
+      "NOM：2024年7月政治局会议只提“逆周期”"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "NOM：AsiaInsights中国ThePolitbu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "NOM：2024年7月政治局会议只提“逆周期”",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      }
+    ],
+    "selected_title": "NOM：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "NOM：政治局会议政策转向逆周期调节，下半年财政为主",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "NOM：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "557",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0001-81-MS-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0002-82-MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

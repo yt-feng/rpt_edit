@@ -1,0 +1,493 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0001-81-MS-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "苹果撤退，高通转型加",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-81-MS-Qualcomm Inc. Apple Exit Accelerates Diversification-260730.pdf",
+      "cleaned_source_title": "MS-Qualcomm Inc. Apple Exit Accelerates Diversification",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：QualcommInc.AppleExit",
+      "raw_candidates": [
+        "高通苹果退出加速多元化",
+        "高通苹果退出加速多元化-2026年7月报价155.68美元",
+        "高通苹果退出加速多元化-汽车与AI业务进展"
+      ],
+      "cleaned_candidates": [
+        "MS：高通苹果退出加速多元化",
+        "MS：高通苹果退出加速多元化-2026年7月报价155.68美元",
+        "MS：高通苹果退出加速多元化-汽车与AI业务进展",
+        "MS：QualcommInc.AppleExit",
+        "MS：截至2026年7月29日，高通报价收于155.68美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：QualcommInc.AppleExit",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：截至2026年7月29日，高通报价收于155.68美元",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "155.68",
+          "2026",
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：高通苹果退出加速多元化-2026年7月报价155.68美元",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0002-82-MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "MLCC需求回暖，订",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：国巨MLCC与MLCC及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-82-MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand-260729.pdf",
+      "cleaned_source_title": "MS-Yageo Corp. MLCC Gains Momentum from Stronger Demand",
+      "institution_name": "MS",
+      "required_terms": [
+        "MLCC"
+      ],
+      "deterministic_fallback": "MS：YageoCorp.MLCCGainsMo",
+      "raw_candidates": [
+        "国巨MLCC需求增强推动订单动能",
+        "国巨MLCC订单出货比升至2.2倍",
+        "国巨MLCC供需趋紧与长期协议讨论"
+      ],
+      "cleaned_candidates": [
+        "MS：国巨MLCC需求增强推动订单动能",
+        "MS：国巨MLCC订单出货比升至2.2倍",
+        "MS：国巨MLCC供需趋紧与长期协议讨论",
+        "MS：YageoCorp.MLCCGainsMo"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：国巨MLCC订单出货比升至2.2倍",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "MS：国巨MLCC供需趋紧与长期协议讨论",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "MS：YageoCorp.MLCCGainsMo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：国巨MLCC与MLCC及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：国巨MLCC需求增强推动订单动能",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：国巨MLCC与MLCC及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "政治局罕见提“贸易再",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "下行|放缓->节奏变化 x3",
+      "压力->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "NOM：行业规则与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730.pdf",
+      "cleaned_source_title": "NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：AsiaInsights中国ThePolitbu",
+      "raw_candidates": [
+        "NOM：政治局会议政策转向逆周期调节",
+        "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+        "NOM：政治局会议政策转向逆周期调节，下半年财政为主"
+      ],
+      "cleaned_candidates": [
+        "NOM：政治局会议政策转向逆周期调节",
+        "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+        "NOM：政治局会议政策转向逆周期调节，下半年财政为主",
+        "NOM：AsiaInsights中国ThePolitbu",
+        "NOM：2024年7月政治局会议只提“逆周期”"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：政治局会议重提逆周期调节，二季度GDP增速为疫情后最低",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "NOM：AsiaInsights中国ThePolitbu",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：2024年7月政治局会议只提“逆周期”",
+          "reasons": [
+            "anchor_coverage=0.46"
+          ]
+        }
+      ],
+      "selected_title": "NOM：行业规则与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：政治局会议政策转向逆周期调节，下半年财政为主",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "NOM：行业规则与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "7月经济：出口强，内",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：中国月度数据前瞻-7月数据预览",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-84-NOM-Asia Insights-China monthly- July data preview-260730.pdf",
+      "cleaned_source_title": "NOM-Asia Insights-China monthly- July data preview",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：AsiaInsights中国monthly",
+      "raw_candidates": [
+        "NOM：中国月度数据前瞻-7月数据预览",
+        "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+        "NOM：7月中国数据前瞻-制造业与非制造业PMI走势"
+      ],
+      "cleaned_candidates": [
+        "NOM：中国月度数据前瞻-7月数据预览",
+        "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+        "NOM：7月中国数据前瞻-制造业与非制造业PMI走势",
+        "NOM：AsiaInsights中国monthly",
+        "NOM：7月中国数据延续出口强、内需弱的分化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：7月中国数据前瞻-官方PMI预计回落至49.9",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "NOM：7月中国数据前瞻-制造业与非制造业PMI走势",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "NOM：AsiaInsights中国monthly",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：7月中国数据延续出口强、内需弱的分化",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：中国月度数据前瞻-7月数据预览",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：中国月度数据前瞻-7月数据预览"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_gsrnn5xn/pdfs/0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "Meta这份财报，藏",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：Meta2Q26财报与AI资本开支",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-85-NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through-260730.pdf",
+      "cleaned_source_title": "NOM-Global AI Trend Tracker-META-s 2Q26 earnings read through",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：全球AITrendTrackerMETAs2Q26",
+      "raw_candidates": [
+        "NOM：Meta 2Q26财报与AI资本开支",
+        "NOM：Meta 2Q26财报与AI资本开支指引",
+        "NOM：Meta 2Q26财报与AI资本开支及变现"
+      ],
+      "cleaned_candidates": [
+        "NOM：Meta2Q26财报与AI资本开支",
+        "NOM：Meta2Q26财报与AI资本开支指引",
+        "NOM：Meta2Q26财报与AI资本开支及变现",
+        "NOM：全球AITrendTrackerMETAs2Q26",
+        "NOM：Meta2Q26财报显示AI资本开支与变现同步推进"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：全球AITrendTrackerMETAs2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.44"
+          ]
+        }
+      ],
+      "selected_title": "NOM：Meta2Q26财报与AI资本开支",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：Meta2Q26财报与AI资本开支"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
