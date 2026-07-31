@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "被动元件景气度回来了",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x2",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Citi：国巨业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+    "cleaned_source_title": "CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact",
+    "institution_name": "Citi",
+    "required_terms": [],
+    "deterministic_fallback": "Citi：Yageo-2Q26BeatonBroadBas",
+    "raw_candidates": [
+      "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+      "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+      "Citi：国巨2Q26业绩超预期-AI收入占比升至16%"
+    ],
+    "cleaned_candidates": [
+      "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+      "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+      "Citi：国巨2Q26业绩超预期-AI收入占比升至16%",
+      "Citi：Yageo-2Q26BeatonBroadBas",
+      "Citi：国巨2Q26业绩超预期，AI收入占比升至16%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+        "reasons": [
+          "anchor_coverage=0.44"
+        ]
+      },
+      {
+        "title": "Citi：国巨2Q26业绩超预期-AI收入占比升至16%",
+        "reasons": [
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：Yageo-2Q26BeatonBroadBas",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：国巨2Q26业绩超预期，AI收入占比升至16%",
+        "reasons": [
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：国巨业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Citi：国巨业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "621",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

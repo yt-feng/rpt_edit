@@ -1,0 +1,618 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "被动元件景气度回来了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x2",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：国巨业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+      "cleaned_source_title": "CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：Yageo-2Q26BeatonBroadBas",
+      "raw_candidates": [
+        "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+        "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+        "Citi：国巨2Q26业绩超预期-AI收入占比升至16%"
+      ],
+      "cleaned_candidates": [
+        "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+        "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+        "Citi：国巨2Q26业绩超预期-AI收入占比升至16%",
+        "Citi：Yageo-2Q26BeatonBroadBas",
+        "Citi：国巨2Q26业绩超预期，AI收入占比升至16%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：国巨2Q26净利94.18亿新台币-估值倍数降至35倍",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        },
+        {
+          "title": "Citi：国巨2Q26业绩超预期-AI收入占比升至16%",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Yageo-2Q26BeatonBroadBas",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：国巨2Q26业绩超预期，AI收入占比升至16%",
+          "reasons": [
+            "anchor_coverage=0.56",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：国巨业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：国巨2Q26业绩超预期-行业估值倍数重置",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：国巨业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "紫金矿业改打法：不收",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：紫金矿业终止全资收购并转向认购9.2%股权",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement-260729.pdf",
+      "cleaned_source_title": "CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：ZijinMiningTerminationof",
+      "raw_candidates": [
+        "Citi：紫金矿业终止收购Allied Gold后拟认购9.2%股权",
+        "Citi：紫金矿业终止全资收购并转向认购9.2%股权",
+        "Citi：紫金矿业终止收购Allied Gold并拟以每股32.55加元入股",
+        "紫金矿业终止收购Allied Gold并拟认购9.2%股权",
+        "紫金矿业终止收购Allied Gold后拟以每股32.55加元认购9.2%股权",
+        "紫金矿业终止收购Allied Gold并拟认购9.2%股权-Citi"
+      ],
+      "cleaned_candidates": [
+        "Citi：紫金矿业终止收购AlliedGold后拟认购9.2%股权",
+        "Citi：紫金矿业终止全资收购并转向认购9.2%股权",
+        "Citi：紫金矿业终止收购AlliedGold并拟以每股32.55加元入股",
+        "Citi：紫金矿业终止收购AlliedGold并拟认购9.2%股权",
+        "Citi：紫金矿业终止收购AlliedGold后拟以每股32.55加元认购",
+        "Citi：紫金矿业终止收购AlliedGold并拟认购9.2%股权-Citi",
+        "Citi：ZijinMiningTerminationof",
+        "Citi：Citi预计紫金矿业2026年上半年盈利同比增长超过70%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：紫金矿业终止收购AlliedGold后拟认购9.2%股权",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "Citi：紫金矿业终止收购AlliedGold并拟以每股32.55加元入股",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "Citi：紫金矿业终止收购AlliedGold并拟认购9.2%股权",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "Citi：紫金矿业终止收购AlliedGold后拟以每股32.55加元认购",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.39"
+          ]
+        },
+        {
+          "title": "Citi：紫金矿业终止收购AlliedGold并拟认购9.2%股权-Citi",
+          "reasons": [
+            "incomplete_last_segment",
+            "long_untranslated_english",
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "Citi：ZijinMiningTerminationof",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Citi预计紫金矿业2026年上半年盈利同比增长超过70%",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：紫金矿业终止全资收购并转向认购9.2%股权",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Citi：Citi预计紫金矿业2026年上半年盈利同比增长超过70%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Citi：紫金矿业终止收购Allied Gold后拟认购9.2%股权",
+        "Citi：紫金矿业终止全资收购并转向认购9.2%股权",
+        "Citi：紫金矿业终止收购Allied Gold并拟以每股32.55加元入股"
+      ],
+      "final_title_after_wording_guard": "Citi：紫金矿业终止全资收购并转向认购9.2%股权"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0003-23-GS-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "百威亚太：中国恢复还",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：百威亚太业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In.pdf",
+      "cleaned_source_title": "GS-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：BudweiserAPAC2Q26Earning",
+      "raw_candidates": [
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复仍需时间",
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复需时间且持续投入",
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复需时间，韩国市场执行强劲"
+      ],
+      "cleaned_candidates": [
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复仍需时间",
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复需时间且持续投入",
+        "GS：百威亚太二季度业绩回顾-中国区销量恢复需时间，韩国市场执行强劲",
+        "GS：BudweiserAPAC2Q26Earning",
+        "GS：百威亚太（）在7月30日交出二季度成绩单后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：BudweiserAPAC2Q26Earning",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：百威亚太（）在7月30日交出二季度成绩单后",
+          "reasons": [
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：百威亚太业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：百威亚太二季度业绩回顾-中国区销量恢复仍需时间",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：百威亚太业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "adidas 大中华",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+      "cleaned_source_title": "GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：AsiaPacificTextile",
+      "raw_candidates": [
+        "GS：亚太纺织服装业对adidas 2Q26业绩的连锁反应评估",
+        "GS：adidas 2Q26服装增35%鞋履增1%对亚太供应链影响",
+        "GS：adidas 2Q26业绩对亚太纺织服装代工与分销商影响"
+      ],
+      "cleaned_candidates": [
+        "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+        "GS：adidas2Q26服装增35%鞋履增1%对亚太供应链影响",
+        "GS：adidas2Q26业绩对亚太纺织服装代工与分销商影响",
+        "GS：AsiaPacificTextile",
+        "GS：1.服装与鞋履增速差扩大至34个百分点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：adidas2Q26服装增35%鞋履增1%对亚太供应链影响",
+          "reasons": [
+            "anchor_coverage=0.42"
+          ]
+        },
+        {
+          "title": "GS：adidas2Q26业绩对亚太纺织服装代工与分销商影响",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：AsiaPacificTextile",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.服装与鞋履增速差扩大至34个百分点",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "加拿大鹅财报超预期，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+      "cleaned_source_title": "GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：CanadaGooseHoldingsF1Q27",
+      "raw_candidates": [
+        "GS：Canada Goose首季营收超预期，批发增长与门店客流回落",
+        "GS：Canada Goose首季批发收入增长，直营门店同店销售下滑",
+        "GS：Canada Goose首季业绩超预期，门店客流变化成关注点",
+        "GS：Canada Goose首季业绩回顾-淡季进展与门店客流表现",
+        "GS：Canada Goose首季收入超预期-批发增长与门店客流回落",
+        "GS：Canada Goose首季业绩-批发收入增长与DTC同店下滑"
+      ],
+      "cleaned_candidates": [
+        "GS：CanadaGoose首季营收超预期，批发增长与门店客流回落",
+        "GS：CanadaGoose首季批发收入增长，直营门店同店销售下滑",
+        "GS：CanadaGoose首季业绩超预期，门店客流变化成关注点",
+        "GS：CanadaGoose首季业绩回顾-淡季进展与门店客流表现",
+        "GS：CanadaGoose首季收入超预期-批发增长与门店客流回落",
+        "GS：CanadaGoose首季业绩-批发收入增长与DTC同店下滑",
+        "GS：CanadaGooseHoldingsF1Q27",
+        "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：CanadaGoose首季营收超预期，批发增长与门店客流回落",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGoose首季批发收入增长，直营门店同店销售下滑",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGoose首季业绩超预期，门店客流变化成关注点",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGoose首季业绩回顾-淡季进展与门店客流表现",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGoose首季收入超预期-批发增长与门店客流回落",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGoose首季业绩-批发收入增长与DTC同店下滑",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CanadaGooseHoldingsF1Q27",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "0.89",
+          "0.95"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：Canada Goose首季营收超预期，批发增长与门店客流回落",
+        "GS：Canada Goose首季批发收入增长，直营门店同店销售下滑",
+        "GS：Canada Goose首季业绩超预期，门店客流变化成关注点"
+      ],
+      "pre_neutralization_title": "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

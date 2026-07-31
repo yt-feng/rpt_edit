@@ -1,0 +1,118 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "adidas 大中华",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+    "cleaned_source_title": "GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：AsiaPacificTextile",
+    "raw_candidates": [
+      "GS：亚太纺织服装业对adidas 2Q26业绩的连锁反应评估",
+      "GS：adidas 2Q26服装增35%鞋履增1%对亚太供应链影响",
+      "GS：adidas 2Q26业绩对亚太纺织服装代工与分销商影响"
+    ],
+    "cleaned_candidates": [
+      "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+      "GS：adidas2Q26服装增35%鞋履增1%对亚太供应链影响",
+      "GS：adidas2Q26业绩对亚太纺织服装代工与分销商影响",
+      "GS：AsiaPacificTextile",
+      "GS：1.服装与鞋履增速差扩大至34个百分点"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：adidas2Q26服装增35%鞋履增1%对亚太供应链影响",
+        "reasons": [
+          "anchor_coverage=0.42"
+        ]
+      },
+      {
+        "title": "GS：adidas2Q26业绩对亚太纺织服装代工与分销商影响",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "GS：AsiaPacificTextile",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：1.服装与鞋履增速差扩大至34个百分点",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：亚太纺织服装业对adidas2Q26业绩的连锁反应评估"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "510",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

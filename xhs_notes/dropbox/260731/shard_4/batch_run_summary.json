@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-CITI-Yageo （2327.TW） 2Q26 Beat on Broad~Based Strength； Recalibrating TP as Sector Multiple Resets， Structural Thesis Intact-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-CITI-Zijin Mining （2899.HK） Termination of Allied Gold Acquisition； Proposed Acquisition of 9.2% Equity Interest Through Private Placement-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-GS-Budweiser APAC（1876.HK）2Q26 Earnings Review：Committed to China volume recovery which still takes time and continued investing；strong execution in Korea In.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0003-23-GS-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-Asia Pacific Textile， Apparel & Footwear： Mixed~to~positive read~across from adidas 2Q26 results-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-GS-Canada Goose Holdings （GOOS.TO） F1Q27 Earnings Review： Incremental evidence of progress in seasonally small quarter； weak DTC store comps in focus-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

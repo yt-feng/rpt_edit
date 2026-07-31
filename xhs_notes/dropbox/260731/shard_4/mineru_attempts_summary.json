@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0003-23-GS-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0004-24-GS-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

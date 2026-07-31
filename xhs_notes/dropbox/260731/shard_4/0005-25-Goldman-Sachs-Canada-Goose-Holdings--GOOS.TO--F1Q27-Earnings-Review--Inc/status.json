@@ -1,0 +1,173 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_zs2htw1_/pdfs/0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "加拿大鹅财报超预期，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-25-GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf",
+    "cleaned_source_title": "GS-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：CanadaGooseHoldingsF1Q27",
+    "raw_candidates": [
+      "GS：Canada Goose首季营收超预期，批发增长与门店客流回落",
+      "GS：Canada Goose首季批发收入增长，直营门店同店销售下滑",
+      "GS：Canada Goose首季业绩超预期，门店客流变化成关注点",
+      "GS：Canada Goose首季业绩回顾-淡季进展与门店客流表现",
+      "GS：Canada Goose首季收入超预期-批发增长与门店客流回落",
+      "GS：Canada Goose首季业绩-批发收入增长与DTC同店下滑"
+    ],
+    "cleaned_candidates": [
+      "GS：CanadaGoose首季营收超预期，批发增长与门店客流回落",
+      "GS：CanadaGoose首季批发收入增长，直营门店同店销售下滑",
+      "GS：CanadaGoose首季业绩超预期，门店客流变化成关注点",
+      "GS：CanadaGoose首季业绩回顾-淡季进展与门店客流表现",
+      "GS：CanadaGoose首季收入超预期-批发增长与门店客流回落",
+      "GS：CanadaGoose首季业绩-批发收入增长与DTC同店下滑",
+      "GS：CanadaGooseHoldingsF1Q27",
+      "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：CanadaGoose首季营收超预期，批发增长与门店客流回落",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGoose首季批发收入增长，直营门店同店销售下滑",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGoose首季业绩超预期，门店客流变化成关注点",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGoose首季业绩回顾-淡季进展与门店客流表现",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGoose首季收入超预期-批发增长与门店客流回落",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGoose首季业绩-批发收入增长与DTC同店下滑",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CanadaGooseHoldingsF1Q27",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "0.89",
+        "0.95"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "GS：Canada Goose首季营收超预期，批发增长与门店客流回落",
+      "GS：Canada Goose首季批发收入增长，直营门店同店销售下滑",
+      "GS：Canada Goose首季业绩超预期，门店客流变化成关注点"
+    ],
+    "pre_neutralization_title": "GS：调整后每股亏损0.89加元，也好于预期的亏损0.95加元",
+    "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "640",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

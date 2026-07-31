@@ -1,0 +1,60 @@
+Found 92 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs2htw1_/pdfs/0001-21-CITI-Yageo -2327.TW- 2Q26 Beat on Broad-Based Strength- Recalibrating TP as Sector Multiple Resets- Structural Thesis Intact-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs2htw1_/pdfs/0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Placement-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs2htw1_/pdfs/0003-23-Goldman Sachs-Budweiser APAC-1876.HK-2Q26 Earnings Review-Committed to China volume recovery which still takes time and continued investing-strong execution in Korea In.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs2htw1_/pdfs/0004-24-Goldman Sachs-Asia Pacific Textile- Apparel - Footwear- Mixed-to-positive read-across from adidas 2Q26 results-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs2htw1_/pdfs/0005-25-Goldman Sachs-Canada Goose Holdings -GOOS.TO- F1Q27 Earnings Review- Incremental evidence of progress in seasonally small quarter- weak DTC store comps in focus-260730.pdf
+MinerU attempt 1 using MINER_U batch_id=df3df8bf-10c7-41c1-bec0-5f9afeb1b5b1
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 5b4459bd94bbee6526bcd7e76d8ea912e8307eb4aefed6f90ece5898092fe624.jpg: score=-100;too_small:367x129
+Skip non-chart visual asset 7928f1313deedd26ca879a34aaba00b018b7ef43d5c24c5541e3321ce9c242b1.jpg: score=-100;too_small:706x157
+Skip non-chart visual asset a0fb9233c4b3c499f4193b97f1b997e18697587e7c0f0a3922470375d83e3c33.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.33,contrast,large
+Skip non-chart visual asset c633a8aa39b076cad8086e2509bd5683d54532b77388daf2082296218723de2a.jpg: score=-100;too_small:420x170
+Skip non-chart visual asset 08883c69321c0fe64df7978c3d1a53964277b40bc30ad34c79094ee1d97b9e2c.jpg: score=-100;too_small:428x170
+Skip non-chart visual asset 944b9677434076a192402148ebae30baff4f8b4111d83f47bcc8d3f227271089.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.60,large
+Skip non-chart visual asset e7105750047b5bdc944820afe07e9c16b03e34174c128a90757882e9cd6444d9.jpg: score=-100;too_small:49x59
+Skip non-chart visual asset ca0d7ec99c69f88b9002a3a0e03d53526726847921b07a4535468788edfb1357.jpg: score=-100;too_small:362x132
+Skip non-chart visual asset 06abf37d38ed17cd9c454f9280af7352025de62ef2a207cfcaea842ce69d61a4.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset cf912e8f6afe929c56d3267b3c8ea43f6e54c09efe84d3f1dcfd523b77fa8ae4.jpg: score=-100;too_small:431x182
+Skip non-chart visual asset 185e4fc3be63cca175002b3fb8263d6002f550311e7d84cfa5a0eff872a6700e.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.29,contrast,large
+Skip non-chart visual asset 2ea1eabd7319a6705a6e64b6fdd568d721138ce869b3808214458ea1221edaee.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 039318a5cd2e9ee532992cb531b300d05cb59c4d034b8041888a6caf5ae16ca5.jpg: score=-100;too_small:1431x151
+Skip non-chart visual asset bec9769d9fc12949db10137903e95ab9d744d15891615e06760e59a8b0d7ad6b.jpg: score=2;chart_ratio,contrast
+Skip non-chart visual asset 2662a7c4379250e426e5a503cdb458b1a3502a3d60e339d567b3bfc5a89fa06b.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 704fd1ed82644d2d7d7d5a7672f16684453587f0d57ef455a2443af31dee3b86.jpg: score=-100;too_small:368x135
+Neutralized WeChat title while keeping the report: 花旗：国巨2Q26业绩超预期-行业估值倍数重置 -> 花旗：国巨业务与季度数据观察
+Skip non-chart visual asset c5b441e9e1ab3555dc28a24ec1ef1d74af45d0f156b1256161c85649ce439644.jpg: score=-100;too_small:428x124
+Skip non-chart visual asset 24053154eb3f1e331ab2933805fe8dd0bff14bb094b1ec584a933093de6b6c32.jpg: score=-100;too_small:1429x149
+Skip non-chart visual asset a1c0f76a7a717d057158305a8cb66f6e82d646f6a7a837047549ac8f71ea2ea8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.60,large
+Skip non-chart visual asset 69b9c8d8daf680e08b21dd9331402676412cef978f35f1e29406f5a0591dda70.jpg: score=-100;too_small:420x123
+Skip non-chart visual asset 4cea279b69c1b81dffb606219f6fac43a8ff78fd56fd8cac0ee9e46423ab4018.jpg: score=-100;too_small:434x120
+Skip non-chart visual asset 3cd50510793f44dda74a26f24ec6b61cd609078e5edeee9fcdcfe44338a3ef4f.jpg: score=-100;too_small:365x107
+Skip non-chart visual asset 2b06c40621e878d16711e7bde94193d7a7f944254a50c6b1defbb3fa18d31372.jpg: score=-100;too_small:368x109
+Skip non-chart visual asset 19de390f1334330fa5209f8eae135d4b8edc26f95ef21ff2c9c2bed7cd3e8fd3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset b3cdf3f8758705e76e8e1e2fe69dd2ba67122b4a03a080cab94d34b93a6a1c2b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 943d3d994cf324bafc4578ab582265e193a289f2d73e587a37885a3ad10f48ed.jpg: score=-100;too_small:1156x107
+Skip non-chart visual asset 91c2ea98b2ffb999d7ab17101fcc42b4fe35e1f8ffe42c3840a3a5a682b16020.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 46d73be441b3de8a502b1ddd5781b7553425fc7a15ae3c2cf983a721745458be.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 1f67d0154d857cc7b2bf7cc447739e794e5e9374070ad6266f3b271e3fff61c4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset cf0b241b3dedc5bad562af6e2d388c51a2de4051a9bbb50a2f2617c8e1ee3720.jpg: score=0;square_without_chart_hint,edge:0.24,large
+Neutralized WeChat title while keeping the report: 高盛：百威亚太二季度业绩回顾-中国区销量恢复仍需时间 -> 高盛：百威亚太业务与季度数据观察
+Skip non-chart visual asset a3d6ff7e4dae6c4c3c8b6eae9b780fdccfd25d490d92b7d1329878cc150e6217.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.21,contrast,large
+Skip non-chart visual asset 43f48905a960255706252775fc58d80e087383a31497583e38abe19ce692f296.jpg: score=-100;too_small:1156x104
+Skip non-chart visual asset 5384157148ab4f6a1e9f8dba06f3e65ca3042f2466ac8ee6520013e0852c96be.jpg: score=-1;square_without_chart_hint,edge:0.31
+Skip non-chart visual asset 28cbca22a81a1aa6b8f1bbd2d8c7a4395d1fec79ec0308e809945ee338d7bb14.jpg: score=-100;too_small:837x90
+Skip non-chart visual asset 843f64cbc12ed2b5db322a8644039d4c12ca8ccbeeaa0aa03a3427b28503241e.jpg: score=-100;too_small:1162x106
+Skip non-chart visual asset 7e7e4627599e3e834a1e742f6ddf9d16fba462521ce16bc99f14cc06a34dd264.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 31fa07a1d5b1e8858d9d7775ecfe64383be80fb947de5252c14d054619ee3fa9.jpg: score=-100;too_small:704x82
+Skip non-chart visual asset 2da0e37cbfbc0e489309575d9d6f39a21b5f208a99f73a831edbfb591fe9b393.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset 381dba8db007e1686841fe283b14f85f59bcd3081505bba8b5e39aede0c54e84.jpg: score=-100;too_small:546x57
+Skip non-chart visual asset f594daa7cd68815f780cb26fb6260713399c626bc765199d1cb254e9d5b9a165.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Neutralized WeChat title while keeping the report: 高盛：调整后每股亏损0.89加元，也好于预期的亏损0.95加元 -> 高盛：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
