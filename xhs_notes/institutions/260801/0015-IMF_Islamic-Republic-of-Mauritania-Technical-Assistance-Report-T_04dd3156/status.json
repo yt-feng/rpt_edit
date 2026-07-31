@@ -1,0 +1,101 @@
+{
+  "source_pdf": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "毛里塔尼亚的债务预警",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x2",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "IMF：资金结构与相关数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156.pdf",
+    "cleaned_source_title": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0015IMFIslamicRepublico",
+    "raw_candidates": [
+      "IMF：毛里塔尼亚公共债务预测工具完成制度化整合",
+      "IMF：毛里塔尼亚债务预测工具制度化整合完成"
+    ],
+    "cleaned_candidates": [
+      "IMF：毛里塔尼亚公共债务预测工具完成制度化整合",
+      "IMF：毛里塔尼亚债务预测工具制度化整合完成",
+      "IMF：0015IMFIslamicRepublico",
+      "IMF：2026年5月发布的这份技术援助报告"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0015IMFIslamicRepublico",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2026年5月发布的这份技术援助报告",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：资金结构与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：毛里塔尼亚公共债务预测工具完成制度化整合",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

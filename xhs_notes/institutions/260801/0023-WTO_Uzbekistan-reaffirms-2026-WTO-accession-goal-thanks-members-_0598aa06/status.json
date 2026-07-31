@@ -1,0 +1,83 @@
+{
+  "source_pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界贸易组织",
+  "cover_short_title": "乌兹别克斯坦入世谈判",
+  "cover_subtitle": "乌兹别克斯坦2026目标清晰",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+    "cleaned_source_title": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+    "institution_name": "世界贸易组织",
+    "required_terms": [],
+    "deterministic_fallback": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+    "raw_candidates": [
+      "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+      "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+      "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段"
+    ],
+    "cleaned_candidates": [
+      "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+      "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+      "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段",
+      "世界贸易组织：0023WTOUzbekistanreaffirms20",
+      "世界贸易组织：1.双边市场准入谈判完成31份协议签署"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "世界贸易组织：1.双边市场准入谈判完成31份协议签署",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "世界贸易组织：乌兹别克斯坦重申2026年入世目标"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

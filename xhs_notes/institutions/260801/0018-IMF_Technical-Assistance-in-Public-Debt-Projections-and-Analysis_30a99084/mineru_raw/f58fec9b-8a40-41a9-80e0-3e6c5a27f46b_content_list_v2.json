@@ -1,0 +1,680 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                228,
+                743,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ISLAMIC REPUBLIC OF"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                386,
+                720,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MAURITANIA"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                436,
+                480,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance in Public Debt"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                479,
+                720,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Projections and Analysis"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                521,
+                542,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                563,
+                287,
+                589
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                614,
+                269,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Marie Pierre Aquino Coste, Ha Minh Nguyen, and Naomitsu Yashiro"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                633,
+                691,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Authoring Department:"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                763,
+                372,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Institute for Capacity Development, IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                784,
+                493,
+                804
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                111,
+                264,
+                207
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report Institute for Capacity Development"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                290,
+                121,
+                687,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance in Public Debt Projections and Analysis, Islamic Republic of Mauritania\nPrepared by Marie Pierre Aquino Coste, Ha Minh Nguyen, and Naomitsu Yashiro"
+                    }
+                ]
+            },
+            "bbox": [
+                125,
+                175,
+                854,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                231,
+                857,
+                286
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: This document summarizes the completion and main outcomes of a Technical Assistance project aimed at strengthening the capacity of Mauritania's National Committee on Public Debt (CNDP) in public debt projection and analysis. At the request of the Mauritanian authorities, the IMF's Institute for Capacity Development (ICD) implemented a multi-mission program between January 2024 and January 2025, combining in-country missions with sustained remote engagement. The project focused on implementing and customizing the IMF's Public Debt Dynamics Tool (DDT), including a resource-rich country version and a natural disaster module. Through hands-on training, the CNDP strengthened its ability to produce debt projections, conduct scenario analysis, and prepare a comprehensive public debt report."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                304,
+                877,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This Technical Assistance was financed by the Government of Japan."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                484,
+                622,
+                503
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2056f2b16df6eb7a5d95266b4ad7866c7d602b82bc1cd1e479a230fcb856c2b5.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>JEL Classification Numbers:</td><td>O11; O23; O55</td></tr><tr><td>Keywords:</td><td>Public debt; debt management; technical assistance; IMF</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                522,
+                772,
+                577
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimer"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                614,
+                236,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                648,
+                880,
+                739
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                89,
+                375,
+                106
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HLS/26/45"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                89,
+                901,
+                104
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                    }
+                ]
+            },
+            "bbox": [
+                321,
+                773,
+                674,
+                863
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Background"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                92,
+                290,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This technical assistance (TA) project aimed to strengthen the Mauritanian authorities' institutional and analytical capacity to produce consistent, policy-relevant public debt projections and analyses. At the request of the Ministry of Finance, the IMF's Institute for Capacity Development (ICD) implemented a multi-mission TA program jointly with the National Public Debt Committee (CNDP), the inter-institutional body responsible for coordinating debt policy, debt sustainability analysis, and public debt reporting. The project was motivated by challenges associated with debt projections and integrating risk analysis into policy discussions. The project comprised three missions: a scoping mission in January 2024 that assessed the CNDP's capacity needs; an implementation mission in August–September 2024 focused on deploying and customizing the DDT; and a consolidation mission in January 2025 that strengthened the technical team's independent use of the tools and produced revised user documentation."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                132,
+                879,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mauritania faces heightened fiscal and debt vulnerabilities stemming from its dependence on iron ore, gold, and gas export revenues, its exposure to recurrent droughts and floods, and its reliance on external financing. These features make robust debt projection frameworks, capable of assessing both baseline dynamics and adverse shock scenarios, particularly important for sound fiscal management. The TA project, aimed to address these challenges by introducing a standardized analytical framework, strengthening inter-institutional coordination, and supporting the gradual institutionalization of debt analysis within the CNDP."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                311,
+                885,
+                411
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Achievements"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                425,
+                496,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The project substantially enhanced the CNDP's capacity to independently produce public debt projections and scenario analyses. The Public Debt Dynamics Tool (DDT) was implemented and customized for Mauritania's resource-rich economic structure, disaggregating the primary balance into extractive and non-extractive components to reflect the volatility of commodity revenues, consistent with the IMF program's structural benchmark. The Natural Disaster DDT was also applied to assess the fiscal impact of climate and commodity price shocks. Through hands-on training, applied workshops, and continuous technical exchanges, the authorities developed the capacity to prepare a comprehensive public debt report covering baseline projections, fiscal adjustment scenarios, and shock simulations, which the technical team presented to the General Directors chairing the CNDP. User manuals, process documentation, and a clearer delineation of institutional roles in data provision and assumption-setting further strengthened ownership and reduced risks related to staff turnover."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                464,
+                872,
+                643
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                659,
+                560,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- To consolidate the gains achieved and ensure sustainability, the TA made three concrete recommendations, which the authorities agreed with:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                699,
+                772,
+                731
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Directorate of Public Debt and the CPPMB have committed to establishing a formal system for the regular integration of DDT-based analyses into CNDP policymaking. This includes a pre-defined schedule for debt sustainability analyses tied to the budget cycle, standardized data inputs, assigned institutional responsibilities, and a workflow for incorporating DDT outputs into CNDP recommendations to the Minister of Finance. An indicative timetable was developed jointly during the project to support this process."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                747,
+                867,
+                830
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, the Directorate of Public Debt and the CPPMB have begun formalizing the division of tasks and data responsibilities among the institutions participating in public debt projections. Historical data on real sector variables are sourced from ANSADE and the Treasury, while macroeconomic and fiscal projection"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                845,
+                880,
+                893
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                955,
+                151,
+                970
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                955,
+                861,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                867,
+                957,
+                883,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "assumptions are provided by the Macro-Budgetary Forecasting and Steering Unit (CPPMB), in line with their budget documents, ensuring a clear and institutionally grounded data flow for the annual debt projection cycle. Debt stock data and interest payment figures are compiled by the Directorate of Public Debt, which also coordinates the consolidation of inputs across agencies."
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                89,
+                864,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Third, to preserve and transmit the analytical capacity built during the project, the authorities developed user manuals for the DDT, the Natural Disaster DDT, and the commodity price shock tool. Experienced staff are committed to using these manuals to train new technical team members at least twice a year, ensuring continuity as the Directorate of Public Debt and the CPPMB deepen their public debt management capacity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                171,
+                875,
+                237
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                955,
+                151,
+                970
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                955,
+                861,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                958,
+                883,
+                969
+            ]
+        }
+    ]
+]

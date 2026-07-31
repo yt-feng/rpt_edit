@@ -1,0 +1,98 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "西巴尔干入欧，卡在哪",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "金融->资金 x1",
+    "危机->扰动 x2",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "风险->不确定性 x1",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b.pdf",
+    "cleaned_source_title": "0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0008BruegelTheWeste",
+    "raw_candidates": [
+      "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差",
+      "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差-2000至2016年数据",
+      "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差-青年就业与法治进展"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差",
+      "布鲁盖尔研究所：0008BruegelTheWeste",
+      "布鲁盖尔研究所：选取2000年至2016年的数据"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：0008BruegelTheWeste",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：选取2000年至2016年的数据",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "布鲁盖尔研究所：西巴尔干入盟进程中的宏观环境与制度落差"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,106 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "银行倒闭，欧盟的处理",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x2",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702.pdf",
+    "cleaned_source_title": "0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0002BruegelBankliqu",
+    "raw_candidates": [
+      "欧盟银行清算框架规则差异待厘清",
+      "欧盟银行清算规则差异：2017年意大利与西班牙案例",
+      "欧盟银行清算与处置框架差异研究"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧盟银行清算框架规则差异待厘清",
+      "布鲁盖尔研究所：欧盟银行清算规则差异，2017年意大利与西班牙案例",
+      "布鲁盖尔研究所：欧盟银行清算与处置框架差异研究",
+      "布鲁盖尔研究所：0002BruegelBankliqu",
+      "布鲁盖尔研究所：1.处置与清算在公共资金使用规则上存在明显差异"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：欧盟银行清算规则差异，2017年意大利与西班牙案例",
+        "reasons": [
+          "anchor_coverage=0.57"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：欧盟银行清算与处置框架差异研究",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：0002BruegelBankliqu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：1.处置与清算在公共资金使用规则上存在明显差异",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧盟银行清算框架规则差异待厘清",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

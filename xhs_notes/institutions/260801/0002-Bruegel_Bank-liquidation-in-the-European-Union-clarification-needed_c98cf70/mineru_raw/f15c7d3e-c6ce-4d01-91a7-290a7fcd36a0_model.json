@@ -1,0 +1,6687 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.092,
+                0.072,
+                0.244,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Policy Contribution\nIssue n°01 | January 2017",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.3,
+                0.069,
+                0.712,
+                0.187
+            ],
+            "angle": 0,
+            "content": "Bank liquidation in\nthe European Union:\nclarification needed"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.228,
+                0.431,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Silvia Merler",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.341,
+                0.272,
+                0.389
+            ],
+            "angle": 0,
+            "content": "SILVIA MERLER (silvia. merler@bruegel.org) is a Research Fellow at Bruegel",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.418,
+                0.285,
+                0.712
+            ],
+            "angle": 0,
+            "content": "This material was originally published in a paper titled ‘Critical functions and public interest in banking services: Need for clarification?’ provided at the request of the European Parliament Committee on Economic and Monetary Affairs, commissioned by the Directorate-General for Internal Policies of the Union and supervised by its Economic Governance Support Unit (EGOV). The original paper is available on the European Parliament’s website. © European Union, 2017",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.292,
+                0.494,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Executive summary"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.904,
+                0.404
+            ],
+            "angle": 0,
+            "content": "UNDER THE CURRENT European Union frameworks for dealing with banking problems, resolution of banks is seen as an exception to be activated only if liquidation under national insolvency proceedings would not be warranted. This is most notably the case when the bank provides critical functions to the economy, or when its liquidation might threaten financial stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.419,
+                0.901,
+                0.512
+            ],
+            "angle": 0,
+            "content": "THE TWO OPTIONS – resolution and liquidation – differ substantially when it comes to the scope of legislation that is applicable to the use of public funds. The EU Bank Recovery and Resolution Directive (2014/59/EU) covers resolution, while liquidation is regulated by national insolvency laws. The liquidations of Veneto Banca and Banca Popolare di Vicenza in Italy highlight how this two-tier framework raises important questions in the context of EU banking union.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.527,
+                0.9,
+                0.59
+            ],
+            "angle": 0,
+            "content": "THE FIRST QUESTION is whether the definitions of critical functions and public interest – key elements in the context of liquidation – should be clarified. A second question is whether the current legal and regulatory situation within banking union ensures that similar banks can expect predictable equal treatment in case of failure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.604,
+                0.895,
+                0.667
+            ],
+            "angle": 0,
+            "content": "WE ARGUE THAT there should be more clarity over the role that the concepts of critical functions and public interest play in Member States' decision to grant liquidation aid, as the current framework might give rise to situations in which the views of national authorities seem to contradict the Single Resolution Board's assessment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.681,
+                0.897,
+                0.759
+            ],
+            "angle": 0,
+            "content": "WHILE THE PURPOSE of this Policy Contribution is not to provide a comprehensive overview of different national insolvency regimes, we argue that the current diversity is a source of uncertainty about the outcome of liquidation procedures, for all participants. For banking union to function effectively, the framework should be changed to provide the same level of certainty in liquidation as there is expected to be in resolution.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.091,
+                0.838,
+                0.192,
+                0.93
+            ],
+            "angle": 0,
+            "content": "bruegel"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.074,
+                0.208,
+                0.083
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.086,
+                0.24,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.068,
+                0.684,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.11,
+                0.713,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.153,
+                0.709,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.229,
+                0.429,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.344,
+                0.245,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.359,
+                0.255,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.375,
+                0.268,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.421,
+                0.218,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.437,
+                0.241,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.451,
+                0.236,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.466,
+                0.281,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.482,
+                0.261,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.497,
+                0.281,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.514,
+                0.274,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.529,
+                0.264,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.543,
+                0.256,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.558,
+                0.259,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.575,
+                0.25,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.59,
+                0.261,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.605,
+                0.257,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.621,
+                0.262,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.637,
+                0.265,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.653,
+                0.28,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.268,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.684,
+                0.275,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.697,
+                0.127,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.292,
+                0.492,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.328,
+                0.868,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.343,
+                0.889,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.901,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.375,
+                0.882,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.388,
+                0.36,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.42,
+                0.859,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.436,
+                0.879,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.452,
+                0.881,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.881,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.898,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.499,
+                0.401,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.897,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.544,
+                0.896,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.882,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.639,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.605,
+                0.862,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.622,
+                0.891,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.871,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.653,
+                0.693,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.683,
+                0.877,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.698,
+                0.887,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.894,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.73,
+                0.891,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.745,
+                0.703,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.303,
+                0.07,
+                0.499,
+                0.093
+            ],
+            "angle": 0,
+            "content": "1 Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.11,
+                0.901,
+                0.264
+            ],
+            "angle": 0,
+            "content": "On 27 January 2017, Single Resolution Board (SRB) chair Elke König said \\( ^{1} \\) “[m]ost banks are now in such a shape that [...] their failure would not endanger financial stability and that they can be resolved if they fail – like any other business in the market economy – through regular insolvency procedures. [...] The extra safety net of resolution is only for the few”. Under the current European Union frameworks for dealing with banking problems, resolution is seen as an exception to be allowed only if liquidation under national insolvency proceedings would not be warranted. This is the case when the bank provides critical functions to the economy, or when its liquidation might threaten financial stability. In such instances, the Single Resolution Board (SRB) is expected to establish the existence of a public interest, for the bank to be put into resolution.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.265,
+                0.903,
+                0.418
+            ],
+            "angle": 0,
+            "content": "The two options – resolution and liquidation – differ substantially when it comes to the legislation that is applicable to the use of public funds. The EU Bank Recovery and Resolution Directive (BRRD, 2014/59/EU) governs resolution, while liquidation is regulated by national insolvency laws. The use of public funds in resolution is subject to both state aid rules and the BRRD – thus requiring a preliminary bail-in up to at least 8 percent of total liabilities – but the use of public funds in liquidation is only subject to the state aid requirement that there be a ‘light’ burden-sharing of equity and junior debt. Depending on the structure of individual banks’ balance sheets – ie on how much junior debt they have on their liability side – the BRRD bail-in requirement could potentially reach up to senior bondholders, whereas the light state aid burden allows them to be shielded from losses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.419,
+                0.903,
+                0.542
+            ],
+            "angle": 0,
+            "content": "We look at the liquidations of Veneto Banca and Banca Popolare di Vicenza and highlight how this two-tier framework raises important questions in the context of banking union, the ultimate aim of which is to ensure clarity about the rules governing banking crises and their outcomes for banks, private creditors and taxpayers. The first question is whether the definitions of critical functions and of public interest – two key elements in the context of liquidation – should be clarified. While we think these concepts are clear for the purpose of the SRB's assessment, more clarity is warranted in terms of their application in the context of member states' decisions to grant liquidation aid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.543,
+                0.898,
+                0.774
+            ],
+            "angle": 0,
+            "content": "A second question is whether the current legal and regulatory environment within banking union ensures that similar banks can expect predictable equal treatment in case of failure. While the purpose of this paper is not to provide a comprehensive overview of different national insolvency regimes across the EU – work that others have done \\( ^{2} \\) – we argue that the current diversity in national insolvency frameworks is a source of uncertainty about the outcomes of liquidation procedures, for all participants. The fact that insolvency law remains national allows member states to amend it compared to the normal insolvency proceedings that constitute the reference for the SRB's assessment of the no-creditor-worse-off condition. In particular, to the extent that different governments have different propensities to provide liquidation aid to the banking sector, the final outcome is unclear. Without an EU insolvency law – or at least further harmonisation – this can lead to paradoxical results, such as in the Italian case where senior creditors were eventually better off under insolvency than they would have been under resolution, while taxpayers were worse off. For banking union to function effectively, the framework should be clarified to provide the same level of certainty over liquidation as there is expected to be over resolution.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.821,
+                0.617,
+                0.834
+            ],
+            "angle": 0,
+            "content": "1 In a speech to the Belgian Financial Forum, January 2017."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.835,
+                0.518,
+                0.847
+            ],
+            "angle": 0,
+            "content": "2 For example, McCormack et al (2016)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.935,
+                0.106,
+                0.945
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.07,
+                0.497,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.112,
+                0.887,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.128,
+                0.896,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.881,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.896,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.899,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.897,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.204,
+                0.882,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.22,
+                0.885,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.892,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.252,
+                0.426,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.267,
+                0.879,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.282,
+                0.9,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.297,
+                0.892,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.314,
+                0.877,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.328,
+                0.9,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.344,
+                0.881,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.36,
+                0.89,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.375,
+                0.891,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.391,
+                0.872,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.407,
+                0.692,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.422,
+                0.895,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.436,
+                0.892,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.451,
+                0.89,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.892,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.903,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.498,
+                0.874,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.514,
+                0.891,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.562,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.545,
+                0.85,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.56,
+                0.888,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.892,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.59,
+                0.891,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.607,
+                0.885,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.621,
+                0.897,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.637,
+                0.89,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.653,
+                0.895,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.668,
+                0.886,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.684,
+                0.893,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.877,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.714,
+                0.866,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.729,
+                0.868,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.746,
+                0.888,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.761,
+                0.673,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.07,
+                0.736,
+                0.094
+            ],
+            "angle": 0,
+            "content": "2 The Veneto and Vicenza cases"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.11,
+                0.904,
+                0.311
+            ],
+            "angle": 0,
+            "content": "On 23 June 2017, Veneto Banca and Banca Popolare di Vicenza- were declared to be “failing or likely to fail” by the European Central Bank (ECB) in its capacity as supervisor for euro-area significant institutions \\( ^{3} \\) . The two banks had already been among the Italian institutions that failed the ECB’s comprehensive assessment in 2014. In 2016, they benefitted from €3.5 billion in investment from the Italian bank-funded Atlante fund, but their financial positions deteriorated further in 2017 (Merler, 2017a), ultimately resulting in a combined capital need of €1.2 billion. In March 2017, the two banks requested precautionary recapitalisations, which however would have required the capital shortfall to be covered by private means as a pre-condition (Merler, 2017b). The ECB eventually deemed the banks’ business plans not credible. This negative assessment opened up the possibility of either resolution or liquidation, with the decision referred to the Single Resolution Board (SRB). The SRB decided that public interest in resolution was not present, because neither of the banks provided critical functions and their failure was unlikely to have a significant adverse impact on financial stability.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.324,
+                0.695,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Table 1: Assets and liabilities acquired by Intesa (ISP)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.302,
+                0.34,
+                0.901,
+                0.502
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Assets</td><td>€ bns</td><td>Liabilities</td><td>€ bns</td></tr><tr><td>Credits vis-à-vis banks</td><td>3.8</td><td>Debts vis-à-vis banks</td><td>9.3</td></tr><tr><td>Credits vis-à-vis customers</td><td>30.1</td><td>Debts vis-à-vis customers</td><td>25.8</td></tr><tr><td>Financial Assets</td><td>8.8</td><td>Bonds (ISP only takes senior)</td><td>11.8</td></tr><tr><td>Shareholdings</td><td>0.02</td><td>Financial liabilities</td><td>2.6</td></tr><tr><td>Others</td><td>3.01</td><td>Others</td><td>1.8</td></tr><tr><td>Total(incl. imbalance and financing to LCA)</td><td>51.3</td><td>Total</td><td>51.3</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.3,
+                0.506,
+                0.432,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Source: Bank of Italy (2017)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.543,
+                0.907,
+                0.836
+            ],
+            "angle": 0,
+            "content": "As a result, Veneto Banca and Banca Popolare di Vicenza were wound down under Italian insolvency law on 25 June 2017. Italian law provides for several insolvency procedures: banks and other financial institutions – and other selected types of enterprises – are subject to “forced administrative liquidation” (Liquidazione Coatta Amministrativa (Baker McKenzie, 2017); see Box 1 in section 4.2 for details). In the context of liquidation, shares (mostly owned by Atlante) and subordinated debt were wiped out to meet the minimum burden-sharing requirement established in the European Commission’s 2013 Communication on State Aid to Banks. The performing parts of the banks’ assets were acquired by Intesa San Paolo – Italy’s second largest bank – together with some of the liabilities, most notably deposits and senior debt (see Table 1 for details). Intesa paid a symbolic sum of €1 for the acquisition, and benefitted from a €4.8 billion cash injection by the state. Of this, €3.5 billion was intended to ensure that the acquisition would not undermine Intesa’s equity ratios, while €1.3 billion was destined to cover the costs of closing branches and managing dismissal/redeployment of the staff of the banks being liquidated. Intesa was also granted state guarantees that could potentially total up to €12 billion \\( ^{4} \\) . Of this, up to €6.35 billion might cover the repayment of debt held that was deemed to be not good after due diligence; up to €4 billion might constitute a buffer for currently performing debts that are high risk; and the remaining guarantee of up to €2 billion might cover potential legal risks of the banks being liquidated. The non-performing parts of the two banks’ balance sheets were transferred to SGA (Società per la Gestione di Attività) – a",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.298,
+                0.87,
+                0.891,
+                0.884
+            ],
+            "angle": 0,
+            "content": "3 ECB press release: https://www.bankingsupervision.europa.eu/press/pr/date/2017/html/ssm.pr170623.en.html."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.883,
+                0.53,
+                0.896
+            ],
+            "angle": 0,
+            "content": "4 Italian law decree No 99 of 25 June 2017."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.07,
+                0.734,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.112,
+                0.892,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.129,
+                0.903,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.144,
+                0.886,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.9,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.173,
+                0.894,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.189,
+                0.898,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.204,
+                0.894,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.221,
+                0.895,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.237,
+                0.898,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.251,
+                0.877,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.267,
+                0.891,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.283,
+                0.88,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.298,
+                0.83,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.546,
+                0.897,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.898,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.575,
+                0.862,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.305,
+                0.592,
+                0.884,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.607,
+                0.898,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.622,
+                0.874,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.885,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.653,
+                0.901,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.668,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.683,
+                0.904,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.892,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.715,
+                0.88,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.73,
+                0.905,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.745,
+                0.894,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.901,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.777,
+                0.888,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.792,
+                0.897,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.807,
+                0.889,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.823,
+                0.895,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.079,
+                0.901,
+                0.109
+            ],
+            "angle": 0,
+            "content": "vehicle set up for the rescue of Banco di Napoli at the end of the 1990s – with aim of maximising the recovery over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.111,
+                0.898,
+                0.31
+            ],
+            "angle": 0,
+            "content": "The cases of Veneto Banca and Popolare di Vicenza are reminiscent of that of Banca Romagna Cooperativa (BRC), a significantly smaller \\( ^{5} \\) Italian lender liquidated in July 2015 (Merler, 2016). BRC’s assets and liabilities were transferred to Banca Sviluppo, part of the Italian ICCREA Group. In the process, BRC equity and junior debt remained in the liquidation estate – similarly to what happened in the Veneto and Vicenza cases. The BRC operation was conducted under national insolvency law by selling only parts of assets and liabilities out of liquidation. The Italian mandatory deposit guarantee scheme for the sector (FGDCC) covered the negative difference between the transferred assets and liabilities – an action that qualified as state aid, because it was beyond the DGS’ pay-out function. This was authorised by the European Commission. The scale of the BRC case was obviously much smaller than the Veneto and Vicenza cases, and the cost of the operation for the Mutual Bank Deposit Guarantee Fund (FGDCC) was estimated at the time as €260.8 million maximum (European Commission, 2015).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.311,
+                0.9,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Because of the structure of the operation, the Veneto Banca and Banca Popolare di Vicenza cases have also been compared to the case of the Spanish Banco Popular, which was acquired for a symbolic amount of €1 by Banco Santander. In contrast to the two Italian banks, however, Banco Popular was put in resolution by the SRB for public interest reasons. The similarity between the Italian and Spanish cases stems from the fact that the sale and transfer of part of the failing banks' balance sheets to a buyer is also foreseen as a resolution tool under Article 38 BRRD. Mesnard et al (2017) highlights also that the measures implemented in the Italian case are very similar to those in previous resolution cases implemented in the EU, such as the resolution of the Greek Panellinia Bank through a transfer order to Piraeus Bank in April 2015 \\( ^{6} \\) . Despite superficial similarities, however, there are significant differences between the Italian and Spanish operations when it comes to the applicability of EU legislation in terms of use of public funds. Section 3 reviews this in more detail.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.548,
+                0.675,
+                0.574
+            ],
+            "angle": 0,
+            "content": "3 Liquidation vs. resolution"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.587,
+                0.421,
+                0.602
+            ],
+            "angle": 0,
+            "content": "3.1 Conditions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.604,
+                0.902,
+                0.774
+            ],
+            "angle": 0,
+            "content": "The current EU rules give two options for dealing with banks that declared by the Single Supervisory Mechanism to be failing or likely to fail: liquidation or resolution. The decision on which approach should be followed in each case is a prerogative of the Single Resolution Board (SRB), and it hinges on an assessment of the existence of public interest. Because of its potential effects on property rights, the choice to put a bank into resolution should be seen as an exception (European Commission, 2017), limited to cases in which winding up the institution under normal insolvency proceedings would not meet the resolution objectives to the same extent \\( ^{7} \\) . Resolution aims at ensuring continuity of critical functions, avoiding a significant adverse effect on the financial system, protecting public funds, covered depositors and covered investors, and clients' assets and funds \\( ^{8} \\) . If the SRB decides that resolution is not in the public interest, then the bank is wound down under national insolvency law.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.808,
+                0.901,
+                0.833
+            ],
+            "angle": 0,
+            "content": "5 As of 31 May 2015, the unpublished accounts of BRC show a balance sheet size of €891 million and a loss of €111.3 million (see European Commission, 2015)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.835,
+                0.891,
+                0.86
+            ],
+            "angle": 0,
+            "content": "6 In that case, the performing part of the balance sheet was transferred to another Greek bank, and the difference between assets and liabilities was financed by the Greek resolution fund."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.861,
+                0.394,
+                0.872
+            ],
+            "angle": 0,
+            "content": "7 Art. 32 BRRD."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.873,
+                0.408,
+                0.885
+            ],
+            "angle": 0,
+            "content": "8 Art. 31(2) BRRD."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.094,
+                0.935,
+                0.105,
+                0.945
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.081,
+                0.898,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.096,
+                0.473,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.112,
+                0.859,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.128,
+                0.877,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.143,
+                0.87,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.158,
+                0.883,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.174,
+                0.895,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.875,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.889,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.895,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.893,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.252,
+                0.88,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.266,
+                0.868,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.282,
+                0.892,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.298,
+                0.432,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.313,
+                0.852,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.328,
+                0.868,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.344,
+                0.888,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.36,
+                0.887,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.375,
+                0.872,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.39,
+                0.889,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.405,
+                0.874,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.422,
+                0.897,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.437,
+                0.868,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.452,
+                0.874,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.468,
+                0.892,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.829,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.549,
+                0.674,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.587,
+                0.419,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.607,
+                0.862,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.621,
+                0.885,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.638,
+                0.889,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.653,
+                0.893,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.668,
+                0.883,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.684,
+                0.869,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.698,
+                0.883,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.715,
+                0.881,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.731,
+                0.899,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.745,
+                0.897,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.761,
+                0.833,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.077,
+                0.489,
+                0.093
+            ],
+            "angle": 0,
+            "content": "3.2 Use of public funds"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.095,
+                0.901,
+                0.125
+            ],
+            "angle": 0,
+            "content": "One important point to note is that the two options differ quite significantly when it comes to the scope of EU legislation applicable to the use of public funds (Figure 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.126,
+                0.908,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Article 32(4) of the Bank Recovery and Resolution Directive (BRRD) suggests that, as a rule, the fact that a banks needs public support is sufficient for the ECB to declare the bank failing or likely to fail. Banks that happen to have capital shortfalls should therefore ideally cover that from private sources. If that is not feasible, a member state can still intervene in line with market conditions, ie on terms that would be the same for a private investor. This kind of intervention would remain outside the scope of both the resolution framework and EU state aid policy \\( ^{9} \\) . Alternatively, if the bank is solvent it could qualify for precautionary recapitalisation, which allows the use of public funds in compliance with state-aid rules and outside the scope of the BRRD resolution framework. Article 32(4.d) BRRD states that this extraordinary public financial support does not trigger resolution if it is required “in order to remedy a serious disturbance in the economy of a member state and preserve financial stability”, and if it is “at prices and on terms that do not confer an advantage upon the institution.” If the conditions for precautionary recapitalisation are met, public funds can thus be used without triggering resolution and the associated 8 percent bail-in requirement. The burden-sharing requirement of equity and junior debt would still apply, as per the Commission’s 2013 State Aid Communication \\( ^{10} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.387,
+                0.662,
+                0.403
+            ],
+            "angle": 0,
+            "content": "Figure 1: Use of public funds in the EU framework"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.324,
+                0.408,
+                0.87,
+                0.787
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.3,
+                0.793,
+                0.478,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Source: European Commission (2017)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.858,
+                0.851,
+                0.883
+            ],
+            "angle": 0,
+            "content": "9 An example is the recapitalisation of Portuguese Caixa Geral de Depósitos in March 2017. See European Commission (2017)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.884,
+                0.657,
+                0.897
+            ],
+            "angle": 0,
+            "content": "10 This option was used in Italy with Monte Dei Paschi in June 2017."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.077,
+                0.485,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.097,
+                0.897,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.777,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.128,
+                0.875,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.883,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.878,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.174,
+                0.905,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.19,
+                0.9,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.891,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.22,
+                0.897,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.893,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.251,
+                0.892,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.266,
+                0.894,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.283,
+                0.888,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.298,
+                0.903,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.313,
+                0.888,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.327,
+                0.904,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.344,
+                0.903,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.358,
+                0.357,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.079,
+                0.901,
+                0.31
+            ],
+            "angle": 0,
+            "content": "If a bank is declared by the ECB to be failing or likely to fail \\( ^{11} \\), the precautionary recapitalisation option is not available, and the choice is between liquidation or resolution. If the bank is put into resolution, the Single Resolution Mechanism Regulation (SRMR) requires that the bank's losses be covered by the bail-in of shareholders and creditors up to 8 percent of the bank's liabilities, before the Single Resolution Fund (SRF) can be accessed. Depending on the composition of individual banks' balance sheets, this may imply the bail-in of senior debt and potentially even uncovered deposits. The use of funds from the SRF is anyway subject to the Commission's State aid assessment. State aid is possible in the context of liquidation – in the form of liquidation aid – and it is subject to the State aid discipline, including the burden-sharing requirements laid out in the 2013 Communication. The rationale underlying aid in liquidation is that while the winding up of small banks is not expected to have systemic effects, it may still have important local effects. Currently, it is for Member States to decide whether liquidation may harm the local economy, and whether the use national funds is warranted to mitigate the damage – although liquidation aid would then need to be cleared by the Commission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.311,
+                0.907,
+                0.512
+            ],
+            "angle": 0,
+            "content": "A comparison of the Banco Popular case with the Veneto and Vicenza cases highlights the practical implications of this different legal scope. The use of public funds in the context of resolution with sale of assets to a private investor would have required the preliminary bail-in of at least 8 percent of the banks' equity and liabilities. Depending on the structure of the bank's balance sheet, this preliminary requirement could have entailed a bail-in of senior liabilities. The use of public funds in the context of a similar operation conducted in liquidation is instead regulated under the State aid framework, which requires a preliminary contribution of equity and junior debt only. In both the case of Popular and the case of the two Italian banks, senior debt was not touched. But Banco Popular was resolved under BRRD, and the sale of business was accompanied by a €7 billion capital raise from the acquiring bank (Santander) and a €3.3 billion bail-in of equity and debt. In the case of two Italian banks, which were dealt with under national insolvency law, equity and junior debt were wiped out but the acquiring bank (Intesa) benefitted from publicly financed liquidation aid.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.564,
+                0.544,
+                0.588
+            ],
+            "angle": 0,
+            "content": "4 Question raised"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.604,
+                0.898,
+                0.728
+            ],
+            "angle": 0,
+            "content": "Since the scope of EU law regulating the use of public money in resolution and liquidation is different, a substantially similar operation conducted under these two different frameworks can lead to very different outcomes for (i) the acquiring bank; (ii) the banks' creditors; and (iii) the taxpayers. The distinction between resolution and liquidation is ultimately based on the existence of public interest, an assessment that is the task of the SRB. In this section we look at the SRB's assessments in the cases of Veneto Banca and Banca Popolare di Vicenza, and at the implications national insolvency frameworks might have on the clarity of EU rules in the context of banking union.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.741,
+                0.624,
+                0.757
+            ],
+            "angle": 0,
+            "content": "4.1 Critical functions and public interest"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.759,
+                0.9,
+                0.789
+            ],
+            "angle": 0,
+            "content": "A closer look at the cases of Veneto Banca and Popolare di Vicenza reveals a friction in terms of the presence of a public interest as viewed by the SRB and as viewed by the Italian government.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.79,
+                0.895,
+                0.851
+            ],
+            "angle": 0,
+            "content": "A key element in the assessment of whether there is a public interest is the criticality of specific functions performed by the banks that are failing or likely to fail. Commission Regulation 2016/778 defines a function as critical when: (i) it is “provided by an institution to third parties not affiliated to the institution or group”; and (ii) “a sudden disruption of that",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.301,
+                0.883,
+                0.409,
+                0.896
+            ],
+            "angle": 0,
+            "content": "11 Art. 32(4) BRRD."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.105,
+                0.946
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.082,
+                0.898,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.096,
+                0.897,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.112,
+                0.894,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.127,
+                0.878,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.142,
+                0.877,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.158,
+                0.9,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.893,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.894,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.873,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.896,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.235,
+                0.876,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.252,
+                0.879,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.267,
+                0.869,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.282,
+                0.888,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.431,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.313,
+                0.875,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.329,
+                0.888,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.344,
+                0.871,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.877,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.374,
+                0.873,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.391,
+                0.88,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.405,
+                0.893,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.422,
+                0.88,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.437,
+                0.901,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.451,
+                0.871,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.468,
+                0.901,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.894,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.499,
+                0.822,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.565,
+                0.542,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.607,
+                0.893,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.622,
+                0.888,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.882,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.652,
+                0.892,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.669,
+                0.882,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.683,
+                0.882,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.895,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.715,
+                0.507,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.742,
+                0.62,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.897,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.896,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.791,
+                0.862,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.807,
+                0.867,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.823,
+                0.88,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.838,
+                0.889,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.08,
+                0.904,
+                0.14
+            ],
+            "angle": 0,
+            "content": "function would likely have a material negative impact on third parties, give rise to contagion or undermine the general confidence of market participants because of the systemic relevance of the function for third parties and the systemic relevance of the institution or group in providing the function.\"",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.142,
+                0.898,
+                0.248
+            ],
+            "angle": 0,
+            "content": "The SRB decision, published on 23 June 2017, states that a public interest was not present in the cases of Veneto Banca and Popolare di Vicenza, because neither bank provides critical functions, and their failure would not be expected to have a significant adverse impact on financial stability. With respect to the functions identified by the institutions as critical – ie deposit taking, lending activities and payment services – the SRB concluded that these are provided to a limited number of third parties and can be replaced in an acceptable manner and within a reasonable timeframe.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.25,
+                0.901,
+                0.464
+            ],
+            "angle": 0,
+            "content": "The assessment of the financial stability implications largely looks at the extent of the two banks' systemic relevance and interconnectedness. A previous SRB assessment – based on information available at the end of 2015 – deemed liquidation under normal insolvency procedure not credible, mostly because of the potential adverse impact on market confidence and the risk of contagion spreading to other credit institutions\\(^{12}\\). For both banks, the SRB's assessment changed in light of significant developments during 2016, which reduced the banks' systemic relevance\\(^{13}\\). In particular, the SRB highlighted that despite significant deposit outflows since the beginning of 2016, deposit volumes in Italy remained relatively stable, suggesting that the two banks' deposit outflows were absorbed by other institutions in Italy. This is taken by the SRB also as evidence supporting the view that the deposit-taking function of the two banks was not critical, because it could be replaced within a reasonable timeframe by some of the active credit institutions in the regions concerned, limiting the potential damage to the real economy and the financial markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.465,
+                0.885,
+                0.495
+            ],
+            "angle": 0,
+            "content": "In looking at the effect of liquidation on financial stability, the SRB focused on Italy as a whole, but also stressed that:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.32,
+                0.512,
+                0.881,
+                0.604
+            ],
+            "angle": 0,
+            "content": "“despite higher market shares at the regional level, it has to be noted that the market share of the Banks, even in the core region of Veneto, has deteriorated without having a measurable impact as evidenced by key economic indicators. Furthermore, substitutability of the deposit and lending functions in the Veneto region is expected to be high due to the large number of credit institutions active in the region.”\n[author's emphasis]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.62,
+                0.906,
+                0.696
+            ],
+            "angle": 0,
+            "content": "In its assessment, the SRB thus excluded the notion that liquidation would have a systemic impact at national level, and also seemed to dismiss the possibility of a significant impact at the local level. The Italian Government's Decree, published on 25 June and converted into law in July 2017, takes an opposite view. The introductory recitals in the Italian Decree (Italian Parliament, 2017) state that:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.32,
+                0.712,
+                0.875,
+                0.805
+            ],
+            "angle": 0,
+            "content": "“Without measures of public support, the placement of [the two banks] into a forced administrative liquidation would lead to the destruction of value of the banks, with consequent serious losses for non-professional creditors that are not protected nor preferred, and it would entail a sudden interruption in the provision of credit to businesses and families with negative repercussions of economic and social character, as well as on employment”. [author’s translation]",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.87,
+                0.648,
+                0.883
+            ],
+            "angle": 0,
+            "content": "12 SRB (2017a), recital (19) page 5; SRB (2017c), recital (19) page 5."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.884,
+                0.489,
+                0.896
+            ],
+            "angle": 0,
+            "content": "13 SRB(2017a), recital (50), page 8."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.935,
+                0.105,
+                0.946
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.081,
+                0.903,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.097,
+                0.888,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.112,
+                0.898,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.127,
+                0.386,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.142,
+                0.895,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.158,
+                0.896,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.875,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.19,
+                0.879,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.88,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.886,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.236,
+                0.53,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.251,
+                0.872,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.267,
+                0.886,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.282,
+                0.888,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.877,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.313,
+                0.888,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.327,
+                0.877,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.344,
+                0.885,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.876,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.376,
+                0.886,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.39,
+                0.897,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.406,
+                0.895,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.422,
+                0.898,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.437,
+                0.867,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.453,
+                0.423,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.467,
+                0.883,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.482,
+                0.489,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.327,
+                0.514,
+                0.878,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.529,
+                0.836,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.545,
+                0.877,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.56,
+                0.875,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.575,
+                0.823,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.591,
+                0.457,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.621,
+                0.904,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.891,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.653,
+                0.904,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.668,
+                0.878,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.684,
+                0.483,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.327,
+                0.714,
+                0.863,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.729,
+                0.862,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.745,
+                0.849,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.761,
+                0.872,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.777,
+                0.865,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.792,
+                0.621,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.32,
+                0.079,
+                0.874,
+                0.125
+            ],
+            "angle": 0,
+            "content": "[Consequently,] “there is the extraordinary need and urgency to adopt measures aimed at allowing the orderly exit of the banks from the market and avoiding a serious disturbance to the local economy”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.141,
+                0.904,
+                0.294
+            ],
+            "angle": 0,
+            "content": "The view of the Italian government is reiterated in MEF (2017) where, in discussing the state aid measures implemented, the €3.5 billion support to Banca Intesa is described as “fundamental because it is precisely this intervention that guarantees the continuity of provision of credit to the present customers of the two banks (families, businesses, artisans)”. But this seems to contradict the SRB’s conclusion about the substitutability – even at the local level – of the banks’ functions. Ultimately, the justification for the state aid provided in the Italian case hinges on the government’s own assessment of local effects of liquidation. The wording of the decree seems to contradict the SRB’s own view about the banks’ critical functions: while the SRB identified no public interest that would justify resolution, the national government identified enough public interest to justify sizable state aid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.296,
+                0.907,
+                0.589
+            ],
+            "angle": 0,
+            "content": "A first question raised by the Veneto Banca and Banca Popolare di Vicenza cases is thus whether the definition of critical functions and the applicable assessment criteria are sufficiently clear at EU level. Here a distinction is worth making. While the definition of critical functions seems to be clear insofar as it concerns the SRB's assessment of the existence of public interest, it is not equally clear what role it plays in the EU discipline on liquidation aid, which is mostly contained in the Commission's 2013 Communication. The rationale for allowing Member States to provide liquidation aid is laid out in European Commission (2017), according to which: \"outside the European banking resolution framework, it is for Member States to decide whether they consider a bank exit to have a serious impact on the regional economy, e.g. on the financing of small and medium enterprises in the regional economy, and whether they wish to use national funds to mitigate these effects.\" The 2013 Communication, however, does not include guidelines or on how this decision should be taken. In the absence of clarity on what constitutes a reasonable \"serious impact on the regional economy\" the rules on liquidation aid leave room for potentially controversial results. This in turn raises the question of whether the SRB itself should be tasked with providing an explicit assessment of the impact of liquidation at the local level. This would have an obvious benefit in terms of clarity of the assessments underlying decisions to grant liquidation aid, but it would be best complemented by a harmonisation of insolvency frameworks, which currently differ significantly at the national level (see next section).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.602,
+                0.668,
+                0.619
+            ],
+            "angle": 0,
+            "content": "4.2 What are normal insolvency proceedings?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.62,
+                0.904,
+                0.758
+            ],
+            "angle": 0,
+            "content": "In the BRRD and the SRMR, normal insolvency proceedings \\( ^{14} \\) are the benchmark scenario against which the (exceptional) alternative of resolution is assessed. Article 74 of the BRRD and Article 15(1) of the SRMR state that “no creditor shall incur greater loss than would have been incurred if the entity had been wound up (...) under normal insolvency proceedings” (no creditor worse off principle). Article 20(16) and 20(17) SRMR provide for a valuation to be conducted to assess whether the treatment of shareholders and creditors under normal insolvency proceedings would differ from that under resolution. Importantly, Article 20(18) of the SRMR states that the valuation of the insolvency proceedings scenario should disregard any extraordinary public financial support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.759,
+                0.906,
+                0.82
+            ],
+            "angle": 0,
+            "content": "Unlike resolution, however, insolvency remains regulated at national level by national insolvency laws. This creates two potential problems. First, the insolvency regimes of different countries differ (see McCormack et al, 2014, for a detailed legal perspective). As mentioned in section 3, Italian law provides for several insolvency procedures, where banks and other",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.844,
+                0.887,
+                0.896
+            ],
+            "angle": 0,
+            "content": "14 Article 2(47) of BRRD states that: “normal insolvency proceedings’ means collective insolvency proceedings which entail the partial or total divestment of a debtor and the appointment of a liquidator or an administrator normally applicable to institutions under national law and either specific to those institutions or generally applicable to any natural or legal person.”"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.935,
+                0.106,
+                0.945
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.08,
+                0.871,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.097,
+                0.869,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.112,
+                0.502,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.144,
+                0.877,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.903,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.173,
+                0.897,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.896,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.206,
+                0.886,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.871,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.878,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.251,
+                0.889,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.267,
+                0.886,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.283,
+                0.679,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.298,
+                0.884,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.313,
+                0.882,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.329,
+                0.878,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.345,
+                0.875,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.36,
+                0.896,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.375,
+                0.904,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.39,
+                0.87,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.406,
+                0.877,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.421,
+                0.87,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.437,
+                0.891,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.453,
+                0.879,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.9,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.483,
+                0.897,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.499,
+                0.902,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.514,
+                0.884,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.53,
+                0.892,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.544,
+                0.9,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.892,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.576,
+                0.531,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.603,
+                0.664,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.622,
+                0.879,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.637,
+                0.883,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.653,
+                0.888,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.684,
+                0.875,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.699,
+                0.902,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.897,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.729,
+                0.889,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.746,
+                0.551,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.761,
+                0.875,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.776,
+                0.904,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.791,
+                0.886,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.807,
+                0.881,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.08,
+                0.901,
+                0.248
+            ],
+            "angle": 0,
+            "content": "financial institutions – as well as other selected types of enterprises – are subject to a regime called “forced administrative liquidation” (Liquidazione Coatta Amministrativa, LCA). Under the LCA framework, liquidators are nominated by the Bank of Italy, which enjoys a high degree of oversight over the process. Unlike other procedures – and unlike what happens in other countries such as Spain – there is no delegated judge, and the LCA is mainly administrative in nature (Baker McKenzie, 2017; see Box 1 for details). This probably reflects the intention to ensure a swift liquidation for entities that are perceived as critical, taking them out of the traditionally long Italian judicial procedure. The Italian Parliament voted on 11 October 2017 on a new law that will streamline insolvency and bankruptcy in Italy. Among other changes, the new law reduces the scope of the LCA, but does not change its applicability to banks and financial institutions \\( ^{15} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.278,
+                0.583,
+                0.295
+            ],
+            "angle": 0,
+            "content": "BOX 1: Liquidation in Italy and in Spain"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.311,
+                0.904,
+                0.588
+            ],
+            "angle": 0,
+            "content": "In Italy, liquidazione coatta amministrativa (LCA) is the ordinary liquidation proceeding for banks and financial institutions, governed by Legislative Decree no. 385/1993 (the Italian Banking Act) and by specific provisions of the Italian Transposing Law and of the Italian statute governing insolvencies, Royal Decree no. 267/1942. LCA is initiated by issuance of a decree by the Italian Ministry of Economy and Finance, and the first step is the appointment by the Bank of Italy of one or more receivers and a supervisory committee to monitor the liquidation process. The receivers replace the former management, ascertain the institution's liabilities, carry out the liquidation of assets, take any legal action in respect of the possible liabilities of the former management and auditors and periodically report to the Bank of Italy. Following the issuance of the decree and the appointment of the receivers, no acts of enforcement may be initiated or continued by creditors, and all payments due from the financial institution are suspended. Within 30 days of the receivers' appointment, all creditors are formally notified of their claims; the statement of liabilities, consisting of a list of the creditors admitted to the LCA proceedings, is then filed by the receivers with Bank of Italy. The statement also identifies the creditors' ranking and the size of their claims. Transfers can be performed at any stage of LCA, including prior to the filing of the definitive statement of liabilities. The receivers may carry out the liquidation either by selling individual assets or through sale of aggregates of assets and liabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.589,
+                0.902,
+                0.805
+            ],
+            "angle": 0,
+            "content": "In Spain, insolvency law establishes one single insolvency procedure (concurso), applied to any insolvent debtor, which includes a common phase during which the insolvency administrator is appointed, an inventory of the assets and creditors is performed, and claims are ranked. The insolvency process is supervised by the Spanish Mercantile Courts, which are competent to hear and decide on insolvency proceedings of a credit institution. Differently from the Bank of Italy – which appoints the liquidators – the Fund for Orderly Bank Restructuring (FROB)'s role in normal insolvency procedure is limited to presenting the Court with a proposed list of insolvency administrators from which the Court must select the appointee. The treatment and safeguards provided to the various classes of creditors and the ranking of their claims in insolvency proceedings of Spanish credit institutions are the same established by the law for creditors or claims relating to any non-banking business subject to insolvency proceedings. The Spanish transposition of the BRRD, however, provides exceptions in the event of an insolvency proceeding of a Spanish credit institution.\nSource: SRB (2017a; 2017b).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.884,
+                0.39,
+                0.895
+            ],
+            "angle": 0,
+            "content": "15 DDL n. 2681.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.935,
+                0.105,
+                0.945
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.08,
+                0.892,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.097,
+                0.898,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.112,
+                0.861,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.128,
+                0.885,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.143,
+                0.875,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.159,
+                0.872,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.174,
+                0.882,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.19,
+                0.868,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.204,
+                0.881,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.22,
+                0.892,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.236,
+                0.552,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.28,
+                0.581,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.313,
+                0.878,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.328,
+                0.9,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.343,
+                0.871,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.359,
+                0.891,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.375,
+                0.9,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.39,
+                0.9,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.406,
+                0.888,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.422,
+                0.888,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.437,
+                0.872,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.452,
+                0.87,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.467,
+                0.882,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.481,
+                0.889,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.499,
+                0.897,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.514,
+                0.885,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.53,
+                0.901,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.545,
+                0.891,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.56,
+                0.883,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.623,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.591,
+                0.866,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.606,
+                0.888,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.621,
+                0.894,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.637,
+                0.899,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.653,
+                0.883,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.668,
+                0.888,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.684,
+                0.886,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.699,
+                0.895,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.714,
+                0.891,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.729,
+                0.897,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.745,
+                0.889,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.761,
+                0.874,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.776,
+                0.717,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.793,
+                0.446,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.885,
+                0.389,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.079,
+                0.904,
+                0.171
+            ],
+            "angle": 0,
+            "content": "A second issue related to the national character of insolvency frameworks is the potential for them to be altered under national law. In its assessments published on 23 June 2017 \\( ^{16} \\) , the SRB stated that in order to assess the need to take resolution action based on the resolution objectives of protecting depositors and investors and protecting client assets and client funds, a comparison was made between the hypothetical resolution action and LCA proceedings. The SRB specifically states that:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.32,
+                0.187,
+                0.877,
+                0.248
+            ],
+            "angle": 0,
+            "content": "since “normal insolvency proceedings (ie LCA) allow for the transfer to a purchaser of the same portfolio which could have been transferred in case of resolution action, it can be concluded that LCA proceedings could meet these two resolution objectives to the same extent” \\( ^{17} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.321,
+                0.265,
+                0.512,
+                0.278
+            ],
+            "angle": 0,
+            "content": "The SRB also observes that \\( ^{18} \\) :",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.32,
+                0.295,
+                0.888,
+                0.341
+            ],
+            "angle": 0,
+            "content": "\"Normal Italian insolvency proceedings would achieve the resolution objectives to the same extent as resolution, since such proceedings would also ensure a comparable degree of protection for depositors, investors, other customers, clients' funds and assets.\"",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.357,
+                0.898,
+                0.419
+            ],
+            "angle": 0,
+            "content": "So, in the context of the SRB's assessment, “winding-up of the institution under normal insolvency proceedings” refers for the SRB to the LCA proceedings\\(^{19}\\), and when discussing the Italian LCA and its degree of creditor protections, the SRB makes no mention of additional public funds\\(^{20}\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.319,
+                0.434,
+                0.887,
+                0.543
+            ],
+            "angle": 0,
+            "content": "However, the opening recitals of the request to convert into law the Italian Decree of 25 June 2017 \\( ^{21} \\) state that: “[...] the banks must be put into LCA as provided [...for by] the [Italian] Banking Law [Testo Unico Bancario]. However, the ordinary liquidation procedure in atomistic form would imply very serious damages to the economy: it is therefore appropriate to envisage a solution that allows managing the crisis of the two groups with additional instruments with respect to those foreseen in the Banking Law” [author’s translation ]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.558,
+                0.904,
+                0.604
+            ],
+            "angle": 0,
+            "content": "This wording suggests that the regime actually implemented was a modified version of the ordinary liquidation proceedings, by the addition of liquidation aid. The recital of the actual Decree text offers a similar view when pointing out that:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.319,
+                0.619,
+                0.88,
+                0.712
+            ],
+            "angle": 0,
+            "content": "“Without measures of public support, the placement of [the two banks] into a forced administrative liquidation would lead to the destruction of value of the banks, with consequent serious losses for non-professional creditors that are not protected nor preferred, and it would entail a sudden interruption in the provision of credit to businesses and families with negative repercussions of economic and social character, as well as on employment.” [author’s translation]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.728,
+                0.897,
+                0.758
+            ],
+            "angle": 0,
+            "content": "The effect of this has been that senior creditors were actually better off in insolvency than they would have been in a resolution. The peculiarity of this outcome was noticed – among",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.792,
+                0.476,
+                0.805
+            ],
+            "angle": 0,
+            "content": "16 SRB (2017a) and SRB (2017c)"
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.805,
+                0.528,
+                0.818
+            ],
+            "angle": 0,
+            "content": "17 SRB (2017a; 2017c), recital (51), page 9."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.818,
+                0.536,
+                0.832
+            ],
+            "angle": 0,
+            "content": "18 SRB (2017d); see also SRB(2017a; 2017c)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.831,
+                0.487,
+                0.844
+            ],
+            "angle": 0,
+            "content": "19 SRB (2017a; 2017c) Article 4(1)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.298,
+                0.844,
+                0.765,
+                0.857
+            ],
+            "angle": 0,
+            "content": "20 SRB (2017a; 2017c), Section 2.2.1 ('Description of the Italian insolvency proceedings')."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.857,
+                0.906,
+                0.896
+            ],
+            "angle": 0,
+            "content": "21 See Mesnard et al (2017): http://www.camera.it/leg17/995?sezione=documenti&tipoDoc=lavori_testo_pdl&idLegislatura=17&codice=17PDL0053070&back_to=http://www.camera.it/leg17/126?tab=2-e-leg=17-e-idDocumento=4565-e-sede=-e-tipo=#RL."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.082,
+                0.893,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.096,
+                0.875,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.886,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.128,
+                0.902,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.883,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.158,
+                0.504,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.189,
+                0.866,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.204,
+                0.873,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.219,
+                0.852,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.236,
+                0.419,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.266,
+                0.509,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.328,
+                0.298,
+                0.862,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.314,
+                0.883,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.328,
+                0.828,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.36,
+                0.878,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.375,
+                0.897,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.39,
+                0.881,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.405,
+                0.397,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.437,
+                0.866,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.451,
+                0.855,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.466,
+                0.879,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.482,
+                0.874,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.499,
+                0.853,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.513,
+                0.884,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.529,
+                0.404,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.56,
+                0.901,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.891,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.59,
+                0.661,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.62,
+                0.852,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.638,
+                0.849,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.653,
+                0.864,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.668,
+                0.872,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.683,
+                0.876,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.699,
+                0.55,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.729,
+                0.895,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.744,
+                0.885,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.079,
+                0.901,
+                0.218
+            ],
+            "angle": 0,
+            "content": "others – by the chairman of the European Banking Authority Andrea Enria who stressed that creditors in liquidation should not be better off than in resolution \\( ^{22} \\) . The fact that insolvency law remains a national prerogative, coupled with the abovementioned lack of clarity in EU legislation about liquidation aid, creates uncertainty about the extent of possible amendments by national governments with different propensities to use public funds, and the ensuing consequences for the banks, their private creditors and taxpayers. To ensure that banks failing in different countries are liquidated under the same conditions and thus know what to expect, national insolvency laws should be harmonised, preferably by introducing an EU insolvency framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.301,
+                0.271,
+                0.499,
+                0.294
+            ],
+            "angle": 0,
+            "content": "5 Conclusions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.311,
+                0.905,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Under the current EU frameworks for dealing with banks that are failing or likely to fail, resolution is seen as an exception to be granted only in case liquidation under national insolvency proceedings would not be feasible or warranted. This is part of a more general shift towards less involvement of public funds in managing banking crises. But resolution and liquidation differ substantially when it comes to the scope of legislation that is applicable to the use of public funds. While resolution is governed by the EU Bank Recovery and Resolution Directive (BRRD), liquidation is regulated by national insolvency laws. While the use of public funds in resolution would be subject to both BRRD and state aid rules – thus requiring a preliminary bail-in up to at least 8 percent of total liabilities – the use of public funds in liquidation is only subject to state aid burden-sharing requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.465,
+                0.898,
+                0.556
+            ],
+            "angle": 0,
+            "content": "Ultimately, the distinction between liquidation and resolution relies on the SRB's assessment of whether there is public interest, which in turn hinges on a determination of whether the functions performed by the failing institution are critical. In this paper, we have looked at the practical application of the SRMR's requirements in the liquidation of the two Italian banks, Banca Popolare di Vicenza and Veneto Banca, highlighting the existence of two problematic issues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.558,
+                0.903,
+                0.696
+            ],
+            "angle": 0,
+            "content": "First, while the definition of critical functions seems clear as regards the SRB's assessment of the existence of a public interest, it is not equally clear what role it plays in the EU discipline on liquidation aid, as the 2013 Banking Communication does not include guidelines or on how the local effect of liquidation should be evaluated. In the absence of clarity on what constitutes a serious impact on the regional economy, the rules on liquidation aid leave room for governments to effectively re-instate at the local level the public interest that the SRB has denied at national (or, in the Italian case, even at the regional) level. One way to overcome this problem could be to task the SRB with providing an explicit assessment of the impact of liquidation at the local level, to ensure the assessment is homogeneous.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.697,
+                0.901,
+                0.836
+            ],
+            "angle": 0,
+            "content": "The second, related, issue is that the Veneto and Vicenza cases highlight the problematic nature of a two-tier framework in which resolution is dealt with under EU law and liquidation is left for diverse national insolvency procedures. The problem with this is twofold. On one hand, the difference in insolvency frameworks implies that failing banks would face different insolvency proceedings in different countries. For example, in Spain, banks would face a court-based process, while the Italian special regime for banks is essentially administrative. The fact that insolvency is regulated under national law also makes it easier for governments to amend the ordinary insolvency framework. This could give rise to peculiar situations whereby senior creditors fare better in insolvency than they would in resolution, such as in",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.857,
+                0.882,
+                0.896
+            ],
+            "angle": 0,
+            "content": "22 La Stampa, 'Enria (Eba): \"We warned Italy in 2014 about risks for banks\", available at http://www.lastampa.it/2017/07/19/esteri/lastampa-in-english/enria-eba-we-warned-italy-in-about-risks-for-banks-ZqtCBNa7Yp1d-PEtxY5CHWI/pagina.html."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.112,
+                0.946
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.081,
+                0.894,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.096,
+                0.889,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.112,
+                0.88,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.128,
+                0.872,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.86,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.159,
+                0.874,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.891,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.898,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.205,
+                0.471,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.27,
+                0.497,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.313,
+                0.895,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.329,
+                0.903,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.344,
+                0.887,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.89,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.375,
+                0.88,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.39,
+                0.901,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.406,
+                0.898,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.422,
+                0.888,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.437,
+                0.898,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.452,
+                0.62,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.467,
+                0.892,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.482,
+                0.894,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.498,
+                0.882,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.514,
+                0.883,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.892,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.545,
+                0.397,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.56,
+                0.9,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.575,
+                0.877,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.591,
+                0.895,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.606,
+                0.886,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.622,
+                0.9,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.892,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.652,
+                0.878,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.684,
+                0.761,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.699,
+                0.89,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.715,
+                0.9,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.729,
+                0.88,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.746,
+                0.88,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.761,
+                0.892,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.776,
+                0.887,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.791,
+                0.894,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.808,
+                0.86,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.823,
+                0.883,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.079,
+                0.894,
+                0.109
+            ],
+            "angle": 0,
+            "content": "the cases of Veneto and Vicenza. In order to avoid this uncertainty, the best option would be to further harmonise insolvency laws, possibly introducing an EU-wide regime.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.111,
+                0.891,
+                0.188
+            ],
+            "angle": 0,
+            "content": "For banking union to function properly, banks, creditors and taxpayers deserve to have certainty about the rules governing liquidation. This objective would best be served by a single EU insolvency regime to complement the current EU framework for resolution, and by a clarification of the extent to which Member States have discretion to establish the local public interest when it comes to liquidation aid.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.301,
+                0.24,
+                0.463,
+                0.263
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.286,
+                0.904,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Baker McKenzie (2017) 'Italy', in Global restructuring & insolvency guide, available at: http://restructuring.bakermckenzie.com/wp-content/uploads/sites/23/2017/01/Global-Restructuring-Insolvency-Guide-12-2016New-Logo-Italy.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.337,
+                0.898,
+                0.379
+            ],
+            "angle": 0,
+            "content": "Bank of Italy (2017) 'Informazioni sulla soluzione della crisi di Veneto Banca S.p.A. e Banca Popolare di Vicenza S.p.A. Memoria per la VI Commissione Finanze della Camera dei Deputati', July, available at www.bancaditalia.it/media/notizie/2017/Nota-Venetobanca-e-BPV.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.388,
+                0.87,
+                0.416
+            ],
+            "angle": 0,
+            "content": "ECB (2017) 'ECB deemed Veneto Banca and Banca Popolare di Vicenza failing or likely to fail', press release, 23 June, European Central Bank"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.425,
+                0.862,
+                0.452
+            ],
+            "angle": 0,
+            "content": "European Commission (2017) 'State aid: How the EU rules apply to banks with a capital shortfall - Factsheet,' 25 June"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.462,
+                0.883,
+                0.504
+            ],
+            "angle": 0,
+            "content": "European Commission (2015) 'State Aid SA.41924 (2015/N) (ex 2015/PN) - Italy Resolution (via liquidation) of Banca Romagna Cooperativa - Credito Cooperativo Romagna Centro e Macerone - Società Cooperativa', 2 July"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.513,
+                0.897,
+                0.556
+            ],
+            "angle": 0,
+            "content": "European Commission (2013) 'Communication from the Commission on the application, from 1 August 2013, of State aid rules to support measures in favour of banks in the context of the financial crisis ('Banking Communication'); 2013/C 216/01, 30 July"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.564,
+                0.906,
+                0.606
+            ],
+            "angle": 0,
+            "content": "Italian Parliament (2017) ‘Disegno di legge: “Conversione in legge del decreto-legge 25 giugno 2017, n. 99, recante disposizioni urgenti per la liquidazione coatta amministrativa di Banca Popolare di Vicenza S.p.A. e di Veneto Banca S.p.A.”"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.615,
+                0.884,
+                0.658
+            ],
+            "angle": 0,
+            "content": "McCormack, G., A. Keay, S. Brown and J. Dhlgreen (2016) Study on a new approach to business failure and insolvency. Comparative legal analysis of the Member States' relevant provisions and practices, European Commission"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.667,
+                0.893,
+                0.709
+            ],
+            "angle": 0,
+            "content": "Ministry of Economy and Finance, Italy (2017), The liquidation of Banca Pop. di Vicenza and Veneto Banca, 2017, available at: http://www.mef.gov.it/inevidenza/documenti/Liquidation_of_banks_in_Veneto.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.718,
+                0.898,
+                0.745
+            ],
+            "angle": 0,
+            "content": "Merler, S. (2016) 'Italy,' chapter in Bank resolution and bail-in in the EU: selected case studies pre and post BRRD, World Bank FinSAC report"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.755,
+                0.795,
+                0.769
+            ],
+            "angle": 0,
+            "content": "Merler, S. (2017a) 'Italian banks: not quiet on the eastern front', Bruegel Blog, 31 March"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.777,
+                0.782,
+                0.791
+            ],
+            "angle": 0,
+            "content": "Merler, S. (2017b) 'A tangled tale of bank liquidation in Venice', Bruegel Blog, 26 June"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.8,
+                0.872,
+                0.828
+            ],
+            "angle": 0,
+            "content": "Mesnard, B., A. Margerit and M. Magnus (2017) 'The orderly liquidation of Veneto Banca and Banca Popolare di Vicenza,' European Parliament Briefing"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.837,
+                0.893,
+                0.865
+            ],
+            "angle": 0,
+            "content": "SRB (2017) 'The SRB will not take resolution action in relation to Banca Popolare di Vicenza and Veneto Banca', press release, 23 June, Single Resolution Board"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.299,
+                0.874,
+                0.897,
+                0.888
+            ],
+            "angle": 0,
+            "content": "SRB (2017a) 'Decision of the Single Resolution Board in its executive session of 23 June 2017 concerning"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.081,
+                0.892,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.097,
+                0.811,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.112,
+                0.881,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.128,
+                0.866,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.143,
+                0.879,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.888,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.609,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.24,
+                0.462,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.321,
+                0.066,
+                0.891,
+                0.094
+            ],
+            "angle": 0,
+            "content": "the assessment of the conditions for resolution in respect of Banca Popolare di Vicenza S.p.A., non-confidential version', SRB/EES/2017/12, Single Resolution Board"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.103,
+                0.891,
+                0.144
+            ],
+            "angle": 0,
+            "content": "SRB (2017b) 'Decision of the Single Resolution Board in its executive session of 7 June 2017 concerning the adoption of a resolution scheme in respect of Banco Popular Espanol S.A., non-confidential version', SRB/EES/2017/08, Single Resolution Board"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.154,
+                0.895,
+                0.196
+            ],
+            "angle": 0,
+            "content": "SRB (2017c) 'Decision of the Single Resolution Board in its executive session of 23 June 2017 concerning the assessment of the conditions for resolution in respect of Veneto Banca S.p.A., non-confidential version', SRB/EES/2017/11, Single Resolution Board"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.205,
+                0.86,
+                0.232
+            ],
+            "angle": 0,
+            "content": "SRB (2017d) 'Notice summarising the effects of the decision taken in respect of Banca Popolare di Vicenza S.p.A,' Single Resolution Board",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.094,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°01 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.207,
+                0.859,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.221,
+                0.547,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,309 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "IMF",
+    "cover_short_title": "英国国债收益率为何跑",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "投资者->读者 x1",
+      "收益率->回报表现 x2",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x3",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "国内经济->国内宏观环境 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "IMF：英国国债回报业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b.pdf",
+      "cleaned_source_title": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+      "institution_name": "IMF",
+      "required_terms": [],
+      "deterministic_fallback": "IMF：0021IMFWhyHaveUKGiltYie",
+      "raw_candidates": [
+        "IMF：英国国债回报表现领先G7同侪的驱动因素",
+        "IMF：英国国债回报表现领先G7同侪-2022年后期限溢价主导",
+        "IMF：英国国债回报表现领先G7同侪-期限溢价与读者结构变化"
+      ],
+      "cleaned_candidates": [
+        "IMF：英国国债回报表现领先G7同侪的驱动因素",
+        "IMF：英国国债回报表现领先G7同侪-2022年后期限溢价主导",
+        "IMF：英国国债回报表现领先G7同侪-期限溢价与读者结构变化",
+        "IMF：0021IMFWhyHaveUKGiltYie",
+        "IMF：IMF在2026年7月发布的国别报告中拆解了这一现象的构成"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "IMF：0021IMFWhyHaveUKGiltYie",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "IMF：IMF在2026年7月发布的国别报告中拆解了这一现象的构成",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "IMF：英国国债回报业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "IMF：英国国债回报表现领先G7同侪的驱动因素",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "IMF：英国国债回报业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "经合组织",
+    "cover_short_title": "政府参与可持续计划，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "wechat_title": "经合组织：区域环境与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b.pdf",
+      "cleaned_source_title": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+      "institution_name": "经合组织",
+      "required_terms": [],
+      "deterministic_fallback": "经合组织：0022OECDGovernmentinvo",
+      "raw_candidates": [
+        "经合组织：政府参与可持续倡议情况",
+        "经合组织：1078项可持续倡议中三成有政府参与",
+        "经合组织：可持续倡议政府参与结构分析"
+      ],
+      "cleaned_candidates": [
+        "经合组织：政府参与可持续倡议情况",
+        "经合组织：1078项可持续倡议中三成有政府参与",
+        "经合组织：可持续倡议政府参与结构分析",
+        "经合组织：0022OECDGovernmentinvo",
+        "经合组织：经合组织2026年7月发布的一份政策简报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "经合组织：1078项可持续倡议中三成有政府参与",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "经合组织：可持续倡议政府参与结构分析",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "经合组织：0022OECDGovernmentinvo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "经合组织：经合组织2026年7月发布的一份政策简报",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "经合组织：区域环境与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "经合组织：政府参与可持续倡议情况",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive"
+      ],
+      "final_title_after_wording_guard": "经合组织：区域环境与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "世界贸易组织",
+    "cover_short_title": "乌兹别克斯坦入世谈判",
+    "cover_subtitle": "乌兹别克斯坦2026目标清晰",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+      "cleaned_source_title": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+      "institution_name": "世界贸易组织",
+      "required_terms": [],
+      "deterministic_fallback": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+      "raw_candidates": [
+        "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+        "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+        "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段"
+      ],
+      "cleaned_candidates": [
+        "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+        "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+        "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段",
+        "世界贸易组织：0023WTOUzbekistanreaffirms20",
+        "世界贸易组织：1.双边市场准入谈判完成31份协议签署"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "世界贸易组织：乌兹别克斯坦入世谈判签署31份双边协议",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "世界贸易组织：乌兹别克斯坦入世谈判进入文本整合阶段",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        },
+        {
+          "title": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "世界贸易组织：1.双边市场准入谈判完成31份协议签署",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "世界贸易组织：乌兹别克斯坦重申2026年入世目标"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

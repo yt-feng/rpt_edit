@@ -1,0 +1,6284 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.039,
+                0.831,
+                0.076
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.079,
+                0.199,
+                0.679,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Labor Taxation in the\nUnited Kingdom"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.49,
+                0.224,
+                0.512
+            ],
+            "angle": 0,
+            "content": "SIP/2026/074",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.449,
+                0.527,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Thomas McGregor and Philippe Wingender",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.52,
+                0.684
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 24, 2026. This paper is also published separately as IMF Country Report No 26/173.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.822,
+                0.232,
+                0.922
+            ],
+            "angle": 0,
+            "content": "2026\nJUL",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.652,
+                0.81,
+                0.8,
+                0.927
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.918,
+                0.12,
+                0.986,
+                0.883
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.199,
+                0.679,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.25,
+                0.543,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.49,
+                0.224,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.45,
+                0.525,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.595,
+                0.499,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.614,
+                0.518,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.631,
+                0.511,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.649,
+                0.514,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.665,
+                0.466,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.819,
+                0.235,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.865,
+                0.232,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.114,
+                0.127,
+                0.368,
+                0.142
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.773,
+                0.127,
+                0.872,
+                0.141
+            ],
+            "angle": 0,
+            "content": "SIP/2026/074"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.399,
+                0.195,
+                0.6,
+                0.23
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Paper\nEuropean Department"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.287,
+                0.247,
+                0.712,
+                0.282
+            ],
+            "angle": 0,
+            "content": "Labor Taxation in the United Kingdom\nPrepared by Thomas McGregor and Philippe Wingender*",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.345,
+                0.298,
+                0.654,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Romain Duvall\nJuly 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.358,
+                0.846,
+                0.411
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 24, 2026. This paper is also published separately as IMF Country Report No 26/074.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.426,
+                0.874,
+                0.547
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: This paper uses a microsimulation model to assess the revenue potential, labor-supply and distributional effects of alternative labor tax reforms. The scope for new measures to raise significant revenue in the future through a uniform increase in labor taxes, without significantly weakening labor supply, is limited. Targeted increases in marginal tax rates toward the bottom of the earnings distribution could raise more revenue, with lower efficiency losses, but come with an equity trade-off. More fundamental reforms that improve work incentives in line with optimal tax design could deliver higher revenues with a better efficiency-equity trade-off.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.564,
+                0.852,
+                0.599
+            ],
+            "angle": 0,
+            "content": "RECOMMENDED CITATION: McGregor, Thomas and Wingender, Philippe. \"Labor Taxation in the United Kingdom\". IMF Selected Issues Paper 26/074.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.117,
+                0.607,
+                0.882,
+                0.723
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>JEL Classification Numbers:</td><td>H21, H24, H31, J22, C63</td></tr><tr><td>Keywords:</td><td>Labor taxation; optimal taxation; marginal effective tax rates; microsimulation; labor supply; tax-benefit reform; United Kingdom</td></tr><tr><td>Author&#x27;s E-Mail Address:</td><td>TMcGregor@imf.org; PWingender@imf.org</td></tr></table>"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.402,
+                0.198,
+                0.597,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.423,
+                0.215,
+                0.576,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.358,
+                0.25,
+                0.64,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.289,
+                0.266,
+                0.709,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.349,
+                0.3,
+                0.651,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.465,
+                0.316,
+                0.534,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.36,
+                0.843,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.377,
+                0.801,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.395,
+                0.844,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.428,
+                0.841,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.446,
+                0.87,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.464,
+                0.871,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.48,
+                0.832,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.497,
+                0.827,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.515,
+                0.864,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.532,
+                0.229,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.565,
+                0.851,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.584,
+                0.439,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.195,
+                0.524,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPERS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.114,
+                0.301,
+                0.736,
+                0.385
+            ],
+            "angle": 0,
+            "content": "Labor Taxation in the United Kingdom"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.458,
+                0.354,
+                0.489
+            ],
+            "angle": 0,
+            "content": "United Kingdom",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.589,
+                0.693,
+                0.614
+            ],
+            "angle": 0,
+            "content": "Prepared by Thomas McGregor and Philippe Wingender",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.199,
+                0.519,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.734,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.348,
+                0.315,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.458,
+                0.351,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.592,
+                0.688,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.081,
+                0.017,
+                0.178,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.234,
+                0.063,
+                0.828,
+                0.091
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.22,
+                0.123,
+                0.657,
+                0.162
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.183,
+                0.416,
+                0.205
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.209,
+                0.139,
+                0.227
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.236,
+                0.23,
+                0.372,
+                0.253
+            ],
+            "angle": 0,
+            "content": "Approved By"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.235,
+                0.253,
+                0.42,
+                0.271
+            ],
+            "angle": 0,
+            "content": "European Department",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.435,
+                0.233,
+                0.824,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Prepared By Thomas McGregor (EUR) and Philippe"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.435,
+                0.252,
+                0.569,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Wingender (RES)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.242,
+                0.298,
+                0.385,
+                0.321
+            ],
+            "angle": 0,
+            "content": "CONTENTS"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.215,
+                0.34,
+                0.884,
+                0.5
+            ],
+            "angle": 0,
+            "content": "LABOR TAXATION IN THE UK ____ 2\nA. Motivation ____ 2\nB. Labor Taxes in the UK ____ 3\nC. Model and Data ____ 6\nD. Simulation Results ____ 8\nE. Robustness ____ 12\nF. Policy Conclusions ____ 14"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.218,
+                0.52,
+                0.294,
+                0.538
+            ],
+            "angle": 0,
+            "content": "FIGURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.539,
+                0.882,
+                0.558
+            ],
+            "angle": 0,
+            "content": "1. Labor Taxation Across Countries ____ 4",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.559,
+                0.883,
+                0.576
+            ],
+            "angle": 0,
+            "content": "2. Structure of Labor Taxation in the UK 5",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.578,
+                0.882,
+                0.596
+            ],
+            "angle": 0,
+            "content": "3. Labor Tax Reform Scenarios 11",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.596,
+                0.883,
+                0.615
+            ],
+            "angle": 0,
+            "content": "4. Robustness Scenarios 13",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.217,
+                0.634,
+                0.276,
+                0.651
+            ],
+            "angle": 0,
+            "content": "TABLE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.652,
+                0.882,
+                0.671
+            ],
+            "angle": 0,
+            "content": "1. Participation Elasticities by Income Group ____ 7",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.216,
+                0.672,
+                0.883,
+                0.691
+            ],
+            "angle": 0,
+            "content": "2. Targeted 5ppts Marginal Tax Increases Across Income Groups ____9",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.709,
+                0.884,
+                0.728
+            ],
+            "angle": 0,
+            "content": "References 15",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.126,
+                0.656,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.218,
+                0.186,
+                0.414,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.21,
+                0.139,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.237,
+                0.232,
+                0.37,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.239,
+                0.256,
+                0.417,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.434,
+                0.233,
+                0.824,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.434,
+                0.252,
+                0.569,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.24,
+                0.297,
+                0.385,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.524,
+                0.29,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.541,
+                0.484,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.869,
+                0.543,
+                0.879,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.56,
+                0.52,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.87,
+                0.562,
+                0.88,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.58,
+                0.449,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.855,
+                0.579,
+                0.881,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.599,
+                0.403,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.857,
+                0.597,
+                0.882,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.219,
+                0.637,
+                0.274,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.654,
+                0.553,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.869,
+                0.657,
+                0.879,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.22,
+                0.674,
+                0.706,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.869,
+                0.674,
+                0.881,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.713,
+                0.304,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.857,
+                0.711,
+                0.883,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.245,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.116,
+                0.097,
+                0.525,
+                0.121
+            ],
+            "angle": 0,
+            "content": "LABOR TAXATION IN THE UK"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.141,
+                0.883,
+                0.406
+            ],
+            "angle": 0,
+            "content": "With labor tax revenues set to rise steadily over the medium term, the debate over how much additional revenue can be raised from labor taxes, while preserving work incentives and supporting growth, is likely to intensify. This annex seeks to contribute to the current policy debate. It uses a microsimulation model that combines household-level microdata with a detailed representation of the tax and benefit system to assess the revenue potential, labor-supply and distributional effects of alternative reforms. There are three main findings. First, the scope for new measures to raise significant revenue in the future through a uniform increase in labor taxes, without significantly weakening labor supply, is limited. Second, targeted increases in marginal tax rates toward the bottom of the earnings distribution could raise more revenue, with lower efficiency losses, but come with an equity trade-off. Third, more fundamental reforms that improve work incentives in line with optimal tax design could deliver higher revenues with a better efficiency-equity trade-off. These findings are robust to different modelling assumptions about the labor supply elasticities as well as the degree of social aversion towards inequality, although the key trade-offs can differ depending on the structural assumptions used.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.423,
+                0.272,
+                0.442
+            ],
+            "angle": 0,
+            "content": "A. Motivation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.459,
+                0.882,
+                0.686
+            ],
+            "angle": 0,
+            "content": "1. As one of the largest and most reliable sources of public revenues, labor taxation is likely to remain at the center of the UK fiscal debate. Labor taxes—income tax and national insurance contributions—account for just under half of all tax revenues in the UK, or around 16 percent of GDP. Labor income is, therefore, an obvious candidate for raising revenue to reduce the deficit and meet growing spending pressures. But the UK is already relying heavily on this channel: despite collecting somewhat less from labor taxes than many OECD peers, revenues have increased substantially in recent years and are projected to rise further as frozen thresholds broaden the tax base and push more income into higher bands. Taxing labor also creates disincentives to work and increase effort. This creates a tension between revenue needs and the growth agenda: additional increases may be a priori fiscally attractive, but their economic cost will depend critically on how they interact with the existing tax and benefit system, and how they affect people's decisions to work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.705,
+                0.876,
+                0.876
+            ],
+            "angle": 0,
+            "content": "2. The extent to which higher labor taxation and the design of social benefits may be weighing on labor-market outcomes is already under discussion. Bank of England analysis suggests that the increase in employer NICs announced in the Fall 2024 budget, alongside rises in the National Living Wage, has added to labor costs and contributed to weaker employment growth. Recent work by the Institute for Fiscal Studies suggests these changes may have had particularly strong effects on job opportunities for young people. At the same time, Resolution Foundation analysis suggests that the design of health-related benefits may weaken incentives to work at the margin, particularly where support is more generous than standard unemployment benefits and conditionality is lighter.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.099,
+                0.523,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.143,
+                0.808,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.162,
+                0.849,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.181,
+                0.831,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.2,
+                0.875,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.22,
+                0.827,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.237,
+                0.879,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.257,
+                0.872,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.277,
+                0.865,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.294,
+                0.862,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.314,
+                0.858,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.334,
+                0.866,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.352,
+                0.833,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.371,
+                0.848,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.389,
+                0.16,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.423,
+                0.269,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.46,
+                0.138,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.461,
+                0.879,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.48,
+                0.836,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.499,
+                0.837,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.519,
+                0.865,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.537,
+                0.865,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.555,
+                0.871,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.575,
+                0.858,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.595,
+                0.865,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.612,
+                0.851,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.633,
+                0.845,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.839,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.668,
+                0.164,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.705,
+                0.135,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.706,
+                0.874,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.724,
+                0.832,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.745,
+                0.859,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.764,
+                0.872,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.782,
+                0.845,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.802,
+                0.837,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.82,
+                0.855,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.84,
+                0.845,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.859,
+                0.296,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.884,
+                0.207
+            ],
+            "angle": 0,
+            "content": "3. This debate is likely to intensify in the coming years as spending pressures grow. Demands on public finances are set to increase, driven by defense spending commitments, the climate transition, and an ageing population. In this context, a key question is how much space there is to increase labor taxation under the current structure without exacerbating existing labor-market distortions and undermining the growth agenda. A related question is whether labor taxes should be increased uniformly across, or whether some rebalancing is needed across income brackets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.225,
+                0.883,
+                0.416
+            ],
+            "angle": 0,
+            "content": "4. Modelling the tax system can help assess the trade-offs that tax and benefit reforms create between revenue potential, efficiency, and equity. Raising tax rates can increase revenue, but it may also reduce incentives to work, save, or earn more, lowering economic activity and limiting the revenue gain. At the same time, a more progressive system may improve equity by shifting the burden toward higher earners but can also create sharper distortions if it relies on very high marginal tax rates or abrupt benefit withdrawal. Conversely, depending on how they are designed, reforms that strengthen work incentives may improve efficiency and labor supply but may reduce redistribution or require offsetting measures elsewhere to preserve revenues. A model-based approach can help make these trade-offs more transparent by quantifying how alternative reforms affect labor decisions, earnings, and fiscal revenues across the earnings distribution.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.428,
+                0.378,
+                0.448
+            ],
+            "angle": 0,
+            "content": "B. Labor Taxes in the UK"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.464,
+                0.868,
+                0.578
+            ],
+            "angle": 0,
+            "content": "5. The UK collects slightly less revenue from labor taxation than other OECD countries. \\( ^{1} \\)  Indeed, many high-tax European economies collect substantially more revenue from labor taxes than the UK does (Figure 1.A). This reflects lower social security contributions in the UK compared to other countries and a greater reliance on progressive income taxes, although the distinction between these two types of labor income taxation is less clear-cut in the UK where national insurance contributions are more loosely linked to benefit entitlements. \\( ^{2} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.597,
+                0.882,
+                0.806
+            ],
+            "angle": 0,
+            "content": "6. However, labor tax revenues have increased substantially in recent years and are set to rise further over the medium term. The UK's overall tax burden, measured by the tax-to-GDP ratio, has increased by about \\(5 \\frac{1}{2}\\) ppts since the mid-1960s and now stands at around 35 percent. Within this broader rise, labor-tax revenues—defined here as personal income tax plus employee and employer social security contributions—have also risen markedly. Having remained relatively low compared with other G7 economies for much of the post-war period, labor-tax revenues in the UK have risen by almost 4 percentage points of GDP since the mid-2010s. Under the current fiscal plans, revenues from labor taxes are projected to increase by a further 2 percentage points of GDP by the end of the decade, as the extension of the income tax threshold freezes beyond 2028 take effect (Figure 1.B). This implies that labor taxation will account for a large share of the projected increase in the overall tax burden over the coming years.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.85,
+                0.816,
+                0.869
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Labor taxes are defined as personal income tax plus employee and employer social security contributions."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.864,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  For a discussion of the comparison of income tax and social security contributions across countries, see IFS “How do UK tax revenues compare internationally”."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.598,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.094,
+                0.136,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.094,
+                0.857,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.114,
+                0.834,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.132,
+                0.879,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.153,
+                0.867,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.172,
+                0.858,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.835,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.227,
+                0.135,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.228,
+                0.821,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.247,
+                0.872,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.267,
+                0.857,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.285,
+                0.868,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.863,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.321,
+                0.822,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.875,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.361,
+                0.877,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.379,
+                0.864,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.398,
+                0.75,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.43,
+                0.374,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.465,
+                0.136,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.466,
+                0.801,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.485,
+                0.846,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.504,
+                0.863,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.523,
+                0.832,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.541,
+                0.828,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.56,
+                0.731,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.597,
+                0.136,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.599,
+                0.857,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.618,
+                0.854,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.638,
+                0.826,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.656,
+                0.839,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.675,
+                0.859,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.694,
+                0.82,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.713,
+                0.876,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.732,
+                0.854,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.752,
+                0.822,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.771,
+                0.876,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.789,
+                0.652,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.328,
+                0.283,
+                0.672,
+                0.302
+            ],
+            "angle": 0,
+            "content": "Figure 1. Labor Taxation Across Countries"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.048,
+                0.246,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.092,
+                0.876,
+                0.265
+            ],
+            "angle": 0,
+            "content": "7. While average tax rates are low by international standards, marginal tax rates can be very high, particularly for high earners. The tax wedge—which measures the difference between labor costs to the employer and the corresponding net take-home pay of the employee—for an average earner in the UK is lower than the OECD and G7 averages (Figure 1.C). This reflects lower social security contributions than in many continental European economies. Marginal tax rates—the share of additional labor income that is either taxed away or lost due to the reduction in benefits—are also broadly in line with other advanced economies for average earners. However, the highly progressive labor tax system in the UK means that the marginal tax rates faced by high earners in the UK are significantly above those faced by workers in other G7 countries (Figure 1.D).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.306,
+                0.359,
+                0.34
+            ],
+            "angle": 0,
+            "content": "A. Composition of Labor Taxes (Percent of GDP; 2024)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.131,
+                0.337,
+                0.459,
+                0.52
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.539,
+                0.484,
+                0.555
+            ],
+            "angle": 0,
+            "content": "Sources: Global Revenue Statistics 2025 and staff calculations"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.496,
+                0.306,
+                0.639,
+                0.34
+            ],
+            "angle": 0,
+            "content": "B. Labor Tax Share (Percent of GDP)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.495,
+                0.32,
+                0.851,
+                0.524
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.496,
+                0.539,
+                0.855,
+                0.555
+            ],
+            "angle": 0,
+            "content": "Sources: Global Revenue Statistics 2025 and staff calculations"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.126,
+                0.565,
+                0.297,
+                0.597
+            ],
+            "angle": 0,
+            "content": "C. Average Tax Wedge (Percent of labor cost)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.128,
+                0.595,
+                0.488,
+                0.81
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.123,
+                0.814,
+                0.481,
+                0.884
+            ],
+            "angle": 0,
+            "content": "Sources: OECD Taxing Wages 2026 and staff calculations\nNotes: The tax wedge is the share of income taxes and social security contributions, and cash benefits, in total labor costs. Household composition: 2 adult couple, with 2 kids, earning 100 percent and 67 percent of average wage."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.496,
+                0.565,
+                0.656,
+                0.598
+            ],
+            "angle": 0,
+            "content": "D. Marginal Tax Rate (Percent)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.498,
+                0.597,
+                0.863,
+                0.813
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.495,
+                0.815,
+                0.868,
+                0.883
+            ],
+            "angle": 0,
+            "content": "Sources: OECD Tax-Benefit model and staff calculations\nNotes: The marginal tax rate is the percentage point increase in taxes paid for an additional 1 percent increase in labor income. Household composition: 1 adult, earning 100 percent of the average wage."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.933,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.094,
+                0.137,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.095,
+                0.868,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.822,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.868,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.152,
+                0.855,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.837,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.19,
+                0.868,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.209,
+                0.874,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.228,
+                0.826,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.247,
+                0.862,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.093,
+                0.879,
+                0.416
+            ],
+            "angle": 0,
+            "content": "8. The UK tax system is marked by significant threshold effects. Threshold effects, or tax “cliff edges”, here refer to sharp increases in marginal tax rates that can create either disincentives to enter the labor market or work more. Several important threshold effects in the UK tax system mean that marginal tax rates on labor earnings vary substantially depending on an individual’s level of earnings. First, for low earners the withdrawal of Universal Credit (UC), the main means-tested benefit in the UK, can significantly reduce the financial gain from employment. This effectively creates a very high tax rate on participating in the labor market—the tax rate that someone pays on their earned income when they start working compared to what they would receive out-of-work (Figure 2.A). For those already in work, a second threshold exists when the basic income tax rate begins to apply, on earnings above the £12,570 personal allowance (PA). Third, there are a set of sharp threshold effects for higher earners that are driven by the combination of progressive income tax rates, withdrawal of child benefits (CB) at earnings above £60,000, and tapering of the personal allowance (PA) at earnings over £100,000. These can result in very high marginal tax rates as earnings rise, reducing the incentive to work more. Figure 2.B shows how the marginal effective tax rate—which takes into account both taxes and benefits—changes as earnings rise. These “tax cliffs” can result in the “bunching” of taxpayers just below the point at which high marginal tax rates take effect (Figure 2.C).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.307,
+                0.449,
+                0.692,
+                0.468
+            ],
+            "angle": 0,
+            "content": "Figure 2. Structure of Labor Taxation in the UK"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.122,
+                0.47,
+                0.873,
+                0.71
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.718,
+                0.478,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Sources: UKFRS 2023/24, UKMOD and staff calculations\nNotes: The participation tax rate (PTR) is defined as the change in post-tax, post-transfer, income in work compared to out of work. Indirect taxes refer to VAT."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.495,
+                0.718,
+                0.859,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Sources: UKFRS 2023/24, UKMOD and staff calculations\nNotes: The marginal effective tax rate (METR) is defined as the ratio of change in disposable income to change in pre-tax earnings. Indirect taxes refer to VAT."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.095,
+                0.136,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.095,
+                0.858,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.785,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.134,
+                0.866,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.152,
+                0.828,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.172,
+                0.867,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.189,
+                0.856,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.209,
+                0.816,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.829,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.247,
+                0.877,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.835,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.285,
+                0.854,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.829,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.323,
+                0.841,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.86,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.361,
+                0.871,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.378,
+                0.851,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.399,
+                0.433,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.245,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.266,
+                0.105,
+                0.741,
+                0.458
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.479,
+                0.319,
+                0.499
+            ],
+            "angle": 0,
+            "content": "C. Model and Data"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.515,
+                0.882,
+                0.781
+            ],
+            "angle": 0,
+            "content": "9. The analysis presented here uses a microsimulation model based on the Mirrlees framework. \\( ^{3} \\)  The model combines household-level microdata, a detailed representation of the current UK tax and benefit system, and a social welfare function to assess the revenue, labor-supply, and distributional effects of alternative labor income tax reforms. The framework assumes individuals differ in productivity and earnings, derive utility from consumption, and face disutility from work. They also respond to changes in after-tax income along two margins: whether to participate in the labor market, and, conditional on working, how much to work and earn. The government is assumed to choose a non-linear labor tax schedule subject to an exogenous revenue requirement, trading off revenue needs, efficiency costs from behavioral responses, and redistribution objectives. In this framework, the “optimal” marginal tax schedule depends on four sufficient-statistic objects: social marginal welfare weights (i.e. the value society places on an additional unit of consumption of an individual), the fiscal cost of participation responses, the local shape of the earnings distribution, and the intensive-margin elasticity of earnings with respect to the net-of-tax rate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.8,
+                0.874,
+                0.857
+            ],
+            "angle": 0,
+            "content": "10. Household data for the UK are combined with a detailed description of the UK tax and benefit system. Data on earnings, employment status, and family structure come from the UK Family Resources Survey (FRS) 2023–24. UKMOD is then used to apply the main parameters of the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.116,
+                0.886,
+                0.671,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  See Brewer, Saez and Shephard (2010) and Piketty and Saez (2013) for an overview."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.933,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.938,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.481,
+                0.316,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.516,
+                0.136,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.209,
+                0.519,
+                0.855,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.537,
+                0.836,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.555,
+                0.874,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.574,
+                0.796,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.594,
+                0.848,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.612,
+                0.815,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.632,
+                0.826,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.649,
+                0.875,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.67,
+                0.781,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.689,
+                0.85,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.708,
+                0.816,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.727,
+                0.865,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.746,
+                0.879,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.765,
+                0.232,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.8,
+                0.148,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.802,
+                0.869,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.821,
+                0.868,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.84,
+                0.859,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.883,
+                0.208
+            ],
+            "angle": 0,
+            "content": "current UK tax and benefit system and to construct disposable income, participation tax rates, and marginal effective tax rates across the earnings distribution. The analysis focuses on the working-age population and maps the joint effect of taxes and transfers—including Personal Income Tax (PIT), National Insurance contributions (NICs), Universal Credit (UC), and non-means-tested benefits such as Child Benefit (CB)—into marginal effective tax rates (METR). These METRs capture the full incentive wedge created by both higher taxes and the withdrawal of benefits as earnings rise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.225,
+                0.881,
+                0.473
+            ],
+            "angle": 0,
+            "content": "11. The calibration combines externally chosen parameters for labor-supply elasticities and social preferences inferred from the existing tax-benefit schedule. The baseline assumes an average intensive-margin elasticity of 0.15 and an average extensive-margin elasticity with respect to in-work income of 0.25 with a declining profile in income, with participation responses lowest for high-income workers (Table 1). \\( ^{4} \\)  These values are taken from Adams and Phillips (2013) and are broadly within the range of estimates used in the empirical literature, albeit toward the lower end of that range. \\( ^{5} \\)  In section E, we test the robustness of our results to these assumptions by increasing the elasticities used by 25 and 50 percent. Social marginal welfare weights are recovered using an inverse-tax approach: conditional on the assumed elasticities, the current UK schedule of marginal effective tax rates is inverted to infer the redistributive preferences that would have generated the same system (Bourguignon and Spadaro 2012; Jacobs, Jongen and Zoutman 2017). The non-linear reform scenarios then solve for alternative marginal tax schedules under different revenue targets, tracing the trade-offs between revenue, aggregate labor supply, and redistribution.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.219,
+                0.493,
+                0.78,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Table 1. United Kingdom: Participation Elasticities by Income Groups"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.219,
+                0.512,
+                0.78,
+                0.65
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Adams and Phillips (2013)</td><td>Baseline calibration</td></tr><tr><td>Lowest 20 percent</td><td>0.50</td><td>0.49</td></tr><tr><td>Next 20 percent</td><td>0.31</td><td>0.37</td></tr><tr><td>Middle 20 percent</td><td>0.21</td><td>0.21</td></tr><tr><td>Next 20 percent</td><td>0.14</td><td>0.13</td></tr><tr><td>Highest 20 percent</td><td>0.06</td><td>0.08</td></tr><tr><td colspan=\"3\">Notes: Participation elasticities are defined as the percent change in the participation rate resulting from a percent change in in-work income. Adams and Phillips (2013) Table E.2.</td></tr></table>"
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.781,
+                0.872,
+                0.826
+            ],
+            "angle": 0,
+            "content": "\\( ^{4} \\)  The simulations assume the participation elasticities are close to zero for the very lowest income earners. This is to ensure consistency with estimated labor force participation rates at very low incomes from the household survey data."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.83,
+                0.879,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{5} \\)  This paper uses labor supply elasticities, which capture behavioral responses in employment, hours, and earnings to changes in the net-of-tax return to work. This is different from taxable income elasticities, which capture a broader set of responses, including tax planning, income shifting, incorporation, deductions, and timing effects. The latter may be particularly relevant for high earners, where observed taxable income responses can exceed labor-supply responses."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.876,
+                0.956
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.094,
+                0.861,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.881,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.852,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.152,
+                0.868,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.171,
+                0.813,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.191,
+                0.822,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.226,
+                0.149,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.227,
+                0.877,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.248,
+                0.878,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.861,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.284,
+                0.872,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.838,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.322,
+                0.875,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.34,
+                0.853,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.36,
+                0.856,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.38,
+                0.859,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.398,
+                0.858,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.417,
+                0.863,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.436,
+                0.859,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.746,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.245,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.09,
+                0.347,
+                0.11
+            ],
+            "angle": 0,
+            "content": "D. Simulation Results"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.127,
+                0.879,
+                0.26
+            ],
+            "angle": 0,
+            "content": "12. Three parametric labor tax reform scenarios are constructed. The simulations are based on the current tax and benefit system (that is, before the extension of the income tax threshold freezes currently planned) and consider changes to the marginal effective tax rates (rather than changes to specific income tax or NIC rates) which better capture the joint effect of changes to taxes and benefits. Each scenario is designed to shed light on the implications of tax increases for revenue potential, labor market responses (as proxied by aggregate labor supply \\( ^{6} \\) ), and equity considerations. The scenarios are as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.275,
+                0.876,
+                0.331
+            ],
+            "angle": 0,
+            "content": "- Scenario 1: Uniform tax increase. Under this scenario, the marginal effective tax schedule is increased uniformly across the distribution of earnings. In practical terms, this entails an upward shift of the METR line in Figure 2.A.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.347,
+                0.852,
+                0.442
+            ],
+            "angle": 0,
+            "content": "- Scenario 2: Segmented tax increases. Instead of raising marginal tax rates uniformly for all taxpayers, this scenario increases the marginal rates only for a subset of earners, keeping the marginal tax rates unchanged for everyone else. This scenario is replicated for each of the following segments of the earnings distribution: (i) the bottom 25 percent; (ii) the middle 65 percent; and (iii) the top 10 percent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.457,
+                0.884,
+                0.626
+            ],
+            "angle": 0,
+            "content": "- Scenario 3: Non-linear reform. Under this scenario, an “optimal” tax reform, which balances revenue and efficiency objectives using the Mirrlees approach, is simulated. While in the previous scenarios, the marginal tax rates were changed exogenously, here the shape of the “optimal” marginal tax schedule is determined endogenously by the revenue target, labor supply elasticities and welfare parameters of the model. \\( ^{7} \\)  This means that marginal tax rates can increase or decrease at different points along the earnings distribution. Similar to the parametric reforms, marginal tax rates are calculated for a sequence of revenue target increases. The result is a series of optimal tax schedules ranging from revenue-neutral to revenue-maximizing reforms.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.643,
+                0.884,
+                0.757
+            ],
+            "angle": 0,
+            "content": "13. Under the first scenario, raising additional revenue by increasing the whole tax schedule would result in significant labor supply losses. The model suggests that a uniform increase in marginal tax rates could raise labor tax revenues by up to 6.5 percent—equivalent to around 1 percent of GDP—but that this would come at the cost of large labor supply responses, that increase with the size of the tax change. \\( ^{8} \\)  Indeed, we find that labor supply could decline by as much as 13.5 percent. Figure 3.A shows the relationship between revenues and marginal tax rate, with",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.774,
+                0.845,
+                0.806
+            ],
+            "angle": 0,
+            "content": "\\( ^{6} \\)  The model is static in the sense that wages are fixed. This means that changes in labor supply can be captured through changes in aggregate earnings."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.81,
+                0.879,
+                0.869
+            ],
+            "angle": 0,
+            "content": "\\( ^{7} \\)  Non-linear labor tax reforms following the Mirrlees-Diamond-Saez approach are modeled using the algorithm proposed by Jacquet, Lehmann and Van der Linden (2013) based on earnings distributions, calibrated elasticities and social welfare weights. See also Zoutman, Jacobs, and Jongen (2014) for a similar analysis for the Netherlands. Revenue targets are then increased sequentially to map out a revenue-earnings frontier."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.872,
+                0.862,
+                0.903
+            ],
+            "angle": 0,
+            "content": "\\( ^{8} \\) The tax increases envisioned under the government's current plans do not map directly into any one of the three scenarios modelled here."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.934,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.091,
+                0.344,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.127,
+                0.147,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.209,
+                0.13,
+                0.849,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.148,
+                0.809,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.166,
+                0.875,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.186,
+                0.873,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.206,
+                0.854,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.224,
+                0.828,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.244,
+                0.451,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.281,
+                0.127,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.276,
+                0.854,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.296,
+                0.874,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.314,
+                0.414,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.349,
+                0.846,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.368,
+                0.849,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.387,
+                0.826,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.405,
+                0.843,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.425,
+                0.419,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.46,
+                0.852,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.478,
+                0.813,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.497,
+                0.842,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.516,
+                0.879,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.534,
+                0.816,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.554,
+                0.876,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.573,
+                0.869,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.592,
+                0.818,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.61,
+                0.213,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.642,
+                0.147,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.208,
+                0.645,
+                0.843,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.664,
+                0.835,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.681,
+                0.843,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.701,
+                0.88,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.72,
+                0.876,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.738,
+                0.841,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.835,
+                0.835,
+                0.86
+            ],
+            "angle": 0,
+            "content": "Notes: The table shows changes in total labor tax revenues, total earnings and average tax rates in percentage points under a 5 percentage-point increase in marginal tax rates for (i) bottom 25% of earners, (ii) middle 65% of earners, (iii) top 10% of earners, and (iv) all earners."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.88,
+                0.265
+            ],
+            "angle": 0,
+            "content": "revenues initially rising with tax rates, before declining as further increases in the rates reduce labor supply causing aggregate earnings to decline. Intuitively, these results reflect the fact that the current system already imposes distortions that weaken labor supply at both the extensive and intensive margins. The current system imposes high participation tax rates, especially for low-income workers. This is mainly due to the withdrawal of universal credit benefits which reduces the incentive to work. It also results in high marginal tax rates for higher earners, driven by the combination of rising statutory tax rates and thresholds, the tapering of the personal allowance, and the withdrawal of child benefit. These findings highlight the importance of balancing the need to raise revenues with protecting employment and minimizing economic distortions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.282,
+                0.881,
+                0.624
+            ],
+            "angle": 0,
+            "content": "14. Under the second scenario, tax increases targeted toward the bottom of the earnings distribution could raise revenue with smaller efficiency costs. Table 2 shows the impact of increasing marginal effective tax rates by 5 percentage points across different parts of the tax schedule. Raising rates for the bottom 25 percent of earners generates the largest revenue gain, at 3 percent, with aggregate labor earnings falling by around 1.6 percent. This reflects the broad tax base affected by the reform: a higher marginal rate at the bottom applies not only to low earners, but also to the infra-marginal earnings of higher-income individuals. Raising rates for the middle 65 percent also increases revenue, by 1.9 percent, but with a somewhat larger decline in aggregate labor earnings of 1.9 percent. By contrast, raising rates only for the top 10 percent lowers revenue by 0.5 percent and reduces aggregate earnings by 0.9 percent, indicating that behavioral responses among high earners more than offset the mechanical revenue gain. A uniform 5 percentage-point increase raises more revenue than the targeted reforms, at 4.3 percent, but at the cost of a much larger decline in aggregate earnings of 4.4 percent. Figure 3.B shows similar effects for the full range of marginal tax rate increases, whereby increasing rates at low levels of earnings entails smaller labor supply distortions, while increasing rates at the top does not generate significant additional revenues. These results point to a clear revenue-efficiency trade-off: broader increases generate larger revenue gains, but also larger labor-supply losses, while increases at the top are more progressive but yield little additional fiscal space once behavioral responses are taken into account.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.126,
+                0.644,
+                0.85,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Table 2. United Kingdom: Targeted 5ppts Marginal Tax Increases Across Income Groups (In percent relative to baseline)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.121,
+                0.675,
+                0.854,
+                0.833
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Change in tax revenue (%)</td><td rowspan=\"2\">Change in labor earnings (%)</td><td colspan=\"4\">Change in average tax rate (%)</td></tr><tr><td>Bottom 25%</td><td>Middle 65%</td><td>Top 10%</td><td>All</td></tr><tr><td>Bottom 25%</td><td>3.0</td><td>-1.6</td><td>3.9</td><td>2.4</td><td>0.7</td><td>1.8</td></tr><tr><td>Middle 65%</td><td>1.9</td><td>-1.9</td><td></td><td>1.5</td><td>2.0</td><td>1.8</td></tr><tr><td>Top 10%</td><td>-0.5</td><td>-0.9</td><td></td><td></td><td>1.1</td><td>0.3</td></tr><tr><td>All</td><td>4.3</td><td>-4.4</td><td>3.9</td><td>3.9</td><td>3.9</td><td>3.9</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.939,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.095,
+                0.87,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.114,
+                0.826,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.133,
+                0.835,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.153,
+                0.878,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.171,
+                0.876,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.191,
+                0.846,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.209,
+                0.872,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.227,
+                0.848,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.248,
+                0.622,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.282,
+                0.148,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.284,
+                0.821,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.305,
+                0.825,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.323,
+                0.873,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.871,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.36,
+                0.873,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.38,
+                0.856,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.398,
+                0.85,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.418,
+                0.865,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.437,
+                0.856,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.871,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.474,
+                0.859,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.492,
+                0.849,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.513,
+                0.875,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.531,
+                0.879,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.55,
+                0.811,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.569,
+                0.842,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.589,
+                0.815,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.607,
+                0.869,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.049,
+                0.245,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.882,
+                0.416
+            ],
+            "angle": 0,
+            "content": "15. Larger revenue gains would require more fundamental structural reforms, which would improve the equity-efficiency tradeoff. A deeper redesign of the current system could strengthen labor supply by lowering participation tax rates for lower-income workers and smoothing some of the high marginal tax-rates higher up the earnings distribution. Figure 3.C shows the change in tax revenues and aggregate earnings under the optimally designed non-linear marginal tax increase in Scenario 3. In addition to the results for the non-linear marginal tax reform (shown by the solid lines) we also show the results from a £100 reduction in out-of-work benefits (shown by the dashed lines). Under the non-linear reform, higher marginal tax rates can raise more revenue than the previous scenarios, while also improving labor supply. This is illustrated by the blue region that lies above the zero horizontal line. An “optimal” revenue-neutral reform could raise aggregate labor supply by 3 percent, while non-linear reforms that raise up to 4.5 percent in additional revenues could result in still higher aggregate labor supply. In practice, this would involve a stronger role for in-work support at the bottom of the distribution by making transfers conditional on labor force participation more generous, combined with less reliance on abrupt withdrawal of benefits and tax allowances as earnings rise. Such a system would reduce some of the most distortionary features of the current schedule—notably weak incentives to enter work at low earnings and sharp cliff edges for higher earners—while preserving overall revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.434,
+                0.867,
+                0.586
+            ],
+            "angle": 0,
+            "content": "16. While it may be possible to raise significantly more revenue under an ambitious reform package, this would involve sharper efficiency-equity tradeoffs. These can be seen in Figure 3.D which shows the optimal marginal tax schedules ranging from a revenue-neutral reform (blue line) to the revenue-maximizing reform (red line). From an efficiency perspective, the optimal schedules generally result in smaller labor market distortions than under the first two scenarios. From an equity perspective, however, the optimal reforms also imply lower marginal tax rates for earners above £100,000, but higher rates for low and middle-income earners, as can be seen from the profiles of the lines in Figure 3.D.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.938,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.094,
+                0.146,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.096,
+                0.856,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.114,
+                0.845,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.133,
+                0.795,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.152,
+                0.83,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.172,
+                0.868,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.874,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.209,
+                0.854,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.865,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.248,
+                0.878,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.835,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.285,
+                0.816,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.303,
+                0.876,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.323,
+                0.876,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.852,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.361,
+                0.811,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.38,
+                0.814,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.4,
+                0.757,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.434,
+                0.148,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.435,
+                0.851,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.855,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.474,
+                0.864,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.493,
+                0.864,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.512,
+                0.84,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.53,
+                0.851,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.55,
+                0.859,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.569,
+                0.396,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.739,
+                0.301,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.539,
+                0.51,
+                0.602,
+                0.525
+            ],
+            "angle": 0,
+            "content": "(Percent)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.377,
+                0.092,
+                0.686,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Figure 3. Labor Tax Reform Scenarios"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.118,
+                0.516,
+                0.168
+            ],
+            "angle": 0,
+            "content": "A. Revenue and Earnings Change Under Uniform Tax Increases (Scenario 1)\n(Y-axes: percent, x-axis: percentage points)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.129,
+                0.168,
+                0.522,
+                0.36
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.363,
+                0.526,
+                0.42
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations.\nNotes: The chart shows the percentage point change in tax revenues (blue line) and average earnings (orange line) against uniform increases in the marginal tax rate (horizontal axis)."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.124,
+                0.476,
+                0.506,
+                0.511
+            ],
+            "angle": 0,
+            "content": "C. Revenue and Earnings Change Under Non-Linear Reform (Scenario 3)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.125,
+                0.523,
+                0.486,
+                0.707
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.751,
+                0.519,
+                0.822
+            ],
+            "angle": 0,
+            "content": "Notes: The chart shows changes to total earnings (vertical axis) and total revenue (horizontal axis) under the uniform marginal rate increase scenario (orange lines) and the non-linear reform scenario (blue lines). Dashed lines represent a supplementary reform that reduces the average out-of-work benefit by £100."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.538,
+                0.152,
+                0.921,
+                0.36
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.536,
+                0.373,
+                0.935,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Notes: The chart shows changes to total earnings (vertical axis) and total revenue (horizontal axis) under different marginal rate increase scenarios. The blue line shows uniform increases applied to all workers. The orange line shows segmented increases only for the bottom 25 percent of earners. The green line shows increases for the middle-income earners between the \\(25^{\\text{th}}\\) and \\(90^{\\text{th}}\\) percentile. The purple line shows uniform increases for the top decile."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.536,
+                0.477,
+                0.935,
+                0.511
+            ],
+            "angle": 0,
+            "content": "D. Marginal Tax Rate Change by Earnings Level Under Non-Linear Reforms (Scenario 3)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.542,
+                0.525,
+                0.931,
+                0.72
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.537,
+                0.752,
+                0.929,
+                0.796
+            ],
+            "angle": 0,
+            "content": "Notes: The chart shows the change in marginal effective tax rates (in ppts) under the revenue-neutral reform (blue line) and revenue-maximising reform scenario (orange line) across earnings levels."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.938,
+                0.875,
+                0.955
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.774,
+                0.443,
+                0.8,
+                0.456
+            ],
+            "latex": "",
+            "score": 0.518
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.825,
+                0.443,
+                0.849,
+                0.457
+            ],
+            "latex": "",
+            "score": 0.5211
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.38,
+                0.095,
+                0.682,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.246,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.09,
+                0.272,
+                0.11
+            ],
+            "angle": 0,
+            "content": "E. Robustness"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.127,
+                0.876,
+                0.222
+            ],
+            "angle": 0,
+            "content": "17. This section assesses the sensitivity of the baseline results to alternative assumptions on key structural parameters. In particular, we assess the impact of different assumptions regarding labor supply elasticities and the degree of inequality aversion. While the key findings are qualitatively robust, the analysis reveals strongly non-linear responses in both revenue and labor supply outcomes to these assumptions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.24,
+                0.884,
+                0.565
+            ],
+            "angle": 0,
+            "content": "18. Assuming higher behavioral responses to tax changes reduces the revenue gains but increases the efficiency gains from reforms. We consider higher elasticities than the baseline for two reasons. First, the estimates from Adams and Phillips (2013) are at the low end of estimates for the UK, especially for the extensive margin elasticities of high-income earners, which have a disproportionate impact on aggregate results. Second, considering higher elasticities provides a more conservative estimate of the revenue potential of reform, which serves as a fiscal risk assessment. Increasing labor supply elasticities—such that people are more responsive to changes in post-tax earnings—leads to smaller revenue gains from higher marginal tax rates. At the same time, stronger behavioral responses mean that reducing distortions, as in the case of the non-linear reform scenario, leads to improvements in labor supply and greater efficiency gains. Quantitatively, increasing the average intensive and extensive elasticities from 0.15 and 0.25 to 0.19 and 0.31 (25 percent increase) respectively, imply materially lower revenue potential and larger labor supply losses. Increasing the elasticities by more, to 0.23 and 0.38 (50 percent increase from baseline) respectively, yield even smaller revenue increases. Using these higher elasticities, however, we find that more modest increases in marginal rates could improve aggregate labor supply. The green line in Figure 4.A shows that it could be possible to increase labor income taxes by up to 5 percent while still raising aggregate labor supply if behavioral responses were sufficiently strong.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.581,
+                0.884,
+                0.81
+            ],
+            "angle": 0,
+            "content": "19. The degree of inequality aversion also plays an important role in determining the optimal labor tax schedule. Higher inequality aversion implies a stronger preference for redistribution toward lower-income households, which implies higher marginal tax rates at the top of the distribution, all else equal. The reverse holds true when inequality aversion is lower. While the baseline simulations use an inequality aversion parameter of 1.0, we also show results when this parameter is set to 0.5 (lower redistributive motive) and 1.5 (higher redistributive motive). \\( ^{9} \\)  Under the calibration with higher aversion to inequality, the earnings-revenue frontier pivots clockwise (Figure 4.B). This means that for lower revenue increases (below 5 percent), labor supply responds more negatively to the optimal schedule therefore shrinking the earnings-revenue frontier. For larger revenue increases, however, the labor supply losses are smaller than in the baseline case, which means the frontier is pushed out. With lower inequality aversion the frontier shifts to the right, implying more adverse earnings responses and lower revenue potential. This is a consequence of",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.114,
+                0.83,
+                0.882,
+                0.904
+            ],
+            "angle": 0,
+            "content": "\\( ^{9} \\)  The analysis assumes that social welfare function is isoelastic. This means the government or society values the marginal consumption of two individuals based only on their relative income levels. In the baseline if one individual earns 10 times less than another individual, society assigns 10 times as much value to an additional unit of consumption for the lower-income individual. With an inequality aversion parameter of 0.5, the ratio is 5; if inequality aversion is 1.5 the marginal consumption of the lower-income individual is valued 15 times more."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.937,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.154,
+                0.939,
+                0.392,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.092,
+                0.269,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.128,
+                0.148,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.13,
+                0.785,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.148,
+                0.815,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.167,
+                0.871,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.187,
+                0.864,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.205,
+                0.495,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.242,
+                0.146,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.243,
+                0.856,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.263,
+                0.872,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.282,
+                0.865,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.3,
+                0.836,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.32,
+                0.844,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.338,
+                0.802,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.357,
+                0.879,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.376,
+                0.873,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.395,
+                0.828,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.414,
+                0.866,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.432,
+                0.854,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.451,
+                0.834,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.47,
+                0.829,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.49,
+                0.861,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.508,
+                0.87,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.527,
+                0.875,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.546,
+                0.741,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.581,
+                0.147,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.208,
+                0.584,
+                0.864,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.603,
+                0.794,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.622,
+                0.862,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.64,
+                0.873,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.66,
+                0.843,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.678,
+                0.851,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.697,
+                0.842,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.716,
+                0.857,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.736,
+                0.834,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.755,
+                0.837,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.774,
+                0.879,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.793,
+                0.852,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.126,
+                0.695,
+                0.3,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.092,
+                0.878,
+                0.15
+            ],
+            "angle": 0,
+            "content": "placing a greater weight on the efficiency costs borne by high earners. Figure 4.B shows that around 5 percent in additional revenue could be achieved with an associated 6.5 percent reduction in labor supply.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.168,
+                0.882,
+                0.378
+            ],
+            "angle": 0,
+            "content": "20. The effects of alternative assumptions are highly non-linear. This reflects the complex interactions between behavioral responses and the desired progressivity of the tax system. In particular, small changes in elasticities or inequality aversion can lead to disproportionately large changes in optimal tax schedules and associated revenue and aggregate earnings outcomes, especially at the top of the income distribution. As a result, while the qualitative conclusions of the baseline analysis remain robust—namely that there is scope to improve the efficiency-equity trade-off through tax reform—the quantitative results are sensitive to these assumptions. Higher labor elasticities and a lower inequality aversion both tend to reduce revenue potential (as shown in Figures 4 A and B), albeit through different channels, and with different implications for labor supply. This highlights the importance of carefully calibrating these parameters when considering reform options.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.372,
+                0.393,
+                0.627,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Figure 4. Robustness Scenarios"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.124,
+                0.425,
+                0.476,
+                0.474
+            ],
+            "angle": 0,
+            "content": "A. Revenue and Earnings Change of Non-linear Reforms Using Higher Labor Supply Elasticities (Percent)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.125,
+                0.486,
+                0.499,
+                0.679
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.124,
+                0.706,
+                0.492,
+                0.75
+            ],
+            "angle": 0,
+            "content": "Notes: The chart shows changes to total earnings (vertical axis) and total revenue (horizontal axis) under non-linear reform scenarios."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.424,
+                0.861,
+                0.49
+            ],
+            "angle": 0,
+            "content": "B. Revenue and Earnings Change of Non-linear Reforms Using Alternative Inequality Aversion Parameters (Percent)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.511,
+                0.495,
+                0.865,
+                0.679
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.511,
+                0.695,
+                0.686,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Source: IMF staff calculations"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.708,
+                0.849,
+                0.75
+            ],
+            "angle": 0,
+            "content": "Notes: The chart shows changes to total earnings (vertical axis) and total revenue (horizontal axis) under non-linear reform scenarios."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.938,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.095,
+                0.875,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.114,
+                0.869,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.133,
+                0.174,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.169,
+                0.147,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.171,
+                0.817,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.19,
+                0.871,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.209,
+                0.868,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.819,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.248,
+                0.861,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.266,
+                0.868,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.286,
+                0.845,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.304,
+                0.83,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.322,
+                0.878,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.342,
+                0.852,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.36,
+                0.181,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.395,
+                0.624,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.245,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.09,
+                0.341,
+                0.111
+            ],
+            "angle": 0,
+            "content": "F. Policy Conclusions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.127,
+                0.865,
+                0.26
+            ],
+            "angle": 0,
+            "content": "21. There is limited scope for new measures to raise significant additional revenue through labor taxation without significantly weakening labor supply. The baseline model simulations in this paper suggest that a uniform increase in marginal effective tax rates could raise some additional revenue but would come with substantial labor supply losses. This is because increasing marginal tax rates across the whole schedule would exacerbate existing distortions, including weak incentives to enter the labor market at the bottom of the distribution and high marginal effective tax rates in upper parts of the earnings distribution.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.279,
+                0.885,
+                0.469
+            ],
+            "angle": 0,
+            "content": "22. More fundamental reforms could deliver higher revenue gains while strengthening work incentives across the earnings distribution. Targeted increases in marginal tax rates towards the bottom of the earnings distribution, accompanied by more generous in-work transfers, would be more efficient, reflecting the size of the tax base affected, but would come with equity trade-offs. More fundamental reforms that improve work incentives in line with optimal tax design could deliver higher revenues with a better efficiency-equity trade-off. The results point to the benefits of strengthening incentives to work at the bottom of the distribution while reducing very high marginal effective tax rates at the top. In practice, this would require a broader redesign of the tax-benefit schedule, including smoothing benefit withdrawal and other threshold effects, rather than simply increasing headline rates of income tax or National Insurance contributions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.487,
+                0.883,
+                0.62
+            ],
+            "angle": 0,
+            "content": "23. Against the backdrop of rising spending pressures, designing labor taxation in a way that both raises revenue and is consistent with the UK's growth agenda will be central. This requires moving beyond a narrow focus on headline tax rates and placing greater weight on how the tax-benefit system affects people's incentives to work and firms' incentives to hire. Broad-based rate increases would risk adding to existing distortions and weaken labor supply, while better-designed reforms that strengthen incentives to enter and progress in work could support both fiscal sustainability and stronger medium-term growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.118,
+                0.938,
+                0.139,
+                0.955
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.092,
+                0.339,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.128,
+                0.148,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.128,
+                0.841,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.148,
+                0.829,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.167,
+                0.862,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.186,
+                0.828,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.205,
+                0.829,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.224,
+                0.831,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.242,
+                0.648,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.279,
+                0.146,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.28,
+                0.877,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.3,
+                0.879,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.319,
+                0.881,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.339,
+                0.849,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.355,
+                0.826,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.375,
+                0.869,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.394,
+                0.881,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.415,
+                0.848,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.432,
+                0.85,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.453,
+                0.689,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.487,
+                0.147,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.489,
+                0.855,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.508,
+                0.853,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.527,
+                0.851,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.546,
+                0.863,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.564,
+                0.879,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.585,
+                0.874,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.602,
+                0.492,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.754,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "UNITED KINGDOM"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.434,
+                0.089,
+                0.567,
+                0.11
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.126,
+                0.865,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Adam, S. and Phillips, D. (2013). \"An ex-ante analysis of the effects of the UK Government's welfare reforms on labour supply in Wales\" IFS Report No. R75."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.183,
+                0.816,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Bourguignon, F., and Spadaro, E. (2012). \"Tax-benefit revealed social preferences\" Journal of Economic Inequality, 10: 75–108."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.24,
+                0.798,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Brewer, M., Saez, E. and Shephard, A. (2010). \"Means-testing and tax rates on earnings\" in Dimensions of Tax Design: the Mirrlees Review, 1(4): 90-201."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.296,
+                0.828,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Mirrlees, J. ed., 2011. Tax by design: The Mirrlees review. Oxford University Press (OUP) Oxford."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.334,
+                0.849,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Piketty, T., and Saez, E. (2013). \"Optimal labor income taxation\" In Handbook of Public Economics, Volume 5, edited by Alan J. Auerbach, Raj Chetty, Martin Feldstein, and Emmanuel Saez, 391–474. Amsterdam: Elsevier."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.41,
+                0.828,
+                0.45
+            ],
+            "angle": 0,
+            "content": "Richiardi, M., Collado, D. and Popova, D., 2021. UKMOD-A new tax-benefit model for the four nations of the UK (No. CeMPA WP 7/21). CeMPA Working Paper Series."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.466,
+                0.848,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Jacobs, B., Jongen, E.L., and Zoutman, F.T. (2017). \"Revealed social preferences of Dutch political parties\" Journal of Public Economics, 156, 81–100."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.524,
+                0.841,
+                0.563
+            ],
+            "angle": 0,
+            "content": "Jacquet, L, Lehmann, E. and Van der Linden, B. (2013) \"Optimal redistributive taxation with both extensive and intensive responses\" Journal of Economic Theory, 148 (5): 1770-1805."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.58,
+                0.843,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Zoutman, F.T., Jacobs, B. and Jongen, E.L. (2013). \"Optimal redistributive taxes and redistributive preferences in the Netherlands\" Erasmus University Rotterdam."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.938,
+                0.836,
+                0.955
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.854,
+                0.937,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.435,
+                0.09,
+                0.565,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

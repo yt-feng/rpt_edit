@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

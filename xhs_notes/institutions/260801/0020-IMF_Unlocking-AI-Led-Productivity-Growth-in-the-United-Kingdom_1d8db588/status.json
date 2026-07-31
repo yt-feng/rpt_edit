@@ -1,0 +1,117 @@
+{
+  "source_pdf": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "英国AI红利，卡在这",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "IMF：AI与组织管理与生产率技术应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588.pdf",
+    "cleaned_source_title": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+    "institution_name": "IMF",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "IMF：0020IMFUnlockingAILedPr",
+    "raw_candidates": [
+      "IMF：英国AI生产率增长解锁路径",
+      "IMF：英国AI生产率增长-2026年7月报告",
+      "IMF：英国AI生产率增长-劳动力结构与产业优势"
+    ],
+    "cleaned_candidates": [
+      "IMF：英国AI生产率增长解锁路径",
+      "IMF：英国AI生产率增长-2026年7月报告",
+      "IMF：英国AI生产率增长-劳动力结构与产业优势",
+      "IMF：0020IMFUnlockingAILedPr",
+      "IMF：英国AI生产率收益取决于监管与技能供给"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0020IMFUnlockingAILedPr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：英国AI生产率收益取决于监管与技能供给",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      }
+    ],
+    "selected_title": "IMF：AI与组织管理与生产率技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：英国AI生产率增长-2026年7月报告",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：AI与组织管理与生产率技术应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

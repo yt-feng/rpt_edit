@@ -1,0 +1,110 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "欧洲央行“正常化”到",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x2",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x2",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "危机->扰动 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "布鲁盖尔研究所：行业规则与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f.pdf",
+    "cleaned_source_title": "0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0005BruegelHowshoul",
+    "raw_candidates": [
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径",
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径与14年缩表测算",
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径与操作框架设计"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径",
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径与14年缩表测算",
+      "布鲁盖尔研究所：欧洲央行货币政策正常化路径与操作框架设计",
+      "布鲁盖尔研究所：0005BruegelHowshoul",
+      "布鲁盖尔研究所：2017年11月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：0005BruegelHowshoul",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：2017年11月",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "14"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧洲央行货币政策正常化路径与14年缩表测算",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：行业规则与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

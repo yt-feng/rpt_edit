@@ -1,0 +1,1397 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.144,
+                0.112,
+                0.265,
+                0.208
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.229,
+                0.744,
+                0.343
+            ],
+            "angle": 0,
+            "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.145,
+                0.387,
+                0.721,
+                0.427
+            ],
+            "angle": 0,
+            "content": "ISLAMIC REPUBLIC OF",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.438,
+                0.482,
+                0.476
+            ],
+            "angle": 0,
+            "content": "MAURITANIA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.481,
+                0.722,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Technical Assistance in Public Debt",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.522,
+                0.544,
+                0.555
+            ],
+            "angle": 0,
+            "content": "Projections and Analysis",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.564,
+                0.289,
+                0.59
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.615,
+                0.27,
+                0.635
+            ],
+            "angle": 0,
+            "content": "Prepared by",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.635,
+                0.692,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Marie Pierre Aquino Coste, Ha Minh Nguyen, and Naomitsu Yashiro",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.765,
+                0.374,
+                0.784
+            ],
+            "angle": 0,
+            "content": "Authoring Department:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.785,
+                0.495,
+                0.805
+            ],
+            "angle": 0,
+            "content": "Institute for Capacity Development, IMF",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.229,
+                0.692,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.271,
+                0.739,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.31,
+                0.339,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.391,
+                0.717,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.44,
+                0.482,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.48,
+                0.722,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.521,
+                0.543,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.56,
+                0.292,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.613,
+                0.27,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.637,
+                0.689,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.766,
+                0.373,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.785,
+                0.495,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.113,
+                0.09,
+                0.376,
+                0.107
+            ],
+            "angle": 0,
+            "content": "©2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.821,
+                0.09,
+                0.903,
+                0.105
+            ],
+            "angle": 0,
+            "content": "HLS/26/45"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.292,
+                0.122,
+                0.689,
+                0.159
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report\nInstitute for Capacity Development"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.176,
+                0.855,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Technical Assistance in Public Debt Projections and Analysis, Islamic Republic of Mauritania\nPrepared by Marie Pierre Aquino Coste, Ha Minh Nguyen, and Naomitsu Yashiro",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.232,
+                0.859,
+                0.287
+            ],
+            "angle": 0,
+            "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.305,
+                0.879,
+                0.468
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: This document summarizes the completion and main outcomes of a Technical Assistance project aimed at strengthening the capacity of Mauritania's National Committee on Public Debt (CNDP) in public debt projection and analysis. At the request of the Mauritanian authorities, the IMF's Institute for Capacity Development (ICD) implemented a multi-mission program between January 2024 and January 2025, combining in-country missions with sustained remote engagement. The project focused on implementing and customizing the IMF's Public Debt Dynamics Tool (DDT), including a resource-rich country version and a natural disaster module. Through hands-on training, the CNDP strengthened its ability to produce debt projections, conduct scenario analysis, and prepare a comprehensive public debt report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.486,
+                0.624,
+                0.504
+            ],
+            "angle": 0,
+            "content": "This Technical Assistance was financed by the Government of Japan.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.118,
+                0.523,
+                0.774,
+                0.578
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>JEL Classification Numbers:</td><td>O11; O23; O55</td></tr><tr><td>Keywords:</td><td>Public debt; debt management; technical assistance; IMF</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.615,
+                0.238,
+                0.635
+            ],
+            "angle": 0,
+            "content": "Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.649,
+                0.882,
+                0.741
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.322,
+                0.774,
+                0.675,
+                0.864
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.295,
+                0.125,
+                0.687,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.143,
+                0.616,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.179,
+                0.851,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.197,
+                0.782,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.234,
+                0.856,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.252,
+                0.815,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.271,
+                0.346,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.306,
+                0.858,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.325,
+                0.877,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.344,
+                0.856,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.361,
+                0.867,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.379,
+                0.816,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.397,
+                0.845,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.415,
+                0.851,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.434,
+                0.868,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.452,
+                0.166,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.488,
+                0.621,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.615,
+                0.236,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.65,
+                0.881,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.668,
+                0.876,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.685,
+                0.878,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.705,
+                0.874,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.724,
+                0.791,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.093,
+                0.291,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.133,
+                0.88,
+                0.297
+            ],
+            "angle": 0,
+            "content": "This technical assistance (TA) project aimed to strengthen the Mauritanian authorities' institutional and analytical capacity to produce consistent, policy-relevant public debt projections and analyses. At the request of the Ministry of Finance, the IMF's Institute for Capacity Development (ICD) implemented a multi-mission TA program jointly with the National Public Debt Committee (CNDP), the inter-institutional body responsible for coordinating debt policy, debt sustainability analysis, and public debt reporting. The project was motivated by challenges associated with debt projections and integrating risk analysis into policy discussions. The project comprised three missions: a scoping mission in January 2024 that assessed the CNDP's capacity needs; an implementation mission in August–September 2024 focused on deploying and customizing the DDT; and a consolidation mission in January 2025 that strengthened the technical team's independent use of the tools and produced revised user documentation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.313,
+                0.886,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Mauritania faces heightened fiscal and debt vulnerabilities stemming from its dependence on iron ore, gold, and gas export revenues, its exposure to recurrent droughts and floods, and its reliance on external financing. These features make robust debt projection frameworks, capable of assessing both baseline dynamics and adverse shock scenarios, particularly important for sound fiscal management. The TA project, aimed to address these challenges by introducing a standardized analytical framework, strengthening inter-institutional coordination, and supporting the gradual institutionalization of debt analysis within the CNDP.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.426,
+                0.498,
+                0.45
+            ],
+            "angle": 0,
+            "content": "Summary of Achievements"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.465,
+                0.874,
+                0.645
+            ],
+            "angle": 0,
+            "content": "The project substantially enhanced the CNDP's capacity to independently produce public debt projections and scenario analyses. The Public Debt Dynamics Tool (DDT) was implemented and customized for Mauritania's resource-rich economic structure, disaggregating the primary balance into extractive and non-extractive components to reflect the volatility of commodity revenues, consistent with the IMF program's structural benchmark. The Natural Disaster DDT was also applied to assess the fiscal impact of climate and commodity price shocks. Through hands-on training, applied workshops, and continuous technical exchanges, the authorities developed the capacity to prepare a comprehensive public debt report covering baseline projections, fiscal adjustment scenarios, and shock simulations, which the technical team presented to the General Directors chairing the CNDP. User manuals, process documentation, and a clearer delineation of institutional roles in data provision and assumption-setting further strengthened ownership and reduced risks related to staff turnover.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.66,
+                0.561,
+                0.684
+            ],
+            "angle": 0,
+            "content": "Summary of Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.7,
+                0.773,
+                0.732
+            ],
+            "angle": 0,
+            "content": "- To consolidate the gains achieved and ensure sustainability, the TA made three concrete recommendations, which the authorities agreed with:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.748,
+                0.868,
+                0.831
+            ],
+            "angle": 0,
+            "content": "The Directorate of Public Debt and the CPPMB have committed to establishing a formal system for the regular integration of DDT-based analyses into CNDP policymaking. This includes a pre-defined schedule for debt sustainability analyses tied to the budget cycle, standardized data inputs, assigned institutional responsibilities, and a workflow for incorporating DDT outputs into CNDP recommendations to the Minister of Finance. An indicative timetable was developed jointly during the project to support this process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.847,
+                0.881,
+                0.895
+            ],
+            "angle": 0,
+            "content": "Second, the Directorate of Public Debt and the CPPMB have begun formalizing the division of tasks and data responsibilities among the institutions participating in public debt projections. Historical data on real sector variables are sourced from ANSADE and the Treasury, while macroeconomic and fiscal projection",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.116,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.492,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.092,
+                0.29,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.135,
+                0.869,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.151,
+                0.861,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.168,
+                0.841,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.184,
+                0.818,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.2,
+                0.866,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.217,
+                0.856,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.235,
+                0.857,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.251,
+                0.867,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.267,
+                0.876,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.284,
+                0.425,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.315,
+                0.862,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.331,
+                0.824,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.347,
+                0.881,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.364,
+                0.848,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.38,
+                0.844,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.396,
+                0.83,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.426,
+                0.496,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.467,
+                0.806,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.484,
+                0.871,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.499,
+                0.861,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.516,
+                0.819,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.534,
+                0.846,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.55,
+                0.864,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.566,
+                0.818,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.583,
+                0.835,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.599,
+                0.833,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.615,
+                0.852,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.632,
+                0.302,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.659,
+                0.559,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.705,
+                0.122,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.701,
+                0.769,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.718,
+                0.519,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.753,
+                0.123,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.75,
+                0.861,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.767,
+                0.866,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.783,
+                0.816,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.8,
+                0.855,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.816,
+                0.771,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.849,
+                0.873,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.866,
+                0.875,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.88,
+                0.829,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.09,
+                0.865,
+                0.155
+            ],
+            "angle": 0,
+            "content": "assumptions are provided by the Macro-Budgetary Forecasting and Steering Unit (CPPMB), in line with their budget documents, ensuring a clear and institutionally grounded data flow for the annual debt projection cycle. Debt stock data and interest payment figures are compiled by the Directorate of Public Debt, which also coordinates the consolidation of inputs across agencies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.172,
+                0.877,
+                0.238
+            ],
+            "angle": 0,
+            "content": "Third, to preserve and transmit the analytical capacity built during the project, the authorities developed user manuals for the DDT, the Natural Disaster DDT, and the commodity price shock tool. Experienced staff are committed to using these manuals to train new technical team members at least twice a year, ensuring continuity as the Directorate of Public Debt and the CPPMB deepen their public debt management capacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.116,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.492,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.959,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.093,
+                0.851,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.108,
+                0.862,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.125,
+                0.82,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.142,
+                0.51,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.173,
+                0.874,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.191,
+                0.858,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.204,
+                0.871,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.222,
+                0.846,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

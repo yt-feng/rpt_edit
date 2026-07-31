@@ -1,0 +1,4546 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Western Balkans on the road to the European Union"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                297,
+                68,
+                860,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Marek Dabrowski and Yana Myachenkova"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                186,
+                715,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MAREK DABROWSKI\n(marek.dabrowski@bruegel.org) is a Non-resident\nFellow at Bruegel"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                341,
+                278,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "YANA MYACHENKOVA (yana.myachenkova@bruegel.org) is a research assistant at Bruegel"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                434,
+                260,
+                495
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors would like to thank Alexander Lehmann, J. Scott Marcus, André Sapir, Alessio Terzi, Nicolas Véron, Guntram Wolff and Georg Zachmann for their comments on an earlier version of this paper."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                525,
+                273,
+                651
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Executive summary"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                291,
+                492,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IN THE 1990s, the Western Balkan region suffered from severe conflicts, which ended after intervention by United Nations and NATO forces and with the promise of accession to the European Union. In the early and mid-2000s, the prospect of EU accession and the global boom facilitated rapid economic recovery in the Western Balkans and boosted economic and institutional reforms. However, the global financial crisis of 2007-09 and the European crisis of 2010-13 slowed the pace of economic growth and amplified high unemployment. In addition, various unresolved legacies from past conflicts slowed the pace of reform and progress towards EU accession."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                324,
+                890,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THE EUROPEAN COMMISSION in February 2018 set an indicative deadline (2025) for admission to the EU of the two most advanced candidates – Serbia and Montenegro. This could incentivise all Western Balkan countries, including those candidates that have not yet started membership negotiations (Macedonia and Albania) and those waiting for candidate status (Bosnia and Herzegovina and Kosovo), to remove domestic political obstacles to EU accession, solve conflicts with neighbours, speed up reforms and accelerate economic growth."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                464,
+                894,
+                573
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THE EUROPEAN UNION and its member states must not overlook the strategic importance of the Western Balkan region. Geographically, Western Balkan countries form a land bridge and the shortest transit route between the south-east flank of the EU and its central European core. The importance of this transit route was demonstrated during the 2015-16 refugee crisis. Furthermore, Western Balkan economies are already closely integrated with the EU. The EU is their largest trade partner, largest source of incoming foreign investment and other financial flows, and the main destination for outward migration."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                587,
+                905,
+                697
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution\nIssue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                70,
+                255,
+                97
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "bruegel"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                837,
+                191,
+                929
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                302,
+                68,
+                497,
+                93
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Western Balkans is a geopolitical term coined by the governing bodies of the European Union in the early 2000s and referring to those countries in south-eastern Europe that were not EU members or candidates at the time but could aspire to join the bloc. Originally, the Western Balkan region consisted of seven countries – Albania, Bosnia and Herzegovina, Croatia, Kosovo, Macedonia  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , Montenegro and Serbia – but Croatia has since joined the EU."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                109,
+                905,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the 1990s, the region suffered from severe conflicts that had negative political and economic consequences that continue to be felt. In the early and mid-2000s, the prospect of EU accession and the global boom facilitated rapid economic recovery and boosted economic and institutional reforms in the region. However, the global financial crisis of 2007-09 and the subsequent European financial crisis of 2010-13 (that affected in particular the southern flank of the EU) slowed down the pace of economic growth in the region, and amplified high unemployment, especially among young people. In addition, various unresolved legacies from past conflicts slowed the pace of reform and progress towards EU accession in Western Balkan counties, and intensified nationalist sentiments across the region."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                186,
+                897,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Given its geographical location, the region is important to the EU in terms of security, stability, trade and transit routes. Therefore, the Western Balkan countries' economic and political prospects, and their future within a European framework, should remain one of the top priorities for the EU."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                325,
+                894,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This Policy Contribution concentrates on economic and social development in the region, and the economic and institutional aspects of EU accession (sections 3-6)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . Naturally, we also take political and geopolitical factors into consideration (section 2) but as the background rather than central theme of our analysis. We conclude (section 7) with broad recommendations pertinent to the possible eventual EU accession of Western Balkan countries."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                387,
+                902,
+                464
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Conflict legacies and geopolitics"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                516,
+                769,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Between 1918 and 1991, all Western Balkan countries except Albania were part of Yugoslavia. After the second world war, similarly to most of their central and eastern European neighbours, the countries were under communist rule. However, in 1948 Yugoslavia split with the Soviet Union and remained independent from major geopolitical and military blocs in Europe, becoming one of the founders of the Non-Aligned Movement. After 1950, Yugoslavia developed a unique decentralised market socialism model based on employee-managed firms. Although this did not protect the country from macroeconomic disequilibria (repeated episodes of high inflation and hyperinflation, large external debt and high unemployment) it allowed the creation of quasi-market institutions and market-oriented microeconomic behaviour. Unlike countries of the Soviet bloc, Yugoslavia remained relatively open to the world in terms of trade and its citizens' freedom to travel."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                557,
+                900,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By contrast, Albania, which also split with the Soviet Union in 1962, chose an orthodox model of a centrally planned economy, based on national self-sufficiency and closed to the outside world."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                727,
+                887,
+                771
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When Yugoslavia began to collapse in 1991, most of its successor states suffered from violent ethnic conflicts, which negatively affected the entire region in terms of war damage, human suffering, disrupted trade links, refugee flows, sanctions, organised crime and so on. The series of civil wars in the region, which lasted throughout the 1990s, was stopped only by the intervention of United Nations and North Atlantic Treaty Organisation (NATO) forces and the EU's generous promise to allow countries in the region to apply for EU membership once they re-established peace and met accession criteria. The prospect of European integration helped to start the process of economic and political reforms, although at various speeds in different countries, and to largely normalise economic and political relations in the region."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                772,
+                887,
+                804
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Because of the conflict with Greece over the country's name (see sections 2 and 6), international organisations and the EU use the temporary name ‘the Former Yugoslav Republic of Macedonia’ (FYROM). However, for the sake of editorial simplicity, we use the short name ‘Macedonia’."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                829,
+                894,
+                869
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2 As the basis for analysis, we rely on data from the International Monetary Fund, World Bank, UNCTAD, UNECE and European Bank for Reconstruction and Development. Unfortunately, data for Kosovo remains incomplete."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                869,
+                880,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                105,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                297,
+                78,
+                900,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, the legacies of past conflicts continue to overshadow regional politics and economics, and to create obstacles in Western Balkan countries to EU integration."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                187,
+                890,
+                216
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, Serbia, five EU member states (Cyprus, Greece, Romania, Slovakia and Spain) and several other countries  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " do not recognise Kosovo as an independent state. Internally, Kosovo has failed to build peaceful relationships between the Albanian majority and Serbian minority, and its domestic stability relies on international peacekeeping forces."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                217,
+                897,
+                278
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, Bosnia and Herzegovina, where the civil war was brought to an end by the Dayton Agreement in 1995, is a very loose two-tier confederation of three ethnic communities that is hardly manageable at the central level (ICG, 2012). Politics in those communities continues to be dominated by nationalist sentiments. As a result, the international community must continue its peacekeeping mission and state-building support more than 20 years after the end of the war."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                279,
+                902,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Third, Greece disputes Macedonia's country name "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and this conflict has frozen the country's EU and NATO accession process for more than decade. Internally, Macedonia has suffered periodically from ethnic tensions between the Macedonian majority and the Albanian minority. Furthermore, the ten-year term of former prime minister Nikola Gruevski (1996-2006) was marred by numerous violations of the rule of law and political and civil liberties."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                372,
+                894,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All countries in the region face problems with corruption (see section 5) and organised crime. The roots of the latter can be tracked back, at least partly, to the conflicts of 1990s and the resulting UN sanctions."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                449,
+                894,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All the above-mentioned legacies of past conflicts contribute to the slow pace of the EU accession process in the region. In addition, EU members' appetites for further enlargement have been reduced by the financial crisis years (2007-13) and associated social and political tensions, the wave of Euroscepticism and nationalism, and Brexit."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                495,
+                895,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, there are signs of a changing atmosphere. First, in his State of the Union Address of 13 September 2017  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , European Commission president Jean-Claude Juncker recognised the strategic importance of further enlargement once the candidate countries meet the accession criteria. Second, the new enhanced Western Balkan strategy elaborated by the European Commission (2018) sets 2025 as a possible time horizon for Montenegrin and Serbian accession."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                557,
+                900,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is good news because the slow pace of the accession process and the lack of enthusiasm among current EU members to accept new entrants might weaken incentives for further reforms in Western Balkan countries, reverse those already in place and derail the enlargement process, as already happened partly with Turkey. In turn, this could mean a serious risk of a new round of intra-regional conflicts "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", and geopolitical destabilisation in the EU's closest neighbourhood."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                650,
+                900,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Faced by such risks, the EU and its member states must not overlook the strategic importance of the Western Balkan region."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                741,
+                894,
+                772
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Including Argentina, Brazil, Chile, China, India, Indonesia, Iran, Israel, Nigeria, Russia, South Africa, Ukraine and most countries of the former Soviet Union."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                804,
+                890,
+                829
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "4 Macedonia is the name of Greece's northern region. Greece also questions the right of Macedonia to refer to the historical memory of Alexander the Great (Gligorov, 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                829,
+                897,
+                854
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "5 See: http://europa.eu/rapid/press-release_SPEECH-17-3165_en.pdf."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                856,
+                645,
+                869
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "6 Some of those conflicts – between Serbia and Kosovo for example – have been at least partly mitigated in recent years thanks to active EU diplomacy and incentives created by the prospect of EU membership."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                870,
+                880,
+                895
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                934,
+                105,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Geographically, Western Balkan countries form a land bridge and the shortest transit route between the south-east flank of the EU (Greece, Bulgaria and Romania) and its central European ‘core’ (Hungary, Croatia, Slovenia and Austria). The importance of this transit area was demonstrated during the 2015-16 refugee crisis. Close cooperation between the Western Balkan governments and the EU played a major role in closing the Balkan route to refugee flows."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                79,
+                904,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Because of its geographical location, and long and complicated land borders with its Western Balkan neighbours, Croatia could be the major beneficiary of further enlargement. The only road connection between its southern and central parts (the Adriatic highway) goes through the territory of Bosnia and Herzegovina, which is an obstacle to Croatia joining the Schengen area."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                155,
+                904,
+                216
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economically, the EU is the largest trade partner of the Western Balkan countries, the main source of inward foreign direct investment and the main destination for outward labour migration (section 4). Many European countries have a sizeable Western Balkan diaspora."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                217,
+                902,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The geopolitical vacuum created by the delayed prospect of EU membership and decreasing EU interest in the region could also encourage other players, such as Russia and China (Fouere, 2017), to become more active. To limited extent, this has already happened. China finances an increasing number of infrastructure projects throughout central and eastern Europe, including Western Balkans (Kynge and Peel, 2017; Byrne and Mitchell, 2017)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                263,
+                900,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Russia's engagement in the region concentrates on geopolitical goals. In particular, Russia wants to discourage Western Balkan countries from joining NATO and is not enthusiastic about their EU membership bids. Serbia is a major target for Russian efforts because of historical and cultural links between the two countries (Hartwell and Sidlo, 2017). However, Serbia has been reluctant to take any step that would damage its EU accession prospects and openly distance it from mainstream EU foreign policy. The exception in this respect is its refusal to join EU sanctions against Russia (in retaliation for the annexation of Crimea and Russia's involvement in the Donbass conflict)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                341,
+                904,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Beyond Serbia, there was some evidence of Russia's involvement in the failed coup plot in Montenegro in October 2016, which was seen by the ruling Democratic Party of Socialists as the attempt to stop Montenegro's accession to NATO (Hopkins, 2017)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                464,
+                900,
+                510
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Turkey, another historical player in the region, is active in the economic and cultural sphere, especially in Albania, Kosovo and Bosnia and Herzegovina. It also has the ambition playoff playing an active peacebuilding role in the region (Bechev, 2012)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                511,
+                889,
+                557
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Macroeconomic and social performance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                609,
+                870,
+                634
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 Income per capita"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                663,
+                477,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In 2016, all Western Balkan countries except Kosovo were classified according to the World Bank Atlas method as upper middle-income countries. This category includes countries with gross national income (GNI) per capita between $3,956 and $12,235. However, most Western Balkan countries are towards the bottom of this income group – between $4,180 in Albania and $5,310 in Serbia. Even Montenegro with the region’s highest GNI per capita ($7,120) recorded approximately only one sixth of German and one fifth of EU average GNI per capita. Kosovo, the region’s poorest country with GNI per capita of $3,850, belonged to a lower middle-income economy group."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                680,
+                900,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nevertheless, since 2000 the Western Balkan region has seen income per-capita convergence towards Western European levels, represented in our analysis by Germany  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (Figure 1)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                804,
+                894,
+                835
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "7 We chose Germany as a benchmark because of its roles as the largest EU national economy and as a major economic and trade partner of Western Balkan economies. Germany also had a largely positive but rather modest rate of growth in the 2000s and 2010s."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                863,
+                892,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                934,
+                104,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ed9cf4761e4289b0c50287a07a36be48c990c0c7f7053714ca37a3c377269b65.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: GDP per capita in current international $, PPP adjusted, Germany = 100%, 2000-16"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: World Economic Outlook database, October 2017. Note: IMF staff estimates for Kosovo (the entire period), Albania (2012-16) and Montenegro (2016)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                300,
+                111,
+                895,
+                332
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fee9126bff6671a2f90ea3de36417a7aa6a167777b091b58d59fa88f71390685.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Real GDP growth, annual percent change, 2000-16"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Economic Outlook database, October 2017."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                406,
+                894,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The income convergence process was particularly strong between 2000 and 2009, on the back of rapid economic growth in the region (Figure 2) and the global economic boom. The gap in income per-capita levels in purchasing power parity (PPP) between Serbia and Germany narrowed by 10.5 percentage points, between Albania and Germany by 9.1 percentage points and between Montenegro and Germany by 7.7 percentage points. Other countries converged at a slower pace – Bosnia and Herzegovina by 5.6 percentage points, Macedonia by 4.7 percentage points and Kosovo by only 2.2 percentage points. After 2010, convergence slowed as a result of the spillover effects of the global and European financial crises. The 2010-12 period brought even de-convergence, compared to the 2009 relative income per capita level. Since 2012-13, convergence has restarted but at slower pace than in the 2000s. By 2016, Bosnia and Herzegovina and Serbia had still not managed to regain the relative income per capita level (as compared to Germany) of 2009."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                712,
+                895,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                934,
+                105,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall, between 2000 and 2016 Albania saw the biggest progress in income per capita convergence (by 10.5 percentage points) followed by Serbia (9.6 percentage points), Montenegro (8.3 percentage points), Macedonia (6.2 percentage points), Bosnia and Herzegovina (5.3 percentage points) and Kosovo (3.4 percentage points). The political and geopolitical factors discussed in section 2 have had at least partial impacts on the observed differences in the pace of convergence."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                79,
+                900,
+                155
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2 Social challenges"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                168,
+                473,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite progress in income convergence, the Western Balkan region continues to face social risks associated with poverty, income inequality, unemployment – especially among young people – and other forms of social exclusion."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                187,
+                895,
+                231
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 1 shows there has been some progress in the Western Balkans since 2001 in reducing poverty gaps  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " at 1.90, 3.20 and 5.50 a day (in 2011 PPP). For Macedonia, the proportion of people living below the thresholds of 1.90 and 3.20 almost halved after 2010. Substantial reductions in the percentage of people living below the thresholds of 3.20 and 5.50 a day were also accomplished in Kosovo (2013 compared to 2005). In Serbia, the percentage of people living below all three thresholds was largely unchanged between 2002 and 2013. In Montenegro, there was even some deterioration for the highest threshold, probably as result of the global and European financial crises. However, in both Serbia and Montenegro, poverty figures remain low compared to their Western Balkan neighbours."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                233,
+                907,
+                372
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/05ec92b1b56d067677d838d79e168ec5afa9eed88ec17cb8a6617531d9e79676.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1: Poverty gap at $1.90, $3.20 and $5.50 a day (2011 PPP), in percent"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank's World Development Indicators. Note: a = 2004, b = 2008, c = 2011, d = 2012. See footnote 8 for poverty gap definition."
+                    }
+                ],
+                "html": "<table><tr><td>Poverty gap at</td><td colspan=\"3\">$1.90 a day</td><td colspan=\"3\">$3.20 a day</td><td colspan=\"3\">$5.50 a day</td></tr><tr><td></td><td>2005</td><td>2010</td><td>2013</td><td>2005</td><td>2010</td><td>2013</td><td>2005</td><td>2010</td><td>2013</td></tr><tr><td>Albania</td><td>0.2</td><td> $0.1^b$ </td><td> $0.2^d$ </td><td>2.2</td><td> $1.1^b$ </td><td> $1.6^d$ </td><td>12.4</td><td> $9.0^b$ </td><td> $10.3^d$ </td></tr><tr><td>Bosnia &amp; Herzegovina</td><td> $0.1^a$ </td><td> $0.0^c$ </td><td></td><td> $0.2^a$ </td><td> $0.1^c$ </td><td></td><td> $1.0^a$ </td><td> $0.8^c$ </td><td></td></tr><tr><td>Macedonia</td><td></td><td>4.3</td><td>3.5</td><td></td><td>8.0</td><td>6.5</td><td></td><td>15.9</td><td>13.0</td></tr><tr><td>Kosovo</td><td>0.6</td><td>0.3</td><td>0.2</td><td>4.2</td><td>2.8</td><td>0.9</td><td>17.7</td><td>13.9</td><td>5.8</td></tr><tr><td>Montenegro</td><td>0.1</td><td>0.0</td><td>0.2</td><td>0.3</td><td>0.1</td><td>0.9</td><td>2.1</td><td>0.8</td><td>2.4</td></tr><tr><td>Serbia</td><td>0.3</td><td>0.0</td><td>0.0</td><td>1.1</td><td>0.3</td><td>0.3</td><td>5.0</td><td>2.1</td><td>2.0</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                401,
+                914,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In terms of income inequality, the region does not differ from the rest of Europe, ie its Gini index represents a moderate level. The exception was Macedonia in 2010, where a high Gini index of 42.8 was recorded (Figure 3), but it declined to 28.5 in 2013. Changes in the Gini index in the region have not followed a single trend: it has remained broadly stable in Albania and Bosnia and Herzegovina, but has fluctuated somewhat in other countries. World Bank (2017) attributes these trends to problems with job creation prior to 2009, combined with low productivity in most sectors."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                588,
+                897,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This points to the inefficiency of labour market institutions in Western Balkan countries, one of the legacies of employee self-management in the former Yugoslavia (Roaf et al, 2014). As a result, the region has been always characterised by very high unemployment rates, even before the transition started."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                681,
+                900,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4 shows that in 2001, the unemployment rate in Kosovo approached 60 percent of the labour force. Since then, Kosovo's labour market had improved: its unemployment rate in 2016 was only half the 2001 level, but still close to 30 percent. Macedonia has been the Western Balkans' second-highest unemployment country, with the unemployment rate exceeding 30 percent of labour force for the most of the examined period and only recently decreasing. Bosnia and Herzegovina has seen only very slow improvements in its unemployment rate since 2006 and had a similar level of unemployment in 2016 to Kosovo and Macedonia."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                741,
+                902,
+                850
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "8 Defined as the mean shortfall in income or consumption from the respective poverty line (counting the non-poor as having a zero shortfall), expressed as a percentage of that poverty line."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                885,
+                900,
+                910
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                934,
+                105,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a42d5652acf2034ecd0b9b0e740b31724fd7003d4cb2faf18c9be324322b42a2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: Western Balkans, Gini indices"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                97,
+                899,
+                311
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c9bc7d4b5e0374eddd37342b61d3603e2ecf8ee9cb5b987cacd75af84b499ddf.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4: Unemployment, total (% of total labour force)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators. Note: national estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                373,
+                899,
+                567
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Albania has been the best performing country in this respect (perhaps thanks to the absence of the legacy of the Yugoslav employee self-management model), with an average unemployment rate equal to approximately 15 percent of the labour force."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                602,
+                882,
+                649
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One might argue that high unemployment results from the informal labour market, which is in turn driven by high taxes and regulatory barriers (section 5). Based on Business Environment and Enterprise Performance Survey data, several studies (eg Koettl-Brodmann et al, 2017) conclude that barriers to entry for new firms, and other regulatory impediments, contribute to high unemployment in the region."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                650,
+                902,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 2 shows unemployment rates per educational level. It is notable that better education has not increased the likelihood of being employed in the Western Balkans (unlike in Germany, which serves as a benchmark) except for the very recent period (2016), when the unemployment rate for people with advanced education markedly declined in Bosnia and Herzegovina and Kosovo. In Albania, the unemployment rate of people with basic education is systematically lower than the rate for those with intermediate and advanced education levels. These findings might suggest a substantial role for the informal labour market (regardless of education level) and a mismatch between education profile and quality and actual demand for labour."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                727,
+                900,
+                865
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                934,
+                104,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/fe847d1d6d0495577b4dc28f82230b896400924fca1cde5552390ae9dff2529e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2: Unemployment rates for people with basic, intermediate and advanced education (% of total labour force in respective education group)"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"12\">Basic</td></tr><tr><td>Country</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td></tr><tr><td>Albania</td><td></td><td></td><td></td><td>12.6</td><td></td><td>11.2</td><td>9.1</td><td>10.5</td><td>10.8</td><td>11.5</td><td></td></tr><tr><td>Bosnia and Herzegovina</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>35.0</td><td></td><td>9.0</td></tr><tr><td>Macedonia</td><td>43.29</td><td>42.7</td><td>40.5</td><td>40.0</td><td>36.6</td><td>33.2</td><td>31.3</td><td>31.2</td><td>29.8</td><td>26.3</td><td>26.1</td></tr><tr><td>Kosovo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>49.0</td><td>39.5</td><td>47.6</td></tr><tr><td>Montenegro</td><td></td><td></td><td></td><td></td><td></td><td>31.3</td><td>35.0</td><td></td><td></td><td></td><td></td></tr><tr><td>Serbia</td><td></td><td></td><td></td><td>20.8</td><td>26.9</td><td>29.7</td><td>30.9</td><td>27.6</td><td>22.5</td><td>19.4</td><td>14.9</td></tr><tr><td>Germany</td><td>17.5</td><td>15.9</td><td>14.2</td><td>13.8</td><td>12.8</td><td>11.7</td><td>10.9</td><td>10.1</td><td>9.9</td><td>9.5</td><td>8.7</td></tr><tr><td colspan=\"12\">Intermediate</td></tr><tr><td>Country</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td></tr><tr><td>Albania</td><td></td><td></td><td></td><td>19.7</td><td></td><td>18.7</td><td>14</td><td>16.8</td><td>20.7</td><td>22.9</td><td></td></tr><tr><td>Bosnia and Herzegovina</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>33.9</td><td>35.0</td><td>7.9</td></tr><tr><td>Macedonia</td><td>38.4</td><td>36.3</td><td>34.1</td><td>32.6</td><td>33.4</td><td>31.7</td><td>31.9</td><td>28.9</td><td>29.8</td><td>25.8</td><td>22.7</td></tr><tr><td>Kosovo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>45.2</td><td>41.1</td><td>36.7</td></tr><tr><td>Montenegro</td><td></td><td></td><td></td><td></td><td></td><td>20.5</td><td>21.7</td><td></td><td></td><td></td><td></td></tr><tr><td>Serbia</td><td></td><td></td><td></td><td>19.4</td><td>22.0</td><td>25.3</td><td>26.5</td><td>26.1</td><td>21.79</td><td>20.5</td><td>18.3</td></tr><tr><td>Germany</td><td>9.6</td><td>8.2</td><td>7.2</td><td>7.0</td><td>6.2</td><td>5.3</td><td>4.9</td><td>4.7</td><td>4.2</td><td>3.8</td><td>3.3</td></tr><tr><td colspan=\"12\">Advanced</td></tr><tr><td>Country</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td></tr><tr><td>Albania</td><td></td><td></td><td></td><td>18.6</td><td></td><td>18.4</td><td>20.8</td><td>15.8</td><td>18.2</td><td>21.5</td><td></td></tr><tr><td>Bosnia and Herzegovina</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>22.2</td><td>20.8</td><td>11.6</td></tr><tr><td>Macedonia</td><td>22.9</td><td>23.2</td><td>23.7</td><td>24.8</td><td>24.8</td><td>26.3</td><td>26.0</td><td>26.7</td><td>24.6</td><td>22.6</td><td>21.0</td></tr><tr><td>Kosovo</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>27.1</td><td>28.0</td><td>8.2</td></tr><tr><td>Montenegro</td><td></td><td></td><td></td><td></td><td></td><td>13.8</td><td>11.6</td><td></td><td></td><td></td><td></td></tr><tr><td>Serbia</td><td></td><td></td><td></td><td>10.7</td><td>12.9</td><td>16.0</td><td>17.9</td><td>18.8</td><td>16.8</td><td>17.0</td><td>14.8</td></tr><tr><td>Germany</td><td>5.3</td><td>4.5</td><td>3.9</td><td>3.7</td><td>3.2</td><td>2.7</td><td>2.6</td><td>2.6</td><td>2.8</td><td>2.5</td><td>2.3</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                108,
+                895,
+                595
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2e2de8f42cfbc297a1b854a377e42a5a0b069515af4f02257956aa6db6ee745b.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: Youth unemployment, % of labour force aged 15-24"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators. Note: national estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                671,
+                897,
+                860
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                105,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "9 IMF (2016, Table 2) classifies the exchange rate regime of Macedonia as the ‘stabilised arrangement’ anchored to the euro."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                844,
+                899,
+                857
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/04cfc00058ca782324a40bf818255acc2cac6a7776708e362c8ca97a57f99daf.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: Birth rate, crude (per 1,000 people)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators. Note: crude birth rate indicates the number of live births occurring during the year, per 1,000 people, estimated at mid-year."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                300,
+                97,
+                899,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The region also suffers from very high youth unemployment rates (Figure 5), which significantly exceed the overall unemployment rates (Figure 4). The highest youth unemployment rates are recorded in Kosovo and Bosnia and Herzegovina, while Montenegro and Serbia have the lowest. However, even the Serbian and Montenegrin rates (the lowest in the region in 2016) are about five times and twice as high as in Germany and the EU respectively. Lack of employment opportunities for young people creates incentives for them to emigrate to more developed countries with better functioning labour markets and more job opportunities."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                370,
+                902,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Emigration adds to the already unfavourable demographic trends in the region (see section 4). The Western Balkan population is shrinking and aging. The median age of the Western Balkans region is 8.7 years above the world average and is expected to increase in the future (World Bank, 2017). Figure 6 shows that the birth rate has decreased by approximately three births per 1000 people on average in the region from 2000 to 2015. The largest decreases in the numbers of births have been recorded in Kosovo, Albania and Montenegro. However, Kosovo and Albania continue to have the highest birth rates. In the face of these unfavourable demographic trends, labour productivity would need to increase significantly to offset the future deficit in the working age population. Pension, healthcare and long-term care systems must be also adjusted to the new demographic reality."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                480,
+                904,
+                634
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3 Monetary policy regimes and inflation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                297,
+                648,
+                633,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Four Western Balkan countries do not conduct sovereign monetary policy. Kosovo and Montenegro use the euro as their currency, Bosnia and Herzegovina has a euro-denominated currency board, and Macedonia pegs to euro (in a relatively narrow horizontal band)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . Exchange rate regimes in Albania and Serbia can be characterised as managed float and both countries declare inflation targeting frameworks (IMF, 2016, Table 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                665,
+                900,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the second half of the 1990s and the early 2000s, pegs to the German mark and then to the euro helped Croatia, Macedonia, Bosnia and Herzegovina, and also Montenegro and Kosovo to disinflate quickly, given their legacies of high inflation/hyperinflation in the early 1990s  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . However, from 2003-17 (Figure 7), the choice of monetary regime seemed to be less important from this point of view."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                741,
+                889,
+                819
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "10 Serbia and Montenegro, which formed the new Yugoslav federation in 1992, suffered from the second fastest hyperinflation in world history. Over 25 months between January 1992 and February 1994, its consumer price index increased by a factor of 78,000,000,000,000,000,000,000! (Koen and De Masi, 1997)."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                857,
+                894,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                104,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite its inflation targeting framework, Serbia was the worst performer (at least until 2013), but Albania with the same regime recorded the lowest and most stable inflation in the region. Kosovo, Montenegro and Bosnia and Herzegovina experienced significant volatility. To a lesser degree, this was also true for Macedonia. This means that small open economies, which have given up their monetary sovereignty, experience more volatile inflation because of its exogenous character driven by real and financial shocks to external markets and changes in exchange rates between major currencies. However, it is fair to say that from 2014-17, all Western Balkan countries converged to low and relatively stable inflation rates."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                61,
+                910,
+                187
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/eed06ecfef7641c0288184bafa225cb3b39accaffa7e6ca932dd425317450bb3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7: Inflation, end-of-period consumer prices"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF World Economic Outlook database, October 2017."
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                217,
+                902,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monetary regimes can really matter for financial stability. All Western Balkan countries, regardless their declared and actual monetary regimes, are heavily euro-ised (Table 3; note this data does not include euro or dollar cash holdings). This is not a problem in Kosovo and Montenegro, where the euro has been adopted as the official national currency, but it is a serious vulnerability in other countries."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                526,
+                919,
+                602
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5a67d74b16f4120ef8444a27c40771b37ef9e723c67267c8c2887bda457c677b.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 3: Share of foreign-exchange denominated liabilities and loans in total liabilities in loans, %, 2006-16"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF Financial Soundness Indicators for Albania, Bosnia and Herzegovina, Kosovo and Macedonia, IMF [2017c, Table 8] for Serbia. Note: data for Montenegro is not available."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">Foreign-exchange denominated liabilities</td><td colspan=\"4\">Foreign-exchange denominated loans</td></tr><tr><td>2006</td><td>2010</td><td>2013</td><td>2016</td><td>2006</td><td>2010</td><td>2013</td><td>2016</td></tr><tr><td>Albania</td><td></td><td>50.5</td><td>50.0</td><td>52.1</td><td></td><td>68.6</td><td>61.9</td><td>57.8</td></tr><tr><td>Bosnia and Herzegovina</td><td>62.8</td><td>67.0</td><td>63.8</td><td>57.4</td><td>71.0</td><td>70.0</td><td>68.8</td><td>62.6</td></tr><tr><td>Kosovo</td><td></td><td>4.6</td><td>4.6</td><td></td><td></td><td>0.2</td><td>0.1</td><td></td></tr><tr><td>Macedonia</td><td>56.9</td><td>57.6</td><td>50.2</td><td>46.3</td><td>52.7</td><td>58.8</td><td>52.7</td><td>44.9</td></tr><tr><td>Serbia</td><td></td><td></td><td>76.7</td><td>71.1</td><td></td><td></td><td>71.6</td><td>69.4</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                285,
+                649,
+                899,
+                796
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Furthermore, despite successful disinflation and repeated recommendations from the IMF (see, for example, IMF, 2017a, b, c) there has been no visible progress in reducing euro-isation (Table 3) in favour of assets and liabilities in national currencies. From that perspective a hard peg (unilateral euro-isation or a credible currency board) can be seen as the factor that increases financial stability (thanks to the elimination of currency depreciation risk) and recognises high exposure of the region to euro-denominated transactions in trade, tourist services and remittance flows, among others."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                850,
+                917,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                295,
+                78,
+                897,
+                140
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.4 Fiscal accounts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                154,
+                460,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most Western Balkan countries managed to maintain fiscal surpluses during the pre-crisis period of the early and mid-2000s, with the exception of Albania, which ran continuous high general government deficits until 2014 (Table 4). However, since 2008, the situation has deteriorated everywhere, though Bosnia and Herzegovina has suffered less than others. There was some improvement in Albania, Bosnia and Herzegovina and Serbia in 2016-17."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                171,
+                902,
+                248
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/158779251006365e7497ea309c2a1121e4736f2eee2fbdbb7fbecc7c09986516.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 4: General government net lending/borrowing, percent of GDP, 2000-17"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF World Economic Outlook database, October 2017."
+                    }
+                ],
+                "html": "<table><tr><td>Country</td><td>2003</td><td>2004</td><td>2005</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td><td>2017</td></tr><tr><td>Albania</td><td>-5.0</td><td>-5.2</td><td>-3.5</td><td>-3.3</td><td>-3.2</td><td>-4.9</td><td>-6.6</td><td>-3.5</td><td>-3.5</td><td>-3.4</td><td>-5.2</td><td>-5.5</td><td>-4.1</td><td>-1.8</td><td>-1.2</td></tr><tr><td>Bosnia &amp; Herzegovina</td><td>-0.4</td><td>-0.2</td><td>0.8</td><td>2.1</td><td>0.2</td><td>-3.9</td><td>-5.3</td><td>-4.1</td><td>-2.7</td><td>-2.7</td><td>-1.9</td><td>-2.9</td><td>-0.2</td><td>0.4</td><td>-0.4</td></tr><tr><td>Macedonia</td><td>-0.1</td><td>0.4</td><td>0.2</td><td>-0.5</td><td>0.6</td><td>-0.9</td><td>-2.6</td><td>-2.4</td><td>-2.5</td><td>-3.8</td><td>-3.8</td><td>-4.2</td><td>-3.5</td><td>-2.6</td><td>-3.5</td></tr><tr><td>Kosovo</td><td>1.6</td><td>-4.6</td><td>-3.1</td><td>2.7</td><td>7.0</td><td>-0.2</td><td>-0.6</td><td>-2.2</td><td>-1.8</td><td>-2.6</td><td>-3.1</td><td>-2.6</td><td>-1.9</td><td>-1.4</td><td>-3.4</td></tr><tr><td>Montenegro</td><td>-4.0</td><td>-2.4</td><td>-1.4</td><td>4.4</td><td>8.5</td><td>-2.3</td><td>-6.7</td><td>-4.9</td><td>-6.7</td><td>-5.8</td><td>-4.5</td><td>-0.7</td><td>-5.9</td><td>-6.0</td><td>-6.4</td></tr><tr><td>Serbia</td><td>-2.7</td><td>0.1</td><td>1.1</td><td>-1.0</td><td>-0.9</td><td>-1.9</td><td>-3.6</td><td>-3.7</td><td>-4.1</td><td>-6.8</td><td>-5.3</td><td>-6.2</td><td>-3.6</td><td>-1.2</td><td>-1.0</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                278,
+                902,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes in fiscal balances have had an impact on the level of general government gross debt to GDP (Figure 8). In particular, the global financial crisis of 2008-09 reversed the previous trend of decreasing debt-to-GDP ratios. As a result, in 2016, general government gross debt exceeded 70 percent of GDP in Albania, Montenegro and Serbia, posing a serious risk to their fiscal sustainability. The very high levels of general government gross debt of Serbia in the early 2000s (225 percent of GDP in 2000) was a legacy of the 1990s with its economic and political turmoil, UN sanctions and engagement in violent regional conflicts."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                464,
+                899,
+                573
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/78e0d24f4f19a41e8a3d15d75cbb57b5d9562d6fb4c1b690984e115c56fb669d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8: General government gross debt, % of GDP, 2000-16"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF World Economic Outlook database, October 2017."
+                    }
+                ]
+            },
+            "bbox": [
+                302,
+                611,
+                900,
+                866
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 External economic relations and the role of the EU"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                297,
+                67,
+                877,
+                123
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.1 Trade"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                297,
+                153,
+                376,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Trade and economic integration with the EU have been major growth factors in transition economies since the beginning of the 1990s (Roaf et al, 2014). This was also the case for the Western Balkan region after the end of the 1990s political and economic turmoil."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                171,
+                885,
+                216
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At first glance, Western Balkan countries' imports and exports seem to represent high shares of GDP (Figures 9 and 10). However, such an observation might not tell us the entire story."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                217,
+                885,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, high shares of exports and imports relative to GDP are a natural phenomenon in small economies. When compared to three small economies that joined the EU in 2004 and have since introduced the euro (Slovenia, Slovakia and Estonia) the differences, especially on the export side, are visible. Even if the gap has been reduced since 2000 (Figure 11), there is still a long way to go to catch up with benchmark countries, especially for Kosovo, Albania and Bosnia and Herzegovina."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                263,
+                892,
+                355
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, in some cases (Montenegro, Macedonia, Albania) imports and exports relative to GDP have been volatile, not only during the global financial crisis (2008-09), which affected negatively almost all analysed countries."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                356,
+                899,
+                403
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6fd5023d5bb0fd943cd5e2dcc643efa93390133983e04e0ed63464f8f681ab44.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9: Imports of goods and services, % of GDP, 2000-16"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                435,
+                895,
+                625
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c9c234cfcd26764c3b583488bbf922664f3271f5948985e3797d609e2f4b9ae3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10: Exports of goods and services, % of GDP, 2000-16"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                682,
+                902,
+                878
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Third, the comparison of import and export shares relative to GDP (Figures 9 and 10) makes clear that all Western Balkan countries run large trade deficits, which are only partly compensated for by positive factor income balances, mainly flows of labour remittances (section 4.2 and Table 6). Large current account imbalances (Figure 12), especially in Montenegro, have been historically financed by inflows of foreign direct investment (FDI, section 4.3 and Table 7) and official development aid (ODA, section 4.4 and Figure 16). However, the volume of ODA has been diminishing over time and the net private capital inflows also went down after the global financial crisis of 2008-09. Therefore, current account and trade balances have had to adjust and this has been achieved by faster growth of exports than of imports (Figure 11)."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                93,
+                894,
+                248
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/95224783518e96ed600af03878cec34d3afb54f20286d5fae3432d98faf7f320.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11: Value of imports and exports, 2000-16, 2000=100"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                282,
+                885,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nevertheless, Montenegro's current account deficits continued to be very high by international comparison, even after the 2008-09 crisis. They increased again in 2015-16 once economic recovery started."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                571,
+                884,
+                618
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b427febde1fce7ae768223f6b56cf902dcd20cec51ac9a0c029541ec03481979.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 12: Current account balances, % of GDP, 2001-16"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF World Economic Outlook database, October 2017. Note: 2016 data for Kosovo and Montenegro contains IMF staff estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                305,
+                651,
+                884,
+                876
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "According to the World Bank (2017), services account for more than two thirds of the total exports of goods and services, with an overall low export sophistication. In 2013, according to the UNCTAD trade database, travel and tourism played a major role in service exports from Albania, Bosnia and Herzegovina and Montenegro, while other services dominated services exports from Macedonia and Serbia (data for Kosovo was missing). Other services were also the largest item in the structure of service imports in all countries except Albania, where travel and tourist services dominated the import side."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                78,
+                884,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figures 13 and 14 show that the EU and Western Balkan neighbours are the dominant trade partners of each Western Balkan country, accounting together to at least 70 percent of their total trade. For Western Balkan countries' exports, this dominance is even stronger. That is, the region is already closely integrated with the EU in terms of trade links, even if the EU's share has declined slightly compared to 2006"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                186,
+                900,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Among other partners, Russia has played some role in supplying the region, especially Serbia, Macedonia and Bosnia and Herzegovina, with energy resources (oil and gas) but Russia's role has gradually diminished over time (despite Russia's interest in the Western Balkans energy sector and the Druzhba and Adrian pipelines). Russia is also one of the destinations for Serbian exports, but not exceeding a few percent of the total."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                263,
+                902,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The shares of China and Turkey are also limited and concentrated on the import side. However, the growth in imports from both countries is very high, so their shares might increase in future."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                341,
+                894,
+                370
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/872b56be50e31fe7403add3bcfc7ee8b0fe71292a4c7ace679992be35b3c7d2c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13: Geographical structure of imports, % of total, 2016"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: International Trade Center (Trade Map). Note: Kosovo is omitted because of missing data."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                405,
+                887,
+                621
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9ea1270fb06e5f82136bdc06d2074cbf5adaac610e328f813d35eccaf41c0a61.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14: Geographical structure of exports, % of total, 2016"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: International Trade Center (Trade Map). Note: Kosovo is omitted because of missing data."
+                    }
+                ]
+            },
+            "bbox": [
+                302,
+                681,
+                887,
+                889
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.2 Outward migration and labour remittances"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                297,
+                76,
+                670,
+                92
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not surprisingly, a large proportion of the Western Balkan population has emigrated to more developed countries (in particular to western and northern Europe), as a result of the violent conflicts of the 1990s, lower income per capita and chronic high unemployment, especially of young people (see section 3). Mass emigration started in 1960s from the former Yugoslavia and in the early 1990s from Albania. Albania and Bosnia and Herzegovina had the largest number and shares of their nationals living abroad in 2015  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{11}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (Table 5)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                93,
+                902,
+                187
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f01f4b167d1c51f0a52667f535e25dcaad72c94c649112ff8ab07f0d6a942f0d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 5: Total migrant stock, number of people and % of population, 2015"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: United Nations, Department of Economic and Social Affairs, Population Division (2015). Trends in International Migrant Stock: Migrants by Destination and Origin (United Nations database, POP/DB/MIG/Stock/Rev.2015), United Nations, Department of Economic and Social Affairs, Population Division (2017). World Population Prospects: The 2017 Revision, DVD Edition and authors' calculations – see http://www.un.org/en/development/desa/population/migration/data/estimates2/estimates15.shtml. Note: Estimates for migrants refer to the total number of international migrants by country of origin and refer to 1 July of the reference year (2015). In estimating the international migrant stock, international migrants have been equated with the foreign-born population whenever this information is available."
+                    }
+                ],
+                "html": "<table><tr><td>Country of origin</td><td>Albania</td><td>Bosnia and Herzegovina</td><td>Montenegro</td><td>Serbia</td><td>Macedonia</td></tr><tr><td>Migrants stock worldwide 2015</td><td>1,122,910</td><td>1,650,772</td><td>138,356</td><td>964,585</td><td>516,024</td></tr><tr><td>Percent of population</td><td>38.4</td><td>46.7</td><td>22.0</td><td>10.9</td><td>24.8</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                216,
+                910,
+                307
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Personal remittances play an important economic and social role in all Western Balkan countries except Macedonia (Table 6). In Kosovo and Bosnia and Herzegovina their share of GDP exceeds 10 percent; in Albania, Montenegro and Serbia they amount to slightly less than 10 percent. Since 2000, their relative importance has gradually decreased in Bosnia and Herzegovina, Kosovo, Albania and Macedonia, while it has increased in Montenegro and remained broadly stable in Serbia."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                403,
+                900,
+                495
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c20170987f5d6561656362fcdd32318ec4c5e735bb26c1f40e3615052be0558b.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 6: Personal remittances, received, % of GDP"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank's World Development Indicators. Note: Personal remittances comprise personal transfers and compensation of employees."
+                    }
+                ],
+                "html": "<table><tr><td>Country</td><td>2000</td><td>2001</td><td>2002</td><td>2003</td><td>2004</td><td>2005</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td></tr><tr><td>Albania</td><td>16.4</td><td>17.2</td><td>16.5</td><td>15.5</td><td>15.9</td><td>15.8</td><td>15.1</td><td>13.7</td><td>14.5</td><td>14.3</td><td>13.4</td><td>12</td><td>11.5</td><td>8.6</td><td>8.6</td><td>9.2</td><td>8.9</td></tr><tr><td>B&amp;H</td><td>28.7</td><td>26.1</td><td>22.5</td><td>20.8</td><td>20.5</td><td>18.2</td><td>16.7</td><td>17</td><td>14.2</td><td>12.1</td><td>10.6</td><td>10.5</td><td>10.7</td><td>10.7</td><td>11.4</td><td>11.1</td><td>10.9</td></tr><tr><td>Kosovo</td><td></td><td></td><td></td><td></td><td>17.1</td><td>18.8</td><td>18.9</td><td>19</td><td>18.3</td><td>18.7</td><td>17.3</td><td>14.9</td><td>14.6</td><td>14</td><td>14.9</td><td>15.1</td><td>14.8</td></tr><tr><td>Montenegro</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5.4</td><td>6.6</td><td>7.3</td><td>8.1</td><td>8.8</td><td>9.7</td><td>9.5</td><td>9.4</td><td>9.4</td><td>9.1</td></tr><tr><td rowspan=\"2\">Macedonia, Serbia</td><td>2.1</td><td>2</td><td>2.6</td><td>3.5</td><td>3.7</td><td>3.6</td><td>3.9</td><td>4.1</td><td>4.1</td><td>4.1</td><td>4.1</td><td>4.1</td><td>4</td><td>3.5</td><td>3.2</td><td>3.1</td><td>2.7</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>9.3</td><td>7.2</td><td>10.9</td><td>10.4</td><td>8.5</td><td>8.7</td><td>8.8</td><td>8.4</td><td>9.1</td><td>8.4</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                525,
+                912,
+                671
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.3 Foreign direct investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                297,
+                725,
+                539,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Western Balkans' deep economic integration with the EU is seen not only in terms of trade and migration (sections 4.2-4.3), but also in investment. Most FDI in Western Balkan countries, except Kosovo, originates from the EU (Figure 15). Progress in EU accession might bring even more European FDI (Stehrer and Holzner, 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                741,
+                897,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Other major sources of FDI in the Western Balkans include Switzerland (entire region), Canada (Albania), Serbia (Bosnia and Herzegovina, Montenegro), Russia (Montenegro, Bosnia and Herzegovina, Serbia), Turkey (Albania, Kosovo, Macedonia) and Norway (Serbia) (Hunya and Schwarzhappel, 2016)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                804,
+                900,
+                866
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "11 The numbers do not include short-term (seasonal) labour migrants."
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                889,
+                638,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5a80b6d4d4bd7be76383340d2ed283307d7667275f742a5ff00cf3d4394bc5ec.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15: Share of the EU28 in the total stock of FDI in Western Balkan countries, %, 2014"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Hunya and Schwarzhappel (2016)."
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                108,
+                904,
+                326
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/08858054ab8cda3a8ee7af852863fbc6dd3bba2be3164ffd30db43e2bb0b3565.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16: Stock of inward FDI, % of GDP, 2016"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: UNCTAD, http://unctadstat.unctad.org/wds/TableViewer/tableView.aspx."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                406,
+                904,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite the lost decade of the 1990s, FDI inflows into Western Balkan countries accelerated in the 2000s and 2010s, including the period following the 2008-09 global financial crisis (Table 7)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . As a result, the cumulative stock of inward FDI relative to GDP exceeds the average in transition economies (Figure 16). Montenegro is the absolute leader with the stock of FDI in 2016 equal to 113.0 percent of GDP."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                665,
+                899,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FDI has mainly been directed at the financial sector, telecommunications, the energy sector, wholesale and retail, construction, real estate and manufacturing (Estrin and Uvalic, 2016; Hunya and Schwarzhappel, 2016). For example, the region's banking sector is owned largely by foreign investors, predominantly from the EU. Many banks in Western Balkan countries are part of pan-European banking groups."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                741,
+                905,
+                819
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "12 Bosnia and Herzegovina is the exception. After the 2008-09 crisis, lower FDI inflows to this country seem to have reflected its domestic political troubles (see section 2) and delayed prospect of EU accession."
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                869,
+                905,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/22ef8522890b9e83ef3d0ad1075d461396c8e7d92edccb19bbe8625ed8d96744.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 7: Inward FDI, annual flows, % of GDP, 2000-16"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: UNCTAD, http://unctadstat.unctad.org/wds/TableViewer/tableView.aspx."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>2001</td><td>2002</td><td>2003</td><td>2004</td><td>2005</td><td>2006</td><td>2007</td><td>2008</td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td><td>2016</td></tr><tr><td>Albania</td><td>5.3</td><td>3.1</td><td>3.2</td><td>4.8</td><td>3.3</td><td>3.6</td><td>6.2</td><td>7.6</td><td>8.3</td><td>8.8</td><td>6.8</td><td>6.9</td><td>9.9</td><td>8.4</td><td>8.2</td><td>9.2</td></tr><tr><td>Bosnia &amp; Herzegovina</td><td>2.0</td><td>3.8</td><td>4.4</td><td>4.9</td><td>5.5</td><td>6.0</td><td>11.5</td><td>5.2</td><td>1.4</td><td>2.4</td><td>2.7</td><td>2.3</td><td>1.5</td><td>2.9</td><td>1.7</td><td>1.7</td></tr><tr><td>Montenegro</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>21.1</td><td>36.6</td><td>18.4</td><td>12.3</td><td>15.2</td><td>10.0</td><td>10.8</td><td>17.4</td><td>5.5</td></tr><tr><td>Serbia</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>7.2</td><td>6.0</td><td>3.7</td><td>9.3</td><td>2.7</td><td>3.9</td><td>3.9</td><td>5.4</td><td>5.2</td></tr><tr><td>Serbia &amp; Montenegro</td><td>1.1</td><td>2.8</td><td>5.8</td><td>3.4</td><td>6.5</td><td>13.1</td><td>11.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Macedonia</td><td>12.1</td><td></td><td>2.3</td><td>5.7</td><td>1.5</td><td>6.3</td><td>8.3</td><td>5.9</td><td>2.1</td><td>2.3</td><td>4.6</td><td>1.5</td><td>3.1</td><td>2.4</td><td>2.4</td><td>3.9</td></tr><tr><td>Transition economies</td><td>1.9</td><td>2.0</td><td>2.9</td><td>3.5</td><td>2.9</td><td>4.3</td><td>4.9</td><td>5.1</td><td>3.5</td><td>3.0</td><td>2.9</td><td>2.2</td><td>2.8</td><td>2.0</td><td>1.9</td><td>3.6</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                93,
+                931,
+                293
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4.4 Official development assistance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                297,
+                354,
+                589,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the early 2000s, Western Balkan countries received large amounts of ODA (Figure 17), reflecting the desire of the international community to support their post-conflict recovery and reconstruction, the transition to democracy and the market economy, and their integration with the EU (sections 2 and 6). However, with progress in economic convergence (section 3.1), the size of ODA flows gradually diminished to between 0.9-3.0 percent of GNI in 2016, except for Kosovo, where they still amounted to 6.7 percent of GNI (having declined from 13.9 percent of GNI in 2009)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                370,
+                905,
+                480
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9f0955d455264bf7d792cbed78ff40b541e16efce5085ae09ee939ab9bfe984d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 17: Net inflows of ODA, % of GNI"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank World Development Indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                516,
+                900,
+                793
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5 Institutional challenges"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                68,
+                650,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Western Balkan region lags behind other central and eastern European countries (those that already joined the EU) in terms of institutional reforms. As noted by the World Bank (2017, pp. 19-20), by 2013, Western Balkan countries had made the same progress in reforms, measured by the EBRD transition scores, as the group of smaller central and eastern European countries  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " had by 1996 (Figure 18)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                108,
+                899,
+                186
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/886c105ed0cb6335f579038c9a4c6b6a2cdab478c28d0584730a29f375544855.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 18: Average EBRD transition scores: Western Balkans and central and eastern European countries*"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bruegel based on EBRD. Notes: EBRD transition score is calculated as the simple average of six EBRD indicators: price liberalisation, trade and foreign exchange system, small-scale privatisation, large scale privatisation, governance and enterprise restructuring, and competition policy, each rated on a scale from 1 (no reform) to 4.33 (maximum reform). Data for Kosovo is missing. * Bulgaria, Croatia, Estonia, Latvia, Lithuania, Slovakia and Slovenia."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                237,
+                895,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Before 1991, the Western Balkan countries were moving faster on reforms than the group of smaller central and eastern European countries (Figure 18) thanks to the legacy of the Yugoslav ‘market socialism’ system. However, the political and economic turmoil of 1990s changed the situation and the Western Balkan countries have since lagged behind. Sanfey et al (2016) offer an optimistic prediction, arguing the Western Balkans can narrow the gap in the coming years under the right circumstances."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                495,
+                895,
+                588
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/93bf098ec19b8379d898fd927196a92ac912c6aa6836626c4d3362189dc10f25.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 8: Ease of Doing Business, rankings out of 190, 2018"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: World Bank Doing Business 2017 survey, http://www.doingbusiness.org/Rankings."
+                    }
+                ],
+                "html": "<table><tr><td>Economy</td><td>Ease of doing business rank</td><td>Starting a business</td><td>Dealing with construction permits</td><td>Getting electricity</td><td>Registering property</td><td>Getting credit</td><td>Protecting minority investors</td><td>Paying taxes</td><td>Trading across borders</td><td>Enforcing contracts</td><td>Resolving insolvency</td></tr><tr><td>Albania</td><td>65</td><td>45</td><td>106</td><td>157</td><td>103</td><td>42</td><td>20</td><td>125</td><td>24</td><td>120</td><td>41</td></tr><tr><td>B&amp;H</td><td>86</td><td>175</td><td>166</td><td>122</td><td>97</td><td>55</td><td>62</td><td>137</td><td>37</td><td>71</td><td>40</td></tr><tr><td>Macedonia</td><td>11</td><td>22</td><td>26</td><td>53</td><td>48</td><td>12</td><td>4</td><td>29</td><td>27</td><td>35</td><td>30</td></tr><tr><td>Montenegro</td><td>42</td><td>60</td><td>78</td><td>127</td><td>76</td><td>12</td><td>51</td><td>70</td><td>44</td><td>42</td><td>37</td></tr><tr><td>Serbia</td><td>43</td><td>32</td><td>10</td><td>96</td><td>57</td><td>55</td><td>76</td><td>82</td><td>23</td><td>60</td><td>48</td></tr><tr><td>Kosovo</td><td>40</td><td>10</td><td>122</td><td>106</td><td>34</td><td>12</td><td>89</td><td>45</td><td>48</td><td>49</td><td>49</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                618,
+                907,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Delayed reforms have a negative impact on the business climate and the entire institutional environment, slowing down economic convergence with the EU and the EU accession process. However, not all global surveys rate Western Balkan economies unfavourably. For example, the annual World Bank Doing Business 2018 survey ranks Macedonia eleventh globally and second in the Europe and Central Asia region (that is, among all transition economies). Kosovo, Montenegro and Serbia respectively occupy the 40  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{th}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , 42  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{nd}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and 43  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{rd}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  positions in this ranking. Bosnia and Herzegovina is the worst regional performer (86  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{th}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  place) but is still better than many economies of the former Soviet Union (Table 8)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                819,
+                897,
+                866
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "13 Bulgaria, Croatia, Estonia, Latvia, Lithuania, Slovakia and Slovenia."
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                889,
+                663,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                295,
+                78,
+                882,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 8 shows that Macedonia is one of the easiest economies when it comes to protecting minority investors or getting credit. Serbia proved to be the best among transition economies in dealing with construction permits, and Montenegro is also ranked high in terms of access to credit. Starting a business is relatively easy in Kosovo. However, Western Balkan countries do not perform well in registering a property or getting electricity. On average, the region still lags behind the groups of smaller central and eastern European countries (World Bank, 2017)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                156,
+                902,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unlike the World Bank Doing Business survey, which concentrates on length, simplicity and costs of administrative procedures, the Heritage Foundation Index of Economic Freedom pays more attention to more fundamental factors such as economic liberalisation, property rights, corruption and government integrity. Figure 19 shows that Western Balkan countries perform especially badly in terms of government integrity, judicial effectiveness and labour freedom. All those indicators point to inefficiency in the public sector. Indicators of business freedom (except Macedonia and Albania) and property rights are also lagging."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                263,
+                902,
+                387
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c0f63015bd5db6d137e91af4f002510011297b9eeca12177e3d6ed8b53191b68.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 19: Heritage Foundation Index of Economic Freedom by components, 2017"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Heritage Foundation, https://www.heritage.org/index/explore. Note: The score range is 1-100. The higher the score, the better is the country performance."
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                439,
+                870,
+                731
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Corruption remains a major problem in the Western Balkans, reflected in the Transparency International Corruption Perception Index (Table 9). Most countries slightly improved their ranking in 2016 compared to 2015: they were ranked between 64 (Montenegro) and 95 (Kosovo) out of 176 countries. However, Macedonia dropped dramatically in the ranking, which can be seen as contradicting its favourable Doing Business rating (Table 8)."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                789,
+                890,
+                866
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4b925eef4a8dbfe44283930de05a281b808b97fe75f192a57fbadcd778ba12e0.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 9: Corruption Perception Index, 2015–16"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Transparency International, https://www.transparency.org/news/feature/corruption_perceptions_index_2016#table. Note: The index represents a scale of 1-100. Higher scores refer to lower levels of corruption."
+                    }
+                ],
+                "html": "<table><tr><td>Country</td><td>CPI 2016</td><td>CPI 2015</td><td>Score difference (2016-2015)</td><td>CPI 2016 Rank</td><td>CPI 2015 Rank</td><td>Rank difference (2015-2016)</td></tr><tr><td>Macedonia</td><td>37</td><td>42</td><td>-5</td><td>90</td><td>66</td><td>-24</td></tr><tr><td>Montenegro</td><td>45</td><td>44</td><td>1</td><td>64</td><td>61</td><td>-3</td></tr><tr><td>Bosnia and Herzegovina</td><td>39</td><td>38</td><td>1</td><td>83</td><td>76</td><td>-7</td></tr><tr><td>Serbia</td><td>42</td><td>40</td><td>2</td><td>72</td><td>71</td><td>-1</td></tr><tr><td>Albania</td><td>39</td><td>36</td><td>3</td><td>83</td><td>88</td><td>5</td></tr><tr><td>Kosovo</td><td>36</td><td>33</td><td>3</td><td>95</td><td>102</td><td>7</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                300,
+                93,
+                912,
+                254
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6 Progress in EU accession"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                347,
+                668,
+                373
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The opportunity for Euro-Atlantic integration was offered to Western Balkan countries in 1999 in the aftermath of the Kosovo conflict. A cooperation agreement, the Stability Pact for Southern and Eastern Europe, was put in place in June 1999. This was an EU initiative but other countries (the US, Canada, Japan, Russia, Turkey, Norway and Switzerland) and a number of international organisations, were also involved. The pact had three major pillars – democracy, economy and security – and it opened the Stabilisation and Association Process (a first step towards potential EU membership) for the Western Balkans region. The Stability Pact was replaced by the Regional Cooperation Council in 2008  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{14}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                387,
+                905,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The potential eligibility of the Western Balkan countries to become EU members was confirmed by the Thessaloniki EU summit in June 2003. The European Council expressed ‘... its determination to fully and effectively support the European perspective of the Western Balkan countries, which will become an integral part of the EU, once they meet the established criteria’ (Council of the European Union, 2003)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                511,
+                890,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Subsequently, Stabilisation and Association Agreements, which also include provisions for a Deep and Comprehensive Free Trade Area (DCFTA)  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{15}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", were negotiated, signed and ratified by the EU and Western Balkan countries. The agreement with Macedonia entered into force in 2004, with Croatia in 2005, with Albania in 2009, with Montenegro in 2010, with Serbia in 2013, with Bosnia and Herzegovina in 2015 and with Kosovo in 2016."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                587,
+                905,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, the EU has promoted a network of horizontal free trade agreements between candidate countries using the umbrella of the Central European Free Trade Agreement  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{16}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , which currently involves all six Western Balkan countries and Moldova."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                665,
+                895,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macedonia and Croatia obtained EU candidate status in 2004, Montenegro in 2010, Serbia in 2012 and Albania in 2014. Croatia started membership negotiations in 2005 and completed them in 2011, becoming the 28  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{th}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " EU member on 1 July 2013."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                711,
+                902,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Montenegro started membership negotiations in 2012 and Serbia started in January 2014. The EU candidate status of Macedonia is frozen, notwithstanding six European Commission recommendations since October 2009 to open accession negotiations. The blockage has been"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                758,
+                902,
+                804
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "14 See http://www.rcc.int/home."
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                837,
+                477,
+                848
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "15 DCFTAs eliminate import tariffs and also non-tariff barriers. They liberalise trade in services and investment regimes, and involve the far-reaching harmonisation of various trade and investment-related regulations and institutions, especially in the areas of competition policy, state aid and public procurement (see Evans et al, 2004, for details)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                848,
+                899,
+                889
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "16 See http://www.cefta.int/ for details."
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                889,
+                509,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Greece's reservations over the country's name and domestic rule of law problems (section 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                78,
+                897,
+                92
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By December 2017, Montenegro had managed to open accession negotiations on 30 out of 35 chapters of the acquis communautaire (the body of EU law). The non-started chapters are competition policy, economic and monetary policy, environment and climate change, institutions and ‘other issues.’ Three chapters (science and research, education and culture, and external relations) have been already provisionally closed  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{17}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                93,
+                892,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Serbia is less advanced. By December 2017, it had managed to start negotiation on only 12 chapters  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{18}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and had provisionally closed only two chapters – on science and research, and education and culture."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                171,
+                892,
+                216
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "7 Summary and conclusions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                299,
+                269,
+                690,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Western Balkan countries have been slow to reform compared to central European and Baltic countries as a consequence of the decade of devastating ethnic conflicts that followed the collapse of the former Yugoslavia. Nevertheless, since 2000, the Western Balkans have managed to move forward on the political and economic reform fronts largely thanks to the prospect of EU accession that the 2003 EU Thessaloniki summit opened up for them. They have also succeeded in partial income convergence with the EU, although there is still a long way to go. In particular, since the start of the global financial crisis in 2008, the convergence process slowed and, in most countries, even temporarily went into reverse. Economic growth has started to accelerate again only very recently, following economic recovery in the EU."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                310,
+                905,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The slow pace of reform and the EU accession process might be disappointing for many and is the result of numerous unresolved legacies of the 1990s conflict era, domestic political setbacks and a decreasing appetite on the part of the incumbent EU member states for further enlargement. In this context, the recent European Commission initiative to reenergise the accession process and agenda, and to set an indicative deadline (2025) for admission of the two most advanced candidates – Serbia and Montenegro – must be welcomed (European Commission, 2018; see section 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                449,
+                905,
+                556
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This initiative could incentivise all countries of the region, including those candidates that have not yet started membership negotiations (Macedonia and Albania) and those who wait for candidate status (Bosnia and Herzegovina and Kosovo), to remove domestic political obstacles to EU accession, solve conflicts with neighbours, speed up reforms and accelerate economic growth. The initiative could also help to avoid the worst-case scenario – the derailing of the entire reform and European integration process (as happened with Turkey) and the descent again into the ethnic conflict trap."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                557,
+                902,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The initiative could create a new momentum for the partly frozen and forgotten EU enlargement process and complement many other initiatives aimed at consolidation of the EU and deeper European integration after the Brexit shock."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                665,
+                889,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, to give the new momentum a real chance of success, political will on the part of the EU governing bodies is not enough. Candidate and potential candidate countries must be ready to intensify their reform homework, including the most difficult issues of conflict legacies, human rights, guarantees for ethnic, religious and other minorities, respect for the rule of law, full normalisation of relations with neighbours, the fight against corruption, state capture and organised crime, and the modernisation of the public administration and judiciary. Experience of the previous EU enlargement rounds suggests that it makes sense to address"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                712,
+                905,
+                819
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "17 See http://www.delmne.ec.europa.eu/upload/images/poglavljaengbig.jpg."
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                850,
+                702,
+                862
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "18 Public procurement, company law, intellectual property law, enterprise and industrial policy, judiciary and fundamental rights, justice, freedom and security, science and research, education and culture, customs union, external relations, financial control, and other issues"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                863,
+                895,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                110,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "up front the most difficult political, institutional and governance issues to avoid disappointment on both sides. This is what the European Commission (2018) is rightly suggesting in its Western Balkans strategy."
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                78,
+                892,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, the EU itself will also need a new round of internal institutional reforms before admitting more members, most of which would be small countries."
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                124,
+                892,
+                155
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                300,
+                208,
+                460,
+                231
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bechev, D. (2012) 'The Periphery of the periphery: the Western Balkans and the Euro Crisis', Policy Brief ECFR/60, European Council on Foreign Relations, available at http://www.ecfr.eu/publications/summary/the_periphery_of_the_periphery_the_western_balkans_and_the_euro_crisis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                254,
+                890,
+                297
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Byrne, A. and T. Mitchell (2017) 'Eastern Europe welcomes China investment promise', Financial Times, 28 November"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                305,
+                892,
+                332
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Council of the European Union (2003) 'Thessaloniki European Council 19 and 20 June 2003: Presidency Conclusions', Document 11638/03, available at http://www.consilium.europa.eu/uedocs/cms_data/docs/pressdata/en/ec/76279.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                342,
+                897,
+                384
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Estrin, S. and M. Uvalic (2016) 'Foreign direct investment in the Western Balkans: what role has it played during transition?' Comparative Economic Studies 58(3): 455-483"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                393,
+                895,
+                420
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "European Commission (2018) 'A credible enlargement perspective for and enhanced EU engagement with the Western Balkans', Communication COM(2018) 65 final, available at https://ec.europa.eu/commission/sites/beta-political/files/communication-credible-enlargement-perspective-western-balkans_en.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                430,
+                890,
+                486
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Evans, D., P. Holmes, L. Iacovone and S. Robinson (2004) 'A Framework for Evaluating Regional Trade Agreements: Deep Integration and New Regionalism', University of Sussex, mimeo"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                495,
+                880,
+                524
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Fouere, E. (2017) 'Western Balkans and the EU: Still in stand-by', Commentary, Italian Institute for International Political Studies, 10 July, available at http://www.ispionline.it/en/pubblicazione/western-balkans-and-eu-still-stand-17166"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                533,
+                867,
+                574
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Gligorov, V. (2018) 'Disagreeing about Alexander the Great is embarrassing', News & Opinions, The Vienna Institute for International Economic Studies, 16 February, available at https://wiiw.ac.at/disagreeing-about-alexander-the-great-is-embarrassing-n-285.html"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                583,
+                902,
+                626
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hartwell, C. and K. Sidlo (2017) Serbia's cooperation with China, the European Union, Russia and the United States of America, study for the European Parliament, Directorate-General for External Policies, available at http://www.europarl.europa.eu/cmsdata/133504/Serbia%20cooperation%20with%20China,%20the%20EU,%20Russia%20and%20the%20USA.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                634,
+                885,
+                690
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hopkins, V. (2017) 'Indictment tells murky Montenegrin coup tale,' Politico, 23 May, available at https://www.politico.eu/article/montenegro-nato-milo-dukanovicmurky-coup-plot/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                700,
+                894,
+                728
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hunya, G. and M. Schwarzhappel (2016) FDI in Central, East and Southeast Europe: Slump despite Global Upturn, FDI Report 2016, The Vienna Institute for International Economic Studies, available at https://wiw.ac.at/slump-despite-global-upturn-dlp-3899.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                737,
+                902,
+                780
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ICG (2012) 'Bosnia's Gordian Knot: Constitutional Reform,' Europe Brief 68, International Crisis Group, available at https://www.crisisgroup.org/file/1377/download?token=-5jv1Ew8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                788,
+                887,
+                816
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF (2016) Annual Report on Exchange Arrangements and Exchange Restrictions 2016, International Monetary Fund, Washington DC, available at https://www.imf.org/~/media/Files/Publications/AREAER/AREAER_2016_Overview.ashx"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                825,
+                873,
+                866
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF (2017a) 'Albania: 2017 Article IV Consultation-Press Release; Staff Report; and Statement by the"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                876,
+                873,
+                890
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Executive Director for Albania', IMF Country Report No. 17/373, International Monetary Fund, available at http://www.imf.org/-/media/Files/Publications/CR/2017/cr17373.ashx"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                319,
+                65,
+                858,
+                93
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF (2017b) 'Former Yugoslav Republic of Macedonia: 2017 Article IV Consultation-Press Release; Staff Report; and Statement by the Executive Director for the Former Yugoslav Republic of Macedonia', IMF Country Report No. 17/354, International Monetary Fund, available at http://www.imf.org/~/media/Files/Publications/CR/2017/cr17354.ashx"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                102,
+                907,
+                158
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF (2017c) 'Republic of Serbia: 2017 Article IV Consultation, Seventh Review Under the Stand-by Arrangement and Modification of Performance Criteria - Press Release; Staff Report; and Statement by the Executive Director for the Republic of Serbia,' IMF Country Report No. 17/263, International Monetary Fund, available at http://www.imf.org/~media/Files/Publications/CR/2017/cr17263.ashx"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                167,
+                900,
+                224
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Koen, V. and P. De Masi (1997) 'Prices in Transition: Ten Stylized Facts', IMF Working Papers WP/97/158, International Monetary Fund, available at http://www.imf.org/~/media/Websites/IMF/imported-full-text-pdf/external/pubs/ft/wp/_wp97158.ashx"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                231,
+                894,
+                275
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Koettl-Brodmann, J., S. Johansson de Silva and O. Kupets (2017) Firm dynamics and job creation in the former Yugoslav Republic of Macedonia, Report Number 112197-MK, World Bank Group, Washington DC, available at http://documents.worldbank.org/curated/en/982121498623703665/pdf/112197-WP-P133003-PUBLIC-27-6-2017-13-30-59-MKDReportLaborDemandAnalysisFinal.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                282,
+                905,
+                340
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Kynge, J. and M. Peel (2017) 'Brussels rattled as China reaches out to eastern Europe', Financial Times, 27 November"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                349,
+                897,
+                376
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Roaf, J., R. Atoyan, B. Joshi, K. Krogulski and an IMF Staff Team (2014) 25 Years of Transition: Post-Communist Europe and the IMF, International Monetary Fund, available at http://www.imf.org/external/region/bal/rr/2014/25_years_of_transition.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                386,
+                873,
+                428
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Sanfey, P., J. Milatovic and A. Kresic (2016) 'How the Western Balkans can catch up', EBRD Working Paper No. 186, European Bank for Reconstruction and Development, available at http://www.ebrd.com/documents/oce/pdf-working-paper-186.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                437,
+                899,
+                480
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Stehrer, R. and M. Holzner (2018) 'Western Balkan countries knocking on EU's door', News & Opinions, The Vienna Institute for International Economic Studies, 5 February, available at https://wiw.ac.at/n-282.html"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                488,
+                885,
+                530
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "World Bank (2017) Western Balkans: Revving up the engines of growth and prosperity, World Bank Group, Washington DC, available at https://openknowledge.worldbank.org/bitstream/handle/10986/28894/ACS22690.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                300,
+                539,
+                905,
+                581
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                92,
+                933,
+                112,
+                945
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Contribution | Issue n°04 | February 2018"
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                932,
+                626,
+                946
+            ]
+        }
+    ]
+]

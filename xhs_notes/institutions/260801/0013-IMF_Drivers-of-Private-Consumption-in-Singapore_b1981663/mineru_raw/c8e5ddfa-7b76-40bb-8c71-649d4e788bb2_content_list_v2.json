@@ -1,0 +1,2413 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Drivers of Private Consumption in Singapore"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                76,
+                199,
+                570,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sandile Hlatshwayo"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                434,
+                285,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SIP/2026/075"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                497,
+                223,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 29, 2026. This paper is also published separately as IMF Country Report No 26/186."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                594,
+                517,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026\nJUL"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                821,
+                233,
+                922
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d1e2cb7d2ed436ea64e36ab97f3a1fe6f3c9e553927c6ac7b5ca4c0dad246168.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                651,
+                810,
+                797,
+                926
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                830,
+                75
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "SELECTED ISSUES PAPER"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                121,
+                983,
+                878
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Selected Issues Paper Asia Pacific Department Drivers of Private Consumption in Singapore Prepared by Sandile Hlatshwayo"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                328,
+                194,
+                666,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized for distribution by Masahiro Nozaki\nJuly 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                336,
+                297,
+                660,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 29, 2026. This paper is also published separately as IMF Country Report No 26/186."
+                    }
+                ]
+            },
+            "bbox": [
+                125,
+                367,
+                846,
+                420
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: Private consumption ratios differ markedly across advanced economies, with Singapore recording one of the lowest of its peer group. Using a sample of 31 advanced economies and a rich set of potential drivers, the analysis finds that slow-moving structural factors like demographics, economic structure, and development levels are important correlates of these differences, while cyclical factors appear to play a more limited role. Relative to other advanced markets, Singapore's lower old age dependency ratio, lower labor share, high real GDP per capita, and role as a financial hub all weigh on its consumption ratio."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                459,
+                883,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "RECOMMENDED CITATION: Hlatshwayo, S. (2026). Drivers of private consumption in Singapore (IMF Selected Issues No. 26/075). International Monetary Fund."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                587,
+                828,
+                623
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e3dcd8232856769cf072aad63961052d8588f03ccdc2a165231856b3af41820c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>JEL Classification Numbers:</td><td>E21, D12, O53</td></tr><tr><td>Keywords:</td><td>Private consumption, household saving, Singapore, external balances</td></tr><tr><td>Author&#x27;s E-Mail Address:</td><td>SHlatshwayo@imf.org</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                116,
+                638,
+                875,
+                758
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                126,
+                370,
+                142
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SIP/2026/075"
+                    }
+                ]
+            },
+            "bbox": [
+                767,
+                126,
+                866,
+                140
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SELECTED ISSUES PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                194,
+                522,
+                220
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Drivers of Private Consumption in Singapore"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                111,
+                258,
+                857,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                386,
+                300,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by Sandile Hlatshwayo  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                506,
+                460,
+                531
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The author would like to thank Aishwary Trivedi for excellent research assistance."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                911,
+                599,
+                926
+            ]
+        }
+    ],
+    [],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                218,
+                123,
+                500,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SELECTED ISSUES"
+                    }
+                ]
+            },
+            "bbox": [
+                217,
+                181,
+                415,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 29, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                209,
+                145,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Approved By\nAsia Pacific\nDepartment"
+                    }
+                ]
+            },
+            "bbox": [
+                233,
+                250,
+                370,
+                308
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared By Sandile Hlatshwayo (APD)"
+                    }
+                ]
+            },
+            "bbox": [
+                434,
+                251,
+                730,
+                270
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CONTENTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                241,
+                335,
+                383,
+                358
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "DRIVERS OF PRIVATE CONSUMPTION IN SINGAPORE 2\nA. Introduction 2\nB. Methodology 3\nC. Findings 4\nD. Conclusion 7"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                388,
+                882,
+                484
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TABLE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                503,
+                297,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Drivers of Private Consumption (Percent of GNDI) ____ 8"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                522,
+                882,
+                542
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ANNEXES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                238,
+                559,
+                326,
+                579
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I. Data Definitions and Sources 9"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                579,
+                880,
+                599
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "II. Key Drivers of Differences in Private Consumption to GNDI for Singapore and"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                599,
+                849,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "References 11"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                655,
+                880,
+                675
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                16,
+                176,
+                95
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                233,
+                61,
+                826,
+                90
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DRIVERS OF PRIVATE CONSUMPTION IN SINGAPORE  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                94,
+                862,
+                119
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private consumption ratios differ markedly across advanced economies, with Singapore recording one of the lowest of its peer group. Using a sample of 31 advanced economies and a rich set of potential drivers, the analysis finds that slow-moving structural factors like demographics, economic structure, and development levels are important correlates of these differences, while cyclical factors appear to play a more limited role. Relative to other advanced markets, Singapore's lower old age dependency ratio, lower labor share, high real GDP per capita, and role as a financial hub all weigh on its consumption ratio."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                137,
+                870,
+                268
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                281,
+                284,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Singapore's private consumption ratio is low and has fallen over time relative to other advanced economies (see Figure 1). In 2024, Singapore's private consumption as a share of gross national disposable income (GNDI) was 38 percent, down from 46 percent in 1990. Across a sample of advanced economies, its share is the lowest but comparable to economies like Ireland and Denmark. Prior analysis has shown that Singapore's high level of development, rapidly aging population, and low labor share contribute to its low consumption ratio (Qureshi, 2016; Yoo, 2021)."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                318,
+                875,
+                431
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c6316003bd5d92297ea200d3b955cd39b270a40bbb5b962331db382047694ad8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. Private Consumption Trends Across Advanced Economies"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                112,
+                464,
+                496,
+                657
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/33d6d0f9ce3afd2055f9d4e34fdb6dd2486bfbdfe441ce08cfef81c6d4565dfc.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: IMF WEO, CEIC, OECD, and IMF staff calculations."
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                469,
+                901,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. To understand the fundamental determinants of Singapore's consumption ratio, this analysis builds on prior research and introduces three novel contributions to the literature. The analysis includes a rich variety of drivers like uncertainty, demographics, development levels, structural features, and cyclical factors, drawing on prior literature. It also adds three novel contributions to the subset of the literature that focuses on Singapore's private consumption rate. First, it introduces a time-varying control for financial center intensity, measured using gross external assets and liabilities relative to GDP to account for the role of large cross-border balance sheets in shaping saving and consumption behavior in highly integrated financial hubs like Singapore. This improves on prior approaches that relied on ad hoc dummy indicators for financial hubs. Second, it explores how being a financial hub interacts with an economy's small geographic size, under the"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                675,
+                883,
+                866
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                47,
+                200,
+                61
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Prepared by Sandile Hlatshwayo with excellent research support from Aishwary Trivedi."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                893,
+                692,
+                910
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                933,
+                130,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                936,
+                390,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "hypothesis that geographically smaller financial hub countries have higher savings rates given limited domestic investment opportunities. Third, it includes a time-varying control to help account for the role of pension systems."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                92,
+                870,
+                148
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "B. Methodology"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                167,
+                295,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. To examine the drivers of variation in private consumption rates across countries, we use two-way fixed effects regressions. The sample includes 31 advanced economies over the period from 1990 to 2024.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The baseline estimating equations take the following form:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                204,
+                867,
+                261
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} c _ {i, t} = \\alpha + \\beta_ {1} ^ {\\prime} D e m o g r a p h i c s _ {i, t} + \\beta_ {2} L a b o r I n c o m e S h a r e + \\beta_ {3} R e a l G D P p e r C a p i t a _ {i, t - 1} \\\\ & + \\beta_ {4} ^ {\\prime} C y c l i c a l F a c t o r s + \\beta_ {5} G o v e r n m e n t C o n s u m p t i o n _ {i, t} + \\beta_ {6} P e n s i o n S y s t e m s _ {i, t} \\\\ & + \\beta_ {7} F i n a n c i a l C e n t e r I n t e n s i t y _ {i, t} + \\delta_ {i} + \\theta_ {t} + \\varepsilon_ {i, t} \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/1661401760683dd09ca39da6d86417e774f3683f3a58278d2571e0ca553cd0d3.jpg"
+                }
+            },
+            "bbox": [
+                130,
+                276,
+                862,
+                333
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c_{i,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  denotes private consumption as a share of GNDI in country i and year t; demographics is a vector of controls including the population growth rate, old age dependency ratio, and aging speed (measured as the difference between the old-age dependency ratio 20 years ahead and the ratio in year t); cyclical factors include real growth, household credit/GDP, interest rates, changes in terms of trade, and the unemployment rate; a measure of net contributions made to pension schemes as a share of GDP; financial center intensity is the log of gross assets and liabilities/GDP;   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta_{i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  denotes country fixed effects that absorb time-invariant cross-country heterogeneity;   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta_{t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  denotes year fixed effects that absorb common global shocks in year t; and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\varepsilon_{i,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the error term. See Annex I for more detail on data definitions and sources. The estimated standard errors are robust to heteroskedasticity."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                348,
+                874,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. The empirical results should be interpreted with several caveats. First, in order to compile a broad and consistently available panel, the dependent variable uses GNDI as the denominator rather than household personal disposable income. Household personal disposable income is the household resource concept most relevant for consumption decisions but it is not available for the full sample in earlier years. While GNDI is preferable to GDP as a denominator because it better captures income available to residents, it remains an imperfect proxy. Second, several explanatory variables, including income uncertainty and financial center intensity are constructed proxies and may be measured with error. Third, the pension indicator captures variation in net contributions as a share of GDP for pension programs where there are transfers between current contributors and current beneficiaries, as in defined benefit schemes. However, for defined contribution schemes where no such redistributive transfers occur, the indicator is set to zero and does not capture varying levels of intensity in defined contribution schemes that can drive consumption lower in some economies. As a complement, staff also conducts an analysis using pension parameters to explain variation in saving behavior across markets, drawing on the IMF's 2026 External Balance Assessment pension tool. Finally, the empirical approach identifies partial"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                554,
+                877,
+                838
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                47,
+                849,
+                61
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Australia, Austria, Belgium, Canada, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hong Kong SAR, Iceland, Ireland, Israel, Italy, Japan, Korea, Latvia, Luxembourg, Netherlands, New Zealand, Norway, Singapore, Slovak Republic, Slovenia, Spain, Sweden, Switzerland, the United Kingdom, and the United States."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                858,
+                848,
+                902
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                596,
+                938,
+                834,
+                954
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                861,
+                934,
+                875,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "correlations rather than general equilibrium causal effects, and some coefficients may still reflect omitted factors not fully captured by the controls."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                92,
+                849,
+                130
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "C. Findings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                148,
+                243,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. Structural characteristics like demographics, economic structure, and income levels play important roles in driving private consumption patterns across advanced economies. Table 1 shows the results of the analysis. The analysis finds that, amongst advanced economies, structural factors like a more elderly population and higher labor income shares are associated with higher consumption ratios, while higher GDP per capita levels, greater financial center intensity, and faster population growth are associated with lower consumption ratios. Cyclical factors, including stronger output growth and higher returns on savings, also drive down consumption but are less important. In particular:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                185,
+                875,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The coefficient on the old-age dependency ratio is positive and is statistically significant across most specifications. In the preferred specification shown under Column 8 of Table 1, a one percentage point (ppt) increase in the old-age dependency ratio is associated with a 0.41 ppt increase in the consumption ratio. This result is in line with findings in the literature that demographics are an important driver of consumption dynamics (Modigliani and Brumberg, 1954). Population growth, by contrast, is negative and significant in most specifications, with a 1 ppt increase associated with a roughly 0.23 ppt lower consumption ratio. Aging speed has an unexpectedly positive sign and is not statistically significant across the specifications. This finding contrasts with prior literature that found that faster aging tends to lower consumption. One factor that may be attenuating the results is a statistical convergence in the projected variation across countries' aging patterns of UN population forecasts relative to prior forecast vintages. However, broadly speaking, the demographic patterns are consistent with the life-cycle model of consumption and savings: a larger elderly population tends to be associated with higher dissaving and consumption, while economies with fast-growing populations and associated labor force dynamics have lower consumption ratios."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                352,
+                882,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- For labor share, a one ppt increase in the share of labor compensation in national income is significantly associated with a 0.44 ppt higher consumption-to-GNDI ratio. This is consistent with Yoo (2021) and highlights that economies with large corporate sectors and a large share of foreign-owned multinationals have a smaller portion of resources that accrue to domestic households (Figure 2).  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                652,
+                877,
+                746
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Higher-income economies have lower consumption ratios. In the preferred specification, a one log unit increase in lagged real GDP per capita is significantly associated with a 4.4 ppt lower consumption ratio, which squares with findings that higher-income economies and the higher-income households within them have a lower marginal propensity to consume, including"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                761,
+                869,
+                838
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                47,
+                200,
+                61
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The corporate profits from multinationals that displace wage income may be largely repatriated abroad rather than recycled into domestic demand, potentially contributing to Singapore's persistent primary income deficit despite its large positive net international investment position."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                858,
+                875,
+                904
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                934,
+                130,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                938,
+                390,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "because of higher bequest and precautionary saving motives (Agarwal and Qian, 2014; De Nardi, 2004; De Nardi et al., 2010; Jappelli and Pistaferri, 2014)."
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                92,
+                831,
+                130
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- For cyclical and policy-related factors, a one ppt increase in real GDP growth is significantly associated with a 0.15 ppt lower consumption ratio in the preferred specification, broadly in line with prior findings (Masson et al., 1998), while a one ppt increase in household credit-to-GDP is associated with about a 0.04 ppt higher consumption ratio (Mian et al., 2017). A one ppt increase in the real short-term deposit rate is significantly associated with a 0.17 ppt lower consumption ratio; a higher real return on deposits strengthens incentives to save and defer consumption and may also be related to the composition of households' balance sheets (Cloyne et al., 2020). Improvements in terms-of-trade lower consumption, which could reflect that the positive income shocks from terms-of-trade increases largely accrue to corporates and not households. Higher income uncertainty tends to reduce consumption, consistent with real options 'wait-and-see' effects (Baker et al., 2016) but the size of the effect becomes statistically insignificant and much smaller once a broader set of controls is included. Year fixed effects that absorb major global shocks may also capture income uncertainty. The unemployment rate and government consumption/GDP are not statistically significant."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                145,
+                877,
+                411
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- For pensions, the control is a rough proxy for pension-induced household saving. A one ppt increase in net contributions associated with defined benefit or pay-as-you-go systems is associated with about a 1.1 ppt lower consumption-to-GNDI ratio. As previously noted, however, the pension control does not capture the behavioral dimension of defined contribution pension systems, where mandatory contribution rates, fund generosity, and the extent of consumption-smoothing facilitated by such schemes vary considerably and can influence household saving and consumption outcomes. A separate analysis using the pension toolkit from the 2026 External Balance Assessment methodology shows that Singapore's defined contribution pension system can help explain up to 1.6 percent of GDP of its current account surplus."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                426,
+                882,
+                597
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The effect of increases in financial center intensity is large and negative: a one log unit increase in the log financial-center measure is significantly associated with about a 1.9 ppt lower consumption ratio. Despite the difference in construction of the measures, this is close to results from studies that use dummy indicators for financial centers. Namely, relative to non-financial centers, Qureshi (2016) finds that financial centers are associated with a higher private saving rate of around 2 percent of GDP and IMF (2017) external balance estimates show that financial centers are associated with a higher current account balance of about 3 percent of GDP."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                611,
+                877,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Finally, small geographic size does not appear to drive higher saving conditional on being a financial hub. The interaction term between a small state dummy indicator and the financial center intensity measure is positive, significant, and fully offsets the negative base effect of the financial center measure, suggesting that large financial hubs that are also small geographically have higher consumption rates relative to physically larger financial hubs. To assess the robustness of this finding, the shares of global population and output were used as alternative measures for small economies. The interaction effect for financial center intensity with output shares is insignificant, but the interaction term for population shares produces a net positive"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                758,
+                872,
+                911
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                47,
+                849,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                598,
+                938,
+                834,
+                954
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                861,
+                934,
+                875,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: External Wealth of Nations and IMF staff calculations."
+                    }
+                ]
+            },
+            "bbox": [
+                503,
+                368,
+                821,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "result that lends some credence to the idea that countries with smaller populations have lower consumption and higher savings, conditional on being financial centers.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Neither of the population share nor the output share indicators are statistically significant on their own."
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                92,
+                864,
+                148
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. Labor Share and Financial Center Intensity Across Advanced Economies"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                167,
+                826,
+                185
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c842faff65d16746ff9c648eb431ea1cfe6a38dbbdb20dccd6cbc1c6b3d9366c.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Penn World Tables and IMF staff calculations."
+                    }
+                ]
+            },
+            "bbox": [
+                107,
+                186,
+                496,
+                378
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dbcd24d927d59fdda45ca818d55a886b3a19211c2fbf7c8d71e946e9fbb00ebe.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                501,
+                185,
+                888,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. For Singapore, its demographics, low labor share, high level of development, low household credit, and financial center status reduce its 2024 consumption relative to peers. Using the preferred specification, Figure 3 shows the decomposition of the key drivers comparing"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                400,
+                857,
+                459
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore's lower consumption rate to that of the average for other advanced economies in 2024. The most important driver is Singapore's old age dependency ratio, which is lower than in other advanced economies at present despite its rapidly aging population. Singapore's labor share ranks second in importance and is amongst the lowest in the sample at 10 ppts below the average for the rest of the sample. Other important factors are Singapore's higher level of real GDP per capita, financial center status, and lower household credit to GDP. See Annex II for a comparison of"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                459,
+                411,
+                779
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e772c2b4dd92372f5d17d2f34887a88762645701cf8be7bde797b2e0447b20f3.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Middle bars show coefficients' estimated contribution of various drivers for Singapore's 2024 consumption rate relative to other advanced economies' average 2024 consumption rate based on a panel fixed effects regression for 31 advanced economies over the period from 1990 to 2024."
+                    }
+                ]
+            },
+            "bbox": [
+                434,
+                463,
+                875,
+                720
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore's private consumption rate to other financial centers. The drivers are similar to those shown in Figure 3, except for the financial center intensity indicator given that Singapore's financial center intensity is lower than the average of other financial centers."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                780,
+                870,
+                837
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                47,
+                200,
+                61
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The interaction term on financial center intensity and population share is 2.64, which offsets the base term on financial center intensity of -2.36; both are significant at the 5 percent level."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                871,
+                839,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                116,
+                933,
+                130,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                936,
+                390,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. Over the past two decades, the decline in Singapore's consumption ratio was driven by similar factors. Figure 4 shows that the decline in Singapore's consumption ratio between 2002 (a"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                92,
+                880,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "peak year) and 2024 includes a higher level of development, falling labor share "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", and growing prominence as a financial hub, as well as global shocks captured by the year fixed effects contribution. The impacts of the year fixed effects are particularly significant and negative around the time of the Covid-19 pandemic when health-related policy interventions and associated preventative behavior lowered household consumption. At the same time, Singapore's old age dependency ratio has increased, partially offsetting the pull factors."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                130,
+                380,
+                452
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0f4247f7cb5e63ab81004938eaebfe66e90c8650b787e4b096555a8f83109a52.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Middle bars show coefficients' estimated contribution for various drivers of Singapore's 2002 consumption rate relative to Singapore's 2024 consumption rate based on a panel fixed effects regression for 31 advanced economies over the period from 1990 to 2024. Years selected based on peak consumption in 2002 and the most recent year in the sample."
+                    }
+                ]
+            },
+            "bbox": [
+                403,
+                137,
+                872,
+                377
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "D. Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                470,
+                267,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "8. The analysis suggests that Singapore's low private consumption-to-GNDI ratio is primarily a structural phenomenon. Relative to other advanced economies, Singapore's demographics, lower labor share, high level of development, and financial center characteristics all weigh on its consumption, while cyclical factors appear to be less important. These same forces also help explain the decline in Singapore's consumption ratio over time. The structural, slow-moving nature of the drivers of private consumption highlights the role of medium-term structural policies to help reduce Singapore's external surpluses over the medium and long term."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                507,
+                875,
+                641
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9. Future work could deepen analysis of saving and investment in Singapore along several dimensions. A microeconomic lens using household-level data would help better identify saving and consumption behavior across demographic groups. The pension system and broader social protection are also likely to be important determinants of saving behavior and can be examined more closely. Aside from households, a more precise understanding of precautionary motives associated with Singapore's financial center status and the role of multinational enterprises in shaping external imbalances would be useful."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                655,
+                874,
+                789
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                47,
+                849,
+                61
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " While Singapore's labor share has declined from its 2002 levels, it is broadly in line with its level in the mid-1990s. The decline in Singapore's labor share since the 2000s may be related to the broader rise of 'superstar' firms globally, in which reallocation of activity toward highly productive, high-markup, low-labor-share firms depresses the aggregate wage share (Autor et al., 2020)."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                843,
+                879,
+                904
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                598,
+                938,
+                834,
+                954
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                861,
+                934,
+                875,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c46afa8bb71f2bece8718a4498158afe21f9916d4037655bb37eb430c85e1f77.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1. Selected Economies: Drivers of Private Consumption (Percent of GNDI)"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td><td>(6)</td><td>(7)</td><td>(8)</td><td>(9)</td></tr><tr><td>Income uncertainty</td><td>-0.133*(0.070)</td><td></td><td>-0.087*(0.047)</td><td>-0.139***(0.040)</td><td>-0.114**(0.052)</td><td>-0.080(0.057)</td><td>-0.053(0.055)</td><td>-0.036(0.055)</td><td>-0.030(0.055)</td></tr><tr><td>Population growth rate</td><td></td><td>-0.761**(0.345)</td><td>-0.745**(0.313)</td><td>-0.629**(0.269)</td><td>-0.500*(0.249)</td><td>-0.447*(0.235)</td><td>-0.221*(0.126)</td><td>-0.233(0.137)</td><td>-0.114(0.129)</td></tr><tr><td>Old-age dependency ratio</td><td></td><td>0.273**(0.118)</td><td>0.179(0.110)</td><td>0.195**(0.096)</td><td>0.222**(0.102)</td><td>0.319**(0.119)</td><td>0.395***(0.114)</td><td>0.414***(0.108)</td><td>0.441***(0.087)</td></tr><tr><td>Population aging speed</td><td></td><td>0.044(0.087)</td><td>0.056(0.079)</td><td>0.084(0.075)</td><td>0.057(0.074)</td><td>0.076(0.083)</td><td>0.108(0.074)</td><td>0.107(0.077)</td><td>0.085(0.057)</td></tr><tr><td>Labor income share</td><td></td><td></td><td>0.440***(0.123)</td><td>0.399***(0.080)</td><td>0.428***(0.098)</td><td>0.481***(0.121)</td><td>0.448***(0.106)</td><td>0.437***(0.100)</td><td>0.375***(0.096)</td></tr><tr><td>Lag Real GDP per capita (Log)</td><td></td><td></td><td></td><td>-5.121**(2.248)</td><td>-5.640***(1.996)</td><td>-5.254**(2.209)</td><td>-4.443**(1.987)</td><td>-4.361**(2.009)</td><td>-6.220***(2.154)</td></tr><tr><td>Real GDP growth</td><td></td><td></td><td></td><td>-0.099(0.062)</td><td>-0.126**(0.045)</td><td>-0.169***(0.045)</td><td>-0.141***(0.040)</td><td>-0.151***(0.037)</td><td>-0.163***(0.040)</td></tr><tr><td>Household credit/GDP</td><td></td><td></td><td></td><td></td><td>0.016(0.020)</td><td>0.027(0.019)</td><td>0.042**(0.017)</td><td>0.044**(0.016)</td><td>0.052***(0.016)</td></tr><tr><td>Real deposit interest rate</td><td></td><td></td><td></td><td></td><td>0.045(0.089)</td><td>0.004(0.088)</td><td>-0.164*(0.091)</td><td>-0.173*(0.091)</td><td>-0.215**(0.088)</td></tr><tr><td>Change in terms of trade</td><td></td><td></td><td></td><td></td><td></td><td>-0.040***(0.014)</td><td>-0.033**(0.014)</td><td>-0.037**(0.014)</td><td>-0.039***(0.013)</td></tr><tr><td>Unemployment rate</td><td></td><td></td><td></td><td></td><td></td><td>0.091(0.103)</td><td>0.117(0.097)</td><td>0.131(0.097)</td><td>0.099(0.098)</td></tr><tr><td>Government Consumption/GDP</td><td></td><td></td><td></td><td></td><td></td><td>-0.342(0.216)</td><td>-0.159(0.203)</td><td>-0.137(0.189)</td><td>-0.105(0.168)</td></tr><tr><td>Defined Benefit Pension Adj./GDP</td><td></td><td></td><td></td><td></td><td></td><td></td><td>-1.261**(0.470)</td><td>-1.125**(0.407)</td><td>-0.875***(0.304)</td></tr><tr><td>Financial Center Intensity</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-1.865**(0.891)</td><td>-2.464***(0.845)</td></tr><tr><td>Financial Center Intensity x Small Geographic Size</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2.978**(1.305)</td></tr><tr><td>Observations</td><td>998</td><td>1,022</td><td>994</td><td>986</td><td>810</td><td>788</td><td>707</td><td>707</td><td>707</td></tr><tr><td>Countries</td><td>31</td><td>31</td><td>31</td><td>31</td><td>26</td><td>26</td><td>24</td><td>24</td><td>24</td></tr><tr><td>R-squared</td><td>0.239</td><td>0.296</td><td>0.455</td><td>0.490</td><td>0.538</td><td>0.556</td><td>0.623</td><td>0.637</td><td>0.656</td></tr><tr><td>Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Year FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td colspan=\"10\">Robust standard errors in parentheses; R-squared is within R-squared; constant, country, and time fixed effects not shown; *p&lt; 0.10, **p&lt; 0.05, ***p&lt; 0.01</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                89,
+                151,
+                909,
+                848
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "∞"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                130,
+                56,
+                143
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                166,
+                56,
+                403
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                936,
+                119,
+                952,
+                202
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Annex I. Data Definitions and Sources"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                277,
+                93,
+                718,
+                114
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c85e717b57fc84e0c70a5b62d947fdec191d6608544fda6c638ab77babaf2ee2.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Variables</td><td>Source / Notes</td></tr><tr><td>Private consumption as a share of gross national disposable income (GNDI)</td><td>IMF WEO, CEIC, OECD</td></tr><tr><td>World Uncertainty Index (in logs)</td><td>World Uncertainty Index</td></tr><tr><td>Income uncertainty</td><td>Author&#x27;s calculations using real GDP per capita data from IMF WEO. Preferred measure is the conditional standard deviation of annual real GDP per capita growth from country-specific GARCH(1,1) models following IMF 2021; if GARCH fails, ARCH(1); if both fail, used 5-year rolling variance</td></tr><tr><td>Old-age dependency ratio</td><td>UN population data</td></tr><tr><td>Population aging speed</td><td>UN population data; author&#x27;s calculations; difference between the old-age dependency ratio 20 years ahead and its current value</td></tr><tr><td>Population growth rate</td><td>IMF WEO</td></tr><tr><td>Population share (% of world population)</td><td>World Bank</td></tr><tr><td>Output share (% of world GDP)</td><td>World Bank</td></tr><tr><td>Labor income share</td><td>Penn World Table; share of labor compensation in GDP at current national prices; for 2024, the 2023 estimates are used</td></tr><tr><td>Log real GDP per capita</td><td>IMF WEO; GDP per capita at constant PPP prices</td></tr><tr><td>Growth of real GDP per capita</td><td>IMF WEO</td></tr><tr><td>Real GDP growth</td><td>IMF WEO</td></tr><tr><td>Household credit to GDP</td><td>BIS; credit to the non-financial sector, Households &amp; NPISHs</td></tr><tr><td>Real deposit interest rate</td><td>IMF WEO</td></tr><tr><td>Annual change in the terms of trade</td><td>IMF WEO</td></tr><tr><td>Unemployment rate</td><td>IMF WEO</td></tr><tr><td>General government consumption expenditure as a share of GDP</td><td>World Bank</td></tr><tr><td>Pension adjustment as a share of GDP for defined benefit systems</td><td>OECD; IMF; author&#x27;s calculations. In line with the 2008 System of National Accounts, the adjustment for the change in pension entitlements is defined as the total value of the actual and imputed social contributions payable into pension schemes, plus the total value of contribution supplements payable out of the property income attributed to pension fund beneficiaries, minus the value of the associated service charges, minus the total value of the pensions paid out as social insurance benefits by pension schemes. The data on the pension adjustments are sourced from the OECD and are divided by nominal GDP. The indicator is set to zero for countries whose core mandatory pension pillar is funded defined contribution</td></tr><tr><td>Financial center intensity (in logs)</td><td>External Wealth of Nations Dataset; author&#x27;s calculations; gross external assets plus gross liabilities relative to GDP</td></tr><tr><td>Small geographic size dummy</td><td>Author&#x27;s classification using geographic size for smallest three economies in the sample; equals one for Singapore, Hong Kong SAR, and Luxembourg.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                128,
+                883,
+                882
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                766,
+                47,
+                848,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                598,
+                938,
+                834,
+                953
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                862,
+                934,
+                875,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/521401684cb79e3f157219176e8b7e297e6dc1a512edbc6fde8cb95661fb8d04.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Annex II. Key Drivers of Differences in Private Consumption to GNDI for Singapore and Other Financial Centers, 2023"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Middle bars show coefficients' estimated contribution for various drivers of Singapore's 2023 consumption rate relative to the 2023 average consumption rate of other financial centers. The comparison group of financial center economies includes Hong Kong SAR, Ireland, Luxembourg, the Netherlands, and Switzerland. This figure uses 2023 instead of 2024 to allow for more data coverage of the financial centers across the various indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                163,
+                157,
+                831,
+                614
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                116,
+                47,
+                200,
+                61
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                117,
+                938,
+                138,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                938,
+                390,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                431,
+                94,
+                566,
+                114
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Agarwal, S., & Qian, W. (2014). Consumption and debt response to unanticipated income shocks: Evidence from a natural experiment in Singapore. American Economic Review, 104(12), 4205-4230."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                132,
+                857,
+                170
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Autor, D., Dorn, D., Katz, L. F., Patterson, C., & Van Reenen, J. (2020). The fall of the labor share and the rise of superstar firms. The Quarterly Journal of Economics, 135(2), 645-709."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                185,
+                861,
+                223
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Baker, S. R., Bloom, N., & Davis, S. J. (2016). Measuring economic policy uncertainty. The Quarterly Journal of Economics, 131(4), 1593-1636."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                238,
+                857,
+                275
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Cloyne, J., Ferreira, C., & Surico, P. (2020). Monetary policy when households have debt: new evidence on the transmission mechanism. The Review of Economic Studies, 87(1), 102-129."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                291,
+                815,
+                329
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "De Nardi, M. (2004). Wealth inequality and intergenerational links. The Review of Economic Studies, 71(3), 743-768."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                344,
+                802,
+                381
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "De Nardi, M., French, E., & Jones, J. B. (2010). Why do the elderly save? The role of medical expenses. Journal of Political Economy, 118(1), 39-75."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                397,
+                802,
+                435
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF. (2017). 2015 Refinements to the External Balance Assessment Methodology. Retrieved on March 27, 2026."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                449,
+                833,
+                488
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Jappelli, T., & Pistaferri, L. (2014). Fiscal policy and MPC heterogeneity. American Economic Journal: Macroeconomics, 6(4), 107-136."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                503,
+                864,
+                541
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Masson, P. R., Bayoumi, T., & Samiei, H. (1998). International evidence on the determinants of private saving. The World Bank Economic Review, 12(3), 483-501."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                556,
+                879,
+                595
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Mian, A., Sufi, A., & Verner, E. (2017). Household debt and business cycles worldwide. The Quarterly Journal of Economics, 132(4), 1755-1817."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                609,
+                870,
+                647
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Qureshi, M. (2016). Singapore's 2016 Article IV Selected Issues paper. What drives private savings in Singapore."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                662,
+                867,
+                700
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Yoo, J. (2021). Singapore's 2021 Article IV Selected Issues paper. Household consumption dynamics around shocks."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                715,
+                862,
+                752
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "SINGAPORE"
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                47,
+                849,
+                61
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                596,
+                938,
+                834,
+                953
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                852,
+                936,
+                875,
+                954
+            ]
+        }
+    ]
+]

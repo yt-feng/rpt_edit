@@ -1,0 +1,1328 @@
+[
+    {
+        "type": "text",
+        "text": "BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "text_level": 1,
+        "bbox": [
+            277,
+            48,
+            818,
+            225
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Guntram Wolff\nDirector, Bruegel",
+        "bbox": [
+            92,
+            300,
+            201,
+            332
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/cd67a56bd52ef7361e6bb0b1a0505586d98c759cd52a34b0aa46fad1eca5f5e9.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Source: Bruegel."
+        ],
+        "content": "",
+        "bbox": [
+            278,
+            300,
+            902,
+            472
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "THE ISSUE",
+        "text_level": 2,
+        "bbox": [
+            277,
+            517,
+            357,
+            531
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Two diametrically opposed visions of the euro-area architecture have been put forward. European Commission president Jean-Claude Juncker favours a model that puts the Commission at the centre of fiscal policy decision-making. The former German finance minister Wolfgang Schäuble argues that fiscal surveillance should be centred on a reformed European Stability Mechanism. Juncker's proposal would over-emphasise the Commission when fiscal policy making is national and would unduly mix the roles of Commission and Council. Schäuble, by contrast, neglects the fact that national fiscal policy matters for the euro area not only for sustainability reasons but also because of the provisioning of public goods, stabilisation policy and effects on inflation and growth. This Policy Brief does not discuss the completion of banking union, which is essential for a stable euro area.",
+        "bbox": [
+            275,
+            532,
+            902,
+            689
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "POLICY CHALLENGE",
+        "text_level": 2,
+        "bbox": [
+            277,
+            702,
+            421,
+            715
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fiscal policy making in the euro area will remain a difficult balancing act between national politics and European interests. Departing from both Juncker's and Schäuble's proposals, the Eurogroup should be developed into a Eurosystem of fiscal policy (EFP) as the centre of euro-area fiscal governance. The Eurogroup should have a permanent, full-time president, with a mandate to represent the interests of the whole euro area, and who will report regularly to the European Parliament. The Commission would make fiscal policy recommendations to member states; fiscal rules would be reformed. Political, and in some cases market, pressure would increase on countries that fail to comply with recommendations. Ultimate responsibility for debt will remain national. The European Stability Mechanism should become a permanent fire brigade to manage sovereign debt crises, including possible restructurings in extreme cases. Finally, the EU budget should be reformed to focus on European public goods and on a stabilisation function.",
+        "bbox": [
+            275,
+            717,
+            905,
+            904
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "POLICYBRIEF\nISSUE 6 | 1 DECEMBER 2017",
+        "bbox": [
+            90,
+            53,
+            253,
+            87
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. Juncker outlined his vision in his 13 September 2017 State of the Union address to the European Parliament. See http://europa.eu/rapid/press-release\\_SPEECH-17-3165\\_en.htm.",
+        "bbox": [
+            92,
+            117,
+            248,
+            219
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. In an undated non-paper from the German federal finance ministry, published in October 2017; see https://www.scribd.com/document/361120275/German-finance-ministry-non-paper-on-Eurozone-reforms.",
+        "bbox": [
+            90,
+            228,
+            253,
+            344
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. Though the Schäuble paper is silent on what this would mean for countries outside the euro area, which are also currently subject to the SGP.",
+        "bbox": [
+            90,
+            351,
+            255,
+            430
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4. It is comparable to appointing Wolfgang Schäuble president of the Bundestag while keeping his finance minister position.",
+        "bbox": [
+            90,
+            438,
+            243,
+            514
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "5. As was aptly described by Italy's former prime minister Giuliano Amato at an October 2017 conference; see https://www.eu2017.ee/political-meetings/academic-conference (minutes 26ff; Amato, 2017).",
+        "bbox": [
+            90,
+            523,
+            245,
+            627
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "6. Some have made a comparison with the high representative for foreign affairs, who is also the vice president of the European Commission, but the high representative position is in fact a double-hat position and not a role in which only a commissioner acquires the chairmanship of the Eurogroup. Also substantively, the EU's Common Foreign and Security Policy does not foresee a clear institutional separation between the issuing of recommendations based on a clear legal framework and decisions that need to be taken in the council based on such recommendations.",
+        "bbox": [
+            92,
+            634,
+            253,
+            934
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "COMPETING VISIONS OF EURO-AREA GOVERNANCE: JUNCKER VERSUS SCHÄUBLE",
+        "text_level": 2,
+        "bbox": [
+            275,
+            77,
+            578,
+            123
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "European Commission president Jean-Claude Juncker and Germany's former finance minister Wolfgang Schäuble have proposed competing visions of euro-area governance. For Juncker, the core of the vision is a strengthened European Commission, with a Commission vice president who would be the euro-area finance minister, chairing the Eurogroup, presiding over a euro-area budget that is part of the European budget and giving recommendations to the Eurogroup and the member states on their national fiscal policies, based on a ‘political’ interpretation of the Stability and Growth Pact (SGP) $^{1}$ .",
+        "bbox": [
+            275,
+            131,
+            578,
+            362
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "By contrast, Schäuble's vision $^{2}$ is clearly motivated by a mistrust of the European Commission. Schäuble proposes to transform the European Stability Mechanism into a permanent European Monetary Fund (EMF) – the euro area needs a fire brigade even when no fire is burning. According to this plan, the EMF would have a clear crisis prevention mandate comparable but more far-reaching than the International Monetary Fund's Article IV. In particular, the ESM would “gradually” be put in charge of monitoring the SGP $^{3}$ . Eventually, the Fiscal Compact and ESM Treaty would be changed so the ESM would fully monitor euro-area compliance with fiscal rules. Schäuble's mistrust of the European Commission is expressed in the wording that the ESM would play a “stronger, neutral” role.",
+        "bbox": [
+            275,
+            363,
+            581,
+            687
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "These visions of the euro-area architecture are diametrically opposed – and both are flawed. Juncker's proposal ignores the reality of the strong intergovernmental nature of European fiscal policy coordination, while Schäuble disregards the numerous spillovers from European fiscal policymaking.",
+        "bbox": [
+            275,
+            688,
+            581,
+            810
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Juncker's plan to merge the role of the chair of the Eurogroup with that of the economic and financial affairs commissioner is institutionally problematic. In fact, the proposal would amount to asking the prosecutor to preside as the chief judge over fiscal decision making $^{4}$ . The European Union is built on a fine balance between community interests and national interests. At its core, this gives the European Commission primacy in initiating legislation and in issuing recommendations in the context of the SGP, while giving member countries supremacy in taking final decisions on the SGP, and giving the Council of the European Union and the European Parliament the final say on legislation $^{5}$ . A merging of the roles of chair of the council and commissioner would upset this fine balance.",
+        "bbox": [
+            275,
+            810,
+            569,
+            935
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            601,
+            85,
+            894,
+            300
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "It would also lead to conflicts of interest. How could the European Commissioner/finance minister issue a recommendation based on the EU legal framework, and then risk losing her/his authority as the chairperson of the council that might want to take a political decision to reject the recommendation $^{6}$ ?",
+        "bbox": [
+            601,
+            300,
+            904,
+            424
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The European Commission already has an impossibly difficult task to interpret a set of rather incomprehensible fiscal rules. But the political approach taken to SGP recommendations has undermined trust in the European Commission as an independent guardian of the treaty and has disturbed the delicate EU balance described above $^{7}$ . Flexibility in fiscal rules is useful but needs to be deployed in a broad forum with strong support from the member states, and should be applied even-handedly. Juncker’s European finance minister proposal is also inefficient because it would give the position of chair of the Eurogroup to the European Commission, disregarding the fact that fiscal policy is national and legitimacy for national fiscal policy derives from national parliaments. Having a commissioner, whose legitimacy is based on European processes, as chair of the group of national finance ministers would not provide adequate political legitimacy and the efficiency of the group would suffer as national ownership would decline. Having said this, it is true that Eurogroup decisions should be made more transparent. Schäuble’s intergovernmental vision also has major shortcomings, and some parts of his proposal, such as",
+        "bbox": [
+            601,
+            425,
+            905,
+            936
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            92,
+            40,
+            105,
+            52
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            36,
+            902,
+            52
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "7. Representatives of smaller countries have voiced concerns that they cannot rely on the Commission to take an even-handed approach between smaller and larger member states. This can have negative effects well beyond the application of the SGP. How can the Commission ask member states to respect the rule of law when it itself appears ready to interpret the SGP rules differently for different countries?",
+        "bbox": [
+            90,
+            607,
+            253,
+            816
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "8. The paper does not discuss the completion of banking union, which is essential for a stable euro area, nor next steps on capital markets union.",
+        "bbox": [
+            90,
+            822,
+            250,
+            900
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "9. For a recent paper see Farhi and Werning (2017).",
+        "bbox": [
+            90,
+            908,
+            245,
+            934
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "automatic restructuring, would be highly problematic.",
+        "bbox": [
+            275,
+            85,
+            574,
+            115
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "According to Schäuble, the ESM should remain an intergovernmental institution (at least if there is no will to change the treaties). Nevertheless, the proposal is worrying institutionally because it would unsettle the delicate balance between interests of the euro area as a whole and national interests. In particular, the ESM as an intergovernmental institution cannot make ‘neutral’ recommendations – on the contrary, it is a highly political institution. As its decision-making process is based on unanimity among its Board of Governors, it would essentially have to fully internalise the political process when issuing fiscal policy recommendations. In doing so, the role of the neutral interpreter – ie the prosecutor – and the judge would again be blurred.",
+        "bbox": [
+            275,
+            117,
+            578,
+            439
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The proposal would deprive the Commission of its role as the institution in charge of applying the fiscal rules (at least for the euro-area countries). The important separation between political interpretation and neutral application of the rules would be lost.",
+        "bbox": [
+            275,
+            439,
+            579,
+            548
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The ESM itself also has interests that might not be in line with the interests of the euro area as a whole. In particular, it could take an excessively risk-averse approach to fiscal deficits, neglecting the positive economic effects that good stabilisation policy can deliver, while focussing excessively on sustainability concerns, which are the primary interest of the ESM.",
+        "bbox": [
+            275,
+            548,
+            579,
+            701
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The proposal would therefore deprive the Eurogroup of the important representation of euro-area-wide interests in its decision making. Beyond ensuring that national fiscal policy remains sustainable, community interests would be little represented. However, it is well known and well established that there are numerous spillovers and interactions between national fiscal policies, monetary policy, inflation and euro-area growth.",
+        "bbox": [
+            275,
+            703,
+            578,
+            887
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "It is indispensable that euro-area interests should be strongly represented in the Eurogroup. That is not visible in the Schäuble paper beyond emergency lending and strengthening of banking union.",
+        "bbox": [
+            275,
+            889,
+            576,
+            934
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            601,
+            85,
+            894,
+            131
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "TOWARDS A MORE EFFECTIVE INSTITUTIONAL SET-UP: A 'EUROSYSTEM OF FISCAL POLICY'8",
+        "text_level": 2,
+        "bbox": [
+            601,
+            146,
+            890,
+            191
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Neither Juncker's nor Schäuble's visions would deliver effective decision making. But they are right to highlight that the current set-up suffers from drawbacks and should therefore be changed. Currently, fiscal coordination primarily focuses on sustainability or more specifically the avoidance of excessive deficits. But two important aspects are not sufficiently considered in the current system: (1) The framework for management of sovereign debt crisis, including possible debt restructurings in extreme cases, is weak and (2) the representation of common interests in decision-making is weak while fiscal rules do not sufficiently take care of stabilisation policy, in particular in terms of the area-wide fiscal stance.",
+        "bbox": [
+            601,
+            193,
+            902,
+            470
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "National fiscal policies matter for the union beyond sustainability concerns: in particular, the area-wide fiscal stance and its impact on inflation, and spillovers of national policies across borders, are relevant channels that need to be considered $^{9}$ . In the absence of a large central/federal treasury, it is indispensable to have a forum in which national policies can be discussed and, ideally, adapted if necessary. Coordination of fiscal policies will remain important in Europe's monetary union unless a giant leap towards a federation with central fiscal powers is made. Since national fiscal policy is driven by national policymakers, a forum needs to exist where these national politics can be reconciled.",
+        "bbox": [
+            601,
+            470,
+            907,
+            764
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Of course, one could hope to create a system in which national fiscal policy is exercised fully independently and a hard no-bail-out clause prevents moral hazard. However, such a system is only credible with significant European-level policies (in particular banking union) and only efficient with European-level stabilisation policy. The latter seems unlikely to be available anytime soon while the former is being built-up. Coordination",
+        "bbox": [
+            601,
+            765,
+            902,
+            935
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            92,
+            40,
+            104,
+            52
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            36,
+            902,
+            52
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "President of the Eurogroup should be a permanent, full time position; it has been argued that it is not a full-time job, but this view seems to disregard the complexity of the task",
+        "bbox": [
+            90,
+            146,
+            250,
+            300
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "10. For the last months of his mandate, Jeroen Dijsel-bloom has become such a full-time Eurogroup chair.",
+        "bbox": [
+            92,
+            769,
+            245,
+            821
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "11. As Eurogroup insiders know, one of the reasons why Eurogroup meetings are now less less likely to last into the night is that more preparatory work is done by the current Euro-group president.",
+        "bbox": [
+            92,
+            828,
+            243,
+            933
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "policies will therefore remain important for stabilisation. When banking union is completed and financial policies are truly European, the no-bail-out clause will become more credible. That also means that fiscal rules can become less intrusive. At the same time, to achieve better stabilisation policy, the rules should become more binding politically as the following sections explain.",
+        "bbox": [
+            275,
+            85,
+            573,
+            241
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "STRENGTHEN THE ROLE OF THE EUROGROUP PRESIDENT BY MAKING IT A FULL-TIME POSITION AND IMPROVE ACCOUNTABILITY\nAn obvious starting point to better represent euro-area interests is to transform the president of the Eurogroup into a permanent, full time position $^{10}$ . It is sometimes argued that chairing the Eurogroup is not a full-time job, but this view seems to disregard the complexity of the task. Key decisions need to be prepared through many bilateral discussions between key stakeholders before the meeting $^{11}$ . Moreover, a full-time president should also increasingly represent the euro area's interests. For example, the Eurogroup president could regularly visit national parliaments and give press conferences in Brussels and in the national contexts to explain Eurogroup decisions. In fact, it is very important to make the European voice heard in the national decision-making bodies so that collective decisions do not only rely on the national finance minister in the national contexts. A further advantage of a full-time position is that conflicting interests between the national and the European mandate would disappear.",
+        "bbox": [
+            275,
+            255,
+            579,
+            687
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To underpin a neutral president who chairs and represents the euro-area interest while simultaneously being fully accepted by national ministers, a dual appointment process would be desirable. The appointment could be based on a qualified majority vote in the Eurogroup followed by a (non-binding) confirmation vote in the European Parliament (possibly in euro-area composition). An important legal question would be whether the Eurogroup, which is currently officially still an informal body according to the Treaties, would need a different formal status if the European Parliament were to play a role in the appointment process.",
+        "bbox": [
+            275,
+            687,
+            578,
+            935
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            601,
+            85,
+            887,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To increase transparency around decisions taken, the Eurogroup president would have to regularly report to the European Parliament, perhaps back-to-back with the appearance of the European Central Bank president. However, the European Parliament should not have the right to dismiss the Eurogroup president; that right would remain with the Eurogroup to reflect the fact that the ultimate ‘judges’ on national fiscal policies remain in the council. After all, national fiscal policies are not decided in the European Parliament. A further step towards increasing the common interest in the decision making on national fiscal policies would be to give the president of the Eurogroup a certain voting weight in formal Economic and Financial Affairs Council (ECOFIN) decision making. Of course, to merge the role of the Eurogroup president with the ECOFIN chair or to give voting weight would require a treaty change.",
+        "bbox": [
+            601,
+            101,
+            904,
+            472
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "THE EUROPEAN COMMISSION AND THE FISCAL RULES",
+        "text_level": 2,
+        "bbox": [
+            601,
+            486,
+            858,
+            514
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Commission should continue to be in charge of fiscal surveillance and give neutral recommendations to the Euro-group. However, fiscal rules are in urgent need of reform. They are overly complex, opaque and often provide faulty recommendations in real time. Moreover, European fiscal rules do not give sufficient weight to the stabilisation policies needed for the monetary union as a whole.",
+        "bbox": [
+            601,
+            517,
+            900,
+            671
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In addition, while rules such as the Fiscal Compact put significant weight on debt reduction, in their application the debt reduction is not achieved. Too many loopholes and unclear interpretations prevent transparent and clear decision making that makes economic and political sense.",
+        "bbox": [
+            601,
+            671,
+            904,
+            795
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Instead, a simple ‘Taylor rule’ for deficits should be put in place to provide transparent guidance to national policymakers: Deficits should be higher as the output gap increases (and conversely). Deficits should be lower, the larger the debt level is compared to the 60 percent SGP benchmark. The weights attached to stabilisation and debt would need to",
+        "bbox": [
+            601,
+            795,
+            905,
+            934
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            92,
+            40,
+            105,
+            52
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            36,
+            902,
+            52
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "12. Claeys (2017) emphasises that the reformed ESM should also have mechanisms to deal with pure multiple equilibria/liquidity problems without any need to resort to conditionality.",
+        "bbox": [
+            92,
+            706,
+            253,
+            810
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "13. The main justification for the ESBies in Brunnermeier et al (2016) is exactly the problem of multiple equilibria in sovereign bond markets.",
+        "bbox": [
+            92,
+            816,
+            248,
+            895
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "14. For a detailed discussion, see Wolff (2014).",
+        "bbox": [
+            90,
+            902,
+            243,
+            927
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "be agreed and fixed. Finally, to prevent liquidity traps when the nominal interest rate is close to zero, all countries should run higher deficits than what the Taylor rule suggests. An alternative proposal worthwhile considering is an expenditure rule, see for example Claeys et al (2016).",
+        "bbox": [
+            275,
+            85,
+            573,
+            193
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A simple rule can be translated into a simple formula and would lead to greater transparency and even-handedness in fiscal recommendations. It would lead to sensible recommendations that take account of each country's sustainability concerns, stabilisation needs and the need to support monetary policy when it is at the zero lower bound.",
+        "bbox": [
+            275,
+            193,
+            574,
+            347
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Commission would compute the deficit suggested by the rule and make a recommendation to the Eurogroup on how much of the gap between the actual deficit and the one given by the simple formula should be closed by the next year's budget.",
+        "bbox": [
+            275,
+            347,
+            578,
+            455
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Eurogroup, in turn, would make a political assessment based on the neutral Commission numbers. In particular, it would give a recommendation on the fiscal adjustment member states should undertake. If countries do not comply with the recommendation, politically pressure would gradually build-up. In particular, it would be the role of the permanent chair to explain in the national context why a decision was taken. Decisions would thus become increasingly binding on national policymaking by an intensification of political pressure on the country. In extremis, access to ESM lending could be withdrawn by the Eurogroup by a supermajority vote, adding market pressure on top of political pressure.",
+        "bbox": [
+            275,
+            456,
+            566,
+            765
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The European Commission would thus become a less political body than currently, and would interpret a simple set of rules in a transparent way. It would be for the Eurogroup as the political judge to decide on deviations from the simple rule. Transparency about why deviations from the rule were allowed would be significantly improved through the appearances of the Eurogroup chair before the European Parliament.",
+        "bbox": [
+            275,
+            765,
+            576,
+            935
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "WHAT ABOUT THE ESM?",
+        "text_level": 2,
+        "bbox": [
+            601,
+            73,
+            759,
+            86
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The ESM is of vital importance for the euro area's stability. It is therefore important to think about how to strengthen it institutionally and how to embed it in the euro-area governance framework proposed here.",
+        "bbox": [
+            601,
+            87,
+            905,
+            181
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The ESM manages sovereign debt crises and prevents self-fulfilling crisis in sovereign debt markets together with the ECB's Outright Monetary Transactions programme (OMT) $^{12}$ . An automatic restructuring clause that forces debt restructuring in all circumstances in which the ESM is employed would destroy this important feature that is of vital importance for the euro area. In fact, the existence of the ESM/OMT programme is an essential substitute for a euro-area safe asset because it solves the problem of self-fulfilling debt crises.",
+        "bbox": [
+            601,
+            193,
+            905,
+            409
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Without a strong ESM/OMT programme, the euro area would need to create a treasury to issue a common debt in order to be sustainable. However, such a step would require a huge leap forward in terms of political and institutional convergence, which the euro area will not be able to make at this stage. More technical solutions such as European Safe Bonds (ESBies) $^{13}$ may be desirable but do not seem to convince either market participants or policymakers. Therefore the ESM/OMT programme needs to be made permanent. The most important feature of the ESM/OMT programme is a political agreement on the sustainability of debt, permitting to the ECB to play fully its lender-of-last-resort function. One important step to make the ESM/OMT programme more credible for the markets, and legally sounder, would be to accept that the ESM should take losses first in case debt turns out to be unsustainable ex-post $^{14}$ . This would be a significant step in the direction of creating a fiscal union for the euro area.",
+        "bbox": [
+            601,
+            409,
+            905,
+            810
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Managing a sovereign debt crisis is about managing the distribution of the adjustment burden – a highly political issue that in the euro area involves national and European decision makers. Once the multiple equilibria problem is solved, with the ECB being the lender of last resort, states cannot go bust unless",
+        "bbox": [
+            601,
+            810,
+            897,
+            935
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            92,
+            40,
+            104,
+            52
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            38,
+            902,
+            52
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "15. Aussilloux et al (2017) usefully remind us that many tax resources such as property taxation remain unexploited in European societies in a context in which public debt has often increased substantially while private wealth has equally surged.",
+        "bbox": [
+            92,
+            359,
+            253,
+            489
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "16. Whether or not to rename the institution the EMF is of secondary importance. Most important is to make it a permanent institution and to expand its functions so it can serve as a back-stop to banking union. One possible legal avenue could be Article 352 of the Treaty on the Functioning of the EU. At the time of writing, European Commission proposals on the ESM are due.",
+        "bbox": [
+            92,
+            495,
+            253,
+            690
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "17. The German constitutional court, however, does not allow a supermajority vote where Germany could be outvoted as this would violate German constitutional requirements, see Calliess (2012).",
+        "bbox": [
+            92,
+            697,
+            252,
+            802
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "18. See, for example Macron's speech at the Sorbonne on 26 September 2017 (Macron, 2017).",
+        "bbox": [
+            92,
+            810,
+            247,
+            860
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "19. Still, non-euro area countries should not be liable to pay into the euro-area budget line of the EU budget.",
+        "bbox": [
+            92,
+            869,
+            245,
+            934
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "they choose to do so. Unlike companies, they have – even when they are in great difficulties – revenues (ie tax resources) that vastly exceed their interest payment obligations. Moreover, many potential tax resources remain unexploited, for example taxes on wealth $^{15}$ . Nevertheless, debt restructuring might be necessary in certain circumstances if debt is assessed to be unsustainable, ie if raising new taxes or cutting spending would lead to a highly negative situation for the country concerned. One option that could be explored would be more equity-like instruments such as GDP-linked bonds. They could provide some desirable automatic adjustment capacity while also increasing market discipline on the margin. However, there are also important questions as to whether such a small market is liquid and whether it would create negative spill-overs on the main stock of debt making it thereby an undesirable instrument.",
+        "bbox": [
+            275,
+            85,
+            574,
+            455
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The main point here is that sovereign debt crises will always be highly political. The question then is who should decide on the distribution of the adjustment burden. In a monetary union, this decision cannot be taken by national decision makers alone, nor can it be taken centrally. Instead responsibility for the decision will be and should be with the ESM and the euro-area ministers. The question is what institutional rules should apply to the decision making.",
+        "bbox": [
+            275,
+            456,
+            573,
+            656
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Sapir and Schoenmaker (2017) suggest making the ESM $^{16}$ a permanent institution in charge of crisis management (for governments and as a backstop to banking union). They also suggest changing its voting mechanism allowing for supermajority voting $^{17}$ – a wise proposal. Moving to supermajority voting (eg an 85 percent threshold) would be an important step to increase the reliability of the ESM as a crisis-management instrument.",
+        "bbox": [
+            275,
+            657,
+            569,
+            841
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "But one could go further in increasing transparency and strengthening the European interest in such decisions. In particular, the appointment of the managing director of the ESM could be confirmed by the European Parliament, following the appointment by the Eurogroup ministers. The managing director would regularly testify to the parliament. And while she would not have voting rights in the Eurogroup, her role could be strengthened by giving her the right to initiate discussions on assistance programmes based on an independent analysis of ESM staff. Unnecessary delays in financial assistance programmes caused by national procrastination could thereby be prevented. The ESM would have the obligation to clearly describe alternative options to the Eurogroup, and it would execute decisions taken by the Eurogroup under the political leadership of the permanent Eurogroup chair. Finally, it would be in charge of defining and overseeing conditionality.",
+        "bbox": [
+            275,
+            841,
+            574,
+            935
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            601,
+            85,
+            905,
+            394
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WHAT ABOUT A EUROPEAN FINANCE MINISTER?",
+        "text_level": 2,
+        "bbox": [
+            601,
+            409,
+            838,
+            438
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "French president Emmanuel Macron's proposal for a European finance minister is, so far, not concrete $^{19}$ . Juncker's idea to call its vice president the ‘European finance minister’ and give her a ‘line’ in the EU budget might be too small to warrant that title. A finance minister should be in charge of a substantial budget with, ideally, taxation and spending powers and the capacity to borrow. For the euro area, this would require treaty changes and a huge step forward in terms of political convergence. It is therefore probably only a long-term vision.",
+        "bbox": [
+            601,
+            441,
+            902,
+            656
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "It makes sense to develop the EU budget further. The Commission's idea to create the euro-area budget as part of the EU budget is sensible. First, it would avoid creating new institutions that would drive a political wedge between euro-area and non-euro area countries $^{19}$ . Second, serious reform of the EU budget is in any case needed. President Macron's Sorbonne speech (Macron, 2017) identifies good priorities for joint action with true European value-added, which would also have the support of many citizens in Europe. In particular, the costs of border control and joint investments in climate change mitigation could be increasingly financed by the EU budget. The EU budget could",
+        "bbox": [
+            601,
+            657,
+            905,
+            935
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            92,
+            40,
+            104,
+            52
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            36,
+            902,
+            52
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A reform of the EU budget would also permit the creation of a stabilisation instrument; this would not replace national stabilisation policies but would support countries with relatively little fiscal space",
+        "bbox": [
+            90,
+            162,
+            252,
+            347
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "20. For example, it could amount to €32bn over two years for a country the size of Italy.",
+        "bbox": [
+            90,
+            626,
+            248,
+            677
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "21. In a simulation exercise, Claeys et al (2017), show that a system built around a European unemployment insurance scheme for large shocks would have required net payments of some €50 billion in 2009, when the shock was greatest.",
+        "bbox": [
+            90,
+            686,
+            252,
+            816
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "22. The more the budget lines of the EU budget become contingent, the more flexibility and the greater the budget with which one could arrange payments to countries and regions in need.",
+        "bbox": [
+            90,
+            822,
+            248,
+            926
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "also increasingly fund European-level research, joint universities, exchange programmes and collaboration in defence and security. Structural funds should continue to support convergence, but in particular in regions in significant need when the national level faces strong budget limitations on the support it can provide. A reform of the European common agricultural policy could free up significant resources, but some increases in contributions may be necessary the more one wants to truly take care of European public goods.",
+        "bbox": [
+            275,
+            85,
+            579,
+            300
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A reform of the EU budget would also permit the creation of a stabilisation instrument. While such an instrument would not replace national stabilisation policies, it would support countries with relatively little fiscal space. One option would be to use part of the seven year EU budget framework as a fund that could be deployed in countries faced with a shock. For example, a fund amounting to €50-70 billion would enable significant support to be provided to a specific country if it was strongly affected by an asymmetric shock. The support could amount to 1-2 percent of GDP of the country concerned $^{20}$ . As recessions happen on average every seven years, such a provision, amounting to about 10 to 15 percent of the EU budget, would be a helpful instrument. However, it should be clear that such a fund would not play a significant role in area-wide macroeconomic stabilisation policy. It would be insurance to support specific countries hit by severe shocks.",
+        "bbox": [
+            275,
+            300,
+            578,
+            687
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "It would be important to define the conditions under which such support payments would be made. The idea of creating a catastrophic unemployment reinsurance scheme has the advantage of enabling automatic payments based on a clear indicator. However, it raises serious political concerns that the countries that would most need support are those that have failed to reform their labour markets $^{21}$ . An alternative would be to have an instrument linked to clear conditions in terms of structural reform. A third option would be to link it to an objective trigger, such as a large fall in GDP.",
+        "bbox": [
+            275,
+            687,
+            579,
+            917
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Such insurance is more important for weaker than for stronger countries. Strong countries are more able to borrow and insure themselves in the markets than weaker countries that are more at risk of losing market access while still engaging in sensible macroeconomic stabilisation policy. As desirable as insurance is for the functioning of a monetary union, it is this asymmetry that makes the introduction of insurance in the euro area so difficult.",
+        "bbox": [
+            297,
+            919,
+            566,
+            934
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            601,
+            85,
+            904,
+            239
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Politically, it might therefore be easier not to differentiate between a fund for stabilisation policy and spending for European public goods. One could, for example, create more contingent budget lines that would allow spending more in specific countries when they are hit by shocks, such as an increase in immigration $^{22}$ .",
+        "bbox": [
+            601,
+            240,
+            892,
+            378
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "One significant step further towards creating meaningful EU-level fiscal capacity would be to introduce an EU tax to fund the EU budget and create a borrowing capacity in the EU budget. For example, if one based the EU budget on a rather volatile tax, such as a corporate tax, then the EU budget itself would become a stabilising factor. One could also consider a carbon tax, which could be raised already under the current EU treaties. This would be a step towards a true centralisation of stabilisation policy funded with own resources and combined with a borrowing capacity. Such a ‘federalisation’ of stabilisation policy would improve the working of the euro area but it is politically, legally and institutionally difficult to do.",
+        "bbox": [
+            601,
+            379,
+            894,
+            671
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The EU budget commissioner manages meaningful resources and a reorientation of the EU budget could provide meaningful insurance that would be helpful in specific circumstances. This budget commissioner would not stand above national ministers in that she would not have the resources to replace national borrowing or national spending. National fiscal policies will remain the core of fiscal policies in the euro area. The budget commissioner would also not have the power to overrule national decisions, a political power that would remain with the Eurogroup. This is why she would not be a euro area finance minister. Yet, she should participate in the Eurogroup.",
+        "bbox": [
+            601,
+            671,
+            905,
+            936
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            92,
+            40,
+            104,
+            52
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            277,
+            36,
+            902,
+            52
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "23. See Sapir and Wolff (2015) for an earlier discussion with a somewhat different set-up.",
+        "bbox": [
+            90,
+            103,
+            248,
+            156
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This institutional set-up could be called a ‘Eurosystem of fiscal policy’ $^{23}$ . It would be a Eurogroup with significant modifications to strengthen the euro-area-wide interest. At the top would be a powerful Eurogroup chair, who would also be the voice representing the euro-area interests in national and international forums. She would not be a national minster and ideally would have voting rights. The Commissioner for economic and financial affairs and the ESM managing directors would be participants without voting rights. As today, the Commission would have the right of initiative and the obligation to make recommendations on fiscal policy. In addition, the ESM managing director would be given the right to initiate discussions on ESM programmes. If the euro area were to decide to create additional fiscal capacities, the EU budget commissioner would be an additional member of the group. In the long term, the positions of budget commissioner and ESM managing director could be merged, especially if the ESM became a full EU institution and the resources of the ESM became true European resources.",
+        "bbox": [
+            275,
+            99,
+            578,
+            548
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Institutional set-up and governance matter. In this proposal, the Eurogroup would be transformed into a Eurosystem of fiscal policy and remain at the centre of joint fiscal policy decision-making in the euro area. The proposal here outlined would not remove the tensions between national and euro-area wide interests in fiscal decision making. These are inherent to the decentralised organisation of fiscal policies in the euro area. Yet, the proposal would help manage these tensions and strengthen in the debate the voice of the centre with the creation of permanent positions, new rights of initiative (and possibly votes) and greater accountability to the European Parliament. The Eurosystem of fiscal policy would thus be the centre of coordination where difficult trade-offs between national and European interests are negotiated and coordinated. Reformed fiscal rules would provide transparent guidance focussing not only on sustainability but also area-wide stabilisation. The EU budget would become more useful for providing public goods and supporting stabilisation. Nevertheless, fiscal policymaking will remain a delicate political balancing act, which is unavoidable unless Europe decides to become a federation.",
+        "bbox": [
+            275,
+            548,
+            574,
+            595
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            600,
+            99,
+            902,
+            549
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/5e7fb2a266f050b75abba95772909ed0795542b92df7150ae85743c30b668ec7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            90,
+            581,
+            191,
+            671
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "REFERENCES",
+        "text_level": 2,
+        "bbox": [
+            603,
+            562,
+            719,
+            577
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Amato, Giuliano (2017) Keynote speech to the Estonian Presidency conference ‘Nation States or Member",
+        "bbox": [
+            601,
+            577,
+            885,
+            602
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Sapir, A. and D. Schoenmaker (2017) 'The time is right for a European Monetary Fund', Policy Brief 2017/04, Bruegel\nSapir, A. and G. Wolff (2015) 'Euro-area governance: what to reform and how to do it', Policy Brief 2015/01, Bruegel\nWolff, G. (2014) 'The OMT programme was justified but the fiscal union question remains', Bruegel Blog, 15 October, available at http://bruegel.org/2014/10/the-omt-programme-was-justified-but-the-fiscal-union-question-remains/",
+        "bbox": [
+            275,
+            854,
+            905,
+            903
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            92,
+            40,
+            105,
+            52
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "POLICY BRIEF BEYOND THE JUNCKER AND SCHÄUBLE VISIONS OF EURO-AREA GOVERNANCE",
+        "bbox": [
+            275,
+            36,
+            902,
+            53
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Bruegel 2017. All rights reserved. Short sections, not to exceed two paragraphs, may be quoted in the original language without explicit permission provided that the source is acknowledged. Opinions expressed in this publication are those of the author(s) alone.",
+        "bbox": [
+            92,
+            703,
+            255,
+            841
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Bruegel, Rue de la Charité\n33, B-1210 Brussels\n(+32) 2 227 4210\ninfo@bruegel.org\nwww.bruegel.org",
+        "bbox": [
+            105,
+            857,
+            240,
+            928
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "States? Reimagining the European Union', Tallinn, 9 October, available at https://www.eu2017.ee/political-meetings/academic-conference",
+        "bbox": [
+            278,
+            615,
+            890,
+            640
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Aussilloux, V., C. Gouardo, F. Lenglart, M. Cases (2017) 'Dealing with legacy debt in the euro area', Note d'analyse 62, France Stratégie",
+        "bbox": [
+            277,
+            640,
+            897,
+            664
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Brunnermeier, M.K., L. Garicano, P.R. Lane, M. Pagano, R. Reis, T. Santos, D. Thesmar, S. Van Nieuwerburgh and D. Vayanos (2016) 'The Sovereign-Bank Diabolic Loop and ESBies', American Economic Review Papers and Proceedings 106(5): 508-512",
+        "bbox": [
+            277,
+            663,
+            897,
+            700
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Calliess, C. (2012) Kein Geld ohne Parlament: ESM, Budgetverantwortung und Bundesverfassungsgericht, Bertelsmann Stiftung, available at https://www.bertelsmann-stiftung.de/fileadmin/files/BSt/Presse/imported/downloads/xcms\\_bst\\_dms\\_36409\\_36410\\_2.pdf",
+        "bbox": [
+            277,
+            700,
+            904,
+            734
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Claeys, G. (2017) 'The missing pieces of the euro architecture', Policy Contribution 2017/28, Bruegel",
+        "bbox": [
+            277,
+            734,
+            778,
+            747
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Claeys, G., Z. Darvas and A. Leandro (2016) 'A proposal to revive the European fiscal framework', Policy Contribution 2016/07, Bruegel",
+        "bbox": [
+            275,
+            747,
+            905,
+            771
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Claeys, G., Z. Darvas and G. Wolff (2014) 'Benefits and drawbacks of European unemployment insurance', Policy Brief 2014/06, Bruegel",
+        "bbox": [
+            277,
+            770,
+            868,
+            795
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Farhi, E. and I. Werning (2017) 'Fiscal Unions', available at https://scholar.harvard.edu/farhi/publications/fiscal-unions, forthcoming in the American Economic Review",
+        "bbox": [
+            275,
+            794,
+            880,
+            819
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "Macron, E. (2017) 'Initiative pour l'Europe – Une Europe souveraine, unie, démocratique,' speech at the Sorbonne, Paris, 26 September, available at http://www.elysee.fr/declarations/article/initiative-pour-l-europe-discours-d-emmanuel-macron-pour-une-europe-souveraine-unie-democratique/",
+        "bbox": [
+            275,
+            819,
+            889,
+            854
+        ],
+        "page_idx": 7
+    }
+]

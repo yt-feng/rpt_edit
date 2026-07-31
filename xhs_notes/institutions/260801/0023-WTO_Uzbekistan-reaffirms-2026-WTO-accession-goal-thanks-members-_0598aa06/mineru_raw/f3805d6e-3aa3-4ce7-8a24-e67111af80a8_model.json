@@ -1,0 +1,835 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.149,
+                0.07,
+                0.23,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Chair,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.148,
+                0.097,
+                0.719,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Distinguished Members of the Working Party,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.149,
+                0.125,
+                0.437,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Ladies and gentlemen,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.153,
+                0.911,
+                0.313
+            ],
+            "angle": 0,
+            "content": "At the outset, I would like to express our sincere appreciation to the Chair, and all Members of the working party for accommodating our request to convene this meeting at the earliest possible date. Maintaining this pace is particularly important in light of Uzbekistan's objective of completing its accession process in 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.316,
+                0.91,
+                0.396
+            ],
+            "angle": 0,
+            "content": "In the interest of making the best use of our time today, allow me to keep my remarks concise and focused on the key factual developments since our previous meeting.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.399,
+                0.911,
+                0.533
+            ],
+            "angle": 0,
+            "content": "First, we can observe that the number of written questions submitted by most Members of the Working Party has been steadily declining. We consider this an important indication that Members' concerns are being progressively addressed and that the accession process has reached a more advanced stage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.535,
+                0.911,
+                0.698
+            ],
+            "angle": 0,
+            "content": "In parallel, we have continued working closely with the WTO Secretariat on the draft Working Party report. The comments and proposals submitted by Members have been carefully considered and, where appropriate, reflected in successive revisions. This work has contributed to consolidating the text and more clearly identifying the issues that remain outstanding.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.7,
+                0.912,
+                0.862
+            ],
+            "angle": 0,
+            "content": "Taken together, these developments indicate that the process is gradually moving from clarification towards conclusion. In line with the Chair's support, the focus should now increasingly shift to the remaining commitment language, with a view to finding balanced and workable solutions, incorporating the agreed language into a consolidated draft and advancing the Report towards finalization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.864,
+                0.91,
+                0.917
+            ],
+            "angle": 0,
+            "content": "Progress is also well advanced in the other principal negotiating tracks.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.068,
+                0.231,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.097,
+                0.715,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.125,
+                0.431,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.151,
+                0.906,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.178,
+                0.907,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.207,
+                0.906,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.234,
+                0.906,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.262,
+                0.907,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.29,
+                0.453,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.317,
+                0.906,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.345,
+                0.905,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.372,
+                0.615,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.399,
+                0.906,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.428,
+                0.905,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.454,
+                0.903,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.482,
+                0.906,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.508,
+                0.629,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.537,
+                0.905,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.563,
+                0.907,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.591,
+                0.906,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.619,
+                0.907,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.645,
+                0.905,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.673,
+                0.668,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.702,
+                0.906,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.729,
+                0.905,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.757,
+                0.906,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.784,
+                0.906,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.81,
+                0.906,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.84,
+                0.888,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.865,
+                0.906,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.893,
+                0.322,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.492,
+                0.043,
+                0.508,
+                0.057
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.07,
+                0.91,
+                0.176
+            ],
+            "angle": 0,
+            "content": "With respect to agricultural domestic support, I believe that Members of the Cairns Group would share our assessment that the discussions have reached their final stage. The remaining issues are limited and can be resolved operatively.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.18,
+                0.91,
+                0.314
+            ],
+            "angle": 0,
+            "content": "The same can be said of the bilateral market-access negotiations. The process is at a highly advanced stage, with the most recent milestone being the signing of a bilateral protocol with India. As of today, 31 of the 34 bilateral protocols signed by Uzbekistan have been deposited to the WTO Secretariat.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.317,
+                0.911,
+                0.505
+            ],
+            "angle": 0,
+            "content": "On the legislative and institutional front, since our previous meeting, Uzbekistan has brought the total number of legal acts harmonized with WTO rules to more than 190. The most significant progress has been achieved in SPS and food safety, including the establishment of a unified Food Safety Committee, the introduction of risk-based controls throughout the farm-to-fork chain and the advancement of the revised draft Law on Food Safety to the Senate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.509,
+                0.911,
+                0.67
+            ],
+            "angle": 0,
+            "content": "In parallel, the draft laws on anti-dumping, countervailing and safeguard measures have been thoroughly revised to ensure consistency with WTO Agreements, make their provisions more precise and predictable, and address Members' concerns. The latest drafts reflecting these revisions were circulated to Members for consideration last week.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.673,
+                0.911,
+                0.752
+            ],
+            "angle": 0,
+            "content": "These developments leave us with a clear task: to translate the progress already achieved into agreed language, close the remaining gaps and bring the accession process to completion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.755,
+                0.91,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Uzbekistan remains fully committed to working intensively and constructively with every Member to achieve this objective in 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.07,
+                0.908,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.097,
+                0.906,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.125,
+                0.906,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.154,
+                0.632,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.177,
+                0.908,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.208,
+                0.905,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.234,
+                0.906,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.261,
+                0.905,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.29,
+                0.827,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.316,
+                0.907,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.345,
+                0.907,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.372,
+                0.907,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.399,
+                0.907,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.427,
+                0.905,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.454,
+                0.907,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.482,
+                0.898,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.508,
+                0.907,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.537,
+                0.907,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.563,
+                0.905,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.591,
+                0.906,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.619,
+                0.907,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.647,
+                0.594,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.673,
+                0.905,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.7,
+                0.906,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.729,
+                0.904,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.758,
+                0.903,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.785,
+                0.894,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

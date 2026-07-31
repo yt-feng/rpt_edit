@@ -1,0 +1,95 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "欧元区财政怎么改",
+  "cover_subtitle": "两套方案，各有各的坑",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "基金->产品 x1",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "基金->产品 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive"
+  ],
+  "wechat_title": "布鲁盖尔研究所：区域环境与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b.pdf",
+    "cleaned_source_title": "0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0004BruegelBeyondtheJuncker",
+    "raw_candidates": [
+      "布鲁盖尔研究所：欧元区财政治理的第三条路径",
+      "布鲁盖尔研究所：欧元区财政治理第三条路径-2017年两套方案对比",
+      "布鲁盖尔研究所：欧元区财政治理第三条路径-常设主席与简化赤字规则"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧元区财政治理的第三条路径",
+      "布鲁盖尔研究所：欧元区财政治理第三条路径-2017年两套方案对比",
+      "布鲁盖尔研究所：欧元区财政治理第三条路径-常设主席与简化赤字规则",
+      "布鲁盖尔研究所：0004BruegelBeyondtheJuncker",
+      "布鲁盖尔研究所：容克在2017年9月13日的盟情咨文中提出"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：0004BruegelBeyondtheJuncker",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：容克在2017年9月13日的盟情咨文中提出",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：区域环境与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2017"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧元区财政治理第三条路径-2017年两套方案对比",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：区域环境与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

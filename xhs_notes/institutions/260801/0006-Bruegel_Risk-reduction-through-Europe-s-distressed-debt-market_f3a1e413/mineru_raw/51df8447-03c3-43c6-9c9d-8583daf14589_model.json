@@ -1,0 +1,6969 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.091,
+                0.072,
+                0.248,
+                0.097
+            ],
+            "angle": 0,
+            "content": "Policy Contribution\nIssue n°02 | January 2018"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.3,
+                0.069,
+                0.808,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Risk reduction through Europe's distressed debt market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.342,
+                0.266,
+                0.404
+            ],
+            "angle": 0,
+            "content": "ALEXANDER LEHMANN (alexander.lehmann@bruegel.org) is a Non-resident Fellow at Bruegel",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.434,
+                0.276,
+                0.791
+            ],
+            "angle": 0,
+            "content": "A version of this Policy Contribution was originally prepared as the in-depth section of Analysis of developments in EU capital flows in the global context, a report by Bruegel for the European Commission. It has drawn on interviews with the representatives from the European Commission, European Central Bank, European Banking Authority, a number of national institutions and numerous market participants. Comments from Maria Demertzis and Nicolas Véron are also gratefully acknowledged, as is research assistance from Inês Gonçalves-Raposo.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.228,
+                0.507,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Alexander Lehmann",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.292,
+                0.494,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Executive summary"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.882,
+                0.404
+            ],
+            "angle": 0,
+            "content": "THE MARKET FOR distressed debt will need to play a more prominent role in Europe's emerging strategy to tackle the legacy of non-performing loans (NPLs). This market could speed up NPL resolution and allow greater flexibility in bank balance sheet management. Investors could contribute crucial skills and possibly capital to the process of workout and restructuring.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.419,
+                0.886,
+                0.466
+            ],
+            "angle": 0,
+            "content": "THE LOAN SALE process potentially suffers from a number of market imperfections which manifest themselves in high valuation gaps, and in the market failing to cover certain asset types.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.48,
+                0.899,
+                0.528
+            ],
+            "angle": 0,
+            "content": "IN EUROPE, TURNOVER from distressed debt sales remains limited relative to the total stock of €870 billion in non-performing loans, and the additional stock of €1.1 trillion of so-called non-core banking assets, which banks also seek to divest in this market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.542,
+                0.894,
+                0.605
+            ],
+            "angle": 0,
+            "content": "THERE HAS SO far been little market demand for the bulk of unsecured assets among small and medium-sized companies and other corporate borrowers, loans held by smaller banks with their higher NPL ratios, or exposures to larger enterprises that could benefit from comprehensive debt restructuring and additional finance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.619,
+                0.903,
+                0.682
+            ],
+            "angle": 0,
+            "content": "SIGNIFICANT FURTHER SUPPLY might now come into the market as stricter supervisory guidelines are implemented, and as new accounting guidelines force higher provisioning levels. Improved national restructuring and insolvency regimes are beginning to attract a wider range of investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.697,
+                0.902,
+                0.759
+            ],
+            "angle": 0,
+            "content": "AN INITIATIVE BY EU finance ministers to improve transparency around loan quality and foster greater liquidity through transaction platforms might lower transaction-specific fixed costs somewhat. More decisive public support, for instance through asset management companies or in securitisation structures, might be needed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.774,
+                0.863,
+                0.82
+            ],
+            "angle": 0,
+            "content": "AS A SIGNIFICANT share of Europe's banking assets might move into the hands of little-known investors, some of the benefits of relationship banking could be lost, and the conduct of the loan servicers will come into the focus of regulators.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.091,
+                0.838,
+                0.192,
+                0.929
+            ],
+            "angle": 0,
+            "content": "bruegel"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.066,
+                0.769,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.11,
+                0.808,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.154,
+                0.451,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.345,
+                0.248,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.358,
+                0.239,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.374,
+                0.235,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.39,
+                0.261,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.436,
+                0.247,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.451,
+                0.208,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.467,
+                0.236,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.481,
+                0.243,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.499,
+                0.254,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.514,
+                0.255,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.529,
+                0.259,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.544,
+                0.258,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.559,
+                0.264,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.575,
+                0.238,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.59,
+                0.252,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.606,
+                0.247,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.621,
+                0.248,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.637,
+                0.217,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.652,
+                0.228,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.242,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.683,
+                0.239,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.699,
+                0.252,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.714,
+                0.237,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.729,
+                0.265,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.744,
+                0.274,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.76,
+                0.267,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.776,
+                0.25,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.229,
+                0.505,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.292,
+                0.492,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.327,
+                0.856,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.343,
+                0.875,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.875,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.375,
+                0.879,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.389,
+                0.392,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.421,
+                0.881,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.435,
+                0.883,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.451,
+                0.343,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.896,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.498,
+                0.888,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.513,
+                0.761,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.544,
+                0.888,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.56,
+                0.885,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.889,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.591,
+                0.646,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.621,
+                0.874,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.637,
+                0.9,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.652,
+                0.894,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.668,
+                0.421,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.881,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.888,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.729,
+                0.898,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.745,
+                0.656,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.85,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.792,
+                0.86,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.807,
+                0.73,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.402,
+                0.278,
+                0.542
+            ],
+            "angle": 0,
+            "content": "'The euro area's gross stock of NPLs amounts to about 8.8 percent of GDP. Including other non-core assets for sale would likely yield twice that as potential supply in this market.'"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.302,
+                0.069,
+                0.888,
+                0.097
+            ],
+            "angle": 0,
+            "content": "1 Resolving Europe's non-performing loans"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.11,
+                0.901,
+                0.202
+            ],
+            "angle": 0,
+            "content": "The resolution of non-performing loans (NPLs) is central to the recovery of Europe's banking sector and the restructuring of the excess debt owed by private sector borrowers. Banks have typically sought to deal with distressed loans through their own dedicated workout units. The prevailing view has been that debt distress is temporary, that valuable client relationships need to be preserved and that knowledge of the client and its industry means that the bank that originated the loan is best placed to oversee the restructuring.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.203,
+                0.906,
+                0.31
+            ],
+            "angle": 0,
+            "content": "However, it is increasingly clear that the European Union banking industry as a whole is poorly placed to address its roughly €870 billion stock of NPLs \\( ^{1} \\) . Inherently, banks do not have the governance structures or skills to oversee combined financial and operational restructurings that typically require substantial write-downs of claims and an engagement that is more akin to the management of equity positions. The realisation of this explains the heightened interest in engaging in the workout process investors who can contribute specialist skills, long term capital and economies of scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.311,
+                0.903,
+                0.356
+            ],
+            "angle": 0,
+            "content": "At the same time, the ongoing restructuring of Europe's banking systems has led banks to seek to divest substantial portfolios that no longer fit with their re-focused business strategies and their efforts to sustainably raise profitability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.357,
+                0.906,
+                0.479
+            ],
+            "angle": 0,
+            "content": "Collectively, NPLs and other performing but ‘non-core’ portfolios are estimated to amount to roughly €2 trillion in gross value. Within the euro area, the gross value of the stock of NPLs amounts to about 8.8 percent of GDP. Including other non-core assets for sale would likely yield twice that as potential supply in this market. This is a substantial stock of assets, even compared to other asset types in the European debt market. Developing the market for asset transfers is therefore an important objective, relevant well beyond the immediate priority of working out distressed loans because it would underpin a broader rebalancing between banks and capital markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.481,
+                0.906,
+                0.65
+            ],
+            "angle": 0,
+            "content": "It is clear that the European secondary loans market is as yet under-developed. Relative to the stock of NPLs and other performing but non-core assets (admittedly hard to estimate), the €146 billion gross value of secondary loan transactions in 2016 represented a turnover ratio of no more than seven percent. Liquidity in EU distressed and secondary loan markets pales in comparison to that seen in episodes of combined debt and NPL resolution in other economies, where the transfer of assets from the banking system to investors accelerated immediately after crisis episodes. Moreover, liquidity in EU secondary loan markets is concentrated in just a handful of EU countries, and is not necessarily available to countries with the highest NPL stocks, or to the most problematic asset types. The market continues to function on a country-by-country basis; no cross-country portfolios have been issued and few loan-servicing companies have expanded beyond their home markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.651,
+                0.898,
+                0.728
+            ],
+            "angle": 0,
+            "content": "The European Central Bank's 2017 guidelines on banks' management of NPL portfolios (ECB, 2017a) already present loan sales as an important tool in NPL reduction, alongside the workout within the bank. Given a much greater focus on market-based solutions by supervisors, various institutions have come forward with proposals to support greater liquidity and integration of the distressed loans market. These proposals address the following aspects:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.743,
+                0.879,
+                0.773
+            ],
+            "angle": 0,
+            "content": "- Enhanced transparency through standardised data templates for distressed loans and other assets, as in FSC (2017) and Mersch (2017);",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.775,
+                0.886,
+                0.804
+            ],
+            "angle": 0,
+            "content": "- NPL transaction platforms that could help reduce barriers to entry related to costly due diligence, thereby attracting more investors (ECB, 2017d);",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.805,
+                0.892,
+                0.835
+            ],
+            "angle": 0,
+            "content": "- Harmonised regulatory treatment of asset transfers, ownership of non-performing loans and the conduct of servicing companies (also in FSC, 2017);",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.836,
+                0.888,
+                0.85
+            ],
+            "angle": 0,
+            "content": "- The prudential treatment of securitisation and of other public-private investment struc-",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.3,
+                0.883,
+                0.716,
+                0.896
+            ],
+            "angle": 0,
+            "content": "1 We use European Banking Authority data for this and other aggregate figures."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.071,
+                0.886,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.897,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.128,
+                0.895,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.898,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.159,
+                0.876,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.886,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.727,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.205,
+                0.886,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.903,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.897,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.251,
+                0.895,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.267,
+                0.884,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.282,
+                0.903,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.537,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.312,
+                0.895,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.328,
+                0.9,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.343,
+                0.614,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.359,
+                0.904,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.374,
+                0.895,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.389,
+                0.881,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.406,
+                0.88,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.422,
+                0.894,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.437,
+                0.873,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.452,
+                0.88,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.475,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.484,
+                0.9,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.498,
+                0.904,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.514,
+                0.903,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.893,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.545,
+                0.882,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.561,
+                0.889,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.575,
+                0.89,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.591,
+                0.901,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.607,
+                0.875,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.622,
+                0.894,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.681,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.653,
+                0.882,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.895,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.683,
+                0.893,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.889,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.714,
+                0.874,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.745,
+                0.875,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.761,
+                0.64,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.776,
+                0.883,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.792,
+                0.696,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.806,
+                0.891,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.823,
+                0.71,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.838,
+                0.885,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.322,
+                0.079,
+                0.82,
+                0.094
+            ],
+            "angle": 0,
+            "content": "tures that facilitate risk sharing and help bridge valuation gaps (ECB, 2017b);",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.094,
+                0.906,
+                0.14
+            ],
+            "angle": 0,
+            "content": "- The establishment of public and centralised asset management companies (AMCs), either at national level (Constâncio, 2017; Fell et al, 2017) or EU level (Haben and Quagliariello, 2017).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.156,
+                0.898,
+                0.233
+            ],
+            "angle": 0,
+            "content": "The European Commission's mid-term review of the 2015 action plan on building a capital markets union also envisages further measures to support secondary markets, possibly through a strengthened framework for collateral recovery, and by building on the Commission's previous initiative to simplify insolvency regimes and restructuring frameworks (European Commission, 2017).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.234,
+                0.902,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Several of these proposals were also taken up by EU member country finance ministers, who acknowledged that an integrated EU strategy was required. July 2017 Ecofin Council conclusions endorsed several of the proposals on market functioning and better supervision, and also called for a “blueprint for national asset management companies” (Council of the EU, 2017). Work on these proposals is at time of writing underway, underlining the need for a much clearer understanding of the functioning of the secondary loans market.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.378,
+                0.873,
+                0.434
+            ],
+            "angle": 0,
+            "content": "2 Market failures and transaction costs in loan transfers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.449,
+                0.897,
+                0.495
+            ],
+            "angle": 0,
+            "content": "Before reviewing the various benefits that investors will bring to the workout and recovery of distressed assets, it is important to point out some of the costs and potential market failures inherent in the transfer of bank loans.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.496,
+                0.897,
+                0.588
+            ],
+            "angle": 0,
+            "content": "First, banks generate borrower-specific information which forms the basis for the further development of their lending. Where banks maintained resources in this type of relationship banking, including close customer contact through their branches, lending has been shown to be more resilient. This borrower-specific information cannot be easily traded in financial markets. As the loan title is transferred to investors, and likely resold subsequently, some of the benefits of relationship banking are likely to be compromised (Schäfer, 2016).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.589,
+                0.896,
+                0.665
+            ],
+            "angle": 0,
+            "content": "Second, the process of transferring assets consumes substantial resources. For selling banks, the selection and preparation of loan portfolios for investors is inevitably protracted, because loans will have been managed based on each bank's specific documentation standards and IT systems. Some information might not be available in digital form, and standards of public credit registries vary. First-time sellers will face substantial costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.666,
+                0.9,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Investors meanwhile must engage in extended due diligence processes. They will incur substantial fees for legal advice, valuation of collateral and further engagement with the originating bank. The outcomes of bidding processes are uncertain, as is how the quality of the portfolio will change during the due diligence process (Rocha, 2016). Selling banks might withdraw parts of the portfolio, or not go ahead with the sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.743,
+                0.897,
+                0.851
+            ],
+            "angle": 0,
+            "content": "Investors in secondary loans markets also display greater risk appetites, and therefore demand higher returns, which are evident in the low valuations that are offered. It might be argued that a shift of a significant share of EU banking sector assets to investors with higher required rates of return represents a loss in terms of social welfare. However, a large part of the bid-ask spreads can be explained by the lower leverage within the funding of investment vehicles. Moreover, unlike banks, investors deduct immediately from the price the costs related to managing NPLs over the entire workout process (Ciavoliello et al, 2016).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.851,
+                0.898,
+                0.881
+            ],
+            "angle": 0,
+            "content": "Third, the market for transferring loans from banks to independent investors might suffer from three key market failures:",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.081,
+                0.817,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.305,
+                0.096,
+                0.903,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.112,
+                0.892,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.127,
+                0.369,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.159,
+                0.888,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.882,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.885,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.895,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.467,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.236,
+                0.884,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.251,
+                0.871,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.266,
+                0.897,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.282,
+                0.877,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.898,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.314,
+                0.803,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.379,
+                0.87,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.331,
+                0.411,
+                0.524,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.452,
+                0.895,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.888,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.544,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.499,
+                0.892,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.514,
+                0.895,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.891,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.545,
+                0.886,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.887,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.822,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.59,
+                0.872,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.606,
+                0.888,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.622,
+                0.892,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.892,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.653,
+                0.776,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.667,
+                0.881,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.683,
+                0.863,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.699,
+                0.885,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.898,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.73,
+                0.692,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.745,
+                0.872,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.761,
+                0.886,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.776,
+                0.886,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.791,
+                0.885,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.807,
+                0.894,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.823,
+                0.863,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.838,
+                0.828,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.853,
+                0.895,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.868,
+                0.501,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.079,
+                0.905,
+                0.125
+            ],
+            "angle": 0,
+            "content": "- A concentrated investor base: investors in certain asset types incur considerable sunk costs specific to each transaction. Only a few investors have the capacity to bid repeatedly, and across a number of European markets. This might result in pricing power.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.127,
+                0.903,
+                0.171
+            ],
+            "angle": 0,
+            "content": "- Information asymmetry: the inability of the originating bank to portray asset quality fully and credibly means investors will bid based on what they suspect is inferior quality, while the originating bank will hold on to higher-quality assets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.172,
+                0.904,
+                0.248
+            ],
+            "angle": 0,
+            "content": "- Externalities from the investor's restructuring work: once the investor has acquired the loan he will render services by maintaining the asset, by imposing a restructuring solution or by foreclosing. Other creditors will benefit from these solutions, and the investor will therefore demand an additional return which will reduce bid prices (ECB, 2016 and 2017b).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.265,
+                0.9,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Each of these potential market failures might have contributed to the significant differences that can be observed between the valuations demanded by banks and those offered by investors, and to the failure of the market to clear fully.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.362,
+                0.773,
+                0.42
+            ],
+            "angle": 0,
+            "content": "3 The economic functions of liquid secondary loans markets"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.435,
+                0.908,
+                0.572
+            ],
+            "angle": 0,
+            "content": "A number of debt and NPL crises have underlined that a good part of bank assets can be made fungible and investors can play a valuable role in loan workout and restructuring. In the Japanese banking crisis of the 1990s, for instance, investors in one year acquired nearly a third of the stock of distressed loans (Ohashi and Sing, 2004). This success in engaging investors crucially depended on a local asset management company which put in place criteria for the quality of loan documentation and collateral rights, which subsequently allowed a swift transfer to investors. Korea's banks similarly experienced a crisis from 1997. The Korean bad bank actively marketed distressed assets and encouraged the participation of foreign investors. This in turn led to the development of a domestic investor base (He, 2004).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.573,
+                0.899,
+                0.604
+            ],
+            "angle": 0,
+            "content": "The costs and pitfalls of asset transfers therefore need to be set against the benefits of secondary loans markets and the engagement of outside investors:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.619,
+                0.885,
+                0.665
+            ],
+            "angle": 0,
+            "content": "- Efficiencies in loan servicing and workout: these result from economies of scale as the assets of several lenders are combined, and economies of scope as different asset types are handled simultaneously in judicial processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.667,
+                0.901,
+                0.711
+            ],
+            "angle": 0,
+            "content": "- Specialist restructuring skills: some borrowers who are debt-distressed but essentially viable will benefit from specialist expertise, which is generally rare within banks, and also from additional equity and senior debt which banks would be unable to provide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.713,
+                0.894,
+                0.758
+            ],
+            "angle": 0,
+            "content": "- Containing the moral hazard problem in loan restructuring: as the relationship between the original lender and borrower is broken, viable borrowers will no longer seek restructuring solutions or contemplate ‘strategic defaults’.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.759,
+                0.907,
+                0.881
+            ],
+            "angle": 0,
+            "content": "- Capital relief: the benefits for the divesting banks result primarily from a reduction in risk-weighted assets for which any additional write-down upon sale is less than the capital required had the NPL been managed internally. More broadly, the banking system will benefit because a well-developed secondary loans market will define a price for distressed and other non-core assets, helping guide balance sheet optimisation. Principles for collateral valuation and more transparent practices in enforcement and restructuring will provide a benchmark that banks will use to judge the prospects of their own restructuring efforts.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.094,
+                0.935,
+                0.105,
+                0.946
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.081,
+                0.874,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.097,
+                0.902,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.112,
+                0.823,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.305,
+                0.127,
+                0.894,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.143,
+                0.9,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.158,
+                0.691,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.174,
+                0.881,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.189,
+                0.903,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.204,
+                0.886,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.219,
+                0.86,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.235,
+                0.377,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.266,
+                0.878,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.282,
+                0.896,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.297,
+                0.651,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.364,
+                0.771,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.329,
+                0.395,
+                0.678,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.437,
+                0.888,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.453,
+                0.903,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.904,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.483,
+                0.879,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.499,
+                0.896,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.514,
+                0.905,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.894,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.546,
+                0.903,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.561,
+                0.748,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.575,
+                0.895,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.591,
+                0.71,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.621,
+                0.877,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.637,
+                0.883,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.653,
+                0.642,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.875,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.684,
+                0.897,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.699,
+                0.842,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.714,
+                0.89,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.73,
+                0.89,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.745,
+                0.649,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.761,
+                0.87,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.775,
+                0.904,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.791,
+                0.881,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.806,
+                0.905,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.823,
+                0.859,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.837,
+                0.9,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.854,
+                0.899,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.867,
+                0.374,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.07,
+                0.783,
+                0.096
+            ],
+            "angle": 0,
+            "content": "4 Europe's secondary loans market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.11,
+                0.889,
+                0.156
+            ],
+            "angle": 0,
+            "content": "Judged against the experience of earlier debt crises, the EU secondary loans market still appears underdeveloped. In 2010, the market was miniscule, even though by that point the various national banking crises were already well underway (Figure 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.156,
+                0.903,
+                0.218
+            ],
+            "angle": 0,
+            "content": "In 2016, the European secondary loans market transacted loans with a gross value of €146 billion, comprising a significant share of as yet performing assets. Total volumes remain volatile because large transactions dominate, though the 2016 figure represents an increase over previous years, and will likely have been exceeded in 2017.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.232,
+                0.819,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Figure 1: Total loan sales and NPL stocks in the EU, 2010-16 (€ billions)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.358,
+                0.256,
+                0.838,
+                0.484
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.299,
+                0.496,
+                0.899,
+                0.534
+            ],
+            "angle": 0,
+            "content": "Source: Bruegel based on PwC and EBA. Note: Because of the limited availability of EBA NPL figures, values for NPL stocks from 2010-13 were taken from IMF Financial Soundness Indicators for some countries. Figures for loan sales were sourced from PwC because the more detailed KPMG data (see main text) does not offer a consistent history. Unlike KPMG, PwC shows a decrease in total loan sales in 2016."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.558,
+                0.904,
+                0.681
+            ],
+            "angle": 0,
+            "content": "Transparency in this market remains quite limited. Data comes almost entirely from private advisory firms, which track transactions that are reported in the financial press. Investor valuations of loan portfolios are not generally available, and can only be gauged from commentary about individual transactions. Non-performing assets and other non-core assets often cannot be distinguished. The latter might be performing or might be considered problematic and only subsequently turn out to be non-performing in regulatory terms. Where banks retain risk exposures to NPLs or sell to other banks, aggregate transactions will overstate the true extent of banking sector relief.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.681,
+                0.902,
+                0.758
+            ],
+            "angle": 0,
+            "content": "With these caveats in mind, some data sources provide a more detailed picture. Data from advisory firm KPMG for 2015 to mid-2017 suggest that four countries – the UK, Italy, Ireland and Spain – account for 80 percent of the total value of transactions. The growth in EU markets underlines that investors operate in a number of distinct and parallel national markets, rather than an integrated European market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.758,
+                0.903,
+                0.82
+            ],
+            "angle": 0,
+            "content": "A number of large investment funds, many from the US, operate across all key jurisdictions. Only about a fifth of the roughly 100 investors were active in more than one market, and these investors accounted for nearly half the total sales volume. Given the very different workout procedures and legal environments, it is of course not surprising that no multi-country portfolios have emerged.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.82,
+                0.901,
+                0.897
+            ],
+            "angle": 0,
+            "content": "NPL stocks in Europe are concentrated in seven countries (Cyprus, Greece, Ireland, Italy, Portugal, Slovenia and Spain; Demertzis and Lehmann, 2017). However, loan sales in Greece and Cyprus, each with NPL ratios above 40 percent, remain miniscule. On the whole, the shares of bank assets sold within national banking systems shows little correlation with these countries' shares of distressed loans (Figure 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.948
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.071,
+                0.782,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.862,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.128,
+                0.885,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.754,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.159,
+                0.898,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.891,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.9,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.678,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.56,
+                0.863,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.576,
+                0.858,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.59,
+                0.869,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.606,
+                0.896,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.622,
+                0.893,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.638,
+                0.903,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.652,
+                0.883,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.583,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.682,
+                0.901,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.699,
+                0.891,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.885,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.729,
+                0.887,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.744,
+                0.582,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.761,
+                0.9,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.885,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.792,
+                0.881,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.807,
+                0.874,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.822,
+                0.893,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.838,
+                0.897,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.853,
+                0.869,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.867,
+                0.898,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.884,
+                0.601,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.078,
+                0.788,
+                0.094
+            ],
+            "angle": 0,
+            "content": "Figure 2: NPLs and cumulative loan sales as a share of gross loans"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.316,
+                0.098,
+                0.885,
+                0.275
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.3,
+                0.281,
+                0.483,
+                0.294
+            ],
+            "angle": 0,
+            "content": "Source: Bruegel based on EBA and KPMG."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.324,
+                0.774,
+                0.341
+            ],
+            "angle": 0,
+            "content": "Figure 3: Composition of all loan sales by asset class (€ billions)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.375,
+                0.347,
+                0.826,
+                0.559
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.299,
+                0.565,
+                0.891,
+                0.59
+            ],
+            "angle": 0,
+            "content": "Source: Bruegel based on KPMG. Note: comprises both performing and non-performing assets. Asset types are not categorised consistently in different countries, and 'other' types comprise transactions that span several asset classes."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.62,
+                0.898,
+                0.649
+            ],
+            "angle": 0,
+            "content": "This is not surprising, because in several respects market activity does not match the incidence of loan distress:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.666,
+                0.898,
+                0.742
+            ],
+            "angle": 0,
+            "content": "- FSC (2017) showed a striking dispersion of NPL ratios between banks of different sizes. Smaller banks had significantly larger NPL ratios, and slightly lower coverage ratios, including within individual jurisdictions. It is a concern that investors primarily seek larger transaction sizes to match the significant due diligence costs and larger banks in turn appear to be better prepared to engage investors repeatedly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.743,
+                0.905,
+                0.819
+            ],
+            "angle": 0,
+            "content": "- EBA data also underlines that NPL stocks are roughly evenly split between large enterprises, SMEs and households. This distribution is not matched by the loan sales transactions, which are primarily in secured credit in commercial and residential real estate and to a lesser extent in unsecured retail credit. Exposures to SMEs and larger enterprises so far do not sell on the secondary market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.82,
+                0.9,
+                0.865
+            ],
+            "angle": 0,
+            "content": "- Also, there is a clear preponderance of assets secured against commercial and residential real estate. It is clear that investors remain uncomfortable with corporate debt if there is no collateral that offers a reasonably clear path to enforcement (Figure 3).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.867,
+                0.886,
+                0.897
+            ],
+            "angle": 0,
+            "content": "- Finally, investors on the whole focus on secured loans which have defaulted and which have already entered legal proceedings. A significant stock of NPLs in enterprises that",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.622,
+                0.896,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.637,
+                0.446,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.668,
+                0.881,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.683,
+                0.883,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.699,
+                0.896,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.714,
+                0.871,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.73,
+                0.711,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.744,
+                0.903,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.761,
+                0.895,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.776,
+                0.883,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.792,
+                0.901,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.807,
+                0.54,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.823,
+                0.897,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.838,
+                0.887,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.853,
+                0.797,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.869,
+                0.883,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.884,
+                0.874,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.322,
+                0.079,
+                0.897,
+                0.14
+            ],
+            "angle": 0,
+            "content": "could be described as debt-distressed though still viable remains on the books of the banks. These enterprises would require financial restructuring, likely with additional senior debt and equity, and likely also a restructuring in the operations of the underlying business.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.3,
+                0.192,
+                0.764,
+                0.281
+            ],
+            "angle": 0,
+            "content": "5 Future supply: distressed asset separation and broader bank restructuring"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.295,
+                0.901,
+                0.325
+            ],
+            "angle": 0,
+            "content": "A number of regulatory developments and the structurally low profitability in Europe's banks are set to bring substantial additional supply to this market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.903,
+                0.402
+            ],
+            "angle": 0,
+            "content": "A trigger for divestment of distressed loans has already come in the form of the ECB's 2017 guidelines for banks' management of NPLs (ECB, 2017a). Based on these guidelines, banks will need to put in place strategies for their NPL portfolios, target reductions of all types of loans and prepare for sales of loans to the secondary market by improving documentation and engaging investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.404,
+                0.901,
+                0.511
+            ],
+            "angle": 0,
+            "content": "While these guidelines are initially being implemented with the significant euro-area banks that have high NPL stocks, they will in principle apply to all banks under ECB supervision and, according to the July 2017 Ecofin decision, should be rolled out to all banks in the banking union (Council of the EU, 2017). It is likely that over time these guidelines will help with the preparation for future sale of the distressed loan portfolios in a larger number of EU banks. Greater liquidity in loan markets and scrutiny of NPL reduction strategies by investors and rating agencies could then lead to a self-sustaining growth in supply.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.512,
+                0.903,
+                0.602
+            ],
+            "angle": 0,
+            "content": "A further impetus to divestment of distressed assets could come from the implementation of IFRS 9 accounting standards in 2018 \\( ^{2} \\) . To date the provisions for individual loans have been triggered by actual credit events, such as the loan becoming past due for more than 90 days. Under the new standard that will come into effect in 2018, once there is a significant increase in credit risk, the credit loss expected over the entire lifetime of the loan will need to be provisioned for.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.604,
+                0.903,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Estimates by the European Banking Authority suggest that provisions in EU banks could rise by about 13 percent (EBA, 2017). The need for additional provisioning under IFRS9 is most likely to arise for loans that have been performing but for which a future credit event can be anticipated. In the transition to the new regime, net book values of loans are likely to decline, and thereby come more into line with investors' valuations. This trend will be further reinforced if the ECB further tightens its provisioning guidelines, as it proposed in October 2017 \\( ^{3} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.726,
+                0.556,
+                0.741
+            ],
+            "angle": 0,
+            "content": "Performing but non-core assets"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.743,
+                0.905,
+                0.804
+            ],
+            "angle": 0,
+            "content": "In addition to NPLs, a substantial stock of other bank assets will be offered in the capital markets as the process of bank restructuring gathers pace. Banks generally support the divestment of both performing ('non-core') assets and NPLs through the same internal organisational structure, and target the same investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.805,
+                0.894,
+                0.836
+            ],
+            "angle": 0,
+            "content": "Non-core assets are typically defined as assets that no longer fit a more focused business strategy that envisages a withdrawal from certain business lines, asset types or geographical",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.298,
+                0.857,
+                0.898,
+                0.883
+            ],
+            "angle": 0,
+            "content": "2 International Financial Reporting Standard, see http://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.299,
+                0.883,
+                0.807,
+                0.896
+            ],
+            "angle": 0,
+            "content": "3 https://www.bankingsupervision.europa.eu/press/pr/date/2017/html/ssm.pr171004.en.html."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.105,
+                0.946
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.081,
+                0.867,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.326,
+                0.097,
+                0.869,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.112,
+                0.894,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.127,
+                0.388,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.193,
+                0.765,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.328,
+                0.225,
+                0.725,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.33,
+                0.255,
+                0.513,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.298,
+                0.898,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.313,
+                0.683,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.328,
+                0.9,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.343,
+                0.885,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.359,
+                0.878,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.375,
+                0.878,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.391,
+                0.454,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.406,
+                0.868,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.421,
+                0.894,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.436,
+                0.885,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.451,
+                0.886,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.893,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.898,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.498,
+                0.769,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.514,
+                0.9,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.528,
+                0.901,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.545,
+                0.889,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.897,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.899,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.59,
+                0.371,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.606,
+                0.886,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.621,
+                0.874,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.637,
+                0.878,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.653,
+                0.889,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.668,
+                0.9,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.683,
+                0.881,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.698,
+                0.344,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.727,
+                0.553,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.745,
+                0.865,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.902,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.884,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.792,
+                0.6,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.807,
+                0.891,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.823,
+                0.889,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.079,
+                0.903,
+                0.141
+            ],
+            "angle": 0,
+            "content": "markets. Banks are scaling back their universal banking ambitions, which involved the offer of investment banking or insurance services alongside traditional intermediation services (ESRB, 2014). Moreover, the international financial crisis has led to a withdrawal from foreign markets, including within the EU, where equity stakes or entire subsidiaries are for sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.141,
+                0.904,
+                0.233
+            ],
+            "angle": 0,
+            "content": "This process of so-called balance sheet optimisation is still in the early stages. Estimates of non-core loans are compiled by advisory firms that survey key European banks and compile figures from their published statements. PwC (2017), for instance, estimates total NPLs and other non-core loans designated for sale at €2.1 trillion, an amount that has only marginally declined in recent years. Including these other assets hence more than doubles the potential supply to the secondary loans market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.233,
+                0.9,
+                0.342
+            ],
+            "angle": 0,
+            "content": "Regulators have broadly welcomed the sale of this substantial stock of non-core assets (Nouy, 2017). There is a consensus that Europe is over-banked, and that this is evident in the imbalance between bank assets and relatively under-developed capital markets, in the slow progress of bank consolidation and in often unfocused business models that have contributed to low profitability (ESRB, 2014). Several empirical studies have identified a threshold for financial depth beyond which the growth effect of additional financial development turns negative (eg Arcand, Berkes and Panizza, 2012).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.394,
+                0.779,
+                0.449
+            ],
+            "angle": 0,
+            "content": "6 Demand from investors and their servicers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.465,
+                0.905,
+                0.542
+            ],
+            "angle": 0,
+            "content": "A more rapid pace of asset divestment would move a substantial share of EU bank assets into the hands of investors and their loan servicers. These investors are on the whole lightly regulated, and entered EU capital markets only recently. It is natural, therefore, that regulators' attention has now focused on the investors in the secondary loans market, their business models and the conduct of their servicers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.543,
+                0.906,
+                0.634
+            ],
+            "angle": 0,
+            "content": "The analysis of the transactions between 2015 and mid-2017 (including performing assets) shows that 100 investors were active on the European market in this period, of which 35 were involved in more than one transaction. The top five investors, three of which were US-owned, account for about 23 percent of the gross value of transactions. This is no more than a modest concentration, which seems to have declined over time, and more investors with lower risk appetites appear to have entered the market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.635,
+                0.906,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Several studies have suggested that a concentrated investor base points to potential buyers having market power and that this in turn explains the wide spreads between book values of assets and valuations offered by investors (ESRB, 2017). It is clear that a potential investor in the secondary loans market faces a number of barriers to entry. This will therefore result in only larger portfolios transacting, though such market entry barriers cannot be characterised as market failures. The wider financial stability benefits of NPL resolution might nevertheless warrant policy interventions that facilitate smaller transactions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.743,
+                0.897,
+                0.82
+            ],
+            "angle": 0,
+            "content": "Problems in sharing information about asset quality in any case do not seem to be prominent where large banks interact with investors repeatedly, and therefore seek to establish a reputation for portraying loan-quality data accurately. Higher quality loan portfolios are selected for early transactions. This is not in line with what adverse selection models, for instance in ECB (2016), would suggest.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.82,
+                0.905,
+                0.882
+            ],
+            "angle": 0,
+            "content": "Large enterprises and SMEs have not accounted for a large share of loan transactions to date. In that sense the third potential market failure highlighted in section 2 – the externalities arising from an investor's restructuring work with a borrower – seems to be less relevant in practice.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.106,
+                0.946
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.082,
+                0.889,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.097,
+                0.877,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.113,
+                0.899,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.128,
+                0.862,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.144,
+                0.902,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.159,
+                0.893,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.887,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.189,
+                0.888,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.205,
+                0.895,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.22,
+                0.547,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.236,
+                0.876,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.251,
+                0.893,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.267,
+                0.888,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.282,
+                0.881,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.297,
+                0.883,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.313,
+                0.899,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.329,
+                0.607,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.395,
+                0.777,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.33,
+                0.426,
+                0.461,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.468,
+                0.867,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.481,
+                0.885,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.499,
+                0.885,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.513,
+                0.903,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.529,
+                0.573,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.545,
+                0.904,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.56,
+                0.898,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.575,
+                0.898,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.591,
+                0.899,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.605,
+                0.885,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.622,
+                0.589,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.637,
+                0.905,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.654,
+                0.893,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.668,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.684,
+                0.882,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.699,
+                0.898,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.714,
+                0.897,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.73,
+                0.71,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.745,
+                0.894,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.877,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.877,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.792,
+                0.866,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.806,
+                0.552,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.823,
+                0.884,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.838,
+                0.903,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.853,
+                0.881,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.869,
+                0.359,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.298,
+                0.077,
+                0.582,
+                0.093
+            ],
+            "angle": 0,
+            "content": "The European loan servicing sector"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.095,
+                0.904,
+                0.202
+            ],
+            "angle": 0,
+            "content": "A further barrier on the demand side of the loan sales market might lie in the difficulty in establishing a local servicing capacity because few investors will manage the acquired loans independently. Servicers provide portfolio management and debt collection. In many instances, in-house servicers work exclusively for a single investor. Given the typically long track records in their home markets, loan servicers will have developed efficiency and skills in the management of portfolios, and in workout and enforcement. Evidence from US mortgage servicers suggests there are significant economies of scale in this industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.203,
+                0.899,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Debt collection and servicing in the unsecured retail segment is a fragmented industry that is largely separated along national lines (FSC, 2017). By contrast, NPL servicers with a capacity to handle corporate loans are more concentrated, and are expanding across Europe. A small number of independent servicers have begun to extend operations from loan sale markets that developed early, such as in Spain, to those that are about to develop, such as in Greece. Ultimately, these companies do not have the capacity to bear major risks on their balance sheets and the fee-based servicing of portfolios financed by investors and banks will likely define business models.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.882,
+                0.356
+            ],
+            "angle": 0,
+            "content": "The prominent role of servicers in loan workout has given rise to a number of incentive problems:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.373,
+                0.885,
+                0.402
+            ],
+            "angle": 0,
+            "content": "- Investors might bid for portfolios that their established servicer has already handled on behalf of another institution.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.404,
+                0.902,
+                0.449
+            ],
+            "angle": 0,
+            "content": "- A second problem arises when the servicer's incentives to ensure early disposal and minimisation of costs conflicts with those of the investor, which will aim at value recovery over the long term and observance of its principles of conduct in relation to borrowers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.45,
+                0.903,
+                0.495
+            ],
+            "angle": 0,
+            "content": "- Where the investor acquires a securitised portfolio of distressed assets but leaves the servicing function with the bank that originated the loan, a number of moral hazard problems arise (ESRB, 2017).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.512,
+                0.89,
+                0.604
+            ],
+            "angle": 0,
+            "content": "Few restrictions appear to restrain the activities of loan servicers, including in cross-border service provision. Several euro-area countries have liberalised this sector in recent years (ECB, 2017c). Some countries have introduced regulations to constrain the conduct of servicers, in particular in some of the conflict-of-interest situations noted above. Ireland, for instance, introduced a code in 2016, because similar regulation could not be applied to investors in the same way \\( ^{4} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.299,
+                0.657,
+                0.876,
+                0.712
+            ],
+            "angle": 0,
+            "content": "7 Regulatory barriers to asset transfers: a case for EU harmonisation?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.296,
+                0.727,
+                0.901,
+                0.836
+            ],
+            "angle": 0,
+            "content": "To what extent do national barriers inhibit the development of secondary loans markets and their integration across the EU? The ECB's stocktake of national legal frameworks (ECB, 2017c) does not identify formal restrictions in the legal and regulatory frameworks that would impede the entry of NPL investors and their acquisition of assets. All 19 euro-area jurisdictions allow the transfer of loans without the borrower's consent, and all countries allow their banks to sell NPL assets to foreign investors and non-banking institutions. While some of the seven euro-area countries with very high NPL ratios indicated restrictions in the first stock-",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.297,
+                0.87,
+                0.889,
+                0.896
+            ],
+            "angle": 0,
+            "content": "4 See regulatory regime for credit servicing companies, available at https://www.centralbank.ie/regulation/industry-market-sectors/credit-servicing-firms."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.935,
+                0.105,
+                0.946
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.079,
+                0.579,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.095,
+                0.854,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.113,
+                0.868,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.128,
+                0.888,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.143,
+                0.882,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.159,
+                0.901,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.174,
+                0.897,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.189,
+                0.776,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.322,
+                0.205,
+                0.876,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.221,
+                0.877,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.236,
+                0.897,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.25,
+                0.874,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.267,
+                0.874,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.282,
+                0.889,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.298,
+                0.894,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.313,
+                0.493,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.328,
+                0.879,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.343,
+                0.369,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.375,
+                0.882,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.39,
+                0.51,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.406,
+                0.9,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.421,
+                0.9,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.436,
+                0.849,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.451,
+                0.865,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.467,
+                0.9,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.483,
+                0.479,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.321,
+                0.514,
+                0.888,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.53,
+                0.854,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.545,
+                0.874,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.883,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.575,
+                0.879,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.591,
+                0.475,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.657,
+                0.876,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.33,
+                0.688,
+                0.703,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.73,
+                0.863,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.744,
+                0.887,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.761,
+                0.899,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.776,
+                0.88,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.792,
+                0.893,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.807,
+                0.895,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.823,
+                0.883,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.079,
+                0.729,
+                0.093
+            ],
+            "angle": 0,
+            "content": "take published in late 2016, these appear to have been lifted since.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.095,
+                0.905,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Investors are of course discouraged from entering certain markets by the range of obstacles in relation to loan enforcement and liquidation. The ECB stocktake flags some familiar shortcomings (ECB, 2017c). The judicial regime, debt enforcement and the lack of liquidity in local debt sales markets were seen as the main obstacles in the entire group of 19 euro-area countries. Most of these responses came from the subset of seven jurisdictions with high NPL levels (Figure 4). Gaps between investors' and divesting banks' valuations of distressed assets result to a great extent from the lengthy recovery procedures and uncertainty about their evolution, and the costs of these procedures. More efficient national workout procedures and judicial systems would therefore help to narrow valuation gaps and lead to greater liquidity in loans markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.25,
+                0.891,
+                0.325
+            ],
+            "angle": 0,
+            "content": "From the results of the ECB stocktake it appears that explicit national supervisory practices on loan transfers no longer represent a meaningful obstacle to the development of secondary loans markets in the euro area. EU countries outside the currency union, in particular those of central and south-eastern Europe, are likely to have more restrictions on asset transfers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.9,
+                0.434
+            ],
+            "angle": 0,
+            "content": "A constraint flagged up by a number of investors is restrictions on their ability to provide additional credit to investee companies. Such funding would need to be protected by being given a more senior status in a restructuring. Also, under EU rules, asset managers remain unable to sponsor securitisations. In addition, some investors regard the present rules on de-recognition as overly restrictive. These rules stipulate to what extent a bank that retains a share of risk in a loan that has been transferred still needs to provide capital coverage for that loan. This is particularly relevant for securitisations and other risk transfers.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.299,
+                0.448,
+                0.852,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Figure 4: Restrictions flagged by national bank supervisors in the euro area"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.34,
+                0.472,
+                0.859,
+                0.706
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.3,
+                0.713,
+                0.877,
+                0.726
+            ],
+            "angle": 0,
+            "content": "Source: Bruegel based on ECB (2017c). Note: * High NPL levels refers to Cyprus, Greece, Ireland, Italy, Portugal, Slovenia and Spain."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.082,
+                0.725,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.096,
+                0.888,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.884,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.129,
+                0.898,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.886,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.159,
+                0.9,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.174,
+                0.898,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.19,
+                0.869,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.205,
+                0.9,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.901,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.397,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.251,
+                0.845,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.266,
+                0.877,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.282,
+                0.87,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.888,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.313,
+                0.398,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.328,
+                0.89,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.344,
+                0.887,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.359,
+                0.878,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.376,
+                0.873,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.39,
+                0.891,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.406,
+                0.897,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.422,
+                0.785,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.301,
+                0.07,
+                0.498,
+                0.093
+            ],
+            "angle": 0,
+            "content": "8 Conclusions"
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.091,
+                0.233,
+                0.281,
+                0.402
+            ],
+            "angle": 0,
+            "content": "'Europe's market for distressed loans is young and fragmented but the disposal of NPLs into European debt markets is essential because banks' internal workout capacities will inevitably remain inadequate.'"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.11,
+                0.907,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Europe's market for distressed loans is young and fragmented but has grown rapidly since the financial crisis. Experience from other debt and NPL crises shows that there is considerable potential to further accelerate the disposal of non-performing loans to private investors, while facilitating the process of balance sheet optimisation as banks seek to conserve capital and dispose of so-called non-core assets. The disposal of NPLs into European debt markets is essential because banks' internal workout capacities will inevitably remain inadequate. Crucially, investors will bring greater efficiency to the workout process, and possibly restructuring skills and additional finance to debt-distressed enterprises.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.234,
+                0.901,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Given the quite rapid market growth it might be argued that no policy intervention is needed to address the multiple market failures inherent in the transfer of bank assets. This overlooks the fact that key countries and NPL segments are not yet covered by secondary loans markets. In particular SME and corporate portfolios offered by smaller banks remain unaddressed. It is rare to see investors who engage in operational as well as financial restructuring of enterprises that are distressed but viable.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.326,
+                0.902,
+                0.449
+            ],
+            "angle": 0,
+            "content": "The action plan adopted by Ecofin in July 2017 could potentially make this market more liquid, and broaden it to other types of distressed assets. Specifically, a template for loan-level data could enhance transparency of loans and could lower entry barriers for investors. It should build on the work done to date by advisory firms. Complex corporate assets will still require more in-depth due diligence. Also, a transaction platform could offer greater transparency of portfolios coming to the market, and incentives should be defined to list transactions on such platforms. The prudential treatment of securitisation and other risk-sharing transfers under the EU capital requirement rules for banks \\( ^{5} \\) still seems to present an obstacle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.45,
+                0.903,
+                0.572
+            ],
+            "angle": 0,
+            "content": "In addition to the measures proposed by Ecofin, which essentially define how the single EU capital market can function more efficiently, supervisory policy within the banking union is likely to give a substantial boost to market liquidity. The tighter provisioning guidelines proposed by the ECB would only apply to newly emerging NPLs, but would nevertheless send a clear signal that further write downs are needed to bridge persistent valuation gaps. The euro area accounts for the bulk of the EU NPL problem, and a visibly more dynamic NPL market would send the message that risk reduction is underway and spillovers from legacy assets in individual banking systems are being contained.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.573,
+                0.894,
+                0.681
+            ],
+            "angle": 0,
+            "content": "A key policy intervention that could help overcome market failures could be wider use of asset management companies (AMCs). The Ecofin tasked the Commission to develop common principles for the relevant asset types, valuation, and consistency with rules on state aid and bank resolution. Spain and Ireland have demonstrated that such ‘bad banks’ can indeed establish transparent valuation principles and loan quality standards, and act as a single counterparty to investors. Because these AMCs bought up exposures from several institutions they were also able to internalise the gains of any restructuring prior to a sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.682,
+                0.902,
+                0.742
+            ],
+            "angle": 0,
+            "content": "An alternative could be securitisation structures in which the public sector is exposed to some risks alongside private investors. While this would overcome problems around discerning the true quality of loans sold, these structures would further fragment the investor base, diluting investors' incentives for restructuring.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.743,
+                0.907,
+                0.835
+            ],
+            "angle": 0,
+            "content": "It is clear that reforms in the functioning of the EU capital market will need to be backed by reforms of national restructuring frameworks and insolvency regimes. The observed bid-ask valuation gaps in loan sales markets are related to the recovery rate, the expected cash flow in recovery and the uncertainty about the evolution of the recovery process. To the extent that national reforms speed up this process and make it more predictable, valuations will converge.",
+            "merge_prev": false
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.299,
+                0.87,
+                0.872,
+                0.895
+            ],
+            "angle": 0,
+            "content": "5 The Capital Requirements Regulation (CRR, Regulation (EU) 575/2013) and Directive (CRD IV, 2013/36/EU), adopted in 2013."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.112,
+                0.946
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.069,
+                0.497,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.113,
+                0.878,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.127,
+                0.889,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.895,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.159,
+                0.894,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.174,
+                0.898,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.189,
+                0.895,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.205,
+                0.904,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.681,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.325,
+                0.236,
+                0.868,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.251,
+                0.878,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.267,
+                0.872,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.282,
+                0.882,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.298,
+                0.897,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.313,
+                0.623,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.328,
+                0.885,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.344,
+                0.871,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.358,
+                0.889,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.374,
+                0.899,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.39,
+                0.884,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.406,
+                0.877,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.422,
+                0.889,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.437,
+                0.898,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.452,
+                0.886,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.467,
+                0.898,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.483,
+                0.901,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.499,
+                0.891,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.513,
+                0.897,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.529,
+                0.885,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.545,
+                0.891,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.56,
+                0.613,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.575,
+                0.877,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.59,
+                0.867,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.606,
+                0.869,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.621,
+                0.876,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.637,
+                0.891,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.653,
+                0.877,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.668,
+                0.874,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.682,
+                0.888,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.699,
+                0.899,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.714,
+                0.886,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.729,
+                0.599,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.745,
+                0.888,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.888,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.776,
+                0.878,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.791,
+                0.906,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.807,
+                0.872,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.823,
+                0.367,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.079,
+                0.896,
+                0.171
+            ],
+            "angle": 0,
+            "content": "The development of distressed debt markets could be a new element of capital market deepening in Europe, even though the market would likely continue functioning in distinct national segments. Large asset managers already cover portfolios from several European jurisdictions in a single fund, even though of course no pan-European asset class can be defined. Gradually, the now numerous smaller investors might diversify across borders, as is already the case for loan servicers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.298,
+                0.172,
+                0.903,
+                0.248
+            ],
+            "angle": 0,
+            "content": "A process of shifting a significant share of European bank assets – potentially a gross value of up to 18 percent of GDP in the euro area – into the hands of lightly-regulated investors will need to be well governed. Public scrutiny of this new investor class will likely demand the setting out of clear codes of conduct, which will inevitably need to be based on national practice in debt resolution.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.301,
+                0.302,
+                0.462,
+                0.325
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.3,
+                0.343,
+                0.844,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Arcand, J., E. Berkes and U. Panizza (2012) 'Too much finance?' IMF Working Paper no. 12/161, International Monetary Fund"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.375,
+                0.872,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Ciavoliello, L., F. Ciocchetta, F. Conti, I. Guida, A. Rendina and G. Santini (2016) 'What's the value of NPLs?' Notes on Financial Stability and Supervision no. 3, Banca d'Italia"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.407,
+                0.9,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Constâncio, V. (2017) ‘Resolving Europe’s NPLs: challenges and benefits,’ speech to a Bruegel conference, 3 February"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.438,
+                0.898,
+                0.466
+            ],
+            "angle": 0,
+            "content": "Council of the EU (2017) 'Council Conclusions on action plan to tackle non-performing loans in Europe,' Press Release 459/17, 11 July"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.47,
+                0.9,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Demertzis, M., and A. Lehmann (2017) 'Tackling Europe's crisis legacy: a comprehensive strategy for bad loans and debt restructuring; Policy Contribution 11/2017, Bruegel"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.502,
+                0.881,
+                0.516
+            ],
+            "angle": 0,
+            "content": "EBA (2017) Report on results from the 2nd EBA IFRS9 impact assessment, European Banking Authority"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.52,
+                0.863,
+                0.547
+            ],
+            "angle": 0,
+            "content": "ECB (2016) 'Addressing market failures in the resolution of non-performing loans in the euro area,' Financial Stability Review, November, European Central Bank"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.551,
+                0.898,
+                0.579
+            ],
+            "angle": 0,
+            "content": "ECB (2017a) 'Guidance to banks on tackling non-performing loans,' European Central Bank, available at: www.bankingsupervision.europa.eu"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.583,
+                0.888,
+                0.611
+            ],
+            "angle": 0,
+            "content": "ECB (2017b) 'Resolving non-performing loans: a role for securitisation and other financial structures?', Financial Stability Review, May, European Central Bank"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.616,
+                0.892,
+                0.642
+            ],
+            "angle": 0,
+            "content": "ECB (2017c) Stocktake of national supervisory practices and legal frameworks related to NPLs, European Central Bank"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.647,
+                0.881,
+                0.674
+            ],
+            "angle": 0,
+            "content": "ECB (2017d) 'Overcoming non-performing loan market failures with transaction platforms', Financial Stability Review, November, European Central Bank"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.679,
+                0.904,
+                0.706
+            ],
+            "angle": 0,
+            "content": "European Commission (2017) ‘Mid-term review of the capital markets union action plan,’ COM(2017) 292 final"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.711,
+                0.854,
+                0.738
+            ],
+            "angle": 0,
+            "content": "ESRB (2014) 'Is Europe overbanked?' Report of the Advisory Scientific Committee no. 4, European Systemic Risk Board"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.743,
+                0.704,
+                0.756
+            ],
+            "angle": 0,
+            "content": "ESRB (2017) Resolving NPLs in Europe, European Systemic Risk Board"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.761,
+                0.906,
+                0.802
+            ],
+            "angle": 0,
+            "content": "Fell, J., M. Grodzicki, R. Martin and E. O'Brien (2017) 'A role for systemic asset management companies in solving Europe's non-performing loan problems', European Economy – Banks, Regulation and the Real Sector, no. 17.1"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.806,
+                0.898,
+                0.848
+            ],
+            "angle": 0,
+            "content": "FSC (Financial Services Committee) (2017) 'Report of the FSC Subgroup on Non-Performing Loans', Council of the European Union, Brussels, 31 May, available at http://data.consilium.europa.eu/doc/document/ST-9854-2017-INIT/en/pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.853,
+                0.865,
+                0.894
+            ],
+            "angle": 0,
+            "content": "Haben, P., and M. Quagliariello (2017) 'Why the EU needs an asset management company', Central Banking, 20 February, available at: http://www.centralbanking.com/central-banking-journal/opinion/2481794/why-the-eu-needs-an-asset-management-company"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.081,
+                0.875,
+                0.092
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.097,
+                0.886,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.112,
+                0.869,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.128,
+                0.866,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.143,
+                0.894,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.158,
+                0.522,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.174,
+                0.899,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.303,
+                0.189,
+                0.896,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.205,
+                0.901,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.22,
+                0.899,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.236,
+                0.421,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.302,
+                0.461,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.066,
+                0.871,
+                0.094
+            ],
+            "angle": 0,
+            "content": "He, D. (2004) 'The role of KAMCO in Resolving Nonperforming Loans in the Republic of Korea', IMF Working Paper no. 04/172, International Monetary Fund"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.098,
+                0.902,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Mersch, Y. (2017) 'Loan-level data transparency: achievements and future prospects,' speech given on the occasion of the \\(5^{\\text{th}}\\) anniversary of the European Data Warehouse, July"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.13,
+                0.894,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Nouy, D. (2017) 'Too much of a good thing? The need for consolidation in the European banking sector', speech to the VIII Financial Forum, Madrid, September"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.162,
+                0.841,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Ohashi, K., and M. Singh (2004) 'Japan's distressed debt market', IMF Working Paper no. 04/86, International Monetary Fund"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.193,
+                0.9,
+                0.235
+            ],
+            "angle": 0,
+            "content": "PwC (2017) Restructuring Europe's banks: Still plenty to do, report from the European Bank Restructuring Conference 2017, available at: https://www.pwc.co.uk/services/transaction-services/insights/european-bank-restructuring-conference-2017.html"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.302,
+                0.239,
+                0.903,
+                0.267
+            ],
+            "angle": 0,
+            "content": "Rocha, I. (2016) 'NPL resolution: prerequisites for loan portfolio sales in the CESEE region', NPL Initiative, available at http://npl.vienna-initiative.com/best-practices/"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.301,
+                0.271,
+                0.894,
+                0.298
+            ],
+            "angle": 0,
+            "content": "Schäfer, L. (2016) 'Forgive but not forget: the behaviour of relationship banks when firms are in distress,' EBRD Working Paper no. 186, European Bank for Reconstruction and Development"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.934,
+                0.114,
+                0.946
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.3,
+                0.933,
+                0.619,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Policy Contribution | Issue n°02 | January 2018"
+        }
+    ]
+]

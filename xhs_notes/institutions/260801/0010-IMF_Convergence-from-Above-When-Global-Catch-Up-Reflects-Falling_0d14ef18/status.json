@@ -1,0 +1,139 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "经济追赶的另一面：富",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x2",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "危机->扰动 x2",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "崩盘|崩溃|暴跌->明显波动 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x3",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "危机->扰动 x3",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "金融->资金 x1",
+    "危机->扰动 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "IMF：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18.pdf",
+    "cleaned_source_title": "0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0010IMFConvergencefromAboveWhen",
+    "raw_candidates": [
+      "IMF：全球趋同部分源于高位地区回落",
+      "IMF：1960-2019年顶端压缩解释约三分之一趋同",
+      "IMF：从上方趋同-日本与南欧增长基准下移案例"
+    ],
+    "cleaned_candidates": [
+      "IMF：全球趋同部分源于高位地区回落",
+      "IMF：1960-2019年顶端压缩解释约三分之一趋同",
+      "IMF：从上方趋同-日本与南欧增长基准下移案例",
+      "IMF：0010IMFConvergencefromAboveWhen",
+      "IMF：IMF宏观环境学家PatrickA.Imam在2026年7月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：1960-2019年顶端压缩解释约三分之一趋同",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：从上方趋同-日本与南欧增长基准下移案例",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：0010IMFConvergencefromAboveWhen",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF宏观环境学家PatrickA.Imam在2026年7月",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：全球趋同部分源于高位地区回落",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

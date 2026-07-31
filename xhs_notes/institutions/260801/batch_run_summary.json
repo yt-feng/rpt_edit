@@ -1,0 +1,173 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 23,
+  "pdf_count_before_skip": 23,
+  "pdf_count": 23,
+  "generated_report_count": 23,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4ikw0b7j/pdfs/0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413.pdf",
+          "batch_file": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397.pdf",
+          "batch_file": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397.pdf",
+          "stable_index": "7"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b.pdf",
+          "batch_file": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b.pdf",
+          "stable_index": "8"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95.pdf",
+          "batch_file": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95.pdf",
+          "stable_index": "9"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18.pdf",
+          "batch_file": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18.pdf",
+          "stable_index": "10"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 3,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41.pdf",
+          "batch_file": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41.pdf",
+          "stable_index": "11"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591.pdf",
+          "batch_file": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591.pdf",
+          "stable_index": "12"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663.pdf",
+          "batch_file": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663.pdf",
+          "stable_index": "13"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5.pdf",
+          "batch_file": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5.pdf",
+          "stable_index": "14"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156.pdf",
+          "batch_file": "/tmp/pdf_batch_003_ybjc6yxt/pdfs/0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156.pdf",
+          "stable_index": "15"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 4,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac.pdf",
+          "batch_file": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac.pdf",
+          "stable_index": "16"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545.pdf",
+          "batch_file": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545.pdf",
+          "stable_index": "17"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084.pdf",
+          "batch_file": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084.pdf",
+          "stable_index": "18"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35.pdf",
+          "batch_file": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35.pdf",
+          "stable_index": "19"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588.pdf",
+          "batch_file": "/tmp/pdf_batch_004_h0v3zxd_/pdfs/0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588.pdf",
+          "stable_index": "20"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 5,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b.pdf",
+          "batch_file": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b.pdf",
+          "stable_index": "21"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Government-involvement-in-sustainability-initiatives_3daece2b.pdf",
+          "batch_file": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b.pdf",
+          "stable_index": "22"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+          "batch_file": "/tmp/pdf_batch_005_69ws0uc5/pdfs/0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06.pdf",
+          "stable_index": "23"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

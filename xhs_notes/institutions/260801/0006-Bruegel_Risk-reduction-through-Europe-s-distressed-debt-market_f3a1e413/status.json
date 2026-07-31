@@ -1,0 +1,117 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "欧洲银行甩卖2万亿坏",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x6",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "金融->资金 x1",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "证券->标的 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413.pdf",
+    "cleaned_source_title": "0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0006BruegelRiskredu",
+    "raw_candidates": [
+      "欧洲不良贷款处置市场：风险降低路径",
+      "欧洲不良贷款处置市场：8700亿欧元存量与1460亿欧元交易",
+      "欧洲不良贷款处置市场：估值分歧与读者集中问题"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧洲不良贷款处置市场，风险降低路径",
+      "布鲁盖尔研究所：欧洲不良贷款处置市场",
+      "布鲁盖尔研究所：欧洲不良贷款处置市场，估值分歧与读者集中问题",
+      "布鲁盖尔研究所：0006BruegelRiskredu",
+      "布鲁盖尔研究所：但2016年二级市场贷款交易总额仅为1460亿欧元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：欧洲不良贷款处置市场",
+        "reasons": [
+          "anchor_coverage=0.60",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：欧洲不良贷款处置市场，估值分歧与读者集中问题",
+        "reasons": [
+          "anchor_coverage=0.60",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：0006BruegelRiskredu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：但2016年二级市场贷款交易总额仅为1460亿欧元",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧洲不良贷款处置市场，风险降低路径",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

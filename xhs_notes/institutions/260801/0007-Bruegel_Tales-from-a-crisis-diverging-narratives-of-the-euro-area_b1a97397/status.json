@@ -1,0 +1,111 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_jfa1y1ny/pdfs/0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "欧元区四年，各国民众",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "危机->扰动 x3",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x2",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397.pdf",
+    "cleaned_source_title": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0007BruegelTalesfro",
+    "raw_candidates": [
+      "布鲁盖尔研究所：欧元区危机叙事分歧",
+      "布鲁盖尔研究所：欧元区四国媒体叙事分歧-2007至2016年5.1万篇文章分析",
+      "布鲁盖尔研究所：欧元区四国报纸归责叙事与政策对应研究"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧元区危机叙事分歧",
+      "布鲁盖尔研究所：欧元区四国媒体叙事分歧",
+      "布鲁盖尔研究所：欧元区四国报纸归责叙事与政策对应研究",
+      "布鲁盖尔研究所：0007BruegelTalesfro",
+      "布鲁盖尔研究所：这份研究基于2007年至2016年间四国四家代表性报纸"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：欧元区四国媒体叙事分歧",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：欧元区四国报纸归责叙事与政策对应研究",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：0007BruegelTalesfro",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：这份研究基于2007年至2016年间四国四家代表性报纸",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧元区危机叙事分歧",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
