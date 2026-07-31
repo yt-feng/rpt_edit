@@ -1,0 +1,553 @@
+[
+  {
+    "item": "0001-16-CITI-Hongfa-Technology--600885--2Q26-Results-Beat--Lifting-TP-to-Rmb45.0",
+    "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0001-16-CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "继电器龙头的半年报，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：宏发股份业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-16-CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion-260729.pdf",
+      "cleaned_source_title": "CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：Hongfa科技600885-2Q26ResultsBeat",
+      "raw_candidates": [
+        "Citi：宏发股份二季度收入超预期，毛利率回升路径明确",
+        "Citi：宏发股份二季度收入59亿元，毛利率33.2%，上调目标价至45元",
+        "Citi：宏发股份二季度收入超预期，全品类增长，毛利率有望回升至35%",
+        "宏发股份二季度业绩超预期-上调目标价至45元",
+        "宏发股份二季度收入59亿元-毛利率33.2%-上调目标价至45元",
+        "宏发股份二季度业绩超预期-继电器全品类增长-上调目标价至45元"
+      ],
+      "cleaned_candidates": [
+        "Citi：宏发股份二季度收入超预期，毛利率回升路径明确",
+        "Citi：宏发股份二季度收入59亿元，毛利率33.2%",
+        "Citi：宏发股份二季度收入超预期，全品类增长，毛利率有望回升至35%",
+        "Citi：Hongfa科技600885-2Q26ResultsBeat",
+        "Citi：二季度收入59亿元，同比增长36%，高出市场预期4个百分点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：宏发股份二季度收入59亿元，毛利率33.2%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：宏发股份二季度收入超预期，全品类增长，毛利率有望回升至35%",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "Citi：Hongfa科技600885-2Q26ResultsBeat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：二季度收入59亿元，同比增长36%，高出市场预期4个百分点",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：宏发股份业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Citi：二季度收入59亿元，同比增长36%，高出市场预期4个百分点",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Citi：宏发股份二季度收入超预期，毛利率回升路径明确",
+        "Citi：宏发股份二季度收入59亿元，毛利率33.2%，上调目标价至45元",
+        "Citi：宏发股份二季度收入超预期，全品类增长，毛利率有望回升至35%"
+      ],
+      "pre_neutralization_title": "Citi：宏发股份二季度收入超预期，毛利率回升路径明确",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：宏发股份业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-17-CITI-Greater-China-Diversified-Utilities-Where-to-Hide-in-Utilities-Rene",
+    "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0002-17-CITI-Greater China Diversified Utilities-Where to Hide in Utilities-Renewables - Power Equipment Space--260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "AI叙事松动，公用事",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：大中华多元化公用事业-公用事业避险方向-可再生能源与电力设备",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-17-CITI-Greater China Diversified Utilities-Where to Hide in Utilities-Renewables - Power Equipment Space--260729.pdf",
+      "cleaned_source_title": "CITI-Greater China Diversified Utilities-Where to Hide in Utilities-Renewables - Power Equipment Space",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：Greater中国DiversifiedUtil",
+      "raw_candidates": [
+        "大中华多元化公用事业-公用事业避险方向-可再生能源与电力设备",
+        "大中华多元化公用事业-高股息与防御标的-可再生能源与电力设备",
+        "大中华多元化公用事业-公用事业资金轮动-可再生能源与电力设备"
+      ],
+      "cleaned_candidates": [
+        "Citi：大中华多元化公用事业-公用事业避险方向-可再生能源与电力设备",
+        "Citi：大中华多元化公用事业-高股息与防御标的-可再生能源与电力设备",
+        "Citi：大中华多元化公用事业-公用事业资金轮动-可再生能源与电力设备",
+        "Citi：Greater中国DiversifiedUtil",
+        "Citi：ENNEnergy的2026年预期股息率6.7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：Greater中国DiversifiedUtil",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：ENNEnergy的2026年预期股息率6.7%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：大中华多元化公用事业-公用事业避险方向-可再生能源与电力设备",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：大中华多元化公用事业-公用事业避险方向-可再生能源与电力设备"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-18-CITI-China-Property-Positive--Position-for-Volume-Growth-in-Core-Cities-",
+    "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0003-18-CITI-China Property-Positive- Position for Volume Growth in Core Cities on More Launches-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "核心城市成交回暖，新",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "Citi：城市与住房数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-18-CITI-China Property-Positive- Position for Volume Growth in Core Cities on More Launches-260729.pdf",
+      "cleaned_source_title": "CITI-China Property-Positive- Position for Volume Growth in Core Cities on More Launches",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国地产Positive",
+      "raw_candidates": [
+        "Citi：中国房地产核心城市推盘放量支撑成交增长",
+        "Citi：中国房地产核心城市7月新房成交同比增11%",
+        "Citi：中国房地产核心城市推盘与成交数据观察"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国房地产核心城市推盘放量支撑成交增长",
+        "Citi：中国房地产核心城市7月新房成交同比增11%",
+        "Citi：中国房地产核心城市推盘与成交数据观察",
+        "Citi：中国地产Positive",
+        "Citi：7月最后一周，Citi跟踪的34城新房网签套数录得18,546套"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国房地产核心城市7月新房成交同比增11%",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "Citi：中国房地产核心城市推盘与成交数据观察",
+          "reasons": [
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "Citi：中国地产Positive",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：7月最后一周，Citi跟踪的34城新房网签套数录得18,546套",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：城市与住房数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：中国房地产核心城市推盘放量支撑成交增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "Citi：城市与住房数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-19-CITI-US-Semiconductors-SWKS---QRVO---Maintain-Neutral-260729",
+    "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0004-19-CITI-US Semiconductors-SWKS - QRVO - Maintain Neutral-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "射频巨头合并，研报怎",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：美国半导体公司Skyworks与Qorvo更新公司观点",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-19-CITI-US Semiconductors-SWKS - QRVO - Maintain Neutral-260729.pdf",
+      "cleaned_source_title": "CITI-US Semiconductors-SWKS - QRVO - Maintain Neutral",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：US半导体SWKSQRVOMaintain报告观点",
+      "raw_candidates": [
+        "Citi：美国半导体公司Skyworks与Qorvo维持中性",
+        "Citi：美国半导体公司Skyworks与Qorvo维持中性-盈利预测分化",
+        "Citi：美国半导体公司Skyworks与Qorvo维持中性-射频行业合并"
+      ],
+      "cleaned_candidates": [
+        "Citi：美国半导体公司Skyworks与Qorvo更新公司观点",
+        "Citi：US半导体SWKSQRVOMaintain报告观点",
+        "Citi：2.Qorvo毛利率站上50%，盈利预测上调幅度明显"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：US半导体SWKSQRVOMaintain报告观点",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：2.Qorvo毛利率站上50%，盈利预测上调幅度明显",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：美国半导体公司Skyworks与Qorvo更新公司观点",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：美国半导体公司Skyworks与Qorvo更新公司观点"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-20-CITI-Taiwan-PCB---Laminates--CCL-sector--quality-beat--likely-another-pr",
+    "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0005-20-CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "CCL涨价潮要来了，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：PCB、CCL技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-20-CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy-260729.pdf",
+      "cleaned_source_title": "CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy",
+      "institution_name": "Citi",
+      "required_terms": [
+        "PCB",
+        "CCL"
+      ],
+      "deterministic_fallback": "Citi：TaiwanPCBLaminatesCCLsec",
+      "raw_candidates": [
+        "台湾PCB与CCL行业：品质超预期，3Q26或再涨价",
+        "台湾PCB与CCL行业：2Q26毛利率超预期，3Q26或再涨价",
+        "台湾PCB与CCL行业：AI服务器需求推动，3Q26供应趋紧或涨价"
+      ],
+      "cleaned_candidates": [
+        "Citi：台湾PCB与CCL行业，品质超预期，3Q26或再涨价",
+        "Citi：台湾PCB与CCL行业，2Q26毛利率超预期，3Q26或再涨价",
+        "Citi：台湾PCB与CCL行业，AI服务器需求推动",
+        "Citi：TaiwanPCBLaminatesCCLsec",
+        "Citi：Citi在7月底的台湾PCB与CCL行业报告中给出一个明确判断"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：台湾PCB与CCL行业，AI服务器需求推动",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：TaiwanPCBLaminatesCCLsec",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：Citi在7月底的台湾PCB与CCL行业报告中给出一个明确判断",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：PCB、CCL技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：台湾PCB与CCL行业，2Q26毛利率超预期，3Q26或再涨价",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：PCB、CCL技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

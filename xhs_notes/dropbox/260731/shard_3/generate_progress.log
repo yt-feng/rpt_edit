@@ -1,0 +1,84 @@
+Found 92 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ee2ht1m1/pdfs/0001-16-CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ee2ht1m1/pdfs/0002-17-CITI-Greater China Diversified Utilities-Where to Hide in Utilities-Renewables - Power Equipment Space--260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ee2ht1m1/pdfs/0003-18-CITI-China Property-Positive- Position for Volume Growth in Core Cities on More Launches-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ee2ht1m1/pdfs/0004-19-CITI-US Semiconductors-SWKS - QRVO - Maintain Neutral-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ee2ht1m1/pdfs/0005-20-CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy-260729.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=a1aa4f39-ee47-49d5-b2a3-e55fa9db527b
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, running, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 9857d3bdcfc47fa7adfcd50432a892fec426687af216388b8155781c187f4502.jpg: score=-100;too_small:1304x126
+Skip non-chart visual asset 03619c736189796df8e1102cb1d67b3617cd1856dc6839784a56696a5576b887.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.29,contrast,large
+Skip non-chart visual asset 6a049e746118ce3b84468b2f239e64de454f691eb97322aa4e92b7031acdad38.jpg: score=0;square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 1272aee62f32dc2d7181a24aa98e1ae6e2f9d664d2d795177a4f0f8b14ff31e4.jpg: score=-100;too_small:374x131
+Skip non-chart visual asset 9f7932c268bb103d37644823d95bc8d9fa165531e9157efb84f7d0bb7d4d593c.jpg: score=-100;too_small:45x53
+Skip non-chart visual asset eab647c5e3d00fa4b61d7294b9d30fd8b1fbf7d0558718989097ba850c5efaba.jpg: score=-100;too_small:51x60
+Skip non-chart visual asset 08b69e7687698da6273a89a53da4e7c9361bf6ed15fd41aeca55b3d8ef2281e1.jpg: score=-100;too_small:368x134
+Skip non-chart visual asset 3e6fe1f0cc0eb1b5c9ffcb0631d98c2105ed600337c5dda410dc8d5a0a206238.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.26,contrast,large
+Skip non-chart visual asset 77d054a819eb8f3305c08b882a1d6ee722202d9b036539df6d316988f222d1ec.jpg: score=-100;too_small:43x56
+Skip non-chart visual asset ee81e4b5217578122e01e7c2ab17fb323bfd2c0d10fbddbe6e4a5453981c897c.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ca38b372642ae6732ec4e0892e7082f684988b8abf448fc16650f3e4e5eb2898.jpg: score=-100;too_small:706x160
+Skip non-chart visual asset 022b0b558830435023bb661184f821d4d8cf7f7fd95b8ccc32421981f58133a9.jpg: score=-100;too_small:1431x154
+Skip non-chart visual asset 004de0c21d31e1d73c3e0fcd8cc49d87e4f9ed72d34dc6cb2dc304d150c17951.jpg: score=-100;too_small:365x128
+Neutralized WeChat title while keeping the report: 花旗：宏发股份二季度收入超预期，毛利率回升路径明确 -> 花旗：宏发股份业务与季度数据观察
+Skip non-chart visual asset 4fc5f9106a4f30476b7bb713c901bc99e249be107702a9a5b1b54727b9b652f8.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 057587c2b3118f981d5b8c4b262c1dc1ecbcceea07244ab4eb7e1c52241ff2b1.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 7eec3c6100a6afc3cfefe087c2133fb8f6075a87f7ae347c1fb96d3f2f2c03a1.jpg: score=-100;too_small:1431x146
+Skip non-chart visual asset 3cdba058ca048f633adb9cb86aba0ac10e20969933f04bb5c0fadc39b92ef407.jpg: score=0;square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset d7bd2a4ef24f5a11b21ba739f8a2924a2cc93bf41c72c81cdda428d889c824b1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.54,large
+Skip non-chart visual asset 85d24f5dfa47a4b333b07a85cd31e1005e013c15b564ba7067b0b35355ad3cb8.jpg: score=0;square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset b9b17c4b60b2ec0a8660b3327ce131e0c3e66559dd6b16f16fe0c09c6a65c3fe.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.43,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 01643f2bf27ddf39c9f27d6f9328f2333ba052c33e5249f9dd02eb7f6f667339.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.55,large
+Skip non-chart visual asset ea6ed0f4b16c15510b496c00f11e5f69cfae3bceb35f854547389c91bb96a537.jpg: score=-100;too_small:1431x146
+Skip non-chart visual asset d2be1446433e9aa90d8e70ca4cda1bda5de81c731fded089217f9d2d32715f9e.jpg: score=0;square_without_chart_hint,edge:0.17,large
+Neutralized WeChat title while keeping the report: 花旗：中国房地产核心城市推盘放量支撑成交增长 -> 花旗：城市与住房数据变化观察
+Skip non-chart visual asset 3ea84b47da3c04c56bdca0a220c13f2b3d4661d1dfa3e8d4dfa0964a9d92f994.jpg: score=-100;too_small:362x157
+Skip non-chart visual asset 7e75838308f1a74b9c3c35e5c13d7dbc9c3021150913eae3621e6237eca62958.jpg: score=-100;too_small:43x45
+Skip non-chart visual asset bf35ab043d2283a616577b283eff11fcde9ca261fcf65e4f302b3c5a9cb9720a.jpg: score=-100;too_small:51x48
+Skip non-chart visual asset 9e61e3b49d88aa5edd329943ca26682c5e0f7680015e7eee762335ed2b333df0.jpg: score=-100;too_small:359x157
+Skip non-chart visual asset 6dea0473960352ec819d342d5f460c2b2af32bec3486d4455b53c41171f42815.jpg: score=-100;too_small:1304x103
+Skip non-chart visual asset c3f3e936fe48427f1c90576c8c98e00ade8c3fbb44567ff8e2ce504b81b4f938.jpg: score=-100;too_small:43x51
+Skip non-chart visual asset ac0e5297976a3aecb8c3b7e74dec9b7a936f32d080542bbe934652570478b3d9.jpg: score=-100;too_small:43x49
+Skip non-chart visual asset 8e152ca4a7d81f75463f684eb34f56fdb0a5b17988bc116625e3d83cc34a9eef.jpg: score=-100;too_small:371x160
+Skip non-chart visual asset 3eac48d10bfe5f58718bbb209ed2ec0af7613750afc5961305985a995ca75719.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 5cbf53bff37fe1f83244556ba71ee5717f1c82d88274aec831c743fbd6a80dc4.jpg: score=-100;too_small:362x160
+Skip non-chart visual asset eeeefc7d49a389d2c07302fafe52f07b6e7153517fcfb36922413ea0c8f061b6.jpg: score=-100;too_small:1431x153
+Skip non-chart visual asset 6012937715d12f8567a2ca2c2f672cc097ded42b0cbc4a9ed9e0eedee42a1209.jpg: score=-100;too_small:359x154
+Skip non-chart visual asset bcda597f1ae332606ce8e59d9bb6ec3187bae006f9a33d031990269ffc244665.jpg: score=-100;too_small:368x159
+Skip non-chart visual asset bc3fc19e0f64b7d253e736e1f32fe970d46ac94a61b986990310161268f96a7a.jpg: score=-100;too_small:40x51
+Skip non-chart visual asset cb204b602979b0d67abd8370a71dbed92a692b83368a95b0965261203c5b8e57.jpg: score=-100;too_small:1307x104
+Skip non-chart visual asset 8fd4defc4f2885aa02619bf99530b4fc697d11895617477a4bae4a880faed24c.jpg: score=1;odd_ratio:5.94,edge:0.29,contrast,large
+Skip non-chart visual asset 375d0ce510b67848a1a8bed407ab5a29ba37a653faeebf2018612218a51301b0.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 2de91654213c0a3673e3b13fbd849350f36c9225961696d194a039888fac7d85.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 9a9cc673f40bb841dfd7628854a34616abf5947f8a6b2901bd011262a743ae83.jpg: score=-100;too_small:45x46
+Skip non-chart visual asset d05a053ec8f623777814af5e0e1059e78821aae474c2de0c2284a141e98de2cd.jpg: score=-100;too_small:40x43
+Skip non-chart visual asset aaa2b7fd431d4f3208ddbb29128f37113509e1d6c25de9566ee0368fd3bda388.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.30,contrast,large
+Skip non-chart visual asset fcd09bc620adccde714f52910656bd87eef70b99e4badfb97ed184f25bee5a4d.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset a6fc7840450c31b2e6142eaf5cfefa99c0e5cc3be035a8f62c50e3f0e40093d8.jpg: score=-100;too_small:45x43
+Skip non-chart visual asset 91bb627f0d54230192c3e3fcfebc903c3ce434509638b3c97da8e231294be11d.jpg: score=1;odd_ratio:5.94,edge:0.30,contrast,large
+Skip non-chart visual asset dfc329740dcf7da97233d3a105f8c70bc753cb3377378ae6fba2066875700882.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset b7b822178e83f17f251b19ec411f7439bc85fbe7fd9882cbd2906f4d11939ec9.jpg: score=-100;too_small:40x51
+Skip non-chart visual asset dd41fbbda502badd50f911b2bed5648ec468d17ac5cab996bbcb6d9fe8294ab8.jpg: score=-100;too_small:1137x56
+Skip non-chart visual asset 2cb513dc01e1116fcac730259b1c56782b81fc5a9cd890617f7a53d710adc7da.jpg: score=-100;too_small:45x48
+Skip non-chart visual asset 8ebdb1cd850a9b3619207183136ad939b8699d31fa87650a7dee8f871fd57b46.jpg: score=-100;too_small:759x87
+Skip non-chart visual asset 66bed05dc2cc78e179d0e4ffd482f07fa861388db4b128c34f71559eff79e4ab.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.31,contrast,large
+Skip non-chart visual asset 7dedb1e3bbba1aaa866fb04c7539a4563b43a7606c659d3e3b79f71f1345369f.jpg: score=-100;too_small:706x162
+Skip non-chart visual asset 915d6e5faf20e77984f8807d303f712b2edfd6a92cdd84739e98ad212a440597.jpg: score=-100;too_small:1431x109
+Skip non-chart visual asset 9e6612ae0691a79644aec56ae0d0a01ce8eaa1d32d07395f3f50c9a39ba6f75a.jpg: score=-100;too_small:46x45
+Skip non-chart visual asset 07643a03c61a29930bf32054463a75cebcb0fff3060e9541d22db1fe9d177d52.jpg: score=0;square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 14524cc25529282149806c8d55bd3646abdb854076b397b458f40ca78251e45d.jpg: score=-100;too_small:706x162
+Skip non-chart visual asset db9d22eb27b6603caf58e310b1d0062c7f8f185b9e792da2c12b44a699ffd6ac.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 6b488325615b521552533d49ca89598b452f947ff49d3a2a4cc996a7d8c3b04a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.28,contrast,large
+Skip non-chart visual asset ec511ac07395e8744848790c0b50f4afc4147f152dbe7bcf30ed653118b53d74.jpg: score=-100;too_small:48x49
+Skip non-chart visual asset d20c764964387efe2e129fa895d741da262cf089d84020c06a3c3b82c18565d9.jpg: score=1;chart_ratio
+Skip non-chart visual asset 15430b7975af1e93c652a04a026e2dfbd1b025d4b84adf7542a7a2d2e188f783.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.30,contrast,large
+Neutralized WeChat title while keeping the report: 花旗：台湾PCB与CCL行业，2Q26毛利率超预期，3Q26或再涨价 -> 花旗：PCB、CCL技术与行业应用观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

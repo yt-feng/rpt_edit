@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ee2ht1m1/pdfs/0005-20-CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "CCL涨价潮要来了，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:politically_sensitive",
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Citi：PCB、CCL技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy-260729.pdf",
+    "cleaned_source_title": "CITI-Taiwan PCB - Laminates -CCL sector- quality beat- likely another price hike in 3Q26- Buy",
+    "institution_name": "Citi",
+    "required_terms": [
+      "PCB",
+      "CCL"
+    ],
+    "deterministic_fallback": "Citi：TaiwanPCBLaminatesCCLsec",
+    "raw_candidates": [
+      "台湾PCB与CCL行业：品质超预期，3Q26或再涨价",
+      "台湾PCB与CCL行业：2Q26毛利率超预期，3Q26或再涨价",
+      "台湾PCB与CCL行业：AI服务器需求推动，3Q26供应趋紧或涨价"
+    ],
+    "cleaned_candidates": [
+      "Citi：台湾PCB与CCL行业，品质超预期，3Q26或再涨价",
+      "Citi：台湾PCB与CCL行业，2Q26毛利率超预期，3Q26或再涨价",
+      "Citi：台湾PCB与CCL行业，AI服务器需求推动",
+      "Citi：TaiwanPCBLaminatesCCLsec",
+      "Citi：Citi在7月底的台湾PCB与CCL行业报告中给出一个明确判断"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Citi：台湾PCB与CCL行业，AI服务器需求推动",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：TaiwanPCBLaminatesCCLsec",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Citi：Citi在7月底的台湾PCB与CCL行业报告中给出一个明确判断",
+        "reasons": [
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Citi：PCB、CCL技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Citi：台湾PCB与CCL行业，2Q26毛利率超预期，3Q26或再涨价",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Citi：PCB、CCL技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "454",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,115 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# Greater China Diversified Utilities
+
+## Where to Hide in Utilities, Renewables & Power Equipment Space?
+
+## CITI'S TAKE
+
+Stock market sentiment has turned sharply with more cautious view on AI and data center related investment themes. 10-year US\$ treasury yield has also risen to 4.61% today, from 3.96% at February end. Investors are keen on sector rotation to low beta names in the near term (in July-Aug). In PRC/HK utility, renewables and power equipment sector, we think high yield plays such as ENN Energy (6.7% 2026E yield), CR Gas (5.9%), Beijing Enterprises (5.9%), Guangdong Investment (5.7%), China Everbright Env. (5.7%) and ENN Natural Gas (5.3%) could outperform in the next 30 days. While their 1H26 earnings might be relatively steady, downside risk looks limited. And all of them should have positive free cashflow to endorse their DPS.
+
+Market sentiment turns — In the past three months, the worst performers within the sectors under our coverage in the Asian utilities, renewables and power equipment space were HD Hyundai Electric (-54%), Hyosung Heavy (-50%), Dongfang Electric (-47%), Dajin Heavy (-43%), Goldwind (-42%) and LS Electric (-41%). We attribute these sharp share price falls owing to more cautious view on AI related spending, treasury yield rise and certain stock specific reasons (e.g. no new order of offshore wind equipment sales for Dajin Heavy and more margin pressure of Goldwind's wind turbine generator sales due to higher blade unit cost).
+
+PRC gas names look defensive — We have Neutral ratings on most PRC city gas distributors since their net profits are likely to be relatively flat and/or down single digit % yoy in 1H26E as a result of no retail gas sales volume growth (PRC retail gas prices were increased, hence should be relatively price competitive versus other energies) and less new household connections amid property market downturn. Therefore, PRC city gas distributors would be keen to sustain their DPS. ENN Energy has promised DPS not less than HK\$3.0 for 2026E. These gas distributors should be able to sustain their DPS despite mild profit cuts as their capex have been curtailed, they have positive free cashflow, and most of them have room to raise their payout ratios.
+
+GDI with the highest yield among HK utilities — We forecast GDI's recurrent net profit to grow more than 5% yoy in 1H26E gaining from financial cost cuts. And we assume it to renew the concession rights for water supply to HK for another 30 years to 2060E at HK\$50bn, though the timing to conclude this is uncertain depending on the negotiation between HK and Guangdong provincial governments. GDI should be able to pay this amount with HK\$4bn pa free cashflow likely (netting dividend) in 2026-30E and also be able to raise further debt with it being in net cash. The company has also promised no DPS cut in the run up to 2030E. Its 5.7% 2026E yield is also the highest among HK yields.
+
+Cautious on PRC IPPs — While 2026E yield of some PRC IPPs such as China Power Int'l (6.9%), CR Power (5.1%), Huadian (5.1%) and Huaneng (5.0%) looks decent, we are cautious on them as their earnings visibility is low amid tariff and utilization drops, hence there is downside risk. When their EPS drops, their DPS will also drop as they have fixed payout ratios. Among PRC IPPs, the most defensive is China Yangtze Power, but its yield is low at 3.6%.
+
+PRC/HK Utilities, Renewables & Power Equipment Sector
+
+Pierre Lau, CFA $^{AC}$
+
++852-2501-2716
+
+pierre.lau@citi.com
+
+Air Ma
+
+air.ma@citi.com
+
+See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Affiliations.
+
+Not for distribution in the People's Republic of China, excluding the Hong Kong Special Administrative Region and Qualified Foreign Institutional Investors.
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.
+Source: Citi
+
+# Where to Hide in PRC/HK Utilities, Renewable & Power Equipment Space
+
+Figure 1. Asian utilities company valuation comparison table
+
+<table><tr><td rowspan="2"></td><td rowspan="2">RIC</td><td rowspan="2">Citi Rating</td><td rowspan="2">Price 29 Jul 2026</td><td rowspan="2">Target Price</td><td rowspan="2">ETR</td><td rowspan="2">Mkt-Cap US$m</td><td rowspan="2">Avg Uo US$m</td><td colspan="5">Share Price Movement</td><td colspan="2">P/E (x)</td><td colspan="2">P/B (x)</td><td colspan="2">Yield (%)</td></tr><tr><td>1-wk</td><td>1-mth</td><td>3-mth</td><td>6-mth</td><td>12-mth</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td colspan="19">Korea (Grid Equipment &amp; Utilities)</td></tr><tr><td>Hyosung Heavy</td><td>298040.KS</td><td>Buy</td><td>W2,006,000</td><td>W4,500,000</td><td>125%</td><td>12,873</td><td>131.9</td><td>-25%</td><td>-39%</td><td>-50%</td><td>-21%</td><td>55%</td><td>22.1</td><td>16.0</td><td>6.3</td><td>4.8</td><td>0.9%</td><td>1.3%</td></tr><tr><td>HD Hyundai Electric</td><td>267260.KS</td><td>Buy</td><td>W586,000</td><td>W1,100,000</td><td>89%</td><td>14,537</td><td>128.6</td><td>-26%</td><td>-37%</td><td>-53%</td><td>-35%</td><td>18%</td><td>21.9</td><td>16.9</td><td>7.5</td><td>5.5</td><td>0.9%</td><td>1.2%</td></tr><tr><td>LS Electric</td><td>010120.KS</td><td>Buy</td><td>W163,800</td><td>W320,000</td><td>96%</td><td>16,909</td><td>195.7</td><td>-14%</td><td>-27%</td><td>-40%</td><td>47%</td><td>169%</td><td>46.8</td><td>33.4</td><td>10.1</td><td>8.4</td><td>0.7%</td><td>1.0%</td></tr><tr><td>KEPCO - KR</td><td>015760.KS</td><td>Buy</td><td>W33,100</td><td>W58,400</td><td>83%</td><td>14,623</td><td>59.8</td><td>-2%</td><td>-13%</td><td>-26%</td><td>-46%</td><td>-17%</td><td>2.7</td><td>2.2</td><td>0.4</td><td>0.3</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="19">China (Power &amp; Grid Equipment)</td></tr><tr><td>Seyuan</td><td>002028.SZ</td><td>Buy</td><td>Rmb165.66</td><td>Rmb216.00</td><td>31%</td><td>19,146</td><td>346.3</td><td>7%</td><td>-5%</td><td>-16%</td><td>-11%</td><td>102%</td><td>34.8</td><td>26.7</td><td>7.0</td><td>5.7</td><td>0.5%</td><td>0.7%</td></tr><tr><td>Pinggao</td><td>600312.SS</td><td>Buy</td><td>Rmb19.76</td><td>Rmb24.00</td><td>23%</td><td>3,960</td><td>74.2</td><td>5%</td><td>13%</td><td>-10%</td><td>-8%</td><td>23%</td><td>21.2</td><td>18.3</td><td>2.2</td><td>2.1</td><td>2.0%</td><td>2.4%</td></tr><tr><td>XJ</td><td>000400.SZ</td><td>Buy</td><td>Rmb22.63</td><td>Rmb33.00</td><td>48%</td><td>3,404</td><td>85.3</td><td>4%</td><td>5%</td><td>-11%</td><td>-25%</td><td>-2%</td><td>17.8</td><td>16.7</td><td>1.7</td><td>1.6</td><td>2.3%</td><td>2.4%</td></tr><tr><td>NARI</td><td>600406.SS</td><td>Buy</td><td>Rmb23.93</td><td>Rmb31.00</td><td>32%</td><td>28,385</td><td>320.0</td><td>1%</td><td>2%</td><td>-10%</td><td>-5%</td><td>8%</td><td>20.8</td><td>19.2</td><td>3.4</td><td>3.2</td><td>2.9%</td><td>3.1%</td></tr><tr><td>Huaming Power Equipment</td><td>002270.SZ</td><td>Buy</td><td>Rmb19.89</td><td>Rmb32.50</td><td>67%</td><td>2,633</td><td>69.4</td><td>14%</td><td>5%</td><td>-22%</td><td>-35%</td><td>13%</td><td>22.6</td><td>20.0</td><td>5.2</td><td>4.8</td><td>3.2%</td><td>3.4%</td></tr><tr><td>Wasion</td><td>3393.HK</td><td>Buy</td><td>Rmb17.44</td><td>Rmb34.00</td><td>98%</td><td>2,323</td><td>19.4</td><td>-7%</td><td>-11%</td><td>-34%</td><td>-26%</td><td>92%</td><td>11.4</td><td>9.1</td><td>2.2</td><td>1.9</td><td>3.5%</td><td>4.4%</td></tr><tr><td>TGood</td><td>300001.SZ</td><td>Buy</td><td>Rmb34.17</td><td>Rmb49.60</td><td>46%</td><td>5,326</td><td>200.5</td><td>-1%</td><td>-10%</td><td>13%</td><td>25%</td><td>47%</td><td>24.9</td><td>19.0</td><td>3.7</td><td>3.2</td><td>0.7%</td><td>0.9%</td></tr><tr><td>Dongfang Electric</td><td>1072.HK</td><td>Buy</td><td>HK$21.20</td><td>HK$30.00</td><td>45%</td><td>9,351</td><td>44.1</td><td>-4%</td><td>-2%</td><td>-47%</td><td>-20%</td><td>8%</td><td>13.1</td><td>10.6</td><td>1.3</td><td>1.3</td><td>3.8%</td><td>4.8%</td></tr><tr><td>Harbin Electric</td><td>1133.HK</td><td>Buy</td><td>HK$15.19</td><td>HK$24.00</td><td>62%</td><td>4,332</td><td>17.8</td><td>-8%</td><td>-3%</td><td>-35%</td><td>-23%</td><td>98%</td><td>8.0</td><td>7.8</td><td>1.4</td><td>1.3</td><td>3.9%</td><td>4.0%</td></tr><tr><td>Shanghai Electric</td><td>2727.HK</td><td>Buy</td><td>HK$3.20</td><td>HK$4.50</td><td>42%</td><td>6,342</td><td>23.3</td><td>-2%</td><td>-8%</td><td>-18%</td><td>-24%</td><td>-6%</td><td>29.1</td><td>29.3</td><td>0.8</td><td>0.8</td><td>1.0%</td><td>1.0%</td></tr><tr><td colspan="19">China (Wind)</td></tr><tr><td>Goldwind</td><td>2208.HK</td><td>Buy</td><td>HK$9.61</td><td>HK$20.00</td><td>111%</td><td>5,173</td><td>40.6</td><td>-1%</td><td>-1%</td><td>-42%</td><td>-37%</td><td>32%</td><td>8.7</td><td>7.6</td><td>0.7</td><td>0.7</td><td>3.6%</td><td>4.1%</td></tr><tr><td>Ningbo Orient Cables</td><td>603606.SS</td><td>Buy</td><td>Rmb40.97</td><td>Rmb66.67</td><td>64%</td><td>4,991</td><td>114.3</td><td>8%</td><td>-2%</td><td>-22%</td><td>-15%</td><td>3%</td><td>18.4</td><td>14.9</td><td>3.5</td><td>3.0</td><td>1.6%</td><td>2.0%</td></tr><tr><td>China Sunfien</td><td>0956.HK</td><td>Buy</td><td>HK$3.27</td><td>HK$4.20</td><td>34%</td><td>895</td><td>2.9</td><td>2%</td><td>5%</td><td>-15%</td><td>-21%</td><td>-22%</td><td>8.4</td><td>7.6</td><td>0.5</td><td>0.5</td><td>5.9%</td><td>6.5%</td></tr><tr><td>Dajin Heavy</td><td>1081.HK</td><td>Buy</td><td>HK$35.78</td><td>HK$50.00</td><td>41%</td><td>4,272</td><td>13.0</td><td>13%</td><td>-43%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>12.0</td><td>8.2</td><td>1.4</td><td>1.2</td><td>0.8%</td><td>1.2%</td></tr><tr><td>China Longyuan</td><td>0916.HK</td><td>Neutral</td><td>HK$5.74</td><td>HK$7.00</td><td>25%</td><td>2,429</td><td>21.5</td><td>2%</td><td>10%</td><td>-8%</td><td>-20%</td><td>-21%</td><td>8.6</td><td>8.0</td><td>0.5</td><td>0.5</td><td>3.5%</td><td>3.7%</td></tr><tr><td>Mingyang Smart Energy</td><td>601615.SS</td><td>Sell</td><td>Rmb11.27</td><td>Rmb12.00</td><td>9%</td><td>3,764</td><td>196.1</td><td>-2%</td><td>0%</td><td>-26%</td><td>-53%</td><td>-3%</td><td>18.7</td><td>14.1</td><td>0.9</td><td>0.9</td><td>2.7%</td><td>3.6%</td></tr><tr><td colspan="19">China (Solar)</td></tr><tr><td>TBEA</td><td>600089.SS</td><td>Buy</td><td>Rmb20.65</td><td>Rmb36.00</td><td>77%</td><td>15,409</td><td>518.6</td><td>4%</td><td>-9%</td><td>-24%</td><td>-25%</td><td>47%</td><td>11.5</td><td>10.1</td><td>1.4</td><td>1.3</td><td>2.7%</td><td>3.1%</td></tr><tr><td>Sungrow</td><td>300274.SZ</td><td>Buy</td><td>Rmb106.55</td><td>Rmb185.00</td><td>75%</td><td>32,623</td><td>1,631.5</td><td>-3%</td><td>-32%</td><td>-23%</td><td>-27%</td><td>41%</td><td>14.7</td><td>11.7</td><td>3.8</td><td>3.0</td><td>1.7%</td><td>2.1%</td></tr><tr><td>Deye</td><td>605117.SS</td><td>Buy</td><td>Rmb85.13</td><td>Rmb142.86</td><td>70%</td><td>16,007</td><td>301.9</td><td>6%</td><td>-18%</td><td>-19%</td><td>38%</td><td>125%</td><td>20.0</td><td>15.9</td><td>7.7</td><td>6.0</td><td>2.6%</td><td>3.2%</td></tr><tr><td>Hangzhou First</td><td>603806.SS</td><td>Buy</td><td>Rmb14.26</td><td>Rmb21.00</td><td>50%</td><td>5,494</td><td>123.0</td><td>3%</td><td>-15%</td><td>-24%</td><td>-20%</td><td>-3%</td><td>20.7</td><td>17.7</td><td>2.1</td><td>2.0</td><td>2.5%</td><td>2.9%</td></tr><tr><td>GCL Technology</td><td>3800.HK</td><td>Buy</td><td>HK$0.61</td><td>HK$1.30</td><td>113%</td><td>2,502</td><td>24.8</td><td>0%</td><td>-10%</td><td>-36%</td><td>-46%</td><td>-52%</td><td>-23.9</td><td>12.3</td><td>0.4</td><td>0.4</td><td>N/A</td><td>N/A</td></tr><tr><td>Daqo New Energy</td><td>DQ.N</td><td>Buy</td><td>US$11.85</td><td>US$26.00</td><td>119%</td><td>802</td><td>5.4</td><td>-1%</td><td>-9%</td><td>-39%</td><td>-54%</td><td>-49%</td><td>-7.4</td><td>40.7</td><td>0.2</td><td>0.2</td><td>N/A</td><td>N/A</td></tr><tr><td>LONGI</td><td>601012.SS</td><td>Buy</td><td>Rmb12.81</td><td>Rmb26.00</td><td>103%</td><td>14,336</td><td>59.8</td><td>2%</td><td>0%</td><td>-23%</td><td>-32%</td><td>-23%</td><td>126.7</td><td>30.4</td><td>1.7</td><td>1.6</td><td>N/A</td><td>0.4%</td></tr><tr><td>Jinko Solar</td><td>688223.SS</td><td>Buy</td><td>Rmb4.27</td><td>Rmb7.50</td><td>76%</td><td>6,476</td><td>123.9</td><td>3%</td><td>-9%</td><td>-33%</td><td>-37%</td><td>-23%</td><td>-37.4</td><td>17.8</td><td>1.6</td><td>1.5</td><td>N/A</td><td>1.7%</td></tr><tr><td>Trina Solar</td><td>688599.SS</td><td>Buy</td><td>Rmb13.51</td><td>Rmb25.00</td><td>85%</td><td>4,674</td><td>99.6</td><td>5%</td><td>-2%</td><td>-16%</td><td>-32%</td><td>-19%</td><td>-28.8</td><td>19.1</td><td>1.4</td><td>1.3</td><td>N/A</td><td>1.3%</td></tr><tr><td>Tongwei</td><td>600438.SS</td><td>Buy</td><td>Rmb11.54</td><td>Rmb30.00</td><td>160%</td><td>7,673</td><td>116.4</td><td>4%</td><td>-4%</td><td>-33%</td><td>-39%</td><td>-46%</td><td>-24.1</td><td>22.0</td><td>1.3</td><td>1.2</td><td>N/A</td><td>1.4%</td></tr><tr><td>Xinyi Solar</td><td>0968.HK</td><td>Neutral</td><td>HK$2.22</td><td>HK$2.40</td><td>8%</td><td>2,590</td><td>18.8</td><td>2%</td><td>9%</td><td>-25%</td><td>-37%</td><td>-33%</td><td>-29.4</td><td>17.8</td><td>0.6</td><td>0.6</td><td>N/A</td><td>3.2%</td></tr><tr><td>Xinyi Energy</td><td>3868.HK</td><td>Neutral</td><td>HK$0.89</td><td>HK$1.00</td><td>20%</td><td>967</td><td>1.1</td><td>-5%</td><td>0%</td><td>-25%</td><td>-29%</td><td>-32%</td><td>6.7</td><td>6.5</td><td>0.5</td><td>0.5</td><td>8.5%</td><td>8.7%</td></tr><tr><td>Flat Glass</td><td>6865.HK</td><td>Neutral</td><td>HK$6.73</td><td>HK$7.00</td><td>4%</td><td>369</td><td>4.9</td><td>1%</td><td>10%</td><td>-26%</td><td>-42%</td><td>-40%</td><td>-11.1</td><td>75.2</td><td>0.7</td><td>0.6</td><td>N/A</td><td>0.4%</td></tr><tr><td>JA Solar</td><td>002459.SZ</td><td>Sell</td><td>Rmb7.39</td><td>Rmb7.00</td><td>-5%</td><td>3,612</td><td>78.2</td><td>1%</td><td>-6%</td><td>-31%</td><td>-38%</td><td>-38%</td><td>-6.5</td><td>-13.4</td><td>1.3</td><td>1.5</td><td>N/A</td><td>N/A</td></tr><tr><td>Maxwell</td><td>300751.SZ</td><td>Sell</td><td>Rmb161.87</td><td>Rmb165.00</td><td>2%</td><td>6,667</td><td>413.3</td><td>-14%</td><td>-39%</td><td>-27%</td><td>-50%</td><td>117%</td><td>66.4</td><td>35.2</td><td>5.3</td><td>4.7</td><td>0.3%</td><td>0.5%</td></tr><tr><td colspan="19">China (Gas)</td></tr><tr><td>ENN Natural Gas</td><td>600803.SS</td><td>Buy</td><td>Rmb17.86</td><td>Rmb23.00</td><td>34%</td><td>8,166</td><td>25.2</td><td>5%</td><td>11%</td><td>-17%</td><td>-8%</td><td>-3%</td><td>10.3</td><td>9.7</td><td>2.3</td><td>2.2</td><td>5.3%</td><td>5.9%</td></tr><tr><td>Kunlun Energy</td><td>0135.HK</td><td>Buy</td><td>HK$7.16</td><td>HK$8.40</td><td>22%</td><td>7,888</td><td>10.4</td><td>3%</td><td>10%</td><td>-6%</td><td>-11%</td><td>-8%</td><td>9.0</td><td>9.1</td><td>0.8</td><td>0.7</td><td>5.6%</td><td>5.6%</td></tr><tr><td>ENN Energy</td><td>2688.HK</td><td>Neutral</td><td>HK$46.60</td><td>HK$47.00</td><td>7%</td><td>6,727</td><td>30.0</td><td>8%</td><td>11%</td><td>-26%</td><td>-32%</td><td>-30%</td><td>7.7</td><td>7.9</td><td>0.9</td><td>0.8</td><td>6.7%</td><td>6.7%</td></tr><tr><td>CR Gas</td><td>1193.HK</td><td>Neutral</td><td>HK$16.67</td><td>HK$20.00</td><td>26%</td><td>4,920</td><td>9.2</td><td>5%</td><td>12%</td><td>-12%</td><td>-23%</td><td>-17%</td><td>10.8</td><td>10.5</td><td>0.8</td><td>0.8</td><td>5.9%</td><td>6.2%</td></tr><tr><td>HKCG</td><td>0003.HK</td><td>Neutral</td><td>HK$7.08</td><td>HK$7.50</td><td>11%</td><td>16,849</td><td>22.8</td><td>2%</td><td>6%</td><td>-4%</td><td>-4%</td><td>0%</td><td>23.0</td><td>21.9</td><td>2.3</td><td>2.3</td><td>4.9%</td><td>4.9%</td></tr><tr><td>Towngas Smart Energy</td><td>1083.HK</td><td>Neutral</td><td>HK$3.44</td><td>HK$3.80</td><td>16%</td><td>1,659</td><td>0.8</td><td>3%</td><td>14%</td><td>-4%</td><td>-7%</td><td>-17%</td><td>9.0</td><td>8.4</td><td>0.5</td><td>0.5</td><td>5.5%</td><td>5.5%</td></tr>
+
+[中间内容因长度限制已省略]
+
+ceipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business.
+
+Citi product may source data from dataCentral. dataCentral is a Citi proprietary database, which includes the Firm's estimates, data from company reports and feeds from LSEG Data & Analytics. The source for all referenced prices, unless otherwise stated, is DataCentral. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance. The printed and printable version of the research report may not include all the information <(e.g. certain financial summary information and comparable company data) that is linked to the online version available on the Firm's proprietary electronic distribution platforms.
+
+Where included in this report, MSCI sourced information is the exclusive property of MS Capital International Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced, redisseminated or used to create any financial products, including any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability for any damages of any kind. MSCI, MS Capital International and the MSCI indexes are services marks of MSCI and its affiliates. Where data is attributed to Morningstar that data is © 2026 Morningstar, Inc. All Rights Reserved. That information: (1) is proprietary to Morningstar and/or its content providers; (2) may not be copied or distributed; and (3) is not warranted to be accurate, complete or timely. Neither Morningstar nor its content providers are responsible for any damages or losses arising from any use of this information.
+
+The Firm accepts no liability whatsoever for the actions of third parties. The Product may provide the addresses of, or contain hyperlinks to, websites. Except to the extent to which the Product refers to website material of the Firm, the Firm has not reviewed the linked site. Equally, except to the extent to which the Product refers to website material of the Firm, the Firm takes no responsibility for, and makes no representations or warranties whatsoever as to, the data and information contained therein. Such address or hyperlink (including addresses or hyperlinks to website material of the Firm) is provided solely for your convenience and information and the content of the linked site does not in any way form part of this document. Accessing such website or following such link through the Product or the website of the Firm shall be at your own risk and the Firm shall have no liability arising out of, or in connection with, any such referenced website.
+
+© 2026 Citi Global Markets Inc. Citi is a division of Citi Global Markets Inc. Citi and Citi and Arc Design are trademarks and service marks of Citi Inc. and its affiliates and are used and registered throughout the world. All rights reserved. The research data in this report are not intended to be used for the purpose of (a) determining the price of or amounts due in respect of (or to value) one or more financial products or instruments and/or (b) measuring or comparing the performance of, or defining the asset allocation of a financial product, a portfolio of financial instruments, or a collective investment undertaking, and any such use is strictly prohibited without the prior written consent of Citi. Any unauthorized use, duplication, redistribution or disclosure of this report (the “Product”), including, but not limited to, redistribution of the Product by electronic mail, posting of the Product on a website or page, and/or providing to a third party a link to the Product, is prohibited by law and will result in prosecution. The information contained in the Product is intended solely for the recipient and may not be further distributed by the recipient to any third party.
+
+ADDITIONAL INFORMATION IS AVAILABLE UPON REQUEST
+"""
