@@ -1,0 +1,107 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0002-37-GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "日本CCL出口数据炸",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：CCL技术与行业应用观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-37-GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf",
+    "cleaned_source_title": "GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others",
+    "institution_name": "GS",
+    "required_terms": [
+      "CCL"
+    ],
+    "deterministic_fallback": "GS：日本ChemicalsCCL贸易dataAprJ",
+    "raw_candidates": [
+      "GS：日本CCL贸易数据-4至6月出货额同比增41%-三菱瓦斯化学与三井金属等正面信号",
+      "GS：日本CCL二季度出货额327亿日元同比增41%-三菱瓦斯化学与三井金属等正面信号",
+      "GS：日本CCL贸易数据-4至6月出货额同比增41%-AI基板材料需求拉动三菱瓦斯化学与三井金属等"
+    ],
+    "cleaned_candidates": [
+      "GS：日本CCL贸易数据-4至6月出货额同比增41%",
+      "GS：日本CCL二季度出货额327亿日元同比增41%",
+      "GS：日本ChemicalsCCL贸易dataAprJ",
+      "GS：日本财务省6月贸易统计显示，覆铜板（CCL）出货量同比增长15%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：日本CCL二季度出货额327亿日元同比增41%",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "GS：日本ChemicalsCCL贸易dataAprJ",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：日本财务省6月贸易统计显示，覆铜板（CCL）出货量同比增长15%",
+        "reasons": [
+          "anchor_coverage=0.40"
+        ]
+      }
+    ],
+    "selected_title": "GS：CCL技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：日本CCL贸易数据-4至6月出货额同比增41%",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：CCL技术与行业应用观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "600",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0001-36-GS-Ferrari NV -RACE.MI-- 2Q26 sees beat on lower volumes- guidance raised with room for further upgrades down the line- Our Buy thesis is in-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0002-37-GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0003-38-GS-Japan Industrial Electronics- June MOF data -optical fiber cable-- Sharp growth in optical fiber cable export value- fundamentals favorable-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0005-40-GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward- raise TP to W490K and.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

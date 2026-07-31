@@ -1,0 +1,52 @@
+Found 92 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_8__d6z4p/pdfs/0001-36-Goldman Sachs-Ferrari NV -RACE.MI-- 2Q26 sees beat on lower volumes- guidance raised with room for further upgrades down the line- Our Buy thesis is in-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_8__d6z4p/pdfs/0002-37-Goldman Sachs-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_8__d6z4p/pdfs/0003-38-Goldman Sachs-Japan Industrial Electronics- June MOF data -optical fiber cable-- Sharp growth in optical fiber cable export value- fundamentals favorable-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_8__d6z4p/pdfs/0004-39-Goldman Sachs-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_8__d6z4p/pdfs/0005-40-Goldman Sachs-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward- raise TP to W490K and.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=cd3bd95c-f01f-41c9-bfb4-f092506f5ee7
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 8e4a910e5093d7a41aa621b205ab781c2b604c38aefa3dcd489f1dc6e9179608.jpg: score=-100;too_small:1159x110
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 3fe5b2e516b4364d817e61dfd1a276d92e419546d763a97a2e36942884efc957.jpg: score=-100;too_small:1023x90
+Skip non-chart visual asset 8a243d523dc12959c844895bcd4e26b88a00df2ffb372dc99fa612eed1b9edd6.jpg: score=-100;too_small:442x126
+Neutralized WeChat title while keeping the report: 高盛：法拉利2Q26销量低于预期但盈利超预期，上调全年指引 -> 高盛：法拉利业务与季度数据观察
+Skip non-chart visual asset f5016fd82a96cc92081ce81f85a27ae2d4d528a6ddaf43d63226aeb47d19da18.jpg: score=-1;square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 68ea04719699b432e25dc1bf0376d6f2b566061d77e845d61e44394417245835.jpg: score=-100;too_small:462x129
+Skip non-chart visual asset cced2a2fb53c7eb3313530346dcce477f399deb2bd73ce8eb5e9ab18b0ef25eb.jpg: score=-100;too_small:484x110
+Skip non-chart visual asset 8034715150cb353eed7491625644b82370e556f01826082d58f04f6b600d21c7.jpg: score=-100;too_small:484x107
+Skip non-chart visual asset 3fc70bb3b1dda0c77d8f128a10e2cfdcf177428a01a64a8374e39bff785bfd0a.jpg: score=0;odd_ratio:5.33,edge:0.21,contrast
+Neutralized WeChat title while keeping the report: 高盛：日本CCL贸易数据-4至6月出货额同比增41% -> 高盛：CCL技术与行业应用观察
+Skip non-chart visual asset 46efd78366db680ca536d457538222539ca54ed64a0c0c6981f9058eb81245f4.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset 89a24a5e479836593da955555a219704441e7969c1b0edb8f462f854d87b0b2f.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset b0569053939d258e17cd9911de09954aa8230bd6fd73e9b23a20279801841f34.jpg: score=-1;square_without_chart_hint,edge:0.24
+Skip non-chart visual asset 0c5ae8e3ca62469768ba703a9e9817c4f0b4250d33e8d208076848e2163f325d.jpg: score=-100;too_small:334x123
+Skip non-chart visual asset 36335f7fafb114ffa8531557bb3f0b0d420eb86b7597965da2becda97a9f643b.jpg: score=-1;square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 3d08bd23e5cf3c43f43ae583402defc7b4276dfb47536965d467c2a6ccee23dc.jpg: score=-1;square_without_chart_hint,edge:0.29
+Neutralized WeChat title while keeping the report: 高盛：日本工业电子6月光缆出口额增长 -> 高盛：跨境贸易数据与主题变化观察
+Skip non-chart visual asset 1fe056466ae786f3557565189a07be5ec15f44378873426aad782980adb4f85f.jpg: score=2;edge:0.29
+Skip non-chart visual asset 6c51721fb95102228be54e742facedc9674773281ffd6778a2cebeea41d4cf1b.jpg: score=-100;too_small:1156x112
+Skip non-chart visual asset e380c7a938e55dabdf595234d9f3bc8acae07427b320944ab39d804394a67045.jpg: score=2;edge:0.14
+Skip non-chart visual asset 0225d0a570f8ec7b297b6272d579eac5c8940278f158d802ddcd8f21cc1c8157.jpg: score=0;odd_ratio:5.87,edge:0.53,contrast
+Skip non-chart visual asset a3166b7df5e83285a61f5eb0c03d7a56b9f8dc673ed1692352d363672149ef3e.jpg: score=1;square_without_chart_hint,edge:0.48,contrast,large
+Skip non-chart visual asset 36c387d067484fa1f18f379d92ac89f4eac4b4e5f20f09731f6a15bfd9f5316c.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.38,contrast,large
+Skip non-chart visual asset 2d5fb6da9f5a1b9b84d674bdd42dc2c52da547ff418f227a067f8d00e3be46b1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.44,large
+Skip non-chart visual asset 8f12295271da61afc8bade18fe27887bc1474077d6967ed159a8e1d417b61d73.jpg: score=0;odd_ratio:5.80,edge:0.51,contrast
+Skip non-chart visual asset b9c99a3652bce4a0a081003cbc3378d225adc673969b5f5d0601fb536f6ff705.jpg: score=-100;too_small:640x104
+Skip non-chart visual asset 63298f8c0795f7c445ef4c16317c31f2b739e2dd9347f9caf5620017049439af.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset cd25aca15f50cc34268baba51aaee776fd6ad82b8604411d1e7cbf93321068c1.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.16,contrast,large
+Skip non-chart visual asset 782542dae9d752fcfff6f1276fbade1c974a184faa6acce9c6d22363d42bbeb3.jpg: score=-100;too_small:840x92
+Skip non-chart visual asset ed1b95f236ab7be9cfe92ab8b00eeb9f493dd5875473cb4b1a962eef2f69c473.jpg: score=-100;too_small:479x104
+Skip non-chart visual asset c3b2fade514a03c4ac3792a7dc3d916f31b3def6cd68deb7abea35639ea8c8b4.jpg: score=1;square_without_chart_hint,edge:0.54,contrast,large
+Skip non-chart visual asset 086d661f2852631bc159dbc8fa16ec3ee1aebdc0faf7f5121eccfa53d0c424ab.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.51,contrast,large
+Skip non-chart visual asset 2b84dbdf7feadc49bd4b2a3693fb2415dafcdb4aabdc406dc891e439e0c54b0e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Neutralized WeChat title while keeping the report: 高盛：三星电子2Q26业绩符合预告，存储基本面稳健 -> 高盛：三星电子业务与季度数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

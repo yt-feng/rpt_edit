@@ -1,0 +1,552 @@
+[
+  {
+    "item": "0001-36-Goldman-Sachs-Ferrari-NV--RACE.MI---2Q26-sees-beat-on-lower-volumes--gui",
+    "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0001-36-GS-Ferrari NV -RACE.MI-- 2Q26 sees beat on lower volumes- guidance raised with room for further upgrades down the line- Our Buy thesis is in-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "法拉利二季度超预期，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "下行|放缓->节奏变化 x1",
+      "不确定性提示->观察提示 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：法拉利业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-GS-Ferrari NV -RACE.MI-- 2Q26 sees beat on lower volumes- guidance raised with room for further upgrades down the line- Our Buy thesis is in-260730.pdf",
+      "cleaned_source_title": "GS-Ferrari NV -RACE.MI-- 2Q26 sees beat on lower volumes- guidance raised with room for further upgrades down the line- Our Buy thesis is in",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：FerrariNV2Q26seesbeatonl",
+      "raw_candidates": [
+        "GS：法拉利2Q26销量低于预期但盈利超预期，上调全年指引",
+        "GS：法拉利2Q26个性化配置率20%，订单覆盖2027全年，上调指引",
+        "GS：法拉利2Q26盈利超预期，个性化配置与产品组合驱动，上调指引"
+      ],
+      "cleaned_candidates": [
+        "GS：法拉利2Q26销量低于预期但盈利超预期，上调全年指引",
+        "GS：法拉利2Q26个性化配置率20%，订单覆盖2027全年，上调指引",
+        "GS：法拉利2Q26盈利超预期，个性化配置与产品组合驱动，上调指引",
+        "GS：FerrariNV2Q26seesbeatonl",
+        "GS：法拉利2Q26个性化配置超预期，订单覆盖2027全年"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：法拉利2Q26个性化配置率20%，订单覆盖2027全年，上调指引",
+          "reasons": [
+            "anchor_coverage=0.39"
+          ]
+        },
+        {
+          "title": "GS：法拉利2Q26盈利超预期，个性化配置与产品组合驱动，上调指引",
+          "reasons": [
+            "anchor_coverage=0.52"
+          ]
+        },
+        {
+          "title": "GS：FerrariNV2Q26seesbeatonl",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：法拉利2Q26个性化配置超预期，订单覆盖2027全年",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：法拉利业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：法拉利2Q26销量低于预期但盈利超预期，上调全年指引",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：法拉利业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-37-Goldman-Sachs-Japan-Chemicals--CCL-trade-data--Apr-Jun-shipment-value--4",
+    "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0002-37-GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本CCL出口数据炸",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：CCL技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others-260730.pdf",
+      "cleaned_source_title": "GS-Japan Chemicals- CCL trade data- Apr-Jun shipment value -41- yoy- positive read-across for Mitsubishi Gas Chemical- Mitsui Kinzoku- others",
+      "institution_name": "GS",
+      "required_terms": [
+        "CCL"
+      ],
+      "deterministic_fallback": "GS：日本ChemicalsCCL贸易dataAprJ",
+      "raw_candidates": [
+        "GS：日本CCL贸易数据-4至6月出货额同比增41%-三菱瓦斯化学与三井金属等正面信号",
+        "GS：日本CCL二季度出货额327亿日元同比增41%-三菱瓦斯化学与三井金属等正面信号",
+        "GS：日本CCL贸易数据-4至6月出货额同比增41%-AI基板材料需求拉动三菱瓦斯化学与三井金属等"
+      ],
+      "cleaned_candidates": [
+        "GS：日本CCL贸易数据-4至6月出货额同比增41%",
+        "GS：日本CCL二季度出货额327亿日元同比增41%",
+        "GS：日本ChemicalsCCL贸易dataAprJ",
+        "GS：日本财务省6月贸易统计显示，覆铜板（CCL）出货量同比增长15%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本CCL二季度出货额327亿日元同比增41%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：日本ChemicalsCCL贸易dataAprJ",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本财务省6月贸易统计显示，覆铜板（CCL）出货量同比增长15%",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        }
+      ],
+      "selected_title": "GS：CCL技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本CCL贸易数据-4至6月出货额同比增41%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：CCL技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-38-Goldman-Sachs-Japan-Industrial-Electronics--June-MOF-data--optical-fiber",
+    "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0003-38-GS-Japan Industrial Electronics- June MOF data -optical fiber cable-- Sharp growth in optical fiber cable export value- fundamentals favorable-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本6月光纤出口爆了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：跨境贸易数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-GS-Japan Industrial Electronics- June MOF data -optical fiber cable-- Sharp growth in optical fiber cable export value- fundamentals favorable-260730.pdf",
+      "cleaned_source_title": "GS-Japan Industrial Electronics- June MOF data -optical fiber cable-- Sharp growth in optical fiber cable export value- fundamentals favorable",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：日本IndustrialElectronicsJ",
+      "raw_candidates": [
+        "GS：日本工业电子6月光缆出口额增长",
+        "GS：日本光缆出口额6月增长129%",
+        "GS：日本光通信出口增长与估值差距观察"
+      ],
+      "cleaned_candidates": [
+        "GS：日本工业电子6月光缆出口额增长",
+        "GS：日本光缆出口额6月增长129%",
+        "GS：日本光通信出口增长与估值差距观察",
+        "GS：日本IndustrialElectronicsJ",
+        "GS：这份GS研报把贸易数据与康宁7月28日的业绩放在一起观察"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：日本光缆出口额6月增长129%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：日本光通信出口增长与估值差距观察",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本IndustrialElectronicsJ",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这份GS研报把贸易数据与康宁7月28日的业绩放在一起观察",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：跨境贸易数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：日本工业电子6月光缆出口额增长",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：跨境贸易数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-39-Goldman-Sachs-Japan-Technology--Hardware--Electronic-Components--June-MO",
+    "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "MLCC涨价信号来了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x2",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf",
+      "cleaned_source_title": "GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening",
+      "institution_name": "GS",
+      "required_terms": [
+        "MLCC"
+      ],
+      "deterministic_fallback": "GS：MLCC日本科技硬件ElectronicComponen",
+      "raw_candidates": [
+        "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+        "GS：6月日本MLCC出口均价环比升4%数量增6%",
+        "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩"
+      ],
+      "cleaned_candidates": [
+        "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+        "GS：6月日本MLCC出口均价环比升4%数量增6%",
+        "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩",
+        "GS：MLCC日本科技硬件ElectronicComponen",
+        "GS：6月日本MLCC出口均价与数量环比齐升"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：6月日本MLCC出口均价环比升4%数量增6%",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：MLCC日本科技硬件ElectronicComponen",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：6月日本MLCC出口均价与数量环比齐升",
+          "reasons": [
+            "anchor_coverage=0.54",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-40-Goldman-Sachs-Samsung-Electronics--005930.KS--Earnings-Review--2Q26-OP-i",
+    "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0005-40-GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward- raise TP to W490K and.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "三星电子：内存供需紧",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：三星电子业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward- raise TP to W490K and.pdf",
+      "cleaned_source_title": "GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward- raise TP to W490K and",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SamsungElectronicsEarningsReview",
+      "raw_candidates": [
+        "GS：三星电子2Q26业绩符合预告，存储基本面稳健",
+        "GS：三星电子2Q26存储利润率近80%，2027年供需缺口或扩大",
+        "GS：三星电子2Q26存储业务利润率近80%，HBM4收入预计环比增三倍"
+      ],
+      "cleaned_candidates": [
+        "GS：三星电子2Q26业绩符合预告，存储基本面稳健",
+        "GS：三星电子2Q26存储利润率近80%，2027年供需缺口或扩大",
+        "GS：三星电子2Q26存储业务利润率近80%",
+        "GS：SamsungElectronicsEarningsReview",
+        "GS：三星电子2Q26存储业务利润率接近80%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：三星电子2Q26存储利润率近80%，2027年供需缺口或扩大",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：三星电子2Q26存储业务利润率近80%",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：SamsungElectronicsEarningsReview",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：三星电子2Q26存储业务利润率接近80%",
+          "reasons": [
+            "anchor_coverage=0.40",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：三星电子业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：三星电子2Q26业绩符合预告，存储基本面稳健",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：三星电子业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

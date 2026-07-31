@@ -1,0 +1,113 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_8__d6z4p/pdfs/0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "MLCC涨价信号来了",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x2",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening-260730.pdf",
+    "cleaned_source_title": "GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightening",
+    "institution_name": "GS",
+    "required_terms": [
+      "MLCC"
+    ],
+    "deterministic_fallback": "GS：MLCC日本科技硬件ElectronicComponen",
+    "raw_candidates": [
+      "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+      "GS：6月日本MLCC出口均价环比升4%数量增6%",
+      "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩"
+    ],
+    "cleaned_candidates": [
+      "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+      "GS：6月日本MLCC出口均价环比升4%数量增6%",
+      "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩",
+      "GS：MLCC日本科技硬件ElectronicComponen",
+      "GS：6月日本MLCC出口均价与数量环比齐升"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：6月日本MLCC出口均价环比升4%数量增6%",
+        "reasons": [
+          "anchor_coverage=0.33",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：日本MLCC出口量价齐升-关注村田TDK太阳诱电业绩",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：MLCC日本科技硬件ElectronicComponen",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：6月日本MLCC出口均价与数量环比齐升",
+        "reasons": [
+          "anchor_coverage=0.54",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "GS：日本电子元件6月贸易统计-MLCC均价与数量环比齐升"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "642",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
