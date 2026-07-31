@@ -1,0 +1,96 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_16/0003-83-Nomura-Asia-Insights-China-The-Politburo-meeting-indicated-a-shift-to--c",
+  "title": "野村：行业规则与主题变化观察",
+  "source_title": "0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-83-NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies-260730",
+    "cleaned_source_title": "NOM-Asia Insights-China-The Politburo meeting indicated a shift to -countercyclical- policies",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaInsights中国ThePolitbu",
+    "raw_candidates": [
+      "中国政治局会议转向逆周期政策",
+      "中国政治局会议转向逆周期政策-二季度GDP增速创疫情以来最低",
+      "中国政治局会议转向逆周期政策-强调财政支出与贸易再平衡"
+    ],
+    "cleaned_candidates": [
+      "野村：中国政治局会议转向逆周期政策",
+      "野村：中国政治局会议转向逆周期政策-二季度GDP增速创疫情以来最低",
+      "野村：中国政治局会议转向逆周期政策-强调财政支出与贸易再平衡",
+      "野村：AsiaInsights中国ThePolitbu",
+      "野村：2026年4月，未提及“逆周期”和“跨周期”"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：AsiaInsights中国ThePolitbu",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：2026年4月，未提及“逆周期”和“跨周期”",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "野村：中国政治局会议转向逆周期政策-二季度GDP增速创疫情以来最低",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "野村：行业规则与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_43.pdf",
+  "figure_count": 0,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "经济->宏观环境 x2",
+    "投资->研究 x2",
+    "下行|放缓->节奏变化 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "下行|放缓->节奏变化 x2",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_9/0001-46-Goldman-Sachs-Sony-Group--6758.T--Announces-proposal-to-make-major-camer",
+  "title": "高盛：索尼集团提议将相机镜头制造商腾龙纳为全资子公司",
+  "source_title": "0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731",
+    "cleaned_source_title": "GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：SonyGroup",
+    "raw_candidates": [
+      "索尼集团提议将相机镜头制造商腾龙纳为全资子公司",
+      "索尼集团提议全资收购腾龙-每股1300日元",
+      "索尼集团提议全资收购腾龙-影像业务协同"
+    ],
+    "cleaned_candidates": [
+      "高盛：索尼集团提议将相机镜头制造商腾龙纳为全资子公司",
+      "高盛：索尼集团提议全资收购腾龙-每股1300日元",
+      "高盛：索尼集团提议全资收购腾龙-影像业务协同",
+      "高盛：SonyGroup",
+      "高盛：对此，腾龙于7月30日上午8点30分（日本时间）公告称"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：索尼集团提议全资收购腾龙-每股1300日元",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "高盛：索尼集团提议全资收购腾龙-影像业务协同",
+        "reasons": [
+          "anchor_coverage=0.32"
+        ]
+      },
+      {
+        "title": "高盛：SonyGroup",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：对此，腾龙于7月30日上午8点30分（日本时间）公告称",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：索尼集团提议将相机镜头制造商腾龙纳为全资子公司",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "高盛：索尼集团提议将相机镜头制造商腾龙纳为全资子公司"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_88.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x6",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "恶化->出现变化 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

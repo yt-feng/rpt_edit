@@ -1,0 +1,81 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_12/0001-61-J.P.-Morgan-JPM-HY-HC--2Q26-CRO--Pharma-Services-Earnings-Observations-I",
+  "title": "摩根大通：2Q26CRO与制药服务业绩观察",
+  "source_title": "0001-61-JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-61-JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730",
+    "cleaned_source_title": "JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：HYHC2Q26CROPharmaServi",
+    "raw_candidates": [
+      "摩根大通：2Q26 CRO与制药服务业绩观察",
+      "摩根大通：2Q26 CRO业绩观察-三家公司上调收入指引",
+      "摩根大通：2Q26 CRO与制药服务业绩观察-涵盖IQV、FTRE和AVTR"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：2Q26CRO与制药服务业绩观察",
+      "摩根大通：2Q26CRO业绩观察-三家公司上调收入指引",
+      "摩根大通：HYHC2Q26CROPharmaServi",
+      "摩根大通：高收益医疗保健，2Q26CRO、制药服务业绩观察"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：2Q26CRO业绩观察-三家公司上调收入指引",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "摩根大通：HYHC2Q26CROPharmaServi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.40"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：2Q26CRO与制药服务业绩观察",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：2Q26CRO与制药服务业绩观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "减持->观点偏谨慎 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

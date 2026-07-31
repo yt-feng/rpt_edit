@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_7/0004-39-Goldman-Sachs-Japan-Technology--Hardware--Electronic-Components--June-MO",
+  "title": "高盛：统计方法与相关数据观察",
+  "source_title": "0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightenin",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-39-GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightenin",
+    "cleaned_source_title": "GS-Japan Technology- Hardware -Electronic Components- June MOF trade statistics -MLCC-- ASP volume up mom suggests further tightenin",
+    "institution_name": "高盛",
+    "required_terms": [
+      "MLCC"
+    ],
+    "deterministic_fallback": "高盛：MLCC日本科技硬件ElectronicComponen",
+    "raw_candidates": [
+      "高盛：日本科技硬件电子元器件6月贸易统计MLCC均价出货量环比上升",
+      "高盛：日本MLCC 6月均价环比上涨4%出货量增长6%",
+      "高盛：日本电子元器件MLCC供需趋紧6月贸易数据"
+    ],
+    "cleaned_candidates": [
+      "高盛：日本科技硬件电子元器件6月贸易统计MLCC均价出货量环比上升",
+      "高盛：日本MLCC6月均价环比上涨4%出货量增长6%",
+      "高盛：日本电子元器件MLCC供需趋紧6月贸易数据",
+      "高盛：MLCC日本科技硬件ElectronicComponen",
+      "高盛：图表1，MLCC出口量与平均出口价格（ASP）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：日本MLCC6月均价环比上涨4%出货量增长6%",
+        "reasons": [
+          "anchor_coverage=0.34"
+        ]
+      },
+      {
+        "title": "高盛：日本电子元器件MLCC供需趋紧6月贸易数据",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      },
+      {
+        "title": "高盛：MLCC日本科技硬件ElectronicComponen",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：图表1，MLCC出口量与平均出口价格（ASP）",
+        "reasons": [
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：统计方法与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：日本科技硬件电子元器件6月贸易统计MLCC均价出货量环比上升",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：统计方法与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_81.pdf",
+  "figure_count": 1,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x2",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

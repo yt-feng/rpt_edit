@@ -1,0 +1,157 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_4/0002-22-CITI-Zijin-Mining--2899.HK--Termination-of-Allied-Gold-Acquisition--Prop",
+  "title": "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权",
+  "source_title": "0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Pla",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-22-CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Pla",
+    "cleaned_source_title": "CITI-Zijin Mining -2899.HK- Termination of Allied Gold Acquisition- Proposed Acquisition of 9.2- Equity Interest Through Private Pla",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：ZijinMiningTerminationof",
+    "raw_candidates": [
+      "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权",
+      "花旗：紫金矿业终止收购联合黄金拟定向增发入股9.2%",
+      "花旗：紫金矿业终止收购联合黄金拟以4.16亿加元认购9.2%股权",
+      "紫金矿业终止收购Allied Gold并拟定向增持9.2%股权",
+      "紫金矿业终止收购Allied Gold拟以4.166亿加元认购9.2%股权",
+      "紫金矿业终止收购Allied Gold拟通过定向增发收购9.2%股权"
+    ],
+    "cleaned_candidates": [
+      "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权",
+      "花旗：紫金矿业终止收购联合黄金拟定向增发入股9.2%",
+      "花旗：紫金矿业终止收购联合黄金拟以4.16亿加元认购9.2%股权",
+      "花旗：紫金矿业终止收购AlliedGold并拟定向增持9.2%股权",
+      "花旗：紫金矿业终止收购AlliedGold拟以4.166亿加元认购9.",
+      "花旗：紫金矿业终止收购AlliedGold拟通过定向增发收购9.2%股",
+      "花旗：ZijinMiningTerminationof",
+      "花旗：总对价为4.166亿加元（约2.95亿美元），定向增发完成后"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：紫金矿业终止收购联合黄金拟定向增发入股9.2%",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      },
+      {
+        "title": "花旗：紫金矿业终止收购联合黄金拟以4.16亿加元认购9.2%股权",
+        "reasons": [
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "花旗：紫金矿业终止收购AlliedGold并拟定向增持9.2%股权",
+        "reasons": [
+          "long_untranslated_english",
+          "forbidden_public_wording",
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "花旗：紫金矿业终止收购AlliedGold拟以4.166亿加元认购9.",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.47",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "花旗：紫金矿业终止收购AlliedGold拟通过定向增发收购9.2%股",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.53"
+        ]
+      },
+      {
+        "title": "花旗：ZijinMiningTerminationof",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：总对价为4.166亿加元（约2.95亿美元），定向增发完成后",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "花旗：总对价为4.166亿加元（约2.95亿美元），定向增发完成后",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权",
+      "花旗：紫金矿业终止收购联合黄金拟定向增发入股9.2%",
+      "花旗：紫金矿业终止收购联合黄金拟以4.16亿加元认购9.2%股权"
+    ],
+    "final_title_after_wording_guard": "花旗：紫金矿业终止收购联合黄金并拟认购9.2%股权"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_64.pdf",
+  "figure_count": 2,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x1",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x2",
+    "金融->资金 x3",
+    "证券->标的 x4",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}

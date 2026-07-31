@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_13/0002-67-J.P.-Morgan-Sungrow--A-300274-FCC-targets-new-Chinese-inverter-imports--",
+  "title": "摩根大通：阳光电源，FCC针对中国新型逆变器进口，调整因素已计入价格",
+  "source_title": "0002-67-JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-67-JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729",
+    "cleaned_source_title": "JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：SungrowA300274FCCtarge",
+    "raw_candidates": [
+      "阳光电源：FCC针对中国新型逆变器进口，调整因素已计入价格",
+      "阳光电源：FCC限制新型逆变器进口，美国市场占2025年毛利润20-25%",
+      "阳光电源：FCC针对中国新型逆变器进口，禁令影响新型号"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：阳光电源，FCC针对中国新型逆变器进口，调整因素已计入价格",
+      "摩根大通：阳光电源，FCC限制新型逆变器进口",
+      "摩根大通：阳光电源，FCC针对中国新型逆变器进口，禁令影响新型号",
+      "摩根大通：SungrowA300274FCCtarge",
+      "摩根大通：阳光电源-A-300274-FCC针对中国新型逆变器进口"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：阳光电源，FCC限制新型逆变器进口",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：阳光电源，FCC针对中国新型逆变器进口，禁令影响新型号",
+        "reasons": [
+          "anchor_coverage=0.65",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：SungrowA300274FCCtarge",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：阳光电源-A-300274-FCC针对中国新型逆变器进口",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：阳光电源，FCC针对中国新型逆变器进口，调整因素已计入价格",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：阳光电源，FCC针对中国新型逆变器进口，调整因素已计入价格"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_27.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

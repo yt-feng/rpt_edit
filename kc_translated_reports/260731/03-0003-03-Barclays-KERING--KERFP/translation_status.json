@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_0/0003-03-Barclays-KERING--KERFP.US--The-future-is-bright-er----Upgrade-to-Market-",
+  "title": "巴克莱：研究主题与行业变化观察",
+  "source_title": "0003-03-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1)",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-03-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1)",
+    "cleaned_source_title": "BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1)",
+    "institution_name": "巴克莱",
+    "required_terms": [],
+    "deterministic_fallback": "巴克莱：KERING-Thefutureisbrighter",
+    "raw_candidates": [
+      "开云集团前景光明-评级上调至标配",
+      "开云集团H1 26业绩企稳-评级上调至标配",
+      "开云集团古驰复苏与去杠杆-评级上调至标配"
+    ],
+    "cleaned_candidates": [
+      "巴克莱：开云集团前景光明-评级上调至标配",
+      "巴克莱：开云集团H126业绩企稳-评级上调至标配",
+      "巴克莱：开云集团古驰复苏与去杠杆-评级上调至标配",
+      "巴克莱：KERING-Thefutureisbrighter",
+      "巴克莱：开云集团首席执行官LucaDeMeo于2025年9月15日正式"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "巴克莱：开云集团H126业绩企稳-评级上调至标配",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "巴克莱：开云集团古驰复苏与去杠杆-评级上调至标配",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "巴克莱：KERING-Thefutureisbrighter",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "巴克莱：开云集团首席执行官LucaDeMeo于2025年9月15日正式",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "巴克莱：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "巴克莱：开云集团前景光明-评级上调至标配",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "巴克莱：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_03.pdf",
+  "figure_count": 9,
+  "institution_name": "巴克莱",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "买入->观点偏积极 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x5",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "(?:上调|下调|维持|重申|恢复)\\s*评级->更新公司观点 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

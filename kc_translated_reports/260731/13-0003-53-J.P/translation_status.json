@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract",
+  "title": "摩根大通：资金结构与相关数据观察",
+  "source_title": "0003-53-JPM-Asia Insurance Summer Series- Leverage in insurance- attractive ROE- but no free lunch-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-53-JPM-Asia Insurance Summer Series- Leverage in insurance- attractive ROE- but no free lunch-260729",
+    "cleaned_source_title": "JPM-Asia Insurance Summer Series- Leverage in insurance- attractive ROE- but no free lunch",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：AsiaInsuranceSummerSer",
+    "raw_candidates": [
+      "亚洲保险夏季系列：保险杠杆与ROE",
+      "亚洲保险杠杆：承保、资产与财务三维度",
+      "亚洲保险杠杆：ROE与资本效率分析"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：亚洲保险夏季系列，保险杠杆与ROE",
+      "摩根大通：亚洲保险杠杆，承保、资产与财务三维度",
+      "摩根大通：亚洲保险杠杆，ROE与资本效率分析",
+      "摩根大通：AsiaInsuranceSummerSer",
+      "摩根大通：其吸引力显而易见，每1美元盈余对应3美元保费"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：亚洲保险杠杆，承保、资产与财务三维度",
+        "reasons": [
+          "anchor_coverage=0.36"
+        ]
+      },
+      {
+        "title": "摩根大通：亚洲保险杠杆，ROE与资本效率分析",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "摩根大通：AsiaInsuranceSummerSer",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：其吸引力显而易见，每1美元盈余对应3美元保费",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：资金结构与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：亚洲保险夏季系列，保险杠杆与ROE",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：资金结构与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_13.pdf",
+  "figure_count": 21,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "股票|个股->公司 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "投资->研究 x1",
+    "股票市场|股市->市场 x1",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x3",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "压力->不确定性 x1"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha",
+  "title": "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药",
+  "source_title": "0005-55-JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729",
+    "cleaned_source_title": "JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国HealthcareGSK和AZ2Q26results",
+    "raw_candidates": [
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药和科伦博泰的启示",
+      "摩根大通：跨国药企2026年第二季度业绩验证中国创新药研发实力",
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩推动中国药企合作进展",
+      "中国医疗健康：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药和科伦博泰的启示"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药",
+      "摩根大通：跨国药企2026年第二季度业绩验证中国创新药研发实力",
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩推动中国药企合作进展",
+      "摩根大通：中国医疗健康",
+      "摩根大通：中国HealthcareGSK和AZ2Q26results",
+      "摩根大通：到2028年，GSK可能同时开展6项Ris"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：跨国药企2026年第二季度业绩验证中国创新药研发实力",
+        "reasons": [
+          "anchor_coverage=0.37"
+        ]
+      },
+      {
+        "title": "摩根大通：GSK与阿斯利康2026年第二季度业绩推动中国药企合作进展",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "摩根大通：中国医疗健康",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国HealthcareGSK和AZ2Q26results",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：到2028年，GSK可能同时开展6项Ris",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根大通：到2028年，GSK可能同时开展6项Ris",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药和科伦博泰的启示",
+      "摩根大通：跨国药企2026年第二季度业绩验证中国创新药研发实力",
+      "摩根大通：GSK与阿斯利康2026年第二季度业绩推动中国药企合作进展"
+    ],
+    "final_title_after_wording_guard": "摩根大通：GSK与阿斯利康2026年第二季度业绩对翰森制药、恒瑞医药"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x3",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "证券->标的 x2",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股价->报价 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1"
+  ]
+}

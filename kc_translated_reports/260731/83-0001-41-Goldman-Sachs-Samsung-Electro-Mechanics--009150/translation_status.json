@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2",
+  "title": "高盛：AI技术与行业应用观察",
+  "source_title": "0001-41-GS-Samsung Electro-Mechanics -009150.KS- Earnings Review- 2Q26 OP beat- Tight supply and strong AI demand continued tailwinds for st",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-41-GS-Samsung Electro-Mechanics -009150.KS- Earnings Review- 2Q26 OP beat- Tight supply and strong AI demand continued tailwinds for st",
+    "cleaned_source_title": "GS-Samsung Electro-Mechanics -009150.KS- Earnings Review- 2Q26 OP beat- Tight supply and strong AI demand continued tailwinds for st",
+    "institution_name": "高盛",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "高盛：AISamsungElectroMechanicsE",
+    "raw_candidates": [
+      "三星电机：2Q26营业利润超预期，供应紧张与AI需求支撑",
+      "三星电机：2Q26营业利润超预期，AI需求推动MLCC与ABF增长",
+      "三星电机：2Q26业绩点评，AI服务器需求与供应紧张支撑盈利"
+    ],
+    "cleaned_candidates": [
+      "高盛：三星电机，2Q26营业利润超预期，供应紧张与AI需求支撑",
+      "高盛：三星电机，2Q26营业利润超预期",
+      "高盛：三星电机，2Q26业绩点评，AI服务器需求与供应紧张支撑盈利",
+      "高盛：AISamsungElectroMechanicsE",
+      "高盛：公司预计AI服务器MLCC需求将强劲增长（公司预计100547μ"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：三星电机，2Q26营业利润超预期",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.56",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：三星电机，2Q26业绩点评，AI服务器需求与供应紧张支撑盈利",
+        "reasons": [
+          "anchor_coverage=0.52"
+        ]
+      },
+      {
+        "title": "高盛：AISamsungElectroMechanicsE",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：公司预计AI服务器MLCC需求将强劲增长（公司预计100547μ",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment",
+          "unsupported_hook_addition"
+        ]
+      }
+    ],
+    "selected_title": "高盛：AI技术与行业应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：三星电机，2Q26营业利润超预期，供应紧张与AI需求支撑",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：AI技术与行业应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_83.pdf",
+  "figure_count": 4,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_14/0004-74-Morgan-Stanley-Apple--Inc.---North-America-F3Q26-Earnings---Cracks-Emerg",
+  "title": "摩根士丹利：苹果北美F3Q26财报，利润率与服务业务现裂痕",
+  "source_title": "0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1)",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1)",
+    "cleaned_source_title": "MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1)",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：Apple-Inc.",
+    "raw_candidates": [
+      "苹果北美F3Q26财报：利润率与服务业务现裂痕",
+      "苹果F3Q26财报：服务业务增速放缓与毛利率承压",
+      "苹果北美F3Q26财报：iPhone需求强劲但供应限制影响指引"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：苹果北美F3Q26财报，利润率与服务业务现裂痕",
+      "摩根士丹利：苹果F3Q26财报，服务业务增速放缓与毛利率承压",
+      "摩根士丹利：苹果北美F3Q26财报",
+      "摩根士丹利：Apple-Inc.",
+      "摩根士丹利：财报后我们的FY27EPS降至10.00美元（此前为10."
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：苹果F3Q26财报，服务业务增速放缓与毛利率承压",
+        "reasons": [
+          "anchor_coverage=0.48"
+        ]
+      },
+      {
+        "title": "摩根士丹利：苹果北美F3Q26财报",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：Apple-Inc.",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：财报后我们的FY27EPS降至10.00美元（此前为10.",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：苹果北美F3Q26财报，利润率与服务业务现裂痕",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：苹果北美F3Q26财报，利润率与服务业务现裂痕"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_34.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "下行|放缓->节奏变化 x3",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

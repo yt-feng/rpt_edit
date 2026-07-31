@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_7/0005-40-Goldman-Sachs-Samsung-Electronics--005930.KS--Earnings-Review--2Q26-OP-i",
+  "title": "高盛：三星电子业务与季度数据观察",
+  "source_title": "0005-40-GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-40-GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward",
+    "cleaned_source_title": "GS-Samsung Electronics -005930.KS- Earnings Review- 2Q26 OP inline with prelim- solid memory fundamentals and attractive risk reward",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：SamsungElectronicsEarningsReview",
+    "raw_candidates": [
+      "三星电子2Q26业绩回顾-营业利润符合预告-内存基本面稳健",
+      "三星电子2Q26营业利润89.5万亿韩元-内存利润率环比提升",
+      "三星电子2Q26业绩回顾-内存供需紧张延续至2028年"
+    ],
+    "cleaned_candidates": [
+      "高盛：三星电子2Q26业绩回顾-营业利润符合预告-内存基本面稳健",
+      "高盛：三星电子2Q26营业利润89.5万亿韩元-内存利润率环比提升",
+      "高盛：三星电子2Q26业绩回顾-内存供需紧张延续至2028年",
+      "高盛：SamsungElectronicsEarningsReview",
+      "高盛：三星电子()自2017年7月14日起评级"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：三星电子2Q26营业利润89.5万亿韩元-内存利润率环比提升",
+        "reasons": [
+          "anchor_coverage=0.42",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：三星电子2Q26业绩回顾-内存供需紧张延续至2028年",
+        "reasons": [
+          "anchor_coverage=0.46",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：SamsungElectronicsEarningsReview",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：三星电子()自2017年7月14日起评级",
+        "reasons": [
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：三星电子业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：三星电子2Q26业绩回顾-营业利润符合预告-内存基本面稳健",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：三星电子业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_82.pdf",
+  "figure_count": 7,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x2",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "买入->观点偏积极 x1",
+    "股价->报价 x2",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1"
+  ]
+}

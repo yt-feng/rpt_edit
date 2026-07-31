@@ -1,0 +1,108 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_11/0003-58-J.P.-Morgan-FX-FOMC-post-mortem-Staying-long-USD-despite-renewed-inflati",
+  "title": "摩根大通：外汇FOMC会后分析-维持做多美元-美联储可信度与曲线陡峭化",
+  "source_title": "0003-58-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-58-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730",
+    "cleaned_source_title": "JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：FXFOMCpostmortemStayin",
+    "raw_candidates": [
+      "外汇FOMC会后分析-维持做多美元",
+      "外汇FOMC会后分析-维持做多美元-通胀不确定性溢价重现",
+      "外汇FOMC会后分析-维持做多美元-美联储可信度与曲线陡峭化"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：外汇FOMC会后分析-维持做多美元",
+      "摩根大通：外汇FOMC会后分析-维持做多美元-通胀不确定性溢价重现",
+      "摩根大通：外汇FOMC会后分析-维持做多美元-美联储可信度与曲线陡峭化",
+      "摩根大通：FXFOMCpostmortemStayin",
+      "摩根大通：这与美元在个别事件（如2025年7月）及更广泛情况下的表现一"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：FXFOMCpostmortemStayin",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：这与美元在个别事件（如2025年7月）及更广泛情况下的表现一",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：外汇FOMC会后分析-维持做多美元-美联储可信度与曲线陡峭化",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": [
+        "美联储"
+      ]
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：外汇FOMC会后分析-维持做多美元-美联储可信度与曲线陡峭化"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_18.pdf",
+  "figure_count": 7,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "推荐->提到 x1",
+    "经济体->地区 x1",
+    "经济->宏观环境 x1"
+  ]
+}

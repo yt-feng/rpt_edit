@@ -1,0 +1,144 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_12/0005-65-J.P.-Morgan-Seagate--STX.US-F4Q26-Review--The-Demand-Supply-Waltz-Contin",
+  "title": "摩根大通：月度与季度数据变化观察",
+  "source_title": "0005-65-JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-65-JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729",
+    "cleaned_source_title": "JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：SeagateF4Q26Review",
+    "raw_candidates": [
+      "摩根大通：希捷六月季度数据中心收入同比增长五成七",
+      "摩根大通：希捷九月季度收入指引上调至四十亿至四十二亿美元",
+      "摩根大通：希捷新存储平台完成主要云客户认证并进入量产",
+      "希捷F4Q26点评-供需之舞延续-上调预测与目标价"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：希捷六月季度数据中心收入同比增长五成七",
+      "摩根大通：希捷九月季度收入指引上调至四十亿至四十二亿美元",
+      "摩根大通：希捷新存储平台完成主要云客户认证并进入量产",
+      "摩根大通",
+      "摩根大通：SeagateF4Q26Review",
+      "摩根大通：按每EB计算，价格同比增长+11%（F3Q26为同比+4%）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：希捷九月季度收入指引上调至四十亿至四十二亿美元",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：希捷新存储平台完成主要云客户认证并进入量产",
+        "reasons": [
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：SeagateF4Q26Review",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：按每EB计算，价格同比增长+11%（F3Q26为同比+4%）",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：月度与季度数据变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根大通：按每EB计算，价格同比增长+11%（F3Q26为同比+4%）",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "摩根大通：希捷六月季度数据中心收入同比增长五成七",
+      "摩根大通：希捷九月季度收入指引上调至四十亿至四十二亿美元",
+      "摩根大通：希捷新存储平台完成主要云客户认证并进入量产"
+    ],
+    "pre_neutralization_title": "摩根大通：希捷六月季度数据中心收入同比增长五成七",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：月度与季度数据变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_25.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "股票|个股->公司 x1",
+    "公司公司->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "股票|个股->公司 x1",
+    "公司公司->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1"
+  ]
+}

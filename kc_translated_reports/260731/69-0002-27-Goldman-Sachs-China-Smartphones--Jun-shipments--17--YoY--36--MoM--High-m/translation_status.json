@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_5/0002-27-Goldman-Sachs-China-Smartphones--Jun-shipments--17--YoY--36--MoM--High-m",
+  "title": "高盛：研究主题与行业变化观察",
+  "source_title": "0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731",
+    "cleaned_source_title": "GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国SmartphonesJunshipments17YoY36",
+    "raw_candidates": [
+      "中国智能手机6月出货量同比下降17%环比下降36%",
+      "中国智能手机6月出货量1700万部同比下降17%环比下降36%",
+      "中国智能手机6月出货量下滑高内存成本影响需求"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国智能手机6月出货量同比下降17%环比下降36%",
+      "高盛：中国智能手机6月出货量1700万部同比下降17%环比下降36%",
+      "高盛：中国智能手机6月出货量下滑高内存成本影响需求",
+      "高盛：中国SmartphonesJunshipments17YoY36",
+      "高盛：6月中国智能手机出货量同比下降17%至1700万部"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国智能手机6月出货量下滑高内存成本影响需求",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "高盛：中国SmartphonesJunshipments17YoY36",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：6月中国智能手机出货量同比下降17%至1700万部",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      }
+    ],
+    "selected_title": "高盛：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1700"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：中国智能手机6月出货量1700万部同比下降17%环比下降36%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_69.pdf",
+  "figure_count": 22,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": []
+}

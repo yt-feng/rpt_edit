@@ -1,0 +1,94 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_5/0004-29-Goldman-Sachs-China--July-Politburo-meeting-strengthens-easing-rhetoric-",
+  "title": "高盛：区域环境与行业变化观察",
+  "source_title": "0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730",
+    "cleaned_source_title": "GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：中国-JulyPolitburomeetings",
+    "raw_candidates": [
+      "中国7月政治局会议强化宽松基调并强调加快落实既定措施",
+      "中国7月政治局会议强化宽松基调并强调加快落实既定措施-二季度GDP弱于预期",
+      "中国7月政治局会议强化宽松基调并强调加快落实既定措施-聚焦高科技制造业与AI供应链"
+    ],
+    "cleaned_candidates": [
+      "高盛：中国7月政治局会议强化宽松基调并强调加快落实既定措施",
+      "高盛：中国-JulyPolitburomeetings",
+      "高盛：7月30日，政治局召开7月会议，为下半年政策基调定调"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：中国-JulyPolitburomeetings",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：7月30日，政治局召开7月会议，为下半年政策基调定调",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：区域环境与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：中国7月政治局会议强化宽松基调并强调加快落实既定措施",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：区域环境与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_71.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x4",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "中国经济->中国宏观环境 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

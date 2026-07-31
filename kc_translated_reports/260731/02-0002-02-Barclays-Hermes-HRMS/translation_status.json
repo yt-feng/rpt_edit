@@ -1,0 +1,123 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_0/0002-02-Barclays-Hermes-HRMS.PA-Beyond-the-Print--Debate-on-algo-remains-unresol",
+  "title": "巴克莱：爱马仕业务与近期数据观察",
+  "source_title": "0002-02-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1)",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1)",
+    "cleaned_source_title": "BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1)",
+    "institution_name": "巴克莱",
+    "required_terms": [],
+    "deterministic_fallback": "巴克莱：HermesBeyondthePrint",
+    "raw_candidates": [
+      "爱马仕数据之外：算法争论未解",
+      "爱马仕Q2增长6.7%：算法争论未解",
+      "爱马仕皮具增长10.2%：算法争论未解"
+    ],
+    "cleaned_candidates": [
+      "巴克莱：爱马仕数据之外，算法争论未解",
+      "巴克莱：爱马仕Q2增长6.7%，算法争论未解",
+      "巴克莱：爱马仕皮具增长10.2%，算法争论未解",
+      "巴克莱：HermesBeyondthePrint",
+      "巴克莱：Q2固定汇率销售增长+6.7%（市场预期+6.5%）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "巴克莱：爱马仕Q2增长6.7%，算法争论未解",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "巴克莱：爱马仕皮具增长10.2%，算法争论未解",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "巴克莱：HermesBeyondthePrint",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "巴克莱：Q2固定汇率销售增长+6.7%（市场预期+6.5%）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "巴克莱：爱马仕业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "巴克莱：爱马仕数据之外，算法争论未解",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "巴克莱：爱马仕业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 6,
+  "institution_name": "巴克莱",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1"
+  ]
+}

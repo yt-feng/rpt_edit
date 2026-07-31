@@ -1,0 +1,79 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_12/0004-64-J.P.-Morgan-Semiconductor-SPE-Implications-from-Teradyne-s-results--Prog",
+  "title": "摩根大通：泰瑞达业绩对半导体设备的影响-超大规模客户第二供应商地位进展",
+  "source_title": "0004-64-JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-64-JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730",
+    "cleaned_source_title": "JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：半导体SPEImplicationsfrom",
+    "raw_candidates": [
+      "泰瑞达业绩对半导体设备的影响-超大规模客户第二供应商地位进展",
+      "泰瑞达4-6月业绩-超大规模客户第二供应商认证取得进展",
+      "泰瑞达业绩-半导体测试设备双供应商采购趋势与GPU客户出货"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：泰瑞达业绩对半导体设备的影响-超大规模客户第二供应商地位进展",
+      "摩根大通：泰瑞达4-6月业绩-超大规模客户第二供应商认证取得进展",
+      "摩根大通：泰瑞达业绩-半导体测试设备双供应商采购趋势与GPU客户出货",
+      "摩根大通：半导体SPEImplicationsfrom",
+      "摩根大通：截至简报会结束时（22，45）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：泰瑞达4-6月业绩-超大规模客户第二供应商认证取得进展",
+        "reasons": [
+          "anchor_coverage=0.50",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：泰瑞达业绩-半导体测试设备双供应商采购趋势与GPU客户出货",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：半导体SPEImplicationsfrom",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：截至简报会结束时（22，45）",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：泰瑞达业绩对半导体设备的影响-超大规模客户第二供应商地位进展",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根大通：泰瑞达业绩对半导体设备的影响-超大规模客户第二供应商地位进展"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_24.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": []
+}

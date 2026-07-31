@@ -1,0 +1,136 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_3/0001-16-CITI-Hongfa-Technology--600885--2Q26-Results-Beat--Lifting-TP-to-Rmb45.0",
+  "title": "花旗：宏发科技业务与季度数据观察",
+  "source_title": "0001-16-CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-16-CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion-260729",
+    "cleaned_source_title": "CITI-Hongfa Technology -600885- 2Q26 Results Beat- Lifting TP to Rmb45.0 on Strong Top Line and Further GPM Expansion",
+    "institution_name": "花旗",
+    "required_terms": [],
+    "deterministic_fallback": "花旗：Hongfa科技600885-2Q26ResultsBeat",
+    "raw_candidates": [
+      "花旗：宏发科技二季度净利润增长两成一",
+      "花旗：宏发科技二季度营收增长三成六",
+      "花旗：宏发科技二季度毛利率达三成三",
+      "宏发科技2Q26业绩超预期-上调目标价至45元",
+      "宏发科技2Q26净利6.72亿元-上调目标价至45元",
+      "宏发科技2Q26继电器营收增长-目标价上调至45元"
+    ],
+    "cleaned_candidates": [
+      "花旗：宏发科技二季度净利润增长两成一",
+      "花旗：宏发科技二季度营收增长三成六",
+      "花旗：宏发科技二季度毛利率达三成三",
+      "花旗：Hongfa科技600885-2Q26ResultsBeat",
+      "花旗：2Q26净利润为人民币6.72亿元（同比增长21%）"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "花旗：宏发科技二季度营收增长三成六",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "花旗：宏发科技二季度毛利率达三成三",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "花旗：Hongfa科技600885-2Q26ResultsBeat",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "花旗：2Q26净利润为人民币6.72亿元（同比增长21%）",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "花旗：宏发科技业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "花旗：2Q26净利润为人民币6.72亿元（同比增长21%）",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "花旗：宏发科技二季度净利润增长两成一",
+      "花旗：宏发科技二季度营收增长三成六",
+      "花旗：宏发科技二季度毛利率达三成三"
+    ],
+    "pre_neutralization_title": "花旗：宏发科技二季度净利润增长两成一",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "花旗：宏发科技业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_58.pdf",
+  "figure_count": 9,
+  "institution_name": "花旗",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "买入->观点偏积极 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1"
+  ]
+}

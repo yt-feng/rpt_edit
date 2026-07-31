@@ -1,0 +1,125 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260731/shard_11/0001-56-J.P.-Morgan-Corning-GLW.US-2Q26-Review--Falls-Short-of-Demanding-Buy-Sid",
+  "title": "摩根大通：康宁业务与季度数据观察",
+  "source_title": "0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729",
+    "cleaned_source_title": "JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：Corning2Q26ReviewFalls",
+    "raw_candidates": [
+      "康宁2Q26业绩回顾：未达买方高预期，长期光通信逻辑完好",
+      "康宁2Q26业绩回顾：收入47.38亿美元，光通信企业端AI销售近翻倍",
+      "康宁2Q26业绩回顾：光通信企业端强劲，运营商端波动，长期逻辑不变"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：康宁2Q26业绩回顾，未达买方高预期，长期光通信逻辑完好",
+      "摩根大通：康宁2Q26业绩回顾，收入47.38亿美元",
+      "摩根大通：康宁2Q26业绩回顾，光通信企业端强劲，运营商端波动",
+      "摩根大通：Corning2Q26ReviewFalls",
+      "摩根大通：此外，公司还将2027年及以后的远期日元汇率假设由此前的12"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：康宁2Q26业绩回顾，收入47.38亿美元",
+        "reasons": [
+          "anchor_coverage=0.36",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：康宁2Q26业绩回顾，光通信企业端强劲，运营商端波动",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：Corning2Q26ReviewFalls",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.12",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：此外，公司还将2027年及以后的远期日元汇率假设由此前的12",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：康宁业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：康宁2Q26业绩回顾，未达买方高预期，长期光通信逻辑完好",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：康宁业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_16.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1"
+  ]
+}
