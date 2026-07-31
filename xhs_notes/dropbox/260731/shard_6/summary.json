@@ -1,0 +1,579 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0001-31-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "二季报里的意外信号",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：能源公用事业与矿业财报季早期信号",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730 (1).pdf",
+      "cleaned_source_title": "GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730 (1)",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：能源UtilitiesMiningPulseIn",
+      "raw_candidates": [
+        "GS：能源公用事业与矿业财报季早期信号",
+        "GS：能源公用事业与矿业二季度财报信号",
+        "GS：能源公用事业与矿业财报季电力需求信号"
+      ],
+      "cleaned_candidates": [
+        "GS：能源公用事业与矿业财报季早期信号",
+        "GS：能源公用事业与矿业二季度财报信号",
+        "GS：能源公用事业与矿业财报季电力需求信号",
+        "GS：能源UtilitiesMiningPulseIn",
+        "GS：GS估计，到2030年公司EPS复合增速约19%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：能源公用事业与矿业二季度财报信号",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "GS：能源UtilitiesMiningPulseIn",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS估计，到2030年公司EPS复合增速约19%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：能源公用事业与矿业财报季早期信号",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：能源公用事业与矿业财报季早期信号"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0002-32-GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "M9材料刚放量，毛利",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy-260730.pdf",
+      "cleaned_source_title": "GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "CCL"
+      ],
+      "deterministic_fallback": "GS：CCLEliteMaterialBetterhighendM9",
+      "raw_candidates": [
+        "GS：Elite Material的M9与载板CCL放量时间表",
+        "GS：Elite Material的M9 CCL量产与载板CCL出货安排",
+        "GS：Elite Material的M9及载板CCL产能扩张与客户预订",
+        "GS：Elite Material高端M9载板CCL贡献与毛利率展望",
+        "GS：Elite Material M9 CCL 3Q26量产与载板CCL 4Q26出货",
+        "GS：Elite Material M9与载板CCL放量时间表及产能扩张"
+      ],
+      "cleaned_candidates": [
+        "GS：EliteMaterial的M9与载板CCL放量时间表",
+        "GS：EliteMaterial的M9CCL量产与载板CCL出货安排",
+        "GS：EliteMaterial的M9及载板CCL产能扩张与客户预订",
+        "GS：EliteMaterial高端M9载板CCL贡献与毛利率展望",
+        "GS：EliteMaterialM9CCL3Q26量产与载板CCL4Q",
+        "GS：EliteMaterialM9与载板CCL放量时间表及产能扩张",
+        "GS：CCLEliteMaterialBetterhighendM9",
+        "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：EliteMaterial的M9与载板CCL放量时间表",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EliteMaterial的M9CCL量产与载板CCL出货安排",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EliteMaterial的M9及载板CCL产能扩张与客户预订",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EliteMaterial高端M9载板CCL贡献与毛利率展望",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EliteMaterialM9CCL3Q26量产与载板CCL4Q",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：EliteMaterialM9与载板CCL放量时间表及产能扩张",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：CCLEliteMaterialBetterhighendM9",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "1",
+          "15",
+          "3"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "GS：Elite Material的M9与载板CCL放量时间表",
+        "GS：Elite Material的M9 CCL量产与载板CCL出货安排",
+        "GS：Elite Material的M9及载板CCL产能扩张与客户预订"
+      ],
+      "final_title_after_wording_guard": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0003-33-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "二季度财报季，哪些公",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：能源公用事业与矿业财报早期启示",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730.pdf",
+      "cleaned_source_title": "GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：能源-UtilitiesMiningPulseI",
+      "raw_candidates": [
+        "GS：能源公用事业与矿业财报早期启示",
+        "GS：二季度能源公用事业与矿业财报主线",
+        "GS：能源公用事业与矿业财报覆盖七大领域"
+      ],
+      "cleaned_candidates": [
+        "GS：能源公用事业与矿业财报早期启示",
+        "GS：二季度能源公用事业与矿业财报主线",
+        "GS：能源公用事业与矿业财报覆盖七大领域",
+        "GS：能源-UtilitiesMiningPulseI",
+        "GS：GS估算其到2030年的每股收益复合年增速约为19%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：二季度能源公用事业与矿业财报主线",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "GS：能源公用事业与矿业财报覆盖七大领域",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "GS：能源-UtilitiesMiningPulseI",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：GS估算其到2030年的每股收益复合年增速约为19%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：能源公用事业与矿业财报早期启示",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：能源公用事业与矿业财报早期启示"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0004-34-GS-GLOBAL CREDIT TRADER-The Increasing Importance of Demand Technicals in Credit-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "信用债需求端，比想象",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "金融->资金 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "基金->产品 x4",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "基金->产品 x4",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "投资者->读者 x2",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-GS-GLOBAL CREDIT TRADER-The Increasing Importance of Demand Technicals in Credit-260730.pdf",
+      "cleaned_source_title": "GS-GLOBAL CREDIT TRADER-The Increasing Importance of Demand Technicals in Credit",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：全球CREDITTRADERTheIncreas",
+      "raw_candidates": [
+        "全球信用交易员：信用债需求技术面重要性上升",
+        "全球信用交易员：信用债需求技术面重要性上升-美元研究级发行近1.5万亿美元",
+        "全球信用交易员：信用债需求技术面重要性上升-五类需求指标与AI债务集中度"
+      ],
+      "cleaned_candidates": [
+        "GS：全球信用交易员，信用债需求技术面重要性上升",
+        "GS：全球CREDITTRADERTheIncreas",
+        "GS：1.资金流显示美元研究级需求连续65周净流入"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：全球CREDITTRADERTheIncreas",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.资金流显示美元研究级需求连续65周净流入",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：全球信用交易员，信用债需求技术面重要性上升",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0005-35-GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "数据中心REIT龙头",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：Equinix业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans-260729.pdf",
+      "cleaned_source_title": "GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：EquinixInc.",
+      "raw_candidates": [
+        "GS：Equinix 2Q26业绩超预期并上调长期目标",
+        "GS：Equinix 2Q26业绩超预期，资本开支上调至50-70亿美元",
+        "GS：Equinix 2Q26业绩超预期，上调长期资本开支与回报指引"
+      ],
+      "cleaned_candidates": [
+        "GS：Equinix2Q26业绩超预期并上调长期目标",
+        "GS：Equinix2Q26业绩超预期，资本开支上调至50-70亿美元",
+        "GS：Equinix2Q26业绩超预期，上调长期资本开支与回报指引",
+        "GS：EquinixInc.",
+        "GS：年化预订量4.24亿美元落在GS预测（4.54亿）与一致预期（4"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：EquinixInc.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：年化预订量4.24亿美元落在GS预测（4.54亿）与一致预期（4",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：Equinix业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "50",
+          "70"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：Equinix2Q26业绩超预期，资本开支上调至50-70亿美元",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：Equinix业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

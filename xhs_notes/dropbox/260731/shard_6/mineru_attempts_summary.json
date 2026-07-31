@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0001-31-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0002-32-GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0003-33-GS-Energy- Utilities - Mining Pulse-Investors Asking- What Are Early Learnings from Earnings--260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0004-34-GS-GLOBAL CREDIT TRADER-The Increasing Importance of Demand Technicals in Credit-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0005-35-GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

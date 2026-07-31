@@ -1,0 +1,109 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0005-35-GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "数据中心REIT龙头",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：Equinix业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-35-GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans-260729.pdf",
+    "cleaned_source_title": "GS-Equinix Inc. -EQIX.US- 2Q26 Review- Beat - raise with upgrade to L T targets on expansion plans",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：EquinixInc.",
+    "raw_candidates": [
+      "GS：Equinix 2Q26业绩超预期并上调长期目标",
+      "GS：Equinix 2Q26业绩超预期，资本开支上调至50-70亿美元",
+      "GS：Equinix 2Q26业绩超预期，上调长期资本开支与回报指引"
+    ],
+    "cleaned_candidates": [
+      "GS：Equinix2Q26业绩超预期并上调长期目标",
+      "GS：Equinix2Q26业绩超预期，资本开支上调至50-70亿美元",
+      "GS：Equinix2Q26业绩超预期，上调长期资本开支与回报指引",
+      "GS：EquinixInc.",
+      "GS：年化预订量4.24亿美元落在GS预测（4.54亿）与一致预期（4"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：EquinixInc.",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：年化预订量4.24亿美元落在GS预测（4.54亿）与一致预期（4",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：Equinix业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "50",
+        "70"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：Equinix2Q26业绩超预期，资本开支上调至50-70亿美元",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：Equinix业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "720",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

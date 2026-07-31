@@ -1,0 +1,163 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_1pvvmy1z/pdfs/0002-32-GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "M9材料刚放量，毛利",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-32-GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy-260730.pdf",
+    "cleaned_source_title": "GS-Elite Material -2383.TW- Better high-end M9 substrate CCL contribution from 2H26- suggesting even better GM OPM in coming quarters- reiterate Buy",
+    "institution_name": "GS",
+    "required_terms": [
+      "CCL"
+    ],
+    "deterministic_fallback": "GS：CCLEliteMaterialBetterhighendM9",
+    "raw_candidates": [
+      "GS：Elite Material的M9与载板CCL放量时间表",
+      "GS：Elite Material的M9 CCL量产与载板CCL出货安排",
+      "GS：Elite Material的M9及载板CCL产能扩张与客户预订",
+      "GS：Elite Material高端M9载板CCL贡献与毛利率展望",
+      "GS：Elite Material M9 CCL 3Q26量产与载板CCL 4Q26出货",
+      "GS：Elite Material M9与载板CCL放量时间表及产能扩张"
+    ],
+    "cleaned_candidates": [
+      "GS：EliteMaterial的M9与载板CCL放量时间表",
+      "GS：EliteMaterial的M9CCL量产与载板CCL出货安排",
+      "GS：EliteMaterial的M9及载板CCL产能扩张与客户预订",
+      "GS：EliteMaterial高端M9载板CCL贡献与毛利率展望",
+      "GS：EliteMaterialM9CCL3Q26量产与载板CCL4Q",
+      "GS：EliteMaterialM9与载板CCL放量时间表及产能扩张",
+      "GS：CCLEliteMaterialBetterhighendM9",
+      "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：EliteMaterial的M9与载板CCL放量时间表",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：EliteMaterial的M9CCL量产与载板CCL出货安排",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.26",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：EliteMaterial的M9及载板CCL产能扩张与客户预订",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：EliteMaterial高端M9载板CCL贡献与毛利率展望",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：EliteMaterialM9CCL3Q26量产与载板CCL4Q",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.35",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：EliteMaterialM9与载板CCL放量时间表及产能扩张",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：CCLEliteMaterialBetterhighendM9",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "1",
+        "15",
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "GS：Elite Material的M9与载板CCL放量时间表",
+      "GS：Elite Material的M9 CCL量产与载板CCL出货安排",
+      "GS：Elite Material的M9及载板CCL产能扩张与客户预订"
+    ],
+    "final_title_after_wording_guard": "GS：1.M9CCL量产启动，3Q26营收环比增速至少15%"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "505",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
