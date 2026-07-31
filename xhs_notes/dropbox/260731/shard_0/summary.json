@@ -1,0 +1,585 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0001-01-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "爱马仕Q2财报：增长",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：爱马仕业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730.pdf",
+      "cleaned_source_title": "BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：HermesBeyondthePrint",
+      "raw_candidates": [
+        "爱马仕二季度收入增长与算法争议未解",
+        "爱马仕二季度收入41亿欧元增长6.7%与算法争议未解",
+        "爱马仕二季度皮具增长10.2%与算法争议未解"
+      ],
+      "cleaned_candidates": [
+        "BARC：爱马仕二季度收入增长与算法争议未解",
+        "BARC：爱马仕二季度收入41亿欧元增长6.7%与算法争议未解",
+        "BARC：爱马仕二季度皮具增长10.2%与算法争议未解",
+        "BARC：HermesBeyondthePrint",
+        "BARC：二季度收入41亿欧元，恒定汇率增长6.7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：HermesBeyondthePrint",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：二季度收入41亿欧元，恒定汇率增长6.7%",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        }
+      ],
+      "selected_title": "BARC：爱马仕业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "41",
+          "6.7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：爱马仕二季度收入41亿欧元增长6.7%与算法争议未解",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：爱马仕业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0002-02-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "爱马仕Q2增长6.7",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：爱马仕业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1).pdf",
+      "cleaned_source_title": "BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1)",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：HermesBeyondthePrint",
+      "raw_candidates": [
+        "BARC：爱马仕二季度增长与算法争论",
+        "BARC：爱马仕二季度收入41亿欧元增长6.7%",
+        "BARC：爱马仕二季度皮具增长与区域分化"
+      ],
+      "cleaned_candidates": [
+        "BARC：爱马仕二季度增长与算法争论",
+        "BARC：爱马仕二季度收入41亿欧元增长6.7%",
+        "BARC：爱马仕二季度皮具增长与区域分化",
+        "BARC：HermesBeyondthePrint",
+        "BARC：爱马仕二季度收入41亿欧元，恒定汇率增长6.7%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：爱马仕二季度收入41亿欧元增长6.7%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "BARC：爱马仕二季度皮具增长与区域分化",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "BARC：HermesBeyondthePrint",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：爱马仕二季度收入41亿欧元，恒定汇率增长6.7%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        }
+      ],
+      "selected_title": "BARC：爱马仕业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：爱马仕二季度增长与算法争论",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：爱马仕业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0003-03-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "开云这轮翻身仗，打得",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "(?:强烈推荐|推荐买入|建议买入|建议卖出)->报告观点 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：资金结构与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1).pdf",
+      "cleaned_source_title": "BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1)",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：KERING-Thefutureisbrighter",
+      "raw_candidates": [
+        "BARC：开云集团评级上调至市场权重",
+        "BARC：开云集团净债务降至33亿欧元，评级上调至市场权重",
+        "BARC：开云集团债务与经营节奏同步改善，评级上调至市场权重"
+      ],
+      "cleaned_candidates": [
+        "BARC：开云集团评级上调至市场权重",
+        "BARC：开云集团净债务降至33亿欧元，评级上调至市场权重",
+        "BARC：开云集团债务与经营节奏同步改善，评级上调至市场权重",
+        "BARC：KERING-Thefutureisbrighter",
+        "BARC：净债务从FY25的80亿欧元降至33亿欧元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：KERING-Thefutureisbrighter",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：净债务从FY25的80亿欧元降至33亿欧元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：资金结构与相关数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "33"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：开云集团净债务降至33亿欧元，评级上调至市场权重",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：资金结构与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0004-04-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BARC",
+    "cover_short_title": "开云集团：最难的时刻",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "(?:上调|下调|维持|重申|恢复)\\s*评级->更新公司观点 x1",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "(?:上调|下调|维持|重申|恢复)\\s*评级->更新公司观点 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "(?:强烈推荐|推荐买入|建议买入|建议卖出)->报告观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "BARC：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730.pdf",
+      "cleaned_source_title": "BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight",
+      "institution_name": "BARC",
+      "required_terms": [],
+      "deterministic_fallback": "BARC：KERING-Thefutureisbrighter",
+      "raw_candidates": [
+        "BARC：开云集团评级上调至市场权重",
+        "BARC：开云集团评级上调，净债务降至33亿欧元",
+        "BARC：开云集团评级上调，聚焦Gucci品牌修复"
+      ],
+      "cleaned_candidates": [
+        "BARC：开云集团评级上调至市场权重",
+        "BARC：开云集团评级上调，净债务降至33亿欧元",
+        "BARC：开云集团评级上调，聚焦Gucci品牌修复",
+        "BARC：KERING-Thefutureisbrighter",
+        "BARC：2026年二季度，Gucci有机收入同比下降2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BARC：开云集团评级上调，净债务降至33亿欧元",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "BARC：开云集团评级上调，聚焦Gucci品牌修复",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "BARC：KERING-Thefutureisbrighter",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BARC：2026年二季度，Gucci有机收入同比下降2%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BARC：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "BARC：开云集团评级上调至市场权重",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "BARC：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0005-05-Bernstein-Air Products - Chemicals Inc-APD.US-Air Products 3QFY26- Passing the duck test-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "工业气体公司为什么该",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-Bernstein-Air Products - Chemicals Inc-APD.US-Air Products 3QFY26- Passing the duck test-260731.pdf",
+      "cleaned_source_title": "Bernstein-Air Products - Chemicals Inc-APD.US-Air Products 3QFY26- Passing the duck test",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：AirProductsChemicalsIn",
+      "raw_candidates": [
+        "Bernstein：Air Products 三季报延续工业气体主业特征",
+        "Bernstein：Air Products 三季报通过鸭子测试，上调每股收益预测",
+        "Bernstein：Air Products 三季报通过鸭子测试，工业气体主业特征延续",
+        "Bernstein：Air Products 三季报通过鸭子测试",
+        "Bernstein：Air Products 三季报通过鸭子测试，上调每股收益预测",
+        "Bernstein：Air Products 三季报通过鸭子测试，工业气体主业特征延续"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：AirProducts三季报延续工业气体主业特征",
+        "Bernstein：AirProducts三季报通过鸭子测试，上调每股收益预测",
+        "Bernstein：AirProducts三季报通过鸭子测试",
+        "Bernstein：AirProductsChemicalsIn",
+        "Bernstein：进入FY27，增速可能回落至同比6-9%的指引区间"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：AirProducts三季报延续工业气体主业特征",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirProducts三季报通过鸭子测试，上调每股收益预测",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirProducts三季报通过鸭子测试",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：AirProductsChemicalsIn",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [
+          "6",
+          "9"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "Bernstein：进入FY27，增速可能回落至同比6-9%的指引区间",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "Bernstein：Air Products 三季报延续工业气体主业特征",
+        "Bernstein：Air Products 三季报通过鸭子测试，上调每股收益预测",
+        "Bernstein：Air Products 三季报通过鸭子测试，工业气体主业特征延续"
+      ],
+      "pre_neutralization_title": "Bernstein：进入FY27，增速可能回落至同比6-9%的指引区间",
+      "pre_neutralization_selection_reason": "evidence_or_emergency_fallback",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

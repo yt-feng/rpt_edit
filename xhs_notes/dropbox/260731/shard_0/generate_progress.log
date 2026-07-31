@@ -1,0 +1,52 @@
+Found 92 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ksvlgywo/pdfs/0001-01-Barclays-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ksvlgywo/pdfs/0002-02-Barclays-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ksvlgywo/pdfs/0003-03-Barclays-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ksvlgywo/pdfs/0004-04-Barclays-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ksvlgywo/pdfs/0005-05-Bernstein-Air Products - Chemicals Inc-APD.US-Air Products 3QFY26- Passing the duck test-260731.pdf
+MinerU attempt 1 using MINER_U batch_id=501294e3-3971-424d-8474-8694650f3b45
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, running, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 97ce4cb4f8cc5c45066ff4c58712e69f564987f10e8522cf9a4eadc80c8c26eb.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset ecc28b590787c3b7cd5e015bd05dc8d4ace13d7ce8a932d800e1e84d2a91aa4d.jpg: score=2;edge:0.18
+Skip non-chart visual asset 524c02048e6458d2c3ec6d99612f28027a6b6aaa2a60cb762f396d647c25f4c9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.13,large
+Skip non-chart visual asset f8bb6482a22aa107da89835d35fb299d67bcb46ff55ef9d5ff1466b1c42b667a.jpg: score=-1;odd_ratio:4.91,edge:0.20
+Skip non-chart visual asset dd20f97d1d3997bfe1d0f4ea30085a406f9ad974c769fe0429a09a7c37e7bd2e.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset ba5546e10d8e984fdfd8156df234b4db234ed8c5d22d03a5f5b9acbe0c5b782f.jpg: score=-100;too_small:1398x154
+Skip non-chart visual asset 7fcaaa9edef743980bd85310c87593730acf208e0d161fa2e87e98dc42a8324c.jpg: score=-100;too_small:412x214
+Skip non-chart visual asset 1833095ae3071f69da2ed1a72b1a6bffb2316ced374de54538ce912e17605423.jpg: score=-100;too_small:445x95
+Skip non-chart visual asset 2cbf6c718758881be16bd3d4e0121428540c7d8d6efeb824c8db1a2f76861d2e.jpg: score=-100;too_small:326x265
+Neutralized WeChat title while keeping the report: 巴克莱：爱马仕二季度收入41亿欧元增长6.7%与算法争议未解 -> 巴克莱：爱马仕业务与季度数据观察
+Skip non-chart visual asset 97ce4cb4f8cc5c45066ff4c58712e69f564987f10e8522cf9a4eadc80c8c26eb.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset ecc28b590787c3b7cd5e015bd05dc8d4ace13d7ce8a932d800e1e84d2a91aa4d.jpg: score=2;edge:0.18
+Skip non-chart visual asset 524c02048e6458d2c3ec6d99612f28027a6b6aaa2a60cb762f396d647c25f4c9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.13,large
+Skip non-chart visual asset f8bb6482a22aa107da89835d35fb299d67bcb46ff55ef9d5ff1466b1c42b667a.jpg: score=-1;odd_ratio:4.91,edge:0.20
+Skip non-chart visual asset dd20f97d1d3997bfe1d0f4ea30085a406f9ad974c769fe0429a09a7c37e7bd2e.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset ba5546e10d8e984fdfd8156df234b4db234ed8c5d22d03a5f5b9acbe0c5b782f.jpg: score=-100;too_small:1398x154
+Skip non-chart visual asset 7fcaaa9edef743980bd85310c87593730acf208e0d161fa2e87e98dc42a8324c.jpg: score=-100;too_small:412x214
+Skip non-chart visual asset 1833095ae3071f69da2ed1a72b1a6bffb2316ced374de54538ce912e17605423.jpg: score=-100;too_small:445x95
+Skip non-chart visual asset 2cbf6c718758881be16bd3d4e0121428540c7d8d6efeb824c8db1a2f76861d2e.jpg: score=-100;too_small:326x265
+Neutralized WeChat title while keeping the report: 巴克莱：爱马仕二季度增长与算法争论 -> 巴克莱：爱马仕业务与季度数据观察
+Skip non-chart visual asset e836b9935043fc7fe3f3062e5234c31294bc6baa40450f7c980caf1615103183.jpg: score=-100;too_small:1004x171
+Neutralized WeChat title while keeping the report: 巴克莱：开云集团净债务降至33亿欧元，评级上调至市场权重 -> 巴克莱：资金结构与相关数据观察
+Skip non-chart visual asset e836b9935043fc7fe3f3062e5234c31294bc6baa40450f7c980caf1615103183.jpg: score=-100;too_small:1004x171
+Neutralized WeChat title while keeping the report: 巴克莱：开云集团评级上调至市场权重 -> 巴克莱：研究主题与行业变化观察
+Skip non-chart visual asset e0827012fb159bd4b62a3b67ef7e48c30cd28dffa3f55157a520f9d446052203.jpg: score=-100;too_small:96x90
+Skip non-chart visual asset 4e3e7a3086e459f384ada148020302f9dfe2b82ae43fb6bea359b18e9317832c.jpg: score=-100;too_small:93x87
+Skip non-chart visual asset a16373e4bb1a627e206ca7e4496cc6fb8eaaa37fb3049c2c6a1d0302da113f6e.jpg: score=-100;too_small:90x93
+Skip non-chart visual asset 39525379647d0c168c21a5ce26be59bf4257472b15fda95bc35682a505815cf0.jpg: score=-1;odd_ratio:6.62,edge:0.13
+Skip non-chart visual asset 6cdd29cc437f6cd707b417ea84592a4883e65dc0ba7681917247745830971904.jpg: score=-100;too_small:90x92
+Skip non-chart visual asset 412806ad2e59832b5a810b9aba7f8dab93ed2344d077347da78ad136e51958d5.jpg: score=1;odd_ratio:4.92,edge:0.21,contrast,large
+Skip non-chart visual asset 42d7eb8ebc676e5fe9744599d2348a5a60a6da0538ad77395424336ae75d59de.jpg: score=-100;too_small:465x118
+Skip non-chart visual asset 6127b7093947e5c06a7b41ab109cf079e789405c54ac334581cb67f9c1ec59e9.jpg: score=-100;too_small:401x121
+Skip non-chart visual asset d3f286cb8872ef46107e7635cb644c7e6a904d305132e17a62d1005ebf9577e3.jpg: score=-100;too_small:398x251
+Skip non-chart visual asset 28623752c1c712fe6102b74fd6f167f5de418c58410453102d1eb6aaf38b05f0.jpg: score=-100;too_small:462x134
+Neutralized WeChat title while keeping the report: 伯恩斯坦：进入FY27，增速可能回落至同比6-9%的指引区间 -> 伯恩斯坦：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0001-01-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0002-02-BARC-Hermes-HRMS.PA-Beyond the Print- Debate on algo remains unresolved-260730 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0003-03-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0004-04-BARC-KERING -KERFP.US- The future is bright-er- - Upgrade to Market Weight-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksvlgywo/pdfs/0005-05-Bernstein-Air Products - Chemicals Inc-APD.US-Air Products 3QFY26- Passing the duck test-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
