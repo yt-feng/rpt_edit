@@ -1,0 +1,91 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0003-BCG_Mind-the-Belief-Gap_90ec8d53.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "团队没业绩，先别急着",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_Mind-the-Belief-Gap_90ec8d53.pdf",
+    "cleaned_source_title": "0003-BCG_Mind-the-Belief-Gap_90ec8d53",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+    "raw_candidates": [
+      "波士顿咨询：领导力团队信念差距与业绩表现",
+      "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+      "波士顿咨询：领导力信念差距与业绩表现关系研究"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：领导力团队信念差距与业绩表现",
+      "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+      "波士顿咨询：领导力信念差距与业绩表现关系研究",
+      "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+      "波士顿咨询：波士顿咨询（BCG）在2026年3月对11个市场563名高"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：波士顿咨询（BCG）在2026年3月对11个市场563名高",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：领导力团队信念差距与业绩表现",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

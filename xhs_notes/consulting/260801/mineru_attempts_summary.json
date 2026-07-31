@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0003-BCG_Mind-the-Belief-Gap_90ec8d53.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0004-BCG_The-Cost-of-Caution-with-AI-Investments_61787743.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

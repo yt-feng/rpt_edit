@@ -1,0 +1,2476 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        267,
+                        2371,
+                        568,
+                        2445
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                267,
+                                2371,
+                                568,
+                                2445
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        267,
+                                        2371,
+                                        568,
+                                        2445
+                                    ],
+                                    "type": "text",
+                                    "content": "Cumulative relative total shareholder return index"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        53,
+                        79,
+                        797,
+                        243
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                53,
+                                79,
+                                797,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        53,
+                                        79,
+                                        797,
+                                        243
+                                    ],
+                                    "type": "text",
+                                    "content": "Delving Deeper into Downturn M&A"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        51,
+                        266,
+                        761,
+                        345
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                266,
+                                761,
+                                345
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        266,
+                                        761,
+                                        345
+                                    ],
+                                    "type": "text",
+                                    "content": "Acquirers generally see higher returns from deals made in a weak economy, a study by BCG finds"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        227,
+                        622,
+                        1179,
+                        769
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                622,
+                                1179,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        622,
+                                        1179,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "DEALMAKERS ARE BRACING FOR A DOWNTURN AGAINST THE BACKDROP OF SOFTENING INVESTOR SUPPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        227,
+                        798,
+                        1166,
+                        905
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                798,
+                                1166,
+                                905
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": "Acquirers' cumulative abnormal returns (CARs) centered on the announcement date fell to an average of "
+                                },
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "-0.4\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": " in 2018. This is the first time since 2012 that CARs were negative for acquirers of public targets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        70,
+                        922,
+                        1221,
+                        1833
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                922,
+                                1221,
+                                1833
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        922,
+                                        1221,
+                                        1833
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                922,
+                                                1221,
+                                                1833
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "f30323e852f9f079be2c407647c2326301376259817e837243375e2d07da967d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        227,
+                        2009,
+                        1154,
+                        2105
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                2009,
+                                1154,
+                                2105
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        2009,
+                                        1154,
+                                        2105
+                                    ],
+                                    "type": "text",
+                                    "content": "EVEN IF A DOWNTURN OCCURS, DEALMAKERS SHOULD NOT BE DETERRED"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        227,
+                        2128,
+                        1203,
+                        2235
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                2128,
+                                1203,
+                                2235
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        2128,
+                                        1203,
+                                        2235
+                                    ],
+                                    "type": "text",
+                                    "content": "In the medium term, weak-economy deals create more value for buyers than strong-economy deals. Two years after an acquisition, buyers' relative total shareholder return (RTSR) is more than 9 percentage points higher."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        95,
+                        2343,
+                        1267,
+                        2790
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                95,
+                                2343,
+                                1267,
+                                2790
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        95,
+                                        2343,
+                                        1267,
+                                        2790
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                95,
+                                                2343,
+                                                1267,
+                                                2790
+                                            ],
+                                            "type": "image",
+                                            "image_path": "6a875102400213cc0fbc32c0fc5c8d74987df5640bb8b03abd0d49579bf6ef53.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        },
+                        {
+                            "bbox": [
+                                1000,
+                                2762,
+                                1084,
+                                2801
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1000,
+                                        2762,
+                                        1084,
+                                        2801
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1000,
+                                                2762,
+                                                1084,
+                                                2801
+                                            ],
+                                            "type": "text",
+                                            "content": "Year 2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "bbox": [
+                        174,
+                        2880,
+                        590,
+                        2971
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                174,
+                                2880,
+                                590,
+                                2971
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        174,
+                                        2880,
+                                        590,
+                                        2971
+                                    ],
+                                    "type": "text",
+                                    "content": "BOLDNESS PAYS OFF, AS DOWNTURN"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        132,
+                        3141,
+                        591,
+                        3311
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                132,
+                                3141,
+                                591,
+                                3311
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        132,
+                                        3141,
+                                        591,
+                                        3311
+                                    ],
+                                    "type": "text",
+                                    "content": "In a weak economy, noncore deals (acquisitions outside the buyer's industry) create more value than core deals: 1-year RTSR is 3.9 percentage points higher"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        776,
+                        2943,
+                        973,
+                        2982
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                776,
+                                2943,
+                                973,
+                                2982
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        776,
+                                        2943,
+                                        973,
+                                        2982
+                                    ],
+                                    "type": "text",
+                                    "content": "1-YEAR RTSR (%)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        781,
+                        3016,
+                        1356,
+                        3311
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                781,
+                                3016,
+                                1356,
+                                3311
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        781,
+                                        3016,
+                                        1356,
+                                        3311
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                781,
+                                                3016,
+                                                1356,
+                                                3311
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e7cab1583f27574f527a09ac4530a15027c81a26dcf4f372c133ad01f06ac168.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                894,
+                                3322,
+                                1062,
+                                3390
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        894,
+                                        3322,
+                                        1062,
+                                        3390
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                894,
+                                                3322,
+                                                1062,
+                                                3390
+                                            ],
+                                            "type": "text",
+                                            "content": "Core segment acquisition"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        },
+                        {
+                            "bbox": [
+                                1101,
+                                3322,
+                                1320,
+                                3396
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1101,
+                                        3322,
+                                        1320,
+                                        3396
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1101,
+                                                3322,
+                                                1320,
+                                                3396
+                                            ],
+                                            "type": "text",
+                                            "content": "Noncore segment acquisition"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "bbox": [
+                        80,
+                        3418,
+                        588,
+                        3463
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                80,
+                                3418,
+                                588,
+                                3463
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        3418,
+                                        588,
+                                        3463
+                                    ],
+                                    "type": "text",
+                                    "content": "EXPERIENCE MATTERS, A"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        84,
+                        3458,
+                        590,
+                        3611
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                3458,
+                                590,
+                                3611
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        3458,
+                                        590,
+                                        3611
+                                    ],
+                                    "type": "text",
+                                    "content": "LOT, WHEN IT COMES TO CREATING VALUE FROM WEAK-ECONOMY DEALS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        100,
+                        3628,
+                        590,
+                        3797
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                100,
+                                3628,
+                                590,
+                                3797
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        100,
+                                        3628,
+                                        590,
+                                        3797
+                                    ],
+                                    "type": "text",
+                                    "content": "In a downturn, experienced buyers create significantly more value from M&A than occasional buyers: 2-year RTSR of 7.3% for experienced versus 1.4% for occasional"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        777,
+                        3480,
+                        974,
+                        3520
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                777,
+                                3480,
+                                974,
+                                3520
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        777,
+                                        3480,
+                                        974,
+                                        3520
+                                    ],
+                                    "type": "text",
+                                    "content": "2-YEAR RTSR (%)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        783,
+                        3548,
+                        1324,
+                        3826
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                783,
+                                3548,
+                                1324,
+                                3826
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        783,
+                                        3548,
+                                        1324,
+                                        3826
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                783,
+                                                3548,
+                                                1324,
+                                                3826
+                                            ],
+                                            "type": "image",
+                                            "image_path": "7033a7c137c9a59b4476b22caba034bb5f17424ed4bea273e4d42f331d61c61f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21
+                        },
+                        {
+                            "bbox": [
+                                842,
+                                3843,
+                                1185,
+                                3882
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        842,
+                                        3843,
+                                        1185,
+                                        3882
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                842,
+                                                3843,
+                                                1185,
+                                                3882
+                                            ],
+                                            "type": "text",
+                                            "content": "Experienced Occasional"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        51,
+                        4063,
+                        923,
+                        4160
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                4063,
+                                923,
+                                4160
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        4063,
+                                        923,
+                                        4160
+                                    ],
+                                    "type": "text",
+                                    "content": "TO MASTER M&A IN A DOWNTURN, BUYERS SHOULD FOLLOW A SET OF IMPERATIVES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        511,
+                        4205,
+                        796,
+                        4465
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                511,
+                                4205,
+                                796,
+                                4465
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        511,
+                                        4205,
+                                        796,
+                                        4465
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                511,
+                                                4205,
+                                                796,
+                                                4465
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4012ef5d99af405d1142695faee987ebec57d6cfef7ca819f533c5360ea92d03.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 24
+                        }
+                    ],
+                    "index": 24
+                },
+                {
+                    "bbox": [
+                        516,
+                        4482,
+                        705,
+                        4522
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                516,
+                                4482,
+                                705,
+                                4522
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        516,
+                                        4482,
+                                        705,
+                                        4522
+                                    ],
+                                    "type": "text",
+                                    "content": "Be prepared"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        515,
+                        4528,
+                        905,
+                        4669
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                515,
+                                4528,
+                                905,
+                                4669
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        515,
+                                        4528,
+                                        905,
+                                        4669
+                                    ],
+                                    "type": "text",
+                                    "content": "Put in place an ongoing target-screening process that covers strategic priorities — it’s a no-regrets move"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        251,
+                        4714,
+                        531,
+                        4901
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                251,
+                                4714,
+                                531,
+                                4901
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        251,
+                                        4714,
+                                        531,
+                                        4901
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                251,
+                                                4714,
+                                                531,
+                                                4901
+                                            ],
+                                            "type": "image",
+                                            "image_path": "2b3628382afdef5c4748aa32eeb48abcc4de0bc62cb462e076072db934dd8c7e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 27
+                        }
+                    ],
+                    "index": 27
+                },
+                {
+                    "bbox": [
+                        239,
+                        4895,
+                        358,
+                        4935
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                239,
+                                4895,
+                                358,
+                                4935
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        239,
+                                        4895,
+                                        358,
+                                        4935
+                                    ],
+                                    "type": "text",
+                                    "content": "Be bold"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        236,
+                        4935,
+                        663,
+                        5077
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                236,
+                                4935,
+                                663,
+                                5077
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        236,
+                                        4935,
+                                        663,
+                                        5077
+                                    ],
+                                    "type": "text",
+                                    "content": "Boldly pursue downturn M&A opportunities if they materialize — downturns are, on average, good times to make deals"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        950,
+                        4827,
+                        1199,
+                        4963
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                950,
+                                4827,
+                                1199,
+                                4963
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        950,
+                                        4827,
+                                        1199,
+                                        4963
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                950,
+                                                4827,
+                                                1199,
+                                                4963
+                                            ],
+                                            "type": "image",
+                                            "image_path": "0ce7ba838495f813dcdbd3cf3098bfe5e9581a3c9dd21cbb33f1017df40b8f00.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 30
+                        }
+                    ],
+                    "index": 30
+                },
+                {
+                    "bbox": [
+                        911,
+                        4986,
+                        1179,
+                        5026
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                911,
+                                4986,
+                                1179,
+                                5026
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        911,
+                                        4986,
+                                        1179,
+                                        5026
+                                    ],
+                                    "type": "text",
+                                    "content": "Be transformative"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        908,
+                        5031,
+                        1317,
+                        5167
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                908,
+                                5031,
+                                1317,
+                                5167
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        908,
+                                        5031,
+                                        1317,
+                                        5167
+                                    ],
+                                    "type": "text",
+                                    "content": "Use transformational deals to stay ahead of the curve and accelerate out of the recession when the upturn starts"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        368,
+                        5529,
+                        1167,
+                        5592
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                368,
+                                5529,
+                                1167,
+                                5592
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        368,
+                                        5529,
+                                        1167,
+                                        5592
+                                    ],
+                                    "type": "text",
+                                    "content": "© Boston Consulting Group 2019. All rights reserved.\nTo find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com.\nPlease direct questions to socialmedia@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        38,
+                        5337,
+                        1398,
+                        5433
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                5337,
+                                1398,
+                                5433
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        5337,
+                                        1398,
+                                        5433
+                                    ],
+                                    "type": "text",
+                                    "content": "Source: This infographic is based on BCG's 2019 M&A Report: Downturns Are a Better Time for Deal Hunting, September 2019 (https://www.bcg.com/publications/2019/mergers-and-acquisitions-report-shows-downturns-a-better-time-for-deal-hunting.aspx). The data set used for the analyses in BCG's M&A research comprises approximately 759,000 deals, covering the period 1980 through 2018. We collected and collated data from a variety of financial databases, including Refinitiv (formerly Thomson Reuters Financial & Risk), Datastream, Worldscope, and S&P Capital IQ, as well as our own proprietary data and analytics. For the analyses in the report, we focused on roughly $1,600 deals that met our study criteria and involved transfers of majority shares, including spinoffs, with a transaction value of at least $250 million. The data set covers all acquisitions—of both private and public targets—by public buyers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 33
+                },
+                {
+                    "bbox": [
+                        64,
+                        5512,
+                        259,
+                        5597
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                5512,
+                                259,
+                                5597
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64,
+                                        5512,
+                                        259,
+                                        5597
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 34
+                }
+            ],
+            "page_size": [
+                1440,
+                5660
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        267,
+                        2371,
+                        568,
+                        2445
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                267,
+                                2371,
+                                568,
+                                2445
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        267,
+                                        2371,
+                                        568,
+                                        2445
+                                    ],
+                                    "type": "text",
+                                    "content": "Cumulative relative total shareholder return index"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        53,
+                        79,
+                        797,
+                        243
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                53,
+                                79,
+                                797,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        53,
+                                        79,
+                                        797,
+                                        243
+                                    ],
+                                    "type": "text",
+                                    "content": "Delving Deeper into Downturn M&A"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        51,
+                        266,
+                        761,
+                        345
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                266,
+                                761,
+                                345
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        266,
+                                        761,
+                                        345
+                                    ],
+                                    "type": "text",
+                                    "content": "Acquirers generally see higher returns from deals made in a weak economy, a study by BCG finds"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        227,
+                        622,
+                        1179,
+                        769
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                622,
+                                1179,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        622,
+                                        1179,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "DEALMAKERS ARE BRACING FOR A DOWNTURN AGAINST THE BACKDROP OF SOFTENING INVESTOR SUPPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        227,
+                        798,
+                        1166,
+                        905
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                798,
+                                1166,
+                                905
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": "Acquirers' cumulative abnormal returns (CARs) centered on the announcement date fell to an average of "
+                                },
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "-0.4\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        227,
+                                        798,
+                                        1166,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": " in 2018. This is the first time since 2012 that CARs were negative for acquirers of public targets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        70,
+                        922,
+                        1221,
+                        1833
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                922,
+                                1221,
+                                1833
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        922,
+                                        1221,
+                                        1833
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                922,
+                                                1221,
+                                                1833
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "f30323e852f9f079be2c407647c2326301376259817e837243375e2d07da967d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        227,
+                        2009,
+                        1154,
+                        2105
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                2009,
+                                1154,
+                                2105
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        2009,
+                                        1154,
+                                        2105
+                                    ],
+                                    "type": "text",
+                                    "content": "EVEN IF A DOWNTURN OCCURS, DEALMAKERS SHOULD NOT BE DETERRED"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        227,
+                        2128,
+                        1203,
+                        2235
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                227,
+                                2128,
+                                1203,
+                                2235
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        227,
+                                        2128,
+                                        1203,
+                                        2235
+                                    ],
+                                    "type": "text",
+                                    "content": "In the medium term, weak-economy deals create more value for buyers than strong-economy deals. Two years after an acquisition, buyers' relative total shareholder return (RTSR) is more than 9 percentage points higher."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        95,
+                        2343,
+                        1267,
+                        2790
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                95,
+                                2343,
+                                1267,
+                                2790
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        95,
+                                        2343,
+                                        1267,
+                                        2790
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                95,
+                                                2343,
+                                                1267,
+                                                2790
+                                            ],
+                                            "type": "image",
+                                            "image_path": "6a875102400213cc0fbc32c0fc5c8d74987df5640bb8b03abd0d49579bf6ef53.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        },
+                        {
+                            "bbox": [
+                                1000,
+                                2762,
+                                1084,
+                                2801
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1000,
+                                        2762,
+                                        1084,
+                                        2801
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1000,
+                                                2762,
+                                                1084,
+                                                2801
+                                            ],
+                                            "type": "text",
+                                            "content": "Year 2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "bbox": [
+                        174,
+                        2880,
+                        590,
+                        2971
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                174,
+                                2880,
+                                590,
+                                2971
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        174,
+                                        2880,
+                                        590,
+                                        2971
+                                    ],
+                                    "type": "text",
+                                    "content": "BOLDNESS PAYS OFF, AS DOWNTURN"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        132,
+                        3141,
+                        591,
+                        3311
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                132,
+                                3141,
+                                591,
+                                3311
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        132,
+                                        3141,
+                                        591,
+                                        3311
+                                    ],
+                                    "type": "text",
+                                    "content": "In a weak economy, noncore deals (acquisitions outside the buyer's industry) create more value than core deals: 1-year RTSR is 3.9 percentage points higher"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        776,
+                        2943,
+                        973,
+                        2982
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                776,
+                                2943,
+                                973,
+                                2982
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        776,
+                                        2943,
+                                        973,
+                                        2982
+                                    ],
+                                    "type": "text",
+                                    "content": "1-YEAR RTSR (%)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        781,
+                        3016,
+                        1356,
+                        3311
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                781,
+                                3016,
+                                1356,
+                                3311
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        781,
+                                        3016,
+                                        1356,
+                                        3311
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                781,
+                                                3016,
+                                                1356,
+                                                3311
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e7cab1583f27574f527a09ac4530a15027c81a26dcf4f372c133ad01f06ac168.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                894,
+                                3322,
+                                1062,
+                                3390
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        894,
+                                        3322,
+                                        1062,
+                                        3390
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                894,
+                                                3322,
+                                                1062,
+                                                3390
+                                            ],
+                                            "type": "text",
+                                            "content": "Core segment acquisition"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        },
+                        {
+                            "bbox": [
+                                1101,
+                                3322,
+                                1320,
+                                3396
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1101,
+                                        3322,
+                                        1320,
+                                        3396
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1101,
+                                                3322,
+                                                1320,
+                                                3396
+                                            ],
+                                            "type": "text",
+                                            "content": "Noncore segment acquisition"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "bbox": [
+                        80,
+                        3418,
+                        588,
+                        3463
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                80,
+                                3418,
+                                588,
+                                3463
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        3418,
+                                        588,
+                                        3463
+                                    ],
+                                    "type": "text",
+                                    "content": "EXPERIENCE MATTERS, A"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        84,
+                        3458,
+                        590,
+                        3611
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                3458,
+                                590,
+                                3611
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        3458,
+                                        590,
+                                        3611
+                                    ],
+                                    "type": "text",
+                                    "content": "LOT, WHEN IT COMES TO CREATING VALUE FROM WEAK-ECONOMY DEALS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        100,
+                        3628,
+                        590,
+                        3797
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                100,
+                                3628,
+                                590,
+                                3797
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        100,
+                                        3628,
+                                        590,
+                                        3797
+                                    ],
+                                    "type": "text",
+                                    "content": "In a downturn, experienced buyers create significantly more value from M&A than occasional buyers: 2-year RTSR of 7.3% for experienced versus 1.4% for occasional"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        777,
+                        3480,
+                        974,
+                        3520
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                777,
+                                3480,
+                                974,
+                                3520
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        777,
+                                        3480,
+                                        974,
+                                        3520
+                                    ],
+                                    "type": "text",
+                                    "content": "2-YEAR RTSR (%)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        783,
+                        3548,
+                        1324,
+                        3826
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                783,
+                                3548,
+                                1324,
+                                3826
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        783,
+                                        3548,
+                                        1324,
+                                        3826
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                783,
+                                                3548,
+                                                1324,
+                                                3826
+                                            ],
+                                            "type": "image",
+                                            "image_path": "7033a7c137c9a59b4476b22caba034bb5f17424ed4bea273e4d42f331d61c61f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21
+                        },
+                        {
+                            "bbox": [
+                                842,
+                                3843,
+                                1185,
+                                3882
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        842,
+                                        3843,
+                                        1185,
+                                        3882
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                842,
+                                                3843,
+                                                1185,
+                                                3882
+                                            ],
+                                            "type": "text",
+                                            "content": "Experienced Occasional"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        51,
+                        4063,
+                        923,
+                        4160
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                4063,
+                                923,
+                                4160
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        4063,
+                                        923,
+                                        4160
+                                    ],
+                                    "type": "text",
+                                    "content": "TO MASTER M&A IN A DOWNTURN, BUYERS SHOULD FOLLOW A SET OF IMPERATIVES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        511,
+                        4205,
+                        796,
+                        4465
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                511,
+                                4205,
+                                796,
+                                4465
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        511,
+                                        4205,
+                                        796,
+                                        4465
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                511,
+                                                4205,
+                                                796,
+                                                4465
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4012ef5d99af405d1142695faee987ebec57d6cfef7ca819f533c5360ea92d03.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 24
+                        }
+                    ],
+                    "index": 24
+                },
+                {
+                    "bbox": [
+                        516,
+                        4482,
+                        705,
+                        4522
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                516,
+                                4482,
+                                705,
+                                4522
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        516,
+                                        4482,
+                                        705,
+                                        4522
+                                    ],
+                                    "type": "text",
+                                    "content": "Be prepared"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        515,
+                        4528,
+                        905,
+                        4669
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                515,
+                                4528,
+                                905,
+                                4669
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        515,
+                                        4528,
+                                        905,
+                                        4669
+                                    ],
+                                    "type": "text",
+                                    "content": "Put in place an ongoing target-screening process that covers strategic priorities — it’s a no-regrets move"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        251,
+                        4714,
+                        531,
+                        4901
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                251,
+                                4714,
+                                531,
+                                4901
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        251,
+                                        4714,
+                                        531,
+                                        4901
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                251,
+                                                4714,
+                                                531,
+                                                4901
+                                            ],
+                                            "type": "image",
+                                            "image_path": "2b3628382afdef5c4748aa32eeb48abcc4de0bc62cb462e076072db934dd8c7e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 27
+                        }
+                    ],
+                    "index": 27
+                },
+                {
+                    "bbox": [
+                        239,
+                        4895,
+                        358,
+                        4935
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                239,
+                                4895,
+                                358,
+                                4935
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        239,
+                                        4895,
+                                        358,
+                                        4935
+                                    ],
+                                    "type": "text",
+                                    "content": "Be bold"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        236,
+                        4935,
+                        663,
+                        5077
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                236,
+                                4935,
+                                663,
+                                5077
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        236,
+                                        4935,
+                                        663,
+                                        5077
+                                    ],
+                                    "type": "text",
+                                    "content": "Boldly pursue downturn M&A opportunities if they materialize — downturns are, on average, good times to make deals"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        950,
+                        4827,
+                        1199,
+                        4963
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                950,
+                                4827,
+                                1199,
+                                4963
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        950,
+                                        4827,
+                                        1199,
+                                        4963
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                950,
+                                                4827,
+                                                1199,
+                                                4963
+                                            ],
+                                            "type": "image",
+                                            "image_path": "0ce7ba838495f813dcdbd3cf3098bfe5e9581a3c9dd21cbb33f1017df40b8f00.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 30
+                        }
+                    ],
+                    "index": 30
+                },
+                {
+                    "bbox": [
+                        911,
+                        4986,
+                        1179,
+                        5026
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                911,
+                                4986,
+                                1179,
+                                5026
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        911,
+                                        4986,
+                                        1179,
+                                        5026
+                                    ],
+                                    "type": "text",
+                                    "content": "Be transformative"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        908,
+                        5031,
+                        1317,
+                        5167
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                908,
+                                5031,
+                                1317,
+                                5167
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        908,
+                                        5031,
+                                        1317,
+                                        5167
+                                    ],
+                                    "type": "text",
+                                    "content": "Use transformational deals to stay ahead of the curve and accelerate out of the recession when the upturn starts"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.4"
+}

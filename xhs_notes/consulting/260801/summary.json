@@ -1,0 +1,528 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "经济越差，并购反而更",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "宏观环境环境->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "宏观环境环境->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "宏观环境环境->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：弱宏观环境周期并购的长期回报高于强周期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651.pdf",
+      "cleaned_source_title": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0001BCGDelvingDeeperi",
+      "raw_candidates": [
+        "波士顿咨询：弱宏观环境周期并购的长期回报高于强周期",
+        "波士顿咨询：弱宏观环境周期并购两年期回报高9个百分点",
+        "波士顿咨询：弱宏观环境周期并购回报与经验分层研究"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：弱宏观环境周期并购的长期回报高于强周期",
+        "波士顿咨询：弱宏观环境周期并购两年期回报高9个百分点",
+        "波士顿咨询：弱宏观环境周期并购回报与经验分层研究",
+        "波士顿咨询：0001BCGDelvingDeeperi",
+        "波士顿咨询：1.弱宏观环境周期交易的两年期回报优势超过9个百分点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：弱宏观环境周期并购两年期回报高9个百分点",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "波士顿咨询：弱宏观环境周期并购回报与经验分层研究",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0001BCGDelvingDeeperi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.弱宏观环境周期交易的两年期回报优势超过9个百分点",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：弱宏观环境周期并购的长期回报高于强周期",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：弱宏观环境周期并购的长期回报高于强周期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "经济下行期，并购交易",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "危机->扰动 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "危机->扰动 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：并购交易在调整期保持推进",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922.pdf",
+      "cleaned_source_title": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0002BCGKeepingMADeals",
+      "raw_candidates": [
+        "波士顿咨询：并购交易在调整期保持推进",
+        "波士顿咨询：73%并购交易估值重谈，2020年夏末回暖",
+        "波士顿咨询：并购交易调整期推进策略与情景规划"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：并购交易在调整期保持推进",
+        "波士顿咨询：73%并购交易估值重谈，2020年夏末回暖",
+        "波士顿咨询：并购交易调整期推进策略与情景规划",
+        "波士顿咨询：0002BCGKeepingMADeals",
+        "波士顿咨询：这是波士顿咨询在2020年疫情冲击下对全球并购从业者所做调"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：73%并购交易估值重谈，2020年夏末回暖",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：并购交易调整期推进策略与情景规划",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0002BCGKeepingMADeals",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：这是波士顿咨询在2020年疫情冲击下对全球并购从业者所做调",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：并购交易在调整期保持推进",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：并购交易在调整期保持推进"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0003-BCG_Mind-the-Belief-Gap_90ec8d53.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "团队没业绩，先别急着",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_Mind-the-Belief-Gap_90ec8d53.pdf",
+      "cleaned_source_title": "0003-BCG_Mind-the-Belief-Gap_90ec8d53",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+      "raw_candidates": [
+        "波士顿咨询：领导力团队信念差距与业绩表现",
+        "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+        "波士顿咨询：领导力信念差距与业绩表现关系研究"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：领导力团队信念差距与业绩表现",
+        "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+        "波士顿咨询：领导力信念差距与业绩表现关系研究",
+        "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+        "波士顿咨询：波士顿咨询（BCG）在2026年3月对11个市场563名高"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2026年调查显示63%领导者未为长期成功做好准备",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：波士顿咨询（BCG）在2026年3月对11个市场563名高",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：领导力团队信念差距与业绩表现",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0004-BCG_The-Cost-of-Caution-with-AI-Investments_61787743.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI省钱省错了？BC",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-BCG_The-Cost-of-Caution-with-AI-Investments_61787743.pdf",
+      "cleaned_source_title": "0004-BCG_The-Cost-of-Caution-with-AI-Investments",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+      "raw_candidates": [
+        "波士顿咨询：AI投入谨慎与经营回报差距",
+        "波士顿咨询：AI投入差距与经营回报数据",
+        "波士顿咨询：AI投入与全球企业成本回报研究"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：AI投入谨慎与经营回报差距",
+        "波士顿咨询：AI投入差距与经营回报数据",
+        "波士顿咨询：AI投入与全球企业成本回报研究",
+        "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+        "波士顿咨询：投入较高的企业将约1.7%的营收用于AI相关建设"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：AI投入与全球企业成本回报研究",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：投入较高的企业将约1.7%的营收用于AI相关建设",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：AI投入谨慎与经营回报差距",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_dal_0mf6/pdfs/0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "非洲并购正在悄悄换主",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融->资金 x2",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "投资组合->组合观察 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3.pdf",
+      "cleaned_source_title": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0005BCGWhatsNew和Nextf",
+      "raw_candidates": [
+        "波士顿咨询：非洲并购新趋势与疫情后恢复路径",
+        "波士顿咨询：非洲并购五趋势与2020至2021年交易量下降40%",
+        "波士顿咨询：非洲并购五趋势与本土收购方份额上升"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：非洲并购新趋势与疫情后恢复路径",
+        "波士顿咨询：非洲并购五趋势与2020至2021年交易量下降40%",
+        "波士顿咨询：非洲并购五趋势与本土收购方份额上升",
+        "波士顿咨询：0005BCGWhatsNew和Nextf",
+        "波士顿咨询：预计，2020至2021年非洲并购交易量可能下降约40%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：非洲并购五趋势与2020至2021年交易量下降40%",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "波士顿咨询：非洲并购五趋势与本土收购方份额上升",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0005BCGWhatsNew和Nextf",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：预计，2020至2021年非洲并购交易量可能下降约40%",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：非洲并购新趋势与疫情后恢复路径",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

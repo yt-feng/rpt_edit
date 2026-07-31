@@ -1,0 +1,2808 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.053,
+                0.433,
+                0.246,
+                0.449
+            ],
+            "angle": 0,
+            "content": "LEADERSHIP DEVELOPMENT",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.045,
+                0.478,
+                0.673,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Mind the Belief Gap"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.558,
+                0.339,
+                0.576
+            ],
+            "angle": 0,
+            "content": "By Fanny Potier and Brittany Heflin",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.601,
+                0.361,
+                0.619
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 31, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.679,
+                0.916,
+                0.74
+            ],
+            "angle": 0,
+            "content": "When a leadership team underperforms, the first explanations are often external. The market shifted. A competitor got aggressive. The technology moved faster than anyone expected and planned for.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.754,
+                0.94,
+                0.795
+            ],
+            "angle": 0,
+            "content": "Sometimes that's the whole story. More often, it's the comfortable version of a harder reality: the team acted on an assumption that it stopped examining.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.808,
+                0.932,
+                0.888
+            ],
+            "angle": 0,
+            "content": "That was Hubert Joly's diagnosis when he became CEO of Best Buy in 2012. The company had plenty of reasons to blame the market for its struggles. Consumers were moving online. Apple was opening its own stores. Devices were converging. Whatever the precise mix of factors might be, Best Buy was losing ground.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.437,
+                0.243,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.476,
+                0.675,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.56,
+                0.336,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.604,
+                0.357,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.681,
+                0.914,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.702,
+                0.905,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.722,
+                0.158,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.757,
+                0.937,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.775,
+                0.572,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.811,
+                0.913,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.832,
+                0.915,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.85,
+                0.927,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.87,
+                0.338,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.944,
+                0.148
+            ],
+            "angle": 0,
+            "content": "But Joly was not convinced that these headwinds were the fundamental source of the company's difficulties. If some of those same forces were helping Amazon and Apple, then, as he put it, “The wind is probably not the problem. We must be the problem.” That conclusion marked a shift in belief from “the market is doing this to us” to “we're still in charge of what we can change.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.16,
+                0.952,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Most leadership teams carry these kinds of unexamined assumptions, whether about the market, their own limits, or what good leadership demands of them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.216,
+                0.956,
+                0.335
+            ],
+            "angle": 0,
+            "content": "In a recent BCG survey of 563 senior leaders across 11 markets, \\(63\\%\\) said that the senior leaders in their organization are not well prepared for what long-term success will require. The survey also found a sharp split between teams that treat leadership growth as real work and teams that don't. Those that reframe beliefs, practice deliberately, and hardwire new behaviors are \\(144\\%\\) as likely as their competitors to outperform and \\(75\\%\\) as likely to report strong long-term preparedness. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.366,
+                0.111,
+                0.381
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.383,
+                0.691,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Leaders Who Reframe, Practice, and Hardwire Are More Likely to Outperform, but Only 15% Do All Three",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.439,
+                0.727,
+                0.65
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.657,
+                0.722,
+                0.718
+            ],
+            "angle": 0,
+            "content": "Source: BCG Global leadership survey, March 2026 (N = 563).\nNote: Spearman's rank correlations show statistically significant associations between reframe, practice, and hardwire behaviors and long-term preparedness and competitive performance ( \\( \\rho = 0.15-0.35 \\) ).\n \\( ^{1} \\) “Senior leaders at my organization actively challenge assumptions about leadership and demonstrate a willingness to adapt their beliefs to meet evolving business and organizational needs.”\n \\( ^{2} \\) “Senior leaders in my organization regularly and intentionally experiment with evolving leadership behaviors in their day-to-day work, seek feedback, and adapt based on what they learn.”\n \\( ^{3} \\) “Senior leaders in my organization consistently work to ensure systems, structures, or routines within the organization reinforce and support leadership growth.”"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.754,
+                0.955,
+                0.874
+            ],
+            "angle": 0,
+            "content": "Reframing beliefs is the hardest of the three changes to implement and the area that most often separates teams that pull ahead from the teams that stall. It’s also the endeavor that most teams get wrong. We call this struggle the belief gap—the distance between what a leadership team knows good leadership requires and what it can actually get itself to do. It closes only when a team, together, surfaces the assumptions that it has been running on, tests to determine which still fit, and changes the ones that don’t.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.939,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.938,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.919,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.127,
+                0.878,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.95,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.182,
+                0.59,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.219,
+                0.94,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.238,
+                0.949,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.258,
+                0.953,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.276,
+                0.932,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.296,
+                0.919,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.316,
+                0.184,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.369,
+                0.108,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.384,
+                0.687,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.404,
+                0.435,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.756,
+                0.937,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.777,
+                0.95,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.796,
+                0.899,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.817,
+                0.906,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.836,
+                0.921,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.855,
+                0.419,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.068,
+                0.499,
+                0.106
+            ],
+            "angle": 0,
+            "content": "Belief Comes First"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.136,
+                0.954,
+                0.215
+            ],
+            "angle": 0,
+            "content": "A belief, in this context, is a shared assumption that a team acts on together: what it treats as possible, what it treats as risky, or what it expects will be rewarded. Although rarely stated outright, beliefs surface in such forms as how a team spends its time, what it does under pressure, and how it reacts to failure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.229,
+                0.95,
+                0.33
+            ],
+            "angle": 0,
+            "content": "The stated value of something and the working assumption surrounding it are often very different things. A team may say that it values learning but then treat learning as time away from real work. It may say that collaboration matters but then reward people who look out for themselves. It may say that empathy is essential but then treat it as a soft skill that gets in the way when results are on the line. The working assumptions, not the stated values, are what a team runs on.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.343,
+                0.947,
+                0.383
+            ],
+            "angle": 0,
+            "content": "A leadership team grows, evolves, and adapts to what the market demands in three ways, and our survey measured all three:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.412,
+                0.42,
+                0.431
+            ],
+            "angle": 0,
+            "content": "- Reframe the beliefs that leaders hold.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.447,
+                0.397,
+                0.466
+            ],
+            "angle": 0,
+            "content": "• Practice new behavior deliberately.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.482,
+                0.543,
+                0.501
+            ],
+            "angle": 0,
+            "content": "- Hardwire the new behavior into how the team runs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.531,
+                0.906,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Only 15% of the leaders surveyed do all three of these things consistently. Of the three, one carries disproportionate weight: leaders who actively reframe beliefs are 168% more likely to outperform their competitors, a bigger effect than practicing or hardwiring on its own.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.606,
+                0.954,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Why does belief so often determine whether practice and hardwiring stick? Ginni Rometty, who led IBM through its reinvention, puts it simply: “until you experience it, you don’t really believe it.” You can’t argue a team into a belief. People have to live it before it takes hold, which is why belief is usually where lasting change begins, not where it ends.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.7,
+                0.951,
+                0.82
+            ],
+            "angle": 0,
+            "content": "Consider the two things that leaders most often credit for their own growth. Having a growth mindset (63%) and embracing discomfort and uncertainty (51%) may sound like capabilities, but both reflect assumptions that leaders hold about themselves. (See Exhibit 2.) A growth mindset means believing that what worked before may no longer be enough. Embracing discomfort means accepting, as Rometty puts it, that “growth and comfort can never coexist”—that there’s no development without going through some discomfort.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.498,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.137,
+                0.909,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.157,
+                0.876,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.177,
+                0.95,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.195,
+                0.298,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.23,
+                0.946,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.251,
+                0.948,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.271,
+                0.943,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.29,
+                0.942,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.311,
+                0.835,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.345,
+                0.943,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.363,
+                0.294,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.413,
+                0.418,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.448,
+                0.393,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.483,
+                0.54,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.892,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.553,
+                0.9,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.575,
+                0.831,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.608,
+                0.951,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.628,
+                0.913,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.648,
+                0.939,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.668,
+                0.575,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.702,
+                0.892,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.721,
+                0.936,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.929,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.762,
+                0.947,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.781,
+                0.892,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.537,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.11,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.081,
+                0.705,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Leadership Teams Should Reframe, Practice, and Hardwire, but the Highest Return Lies in Reframing Beliefs",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.041,
+                0.14,
+                0.607,
+                0.172
+            ],
+            "angle": 0,
+            "content": "Leadership growth accelerators | Q: What factors have most accelerated your growth as a leader? LEADERS WHO LISTED THE SPECIFIED ACCELERATOR AS A TOP 3 FACTOR (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.047,
+                0.158,
+                0.728,
+                0.414
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.427,
+                0.286,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Source: BCG Global leadership survey, March 2026 (N = 563)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.473,
+                0.956,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Some leaders won't step into discomfort on their own, and moving them takes more than a good argument. For Rometty, it meant helping them experience the belief rather than debate it, often by drawing on their own history. Most people have weathered something hard; and viewed next to that, a professional risk looks smaller than it might in isolation. When someone had less personal experience to draw on, Rometty would talk through the possible worst-case outcome until it lost its grip, and then help the leader take a small first step and see that it held.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.606,
+                0.946,
+                0.706
+            ],
+            "angle": 0,
+            "content": "Joly’s own instinct fit a similar pattern. He didn’t start with a strategy offsite. He spent a week working in Best Buy stores, wearing a “CEO in training” badge and asking employees three questions: what’s working, what’s not, and what do you need? The experience shifted his sense of where the truth was and what it would take to act on it: less talking from the top, more doing based on what the floor already knew.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.776,
+                0.616,
+                0.818
+            ],
+            "angle": 0,
+            "content": "One Mind Isn't Enough"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.844,
+                0.953,
+                0.923
+            ],
+            "angle": 0,
+            "content": "When one leader holds an unexamined belief, it’s a personal blind spot. When a whole leadership team shares one, it becomes a ceiling to what the organization thinks is possible. Reframing is likelier to succeed on teams drawn from different backgrounds and skills, where discussion and dissent are welcome. It stalls in situations where a team’s shared assumptions and unspoken",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.108,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.083,
+                0.701,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.102,
+                0.444,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.475,
+                0.931,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.495,
+                0.93,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.513,
+                0.944,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.534,
+                0.953,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.553,
+                0.934,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.573,
+                0.745,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.609,
+                0.91,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.628,
+                0.883,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.649,
+                0.941,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.666,
+                0.897,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.686,
+                0.397,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.775,
+                0.616,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.844,
+                0.947,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.865,
+                0.915,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.885,
+                0.927,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.905,
+                0.912,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.126
+            ],
+            "angle": 0,
+            "content": "norms prevent new ideas from ever surfacing. A single leader can change what she believes, but if she walks back into a team whose shared assumptions haven't moved, the old behavior will pull her back.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.142,
+                0.955,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Joly’s second shift at Best Buy was to deal with the latter issue. The company had been running as a set of departments each optimizing for itself, and the underlying belief was that value creation is a zero-sum contest, both inside the company and with suppliers. He moved the team to act in support of “one team, one dream, one Best Buy,” putting every officer on a single set of goals and a single bonus tied to the company’s overall performance. The belief had to move across the team, incentives and all. One leader changing his mind would not have been enough.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.275,
+                0.949,
+                0.414
+            ],
+            "angle": 0,
+            "content": "In many cases, shared assumptions that a team never examines show up later as obstacles that it complains about. When leaders name what gets in the way of their own growth, the most common answers—unclear expectations, lack of strategic clarity, inadequate attention to learning—look like process problems, but each tends to sit on an assumption that no one has questioned. The most frequent of these may be the idea that leadership development is separate from the real work. You can hardwire every system you want, but if the team’s shared belief hasn’t shifted, behavior reverts to its previous norms.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.484,
+                0.863,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Leaders Know What Good Looks\nLike"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.591,
+                0.936,
+                0.672
+            ],
+            "angle": 0,
+            "content": "This is not a knowledge problem. Ask senior leaders which qualities matter, and they will answer without hesitation: empathy, clarity, courage, vision, and the ability to lead across functions and boundaries, which the survey calls superteaming. That list has remained strikingly stable, closely matching the qualities that leaders named in our previous leadership research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.684,
+                0.931,
+                0.784
+            ],
+            "angle": 0,
+            "content": "The problem is performance. Teams fall shortest on some of the qualities they rank highest. Empathy is the clearest case: 41% of leaders identify it as a top-three quality, but only 16% say that senior leaders in their organization excel at it, a 25-percentage-point gap. Likewise, clarity shows a 22-percentage-point gap. Leaders fall short exactly where they say they care most. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.952,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.933,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.132,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.143,
+                0.953,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.163,
+                0.934,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.932,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.947,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.222,
+                0.903,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.243,
+                0.829,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.277,
+                0.936,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.296,
+                0.879,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.317,
+                0.877,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.92,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.356,
+                0.943,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.375,
+                0.944,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.394,
+                0.475,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.483,
+                0.863,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.523,
+                0.155,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.593,
+                0.933,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.614,
+                0.923,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.633,
+                0.923,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.652,
+                0.775,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.686,
+                0.892,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.707,
+                0.917,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.917,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.746,
+                0.927,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.766,
+                0.138,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.082,
+                0.662,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Leaders Underperform on the Characteristics That Matter Most"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.114,
+                0.428,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Top 5 most important leadership characteristics and performance LEADERS WHO SELECTED THE QUALITY AS A TOP 3 CHARACTERISTIC"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.047,
+                0.152,
+                0.728,
+                0.353
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.375,
+                0.26,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Source: BCG leadership survey, March 2026 (N = 563)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.382,
+                0.712,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Source: BCG leadership survey, March 2020 (N = 503).\n\nNote: Gaps were calculated as the difference between the share of respondents selecting each characteristic as a top 3 priority and the share indicating strong performance; characteristics are ranked by largest positive gaps."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.398,
+                0.7,
+                0.417
+            ],
+            "angle": 0,
+            "content": "2“What are the top 3 most important leadership qualities for senior leaders to drive long-term organizational success, employee engagement, and customer satisfaction?”\n2“What are the top 3 leadership qualities senior leaders at your organization currently excel at?”"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.45,
+                0.949,
+                0.53
+            ],
+            "angle": 0,
+            "content": "These gaps don't signal a lack of skill. They come from believing that using these qualities would cost them something. The empathy gap arises out of the assumption that real empathy would erode a team's accountability. The clarity gap rests on the assumption that admitting uncertainty would cost a leader authority.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.544,
+                0.954,
+                0.644
+            ],
+            "angle": 0,
+            "content": "This is where Joly and Rometty landed when we asked them what had been the most difficult thing to change. For Rometty the hardest shift was accepting that empathy takes vulnerability, and that vulnerability builds followership instead of undercutting it. For Joly the hardest thing he had to learn was to say, “I don’t know” and “I need help.” Both leaders approached the question from different directions but landed in the same place: admitting a limit makes a leader stronger.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.717,
+                0.359,
+                0.752
+            ],
+            "angle": 0,
+            "content": "How to Start"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.782,
+                0.955,
+                0.823
+            ],
+            "angle": 0,
+            "content": "In order to shift a shared belief, a team must surface the assumptions that it has been running on, examine them together, and be willing to find that some no longer fit. Here are a few ways in:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.851,
+                0.907,
+                0.932
+            ],
+            "angle": 0,
+            "content": "- Name the belief underlying the decision. Before making a major call, have the team finish the sentence: “We’re doing this because we believe…” Run it backward on decisions that didn’t land: “We did that because we believed… Was that accurate?” Teams often find that they’ve been acting collectively on an assumption that stopped being true a while ago.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.658,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.452,
+                0.935,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.472,
+                0.909,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.492,
+                0.944,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.511,
+                0.319,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.546,
+                0.951,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.566,
+                0.945,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.586,
+                0.913,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.605,
+                0.913,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.624,
+                0.894,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.715,
+                0.36,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.783,
+                0.952,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.803,
+                0.899,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.853,
+                0.903,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.873,
+                0.892,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.893,
+                0.901,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.912,
+                0.871,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.931,
+                0.226
+            ],
+            "angle": 0,
+            "content": "- Challenge the false tradeoff. Leadership teams often make false choices, such as between individualism and collaboration or between strategic clarity and tolerance for ambiguity. A team needs both. Running a polarity workshop can help surface the belief that a team has defaulted to in situations that call for more of the other side. It treats two seemingly opposed sides as a tension to manage, not a choice to settle once and for all, since the right balance shifts with the business context. The team works from a real decision that it has faced. For example, a team that leans on consensus by default can learn to recognize situations where a call needs fewer voices and a faster owner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.241,
+                0.912,
+                0.339
+            ],
+            "angle": 0,
+            "content": "- Audit the two widest gaps. The empathy gap and the clarity gap arise from beliefs that are consistent across teams: that showing vulnerability will undermine authority, and that admitting uncertainty will create panic. Those beliefs won't shift until they are exposed to light, which is why the right question isn't “How do we get better at empathy?” but “What would have to be true for us to exhibit empathy when the pressure is on?”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.354,
+                0.927,
+                0.493
+            ],
+            "angle": 0,
+            "content": "- Treat leadership development as a team sport, not a matter of individual enrichment. The belief that most often blocks leadership growth is that development belongs in a program, separate from actual work. At Best Buy, Joly restructured the way the team worked together, identifying one set of goals and establishing one bonus tied to company performance, so that every officer's incentives pointed the same direction. People who had been protecting their own departments began acting differently. The organization had created the conditions necessary to nurture a different belief.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.507,
+                0.927,
+                0.646
+            ],
+            "angle": 0,
+            "content": "- Make the new belief experiential, then wire it in. When Rometty needed to shift the way nearly half a million IBM employees worked, she started with three beliefs, translated them into nine behaviors, and asked the workforce to define what each one looked like at its best. Every meeting opened with a story about one of the behaviors, and the company rewarded and celebrated those stories. Only after that did Rometty hardwire the behaviors into promotion criteria and pulse surveys. A system that is installed before people have lived the belief is easy to ignore. The story has to come first.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.711,
+                0.955,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Naming beliefs is the easy part. The harder thing is getting a team to look at its own assumptions together, discuss them out loud, and recognize the fact that some of them no longer fit. Most leaders would rather do almost anything else. Joly's teams didn't turn Best Buy around by working harder at what they already believed. They started the comeback by admitting that the market was not the only thing that had to change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.825,
+                0.924,
+                0.864
+            ],
+            "angle": 0,
+            "content": "That shift is what separates the teams that move from the ones that stall, and no single leader can make it happen alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.906,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.088,
+                0.903,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.903,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.127,
+                0.928,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.147,
+                0.914,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.897,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.188,
+                0.924,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.207,
+                0.48,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.908,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.263,
+                0.86,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.282,
+                0.894,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.301,
+                0.884,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.321,
+                0.746,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.356,
+                0.921,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.375,
+                0.908,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.394,
+                0.912,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.414,
+                0.891,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.435,
+                0.906,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.454,
+                0.921,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.474,
+                0.426,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.508,
+                0.882,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.528,
+                0.917,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.549,
+                0.92,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.567,
+                0.903,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.587,
+                0.852,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.608,
+                0.921,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.627,
+                0.535,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.714,
+                0.943,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.733,
+                0.897,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.751,
+                0.952,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.773,
+                0.918,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.792,
+                0.434,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.826,
+                0.92,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.847,
+                0.295,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.22,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.19,
+                0.388,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Fanny Potier"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.223,
+                0.422,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Partner & Director, People Strategy & Leadership Paris"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.186,
+                0.684,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.19,
+                0.872,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Brittany Heflin"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.222,
+                0.92,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Associate Director, Leadership, Culture & Change\nHouston"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.381,
+                0.436,
+                0.399
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.415,
+                0.952,
+                0.537
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.384,
+                0.433,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.419,
+                0.95,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.437,
+                0.9,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.457,
+                0.905,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.477,
+                0.912,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.496,
+                0.934,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.517,
+                0.594,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
