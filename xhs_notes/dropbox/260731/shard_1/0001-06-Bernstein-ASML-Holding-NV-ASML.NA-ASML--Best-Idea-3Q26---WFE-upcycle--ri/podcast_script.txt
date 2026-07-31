@@ -1,0 +1,115 @@
+# 中文脚本
+
+ZH_A: 最近半导体设备板块波动很大，但有一份报告在ASML股价回调之后反而给出了非常高的目标价，上调空间接近百分之八十。这份报告到底看到了什么市场没看到的东西？
+
+ZH_B: 核心判断很直接。某外资投行把ASML列为三季度最佳投资标的，目标价定在两千五百欧元。他们认为市场低估了两件事，一是光刻强度持续上升，二是阿斯麦的涨价能力被完全忽视了。
+
+ZH_A: 光刻强度这个词听起来很专业，能不能先解释一下它为什么重要？
+
+ZH_B: 简单说，光刻强度就是晶圆制造设备支出里，花在光刻环节的比例。这个比例过去大概在百分之二十左右，但报告预测到2028年会上升到百分之二十八。原因是存储芯片和先进逻辑芯片的增长速度明显快于整个半导体行业，而这两个领域恰恰是光刻最密集的。
+
+ZH_A: 也就是说，即使整体设备支出增长放缓，光刻部分也会跑赢大盘？
+
+ZH_B: 对，这就是阿斯麦增长可见性最高的原因。特别是存储芯片，报告认为DRAM已经取代逻辑芯片，成为阿斯麦光刻需求的最大增长引擎。
+
+ZH_A: 这个变化很关键，DRAM为什么突然变得这么重要？
+
+ZH_B: 两个原因叠加。第一，DRAM向更先进节点迁移，EUV光刻层数从一a节点的两三层，增加到一c节点的六七层，到一d节点可能到八层。第二，存储原厂在大力扩产，HBM和DDR供不应求，带动资本开支大幅增长。阿斯麦自己都说了，2026年存储系统销售要增长百分之七十五以上。
+
+ZH_A: 那这意味着什么？对阿斯麦的收入结构会有什么影响？
+
+ZH_B: 影响非常直接。过去存储占阿斯麦系统销售的百分之三十左右，现在已经接近百分之五十。报告预计未来五年DRAM的EUV曝光量要增长四倍半，而逻辑芯片只增长三倍。存储已经成为阿斯麦最强大的增长引擎。
+
+ZH_A: 那第二个被低估的因素，涨价能力，这个市场为什么没有充分定价？
+
+ZH_B: 报告拆成两部分。第一是产品迭代带来的涨价，从3800E升级到3800F，两年内EUV价格要上涨百分之二十。第二部分是同等配置下的直接提价。报告认为第一部分经常被忽略，第二部分市场预期里完全没有。
+
+ZH_A: 涨价对利润率的影响有多大？
+
+ZH_B: 光是第一部分涨价，就能把EUV的毛利率推到百分之六十以上。如果第二部分也实现，那还有进一步上升空间。报告还发现一个佐证，日本设备厂商已经开始确认涨价，这说明阿斯麦跟进提价的可能性很大。
+
+ZH_A: 说到阿斯麦，市场还有一个担心是中国市场。中国正在自主研发DUV光刻机，这是不是长期威胁？
+
+ZH_B: 报告认为这个担心被夸大了。中国确实在研发ArFi机型，但短期内很难跟阿斯麦竞争。而且阿斯麦来自中国的收入占比已经降到百分之十六，在设备同行里是最低的。更重要的逻辑是，中国无法获得EUV，只能大量采购DUV，中国先进逻辑产能扩张反而会给阿斯麦的DUV业务带来结构性支撑。
+
+ZH_A: 说到DUV，市场注意力都在EUV上，DUV是不是被忽视了？
+
+ZH_B: 非常被忽视。报告强调了一个关键比例，DUV和EUV的资本开支比大约是一比一。也就是说，每花一块钱在EUV上，就会对应一块钱的DUV需求。在DRAM领域，即使到了一c节点，DUV仍然占光刻支出的一半。所以EUV增长越快，DUV也跟着增长。
+
+ZH_A: 这个逻辑很有意思。那估值呢？报告提到的风险回报比为什么这么有吸引力？
+
+ZH_B: 核心是下行保护。股价回调之后，按2028年每股收益计算，市盈率只有二十倍。报告说这个估值水平在历史上几乎从未出现过。而且这个盈利预测还没有包含任何额外涨价的因素。所以目标价两千五百欧元对应大约百分之八十的上行空间，但下行风险相对有限。
+
+ZH_A: 听下来逻辑很完整，但有没有哪些问题报告还没有完全展开？
+
+ZH_B: 有一个关键变量值得关注，就是High-NA EUV的采用节奏。报告认为到2030年，几乎所有领先的DRAM和逻辑厂商都会逐步采用High-NA，但具体的时点因厂商而异。英特尔在18A节点已经率先采用，SK海力士和三星在DRAM上跟进，台积电可能要到10A节点才会大规模引入。这个时间差对阿斯麦的收入节奏影响很大，但报告里没有给出一个统一的采用时间表。
+
+ZH_A: 还有一个问题，中国自主研发的光刻机到底什么时候会形成真正的竞争？报告只说了短期内不会，但长期呢？
+
+ZH_B: 这个问题确实没有完全回答。报告认为中国设备短期内不具备竞争力，但没有给出一个明确的时间框架。考虑到半导体设备的研发周期和生态壁垒，这个时间窗口可能比很多人预期的要长，但具体有多长，还需要继续验证。
+
+ZH_A: 所以如果想知道High-NA的详细采用时间表，以及中国竞争格局的长期判断，还是得去读完整报告？
+
+ZH_B: 没错。报告里还有更详细的DRAM和逻辑芯片逐节点分析，包括每个节点的EUV层数变化、HNA的成本模型、以及DUV在中国的需求拆分。这些内容在完整版里都有展开。
+
+ZH_A: 好的，今天聊得很透。如果大家对完整报告感兴趣，欢迎加入我们的社群，我们会定期分享深度研报解读。我们下期再见。
+
+ZH_B: 下期见。
+
+# English Script
+
+EN_A: So ASML just pulled back quite a bit, but one investment bank just put out a note calling it their top pick with a target price that implies roughly eighty percent upside. What are they seeing that the market isn't?
+
+EN_B: The core argument is pretty straightforward. They rate ASML outperform with a target of twenty-five hundred euros. They think the market is underpricing two things. First, litho intensity keeps going up. Second, ASML's pricing power is being completely ignored.
+
+EN_A: Litho intensity sounds very technical. Can you break that down for us?
+
+EN_B: Sure. It's basically the share of wafer fab equipment spending that goes into lithography. It used to be around twenty percent. The report sees it climbing to twenty-eight percent by twenty-eight. The reason is DRAM and advanced logic are growing faster than the overall semiconductor market, and those two segments are the most litho-intensive.
+
+EN_A: So even if overall equipment spending slows down, lithography keeps outperforming?
+
+EN_B: Exactly. That's why ASML has the best growth visibility in the sector. And here's the big shift. The report says DRAM has now overtaken logic as the main growth driver for ASML's litho demand.
+
+EN_A: That's a big change. Why is DRAM suddenly so important?
+
+EN_B: Two things are happening at once. First, DRAM is moving to more advanced nodes, and each node adds more EUV layers. You go from two or three layers at one-alpha to five at one-c, and up to eight at one-d. Second, memory makers are ramping capacity aggressively because HBM and DDR are in short supply. ASML itself guided memory system sales up more than seventy-five percent year over year in twenty-six.
+
+EN_A: So what does that mean for ASML's revenue mix?
+
+EN_B: It's already visible. Memory used to be about thirty percent of ASML's system sales. Now it's close to fifty percent. The report estimates DRAM EUV exposures will grow four and a half times over the next five years, while logic grows just over three times. Memory is now the more powerful growth engine.
+
+EN_A: Okay, so that's the first underappreciated point. What about pricing power? Why does the market keep missing that?
+
+EN_B: The report breaks it into two parts. First, product migration from the 3800E to the 3800F, which implies a twenty percent price increase over two years. Second, potential like-for-like price hikes to capture more value in the supply chain. The report says the first part is often ignored, and the second part is completely missing from expectations.
+
+EN_A: How much does that move the margin story?
+
+EN_B: Just the first part alone could push EUV gross margins into the mid-sixties. The second part could push even higher. And here's a good tell. Japanese equipment makers have started confirming price hikes. That suggests ASML is likely to follow.
+
+EN_A: Now, the other big concern is China. They're building their own DUV tools. Is that a real threat?
+
+EN_B: The report thinks that concern is overdone. China is reportedly working on ArFi machines, but they won't be competitive with ASML anytime soon. And here's the thing. ASML's China revenue has already dropped to sixteen percent in the first half, the lowest among equipment peers. But China still needs DUV because they can't get EUV. So their capacity expansion actually creates a structural tailwind for ASML's DUV business.
+
+EN_A: Speaking of DUV, everyone focuses on EUV. Is DUV being underappreciated?
+
+EN_B: Very much so. The report highlights a key ratio. The blended DUV to EUV capex ratio is roughly one to one. For every dollar spent on EUV, there's a corresponding dollar of DUV demand. Even at the one-c node, DUV still accounts for about half of DRAM litho spending. So when EUV grows, DUV grows right along with it.
+
+EN_A: That's a helpful framework. Now what about valuation? The risk reward sounds compelling.
+
+EN_B: The downside protection is the key. After the correction, the stock is trading at only twenty times twenty-eight earnings. The report says that multiple has almost never happened historically. And that earnings estimate doesn't even include any additional price hikes. So the target of twenty-five hundred euros gives you roughly eighty percent upside with limited downside.
+
+EN_A: The logic sounds complete. But are there questions the report doesn't fully answer?
+
+EN_B: One big variable is the High-NA EUV adoption timeline. The report expects virtually all leading DRAM and logic players to adopt it by twenty-thirty, but the timing varies a lot by company. Intel is already using it at eighteen-A. SK hynix and Samsung are moving quickly in DRAM. TSMC might wait until around ten-A. That timing difference has a big impact on ASML's revenue trajectory, but the report doesn't give us a single unified adoption schedule.
+
+EN_A: And what about China's domestic lithography? The report says not anytime soon, but what about the longer term?
+
+EN_B: That's another open question. The report argues Chinese tools won't be competitive in the near term, but it doesn't give a clear timeline for when that might change. Given how long semiconductor equipment takes to develop and how hard the ecosystem is to break into, the window could be longer than people think. But that still needs to be validated.
+
+EN_A: So if we want the detailed High-NA adoption timeline and the longer term China picture, we need to read the full report?
+
+EN_B: Exactly. The full report has a node-by-node breakdown for both DRAM and logic, including EUV layer counts, a cost model for High-NA, and a detailed breakdown of DUV demand in China. That's where the real depth is.
+
+EN_A: Great conversation. If you want to dig into the full report, join our community and we'll share the detailed breakdowns. Thanks for listening, and we'll catch you next time.
+
+EN_B: See you next time.

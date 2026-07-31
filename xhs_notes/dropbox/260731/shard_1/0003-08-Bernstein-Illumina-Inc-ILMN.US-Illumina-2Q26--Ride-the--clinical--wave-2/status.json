@@ -1,0 +1,108 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0003-08-Bernstein-Illumina Inc-ILMN.US-Illumina 2Q26- Ride the -clinical- wave-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "临床测序不是悬崖，是",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：Illumina2Q26临床测序装机放量",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-08-Bernstein-Illumina Inc-ILMN.US-Illumina 2Q26- Ride the -clinical- wave-260731.pdf",
+    "cleaned_source_title": "Bernstein-Illumina Inc-ILMN.US-Illumina 2Q26- Ride the -clinical- wave",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：IlluminaIncIllumina2Q26",
+    "raw_candidates": [
+      "Illumina 2Q26临床测序装机放量",
+      "Illumina 2Q26营收11.59亿美元超预期",
+      "Illumina 2Q26临床测序装机与耗材增长"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：Illumina2Q26临床测序装机放量",
+      "Bernstein：Illumina2Q26营收11.59亿美元超预期",
+      "Bernstein：Illumina2Q26临床测序装机与耗材增长",
+      "Bernstein：IlluminaIncIllumina2Q26",
+      "Bernstein：营收11.59亿美元，较市场一致预期高出4%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：Illumina2Q26营收11.59亿美元超预期",
+        "reasons": [
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "Bernstein：IlluminaIncIllumina2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.58"
+        ]
+      },
+      {
+        "title": "Bernstein：营收11.59亿美元，较市场一致预期高出4%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：Illumina2Q26临床测序装机放量",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：Illumina2Q26临床测序装机放量"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "537",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

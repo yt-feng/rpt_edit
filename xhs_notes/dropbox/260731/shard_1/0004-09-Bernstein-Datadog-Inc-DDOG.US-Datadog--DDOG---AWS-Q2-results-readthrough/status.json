@@ -1,0 +1,102 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0004-09-Bernstein-Datadog Inc-DDOG.US-Datadog -DDOG-- AWS Q2 results readthrough to earnings-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "AWS数据回暖，Da",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "股价->报价 x2",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：Datadog，AWS二季度业绩对财报的参考",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-09-Bernstein-Datadog Inc-DDOG.US-Datadog -DDOG-- AWS Q2 results readthrough to earnings-260731.pdf",
+    "cleaned_source_title": "Bernstein-Datadog Inc-DDOG.US-Datadog -DDOG-- AWS Q2 results readthrough to earnings",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：DatadogIncDatadogDDOG",
+    "raw_candidates": [
+      "Datadog：AWS二季度业绩对财报的参考",
+      "Datadog：AWS二季度非AI收入增速指向核心收入提升",
+      "Datadog：AWS二季度数据与核心客户需求关联分析"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：Datadog，AWS二季度业绩对财报的参考",
+      "Bernstein：Datadog，AWS二季度非AI收入增速指向核心收入提升",
+      "Bernstein：Datadog，AWS二季度数据与核心客户需求关联分析",
+      "Bernstein：DatadogIncDatadogDDOG",
+      "Bernstein：AWS二季度收入同比增长36.7%，高于上季度的28.4%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：Datadog，AWS二季度非AI收入增速指向核心收入提升",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "Bernstein：Datadog，AWS二季度数据与核心客户需求关联分析",
+        "reasons": [
+          "anchor_coverage=0.60"
+        ]
+      },
+      {
+        "title": "Bernstein：DatadogIncDatadogDDOG",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：AWS二季度收入同比增长36.7%，高于上季度的28.4%",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：Datadog，AWS二季度业绩对财报的参考",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：Datadog，AWS二季度业绩对财报的参考"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "555",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

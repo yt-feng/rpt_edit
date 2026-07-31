@@ -1,0 +1,112 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0002-07-Bernstein-Budweiser Brewing Co APAC Ltd-1876.HK-Bud APAC Q2- China remains in investment mode as management strive to stabilize the volume decline-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "百威亚太Q2：中国市",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "投资->研究 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "Bernstein：百威亚太业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-07-Bernstein-Budweiser Brewing Co APAC Ltd-1876.HK-Bud APAC Q2- China remains in investment mode as management strive to stabilize the volume decline-260730.pdf",
+    "cleaned_source_title": "Bernstein-Budweiser Brewing Co APAC Ltd-1876.HK-Bud APAC Q2- China remains in investment mode as management strive to stabilize the volume decline",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：BudweiserBrewingCoAPAC",
+    "raw_candidates": [
+      "百威亚太二季度中国区销量下滑近一成",
+      "百威亚太二季度中国区销量下滑9.7%",
+      "百威亚太二季度中国区销量下滑近一成-韩国区增长"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：百威亚太二季度中国区销量下滑近一成",
+      "Bernstein：百威亚太二季度中国区销量下滑9.7%",
+      "Bernstein：百威亚太二季度中国区销量下滑近一成-韩国区增长",
+      "Bernstein：BudweiserBrewingCoAPAC",
+      "Bernstein：中国区销量同比下滑9.7%，较一季度1.5%的降幅显著扩大"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：BudweiserBrewingCoAPAC",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：中国区销量同比下滑9.7%，较一季度1.5%的降幅显著扩大",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：百威亚太业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "9.7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "Bernstein：百威亚太二季度中国区销量下滑9.7%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "Bernstein：百威亚太业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "655",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0001-06-Bernstein-ASML Holding NV-ASML.NA-ASML- Best Idea 3Q26 - WFE upcycle- rising litho intensity- and pricing upside-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0002-07-Bernstein-Budweiser Brewing Co APAC Ltd-1876.HK-Bud APAC Q2- China remains in investment mode as management strive to stabilize the volume decline-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0003-08-Bernstein-Illumina Inc-ILMN.US-Illumina 2Q26- Ride the -clinical- wave-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0004-09-Bernstein-Datadog Inc-DDOG.US-Datadog -DDOG-- AWS Q2 results readthrough to earnings-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0005-10-Bernstein-Xiaomi Corp-1810.HK-Xiaomi- SkyNomad N90 Max - N70 Max Debut - Our thoughts-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

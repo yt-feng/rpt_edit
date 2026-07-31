@@ -1,0 +1,111 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__qgdozem/pdfs/0005-10-Bernstein-Xiaomi Corp-1810.HK-Xiaomi- SkyNomad N90 Max - N70 Max Debut - Our thoughts-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "小米新SUV定价，直",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：N90作为全尺寸7座SUV，纯电续航464公里",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-10-Bernstein-Xiaomi Corp-1810.HK-Xiaomi- SkyNomad N90 Max - N70 Max Debut - Our thoughts-260730.pdf",
+    "cleaned_source_title": "Bernstein-Xiaomi Corp-1810.HK-Xiaomi- SkyNomad N90 Max - N70 Max Debut - Our thoughts",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：XiaomiCorpXiaomi",
+    "raw_candidates": [
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，预售29.99万与25.99万元",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，EREV SUV市场定价",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，预售29.99万与25.99万元",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，EREV SUV市场定价"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：小米SkyNomadN90Max与N70Max发布",
+      "Bernstein：XiaomiCorpXiaomi",
+      "Bernstein：N90作为全尺寸7座SUV，纯电续航464公里"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：小米SkyNomadN90Max与N70Max发布",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：XiaomiCorpXiaomi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：N90作为全尺寸7座SUV，纯电续航464公里",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "464",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "Bernstein：N90作为全尺寸7座SUV，纯电续航464公里",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，预售29.99万与25.99万元",
+      "Bernstein：小米SkyNomad N90 Max与N70 Max发布，EREV SUV市场定价"
+    ],
+    "final_title_after_wording_guard": "Bernstein：N90作为全尺寸7座SUV，纯电续航464公里"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "438",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
