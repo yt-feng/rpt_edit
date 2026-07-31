@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-CHINA INTERNET： AUTO CLASSIFIED 2Q26 Preview： Stepped~Up Growth Investments and Capital Returns Meet Tough Industry Backdrop； Stay Neutral on Tuhu Autohome.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vbg54chg/pdfs/0001-26-GS-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-China Smartphones： Jun shipments ~17% YoY ~36% MoM； High memory costs weigh on demand-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vbg54chg/pdfs/0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Curves， Chips， Crude and Carry-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vbg54chg/pdfs/0003-28-GS-Curves- Chips- Crude and Carry-260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-China： July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vbg54chg/pdfs/0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-EM IN FOCUS EM Output Gaps — Significant Room to Grow， But Mixed Picture-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vbg54chg/pdfs/0005-30-GS-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture-260730.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

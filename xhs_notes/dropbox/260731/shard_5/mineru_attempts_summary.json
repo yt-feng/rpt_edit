@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0001-26-GS-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0003-28-GS-Curves- Chips- Crude and Carry-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0005-30-GS-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

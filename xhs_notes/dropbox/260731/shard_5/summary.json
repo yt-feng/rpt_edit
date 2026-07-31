@@ -1,0 +1,506 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0001-26-GS-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "汽车平台的中报，比想",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：中国汽车互联网平台中期业绩预览-投入与资本回报",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-26-GS-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome.pdf",
+      "cleaned_source_title": "GS-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国INTERNETAUTOCLASSIFIED2Q26",
+      "raw_candidates": [
+        "GS：中国汽车互联网平台中期业绩预览-投入与资本回报",
+        "GS：中国汽车互联网平台中期预览-门店扩张与回购计划",
+        "GS：中国汽车互联网平台中期预览-途虎与汽车之家投入回报"
+      ],
+      "cleaned_candidates": [
+        "GS：中国汽车互联网平台中期业绩预览-投入与资本回报",
+        "GS：中国汽车互联网平台中期预览-门店扩张与回购计划",
+        "GS：中国汽车互联网平台中期预览-途虎与汽车之家投入回报",
+        "GS：中国INTERNETAUTOCLASSIFIED2Q26",
+        "GS：途虎养车在2026年上半年预计净增约900家门店"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国汽车互联网平台中期预览-门店扩张与回购计划",
+          "reasons": [
+            "anchor_coverage=0.52",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国汽车互联网平台中期预览-途虎与汽车之家投入回报",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：中国INTERNETAUTOCLASSIFIED2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：途虎养车在2026年上半年预计净增约900家门店",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：中国汽车互联网平台中期业绩预览-投入与资本回报",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：中国汽车互联网平台中期业绩预览-投入与资本回报"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "6月手机出货跌17%",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：存储行业数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-27-GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731.pdf",
+      "cleaned_source_title": "GS-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国SmartphonesJunshipments17YoY36",
+      "raw_candidates": [
+        "中国智能手机6月出货量同比降17% 存储成本上升压制需求"
+      ],
+      "cleaned_candidates": [
+        "GS：中国智能手机6月出货量同比降17%存储成本上升压制需求",
+        "GS：中国SmartphonesJunshipments17YoY36",
+        "GS：中国智能手机6月出货量同比降17%，存储成本抬升压制需求"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国SmartphonesJunshipments17YoY36",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：存储行业数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国智能手机6月出货量同比降17%存储成本上升压制需求",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：存储行业数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0003-28-GS-Curves- Chips- Crude and Carry-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "油价又起波澜，新兴市",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x2",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x3",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x3",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x4",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股票|个股->公司 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：曲线、芯片、原油与利差交易-7月油价见顶后新兴市场货币表现",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-28-GS-Curves- Chips- Crude and Carry-260730.pdf",
+      "cleaned_source_title": "GS-Curves- Chips- Crude and Carry",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：Curves-Chips-Crude和Carry",
+      "raw_candidates": [
+        "GS：曲线、芯片、原油与利差交易",
+        "GS：曲线、芯片、原油与利差交易-7月油价见顶后新兴市场货币表现",
+        "GS：曲线、芯片、原油与利差交易-新兴市场汇率与利率框架"
+      ],
+      "cleaned_candidates": [
+        "GS：曲线、芯片、原油与利差交易",
+        "GS：曲线、芯片、原油与利差交易-7月油价见顶后新兴市场货币表现",
+        "GS：曲线、芯片、原油与利差交易-新兴市场汇率与利率框架",
+        "GS：Curves-Chips-Crude和Carry",
+        "GS：7月6日伊朗冲突再度升级至7月23日油价见顶"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：Curves-Chips-Crude和Carry",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月6日伊朗冲突再度升级至7月23日油价见顶",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：曲线、芯片、原油与利差交易-7月油价见顶后新兴市场货币表现",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "7"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：曲线、芯片、原油与利差交易-7月油价见顶后新兴市场货币表现"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "7月会议：政策更松了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：区域环境与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-29-GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf",
+      "cleaned_source_title": "GS-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：中国-JulyPolitburomeetings",
+      "raw_candidates": [
+        "GS：7月政治局会议强化宽松表述并强调加快落实已规划措施",
+        "GS：7月政治局会议强化宽松表述，强调加快落实已规划措施"
+      ],
+      "cleaned_candidates": [
+        "GS：7月政治局会议强化宽松表述并强调加快落实已规划措施",
+        "GS：7月政治局会议强化宽松表述，强调加快落实已规划措施",
+        "GS：中国-JulyPolitburomeetings",
+        "GS：7月30日召开的政治局会议，为下半年宏观政策定下基调"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国-JulyPolitburomeetings",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月30日召开的政治局会议，为下半年宏观政策定下基调",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：区域环境与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：7月政治局会议强化宽松表述并强调加快落实已规划措施",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：区域环境与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vbg54chg/pdfs/0005-30-GS-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "新兴市场增长空间，到",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x2",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x3",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-30-GS-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture-260730.pdf",
+      "cleaned_source_title": "GS-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：EMINFOCUSEMOutputGapsSig",
+      "raw_candidates": [
+        "GS：新兴市场产出缺口区域分化",
+        "GS：22个新兴市场产出缺口分化",
+        "GS：新兴市场产出缺口与区域增长空间"
+      ],
+      "cleaned_candidates": [
+        "GS：新兴市场产出缺口区域分化",
+        "GS：22个新兴市场产出缺口分化",
+        "GS：新兴市场产出缺口与区域增长空间",
+        "GS：EMINFOCUSEMOutputGapsSig",
+        "GS：这份覆盖22个新兴市场地区的研究"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：EMINFOCUSEMOutputGapsSig",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：这份覆盖22个新兴市场地区的研究",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：新兴市场产出缺口区域分化",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

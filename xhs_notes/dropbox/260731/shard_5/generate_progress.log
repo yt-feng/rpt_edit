@@ -1,0 +1,60 @@
+Found 92 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vbg54chg/pdfs/0001-26-Goldman Sachs-CHINA INTERNET- AUTO CLASSIFIED 2Q26 Preview- Stepped-Up Growth Investments and Capital Returns Meet Tough Industry Backdrop- Stay Neutral on Tuhu Autohome.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vbg54chg/pdfs/0002-27-Goldman Sachs-China Smartphones- Jun shipments -17- YoY -36- MoM- High memory costs weigh on demand-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vbg54chg/pdfs/0003-28-Goldman Sachs-Curves- Chips- Crude and Carry-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vbg54chg/pdfs/0004-29-Goldman Sachs-China- July Politburo meeting strengthens easing rhetoric and emphasizes faster implementation of planned measures-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vbg54chg/pdfs/0005-30-Goldman Sachs-EM IN FOCUS EM Output Gaps - Significant Room to Grow- But Mixed Picture-260730.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=7874de85-1006-4d83-a1ad-43131d5dc91c
+MinerU states: done, running, running, running, waiting-file
+MinerU states: done, done, running, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 979b4b38cb28235a1da3cd8ea982996039765adf4fd368f7e7e352e3e097134b.jpg: score=-100;too_small:1156x118
+Skip non-chart visual asset ba5fd05e447704bd02d43792f71c68f2842560dd90794f6a3750a8439b65d02e.jpg: score=-100;too_small:828x96
+Skip non-chart visual asset f597b5f488b57443f92d281e40fbb2d8a68ceb3e84a1ad135a163fde3780b676.jpg: score=-100;too_small:1095x131
+Skip non-chart visual asset 71627fa77d4ce8ed774cbd7688a33210c0d021735287d18562f212911e48fbd5.jpg: score=-2;square_without_chart_hint,contrast
+Skip non-chart visual asset 82d8e9fca1b556300c9e18dd03c4a78e9336ab10dfb459ae078c30a6480984dc.jpg: score=0;square_without_chart_hint,edge:0.11,contrast
+Skip non-chart visual asset 68b15d9275b89492be887111a25d7765182d2a71be5b9bf3e73be5f52f7dac2e.jpg: score=0;square_without_chart_hint,edge:0.10,contrast
+Skip non-chart visual asset 64d112d7cfa95203f74b091b36daf4b16722538c26e510a52b39485e16ed160b.jpg: score=0;square_without_chart_hint,edge:0.11,contrast
+Skip non-chart visual asset b06fbc302b0a460d42e2f5b7b5761facb87799a1b0f31bb69ba37091a94d1e46.jpg: score=0;square_without_chart_hint,edge:0.11,contrast
+Skip non-chart visual asset c733119c6f15c47a336f26333d5b59d1afa6e394027805458c4965f7dd65cf1b.jpg: score=1;square_without_chart_hint,edge:0.31,contrast,large
+Skip non-chart visual asset a88d3ed908a7a1617467fb7c129db17e0dab0f49fab156b06c733e66fb60a594.jpg: score=0;square_without_chart_hint,edge:0.11,contrast
+Skip non-chart visual asset 940c708135237040dba5fd6ff789ac9eedbcffcc79301a09e7a6fe25f26d390e.jpg: score=-100;too_small:1156x112
+Neutralized WeChat title while keeping the report: 高盛：中国智能手机6月出货量同比降17%存储成本上升压制需求 -> 高盛：存储行业数据与主题变化观察
+Skip non-chart visual asset f506ddf1549e840136e01bdb861b5875bbaa91a1d7d4725df71b65e6523d357a.jpg: score=0;odd_ratio:5.73,edge:0.51,contrast
+Skip non-chart visual asset 3ace54b1c3794e070126fc891818a36349ececa23d172e1fcb6bcea9a1c62529.jpg: score=0;square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset 7f04c6841784d925f007f2e5bbb08ad07bda8bead75ed954d301f9ea052afb79.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 0f1bd7ec4cc8d7bb726d6084642264684146ccfec0d94c7fc77916c875414705.jpg: score=1;chart_ratio
+Skip non-chart visual asset 29832a5f9bf4837424343ff4a345eca7fbac931db7f6ec9393fe9fed52a554d8.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.28,contrast,large
+Neutralized WeChat title while keeping the report: 高盛：7月政治局会议强化宽松表述并强调加快落实已规划措施 -> 高盛：区域环境与行业变化观察
+Skip non-chart visual asset b8edf741061a3c3e3a1dc6aee846f5f949d2498ca94422223152ef7486a37d32.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset 270335625cc483a80c58e4277962872fcb5aa69478fea0e2955ea0b6e91365ae.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.12
+Skip non-chart visual asset f6707f424cdcbbdd1ca47c4a0a97c09895ea858ed8285d5b9cede3170107b04b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset 91cdc1f84b98b43f9b359b40617c8f6bdef5ff70273c1fbb8c2e9ab26ce188e8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,large
+Skip non-chart visual asset 90ce992539dda2aa75df057133cb6e950391c858d70baccef8b072e060dadb9c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 40d1a198c8e96b0806da6a99b7edb9e3e2b40390bfeccbfc6b24fa5073fe9b1f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 393cad433d60a1a5175085864e87a6325586745581a6986a7703b8e32231e42f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 67ec9d0194e85f695772c54d41cbf4c6e3daf032a979d60367a936a89d5cb083.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,large
+Skip non-chart visual asset 55df90b0d20503fd35f4c4ad890af882212689f02496f023a7821415db453ee9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,large
+Skip non-chart visual asset 9b8054beb4fe986e9163d6d8f656af7f7ea32030dc8e620ad82372bc0c096133.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset a164b77aa5ea81b55a953ff3f44fba12a0f97a855e6dca30effe30433df90fc5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,large
+Skip non-chart visual asset bd7b08dc8f86164197710b52661d6e5d517d537fa5205c6c8610c97dd6175c1b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset eb7db8f6608ccc78fa1ae585b59bd6c0821c93465079507ae4ab9eae24bf891d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset efe84f97fafddfe15a9095e0a102cf827b644c78bd99b892d147fa392bc16955.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset d7762e8f4a6b356ebfc9011d99b62626805e7e102d54f6bd93615af849938e4e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset 3800754fdb6df74a95b7d91a603b929cc82052ba4d5c79833b713afc713e4668.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset b739f584e7a2b210d8f896de13c944992afa770a86895664775493c822dca57e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset a74589fe262827de955765c64a7ddc958d49f0ad194cf8eeb17d81df22d73d3e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset 7779a3cca6e48569e8b048bd827e44f56be45cb122d594ebb3fd5a9c49e6b493.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,large
+Skip non-chart visual asset 8f93d17c3cea964bb725253baa6b2cf771ee3600752f634583154fb5e302c332.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset 97180a7762c4417416c86b491f27d3956f5627e1312a17f73cdc0688db7b5d77.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 55f36b29d8d26eac9d9877d9c33611416cdebd41d0a07ed185fd21ba9ed3b5ed.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.16,large
+Skip non-chart visual asset 934c7c70fdd1e36057864e12848fc49b70fc878eddbc2d6d3be9df4310a1d625.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,large
+Skip non-chart visual asset 8ff215b73350149ea747267cb49fc1f84f4bab72c98b93219e7f8f832fd1551e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.13
+Neutralized WeChat title while keeping the report: 高盛：新兴市场产出缺口区域分化 -> 高盛：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_5; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
