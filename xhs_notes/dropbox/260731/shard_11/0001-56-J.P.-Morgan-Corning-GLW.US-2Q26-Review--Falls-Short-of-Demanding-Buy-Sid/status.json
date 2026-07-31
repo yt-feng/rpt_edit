@@ -1,0 +1,119 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "康宁这份财报，光模块",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：康宁业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf",
+    "cleaned_source_title": "JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：Corning2Q26ReviewFalls",
+    "raw_candidates": [
+      "JPM：康宁2026年第二季度业绩回顾",
+      "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+      "JPM：康宁2026年第二季度业绩回顾-光通信需求分化与估值调整"
+    ],
+    "cleaned_candidates": [
+      "JPM：康宁2026年第二季度业绩回顾",
+      "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+      "JPM：康宁2026年第二季度业绩回顾-光通信需求分化与估值调整",
+      "JPM：Corning2Q26ReviewFalls",
+      "JPM：估值倍数从35倍降至30倍"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：Corning2Q26ReviewFalls",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：估值倍数从35倍降至30倍",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：康宁业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "30"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：康宁业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "609",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

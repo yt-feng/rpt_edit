@@ -1,0 +1,103 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0004-59-JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "AI芯片测试需求，比",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-59-JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf",
+    "cleaned_source_title": "JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds",
+    "institution_name": "JPM",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "JPM：AIHon.PrecisionPositiver",
+    "raw_candidates": [
+      "鸿劲精密：爱德万测试FY1Q26电话会议显示AI需求多元化与SoC测试机产能加快",
+      "鸿劲精密：爱德万上调2026年SoC测试机市场预期并加速产能建设",
+      "鸿劲精密：AI需求多元化推动SoC测试机产能扩张与治具需求增长"
+    ],
+    "cleaned_candidates": [
+      "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+      "JPM：鸿劲精密，爱德万上调2026年SoC测试机市场预期并加速产能",
+      "JPM：鸿劲精密，AI需求多元化推动SoC测试机产能扩张与治具需求增",
+      "JPM：AIHon.PrecisionPositiver",
+      "JPM：这一变化说明下游客户对AI芯片测试需求的规划周期明显拉长"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：鸿劲精密，爱德万上调2026年SoC测试机市场预期并加速产能",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：鸿劲精密，AI需求多元化推动SoC测试机产能扩张与治具需求增",
+        "reasons": [
+          "anchor_coverage=0.37"
+        ]
+      },
+      {
+        "title": "JPM：AIHon.PrecisionPositiver",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：这一变化说明下游客户对AI芯片测试需求的规划周期明显拉长",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "675",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

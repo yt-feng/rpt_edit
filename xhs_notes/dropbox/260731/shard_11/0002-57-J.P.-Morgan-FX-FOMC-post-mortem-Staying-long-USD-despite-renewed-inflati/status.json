@@ -1,0 +1,140 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0002-57-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "FOMC后美元跌了，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x2",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x2",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：价格数据与市场变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-57-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf",
+    "cleaned_source_title": "JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1)",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：FXFOMCpostmortemStayin",
+    "raw_candidates": [
+      "JPM：美元维持多头，通胀不确定性溢价回升",
+      "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+      "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性"
+    ],
+    "cleaned_candidates": [
+      "JPM：美元维持多头，通胀不确定性溢价回升",
+      "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+      "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性",
+      "JPM：FXFOMCpostmortemStayin",
+      "JPM：2025年7月美联储独立性受到质疑时，美元也出现过类似反应"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+        "reasons": [
+          "anchor_coverage=0.47",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性",
+        "reasons": [
+          "anchor_coverage=0.67"
+        ]
+      },
+      {
+        "title": "JPM：FXFOMCpostmortemStayin",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：2025年7月美联储独立性受到质疑时，美元也出现过类似反应",
+        "reasons": [
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：价格数据与市场变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：美元维持多头，通胀不确定性溢价回升",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：价格数据与市场变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "567",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

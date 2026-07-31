@@ -1,0 +1,49 @@
+Found 92 total PDFs; shard 11/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7_4y0zcm/pdfs/0001-56-J.P. Morgan-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7_4y0zcm/pdfs/0002-57-J.P. Morgan-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7_4y0zcm/pdfs/0003-58-J.P. Morgan-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7_4y0zcm/pdfs/0004-59-J.P. Morgan-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7_4y0zcm/pdfs/0005-60-J.P. Morgan-Infineon Technologies-IFXGn.DE-FY3Q26 Preview- Focus will be on FY27 potential- capacity ramp and margin-260730.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=8844b632-8dfd-46ee-b4a3-220cc91df0dd
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 38c313cd8953159f2604ce6cc7c1aef2aa8c8011d8b2c84e4e8230147a3a19af.jpg: score=-100;too_small:451x159
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset b934f4ffeebe49675c8f08cf05a3d5c954fd215f65330a73872e60a10df0cb83.jpg: score=-100;too_small:982x170
+Skip non-chart visual asset 71fdc53ccf7b6c823949887d7055da73bf241614583a1c6f7757f547f9fa1db2.jpg: score=-100;too_small:95x93
+Skip non-chart visual asset bb15d0dde93258097f10639555276a42366fcbdea619442204cc83966cbabf88.jpg: score=-100;too_small:451x101
+Skip non-chart visual asset d5001189899e6109766b23a24fffd992e014061f3b3ddf24bd48e90f9f71b1cb.jpg: score=1;chart_ratio
+Skip non-chart visual asset 10dc8d38ab315b2e1c5783730bedfc00aae80e59a40f425b4e46cc0281e3433b.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset c8a73c4c9cba1f99400ffc844284c6b774f97f06d691a9f200075507c28733b5.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 2c126c99ac5821e0da5d7888ea9fb8f331d805cc948db4263cc95d08b62bcb12.jpg: score=0;square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 6f6cd933c5ce954d1f70b3166b475c98dc7d15fe4a5f29d11172db5d6cf1adab.jpg: score=1;square_without_chart_hint,edge:0.38,contrast,large
+Neutralized WeChat title while keeping the report: 摩根大通：康宁2026年第二季度业绩回顾-估值倍数下调至30倍 -> 摩根大通：康宁业务与季度数据观察
+Skip non-chart visual asset 2d6169cf5df2f83074623f964aadc31cbffe43913ccf3eee6cc31ca673734efc.jpg: score=1;chart_ratio
+Skip non-chart visual asset 0e5694cc24a3a3fe10dff8bb854760335338afc93aa135f6f37f73577ef15aaf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset b2df6134e5a9672f1f289723fe21170a29748a45e3214b348c91fa125973f411.jpg: score=1;chart_ratio
+Skip non-chart visual asset 7dfc41ccbe60cf945c9dceec12b3febe547684fec18bd0829d466eedb12f4bea.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset df224f67b23aa32c73d0004572e4ff79c279789d0e2a6f432e69a2373f6237a1.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：美元维持多头，通胀不确定性溢价回升 -> 摩根大通：价格数据与市场变化观察
+Skip non-chart visual asset 2d6169cf5df2f83074623f964aadc31cbffe43913ccf3eee6cc31ca673734efc.jpg: score=1;chart_ratio
+Skip non-chart visual asset 0e5694cc24a3a3fe10dff8bb854760335338afc93aa135f6f37f73577ef15aaf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset b2df6134e5a9672f1f289723fe21170a29748a45e3214b348c91fa125973f411.jpg: score=1;chart_ratio
+Skip non-chart visual asset 7dfc41ccbe60cf945c9dceec12b3febe547684fec18bd0829d466eedb12f4bea.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset df224f67b23aa32c73d0004572e4ff79c279789d0e2a6f432e69a2373f6237a1.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：美元在通胀不确定性溢价回升中维持多头框架 -> 摩根大通：价格数据与市场变化观察
+Skip non-chart visual asset e5b16ec7b6ff8f7ff717f89085631f1b428c05836030a271f49fa9c683c607c7.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 6e83b9c3560c1375034286491d8c708abc27258f13eeb80c8ed49b471ebb04b4.jpg: score=-100;too_small:540x134
+Skip non-chart visual asset 018f4cac212e2f8c8fbc92b0aec33e4f0eaa38423c87137d1dfb3a45c152fc90.jpg: score=2;chart_ratio,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset d43ca104b8456c21fc5061cd6c3e0073bc91b5e8bce52a15684f65bae55bc802.jpg: score=1;odd_ratio:5.32,edge:0.36,contrast,large
+Skip non-chart visual asset f57ef1ae40993d092378b841a286d82ccb2bcf09f470d749318d365a050a1185.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset d56afc750f5cb2ab56f7c04490327472e58783bda9e5ceff98b16e09d0f01066.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 994400bb2479495757778e08c847570baf92f7dd629a1cacfd70d2514042e59e.jpg: score=1;chart_ratio
+Skip non-chart visual asset 298b328cb0380dda91618ad79060ed6e9e41f9dcddf96a8e9f89862f413b03bc.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 697fcbe68a58e0709b0439150ee0f70b6b65ca272ca6b69f8e5041e21e0bf28d.jpg: score=2;chart_ratio,large
+Neutralized WeChat title while keeping the report: 摩根大通：英飞凌第三财季前瞻，聚焦2027财年潜力与产能爬坡 -> 摩根大通：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_11; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

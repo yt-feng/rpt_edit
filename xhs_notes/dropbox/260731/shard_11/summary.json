@@ -1,0 +1,548 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "康宁这份财报，光模块",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：康宁业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf",
+      "cleaned_source_title": "JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Corning2Q26ReviewFalls",
+      "raw_candidates": [
+        "JPM：康宁2026年第二季度业绩回顾",
+        "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+        "JPM：康宁2026年第二季度业绩回顾-光通信需求分化与估值调整"
+      ],
+      "cleaned_candidates": [
+        "JPM：康宁2026年第二季度业绩回顾",
+        "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+        "JPM：康宁2026年第二季度业绩回顾-光通信需求分化与估值调整",
+        "JPM：Corning2Q26ReviewFalls",
+        "JPM：估值倍数从35倍降至30倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Corning2Q26ReviewFalls",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：估值倍数从35倍降至30倍",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：康宁业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "30"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：康宁2026年第二季度业绩回顾-估值倍数下调至30倍",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：康宁业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0002-57-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "FOMC后美元跌了，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-57-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf",
+      "cleaned_source_title": "JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1)",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：FXFOMCpostmortemStayin",
+      "raw_candidates": [
+        "JPM：美元维持多头，通胀不确定性溢价回升",
+        "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+        "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性"
+      ],
+      "cleaned_candidates": [
+        "JPM：美元维持多头，通胀不确定性溢价回升",
+        "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+        "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性",
+        "JPM：FXFOMCpostmortemStayin",
+        "JPM：2025年7月美联储独立性受到质疑时，美元也出现过类似反应"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：美元维持多头，FOMC后曲线陡峭化与通胀溢价",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：美元维持多头，聚焦美联储信誉与通胀不确定性",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "JPM：FXFOMCpostmortemStayin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2025年7月美联储独立性受到质疑时，美元也出现过类似反应",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：美元维持多头，通胀不确定性溢价回升",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0003-58-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "美元没凉透，FOMC",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：价格数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-58-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730.pdf",
+      "cleaned_source_title": "JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：FXFOMCpostmortemStayin",
+      "raw_candidates": [
+        "美元在通胀不确定性溢价回升中维持多头框架",
+        "美元多头框架：通胀不确定性溢价与曲线陡峭化数据",
+        "美元多头框架：FOMC会议后通胀预期与曲线形态观察"
+      ],
+      "cleaned_candidates": [
+        "JPM：美元在通胀不确定性溢价回升中维持多头框架",
+        "JPM：美元多头框架，通胀不确定性溢价与曲线陡峭化数据",
+        "JPM：美元多头框架，FOMC会议后通胀预期与曲线形态观察",
+        "JPM：FXFOMCpostmortemStayin",
+        "JPM：2s30s曲线出现了单日15个基点的扭曲陡峭化"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：美元多头框架，通胀不确定性溢价与曲线陡峭化数据",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "JPM：美元多头框架，FOMC会议后通胀预期与曲线形态观察",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：FXFOMCpostmortemStayin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2s30s曲线出现了单日15个基点的扭曲陡峭化",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：价格数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：美元在通胀不确定性溢价回升中维持多头框架",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：价格数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0004-59-JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "AI芯片测试需求，比",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-59-JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf",
+      "cleaned_source_title": "JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "JPM：AIHon.PrecisionPositiver",
+      "raw_candidates": [
+        "鸿劲精密：爱德万测试FY1Q26电话会议显示AI需求多元化与SoC测试机产能加快",
+        "鸿劲精密：爱德万上调2026年SoC测试机市场预期并加速产能建设",
+        "鸿劲精密：AI需求多元化推动SoC测试机产能扩张与治具需求增长"
+      ],
+      "cleaned_candidates": [
+        "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+        "JPM：鸿劲精密，爱德万上调2026年SoC测试机市场预期并加速产能",
+        "JPM：鸿劲精密，AI需求多元化推动SoC测试机产能扩张与治具需求增",
+        "JPM：AIHon.PrecisionPositiver",
+        "JPM：这一变化说明下游客户对AI芯片测试需求的规划周期明显拉长"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：鸿劲精密，爱德万上调2026年SoC测试机市场预期并加速产能",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：鸿劲精密，AI需求多元化推动SoC测试机产能扩张与治具需求增",
+          "reasons": [
+            "anchor_coverage=0.37"
+          ]
+        },
+        {
+          "title": "JPM：AIHon.PrecisionPositiver",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：这一变化说明下游客户对AI芯片测试需求的规划周期明显拉长",
+          "reasons": [
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：鸿劲精密，爱德万测试FY1Q26电话会议显示AI需求多元化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0005-60-JPM-Infineon Technologies-IFXGn.DE-FY3Q26 Preview- Focus will be on FY27 potential- capacity ramp and margin-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "英飞凌财报前瞻：AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-60-JPM-Infineon Technologies-IFXGn.DE-FY3Q26 Preview- Focus will be on FY27 potential- capacity ramp and margin-260730.pdf",
+      "cleaned_source_title": "JPM-Infineon Technologies-IFXGn.DE-FY3Q26 Preview- Focus will be on FY27 potential- capacity ramp and margin",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：InfineonTechnologiesFY3Q26",
+      "raw_candidates": [
+        "英飞凌第三财季前瞻：聚焦2027财年潜力与产能爬坡",
+        "英飞凌第三财季前瞻：8月5日业绩发布，聚焦2027财年潜力与产能爬坡",
+        "英飞凌第三财季前瞻：AI电源与汽车半导体回升，聚焦2027财年潜力与产能爬坡"
+      ],
+      "cleaned_candidates": [
+        "JPM：英飞凌第三财季前瞻，聚焦2027财年潜力与产能爬坡",
+        "JPM：英飞凌第三财季前瞻，8月5日业绩发布",
+        "JPM：英飞凌第三财季前瞻，AI电源与汽车半导体回升",
+        "JPM：InfineonTechnologiesFY3Q26",
+        "JPM：8月5日英飞凌将发布第三财季业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：英飞凌第三财季前瞻，8月5日业绩发布",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：英飞凌第三财季前瞻，AI电源与汽车半导体回升",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：InfineonTechnologiesFY3Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：8月5日英飞凌将发布第三财季业绩",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：英飞凌第三财季前瞻，聚焦2027财年潜力与产能爬坡",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

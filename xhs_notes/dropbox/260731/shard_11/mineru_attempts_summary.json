@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0001-56-JPM-Corning-GLW.US-2Q26 Review- Falls Short of Demanding Buy-Side Bar- However- LT Optical Story Intact Despite Mixed Print-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0002-57-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0003-58-JPM-FX FOMC post-mortem-Staying long-USD despite renewed inflation risk premium-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0004-59-JPM-Hon. Precision-7769.TW-Positive read-through from Advantest-s FY1Q26 earnings call - better- diversified AI demand and faster SoC tester capacity builds-.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7_4y0zcm/pdfs/0005-60-JPM-Infineon Technologies-IFXGn.DE-FY3Q26 Preview- Focus will be on FY27 potential- capacity ramp and margin-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
