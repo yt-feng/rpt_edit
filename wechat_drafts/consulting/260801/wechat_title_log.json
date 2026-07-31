@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "date_folder": "260801",
+  "source": "kc_translated_reports/consulting",
+  "generated_at_utc": "2026-07-31T23:49:29Z",
+  "article_count": 5,
+  "uploaded_count": 5,
+  "articles": [
+    {
+      "source_report_name": "BCG Delving-Deeper-into-Downturn-M-A d816c651",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+      "final_wechat_title": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260801/01-0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+      "generation_decision": {
+        "source_filename": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+        "cleaned_source_title": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGDelvingDeeperi",
+        "raw_candidates": [
+          "波士顿咨询：弱宏观环境周期并购回报研究",
+          "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+          "波士顿咨询：弱宏观环境周期并购与非核心领域回报研究"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：弱宏观环境周期并购回报研究",
+          "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+          "波士顿咨询：弱宏观环境周期并购与非核心领域回报研究",
+          "波士顿咨询：0001BCGDelvingDeeperi",
+          "波士顿咨询：弱宏观环境周期交易两年后相对股东回报高出9个百分点以上"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0001BCGDelvingDeeperi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：弱宏观环境周期交易两年后相对股东回报高出9个百分点以上",
+            "reasons": [
+              "anchor_coverage=0.70"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "9"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+        "body_heading_neutralization_changes": [
+          "经验丰富的收购方在弱宏观环境周期中回报差距显著->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Keeping-M-A-Deals-on-Track-During-the-Downturn 36c4d922",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：研究主题与行业变化观察，买方在早期阶段需重做尽职调查并引入",
+      "final_wechat_title": "波士顿咨询：研究主题与行业变化观察，买方在早期阶段需重做尽职调查并引入",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260801/02-0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+      "generation_decision": {
+        "source_filename": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+        "cleaned_source_title": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGKeepingMADeals",
+        "raw_candidates": [
+          "波士顿咨询：并购交易在低迷期保持正轨",
+          "波士顿咨询：并购交易执行框架与73%估值重谈",
+          "波士顿咨询：并购交易三阶段应对与情景定价"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：并购交易在低迷期保持正轨",
+          "波士顿咨询：并购交易执行框架与73%估值重谈",
+          "波士顿咨询：并购交易三阶段应对与情景定价",
+          "波士顿咨询：0002BCGKeepingMADeals",
+          "波士顿咨询：疫情冲击下并购交易执行的三阶段应对框架"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：并购交易执行框架与73%估值重谈",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：并购交易三阶段应对与情景定价",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0002BCGKeepingMADeals",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：疫情冲击下并购交易执行的三阶段应对框架",
+            "reasons": [
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：并购交易在低迷期保持正轨",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察",
+        "body_heading_neutralization_changes": [
+          "已签约交易应加速整合节奏并强化远程沟通->研究主题与行业变化观察",
+          "卖方需重估出售理由并扩大潜在买家范围->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG Mind-the-Belief-Gap 90ec8d53",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：研究主题与行业变化观察，重构信念是三种变革中最难也最关键",
+      "final_wechat_title": "波士顿咨询：研究主题与行业变化观察",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260801/03-0003-BCG_Mind-the-Belief-Gap_90ec8d53",
+      "generation_decision": {
+        "source_filename": "0003-BCG_Mind-the-Belief-Gap_90ec8d53",
+        "cleaned_source_title": "0003-BCG_Mind-the-Belief-Gap_90ec8d53",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+        "raw_candidates": [
+          "波士顿咨询：领导团队的信念差距决定转型成败",
+          "波士顿咨询：信念差距调查-11市场563名高管63%认为领导层准备不足",
+          "波士顿咨询：信念差距与领导力转型-重构信念、刻意练习与行为固化"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：领导团队的信念差距决定转型成败",
+          "波士顿咨询：信念差距调查-11市场563名高管63%认为领导层准备不足",
+          "波士顿咨询：信念差距与领导力转型-重构信念、刻意练习与行为固化",
+          "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+          "波士顿咨询：波士顿咨询在2026年3月完成的这项全球领导力调研发现"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：信念差距调查-11市场563名高管63%认为领导层准备不足",
+            "reasons": [
+              "anchor_coverage=0.29",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：信念差距与领导力转型-重构信念、刻意练习与行为固化",
+            "reasons": [
+              "anchor_coverage=0.36"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0003BCGMindtheBeliefGap90ec8d",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询在2026年3月完成的这项全球领导力调研发现",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：领导团队的信念差距决定转型成败",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察",
+        "pre_upload_neutralization_title": "波士顿咨询：研究主题与行业变化观察，重构信念是三种变革中最难也最关键",
+        "header_pre_neutralization_title": "重构信念是三种变革中最难也最关键的环节",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "重构信念是三种变革中最难也最关键的环节->研究主题与行业变化观察",
+          "团队共享信念不改变，个人转变会被旧规范拉回->研究主题与行业变化观察",
+          "领导者最重视的品质恰恰是表现差距最大的领域->领导者最重视的品质恰恰是业务与近期数据观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG The-Cost-of-Caution-with-AI-Investments 61787743",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：AI技术与行业应用观察，价值分配中七成来自组织变革而非技术",
+      "final_wechat_title": "波士顿咨询：AI技术与行业应用观察，价值分配中七成来自组织变革而非技术",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260801/04-0004-BCG_The-Cost-of-Caution-with-AI-Investments_61787743",
+      "generation_decision": {
+        "source_filename": "0004-BCG_The-Cost-of-Caution-with-AI-Investments_61787743",
+        "cleaned_source_title": "0004-BCG_The-Cost-of-Caution-with-AI-Investments",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+        "raw_candidates": [
+          "波士顿咨询：AI投入谨慎的成本",
+          "波士顿咨询：AI投入差距与企业竞争力关联",
+          "波士顿咨询：AI投入与成本及回报表现"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：AI投入谨慎的成本",
+          "波士顿咨询：AI投入差距与企业竞争力关联",
+          "波士顿咨询：AI投入与成本及回报表现",
+          "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+          "波士顿咨询：传统成本优化可为AI转型释放5%至25%资金"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：AI投入差距与企业竞争力关联",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI投入与成本及回报表现",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "波士顿咨询：AI0004BCGTheCostof谨慎wit",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：传统成本优化可为AI转型释放5%至25%资金",
+            "reasons": [
+              "anchor_coverage=0.25",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：AI投入谨慎的成本",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察",
+        "body_heading_neutralization_changes": [
+          "领先企业愿意在回报尚未完全明确时先行投入->研究主题与行业变化观察"
+        ]
+      }
+    },
+    {
+      "source_report_name": "BCG What-s-New-and-Next-for-M-A-in-Africa 1bcaaea3",
+      "institution_name": "波士顿咨询",
+      "title_before_upload": "波士顿咨询：非洲并购市场新趋势与未来走向",
+      "final_wechat_title": "波士顿咨询：非洲并购市场新趋势与未来走向",
+      "uploaded": true,
+      "skip_reason": "",
+      "report_dir": "kc_translated_reports/consulting/260801/05-0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+      "generation_decision": {
+        "source_filename": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+        "cleaned_source_title": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0005BCGWhatsNew和Nextf",
+        "raw_candidates": [
+          "波士顿咨询：非洲并购市场新趋势与未来走向",
+          "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+          "波士顿咨询：非洲并购市场趋势与科技行业机会"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：非洲并购市场新趋势与未来走向",
+          "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+          "波士顿咨询：非洲并购市场趋势与科技行业机会",
+          "波士顿咨询：0005BCGWhatsNew和Nextf",
+          "波士顿咨询：从2016年到2019年"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+            "reasons": [
+              "anchor_coverage=0.62"
+            ]
+          },
+          {
+            "title": "波士顿咨询：非洲并购市场趋势与科技行业机会",
+            "reasons": [
+              "anchor_coverage=0.54"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0005BCGWhatsNew和Nextf",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：从2016年到2019年",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：非洲并购市场新趋势与未来走向",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：非洲并购市场新趋势与未来走向",
+        "header_pre_neutralization_title": "非洲本土买家交易份额逐年上升，外资单笔规模仍占优势",
+        "header_neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "body_heading_neutralization_changes": [
+          "非洲本土买家交易份额逐年上升，外资单笔规模仍占优势->研究主题与行业变化观察",
+          "非洲私募股权产品规模扩大，科技初创企业集中吸引资金->非洲私募股权业务与近期数据观察",
+          "疫情改变并购动机，泛非平台交易在部分行业加速->研究主题与行业变化观察"
+        ]
+      }
+    }
+  ]
+}
