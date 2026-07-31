@@ -1,0 +1,57 @@
+Found 92 total PDFs; shard 13/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3w9wdrbw/pdfs/0001-66-J.P. Morgan-PetroChina-Thoughts on the reported LNG Canada stake sale -monetising assets when LNG prices are high--260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3w9wdrbw/pdfs/0002-67-J.P. Morgan-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3w9wdrbw/pdfs/0003-68-J.P. Morgan-Unimicron-3037.TW-ABF GM could reach 60--260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3w9wdrbw/pdfs/0004-69-J.P. Morgan-Skyworks Solutions-SWKS.US-Results and Guidance a Mixed Bag- Memory Headwinds Muted -For Now-- Offset by Momentum in Broad Markets-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3w9wdrbw/pdfs/0005-70-J.P. Morgan-YAGEO-2327.TW-Positive outlook didn-t break-260730.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=4ac7cc8d-9cbd-416a-9bed-2aaa74c9b782
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset c8e04c9477139da2342dbc3f3d21d9c5841797138a913aeaef92e134638ca235.jpg: score=0;square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 6ffa097ffd22dd735ad95d8aba85e37d532d5f4bdfa0a44e9c57fc03a5726dde.jpg: score=1;chart_ratio
+Skip non-chart visual asset dcda2f5c7a1072a8bf2962ab95c00bda33244d91ef8e854f66ff5815a7afb6ed.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset 703945fd6e9234128d1790843992067378f4533d7a34cf99dce4cf73afb5ff57.jpg: score=-100;too_small:982x165
+Skip non-chart visual asset 67a3aa3cdf016e1d3d8d96d0d03d15df9a019984fbcda8607289fc745c044677.jpg: score=-100;too_small:443x65
+Skip non-chart visual asset dc7b5b26b2a72a9ee8a2ac53de0661e981ee2bf1eb1f6147d3a3d8dbd189e9ad.jpg: score=1;odd_ratio:5.27,edge:0.29,contrast,large
+Skip non-chart visual asset a7f1ac21d48b62bff3098526d7b32d6865d267577340deac2334d8d1f54145e4.jpg: score=1;chart_ratio
+Skip non-chart visual asset aa6e3627a5c530be701e16b42c794ca2363fcc62a85b10fec424b20b1407a148.jpg: score=-100;too_small:1348x137
+Skip non-chart visual asset 3cf1c9d0a3c5def6ceaacae1e6229cc796dc1a4e9762ebca8a103f8ad5b099bb.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 83ca4277b10cd1e7b0d7a6b624cfee28d85820b7058ea105875564d2999d0cd3.jpg: score=-100;too_small:626x90
+Skip non-chart visual asset 8271cb01d6515597cb4f79c9959f68a69252e4f1ee7d8c5affcfb8eecd6b4737.jpg: score=-100;too_small:626x90
+Neutralized WeChat title while keeping the report: 摩根大通：中国石油评估LNGCanada股权出售-参考30亿美元交易 -> 摩根大通：研究主题与行业变化观察
+Skip non-chart visual asset a1e5587b27203dbf85c53ae6f8cfc19f583e4ae604dee36795a4fe0b24f72797.jpg: score=-100;too_small:542x104
+Skip non-chart visual asset 22cfd1898c637437aef47a6899a203425806747b1a05c85643d22863b17ecbc6.jpg: score=-100;too_small:982x170
+Skip non-chart visual asset e948078a17f05f255adc4bbb93b5ce39d75ca5adda4070deff2c52e91d6ec2bc.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 15301cf9da7bab006bbaa82491673104b327b2833118fe422cb27ab5f039c2bd.jpg: score=0;odd_ratio:4.91,edge:0.28,contrast
+Skip non-chart visual asset eef8eb05e9a8b7ae5c58ae7e563935a8370a1e9a4522dd477bae8abdce890255.jpg: score=-1;square_without_chart_hint,edge:0.28
+Neutralized WeChat title while keeping the report: 摩根大通：阳光电源，FCC新规限制中国逆变器进口 -> 摩根大通：阳光电源业务与近期数据观察
+Skip non-chart visual asset 5173046f5388c76f4a0ff830310354e7421b3481aafd64ca22ea6179e1d5eb61.jpg: score=-100;too_small:448x96
+Skip non-chart visual asset 6f6b9e30bbcfd68df4d6a37c617ca2732608ce30d24fa087e77d760ccaeda602.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 28ded26435fc85f6e2e77a754fa3896a016866d498c1159ab4bfeabb2f7aea7d.jpg: score=-100;too_small:448x181
+Skip non-chart visual asset eb1e46db99290aa12ecc8f2362070cf61e1b4205e0479731afd9d8404db17cc8.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset 321870defde1a3ebd9a32b8bcf01cc6ab1a5babdec5cd22b84186d02c4378e8d.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset a609c0e812fb348923da0c87c3ce3caf35412bef0b084d5083207e48968c2b6b.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 9c7ba36caf4779476df9c3e43bb272b412bc5d8729f4e967ff16159b0ce4ffc8.jpg: score=1;chart_ratio
+Skip non-chart visual asset 7ca2babc37df7c8aab56358b81720e43272c750b3da1878044cd1cf7b50e4a68.jpg: score=-100;too_small:448x159
+Skip non-chart visual asset 60430e22799d309f6bb30b4e074a31942ba63d0a20508fdb530b103ada3393e5.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset db4f3f6f26c8a7499d46afa6b5c9941f7ea4ccb43bc4934f633465eea5fe2ebd.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 776d7981d5619d7371c9b5e4d1780d35421a59aaf42d8a145d2448d3a9cad3a4.jpg: score=-100;too_small:92x90
+Skip non-chart visual asset e6651942a2f63603c5ef9cd20222887de227ab8dc8bb8ee7e4218f0f698b9872.jpg: score=-100;too_small:770x170
+Skip non-chart visual asset d46cdcb5f09bee05f97164190b363059710ef44223b29a9626645fce42a28e9f.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset 4f05ecd3d97deb523ec45169954e7d85defb98c32447fbe458a296575864dcfd.jpg: score=-100;too_small:982x170
+Neutralized WeChat title while keeping the report: 摩根大通：Skyworks六月季度收入9.35亿美元超预期 -> 摩根大通：Skyworks六月季度业务与季度数据观察
+Skip non-chart visual asset dd5cdb4e8272fd845e8a65c0d25937b38cfd4850e9d056dc9dc581a386fc1ef9.jpg: score=1;chart_ratio
+Skip non-chart visual asset 975821e1dc0d2052bd9368f7077f6389e669477243a227de2ce22ccb35b72563.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset 850a433fd263d00f553f120eb425dc7c6388c235883159bc111506d7f067753f.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset fc41112794cc255d34da49058fbf2bb3972a45197cfd6f278e9a94a473736473.jpg: score=-100;too_small:626x90
+Skip non-chart visual asset 9d1c4af6db4c389c149509b9a2d2d2539877db0a037d2a8c47a9bd145783296a.jpg: score=-100;too_small:451x120
+Skip non-chart visual asset c24e847fde9853e9c77edaafbeab3bbc104856bdc5649ecc5b62cc67c7705123.jpg: score=-100;too_small:448x170
+Neutralized WeChat title while keeping the report: 摩根大通：国巨，正面展望未变-第三季稼动率升至九成以上 -> 摩根大通：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_13; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

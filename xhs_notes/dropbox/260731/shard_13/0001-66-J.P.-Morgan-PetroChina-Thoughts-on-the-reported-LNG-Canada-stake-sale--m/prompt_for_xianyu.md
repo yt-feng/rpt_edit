@@ -1,0 +1,130 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.
+
+## PetroChina
+
+## Thoughts on the reported LNG Canada stake sale - monetising assets when LNG prices are high?
+
+According to Bloomberg, PetroChina is reportedly considering selling part of its 15% stake in LNG Canada to help finance the project's planned Phase 2 expansion. The partial stake sale has not been confirmed by PetroChina. We believe some investor concerns of impairments caused PetroChina's slight underperformance versus other oil majors yesterday (PTR-H +1%, SNP-H/CNOOC-H +2%, HSI +2%). In our view, monetising LNG assets when LNG prices are high and S-D is tight makes sense, and the potential rationale for the selldown might be to recycle capital and reduce the capex burden for Phase 2. Petronas recently sold a 5% stake in LNG Canada for \$3bn (media-reported), along with upstream gas assets. Given the current tight LNG market, we see potential for a more attractive valuation, and note that PetroChina's board in 2018 approved an equity investment of \$3.46bn for its 15% stake. Overall, we view the newsflow as a neutral to positive for the stock, and note whether an impairment is recognised depends on valuation and the current book value of the asset. Our FY26 forecast already conservatively models in Rmb15bn impairment for FY26, in line with the historical trend (Figure 4).
+
+\- About LNG Canada: LNG Canada is a JV between Shell (40%), Petronas (20%), Mitsubishi (15%), PetroChina (15%), KOGAS (5%) and MidOcean Energy (5%). Phase 1 capacity is 14Mtpa, which began commissioning in 2Q25 and is expected to achieve full two-train capacity in 2H26. Phase 2 is a planned expansion project with another 14Mtpa capacity. Shell has guided for the FID to be achieved by the end of 2026, and the project is receiving significant government support to fast-track its development. Assuming an FID in 2H26, Phase 2 might come online in the early 2030s.
+
+\- Monetizing LNG assets in a higher LNG price environment? In 4Q25, Petronas sold a 5% stake in LNG Canada to MidOcean Energy. The deal also includes a 20% stake in Petronas' Canadian upstream assets that feed into LNG Canada. Reuters reported that the deal price was slightly above US\$3bn. PetroChina also holds equity in upstream assets linked to LNG Canada, although with smaller reserves compared to Petronas. In 2018, PetroChina disclosed that the board had approved \$335mn in pre-FID investment in LNG Canada, and \$3.125bn in post-FID investment (total \$3.46bn).
+
+\- A selldown could reduce risk exposure to Phase 2: LNG Canada has not disclosed or guided the official project cost. Woodmac estimates the project capex at CAD\$26bn (\$19.5bn or \$1400/tpa) for Phase 1, and CAD\$18.2bn (\$13.65bn or \$975/tpa) for Phase 2. The Phase 1 project was FIDed in 2018 and was originally scheduled to come online in 2024, but experienced some delays and started commissioning in 2Q25. Woodmac estimates that construction delays and cost overruns increased Phase 1 capex by 30% to CAD\$26bn.
+
+Head of Asia Energy & Chemicals | Asia EV Battery
+
+Parsley Ong AC
+(65) 6882-8578
+parsley.rh.ong@JPM.com
+JPM Securities Singapore Private Limited/
+JPM Securities (Asia Pacific) Limited/ JPM Broking (Hong Kong) Limited
+
+Michelle Wong
+(852) 2800 8556
+michelle.wong@JPM.com
+JPM Securities (Asia Pacific) Limited/ JPM Broking (Hong Kong) Limited
+
+Vicky Hsia
+(852) 2800 3752
+vicky.hsia@JPM.com
+JPM Securities (Asia Pacific) Limited/ JPM Broking (Hong Kong) Limited
+
+Equity Ratings and Price Targets
+
+<table><tr><td rowspan="2">Company</td><td rowspan="2">Ticker</td><td rowspan="2">Mkt Cap ($ mn)</td><td rowspan="2">Price CCY</td><td rowspan="2">Price</td><td colspan="2">Rating</td><td colspan="4">Price Target</td></tr><tr><td>Cur</td><td>Prev</td><td>Cur</td><td>End Date</td><td>Prev End Date</td><td></td></tr><tr><td>PetroChina - H</td><td>857 HK</td><td>231,788</td><td>HKD</td><td>9.93</td><td>OW</td><td>n/c</td><td>13.50</td><td>Dec-26</td><td>n/c</td><td>n/c</td></tr><tr><td>PetroChina - A</td><td>601857 CH</td><td>294,402</td><td>CNY</td><td>10.89</td><td>OW</td><td>n/c</td><td>15.50</td><td>Dec-26</td><td>n/c</td><td>n/c</td></tr></table>
+
+Source: Company data, Bloomberg Finance L.P., JPM estimates. n/c = no change. All prices as of 29 Jul 26.
+
+See page 14 for analyst certification and important disclosures, including non-US analyst disclosures.
+
+\- Shell and Mitsubishi are also reportedly considering a selldown: In Jan 2026, Reuters reported that Shell and Mitsubishi are also considering selling down their stakes. Of which, Shell might be looking to sell up to a 30% stake (out of a total of 40%), and considering different options for its stake in Phase 1 vs. Phase 2. During its earnings call in May, Shell clarified that the selldown being considered relates to the midstream assets, as the company wants to reallocate the capital elsewhere while keeping exposure to the entire value chain.
+
+\- Strategic advantages of LNG Canada: Shell views LNG Canada as a cornerstone of its LNG growth strategy, citing several competitive moats for the project: (1) proximity to Asia - the facility is roughly 10 days shipping time from Asian markets, which is less than half the transit time required for shipments originating from the Gulf of Mexico, (2) feedstock advantage - feedgas for LNG Canada is indexed to AECO, which typically trades at a discount to Henry Hub, (3) supply diversification - amid geopolitical volatility in the Middle East and Qatar LNG disruptions, Shell noted that LNG buyers are looking for diversified supply and Canada is top of their list.
+
+\- 2Q earnings review: We expect PetroChina to report strong 2Q NP of Rmb58bn (+20% q/q, +56% y/y), with 1H26 NP of Rmb106bn a new record high. While investors have been concerned about refining losses, we note that PetroChina is 60-70% self-sufficient in crude oil, with another \~20% imported via pipelines from Russia. As such, we forecast PetroChina's refining OP to remain positive in 2Q, versus a loss for Sinopec. We also forecast LNG imports turning to profit in 2Q, given PetroChina's domestic market share gain (JPMe 1H26 gas sales +1% y/y vs China gas demand -2.4% y/y), best-in-class gas cost management and recovering Chinese gas demand since May.
+
+Figure 1: Recent LNG M&A transactions
+
+<table><tr><td>Asset</td><td>Seller</td><td>Acquirer</td><td>Date announced</td><td>Deal value</td><td>Book value / Initial purchase price</td><td>Status</td><td>Note</td></tr><tr><td>10.67% of Browse gas fields in Australia</td><td>Petrochina</td><td>Woodside</td><td>6/12/2026</td><td>$225mn + reimbursement of capex made since 30 Jun 2025 + $175mn contingent on FID before 30 Jun 2032</td><td>Petrochina acquired the stake in 2012.</td><td>Offer reported by Woodside, deal pending</td><td>Deal pending</td></tr><tr><td>20% of Petronas&#x27; Canadian upstream assets and 5% of LNG Canada</td><td>Petronas</td><td>MidOcean Energy</td><td>9/30/2025</td><td>$3bn (media-reported)</td><td>n.a.</td><td>Deal closed</td><td>The upstream assets include 53 Tcf of reserves and contingent resources, 20% of which = 10.6 Tcf</td></tr><tr><td>40% of Louisiana LNG Infrastructure LLC*</td><td>Woodside</td><td>Stonepeak</td><td>4/5/2025</td><td>75% of the project capex in 2025-26, amounting to $5.7bn</td><td rowspan="2">Woodside acquired the project (previously known as Driftwood LNG) for an implied enterprise value of $1.2bn in 4Q24</td><td>Deal closed</td><td>*Covers the LNG plant and export terminal only (i.e. Stonepeak gets 40% of the liquefaction fee). Does not include LNG offtake.</td></tr><tr><td>10% of Louisiana LNG** and 80% in Driftwood Pipeline LLC</td><td>Woodside</td><td>Williams</td><td>10/23/2025</td><td>$250mn</td><td>Deal closed</td><td>**This is the holdco. Williams gets 6% effective stake in the LNG plant / export terminal and 10% of the offtake volume (1.6Mtpa).</td></tr></table>
+
+Source: Reuters, Company reports, JPM Asia Energy Research.
+
+Figure 2: PetroChina quarterly summary
+
+<table><tr><td>Financials (Rmb mn)</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26e</td><td>3Q26e</td><td>4Q26e</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Net sales</td><td>753,108</td><td>696,991</td><td>719,157</td><td>695,213</td><td>736,383</td><td>716,437</td><td>1,052,757</td><td>1,052,757</td><td>3,239,167</td><td>3,011,012</td><td>2,937,981</td><td>2,864,469</td><td>3,558,333</td><td>3,339,171</td><td>3,264,953</td></tr><tr><td>OP</td><td>65,975</td><td>51,058</td><td>58,020</td><td>44,190</td><td>66,601</td><td>78,441</td><td>68,121</td><td>53,216</td><td>216,660</td><td>235,466</td><td>233,954</td><td>219,241</td><td>266,380</td><td>276,810</td><td>297,745</td></tr><tr><td>Oil, Gas &amp; New Energies</td><td>46,888</td><td>38,798</td><td>39,417</td><td>10,962</td><td>41,045</td><td>63,993</td><td>47,042</td><td>13,043</td><td>165,748</td><td>148,695</td><td>159,745</td><td>136,065</td><td>165,123</td><td>168,278</td><td>183,016</td></tr><tr><td>Refining, Chemicals &amp; New Materials</td><td>5,388</td><td>5,668</td><td>5,184</td><td>8,009</td><td>8,283</td><td>5,029</td><td>5,010</td><td>6,859</td><td>40,570</td><td>36,936</td><td>21,386</td><td>24,247</td><td>25,182</td><td>27,712</td><td>30,065</td></tr><tr><td>Refining</td><td>4,551</td><td>5,111</td><td>4,791</td><td>7,251</td><td>7,176</td><td>4,690</td><td>3,987</td><td>5,836</td><td>41,168</td><td>36,252</td><td>18,230</td><td>21,704</td><td>21,689</td><td>22,433</td><td>22,756</td></tr><tr><td>Chemicals &amp; New Materials</td><td>837</td><td>555</td><td>393</td><td>758</td><td>1,107</td><td>339</td><td>1,023</td><td>1,023</td><td>(598)</td><td>684</td><td>3,156</td><td>2,543</td><td>3,492</td><td>5,279</td><td>7,310</td></tr><tr><td>Marketing</td><td>5,043</td><td>2,519</td><td>4,064</td><td>5,921</td><td>6,470</td><td>2,578</td><td>3,966</td><td>3,966</td><td>14,374</td><td>23,962</td><td>16,494</td><td>17,547</td><td>16,980</td><td>17,242</td><td>17,546</td></tr><tr><td>Natural Gas Sales</td><td>13,508</td><td>5,118</td><td>12,653</td><td>29,523</td><td>18,867</td><td>7,841</td><td>17,281</td><td>34,526</td><td>12,957</td><td>43,044</td><td>54,010</td><td>60,802</td><td>78,515</td><td>82,998</td><td>86,538</td></tr><tr><td>Imported gas/LNG</td><td>(1,840)</td><td>(960)</td><td>(290)</td><td>(1,390)</td><td>(620)</td><td>552</td><td>276</td><td>335</td><td>(23,000)</td><td>(13,000)</td><td>(10,000)</td><td>(4,480)</td><td>544</td><td>1,128</td><td>575</td></tr><tr><td>Other</td><td>15,348</td><td>6,078</td><td>12,943</td><td>30,913</td><td>19,487</td><td>7,289</td><td>17,004</td><td>34,191</td><td>35,957</td><td>56,044</td><td>64,010</td><td>65,282</td><td>77,971</td><td>81,870</td><td>85,963</td></tr><tr><td>Corporate and Other</td><td>(4,852)</td><td>(1,045)</td><td>(3,298)</td><td>(10,225)</td><td>(8,064)</td><td>(1,000)</td><td>(5,178)</td><td>(5,178)</td><td>(16,989)</td><td>(17,171)</td><td>(17,681)</td><td>(19,420)</td><td>(19,420)</td><td>(19,420)</td><td>(19,420)</td></tr><tr><td>OPM%</td><td>8.8%</td><td>7.3%</td><td>8.1%</td><td>6.4%</td><td>9.0%</td><td>10.9%</td><td>6.5%</td><td>-19.0%</td><td>6.7%</td><td>7.8%</td><td>8.0%</td><td>7.7%</td><td>7.5%</td><td>8.3%</td><td>9.1%</td></tr><tr><td>Exploration and production</td><td>129.2%</td><td>126.5%</td><td>127.0%</td><td>29.6%</td><td>146.6%</td><td>182.9%</td><td>94.2%</td><td>26.1%</td><td>109.5%</td><td>102.7%</td><td>103.2%</td><td>100.8%</td><td>101.4%</td><td>109.7%</td><td>121.4%</td></tr><tr><td>Refining and chemicals</td><td>6.4%</td><td>7.0%</td><td>6.4%</td><td>10.0%</td><td>9.6%</td><td>6.3%</td><td>4.6%</td><td>6.3%</td><td>12.0%</td><td>11.0%</td><td>6.2%</td><td>7.4%</td><td>6.6%</td><td>7.4%</td><td>8.1%</td></tr><tr><td>Marketing</td><td>1.1%</td><td>0.5%</td><td>0.8%</td><td>1.4%</td><td>1.4%</td><td>0.5%</td><td>0.5%</td><td>0.5%</td><td>0.6%</td><td>1.2%</td><td>0.9%</td><td>1.0%</td><td>0.7%</td><td>0.8%</td><td>0.8%</td></tr><tr><td>Natural Gas Sales</td><td>7.9%</td><td>4.2%</td><td>10.0%</td><td>18.5%</td><td>11.2%</td><td>6.2%</td><td>11.4%</td><td>22.8%</td><td>2.6%</td><td>8.1%</td><td>9.7%</td><td>10.5%</td><td>13.2%</td><td>13.3%</td><td>13.3%</td></tr><tr><td>NP to shareholders</td><td>46,809</td><td>37,198</td><td>42,287</td><td>31,024</td><td>48,333</td><td>58,047</td><td>47,685</td><td>31,862</td><td>149,380</td><td>161,146</td><td>164,684</td><td>157,318</td><td>185,926</td><td>195,225</td><td>211,235</td></tr><tr><td>EPS (Rmb)</td><td>0.26</td><td>0.20</td><td>0.23</td><td>0.17</td><td>0.26</td><td>0.32</td><td>0.26</td><td>0.17</td><td>0.82</td><td>0.88</td><td>0.90</td><td>0.86</td><td>1.02</td><td>1.07</td><td>1.15</td></tr><tr><td>DPS (Rmb)</td><td></td><td>0.22</td><td></td><td>0.25</td><td></td><td>0.26</td><td></td><td>0.30</td><td>0.42</td><td>0.44</td><td>0.47</td><td>0.47</td><td>0.56</td><td>0.59</td><td>0.63</td></tr><tr><td>Payout ratio</td><td></td><td>48%</td><td></td><td>55%</td><td></td><td>45%</td><td></td><td>55%</td><td>52%</td><td>50%</td><td>52%</td><td>55%</td><td>55%</td><td>55%</td><td>55%</td></tr><tr><td># of share (mn)</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>183,021</td><td>18 3,021</td><td>183,021</td></tr><tr><td>y/y growth (%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>-5%</td><td>-9%</td><td>-4%</td><td>-2%</td><td>-4%</td><td>6%</td><td>39%</td><td>49%</td><td>27%</td><td>-3%</td><td>-1%</td><td>-5%</td><td>22%</td><td>-6%</td><td>-2%</td></tr><tr><td>OP</td><td>2%</td><td>-15%</td><td>-8%</td><td>-4%</td><td>1%</td><td>54%</td><td>17%</td><td>20%</td><td>34%</td><td>9%</td><td>-1%</td><td>-6%</td><td>22%</td><td>4%</td><td>8%</td></tr><tr><td>NP</td><td>2%</td><td>-13%</td><td>-4%</td><td>-4%</td><td>3%</td><td>56%</td><td>13%</td><td>3%</td><td>62%</td><td>8%</td><td>2%</td><td>-4%</td><td>18%</td><td>5%</td><td>8%</td></tr><tr><td>Consensus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>26y</td><td>27y</td><td>28y</td></tr><tr><td>Revenue</td><td>753,108</td><td>696,991</td><td>719,157</td><td>925,681</td><td>736,383</td><td>820,219</td><td>820,219</td><td>820,219</td><td>3,245,596</td><td>3,115,798</td><td>3,038,083</td><td>3,094,937</td><td>3,197,040</td><td>3,100,583</td><td>3,096,600</td></tr><tr><td>OP</td><td>65,975</td><td>51,058</td><td>58,020</td><td>54,635</td><td>66,601</td><td>69,246</td><td>69,246</td><td>69,246</td><td>230,768</td><td>245,790</td><td>246,969</td><td>229,688</td><td>274,340</td><td>250,726</td><td>255,328</td></tr><tr><td>NP</td><td>46,809</td><td>37,198</td><td>42,287</td><td>31,236</td><td>48,333</td><td>46,096</td><td>46,096</td><td>46,096</td><td>147,319</td><td>162,754</td><td>167,673</td><td>157,530</td><td>186,622</td><td>178,273</td><td>184,059</td></tr><tr><td>EPS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.80</td><td>0.90</td><td>0.92</td><td>0.87</td><td>1.02</td><td>0.95</td><td>1.01</td></tr><tr><td>DPS (CNY)</td><td></td><td>0.22</td><td></td><td>0.22</td><td></td><td>0.27</td><td></td><td>0.27</td><td>0.36</td><td>0.45</td><td>0.45</td><td>0.44</td><td>0.54</td><td>0.50</td><td>0.54</td></tr><tr><td>Commodities</t
+
+[中间内容因长度限制已省略]
+
+f market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.
+"""

@@ -1,0 +1,494 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0001-66-JPM-PetroChina-Thoughts on the reported LNG Canada stake sale -monetising assets when LNG prices are high--260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "LNG高价时卖资产，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x4",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-66-JPM-PetroChina-Thoughts on the reported LNG Canada stake sale -monetising assets when LNG prices are high--260730.pdf",
+      "cleaned_source_title": "JPM-PetroChina-Thoughts on the reported LNG Canada stake sale -monetising assets when LNG prices are high",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：PetroChinaThoughtsonth",
+      "raw_candidates": [
+        "中国石油评估LNG Canada部分股权出售",
+        "中国石油评估LNG Canada股权出售-参考30亿美元交易",
+        "中国石油评估LNG Canada股权出售-聚焦二期资金"
+      ],
+      "cleaned_candidates": [
+        "JPM：中国石油评估LNGCanada部分股权出售",
+        "JPM：中国石油评估LNGCanada股权出售-参考30亿美元交易",
+        "JPM：中国石油评估LNGCanada股权出售-聚焦二期资金",
+        "JPM：PetroChinaThoughtsonth",
+        "JPM：若2026年下半年实现FID，二期可能于2030年代初投产"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：PetroChinaThoughtsonth",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：若2026年下半年实现FID，二期可能于2030年代初投产",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "30"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：中国石油评估LNGCanada股权出售-参考30亿美元交易",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0002-67-JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "美国FCC新规落地，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：阳光电源业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-67-JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729.pdf",
+      "cleaned_source_title": "JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：SungrowA300274FCCtarge",
+      "raw_candidates": [
+        "阳光电源：FCC新规限制中国逆变器进口，维持增持",
+        "阳光电源：FCC新规覆盖储能变流器，美国市场占2025年毛利20%-25%",
+        "阳光电源：FCC新规限制新型号逆变器，现有型号销售窗口延后"
+      ],
+      "cleaned_candidates": [
+        "JPM：阳光电源，FCC新规限制中国逆变器进口",
+        "JPM：阳光电源，FCC新规覆盖储能变流器",
+        "JPM：阳光电源，FCC新规限制新型号逆变器，现有型号销售窗口延后",
+        "JPM：SungrowA300274FCCtarge",
+        "JPM：对阳光电源而言，美国市场约占其2025年毛利的20%至25%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：阳光电源，FCC新规覆盖储能变流器",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "JPM：阳光电源，FCC新规限制新型号逆变器，现有型号销售窗口延后",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "JPM：SungrowA300274FCCtarge",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：对阳光电源而言，美国市场约占其2025年毛利的20%至25%",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：阳光电源业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：阳光电源，FCC新规限制中国逆变器进口",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：阳光电源业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0003-68-JPM-Unimicron-3037.TW-ABF GM could reach 60--260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "ABF毛利率剑指60",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：欣兴电子ABF毛利率中期目标60%2027下半年实现",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-68-JPM-Unimicron-3037.TW-ABF GM could reach 60--260730.pdf",
+      "cleaned_source_title": "JPM-Unimicron-3037.TW-ABF GM could reach 60",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：UnimicronABFGMcouldreach60",
+      "raw_candidates": [
+        "欣兴电子ABF毛利率中期目标指向60%",
+        "欣兴电子ABF毛利率中期目标60% 2027下半年实现",
+        "欣兴电子ABF毛利率中期目标60% AI载板占比提升"
+      ],
+      "cleaned_candidates": [
+        "JPM：欣兴电子ABF毛利率中期目标指向60%",
+        "JPM：欣兴电子ABF毛利率中期目标60%2027下半年实现",
+        "JPM：欣兴电子ABF毛利率中期目标60%AI载板占比提升",
+        "JPM：UnimicronABFGMcouldreach60",
+        "JPM：欣兴电子第二季度毛利率24.8%，环比提升684个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：UnimicronABFGMcouldreach60",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：欣兴电子第二季度毛利率24.8%，环比提升684个基点",
+          "reasons": [
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：欣兴电子ABF毛利率中期目标60%2027下半年实现",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2027"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：欣兴电子ABF毛利率中期目标60%2027下半年实现"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0004-69-JPM-Skyworks Solutions-SWKS.US-Results and Guidance a Mixed Bag- Memory Headwinds Muted -For Now-- Offset by Momentum in Broad Markets-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "苹果链冷思考：Sky",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：Skyworks六月季度业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-69-JPM-Skyworks Solutions-SWKS.US-Results and Guidance a Mixed Bag- Memory Headwinds Muted -For Now-- Offset by Momentum in Broad Markets-260729.pdf",
+      "cleaned_source_title": "JPM-Skyworks Solutions-SWKS.US-Results and Guidance a Mixed Bag- Memory Headwinds Muted -For Now-- Offset by Momentum in Broad Markets",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：SkyworksSolutionsResults",
+      "raw_candidates": [
+        "Skyworks Solutions季度业绩与资本回报调整",
+        "Skyworks六月季度收入9.35亿美元超预期",
+        "Skyworks季度业绩与资本回报调整并行"
+      ],
+      "cleaned_candidates": [
+        "JPM：SkyworksSolutions季度业绩与资本回报调整",
+        "JPM：Skyworks六月季度收入9.35亿美元超预期",
+        "JPM：Skyworks季度业绩与资本回报调整并行",
+        "JPM：SkyworksSolutionsResults",
+        "JPM：九月季度收入指引中值10.35亿美元，环比增长约11%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：SkyworksSolutions季度业绩与资本回报调整",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "JPM：Skyworks季度业绩与资本回报调整并行",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "JPM：SkyworksSolutionsResults",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.32"
+          ]
+        },
+        {
+          "title": "JPM：九月季度收入指引中值10.35亿美元，环比增长约11%",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Skyworks六月季度业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "9.35"
+        ],
+        "added_contrarian_terms": [
+          "超预期"
+        ],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：Skyworks六月季度收入9.35亿美元超预期",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：Skyworks六月季度业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0005-70-JPM-YAGEO-2327.TW-Positive outlook didn-t break-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "被动元件龙头，涨多了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-70-JPM-YAGEO-2327.TW-Positive outlook didn-t break-260730.pdf",
+      "cleaned_source_title": "JPM-YAGEO-2327.TW-Positive outlook didn-t break",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：YAGEOPositive展望didntbreak",
+      "raw_candidates": [
+        "国巨：正面展望未变",
+        "国巨：正面展望未变-第三季稼动率升至九成以上",
+        "国巨：正面展望未变-大中华区通用IT市场角色变化"
+      ],
+      "cleaned_candidates": [
+        "JPM：国巨，正面展望未变",
+        "JPM：国巨，正面展望未变-第三季稼动率升至九成以上",
+        "JPM：国巨，正面展望未变-大中华区通用IT市场角色变化",
+        "JPM：YAGEOPositive展望didntbreak",
+        "JPM：营收444.56亿新台币，超出JPM预期9%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：YAGEOPositive展望didntbreak",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：营收444.56亿新台币，超出JPM预期9%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：国巨，正面展望未变-第三季稼动率升至九成以上",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

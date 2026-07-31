@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 13,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/66-JPM-PetroChina：Thoughts on the reported LNG Canada stake sale ~monetising assets when LNG prices are high？-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0001-66-JPM-PetroChina-Thoughts on the reported LNG Canada stake sale -monetising assets when LNG prices are high--260730.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/67-JPM-Sungrow ~A（300274）FCC targets new Chinese inverter imports； maintain OW as negative already priced in-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0002-67-JPM-Sungrow -A-300274-FCC targets new Chinese inverter imports- maintain OW as negative already priced in-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/68-JPM-Unimicron（3037.TW）ABF GM could reach 60%-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0003-68-JPM-Unimicron-3037.TW-ABF GM could reach 60--260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/69-JPM-Skyworks Solutions（SWKS.US）Results and Guidance a Mixed Bag； Memory Headwinds Muted （For Now）， Offset by Momentum in Broad Markets-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0004-69-JPM-Skyworks Solutions-SWKS.US-Results and Guidance a Mixed Bag- Memory Headwinds Muted -For Now-- Offset by Momentum in Broad Markets-260729.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/70-JPM-YAGEO（2327.TW）Positive outlook didn’t break-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_3w9wdrbw/pdfs/0005-70-JPM-YAGEO-2327.TW-Positive outlook didn-t break-260730.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
