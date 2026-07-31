@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0001-86-NOM-Global AI Trend Tracker-Amazon-s 2Q26 earnings read through-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0002-87-NOM-Global AI Trend Tracker-Microsoft-s June quarter results read-through-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0003-88-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0004-89-NOM-USD CNY fix model-Projection- 6.7300-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0005-90-NOM-Industrial electronics sector-Results at overseas companies- Meta and Microsoft-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

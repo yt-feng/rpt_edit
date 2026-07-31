@@ -1,0 +1,37 @@
+Found 92 total PDFs; shard 17/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dnbyakxf/pdfs/0001-86-Nomura-Global AI Trend Tracker-Amazon-s 2Q26 earnings read through-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dnbyakxf/pdfs/0002-87-Nomura-Global AI Trend Tracker-Microsoft-s June quarter results read-through-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dnbyakxf/pdfs/0003-88-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dnbyakxf/pdfs/0004-89-Nomura-USD CNY fix model-Projection- 6.7300-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dnbyakxf/pdfs/0005-90-Nomura-Industrial electronics sector-Results at overseas companies- Meta and Microsoft-260730.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=e450e524-310a-4ab4-ba7f-6efa3970f578
+MinerU states: running, pending, running, pending, waiting-file
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 8c91671db562be8bb8902669b4a9f44baa6c2194db12e050d8ea76901a8579e4.jpg: score=-100;too_small:1409x118
+Skip non-chart visual asset 15c64f925b74c8eb51efb45c5e883c1e53fee5d37eee29c80fcb8f34c2306679.jpg: score=-1;square_without_chart_hint,edge:0.34
+Skip non-chart visual asset ff8e7cdeed76c7c671f146fe237db403413a5c1447678b5591e243837e2e4a65.jpg: score=-100;too_small:1412x148
+Skip non-chart visual asset 89599f9d855d2f5d4262758148dd664cbedcbe744f108b30ba2cb27e1b481142.jpg: score=0;odd_ratio:6.90,edge:0.44,contrast
+Neutralized WeChat title while keeping the report: 野村：全球AI趋势追踪-微软6月季度财报，Azure增长43% -> 野村：月度与季度数据变化观察
+Skip non-chart visual asset aa60a3ff979adcedc996c969fa346bf130b3c7cadc1350a32886a2ae1d8d5c7a.jpg: score=-100;too_small:442x87
+Skip non-chart visual asset 7cc586b578b9760baafa8f7291a08c369be40e752702760f00a0647828b21d14.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset be7a0d99b1cd16e8cb874ecfa07054f73b043e714621f0c14834dd9b14534b30.jpg: score=-1;odd_ratio:7.04,edge:0.24
+Skip non-chart visual asset 7bbe9eed3db4ea5bd38b3f804f01ae6cd85bafa9d1f95ac71be72e8c8d59204e.jpg: score=0;square_without_chart_hint,edge:0.22,large
+Skip non-chart visual asset bc3e0a7a5712b2f27503ad82a4431b93362b0875cc613a038beb9bb826b89019.jpg: score=-1;odd_ratio:7.35,edge:0.26
+Skip non-chart visual asset 30fbaec81e932c20ee68cdb1a09cac058877893bd9e7a764be2f6a75b25b81af.jpg: score=2;edge:0.12
+Skip non-chart visual asset 122d8729cc8d3ac07775e495f9d6ad65622749a057814559bd4162cbbc319916.jpg: score=-1;odd_ratio:7.57,edge:0.21
+Skip non-chart visual asset ad6466e64ec3e077703d3a49194c68f62d7654d371447ae5b33b868a96f547a8.jpg: score=1;chart_ratio
+Skip non-chart visual asset 7a3262dc1baa5cb52746b05ab2bf13d74f365ce08bd39244382f870b11f27755.jpg: score=-100;too_small:923x118
+Skip non-chart visual asset fe2bdbdec6ea682a216a834fbb8d2546cf6343536adc3f4c921f3da7e0b0b139.jpg: score=-100;too_small:1412x104
+Skip non-chart visual asset 3e03fdc3bee863da3105bf602f89b388acd576ad7505a4ee7b7049d255abecdd.jpg: score=0;odd_ratio:4.84,edge:0.18,large
+Neutralized WeChat title while keeping the report: 瑞银：亚马逊AWS加速增长进入40%区间 -> 瑞银：研究主题与行业变化观察
+Skip non-chart visual asset f7435ffc059c0b72a0ca3b7872df12457417a72208bd6c2bbf2cd4c5fca67e8a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.19,contrast
+Neutralized WeChat title while keeping the report: 野村：美元兑人民币中间价模型预测降至6.7300-较前值低592个基点 -> 野村：货币市场与相关指标观察
+MinerU result contained no standalone chart images; creating title card only.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_17; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

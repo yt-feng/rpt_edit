@@ -1,0 +1,543 @@
+[
+  {
+    "item": "0001-86-NOM-Global-AI-Trend-Tracker-Amazon-s-2Q26-earnings-read-through-26073",
+    "source_pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0001-86-NOM-Global AI Trend Tracker-Amazon-s 2Q26 earnings read through-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "AWS财报里的三个关",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：全球AI趋势追踪-亚马逊二季度财报解读",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-86-NOM-Global AI Trend Tracker-Amazon-s 2Q26 earnings read through-260731.pdf",
+      "cleaned_source_title": "NOM-Global AI Trend Tracker-Amazon-s 2Q26 earnings read through",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：全球AITrendTrackerAmazons2Q26",
+      "raw_candidates": [
+        "NOM：全球AI趋势追踪-亚马逊二季度财报解读",
+        "NOM：亚马逊二季度营收2006亿美元，资本开支上调至2200亿",
+        "NOM：亚马逊AI基础设施投入与AWS云产能预订至2028年"
+      ],
+      "cleaned_candidates": [
+        "NOM：全球AI趋势追踪-亚马逊二季度财报解读",
+        "NOM：亚马逊二季度营收2006亿美元，资本开支上调至2200亿",
+        "NOM：亚马逊AI基础设施投入与AWS云产能预订至2028年",
+        "NOM：全球AITrendTrackerAmazons2Q26",
+        "NOM：2.芯片业务年化收入超250亿美元，Trainium客户范围扩大"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：亚马逊二季度营收2006亿美元，资本开支上调至2200亿",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：亚马逊AI基础设施投入与AWS云产能预订至2028年",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：全球AITrendTrackerAmazons2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：2.芯片业务年化收入超250亿美元，Trainium客户范围扩大",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：全球AI趋势追踪-亚马逊二季度财报解读",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：全球AI趋势追踪-亚马逊二季度财报解读"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-87-NOM-Global-AI-Trend-Tracker-Microsoft-s-June-quarter-results-read-thr",
+    "source_pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0002-87-NOM-Global AI Trend Tracker-Microsoft-s June quarter results read-through-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "微软这份财报，最让我",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "NOM：月度与季度数据变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-87-NOM-Global AI Trend Tracker-Microsoft-s June quarter results read-through-260730.pdf",
+      "cleaned_source_title": "NOM-Global AI Trend Tracker-Microsoft-s June quarter results read-through",
+      "institution_name": "NOM",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "NOM：全球AITrendTrackerMicrosof",
+      "raw_candidates": [
+        "全球AI趋势追踪-微软6月季度财报解读",
+        "全球AI趋势追踪-微软6月季度财报：Azure增长43%",
+        "全球AI趋势追踪-微软6月季度财报与AI基础设施支出"
+      ],
+      "cleaned_candidates": [
+        "NOM：全球AI趋势追踪-微软6月季度财报解读",
+        "NOM：全球AI趋势追踪-微软6月季度财报，Azure增长43%",
+        "NOM：全球AI趋势追踪-微软6月季度财报与AI基础设施支出",
+        "NOM：全球AITrendTrackerMicrosof",
+        "NOM：微软6月季度财报指向AI基础设施支出延续"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：全球AITrendTrackerMicrosof",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：微软6月季度财报指向AI基础设施支出延续",
+          "reasons": [
+            "anchor_coverage=0.47",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：月度与季度数据变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "43"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：全球AI趋势追踪-微软6月季度财报，Azure增长43%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "NOM：月度与季度数据变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-88-UBS-Amazon.com-AWS-Set-to-Accelerate-Further-into-40---Growth-260731-1",
+    "source_pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0003-88-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "AWS增速要冲40%",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "UBS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-88-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731 (1).pdf",
+      "cleaned_source_title": "UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731 (1)",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：AWSSettoAccelerateFurtherinto40",
+      "raw_candidates": [
+        "UBS：亚马逊AWS加速增长进入40%区间",
+        "UBS：AWS订单积压4960亿美元，云业务增速进入40%区间",
+        "UBS：AWS AI年化收入250亿美元，云业务增速进入40%区间"
+      ],
+      "cleaned_candidates": [
+        "UBS：亚马逊AWS加速增长进入40%区间",
+        "UBS：AWS订单积压4960亿美元，云业务增速进入40%区间",
+        "UBS：AWSAI年化收入250亿美元，云业务增速进入40%区间",
+        "UBS：AWSSettoAccelerateFurtherinto40",
+        "UBS：AWS订单积压升至4960亿美元，云业务增速将进入40%区间"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：AWS订单积压4960亿美元，云业务增速进入40%区间",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "UBS：AWSAI年化收入250亿美元，云业务增速进入40%区间",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "UBS：AWSSettoAccelerateFurtherinto40",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：AWS订单积压升至4960亿美元，云业务增速将进入40%区间",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        }
+      ],
+      "selected_title": "UBS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：亚马逊AWS加速增长进入40%区间",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "UBS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-89-NOM-USD-CNY-fix-model-Projection--6.7300-260731",
+    "source_pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0004-89-NOM-USD CNY fix model-Projection- 6.7300-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "人民币中间价模型预测",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "NOM：货币市场与相关指标观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-89-NOM-USD CNY fix model-Projection- 6.7300-260731.pdf",
+      "cleaned_source_title": "NOM-USD CNY fix model-Projection- 6.7300",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：USDCNYfixmodelProjection-6.7300",
+      "raw_candidates": [
+        "NOM：美元兑人民币中间价模型预测降至6.7300",
+        "NOM：美元兑人民币中间价模型预测降至6.7300-较前值低592个基点",
+        "NOM：美元兑人民币中间价模型预测降至6.7300-含逆周期因子预测6.7426"
+      ],
+      "cleaned_candidates": [
+        "NOM：美元兑人民币中间价模型预测降至6.7300",
+        "NOM：美元兑人民币中间价模型预测降至6.7300-较前值低592个基点",
+        "NOM：USDCNYfixmodelProjection-6.7300",
+        "NOM：NOM亚洲外汇策略团队在7月31日发布的中间价预测模型中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "bare_trailing_number"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：美元兑人民币中间价模型预测降至6.7300",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.66",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：USDCNYfixmodelProjection-6.7300",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：NOM亚洲外汇策略团队在7月31日发布的中间价预测模型中",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：货币市场与相关指标观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "592"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "NOM：美元兑人民币中间价模型预测降至6.7300-较前值低592个基点",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "NOM：货币市场与相关指标观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-90-NOM-Industrial-electronics-sector-Results-at-overseas-companies--Meta",
+    "source_pdf": "/tmp/pdf_batch_001_dnbyakxf/pdfs/0005-90-NOM-Industrial electronics sector-Results at overseas companies- Meta and Microsoft-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "海外云厂商最新季报：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：工业电子行业海外公司业绩，Meta与微软",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-90-NOM-Industrial electronics sector-Results at overseas companies- Meta and Microsoft-260730.pdf",
+      "cleaned_source_title": "NOM-Industrial electronics sector-Results at overseas companies- Meta and Microsoft",
+      "institution_name": "NOM",
+      "required_terms": [],
+      "deterministic_fallback": "NOM：Industrialelectronicssec",
+      "raw_candidates": [
+        "工业电子行业海外公司业绩：Meta与微软",
+        "Meta与微软季度业绩：AI算力供给落后于需求",
+        "Meta与微软财报：AI算力需求与资本开支指引"
+      ],
+      "cleaned_candidates": [
+        "NOM：工业电子行业海外公司业绩，Meta与微软",
+        "NOM：Meta与微软季度业绩，AI算力供给落后于需求",
+        "NOM：Meta与微软财报，AI算力需求与资本开支指引",
+        "NOM：Industrialelectronicssec",
+        "NOM：美国两大超大规模云厂商Meta和微软于7月30日（日本时间）公布"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "NOM：Meta与微软季度业绩，AI算力供给落后于需求",
+          "reasons": [
+            "anchor_coverage=0.39",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：Meta与微软财报，AI算力需求与资本开支指引",
+          "reasons": [
+            "anchor_coverage=0.33",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：Industrialelectronicssec",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "NOM：美国两大超大规模云厂商Meta和微软于7月30日（日本时间）公布",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "NOM：工业电子行业海外公司业绩，Meta与微软",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "NOM：工业电子行业海外公司业绩，Meta与微软"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
