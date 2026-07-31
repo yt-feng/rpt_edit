@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0001-61-JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0002-62-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0003-63-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0004-64-JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0005-65-JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+Found 92 total PDFs; shard 12/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_anwmxa4z/pdfs/0001-61-J.P. Morgan-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_anwmxa4z/pdfs/0002-62-J.P. Morgan-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_anwmxa4z/pdfs/0003-63-J.P. Morgan-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_anwmxa4z/pdfs/0004-64-J.P. Morgan-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_anwmxa4z/pdfs/0005-65-J.P. Morgan-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729.pdf
+MinerU attempt 1 using MINER_U batch_id=debd966a-3cbe-4e74-9690-da0832104e76
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset e555f5632fc2fe88e2824ac38bd26201b477e11d0d72499324c2fea173e7ef98.jpg: score=1;odd_ratio:6.08,edge:0.26,contrast,large
+Skip non-chart visual asset d28b19b9250f90da2d5bfae137719e8f5c5212e94427882121ce3cfe838fa06a.jpg: score=-100;too_small:1003x109
+Skip non-chart visual asset b668c89f2f1d3362382d0c0fa9878edddb6cc4c5fdaa872a1e269923d5a63a76.jpg: score=-100;too_small:982x112
+Skip non-chart visual asset 64fa1b7b2d9c306b1b8c9c0c173b8a9e9852664ec10486902db132adc742d744.jpg: score=-100;too_small:1459x176
+Skip non-chart visual asset 03b1a90152829b673409a66253fc75785781e19843744cdf7d4a385d7061e158.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 1f2c162541ba2fba97be71f259bf163c2f9ce1b16434d8fd1d171a4006897c42.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 31b5c9de30dc41d758e098d80ed280b3070dc2eff64b372298a2376aee9d51d3.jpg: score=-100;too_small:448x99
+Skip non-chart visual asset 7deabce84c5cb4950104d4eab5afdd0e887dab38d8d7cf33fd8d1674d7fe6014.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.42,contrast
+Skip non-chart visual asset c6afc9d3f827d046fd2fc1cb00f471b29395fd344a95c39b91acce2dc11af6d5.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 53a0b137e1ae362568eccb6058260a5860a63b5960975dac979c9c9b627e6bfd.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 0cf57d27b1466b6c950078cc30fcb0860c939f1017c93c5451f5ecb95d1f3527.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 8c652f5fe79484c067b44b23f4885ba2801964057dcb6073b915860ca3f992da.jpg: score=0;square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 3abf26e92308b4bd10b3b1d10ed77b903f8863194e4dae433175b519683bc5b7.jpg: score=-100;too_small:448x159
+Neutralized WeChat title while keeping the report: 摩根大通：罗技国际第一财季业绩超预期但供应商事件影响近期展望 -> 摩根大通：罗技国际第一财季业务与近期数据观察
+Skip non-chart visual asset 03b1a90152829b673409a66253fc75785781e19843744cdf7d4a385d7061e158.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 1f2c162541ba2fba97be71f259bf163c2f9ce1b16434d8fd1d171a4006897c42.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 31b5c9de30dc41d758e098d80ed280b3070dc2eff64b372298a2376aee9d51d3.jpg: score=-100;too_small:448x99
+Skip non-chart visual asset 7deabce84c5cb4950104d4eab5afdd0e887dab38d8d7cf33fd8d1674d7fe6014.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.42,contrast
+Skip non-chart visual asset c6afc9d3f827d046fd2fc1cb00f471b29395fd344a95c39b91acce2dc11af6d5.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 53a0b137e1ae362568eccb6058260a5860a63b5960975dac979c9c9b627e6bfd.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 0cf57d27b1466b6c950078cc30fcb0860c939f1017c93c5451f5ecb95d1f3527.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset 8c652f5fe79484c067b44b23f4885ba2801964057dcb6073b915860ca3f992da.jpg: score=0;square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 3abf26e92308b4bd10b3b1d10ed77b903f8863194e4dae433175b519683bc5b7.jpg: score=-100;too_small:448x159
+Neutralized WeChat title while keeping the report: 摩根大通：罗技国际2027财年一季度业绩超预期但供应商事件影响近季出货 -> 摩根大通：罗技国际业务与季度数据观察
+Skip non-chart visual asset 988be2dd2d2c088e32181b409da4793dfba966f9bf2b1642d2b3b73c23a47bc4.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset b7c3b8330f118e93049e13dc8b6ad9272e2a6c4aef0eec53d0fc77b5567bb330.jpg: score=0;square_without_chart_hint,edge:0.43,large
+Skip non-chart visual asset a129706da2a308d2468f2fd25abfa8866dcfd5eacc14d73254b547726b299e07.jpg: score=1;chart_ratio
+Skip non-chart visual asset 1ee10fcc21d1277ff2dafe17e7be94ac6362f247175eff6693741f2ec8988d64.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 0721a4bc37eb92a2a7add4bfa7b479515d5e98c93ca275155822144fe9d72126.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.40,contrast,large
+Skip non-chart visual asset 1bf816ae0b209b9888cc0d76c0eb503e4b800f1f764228af0daa949d9582c504.jpg: score=-100;too_small:982x168
+Skip non-chart visual asset 137a622c008f1d5c50b43e99f0a5baa95178785ba07a96d77b9cc81e274e3736.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 598ea8e665da6c7bb2b8aa00e3f09aab1e7969d11727fabfb17a1ba84a473c31.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 178812c09643fea5920a0bac1b0dc36921b12d9a6db095eab6689f7dd7069679.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 9e3b224bc2fde5982dc267b3d9ff34697ca163d101f825a767d27831c878438a.jpg: score=-100;too_small:451x118
+Skip non-chart visual asset 185dafaf654c227a0682bd26c9f495825e15250c0d43bc1d7f89e46f0484decd.jpg: score=-100;too_small:448x159
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_12; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

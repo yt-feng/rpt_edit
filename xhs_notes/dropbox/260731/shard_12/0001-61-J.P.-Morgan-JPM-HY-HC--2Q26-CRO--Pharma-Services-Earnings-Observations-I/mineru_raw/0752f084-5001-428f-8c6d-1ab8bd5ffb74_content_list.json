@@ -1,0 +1,1850 @@
+[
+    {
+        "type": "text",
+        "text": "JPM HY HC: 2Q26 CRO, Pharma Services Earnings Observations",
+        "text_level": 1,
+        "bbox": [
+            133,
+            107,
+            629,
+            167
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IQV, FTRE, and AVTR Earnings Review",
+        "bbox": [
+            133,
+            174,
+            514,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IQV, FTRE, and AVTR reported their 2Q26 earnings this week. All three spoke to positive funding environments and/or improving macro backdrops. Further, they all raised their revenue guidance for FY26, reflecting confidence in 2H26 trends and healthy demand resulting in organic growth. We note that ICLR echoed this constructive view on end-market demand for the remainder of 2026 and a healthy pharma funding environment. Though mainly highlighted in the IQV call, we will continue to watch for any AI disruption in the space and monitor funding in pharma, biotech, and EBP.",
+        "bbox": [
+            132,
+            234,
+            665,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/215648d48eaabc25075271e10c45654367d268badd88622c55d698960a09e408.jpg",
+        "table_caption": [
+            "Table 1: Pricing"
+        ],
+        "table_footnote": [
+            "Source: Bloomberg Finance, L.P."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">CREDIT</td><td rowspan=\"2\">RATE</td><td rowspan=\"2\">RANKING</td><td rowspan=\"2\">MATURITY</td><td colspan=\"3\">RATINGS</td><td colspan=\"3\">PRICING</td></tr><tr><td>M</td><td>/</td><td>S&amp;P</td><td>Px</td><td>YTW</td><td>SPREAD</td></tr><tr><td>FTRE</td><td>7.500%</td><td>Secured</td><td>7/1/2030</td><td>B3</td><td>/</td><td>B-</td><td>101.8</td><td>6.509%</td><td>225</td></tr><tr><td>PRXL</td><td>TSFR1M+275bp, Indx FI: 50</td><td>Term Loan</td><td>12/12/2031</td><td>B2</td><td>/</td><td>B+</td><td>100.3</td><td>6.442%</td><td>269</td></tr><tr><td>SYNH</td><td>TSFR1M+350bp, Indx FI: 0</td><td>Term Loan</td><td>9/30/2030</td><td>B1</td><td>/</td><td>B</td><td>100.0</td><td>7.248%</td><td>350</td></tr><tr><td>SYNH</td><td>9.000%</td><td>Secured</td><td>10/1/2030</td><td>B1</td><td>/</td><td>B</td><td>104.5</td><td>6.725%</td><td>244</td></tr><tr><td>IQV</td><td>TSFR3M+175bp, Indx FI: 0</td><td>Term Loan</td><td>1/2/2031</td><td>Baa3</td><td>/</td><td>BBB-</td><td>100.5</td><td>5.459%</td><td>162</td></tr><tr><td>IQV</td><td>5.700%</td><td>Secured</td><td>5/15/2028</td><td>Baa3</td><td>/</td><td>BBB-</td><td>101.3</td><td>4.924%</td><td>71</td></tr><tr><td>IQV</td><td>6.250%</td><td>Secured</td><td>2/1/2029</td><td>Baa3</td><td>/</td><td>BBB-</td><td>102.8</td><td>5.029%</td><td>73</td></tr><tr><td>IQV</td><td>5.000%</td><td>Unsecured</td><td>10/15/2026</td><td>Ba2</td><td>/</td><td>BB</td><td>100.0</td><td>4.927%</td><td>127</td></tr><tr><td>IQV</td><td>5.000%</td><td>Unsecured</td><td>5/15/2027</td><td>Ba2</td><td>/</td><td>BB</td><td>99.9</td><td>5.154%</td><td>115</td></tr><tr><td>IQV</td><td>2.250%</td><td>Unsecured</td><td>1/15/2028</td><td>Ba2</td><td>/</td><td>BB</td><td>98.1</td><td>3.620%</td><td>81</td></tr><tr><td>IQV</td><td>2.875%</td><td>Unsecured</td><td>6/15/2028</td><td>Ba2</td><td>/</td><td>BB</td><td>98.9</td><td>3.532%</td><td>72</td></tr><tr><td>IQV</td><td>2.250%</td><td>Unsecured</td><td>3/15/2029</td><td>Ba2</td><td>/</td><td>BB</td><td>96.6</td><td>3.645%</td><td>82</td></tr><tr><td>IQV</td><td>6.500%</td><td>Unsecured</td><td>5/15/2030</td><td>Ba2</td><td>/</td><td>BB</td><td>101.6</td><td>5.527%</td><td>130</td></tr><tr><td>IQV</td><td>6.250%</td><td>Unsecured</td><td>6/1/2032</td><td>Ba2</td><td>/</td><td>BB</td><td>101.3</td><td>5.878%</td><td>150</td></tr><tr><td>IQV</td><td>4.625%</td><td>Unsecured</td><td>6/15/2033</td><td>Ba2</td><td>/</td><td>BB</td><td>100.4</td><td>4.588%</td><td>169</td></tr><tr><td>AVTR</td><td>EUR003M+200bp, Indx FI: 0</td><td>Term Loan</td><td>10/12/2032</td><td>Ba1</td><td>/</td><td>BBB-</td><td>100.5</td><td>4.364%</td><td>191</td></tr><tr><td>AVTR</td><td>3.875%</td><td>Unsecured</td><td>7/15/2028</td><td>B1</td><td>/</td><td>BB</td><td>100.0</td><td>3.868%</td><td>131</td></tr><tr><td>AVTR</td><td>4.625%</td><td>Unsecured</td><td>7/15/2028</td><td>B1</td><td>/</td><td>BB</td><td>98.9</td><td>5.236%</td><td>97</td></tr><tr><td>AVTR</td><td>3.875%</td><td>Unsecured</td><td>11/1/2029</td><td>B1</td><td>/</td><td>BB</td><td>95.1</td><td>5.532%</td><td>119</td></tr></table>",
+        "bbox": [
+            137,
+            383,
+            661,
+            608
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IQVIA (IQV)",
+        "text_level": 2,
+        "bbox": [
+            133,
+            655,
+            243,
+            674
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Recommendation: We maintain our Neutral rating on IQV. Results were generally in line and management sentiment around the current and future market environment and AI was overwhelmingly positive. The company has a strong competitive position and is the leading provider to the EBP customer base, which is quickly growing and requires complete outsourcing. FCF is strong and leverage is stable. However, the Commercial business remains vulnerable to AI disruption and it's too early to see the anticipated tailwinds pan out. Management made no mention of targeting IG ratings and current levels have little upside. Risks to our rating include leveraged acquisitions, AI disruption, and a weakening pharma, EBP, or biotech funding environment.",
+        "bbox": [
+            132,
+            678,
+            665,
+            828
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Summary: 2Q26 results were in line with expectations. Revenue grew 8.7% YoY to \\$4.4bn and EBITDA margins expanded 30bp to 22.8%, resulting in EBITDA of \\$994mm. The company's newly increased revenue guidance is higher than the street while EBITDA remains consistent with consensus estimates. The market demand continues to improve, as evidenced by double-digit RFP flow growth YoY",
+        "bbox": [
+            132,
+            839,
+            666,
+            916
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 6 for analyst certification and important disclosures.",
+        "bbox": [
+            133,
+            934,
+            580,
+            953
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "North America Corporate Credit - Healthcare (HY)",
+        "bbox": [
+            687,
+            234,
+            926,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            687,
+            266,
+            843,
+            306
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rachel Barish\n(1-212) 270-0970\nrachel.barish@JPM.com\nJPM Securities LLC",
+        "bbox": [
+            689,
+            306,
+            846,
+            359
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "J.D.Morgan",
+        "bbox": [
+            1,
+            564,
+            96,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            133,
+            22,
+            344,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            689,
+            26,
+            913,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "in the clinical environment, shortening decision timelines, and elevated emergent biopharma funding. The Commercial Solutions segment is supported by a $\\sim45\\%$ increase in new drug launches in 1H26 compared to 1H25 and an increasing trend from large pharma customers seeking to outsource the full commercialization of certain therapies in select geographies.",
+        "bbox": [
+            66,
+            148,
+            665,
+            210
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Strength in emerging biopharma funding. Management highlighted emerging biopharma (“EBP”) as a key driver of market demand, with EBP funding at \\$35bn in 2Q26 (more than double the 2Q25 amount). EBP now represents \\~35% of IQV’s R&DS revenue and the company derives more revenue from the emerging biopharma segment than its CRO peers. This is important given that IQV is the largest provider to the EBP segment and it continues to be where much of the industry’s innovation is coming from. For reference, a decade ago, EBP represented \\~45% of all clinical trial starts globally; today, it comprises \\~70%. IQVIA expects EBP R&D to grow at 2x-3x the rate of large pharma R&D spend. EBP has proven additionally beneficial as trials in the segment are full-service outsourcing, compared to large pharma trials which can be in-sourced.",
+        "bbox": [
+            66,
+            222,
+            665,
+            372
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI remains a focus. Management reiterated its view that AI will contribute to market expansion in 2027 and beyond. They cited clients stating that AI in discovery will increase CRO demand as more molecules with a higher predictable success are entering development. Further, the company's AI-enabled capabilities are improving study design, accelerating timelines, and reducing operational risk across complex global trials. We believe it's still too early to determine how exactly AI will impact the CRO universe, and, although these statements seem plausible, we are cautious of how AI may impact IQV's analytics and consulting businesses within the Commercial segment.",
+        "bbox": [
+            66,
+            383,
+            665,
+            503
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Highlights. Book-to-bill of 1.2x was driven by \\$3.15bn in new bookings (19% YoY growth), with notable strength in full-service bookings. Passthroughs and cancelations were in the normal range. Leverage remained flat sequentially at 4.1x (3.6x net) and liquidity remained ample with \\$1.9bn of cash on the balance sheet and full capacity under the \\$2bn RC.",
+        "bbox": [
+            66,
+            515,
+            663,
+            577
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3Q26 guidance. For the third quarter, IQVIA expects revenue between \\$4.35bn and \\$4.39bn, representing YoY growth of 5.2%-7.1%. EBITDA is expected to be \\$1bn-\\$1.02bn, demonstrating 5.4%-7.5% YoY growth.",
+        "bbox": [
+            66,
+            589,
+            663,
+            636
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "FY26 guidance. Off the back of stronger than expected organic revenue growth and changes to M&A and FX impacts, IQV raised its revenue guidance to \\$17.275bn-\\$17.475bn, representing growth of 6.5% at the midpoint compared to the prior guidance midpoint of 5.8%. Of this 70bp increase, 100bp are related to higher organic revenue growth and 50bp higher contribution from M&A, partially offset by an 80bp reduction to FX tailwind. We note that acquisition impact is historically $\\frac{2}{3}$ commercial and $\\frac{1}{3}$ RD&S. EBITDA guidance was also increased to \\$4bn-\\$4.05bn, growing 6.25% at the midpoint and reconfirming flat YoY margins at \\~23.2%.",
+        "bbox": [
+            66,
+            648,
+            665,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/621c267375b719b2eb8a59e12a9ec53f8fca16e3c0b449443e7963286eaba418.jpg",
+        "table_caption": [
+            "Table 2: Summary Model"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>FY 2024</td><td>Q1:25</td><td>Q2:25</td><td>Q3:25</td><td>Q4:25</td><td>FY 2025</td><td>Q1:26</td><td>Q2:26</td></tr><tr><td>LTM EBITDA</td><td>3,684</td><td>3,705</td><td>3,728</td><td>3,738</td><td>3,788</td><td>3,788</td><td>3,837</td><td>3,921</td></tr><tr><td>LTM FCF</td><td>2,114</td><td>2,163</td><td>2,010</td><td>2,211</td><td>2,051</td><td>2,051</td><td>2,115</td><td>2,181</td></tr><tr><td>Cash</td><td>1,702</td><td>1,740</td><td>2,039</td><td>1,814</td><td>1,980</td><td>1,980</td><td>1,947</td><td>1,909</td></tr><tr><td>Secured Debt</td><td>7,965</td><td>8,166</td><td>7,046</td><td>7,003</td><td>7,767</td><td>7,767</td><td>8,576</td><td>7,688</td></tr><tr><td>Total Debt</td><td>14,045</td><td>14,389</td><td>15,573</td><td>15,034</td><td>15,800</td><td>15,800</td><td>15,908</td><td>16,081</td></tr><tr><td>Secured leverage</td><td>2.2x</td><td>2.2x</td><td>1.9x</td><td>1.9x</td><td>2.1x</td><td>2.1x</td><td>2.2x</td><td>2.0x</td></tr><tr><td>Total leverage</td><td>3.8x</td><td>3.9x</td><td>4.2x</td><td>4.0x</td><td>4.2x</td><td>4.2x</td><td>4.1x</td><td>4.1x</td></tr><tr><td>Net leverage</td><td>3.4x</td><td>3.4x</td><td>3.6x</td><td>3.5x</td><td>3.6x</td><td>3.6x</td><td>3.6x</td><td>3.6x</td></tr></table>",
+        "bbox": [
+            70,
+            165,
+            660,
+            306
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/cab6db3602910c884e636f1a7d69ec2acc20e194db5a65c2da8c84c03efd63c3.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Revenue</td><td>15,405</td><td>3,829</td><td>4,017</td><td>4,100</td><td>4,364</td><td>16,310</td><td>4,151</td><td>4,368</td></tr><tr><td>Cost of Revenue</td><td>(10,030)</td><td>(2,531)</td><td>(2,694)</td><td>(2,727)</td><td>(2,928)</td><td>(10,880)</td><td>(2,796)</td><td>(2,933)</td></tr><tr><td>Percent of sales</td><td>65.1%</td><td>66.1%</td><td>67.1%</td><td>66.5%</td><td>67.1%</td><td>66.7%</td><td>67.4%</td><td>67.1%</td></tr><tr><td>SG&amp;A</td><td>(1,992)</td><td>(508)</td><td>(509)</td><td>(514)</td><td>(468)</td><td>(1,999)</td><td>(502)</td><td>(574)</td></tr><tr><td>Percent of sales</td><td>12.9%</td><td>13.3%</td><td>12.7%</td><td>12.5%</td><td>10.7%</td><td>12.3%</td><td>12.1%</td><td>13.1%</td></tr><tr><td>Equity in affiliate</td><td>90</td><td>(15)</td><td>(11)</td><td>31</td><td>94</td><td>99</td><td>(4)</td><td>(12)</td></tr><tr><td>Adjustment</td><td>206</td><td>121</td><td>108</td><td>59</td><td>(52)</td><td>236</td><td>78</td><td>130</td></tr><tr><td>EBITDA</td><td>3,684</td><td>883</td><td>910</td><td>949</td><td>1,046</td><td>3,788</td><td>932</td><td>994</td></tr><tr><td>EBITDA margin</td><td>23.9%</td><td>23.1%</td><td>22.7%</td><td>23.1%</td><td>24.0%</td><td>23.2%</td><td>22.5%</td><td>22.8%</td></tr></table>",
+        "bbox": [
+            70,
+            325,
+            660,
+            424
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/d28b19b9250f90da2d5bfae137719e8f5c5212e94427882121ce3cfe838fa06a.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company filings, JPM"
+        ],
+        "table_body": "<table><tr><td>Cash flow from ops</td><td>2,716</td><td>568</td><td>443</td><td>908</td><td>735</td><td>2,654</td><td>618</td><td>558</td></tr><tr><td>Less capex</td><td>(602)</td><td>(142)</td><td>(151)</td><td>(136)</td><td>(174)</td><td>(603)</td><td>(127)</td><td>(198)</td></tr><tr><td>Percent of sales</td><td>3.9%</td><td>3.7%</td><td>3.8%</td><td>3.3%</td><td>4.0%</td><td>3.7%</td><td>3.1%</td><td>4.5%</td></tr><tr><td>Free Cash Flow</td><td>2,114</td><td>426</td><td>292</td><td>772</td><td>561</td><td>2,051</td><td>491</td><td>360</td></tr></table>",
+        "bbox": [
+            71,
+            430,
+            661,
+            479
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Fortrea (FTRE)",
+        "text_level": 2,
+        "bbox": [
+            68,
+            527,
+            210,
+            545
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Recommendation: Despite an improved backdrop and diversification benefits, we remain Underweight on the credit. Fortrea remains a show-me story, leverage remains elevated, and we have yet to find a compelling reason to chase the bonds at current levels. Despite this view, we believe the company is positioned to refinance its TLA, TLB and possibly its A/R facility (reset covenants, etc.). It would not surprise us if the company attempts a global approach, but the cost savings will not be significant. Risks to our UW include stronger new bookings, market share wins, and aggressive debt paydowns. Risks to our rating include an early refinancing, M&A and stronger improvement in results.",
+        "bbox": [
+            66,
+            549,
+            665,
+            670
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary. Overall, Fortrea posted a good quarter, beating both our estimates and the street's driven by new business wins and continued booking diversification efforts. The macro and funding environment continues to improve and we believe expectations of positive FCF for 2H26 and FY26 are realistic based on 1H26 results. However, FTRE remains highly levered at 7.5x 1L leverage and did not comment on any future debt redemptions.",
+        "bbox": [
+            66,
+            681,
+            665,
+            758
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Backlog and new wins. Backlog was \\$7.8bn and cancelations remained in line with historical trends. Backlog burn of 8.6% in 2Q26 was higher sequentially driven by service fee growth in the Clinical Pharmacology business and sequentially higher pass-through revenue in Clinical Pharmacology and Clinical Development. Fortrea noted it is looking to diversify its bookings and backlog, which is burning off into revenue, some of which are higher-margin projects. In line with the market, the company has seen the most strength in oncology compared to other therapeutic areas. Management noted that the mix of projects coming into its pipeline will likely remain steady, and would only shift if the company took on a very large vaccine or Phase III GLP-1 study earlier.",
+        "bbox": [
+            66,
+            770,
+            665,
+            905
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Improved biotech funding and its impact on pipeline. Similar to its peers, Fortrea noted that biotech funding has improved meaningfully, and that has bled into increasing the speed at which RFPs are coming into Fortrea's pipeline. The speed at which biotech decisions are entering and exiting the company's pipeline is starting to normalize and improve sequentially, compared to 2H25 which was characterized by extraordinarily slow decision making because funding ws oftentimes delayed or off cycle.",
+        "bbox": [
+            66,
+            917,
+            665,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            66,
+            148,
+            663,
+            210
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Momentum in China. China continues to be a hub for innovative medicines and FTRE remains focused on maintaining a strong presence in the region. Management believes this presence makes it a strong option for customers looking to run global studies in China. Echoing 1Q26 commentary, the company called out growth from Chinese biotechs and U.S. companies partnering with Chinese biotechs that are brinign medicines into the global landscape.",
+        "bbox": [
+            66,
+            222,
+            665,
+            313
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FY26 guidance. Fortrea increased its FY26 revenue and EBITDA guidance to \\$2.62bn-\\$2.69bn (from \\$2.55-2.65bn) and \\$205mm-\\$220mm (from \\$190-200mn), respectively. These improvements reflect solid performance in 1H26 due to execution against an improving mix in backlog and new business wins. Management stated that it remains focused on the balance sheet and capital allocation, and continues to expect positive FCF for the remainder of the year and the full year.",
+        "bbox": [
+            66,
+            324,
+            665,
+            415
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Table 3: Summary Model",
+        "text_level": 2,
+        "bbox": [
+            68,
+            426,
+            218,
+            441
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/895c1afd7e5b670144cc984b66041aedd1124ea8ed43345fb7d11fbde94956fe.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company filings, JPM"
+        ],
+        "table_body": "<table><tr><td></td><td>FY 2024</td><td>1Q:25</td><td>2Q:25</td><td>3Q:25</td><td>4Q:25</td><td>FY 2025</td><td>1Q:26</td><td>2Q:26</td></tr><tr><td>LTM EBITDA</td><td>181</td><td>195</td><td>192</td><td>178</td><td>182</td><td>182</td><td>198</td><td>204</td></tr><tr><td>Cash</td><td>119</td><td>102</td><td>81</td><td>131</td><td>175</td><td>175</td><td>148</td><td>169</td></tr><tr><td>Total Debt</td><td>1,440</td><td>1,531</td><td>1,492</td><td>1,366</td><td>1,366</td><td>1,366</td><td>1,366</td><td>1,366</td></tr><tr><td>Total leverage</td><td>7.9x</td><td>7.9x</td><td>7.8x</td><td>7.7x</td><td>7.5x</td><td>7.5x</td><td>6.9x</td><td>6.7x</td></tr><tr><td>Net leverage</td><td>7.3x</td><td>7.3x</td><td>7.4x</td><td>6.9x</td><td>6.5x</td><td>6.5x</td><td>6.1x</td><td>5.9x</td></tr><tr><td>Revenue</td><td>2,696</td><td>651</td><td>710</td><td>701</td><td>661</td><td>2,723</td><td>637</td><td>678</td></tr><tr><td>Direct costs</td><td>(2,162)</td><td>(535)</td><td>(577)</td><td>(579)</td><td>(529)</td><td>(2,220)</td><td>(513)</td><td>(539)</td></tr><tr><td>Percent of sales</td><td>80.2%</td><td>82.1%</td><td>81.2%</td><td>82.5%</td><td>80.2%</td><td>81.5%</td><td>80.6%</td><td>79.5%</td></tr><tr><td>SG&amp;A</td><td>(561)</td><td>(122)</td><td>(125)</td><td>(107)</td><td>(103)</td><td>(456)</td><td>(101)</td><td>(102)</td></tr><tr><td>Percent of sales</td><td>20.8%</td><td>18.7%</td><td>17.6%</td><td>15.2%</td><td>15.6%</td><td>16.8%</td><td>15.8%</td><td>15.1%</td></tr><tr><td>Adjustments &amp; other expenses</td><td>208</td><td>36</td><td>43</td><td>30</td><td>26</td><td>135</td><td>23</td><td>21</td></tr><tr><td>EBITDA</td><td>181</td><td>30</td><td>52</td><td>46</td><td>54</td><td>182</td><td>47</td><td>58</td></tr><tr><td>EBITDA margin</td><td>6.7%</td><td>4.7%</td><td>7.3%</td><td>6.5%</td><td>8.2%</td><td>6.7%</td><td>7.3%</td><td>8.6%</td></tr><tr><td>Cash flow from ops</td><td>263</td><td>(124)</td><td>22</td><td>87</td><td>129</td><td>114</td><td>(17)</td><td>29</td></tr><tr><td>Less capex</td><td>(26)</td><td>(3)</td><td>(8)</td><td>(7)</td><td>(8)</td><td>(25)</td><td>(8)</td><td>(9)</td></tr><tr><td>Percent of sales</td><td>0.9%</td><td>0.4%</td><td>1.1%</td><td>1.0%</td><td>1.1%</td><td>0.9%</td><td>1.3%</td><td>1.3%</td></tr><tr><td>Free Cash Flow</td><td>237</td><td>(127)</td><td>14</td><td>80</td><td>122</td><td>88</td><td>(25)</td><td>20</td></tr><tr><td>Backlog</td><td>7,699</td><td>7,721</td><td>7,547</td><td>7,644</td><td>7,728</td><td>7,728</td><td>7,846</td><td>7,800</td></tr><tr><td>Book-to-bill - Quarterly</td><td>1.17x</td><td>1.02x</td><td>0.79x</td><td>1.13x</td><td>1.14x</td><td>1.02x</td><td>1.15x</td><td>1.06x</td></tr><tr><td>Pass-throughs</td><td>939</td><td>240</td><td>276</td><td>280</td><td>231</td><td>1,028</td><td>230</td><td>251</td></tr><tr><td>Percent of sales</td><td>34.8%</td><td>36.8%</td><td>38.9%</td><td>39.9%</td><td>35.0%</td><td>37.7%</td><td>36.1%</td><td>37.0%</td></tr><tr><td>Direct Costs</td><td>1,222</td><td>294</td><td>299</td><td>299</td><td>300</td><td>1,191</td><td>283</td><td>288</td></tr><tr><td>Percent of sales</td><td>45.3%</td><td>45.2%</td><td>42.1%</td><td>42.6%</td><td>45.4%</td><td>43.7%</td><td>44.4%</td><td>42.5%</td></tr></table>",
+        "bbox": [
+            70,
+            443,
+            661,
+            732
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Avantor (AVTR)",
+        "text_level": 2,
+        "bbox": [
+            68,
+            779,
+            217,
+            796
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Recommendation. We maintain our Neutral rating on the AVTR term loan and Underweight on the unsecureds. 2Q26 results were strong, but BMP remains a “show-me” story as it has yet to generate growth this year. The Revival program is a positive for the credit, as are FCF and use of cash to pay down debt and de-lever, but investors aren’t being compensated at current levels especially considering the inconsistency in results. Risks include M&A, accelerated delevering, asset sales.",
+        "bbox": [
+            66,
+            801,
+            665,
+            891
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Summary. Avantor had a strong quarter, with revenue and EBITDA beating our estimates. VWR returned to growth after troughing in the prior quarter, while BMP saw sales decline. AVTR continues to generate sufficient FCF, which totaled \\$141mm for 2Q26. \\~\\$112mm of",
+        "bbox": [
+            66,
+            902,
+            665,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            54,
+            218,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            54,
+            516,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FCF was used to repay debt during the quarter, underscoring the previously stated commitment to net leverage under 3x; as of 6/30/26, net leverage was 3.4x.",
+        "bbox": [
+            66,
+            148,
+            663,
+            180
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "VWR. VWR troughed in 1Q26, but management stated that the segment would return to growth in 2Q26 and beyond. In the second quarter, VWR returned to growth at 1.7%, with revenue in the segment totaling \\$1,240.5mm. AVTR has begun to lap historical headwinds around large customer contract renewals. Over the past year, management has highlighted many large contract wins, which have led to growth. 2Q26 growth for midsize and small customers was driven by e-commerce, including the relaunch of vwr.com. Avantor additionally is seeing broad-based momentum across customers of all sizes due to better pharma and biotech end markets.",
+        "bbox": [
+            66,
+            191,
+            665,
+            313
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "BMP. The BMP segment declined 5.1% YoY to \\$451.8mm driven by anticipated growth headwinds from Serum and Electronic Materials, partially offset by faster-than-expected process chemicals growth, strong order performance, and healthy end market conditions. The aforementioned headwinds, combined with a difficult comp in Fluid Handling resulted in a 600bp negative impact to BP organic growth during the quarter. The segment also benefitted from double-digit order growth resulting in a book-to-bill of 1.1x. Consistent with 1Q26 commentary, management stated its expectation for BP to return to growth in 2H26, driven by improved execution and more favorable comparisons.",
+        "bbox": [
+            66,
+            324,
+            665,
+            446
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3Q26 guidance. The midpoint of the 3Q26 guidance assumes total company organic revenue growth of \\~250bp, with FX contributing a 125bp headwind to revenue. Management assumes BMP reported revenue will be roughly flat sequentially and YoY, with YoY organic revenue growth largely offset by FX headwinds. Further, the impact of discrete customer ordering patterns and shipments will present a headwind of \\~150bp to organic growth during the quarter. Finally, the underlying operating margin drivers in both segments are expected to remain relatively stable sequentially, with volumes, mix, and inflationary pressures expected to be the primary factors influencing any sequential changes in segment margins.",
+        "bbox": [
+            66,
+            457,
+            665,
+            578
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "FY26 guidance. AVTR has updated its organic revenue growth guidance to $(0.5\\%)-0.5\\%$ from $(2.5\\%)-(0.5\\%)$ , which reflects 2Q26 revenue performance and higher growth expectations in VWR for 2H26. FY26 FCF guidance remained at \\$500mm-\\$550mm.",
+        "bbox": [
+            68,
+            589,
+            663,
+            636
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/8cf80b299f832a72289c96e61d94ee14552b43871585c3705632f223d8be2047.jpg",
+        "table_caption": [
+            "Table 4: Summary Model"
+        ],
+        "table_footnote": [
+            "Source: Company filings, JPM"
+        ],
+        "table_body": "<table><tr><td></td><td>FY 2024</td><td>Q1:25</td><td>Q2:25</td><td>Q3:25</td><td>Q4:25</td><td>FY 2025</td><td>Q1:26</td><td>Q2:26</td></tr><tr><td>LTM EBITDA</td><td>1,195</td><td>1,181</td><td>1,156</td><td>1,121</td><td>1,066</td><td>1,066</td><td>1,018</td><td>993</td></tr><tr><td>Cash</td><td>262</td><td>316</td><td>449</td><td>252</td><td>365</td><td>365</td><td>279</td><td>307</td></tr><tr><td>Secured debt</td><td>1,314</td><td>1,345</td><td>1,441</td><td>1,055</td><td>1,149</td><td>1,149</td><td>1,025</td><td>909</td></tr><tr><td>Unsecured debt</td><td>2,764</td><td>2,782</td><td>2,820</td><td>2,819</td><td>2,819</td><td>2,819</td><td>2,811</td><td>2,807</td></tr><tr><td>Total debt</td><td>4,078</td><td>4,127</td><td>4,261</td><td>3,874</td><td>3,968</td><td>3,968</td><td>3,836</td><td>3,715</td></tr><tr><td>Secured leverage</td><td>1.1x</td><td>1.1x</td><td>1.2x</td><td>0.9x</td><td>1.1x</td><td>1.1x</td><td>1.0x</td><td>0.9x</td></tr><tr><td>Total leverage</td><td>3.4x</td><td>3.5x</td><td>3.7x</td><td>3.5x</td><td>3.7x</td><td>3.7x</td><td>3.8x</td><td>3.7x</td></tr><tr><td>Net leverage</td><td>3.2x</td><td>3.2x</td><td>3.3x</td><td>3.2x</td><td>3.4x</td><td>3.4x</td><td>3.5x</td><td>3.4x</td></tr><tr><td>Revenue</td><td>6,784</td><td>1,581</td><td>1,683</td><td>1,624</td><td>1,664</td><td>6,552</td><td>1,581</td><td>1,692</td></tr><tr><td>Cost of revenue</td><td>(4,504)</td><td>(1,047)</td><td>(1,129)</td><td>(1,097)</td><td>(1,140)</td><td>(4,413)</td><td>(1,081)</td><td>(1,155)</td></tr><tr><td>SG&amp;A</td><td>(1,641)</td><td>(388)</td><td>(425)</td><td>(390)</td><td>(392)</td><td>(1,596)</td><td>(401)</td><td>(415)</td></tr><tr><td>D&amp;A</td><td>(406)</td><td>(100)</td><td>(103)</td><td>(105)</td><td>(103)</td><td>(410)</td><td>(105)</td><td>(106)</td></tr><tr><td>Adjustment</td><td>151</td><td>21</td><td>48</td><td>25</td><td>17</td><td>112</td><td>15</td><td>28</td></tr><tr><td>EBITDA</td><td>1,195</td><td>268</td><td>280</td><td>266</td><td>252</td><td>1,066</td><td>220</td><td>255</td></tr><tr><td>EBITDA margin</td><td>17.6%</td><td>17.0%</td><td>16.6%</td><td>16.4%</td><td>15.2%</td><td>16.3%</td><td>13.9%</td><td>15.1%</td></tr><tr><td>Cash flow from ops</td><td>841</td><td>109</td><td>154</td><td>207</td><td>153</td><td>624</td><td>59</td><td>178</td></tr><tr><td>Less capex</td><td>(149)</td><td>(28)</td><td>(30)</td><td>(36)</td><td>(36)</td><td>(129)</td><td>(34)</td><td>(38)</td></tr><tr><td>Percent of sales</td><td>2.2%</td><td>1.8%</td><td>1.8%</td><td>2.2%</td><td>2.1%</td><td>2.0%</td><td>2.1%</td><td>2.2%</td></tr><tr><td>Free Cash Flow</td><td>692</td><td>81</td><td>125</td><td>172</td><td>117</td><td>495</td><td>25</td><td>141</td></tr></table>",
+        "bbox": [
+            71,
+            664,
+            661,
+            904
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            54,
+            218,
+            89
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            54,
+            516,
+            79
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            66,
+            167,
+            924,
+            271
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            66,
+            276,
+            901,
+            304
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            309,
+            230,
+            324
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            66,
+            347,
+            923,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Manager or Co-manager: JPM acted as manager or co-manager in a public offering of securities or financial instruments (as such term is defined in Directive 2014/65/EU) of/for IQVIA Holdings Inc or related entities within the past 12 months.",
+        "bbox": [
+            66,
+            377,
+            901,
+            404
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Director: An employee of JPM or an executive officer or director of JPM Chase & Co. is an officer, director or advisory board member of IQVIA Holdings Inc or related entities.",
+        "bbox": [
+            66,
+            407,
+            919,
+            434
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            66,
+            436,
+            923,
+            464
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: IQVIA Holdings Inc, Avantor or related entities.",
+        "bbox": [
+            66,
+            465,
+            898,
+            493
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            68,
+            496,
+            916,
+            523
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            66,
+            525,
+            890,
+            553
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from IQVIA Holdings Inc, Avantor or related entities.",
+        "bbox": [
+            66,
+            555,
+            928,
+            583
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            66,
+            585,
+            893,
+            612
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "• Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from IQVIA Holdings Inc, Fortrea, Avantor or related entities.",
+        "bbox": [
+            66,
+            614,
+            910,
+            641
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Debt Position: JPM may hold a position in the debt securities of IQVIA Holdings Inc, Fortrea, Avantor or related entities, if any.",
+        "bbox": [
+            68,
+            643,
+            887,
+            659
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            66,
+            669,
+            926,
+            746
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            752,
+            336,
+            766
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            68,
+            763,
+            875,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/e555f5632fc2fe88e2824ac38bd26201b477e11d0d72499324c2fea173e7ef98.jpg",
+        "table_caption": [
+            "IQVIA Holdings Inc - JPM Credit Opinion History"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Date</td><td>Action</td><td>Rating/Designation</td><td>Ticker/ISIN</td></tr><tr><td>Issuer</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>IQV</td></tr><tr><td>5.000% '27 *</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>US46266TAA60</td></tr><tr><td>1.750% '26</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>XS2305743911</td></tr><tr><td>2.250% '28</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>XS2036798234</td></tr><tr><td>2.250% '29</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>XS2305744489</td></tr><tr><td>2.875% '25</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>XS1684387613</td></tr><tr><td>2.875% '28</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>XS2189947687</td></tr><tr><td>5.000% '26</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>US449934AD05</td></tr><tr><td>5.000% Sr Unsec Notes due 2026</td><td>28 Jul 22</td><td>Terminate</td><td>Not Covered</td><td>USU45049AF79</td></tr><tr><td>5.000% Sr Unsec Notes due 2027</td><td>28 Jul 22</td><td>Terminate</td><td>Not Covered</td><td>USU46093AA51</td></tr><tr><td>5.7% notes</td><td>26 Sep 23</td><td>Initiate</td><td>Neutral</td><td>USU46093AF49</td></tr><tr><td>6.25% Sec '29</td><td>04 Dec 23</td><td>Initiate</td><td>Neutral</td><td>US46266TAE82</td></tr><tr><td>6.25% Senior Unsecureds due 2032</td><td>07 Apr 26</td><td>Initiate</td><td>Neutral</td><td>US46266TAG31</td></tr><tr><td>6.5% notes</td><td>26 Sep 23</td><td>Initiate</td><td>Neutral</td><td>USU46093AG22</td></tr><tr><td>L+175bp Term Loan B1 due 2024</td><td>28 Jul 22</td><td>Terminate</td><td>Not Covered</td><td>—</td></tr><tr><td>L+175bp Term Loan B3 due 2025</td><td>28 Jul 22</td><td>Terminate</td><td>Not Covered</td><td>—</td></tr><tr><td>S+175bp Term Loan B5 due 2031</td><td>07 Apr 26</td><td>Initiate</td><td>Neutral</td><td>—</td></tr><tr><td>S+225bp Term Loan B '31</td><td>04 Dec 23</td><td>Initiate</td><td>Neutral</td><td>—</td></tr><tr><td>S+225bp Term Loan B '31</td><td>07 Apr 26</td><td>Terminate</td><td>Not Covered</td><td>—</td></tr><tr><td>TL A 1L EUR</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>US44969CBC38</td></tr><tr><td>TL A 1L USD</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>US44969CBB54</td></tr><tr><td>TL A2 1L USD</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>US44969CBM10</td></tr><tr><td>TL B1 1L EUR</td><td>15 Oct 24</td><td>Terminate</td><td>Not Covered</td><td>US44969CBG42</td></tr><tr><td>TL B2 1L EUR</td><td>31 Mar 26</td><td>Terminate</td><td>Not Covered</td><td>US44969CBK53</td></tr><tr><td>TL B2 1L USD</td><td>15 Oct 24</td><td>Terminate</td><td>Not Covered</td><td>US44969CBH25</td></tr><tr><td>TL B3 1L USD</td><td>15 Oct 24</td><td>Terminate</td><td>Not Covered</td><td>US44969CBJ80</td></tr></table>",
+        "bbox": [
+            68,
+            821,
+            926,
+            930
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            66,
+            142,
+            926,
+            459
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/64fa1b7b2d9c306b1b8c9c0c173b8a9e9852664ec10486902db132adc742d744.jpg",
+        "table_caption": [
+            "Fortrea - JPM Credit Opinion History"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Date</td><td>Action</td><td>Rating/Designation</td><td>Ticker/ISIN</td></tr><tr><td>Issuer</td><td>04 Dec 23</td><td>Initiate</td><td>Underweight</td><td>FTRE</td></tr><tr><td>7.5% Sec&#x27;30 *</td><td>04 Dec 23</td><td>Initiate</td><td>Underweight</td><td>US34965KAA51</td></tr><tr><td>S+225b Term Loan A &#x27;28</td><td>04 Dec 23</td><td>Initiate</td><td>Underweight</td><td>—</td></tr><tr><td>S+375bp Term Loan B &#x27;30</td><td>04 Dec 23</td><td>Initiate</td><td>Underweight</td><td>—</td></tr></table>",
+        "bbox": [
+            68,
+            510,
+            926,
+            589
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/fa05863293841246eb0db03cedb918c720124a1458f5c6c7cc6fa28623f1adb3.jpg",
+        "table_caption": [
+            "Avantor - JPM Credit Opinion History"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Date</td><td>Action</td><td>Rating/Designation</td><td>Ticker/ISIN</td></tr><tr><td>Issuer</td><td>07 Dec 22</td><td>Initiate</td><td>Neutral</td><td>AVTR</td></tr><tr><td>E+250bp Term Loan B6 due 2032 *</td><td>07 Apr 26</td><td>Initiate</td><td>Neutral</td><td>—</td></tr><tr><td>2.625% Sr Sec Notes due 2025</td><td>07 Apr 26</td><td>Terminate</td><td>Not Covered</td><td>XS2251742610</td></tr><tr><td>3.875% Sr Unsec Notes due 2028</td><td>25 Apr 25</td><td>Downgrade</td><td>Underweight</td><td>XS2205083822</td></tr><tr><td>3.875% Sr Unsec Notes due 2029</td><td>01 Aug 23</td><td>Downgrade</td><td>Neutral</td><td>US05352TAB52</td></tr><tr><td>3.875% Sr Unsec Notes due 2029</td><td>25 Apr 25</td><td>Downgrade</td><td>Underweight</td><td>US05352TAB52</td></tr><tr><td>4.625% Sr Unsec Notes due 2028</td><td>01 Aug 23</td><td>Downgrade</td><td>Neutral</td><td>US05352TAA79</td></tr><tr><td>4.625% Sr Unsec Notes due 2028</td><td>25 Apr 25</td><td>Downgrade</td><td>Underweight</td><td>US05352TAA79</td></tr><tr><td>6.000% Sr Sec Notes 2024</td><td>07 Jan 21</td><td>Terminate</td><td>Not Covered</td><td>USU05248AA44</td></tr><tr><td>9.000% Sr Unsec Nts 2025</td><td>11 Sep 20</td><td>Terminate</td><td>Not Covered</td><td>USU05248AC00</td></tr><tr><td>L+225bp Term Loan B3 due 2024</td><td>28 Jul 22</td><td>Terminate</td><td>Not Covered</td><td>—</td></tr><tr><td>L+225bp Term Loan due 2026</td><td>07 Apr 26</td><td>Terminate</td><td>Not Covered</td><td>US05350NAH70</td></tr><tr><td>L+225bp Term Loan due 2027</td><td>07 Apr 26</td><td>Terminate</td><td>Not Covered</td><td>US05350NAL82</td></tr><tr><td>L+275bp Term Loan due 2028</td><td>07 Apr 26</td><td>Terminate</td><td>Not Covered</td><td>US05350NAJ37</td></tr></table>",
+        "bbox": [
+            66,
+            642,
+            926,
+            878
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            54,
+            218,
+            89
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            78
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\*Indicates representative/primary bond/instrument.",
+        "bbox": [
+            68,
+            915,
+            401,
+            930
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The table(s) above show the recommendation changes made by JPM Credit Research Analysts in the subject company and/or instruments over the past three years (or, if no recommendation changes were made during that period, the most recent change). Notes: Effective April 11, 2016, JPM changed its Credit Research Ratings System. Please see the Explanation of Credit Research Ratings below for the new definitions. The previous rating system no longer should be relied upon. For the history prior to April 11, 2016, please call 1-800-447-0406 or e-mail research.disclosure.inquiries@JPM.com.",
+        "bbox": [
+            66,
+            147,
+            908,
+            195
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Credit Research Valuation Methodology, Ratings and Risk to Ratings:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            215,
+            612,
+            229
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "JPM uses a bond-level rating system that incorporates valuations (relative value) and our fundamental view on the security. Our fundamental credit view of an issuer is based on the company's underlying credit trends, overall creditworthiness and our opinion on whether the issuer will be able to service its debt obligations when they become due and payable. We analyze, among other things, the company's cash flow capacity and trends and standard credit ratios, such as gross and net leverage, interest coverage and liquidity ratios. We also analyze profitability, capitalization and asset quality, among other variables, when assessing financials. Analysts also rate the issuer, based on the rating of the benchmark or representative security. Unless we specify a different recommendation for the company's individual securities, an issuer recommendation applies to all of the bonds at the same level of the issuer's capital structure. We may also rate certain loans and preferred securities, as applicable. This report also sets out within it the material underlying assumptions used. We use the following ratings for bonds (issues), issuers, loans, and preferred securities: Overweight (over the next three months, the recommended risk position is expected to outperform the relevant index, sector, or benchmark); Neutral (over the next three months, the recommended risk position is expected to perform in line with the relevant index, sector, or benchmark); and Underweight (over the next three months, the recommended risk position is expected to underperform the relevant index, sector, or benchmark). For CDS, we use the following rating system: Long Risk (over the next three months, the credit return on the recommended position is expected to exceed the relevant index, sector or benchmark); Neutral (over the next three months, the credit return on the recommended position is expected to match the relevant index, sector or benchmark); and Short Risk (over the next three months, the credit return on the recommended position is expected to underperform the relevant index, sector or benchmark).",
+        "bbox": [
+            66,
+            229,
+            929,
+            421
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/b668c89f2f1d3362382d0c0fa9878edddb6cc4c5fdaa872a1e269923d5a63a76.jpg",
+        "table_caption": [
+            "JPM Credit Research Ratings Distribution, as of July 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>Global Credit Research Universe*</td><td>26%</td><td>58%</td><td>16%</td></tr><tr><td>IB clients**</td><td>84%</td><td>84%</td><td>89%</td></tr></table>",
+        "bbox": [
+            68,
+            448,
+            645,
+            498
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Percentage of subject companies within each of the \"Overweight,\" \"Neutral\" and \"Underweight\" categories for which JPM has provided investment banking services within the previous 12 months.",
+        "bbox": [
+            68,
+            513,
+            913,
+            542
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. The Credit Research Rating Distribution is at the issuer level. Issuers with an NR or an NC designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            68,
+            540,
+            929,
+            589
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            68,
+            616,
+            918,
+            643
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            648,
+            200,
+            662
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            68,
+            694,
+            897,
+            709
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            66,
+            714,
+            921,
+            742
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            66,
+            748,
+            918,
+            776
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            66,
+            780,
+            924,
+            834
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            66,
+            839,
+            893,
+            867
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            66,
+            871,
+            897,
+            898
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            66,
+            904,
+            926,
+            931
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            66,
+            147,
+            919,
+            200
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or",
+        "bbox": [
+            66,
+            205,
+            913,
+            258
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            68,
+            256,
+            900,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            66,
+            289,
+            926,
+            329
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            66,
+            334,
+            926,
+            375
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            66,
+            378,
+            928,
+            496
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            501,
+            506,
+            513
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            68,
+            513,
+            897,
+            541
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            66,
+            546,
+            928,
+            675
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            66,
+            679,
+            905,
+            709
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            66,
+            713,
+            921,
+            753
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            68,
+            758,
+            589,
+            773
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            66,
+            779,
+            875,
+            806
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            66,
+            811,
+            916,
+            864
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            66,
+            869,
+            911,
+            922
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            916,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            66,
+            147,
+            924,
+            251
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            66,
+            256,
+            928,
+            335
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            66,
+            339,
+            928,
+            507
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            66,
+            511,
+            910,
+            537
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            66,
+            542,
+            926,
+            597
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            66,
+            602,
+            923,
+            628
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            66,
+            633,
+            916,
+            662
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            66,
+            667,
+            918,
+            709
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            66,
+            712,
+            893,
+            753
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            66,
+            758,
+            924,
+            786
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            66,
+            791,
+            926,
+            893
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            66,
+            898,
+            915,
+            926
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            66,
+            147,
+            926,
+            276
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            66,
+            281,
+            928,
+            321
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            66,
+            325,
+            929,
+            469
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            66,
+            473,
+            916,
+            500
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            66,
+            505,
+            929,
+            939
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            911,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            147,
+            924,
+            251
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            66,
+            256,
+            923,
+            321
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            325,
+            919,
+            404
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            68,
+            409,
+            349,
+            424
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            434,
+            923,
+            489
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Rishi S Parekh AC\n(1-212) 622-2379\nrishi.parekh@JPM.com",
+        "bbox": [
+            68,
+            55,
+            218,
+            89
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "North America Credit Research\n30 July 2026",
+        "bbox": [
+            341,
+            55,
+            516,
+            78
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Completed 30 Jul 2026 04:30 AM EDT",
+        "bbox": [
+            68,
+            493,
+            308,
+            508
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Disseminated 30 Jul 2026 06:10 AM EDT",
+        "bbox": [
+            673,
+            493,
+            928,
+            507
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 11
+    }
+]

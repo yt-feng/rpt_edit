@@ -1,0 +1,524 @@
+[
+  {
+    "item": "0001-61-J.P.-Morgan-JPM-HY-HC--2Q26-CRO--Pharma-Services-Earnings-Observations-I",
+    "source_pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0001-61-JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "CRO行业回暖信号，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：CRO与制药服务2Q26业绩观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-61-JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review-260730.pdf",
+      "cleaned_source_title": "JPM-JPM HY HC- 2Q26 CRO- Pharma Services Earnings Observations-IQV- FTRE- and AVTR Earnings Review",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：HYHC2Q26CROPharmaServi",
+      "raw_candidates": [
+        "JPM：CRO与制药服务2Q26业绩观察",
+        "JPM：CRO三公司上调全年收入指引",
+        "JPM：CRO与制药服务新兴生物制药融资回暖"
+      ],
+      "cleaned_candidates": [
+        "JPM：CRO与制药服务2Q26业绩观察",
+        "JPM：CRO三公司上调全年收入指引",
+        "JPM：CRO与制药服务新兴生物制药融资回暖",
+        "JPM：HYHC2Q26CROPharmaServi",
+        "JPM：2.IQVIA上调全年指引，有机增长贡献100个基点"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：CRO三公司上调全年收入指引",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：CRO与制药服务新兴生物制药融资回暖",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "JPM：HYHC2Q26CROPharmaServi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "JPM：2.IQVIA上调全年指引，有机增长贡献100个基点",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：CRO与制药服务2Q26业绩观察",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：CRO与制药服务2Q26业绩观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-62-J.P.-Morgan-Logitech-International-LOGI.US-F1Q27-Review--Delivers-on-Qua",
+    "source_pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0002-62-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "罗技财报超预期，但供",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：罗技国际第一财季业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-62-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730 (1).pdf",
+      "cleaned_source_title": "JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730 (1)",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LogitechInternationalF1Q27",
+      "raw_candidates": [
+        "罗技国际第一财季业绩超预期但供应商事件影响近期展望",
+        "罗技国际第一财季营收增7%至12.27亿美元，供应商事件影响两季度",
+        "罗技国际第一财季业绩超预期，半导体供应商事件影响游戏与个人工作空间"
+      ],
+      "cleaned_candidates": [
+        "JPM：罗技国际第一财季业绩超预期但供应商事件影响近期展望",
+        "JPM：罗技国际第一财季营收增7%至12.27亿美元",
+        "JPM：罗技国际第一财季业绩超预期",
+        "JPM：LogitechInternationalF1Q27",
+        "JPM：罗技国际在截至6月底的2027财年第一财季交出了一份超出预期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：罗技国际第一财季营收增7%至12.27亿美元",
+          "reasons": [
+            "anchor_coverage=0.32"
+          ]
+        },
+        {
+          "title": "JPM：罗技国际第一财季业绩超预期",
+          "reasons": [
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "JPM：LogitechInternationalF1Q27",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：罗技国际在截至6月底的2027财年第一财季交出了一份超出预期",
+          "reasons": [
+            "anchor_coverage=0.32"
+          ]
+        }
+      ],
+      "selected_title": "JPM：罗技国际第一财季业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：罗技国际第一财季业绩超预期但供应商事件影响近期展望",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：罗技国际第一财季业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-63-J.P.-Morgan-Logitech-International-LOGI.US-F1Q27-Review--Delivers-on-Qua",
+    "source_pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0003-63-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "罗技这一季业绩超预期",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：罗技国际业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-63-JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook-260730.pdf",
+      "cleaned_source_title": "JPM-Logitech International-LOGI.US-F1Q27 Review- Delivers on Quarterly Beat but Supply Disruption Tests Near-Term Outlook",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LogitechInternationalF1Q27",
+      "raw_candidates": [
+        "罗技国际2027财年一季度业绩超预期但供应商事件影响近季出货",
+        "罗技国际一季度营收12.27亿美元超预期，供应商事件影响两季",
+        "罗技国际一季度业绩超预期，半导体供应商晶圆厂关闭影响供货"
+      ],
+      "cleaned_candidates": [
+        "JPM：罗技国际2027财年一季度业绩超预期但供应商事件影响近季出货",
+        "JPM：罗技国际一季度营收12.27亿美元超预期，供应商事件影响两季",
+        "JPM：罗技国际一季度业绩超预期，半导体供应商晶圆厂关闭影响供货",
+        "JPM：LogitechInternationalF1Q27",
+        "JPM：罗技国际在截至6月底的2027财年第一季度交出了一份超出预期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：罗技国际一季度营收12.27亿美元超预期，供应商事件影响两季",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "JPM：罗技国际一季度业绩超预期，半导体供应商晶圆厂关闭影响供货",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "JPM：LogitechInternationalF1Q27",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.03",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：罗技国际在截至6月底的2027财年第一季度交出了一份超出预期",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "JPM：罗技国际业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：罗技国际2027财年一季度业绩超预期但供应商事件影响近季出货",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：罗技国际业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-64-J.P.-Morgan-Semiconductor-SPE-Implications-from-Teradyne-s-results--Prog",
+    "source_pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0004-64-JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "半导体测试设备，开始",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：Teradyne在超大规模客户二供认证上取得进展",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-64-JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler-260730.pdf",
+      "cleaned_source_title": "JPM-Semiconductor SPE Implications from Teradyne-s results- Progress in achieving second-vendor status with hyperscaler",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：半导体SPEImplicationsfrom",
+      "raw_candidates": [
+        "JPM：Teradyne在超大规模客户二供认证上取得进展",
+        "JPM：Teradyne二供认证进展，最早2027年见实质变化",
+        "JPM：Teradyne超大规模客户二供认证进展与测试机市场更新"
+      ],
+      "cleaned_candidates": [
+        "JPM：Teradyne在超大规模客户二供认证上取得进展",
+        "JPM：Teradyne二供认证进展，最早2027年见实质变化",
+        "JPM：Teradyne超大规模客户二供认证进展与测试机市场更新",
+        "JPM：半导体SPEImplicationsfrom",
+        "JPM：7月29日盘后，Teradyne公布4"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：Teradyne二供认证进展，最早2027年见实质变化",
+          "reasons": [
+            "anchor_coverage=0.48"
+          ]
+        },
+        {
+          "title": "JPM：半导体SPEImplicationsfrom",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：7月29日盘后，Teradyne公布4",
+          "reasons": [
+            "anchor_coverage=0.30"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Teradyne在超大规模客户二供认证上取得进展",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：Teradyne在超大规模客户二供认证上取得进展"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-65-J.P.-Morgan-Seagate--STX.US-F4Q26-Review--The-Demand-Supply-Waltz-Contin",
+    "source_pdf": "/tmp/pdf_batch_001_anwmxa4z/pdfs/0005-65-JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "硬盘供需缺口还在拉大",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：希捷F4Q26财报点评-供需持续博弈",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-65-JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher-260729.pdf",
+      "cleaned_source_title": "JPM-Seagate -STX.US-F4Q26 Review- The Demand-Supply Waltz Continues- Raise Estimates - PT Higher",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：SeagateF4Q26Review",
+      "raw_candidates": [
+        "JPM：希捷F4Q26财报点评-供需持续博弈",
+        "JPM：希捷F4Q26点评-每EB定价同比增11%",
+        "JPM：希捷F4Q26点评-数据中心收入增57%"
+      ],
+      "cleaned_candidates": [
+        "JPM：希捷F4Q26财报点评-供需持续博弈",
+        "JPM：希捷F4Q26点评-每EB定价同比增11%",
+        "JPM：希捷F4Q26点评-数据中心收入增57%",
+        "JPM：SeagateF4Q26Review",
+        "JPM：将FY27和FY28的每股盈利预测分别上调30.7%和32."
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：希捷F4Q26点评-每EB定价同比增11%",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：希捷F4Q26点评-数据中心收入增57%",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：SeagateF4Q26Review",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：将FY27和FY28的每股盈利预测分别上调30.7%和32.",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "JPM：希捷F4Q26财报点评-供需持续博弈",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：希捷F4Q26财报点评-供需持续博弈"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
