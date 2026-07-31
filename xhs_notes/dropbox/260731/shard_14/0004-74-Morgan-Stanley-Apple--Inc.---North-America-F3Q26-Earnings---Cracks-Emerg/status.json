@@ -1,0 +1,118 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "苹果这季财报，藏着几",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+    "cleaned_source_title": "MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1)",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：Apple-Inc.",
+    "raw_candidates": [
+      "苹果北美F3Q26财报：毛利率与服务增速现变化",
+      "苹果F3Q26财报：目标价调整至360美元，服务增速降至10%以下",
+      "苹果北美F3Q26财报：九月季度供给约束与内存成本影响毛利率"
+    ],
+    "cleaned_candidates": [
+      "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+      "MS：服务增速降至10%以下",
+      "MS：苹果北美F3Q26财报",
+      "MS：Apple-Inc.",
+      "MS：从364美元调整至360美元"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：服务增速降至10%以下",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：苹果北美F3Q26财报",
+        "reasons": [
+          "anchor_coverage=0.48",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：Apple-Inc.",
+        "reasons": [
+          "incomplete_last_segment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：从364美元调整至360美元",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "645",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0001-71-JPM-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0002-72-JPM-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0003-73-MS-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0005-75-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

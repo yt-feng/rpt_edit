@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 14,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/71-JPM-Zijin Gold International ~H（2259.HK）Allied Gold dust settled； organic ramp up to support growth until further acquisitions-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0001-71-JPM-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions-260730.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/72-JPM-Weichai Power ~ A H （000338）Positive read~throughs from BE， Innio， GE Vernova： SOFC， Gas Engines， BTM Demand； stay OW-260729.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0002-72-JPM-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW-260729.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/73-MS-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0003-73-MS-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/74-MS-Apple, Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+          "batch_file": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/75-MS-Apple, Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0005-75-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

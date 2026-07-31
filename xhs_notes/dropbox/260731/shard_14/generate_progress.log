@@ -1,0 +1,74 @@
+Found 92 total PDFs; shard 14/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jrxnpgmz/pdfs/0001-71-J.P. Morgan-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jrxnpgmz/pdfs/0002-72-J.P. Morgan-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jrxnpgmz/pdfs/0003-73-Morgan Stanley-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jrxnpgmz/pdfs/0004-74-Morgan Stanley-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jrxnpgmz/pdfs/0005-75-Morgan Stanley-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=f2694413-d610-4165-8852-6c5e9388f79b
+MinerU states: pending, running, running, running, waiting-file
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 12de56eca597d6ab72dbb54a2245fd94d38e34805b2d2da75048135e624e48e4.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset feaddaf04c6681b7ebcc7798c1dede9f2cc56ad6effa5ef416b3c7d8c2869a2f.jpg: score=1;chart_ratio
+Skip non-chart visual asset 1b6aa2dc4590dac8846bb35d84b69cf03a9d719db1cc0cbbcabe323634edd5bb.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 3b7fde505685330fdf6e7b3bb4dba0d30da2ad007bcb619b159061f07a0eca31.jpg: score=-100;too_small:626x84
+Skip non-chart visual asset aa42f5ee3ef902d0bb679c10648aabe2732e442b9d2ef773dfb91efe0e46d15a.jpg: score=-100;too_small:448x124
+Skip non-chart visual asset 94b299dfcd7ba1d3c0ebf0924e16e1e21b42c3a686c1dbe5810a9d4b001eae5e.jpg: score=-100;too_small:540x132
+Skip non-chart visual asset 245eb2521c6f69ebdc715c214e8b57985a284906cc1f206d243f4015349a3a3e.jpg: score=-100;too_small:982x164
+Skip non-chart visual asset f0b2a63e86eb5939f00d7d45406a5ef5f201f5de476f70f180ebeaa97d6726d7.jpg: score=1;chart_ratio
+Neutralized WeChat title while keeping the report: 摩根大通：紫金黄金终止收购后以自有矿山增长衔接产能 -> 摩根大通：紫金黄金终止收购后以自有矿山业务与近期数据观察
+Skip non-chart visual asset bbb7dd2d71db0bdb0a23c7c6e5234aba514669713c7a9e8fb99e347e82df22b4.jpg: score=2;edge:0.35
+Skip non-chart visual asset 158f85ca5d628f9a89e8e800752f89f1475151f04b4696ce7df0ae3171c84a4a.jpg: score=-100;too_small:924x162
+Skip non-chart visual asset 75359febf283018bfbb21a75fc58111c298d70f497fe662c9961db4fa2627f32.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,contrast
+Skip non-chart visual asset c2211b06769db70b261d6929d7615916c988194dabe911befb7d196c3f52d89c.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset e87e55cc92a950409b7019630660c5bdec4aa60bc7ab7e08ae6b33cab9442b7b.jpg: score=-100;too_small:448x120
+Skip non-chart visual asset 72ea2e98df33210eaceace229ec4762e594f1c3abfa94d547d295dfe717a2d10.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,contrast
+Skip non-chart visual asset 5cd4b3f6c6a4b05261d36f9bd95db0074c1c5dea78fc9e08785adb4a87250a3a.jpg: score=-100;too_small:903x110
+Skip non-chart visual asset a82392deb7de5e6bc149bed2113d09b3ad2ff3637e4ea4e463dac097d3fd9f8e.jpg: score=2;edge:0.31
+Skip non-chart visual asset 5a00eab0ec9cc7f494fd251b3408b31c35e5eca65d002be4f4f09dbbaf1ef8f8.jpg: score=-100;too_small:415x178
+Skip non-chart visual asset 0b3eac8fe4f585846acd5530faa9427281bc1c7552260ee7126a0759428b10b8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset b23d259d65f14804f4dd0b1cbc942a38b795604c9d64ef0e9a7e2aa614732192.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset b6db24cb3adf53c8717f7030aa8d3211353277ae69b5c47cde52ec0a526695e4.jpg: score=-100;too_small:446x148
+Skip non-chart visual asset 32583cbe4b1d540ff9fabd0ec0d055fe1331a118299fe26ee664b4b31c7e9fd7.jpg: score=1;large
+Skip non-chart visual asset 2f780f7afad17b8e1e12eaeb2b4f43a6cb3a11635909df1965cf79ea2944f436.jpg: score=-100;too_small:1285x104
+Skip non-chart visual asset 7612935c2f3c6d5a86ca0fef7ee898f316b961ddfdc8e3bc342ccb00a7f739db.jpg: score=-1;square_without_chart_hint,edge:0.11
+Skip non-chart visual asset a484882bf370088934b52d0747a2cb2fe5e433a73b18c9e073561303ee17cba7.jpg: score=-100;too_small:448x70
+Skip non-chart visual asset cfff543d31ca6bb6aee14feeed7060dab758591fcdd0137a5be7ead5d9f80b8e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.40
+Skip non-chart visual asset 352848ac22609ae4cc65a1f70dd25db6effdd4d7bbf222fd57c68df729280818.jpg: score=-100;too_small:523x112
+Skip non-chart visual asset 9e0d0d4bb4c92b3a284d0f5994359a52dd3d7eb0c8e9b749239834a3ec7bb8d5.jpg: score=-100;too_small:437x109
+Skip non-chart visual asset 0332326b38aa85e4588512f76a1eeadd67eb81732ab26b16210faf41dd573887.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 14d621ea9cc6bfd7107a59be77c0b02b1c427cb2092f576301b738428aa5bc0f.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset ed3974cf407f82d8b08f66097de2fd91c068d561df0d59e6968a9a3da2f8cb06.jpg: score=-100;too_small:529x156
+Skip non-chart visual asset c7b62363f7458e63a6ed8ecc249d10898f94cb09bfa20334ad550903af771b5e.jpg: score=1;large
+Skip non-chart visual asset 0444a6fe27331f5cf4d08de5eefe8e75ddfade4e5e57ee8bf12259a07cea10d2.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 6713e69b774a84de682357ca56a0d43d1b7b8d352a88af65c221cf0e0e3e4ac3.jpg: score=-100;too_small:437x112
+Skip non-chart visual asset ebd1cb9224dedca45f80feffbea259da0ec6a4c9eb399f194cb0a898719ad106.jpg: score=-100;too_small:507x112
+Skip non-chart visual asset 4c0c10c455528907fd96214c838087d8ea1261c4f78ac8f19a1d8e013bf04e7e.jpg: score=-100;too_small:449x165
+Skip non-chart visual asset 0e1fc5da9bd9236d2c6ac88e89c1ff08842b857abe4c66c9f28c4c0762a9e85d.jpg: score=-100;too_small:529x173
+Skip non-chart visual asset 0a1e3df702ca6278b24b2a110360b10da01b6ecf8ee6d2b522cca99010a17a35.jpg: score=-100;too_small:449x71
+Skip non-chart visual asset 5f81d9b6dc2b559b86eacd0993de0784de366032d93ae694e340cb8648ba0ddf.jpg: score=-100;too_small:384x137
+Skip non-chart visual asset a82362d13b3623c1460ce23b31dbab4b0eafa4f281330b5160c536655e13efa8.jpg: score=1;square_without_chart_hint,edge:0.48,contrast,large
+Skip non-chart visual asset b1eba830a19a2b953845b19d68cf7abc604ce9aa1339759442720e3c9a7b7456.jpg: score=-100;too_small:529x162
+Skip non-chart visual asset 2159021f2546c33d33df77460f2cefcd03ab094700639cf558eb040eca0dce01.jpg: score=-100;too_small:122x126
+Skip non-chart visual asset aee50c6784da603a00de530d479506dcef207a5cdec23cbf4723020bd1965739.jpg: score=-100;too_small:906x76
+Skip non-chart visual asset 14d621ea9cc6bfd7107a59be77c0b02b1c427cb2092f576301b738428aa5bc0f.jpg: score=-1;square_without_chart_hint,edge:0.12
+Skip non-chart visual asset ed3974cf407f82d8b08f66097de2fd91c068d561df0d59e6968a9a3da2f8cb06.jpg: score=-100;too_small:529x156
+Skip non-chart visual asset c7b62363f7458e63a6ed8ecc249d10898f94cb09bfa20334ad550903af771b5e.jpg: score=1;large
+Skip non-chart visual asset 0444a6fe27331f5cf4d08de5eefe8e75ddfade4e5e57ee8bf12259a07cea10d2.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 6713e69b774a84de682357ca56a0d43d1b7b8d352a88af65c221cf0e0e3e4ac3.jpg: score=-100;too_small:437x112
+Skip non-chart visual asset ebd1cb9224dedca45f80feffbea259da0ec6a4c9eb399f194cb0a898719ad106.jpg: score=-100;too_small:507x112
+Skip non-chart visual asset 4c0c10c455528907fd96214c838087d8ea1261c4f78ac8f19a1d8e013bf04e7e.jpg: score=-100;too_small:449x165
+Skip non-chart visual asset 0e1fc5da9bd9236d2c6ac88e89c1ff08842b857abe4c66c9f28c4c0762a9e85d.jpg: score=-100;too_small:529x173
+Skip non-chart visual asset 0a1e3df702ca6278b24b2a110360b10da01b6ecf8ee6d2b522cca99010a17a35.jpg: score=-100;too_small:449x71
+Skip non-chart visual asset 5f81d9b6dc2b559b86eacd0993de0784de366032d93ae694e340cb8648ba0ddf.jpg: score=-100;too_small:384x137
+Skip non-chart visual asset a82362d13b3623c1460ce23b31dbab4b0eafa4f281330b5160c536655e13efa8.jpg: score=1;square_without_chart_hint,edge:0.48,contrast,large
+Skip non-chart visual asset b1eba830a19a2b953845b19d68cf7abc604ce9aa1339759442720e3c9a7b7456.jpg: score=-100;too_small:529x162
+Skip non-chart visual asset 2159021f2546c33d33df77460f2cefcd03ab094700639cf558eb040eca0dce01.jpg: score=-100;too_small:122x126
+Skip non-chart visual asset aee50c6784da603a00de530d479506dcef207a5cdec23cbf4723020bd1965739.jpg: score=-100;too_small:906x76
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_14; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,562 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0001-71-JPM-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "紫金黄金收购终止，反",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：紫金黄金终止收购后以自有矿山业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-71-JPM-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions-260730.pdf",
+      "cleaned_source_title": "JPM-Zijin Gold International -H-2259.HK-Allied Gold dust settled- organic ramp up to support growth until further acquisitions",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：ZijinGoldInternational",
+      "raw_candidates": [
+        "JPM：紫金黄金终止收购后以自有矿山增长衔接产能",
+        "JPM：紫金黄金终止收购后自有矿山支撑2026至2028年产量增长",
+        "JPM：紫金黄金终止收购后以自有矿山爬坡支撑产量增长"
+      ],
+      "cleaned_candidates": [
+        "JPM：紫金黄金终止收购后以自有矿山增长衔接产能",
+        "JPM：紫金黄金终止收购后自有矿山支撑2026至2028年产量增长",
+        "JPM：紫金黄金终止收购后以自有矿山爬坡支撑产量增长",
+        "JPM：ZijinGoldInternational",
+        "JPM：JPM据此更新公司观点，主要反映盈利预测下调12%至32%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：紫金黄金终止收购后自有矿山支撑2026至2028年产量增长",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "JPM：ZijinGoldInternational",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM据此更新公司观点，主要反映盈利预测下调12%至32%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：紫金黄金终止收购后以自有矿山业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：紫金黄金终止收购后以自有矿山增长衔接产能",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：紫金黄金终止收购后以自有矿山业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0002-72-JPM-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "电力设备订单爆了，潍",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "增持->观点偏积极 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "增持->观点偏积极 x2",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：潍柴动力，三家电力设备公司订单排至2030年代",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-72-JPM-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW-260729.pdf",
+      "cleaned_source_title": "JPM-Weichai Power - A H -000338-Positive read-throughs from BE- Innio- GE Vernova- SOFC- Gas Engines- BTM Demand- stay OW",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：WeichaiPowerAH000338Po",
+      "raw_candidates": [
+        "潍柴动力：BE、Innio与GE Vernova订单延伸至2030年代",
+        "潍柴动力：三家电力设备公司订单排至2030年代",
+        "潍柴动力：SOFC、气体发动机与燃气轮机订单能见度延伸至2030年代"
+      ],
+      "cleaned_candidates": [
+        "JPM：潍柴动力，BE、Innio与GEVernova订单延伸至20",
+        "JPM：潍柴动力，三家电力设备公司订单排至2030年代",
+        "JPM：潍柴动力，SOFC、气体发动机与燃气轮机订单能见度延伸至20",
+        "JPM：WeichaiPowerAH000338Po",
+        "JPM：JPM在7月28日发布的潍柴动力研报中"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [
+        "bare_trailing_number"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：潍柴动力，BE、Innio与GEVernova订单延伸至20",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：潍柴动力，SOFC、气体发动机与燃气轮机订单能见度延伸至20",
+          "reasons": [
+            "bare_trailing_number",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：WeichaiPowerAH000338Po",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM在7月28日发布的潍柴动力研报中",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：潍柴动力，三家电力设备公司订单排至2030年代",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "2030"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "JPM：潍柴动力，三家电力设备公司订单排至2030年代"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0003-73-MS-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "Arm的CPU故事很",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->公司观点更新 x1",
+      "股价->报价 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?<![A-Za-z])(?:strong\\s+buy|buy|sell|overweight|underweight|outperform|underperform|equal-?weight|market\\s+perform|neutral|hold)(?![A-Za-z])\\s*(?:rating|rated|recommendation)?->公司观点更新 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：Arm版税增速节奏变化，CPU供应覆盖待确认",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-73-MS-Arm Holdings plc - North America Royalty Growth Weakens-260730.pdf",
+      "cleaned_source_title": "MS-Arm Holdings plc - North America Royalty Growth Weakens",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：ArmHoldingsplcNorthAm",
+      "raw_candidates": [
+        "MS：Arm版税增速节奏变化，CPU供应覆盖待确认",
+        "MS：Arm版税增速放缓，数据中心版税成对冲",
+        "MS：Arm版税增速变化，AGI CPU供应覆盖待确认",
+        "Arm Holdings北美版税增长放缓",
+        "Arm Holdings北美版税增长放缓-2027财年一季度业绩超预期",
+        "Arm Holdings北美版税增长放缓-AGI CPU供应覆盖待确认"
+      ],
+      "cleaned_candidates": [
+        "MS：Arm版税增速节奏变化，CPU供应覆盖待确认",
+        "MS：Arm版税增速放缓，数据中心版税成对冲",
+        "MS：Arm版税增速变化，AGICPU供应覆盖待确认",
+        "MS：ArmHoldings北美版税增长放缓",
+        "MS：ArmHoldingsplcNorthAm",
+        "MS：第一季度非GAAP运营费用为7.33亿美元，同比增长18%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Arm版税增速放缓，数据中心版税成对冲",
+          "reasons": [
+            "anchor_coverage=0.30",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ArmHoldings北美版税增长放缓",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：ArmHoldingsplcNorthAm",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：第一季度非GAAP运营费用为7.33亿美元，同比增长18%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Arm版税增速节奏变化，CPU供应覆盖待确认",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "MS：第一季度非GAAP运营费用为7.33亿美元，同比增长18%",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "MS：Arm版税增速节奏变化，CPU供应覆盖待确认",
+        "MS：Arm版税增速放缓，数据中心版税成对冲",
+        "MS：Arm版税增速变化，AGI CPU供应覆盖待确认"
+      ],
+      "final_title_after_wording_guard": "MS：Arm版税增速节奏变化，CPU供应覆盖待确认"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "苹果这季财报，藏着几",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-74-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1).pdf",
+      "cleaned_source_title": "MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731 (1)",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Apple-Inc.",
+      "raw_candidates": [
+        "苹果北美F3Q26财报：毛利率与服务增速现变化",
+        "苹果F3Q26财报：目标价调整至360美元，服务增速降至10%以下",
+        "苹果北美F3Q26财报：九月季度供给约束与内存成本影响毛利率"
+      ],
+      "cleaned_candidates": [
+        "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+        "MS：服务增速降至10%以下",
+        "MS：苹果北美F3Q26财报",
+        "MS：Apple-Inc.",
+        "MS：从364美元调整至360美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：服务增速降至10%以下",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：苹果北美F3Q26财报",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Apple-Inc.",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：从364美元调整至360美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：苹果北美F3Q26财报，毛利率与服务增速现变化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_jrxnpgmz/pdfs/0005-75-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "苹果财报里的三个裂缝",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：苹果北美F3Q26财报，毛利率与服务业务现变化",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-75-MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services-260731.pdf",
+      "cleaned_source_title": "MS-Apple- Inc. - North America F3Q26 Earnings - Cracks Emerge in Margins and Services",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Apple-Inc.",
+      "raw_candidates": [
+        "苹果北美F3Q26财报：毛利率与服务业务现变化",
+        "苹果F3Q26财报：毛利率环比降150基点，服务增速跌破10%",
+        "苹果北美F3Q26财报：内存成本挤压毛利率，服务业务增速放缓"
+      ],
+      "cleaned_candidates": [
+        "MS：苹果北美F3Q26财报，毛利率与服务业务现变化",
+        "MS：苹果F3Q26财报，毛利率环比降150基点",
+        "MS：苹果北美F3Q26财报，内存成本挤压毛利率",
+        "MS：Apple-Inc.",
+        "MS：估值倍数维持35倍不变，滚动至CY27EPS10.30美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：苹果F3Q26财报，毛利率环比降150基点",
+          "reasons": [
+            "anchor_coverage=0.48",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：苹果北美F3Q26财报，内存成本挤压毛利率",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Apple-Inc.",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：估值倍数维持35倍不变，滚动至CY27EPS10.30美元",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment",
+            "unsupported_hook_addition"
+          ]
+        }
+      ],
+      "selected_title": "MS：苹果北美F3Q26财报，毛利率与服务业务现变化",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：苹果北美F3Q26财报，毛利率与服务业务现变化"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
