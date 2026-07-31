@@ -1,0 +1,68 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+  "title": "IMF：AI与组织管理与生产率技术应用观察",
+  "source_title": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+    "cleaned_source_title": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+    "institution_name": "IMF",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "IMF：0020IMFUnlockingAILedPr",
+    "raw_candidates": [
+      "IMF：英国AI生产率增长路径",
+      "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+      "IMF：英国AI生产率增长与五项条件"
+    ],
+    "cleaned_candidates": [
+      "IMF：英国AI生产率增长路径",
+      "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+      "IMF：英国AI生产率增长与五项条件",
+      "IMF：0020IMFUnlockingAILedPr",
+      "IMF：英国AI生产率增长的五个瓶颈与政策路径"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0020IMFUnlockingAILedPr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.10",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：AI与组织管理与生产率技术应用观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "0.1",
+        "0.5"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：AI与组织管理与生产率技术应用观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_20.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

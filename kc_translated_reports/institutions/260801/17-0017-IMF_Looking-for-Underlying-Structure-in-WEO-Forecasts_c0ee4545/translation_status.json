@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+  "title": "IMF：WEO业务与近期数据观察",
+  "source_title": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+    "cleaned_source_title": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0017IMFLookingforUnderl",
+    "raw_candidates": [
+      "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+      "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+      "IMF：WEO增长预测的乐观偏差与跨国传导缺口研究"
+    ],
+    "cleaned_candidates": [
+      "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+      "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+      "IMF：WEO增长预测的乐观偏差与跨国传导缺口研究",
+      "IMF：0017IMFLookingforUnderl",
+      "IMF：在控制国家固定效应后，预测增长平均高出实际增长约0.5个百分点"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+        "reasons": [
+          "anchor_coverage=0.32",
+          "unsupported_hook_addition"
+        ]
+      },
+      {
+        "title": "IMF：0017IMFLookingforUnderl",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：在控制国家固定效应后，预测增长平均高出实际增长约0.5个百分点",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：WEO业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：WEO业务与近期数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_17.pdf",
+  "figure_count": 7,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

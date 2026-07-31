@@ -1,0 +1,1779 @@
+{
+  "date_folder": "260801",
+  "max_reports": "all",
+  "selected_count": 23,
+  "successful_count": 23,
+  "title_neutralized_count": 15,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+      "title": "布鲁盖尔研究所：行业规则与主题变化观察",
+      "source_title": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+        "cleaned_source_title": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0001BruegelAtwinpea",
+        "raw_candidates": [
+          "欧盟资金监管双峰愿景",
+          "2015年数据下的欧盟资金监管双峰愿景",
+          "欧盟资金监管双峰愿景：银行保险融合背景"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧盟资金监管双峰愿景",
+          "布鲁盖尔研究所：2015年数据下的欧盟资金监管双峰愿景",
+          "布鲁盖尔研究所：欧盟资金监管双峰愿景，银行保险融合背景",
+          "布鲁盖尔研究所：0001BruegelAtwinpea",
+          "布鲁盖尔研究所：2008年9月至10月美国资金恐慌中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：0001BruegelAtwinpea",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2008年9月至10月美国资金恐慌中",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2015"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "布鲁盖尔研究所：2015年数据下的欧盟资金监管双峰愿景",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "布鲁盖尔研究所：行业规则与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 2,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/01-0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+      "pdf_path": "kc_translated_reports/institutions/260801/01-0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf70",
+      "title": "布鲁盖尔研究所：欧盟银行清算框架需要更明确的公共资金规则",
+      "source_title": "0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702",
+        "cleaned_source_title": "0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf702",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0002BruegelBankliqu",
+        "raw_candidates": [
+          "布鲁盖尔研究所：欧盟银行清算框架需要更明确的公共资金规则",
+          "布鲁盖尔研究所：欧盟银行清算框架与公共资金规则-2017年意大利案例",
+          "布鲁盖尔研究所：欧盟银行清算框架-意大利银行清算与公共资金规则"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧盟银行清算框架需要更明确的公共资金规则",
+          "布鲁盖尔研究所：欧盟银行清算框架与公共资金规则-2017年意大利案例",
+          "布鲁盖尔研究所：欧盟银行清算框架-意大利银行清算与公共资金规则",
+          "布鲁盖尔研究所：0002BruegelBankliqu",
+          "布鲁盖尔研究所：2017年6月23日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：欧盟银行清算框架与公共资金规则-2017年意大利案例",
+            "reasons": [
+              "anchor_coverage=0.63"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：欧盟银行清算框架-意大利银行清算与公共资金规则",
+            "reasons": [
+              "anchor_coverage=0.63"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：0002BruegelBankliqu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2017年6月23日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：欧盟银行清算框架需要更明确的公共资金规则",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "布鲁盖尔研究所：欧盟银行清算框架需要更明确的公共资金规则"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 1,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/02-0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf70",
+      "pdf_path": "kc_translated_reports/institutions/260801/02-0002-Bruegel_Bank-liquidation-in-the-European-Union-clarification-needed_c98cf70/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9",
+      "title": "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排",
+      "source_title": "0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9",
+        "cleaned_source_title": "0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0003BruegelBeyondco",
+        "raw_candidates": [
+          "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排",
+          "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排-2015年煤炭占发电25%",
+          "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排-波兰等三国依赖度高"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排",
+          "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排-波兰等三国依赖度高",
+          "布鲁盖尔研究所：0003BruegelBeyondco",
+          "布鲁盖尔研究所：2015年数据显示，煤炭在欧盟发电组合中的份额为25%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：0003BruegelBeyondco",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2015年数据显示，煤炭在欧盟发电组合中的份额为25%",
+            "reasons": [
+              "anchor_coverage=0.07",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "布鲁盖尔研究所：欧盟煤电退出路径与就业转型安排"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 5,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9",
+      "pdf_path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e",
+      "title": "布鲁盖尔研究所：区域环境与行业变化观察",
+      "source_title": "0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b",
+        "cleaned_source_title": "0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e3b",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0004BruegelBeyondtheJuncker",
+        "raw_candidates": [
+          "布鲁盖尔研究所：欧元区财政治理的两种愿景与第三条路径",
+          "布鲁盖尔研究所：欧元区财政治理方案与2017年9月改革讨论",
+          "布鲁盖尔研究所：欧元区财政治理框架与ESM及财政规则改革"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧元区财政治理的两种愿景与第三条路径",
+          "布鲁盖尔研究所：欧元区财政治理方案与2017年9月改革讨论",
+          "布鲁盖尔研究所：欧元区财政治理框架与ESM及财政规则改革",
+          "布鲁盖尔研究所：0004BruegelBeyondtheJuncker"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：欧元区财政治理方案与2017年9月改革讨论",
+            "reasons": [
+              "anchor_coverage=0.35"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：欧元区财政治理框架与ESM及财政规则改革",
+            "reasons": [
+              "anchor_coverage=0.35"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：0004BruegelBeyondtheJuncker",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：区域环境与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "布鲁盖尔研究所：欧元区财政治理的两种愿景与第三条路径",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "布鲁盖尔研究所：区域环境与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/04-0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e",
+      "pdf_path": "kc_translated_reports/institutions/260801/04-0004-Bruegel_Beyond-the-Juncker-and-Sch-uble-visions-of-euro-area-governa_ccf39e/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e66730",
+      "title": "布鲁盖尔研究所：行业规则与主题变化观察",
+      "source_title": "0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f",
+        "cleaned_source_title": "0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e667301f",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0005BruegelHowshoul",
+        "raw_candidates": [
+          "欧洲央行货币政策正常化路径与终点",
+          "欧洲央行缩减购债至300亿欧元后的正常化路径",
+          "欧洲央行货币政策正常化路径与资产负债表终点"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧洲央行货币政策正常化路径与终点",
+          "布鲁盖尔研究所：欧洲央行缩减购债至300亿欧元后的正常化路径",
+          "布鲁盖尔研究所：欧洲央行货币政策正常化路径与资产负债表终点",
+          "布鲁盖尔研究所：0005BruegelHowshoul",
+          "布鲁盖尔研究所：2017年10月"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：欧洲央行缩减购债至300亿欧元后的正常化路径",
+            "reasons": [
+              "anchor_coverage=0.47"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：0005BruegelHowshoul",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2017年10月",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：行业规则与主题变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "布鲁盖尔研究所：欧洲央行货币政策正常化路径与终点",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "布鲁盖尔研究所：行业规则与主题变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 10,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/05-0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e66730",
+      "pdf_path": "kc_translated_reports/institutions/260801/05-0005-Bruegel_How-should-the-European-Central-Bank-normalise-its-monetary-_e66730/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+      "title": "布鲁盖尔研究所：欧洲不良贷款二级市场交易规模与结构",
+      "source_title": "0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+        "cleaned_source_title": "0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0006BruegelRiskredu",
+        "raw_candidates": [
+          "布鲁盖尔研究所：欧洲不良贷款二级市场交易规模与结构",
+          "布鲁盖尔研究所：2016年欧洲不良贷款二级市场交易1460亿欧元",
+          "布鲁盖尔研究所：欧洲不良贷款二级市场集中于英意爱西四国"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧洲不良贷款二级市场交易规模与结构",
+          "布鲁盖尔研究所：2016年欧洲不良贷款二级市场交易1460亿欧元",
+          "布鲁盖尔研究所：欧洲不良贷款二级市场集中于英意爱西四国",
+          "布鲁盖尔研究所：0006BruegelRiskredu",
+          "布鲁盖尔研究所：2016年，欧洲二级贷款市场交易总额为1460亿欧元"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：2016年欧洲不良贷款二级市场交易1460亿欧元",
+            "reasons": [
+              "anchor_coverage=0.69"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：欧洲不良贷款二级市场集中于英意爱西四国",
+            "reasons": [
+              "anchor_coverage=0.56"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：0006BruegelRiskredu",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2016年，欧洲二级贷款市场交易总额为1460亿欧元",
+            "reasons": [
+              "anchor_coverage=0.38"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：欧洲不良贷款二级市场交易规模与结构",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "布鲁盖尔研究所：欧洲不良贷款二级市场交易规模与结构"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 4,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413",
+      "pdf_path": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+      "title": "布鲁盖尔研究所：研究主题与行业变化观察",
+      "source_title": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+        "cleaned_source_title": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0007BruegelTalesfro",
+        "raw_candidates": [
+          "布鲁盖尔研究所：欧元区危机叙事分歧",
+          "布鲁盖尔研究所：欧元区危机叙事分歧-2007至2016年四国媒体5.1万篇报道分析",
+          "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：欧元区危机叙事分歧",
+          "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异",
+          "布鲁盖尔研究所：0007BruegelTalesfro",
+          "布鲁盖尔研究所：2007年至2016年间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：0007BruegelTalesfro",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2007年至2016年间",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "布鲁盖尔研究所：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 5,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/07-0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+      "pdf_path": "kc_translated_reports/institutions/260801/07-0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+      "title": "布鲁盖尔研究所：西巴尔干入盟进程的宏观环境与社会基础",
+      "source_title": "0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+        "cleaned_source_title": "0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+        "institution_name": "布鲁盖尔研究所",
+        "required_terms": [],
+        "deterministic_fallback": "布鲁盖尔研究所：0008BruegelTheWeste",
+        "raw_candidates": [
+          "布鲁盖尔研究所：西巴尔干入盟进程的宏观环境与社会基础",
+          "布鲁盖尔研究所：西巴尔干入盟进程-2000至2016年人均收入收敛差异",
+          "布鲁盖尔研究所：西巴尔干入盟进程-六国宏观环境与制度准备"
+        ],
+        "cleaned_candidates": [
+          "布鲁盖尔研究所：西巴尔干入盟进程的宏观环境与社会基础",
+          "布鲁盖尔研究所：西巴尔干入盟进程-2000至2016年人均收入收敛差异",
+          "布鲁盖尔研究所：西巴尔干入盟进程-六国宏观环境与制度准备",
+          "布鲁盖尔研究所：0008BruegelTheWeste",
+          "布鲁盖尔研究所：2000年至2016年间西巴尔干各国人均收入向德国水平"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "布鲁盖尔研究所：西巴尔干入盟进程-2000至2016年人均收入收敛差异",
+            "reasons": [
+              "anchor_coverage=0.41"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：西巴尔干入盟进程-六国宏观环境与制度准备",
+            "reasons": [
+              "anchor_coverage=0.65"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：0008BruegelTheWeste",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "布鲁盖尔研究所：2000年至2016年间西巴尔干各国人均收入向德国水平",
+            "reasons": [
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "布鲁盖尔研究所：西巴尔干入盟进程的宏观环境与社会基础",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "布鲁盖尔研究所：西巴尔干入盟进程的宏观环境与社会基础"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 19,
+      "institution_name": "布鲁盖尔研究所",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/08-0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b",
+      "pdf_path": "kc_translated_reports/institutions/260801/08-0008-Bruegel_The-Western-Balkans-on-the-road-to-the-European-Union_6827964b/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+      "title": "IMF：大宗商品繁荣与智利矿业生产率研究",
+      "source_title": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+        "cleaned_source_title": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0009IMFCommodityBoomsPr",
+        "raw_candidates": [
+          "IMF：大宗商品繁荣与智利矿业生产率研究",
+          "IMF：智利矿业生产率下降8%与资源配置研究",
+          "IMF：铜价上涨对智利矿业生产率的影响"
+        ],
+        "cleaned_candidates": [
+          "IMF：大宗商品繁荣与智利矿业生产率研究",
+          "IMF：智利矿业生产率下降8%与资源配置研究",
+          "IMF：铜价上涨对智利矿业生产率的影响",
+          "IMF：0009IMFCommodityBoomsPr",
+          "IMF：IMF工作论文利用智利2003至2013年的行政微观数据"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：智利矿业生产率下降8%与资源配置研究",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          },
+          {
+            "title": "IMF：铜价上涨对智利矿业生产率的影响",
+            "reasons": [
+              "anchor_coverage=0.46"
+            ]
+          },
+          {
+            "title": "IMF：0009IMFCommodityBoomsPr",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：IMF工作论文利用智利2003至2013年的行政微观数据",
+            "reasons": [
+              "anchor_coverage=0.08",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：大宗商品繁荣与智利矿业生产率研究",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：大宗商品繁荣与智利矿业生产率研究"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 11,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/09-0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+      "pdf_path": "kc_translated_reports/institutions/260801/09-0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+      "title": "IMF：研究主题与行业变化观察",
+      "source_title": "0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+        "cleaned_source_title": "0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0010IMFConvergencefromAboveWhen",
+        "raw_candidates": [
+          "IMF：从上方趋同-全球追赶反映顶部回落",
+          "IMF：从上方趋同-1960至2019年顶部压缩贡献约三分之一",
+          "IMF：从上方趋同-全球收入差距收窄中的顶部回落机制"
+        ],
+        "cleaned_candidates": [
+          "IMF：从上方趋同-全球追赶反映顶部回落",
+          "IMF：从上方趋同-1960至2019年顶部压缩贡献约三分之一",
+          "IMF：从上方趋同-全球收入差距收窄中的顶部回落机制",
+          "IMF：0010IMFConvergencefromAboveWhen",
+          "IMF：2026年7月发布的IMF工作论文提出一个与主流叙事不同的观察"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：从上方趋同-1960至2019年顶部压缩贡献约三分之一",
+            "reasons": [
+              "anchor_coverage=0.36",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：从上方趋同-全球收入差距收窄中的顶部回落机制",
+            "reasons": [
+              "anchor_coverage=0.64"
+            ]
+          },
+          {
+            "title": "IMF：0010IMFConvergencefromAboveWhen",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2026年7月发布的IMF工作论文提出一个与主流叙事不同的观察",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：从上方趋同-全球追赶反映顶部回落",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 10,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/10-0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18",
+      "pdf_path": "kc_translated_reports/institutions/260801/10-0010-IMF_Convergence-from-Above-When-Global-Catch-Up-Reflects-Falling_0d14ef18/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+      "title": "IMF：资金结构与相关数据观察",
+      "source_title": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+        "cleaned_source_title": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0011IMFCreditorsSeniority",
+        "raw_candidates": [
+          "IMF：债权人优先层级与主权债务风险的实证证据",
+          "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+          "IMF：债权人优先层级与主权债务风险-基于119国分项债务数据的实证"
+        ],
+        "cleaned_candidates": [
+          "IMF：债权人优先层级与主权债务风险的实证证据",
+          "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+          "IMF：债权人优先层级与主权债务风险-基于119国分项债务数据的实证",
+          "IMF：0011IMFCreditorsSeniority",
+          "IMF：161）利用1980至2022年间119个新兴市场和发展中地区"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0011IMFCreditorsSeniority",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：161）利用1980至2022年间119个新兴市场和发展中地区",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：资金结构与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "119",
+            "1980",
+            "2022"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 16,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/11-0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+      "pdf_path": "kc_translated_reports/institutions/260801/11-0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591",
+      "title": "IMF：货币定价框架与相关指标观察",
+      "source_title": "0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591",
+        "cleaned_source_title": "0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0012IMFDominantCurrencyPricing",
+        "raw_candidates": [
+          "IMF：主导货币定价与货币不确定性溢价",
+          "IMF：主导货币定价与货币不确定性溢价-2003至2018年25国数据",
+          "IMF：主导货币定价与货币不确定性溢价-出口美元计价与美元负债"
+        ],
+        "cleaned_candidates": [
+          "IMF：主导货币定价与货币不确定性溢价",
+          "IMF：主导货币定价与货币不确定性溢价-2003至2018年25国数据",
+          "IMF：主导货币定价与货币不确定性溢价-出口美元计价与美元负债",
+          "IMF：0012IMFDominantCurrencyPricing",
+          "IMF：[[KC_IMAGE_001]]"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0012IMFDominantCurrencyPricing",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：[[KC_IMAGE_001]]",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：货币定价框架与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2003",
+            "2018",
+            "25"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：主导货币定价与货币不确定性溢价-2003至2018年25国数据",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：货币定价框架与相关指标观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/12-0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591",
+      "pdf_path": "kc_translated_reports/institutions/260801/12-0012-IMF_Dominant-Currency-Pricing-and-Currency-Risk-Premia_635ec591/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663",
+      "title": "IMF：研究主题与行业变化观察",
+      "source_title": "0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663",
+        "cleaned_source_title": "0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0013IMFDriversofPrivate",
+        "raw_candidates": [
+          "IMF：新加坡私人消费驱动因素分析",
+          "IMF：新加坡私人消费占GNDI比率38%的驱动因素",
+          "IMF：新加坡私人消费比率与人口结构及劳动收入份额分析"
+        ],
+        "cleaned_candidates": [
+          "IMF：新加坡私人消费驱动因素分析",
+          "IMF：新加坡私人消费占GNDI比率38%的驱动因素",
+          "IMF：新加坡私人消费比率与人口结构及劳动收入份额分析",
+          "IMF：0013IMFDriversofPrivate",
+          "IMF：国际货币产品组织（IMF）2026年7月发布的国别报告选取19"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：新加坡私人消费比率与人口结构及劳动收入份额分析",
+            "reasons": [
+              "anchor_coverage=0.58"
+            ]
+          },
+          {
+            "title": "IMF：0013IMFDriversofPrivate",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）2026年7月发布的国别报告选取19",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment",
+              "unsupported_hook_addition"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "38"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：新加坡私人消费占GNDI比率38%的驱动因素",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 7,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/13-0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663",
+      "pdf_path": "kc_translated_reports/institutions/260801/13-0013-IMF_Drivers-of-Private-Consumption-in-Singapore_b1981663/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+      "title": "IMF：货币市场与相关指标观察",
+      "source_title": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+        "cleaned_source_title": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0014IMFFinancialShocksi",
+        "raw_candidates": [
+          "IMF：汇率市场资金冲击识别与宏观影响",
+          "IMF：资金冲击解释UIP偏离三分之一波动",
+          "IMF：巴西智利汇率资金冲击识别与宏观影响"
+        ],
+        "cleaned_candidates": [
+          "IMF：汇率市场资金冲击识别与宏观影响",
+          "IMF：资金冲击解释UIP偏离三分之一波动",
+          "IMF：巴西智利汇率资金冲击识别与宏观影响",
+          "IMF：0014IMFFinancialShocksi",
+          "IMF：国际货币产品组织（IMF）2026年7月发布的工作论文提出了一"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：资金冲击解释UIP偏离三分之一波动",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0014IMFFinancialShocksi",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：国际货币产品组织（IMF）2026年7月发布的工作论文提出了一",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：货币市场与相关指标观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：汇率市场资金冲击识别与宏观影响",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：货币市场与相关指标观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/14-0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+      "pdf_path": "kc_translated_reports/institutions/260801/14-0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+      "title": "IMF：资金结构与相关数据观察",
+      "source_title": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+        "cleaned_source_title": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0015IMFIslamicRepublico",
+        "raw_candidates": [
+          "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾",
+          "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+          "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-资源依赖与自然灾害情景"
+        ],
+        "cleaned_candidates": [
+          "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾",
+          "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+          "IMF：0015IMFIslamicRepublico",
+          "IMF：2025年1月9日至15日"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0015IMFIslamicRepublico",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2025年1月9日至15日",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：资金结构与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1",
+            "2025"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/15-0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+      "pdf_path": "kc_translated_reports/institutions/260801/15-0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+      "title": "IMF：英国劳动税研究-2026年7月国别报告",
+      "source_title": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+        "cleaned_source_title": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0016IMFLaborTaxationint",
+        "raw_candidates": [
+          "IMF：英国劳动税研究",
+          "IMF：英国劳动税研究-2026年7月国别报告",
+          "IMF：英国劳动税研究-微观模拟与税制改革"
+        ],
+        "cleaned_candidates": [
+          "IMF：英国劳动税研究",
+          "IMF：英国劳动税研究-2026年7月国别报告",
+          "IMF：英国劳动税研究-微观模拟与税制改革",
+          "IMF：0016IMFLaborTaxationint",
+          "IMF：IMF工作人员在2026年7月发布的国别报告附属论文中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [
+          "body_too_short"
+        ],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：英国劳动税研究",
+            "reasons": [
+              "body_too_short",
+              "anchor_coverage=0.27",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：英国劳动税研究-微观模拟与税制改革",
+            "reasons": [
+              "anchor_coverage=0.40",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：0016IMFLaborTaxationint",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：IMF工作人员在2026年7月发布的国别报告附属论文中",
+            "reasons": [
+              "anchor_coverage=0.47",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：英国劳动税研究-2026年7月国别报告",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026",
+            "7"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：英国劳动税研究-2026年7月国别报告"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 12,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/16-0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+      "pdf_path": "kc_translated_reports/institutions/260801/16-0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+      "title": "IMF：WEO业务与近期数据观察",
+      "source_title": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+        "cleaned_source_title": "0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0017IMFLookingforUnderl",
+        "raw_candidates": [
+          "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+          "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+          "IMF：WEO增长预测的乐观偏差与跨国传导缺口研究"
+        ],
+        "cleaned_candidates": [
+          "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+          "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+          "IMF：WEO增长预测的乐观偏差与跨国传导缺口研究",
+          "IMF：0017IMFLookingforUnderl",
+          "IMF：在控制国家固定效应后，预测增长平均高出实际增长约0.5个百分点"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：WEO增长预测平均高估0.5个百分点，美国溢出效应吸收不足一半",
+            "reasons": [
+              "anchor_coverage=0.32",
+              "unsupported_hook_addition"
+            ]
+          },
+          {
+            "title": "IMF：0017IMFLookingforUnderl",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：在控制国家固定效应后，预测增长平均高出实际增长约0.5个百分点",
+            "reasons": [
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：WEO业务与近期数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：WEO增长预测中的乐观偏差与跨国传导缺口",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：WEO业务与近期数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 7,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/17-0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545",
+      "pdf_path": "kc_translated_reports/institutions/260801/17-0017-IMF_Looking-for-Underlying-Structure-in-WEO-Forecasts_c0ee4545/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084",
+      "title": "IMF：资金结构与相关数据观察",
+      "source_title": "0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084",
+        "cleaned_source_title": "0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0018IMFTechnicalAssista",
+        "raw_candidates": [
+          "IMF：毛里塔尼亚公共债务预测技术援助",
+          "IMF：毛里塔尼亚公共债务预测技术援助-2024年1月至2025年1月",
+          "IMF：毛里塔尼亚公共债务预测技术援助-债务动态工具与情景分析"
+        ],
+        "cleaned_candidates": [
+          "IMF：毛里塔尼亚公共债务预测技术援助",
+          "IMF：毛里塔尼亚公共债务预测技术援助-2024年1月至2025年1月",
+          "IMF：毛里塔尼亚公共债务预测技术援助-债务动态工具与情景分析",
+          "IMF：0018IMFTechnicalAssista",
+          "IMF：2024年1月至2025年1月期间"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0018IMFTechnicalAssista",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：2024年1月至2025年1月期间",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：资金结构与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "1",
+            "2024",
+            "2025"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：毛里塔尼亚公共债务预测技术援助-2024年1月至2025年1月",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/18-0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084",
+      "pdf_path": "kc_translated_reports/institutions/260801/18-0018-IMF_Technical-Assistance-in-Public-Debt-Projections-and-Analysis_30a99084/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+      "title": "IMF：研究主题与行业变化观察",
+      "source_title": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+        "cleaned_source_title": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0019IMFTheComingGreatRe",
+        "raw_candidates": [
+          "IMF：资金压抑的百年证据与新一轮财政不确定性",
+          "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+          "IMF：资金压抑百年证据-债务削减中的政策工具量化"
+        ],
+        "cleaned_candidates": [
+          "IMF：资金压抑的百年证据与新一轮财政不确定性",
+          "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+          "IMF：资金压抑百年证据-债务削减中的政策工具量化",
+          "IMF：0019IMFTheComingGreatRe",
+          "IMF：各国之间的差异在1940年代和1950年代初尤为明显"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "IMF：资金压抑百年证据-债务削减中的政策工具量化",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "IMF：0019IMFTheComingGreatRe",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：各国之间的差异在1940年代和1950年代初尤为明显",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：资金压抑的百年证据与新一轮财政不确定性",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 25,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/19-0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+      "pdf_path": "kc_translated_reports/institutions/260801/19-0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+      "title": "IMF：AI与组织管理与生产率技术应用观察",
+      "source_title": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+        "cleaned_source_title": "0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+        "institution_name": "IMF",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "IMF：0020IMFUnlockingAILedPr",
+        "raw_candidates": [
+          "IMF：英国AI生产率增长路径",
+          "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+          "IMF：英国AI生产率增长与五项条件"
+        ],
+        "cleaned_candidates": [
+          "IMF：英国AI生产率增长路径",
+          "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+          "IMF：英国AI生产率增长与五项条件",
+          "IMF：0020IMFUnlockingAILedPr",
+          "IMF：英国AI生产率增长的五个瓶颈与政策路径"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0020IMFUnlockingAILedPr",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：AI与组织管理与生产率技术应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "0.1",
+            "0.5"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "IMF：英国AI生产率增长与TFP年增0.1至0.5个百分点",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "IMF：AI与组织管理与生产率技术应用观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/20-0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588",
+      "pdf_path": "kc_translated_reports/institutions/260801/20-0020-IMF_Unlocking-AI-Led-Productivity-Growth-in-the-United-Kingdom_1d8db588/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+      "title": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+      "source_title": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+        "cleaned_source_title": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+        "institution_name": "IMF",
+        "required_terms": [],
+        "deterministic_fallback": "IMF：0021IMFWhyHaveUKGiltYie",
+        "raw_candidates": [
+          "IMF：英国国债期限溢价高于七国集团同业",
+          "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+          "IMF：英国国债期限溢价高于七国集团同业-养老金与对冲产品需求变化"
+        ],
+        "cleaned_candidates": [
+          "IMF：英国国债期限溢价高于七国集团同业",
+          "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+          "IMF：英国国债期限溢价高于七国集团同业-养老金与对冲产品需求变化",
+          "IMF：0021IMFWhyHaveUKGiltYie",
+          "IMF：IMF工作人员在2026年7月发布的国别报告中"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "IMF：0021IMFWhyHaveUKGiltYie",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "IMF：IMF工作人员在2026年7月发布的国别报告中",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+        "selection_reason": "supported_hook",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "2026",
+            "3"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/21-0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+      "pdf_path": "kc_translated_reports/institutions/260801/21-0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+      "title": "经合组织：区域环境与行业变化观察",
+      "source_title": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+        "cleaned_source_title": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+        "institution_name": "经合组织",
+        "required_terms": [],
+        "deterministic_fallback": "经合组织：0022OECDGovernmentinvo",
+        "raw_candidates": [
+          "经合组织：政府参与可持续倡议的现状与方式",
+          "经合组织：2020-2025年可持续倡议政府参与度分析",
+          "经合组织：可持续倡议中政府直接参与及政策引用观察"
+        ],
+        "cleaned_candidates": [
+          "经合组织：政府参与可持续倡议的现状与方式",
+          "经合组织：2020-2025年可持续倡议政府参与度分析",
+          "经合组织：可持续倡议中政府直接参与及政策引用观察",
+          "经合组织：0022OECDGovernmentinvo",
+          "经合组织：755项倡议没有任何政府直接参与，占70%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "经合组织：2020-2025年可持续倡议政府参与度分析",
+            "reasons": [
+              "anchor_coverage=0.50"
+            ]
+          },
+          {
+            "title": "经合组织：可持续倡议中政府直接参与及政策引用观察",
+            "reasons": [
+              "anchor_coverage=0.43"
+            ]
+          },
+          {
+            "title": "经合组织：0022OECDGovernmentinvo",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "经合组织：755项倡议没有任何政府直接参与，占70%",
+            "reasons": [
+              "anchor_coverage=0.21",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "经合组织：区域环境与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "经合组织：政府参与可持续倡议的现状与方式",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:politically_sensitive"
+        ],
+        "final_title_after_wording_guard": "经合组织：区域环境与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 3,
+      "institution_name": "经合组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/22-0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+      "pdf_path": "kc_translated_reports/institutions/260801/22-0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260801/0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+      "title": "世界贸易组织：乌兹别克斯坦重申2026年完成入世目标",
+      "source_title": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+        "cleaned_source_title": "0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+        "institution_name": "世界贸易组织",
+        "required_terms": [],
+        "deterministic_fallback": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+        "raw_candidates": [
+          "世界贸易组织：乌兹别克斯坦重申2026年完成入世目标",
+          "世界贸易组织：乌兹别克斯坦重申2026年入世目标-31份双边议定书已交存",
+          "世界贸易组织：乌兹别克斯坦入世进程-190项法规调整与食品安全进展"
+        ],
+        "cleaned_candidates": [
+          "世界贸易组织：乌兹别克斯坦重申2026年完成入世目标",
+          "世界贸易组织：乌兹别克斯坦重申2026年入世目标",
+          "世界贸易组织：乌兹别克斯坦入世进程-190项法规调整与食品安全进展",
+          "世界贸易组织：0023WTOUzbekistanreaffirms20",
+          "世界贸易组织：乌兹别克斯坦重申2026年完成入世进程目标"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "世界贸易组织：乌兹别克斯坦入世进程-190项法规调整与食品安全进展",
+            "reasons": [
+              "anchor_coverage=0.33"
+            ]
+          },
+          {
+            "title": "世界贸易组织：0023WTOUzbekistanreaffirms20",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.11",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "世界贸易组织：乌兹别克斯坦重申2026年完成入世目标",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "世界贸易组织：乌兹别克斯坦重申2026年完成入世目标"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 0,
+      "institution_name": "世界贸易组织",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/institutions/260801/23-0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06",
+      "pdf_path": "kc_translated_reports/institutions/260801/23-0023-WTO_Uzbekistan-reaffirms-2026-WTO-accession-goal-thanks-members-_0598aa06/kc_translated_report_23.pdf"
+    }
+  ]
+}

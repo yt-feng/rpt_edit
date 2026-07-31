@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/mineru_raw/images/d1d29925191cdd08388e2ac8ca89e6996bc8b91a549b731df706f7e29d3246c0.jpg",
+    "path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.61,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/mineru_raw/images/baea1e6899704cb36c6c88c3ad6f3e2524609783ec9c6d65a4036375b450cf5b.jpg",
+    "path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.73,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/mineru_raw/images/36b57ff335418e0ff8d60dc1e1f432615668b388ff8a53d9fc2bc08be441d0d8.jpg",
+    "path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.26,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/mineru_raw/images/bb508945925f909269da2723422e93ca232a1700be48e4d346f7c0da14236004.jpg",
+    "path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.27,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260801/0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/mineru_raw/images/e4874910a6e736f5d9ca26ea2cf1e236abb1679ceacd09a9fb2a41f0926301e7.jpg",
+    "path": "kc_translated_reports/institutions/260801/03-0003-Bruegel_Beyond-coal-facilitating-the-transition-in-Europe_419d07a9/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.28,contrast"
+  }
+]

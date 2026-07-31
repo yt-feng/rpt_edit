@@ -1,0 +1,74 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+  "title": "IMF：资金结构与相关数据观察",
+  "source_title": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+    "cleaned_source_title": "0011-IMF_Creditors-Seniority-and-Sovereign-Risk-Evidence-from-Debt-Co_69bbec41",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0011IMFCreditorsSeniority",
+    "raw_candidates": [
+      "IMF：债权人优先层级与主权债务风险的实证证据",
+      "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+      "IMF：债权人优先层级与主权债务风险-基于119国分项债务数据的实证"
+    ],
+    "cleaned_candidates": [
+      "IMF：债权人优先层级与主权债务风险的实证证据",
+      "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+      "IMF：债权人优先层级与主权债务风险-基于119国分项债务数据的实证",
+      "IMF：0011IMFCreditorsSeniority",
+      "IMF：161）利用1980至2022年间119个新兴市场和发展中地区"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0011IMFCreditorsSeniority",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：161）利用1980至2022年间119个新兴市场和发展中地区",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：资金结构与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "119",
+        "1980",
+        "2022"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：1980至2022年119国债权人优先层级与主权债务风险实证",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_11.pdf",
+  "figure_count": 16,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

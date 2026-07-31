@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+  "title": "IMF：大宗商品繁荣与智利矿业生产率研究",
+  "source_title": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+    "cleaned_source_title": "0009-IMF_Commodity-Booms-Productivity-and-Misallocation-Evidence-from_5ee2ca95",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0009IMFCommodityBoomsPr",
+    "raw_candidates": [
+      "IMF：大宗商品繁荣与智利矿业生产率研究",
+      "IMF：智利矿业生产率下降8%与资源配置研究",
+      "IMF：铜价上涨对智利矿业生产率的影响"
+    ],
+    "cleaned_candidates": [
+      "IMF：大宗商品繁荣与智利矿业生产率研究",
+      "IMF：智利矿业生产率下降8%与资源配置研究",
+      "IMF：铜价上涨对智利矿业生产率的影响",
+      "IMF：0009IMFCommodityBoomsPr",
+      "IMF：IMF工作论文利用智利2003至2013年的行政微观数据"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：智利矿业生产率下降8%与资源配置研究",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "IMF：铜价上涨对智利矿业生产率的影响",
+        "reasons": [
+          "anchor_coverage=0.46"
+        ]
+      },
+      {
+        "title": "IMF：0009IMFCommodityBoomsPr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF工作论文利用智利2003至2013年的行政微观数据",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：大宗商品繁荣与智利矿业生产率研究",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：大宗商品繁荣与智利矿业生产率研究"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_09.pdf",
+  "figure_count": 11,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

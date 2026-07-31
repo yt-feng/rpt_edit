@@ -1,0 +1,82 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+  "title": "IMF：研究主题与行业变化观察",
+  "source_title": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+    "cleaned_source_title": "0019-IMF_The-Coming-Great-Repression-New-Measures-and-a-Century-of-Ev_d2304c35",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0019IMFTheComingGreatRe",
+    "raw_candidates": [
+      "IMF：资金压抑的百年证据与新一轮财政不确定性",
+      "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+      "IMF：资金压抑百年证据-债务削减中的政策工具量化"
+    ],
+    "cleaned_candidates": [
+      "IMF：资金压抑的百年证据与新一轮财政不确定性",
+      "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+      "IMF：资金压抑百年证据-债务削减中的政策工具量化",
+      "IMF：0019IMFTheComingGreatRe",
+      "IMF：各国之间的差异在1940年代和1950年代初尤为明显"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：资金压抑百年证据-17个发达地区1920年以来数据",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "IMF：资金压抑百年证据-债务削减中的政策工具量化",
+        "reasons": [
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "IMF：0019IMFTheComingGreatRe",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：各国之间的差异在1940年代和1950年代初尤为明显",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：资金压抑的百年证据与新一轮财政不确定性",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_19.pdf",
+  "figure_count": 25,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260801/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/mineru_raw/images/f8d50c66c9a654fcafc95d0a8bbb74ca8819bc2752edc2b581c984090b050dd3.jpg",
+    "path": "kc_translated_reports/institutions/260801/22-0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260801/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/mineru_raw/images/bcd98ff9f5d360c5b2a0ea63244bcbccb637af048c1151bc52c4aa2e53e6b821.jpg",
+    "path": "kc_translated_reports/institutions/260801/22-0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.17,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260801/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/mineru_raw/images/3188159760113b3206b1a534a8d3b57bf6e12f215d0df4a78c299246e10f0f62.jpg",
+    "path": "kc_translated_reports/institutions/260801/22-0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.21,contrast,large"
+  }
+]

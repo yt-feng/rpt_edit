@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260801/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/mineru_raw/images/39a26036bdd2e7bd45d4c67a7c8d4ea72122ab47653a9b165a52fd75669ab6c6.jpg",
+    "path": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.29,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260801/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/mineru_raw/images/4ec3ad6ed8de8c36550bee23c9adeac75e263cc25320e0df35bcced1e88cd68b.jpg",
+    "path": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.38,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260801/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/mineru_raw/images/cd205d73e33e5d2f1c2c4db42e9791271f3739eaacf4b590ae7de419cb9a6992.jpg",
+    "path": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.31,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260801/0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/mineru_raw/images/0b76dd51d0d674e9ca2ae1d6f7d7d9304b9e70af6eb2451afc59545fbade3d9b.jpg",
+    "path": "kc_translated_reports/institutions/260801/06-0006-Bruegel_Risk-reduction-through-Europe-s-distressed-debt-market_f3a1e413/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.13,large"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+  "title": "IMF：货币市场与相关指标观察",
+  "source_title": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+    "cleaned_source_title": "0014-IMF_Financial-Shocks-in-Currency-Markets-Evidence-from-UIP-Premi_93e985e5",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0014IMFFinancialShocksi",
+    "raw_candidates": [
+      "IMF：汇率市场资金冲击识别与宏观影响",
+      "IMF：资金冲击解释UIP偏离三分之一波动",
+      "IMF：巴西智利汇率资金冲击识别与宏观影响"
+    ],
+    "cleaned_candidates": [
+      "IMF：汇率市场资金冲击识别与宏观影响",
+      "IMF：资金冲击解释UIP偏离三分之一波动",
+      "IMF：巴西智利汇率资金冲击识别与宏观影响",
+      "IMF：0014IMFFinancialShocksi",
+      "IMF：国际货币产品组织（IMF）2026年7月发布的工作论文提出了一"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：资金冲击解释UIP偏离三分之一波动",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：0014IMFFinancialShocksi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：国际货币产品组织（IMF）2026年7月发布的工作论文提出了一",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：货币市场与相关指标观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：汇率市场资金冲击识别与宏观影响",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：货币市场与相关指标观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_14.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

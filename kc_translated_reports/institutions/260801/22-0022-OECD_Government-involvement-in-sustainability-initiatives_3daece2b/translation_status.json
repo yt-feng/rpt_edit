@@ -1,0 +1,82 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+  "title": "经合组织：区域环境与行业变化观察",
+  "source_title": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+    "cleaned_source_title": "0022-OECD_Government-involvement-in-sustainability-initiatives_3daece2b",
+    "institution_name": "经合组织",
+    "required_terms": [],
+    "deterministic_fallback": "经合组织：0022OECDGovernmentinvo",
+    "raw_candidates": [
+      "经合组织：政府参与可持续倡议的现状与方式",
+      "经合组织：2020-2025年可持续倡议政府参与度分析",
+      "经合组织：可持续倡议中政府直接参与及政策引用观察"
+    ],
+    "cleaned_candidates": [
+      "经合组织：政府参与可持续倡议的现状与方式",
+      "经合组织：2020-2025年可持续倡议政府参与度分析",
+      "经合组织：可持续倡议中政府直接参与及政策引用观察",
+      "经合组织：0022OECDGovernmentinvo",
+      "经合组织：755项倡议没有任何政府直接参与，占70%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "经合组织：2020-2025年可持续倡议政府参与度分析",
+        "reasons": [
+          "anchor_coverage=0.50"
+        ]
+      },
+      {
+        "title": "经合组织：可持续倡议中政府直接参与及政策引用观察",
+        "reasons": [
+          "anchor_coverage=0.43"
+        ]
+      },
+      {
+        "title": "经合组织：0022OECDGovernmentinvo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "经合组织：755项倡议没有任何政府直接参与，占70%",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "经合组织：区域环境与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "经合组织：政府参与可持续倡议的现状与方式",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "经合组织：区域环境与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_22.pdf",
+  "figure_count": 3,
+  "institution_name": "经合组织",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

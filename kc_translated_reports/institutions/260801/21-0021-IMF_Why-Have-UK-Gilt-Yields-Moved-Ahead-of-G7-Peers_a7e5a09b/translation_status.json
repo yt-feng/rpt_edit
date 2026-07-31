@@ -1,0 +1,68 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+  "title": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+  "source_title": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+    "cleaned_source_title": "0021-IMF_Why-Have-UK-Gilt-Yields-Moved-Ahead-of-G7-Peers_a7e5a09b",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0021IMFWhyHaveUKGiltYie",
+    "raw_candidates": [
+      "IMF：英国国债期限溢价高于七国集团同业",
+      "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+      "IMF：英国国债期限溢价高于七国集团同业-养老金与对冲产品需求变化"
+    ],
+    "cleaned_candidates": [
+      "IMF：英国国债期限溢价高于七国集团同业",
+      "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+      "IMF：英国国债期限溢价高于七国集团同业-养老金与对冲产品需求变化",
+      "IMF：0021IMFWhyHaveUKGiltYie",
+      "IMF：IMF工作人员在2026年7月发布的国别报告中"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0021IMFWhyHaveUKGiltYie",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF工作人员在2026年7月发布的国别报告中",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026",
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：英国国债期限溢价高于七国集团同业-2026年3月通胀最高"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

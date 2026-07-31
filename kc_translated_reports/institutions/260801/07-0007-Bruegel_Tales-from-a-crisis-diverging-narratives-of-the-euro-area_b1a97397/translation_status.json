@@ -1,0 +1,69 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+  "title": "布鲁盖尔研究所：研究主题与行业变化观察",
+  "source_title": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+    "cleaned_source_title": "0007-Bruegel_Tales-from-a-crisis-diverging-narratives-of-the-euro-area_b1a97397",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0007BruegelTalesfro",
+    "raw_candidates": [
+      "布鲁盖尔研究所：欧元区危机叙事分歧",
+      "布鲁盖尔研究所：欧元区危机叙事分歧-2007至2016年四国媒体5.1万篇报道分析",
+      "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧元区危机叙事分歧",
+      "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异",
+      "布鲁盖尔研究所：0007BruegelTalesfro",
+      "布鲁盖尔研究所：2007年至2016年间"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：0007BruegelTalesfro",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：2007年至2016年间",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：欧元区危机叙事分歧-德法意西四国报纸归因差异",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_07.pdf",
+  "figure_count": 5,
+  "institution_name": "布鲁盖尔研究所",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

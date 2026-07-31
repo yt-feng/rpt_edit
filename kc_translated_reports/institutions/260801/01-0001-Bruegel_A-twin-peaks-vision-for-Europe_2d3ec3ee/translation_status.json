@@ -1,0 +1,72 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+  "title": "布鲁盖尔研究所：行业规则与主题变化观察",
+  "source_title": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+    "cleaned_source_title": "0001-Bruegel_A-twin-peaks-vision-for-Europe_2d3ec3ee",
+    "institution_name": "布鲁盖尔研究所",
+    "required_terms": [],
+    "deterministic_fallback": "布鲁盖尔研究所：0001BruegelAtwinpea",
+    "raw_candidates": [
+      "欧盟资金监管双峰愿景",
+      "2015年数据下的欧盟资金监管双峰愿景",
+      "欧盟资金监管双峰愿景：银行保险融合背景"
+    ],
+    "cleaned_candidates": [
+      "布鲁盖尔研究所：欧盟资金监管双峰愿景",
+      "布鲁盖尔研究所：2015年数据下的欧盟资金监管双峰愿景",
+      "布鲁盖尔研究所：欧盟资金监管双峰愿景，银行保险融合背景",
+      "布鲁盖尔研究所：0001BruegelAtwinpea",
+      "布鲁盖尔研究所：2008年9月至10月美国资金恐慌中"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "布鲁盖尔研究所：0001BruegelAtwinpea",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "布鲁盖尔研究所：2008年9月至10月美国资金恐慌中",
+        "reasons": [
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "布鲁盖尔研究所：行业规则与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2015"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "布鲁盖尔研究所：2015年数据下的欧盟资金监管双峰愿景",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:politically_sensitive"
+    ],
+    "final_title_after_wording_guard": "布鲁盖尔研究所：行业规则与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 2,
+  "institution_name": "布鲁盖尔研究所",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

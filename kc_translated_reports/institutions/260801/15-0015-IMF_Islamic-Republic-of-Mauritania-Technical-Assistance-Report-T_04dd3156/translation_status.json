@@ -1,0 +1,72 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+  "title": "IMF：资金结构与相关数据观察",
+  "source_title": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+    "cleaned_source_title": "0015-IMF_Islamic-Republic-of-Mauritania-Technical-Assistance-Report-T_04dd3156",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0015IMFIslamicRepublico",
+    "raw_candidates": [
+      "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾",
+      "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+      "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-资源依赖与自然灾害情景"
+    ],
+    "cleaned_candidates": [
+      "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾",
+      "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+      "IMF：0015IMFIslamicRepublico",
+      "IMF：2025年1月9日至15日"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：0015IMFIslamicRepublico",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：2025年1月9日至15日",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：资金结构与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1",
+        "2025"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "IMF：毛里塔尼亚公共债务分析工具技术援助项目回顾-2025年1月完成",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "IMF：资金结构与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 28,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

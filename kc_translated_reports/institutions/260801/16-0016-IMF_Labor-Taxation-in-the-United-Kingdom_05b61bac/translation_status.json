@@ -1,0 +1,85 @@
+{
+  "source_report_dir": "xhs_notes/institutions/260801/0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+  "title": "IMF：英国劳动税研究-2026年7月国别报告",
+  "source_title": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+    "cleaned_source_title": "0016-IMF_Labor-Taxation-in-the-United-Kingdom_05b61bac",
+    "institution_name": "IMF",
+    "required_terms": [],
+    "deterministic_fallback": "IMF：0016IMFLaborTaxationint",
+    "raw_candidates": [
+      "IMF：英国劳动税研究",
+      "IMF：英国劳动税研究-2026年7月国别报告",
+      "IMF：英国劳动税研究-微观模拟与税制改革"
+    ],
+    "cleaned_candidates": [
+      "IMF：英国劳动税研究",
+      "IMF：英国劳动税研究-2026年7月国别报告",
+      "IMF：英国劳动税研究-微观模拟与税制改革",
+      "IMF：0016IMFLaborTaxationint",
+      "IMF：IMF工作人员在2026年7月发布的国别报告附属论文中"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "body_too_short"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "IMF：英国劳动税研究",
+        "reasons": [
+          "body_too_short",
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：英国劳动税研究-微观模拟与税制改革",
+        "reasons": [
+          "anchor_coverage=0.40",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：0016IMFLaborTaxationint",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "IMF：IMF工作人员在2026年7月发布的国别报告附属论文中",
+        "reasons": [
+          "anchor_coverage=0.47",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "IMF：英国劳动税研究-2026年7月国别报告",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "2026",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "IMF：英国劳动税研究-2026年7月国别报告"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_16.pdf",
+  "figure_count": 12,
+  "institution_name": "IMF",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
