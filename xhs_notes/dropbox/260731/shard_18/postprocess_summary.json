@@ -1,0 +1,239 @@
+[
+  {
+    "item": "0001-91-UBS-Amazon.com-AWS-Set-to-Accelerate-Further-into-40---Growth-260731",
+    "source_pdf": "/tmp/pdf_batch_001_hordrsnv/pdfs/0001-91-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "AWS云业务加速信号",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "UBS：亚马逊AWS增速将进入40%以上区间",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-91-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731.pdf",
+      "cleaned_source_title": "UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth",
+      "institution_name": "UBS",
+      "required_terms": [],
+      "deterministic_fallback": "UBS：AWSSettoAccelerateFurtherinto40",
+      "raw_candidates": [
+        "UBS：亚马逊AWS增速将进入40%以上区间",
+        "UBS：AWS AI年化收入250亿美元 2027年增速超40%",
+        "UBS：AWS核心云与AI算力需求同步加速"
+      ],
+      "cleaned_candidates": [
+        "UBS：亚马逊AWS增速将进入40%以上区间",
+        "UBS：AWSAI年化收入250亿美元2027年增速超40%",
+        "UBS：AWS核心云与AI算力需求同步加速",
+        "UBS：AWSSettoAccelerateFurtherinto40",
+        "UBS：1.AWS增速预测上调至38.9%，2027年将突破40%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：AWSAI年化收入250亿美元2027年增速超40%",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：AWS核心云与AI算力需求同步加速",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：AWSSettoAccelerateFurtherinto40",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：1.AWS增速预测上调至38.9%，2027年将突破40%",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        }
+      ],
+      "selected_title": "UBS：亚马逊AWS增速将进入40%以上区间",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "UBS：亚马逊AWS增速将进入40%以上区间"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-92-UBS-China-Economic-Perspectives-AI-is-reshaping-China-s-trade-story---up",
+    "source_pdf": "/tmp/pdf_batch_001_hordrsnv/pdfs/0002-92-UBS-China Economic Perspectives-AI is reshaping China-s trade story - upgrading 2026 trade forecasts-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "UBS",
+    "cover_short_title": "AI正在改写中国贸易",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "中国经济->中国宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济体->地区 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "疲弱|乏力|低迷->仍在调整 x2",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "投资->研究 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "UBS：近期数据与市场变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-92-UBS-China Economic Perspectives-AI is reshaping China-s trade story - upgrading 2026 trade forecasts-260730.pdf",
+      "cleaned_source_title": "UBS-China Economic Perspectives-AI is reshaping China-s trade story - upgrading 2026 trade forecasts",
+      "institution_name": "UBS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "UBS：中国EconomicPerspectivesAI",
+      "raw_candidates": [
+        "UBS：中国宏观环境-AI重塑贸易格局与2026年预测上调",
+        "UBS：AI相关产品占进出口约三成，贡献近半增量",
+        "UBS：AI重塑中国贸易格局，2026年出口增速预测上调至18%"
+      ],
+      "cleaned_candidates": [
+        "UBS：中国宏观环境-AI重塑贸易格局与2026年预测上调",
+        "UBS：AI相关产品占进出口约三成，贡献近半增量",
+        "UBS：AI重塑中国贸易格局，2026年出口增速预测上调至18%",
+        "UBS：中国EconomicPerspectivesAI",
+        "UBS：非AI出口上半年同比增长11%，其中汽车出口增长60%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "UBS：AI相关产品占进出口约三成，贡献近半增量",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：AI重塑中国贸易格局，2026年出口增速预测上调至18%",
+          "reasons": [
+            "anchor_coverage=0.61",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：中国EconomicPerspectivesAI",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "UBS：非AI出口上半年同比增长11%，其中汽车出口增长60%",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "UBS：近期数据与市场变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "UBS：中国宏观环境-AI重塑贸易格局与2026年预测上调",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "UBS：近期数据与市场变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_hordrsnv/pdfs/0001-91-UBS-Amazon.com AWS Set to Accelerate Further into 40-- Growth-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hordrsnv/pdfs/0002-92-UBS-China Economic Perspectives-AI is reshaping China-s trade story - upgrading 2026 trade forecasts-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

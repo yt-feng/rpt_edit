@@ -1,0 +1,119 @@
+ZH_A: 今天我们要聊一份关于亚马逊的深度研报，标题很直接，说AWS要加速冲向40%以上的增长。听起来是个很强的判断，你读完第一反应是什么？
+
+ZH_B: 我第一反应是，这个判断不是拍脑袋。它背后有两个关键数字，一个是AI年化收入250亿美元，一个是积压订单4960亿美元。这两个数字同时出现，说明企业客户对AWS的需求在加速，而且不只是AI，核心计算也在提速。
+
+ZH_A: 这两个数字为什么这么重要？一般的投资者看亚马逊，可能更多盯零售或者广告。
+
+ZH_B: 因为AWS是亚马逊利润的核心引擎。如果AWS增长从30%左右跳到40%以上，整个公司的收入结构和利润率都会发生质变。报告里提到，这个积压订单比市场预期的还要高，原本预期会增加1000亿，结果实际增加了510亿。这说明需求比想象中更强。
+
+ZH_A: 那这个增长是怎么来的？是AI带来的，还是传统云计算的复苏？
+
+ZH_B: 两者都有。报告特别提到，Bedrock和核心计算服务都在加速。另外还有一个关键变量，就是OpenAI从2027年初开始会使用亚马逊的Trainium芯片。这意味着AWS不只是卖算力，还在芯片层面拿到一个大客户，这会直接推高明年的增长预期。
+
+ZH_A: 所以报告判断，AWS今年下半年能到39%的增长，明年可能突破40%。这个判断会不会太乐观了？
+
+ZH_B: 这就要看你怎么看利润率。很多人担心，AI工作负载占比上升，会拉低利润率。但报告提出一个反直觉的观点：如果AWS收入增长这么快，亚马逊反而需要大幅增加销售管理费用才能把利润率压下来。换句话说，利润率可能不是下滑，而是继续扩张。
+
+ZH_A: 这个逻辑很有意思。你是说，收入增长太快，费用跟不上，利润率反而会被动提升？
+
+ZH_B: 对，就是这个意思。报告算了一笔账，说要想把利润率压住，SG&A费用增速得是过去几年的三倍。这几乎不可能。所以他们的结论是，AWS的利润率到2027年还会继续往上走。这个判断如果成立，市场对亚马逊的估值逻辑就要重新定价。
+
+ZH_A: 那市场现在怎么看？股价在什么位置？
+
+ZH_B: 报告给的目标价是318美元，比之前提高了13美元。当前股价在258美元左右，对应2027年预期每股收益的19倍。报告认为这个估值不应该低于市场平均水平，所以维持买入评级。
+
+ZH_A: 那有没有什么风险？不可能全是好消息吧。
+
+ZH_B: 当然有。报告也列出了空头的几个理由。比如这个季度净利润里包含了一笔534亿美元的账面收益，来自Anthropic的投资。如果剔除这个，实际业绩是低于市场预期的。另外资本开支上调到2200亿美元，主要是内存成本上升。还有一个是下季度收入指引偏低，因为Prime Day提前到了6月。
+
+ZH_A: 那这些风险你怎么权衡？是暂时的，还是结构性的？
+
+ZH_B: 我觉得要分开看。Prime Day的时间调整是纯技术性的，影响一个季度就结束了。资本开支上升，如果是为了AI基础设施，那反而是为了未来的增长。但Anthropic那笔账面收益确实要小心，它会让利润数字看起来很好看，但实际经营利润没有那么高。
+
+ZH_A: 说到Anthropic，报告里还提到积压订单里包含了来自Anthropic的1000亿美元。这笔订单的确定性有多高？
+
+ZH_B: 这是个好问题。报告把它计入积压订单，说明合同已经签了。但问题是，这笔订单什么时候能转化为收入，以及转化速度有多快。报告没有完全展开这一点，我觉得这是完整报告里值得深挖的部分。
+
+ZH_A: 那还有一个问题，AWS的芯片业务年化收入已经超过250亿美元，这个数字意味着什么？
+
+ZH_B: 这意味着AWS在芯片领域的布局已经开始产生规模效应。之前披露是200亿，这次到了250亿，一个季度就增加了50亿。而且OpenAI的订单还没开始贡献。如果2027年Trainium大规模上线，这个数字还会跳升。
+
+ZH_A: 听起来AWS的故事越来越像英伟达的故事了，不只是云计算，而是整个AI算力平台。
+
+ZH_B: 对，你可以这么理解。但亚马逊的独特之处在于，它同时有零售、物流、广告、订阅这些业务。AWS的加速增长，叠加零售业务的利润率改善，会形成一个双击效应。报告里也提到，单位增长环比提升了2个百分点，说明电商需求也在回暖。
+
+ZH_A: 那最后总结一下，这份报告最核心的投资逻辑是什么？
+
+ZH_B: 核心逻辑就一句话：AWS的AI增长曲线比市场预期的更陡峭，而且利润率不会因为AI而下滑，反而可能继续扩张。如果这个逻辑成立，亚马逊的盈利预期还会不断上修，股价也会跟着重新定价。
+
+ZH_A: 那这个判断里，最大的不确定性是什么？
+
+ZH_B: 最大的不确定性是AI资本开支的回报周期。现在所有人都在疯狂投AI基础设施，但最终这些投入能不能转化为可持续的利润，还需要时间验证。报告对这个问题的回答是乐观的，但它也没有完全证明这一点。
+
+ZH_A: 所以这可能是完整报告里最值得继续读的部分。
+
+ZH_B: 没错，报告中还有很多细节，比如广告业务的调整、物流成本的分析、Prime Video的进展，这些都会影响你对亚马逊长期判断。今天聊的只是框架，真正的细节还在报告里。
+
+ZH_A: 好，那我们今天就聊到这里。如果你想看完整报告，或者加入我们的讨论群，欢迎在节目简介里找到入口。我们下期再见。
+
+ZH_B: 下期见。
+
+EN_A: So we just got a fresh deep dive on Amazon, and the headline is pretty bold. It says AWS is about to accelerate into 40 percent plus growth. What was your first takeaway?
+
+EN_B: My first takeaway is that this is not a hand wave. The report points to two numbers that really stand out. AI annualized revenue hit 25 billion, and total backlog reached 496 billion. Both of those suggest enterprise demand for AWS is accelerating, not just for AI, but for core compute as well.
+
+EN_A: Why do those two numbers matter so much? Most people look at Amazon and think retail or ads.
+
+EN_B: Right, but AWS is the profit engine. If AWS growth jumps from around 30 percent to over 40 percent, the whole revenue mix changes. The report also notes that the backlog came in higher than expected. They thought it would grow by 100 billion, but it actually grew by 51 billion quarter over quarter. That tells you demand is stronger than the market thought.
+
+EN_A: So where does that growth come from? Is it AI, or is it a broader cloud recovery?
+
+EN_B: Both. The report specifically calls out Bedrock and core services accelerating. And then there is the OpenAI angle. OpenAI is expected to start using Amazon's Trainium chips in early 2027. That means AWS is not just selling compute, it is also winning at the chip level. That alone pushes next year's growth expectations higher.
+
+EN_A: So the report is saying AWS hits 39 percent growth in the second half of this year, and then crosses 40 percent next year. Is that too optimistic?
+
+EN_B: It depends on how you think about margins. A lot of investors worry that AI workloads will drag margins down. But the report makes a counterintuitive point. If AWS revenue grows that fast, Amazon would actually need to increase SG&A spending at three times the recent pace just to keep margins flat. That is almost impossible. So margins are more likely to expand than contract.
+
+EN_A: That is a really interesting logic. You are saying revenue grows so fast that costs cannot keep up, so margins go up almost by default.
+
+EN_B: Exactly. The report does the math. To keep margins down, they would need to triple the growth rate of selling and administrative expenses. That is not going to happen. So their conclusion is AWS margin expansion continues into 2027. If that plays out, the market has to reprice Amazon's earnings power.
+
+EN_A: And where does the stock stand right now?
+
+EN_B: The price target is 318, up from 305. The stock is around 258, which is about 19 times 2027 expected earnings. The report argues that multiple should not be below the market average, so they keep a Buy rating.
+
+EN_A: But there must be risks. It can't all be good news.
+
+EN_B: There are always risks. The report lists a few bear points. Net income included a 53 billion gain from the Anthropic investment. Exclude that, and the quarter actually missed. CapEx guidance was raised to 220 billion, partly due to memory costs. And the next quarter revenue guide looks soft because Prime Day shifted into June.
+
+EN_A: So how do you weigh those? Are they temporary or structural?
+
+EN_B: I would separate them. The Prime Day shift is purely technical, it only affects one quarter. Higher CapEx, if it is for AI infrastructure, is actually setting up future growth. But that Anthropic gain is tricky. It makes the profit number look great, but the operating business did not grow as fast.
+
+EN_A: Speaking of Anthropic, the report says the backlog includes a 100 billion commitment from them. How certain is that revenue?
+
+EN_B: That is a great question. It is in the backlog, so the contract is signed. But the question is when it converts to revenue and how fast. The report does not fully answer that yet. I think that is one of the things worth digging into in the full report.
+
+EN_A: And the chip business, now over 25 billion in annualized revenue. What does that tell you?
+
+EN_B: It tells me the chip strategy is starting to scale. It was 20 billion before, now it is 25 billion. That is a big jump in one quarter. And OpenAI has not even started contributing yet. If Trainium ramps in 2027, that number could jump again.
+
+EN_A: So AWS is starting to sound less like a cloud company and more like an AI platform, almost like an Nvidia story.
+
+EN_B: You could see it that way. But what makes Amazon unique is that it also has retail, logistics, ads, and subscriptions. AWS accelerating, plus retail margins improving, creates a double tailwind. The report also notes that unit growth ticked up two points sequentially, which suggests e-commerce demand is firming up.
+
+EN_A: So if you had to summarize the core investment thesis in one line, what would it be?
+
+EN_B: One line would be, AWS AI growth is steeper than the market expects, and margins will not fall because of AI, they will likely expand. If that holds, earnings estimates keep going up, and the stock gets repriced higher.
+
+EN_A: And what is the biggest uncertainty in that thesis?
+
+EN_B: The biggest uncertainty is the payback period on all this AI CapEx. Everyone is pouring money into AI infrastructure right now. But whether that translates into sustainable profits over time, that still needs to be proven. The report is optimistic, but it does not fully answer that question.
+
+EN_A: So that might be the best reason to read the full report.
+
+EN_B: Absolutely. There is a lot more detail in there, like ad business adjustments, logistics cost analysis, and Prime Video progress. Today we covered the framework, but the real nuance is in the full document.
+
+EN_A: Great. Well, we will leave it there for now. If you want the full report or want to join the discussion, check the show notes. Thanks for listening, and see you next time.
+
+EN_B: See you.
