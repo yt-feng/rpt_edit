@@ -1,0 +1,99 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "GS",
+  "cover_short_title": "东京电子财报后，市场",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "GS：东京电子1Q业务与近期数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+    "cleaned_source_title": "GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen",
+    "institution_name": "GS",
+    "required_terms": [],
+    "deterministic_fallback": "GS：TokyoElectronEarningsReview1",
+    "raw_candidates": [
+      "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野"
+    ],
+    "cleaned_candidates": [
+      "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野",
+      "GS：TokyoElectronEarningsReview1",
+      "GS：同时将2027财年营业利润预测从9140亿日元上调至10224亿"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "GS：TokyoElectronEarningsReview1",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "GS：同时将2027财年营业利润预测从9140亿日元上调至10224亿",
+        "reasons": [
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "GS：东京电子1Q业务与近期数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "GS：东京电子1Q业务与近期数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "526",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

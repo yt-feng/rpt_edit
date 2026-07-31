@@ -1,0 +1,498 @@
+[
+  {
+    "item": "0001-46-Goldman-Sachs-Sony-Group--6758.T--Announces-proposal-to-make-major-camer",
+    "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "索尼要把镜头厂腾龙收",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x4",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：索尼提议将相机镜头制造商腾龙纳为全资子公司",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf",
+      "cleaned_source_title": "GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：SonyGroup",
+      "raw_candidates": [
+        "索尼提议将相机镜头制造商腾龙纳为全资子公司",
+        "索尼提议全资收购腾龙-报价每股1300日元溢价15%",
+        "索尼拟全资收购镜头制造商腾龙-影像业务协同与创作技术布局"
+      ],
+      "cleaned_candidates": [
+        "GS：索尼提议将相机镜头制造商腾龙纳为全资子公司",
+        "GS：索尼提议全资收购腾龙-报价每股1300日元溢价15%",
+        "GS：索尼拟全资收购镜头制造商腾龙-影像业务协同与创作技术布局",
+        "GS：SonyGroup",
+        "GS：1.索尼持有腾龙15.35%股份，全资收购成本约1880亿日元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：索尼提议全资收购腾龙-报价每股1300日元溢价15%",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：索尼拟全资收购镜头制造商腾龙-影像业务协同与创作技术布局",
+          "reasons": [
+            "anchor_coverage=0.40"
+          ]
+        },
+        {
+          "title": "GS：SonyGroup",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.索尼持有腾龙15.35%股份，全资收购成本约1880亿日元",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：索尼提议将相机镜头制造商腾龙纳为全资子公司",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：索尼提议将相机镜头制造商腾龙纳为全资子公司"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-47-Goldman-Sachs-Taiwan-Union-Technology-Corp.--6274.TWO--Solid-capacity-ex",
+    "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0002-47-GS-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "台湾CCL龙头扩产提",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：台燿科技扩产获高端客户与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-47-GS-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei.pdf",
+      "cleaned_source_title": "GS-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：TaiwanUnion科技Corp.",
+      "raw_candidates": [
+        "台燿科技扩产获高端客户需求支撑，覆盖AI、LEO与交换器领域",
+        "台燿科技扩产提前至7月，2028年新增产能达现有八成",
+        "台燿科技扩产覆盖AI、LEO与交换器，M7/M8占比升至39%"
+      ],
+      "cleaned_candidates": [
+        "GS：台燿科技扩产获高端客户需求支撑，覆盖AI、LEO与交换器领域",
+        "GS：台燿科技扩产提前至7月，2028年新增产能达现有八成",
+        "GS：M8占比升至39%",
+        "GS：TaiwanUnion科技Corp.",
+        "GS：提到，高端AI项目的ASP可以是低端项目的3到5倍"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：台燿科技扩产提前至7月，2028年新增产能达现有八成",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：M8占比升至39%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：TaiwanUnion科技Corp.",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：提到，高端AI项目的ASP可以是低端项目的3到5倍",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：台燿科技扩产获高端客户与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：台燿科技扩产获高端客户需求支撑，覆盖AI、LEO与交换器领域",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：台燿科技扩产获高端客户与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-48-Goldman-Sachs-Tokyo-Electron--8035.T-Earnings-Review--1Q-in-line--but-st",
+    "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "东京电子财报后，市场",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：东京电子1Q业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+      "cleaned_source_title": "GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：TokyoElectronEarningsReview1",
+      "raw_candidates": [
+        "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野"
+      ],
+      "cleaned_candidates": [
+        "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野",
+        "GS：TokyoElectronEarningsReview1",
+        "GS：同时将2027财年营业利润预测从9140亿日元上调至10224亿"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：TokyoElectronEarningsReview1",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：同时将2027财年营业利润预测从9140亿日元上调至10224亿",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：东京电子1Q业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：东京电子1Q业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-49-Goldman-Sachs-VPEC--2455.TW---New-equipment-reflects-strong-orders--3Q26",
+    "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0004-49-GS-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "3Q26营收预计环比",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：VPEC新增MOCVD设备反映订单能见度至2027年后",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-49-GS-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy-260731.pdf",
+      "cleaned_source_title": "GS-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：VPECNewequipmentreflects",
+      "raw_candidates": [
+        "GS：VPEC新增MOCVD设备反映订单能见度至2027年后"
+      ],
+      "cleaned_candidates": [
+        "GS：VPEC新增MOCVD设备反映订单能见度至2027年后",
+        "GS：VPECNewequipmentreflects",
+        "GS：同时上调2027至2028年净利润预测2%至3%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：VPECNewequipmentreflects",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：同时上调2027至2028年净利润预测2%至3%",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：VPEC新增MOCVD设备反映订单能见度至2027年后",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：VPEC新增MOCVD设备反映订单能见度至2027年后"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-50-Goldman-Sachs-Xiaomi-Corp.--1810.HK--Commanding-the-scene-with-disruptiv",
+    "source_pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0005-50-GS-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "小米昆仑架构发布，预",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：小米SkyNomad预售价25.99万起与昆仑架构",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-50-GS-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy-260731.pdf",
+      "cleaned_source_title": "GS-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：XiaomiCorp.",
+      "raw_candidates": [
+        "GS：小米SkyNomad预售价与昆仑架构",
+        "GS：小米SkyNomad预售价25.99万起与昆仑架构",
+        "GS：小米SkyNomad增程SUV预售价与昆仑平台"
+      ],
+      "cleaned_candidates": [
+        "GS：小米SkyNomad预售价与昆仑架构",
+        "GS：小米SkyNomad预售价25.99万起与昆仑架构",
+        "GS：小米SkyNomad增程SUV预售价与昆仑平台",
+        "GS：XiaomiCorp.",
+        "GS：7月30日小米第二次电动汽车技术发布会后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：XiaomiCorp.",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：7月30日小米第二次电动汽车技术发布会后",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：小米SkyNomad预售价25.99万起与昆仑架构",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "25.99"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：小米SkyNomad预售价25.99万起与昆仑架构"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

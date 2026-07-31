@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0002-47-GS-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0004-49-GS-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vrayphu/pdfs/0005-50-GS-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

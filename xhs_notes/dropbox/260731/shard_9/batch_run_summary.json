@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 92,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-GS-Sony Group （6758.T）：Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001__vrayphu/pdfs/0001-46-GS-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/47-GS-Taiwan Union Technology Corp. （6274.TWO） Solid capacity expansion into long term supported by high~end customers demand across AI LEO Switching sectors； rei.pdf",
+          "batch_file": "/tmp/pdf_batch_001__vrayphu/pdfs/0002-47-GS-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/48-GS-Tokyo Electron （8035.T）Earnings Review： 1Q in line， but stronger outlook from 2Q brings FY3 27 operating profits of ￥1 tn into view； margin improvemen.pdf",
+          "batch_file": "/tmp/pdf_batch_001__vrayphu/pdfs/0003-48-GS-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/49-GS-VPEC （2455.TW）： New equipment reflects strong orders； 3Q26 to ride on better InP substrate supply and capacity expansion； Buy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001__vrayphu/pdfs/0004-49-GS-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy-260731.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/50-GS-Xiaomi Corp. （1810.HK） Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture； Buy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001__vrayphu/pdfs/0005-50-GS-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy-260731.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

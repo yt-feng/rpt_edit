@@ -1,0 +1,36 @@
+Found 92 total PDFs; shard 9/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001__vrayphu/pdfs/0001-46-Goldman Sachs-Sony Group -6758.T--Announces proposal to make major camera lens maker Tamron a wholly owned subsidiary-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__vrayphu/pdfs/0002-47-Goldman Sachs-Taiwan Union Technology Corp. -6274.TWO- Solid capacity expansion into long term supported by high-end customers demand across AI LEO Switching sectors- rei.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__vrayphu/pdfs/0003-48-Goldman Sachs-Tokyo Electron -8035.T-Earnings Review- 1Q in line- but stronger outlook from 2Q brings FY3 27 operating profits of -1 tn into view- margin improvemen.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__vrayphu/pdfs/0004-49-Goldman Sachs-VPEC -2455.TW-- New equipment reflects strong orders- 3Q26 to ride on better InP substrate supply and capacity expansion- Buy-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__vrayphu/pdfs/0005-50-Goldman Sachs-Xiaomi Corp. -1810.HK- Commanding the scene with disruptive SkyNomad pricing and differentiated Kunlun architecture- Buy-260731.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=c5b5c6ba-9680-4791-8036-2d2b2140d03f
+MinerU states: done, done, running, running, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset d69bc299a772ea0e450cbbf52cd0517b190e853831492078acd82f105997f50e.jpg: score=-100;too_small:1159x107
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset cf5ad63e592564921cac0b788f770fab96f9538f50acb5abe2e001b7d70a86fc.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 645e4d07a7c1cb5c3b7a7589ee8c0d64d97bec380a58a1eb3ebb3f0b58786327.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.47
+Skip non-chart visual asset 94736ee1556ec4dc2b6a85a6d1724bc297069e7b42954e2f1f7c4c6e1829ac33.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset bdbf35b9af03f809be76aa8b9f1882079188ca313d1567ae8dd709c7efd477a3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 9b449b0893422429e38e99a9e8156017d73d86c4193e6ee931b3f8ecfb8d7205.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset bf72170ad0c99cac15f43932b53b8df6b0ab1e5002c00c2b28091e0a735f672b.jpg: score=0;odd_ratio:7.41,edge:0.61,contrast
+Skip non-chart visual asset f29903e4d88426bc174ad5a4eb00319cfc76b57cc225a12ae3a75a7a18dfdc0d.jpg: score=-100;too_small:1159x107
+Neutralized WeChat title while keeping the report: 高盛：台燿科技扩产获高端客户需求支撑，覆盖AI、LEO与交换器领域 -> 高盛：台燿科技扩产获高端客户与AI及近期数据观察
+Skip non-chart visual asset 61bda290193c0c3b4594194980dfe511c83df14b9b7b65da2d8cb2cbeb72b303.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 7095dca69b6c9eb21fcc91e59225216a19a26bddc8b2d9de11ddfc365f2eee2e.jpg: score=0;square_without_chart_hint,edge:0.32,large
+Skip non-chart visual asset 88d30116062d775b0535bf6bef11c09c7104b7fa1241322ce4dffa326c05d932.jpg: score=-100;too_small:1159x107
+Neutralized WeChat title while keeping the report: 高盛：东京电子1Q利润符合预期，全年万亿日元营业利润进入视野 -> 高盛：东京电子1Q业务与近期数据观察
+Skip non-chart visual asset fb07eea1fbb2ba0816a8706c36803b3835356a6edbcb7bcca87c083e5f17d0e3.jpg: score=-100;too_small:1159x107
+Skip non-chart visual asset b1ede47aee039bfa4e6825a4dc13ab8be1f028cefeddee73a81e53360bbc253d.jpg: score=-100;too_small:1026x151
+Skip non-chart visual asset 8e4cdcd7b1020277d8c4c7d9b396eac7c7dcf77be6de82529da7adf308aefd64.jpg: score=0;square_without_chart_hint,edge:0.41,large
+Skip non-chart visual asset acc92f59c2896a1c52292bc8620e928984a61d1535f31f13b61559fc0435b800.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset eebe30cdac83eec7a8ebd7ba42a2558ec95908843a11ffc6bab4377c11424fd5.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset 9b8e9a2f19cba7fc6a1ca6ab60563b4259fc0ee2bc2e0fca8268ee3c209c9ffa.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_9; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
