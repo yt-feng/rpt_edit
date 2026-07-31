@@ -1,0 +1,482 @@
+[
+  {
+    "item": "0001-11-Bernstein-Tokyo-Electron-Ltd-8035.JP-TEL-1Q27-3-Margin-upside-materializ",
+    "source_pdf": "/tmp/pdf_batch_001_5bujy_30/pdfs/0001-11-Bernstein-Tokyo Electron Ltd-8035.JP-TEL 1Q27 3-Margin upside materializing sooner-Lifting PT to -79-300-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "半导体设备龙头，毛利",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：东京电子一季度毛利率46.8%上行早于预期",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-Bernstein-Tokyo Electron Ltd-8035.JP-TEL 1Q27 3-Margin upside materializing sooner-Lifting PT to -79-300-260730.pdf",
+      "cleaned_source_title": "Bernstein-Tokyo Electron Ltd-8035.JP-TEL 1Q27 3-Margin upside materializing sooner-Lifting PT to -79-300",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：TokyoElectronLtdTEL1Q273",
+      "raw_candidates": [
+        "东京电子一季度毛利率上行早于预期",
+        "东京电子一季度毛利率46.8%上行早于预期",
+        "东京电子一季度毛利率上行早于预期-WFE市场预期上调至1900亿美元"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：东京电子一季度毛利率上行早于预期",
+        "Bernstein：东京电子一季度毛利率46.8%上行早于预期",
+        "Bernstein：TokyoElectronLtdTEL1Q273",
+        "Bernstein：收入7324亿日元，同比增33%，略低于市场预期"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：TokyoElectronLtdTEL1Q273",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：收入7324亿日元，同比增33%，略低于市场预期",
+          "reasons": [
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：东京电子一季度毛利率46.8%上行早于预期",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "46.8"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：东京电子一季度毛利率46.8%上行早于预期"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-12-Bernstein-Schneider-Electric-SA-SU.FP-Schneider--A-Year-in-a-Day-260731",
+    "source_pdf": "/tmp/pdf_batch_001_5bujy_30/pdfs/0002-12-Bernstein-Schneider Electric SA-SU.FP-Schneider- A Year in a Day-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "施耐德电气：一年修复",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x2",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：施耐德电气上半年业绩与数据中心产能布局",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-Bernstein-Schneider Electric SA-SU.FP-Schneider- A Year in a Day-260731.pdf",
+      "cleaned_source_title": "Bernstein-Schneider Electric SA-SU.FP-Schneider- A Year in a Day",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：SchneiderElectricSASchneider",
+      "raw_candidates": [
+        "施耐德电气上半年业绩与数据中心产能布局",
+        "施耐德电气上半年有机增长16.5%与数据中心订单三位数增长",
+        "施耐德电气上半年执行拐点与模块化数据中心产能布局"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：施耐德电气上半年业绩与数据中心产能布局",
+        "Bernstein：施耐德电气上半年有机增长16.5%与数据中心订单三位数增长",
+        "Bernstein：施耐德电气上半年执行拐点与模块化数据中心产能布局",
+        "Bernstein：SchneiderElectricSASchneider",
+        "Bernstein：施耐德电气在7月30日发布上半年业绩后"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：施耐德电气上半年有机增长16.5%与数据中心订单三位数增长",
+          "reasons": [
+            "anchor_coverage=0.61"
+          ]
+        },
+        {
+          "title": "Bernstein：SchneiderElectricSASchneider",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：施耐德电气在7月30日发布上半年业绩后",
+          "reasons": [
+            "anchor_coverage=0.44"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：施耐德电气上半年业绩与数据中心产能布局",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：施耐德电气上半年业绩与数据中心产能布局"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-13-CITI-China-Humanoid-Robots-US-FCC-to-Ban-Foreign-Made-Humanoid-and-Quadr",
+    "source_pdf": "/tmp/pdf_batch_001_5bujy_30/pdfs/0003-13-CITI-China Humanoid Robots-US FCC to Ban Foreign-Made Humanoid and Quadruped Robots in the US-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "美国拟禁中国机器人？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：美国FCC拟禁外国制人形与四足机器人",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-CITI-China Humanoid Robots-US FCC to Ban Foreign-Made Humanoid and Quadruped Robots in the US-260729.pdf",
+      "cleaned_source_title": "CITI-China Humanoid Robots-US FCC to Ban Foreign-Made Humanoid and Quadruped Robots in the US",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国HumanoidRobotsUSFCCtoB",
+      "raw_candidates": [
+        "Citi：美国FCC拟禁外国制人形与四足机器人",
+        "Citi：美国FCC禁令下中国人形机器人供应链布局",
+        "Citi：美国FCC新规与人形机器人零部件海外产能"
+      ],
+      "cleaned_candidates": [
+        "Citi：美国FCC拟禁外国制人形与四足机器人",
+        "Citi：美国FCC禁令下中国人形机器人供应链布局",
+        "Citi：美国FCC新规与人形机器人零部件海外产能",
+        "Citi：中国HumanoidRobotsUSFCCtoB",
+        "Citi：2026年7月28日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：美国FCC禁令下中国人形机器人供应链布局",
+          "reasons": [
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "Citi：美国FCC新规与人形机器人零部件海外产能",
+          "reasons": [
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "Citi：中国HumanoidRobotsUSFCCtoB",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：2026年7月28日",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：美国FCC拟禁外国制人形与四足机器人",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：美国FCC拟禁外国制人形与四足机器人"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-14-CITI-China-Battery-Materials-A-reconciliation-between-tepid-EV-sales-vol",
+    "source_pdf": "/tmp/pdf_batch_001_5bujy_30/pdfs/0004-14-CITI-China Battery Materials-A reconciliation between tepid EV sales vol and strong battery installation-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "电动车卖得一般，电池",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Citi：电池储能数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-CITI-China Battery Materials-A reconciliation between tepid EV sales vol and strong battery installation-260729.pdf",
+      "cleaned_source_title": "CITI-China Battery Materials-A reconciliation between tepid EV sales vol and strong battery installation",
+      "institution_name": "Citi",
+      "required_terms": [],
+      "deterministic_fallback": "Citi：中国BatteryMaterialsArecon",
+      "raw_candidates": [
+        "中国电池材料：装车量增速与销量增速的差异来源",
+        "中国电池材料：上半年装车量增33%与销量增10%的差异来源",
+        "中国电池材料：装车量增速与销量增速差异的三大结构性因素"
+      ],
+      "cleaned_candidates": [
+        "Citi：中国电池材料，装车量增速与销量增速的差异来源",
+        "Citi：中国电池材料，上半年装车量增33%与销量增10%的差异来源",
+        "Citi：中国电池材料，装车量增速与销量增速差异的三大结构性因素",
+        "Citi：中国BatteryMaterialsArecon",
+        "Citi：2026年上半年中国动力电池装车量同比增长33%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：中国BatteryMaterialsArecon",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：2026年上半年中国动力电池装车量同比增长33%",
+          "reasons": [
+            "anchor_coverage=0.22",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：电池储能数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "10",
+          "33"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Citi：中国电池材料，上半年装车量增33%与销量增10%的差异来源",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Citi：电池储能数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-15-CITI-BYD--1211.HK--Fundamentals--AI-Fund-Flows--BYD-Robots-update-260729",
+    "source_pdf": "/tmp/pdf_batch_001_5bujy_30/pdfs/0005-15-CITI-BYD -1211.HK- Fundamentals- AI-Fund Flows- BYD Robots update-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "比亚迪7月订单稳了，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Citi：比亚迪基本面与AI资金流向及机器人业务更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-CITI-BYD -1211.HK- Fundamentals- AI-Fund Flows- BYD Robots update-260729.pdf",
+      "cleaned_source_title": "CITI-BYD -1211.HK- Fundamentals- AI-Fund Flows- BYD Robots update",
+      "institution_name": "Citi",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "Citi：BYDFundamentalsAIFundFlo",
+      "raw_candidates": [
+        "Citi：比亚迪基本面与AI资金流向及机器人业务更新",
+        "Citi：比亚迪7月订单企稳与机器人业务长期空间",
+        "Citi：比亚迪基本面与AI资金流向及人形机器人业务"
+      ],
+      "cleaned_candidates": [
+        "Citi：比亚迪基本面与AI资金流向及机器人业务更新",
+        "Citi：比亚迪7月订单企稳与机器人业务长期空间",
+        "Citi：比亚迪基本面与AI资金流向及人形机器人业务",
+        "Citi：BYDFundamentalsAIFundFlo",
+        "Citi：同时指出，AI与商用车相关标的（潍柴、Generac、"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Citi：比亚迪7月订单企稳与机器人业务长期空间",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.33"
+          ]
+        },
+        {
+          "title": "Citi：BYDFundamentalsAIFundFlo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Citi：同时指出，AI与商用车相关标的（潍柴、Generac、",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Citi：比亚迪基本面与AI资金流向及机器人业务更新",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Citi：比亚迪基本面与AI资金流向及机器人业务更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

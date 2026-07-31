@@ -1,0 +1,3349 @@
+[
+    {
+        "type": "text",
+        "text": "Japan Semiconductors",
+        "bbox": [
+            66,
+            114,
+            220,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rating\nOutperform",
+        "bbox": [
+            65,
+            164,
+            202,
+            205
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Price Target",
+        "bbox": [
+            65,
+            210,
+            151,
+            227
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "8035.JP",
+        "bbox": [
+            65,
+            233,
+            148,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "79,300 JPY (59,200 OLD)",
+        "bbox": [
+            292,
+            234,
+            450,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/8480cb7540e3c2992f332172f3d273efecbc19109ef7bf35deb3070e57f83999.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            655,
+            90,
+            710,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/9cd0707aad302c3a5f0d26783080652d900d7c6fe449dcd0233901d72780ee3e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            655,
+            140,
+            710,
+            184
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "David Dai, CFA\n+852 2918 5704\ndavid.dai@bernsteinsg.com",
+        "bbox": [
+            723,
+            95,
+            862,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/97e3d4c1932a427811e53fb61e4363264217d56a9fea3b1efb72e337fd4643e9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            655,
+            191,
+            710,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Juho Hwang\n+81 3 6777 6980\njuho.hwang@bernsteinsg.com",
+        "bbox": [
+            723,
+            146,
+            875,
+            183
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Carmine Milano, CFA\n+44 20 7762 1857\ncarmine.milano@bernsteinsg.com",
+        "bbox": [
+            723,
+            196,
+            893,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "TEL 1Q27/3: Margin upside materializing sooner; Lifting PT to ¥79,300",
+        "text_level": 1,
+        "bbox": [
+            65,
+            306,
+            869,
+            362
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "For our updated TEL model please click here: TEL model.",
+        "bbox": [
+            65,
+            387,
+            419,
+            402
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In-line Q1. Revenue of ¥732.4bn (+2.9% QoQ) came below consensus as we previewed. Although, GPM at 46.8% and OPM at 28.9% were above consensus. OP came in at ¥211.4bn (+2.8% QoQ), in-line with consensus. By application, logic / foundry was a 10% miss; DRAM was 9% below, NAND was in-line. Raised Q2 guidance beat, with both topline 8% above and OP 6% above consensus.",
+        "bbox": [
+            63,
+            414,
+            637,
+            491
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CY27 WFE raised to \\$190bn. TEL provided an improved market outlook of \\$190bn (\\$170bn prior) for 2027 WFE, citing AI as the major growth driver but this time with an additional mention of conventional DRAM and CPUs. TEL continues to see \\$150bn for CY26. By application, company expects YoY growth of 15% for logic / foundry, >30% for DRAM, and 40% for NAND in CY26, and \\~20% overall.",
+        "bbox": [
+            63,
+            502,
+            638,
+            579
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "TEL expects to outperform the market — 1H sales is guided to be 37% YoY, and 2H is “expected to outgrow 1H significantly” — implying annual growth of above 37%. TEL continues to expect >50% growth from coater & developers, as well as etchers — for which they expect up to ¥1tn annual revenue — and advanced packaging, led by probers, to drive the outperformance. On capacity, CEO highlighted their robust supply chain management as well as their strong relationship with customers who can provide enough visibility for TEL to prepare well in advance, as their strength.",
+        "bbox": [
+            63,
+            589,
+            633,
+            696
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/5281366dc077338aa453c515ba83ade4565e8e837c04fd190d1e33b7e7f24381.jpg",
+        "table_caption": [
+            "50%+ margins next year. Management confirmed that margin uplift from price hike will start to kick in from Q4, and that they will be able to target 50%+ GPM early next FY, ahead of investor expectations of FY29/3. There is further upside beyond 50%+ GM and 35%+ OPM. In terms of OP, the CEO said they will be able to target near ¥1tn this FY.",
+            "Outperform. Reflecting Q1 earnings and an improved outlook on next year's growth as well as margins, we lift our FY27/28 top line by 6% / 20% respectively, and bottom line by 12% / 43%. Lowering our valuation multiple to 28x (32x prior) P/E and rolling over a quarter, we raise our PT to ¥79,300, representing 52% implied upside. Reiterate Outperform."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Close Date</td><td>30 Jul 2026</td></tr><tr><td>8035.JP Close Price (JPY)</td><td>52,240</td></tr><tr><td>Price Target (JPY)</td><td>79,300</td></tr><tr><td>Upside/(Downside)</td><td>52%</td></tr><tr><td>52-Week Range</td><td>81,260/19,870</td></tr><tr><td>JPL</td><td>2,570.52</td></tr><tr><td>FYE</td><td>Mar</td></tr><tr><td>Div Yield</td><td>1.4%</td></tr><tr><td>Market Cap (JPY) (B)</td><td>24,450.03</td></tr><tr><td>EV (JPY) (B)</td><td>23,982.12</td></tr></table>",
+        "bbox": [
+            653,
+            391,
+            924,
+            545
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/8b22ee7d330e7f23ba8507a2c7b338cd53570c5418059c6fc034ba681b033a3c.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>52.2</td><td>(32.3)</td><td>26.5</td><td>91.6</td></tr><tr><td>JPL (%)</td><td>16.5</td><td>(1.9)</td><td>11.5</td><td>37.4</td></tr><tr><td>Relative (%)</td><td>35.7</td><td>(30.4)</td><td>14.9</td><td>54.2</td></tr></table>",
+        "bbox": [
+            653,
+            549,
+            924,
+            611
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e9b30cc7c0075cff4b62b2a517b0811d827a363f11fe25c649c1f1884619a7ec.jpg",
+        "content": "",
+        "chart_caption": [
+            "Price Performance, 1YR"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            651,
+            655,
+            890,
+            768
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/cfb51037e34c29431b5c27863e4abbe616912520d0f2cffa493340b0295dabe0.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\*Values shown in billions; Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td colspan=\"13\">Investment Implications</td></tr><tr><td>Reported EPS</td><td>F25A</td><td>F26E</td><td>F27E</td><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td colspan=\"13\">We rate Tokyo Electron Outperform (PT ¥79,300).</td></tr><tr><td>8035.JP (JPY)</td><td>1,250.88</td><td>1,687.17</td><td>2,635.81</td><td>Revenues (M)</td><td>2,444*</td><td>3,411*</td><td>4,436*</td><td>--</td><td>Reported P/E (x)</td><td>41.8</td><td>31.0</td><td>19.8</td></tr></table>",
+        "bbox": [
+            66,
+            854,
+            919,
+            893
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            65,
+            32,
+            292,
+            80
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            723,
+            54,
+            826,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.\nFirst Published: 30 Jul 2026 12:37 UTC Completion Date: 30 Jul 2026 12:37 UTC",
+        "bbox": [
+            65,
+            935,
+            700,
+            977
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            776,
+            935,
+            919,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            174,
+            84
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/55447990aaae79d6e37886d3c6b239f6475dbcad07cd9adeedba80d78b7c3b43.jpg",
+        "table_caption": [
+            "EXHIBIT 1: TEL Q1: Results Summary"
+        ],
+        "table_footnote": [
+            "Source: Company disclosures, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\" colspan=\"2\">TEL Q1 FY27/3 results</td><td rowspan=\"2\">ActualQ1 FY27/3</td><td colspan=\"2\">Delta</td><td colspan=\"2\">Growth YoY</td></tr><tr><td>vs. Bernstein</td><td>vs. Cons.</td><td>Actual</td><td>Cons.</td></tr><tr><td rowspan=\"3\">Revenue</td><td>Actual</td><td>732.4</td><td>-4.2%</td><td>-3.0%</td><td>33.3%</td><td>37.4%</td></tr><tr><td>Bernstein</td><td>764.8</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>755.3</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Gross profit</td><td>Actual</td><td>342.7</td><td>-0.4%</td><td>-1.9%</td><td>34.9%</td><td>37.6%</td></tr><tr><td>Bernstein</td><td>344.2</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>349.5</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Gross margin</td><td>Actual</td><td>46.8%</td><td>1.8%</td><td>0.5%</td><td>0.6%</td><td>0.1%</td></tr><tr><td>Bernstein</td><td>45.0%</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>46.3%</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Operating profit</td><td>Actual</td><td>211.4</td><td>3.5%</td><td>0.0%</td><td>46.1%</td><td>46.1%</td></tr><tr><td>Bernstein</td><td>204.2</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>211.4</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Operating margin</td><td>Actual</td><td>28.9%</td><td>2.2%</td><td>0.9%</td><td>2.5%</td><td>1.7%</td></tr><tr><td>Bernstein</td><td>26.7%</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>28.0%</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Net profit</td><td>Actual</td><td>164.3</td><td>2.9%</td><td>4.3%</td><td>39.5%</td><td>33.8%</td></tr><tr><td>Bernstein</td><td>159.7</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>157.6</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">Earnings per share</td><td>Actual</td><td>360.15</td><td>3.3%</td><td>5.1%</td><td>40.4%</td><td>33.7%</td></tr><tr><td>Bernstein</td><td>348.56</td><td></td><td></td><td></td><td></td></tr><tr><td>Consensus</td><td>342.81</td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            109,
+            119,
+            846,
+            425
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/9f24e47a7b5efd7ed4ef00f9923213bf8d19e31b90c9ea26880de14d40bf4e5b.jpg",
+        "table_caption": [
+            "EXHIBIT 2: TEL Q1: Results Breakdown"
+        ],
+        "table_footnote": [
+            "Source: Company disclosures, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>Results Breakdown</td><td>ActualQ1 FY27/3</td><td>GrowthYoY</td><td>BernsteinQ1 FY27/3</td><td>Delta</td><td>ConsensusQ1 FY27/3</td><td>Delta</td></tr><tr><td>SPE</td><td>732.4</td><td>33.3%</td><td>764.8</td><td>-4.2%</td><td>767.0</td><td>-4.5%</td></tr><tr><td>Logic and foundry</td><td>302.8</td><td>19.8%</td><td>332.1</td><td>-8.8%</td><td>336.9</td><td>-10.1%</td></tr><tr><td>DRAM</td><td>170.0</td><td>65.5%</td><td>189.1</td><td>-10.1%</td><td>187.5</td><td>-9.3%</td></tr><tr><td>NAND</td><td>58.4</td><td>48.0%</td><td>57.0</td><td>2.5%</td><td>58.6</td><td>-0.2%</td></tr><tr><td>Field Solution</td><td>188.0</td><td>33.1%</td><td>177.5</td><td>5.9%</td><td>174.2</td><td>7.9%</td></tr></table>",
+        "bbox": [
+            109,
+            487,
+            831,
+            582
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/4473f1530a64f7589166583cf17bdb05c063bb0b1050aaa6226188bf20d3fff1.jpg",
+        "table_caption": [
+            "EXHIBIT 3: TEL Q1: Summary of implied Q2 guidance"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Guidance Breakdown</td><td>Guidance2Q FY27/3E</td><td>Prev. Guidance2Q FY27/3E</td><td>Delta</td><td>Bernstein2Q FY27/3E</td><td>Delta</td><td>Consensus2Q FY27/3E</td><td>Delta</td></tr><tr><td>Revenue</td><td>887.6</td><td>837.6</td><td>6.0%</td><td>824.8</td><td>7.6%</td><td>824.7</td><td>7.6%</td></tr><tr><td>Gross Profit</td><td>405.3</td><td>372.3</td><td>8.9%</td><td>379.4</td><td>6.8%</td><td>383.7</td><td>5.6%</td></tr><tr><td>Operating profit</td><td>246.6</td><td>219.6</td><td>12.3%</td><td>234.2</td><td>5.3%</td><td>232.7</td><td>6.0%</td></tr><tr><td>Net Income</td><td>184.7</td><td>163.7</td><td>12.8%</td><td>182.3</td><td>1.3%</td><td>179.0</td><td>3.1%</td></tr><tr><td>New Equipments</td><td>708.7</td><td>668.7</td><td>6.0%</td><td>622.1</td><td>13.9%</td><td>617.6</td><td>14.8%</td></tr><tr><td>Logic / Foundry</td><td>404.0</td><td>381.2</td><td>6.0%</td><td>352.0</td><td>14.8%</td><td>353.2</td><td>14.4%</td></tr><tr><td>DRAM</td><td>226.8</td><td>214.0</td><td>6.0%</td><td>194.8</td><td>16.4%</td><td>193.0</td><td>17.5%</td></tr><tr><td>NAND</td><td>78.0</td><td>73.6</td><td>6.0%</td><td>75.3</td><td>3.5%</td><td>70.3</td><td>10.9%</td></tr></table>",
+        "bbox": [
+            107,
+            643,
+            890,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: Company disclosures, Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            786,
+            473,
+            799
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/c53c00e11fa94d886e043bb6d2c5e25905b2c4ecdb8ce41c6d04e1729a33922a.jpg",
+        "table_caption": [
+            "EXHIBIT 4: TEL Q1: Summary of estimate changes"
+        ],
+        "table_footnote": [
+            "Source: Company disclosures, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>TEL: change in estimates</td><td>FY26/3</td><td>1Q27</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>FY27/3E</td><td>FY28/3E</td><td>FY29/3E</td></tr><tr><td colspan=\"9\">Revenue (JPY bn)</td></tr><tr><td>Bernstein - Old</td><td>2,443.5</td><td>764.8</td><td>824.8</td><td>738.1</td><td>890.0</td><td>3,217.6</td><td>3,704.7</td><td>4,042.7</td></tr><tr><td>Growth YoY</td><td>0.5%</td><td>39.2%</td><td>30.9%</td><td>33.7%</td><td>25.0%</td><td>31.7%</td><td>15.1%</td><td>9.1%</td></tr><tr><td>Bernstein - New</td><td>2,443.5</td><td>732.4</td><td>887.6</td><td>814.8</td><td>976.0</td><td>3,410.8</td><td>4,435.9</td><td>5,491.6</td></tr><tr><td>Growth YoY</td><td>0.5%</td><td>33.3%</td><td>40.9%</td><td>47.6%</td><td>37.1%</td><td>39.6%</td><td>30.1%</td><td>23.8%</td></tr><tr><td>Consensus</td><td></td><td></td><td>824.7</td><td>817.8</td><td>881.0</td><td>3,261.8</td><td>4,008.5</td><td>4,594.7</td></tr><tr><td>Growth YoY</td><td></td><td></td><td>30.9%</td><td>48.1%</td><td>23.8%</td><td>33.5%</td><td>22.9%</td><td>14.6%</td></tr><tr><td>New vs. old</td><td></td><td></td><td>7.6%</td><td>10.4%</td><td>9.7%</td><td>6.0%</td><td>19.7%</td><td>35.8%</td></tr><tr><td>Bernstein vs. consensus</td><td></td><td></td><td>7.6%</td><td>-0.4%</td><td>10.8%</td><td>4.6%</td><td>10.7%</td><td>19.5%</td></tr><tr><td colspan=\"9\">Operating profit (JPY bn)</td></tr><tr><td>Bernstein - Old</td><td>624.9</td><td>204.2</td><td>234.2</td><td>195.6</td><td>250.1</td><td>884.1</td><td>1,081.8</td><td>1,200.7</td></tr><tr><td>Growth YoY</td><td>-10.4%</td><td>41.1%</td><td>47.8%</td><td>68.4%</td><td>21.6%</td><td>41.5%</td><td>22.4%</td><td>11.0%</td></tr><tr><td>Margin</td><td>25.6%</td><td>26.7%</td><td>28.4%</td><td>26.5%</td><td>28.1%</td><td>27.5%</td><td>29.2%</td><td>29.7%</td></tr><tr><td>Bernstein - New</td><td>624.9</td><td>211.4</td><td>252.1</td><td>232.2</td><td>288.9</td><td>984.6</td><td>1,530.4</td><td>1,977.0</td></tr><tr><td>Growth YoY</td><td>-10.4%</td><td>46.1%</td><td>59.1%</td><td>99.9%</td><td>40.5%</td><td>57.6%</td><td>55.4%</td><td>29.2%</td></tr><tr><td>Margin</td><td>25.6%</td><td>28.9%</td><td>28.4%</td><td>28.5%</td><td>29.6%</td><td>28.9%</td><td>34.5%</td><td>36.0%</td></tr><tr><td>Consensus</td><td></td><td></td><td>232.7</td><td>238.6</td><td>270.0</td><td>948.5</td><td>1,272.4</td><td>1,549.2</td></tr><tr><td>Growth YoY</td><td></td><td></td><td>46.9%</td><td>105.5%</td><td>31.3%</td><td>51.8%</td><td>34.1%</td><td>21.8%</td></tr><tr><td>Margin</td><td></td><td></td><td>28.2%</td><td>29.2%</td><td>30.7%</td><td>29.1%</td><td>31.7%</td><td>33.7%</td></tr><tr><td>New vs. old</td><td></td><td></td><td>7.6%</td><td>18.7%</td><td>15.5%</td><td>11.4%</td><td>41.5%</td><td>64.7%</td></tr><tr><td>Bernstein vs. consensus</td><td></td><td></td><td>8.3%</td><td>-2.7%</td><td>7.0%</td><td>3.8%</td><td>20.3%</td><td>27.6%</td></tr><tr><td colspan=\"9\">EPS (JPY)</td></tr><tr><td>Bernstein - Old</td><td>1,250.9</td><td>348.6</td><td>397.9</td><td>332.7</td><td>424.9</td><td>1,504.1</td><td>1,848.8</td><td>2,064.7</td></tr><tr><td>Growth YoY</td><td>6.1%</td><td>-24.1%</td><td>-13.5%</td><td>-27.7%</td><td>-7.3%</td><td>20.2%</td><td>22.9%</td><td>11.7%</td></tr><tr><td>Bernstein - New</td><td>1,250.9</td><td>360.2</td><td>432.8</td><td>398.6</td><td>495.6</td><td>1,687.2</td><td>2,635.8</td><td>3,424.7</td></tr><tr><td>Growth YoY</td><td>6.1%</td><td>40.4%</td><td>60.8%</td><td>54.7%</td><td>6.0%</td><td>34.9%</td><td>56.2%</td><td>29.9%</td></tr><tr><td>Consensus</td><td></td><td></td><td>390.8</td><td>387.8</td><td>483.6</td><td>1,600.4</td><td>2,126.1</td><td>2,623.9</td></tr><tr><td>Growth YoY</td><td></td><td></td><td>45.2%</td><td>50.5%</td><td>3.4%</td><td>27.9%</td><td>32.8%</td><td>23.4%</td></tr><tr><td>New vs. old</td><td></td><td></td><td>8.7%</td><td>19.8%</td><td>16.6%</td><td>12.2%</td><td>42.6%</td><td>65.9%</td></tr><tr><td>Bernstein vs. consensus</td><td></td><td></td><td>10.7%</td><td>2.8%</td><td>2.5%</td><td>5.4%</td><td>24.0%</td><td>30.5%</td></tr></table>",
+        "bbox": [
+            106,
+            87,
+            890,
+            444
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6aca2e41d405da4eb31dcc0b76a6933706e9d4704ca2d45233953328bc6f7e10.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 5: Tokyo Electron: historical 1-year forward P/E multiple"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, Bernstein analysis."
+        ],
+        "bbox": [
+            125,
+            512,
+            877,
+            766
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Q1 FY27/3 EARNINGS SUMMARY IN CHARTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            827,
+            416,
+            842
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            882,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7edf80c909ce27cbe2e6a3eff3b949885e80b3762e712c205f874c4ee56fccf2.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 6: TEL Q1 revenue was ¥732.4bn, +33% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein estimates and analysis."
+        ],
+        "bbox": [
+            130,
+            99,
+            480,
+            358
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/433d0a14933adea384f05746057e35605d70fc7b745c1f8865c8c7c78e9884e5.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 7: TEL Q1 GPM / OPM was 46.8% / 28.9% respectively, sequentially flat."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein estimates and analysis."
+        ],
+        "bbox": [
+            511,
+            114,
+            872,
+            373
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/210a1e2efeeff57414eb80d589e3152e49e33c7abf60af0079e240f538aa4a35.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 8: TEL Q1 EPS was ¥360.15, +40.4% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein estimates and analysis.",
+            "EXHIBIT 9: TEL Q1 China sales contribution was 30.4%, +3% QoQ from 26.8% in Q4",
+            "FY23/3-FY26/3: TEL Revenue Regional Breakdown"
+        ],
+        "bbox": [
+            127,
+            463,
+            483,
+            708
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/80296603b835ad12e6bcfe4fe420ac829d5976b84603b16dc1dba3527d0c11df.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            514,
+            491,
+            875,
+            727
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/612d91a0507566c39a2f92d0a37a6543317ed4e8b12c247a7f70834086c5f9a5.jpg",
+        "content": "",
+        "chart_caption": [
+            "FY22/3-FY27/3: TEL NAND Revenue",
+            "EXHIBIT 10: Q1 Logic/Foundry contribution was 57%, up from 58% in Q4.",
+            "FY23/3-FY27/3: TEL SPE Revenue Application Breakdown"
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            117,
+            145,
+            478,
+            378
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/07a34c9f59a724619d0c4c09e2509a2c68836e58b51658782d1c21865cf8b6b3.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 11: TEL Q1 DRAM sales was ¥170.0bn, +65.5% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            524,
+            114,
+            880,
+            375
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6916446eae101aed45f47bc7f0b5c529080131306ad87ecf0eaf4c0b84d0371.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 12: TEL Q1 NAND sales was ¥58.4bn, +48.0% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            130,
+            470,
+            486,
+            714
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e63028874182acc63f6215410c9d59fd27875cff76476fc627300b6203de1698.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 13: TEL Q1 Logic / Foundry sales was ¥302.8bn, +19.8% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            526,
+            469,
+            879,
+            729
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2a8d87f54fed8b70962dc7430bb8df72e230314950b030c137f74577b743f84e.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 14: TEL Q1 Field solution sales was ¥188.0bn, +33.1% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            130,
+            114,
+            480,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ac406006c6663417351c99f510f0effb77718978c2f3d262920c0aa61098d838.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 15: TEL Q1 sales to Korea was ¥152.4bn, +73% yoy"
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            524,
+            114,
+            877,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/67cc5055ade675ccfc512468b9b967d6b73a6ef6c9c515bba83b602d17d43a6b.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 16: TEL Q1 sales to Taiwan was ¥186.1bn, +66.9% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            132,
+            467,
+            480,
+            728
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d4b84b6d0b482968328afd5eeb3bf65a05836a0338259612d7185d9a4d41d22a.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 17: TEL Q1 sales to China was ¥222.9bn, +5% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            527,
+            465,
+            879,
+            713
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/711abae6d61a2ab221b1a5352ffbe6251b4f39fd9378e89f2da624547f040244.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 18: TEL Q1 sales to the US was ¥59.0bn, +36% yoy."
+        ],
+        "chart_footnote": [
+            "Source: Company disclosures, Bernstein analysis."
+        ],
+        "bbox": [
+            133,
+            114,
+            486,
+            375
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            882,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            940,
+            207,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "APPENDIX - FINANCIAL FORECASTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            385,
+            85
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/d3d036dfa0497703880a751de0c4815480c5e4a2ca795ac89d72edc7676a1dc0.jpg",
+        "table_caption": [
+            "EXHIBIT 19: Tokyo Electron: Income Statement"
+        ],
+        "table_footnote": [
+            "Source: Company disclosures, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>JPY bn</td><td>FY26/3</td><td>1Q27</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>FY27/3E</td><td>FY28/3E</td><td>FY29/3E</td></tr><tr><td>Revenue</td><td>2,443.5</td><td>732.4</td><td>887.6</td><td>814.8</td><td>976.0</td><td>3,410.8</td><td>4,435.9</td><td>5,491.6</td></tr><tr><td>Gross profit</td><td>1,107.9</td><td>342.7</td><td>408.3</td><td>382.9</td><td>468.5</td><td>1,602.5</td><td>2,240.1</td><td>2,800.7</td></tr><tr><td>SG&amp;A</td><td>205.1</td><td>59.3</td><td>69.2</td><td>61.1</td><td>72.2</td><td>261.8</td><td>310.5</td><td>357.0</td></tr><tr><td>R&amp;D</td><td>277.9</td><td>72.0</td><td>87.0</td><td>89.6</td><td>107.4</td><td>356.0</td><td>399.2</td><td>466.8</td></tr><tr><td>Other opex</td><td>482.9</td><td>131.3</td><td>156.2</td><td>150.7</td><td>179.6</td><td>617.9</td><td>709.7</td><td>823.7</td></tr><tr><td>Operating profit</td><td>624.9</td><td>211.4</td><td>252.1</td><td>232.2</td><td>288.9</td><td>984.6</td><td>1,530.4</td><td>1,977.0</td></tr><tr><td>D&amp;A</td><td>81.0</td><td>22.5</td><td>28.4</td><td>26.1</td><td>31.2</td><td>108.2</td><td>133.1</td><td>164.7</td></tr><tr><td>EBITDA</td><td>705.9</td><td>233.9</td><td>280.5</td><td>258.3</td><td>320.1</td><td>1,092.8</td><td>1,663.4</td><td>2,141.7</td></tr><tr><td>Non-OP income / (expense)</td><td>123.2</td><td>4.1</td><td>4.4</td><td>4.1</td><td>4.9</td><td>17.5</td><td>22.2</td><td>27.5</td></tr><tr><td>Pretax Income</td><td>748.2</td><td>215.5</td><td>256.5</td><td>236.3</td><td>293.8</td><td>1,002.1</td><td>1,552.5</td><td>2,004.4</td></tr><tr><td>Income tax expense</td><td>173.7</td><td>51.2</td><td>60.3</td><td>55.5</td><td>69.0</td><td>236.0</td><td>364.8</td><td>471.0</td></tr><tr><td>Net income before minority interest</td><td>574.5</td><td>164.3</td><td>196.2</td><td>180.8</td><td>224.7</td><td>766.1</td><td>1,187.7</td><td>1,533.4</td></tr><tr><td>Net Income</td><td>574.5</td><td>164.3</td><td>196.2</td><td>180.8</td><td>224.7</td><td>766.1</td><td>1,187.7</td><td>1,533.4</td></tr><tr><td>Diluted EPS (JPY)</td><td>1,250.9</td><td>360.2</td><td>432.8</td><td>398.6</td><td>495.6</td><td>1,687.2</td><td>2,635.8</td><td>3,424.7</td></tr><tr><td colspan=\"9\">Margins</td></tr><tr><td>Gross profit</td><td>45.3%</td><td>46.8%</td><td>46.0%</td><td>47.0%</td><td>48.0%</td><td>47.0%</td><td>50.5%</td><td>51.0%</td></tr><tr><td>Operating profit</td><td>25.6%</td><td>28.9%</td><td>28.4%</td><td>28.5%</td><td>29.6%</td><td>28.9%</td><td>34.5%</td><td>36.0%</td></tr><tr><td>EBITDA</td><td>28.9%</td><td>31.9%</td><td>31.6%</td><td>31.7%</td><td>32.8%</td><td>32.0%</td><td>37.5%</td><td>39.0%</td></tr><tr><td>Profit before tax</td><td>30.6%</td><td>29.4%</td><td>28.9%</td><td>29.0%</td><td>30.1%</td><td>29.4%</td><td>35.0%</td><td>36.5%</td></tr><tr><td>Net income</td><td>23.5%</td><td>22.4%</td><td>22.1%</td><td>22.2%</td><td>23.0%</td><td>22.5%</td><td>26.8%</td><td>27.9%</td></tr><tr><td colspan=\"9\">Growth YoY</td></tr><tr><td>Revenue</td><td>0.5%</td><td>16.2%</td><td>60.8%</td><td>14.5%</td><td>-60.1%</td><td>39.6%</td><td>30.1%</td><td>23.8%</td></tr><tr><td>Gross profit</td><td>-3.4%</td><td>20.3%</td><td>73.1%</td><td>14.9%</td><td>-57.7%</td><td>44.6%</td><td>39.8%</td><td>25.0%</td></tr><tr><td>Operating profit</td><td>-10.4%</td><td>33.4%</td><td>117.0%</td><td>12.9%</td><td>-53.8%</td><td>57.6%</td><td>55.4%</td><td>29.2%</td></tr><tr><td>EBITDA</td><td>-7.1%</td><td>31.7%</td><td>104.3%</td><td>12.7%</td><td>-54.6%</td><td>54.8%</td><td>52.2%</td><td>28.8%</td></tr><tr><td>Profit before tax</td><td>6.0%</td><td>33.8%</td><td>67.3%</td><td>-16.2%</td><td>-60.7%</td><td>33.9%</td><td>54.9%</td><td>29.1%</td></tr><tr><td>Net income</td><td>5.6%</td><td>32.7%</td><td>65.5%</td><td>-15.6%</td><td>-60.9%</td><td>33.4%</td><td>55.0%</td><td>29.1%</td></tr></table>",
+        "bbox": [
+            104,
+            118,
+            890,
+            450
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/fc9009740981aea17b045f483f528465b987c1d6c4221d96f36eaf2d547174d9.jpg",
+        "table_caption": [
+            "EXHIBIT 20: Tokyo Electron: Balance Sheet"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>JPY bn</td><td>FY23/3</td><td>FY24/3</td><td>FY25/3</td><td>FY26/3E</td><td>FY27/3E</td><td>FY28/3E</td><td>FY29/3E</td></tr><tr><td>Cash and cash equivalents</td><td>472.5</td><td>461.6</td><td>485.1</td><td>505.4</td><td>-66.3</td><td>72.7</td><td>118.9</td></tr><tr><td>Accounts receivable</td><td>464.9</td><td>391.4</td><td>485.6</td><td>525.9</td><td>643.5</td><td>729.2</td><td>902.7</td></tr><tr><td>Inventories</td><td>652.2</td><td>763.0</td><td>749.1</td><td>713.1</td><td>1,394.3</td><td>1,443.8</td><td>1,695.6</td></tr><tr><td>Other current assets</td><td>151.4</td><td>84.5</td><td>80.9</td><td>91.0</td><td>99.0</td><td>99.0</td><td>99.0</td></tr><tr><td>Total current assets</td><td>1,741.0</td><td>1,700.5</td><td>1,800.8</td><td>1,835.5</td><td>2,070.6</td><td>2,344.6</td><td>2,816.3</td></tr><tr><td>Property, plant and equipment, net</td><td>259.1</td><td>337.4</td><td>441.7</td><td>589.3</td><td>685.4</td><td>907.2</td><td>1,126.8</td></tr><tr><td>Other non-current assets</td><td>311.5</td><td>418.6</td><td>383.5</td><td>436.2</td><td>542.0</td><td>542.0</td><td>542.0</td></tr><tr><td>Total assets</td><td>2,311.6</td><td>2,456.5</td><td>2,626.0</td><td>2,861.0</td><td>3,298.0</td><td>3,793.8</td><td>4,485.1</td></tr><tr><td>Accounts payable and accrued expenses</td><td>187.5</td><td>172.4</td><td>217.5</td><td>236.8</td><td>278.9</td><td>330.9</td><td>405.5</td></tr><tr><td>ST Debt and Lease Obligations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Other current liabilities</td><td>442.4</td><td>439.5</td><td>460.4</td><td>442.4</td><td>477.1</td><td>477.1</td><td>477.1</td></tr><tr><td>Total current liabilities</td><td>629.9</td><td>611.9</td><td>677.9</td><td>679.2</td><td>756.0</td><td>808.0</td><td>882.6</td></tr><tr><td>LT Debt and Lease Obligations</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Other non-current liabilities</td><td>82.2</td><td>84.4</td><td>92.8</td><td>111.8</td><td>127.6</td><td>127.6</td><td>127.6</td></tr><tr><td>Total liabilities</td><td>712.1</td><td>696.3</td><td>770.8</td><td>791.0</td><td>883.6</td><td>935.6</td><td>1,010.2</td></tr><tr><td>Shareholders&#x27; equity</td><td>1,599.5</td><td>1,760.2</td><td>1,855.2</td><td>2,070.0</td><td>2,414.4</td><td>2,858.2</td><td>3,474.9</td></tr><tr><td>Total liabilities &amp; shareholders&#x27; equity</td><td>2,311.6</td><td>2,456.5</td><td>2,626.0</td><td>2,861.0</td><td>3,298.0</td><td>3,793.8</td><td>4,485.1</td></tr></table>",
+        "bbox": [
+            106,
+            507,
+            893,
+            736
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: Company disclosures, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            752,
+            415,
+            763
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/34c702367907a56d60cd9e4ed38094ad314b56a53e94336be51dc2c706cbe4cd.jpg",
+        "table_caption": [
+            "EXHIBIT 21: Tokyo Electron: Cash Flow Statement"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>JPY bn</td><td>FY23/3</td><td>FY24/3</td><td>FY25/3</td><td>FY26/3E</td><td>FY27/3E</td><td>FY28/3E</td><td>FY29/3E</td></tr><tr><td>Net Income</td><td>471.6</td><td>364.0</td><td>544.1</td><td>574.5</td><td>766.1</td><td>1,187.7</td><td>1,533.4</td></tr><tr><td>D&amp;A</td><td>38.5</td><td>52.3</td><td>62.1</td><td>81.0</td><td>108.2</td><td>133.1</td><td>164.7</td></tr><tr><td>Changes in working capital</td><td>-77.6</td><td>-85.5</td><td>36.2</td><td>-45.1</td><td>-714.2</td><td>-83.1</td><td>-350.8</td></tr><tr><td>Other adjustments</td><td>-10.7</td><td>103.9</td><td>-60.3</td><td>-70.6</td><td>79.6</td><td>0.0</td><td>0.0</td></tr><tr><td>Cash flow from operations</td><td>421.9</td><td>434.7</td><td>582.2</td><td>539.7</td><td>239.7</td><td>1,237.7</td><td>1,347.4</td></tr><tr><td>Capex</td><td>-76.8</td><td>-135.1</td><td>-177.6</td><td>-209.0</td><td>-195.0</td><td>-354.9</td><td>-384.4</td></tr><tr><td>Other</td><td>35.0</td><td>10.0</td><td>8.0</td><td>112.5</td><td>-4.2</td><td>0.0</td><td>0.0</td></tr><tr><td>Cash flow from investments</td><td>-41.8</td><td>-125.1</td><td>-169.6</td><td>-96.5</td><td>-199.2</td><td>-354.9</td><td>-384.4</td></tr><tr><td>Cash flow from financing</td><td>-256.5</td><td>-325.0</td><td>-388.8</td><td>-311.7</td><td>-508.8</td><td>-743.9</td><td>-916.7</td></tr><tr><td>Net effect of exchange rate changes</td><td>13.3</td><td>4.6</td><td>-0.3</td><td>2.5</td><td>1.3</td><td>0.0</td><td>0.0</td></tr><tr><td>Net change in cash</td><td>136.8</td><td>-10.9</td><td>23.5</td><td>134.0</td><td>-467.1</td><td>139.0</td><td>46.2</td></tr></table>",
+        "bbox": [
+            106,
+            89,
+            892,
+            247
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Company disclosures, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            263,
+            415,
+            275
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            940,
+            207,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            313,
+            85
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/f564222fef60e0f3e9b57fbe5d902d18b11fc5be54314359b51bbd4227c7f950.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">30 Jul 2026</td><td>TTM</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td></td><td></td><td rowspan=\"2\">Closing Price</td><td rowspan=\"2\">Price Target</td><td rowspan=\"2\">Rel. Perf.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>8035.JP (Tokyo Electron)</td><td>O</td><td>JPY</td><td>52,240</td><td>79,300</td><td>54.2%</td><td>JPY</td><td>1,250.88</td><td>1,687.17</td><td>2,635.81</td><td>41.8</td><td>31.0</td><td>19.8</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>59,200</td><td></td><td></td><td></td><td>1,504.14</td><td>1,848.77</td><td></td><td></td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,570.52</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            99,
+            890,
+            189
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended Source: Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            208,
+            616,
+            236
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            940,
+            207,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            112
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            893,
+            220
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            893,
+            273
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            300
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Tokyo Electron Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            235,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We set a ¥79,300 price target using a P/E multiple of 28x against our forward Q5-Q8 EPS estimate.",
+        "bbox": [
+            104,
+            342,
+            714,
+            357
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            369,
+            153,
+            383
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Tokyo Electron Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            397,
+            235,
+            411
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "There are a number of downside risks to our TEL target price: (1) Changes in US trade restriction which are unfavorable to China's and global semiconductor capex (2) Slowdown in global semiconductor demand including both logic and memory, which trigger reduced or increased capex and capacity expansion (3) Unfavorable exchange rate fluctuation posing a downside risk to overall Japan market",
+        "bbox": [
+            102,
+            424,
+            893,
+            484
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            496,
+            508,
+            511
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            522,
+            320,
+            537
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            549,
+            218,
+            564
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            575,
+            893,
+            659
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            670,
+            429,
+            684
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            696,
+            549,
+            712
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            724,
+            637,
+            739
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            752,
+            658,
+            767
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            779,
+            893,
+            806
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            819,
+            893,
+            859
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            873,
+            517,
+            887
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            415,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            893,
+            84
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            207,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            70,
+            532,
+            84
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            97,
+            359,
+            111
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments, and the Bloomberg Japan Financials Large & Mid Cap Price Return Index (JPFILM) for Japanese Financials. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            123,
+            893,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            244,
+            542,
+            258
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            272,
+            584,
+            286
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+        "bbox": [
+            104,
+            299,
+            604,
+            313
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            327,
+            694,
+            340
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            354,
+            893,
+            382
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            393,
+            893,
+            435
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            446,
+            782,
+            460
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            474,
+            519,
+            488
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            500,
+            607,
+            513
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            526,
+            364,
+            540
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            553,
+            547,
+            566
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            579,
+            893,
+            609
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            621,
+            893,
+            651
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            664,
+            893,
+            694
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            705,
+            565,
+            720
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            732,
+            346,
+            746
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            758,
+            893,
+            787
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            799,
+            893,
+            854
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            864,
+            320,
+            878
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            893,
+            486,
+            906
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            940,
+            209,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly.",
+        "bbox": [
+            102,
+            502,
+            892,
+            544
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            102,
+            71,
+            893,
+            101
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            102,
+            114,
+            893,
+            143
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            156,
+            893,
+            186
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            102,
+            198,
+            504,
+            213
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            224,
+            893,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            263,
+            893,
+            306
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            342,
+            591,
+            357
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/7151fd7a7685180f408ae80d8744a4e73187f383398feb5756f9adb34d4de262.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+        "bbox": [
+            107,
+            367,
+            890,
+            489
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            568,
+            490,
+            583
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/c250ef4f6f094d0aa7430982ea49b85079cee83978a4a56074d413220fe6b0fb.jpg",
+        "image_caption": [
+            "Tokyo Electron Ltd (8035.JP) Rating History for Bernstein as of 07/29/2026",
+            "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            122,
+            611,
+            870,
+            844
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            282,
+            84
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Tokyo Electron Ltd.",
+        "bbox": [
+            102,
+            97,
+            892,
+            125
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Tokyo Electron Ltd.",
+        "bbox": [
+            104,
+            136,
+            888,
+            151
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            162,
+            228,
+            175
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            189,
+            893,
+            217
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            229,
+            514,
+            242
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            255,
+            385,
+            268
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            281,
+            584,
+            294
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            308,
+            328,
+            321
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            334,
+            331,
+            347
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            359,
+            441,
+            375
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            386,
+            367,
+            400
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            412,
+            495,
+            426
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            439,
+            643,
+            453
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            465,
+            506,
+            479
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            491,
+            413,
+            505
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            518,
+            893,
+            614
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            626,
+            893,
+            667
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            679,
+            217,
+            693
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            705,
+            893,
+            761
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            773,
+            444,
+            787
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            799,
+            893,
+            840
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            852,
+            501,
+            866
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            104,
+            878,
+            638,
+            893
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            940,
+            207,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            71,
+            895,
+            176
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            189,
+            893,
+            250
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            261,
+            893,
+            304
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            314,
+            893,
+            356
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            367,
+            893,
+            438
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            448,
+            893,
+            491
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            502,
+            893,
+            559
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            569,
+            893,
+            597
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            608,
+            893,
+            638
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            648,
+            893,
+            691
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            101,
+            702,
+            895,
+            828
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            838,
+            893,
+            867
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            877,
+            893,
+            920
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            69,
+            893,
+            113
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            101,
+            125,
+            895,
+            234
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            244,
+            893,
+            289
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            299,
+            893,
+            327
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            339,
+            893,
+            436
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            446,
+            893,
+            530
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            541,
+            893,
+            598
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            608,
+            893,
+            679
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            690,
+            341,
+            705
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            104,
+            718,
+            310,
+            733
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- making a market for a financial product; and",
+        "bbox": [
+            104,
+            744,
+            398,
+            758
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            773,
+            390,
+            787
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            799,
+            893,
+            869
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial",
+        "bbox": [
+            102,
+            881,
+            893,
+            912
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            120,
+            71,
+            893,
+            99
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            114,
+            892,
+            143
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            156,
+            594,
+            171
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            184,
+            893,
+            214
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            227,
+            493,
+            241
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            253,
+            764,
+            268
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            282,
+            647,
+            296
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            309,
+            781,
+            324
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            337,
+            893,
+            367
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            380,
+            813,
+            395
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            407,
+            893,
+            436
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            450,
+            893,
+            479
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            493,
+            674,
+            507
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            520,
+            893,
+            580
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            592,
+            893,
+            623
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            635,
+            893,
+            665
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            678,
+            893,
+            708
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            720,
+            893,
+            766
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            777,
+            893,
+            848
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            859,
+            893,
+            915
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            893,
+            99
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            109,
+            155,
+            125
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            136,
+            893,
+            179
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            189,
+            893,
+            246
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            102,
+            257,
+            895,
+            450
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            460,
+            893,
+            585
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            595,
+            893,
+            707
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            717,
+            893,
+            746
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            757,
+            893,
+            840
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            852,
+            893,
+            893
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            102,
+            70,
+            893,
+            195
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            102,
+            205,
+            893,
+            344
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            354,
+            893,
+            425
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            434,
+            893,
+            506
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            516,
+            893,
+            627
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "David Dai, CFA +852 2918 5704 david.dai@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            416,
+            51
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "30 July 2026",
+        "bbox": [
+            823,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN SEMICONDUCTORS",
+        "bbox": [
+            104,
+            939,
+            209,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 18
+    }
+]
