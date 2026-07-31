@@ -1,0 +1,531 @@
+[
+  {
+    "item": "0001-76-Morgan-Stanley-Cambricon-Technology-Corporation-2Q26-Preview-Delivery-sl",
+    "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0001-76-MS-Cambricon Technology Corporation 2Q26 Preview Delivery slippage clouds near-term upside- Keep OW-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "交付延迟，目标价下调",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：寒武纪业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-76-MS-Cambricon Technology Corporation 2Q26 Preview Delivery slippage clouds near-term upside- Keep OW-260730.pdf",
+      "cleaned_source_title": "MS-Cambricon Technology Corporation 2Q26 Preview Delivery slippage clouds near-term upside- Keep OW",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Cambricon科技Corporation2Q26",
+      "raw_candidates": [
+        "寒武纪2Q26前瞻：交付延迟影响近期上行空间",
+        "寒武纪2Q26前瞻：交付延迟影响近期上行空间-预计二季度收入38亿元",
+        "寒武纪2Q26前瞻：交付延迟影响近期上行空间-MLU580/590交付进度"
+      ],
+      "cleaned_candidates": [
+        "MS：寒武纪2Q26前瞻，交付延迟影响近期上行空间",
+        "MS：590交付进度",
+        "MS：Cambricon科技Corporation2Q26",
+        "MS：预计寒武纪二季度收入38亿元，环比增长31%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：590交付进度",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Cambricon科技Corporation2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：预计寒武纪二季度收入38亿元，环比增长31%",
+          "reasons": [
+            "anchor_coverage=0.10",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：寒武纪业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：寒武纪2Q26前瞻，交付延迟影响近期上行空间",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：寒武纪业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-77-Morgan-Stanley-China-Equity-Strategy-China-Five-factor-Consumer-Activity",
+    "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0002-77-MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "6月消费小幅回暖，但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-77-MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China-260729.pdf",
+      "cleaned_source_title": "MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Equity策略中国Fivefactor消费",
+      "raw_candidates": [
+        "MS：中国权益策略-五因子消费活动Z-Score与MSCI中国对比",
+        "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+        "MS：五因子消费活动Z-Score与MSCI中国对比-六月数据更新"
+      ],
+      "cleaned_candidates": [
+        "MS：中国权益策略-五因子消费活动Z",
+        "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+        "MS：五因子消费活动Z-Score与MSCI中国对比",
+        "MS：中国Equity策略中国Fivefactor消费",
+        "MS：截至2026年6月底的数据显示，该Z"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：五因子消费活动Z-Score与MSCI中国对比",
+          "reasons": [
+            "anchor_coverage=0.62",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国Equity策略中国Fivefactor消费",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：截至2026年6月底的数据显示，该Z",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国权益策略-五因子消费活动Z",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-78-Morgan-Stanley-China-Industrials-2Q26-Automation-Market---Growth-Acceler",
+    "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0003-78-MS-China Industrials-2Q26 Automation Market - Growth Accelerating-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "自动化复苏比想象中快",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国工业自动化市场2Q26增速加快",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-78-MS-China Industrials-2Q26 Automation Market - Growth Accelerating-260729.pdf",
+      "cleaned_source_title": "MS-China Industrials-2Q26 Automation Market - Growth Accelerating",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Industrials2Q26Automation市场",
+      "raw_candidates": [
+        "中国工业自动化市场2Q26增速加快",
+        "中国自动化市场2Q26增长6% OEM端增17%",
+        "中国自动化市场2Q26增速加快 伺服与机器人领涨"
+      ],
+      "cleaned_candidates": [
+        "MS：中国工业自动化市场2Q26增速加快",
+        "MS：中国自动化市场2Q26增长6%OEM端增17%",
+        "MS：中国自动化市场2Q26增速加快伺服与机器人领涨",
+        "MS：中国Industrials2Q26Automation市场",
+        "MS：2Q26中国自动化市场增速加快，OEM端增长17%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国自动化市场2Q26增长6%OEM端增17%",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：中国Industrials2Q26Automation市场",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "MS：2Q26中国自动化市场增速加快，OEM端增长17%",
+          "reasons": [
+            "anchor_coverage=0.69"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国工业自动化市场2Q26增速加快",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国工业自动化市场2Q26增速加快"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-79-Morgan-Stanley-Samsung-Electronics-2Q26---Clean-Beat--Share-Gains-and-HB",
+    "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0004-79-MS-Samsung Electronics 2Q26 - Clean Beat- Share Gains and HBM Leadership-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "三星这次财报，不只是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：三星电子二季度业绩与HBM领导力",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-79-MS-Samsung Electronics 2Q26 - Clean Beat- Share Gains and HBM Leadership-260730.pdf",
+      "cleaned_source_title": "MS-Samsung Electronics 2Q26 - Clean Beat- Share Gains and HBM Leadership",
+      "institution_name": "MS",
+      "required_terms": [
+        "HBM"
+      ],
+      "deterministic_fallback": "MS：HBMSamsungElectronics2Q26",
+      "raw_candidates": [
+        "三星电子二季度业绩与HBM领导力",
+        "三星电子二季度营收172万亿韩元与HBM4进展",
+        "三星电子二季度存储增长与HBM技术领先"
+      ],
+      "cleaned_candidates": [
+        "MS：三星电子二季度业绩与HBM领导力",
+        "MS：三星电子二季度营收172万亿韩元与HBM4进展",
+        "MS：三星电子二季度存储增长与HBM技术领先",
+        "MS：HBMSamsungElectronics2Q26",
+        "MS：三星电子二季度存储业务增长与HBM4进展"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：三星电子二季度营收172万亿韩元与HBM4进展",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "MS：三星电子二季度存储增长与HBM技术领先",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "MS：HBMSamsungElectronics2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：三星电子二季度存储业务增长与HBM4进展",
+          "reasons": [
+            "anchor_coverage=0.60"
+          ]
+        }
+      ],
+      "selected_title": "MS：三星电子二季度业绩与HBM领导力",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：三星电子二季度业绩与HBM领导力"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-80-Morgan-Stanley-China-Power-and-Renewables-Shanghai-Marketing-Takeaways-2",
+    "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0005-80-MS-China Power and Renewables-Shanghai Marketing Takeaways-260729.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "中国电力设备股回调5",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x3",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x2",
+      "股价->报价 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国电力与可再生能源上海路演反馈",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-80-MS-China Power and Renewables-Shanghai Marketing Takeaways-260729.pdf",
+      "cleaned_source_title": "MS-China Power and Renewables-Shanghai Marketing Takeaways",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Power和RenewablesSha",
+      "raw_candidates": [
+        "MS：中国电力与可再生能源上海路演反馈",
+        "MS：中国电力设备板块回调后资金关注点",
+        "MS：中国电力与可再生能源板块资金轮动观察"
+      ],
+      "cleaned_candidates": [
+        "MS：中国电力与可再生能源上海路演反馈",
+        "MS：中国电力设备板块回调后资金关注点",
+        "MS：中国电力与可再生能源板块资金轮动观察",
+        "MS：中国Power和RenewablesSha",
+        "MS：7月29日，MS发布上海路演反馈纪要"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国电力设备板块回调后资金关注点",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国电力与可再生能源板块资金轮动观察",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.60"
+          ]
+        },
+        {
+          "title": "MS：中国Power和RenewablesSha",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：7月29日，MS发布上海路演反馈纪要",
+          "reasons": [
+            "anchor_coverage=0.33"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国电力与可再生能源上海路演反馈",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国电力与可再生能源上海路演反馈"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

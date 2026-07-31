@@ -1,0 +1,108 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ji0325d6/pdfs/0002-77-MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "6月消费小幅回暖，但",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:china_systemic_topic"
+  ],
+  "wechat_title": "MS：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-77-MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China-260729.pdf",
+    "cleaned_source_title": "MS-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：中国Equity策略中国Fivefactor消费",
+    "raw_candidates": [
+      "MS：中国权益策略-五因子消费活动Z-Score与MSCI中国对比",
+      "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+      "MS：五因子消费活动Z-Score与MSCI中国对比-六月数据更新"
+    ],
+    "cleaned_candidates": [
+      "MS：中国权益策略-五因子消费活动Z",
+      "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+      "MS：五因子消费活动Z-Score与MSCI中国对比",
+      "MS：中国Equity策略中国Fivefactor消费",
+      "MS：截至2026年6月底的数据显示，该Z"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：五因子消费活动Z-Score六月边际改善与MSCI中国对比",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：五因子消费活动Z-Score与MSCI中国对比",
+        "reasons": [
+          "anchor_coverage=0.62",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：中国Equity策略中国Fivefactor消费",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.23",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：截至2026年6月底的数据显示，该Z",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "MS：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "MS：中国权益策略-五因子消费活动Z",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "707",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
