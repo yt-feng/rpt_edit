@@ -1,0 +1,331 @@
+{
+  "created_at_utc": "2026-07-31T21:32:14.939634+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260731",
+  "output_dir": "publish_ready_zips/260731",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 19,
+  "skipped_shards": [],
+  "total_files": 1746,
+  "total_renamed_markdown_count": 460,
+  "total_raw_file_bytes": 257159943,
+  "zip_count": 3,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260731/publish_ready_260731_part001.zip",
+      "size_bytes": 87756017,
+      "file_count": 661,
+      "renamed_markdown_count": 165,
+      "raw_file_bytes": 94105643,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_12",
+        "shard_13",
+        "shard_14"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260731/publish_ready_260731_part002.zip",
+      "size_bytes": 88091012,
+      "file_count": 625,
+      "renamed_markdown_count": 175,
+      "raw_file_bytes": 94178904,
+      "shards": [
+        "shard_14",
+        "shard_15",
+        "shard_16",
+        "shard_17",
+        "shard_18",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260731/publish_ready_260731_part003.zip",
+      "size_bytes": 64601703,
+      "file_count": 460,
+      "renamed_markdown_count": 120,
+      "raw_file_bytes": 68875396,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16883193,
+      "reports": [
+        "0001-01-Barclays-Hermes-HRMS.PA-Beyond-the-Print--Debate-on-algo-remains-unresol",
+        "0002-02-Barclays-Hermes-HRMS.PA-Beyond-the-Print--Debate-on-algo-remains-unresol",
+        "0003-03-Barclays-KERING--KERFP.US--The-future-is-bright-er----Upgrade-to-Market-",
+        "0004-04-Barclays-KERING--KERFP.US--The-future-is-bright-er----Upgrade-to-Market-",
+        "0005-05-Bernstein-Air-Products---Chemicals-Inc-APD.US-Air-Products-3QFY26--Passi"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13590606,
+      "reports": [
+        "0001-06-Bernstein-ASML-Holding-NV-ASML.NA-ASML--Best-Idea-3Q26---WFE-upcycle--ri",
+        "0002-07-Bernstein-Budweiser-Brewing-Co-APAC-Ltd-1876.HK-Bud-APAC-Q2--China-remai",
+        "0003-08-Bernstein-Illumina-Inc-ILMN.US-Illumina-2Q26--Ride-the--clinical--wave-2",
+        "0004-09-Bernstein-Datadog-Inc-DDOG.US-Datadog--DDOG---AWS-Q2-results-readthrough",
+        "0005-10-Bernstein-Xiaomi-Corp-1810.HK-Xiaomi--SkyNomad-N90-Max---N70-Max-Debut--"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14121495,
+      "reports": [
+        "0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a",
+        "0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont",
+        "0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract",
+        "0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota",
+        "0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 5,
+      "file_count": 71,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9264613,
+      "reports": [
+        "0001-56-J.P.-Morgan-Corning-GLW.US-2Q26-Review--Falls-Short-of-Demanding-Buy-Sid",
+        "0002-57-J.P.-Morgan-FX-FOMC-post-mortem-Staying-long-USD-despite-renewed-inflati",
+        "0003-58-J.P.-Morgan-FX-FOMC-post-mortem-Staying-long-USD-despite-renewed-inflati",
+        "0004-59-J.P.-Morgan-Hon.-Precision-7769.TW-Positive-read-through-from-Advantest-",
+        "0005-60-J.P.-Morgan-Infineon-Technologies-IFXGn.DE-FY3Q26-Preview--Focus-will-be"
+      ]
+    },
+    {
+      "shard": "shard_12",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13421755,
+      "reports": [
+        "0001-61-J.P.-Morgan-JPM-HY-HC--2Q26-CRO--Pharma-Services-Earnings-Observations-I",
+        "0002-62-J.P.-Morgan-Logitech-International-LOGI.US-F1Q27-Review--Delivers-on-Qua",
+        "0003-63-J.P.-Morgan-Logitech-International-LOGI.US-F1Q27-Review--Delivers-on-Qua",
+        "0004-64-J.P.-Morgan-Semiconductor-SPE-Implications-from-Teradyne-s-results--Prog",
+        "0005-65-J.P.-Morgan-Seagate--STX.US-F4Q26-Review--The-Demand-Supply-Waltz-Contin"
+      ]
+    },
+    {
+      "shard": "shard_13",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16494454,
+      "reports": [
+        "0001-66-J.P.-Morgan-PetroChina-Thoughts-on-the-reported-LNG-Canada-stake-sale--m",
+        "0002-67-J.P.-Morgan-Sungrow--A-300274-FCC-targets-new-Chinese-inverter-imports--",
+        "0003-68-J.P.-Morgan-Unimicron-3037.TW-ABF-GM-could-reach-60--260730",
+        "0004-69-J.P.-Morgan-Skyworks-Solutions-SWKS.US-Results-and-Guidance-a-Mixed-Bag-",
+        "0005-70-J.P.-Morgan-YAGEO-2327.TW-Positive-outlook-didn-t-break-260730"
+      ]
+    },
+    {
+      "shard": "shard_14",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21291278,
+      "reports": [
+        "0001-71-J.P.-Morgan-Zijin-Gold-International--H-2259.HK-Allied-Gold-dust-settled",
+        "0002-72-J.P.-Morgan-Weichai-Power---A-H--000338-Positive-read-throughs-from-BE--",
+        "0003-73-Morgan-Stanley-Arm-Holdings-plc---North-America-Royalty-Growth-Weakens-2",
+        "0004-74-Morgan-Stanley-Apple--Inc.---North-America-F3Q26-Earnings---Cracks-Emerg",
+        "0005-75-Morgan-Stanley-Apple--Inc.---North-America-F3Q26-Earnings---Cracks-Emerg"
+      ]
+    },
+    {
+      "shard": "shard_15",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11380162,
+      "reports": [
+        "0001-76-Morgan-Stanley-Cambricon-Technology-Corporation-2Q26-Preview-Delivery-sl",
+        "0002-77-Morgan-Stanley-China-Equity-Strategy-China-Five-factor-Consumer-Activity",
+        "0003-78-Morgan-Stanley-China-Industrials-2Q26-Automation-Market---Growth-Acceler",
+        "0004-79-Morgan-Stanley-Samsung-Electronics-2Q26---Clean-Beat--Share-Gains-and-HB",
+        "0005-80-Morgan-Stanley-China-Power-and-Renewables-Shanghai-Marketing-Takeaways-2"
+      ]
+    },
+    {
+      "shard": "shard_16",
+      "report_count": 5,
+      "file_count": 67,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8718511,
+      "reports": [
+        "0001-81-Morgan-Stanley-Qualcomm-Inc.-Apple-Exit-Accelerates-Diversification-2607",
+        "0002-82-Morgan-Stanley-Yageo-Corp.-MLCC-Gains-Momentum-from-Stronger-Demand-2607",
+        "0003-83-Nomura-Asia-Insights-China-The-Politburo-meeting-indicated-a-shift-to--c",
+        "0004-84-Nomura-Asia-Insights-China-monthly--July-data-preview-260730",
+        "0005-85-Nomura-Global-AI-Trend-Tracker-META-s-2Q26-earnings-read-through-260730"
+      ]
+    },
+    {
+      "shard": "shard_17",
+      "report_count": 5,
+      "file_count": 77,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9650889,
+      "reports": [
+        "0001-86-Nomura-Global-AI-Trend-Tracker-Amazon-s-2Q26-earnings-read-through-26073",
+        "0002-87-Nomura-Global-AI-Trend-Tracker-Microsoft-s-June-quarter-results-read-thr",
+        "0003-88-UBS-Amazon.com-AWS-Set-to-Accelerate-Further-into-40---Growth-260731-1",
+        "0004-89-Nomura-USD-CNY-fix-model-Projection--6.7300-260731",
+        "0005-90-Nomura-Industrial-electronics-sector-Results-at-overseas-companies--Meta"
+      ]
+    },
+    {
+      "shard": "shard_18",
+      "report_count": 2,
+      "file_count": 46,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 6899405,
+      "reports": [
+        "0001-91-UBS-Amazon.com-AWS-Set-to-Accelerate-Further-into-40---Growth-260731",
+        "0002-92-UBS-China-Economic-Perspectives-AI-is-reshaping-China-s-trade-story---up"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12853593,
+      "reports": [
+        "0001-11-Bernstein-Tokyo-Electron-Ltd-8035.JP-TEL-1Q27-3-Margin-upside-materializ",
+        "0002-12-Bernstein-Schneider-Electric-SA-SU.FP-Schneider--A-Year-in-a-Day-260731",
+        "0003-13-CITI-China-Humanoid-Robots-US-FCC-to-Ban-Foreign-Made-Humanoid-and-Quadr",
+        "0004-14-CITI-China-Battery-Materials-A-reconciliation-between-tepid-EV-sales-vol",
+        "0005-15-CITI-BYD--1211.HK--Fundamentals--AI-Fund-Flows--BYD-Robots-update-260729"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12842085,
+      "reports": [
+        "0001-16-CITI-Hongfa-Technology--600885--2Q26-Results-Beat--Lifting-TP-to-Rmb45.0",
+        "0002-17-CITI-Greater-China-Diversified-Utilities-Where-to-Hide-in-Utilities-Rene",
+        "0003-18-CITI-China-Property-Positive--Position-for-Volume-Growth-in-Core-Cities-",
+        "0004-19-CITI-US-Semiconductors-SWKS---QRVO---Maintain-Neutral-260729",
+        "0005-20-CITI-Taiwan-PCB---Laminates--CCL-sector--quality-beat--likely-another-pr"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14452707,
+      "reports": [
+        "0001-21-CITI-Yageo--2327.TW--2Q26-Beat-on-Broad-Based-Strength--Recalibrating-TP",
+        "0002-22-CITI-Zijin-Mining--2899.HK--Termination-of-Allied-Gold-Acquisition--Prop",
+        "0003-23-Goldman-Sachs-Budweiser-APAC-1876.HK-2Q26-Earnings-Review-Committed-to-C",
+        "0004-24-Goldman-Sachs-Asia-Pacific-Textile--Apparel---Footwear--Mixed-to-positiv",
+        "0005-25-Goldman-Sachs-Canada-Goose-Holdings--GOOS.TO--F1Q27-Earnings-Review--Inc"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13855031,
+      "reports": [
+        "0001-26-Goldman-Sachs-CHINA-INTERNET--AUTO-CLASSIFIED-2Q26-Preview--Stepped-Up-G",
+        "0002-27-Goldman-Sachs-China-Smartphones--Jun-shipments--17--YoY--36--MoM--High-m",
+        "0003-28-Goldman-Sachs-Curves--Chips--Crude-and-Carry-260730",
+        "0004-29-Goldman-Sachs-China--July-Politburo-meeting-strengthens-easing-rhetoric-",
+        "0005-30-Goldman-Sachs-EM-IN-FOCUS-EM-Output-Gaps---Significant-Room-to-Grow--But"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16971893,
+      "reports": [
+        "0001-31-Goldman-Sachs-Energy--Utilities---Mining-Pulse-Investors-Asking--What-Ar",
+        "0002-32-Goldman-Sachs-Elite-Material--2383.TW--Better-high-end-M9-substrate-CCL-",
+        "0003-33-Goldman-Sachs-Energy--Utilities---Mining-Pulse-Investors-Asking--What-Ar",
+        "0004-34-Goldman-Sachs-GLOBAL-CREDIT-TRADER-The-Increasing-Importance-of-Demand-T",
+        "0005-35-Goldman-Sachs-Equinix-Inc.--EQIX.US--2Q26-Review--Beat---raise-with-upgr"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15084811,
+      "reports": [
+        "0001-36-Goldman-Sachs-Ferrari-NV--RACE.MI---2Q26-sees-beat-on-lower-volumes--gui",
+        "0002-37-Goldman-Sachs-Japan-Chemicals--CCL-trade-data--Apr-Jun-shipment-value--4",
+        "0003-38-Goldman-Sachs-Japan-Industrial-Electronics--June-MOF-data--optical-fiber",
+        "0004-39-Goldman-Sachs-Japan-Technology--Hardware--Electronic-Components--June-MO",
+        "0005-40-Goldman-Sachs-Samsung-Electronics--005930.KS--Earnings-Review--2Q26-OP-i"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14019996,
+      "reports": [
+        "0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2",
+        "0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi",
+        "0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-",
+        "0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt",
+        "0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15363466,
+      "reports": [
+        "0001-46-Goldman-Sachs-Sony-Group--6758.T--Announces-proposal-to-make-major-camer",
+        "0002-47-Goldman-Sachs-Taiwan-Union-Technology-Corp.--6274.TWO--Solid-capacity-ex",
+        "0003-48-Goldman-Sachs-Tokyo-Electron--8035.T-Earnings-Review--1Q-in-line--but-st",
+        "0004-49-Goldman-Sachs-VPEC--2455.TW---New-equipment-reflects-strong-orders--3Q26",
+        "0005-50-Goldman-Sachs-Xiaomi-Corp.--1810.HK--Commanding-the-scene-with-disruptiv"
+      ]
+    }
+  ]
+}
