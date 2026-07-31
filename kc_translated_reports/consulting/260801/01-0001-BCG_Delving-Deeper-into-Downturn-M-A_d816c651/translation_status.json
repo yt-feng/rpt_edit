@@ -1,0 +1,66 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260801/0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+  "title": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+  "source_title": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+    "cleaned_source_title": "0001-BCG_Delving-Deeper-into-Downturn-M-A_d816c651",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0001BCGDelvingDeeperi",
+    "raw_candidates": [
+      "波士顿咨询：弱宏观环境周期并购回报研究",
+      "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+      "波士顿咨询：弱宏观环境周期并购与非核心领域回报研究"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：弱宏观环境周期并购回报研究",
+      "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+      "波士顿咨询：弱宏观环境周期并购与非核心领域回报研究",
+      "波士顿咨询：0001BCGDelvingDeeperi",
+      "波士顿咨询：弱宏观环境周期交易两年后相对股东回报高出9个百分点以上"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：0001BCGDelvingDeeperi",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：弱宏观环境周期交易两年后相对股东回报高出9个百分点以上",
+        "reasons": [
+          "anchor_coverage=0.70"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "9"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：弱宏观环境周期并购两年回报高9个百分点"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_01.pdf",
+  "figure_count": 2,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

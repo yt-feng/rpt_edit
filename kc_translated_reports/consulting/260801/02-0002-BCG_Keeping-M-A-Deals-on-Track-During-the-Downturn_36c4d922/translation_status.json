@@ -1,0 +1,84 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260801/0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+  "title": "波士顿咨询：研究主题与行业变化观察",
+  "source_title": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+    "cleaned_source_title": "0002-BCG_Keeping-M-A-Deals-on-Track-During-the-Downturn_36c4d922",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0002BCGKeepingMADeals",
+    "raw_candidates": [
+      "波士顿咨询：并购交易在低迷期保持正轨",
+      "波士顿咨询：并购交易执行框架与73%估值重谈",
+      "波士顿咨询：并购交易三阶段应对与情景定价"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：并购交易在低迷期保持正轨",
+      "波士顿咨询：并购交易执行框架与73%估值重谈",
+      "波士顿咨询：并购交易三阶段应对与情景定价",
+      "波士顿咨询：0002BCGKeepingMADeals",
+      "波士顿咨询：疫情冲击下并购交易执行的三阶段应对框架"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：并购交易执行框架与73%估值重谈",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：并购交易三阶段应对与情景定价",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0002BCGKeepingMADeals",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：疫情冲击下并购交易执行的三阶段应对框架",
+        "reasons": [
+          "anchor_coverage=0.27",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：并购交易在低迷期保持正轨",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 0,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260801/0003-BCG_Mind-the-Belief-Gap_90ec8d53/mineru_raw/images/b08ac30fb04c8afa59cefaf66de665a1e455df57dd0e64a929864c9b208dc05b.jpg",
+    "path": "kc_translated_reports/consulting/260801/03-0003-BCG_Mind-the-Belief-Gap_90ec8d53/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.18,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260801/0003-BCG_Mind-the-Belief-Gap_90ec8d53/mineru_raw/images/6895f144ad4a69331e5b7926a6f3c47b28d0dc62adb39d61a110b9265b558fea.jpg",
+    "path": "kc_translated_reports/consulting/260801/03-0003-BCG_Mind-the-Belief-Gap_90ec8d53/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.18,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260801/0003-BCG_Mind-the-Belief-Gap_90ec8d53/mineru_raw/images/748d336059b015086e8b548ed177b79201d4f9b7ee07875054ce841df90aec71.jpg",
+    "path": "kc_translated_reports/consulting/260801/03-0003-BCG_Mind-the-Belief-Gap_90ec8d53/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.15,contrast,large"
+  }
+]

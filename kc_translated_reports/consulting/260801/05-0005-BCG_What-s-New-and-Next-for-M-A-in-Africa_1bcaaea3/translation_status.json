@@ -1,0 +1,77 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260801/0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+  "title": "波士顿咨询：非洲并购市场新趋势与未来走向",
+  "source_title": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+    "cleaned_source_title": "0005-BCG_What-s-New-and-Next-for-M-A-in-Africa_1bcaaea3",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0005BCGWhatsNew和Nextf",
+    "raw_candidates": [
+      "波士顿咨询：非洲并购市场新趋势与未来走向",
+      "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+      "波士顿咨询：非洲并购市场趋势与科技行业机会"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：非洲并购市场新趋势与未来走向",
+      "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+      "波士顿咨询：非洲并购市场趋势与科技行业机会",
+      "波士顿咨询：0005BCGWhatsNew和Nextf",
+      "波士顿咨询：从2016年到2019年"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：非洲并购市场五个趋势与疫后走向",
+        "reasons": [
+          "anchor_coverage=0.62"
+        ]
+      },
+      {
+        "title": "波士顿咨询：非洲并购市场趋势与科技行业机会",
+        "reasons": [
+          "anchor_coverage=0.54"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0005BCGWhatsNew和Nextf",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：从2016年到2019年",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：非洲并购市场新趋势与未来走向",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：非洲并购市场新趋势与未来走向"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 2,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
