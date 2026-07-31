@@ -1,0 +1,1551 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "6.4",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "手机",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "手机",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:收益率->回报表现 x1",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x5"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "投资->研究 x1",
+      "after_deepseek:投资->研究 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0001-41-Goldman-Sachs-Samsung-Electro-Mechanics--009150.KS--Earnings-Review--2Q2/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "地震",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x7",
+      "after_deepseek:买入评级->报告评级 x2",
+      "after_deepseek:投资->研究 x41"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "操",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x5",
+      "after_deepseek:最强->较强 x1",
+      "after_deepseek:投资->研究 x9"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "space",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "制造",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0002-42-Goldman-Sachs-Panasonic-HD--6752.T---Reported-supercapacitor-ramp-up-usi/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "制造",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x13",
+      "after_deepseek:买入评级->报告评级 x1",
+      "after_deepseek:最强->较强 x1",
+      "after_deepseek:绝对->相对 x3",
+      "after_deepseek:投资->研究 x32"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "54",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "69",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "转化",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x13",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "au",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "表现",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0003-43-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "法国",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "功",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "测试",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x5",
+      "after_deepseek:买入评级->报告评级 x1",
+      "after_deepseek:收益率->回报表现 x1",
+      "after_deepseek:投资->研究 x22"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SB",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "公开信",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0004-44-Goldman-Sachs-Samsung-SDI-Co.--006400.KS--Core-OP-in-line--AI-infra-batt/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "断电",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "SB",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "筹码",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x12",
+      "after_deepseek:最强->较强 x1",
+      "after_deepseek:绝对->相对 x3",
+      "after_deepseek:投资->研究 x33"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "54",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "69",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/note.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "入联",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资逻辑->研究逻辑 x4",
+      "after_deepseek:投资者->读者 x17",
+      "after_deepseek:收益率->回报表现 x2",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "标准",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_8/0005-45-Goldman-Sachs-Sanofi--SASY.PA-Strong-commercial-execution--but-pipeline-/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "压制",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "功",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  }
+]

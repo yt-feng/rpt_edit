@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_mdhcwdt0/pdfs/0001-41-GS-Samsung Electro-Mechanics -009150.KS- Earnings Review- 2Q26 OP beat- Tight supply and strong AI demand continued tailwinds for strong MLCC and ABF earning.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mdhcwdt0/pdfs/0002-42-GS-Panasonic HD -6752.T-- Reported supercapacitor ramp-up using Japan auto battery lines- BBU CBU strategy advances-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mdhcwdt0/pdfs/0003-43-GS-Sanofi -SASY.PA-Strong commercial execution- but pipeline misses continue to weigh on the multiple-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mdhcwdt0/pdfs/0004-44-GS-Samsung SDI Co. -006400.KS- Core OP in line- AI infra batteries gain momentum-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mdhcwdt0/pdfs/0005-45-GS-Sanofi -SASY.PA-Strong commercial execution- but pipeline misses continue to weigh on the multiple-260731 (1).pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

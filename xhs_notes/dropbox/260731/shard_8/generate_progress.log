@@ -1,0 +1,40 @@
+Found 92 total PDFs; shard 8/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mdhcwdt0/pdfs/0001-41-Goldman Sachs-Samsung Electro-Mechanics -009150.KS- Earnings Review- 2Q26 OP beat- Tight supply and strong AI demand continued tailwinds for strong MLCC and ABF earning.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mdhcwdt0/pdfs/0002-42-Goldman Sachs-Panasonic HD -6752.T-- Reported supercapacitor ramp-up using Japan auto battery lines- BBU CBU strategy advances-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mdhcwdt0/pdfs/0003-43-Goldman Sachs-Sanofi -SASY.PA-Strong commercial execution- but pipeline misses continue to weigh on the multiple-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mdhcwdt0/pdfs/0004-44-Goldman Sachs-Samsung SDI Co. -006400.KS- Core OP in line- AI infra batteries gain momentum-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mdhcwdt0/pdfs/0005-45-Goldman Sachs-Sanofi -SASY.PA-Strong commercial execution- but pipeline misses continue to weigh on the multiple-260731 (1).pdf
+MinerU attempt 1 using MINER_U batch_id=8c8cb743-a61f-491c-93a1-802e3f49558b
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 53ec42bb5a356e459cf597512d35b28f7c20f3c3fc88e7b3d2715f490d1f56a0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset fb1018071b2ccb9167ecb02aa867c06fc41255ca962e7a88d2c549a4d6390766.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.30
+Skip non-chart visual asset 9372d8f57b82a7aaff396209d549c28aa334d35054321387f631ec72fcf3e3cd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset dc78a672216a28fad22b0adb237b4a31753a1fcc7f1d36196b2cb4204bf5a2ec.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset f10e02967fa1f928dbea2ccff95a36217f1de9abda46fc2ea89560f9b7837930.jpg: score=-100;too_small:543x173
+Skip non-chart visual asset 74aa915095af06db15600bba43a594f287575c717d84ae0b16861db3e06abcf9.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：三星电机2Q26业绩点评-供应趋紧与AI需求支撑MLCC和FC -> 高盛：三星电机与AI、MLCC及季度数据观察
+Skip non-chart visual asset ac97a001aff046545e56418a396377f6c73fb48a9561b7c40a9042d805494596.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset 4ed6c96c73f4967870b4a84996d2064160a9bea20a13f5e57b4876ff3d27c162.jpg: score=2;edge:0.30
+Skip non-chart visual asset 633365411911f365f6a5fad868bb87a70e4078acfe5a4d26ceacd54f0842056d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 5427a84b109edc8adc24961656f142e9916a87789007b698a6a04f5e3352ef47.jpg: score=-100;too_small:704x79
+Skip non-chart visual asset ad3246bc66888b158e434399b64f937da6c755afa4d95b95124cc2c39fe858e1.jpg: score=0;square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset 59b0a56435c61b3507de98f76b6eed22d1aa1f550e18d9eb17018bfcb6e20a6d.jpg: score=-100;too_small:842x92
+Skip non-chart visual asset 93e2a48a767ed24652a8bd445ca50d8d36c9730dc99073e1497e235810a5dd4a.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：赛诺菲商业执行稳健-研发管线缺口压制估值 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 3529aff1755354ddec8e9efc82ee2b6467fd9afeda902240226354ffcbc2959a.jpg: score=-1;square_without_chart_hint,edge:0.32
+Skip non-chart visual asset 98ae2c8ab6438eb6060cc14251d483b8818c29ad39c96154796a6a143c623e24.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：三星SDI核心营业利润符合预期AI基础设施电池动能增强 -> 高盛：三星SDI核心营业与AI及近期数据观察
+Skip non-chart visual asset 633365411911f365f6a5fad868bb87a70e4078acfe5a4d26ceacd54f0842056d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset 5427a84b109edc8adc24961656f142e9916a87789007b698a6a04f5e3352ef47.jpg: score=-100;too_small:704x79
+Skip non-chart visual asset ad3246bc66888b158e434399b64f937da6c755afa4d95b95124cc2c39fe858e1.jpg: score=0;square_without_chart_hint,edge:0.40,large
+Skip non-chart visual asset 59b0a56435c61b3507de98f76b6eed22d1aa1f550e18d9eb17018bfcb6e20a6d.jpg: score=-100;too_small:842x92
+Skip non-chart visual asset 93e2a48a767ed24652a8bd445ca50d8d36c9730dc99073e1497e235810a5dd4a.jpg: score=-100;too_small:1159x109
+Neutralized WeChat title while keeping the report: 高盛：赛诺菲商业执行强劲-研发管线进展待验证 -> 高盛：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_8; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
