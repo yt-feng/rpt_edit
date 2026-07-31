@@ -1,0 +1,83 @@
+ZH_A: 今天我们聊一家在先进封装领域非常关键的公司，ASMPT。这份报告来自某外资投行，给出了明确增持评级，目标价225港元。但我更想知道的是，为什么在股价已经涨了这么多之后，他们依然认为故事才刚刚开始？
+
+ZH_B: 这是个好问题。报告的核心判断是，ASMPT的增长引擎正在从单一走向多元。过去市场只盯着它在内存TCB上的表现，但这份报告告诉我们，逻辑芯片的TCB、光电子，甚至传统业务，都在同时发力。这不是一次性的业绩超预期，而是一个结构性拐点。
+
+ZH_A: 结构性拐点这个词很重。那我们先把第一个问题拆开，这份报告真正要回答的问题是什么？
+
+ZH_B: 它要回答的是，ASMPT的这轮增长，到底是靠一两个大客户的订单撑起来的，还是一个可持续的、由技术趋势驱动的长期逻辑。报告想证明的是后者。比如，它提到在7月份，仅一个月就从领先的OSAT客户那里拿到了超过50台用于C2S的TCB设备。这个数字本身就说明，需求不是零星的，而是成规模的。
+
+ZH_A: 50台设备，这个量级确实能说明问题。那这里面第一个关键洞察是什么？
+
+ZH_B: 第一个洞察是，逻辑芯片的TCB正在成为新的增长主轴，而C2W，也就是芯片对晶圆键合，可能是下一个大的突破点。报告认为，随着AI加速器越来越多地采用基于SoIC的Chiplet封装，C2W这个环节会强制要求使用TCB，因为大尺寸封装需要用它来缓解翘曲。
+
+ZH_A: 所以这意味着，TCB不再是内存的专属工具，它在逻辑芯片的世界里找到了更大的舞台？
+
+ZH_B: 对。而且报告提到，AMD的MI450是第一个走向这个方向的产品，但真正的更大规模的迁移可能要等到2027年下半年，当SoIC的需求真正起来的时候。这意味着，从现在到那个时候，ASMPT在这个领域几乎是独占的。
+
+ZH_A: 那第二个洞察呢？内存TCB这块，之前不是一直有延迟的担忧吗？
+
+ZH_B: 是的，上半年内存TCB收入是同比下滑的，因为某个韩国大客户的HBM4相关出货推迟了。但报告认为，这个下滑在下半年就会扭转，因为HBM4的订单要开始出货了。更关键的是，JEDEC可能会放宽堆叠高度的标准，从现在的775微米放宽到900微米。
+
+ZH_A: 这个标准放宽，意味着什么？
+
+ZH_B: 这意味着TCB设备的使用寿命会被拉长。如果标准放宽，那从HBM4到HBM5，TCB可能都会被继续使用，而不是很快被淘汰。这对设备商来说，是延长了产品生命周期的好消息。但报告也留了个心眼，它提到有些公司可能还是会用8层的HBM4，而不是16层，这可能会限制对TCB设备的需求上限。这块还需要继续验证。
+
+ZH_A: 那第三个洞察，我猜是光电子？报告里说这是个新的增长驱动。
+
+ZH_B: 没错。光电子这块，上半年收入已经达到7500万美元，同比翻了三倍。现在主要靠可插拔光模块的800G和1.6T产品驱动。但报告更看重的是CPO，也就是共封装光学。ASMPT在这个领域已经和几家领先的CPO玩家在TCB、混合键合和超高精度光子学解决方案上有了接触。
+
+ZH_A: 所以这意味着，如果CPO真的成为主流，ASMPT的整个市场空间可能会翻两到三倍？
+
+ZH_B: 报告是这么判断的，在未来两到三年内，它的die-attach市场空间可能增长2到3倍。但这里的关键是，CPO的采用节奏现在还不完全确定，所以这也是报告里一个需要持续跟踪的悬念。
+
+ZH_A: 说到悬念，这份报告里还有哪些问题是它没有完全展开的？
+
+ZH_B: 有两个点值得注意。第一，关于SMT业务，报告提到公司还在探索战略选项，而且最近的订单积压改善应该能带来更高的退出估值。但具体是什么选项，是出售还是分拆，报告没有说死，这可能是未来一个很大的催化剂。第二，关于内存TCB的复苏节奏，虽然报告认为下半年会重启增长，但HBM4的出货具体能有多快，以及那个韩国大客户的时间表，报告也没有给出一个非常精确的答案。
+
+ZH_A: 所以这两个点，恰恰是读完这份报告之后，最值得继续深挖的地方？
+
+ZH_B: 对。如果你想了解ASMPT的完整投资逻辑，特别是关于SMT战略选项和内存TCB复苏节奏的更多细节，那完整的报告里会有更深入的讨论。这期我们就先聊到这里。
+
+ZH_A: 好的，那我们下期再见。
+
+EN_A: So today we are looking at ASMPT, a name that keeps coming up in advanced packaging. A global investment bank just put out a report with an Overweight rating and a target price of 225 Hong Kong dollars. But what I want to know is, after the stock has already run up so much, why do they still think the story is just getting started?
+
+EN_B: That is the right question. The core argument here is that ASMPT is moving from a single growth engine to multiple ones. The market has been fixated on its memory TCB business, but this report says logic TCB, photonics, and even the legacy business are all firing at the same time. This is not just a one quarter beat, it is a structural shift.
+
+EN_A: Structural shift is a strong phrase. So let us start with the first question. What is this report really trying to answer?
+
+EN_B: It is trying to answer whether this growth is driven by a couple of big customers or by a sustainable technology trend. The report wants to prove the latter. For example, it points out that in July alone, ASMPT received more than 50 TCB tools for C2S from leading OSAT customers. That number alone tells you the demand is not sporadic, it is scaling.
+
+EN_A: 50 tools in one month, that does sound like real scale. So what is the first key insight here?
+
+EN_B: The first insight is that logic TCB is becoming the new growth engine, and C2W, which is chip on wafer bonding, could be the next big breakthrough. The report argues that as AI accelerators move to SoIC based Chiplet packaging, the C2W step will require TCB because of warpage control on large package sizes.
+
+EN_A: So this means TCB is no longer just a memory tool, it is finding a bigger stage in the logic world?
+
+EN_B: Exactly. And the report mentions that AMD MI450 is the first product moving in that direction, but a bigger migration could happen in the second half of 2027 when SoIC demand picks up. That means until then, ASMPT is almost the only player in this space.
+
+EN_A: And what about memory TCB? There was a lot of concern about delays there.
+
+EN_B: Right, first half memory TCB revenue was down year over year because a major Korean customer delayed HBM4 shipments. But the report argues that reverses in the second half because HBM4 orders will start shipping. More importantly, JEDEC might relax the stacking height standard from 775 microns to 900 microns.
+
+EN_A: What does that standard change actually mean?
+
+EN_B: It means the TCB tool lifecycle gets extended. If the standard relaxes, TCB could be used from HBM4 all the way to HBM5, instead of being phased out quickly. That is a positive for the equipment maker. But the report is also cautious, it notes some companies might still use 8 high HBM4 instead of 16 high, which could limit the upside for TCB demand. That is still something to verify.
+
+EN_A: And the third insight, I am guessing photonics? The report calls it a new growth driver.
+
+EN_B: Yes. Photonics revenue hit 75 million US dollars in the first half, tripling year over year. Right now it is driven by pluggable optical transceivers at 800G and 1.6T. But the report is more excited about CPO, co-packaged optics. ASMPT has already engaged with several leading CPO players on TCB, hybrid bonding, and ultra precision photonics solutions.
+
+EN_A: So this means if CPO really takes off, ASMPT's total addressable market could double or even triple?
+
+EN_B: That is the report's view, the die attach TAM could grow two to three times in the next two to three years. But the adoption pace of CPO is still uncertain, so that is one of the things we need to keep watching.
+
+EN_A: Speaking of uncertainties, what are the questions this report does not fully answer?
+
+EN_B: Two things stand out. First, the SMT business. The report says the company is still exploring strategic options and the recent improvement in backlog should imply a higher exit valuation. But what exactly those options are, a sale or a spin off, is not spelled out. That could be a big catalyst down the road. Second, on the memory TCB recovery, the report believes it restarts in the second half, but the exact pace of HBM4 shipments and the timeline from that Korean customer are not fully detailed.
+
+EN_A: So those are exactly the points that make the full report worth reading?
+
+EN_B: Absolutely. If you want the complete investment thesis, especially on the SMT strategic options and the memory TCB recovery details, the full report goes much deeper. That is all for today.
+
+EN_A: Thanks for breaking it down. See you next time.

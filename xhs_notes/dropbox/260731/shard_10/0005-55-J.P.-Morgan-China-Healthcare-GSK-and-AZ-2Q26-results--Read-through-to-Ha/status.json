@@ -1,0 +1,91 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0005-55-JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "跨国药企押注中国AD",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：中国医疗健康GSK与阿斯利康2026年二季度业绩及翰森、恒瑞",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-55-JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729.pdf",
+    "cleaned_source_title": "JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：中国HealthcareGSK和AZ2Q26results",
+    "raw_candidates": [
+      "JPM：中国医疗健康GSK与阿斯利康2026年二季度业绩及翰森、恒瑞、科伦博泰影响",
+      "JPM：GSK与阿斯利康2026年二季度业绩披露中国ADC与抗体资产III期进展",
+      "JPM：GSK与阿斯利康2026年二季度业绩及翰森、恒瑞、科伦博泰管线推进"
+    ],
+    "cleaned_candidates": [
+      "JPM：中国医疗健康GSK与阿斯利康2026年二季度业绩及翰森、恒瑞",
+      "JPM：GSK与阿斯利康2026年二季度业绩披露中国ADC与抗体资产",
+      "JPM：GSK与阿斯利康2026年二季度业绩及翰森、恒瑞、科伦博泰管",
+      "JPM：中国HealthcareGSK和AZ2Q26results",
+      "JPM：JPM预计，到2028年GSK可能同时运行6项Ris"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：GSK与阿斯利康2026年二季度业绩披露中国ADC与抗体资产",
+        "reasons": [
+          "anchor_coverage=0.64"
+        ]
+      },
+      {
+        "title": "JPM：中国HealthcareGSK和AZ2Q26results",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：JPM预计，到2028年GSK可能同时运行6项Ris",
+        "reasons": [
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：中国医疗健康GSK与阿斯利康2026年二季度业绩及翰森、恒瑞",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "JPM：中国医疗健康GSK与阿斯利康2026年二季度业绩及翰森、恒瑞"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "667",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

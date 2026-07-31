@@ -1,0 +1,1475 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:买入评级->报告评级 x2",
+      "after_deepseek:收益率->回报表现 x3",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "189",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/note.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "贷款",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x2",
+      "after_deepseek:翻倍->弹性较高 x2",
+      "after_deepseek:收益率->回报表现 x6",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0001-51-Goldman-Sachs-Yum-China-Holdings--YUMC.US--Earnings-Review--Resilience-a/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "绝对->相对 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "电话",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "贷款",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "收购",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/note.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1",
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:唯一->相对少见 x1",
+      "after_deepseek:投资->研究 x4"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "eve",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0002-52-J.P.-Morgan-ASMPT-Ltd-0522.HK-ASMPT--Strong-operating-leverage--TCB-cont/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "翻倍->弹性较高 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "运营",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "限制",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "调整",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资机会->研究线索 x1",
+      "after_deepseek:投资者->读者 x10",
+      "after_deepseek:收益率->回报表现 x1",
+      "after_deepseek:投资->研究 x10"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/note.md",
+    "changed": true,
+    "local_changes": [
+      "投资->研究 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "绝对->相对 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资机会->研究线索 x1",
+      "after_deepseek:投资者->读者 x4",
+      "after_deepseek:收益率->回报表现 x2",
+      "after_deepseek:绝对->相对 x2",
+      "after_deepseek:投资->研究 x7"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "投资者->读者 x1",
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "转化",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0003-53-J.P.-Morgan-Asia-Insurance-Summer-Series--Leverage-in-insurance--attract/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x1",
+      "投资->研究 x3",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "监管",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "表现",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资者->读者 x2",
+      "after_deepseek:收益率->回报表现 x4",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/note.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x2",
+      "绝对->相对 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "64",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "最强->较强 x1",
+      "绝对->相对 x3",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x14",
+      "after_deepseek:收益率->回报表现 x5",
+      "after_deepseek:绝对->相对 x6",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "eve",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "表现",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0004-54-J.P.-Morgan-Asia-Pacific-Equity-Derivatives-Strategy-Japan-Thematic-Rota/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x1",
+      "唯一->相对少见 x1",
+      "投资->研究 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "表现",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "买",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "复制",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "BC",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "market",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "乳腺",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "乳腺",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资逻辑->研究逻辑 x1",
+      "after_deepseek:顶级->高质量 x2",
+      "after_deepseek:最强->较强 x2",
+      "after_deepseek:投资->研究 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "eve",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "Test",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "au",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "准备",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260731/shard_10/0005-55-J.P.-Morgan-China-Healthcare-GSK-and-AZ-2Q26-results--Read-through-to-Ha/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "买",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "色",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "买",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "表现",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  }
+]

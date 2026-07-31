@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0001-51-GS-Yum China Holdings -YUMC.US- Earnings Review- Resilience amid tough macro- New initiatives progress encouraging- Buy -on CL--260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0002-52-JPM-ASMPT Ltd-0522.HK-ASMPT- Strong operating leverage- TCB continues to grow- and Photonics becoming a new driver- Stay OW-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0003-53-JPM-Asia Insurance Summer Series- Leverage in insurance- attractive ROE- but no free lunch-260729.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0004-54-JPM-Asia Pacific Equity Derivatives Strategy-Japan Thematic Rotation Trades Amid Yen Reversal Risk- Diversify into Korea Buybacks Amid AI Momentum Unwind-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0hpa02tg/pdfs/0005-55-JPM-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

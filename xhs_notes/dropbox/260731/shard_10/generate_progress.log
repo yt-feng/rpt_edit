@@ -1,0 +1,64 @@
+Found 92 total PDFs; shard 10/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0hpa02tg/pdfs/0001-51-Goldman Sachs-Yum China Holdings -YUMC.US- Earnings Review- Resilience amid tough macro- New initiatives progress encouraging- Buy -on CL--260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0hpa02tg/pdfs/0002-52-J.P. Morgan-ASMPT Ltd-0522.HK-ASMPT- Strong operating leverage- TCB continues to grow- and Photonics becoming a new driver- Stay OW-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0hpa02tg/pdfs/0003-53-J.P. Morgan-Asia Insurance Summer Series- Leverage in insurance- attractive ROE- but no free lunch-260729.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0hpa02tg/pdfs/0004-54-J.P. Morgan-Asia Pacific Equity Derivatives Strategy-Japan Thematic Rotation Trades Amid Yen Reversal Risk- Diversify into Korea Buybacks Amid AI Momentum Unwind-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0hpa02tg/pdfs/0005-55-J.P. Morgan-China Healthcare GSK and AZ 2Q26 results- Read-through to Hansoh- Hengrui and Kelun Biotech-260729.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=255607cc-975e-412c-91bb-7515894210ad
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, running, running, done
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset dff2a8408ce8b5034f7426bab1545cb5cc8f443023b649cb141c5305ce5659e4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset 3313ca42e46da2641bfb0b3bcc11080b1e5421605260ba66389809c98c41546f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset f2abf869d6317c2c3e04400146fa76f1aed705012d8cda5d5b58421f62c0eb6f.jpg: score=0;square_without_chart_hint,edge:0.42,large
+Skip non-chart visual asset 2aa93907cd5ca0759e0294e335fb6a0924de4bc08f8ead1d5894ff51c4db2081.jpg: score=-100;too_small:1162x115
+Skip non-chart visual asset 811d85db342cb038f9d0525d440ad0c271b4bc2801d4b31e5df052067f6d9179.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 63d71b7b1d734666440eccb63e5fca4758794bed14072ecabdcebd8d38b8cd0e.jpg: score=-100;too_small:109x109
+Skip non-chart visual asset 7860d6343a264efa1d4b1305f99529813547e40cab2377ff8219c343a7a69ea0.jpg: score=-100;too_small:837x92
+Neutralized WeChat title while keeping the report: 高盛：百胜中国业绩回顾-宏观环境波动下新业态进展积极 -> 高盛：百胜中国业务与近期数据观察
+Skip non-chart visual asset a348b8044b94b7f90dac13eec77f57916f25a1da80c86be17b75275004fd787a.jpg: score=1;chart_ratio
+Skip non-chart visual asset 50972eef38de2f8ac4a0c81edd1e4175f70431ff0be013b994b565b74768e244.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
+Skip non-chart visual asset 405ee36536aa6f79558d940bfa9630961e00a89448672e750b51edf8a0d1fe60.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 70c8e75207ff7c01764b60ecc7dcf0d2958d4b3cb7cdf932222838f6ea4d1065.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset d1990ede0c4bb54cdc8eb662aaae416cb7dbb3cdbfd8207fe78aab135fe893dd.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset bd19c051fdb0a7ea161571648478f7e45f56779601d43a595c7c6a9e360c1bed.jpg: score=-100;too_small:451x182
+Skip non-chart visual asset b96e04486eaff086ca35c88527c3ba3f717255657c3bf8083190060bf80de036.jpg: score=-100;too_small:451x121
+Skip non-chart visual asset 2f4fec9a837f150c8b793e99c028bd96f0453a17f20c08d581c59c1539172447.jpg: score=-100;too_small:982x168
+Neutralized WeChat title while keeping the report: 摩根大通：ASMPT经营杠杆与TCB增长及光电子新驱动 -> 摩根大通：资金结构与相关数据观察
+Skip non-chart visual asset c8209ec90f0c5e79345205278f2d8f3e6030075615bb0c9b75a9bdd39504d37e.jpg: score=-100;too_small:982x170
+Skip non-chart visual asset b7f2115b7899a9ffcfecdf7a5fc84cd484f2148787f0c120bccbfa5a2d9aabe7.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.32
+Skip non-chart visual asset 18f1969aeffe16a81be921af9b948aa3bf863db28c9790562775f50d55114e27.jpg: score=-100;too_small:982x112
+Skip non-chart visual asset 6c0b3c4bdb5f7437d6468c179637634ae292a79d25b4fbcdd7d8d17ee5ef0761.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset ceb503afe96c8f9f0e59ce69fa023ef0707ed8b57b67625848d345139df6b75c.jpg: score=-100;too_small:1457x176
+Skip non-chart visual asset 763156a82b18f84e31c54b3923a6ef0447a3fb738c47efe8726c46e7d4cd6f85.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 2c2d97c2b2088d39dbf71ce09ee9018b45eae706ec423afa22fca7847afd0600.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 76ac308dd8e944a3dd01473943dad4e912706000f79add45048be1200138b92f.jpg: score=0;square_without_chart_hint,edge:0.27,large
+Neutralized WeChat title while keeping the report: 摩根大通：亚洲保险夏季系列-保险杠杆与ROE观察 -> 摩根大通：资金结构与相关数据观察
+Skip non-chart visual asset faab7c0de3c5c642fc8dab78704a77049fd40661bae7c7a8e801c986ccad6f35.jpg: score=0;square_without_chart_hint,edge:0.47,large
+Skip non-chart visual asset 9013e084cfb593bffb1aa4410905db58b11561659661fbd80e56c7f754ad6939.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset f47c42001ff8044f4343c1d1e9f90e37a17774a59a41e6082f879625d29859f7.jpg: score=-100;too_small:171x79
+Skip non-chart visual asset c5ffffc061ef31fa51fbaeb391a2285a34d251843449bfd4784ae0e11016b3ed.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.50,large
+Skip non-chart visual asset 239ca6dc2ee895eb386c966c91a07b969d69f6f9a890fc27210d7fd55f074ffb.jpg: score=-100;too_small:546x182
+Skip non-chart visual asset 1e3bf85fd994cc72bc11f2a66d5d39d67029e9e5c589a74ccb49bbe01e7e4287.jpg: score=-100;too_small:203x76
+Skip non-chart visual asset 7c6a6fc98ba3f080e5f60444b2961ead42e8ffb1bbf58da4475afbca4fee2515.jpg: score=-100;too_small:515x34
+Skip non-chart visual asset cf26f60621a810b16c03bd2c6fa0f7ed0e02a3bc5457e04af97dd29b03a75abc.jpg: score=-100;too_small:206x34
+Skip non-chart visual asset 22e1ceda71c9c474146640b5caaead3ef56692bd38b9e230ebb812cb038654e3.jpg: score=-100;too_small:554x68
+Skip non-chart visual asset 7e3176ae7e066a85e64e6c7f3d1e451df64669614b5e9fe5ec1256626d0c6739.jpg: score=-100;too_small:401x62
+Skip non-chart visual asset 784dc5139aa4b2825de5fdf24968eadd4cebc50b879bce2163c4f14bd6e41466.jpg: score=1;chart_ratio
+Skip non-chart visual asset 67b1490bdb101d8acd22c66f28e3a7fab42a0f2c33c59b9e2db0dd1e0b6432f7.jpg: score=-100;too_small:549x179
+Skip non-chart visual asset f4405d11bd0173994630ac1b7e6b2adbaf2ed06f0c8130dc0cd49688b76d315a.jpg: score=-100;too_small:982x165
+Skip non-chart visual asset 8f93a29c5dbd13e69222d787191625962b4c31b10765f48ac7aadf2cbda7f7b5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset b73a09921ec51a79894e964a7c7b6d44cbca931652c785728751df800e72f2e9.jpg: score=0;square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset f232f338151154e1cd5476a5282fbb75e6f9e3cadc7166c1711d20ce65d6d06e.jpg: score=-100;too_small:542x134
+Skip non-chart visual asset b50d339bad0e5ac45aabd994da3619d7f7c5d6e5e9ada39d1c0f4f19eeb8f1d8.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset dec0e2d815833774ea492b5ef483e0a03d35116d214d593363811d05320925f6.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 63660ebfe4b0d1556a75abdffcdc3eb6486c252f4330fdc73c4d93413fa0c6a9.jpg: score=-100;too_small:542x165
+Skip non-chart visual asset 31811ec09a5099677f257e6899abe69ff0f651d989b08b6490706ba04a7e1855.jpg: score=-100;too_small:982x168
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260731/shard_10; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
