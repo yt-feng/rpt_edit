@@ -44,7 +44,7 @@ cleanup_artifact_dir() {
 artifact_rows() {
   gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
     --jq '.artifacts[] | select((.expired | not) and (.name | startswith("market-views-pdf-"))) | [.id, .workflow_run.id, .name, .created_at] | @tsv' \
-    | sort -t $'\t' -k4,4 -k1,1n
+    | sort -t $'\t' -k4,4r -k1,1nr
 }
 
 artifact_count=0
@@ -71,7 +71,8 @@ while IFS=$'\t' read -r artifact_id run_id artifact_name created_at; do
     fi
     python scripts/upload_market_view_to_r2.py \
       --date "$date_folder" \
-      --pdf "$pdf_path"
+      --pdf "$pdf_path" \
+      --if-absent
     artifact_pdf_count=$((artifact_pdf_count + 1))
     pdf_count=$((pdf_count + 1))
   done < <(find "$artifact_dir" -type f -name 'market_views_*.pdf' -print0 | sort -z)

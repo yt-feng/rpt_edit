@@ -82,6 +82,21 @@ def _utc_timestamp(value: str | None = None) -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def r2_object_exists(client: Any, bucket: str, key: str) -> tuple[bool, dict[str, Any]]:
+    try:
+        return True, dict(client.head_object(Bucket=bucket, Key=key) or {})
+    except (FileNotFoundError, KeyError):
+        return False, {}
+    except Exception as exc:
+        response = getattr(exc, "response", {})
+        error = response.get("Error", {}) if isinstance(response, dict) else {}
+        status = response.get("ResponseMetadata", {}).get("HTTPStatusCode") if isinstance(response, dict) else None
+        code = str(error.get("Code") or "")
+        if status == 404 or code in {"404", "NoSuchKey", "NotFound"}:
+            return False, {}
+        raise
+
+
 def upload_market_view(
     pdf_path: Path | str,
     date_value: str,
@@ -89,13 +104,11 @@ def upload_market_view(
     client: Any | None = None,
     bucket: str | None = None,
     updated_at: str | None = None,
+    if_absent: bool = False,
 ) -> dict[str, Any]:
     """Upload and verify the PDF, then publish its metadata item."""
     issue_date, date_key = parse_issue_date(date_value)
     path = Path(pdf_path).expanduser()
-    data = read_valid_pdf(path)
-    size_bytes = len(data)
-    sha256 = hashlib.sha256(data).hexdigest()
     resolved_bucket = (bucket or os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET).strip()
     if not resolved_bucket:
         raise RuntimeError("R2 bucket name is empty")
@@ -104,6 +117,25 @@ def upload_market_view(
     pdf_key = f"{MARKET_VIEWS_PREFIX}/pdfs/{date_key}.pdf"
     item_key = f"{MARKET_VIEWS_PREFIX}/items/{date_key}.json"
     filename = f"market_views_{date_key}.pdf"
+    if if_absent:
+        pdf_exists, pdf_head = r2_object_exists(resolved_client, resolved_bucket, pdf_key)
+        item_exists, _item_head = r2_object_exists(resolved_client, resolved_bucket, item_key)
+        if pdf_exists and item_exists:
+            return {
+                "schema_version": 1,
+                "id": f"market-view:{date_key}",
+                "date_key": date_key,
+                "date": issue_date.isoformat(),
+                "title": f"Market Views · {issue_date.isoformat()}",
+                "filename": filename,
+                "pdf_key": pdf_key,
+                "size_bytes": int(pdf_head.get("ContentLength") or 0),
+                "skipped_existing": True,
+            }
+
+    data = read_valid_pdf(path)
+    size_bytes = len(data)
+    sha256 = hashlib.sha256(data).hexdigest()
     timestamp = _utc_timestamp(updated_at)
 
     resolved_client.put_object(
@@ -173,6 +205,11 @@ def main() -> int:
     parser.add_argument("--date", required=True, help="Issue date in YYMMDD or YYYYMMDD form.")
     parser.add_argument("--pdf", required=True, help="Path to market_views_<date>.pdf.")
     parser.add_argument("--bucket", default="", help="Optional R2 bucket override.")
+    parser.add_argument(
+        "--if-absent",
+        action="store_true",
+        help="Keep an already verified private PDF+metadata pair instead of overwriting it.",
+    )
     args = parser.parse_args()
 
     try:
@@ -180,13 +217,14 @@ def main() -> int:
             args.pdf,
             args.date,
             bucket=args.bucket or None,
+            if_absent=args.if_absent,
         )
     except (FileNotFoundError, RuntimeError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc
 
+    action = "Kept existing private" if item.get("skipped_existing") else "Archived"
     print(
-        "Archived "
-        f"{item['filename']} ({item['size_bytes']} bytes) -> "
+        f"{action} {item['filename']} ({item['size_bytes']} bytes) -> "
         f"{item['pdf_key']} + {MARKET_VIEWS_PREFIX}/items/{item['date_key']}.json"
     )
     return 0

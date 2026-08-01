@@ -78,6 +78,34 @@ class PdfValidationTests(unittest.TestCase):
 
 
 class UploadTests(unittest.TestCase):
+    def test_if_absent_keeps_an_existing_private_pdf_and_item(self):
+        with tempfile.TemporaryDirectory() as directory:
+            pdf_path = write_pdf(directory)
+            client = FakeR2Client()
+            client.objects["_market-views/pdfs/260802.pdf"] = {
+                "Body": b"%PDF-existing",
+                "ContentType": "application/pdf",
+                "Metadata": {},
+            }
+            client.objects["_market-views/items/260802.json"] = {
+                "Body": b"{}",
+                "ContentType": "application/json; charset=utf-8",
+                "Metadata": {},
+            }
+            item = uploader.upload_market_view(
+                pdf_path,
+                "260802",
+                client=client,
+                bucket="test-bucket",
+                if_absent=True,
+            )
+
+        self.assertTrue(item["skipped_existing"])
+        self.assertEqual(
+            client.calls,
+            [("head", "_market-views/pdfs/260802.pdf"), ("head", "_market-views/items/260802.json")],
+        )
+
     def test_uploads_pdf_verifies_head_then_publishes_metadata(self):
         with tempfile.TemporaryDirectory() as directory:
             pdf_path = write_pdf(directory)
