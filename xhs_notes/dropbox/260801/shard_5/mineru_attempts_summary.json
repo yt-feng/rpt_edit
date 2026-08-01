@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_5qa2il1a/pdfs/0001-26-GS-Tyler Technologies Inc. -TYL.US-2Q26- Cloud trendline likely continues to move higher- with AI contributing in the next 2 years-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5qa2il1a/pdfs/0002-27-GS-TDK -6762.T- 1Q above expectations- Very positive- with results outlook trending up in all segments- raise TP- reiterate Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5qa2il1a/pdfs/0003-28-JPM-Electronic Components Sector -MLCC eXchange- June 2026 trade data- will this be a summer of price hikes--260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5qa2il1a/pdfs/0004-29-JPM-China Insurance 1H26 Preview- Dividend surprise could reset the trade- Ping An-H top pick-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_5qa2il1a/pdfs/0005-30-JPM-Asian Tech-QCOM and ARM earnings takeaways-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
