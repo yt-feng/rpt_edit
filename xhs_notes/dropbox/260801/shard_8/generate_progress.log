@@ -1,0 +1,56 @@
+Found 50 total PDFs; shard 8/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rzw83q_o/pdfs/0001-41-Morgan Stanley-Equinix Inc.-EQIX.US-2Q26- Investing for Growth - Reiterate OW and Top Pick-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rzw83q_o/pdfs/0002-42-Morgan Stanley-Greater China Materials-China Steel and Iron Ore Weekly Update-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rzw83q_o/pdfs/0003-43-Morgan Stanley-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rzw83q_o/pdfs/0004-44-Morgan Stanley-Ping An Insurance Group Co of China Ltd-2318.HK-1H26 Preview- Continued Solid Momentum while VNB Growth a Key to Track-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rzw83q_o/pdfs/0005-45-Morgan Stanley-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730.pdf
+MinerU attempt 1 using MINER_U batch_id=4378095e-9ad8-4717-b7a5-120ed47a07b0
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 83b7b5acacc1f648d5888548f8e3d29145091b0274aec7d5b6e25009674255a9.jpg: score=2;edge:0.19
+Skip non-chart visual asset d08da564c98a6e282a6bc88d610c18e25c2bdfc66993dc6f0cf19179e623fc3f.jpg: score=-100;too_small:65x43
+Skip non-chart visual asset 3222c9cb0e79209b8759ab472509cfd03b1990bdbdcb94ba3fc8580390298504.jpg: score=-100;too_small:315x487
+Skip non-chart visual asset 29756602fb76a897d37981797101f88cf414ad9013b52c451203bfd9bb3a38bf.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.45,contrast,large
+Skip non-chart visual asset a95c3c9bbae858331e3dcffd3bc7b07fdc437a2c1a585fbd74402c381aa3cf7b.jpg: score=-100;too_small:512x112
+Skip non-chart visual asset 1c8918368abe6a61c9f4fe8ea5bcf324557abbc7e58e7aae3bd9c5f1c5436983.jpg: score=-100;too_small:529x173
+Skip non-chart visual asset 019673df66bfd9774401565bb55e67aa22086cec78eb164a4e90ec0d1891c7be.jpg: score=-100;too_small:529x151
+Skip non-chart visual asset 5cad377c5505bfd303bfaa55a09bbfcb12156024512f91ef7cd10d8b1a0e1a7d.jpg: score=-100;too_small:312x487
+Skip non-chart visual asset 04faf8f7cf31f9383fdb08cf327d9c640eb8f32271a8bc86e984b3173f69e564.jpg: score=-100;too_small:453x73
+Skip non-chart visual asset 899e1b311f61832c50a3b599e65a46518bb285a88ed3a7f413ef5524477e4d28.jpg: score=-100;too_small:379x118
+Skip non-chart visual asset 86c689d312530fa3192551aeaee0308bf63874c22d691954125c78c88a228181.jpg: score=-100;too_small:122x126
+Skip non-chart visual asset ce7b198d1358fb6214cd058747054347214588aa5e4394810cb677606ebf04eb.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 4f983a97ecf429d7aea1b0fedc54d2502e36d92ff78f5679ac77145f23662b91.jpg: score=-100;too_small:437x109
+Skip non-chart visual asset 150c4ff68336b44f13bd243d834a779fe5163ec556d24f6a4f1492687d13ac5b.jpg: score=-100;too_small:449x165
+Skip non-chart visual asset 8ae4a63619dfe0d45a153c424fa8f23e258d4ff5fe7839bc9df9f3fe277cd97e.jpg: score=-100;too_small:901x82
+Skip non-chart visual asset b47078b584d2e450e6c40cf5f4a0b4e281168281d415ee0dcba7568b1a8ef6b0.jpg: score=-100;too_small:457x162
+Skip non-chart visual asset 9baf95b64917a76bf3be18b14620f9def262eb08d47df8d67498739f5cbfa3c6.jpg: score=1;large
+Skip non-chart visual asset 80c586731e315beefc0f3516855bf989b0781f10d3cb60eb76d9ed7eac19c3f4.jpg: score=-100;too_small:417x176
+Skip non-chart visual asset 1127a8ade550a2badbdccd9636b1c7a2d533fdd8e4362e640d31b849a5985485.jpg: score=-100;too_small:529x154
+Neutralized WeChat title while keeping the report: 摩根士丹利：Equinix2026年第二季度研究增长与超配首选 -> 摩根士丹利：Equinix业务与季度数据观察
+Skip non-chart visual asset 3d3d629725d1bcf1d9e6d2c72b6f90b49196d266bd34574513ed54f73de0a8cd.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 479c345c55a472b7fe8d5f03225f08b17714c3f0c57c0a7b61403fe47ddf07d0.jpg: score=0;square_without_chart_hint,edge:0.29,large
+Skip non-chart visual asset a9e6b05e8faa7a723b57feac91a06345729ce386175ee261c5d0009f4912d08c.jpg: score=1;large
+Skip non-chart visual asset 95cfb728188d794167704676f351cfc7f4577bd705fd2482715844265553636f.jpg: score=-100;too_small:523x89
+Skip non-chart visual asset 1e3e8928629bc807318478b44d5400b9403a8aa4e254875719b1bb828975d720.jpg: score=-100;too_small:515x134
+Skip non-chart visual asset 77145171e9e7838b3c9599c7454ce3630752a14d1a44ae82ac7435bc1be5ed04.jpg: score=-100;too_small:521x137
+Skip non-chart visual asset 74bd0d86125aa1666134971ea8d549230de926360187580fb4ee9884b6e9df16.jpg: score=1;large
+Skip non-chart visual asset 94397d8d193d4aeed23876ce6cb088439de3aa93ca51e60bb2e3fc057f36f7bc.jpg: score=0;square_without_chart_hint,edge:0.13,large
+Skip non-chart visual asset 8259cc54373422278d2f2cab302b77c5834524997e71413cb51ce00dc0f52cf9.jpg: score=1;large
+Skip non-chart visual asset 5a4d3220c04795d8472a68a0661ed7c68e091915fa07339d3bee84e785287fbe.jpg: score=-100;too_small:518x137
+Skip non-chart visual asset 46625fcceb5d59fa00a4b286c10c1027296230852a5f689ad4168c270815913d.jpg: score=1;large
+Skip non-chart visual asset 6e040c6a5e8190729caa8bf33be80a3221645fa32a253686c82b3844d67572ad.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 397f36926d9aefd6c040ac11df973db68a3cc4f9bc67796faf4d9c3851e6a9d9.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset de0ab4235599d57410d274cb506b4c8672d513e8963c9fced16ced907a1ffe0a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset 5b22b74eb201ccf84cb235edcd6ad4c3ffa85410d4a0bf521ec7aa674f1c3473.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.23
+Skip non-chart visual asset 7447135a0927c523e0fc807d444d9f621ba956bbe46a20292b9a3aebc0ee8b6c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset e83ff7cc9e0bc64990e0d13b608727a3b984819cdadb4c84ccffefed21f9c880.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset 66b941001083976674a8ef26713eef210840546a7f318e58b91418cd8364c1ea.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,contrast
+Neutralized WeChat title while keeping the report: 摩根士丹利：7月FOMC按兵不动，主席对加息门槛表态高于市场预期 -> 摩根士丹利：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_8; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

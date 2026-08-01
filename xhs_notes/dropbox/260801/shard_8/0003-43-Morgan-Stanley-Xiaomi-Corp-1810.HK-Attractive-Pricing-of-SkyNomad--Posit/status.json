@@ -1,0 +1,94 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0003-43-MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "MS",
+  "cover_short_title": "小米新品牌定价意外能",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "风险->不确定性 x3",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "下行|放缓->节奏变化 x1",
+    "仍在调整影响->仍在调整，并影响 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-43-MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf",
+    "cleaned_source_title": "MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook",
+    "institution_name": "MS",
+    "required_terms": [],
+    "deterministic_fallback": "MS：XiaomiCorpAttractiveP",
+    "raw_candidates": [
+      "MS：小米SkyNomad定价与增程SUV市场定位",
+      "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+      "MS：小米SkyNomad定价与增程SUV市场定位及产品线覆盖"
+    ],
+    "cleaned_candidates": [
+      "MS：小米SkyNomad定价与增程SUV市场定位",
+      "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+      "MS：小米SkyNomad定价与增程SUV市场定位及产品线覆盖",
+      "MS：XiaomiCorpAttractiveP",
+      "MS：7月30日，小米在北京举行SkyNomad技术发布会"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "MS：XiaomiCorpAttractiveP",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "MS：7月30日，小米在北京举行SkyNomad技术发布会",
+        "reasons": [
+          "anchor_coverage=0.38"
+        ]
+      }
+    ],
+    "selected_title": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "29.99"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "632",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

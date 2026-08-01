@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0001-41-MS-Equinix Inc.-EQIX.US-2Q26- Investing for Growth - Reiterate OW and Top Pick-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0003-43-MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0004-44-MS-Ping An Insurance Group Co of China Ltd-2318.HK-1H26 Preview- Continued Solid Momentum while VNB Growth a Key to Track-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0005-45-MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

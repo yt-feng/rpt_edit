@@ -1,0 +1,511 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0001-41-MS-Equinix Inc.-EQIX.US-2Q26- Investing for Growth - Reiterate OW and Top Pick-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "数据中心巨头交了一份",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：Equinix业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-41-MS-Equinix Inc.-EQIX.US-2Q26- Investing for Growth - Reiterate OW and Top Pick-260730.pdf",
+      "cleaned_source_title": "MS-Equinix Inc.-EQIX.US-2Q26- Investing for Growth - Reiterate OW and Top Pick",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：EquinixInc.-2Q26",
+      "raw_candidates": [
+        "Equinix 2026年第二季度投资增长与超配首选",
+        "Equinix 2026年第二季度资本开支上调至50至70亿美元",
+        "Equinix 2026年第二季度AI推理负载与互联网络扩张"
+      ],
+      "cleaned_candidates": [
+        "MS：Equinix2026年第二季度研究增长与超配首选",
+        "MS：Equinix2026年第二季度资本开支上调至50至70亿",
+        "MS：Equinix2026年第二季度AI推理负载与互联网络扩张",
+        "MS：EquinixInc.-2Q26",
+        "MS：Equinix上调资本开支指引至每年50至70亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Equinix2026年第二季度资本开支上调至50至70亿",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：Equinix2026年第二季度AI推理负载与互联网络扩张",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "MS：EquinixInc.-2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：Equinix上调资本开支指引至每年50至70亿美元",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：Equinix业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：Equinix2026年第二季度研究增长与超配首选",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：Equinix业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "钢材需求分化，铁矿发",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "衰退|萎缩|收缩->调整 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国钢材与铁矿石周度更新",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260730.pdf",
+      "cleaned_source_title": "MS-Greater China Materials-China Steel and Iron Ore Weekly Update",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：Greater中国Materials中国Steel",
+      "raw_candidates": [
+        "MS：中国钢材与铁矿石周度更新",
+        "MS：中国钢材与铁矿石周度数据-长材消费回升1.2%",
+        "MS：中国钢材与铁矿石周度更新-长材板材消费分化"
+      ],
+      "cleaned_candidates": [
+        "MS：中国钢材与铁矿石周度更新",
+        "MS：中国钢材与铁矿石周度数据-长材消费回升1.2%",
+        "MS：中国钢材与铁矿石周度更新-长材板材消费分化",
+        "MS：Greater中国Materials中国Steel",
+        "MS：247家样本钢厂产能利用率回落0.6个百分点至89.2%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：Greater中国Materials中国Steel",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.11",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：247家样本钢厂产能利用率回落0.6个百分点至89.2%",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国钢材与铁矿石周度更新",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国钢材与铁矿石周度更新"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0003-43-MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "小米新品牌定价意外能",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "风险->不确定性 x3",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "仍在调整影响->仍在调整，并影响 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-43-MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook-260730.pdf",
+      "cleaned_source_title": "MS-Xiaomi Corp-1810.HK-Attractive Pricing of SkyNomad- Positive Volume Outlook",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：XiaomiCorpAttractiveP",
+      "raw_candidates": [
+        "MS：小米SkyNomad定价与增程SUV市场定位",
+        "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+        "MS：小米SkyNomad定价与增程SUV市场定位及产品线覆盖"
+      ],
+      "cleaned_candidates": [
+        "MS：小米SkyNomad定价与增程SUV市场定位",
+        "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+        "MS：小米SkyNomad定价与增程SUV市场定位及产品线覆盖",
+        "MS：XiaomiCorpAttractiveP",
+        "MS：7月30日，小米在北京举行SkyNomad技术发布会"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：XiaomiCorpAttractiveP",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：7月30日，小米在北京举行SkyNomad技术发布会",
+          "reasons": [
+            "anchor_coverage=0.38"
+          ]
+        }
+      ],
+      "selected_title": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "29.99"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：小米SkyNomad定价29.99万起与增程SUV市场定位"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0004-44-MS-Ping An Insurance Group Co of China Ltd-2318.HK-1H26 Preview- Continued Solid Momentum while VNB Growth a Key to Track-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "平安中报前瞻：利润超",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "证券->标的 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "减持->观点偏谨慎 x1",
+      "风险->不确定性 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "MS：中国平安上半年业绩前瞻与寿险新业务价值增速观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-44-MS-Ping An Insurance Group Co of China Ltd-2318.HK-1H26 Preview- Continued Solid Momentum while VNB Growth a Key to Track-260730.pdf",
+      "cleaned_source_title": "MS-Ping An Insurance Group Co of China Ltd-2318.HK-1H26 Preview- Continued Solid Momentum while VNB Growth a Key to Track",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：PingAnInsuranceGroupCoof中国Ltd",
+      "raw_candidates": [
+        "中国平安上半年业绩前瞻与寿险新业务价值增速观察",
+        "中国平安上半年业绩前瞻：净利润预增29%，寿险新业务价值增速11%",
+        "中国平安上半年业绩前瞻：寿险新业务价值增速与高股息资产吸引力"
+      ],
+      "cleaned_candidates": [
+        "MS：中国平安上半年业绩前瞻与寿险新业务价值增速观察",
+        "MS：中国平安上半年业绩前瞻，净利润预增29%",
+        "MS：中国平安上半年业绩前瞻",
+        "MS：PingAnInsuranceGroupCoof中国Ltd",
+        "MS：中国平安将在8月20日盘后发布2026年上半年业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国平安上半年业绩前瞻，净利润预增29%",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "MS：中国平安上半年业绩前瞻",
+          "reasons": [
+            "anchor_coverage=0.45"
+          ]
+        },
+        {
+          "title": "MS：PingAnInsuranceGroupCoof中国Ltd",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国平安将在8月20日盘后发布2026年上半年业绩",
+          "reasons": [
+            "anchor_coverage=0.32"
+          ]
+        }
+      ],
+      "selected_title": "MS：中国平安上半年业绩前瞻与寿险新业务价值增速观察",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "MS：中国平安上半年业绩前瞻与寿险新业务价值增速观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_rzw83q_o/pdfs/0005-45-MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "美联储7月会议：主席",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "金融市场->市场 x1",
+      "金融条件->资金条件 x1",
+      "sanitize_wechat_stock_line",
+      "金融市场->市场 x1",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融市场->市场 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "金融条件->资金条件 x2",
+      "收益率->回报表现 x2",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-45-MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730.pdf",
+      "cleaned_source_title": "MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：USEconomics和FixedIncome策略",
+      "raw_candidates": [
+        "MS：7月FOMC按兵不动，主席对加息门槛表态高于市场预期",
+        "MS：7月FOMC维持利率3.50%-3.75%，主席加息门槛高于预期",
+        "MS：7月FOMC按兵不动，主席对加息门槛表态与市场预期差异"
+      ],
+      "cleaned_candidates": [
+        "MS：7月FOMC按兵不动，主席对加息门槛表态高于市场预期",
+        "MS：7月FOMC维持利率3.50%-3.75%",
+        "MS：7月FOMC按兵不动，主席对加息门槛表态与市场预期差异",
+        "MS：USEconomics和FixedIncome策略",
+        "MS：2026年7月30日"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：7月FOMC维持利率3.50%-3.75%",
+          "reasons": [
+            "incomplete_last_segment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：7月FOMC按兵不动，主席对加息门槛表态与市场预期差异",
+          "reasons": [
+            "unsupported_hook_addition"
+          ]
+        },
+        {
+          "title": "MS：USEconomics和FixedIncome策略",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：2026年7月30日",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：7月FOMC按兵不动，主席对加息门槛表态高于市场预期",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
