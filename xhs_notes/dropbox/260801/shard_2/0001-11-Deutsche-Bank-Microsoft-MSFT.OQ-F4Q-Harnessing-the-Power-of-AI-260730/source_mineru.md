@@ -1,0 +1,282 @@
+Rating Buy
+
+## Company Microsoft
+
+North America
+United States
+
+Reuters
+MSFT.OQ
+
+Bloomberg
+MSFT US
+
+Date
+30 July 2026
+
+<table><tr><td>Rating</td><td>Buy</td></tr><tr><td>Price target (USD)</td><td>550.00</td></tr><tr><td>Price at 29 Jul 26</td><td>390.54</td></tr><tr><td>52-week range</td><td>542.07 – 1.46</td></tr></table>
+
+TMT
+Software
+
+Valuation & Risks
+
+## F4Q - Harnessing the Power of AI
+
+Microsoft reported very strong F4Q results that underscore its full-stack advantage in the AI era, with strong evidence of monetization up through the application layer featuring M365 Commercial Cloud acceleration including Copilot reaching 30mn seats from 20mn last quarter. Another clear message is that the future is very much multi-model and the frontier is about every firm having the flexibility and choice to control its destiny; Microsoft enables this with the broadest model catalog in the cloud and associated scaffolding and guardrails enterprises require. The quarter evidenced that production AI applications rely on harnesses, context, memory and action space, architected in a way that any given model at any given time is swappable. Aligning with the durable role Microsoft plays, we found it interesting that mgmt. framed its success and various growth metrics ex the contribution from frontier model companies.
+
+Azure +43% y/y @cc exceeded \~40-41% investor expectations, driven by efficiency gains across the CPU/GPU fleet and process improvements that enabled earlier delivery of new capacity which was quickly monetized. Results also benefited from stronger than expected GitHub Copilot consumption revenue following the June business model change to consumption pricing. Very impressively, Azure was guided to accelerate in F1H and +45% y/y @cc in F1Q, which implies \$2.8bn net adds (+65% y/y) and is consistent with commentary implying accelerating demand. With CapEx continuing to climb in F1H and more weighted toward short-lived assets in recent quarters, this looks supportive for elevated Azure growth rates to persist for multiple quarters to come.
+
+For the full year, mgmt. reiterated total company guidance for double-digit topline and EBIT growth, with operating margins down <1pt y/y. This was slightly better than the -1pt y/y decline we previewed despite guidance for sharper FY27 revenue declines in high margin Windows (-high-teens % y/y), M365 Commercial Products (-MSD %) and Server Products (-MSD %). Factoring in updated guidance, our FY27 GM estimate eases only a slight \~10bps to 65.8% which we believe supports our view that Microsoft has a number of levers to help partly offset margin headwinds from mix shift and higher component costs as we laid out in our Margins under the Microscope report. As for CapEx, the lease reclassification impact from useful life changes on long-lived assets creates some noise, but on a like-for-like basis we understand there is no change to prior CY26 investment plans. Beyond that, mgmt. essentially held off on giving a view on F2H plans outside the expectation for FY27 FCF overall to remain positive.
+
+Brad Zelnick
+Research Analyst
++1-212-250-8563
+
+Bhavin Shah, CFA
+Research Analyst
++1-212-250-6775
+
+Yash Kejriwal
+Research Associate
++1-212-250-1203
+
+We come away reaffirmed in our view that Microsoft is poised to continue compounding EPS at a mid-teens+ rate for multiple years to come on the back of increasingly tangible AI monetization across its full-stack. Accelerating Azure and M365 growth along-side resilient operating margins should build confidence in the returns on CapEx and R&D investment going into the business and Microsoft's position as a key facilitator of enterprise wide AI value creation. We maintain our Buy rating and target price of \$550, which implies \~25x our updated CY27E EPS.
+
+## What We Liked / What We're watching on the Quarter
+
+## Revenue/Bookings
+
+(+) F4Q revenue of \$90.0bn was 3.2% above the midpoint of guidance, with upside across all segments. On a constant currency basis, growth accelerated to 17% y/y @cc vs +15% last quarter. From a full year perspective, growth ticked up 1pt to +16% y/y @cc with a revenue base that now exceeds \$331bn.
+
+(+) Commercial Bookings grew 11% y/y @cc. When adjusted for Azure commitments from OpenAI, commercial bookings reportedly grew 18% y/y driven by strong execution in core annuity sales motions vs guidance for healthy growth on a growing expiry base. Commercial RPO ended the quarter +84% y/y at \$678bn with all sequential growth driven by commitments from customers other than frontier model providers. Total Commercial RPO was noted to have a weighted avg duration of 2.3yrs (including OpenAI), down from 2.5yrs last quarter, with 30% expected to be recognized in the next 12 months (up +37% y/y).
+
+## Business Lines
+
+(+) Azure growth of +43% y/y @cc was 3.5pts above the guidance midpoint (39.5%) and likely above buyside expectations. Upside was driven by efficiency gains across the CPU and GPU fleet, process improvements to enable earlier delivery of new capacity, and stronger than expected GitHub Copilot consumption. We underscore that while the outperformance was incredibly strong, results continue to be limited by supply constraints as mgmt. works toward balancing increasing Azure demand with growing needs across 1P services, increasing allocation to R&D teams, and replacement of end-of-life equipment. Demand continues to exceed supply across workloads, customer segments, and geographic regions.
+
+(+) M365 Commercial Cloud +14% y/y @cc came in at the high end of guidance +13-14% on a reported basis. When adjusted for 1x rev rec benefit in the prior year, M365 Commercial Cloud grew +16% and accelerated from +15% in F3Q. Growth was again driven by a combination of seat growth (+6% y/y) and ARPU expansion which was led by Copilot, E5, and early E7 traction. M365 Copilot was now reported to exceed 30m paid seats vs >20m reported last quarter with net paid seat adds >2x q/q against guidance for "net paid seat adds to increase sequentially".
+
+(+) Server Products declined -1% y/y @cc and was relatively unchanged on a reported basis, ahead of guidance that called for a MSD% decline on the back of continued mix shift to cloud partially offset by higher purchasing of licenses running in multi cloud environments.
+
+(+) LinkedIn ticked up to +10% y/y @cc vs +9% in F3Q primarily driven by growth in Marketing Solutions.
+
+(-) Dynamics 365 growth eased to +12% y/y @cc and grew in line with expectations for LDD% growth. Mgmt. noted bookings growth within ERP to remain healthy while CRM moderated with longer sales cycles.
+
+(=) Search and News Advertising revenue (ex-TAC) +9% y/y @cc came in line with guidance for high single digit growth (flat sequentially as growth rates normalize).
+
+(+) High margin Windows OEM + Devices revenue of -7% y/y was much better than guidance for mid-to-high teens decline attributable to lower PC market demand and a tough prior year comp partially offset by OEM and channel partners continuing to build inventory because of increasing component prices.
+
+## Margins/EPS/CapEx
+
+(+) Operating margin of 45.1% was +1.1pts above the implied guidance midpoint (44.0%) and +0.2pts y/y, benefiting from revenue and gross margin outperformance. Gross margin of 67.2% exceeded guidance of 66.2%, though was down -1.4pts y/y on continued investments in AI infrastructure and growing AI product usage, partially offset by efficiency gains in Azure and M365 Commercial Cloud.
+
+(=) OpEx of \$19.9bn came in \~2.7% above the guidance midpoint (\$19.35bn) and grew 10% primarily driven by continued investments in R&D compute capacity, talent, and data to support product development. Adjusted for 1x charges (\$0.5bn net impact), primarily those tied to Xbox and the VRP, OpEx screens roughly in line with the guidance midpoint in our view. Despite gross margin headwinds, operating margins expanded >1pt on a full year basis to 46.8%. Total company headcount was noted to be down 2% y/y exiting FY26.
+
+(+) Non-GAAP EPS of \$4.74 was in line with consensus, though benefited by \$2.0bn (\$0.27 EPS impact) from discrete items.
+
+(+) Capex (inclusive of capital leases) rose by \$9.1bn sequentially to \~\$41.0bn in F4Q, in line with guidance to be >\$40bn with impact from higher component pricing. Roughly two-thirds was spent on short-lived assets, in line with last quarter and consistent with mgmt.'s messaging around capex mix shift.
+
+## What We Liked / What We're watching on the Guide
+
+(+) F1Q revenue guidance of \$90.4bn at the midpoint came in above Street (\$89.9bn); PBP and IC segment revenue guidance was ahead of consensus while MPC is guided below and declining y/y. FX is anticipated to be a <1pt headwind to revenue in the quarter. From a full year perspective, mgmt. expects another year of DD% revenue growth with a <1pt headwind from FX.
+
+(+) F1Q Azure guidance of +45% y/y @cc was 4pts ahead of consensus \~41% and implies a 2pt acceleration from F4Q levels. Demand is still expected to remain ahead of supply and mgmt. remains focused on delivering infrastructure efficiencies to help bridge the gap between demand and supply. Despite a strong C1H26, mgmt. continues to expect C2H growth to accelerate.
+
+(+) F1Q M365 Commercial Cloud guidance for +16% y/y @cc in line with F4Q when normalized for in-period rev rec benefit in the prior year comp. Beyond F1Q, mgmt. guided M365 Commercial Cloud revenue to accelerate through FY27, contributors to which include premium SKU momentum and increased monetization opportunity from adding usage based billing products.
+
+(+) At midpoints, guidance for F1Q OM to remain relatively flat y/y in the 48.0% to 49.0% range, \~1pt above Street. Guidance embeds gross margins of 67.1% at the midpoint that are down 1.9pts y/y and OpEx growth of +7.5%. On a full year basis, op. income is expected to grow DD% once again with OpEx growing in the MSD-HSD% range calling for full year operating margins to tick down less than 1pt.
+
+(+) From a CapEx perspective, CY26 CapEx was reset to \~\$175bn (vs. \~\$190bn previously), though the change is primarily accounting-driven following the extension of datacenter and office building useful lives from 15 to 25 years. The update shifts more future datacenter leases from finance to operating leases, the latter of what is generally not included in CapEx thus reducing reported CapEx without changing underlying investment levels. Consistent with that, management reiterated that CY26 investment expectations are unchanged and guided to >\$50bn of CapEx in F1Q reinforcing continued infrastructure investment to support demand. From a full year perspective, mgmt. did not give more direction beyond saying FY27 CapEx is expected to grow y/y. Microsoft is expected to be FCF positive in FY27.
+
+(+) In other parts of the business, M365 Commercial Products as well as Server Products are expected to decline in the MSD% range for the full year as they lap higher transactional purchasing from the timing of product launches. Windows OEM and Devices is also expected to be impacted by lower PC market demand driven by high component prices in addition to already elevated inventory levels and comps that benefitted from W10 EOS, following which Windows OEM and Devices are expected to decline in the HDD% range for the full year.
+
+## Estimate Revisions and Valuation
+
+Incorporating F4Q results, guidance and our latest thoughts on the business we increase FY27/28 revenue estimates to \$388.5/\$459.4bn from \$384.2/\$448.0bn and non-GAAP EPS estimates to \$19.46/\$23.15 from \$19.45/\$22.75, respectively. We reiterate our \$550 TP, implying a P/E of \~25x our CY27E Non-GAAP EPS. We use a DCF to arrive at our target price. Our DCF is based on a WACC of 9.1%, a risk-free rate of 4.0% and an equity risk premium of 5.3%. We use a terminal growth rate of 3.5%, based on GDP growth. Downside risks to our Buy rating include: (1) Increased competition for AI and public cloud; (2) Further deterioration of the macro environment; and (3) Expectations for continued growth at large scale.
+
+Figure 1: Key Charts
+
+![](images/a6d1320b974cb2be2af2988eee8c3c97c838ca0c564565c57e557c8c8e9a5e2a.jpg)
+
+![](images/a900dcfc4e5954b8754ce160707b8c66446abb9a0ccfd786dbc794006df264de.jpg)
+
+![](images/5f989ef06db70f48fbabf40ead61922b8a9c3cc6fc74e2556947978205cc80a3.jpg)  
+Source: Company Reports, DB Estimates
+
+![](images/93ac3d9a68e67675f8cc794911f7b7cb9e2c79e009dc70529975e55023b6c05f.jpg)
+
+Figure 2: F4Q26 Summary
+
+<table><tr><td colspan="6">Microsoft (MSFT)In $mn except EPS</td></tr><tr><td rowspan="2"></td><td colspan="5">4Q26E</td></tr><tr><td>Actual</td><td>DBe</td><td>Actual vs. DBe</td><td>Cons.</td><td>Company guidance</td></tr><tr><td colspan="6">Income Statement</td></tr><tr><td>Productivity &amp; Business Process</td><td>37,847</td><td>37,171</td><td>+1.8%</td><td>37,235</td><td>37,000 - 37,300</td></tr><tr><td>Y/Y Growth</td><td>+14.3%</td><td>+12.3%</td><td></td><td>+12.5%</td><td></td></tr><tr><td>M365 Comm Cloud Y/Y Growth - CC</td><td>+14.0%</td><td>+13.5%</td><td></td><td>+13.8%</td><td>+13% - +14%</td></tr><tr><td>Intelligent Cloud</td><td>39,306</td><td>38,095</td><td>+3.2%</td><td>38,127</td><td>37,950 - 38,250</td></tr><tr><td>Y/Y Growth</td><td>+31.6%</td><td>+27.5%</td><td></td><td>+27.6%</td><td></td></tr><tr><td>Azure Y/Y Growth - CC</td><td>+43.0%</td><td>+39.5%</td><td></td><td>+39.5%</td><td>+39% - +40%</td></tr><tr><td>More Personal Computing</td><td>12,854</td><td>12,105</td><td>+6.2%</td><td>12,106</td><td>11,750 - 12,250</td></tr><tr><td>Y/Y Growth</td><td>-4.4%</td><td>-10.0%</td><td></td><td>-10.0%</td><td></td></tr><tr><td>Total Revenue</td><td>90,007</td><td>87,371</td><td>+3.0%</td><td>90,007</td><td>86,700 - 87,800</td></tr><tr><td>Y/Y Growth</td><td>+17.7%</td><td>+14.3%</td><td></td><td>+17.7%</td><td></td></tr><tr><td>Gross Profit</td><td>60,482</td><td>57,839</td><td>+4.6%</td><td>60,482</td><td>57,100 - 58,400</td></tr><tr><td>GM (%)</td><td>67.2%</td><td>66.2%</td><td></td><td>67.2%</td><td></td></tr><tr><td>Operating Income</td><td>40,603</td><td>38,487</td><td>+5.5%</td><td>40,603</td><td>37,700 - 39,100</td></tr><tr><td>OM (%)</td><td>45.1%</td><td>44.1%</td><td></td><td>45.1%</td><td></td></tr><tr><td>Y/Y Growth</td><td>+18.3%</td><td>+12.1%</td><td></td><td>+18.3%</td><td></td></tr><tr><td>Non-GAAP Net Income</td><td>35,286</td><td>31,017</td><td>+13.8%</td><td>35,286</td><td></td></tr><tr><td>Net margin (%)</td><td>39.2%</td><td>35.5%</td><td></td><td>39.2%</td><td></td></tr><tr><td>Non-GAAP EPS</td><td>$4.74</td><td>$4.17</td><td>+13.6%</td><td>$4.74</td><td></td></tr><tr><td colspan="6">Operating Metrics</td></tr><tr><td>Operating Cash Flow</td><td>55,441</td><td>49,028</td><td>+13.1%</td><td>55,441</td><td></td></tr><tr><td>Y/Y Growth</td><td>+30.0%</td><td>+15.0%</td><td></td><td>+30.0%</td><td></td></tr><tr><td>Capital Expenditures (incl. cap leases)</td><td>41,002</td><td>41,938</td><td>-2.2%</td><td>41,000</td><td></td></tr><tr><td>Levered Free Cash Flow (ex-cap leases)</td><td>19,639</td><td>14,080</td><td>+39.5%</td><td>19,639</td><td></td></tr><tr><td colspan="6">Source: DB estimates, Company data, Bloomberg Finance LP</td></tr></table>
+
+Figure 3: Estimates Summary
+
+<table><tr><td colspan="14">Microsoft (MSFT)In $mn except EPS</td></tr><tr><td rowspan="2"></td><td colspan="5">1Q27E</td><td colspan="4">FY27E</td><td colspan="4">FY28E</td></tr><tr><td>New Estimates</td><td>Old Estimates</td><td>New vs. Old</td><td>Cons.</td><td>Company guidance</td><td>New Estimates</td><td>Old Estimates</td><td>New vs. Old</td><td>Cons.</td><td>New Estimates</td><td>Old Estimates</td><td>New vs. Old</td><td>Cons.</td></tr><tr><td colspan="14">Income Statement</td></tr><tr><td>Productivity &amp; Business Process</td><td>36,855</td><td>36,654</td><td>+0.5%</td><td>36,793</td><td>36,700-37,000</td><td>155,536</td><td>154,709</td><td>+0.5%</td><td>155,062</td><td>173,318</td><td>170,123</td><td>+1.9%</td><td>171,077</td></tr><tr><td>Y/Y Growth</td><td>+11.6%</td><td>+11.0%</td><td></td><td>+11.4%</td><td></td><td>+11.1%</td><td>+11.0%</td><td></td><td>+10.8%</td><td>+11.4%</td><td>+10.0%</td><td></td><td>+10.3%</td></tr><tr><td>M365 Comm Cloud Y/Y Growth - CC</td><td>+15.1%</td><td>+14.6%</td><td></td><td>+14.5%</td><td>+15%</td><td>+16.1%</td><td>+14.6%</td><td></td><td>+13.0%</td><td>+15.0%</td><td>+12.6%</td><td></td><td>+12.9%</td></tr><tr><td>Intelligent Cloud</td><td>41,095</td><td>40,024</td><td>+2.7%</td><td>39,997</td><td>40,950-41,250</td><td>181,602</td><td>177,743</td><td>+2.2%</td><td>176,718</td><td>233,229</td><td>224,570</td><td>+3.9%</td><td>228,991</td></tr><tr><td>Y/Y Growth</td><td>+33.0%</td><td>+29.5%</td><td></td><td>+29.5%</td><td></td><td>+31.8%</td><td>+30.1%</td><td></td><td>+28.3%</td><td>+28.4%</td><td>+26.3%</td><td></td><td>+29.6%</td></tr><tr><td>Azure Y/Y Growth - CC</td><td>+45.0%</td><td>+41.0%</td><td></td><td>+41.0%</td><td>+45%</td><td>+42.5%</td><td>+40.1%</td><td></td><td>+40.3%</td><td>+34.5%</td><td>+32.2%</td><td></td><td>+37.5%</td></tr><tr><td>More Personal Computing</td><td>12,477</td><td>12,876</td><td>-3.1%</td><td>12,865</td><td>12,200-12,700</td><td>51,411</td><td>51,771</td><td>-0.7%</td><td>52,511</td><td>52,896</td><td>53,269</td><td>-0.7%</td><td>53,311</td></tr><tr><td>Y/Y Growth</td><td>-9.3%</td><td>-6.4%</td><td></td><td>-6.5%</td><td></td><td>-4.9%</td><td>-2.9%</td><td></td><td>-2.9%</td><td>+2.9%</td><td>+2.9%</td><td></td><td>+1.5%</td></tr><tr><td>Total Revenue</td><td>90,427</td><td>89,553</td><td>+1.0%</td><td>89,901</td><td>89,850-90,950</td><td>388,549</td><td>384,222</td><td>+1.1%</td><td>384,222</td><td>459,442</td><td>447,962</td><td>+2.6%</td><td>455,581</td></tr><tr><td>Y/Y Growth</td><td>+16.4%</td><td>+15.3%</td><td></td><td>+15.7%</td><td></td><td>+17.1%</td><td>+16.7%</td><td></td><td>+15.8%</td><td>+18.2%</td><td>+16.6%</td><td></td><td>+18.6%</td></tr><tr><td>Gross Profit</td><td>60,677</td><td>59,401</td><td>+2.1%</td><td>59,959</td><td>60,050-61,350</td><td>255,820</td><td>253,403</td><td>+1.0%</td><td>255,418</td><td>296,525</td><td>291,067</td><td>+1.9%</td><td>294,535</td></tr><tr><td>GM (%)</td><td>67.1%</td><td>66.3%</td><td></td><td>66.7%</td><td></td><td>65.8%</td><td>66.0%</td><td></td><td>66.5%</td><td>64.5%</td><td>65.0%</td><td></td><td>64.7%</td></tr><tr><td>Operating Income</td><td>43,823</td><td>42,499</td><td>+3.1%</td><td>42,588</td><td>43,150-44,550</td><td>180,643</td><td>178,365</td><td>+1.3%</td><td>178,358</td><td>213,837</td><td>207,788</td><td>+2.9%</td><td>210,000</td></tr><tr><td>OM (%)</td><td>48.5%</td><td>47.5%</td><td></td><td>47.4%</td><td></td><td>46.5%</td><td>46.4%</td><td></td><td>46.4%</td><td>46.5%</td><td>46.4%</td><td></td><td>46.1%</td></tr><tr><td>Y/Y Growth</td><td>+15.4%</td><td>+12.0%</td><td></td><td>+12.2%</td><td></td><td>+16.4%</td><td>+16.5%</td><td></td><td>+14.9%</td><td>+18.4%</td><td>+16.5%</td><td></td><td>17.7%</td></tr><tr><td>Non-GAAP Net Income</td><td>34,978</td><td>34,318</td><td>+1.9%</td><td>34,522</td><td></td><td>144,434</td><td>144,030</td><td>+0.3%</td><td>144,289</td><td>171,070</td><td>167,623</td><td>+2.1%</td><td>168,765</td></tr><tr><td>Net margin (%)</td><td>38.7%</td><td>38.3%</td><td></td><td>38.4%</td><td></td><td>37.2%</td><td>37.5%</td><td></td><td>37.6%</td><td>37.2%</td><td>37.4%</td><td></td><td>37.0%</td></tr><tr><td>Non-GAAP EPS</td><td>$4.71</td><td>$4.63</td><td>+1.7%</td><td>$4.65</td><td></td><td>$19.46</td><td>$19.45</td><td>+0.1%</td><td>$19.46</td><td>$23.15</td><td>$22.75</td><td>+1.8%</td><td>$22.78</td></tr><tr><td colspan="14">Operating Metrics</td></tr><tr><td>Operating Cash Flow</td><td>51,553</td><td>54,931</td><td>-6.2%</td><td>53,613</td><td></td><td>215,683</td><td>207,959</td><td>+3.7%</td><td>215,163</td><td>255,359</td><td>250,165</td><td>+2.1%</td><td>251,652</td></tr><tr><td>Y/Y Growth</td><td>+14.4%</td><td>+21.9%</td><td></td><td>+19.0%</td><td></td><td>+17.9%</td><td>+17.8%</td><td></td><td>+17.6%</td><td>+18.4%</td><td>+20.3%</td><td></td><td>17.0%</td></tr><tr><td>Capital Expenditures (incl. cap leases)</td><td>50,639</td><td>(56,419)</td><td>-189.8%</td><td>55,749</td><td></td><td>214,895</td><td>238,027</td><td>-9.7%</td><td>231,973</td><td>241,551</td><td>259,916</td><td>-7.1%</td><td>261,454</td></tr><tr><td>Levered Free Cash Flow (ex-cap leases)</td><td>1,818</td><td>7,468</td><td>-75.7%</td><td>7,477</td><td></td><td>4,674</td><td>7,840</td><td>-40.4%</td><td>30,000</td><td>18,402</td><td>30,566</td><td>-39.8%</td><td>52,235</td></tr><tr><td colspan="14">Source: DB estimates, Company data, Bloomberg Finance LP</td></tr></table>
+
+## Appendix 1
+
+## Important Disclosures
+
+<table><tr><td>Company</td><td>Ticker</td><td>Recent price</td><td>Disclosure</td></tr><tr><td>Microsoft</td><td>MSFT.OQ</td><td>390.54 (USD) 29 Jul 26</td><td>7, 8, 14, 15, 21, 24, 26</td></tr></table>
+
+Prices are current as of the end of the previous trading session unless otherwise indicated and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Other information is sourced from DB, subject companies, and other sources.
+
+## Important Disclosures Required by U.S. Regulators
+
+7 - DB and/or its affiliate(s) has received compensation from this company for the provision of investment banking or financial advisory services within the past year.
+
+8 - DB and/or its affiliate(s) expects to receive, or intends to seek, compensation for investment banking services from this company in the next three months.
+
+14 - DB and/or its affiliate(s) has received compensation from this company within the past year for non-investment banking related services.
+
+15 - This company has been a client of DB Securities Inc. within the past year during which time it received investment banking services.
+
+21 - This company has been a client of DB Securities Inc. within the past year, during which time it received non-investment banking securities-related services.
+
+## Important Disclosures Required by Non-U.S. Regulators
+
+24 - DB and/or its affiliate(s) is or has been over the previous 12 months party to an agreement with the company relating to the provision of services set out in Sections A and B of Annex I of Directive 2014/65/EU, or has over the previous 12 months been obliged or entitled (as applicable) to pay or receive compensation relating to the provision of services set out in Sections A and B of Annex I of Directive 2014/65/EU.
+
+26 - Within the preceding 12 months, DB and/or its affiliate(s) has received compensation for the provision of investment banking services or is currently providing or has provided investment banking services to this company.
+
+For disclosures pertaining to recommendations or estimates made on securities other than the primary subject of this research, please see the most recently published company report or visit our global disclosure look-up page on our website at https://research.db.com/Research/Disclosures/EquityResearchDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.
+
+## Analyst Certification
+
+The views expressed in this report accurately reflect the personal views of the undersigned lead analyst(s). In addition, the undersigned lead analyst(s) has not and will not receive any compensation for providing a specific recommendation or view in this report. Brad Zelnick.
+
+Historical recommendations and target price: Microsoft (MSFT.OQ)  
+![](images/a131aa48663d27108620ce48a05b2b7c7829609617a062a9448d9a9470b0499f.jpg)
+
+<table><tr><td>1.</td><td>25 Oct 23</td><td>Price target: 395 (USD), close price 340.67 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>2.</td><td>16 Nov 23</td><td>Price target: 415 (USD), close price 376.17 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>3.</td><td>25 Jan 24</td><td>Price target: 450 (USD), close price 404.87 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>4.</td><td>26 Apr 24</td><td>Price target: 475 (USD), close price 406.32 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>5.</td><td>2 May 25</td><td>Price target: 500 (USD), close price 435.28 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>6.</td><td>17 Jul 25</td><td>Price target: 550 (USD), close price 511.7 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>7.</td><td>31 Jul 25</td><td>Price target: 630 (USD), close price 533.5 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>8.</td><td>29 Jan 26</td><td>Price target: 575 (USD), close price 433.5 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr><tr><td>9.</td><td>30 Apr 26</td><td>Price target: 550 (USD), close price 407.78 (USD), Recommendation: Buy, Analyst: Brad Zelnick</td></tr></table>
+
+Company rating dispersion and banking relationships
+
+<table><tr><td>DBSI Companies under Coverage</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Covered</td><td>58%</td><td>42%</td><td>0%</td></tr><tr><td>w/ Banking relationship</td><td>42%</td><td>35%</td><td>0%</td></tr><tr><td>w/ MiFID services</td><td>63%</td><td>52%</td><td>67%</td></tr></table>
+
+<table><tr><td>Global Companies under Coverage</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Covered</td><td>58%</td><td>40%</td><td>2%</td></tr><tr><td>w/ Banking relationship</td><td>46%</td><td>32%</td><td>32%</td></tr><tr><td>w/ MiFID services</td><td>75%</td><td>69%</td><td>94%</td></tr></table>
+
+## Company Rating and Dispersion Key
+
+The above table provides a snapshot of DB's company research rating distribution across our covered companies. We also present the percentage of companies where DB has provided Investment Banking Services in the past 12 months and/or MIFID Investment and Ancillary services, in the past 12 months. Please see the key and definition of our rating below.
+
+Note - percentages are rounded so may not total 100%.
+
+Covered: The overall rating distribution across all companies under coverage with a rating.
+
+w/Banking relation: Percentage of companies under coverage with a rating within each of the "buy", "hold" and "sell" categories for which DB has provided Investment Banking Services within the previous 12 months.
+
+w/MiFID services: Percentage of companies under coverage with a rating within each of the "buy", "hold" and "sell" categories for which DB has provided MIFID Investment and Ancillary services within the previous 12 months.
+
+Buy/Hold/Sell Percentages: These percentages reflect the proportion of companies within each category that have been assigned the corresponding rating, based on our 12-month view of Total Shareholder Return (TSR).
+
+## Rating definitions:
+
+Buy: Based on a current 12-month view of TSR, we recommend that investors buy the stock.
+
+Sell: Based on a current 12-month view of TSR, we recommend that investors sell the stock.
+
+Hold: We take a neutral view on the stock 12-months out and, based on this time horizon, do not recommend either a Buy or Sell.
+
+TSR: Total Shareholder Return. Percentage change in share price from current price to projected target price plus projected dividend yield.
+
+Newly issued research recommendations and target prices supersede previously published research.
+
+## Additional Information
+
+The information and opinions in this report were prepared by DB AG or one of its affiliates (collectively 'DB'). Though the information herein is believed to be reliable and has been obtained from public sources believed to be reliable, DB makes no representation as to its accuracy or completeness. Hyperlinks to third-party websites in this report are provided for reader convenience only. DB neither endorses the content nor is responsible for the accuracy or security controls of those websites.
+
+If you use the services of DB in connection with a purchase or sale of a security that is discussed in this report, or is included or discussed in another communication (oral or written) from a DB analyst, DB may act as principal for its own account or as agent for another person.
+
+DB may consider this report in deciding to trade as principal. It may also engage in transactions, for its own account or with customers, in a manner inconsistent with the views taken in this research report. Others within DB, including strategists, sales staff and other analysts, may take views that are inconsistent with those taken in this research report. DB issues a variety of research products, including fundamental analysis, equity-linked analysis, quantitative analysis and trade ideas. Recommendations contained in one type of communication may differ from recommendations contained in others, whether as a result of differing time horizons, methodologies, perspectives or otherwise. DB and/or its affiliates may also be holding debt or equity securities of the issuers it writes on. Analysts are paid in part based on the profitability of DB AG and its affiliates, which includes investment banking, trading and principal trading revenues.
+
+Opinions, estimates and projections constitute the current judgment of the author as of the date of this report. They do not necessarily reflect the opinions of DB and are subject to change without notice. DB provides liquidity for buyers and sellers of securities issued by the companies it covers. DB analysts sometimes have shorter-term trade ideas that may be inconsistent with DB's existing longer-term ratings. Some trade ideas for equities are listed as Catalyst Calls on the Research Website (https://research.db.com/Research/) , and can be found on the general coverage list and also on the covered company's page. A Catalyst Call represents a high-conviction belief by an analyst that a stock will outperform or underperform the market and/or a specified sector over a time frame of no less than two weeks and no more than three months. In addition to Catalyst Calls, analysts may occasionally discuss with our clients, and with DB salespersons and traders, trading strategies or ideas that reference catalysts or events that may have a near-term or medium-term impact on the market price of the securities discussed in this report, which impact may be directionally counter to the analysts' current 12-month view of total return or investment return as described herein. DB has no obligation to update, modify or amend this report or to otherwise notify a recipient thereof if an opinion, forecast or estimate changes or becomes inaccurate. Coverage and the frequency of changes in market conditions and in both general and company-specific economic prospects make it difficult to update research at defined intervals. Updates are at the sole discretion of the coverage analyst or of the Research Department Management, and the majority of reports are published at irregular intervals. This report is provided for informational purposes only and does not take into account the particular investment objectives, financial situations, or needs of individual clients. It is not an offer or a solicitation of an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Target prices are inherently imprecise and a product of the analyst's judgment. The financial instruments discussed in this report may not be suitable for all investors, and investors must make their own informed investment decisions. Prices and availability of financial instruments are subject to change without notice, and investment transactions can lead to losses as a result of price fluctuations and other factors. If a financial instrument is denominated in a currency other than an investor's currency, a change in exchange rates may adversely affect the investment. Past performance is not necessarily indicative of future results. Performance calculations exclude transaction costs, unless otherwise indicated. Unless otherwise indicated, prices are current as of the end of the previous trading session and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Data is also sourced from DB, subject companies, and other parties. Artificial intelligence tools may be used in the preparation of this material, including but not limited to assist in fact-finding, data analysis, pattern recognition, content drafting and editorial corrections pertaining to research material.
+
+The DB Department is independent of other business divisions of the Bank. Details regarding our organizational arrangements and information barriers we have to prevent and avoid conflicts of interest with respect to our research are available on our website (https://research.db.com/Research/) under Disclaimer.
+
+Macroeconomic fluctuations often account for most of the risks associated with exposures to instruments that promise to pay fixed or variable interest rates. For an investor who is long fixed-rate instruments (thus receiving these cash flows), increases in interest rates naturally lift the discount factors applied to the expected cash flows and thus cause a loss. The longer the maturity of a certain cash flow and the higher the move in the discount factor, the higher will be the loss. Upside surprises in inflation, fiscal funding needs, and FX depreciation rates are among the most common adverse macroeconomic shocks to receivers. But counterparty exposure, issuer creditworthiness, client segmentation, regulation (including changes in assets holding limits for different types of investors), changes in tax policies, currency convertibility (which may constrain currency conversion, repatriation of profits and/or liquidation of positions), and settlement issues related to local clearing houses are also important risk factors. The sensitivity of fixed-income instruments to macroeconomic shocks may be mitigated by indexing the contracted cash flows to inflation, to FX depreciation, or to specified interest rates - these are common in emerging markets. The index fixings may - by construction - lag or mis-measure the actual move in the underlying variables they are intended to track. The choice of the proper fixing (or metric) is particularly important in swaps markets, where floating coupon rates (i.e., coupons indexed to a typically short-dated interest rate reference index) are exchanged for fixed coupons. Funding in a currency that differs from the currency in which coupons are denominated carries FX risk. Options on swaps (swaptions) the risks typical to options in addition to the risks related to rates movements.
+
+Derivative transactions involve numerous risks including market, counterparty default and illiquidity risk. The appropriateness of these products for use by investors depends on the investors' own circumstances, including their tax position, their regulatory environment and the nature of their other assets and liabilities; as such, investors should take expert legal and financial advice before entering into any transaction similar to or inspired by the contents of this publication. The risk of loss in futures trading and options, foreign or domestic, can be substantial. As a result of the high degree of leverage obtainable in futures and options trading, losses may be incurred that are greater than the amount of funds initially deposited - up to theoretically unlimited losses. Trading in options involves risk and is not suitable for all investors. Prior to buying or selling an option, investors must review the 'Characteristics and Risks of Standardized Options", at https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document. If you are unable to access the website, please contact your DB representative for a copy of this important document.
+
+Participants in foreign exchange transactions may incur risks arising from several factors, including the following: (i) exchange rates can be volatile and are subject to large fluctuations; (ii) the value of currencies may be affected by numerous market factors, including world and national economic, political and regulatory events, events in equity and debt markets and changes in interest rates; and (iii) currencies may be subject to devaluation or government-imposed exchange controls, which could affect the value of the currency. Investors in securities such as ADRs, whose values are affected by the currency of an underlying security, effectively assume currency risk.
+
+Unless governing law provides otherwise, all transactions should be executed through the DB entity in the investor's home jurisdiction. Aside from within this report, important conflict disclosures can also be found at https://research.db.com/Research/ on each company's research page or under the 'Disclosures' tab. Investors are strongly encouraged to review this information before investing.
+
+DB (which includes DB AG, its branches and affiliated companies) is not acting as a financial adviser, consultant or fiduciary to you or any of your agents (collectively, "You" or "Your") with respect to any information provided in this report. DB does not provide investment, legal, tax or accounting advice, DB is not acting as your impartial adviser, and does not express any opinion or recommendation whatsoever as to any strategies, products or any other information presented in the materials. Information contained herein is being provided solely on the basis that the recipient will make an independent assessment of the merits of any investment decision, and it does not constitute a recommendation of, or express an opinion on, any product or service or any trading strategy.
+
+The information presented is general in nature and is not directed to retirement accounts or any specific person or account type, and is therefore provided to You on the express basis that it is not advice, and You may not rely upon it in making Your decision. The information we provide is being directed only to persons we believe to be financially sophisticated, who are capable of evaluating investment risks independently, both in general and with regard to particular transactions and investment strategies, and who understand that DB has financial interests in the offering of its products and services. If this is not the case, or if You are an IRA or other retail investor receiving this directly from us, we ask that you inform us immediately.
+
+In July 2018, DB revised its rating system for short term ideas whereby the branding has been changed to Catalyst Calls ("CC") from SOLAR ideas; the rating categories for Catalyst Calls originated in the Americas region have been made consistent with the categories used by Analysts globally; and the effective time period for CCs has been reduced from a maximum of 180 days to 90 days.
+
+United States: Approved and/or distributed by DB Securities Incorporated, a member of FINRA and SIPC. Analysts located outside of the United States are employed by non-US affiliates and are not registered/qualified as research analysts with FINRA.
+
+European Economic Area (exc. United Kingdom): Approved and/or distributed by DB AG, a joint stock corporation with limited liability incorporated in the Federal Republic of Germany with its principal office in Frankfurt am Main. DB AG is authorized under German Banking Law and is subject to supervision by the European Central Bank and by BaFin, Germany's Federal Financial Supervisory Authority.
+
+United Kingdom: Approved and/or distributed by DB AG acting through its London Branch at 21 Moorfields, London EC2Y 9DB. DB AG in the United Kingdom is authorised by the Prudential Regulation Authority and is subject to limited regulation by the Prudential Regulation Authority and Financial Conduct Authority. Details about the extent of our authorisation and regulation are available on request.
+
+Hong Kong SAR: Distributed by DB AG, Hong Kong Branch, except for any research content relating to futures contracts within the meaning of the Hong Kong Securities and Futures Ordinance Cap. 571. Research reports on such futures contracts are not intended for access by persons who are located, incorporated, constituted or resident in Hong Kong. The author(s) of a research report, and the entities for which they act and/or are affiliated with, may not be licensed to carry on regulated activities in Hong Kong, and if not licensed, do not hold themselves out as being able to do so. The provisions set out above in the 'Additional Information' section shall apply to the fullest extent permissible by local laws and regulations, including without limitation the Code of Conduct for Persons Licensed or Registered with the Securities and Futures Commission. This report is intended for distribution only to 'professional investors' as defined in Part 1 of Schedule of the SFO. This document must not be acted or relied on by persons who are not professional investors. Any investment or investment activity to which this document relates is only available to professional investors and will be engaged only with professional investors.
+
+India: Prepared by Deutsche Equities India Private Limited (DEIPL) having CIN: U65990MH2002PTC137431 and registered office at 14th Floor, The Capital, C-70, G Block, Bandra Kurla Complex, Mumbai (India) 400051. Tel: +91 22 7180 4444. It is registered by the Securities and Exchange Board of India (SEBI) as a Stock broker bearing registration no.: INZ000252437; Merchant Banker bearing SEBI Registration no.: INM000010833 and Research Analyst bearing SEBI Registration no.: INH000001741. DEIPL's Compliance / Grievance officer is Ms. Rashmi Poddar (Tel: +91 22 7180 4929 email ID: complaints.deipl@db.com). Registration granted by SEBI and certification from NISM in no way guarantee performance of DEIPL or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. DEIPL may have received administrative warnings from the SEBI for breaches of Indian regulations. DB and/or its affiliate(s) may have debt holdings or positions in the subject company. With regard to information on associates, please refer to the "Shareholdings" section in the Annual Report at: https://www.db.com/ir/en/annual-reports.htm. For latest India research audit report, refer https://country.db.com/india/deutsche-equities-india/index?language\_id=1.
+
+Japan: Approved and/or distributed by Deutsche Securities Inc.(DSI). Registration number - Registered as a financial instruments dealer by the Head of the Kanto Local Finance Bureau (Kinsho) No. 117. Member of associations: JSDA,
+
+Type II Financial Instruments Firms Association and The Financial Futures Association of Japan. Commissions and risks involved in stock transactions - for stock transactions, we charge stock commissions and consumption tax by multiplying the transaction amount by the commission rate agreed with each customer. Stock transactions can lead to losses as a result of share price fluctuations and other factors. Transactions in foreign stocks can lead to additional losses stemming from foreign exchange fluctuations. We may also charge commissions and fees for certain categories of investment advice, products and services. Recommended investment strategies, products and services carry the risk of losses to principal and other losses as a result of changes in market and/or economic trends, and/or fluctuations in market value. Before deciding on the purchase of financial products and/or services, customers should carefully read the relevant disclosures, prospectuses and other documentation. 'Moody's', 'Standard Poor's', and 'Fitch' mentioned in this report are not registered credit rating agencies in Japan unless Japan or 'Nippon' is specifically designated in the name of the entity. Reports on Japanese listed companies not written by analysts of DSI are written by DB Group's analysts with the coverage companies specified by DSI. Some of the foreign securities stated on this report are not disclosed according to the Financial Instruments and Exchange Law of Japan. Target prices set by DB's equity analysts are based on a 12-month forecast period.
+
+Korea: Distributed by Deutsche Securities Korea Co.
+
+South Africa: DB AG Johannesburg is incorporated in the Federal Republic of Germany (Branch Register Number in South Africa: 1998/003298/10).
+
+Singapore: This report is issued by DB AG, Singapore Branch (One Raffles Quay #18-00 South Tower Singapore 048583, 65 6423 8001), which may be contacted in respect of any matters arising from, or in connection with, this report. Where this report is issued or promulgated by DB in Singapore to a person who is not an accredited investor, expert investor or institutional investor (as defined in the applicable Singapore laws and regulations), they accept legal responsibility to such person for its contents.
+
+Taiwan: Information on securities/investments that trade in Taiwan is for your reference only. Readers should independently evaluate investment risks and are solely responsible for their investment decisions. DB may not be distributed to the Taiwan public media or quoted or used by the Taiwan public media without written consent. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation to trade in such securities/instruments.
+
+Qatar: DB AG in the Qatar Financial Centre (registered no. 00032) is regulated by the Qatar Financial Centre Regulatory Authority. DB AG - QFC Branch may undertake only the financial services activities that fall within the scope of its existing QFCRA license. Its principal place of business in the QFC: Qatar Financial Centre, Tower, West Bay, Level 5, PO Box 14928, Doha, Qatar. This information has been distributed by DB AG. Related financial products or services are only available only to Business Customers, as defined by the Qatar Financial Centre Regulatory Authority.
+
+Russia: The information, interpretation and opinions submitted herein are not in the context of, and do not constitute, any appraisal or evaluation activity requiring a license in the Russian Federation.
+
+Kingdom of Saudi Arabia: Deutsche Securities Saudi Arabia (DSSA) is a closed joint stock company authorized by the Capital Market Authority of the Kingdom of Saudi Arabia with a license number (No. 37-07073) to conduct the following business activities: Dealing, Arranging, Advising, and Custody activities. DSSA registered office is Faisaliah Tower, 17th Floor, King Fahad Road - Al Olaya District Riyadh, Kingdom of Saudi Arabia P.O. Box 301806.
+
+United Arab Emirates: DB AG in the Dubai International Financial Centre (registered no. 00045) is regulated by the Dubai Financial Services Authority. DB AG - DIFC Branch may only undertake the financial services activities that fall within the scope of its existing DFSA license. Principal place of business in the DIFC: Dubai International Financial Centre, The Gate Village, Building 5, PO Box 504902, Dubai, U.A.E. This information has been distributed by DB AG. Related financial products or services are available only to Professional Clients, as defined by the Dubai Financial Services Authority.
+
+Australia and New Zealand: This research is intended only for 'wholesale clients' within the meaning of the Australian Corporations Act and New Zealand Financial Advisors Act, respectively. Please refer to Australia-specific research disclosures and related information at https://www.dbresearch.com/PROD/RPS\_EN-
+
+PROD/PROD0000000000521304.xhtml. Where research refers to any particular financial product recipients of the research should consider any product disclosure statement, prospectus or other applicable disclosure document before making any decision about whether to acquire the product. In preparing this report, the primary analyst or an individual who assisted in the preparation of this report has likely been in contact with the company that is the subject of this research for confirmation/clarification of data, facts, statements, permission to use company-sourced material in the report, and/or site-visit attendance. Without prior approval from Research Management, analysts may not accept from current or potential Banking clients the costs of travel, accommodations, or other expenses incurred by analysts attending site visits, conferences, social events, and the like. Similarly, without prior approval from Research Management and Anti-Bribery and Corruption ("ABC") team, analysts may not accept perks or other items of value for their personal use from issuers they cover.
+
+Additional information relative to securities, other financial products or issuers discussed in this report is available upon request. This report may not be reproduced, distributed or published without DB's prior written consent.
+
+Backtested, hypothetical or simulated performance results have inherent limitations. Unlike an actual performance record based on trading actual client portfolios, simulated results are achieved by means of the retroactive application of a backtested model itself designed with the benefit of hindsight. Taking into account historical events the backtesting of performance also differs from actual account performance because an actual investment strategy may be adjusted any time, for any reason, including a response to material, economic or market factors. The backtested performance includes hypothetical results that do not reflect the reinvestment of dividends and other earnings or the deduction of advisory fees, brokerage or other commissions, and any other expenses that a client would have paid or actually paid. No representation is made that any trading strategy or account will or is likely to achieve profits or losses similar to those shown. Alternative modeling techniques or assumptions might produce significantly different results and prove to be more appropriate. Past hypothetical backtest results are neither an indicator nor guarantee of future returns. Actual results will vary, perhaps materially, from the analysis.
+
+The method for computing individual E,S,G and composite ESG scores set forth herein is a novel method developed by the Research department within DB AG, computed using a systematic approach without human intervention. Different data providers, market sectors and geographies approach ESG analysis and incorporate the findings in a variety of ways. As such, the ESG scores referred to herein may differ from equivalent ratings developed and implemented by other ESG data providers in the market and may also differ from equivalent ratings developed and implemented by other divisions within the DB Group. Such ESG scores also differ from other ratings and rankings that have historically been applied in research reports published by DB AG. Further, such ESG scores do not represent a formal or official view of DB AG.
+
+It should be noted that the decision to incorporate ESG factors into any investment strategy may inhibit the ability to participate in certain investment opportunities that otherwise would be consistent with your investment objective and other principal investment strategies. The returns on a portfolio consisting primarily of sustainable investments may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered, and the investment opportunities available to such portfolios may differ. Companies may not necessarily meet high performance standards on all aspects of ESG or sustainable investing issues; there is also no guarantee that any company will meet expectations in connection with corporate responsibility, sustainability, and/or impact performance.
+
+Copyright © 2026 DB AG
+
+David Folkerts-Landau
+Group Chief Economist and Global Head of Research
+
+<table><tr><td>Pam FinelliCOO and Head of Fixed Income Research</td><td>Steve PollardGlobal Head of Company Research and Sales</td><td>Jim ReidGlobal Head of Macro and Thematic Research</td><td>Tim RokossaHead of European Company Research</td></tr><tr><td>Matthew BarnardHead of AmericasCompany Research</td><td>Debbie JonesGlobal Head of Sustainability and Data Innovation, Research</td><td>Robin WinklerHead of German Macro Research</td><td>Sameer GoelGlobal Head of EM &amp; APAC Research</td></tr><tr><td>Francis YaredGlobal Head of Rates Research</td><td>George SaravelosGlobal Head of FX Research</td><td>Peter HooperVice-Chair of Research</td><td>Nilendra de-MelHead of APAC &amp; Middle East Product Development</td></tr></table>
+
+International Production Locations
+
+<table><tr><td>DB AG</td><td>DB AG</td><td>DB AG</td><td>Deutsche Securities Inc.</td></tr><tr><td>DB Place</td><td>Equity Research</td><td>Filiale Hongkong</td><td>1-3-1 Azabudai</td></tr><tr><td>Level 16</td><td>Mainzer Landstrasse 11-17</td><td>International Commerce</td><td>Azabudai Hills Mori JP</td></tr><tr><td>Corner of Hunter &amp; Phillip</td><td>60329 Frankfurt am Main</td><td>Centre</td><td>Tower</td></tr><tr><td>Streets</td><td>Germany</td><td>1 Austin Road West,</td><td>Minato-ku, Tokyo 106-</td></tr><tr><td>Sydney, NSW 2000</td><td>Tel: (49) 69 910 00</td><td>Kowloon,</td><td>0041</td></tr><tr><td>Australia</td><td></td><td>Hong Kong</td><td>Japan</td></tr><tr><td>Tel: (61) 2 8258 1234</td><td></td><td>Tel: (852) 2203 8888</td><td>Tel: (81) 3 6730 1000</td></tr></table>
+
+DB AG
+21 Moorfields
+London EC2Y 9DB
+United Kingdom
+Tel: (44) 20 7545 8000
+
+DB Securities Inc.
+
+The DB Center
+1 Columbus Circle
+New York, NY 10019
+Tel: (1) 212 250 2500
+
+DB AG
+Filiale Singapur
+One Raffles Quay, South Tower
+Singapore 048583
+Tel: (65) 6423 8001

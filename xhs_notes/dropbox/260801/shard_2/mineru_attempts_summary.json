@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_3",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0001-11-DB-Microsoft-MSFT.OQ-F4Q-Harnessing the Power of AI-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0002-12-DB-Meta-META.US-Core Strength Funds the AI Build-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0003-13-GS-ASIA IN FOCUS-China H2 Fiscal Outlook- Reversing the Tightening-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0004-14-GS-AI Adoption Tracker July 2026-Adoption Rises to 21.5--260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0005-15-GS-Amazon.com Inc. -AMZN.US- Q2-26 Review- AWS Revenue Growth - Operating Margins Support the RoIC Behind AI Investments- Overall Profit Margin Multi-Year.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

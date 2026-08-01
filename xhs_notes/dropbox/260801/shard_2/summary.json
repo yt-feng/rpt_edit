@@ -1,0 +1,551 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0001-11-DB-Microsoft-MSFT.OQ-F4Q-Harnessing the Power of AI-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "AI全栈优势，微软这",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "DB：微软F4Q财报，AI能力应用层落地",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-11-DB-Microsoft-MSFT.OQ-F4Q-Harnessing the Power of AI-260730.pdf",
+      "cleaned_source_title": "DB-Microsoft-MSFT.OQ-F4Q-Harnessing the Power of AI",
+      "institution_name": "DB",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "DB：AIMicrosoftF4QHarnessin",
+      "raw_candidates": [
+        "微软F4Q财报：AI能力应用层落地",
+        "微软F4Q财报：AI应用层收入验证，Copilot席位增至3000万",
+        "微软F4Q财报：AI货币化延伸至应用层，Azure增速43%"
+      ],
+      "cleaned_candidates": [
+        "DB：微软F4Q财报，AI能力应用层落地",
+        "DB：微软F4Q财报，AI应用层收入验证",
+        "DB：微软F4Q财报，AI货币化延伸至应用层",
+        "DB：AIMicrosoftF4QHarnessin",
+        "DB：微软AI货币化从基础设施延伸至应用层"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：AIMicrosoftF4QHarnessin",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：微软AI货币化从基础设施延伸至应用层",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：微软F4Q财报，AI能力应用层落地",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "DB：微软F4Q财报，AI能力应用层落地"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0002-12-DB-Meta-META.US-Core Strength Funds the AI Build-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "DB",
+    "cover_short_title": "Meta二季度乱中有",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "DB：Meta核心与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-12-DB-Meta-META.US-Core Strength Funds the AI Build-260730.pdf",
+      "cleaned_source_title": "DB-Meta-META.US-Core Strength Funds the AI Build",
+      "institution_name": "DB",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "DB：AIMetaCoreStrengthFunds",
+      "raw_candidates": [
+        "DB：Meta核心业务增长支撑AI基础设施投入",
+        "DB：Meta二季度收入增长28%支撑AI基础设施投入",
+        "DB：Meta广告与AI基础设施投入研究"
+      ],
+      "cleaned_candidates": [
+        "DB：Meta核心业务增长支撑AI基础设施投入",
+        "DB：Meta二季度收入增长28%支撑AI基础设施投入",
+        "DB：Meta广告与AI基础设施投入研究",
+        "DB：AIMetaCoreStrengthFunds",
+        "DB：1.广告业务增长由AI驱动且已产生可量化回报"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "DB：Meta广告与AI基础设施投入研究",
+          "reasons": [
+            "anchor_coverage=0.53"
+          ]
+        },
+        {
+          "title": "DB：AIMetaCoreStrengthFunds",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "DB：1.广告业务增长由AI驱动且已产生可量化回报",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "DB：Meta核心与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "DB：Meta核心业务增长支撑AI基础设施投入",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "DB：Meta核心与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0003-13-GS-ASIA IN FOCUS-China H2 Fiscal Outlook- Reversing the Tightening-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "下半年财政要转向了？",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "GS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-13-GS-ASIA IN FOCUS-China H2 Fiscal Outlook- Reversing the Tightening-260731.pdf",
+      "cleaned_source_title": "GS-ASIA IN FOCUS-China H2 Fiscal Outlook- Reversing the Tightening",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：ASIAINFOCUS中国H2Fiscal展望",
+      "raw_candidates": [
+        "GS：中国下半年财政展望-宽松节奏转向",
+        "GS：中国下半年财政展望-支出增速1.5%低于预算目标",
+        "GS：中国下半年财政展望-资金使用节奏与增长走向"
+      ],
+      "cleaned_candidates": [
+        "GS：中国下半年财政展望-宽松节奏转向",
+        "GS：中国下半年财政展望-支出增速1.5%低于预算目标",
+        "GS：中国下半年财政展望-资金使用节奏与增长走向",
+        "GS：ASIAINFOCUS中国H2Fiscal展望",
+        "GS：一般公共预算收入同比增长4.7%，高于全年预算隐含的2.2%增速"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：中国下半年财政展望-支出增速1.5%低于预算目标",
+          "reasons": [
+            "anchor_coverage=0.57",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：中国下半年财政展望-资金使用节奏与增长走向",
+          "reasons": [
+            "anchor_coverage=0.64",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：ASIAINFOCUS中国H2Fiscal展望",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：一般公共预算收入同比增长4.7%，高于全年预算隐含的2.2%增速",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：中国下半年财政展望-宽松节奏转向",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "GS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0004-14-GS-AI Adoption Tracker July 2026-Adoption Rises to 21.5--260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI采用率突破21%",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "拖累->影响 x2",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：AI技术与行业应用观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-14-GS-AI Adoption Tracker July 2026-Adoption Rises to 21.5--260731.pdf",
+      "cleaned_source_title": "GS-AI Adoption Tracker July 2026-Adoption Rises to 21.5",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIAdoptionTrackerJuly2026",
+      "raw_candidates": [
+        "GS：AI采用追踪报告-2026年7月采用率升至21.5%",
+        "GS：AI采用追踪报告-美国企业采用率升至21.5%",
+        "GS：AI采用追踪报告-2026年7月美国企业采用率21.5%"
+      ],
+      "cleaned_candidates": [
+        "GS：AI采用追踪报告-2026年7月采用率升至21.5%",
+        "GS：AI采用追踪报告-美国企业采用率升至21.5%",
+        "GS：AI采用追踪报告-2026年7月美国企业采用率21.5%",
+        "GS：AIAdoptionTrackerJuly2026",
+        "GS：美国国民账户中AI相关硬件研究较2022年水平增加4630亿美元"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：AI采用追踪报告-美国企业采用率升至21.5%",
+          "reasons": [
+            "anchor_coverage=0.62"
+          ]
+        },
+        {
+          "title": "GS：AIAdoptionTrackerJuly2026",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：美国国民账户中AI相关硬件研究较2022年水平增加4630亿美元",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：AI技术与行业应用观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：AI采用追踪报告-2026年7月采用率升至21.5%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：AI技术与行业应用观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_o4qolmie/pdfs/0005-15-GS-Amazon.com Inc. -AMZN.US- Q2-26 Review- AWS Revenue Growth - Operating Margins Support the RoIC Behind AI Investments- Overall Profit Margin Multi-Year.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AWS 云增速37%",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：亚马逊AWS与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-15-GS-Amazon.com Inc. -AMZN.US- Q2-26 Review- AWS Revenue Growth - Operating Margins Support the RoIC Behind AI Investments- Overall Profit Margin Multi-Year.pdf",
+      "cleaned_source_title": "GS-Amazon.com Inc. -AMZN.US- Q2-26 Review- AWS Revenue Growth - Operating Margins Support the RoIC Behind AI Investments- Overall Profit Margin Multi-Year",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIInc.，Q226ReviewAWSRevenue增长",
+      "raw_candidates": [
+        "GS：亚马逊AWS增速与利润率支撑AI投入回报",
+        "GS：亚马逊AWS收入增37%利润率39%支撑AI投入回报",
+        "GS：亚马逊AWS与AI业务年化收入250亿美元支撑资本开支"
+      ],
+      "cleaned_candidates": [
+        "GS：亚马逊AWS增速与利润率支撑AI投入回报",
+        "GS：亚马逊AWS收入增37%利润率39%支撑AI投入回报",
+        "GS：亚马逊AWS与AI业务年化收入250亿美元支撑资本开支",
+        "GS：AIInc.，Q226ReviewAWSRevenue增长",
+        "GS：芯片和AI业务各自达到250亿美元的年化收入运行率"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：亚马逊AWS与AI业务年化收入250亿美元支撑资本开支",
+          "reasons": [
+            "anchor_coverage=0.37"
+          ]
+        },
+        {
+          "title": "GS：AIInc.，Q226ReviewAWSRevenue增长",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.16",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：芯片和AI业务各自达到250亿美元的年化收入运行率",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：亚马逊AWS与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "37",
+          "39"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：亚马逊AWS收入增37%利润率39%支撑AI投入回报",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：亚马逊AWS与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

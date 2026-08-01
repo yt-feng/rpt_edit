@@ -1,0 +1,53 @@
+Found 50 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o4qolmie/pdfs/0001-11-Deutsche Bank-Microsoft-MSFT.OQ-F4Q-Harnessing the Power of AI-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o4qolmie/pdfs/0002-12-Deutsche Bank-Meta-META.US-Core Strength Funds the AI Build-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o4qolmie/pdfs/0003-13-Goldman Sachs-ASIA IN FOCUS-China H2 Fiscal Outlook- Reversing the Tightening-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o4qolmie/pdfs/0004-14-Goldman Sachs-AI Adoption Tracker July 2026-Adoption Rises to 21.5--260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_o4qolmie/pdfs/0005-15-Goldman Sachs-Amazon.com Inc. -AMZN.US- Q2-26 Review- AWS Revenue Growth - Operating Margins Support the RoIC Behind AI Investments- Overall Profit Margin Multi-Year.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=c2b67879-7845-40d9-9531-79fb91c1b829
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset d4c99a74a93ca29c84e3bc2e730b25510537cbb51b624dabc20fcb9465cc97d3.jpg: score=-100;too_small:765x162
+Skip non-chart visual asset 66ae828fff15ac5fd2d4aa705a3947e105f5818a49f0b0b2ad721844e9361766.jpg: score=-100;too_small:1393x76
+Skip non-chart visual asset 342b8d71c6d96bd70bf4c3b8ee01992b490499c4a09a85b0fae2c3ace9622e71.jpg: score=1;square_without_chart_hint,edge:0.31,contrast,large
+Skip non-chart visual asset 2eda105db7a84c4707ed626f48fb62d433d0e4e32b72fdc63ee71703fe2407b5.jpg: score=-100;too_small:401x126
+Skip non-chart visual asset fa46cf8a15c375b6e82cf19e7916914ea0a77e874990239c86d44690a8d3e647.jpg: score=-100;too_small:771x160
+Skip non-chart visual asset a1bfedd344b120a12fde3ebca2e94fdd8c33b808b33992e3d91bf5057de13bca.jpg: score=0;odd_ratio:4.91,edge:0.28,large
+Skip non-chart visual asset 514ed57f524c4e16bf023d6f7838a39b4b650934dd769b845441ce9c52941782.jpg: score=-100;too_small:451x112
+Skip non-chart visual asset 98e56e28906787ee3edff15f6b828f5f1b847f880447349386fe6d4cbcb38fbc.jpg: score=-100;too_small:1412x117
+Skip non-chart visual asset 0155c3b01160c03b9db97730ff36924f531245b5af7494bfd9ae9904c5f47aa5.jpg: score=-100;too_small:801x151
+Skip non-chart visual asset a98b9bd6765e1657078ca661313e11ae27c9993b11bc916c1f632d2934953357.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Skip non-chart visual asset 9da5b9dea5a6662fa336fea05c6c44a578530e498f682598e62524e96cd7ae89.jpg: score=-1;odd_ratio:5.45,edge:0.21
+Neutralized WeChat title while keeping the report: 德意志银行：Meta核心业务增长支撑AI基础设施投入 -> 德意志银行：Meta核心与AI及近期数据观察
+Skip non-chart visual asset 34ae5cd5e15305b8af05c949831c4bf99695935edbc3701627b92d0510a09b89.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.44,contrast,large
+Neutralized WeChat title while keeping the report: 高盛：中国下半年财政展望-宽松节奏转向 -> 高盛：研究主题与行业变化观察
+Skip non-chart visual asset 5fa7b77b8e4d1fe14df2290bfe5b6422ecb8eceb5b7573434d70be4960a95137.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.24,contrast,large
+Skip non-chart visual asset 92774caee99b09b4613897be115e75c8407bad33695a544f62c4470272cbeff8.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 13212f910fa20ad130c05614f719e0cf4d4bfe94e9afd595c26d52f90de4a521.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset f3a947ecb4b45a4266dc80416d7ac22fc441d85e47da70acd00746a9555dd9cf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 75666ff095a0eab25dbda21cfde72173ee4acd677ffda5425aa514724f35eb78.jpg: score=0;square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 987c2c80896b5326a773724b422d57e1ac8b92bbf8857ed8c9038531cc503212.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.28,contrast,large
+Skip non-chart visual asset d9110a35a8b0db8f7a8850db5673f9acc51afdbac5673da5abdf6538d5ab5fd3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset 0e33107e080d049e95792ee9a43db4f13917502582aac8bb32e4b3ddfcdd8714.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.13,large
+Skip non-chart visual asset b1ef81e0aec208f328af0304a0aa989a30bb46336fda6a2a1de4dc9fe7e8949c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 9bf2046fa34c39163d2ee0a003a49914fd88ad361ec5a07737841626800a8660.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Neutralized WeChat title while keeping the report: 高盛：AI采用追踪报告-2026年7月采用率升至21.5% -> 高盛：AI技术与行业应用观察
+Skip non-chart visual asset 6cf1a581041883987a3fadc92a4a54dcd249d06c2560d636d57b6302fb2250c2.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset 8c12ea7e62a15adefb7392144d579556c186534214adb65a1e7f335853812243.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset 9f7c1221468272860b59a2a500f4ff14b3442a394d88eb15b94643c18ce719ab.jpg: score=0;square_without_chart_hint,edge:0.39,large
+Skip non-chart visual asset 92b8a502a075c4bd5dad24e8fab135def5c063f3a00c76c87d9f5f98839807c6.jpg: score=2;edge:0.33
+Skip non-chart visual asset f9d8c8a2d2f1375b818da87334ec5fd52b8605d166df41846863137e63afebd0.jpg: score=1;square_without_chart_hint,edge:0.39,contrast,large
+Skip non-chart visual asset 859c5ef90554120a8386688a3381b4ef5c2e80d231597caba3c1da4d88961fcf.jpg: score=-100;too_small:484x106
+Skip non-chart visual asset a1ba5c9706555dbede11b9fd8bfd6157774845316e317267f1767380794fe6bd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset c30f6a2615efd2b710d0d090a0138c8d7079ecbd138d498e350f3c62ef1ea793.jpg: score=-100;too_small:543x150
+Neutralized WeChat title while keeping the report: 高盛：亚马逊AWS收入增37%利润率39%支撑AI投入回报 -> 高盛：亚马逊AWS与AI及近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

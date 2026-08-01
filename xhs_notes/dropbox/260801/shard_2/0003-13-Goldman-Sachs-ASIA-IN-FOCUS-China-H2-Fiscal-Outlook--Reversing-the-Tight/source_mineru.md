@@ -1,0 +1,247 @@
+ASIA IN FOCUS
+
+# China H2 Fiscal Outlook: Reversing the Tightening
+
+Since China reopened from Covid lockdowns, fiscal policy has shifted from pre-emptive, broad-based stimulus to a more reactive, “stop-go” easing approach to stabilizing growth. Weak domestic demand still calls for continued policy support, but high government debt, lower capital returns, heightened external uncertainty, and greater emphasis on high-tech manufacturing and strategic supply chains have made policy easing in recent years smaller in scale, more delayed in timing, and more targeted in spending than previous major stimulus cycles.
+
+Lisheng Wang
++852-3966-4004 |
+lisheng.wang@gs.com
+GS (Asia) L.L.C.
+
+In H1 2026, on-budget fiscal revenue rose 4.7% yoy, ahead of the budget run-rate, while off-budget government-managed fund revenue lagged materially, dragged down by a 31.5% yoy decline in land sales revenue. Government expenditure also fell meaningfully short of budget projections. Policy bank support contracted sharply in Q2, and local government financing vehicle (LGFV) bond issuance remained subdued. Our proprietary augmented fiscal deficit (AFD) metric narrowed to 10.2% of GDP in June from a recent peak of 11.2% in March on a 12-month moving-average basis.
+
+■ Strong Q1 GDP growth and resilient exports likely increased comfort with the growth trajectory among top leaders and reduced the urgency for incremental easing, while local officials have become more cautious amid political turnover, anti-corruption pressure, and accountability risks. As a result, the fiscal impulse turned negative at an inopportune time, as other shocks also weighed on growth in Q2. We estimate the negative fiscal impulse contributed nearly half of the sequential real GDP slowdown from Q1 to Q2.
+
+We estimate more than RMB8tn of government funding capacity is available for H2 (compared to the RMB5.4tn used in H1), including RMB6.8tn of unused new government bond issuance quota, the RMB800bn new policy-based financial instrument, and higher fiscal deposits. Recent policy signals point to faster use of already-planned easing measures, but with the 4.5-5.0% growth target still within reach, policymakers may see limited urgency for broad-based, sizable new stimulus unless growth weakens further.
+
+We expect central and local governments to accelerate their bond issuance and proceeds spending in the coming months, expedite implementation of the new policy-based financial instrument, and leave the door open for additional easing later this year if needed. Ongoing and planned easing still appear tilted toward technology, investment, and “high-quality growth,” with investment support focused on high-tech manufacturing, strategic supply chains, the green transition, urban renewal, and “Six Networks” projects.
+
+We recently lowered our 2026 AFD forecast by 0.5pp to 11.5% of GDP, and cut our 2026 gross fixed capital formation growth forecast to 2.0% yoy from 2.5% yoy previously, after incorporating Q2 realized numbers. Upside risks include additional extra-budget funding and new demand-side measures, while downside risks include continued central-level complacency and increasing local implementation constraints.
+
+## China H2 Fiscal Outlook: Reversing the Tightening
+
+## Characterizing China's "stop-go" fiscal easing mode
+
+Since China reopened from Covid lockdowns, fiscal policy has shifted from pre-emptive, broad-based stimulus to a more reactive, “stop-go” easing approach to stabilizing growth. Weak domestic demand still calls for continued policy support, but high government debt and declining returns on capital have constrained the room for easing. Elevated external uncertainty has also encouraged policymakers to preserve policy capacity for more adverse scenarios. At the same time, the US-China technology race has increased the medium- to long-term priority of supporting high-tech manufacturing and key supply chains. Together, these constraints and priorities have made policy easing in recent years smaller in scale, more delayed in timing, and more targeted in spending than previous major stimulus cycles.
+
+In recent years, sequential real GDP growth has often followed an intra-year “V-shaped” or “U-shaped” pattern: a strong Q1, a softer Q2, and, when needed, an H2 catch-up (Exhibit 1). Headline GDP growth has met the full-year target in recent decades except in 2022 $^{1}$ , but the margin of outperformance has narrowed. When the full-year target appeared secure before year-end – as in 2021, 2023, and 2025 (mainly for H1 2025) when growth surprised to the upside – policymakers tended to slow spending and carry some funds into the following year (Exhibit 2) $^{2}$ . In 2025, for example, central and local governments had largely completed their full-year bond issuance quotas by December, yet fiscal deposits still showed RMB700bn of net accumulation (vs. end-2024) that had not been spent by year-end.
+
+Exhibit 1: Sequential real GDP growth has often followed a “V-shaped” or “U-shaped” path in recent years  
+![](images/9dac432e7aaf592361301b6eabe3878719b3a1e4feeb0c97e77bee244f165ca2.jpg)  
+NBS often revises historical sequential GDP growth estimates. In the exhibit, we use China's initially released sequential real GDP growth because, in our view, it is more relevant for contemporaneous policymaking than post-revision figures. Dashed line refers to GS projections.  
+Source: NBS, Haver Analytics, GS Global Investment Research
+
+Exhibit 2: Fiscal “spend-through” ratio tends to decline – implying slower spending of previously raised funds – when the full-year growth target is largely secured  
+![](images/a09ec2d135c8bb68f97a893525269935d3fa2393b59a3fffe20744f1d7614a3b.jpg)  
+Shaded areas indicate periods when China's year-to-date real GDP growth was at or below the full-year target; circles mark stylized episodes of slower government spending in recent years.  
+Source: MOF, Wind, CEIC, GS Global Investment Research
+
+## H1 2026 progress check: Fiscal revenue outpaced budget run-rate, while expenditure lagged
+
+In H1 2026, on-budget fiscal revenue rose 4.7% yoy (vs. -1.7% yoy in 2025), beating the MOF's full-year budget projection of +2.2% yoy growth, supported by a marked improvement in tax revenue. Although higher PPI inflation amid the global energy-supply shock provided a support, anecdotal evidence also suggests that some fiscally strained local governments have collected taxes more aggressively. By contrast, on-budget fiscal expenditure increased only 1.5% yoy in H1 2026 (vs. +1.0% yoy in 2025), well below both the 4.4% full-year budget projection and fiscal revenue growth.
+
+Off-budget, government-managed fund revenue fell 21.6% yoy in H1 2026 (vs. -7.0% yoy in 2025), dragged down by a 31.5% yoy decline in land sales revenue (-14.7% yoy in 2025), suggesting the full-year budget projection of +0.6% yoy growth will likely be missed (Exhibit 3). Government-managed fund expenditure also dropped 16.4% yoy in H1 2026 (vs. +11.3% yoy in 2025), with year-on-year growth slowing sharply in Q2 vs. Q1. Combining the general public budget and government-managed fund budget, we estimate total government revenue growth improved to +1.0% yoy in H1 2026 from -2.8% yoy in 2025, while total government expenditure growth slowed to -2.9% yoy from +3.7% yoy.
+
+Among implicit government debt financing channels, policy bank support weakened significantly in Q2, as both policy bank bond issuance and the PBOC's Pledged Supplementary Lending (PSL) contracted sharply, in contrast with the stabilization seen in previous years (Exhibit 4). Based on our GS-defined estimates, local government financing vehicle (LGFV) bond net financing rebounded modestly in H1 2026 vs. 2025, but remained well below pre-2024 levels. Incorporating all major on- and off-budget financing channels, our proprietary augmented fiscal deficit (AFD) metric widened slightly to $11.2\%$ of GDP in March 2026 from $11.0\%$ in December 2025 on a 12-month moving-average basis, followed by a notable narrowing to $10.2\%$ in June 2026.
+
+Exhibit 3: Land sales revenue continued to decline in H1 2026, while LGFV bond net issuance remained subdued despite a small improvement from 2025  
+![](images/ebbcbf427df35ebf3801e781d4c36e54446031693d339aafdddfe4d8670025cd.jpg)  
+We assume the “net” portion equals 30% of gross land sales revenue, with the remainder used for land acquisition and redevelopment.  
+Source: MOF, Wind, Data compiled by GS Global Investment Research
+
+Exhibit 4: Policy bank support contracted sharply in Q2, in contrast with the stabilization seen in previous years  
+![](images/991b818f510148747ccedb169fc27af603a94d5b1c2e75295cee9863220acaec.jpg)  
+Policy bank support includes net financing via policy bank bond issuance and the PBOC's PSL injection.  
+Source: Wind, CEIC, GS Global Investment Research
+
+## Fiscal impulse turned negative in Q2 amid central-level comfort with the growth trajectory and local implementation constraints
+
+Although policymakers lowered this year's growth target to “4.5-5.0%” from last year's “around 5%,” China's real GDP still grew 5.0% yoy in Q1, supported by strong exports and frontloaded fiscal easing. This likely left top leaders comfortable with year-to-date economic performance and prompted a pullback in easing signals at the April Politburo meeting. Government bond issuance and proceeds spending slowed meaningfully in Q2, pushing the fiscal impulse into negative territory at an inopportune time, as global energy-supply shocks and adverse domestic weather conditions also weighed on growth (Exhibit 5). We estimate the negative fiscal impulse contributed nearly half of the sequential slowdown in real GDP growth from Q1 to Q2 (from 5.3% qoq annualized to 3.6% qoq annualized).
+
+Exhibit 5: Fiscal impulse turned negative in Q2 when growth slowed, while we expect it to turn positive in H2  
+![](images/92e568cff340dbf57a84a17c25b438b9e012f60383de91edd2238be9aad55928.jpg)  
+Source: NBS, Haver Analytics, GS Global Investment Research
+
+Exhibit 6: Our China anti-corruption proxy at the national level stayed elevated, while that at the local level rose to a record high in Q2 2026  
+![](images/2990ee995ecbb164035581f634918c984efdf4e66b0d169de560e86efe19ad4c.jpg)  
+Source: China Central Commission for Discipline Inspection, Data compiled by GS Global Investment Research
+
+Local-level political turnover this year, ahead of next year's $21^{\text{st}}$ Party Congress, has made local officials more risk-averse than usual. Amid intensifying anti-corruption investigations (Exhibit 6) and greater emphasis on the “correct view of performance” (正确政绩观), local officials have adopted a more cautious approach in launching large-scale investment projects even when funding is available, especially in less-developed inland provinces with elevated debt risks. Recent major incidents, including the Shanxi coal mine explosion in May and the Guangxi severe flooding in July, have reinforced this cautious stance, as the modest GDP gains from additional investment may be outweighed by the accountability risks associated with such incidents (Exhibit 7). For example, Shanxi coal production has fallen sharply in recent months despite higher coal prices, as local officials prioritized safety and launched intensive inspections after the severe coal mine explosion in May (Exhibit 8).
+
+Exhibit 7: Several major incidents in China since early 2026
+
+<table><tr><td rowspan="2">Major incident</td><td rowspan="2">Date</td><td colspan="2">Location</td><td rowspan="2">Details and Accountability Costs</td></tr><tr><td>Province</td><td>City/County</td></tr><tr><td>Liuyang Fireworks Factory Explosion</td><td>5-May-26</td><td>Hunan</td><td>Liuyang (county-level) City, Changsha City</td><td>The incident triggered a State Council investigation. Within a week, six local officials had been detained or suspended.</td></tr><tr><td>Liushenyu Coal Mine Exceptionally Serious Gas Explosion</td><td>22-May-26</td><td>Shanxi</td><td>Qinyuan County, Changzhi City</td><td>The mining disaster is classified as an &quot;exceptionally serious&quot; incident, with significant casualties reported, and led to major personnel changes among local and sector-level officials in Shanxi.</td></tr><tr><td>Guangxi Severe Flooding and Liulan Reservoir Dam Collapse</td><td>Early July 2026</td><td>Guangxi</td><td>Primarily Nanning, Hengzhou, and Guigang</td><td>Severe flooding due to torrential rains from Typhoon Maysak caused the breach of the Liulan Reservoir dam in Hengzhou on July 6. The incident triggered a State Council investigation.</td></tr></table>
+
+Source: Government websites, Media reports, Data compiled by GS Global Investment Research
+
+Exhibit 8: Shanxi coal production fell sharply after the local coal mine explosion  
+![](images/abaf1edfd0cab293420285b9e90502dad32338cfe957253daa707b440504bbae.jpg)  
+Source: Wind, Data compiled by GS Global Investment Research
+
+## Government funding capacity remains ample for H2
+
+We estimate available government funding capacity for H2 at more than RMB8tn (compared with the RMB5.4tn used in H1). This includes RMB6.8tn of unused new government bond issuance quota as of end-June (57% of the RMB11.9tn full-year quota; Exhibit 9), this year's RMB800bn new policy-based financial instrument (“新型政策性金融工具”, up from RMB500bn last year) and a more-than-RMB400bn year-on-year increase in outstanding fiscal deposits.
+
+We also estimate that around RMB1.8tn of unused government bond issuance quota had accumulated from prior years by end-2025—RMB0.6tn in central government bonds (CGBs) and RMB1.2tn in local government bonds (LGBs)—which could be tapped relatively easily with Ministry of Finance (MOF) approval if needed (see past examples here and here). Policymakers could also require SOEs to increase profit transfers to the budget, as they did in 2022.
+
+## Planned easing likely to catch up in Q3
+
+Recent policy signals point to a modestly more pro-growth stance. At a 13 July symposium with experts and entrepreneurs, Premier Li Qiang called for “intensifying counter-cyclical adjustment, making full and effective use of existing policies, and studying and preparing incremental policies in advance.” At a 22 July press conference, an MOF spokesperson pledged to reasonably accelerate the use of government funds and support the rollout of already-planned policy measures. In a 23 July People’s Daily article, Finance Minister Lan Fo’an also vowed to strengthen implementation of the RMB100bn fiscal-financial policy package aimed at promoting domestic demand (“财政金融协同促内需一揽子政策”; funded by the central budget).
+
+At the just-concluded July Politburo meeting, top leaders strengthened their easing rhetoric — they pledged to “step up counter-cyclical adjustments” and required macro policies to “exert force and improve efficiency” (“发力提效”). On the fiscal policy front, they called for “accelerating the progress of fiscal expenditures and the spending of bond proceeds, and vigorously promoting the implementation of ‘Two Majors’ investment (‘两重’项目, referring to investment projects and areas of strategic importance such as high-tech manufacturing and key supply chains), as well as consumer goods trade-in and equipment upgrade programs.”
+
+We expect central and local governments to accelerate their bond issuance and proceeds spending in the coming months, expedite implementation of the RMB800bn new policy-based financial instrument, and leave the door open for additional easing later this year if needed. In previous years with a stronger easing bias, policymakers typically required local governments to largely complete their full-year special bond issuance quotas by end-September (see the precedents in 2022 and 2023). With exports still resilient and the 4.5-5.0% full-year growth target still within reach (real GDP grew 4.7% yoy in H1), policymakers may see limited urgency for broad-based, sizable near-term stimulus. In our view, the H2 fiscal outlook hinges more on the pace of planned easing implementation rather than on the scale of any new stimulus, unless growth momentum weakens further and puts the full-year GDP target at risk (Exhibit 10).
+
+Exhibit 9: The government fulfilled 43% of its full-year bond issuance quota in H1, with the pace of issuance slowing notably in Q2 vs. Q1
+
+![](images/b14e826f6b0d2c77c6d5c30a8aeb7842d3dcfd2941cb190387daa80d6df2100c.jpg)  
+Government bond net issuance includes central and local government bonds. Local government refinancing bond issuance for debt resolution is not included.  
+Source: Wind, CEIC, GS Global Investment Research  
+Exhibit 10: Policymakers appear not to be in a rush to significantly stimulate the economy as of now, as the full-year growth target appears still on track
+
+![](images/aaf7c5332f57c8191c28e0c711ea4940ea33f949e314b874ee093798d2e30d08.jpg)  
+Source: NBS, Haver Analytics, Data compiled by GS Global Investment Research
+
+We believe demand-side fiscal expansion will be key to stabilizing growth and market sentiment, while ongoing easing measures appear tilted toward technology, investment, and “high-quality growth” (Exhibit 11). Compared to past major easing cycles, government spending this time looks set to favor high-tech manufacturing (e.g., AI infrastructure and the digital economy), strategic supply chains (e.g., food, energy, and semiconductors), the green transition, people’s livelihoods (e.g., urban renewal), and the “Six Networks” projects (i.e., water networks, new power grids, computing power networks, next-generation communication networks, urban underground pipeline networks, and logistics networks). In our view, this reflects stronger policy support for China’s “New Quality Productive Forces.” Although recent policy communications have again emphasized boosting consumption, the focus remains largely supply-side and long-term, suggesting a limited near-term growth impulse.
+
+Exhibit 11: Ongoing and planned policy easing measures tilt toward technology, investment, and “high-quality growth”
+
+<table><tr><td>Easing dimension</td><td>Policy measures announced for 2026</td><td>Description</td><td>Status</td><td>Estimated impact on 2026 GDP growth</td></tr><tr><td rowspan="6">Investment</td><td>&quot;Two Majors&quot; Investment for strategically important projects</td><td>RMB800bn, unchanged from last year</td><td>Ongoing</td><td>None</td></tr><tr><td>Equipment upgrade program</td><td>RMB200bn, unchanged from last year</td><td>Ongoing</td><td>None</td></tr><tr><td>New policy-based financial instrument</td><td>RMB800bn (RMB300bn more than last year), for strategically important investment</td><td>To be implemented</td><td>+50bp *</td></tr><tr><td>Special funding program with fiscal-financial coordination</td><td>RMB100bn, to promote domestic demand (especially private investment and household consumption)</td><td>Unclear</td><td>Less than +10bp</td></tr><tr><td>National-level Merger &amp; Acquisition Fund</td><td>To ease the exit of venture capital and improve the investment efficiency, NDRC mentioned that policymakers will establish a national-level Merger &amp; Acquisition Fund this year.</td><td>Unclear</td><td>n.a.</td></tr><tr><td>Relending program for private enterprises, technological innovation, the agriculture sector and SMEs</td><td>A total of RMB2.1tn increase in relending quotas, including a new RMB1tn program for private enterprises, an additional RMB600bn quota to support technological innovation and related corporate bond issuance, and an extra RMB 500bn quota for the agriculture sector and SMEs. A 25bp cut to various relending rates.</td><td>Quota increased but yet to be fully used</td><td>n.a.</td></tr><tr><td rowspan="4">Consumption</td><td>Consumer goods trade-in program</td><td>RMB250bn, RMB50bn less than last year</td><td>Ongoing</td><td>-5bp or smaller</td></tr><tr><td>Nationwide childbirth subsidy</td><td>RMB3.6k per child annual subsidy for newborns under 3yrs old (unchanged from last year)</td><td>Ongoing</td><td>Less than +10bp *</td></tr><tr><td>Strengthening social safety net</td><td>Increasing the minimum basic pension for urban and rural residents by RMB20 per month (consistent with last year&#x27;s adjustment)</td><td>Ongoing</td><td>Less than +5bp</td></tr><tr><td>Interest rate subsidies</td><td>Providing temporary fiscal subsidies of 1pp for the interest payments of eligible consumer and services business loans.</td><td>Ongoing</td><td>Negligible</td></tr><tr><td rowspan="2">Housing</td><td>Urban renewal</td><td>Official estimates suggest total investment on urban renewal will exceed RMB15tn during the 15th FYP (2026-30), or RMB3tn annually, higher than the 2023-24 average of RMB2.8tn (2025 data not yet available)</td><td>Ongoing</td><td>n.a. (some projects could be funded by measures in the &quot;investment&quot; part)</td></tr><tr><td>Housing provident fund</td><td>Broadening the use of housing provident fund to lower the blended mortgage rates and support the spending on other housing-related areas (e.g., home renovation, property management fees, rent)</td><td>Ongoing</td><td>n.a.</td></tr><tr><td>Other</td><td>Local government debt resolution</td><td>RMB2.8tn planned for this year (unchanged from last year)</td><td>Ongoing</td><td>None</td></tr></table>
+
+\* Some easing measures were launched in late 2025, with part of the growth impulse falling in 2026.  
+Source: Government websites, GS Global Investment Research
+
+## Our latest 2026 AFD and investment forecasts
+
+We recently lowered our 2026 full-year AFD forecast by 0.5pp of GDP to 11.5% (vs. 11.0% in 2025), reflecting weaker-than-expected land sales and policy bank support, as well as stronger-than-expected tax revenue collection (Exhibit 12). Still, after the sharp fiscal tightening in Q2, our forecast implies a modest H2 expansion, with fiscal policy returning as a growth driver. Incorporating the H1 outturn (-31.5% yoy), we now expect land sales revenue to fall by around 20% yoy this year, given the prolonged property downturn and still-tight developer funding conditions. Compared with H1, we expect policy bank support to rebound meaningfully as the new policy-based financial instrument is set to be rolled out, while on-budget fiscal spending should catch up with revenue in H2.
+
+Exhibit 12: We recently lowered our 2026 AFD forecast by 0.5pp to 11.5% of GDP
+
+<table><tr><td colspan="2"></td><td>Percent of GDP</td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026F</td><td>Change in 2026F</td></tr><tr><td>1</td><td rowspan="4">=3-(2+4)</td><td>Official on-budget deficit</td><td>2.8</td><td>3.6</td><td>3.2</td><td>2.8</td><td>3.8</td><td>3.0</td><td>4.0</td><td>4.0</td><td>0.0</td></tr><tr><td>2</td><td>Budget revenue</td><td>18.9</td><td>17.7</td><td>17.3</td><td>16.5</td><td>16.8</td><td>16.3</td><td>15.4</td><td>15.0</td><td>-0.4</td></tr><tr><td>3</td><td>Budget expenditure</td><td>23.7</td><td>23.7</td><td>20.9</td><td>21.1</td><td>21.2</td><td>21.1</td><td>20.5</td><td>20.1</td><td>-0.4</td></tr><tr><td>4</td><td>Net drawdown of fiscal deposit and transfer from other fiscal accounts</td><td>2.0</td><td>2.5</td><td>0.5</td><td>1.8</td><td>0.7</td><td>1.8</td><td>1.1</td><td>1.1</td><td>0.0</td></tr><tr><td>5</td><td rowspan="2">=3-2</td><td>Effective on-budget deficit</td><td>4.8</td><td>6.1</td><td>3.7</td><td>4.6</td><td>4.5</td><td>4.8</td><td>5.1</td><td>5.1</td><td>0.0</td></tr><tr><td>6</td><td>Local government special bond (LGSB)</td><td>2.1</td><td>3.5</td><td>2.8</td><td>3.6</td><td>3.0</td><td>3.0</td><td>3.1</td><td>3.1</td><td>0.0</td></tr><tr><td>7</td><td rowspan="3">=8+9</td><td>LGFV bond and railway construction bond net issuance</td><td>1.3</td><td>2.2</td><td>2.1</td><td>1.0</td><td>1.0</td><td>-0.1</td><td>0.0</td><td>0.4</td><td>0.4</td></tr><tr><td>8</td><td>LGFV bond net issuance</td><td>1.2</td><td>2.2</td><td>2.0</td><td>1.0</td><td>1.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.3</td></tr><tr><td>9</td><td>Railway construction bond net issuance</td><td>0.0</td><td>0.1</td><td>0.1</td><td>0.0</td><td>-0.1</td><td>-0.1</td><td>0.0</td><td>0.1</td><td>0.1</td></tr><tr><td>10</td><td rowspan="7">=11+12</td><td>Policy bank support (including PSL)</td><td>1.3</td><td>2.0</td><td>1.0</td><td>1.7</td><td>1.1</td><td>0.2</td><td>0.2</td><td>0.6</td><td>0.5</td></tr><tr><td>11</td><td>Policy bank bond issuance</td><td>1.2</td><td>2.3</td><td>1.4</td><td>1.4</td><td>1.0</td><td>0.8</td><td>1.1</td><td>0.6</td><td>-0.5</td></tr><tr><td>12</td><td>PSL</td><td>0.2</td><td>-0.3</td><td>-0.4</td><td>0.3</td><td>0.1</td><td>-0.7</td><td>-1.0</td><td>0.1</td><td>1.0</td></tr><tr><td>13</td><td>Trust loans</td><td>-0.2</td><td>-0.5</td><td>-0.9</td><td>-0.2</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.0</td></tr><tr><td>14</td><td>Net financing via land sales</td><td>2.2</td><td>2.4</td><td>2.2</td><td>1.6</td><td>1.3</td><td>1.1</td><td>0.9</td><td>0.7</td><td>-0.2</td></tr><tr><td>15</td><td>Central government special bond (CGSB)</td><td>0.0</td><td>1.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.7</td><td>1.3</td><td>1.1</td><td>-0.2</td></tr><tr><td>16</td><td>Local government debt resolution (swap / refinancing / special-purpose refinancing bond)</td><td>0.1</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.4</td><td>0.7</td><td>0.5</td><td>0.5</td><td>0.0</td></tr><tr><td>17</td><td>=5+6+7+10+13+14+15+16</td><td>Augmented fiscal deficit (AFD)</td><td>11.7</td><td>16.6</td><td>11.2</td><td>12.3</td><td>11.3</td><td>10.6</td><td>11.0</td><td>11.5</td><td>0.5</td></tr></table>
+
+Source: MOF, CEIC, Haver Analytics, Wind, GS Global Investment Research
+
+Occasional NBS “statistical corrections” to previously over-reported data may have amplified reported FAI growth volatility in recent quarters. Incorporating weaker-than-expected H1 outturns and our lower 2026 AFD forecast, we have cut our 2026 FAI growth forecast by 4pp to -2.0% yoy. This still implies a modest improvement from -3.8% yoy in 2025 and a pickup in H2 from H1 2026, supported by fiscal easing and a low base (Exhibit 13). We also lowered our 2026 gross fixed capital formation (GFCF; a GDP expenditure component) growth forecast to 2.0% yoy from 2.5% previously (vs. 1.2% in 2025). Our proprietary investment tracker suggests China’s real investment growth rebounded from 2.0% yoy in Q4 2025 to 3.2% yoy in Q1 2026, before easing back to 2.1% yoy in Q2 2026, while its volatility was much smaller than headline FAI growth implies in recent quarters (Exhibit 14). Note that our investment tracker has broadly moved in line with GFCF growth, but has remained higher since 2025.
+
+Risks to our fiscal policy and investment outlook remain two-sided. On the upside, policymakers could add extra-budget funding and introduce new demand-side measures to support investment and consumption. On the downside, continued complacency among top leaders toward economic performance, combined with a stronger emphasis on anti-corruption and fiscal discipline, could constrain further easing or reduce its effectiveness. Frequent quarter-to-quarter shifts in the macro policy stance could also slow, if not undermine, the rebuilding of confidence among consumers and private entrepreneurs.
+
+Exhibit 13: Incorporating weaker-than-expected H1 outturns, we have cut our 2026 FAI growth forecast to -2.0% yoy  
+![](images/5d06bb88b55d4b405a85a5a9f2b2747cf370593a5c136a7e78aaf9541b17a746.jpg)  
+Source: CEIC, GS Global Investment Research
+
+Exhibit 14: Our investment tracker suggests China's real investment growth slowed in Q2 vs. Q1  
+![](images/131e8c00f99462ebbf94d65a03153354f67b2e00436ee08b100d4349f12305e6.jpg)  
+Source: NBS, GS Global Investment Research
+
+## Lisheng Wang
+
+The author would like to thank Samson Yau, an intern on the Asia Economics team, for his contribution to this report.
+
+## The China Economics Team
+
+Andrew Tilton
++852-2978-1802
+andrew.tilton@gs.com
+GS (Asia) L.L.C.
+
+Xinquan Chen
++852-2978-2418
+xinquan.chen@gs.com
+GS (Asia) L.L.C.
+
+Hui Shan
++852-2978-6634
+hui.shan@gs.com
+GS (Asia) L.L.C.
+
+Yuting Yang
++852-2978-7283
+yuting.y.yang@gs.com
+GS (Asia) L.L.C.
+
+Lisheng Wang
++852-3966-4004
+lisheng.wang@gs.com
+GS (Asia) L.L.C.
+
+Chelsea Song
++852-2978-0106
+chelsea.song@gs.com
+GS (Asia) L.L.C.
+
+## Disclosure Appendix
+
+## Reg AC
+
+I, Lisheng Wang, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Lisheng Wang GS (Asia) L.L.C..
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## Disclosures
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:
+
+https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are
+
+available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.
+
+As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
