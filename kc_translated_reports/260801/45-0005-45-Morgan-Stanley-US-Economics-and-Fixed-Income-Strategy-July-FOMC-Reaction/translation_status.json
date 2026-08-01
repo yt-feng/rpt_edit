@@ -1,0 +1,116 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_8/0005-45-Morgan-Stanley-US-Economics-and-Fixed-Income-Strategy-July-FOMC-Reaction",
+  "title": "摩根士丹利：研究主题与行业变化观察",
+  "source_title": "0005-45-MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-45-MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility-260730",
+    "cleaned_source_title": "MS-US Economics and Fixed Income Strategy-July FOMC Reaction- A question of credibility",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：USEconomics和FixedIncome策略",
+    "raw_candidates": [
+      "美国经济与固定收益策略-七月FOMC会议反应-信誉问题",
+      "美国经济与固定收益策略-七月FOMC会议反应-加息门槛与通胀数据",
+      "美国经济与固定收益策略-七月FOMC会议反应-利率策略与曲线陡峭化"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：美国宏观环境与固定收益策略-七月FOMC会议反应-信誉问题",
+      "摩根士丹利：美国宏观环境与固定收益策略-七月FOMC会议反应",
+      "摩根士丹利：USEconomics和FixedIncome策略",
+      "摩根士丹利：我们此前认为美联储将在7月按兵不动"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：美国宏观环境与固定收益策略-七月FOMC会议反应",
+        "reasons": [
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：USEconomics和FixedIncome策略",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：我们此前认为美联储将在7月按兵不动",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根士丹利：美国宏观环境与固定收益策略-七月FOMC会议反应-信誉问题",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根士丹利：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_45.pdf",
+  "figure_count": 14,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "金融条件->资金条件 x2",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "金融条件->资金条件 x1",
+    "股票市场|股市->市场 x1",
+    "收益率->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "金融条件->资金条件 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "金融市场->市场 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "金融市场->市场 x1",
+    "风险->不确定性 x1"
+  ]
+}

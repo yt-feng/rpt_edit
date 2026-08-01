@@ -1,0 +1,155 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_5/0001-26-Goldman-Sachs-Tyler-Technologies-Inc.--TYL.US-2Q26--Cloud-trendline-like",
+  "title": "高盛：2Q26，云业务趋势线有望继续上行，AI将在未来两年内贡献增量",
+  "source_title": "0001-26-GS-Tyler Technologies Inc. -TYL.US-2Q26- Cloud trendline likely continues to move higher- with AI contributing in the next 2 years-2",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-26-GS-Tyler Technologies Inc. -TYL.US-2Q26- Cloud trendline likely continues to move higher- with AI contributing in the next 2 years-2",
+    "cleaned_source_title": "GS-Tyler Technologies Inc. -TYL.US-2Q26- Cloud trendline likely continues to move higher- with AI contributing in the next 2 years-2",
+    "institution_name": "高盛",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "高盛：AITylerTechnologiesInc.2Q26",
+    "raw_candidates": [
+      "高盛：Tyler Technologies云业务趋势上行，AI两年内贡献增量",
+      "高盛：Tyler Technologies云迁移推进，AI功能云端化加速",
+      "高盛：Tyler Technologies订阅收入增长，AI将成云迁移催化",
+      "Tyler Technologies云业务趋势上行 AI未来两年贡献增量",
+      "Tyler Technologies云业务趋势上行 AI两年内贡献增量",
+      "Tyler Technologies云迁移推进 AI功能云端化加速"
+    ],
+    "cleaned_candidates": [
+      "高盛：TylerTechnologies云业务趋势上行",
+      "高盛：TylerTechnologies云迁移推进，AI功能云端化加速",
+      "高盛：TylerTechnologies订阅收入增长",
+      "高盛：TylerTechnologies云业务趋势上行AI未来两年贡献",
+      "高盛：TylerTechnologies云业务趋势上行AI两年内贡献增",
+      "高盛：TylerTechnologies云迁移推进AI功能云端化加速",
+      "高盛：AITylerTechnologiesInc.2Q26",
+      "高盛：2Q26，云业务趋势线有望继续上行，AI将在未来两年内贡献增量"
+    ],
+    "faithful_candidate_missing_terms": [
+      "AI"
+    ],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english",
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：TylerTechnologies云业务趋势上行",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TylerTechnologies云迁移推进，AI功能云端化加速",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TylerTechnologies订阅收入增长",
+        "reasons": [
+          "missing_required_terms=AI",
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TylerTechnologies云业务趋势上行AI未来两年贡献",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.39",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TylerTechnologies云业务趋势上行AI两年内贡献增",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.43",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：TylerTechnologies云迁移推进AI功能云端化加速",
+        "reasons": [
+          "long_untranslated_english",
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：AITylerTechnologiesInc.2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.14",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：2Q26，云业务趋势线有望继续上行，AI将在未来两年内贡献增量",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "高盛：2Q26，云业务趋势线有望继续上行，AI将在未来两年内贡献增量",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "高盛：Tyler Technologies云业务趋势上行，AI两年内贡献增量",
+      "高盛：Tyler Technologies云迁移推进，AI功能云端化加速",
+      "高盛：Tyler Technologies订阅收入增长，AI将成云迁移催化"
+    ],
+    "final_title_after_wording_guard": "高盛：2Q26，云业务趋势线有望继续上行，AI将在未来两年内贡献增量"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 2,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "风险->不确定性 x1",
+    "恶化->出现变化 x1",
+    "下行|放缓->节奏变化 x4",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

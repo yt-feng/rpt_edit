@@ -1,0 +1,126 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_9/0004-49-Nomura-US-Economic-Weekly-Markets-play-the-ball-260731",
+  "title": "野村：美国宏观环境周报-市场在打球-7月非农就业预计13万",
+  "source_title": "0004-49-NOM-US Economic Weekly-Markets play the ball-260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-49-NOM-US Economic Weekly-Markets play the ball-260731",
+    "cleaned_source_title": "NOM-US Economic Weekly-Markets play the ball",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：USEconomicWeeklyMarketsp",
+    "raw_candidates": [
+      "美国经济周报-市场在打球",
+      "美国经济周报-市场在打球-7月非农就业预计13万",
+      "美国经济周报-市场在打球-FOMC维持利率不变"
+    ],
+    "cleaned_candidates": [
+      "野村：美国宏观环境周报-市场在打球",
+      "野村：美国宏观环境周报-市场在打球-7月非农就业预计13万",
+      "野村：美国宏观环境周报-市场在打球-FOMC维持利率不变",
+      "野村：USEconomicWeeklyMarketsp",
+      "野村：他表示，6月通胀的节奏变化意外对7月决策影响甚微"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "generic_series_title"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：美国宏观环境周报-市场在打球",
+        "reasons": [
+          "generic_series_title",
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：美国宏观环境周报-市场在打球-FOMC维持利率不变",
+        "reasons": [
+          "anchor_coverage=0.52",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：USEconomicWeeklyMarketsp",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：他表示，6月通胀的节奏变化意外对7月决策影响甚微",
+        "reasons": [
+          "anchor_coverage=0.04",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：美国宏观环境周报-市场在打球-7月非农就业预计13万",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "13",
+        "7"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：美国宏观环境周报-市场在打球-7月非农就业预计13万"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_49.pdf",
+  "figure_count": 9,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "收益率->回报表现 x1",
+    "风险->不确定性 x2",
+    "通缩->价格变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "下行|放缓->节奏变化 x1",
+    "负面->谨慎 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1"
+  ]
+}

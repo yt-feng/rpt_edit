@@ -1,0 +1,112 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_0/0002-02-Bernstein-Asian-Industrial-Tech--The-Barometer--June-July-2026--260731",
+  "title": "伯恩斯坦：亚洲工业科技景气晴雨表，2026年6月7月",
+  "source_title": "0002-02-Bernstein-Asian Industrial Tech- The Barometer -June July 2026--260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-02-Bernstein-Asian Industrial Tech- The Barometer -June July 2026--260731",
+    "cleaned_source_title": "Bernstein-Asian Industrial Tech- The Barometer -June July 2026",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：AsianIndustrialTech",
+    "raw_candidates": [
+      "亚洲工业科技景气晴雨表：2026年6月7月",
+      "亚洲工业科技景气晴雨表：中国PMI与日本机床订单",
+      "亚洲工业科技景气晴雨表：中国自动化与日本机床数据"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：亚洲工业科技景气晴雨表，2026年6月7月",
+      "伯恩斯坦：亚洲工业科技景气晴雨表，中国PMI与日本机床订单",
+      "伯恩斯坦：亚洲工业科技景气晴雨表，中国自动化与日本机床数据",
+      "伯恩斯坦：AsianIndustrialTech",
+      "伯恩斯坦：我们重点提示三组中国数据，1）7月"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：亚洲工业科技景气晴雨表，中国PMI与日本机床订单",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：亚洲工业科技景气晴雨表，中国自动化与日本机床数据",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：AsianIndustrialTech",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：我们重点提示三组中国数据，1）7月",
+        "reasons": [
+          "anchor_coverage=0.05",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：亚洲工业科技景气晴雨表，2026年6月7月",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "伯恩斯坦：亚洲工业科技景气晴雨表，2026年6月7月"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 28,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3",
+    "sanitize_wechat_stock_line"
+  ]
+}

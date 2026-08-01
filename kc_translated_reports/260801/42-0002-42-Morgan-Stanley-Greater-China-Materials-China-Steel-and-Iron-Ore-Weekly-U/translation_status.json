@@ -1,0 +1,93 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_8/0002-42-Morgan-Stanley-Greater-China-Materials-China-Steel-and-Iron-Ore-Weekly-U",
+  "title": "摩根士丹利：中国钢铁与铁矿石周度更新-长材消费环比升1.2%",
+  "source_title": "0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260730",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-42-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260730",
+    "cleaned_source_title": "MS-Greater China Materials-China Steel and Iron Ore Weekly Update",
+    "institution_name": "摩根士丹利",
+    "required_terms": [],
+    "deterministic_fallback": "摩根士丹利：Greater中国Materials中国Steel",
+    "raw_candidates": [
+      "摩根士丹利：中国钢铁与铁矿石周度更新",
+      "摩根士丹利：中国钢铁与铁矿石周度更新-长材消费环比升1.2%",
+      "摩根士丹利：中国钢铁与铁矿石周度更新-澳巴发运量环比增159万吨"
+    ],
+    "cleaned_candidates": [
+      "摩根士丹利：中国钢铁与铁矿石周度更新",
+      "摩根士丹利：中国钢铁与铁矿石周度更新-长材消费环比升1.2%",
+      "摩根士丹利：中国钢铁与铁矿石周度更新-澳巴发运量环比增159万吨",
+      "摩根士丹利：Greater中国Materials中国Steel",
+      "摩根士丹利：铁矿石发运量，7月20日至7月26日期间"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根士丹利：Greater中国Materials中国Steel",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.11",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根士丹利：铁矿石发运量，7月20日至7月26日期间",
+        "reasons": [
+          "anchor_coverage=0.22",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根士丹利：中国钢铁与铁矿石周度更新-长材消费环比升1.2%",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1.2"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "摩根士丹利：中国钢铁与铁矿石周度更新-长材消费环比升1.2%"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_42.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x2",
+    "买入->观点偏积极 x3",
+    "卖出->观点偏谨慎 x3",
+    "增持->观点偏积极 x3",
+    "减持->观点偏谨慎 x3",
+    "股票|个股->公司 x2",
+    "sanitize_wechat_stock_line",
+    "投资银行->国际机构 x2",
+    "sanitize_wechat_stock_line",
+    "增持->观点偏积极 x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "减持->观点偏谨慎 x1",
+    "股票|个股->公司 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_5/0004-29-J.P.-Morgan-China-Insurance-1H26-Preview--Dividend-surprise-could-reset-",
+  "title": "摩根大通：保险与养老服务数据与主题变化观察",
+  "source_title": "0004-29-JPM-China Insurance 1H26 Preview- Dividend surprise could reset the trade- Ping An-H top pick-260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-29-JPM-China Insurance 1H26 Preview- Dividend surprise could reset the trade- Ping An-H top pick-260731",
+    "cleaned_source_title": "JPM-China Insurance 1H26 Preview- Dividend surprise could reset the trade- Ping An-H top pick",
+    "institution_name": "摩根大通",
+    "required_terms": [],
+    "deterministic_fallback": "摩根大通：中国Insurance1H26Preview",
+    "raw_candidates": [
+      "中国保险2026年上半年预览-股息惊喜或重塑交易逻辑-平安H股为首选",
+      "中国保险2026年上半年预览-中期股息或增15%-平安H股为首选",
+      "中国保险2026年上半年预览-偿付能力充足-平安H股为首选"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：中国保险2026年上半年预览-股息惊喜或重塑交易逻辑",
+      "摩根大通：中国保险2026年上半年预览-中期股息或增15%",
+      "摩根大通：中国保险2026年上半年预览-偿付能力充足-平安H股为首选",
+      "摩根大通：中国Insurance1H26Preview"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：中国保险2026年上半年预览-中期股息或增15%",
+        "reasons": [
+          "anchor_coverage=0.58",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国保险2026年上半年预览-偿付能力充足-平安H股为首选",
+        "reasons": [
+          "anchor_coverage=0.54",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：中国Insurance1H26Preview",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：保险与养老服务数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "摩根大通：中国保险2026年上半年预览-股息惊喜或重塑交易逻辑",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "摩根大通：保险与养老服务数据与主题变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_29.pdf",
+  "figure_count": 28,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "A股|港股->相关市场 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "投资收益->回报表现 x1",
+    "股票市场|股市->市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资收益->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "A股|港股->相关市场 x2",
+    "收益率->回报表现 x2",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x9",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "A股|港股->相关市场 x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "增持->观点偏积极 x1",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "股票市场|股市->市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股票市场|股市->市场 x1",
+    "股价->报价 x1"
+  ]
+}

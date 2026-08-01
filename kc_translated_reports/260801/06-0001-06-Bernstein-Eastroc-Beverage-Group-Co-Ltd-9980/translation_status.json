@@ -1,0 +1,110 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_1/0001-06-Bernstein-Eastroc-Beverage-Group-Co-Ltd-9980.HK-Eastroc-Q2--Out-of-Energ",
+  "title": "伯恩斯坦：东鹏饮料业务与季度数据观察",
+  "source_title": "0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731",
+    "cleaned_source_title": "Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy",
+    "institution_name": "伯恩斯坦",
+    "required_terms": [],
+    "deterministic_fallback": "伯恩斯坦：EastrocBeverageGroupCo",
+    "raw_candidates": [
+      "东鹏饮料二季度：能量饮料增速放缓",
+      "东鹏饮料二季度：营收增长11%，能量饮料增速降至1%",
+      "东鹏饮料二季度：能量饮料与电解质饮料增速变化"
+    ],
+    "cleaned_candidates": [
+      "伯恩斯坦：东鹏饮料二季度，能量饮料增速放缓",
+      "伯恩斯坦：东鹏饮料二季度，营收增长11%，能量饮料增速降至1%",
+      "伯恩斯坦：东鹏饮料二季度，能量饮料与电解质饮料增速变化",
+      "伯恩斯坦：EastrocBeverageGroupCo",
+      "伯恩斯坦：净利润同比增长15%，较我们及市场一致预期低约5%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "伯恩斯坦：EastrocBeverageGroupCo",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "伯恩斯坦：净利润同比增长15%，较我们及市场一致预期低约5%",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "伯恩斯坦：东鹏饮料业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "1",
+        "11"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "伯恩斯坦：东鹏饮料二季度，营收增长11%，能量饮料增速降至1%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "伯恩斯坦：东鹏饮料业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_06.pdf",
+  "figure_count": 16,
+  "institution_name": "伯恩斯坦",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "A股|港股->相关市场 x1",
+    "疲弱|乏力|低迷->仍在调整 x2",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "投资启示->观察提示 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

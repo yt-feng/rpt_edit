@@ -1,0 +1,115 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_9/0003-48-Nomura-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid",
+  "title": "野村：中国在全球石油市场中的减震器作用",
+  "source_title": "0003-48-NOM-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now--260731",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-48-NOM-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now--260731",
+    "cleaned_source_title": "NOM-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now",
+    "institution_name": "野村",
+    "required_terms": [],
+    "deterministic_fallback": "野村：AsiaInsights中国",
+    "raw_candidates": [
+      "中国在全球石油市场中的减震器作用",
+      "中国石油进口削减与战略储备动用数据",
+      "中国战略石油储备与全球油价影响"
+    ],
+    "cleaned_candidates": [
+      "野村：中国在全球石油市场中的减震器作用",
+      "野村：中国石油进口削减与战略储备动用数据",
+      "野村：中国战略石油储备与全球油价影响",
+      "野村：AsiaInsights中国",
+      "野村：为应对2026年2月底霍尔木兹海峡的关闭"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "野村：中国石油进口削减与战略储备动用数据",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：中国战略石油储备与全球油价影响",
+        "reasons": [
+          "anchor_coverage=0.20",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：AsiaInsights中国",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "野村：为应对2026年2月底霍尔木兹海峡的关闭",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "野村：中国在全球石油市场中的减震器作用",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "野村：中国在全球石油市场中的减震器作用"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_48.pdf",
+  "figure_count": 6,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "风险->不确定性 x1",
+    "危机->扰动 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "全球经济->全球宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济体->地区 x1",
+    "sanitize_wechat_stock_line",
+    "危机->扰动 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

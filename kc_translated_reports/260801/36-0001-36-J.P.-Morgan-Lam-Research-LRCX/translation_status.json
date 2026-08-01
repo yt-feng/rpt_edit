@@ -1,0 +1,171 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_7/0001-36-J.P.-Morgan-Lam-Research-LRCX.US--Beat-and-Raise-on-NAND-Reacceleration-",
+  "title": "摩根大通：逻辑、20nm以下DRAM和3DNAND",
+  "source_title": "0001-36-JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-36-JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised",
+    "cleaned_source_title": "JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised",
+    "institution_name": "摩根大通",
+    "required_terms": [
+      "NAND",
+      "DRAM"
+    ],
+    "deterministic_fallback": "摩根大通：NAND与DRAMLamResearch",
+    "raw_candidates": [
+      "摩根大通：Lam Research NAND再加速与DRAM强劲，CY26 WFE上调",
+      "摩根大通：Lam Research NAND与DRAM推动业绩，CY26 WFE上调",
+      "摩根大通：Lam Research NAND再加速与DRAM持续，CY26 WFE上调",
+      "Lam Research：NAND再加速与前沿制程F/L和DRAM持续强劲，CY26 WFE上调",
+      "Lam Research：NAND与DRAM推动业绩超预期，CY26 WFE上调至1500亿美元以上",
+      "Lam Research：NAND再加速与DRAM强劲，前沿制程F/L进展，CY26 WFE上调"
+    ],
+    "cleaned_candidates": [
+      "摩根大通：LamResearchNAND再加速与DRAM强劲",
+      "摩根大通：LamResearchNAND与DRAM推动业绩",
+      "摩根大通：LamResearchNAND再加速与DRAM持续",
+      "摩根大通：L和DRAM持续强劲，CY26WFE上调",
+      "摩根大通：LamResearch，NAND与DRAM推动业绩超预期",
+      "摩根大通：L进展，CY26WFE上调",
+      "摩根大通：NAND与DRAMLamResearch",
+      "摩根大通：逻辑、20nm以下DRAM和3DNAND"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [
+      "long_untranslated_english",
+      "english_heavy_fragment"
+    ],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "摩根大通：LamResearchNAND再加速与DRAM强劲",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "摩根大通：LamResearchNAND与DRAM推动业绩",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "摩根大通：LamResearchNAND再加速与DRAM持续",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "摩根大通：L和DRAM持续强劲，CY26WFE上调",
+        "reasons": [
+          "missing_required_terms=NAND",
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：LamResearch，NAND与DRAM推动业绩超预期",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      },
+      {
+        "title": "摩根大通：L进展，CY26WFE上调",
+        "reasons": [
+          "missing_required_terms=NAND,DRAM",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "摩根大通：NAND与DRAMLamResearch",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.33"
+        ]
+      }
+    ],
+    "selected_title": "摩根大通：逻辑、20nm以下DRAM和3DNAND",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [
+        "20",
+        "3"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "摩根大通：逻辑、20nm以下DRAM和3DNAND",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "摩根大通：Lam Research NAND再加速与DRAM强劲，CY26 WFE上调",
+      "摩根大通：Lam Research NAND与DRAM推动业绩，CY26 WFE上调",
+      "摩根大通：Lam Research NAND再加速与DRAM持续，CY26 WFE上调"
+    ],
+    "final_title_after_wording_guard": "摩根大通：逻辑、20nm以下DRAM和3DNAND"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_36.pdf",
+  "figure_count": 3,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "remove_target_price_clause x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

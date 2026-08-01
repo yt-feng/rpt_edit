@@ -1,0 +1,119 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260801/shard_3/0005-20-Goldman-Sachs-Kioxia-Holdings--285A.T-Earnings-Review--1Q-broadly-in-lin",
+  "title": "高盛：铠侠控股业务与季度数据观察",
+  "source_title": "0005-20-GS-Kioxia Holdings -285A.T-Earnings Review- 1Q broadly in line- share buyback a surprise- sign of confidence in future earnings grow",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-20-GS-Kioxia Holdings -285A.T-Earnings Review- 1Q broadly in line- share buyback a surprise- sign of confidence in future earnings grow",
+    "cleaned_source_title": "GS-Kioxia Holdings -285A.T-Earnings Review- 1Q broadly in line- share buyback a surprise- sign of confidence in future earnings grow",
+    "institution_name": "高盛",
+    "required_terms": [],
+    "deterministic_fallback": "高盛：KioxiaHoldings285EarningsReview1",
+    "raw_candidates": [
+      "铠侠控股一季度业绩基本符合预期，回购显示信心",
+      "铠侠控股一季度营业利润1.33万亿日元，二季度指引1.9万亿日元",
+      "铠侠控股一季度业绩与回购计划，NAND供需展望"
+    ],
+    "cleaned_candidates": [
+      "高盛：铠侠控股一季度业绩基本符合预期，回购显示信心",
+      "高盛：铠侠控股一季度营业利润1.33万亿日元，二季度指引1.9万亿日元",
+      "高盛：铠侠控股一季度业绩与回购计划，NAND供需展望",
+      "高盛：KioxiaHoldings285EarningsReview1",
+      "高盛：铠侠于7月31日收盘后公布的一季度非GAAP营业利润为1.33万"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "高盛：铠侠控股一季度营业利润1.33万亿日元，二季度指引1.9万亿日元",
+        "reasons": [
+          "anchor_coverage=0.30",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：铠侠控股一季度业绩与回购计划，NAND供需展望",
+        "reasons": [
+          "anchor_coverage=0.45",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：KioxiaHoldings285EarningsReview1",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "高盛：铠侠于7月31日收盘后公布的一季度非GAAP营业利润为1.33万",
+        "reasons": [
+          "anchor_coverage=0.15",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "高盛：铠侠控股业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "高盛：铠侠控股一季度业绩基本符合预期，回购显示信心",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "高盛：铠侠控股业务与季度数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_20.pdf",
+  "figure_count": 2,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "股票|个股->公司 x2",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "股票|个股->公司 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}
