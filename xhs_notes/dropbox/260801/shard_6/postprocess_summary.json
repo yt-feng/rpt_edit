@@ -1,0 +1,547 @@
+[
+  {
+    "item": "0001-31-J.P.-Morgan-Hon.-Precision--7769.TW-Formidable-2027-drivers---large-pack",
+    "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0001-31-JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "半导体测试设备龙头的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：AI与CPO技术与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-31-JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW-260731.pdf",
+      "cleaned_source_title": "JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW",
+      "institution_name": "JPM",
+      "required_terms": [
+        "AI",
+        "CPO"
+      ],
+      "deterministic_fallback": "JPM：AI与CPOHon.PrecisionFormidable2",
+      "raw_candidates": [
+        "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+        "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+        "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+        "鸿海精密2027年增长驱动：大封装与AI测试需求"
+      ],
+      "cleaned_candidates": [
+        "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+        "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+        "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+        "JPM：鸿海精密2027年增长驱动，大封装与AI测试需求",
+        "JPM：AI与CPOHon.PrecisionFormidable2",
+        "JPM：AI与CPO技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [
+        "CPO"
+      ],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+          "reasons": [
+            "missing_required_terms=CPO",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：鸿海精密2027年增长驱动，大封装与AI测试需求",
+          "reasons": [
+            "missing_required_terms=CPO",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：AI与CPOHon.PrecisionFormidable2",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.36"
+          ]
+        }
+      ],
+      "selected_title": "JPM：AI与CPO技术与相关数据观察",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "JPM：AI与CPO技术与相关数据观察",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+        "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+        "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测"
+      ],
+      "final_title_after_wording_guard": "JPM：AI与CPO技术与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-32-J.P.-Morgan-GCL-Tech-3800.HK-Pivot-to-Multi-Product-New-Energy-Materials",
+    "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0002-32-JPM-GCL Tech-3800.HK-Pivot to Multi-Product New Energy Materials-LFP as Growth Engine-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "颗粒硅龙头转型新能源",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：协鑫科技转向多业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-32-JPM-GCL Tech-3800.HK-Pivot to Multi-Product New Energy Materials-LFP as Growth Engine-260731.pdf",
+      "cleaned_source_title": "JPM-GCL Tech-3800.HK-Pivot to Multi-Product New Energy Materials-LFP as Growth Engine",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：GCLTechPivottoMultiProductNew能",
+      "raw_candidates": [
+        "协鑫科技转向多产品新能源材料平台-磷酸铁锂为增长引擎",
+        "协鑫科技多产品新能源材料平台-磷酸铁锂单位资本开支8500元",
+        "协鑫科技新能源材料平台-磷酸铁锂与硅碳负极产能布局"
+      ],
+      "cleaned_candidates": [
+        "JPM：协鑫科技转向多产品新能源材料平台-磷酸铁锂为增长引擎",
+        "JPM：协鑫科技多产品新能源材料平台-磷酸铁锂单位资本开支8500元",
+        "JPM：协鑫科技新能源材料平台-磷酸铁锂与硅碳负极产能布局",
+        "JPM：GCLTechPivottoMultiProductNew能",
+        "JPM：2026年5月中旬，协鑫科技对外宣布了一项战略转向"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：协鑫科技多产品新能源材料平台-磷酸铁锂单位资本开支8500元",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "JPM：协鑫科技新能源材料平台-磷酸铁锂与硅碳负极产能布局",
+          "reasons": [
+            "anchor_coverage=0.54"
+          ]
+        },
+        {
+          "title": "JPM：GCLTechPivottoMultiProductNew能",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2026年5月中旬，协鑫科技对外宣布了一项战略转向",
+          "reasons": [
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：协鑫科技转向多业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：协鑫科技转向多产品新能源材料平台-磷酸铁锂为增长引擎",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：协鑫科技转向多业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-33-J.P.-Morgan-LG-Electronics-066570.KS-2Q26-OP-beat--positive-CDU-business",
+    "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0003-33-JPM-LG Electronics-066570.KS-2Q26 OP beat- positive CDU business progress vs. immature robotics outlook- maintain N-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "LG的AI数据中心生",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "风险->不确定性 x3",
+      "下行|放缓->节奏变化 x2",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：LG电子业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-33-JPM-LG Electronics-066570.KS-2Q26 OP beat- positive CDU business progress vs. immature robotics outlook- maintain N-260731.pdf",
+      "cleaned_source_title": "JPM-LG Electronics-066570.KS-2Q26 OP beat- positive CDU business progress vs. immature robotics outlook- maintain N",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：LGElectronics2Q26OPbeat",
+      "raw_candidates": [
+        "LG电子二季度盈利超预期，CDU业务进展快于机器人",
+        "LG电子二季度营业利润1.58万亿韩元，CDU订单6000亿韩元",
+        "LG电子二季度盈利超预期，CDU获英伟达认证，机器人仍早期"
+      ],
+      "cleaned_candidates": [
+        "JPM：LG电子二季度盈利超预期，CDU业务进展快于机器人",
+        "JPM：LG电子二季度营业利润1.58万亿韩元",
+        "JPM：LG电子二季度盈利超预期，CDU获英伟达认证，机器人仍早期",
+        "JPM：LGElectronics2Q26OPbeat",
+        "JPM：2.CDU订单从6000亿韩元起步"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：LG电子二季度营业利润1.58万亿韩元",
+          "reasons": [
+            "anchor_coverage=0.26",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：LG电子二季度盈利超预期，CDU获英伟达认证，机器人仍早期",
+          "reasons": [
+            "anchor_coverage=0.70"
+          ]
+        },
+        {
+          "title": "JPM：LGElectronics2Q26OPbeat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：2.CDU订单从6000亿韩元起步",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：LG电子业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：LG电子二季度盈利超预期，CDU业务进展快于机器人",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：LG电子业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-34-J.P.-Morgan-PRADA-Group-1913.HK-A-really-healthy-delivery-260730",
+    "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0004-34-JPM-PRADA Group-1913.HK-A really healthy delivery-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "Prada这份半年报",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "拖累->影响 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：Prada集团业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-34-JPM-PRADA Group-1913.HK-A really healthy delivery-260730.pdf",
+      "cleaned_source_title": "JPM-PRADA Group-1913.HK-A really healthy delivery",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：PRADAGroupAreallyhealt",
+      "raw_candidates": [
+        "Prada集团二季度销售增速回升至7%",
+        "Prada集团二季度销售增速回升至7%：主品牌零售增长6%",
+        "Prada集团二季度销售增速回升至7%：Miu Miu增长3%"
+      ],
+      "cleaned_candidates": [
+        "JPM：Prada集团二季度销售增速回升至7%",
+        "JPM：Prada集团二季度销售增速回升至7%，主品牌零售增长6%",
+        "JPM：Prada集团二季度销售增速回升至7%，MiuMiu增长3%",
+        "JPM：PRADAGroupAreallyhealt"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：PRADAGroupAreallyhealt",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.24",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：Prada集团业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "6"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：Prada集团二季度销售增速回升至7%，主品牌零售增长6%",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：Prada集团业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-35-J.P.-Morgan-PCs-and-Servers-Read-through-from-Microsoft-Meta-Jun-26-earn",
+    "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0005-35-JPM-PCs and Servers-Read-through from Microsoft Meta Jun-26 earnings-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "微软Meta财报，把",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-35-JPM-PCs and Servers-Read-through from Microsoft Meta Jun-26 earnings-260730.pdf",
+      "cleaned_source_title": "JPM-PCs and Servers-Read-through from Microsoft Meta Jun-26 earnings",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：PCs和ServersReadthrough",
+      "raw_candidates": [
+        "微软与Meta财报后PC与服务器行业更新",
+        "微软与Meta资本开支增长96%后PC与服务器行业更新",
+        "微软与Meta财报后AI服务器与通用服务器行业更新"
+      ],
+      "cleaned_candidates": [
+        "JPM：微软与Meta财报后PC与服务器行业更新",
+        "JPM：微软与Meta资本开支增长96%后PC与服务器行业更新",
+        "JPM：微软与Meta财报后AI服务器与通用服务器行业更新",
+        "JPM：PCs和ServersReadthrough",
+        "JPM：JPM在6月26日微软与Meta财报发布后更新了PC与服务"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：PCs和ServersReadthrough",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：JPM在6月26日微软与Meta财报发布后更新了PC与服务",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "96"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：微软与Meta资本开支增长96%后PC与服务器行业更新",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

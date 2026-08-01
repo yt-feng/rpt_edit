@@ -1,0 +1,41 @@
+Found 50 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_3: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e9trr5n8/pdfs/0001-31-J.P. Morgan-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e9trr5n8/pdfs/0002-32-J.P. Morgan-GCL Tech-3800.HK-Pivot to Multi-Product New Energy Materials-LFP as Growth Engine-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e9trr5n8/pdfs/0003-33-J.P. Morgan-LG Electronics-066570.KS-2Q26 OP beat- positive CDU business progress vs. immature robotics outlook- maintain N-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e9trr5n8/pdfs/0004-34-J.P. Morgan-PRADA Group-1913.HK-A really healthy delivery-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e9trr5n8/pdfs/0005-35-J.P. Morgan-PCs and Servers-Read-through from Microsoft Meta Jun-26 earnings-260730.pdf
+MinerU attempt 1 using MINER_U_3 batch_id=99b79b6e-a194-4ecf-bb42-628458dbb03d
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset fc3deb8b709a6b280c4651a82fe10c86fa2e8a78f50fcc333f9be5b39555233e.jpg: score=-100;too_small:982x167
+Skip non-chart visual asset a0289c382a26c8684319349b20720c8638e89bc611d160ec6f171b2ca7dce301.jpg: score=1;chart_ratio
+Skip non-chart visual asset 859fc0ffacf378ae492a6adddf5fc4cf5caa62c5069a218a84fa7cf69a0a3c21.jpg: score=-100;too_small:448x184
+Skip non-chart visual asset 439cd8ccef0ee8917e3091bd1c091881040aca76775d1950408abd1f813b9bd7.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 2d55892f673d6155bbc3506b0a4cdc26f6b583f20c674c9f6d38eff8223e8511.jpg: score=-100;too_small:451x134
+Skip non-chart visual asset 852227a32ded3dd5928ada053306dc237b91ed742d46aeae5dd26743180239e1.jpg: score=-100;too_small:540x134
+Skip non-chart visual asset 649289f996b10fb92f5ed1d5fb1b9040ef9f1dfe62c014c24140addaf532fcb2.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 57822b488b2b18bb744c2dc6efc8f7ff4b4adc24bd2f2c8b7e035168af983ab6.jpg: score=0;square_without_chart_hint,edge:0.35,large
+Skip non-chart visual asset c1f84e6b201589c73a9712d8957b5caa6737678ce128b4f9efb77206d23d55d3.jpg: score=-100;too_small:542x165
+Skip non-chart visual asset afbbe8f2d744781089b25e18c3a390bb5526365cccf83e02488022c33342e750.jpg: score=-100;too_small:982x170
+Neutralized WeChat title while keeping the report: 摩根大通：协鑫科技转向多产品新能源材料平台-磷酸铁锂为增长引擎 -> 摩根大通：协鑫科技转向多业务与近期数据观察
+Skip non-chart visual asset 94562938ff61a22195e76b540482fc9db236ad18cf84fadd935e8b64826c1ce4.jpg: score=-100;too_small:982x167
+Neutralized WeChat title while keeping the report: 摩根大通：LG电子二季度盈利超预期，CDU业务进展快于机器人 -> 摩根大通：LG电子业务与季度数据观察
+Skip non-chart visual asset 99887f0789200d7a13e71e459b1297bdd38c375782b6b2d54502378308354221.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset d0e600ffe779e24838f5aa35370e46e79c5ddb809c07f05d2232ade19c7f2337.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset b78bd281aab14b1406040fd15966589346c6e80e0efb6391cec0eaf4ad1ed949.jpg: score=0;square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 6d333f0a1b8147c0a577dedf0c7f0cd7c709fb9979a387d3c1e1bf43aef2abec.jpg: score=-100;too_small:451x193
+Skip non-chart visual asset 92f724cee140333ceb3530b12e3b35fec34df18ef60c08e67de1cebd30f052d0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,large
+Skip non-chart visual asset 4c1462b62167d08fb738d4e75236926c51aeeb01c4608a78157da7dfda30f31e.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 8b9ae0ae1cba412c44dcdf7b395179313500aa6d707b14314a741200415ec212.jpg: score=0;square_without_chart_hint,edge:0.33,large
+Skip non-chart visual asset 1d634d79bece00ea3821e210d92d81a34deeb967498038c21d36a219ef5acdce.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset c1cd0605fa6f0e13e5fa158ec5450efd946fd1a1db85fb2627346219b68f6898.jpg: score=-100;too_small:982x167
+Neutralized WeChat title while keeping the report: 摩根大通：Prada集团二季度销售增速回升至7%，主品牌零售增长6% -> 摩根大通：Prada集团业务与季度数据观察
+Skip non-chart visual asset c8474f2e6f3603842dfa5645e212531b125a73d4ff81d5ccc02df876cf4b7798.jpg: score=-100;too_small:982x168
+Neutralized WeChat title while keeping the report: 摩根大通：微软与Meta资本开支增长96%后PC与服务器行业更新 -> 摩根大通：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

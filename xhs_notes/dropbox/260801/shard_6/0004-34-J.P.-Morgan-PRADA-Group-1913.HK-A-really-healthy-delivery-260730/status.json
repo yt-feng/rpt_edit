@@ -1,0 +1,100 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0004-34-JPM-PRADA Group-1913.HK-A really healthy delivery-260730.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "Prada这份半年报",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "拖累->影响 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "JPM：Prada集团业务与季度数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-34-JPM-PRADA Group-1913.HK-A really healthy delivery-260730.pdf",
+    "cleaned_source_title": "JPM-PRADA Group-1913.HK-A really healthy delivery",
+    "institution_name": "JPM",
+    "required_terms": [],
+    "deterministic_fallback": "JPM：PRADAGroupAreallyhealt",
+    "raw_candidates": [
+      "Prada集团二季度销售增速回升至7%",
+      "Prada集团二季度销售增速回升至7%：主品牌零售增长6%",
+      "Prada集团二季度销售增速回升至7%：Miu Miu增长3%"
+    ],
+    "cleaned_candidates": [
+      "JPM：Prada集团二季度销售增速回升至7%",
+      "JPM：Prada集团二季度销售增速回升至7%，主品牌零售增长6%",
+      "JPM：Prada集团二季度销售增速回升至7%，MiuMiu增长3%",
+      "JPM：PRADAGroupAreallyhealt"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：PRADAGroupAreallyhealt",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "JPM：Prada集团业务与季度数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "6"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "JPM：Prada集团二季度销售增速回升至7%，主品牌零售增长6%",
+    "pre_neutralization_selection_reason": "supported_hook",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "JPM：Prada集团业务与季度数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "530",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

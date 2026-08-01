@@ -1,0 +1,136 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_e9trr5n8/pdfs/0001-31-JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "JPM",
+  "cover_short_title": "半导体测试设备龙头的",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "JPM：AI与CPO技术与相关数据观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-31-JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW-260731.pdf",
+    "cleaned_source_title": "JPM-Hon. Precision -7769.TW-Formidable 2027 drivers - large-package- China AI- FT SLT pipelines- OSAT US onshoring- CPO ins4 O E- OW",
+    "institution_name": "JPM",
+    "required_terms": [
+      "AI",
+      "CPO"
+    ],
+    "deterministic_fallback": "JPM：AI与CPOHon.PrecisionFormidable2",
+    "raw_candidates": [
+      "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+      "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+      "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+      "鸿海精密2027年增长驱动：大封装与AI测试需求"
+    ],
+    "cleaned_candidates": [
+      "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+      "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+      "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+      "JPM：鸿海精密2027年增长驱动，大封装与AI测试需求",
+      "JPM：AI与CPOHon.PrecisionFormidable2",
+      "JPM：AI与CPO技术与相关数据观察"
+    ],
+    "faithful_candidate_missing_terms": [
+      "CPO"
+    ],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+        "reasons": [
+          "missing_required_terms=CPO",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测",
+        "reasons": [
+          "missing_required_terms=AI",
+          "anchor_coverage=0.21",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：鸿海精密2027年增长驱动，大封装与AI测试需求",
+        "reasons": [
+          "missing_required_terms=CPO",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "JPM：AI与CPOHon.PrecisionFormidable2",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.36"
+        ]
+      }
+    ],
+    "selected_title": "JPM：AI与CPO技术与相关数据观察",
+    "selection_reason": "evidence_or_emergency_fallback",
+    "selected_quality_issues": [],
+    "needs_model_repair": true,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": true,
+    "initial_selection": {
+      "title": "JPM：AI与CPO技术与相关数据观察",
+      "reason": "evidence_or_emergency_fallback",
+      "quality_issues": []
+    },
+    "repair_candidates": [
+      "JPM：鸿海精密2027年增长来自大封装与AI测试需求",
+      "JPM：鸿海精密大封装分选机与CPO测试设备进展",
+      "JPM：鸿海精密2027年驱动来自大封装与CPO光电共测"
+    ],
+    "final_title_after_wording_guard": "JPM：AI与CPO技术与相关数据观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "525",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
