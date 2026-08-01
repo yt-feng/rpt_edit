@@ -1,0 +1,189 @@
+{
+  "created_at_utc": "2026-08-01T20:26:04.518384+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260801",
+  "output_dir": "publish_ready_zips/260801",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 10,
+  "skipped_shards": [],
+  "total_files": 936,
+  "total_renamed_markdown_count": 250,
+  "total_raw_file_bytes": 131045074,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260801/publish_ready_260801_part001.zip",
+      "size_bytes": 87235729,
+      "file_count": 663,
+      "renamed_markdown_count": 165,
+      "raw_file_bytes": 94089752,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260801/publish_ready_260801_part002.zip",
+      "size_bytes": 34478451,
+      "file_count": 273,
+      "renamed_markdown_count": 85,
+      "raw_file_bytes": 36955322,
+      "shards": [
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16132200,
+      "reports": [
+        "0001-01-Bernstein-Apple-Inc-AAPL.US-AAPL-FQ3-26--Memflation-takes-a-bite-out-of-",
+        "0002-02-Bernstein-Asian-Industrial-Tech--The-Barometer--June-July-2026--260731",
+        "0003-03-Bernstein-Americas-Energy---Transition-Americas-Power-and-Energy-Transit",
+        "0004-04-Bernstein-Konami-Group-Corporation-9766.JP-Konami-Q1-Football-won-eFootb",
+        "0005-05-Bernstein-Global-Retail-Japan-x-European-Retail--Inditex-vs.-Fast-Retail"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14652106,
+      "reports": [
+        "0001-06-Bernstein-Eastroc-Beverage-Group-Co-Ltd-9980.HK-Eastroc-Q2--Out-of-Energ",
+        "0002-07-Bernstein-Vertiv-Holdings-Co-VRT.US-VRT-2Q26-Earnings-Review--Still-a-gr",
+        "0003-08-Bernstein-Space-Exploration-Technologies-Corporation-SPCX.US-SpaceX--The",
+        "0004-09-Bernstein-Weekend-Healthcare-Pulse--Is-Japan-the-land-of-cheap-executive",
+        "0005-10-Bofa-The-Flow-Show-Credibility--Intervention---Liquidation-260731"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16702070,
+      "reports": [
+        "0001-11-Deutsche-Bank-Microsoft-MSFT.OQ-F4Q-Harnessing-the-Power-of-AI-260730",
+        "0002-12-Deutsche-Bank-Meta-META.US-Core-Strength-Funds-the-AI-Build-260730",
+        "0003-13-Goldman-Sachs-ASIA-IN-FOCUS-China-H2-Fiscal-Outlook--Reversing-the-Tight",
+        "0004-14-Goldman-Sachs-AI-Adoption-Tracker-July-2026-Adoption-Rises-to-21.5--2607",
+        "0005-15-Goldman-Sachs-Amazon.com-Inc.--AMZN.US--Q2-26-Review--AWS-Revenue-Growth"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14777952,
+      "reports": [
+        "0001-16-Goldman-Sachs-Apple-Inc.--AAPL.US--F3Q26-review--Guidance-miss-on-supply",
+        "0002-17-Goldman-Sachs-China-Economic-Activity-and-Policy-Tracker--July-31-260731",
+        "0003-18-Goldman-Sachs-Americas-Technology--Hardware--AI-Project-Pulse--July-2026",
+        "0004-19-Goldman-Sachs-China-Investment-Dashboard--2026Q2--Investment-Momentum-We",
+        "0005-20-Goldman-Sachs-Kioxia-Holdings--285A.T-Earnings-Review--1Q-broadly-in-lin"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 79,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9874878,
+      "reports": [
+        "0001-21-Goldman-Sachs-MARUWA--5344.T---Results-briefing--Prospects-for-upside-to",
+        "0002-22-Goldman-Sachs-Reddit-Inc.--RDDT.US--Q2-26-Review--Operating-Momentum--Re",
+        "0003-23-Goldman-Sachs-Panasonic-HD--6752.T---Group-CFO-operating-company-CEO-mee",
+        "0004-24-Goldman-Sachs-Meitu--1357.HK---New-AI-products-features-to-drive-ARR-gro",
+        "0005-25-J.P.-Morgan-Apple-Supply-Chain-Implications--Resilient-iPhone-and-Mac-de"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13798342,
+      "reports": [
+        "0001-26-Goldman-Sachs-Tyler-Technologies-Inc.--TYL.US-2Q26--Cloud-trendline-like",
+        "0002-27-Goldman-Sachs-TDK--6762.T--1Q-above-expectations--Very-positive--with-re",
+        "0003-28-J.P.-Morgan-Electronic-Components-Sector--MLCC-eXchange--June-2026-trade",
+        "0004-29-J.P.-Morgan-China-Insurance-1H26-Preview--Dividend-surprise-could-reset-",
+        "0005-30-J.P.-Morgan-Asian-Tech-QCOM-and-ARM-earnings-takeaways-260730"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13758878,
+      "reports": [
+        "0001-31-J.P.-Morgan-Hon.-Precision--7769.TW-Formidable-2027-drivers---large-pack",
+        "0002-32-J.P.-Morgan-GCL-Tech-3800.HK-Pivot-to-Multi-Product-New-Energy-Materials",
+        "0003-33-J.P.-Morgan-LG-Electronics-066570.KS-2Q26-OP-beat--positive-CDU-business",
+        "0004-34-J.P.-Morgan-PRADA-Group-1913.HK-A-really-healthy-delivery-260730",
+        "0005-35-J.P.-Morgan-PCs-and-Servers-Read-through-from-Microsoft-Meta-Jun-26-earn"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10980892,
+      "reports": [
+        "0001-36-J.P.-Morgan-Lam-Research-LRCX.US--Beat-and-Raise-on-NAND-Reacceleration-",
+        "0002-37-J.P.-Morgan-Xiaomi--1810.HK--New-Extended-Range-EV-launched-as-expected-",
+        "0003-38-Morgan-Stanley-China-Equity-Strategy-A-share-Sentiment-Edged-Down-on-Low",
+        "0004-39-Morgan-Stanley-China-Economics-Politburo-Faster-Fiscal-Rollout--Not-a-Pi",
+        "0005-40-Morgan-Stanley-China-Financials-Tracking-industrial-risks--Demand-growth"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12074457,
+      "reports": [
+        "0001-41-Morgan-Stanley-Equinix-Inc.-EQIX.US-2Q26--Investing-for-Growth---Reitera",
+        "0002-42-Morgan-Stanley-Greater-China-Materials-China-Steel-and-Iron-Ore-Weekly-U",
+        "0003-43-Morgan-Stanley-Xiaomi-Corp-1810.HK-Attractive-Pricing-of-SkyNomad--Posit",
+        "0004-44-Morgan-Stanley-Ping-An-Insurance-Group-Co-of-China-Ltd-2318.HK-1H26-Prev",
+        "0005-45-Morgan-Stanley-US-Economics-and-Fixed-Income-Strategy-July-FOMC-Reaction"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 59,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8293299,
+      "reports": [
+        "0001-46-Nomura-China-sportswear-Read-across-from-adidas--2Q26-results-260731",
+        "0002-47-Nomura-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened",
+        "0003-48-Nomura-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid",
+        "0004-49-Nomura-US-Economic-Weekly-Markets-play-the-ball-260731",
+        "0005-50-Nomura-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader"
+      ]
+    }
+  ]
+}
