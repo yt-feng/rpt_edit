@@ -1,0 +1,109 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "工业资产关停潮将至，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+    "cleaned_source_title": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0001BCGClosingIndustr",
+    "raw_candidates": [
+      "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+      "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+      "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+      "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+      "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放",
+      "波士顿咨询：0001BCGClosingIndustr",
+      "波士顿咨询：波士顿咨询（BCG）在2026年4月发布的一份报告中提出一"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+        "reasons": [
+          "anchor_coverage=0.25",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放",
+        "reasons": [
+          "anchor_coverage=0.19",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0001BCGClosingIndustr",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：波士顿咨询（BCG）在2026年4月发布的一份报告中提出一",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

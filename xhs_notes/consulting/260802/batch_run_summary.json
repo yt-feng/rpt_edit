@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+          "batch_file": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+          "batch_file": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+          "batch_file": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5.pdf",
+          "batch_file": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c.pdf",
+          "batch_file": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

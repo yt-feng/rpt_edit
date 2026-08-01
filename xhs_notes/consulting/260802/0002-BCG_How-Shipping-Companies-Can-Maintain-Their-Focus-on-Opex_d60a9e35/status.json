@@ -1,0 +1,102 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "航运公司成本控制：十",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title_neutralization_changes": [
+    "neutralized:evaluative_or_adversarial_wording"
+  ],
+  "wechat_title": "波士顿咨询：运输与供应链数据与主题变化观察",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+    "cleaned_source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0002BCGHowShippingCom",
+    "raw_candidates": [
+      "波士顿咨询：航运公司如何保持运营成本管控",
+      "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+      "波士顿咨询：航运成本管控与老龄船队维护策略"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：航运公司如何保持运营成本管控",
+      "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+      "波士顿咨询：航运成本管控与老龄船队维护策略",
+      "波士顿咨询：0002BCGHowShippingCom",
+      "波士顿咨询：1.疫情前五年行业实现累计13%的实际成本下降"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "波士顿咨询：航运成本管控与老龄船队维护策略",
+        "reasons": [
+          "anchor_coverage=0.31"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0002BCGHowShippingCom",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：1.疫情前五年行业实现累计13%的实际成本下降",
+        "reasons": [
+          "anchor_coverage=0.08",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：运输与供应链数据与主题变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：航运公司如何保持运营成本管控",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：运输与供应链数据与主题变化观察"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,2845 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.047,
+                0.141,
+                0.076
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.0,
+                1.0,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.053,
+                0.432,
+                0.293,
+                0.449
+            ],
+            "angle": 0,
+            "content": "TRANSPORTATION AND LOGISTICS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.479,
+                0.791,
+                0.68
+            ],
+            "angle": 0,
+            "content": "How Shipping\nCompanies Can\nMaintain their Focus on\nOpex"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.707,
+                0.414,
+                0.726
+            ],
+            "angle": 0,
+            "content": "By Ulrik Sanders and Christoffer Nielsen-friis",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.751,
+                0.365,
+                0.768
+            ],
+            "angle": 0,
+            "content": "ARTICLE APRIL 28, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.829,
+                0.954,
+                0.93
+            ],
+            "angle": 0,
+            "content": "To help shipping companies navigate the ever-shifting global seascape, BCG partners with global shipping companies through its Shipping Benchmark Initiative (SBI) to run class-by-class opex analyses and to help companies maintain cost excellence. Working directly with companies to collect granular opex data, SBI serves as a value-adding clearing-house that delivers customized, actionable insights. Upward of 60 global shipowners and managers participate in the benchmark annually; all shipping companies are invited to join.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.288,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.473,
+                0.499,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.528,
+                0.546,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.576,
+                0.798,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.628,
+                0.22,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.709,
+                0.411,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.754,
+                0.361,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.901,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.853,
+                0.916,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.872,
+                0.949,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.95,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.912,
+                0.832,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.944,
+                0.166
+            ],
+            "angle": 0,
+            "content": "In a seascape regularly buffeted by external shocks—pandemics, inflationary pressures, volatile oil prices, and shifting trade-war dynamics—maintaining tight, disciplined control over operating expenses (opex) has long been a strategic imperative for shipping firms. That’s because managing costs is key to both short-term profitability and long-term competitive advantage across the industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.18,
+                0.944,
+                0.28
+            ],
+            "angle": 0,
+            "content": "From the cost-cutting imperative of 2014 to 2019, through the surge in costs driven by COVID-19, and on to the current period of restraint, the past ten years have witnessed considerable volatility. As circumstances changed, shipping companies have struggled at times to master their cost base and to fully understand the factors that matter most in managing their short-term and long-term costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.294,
+                0.942,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Over the past 15 years, BCG's Shipping Benchmark Initiative (SBI) has worked with more than 60 shipping companies to capture spending data and analyze key trends that have affected the industry's opex. After examining the data, we seek to answer two critical questions in this article. What trends and factors affected the industry's opex and thus its profitability over the past decade? And which levers should shipping companies pull to maintain and strengthen their cost discipline and competitive advantage in future?",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.485,
+                0.67,
+                0.527
+            ],
+            "angle": 0,
+            "content": "A Decade of Cost-Cutting"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.552,
+                0.943,
+                0.652
+            ],
+            "angle": 0,
+            "content": "Over the past decade, opex spending across the shipping industry has been highly variable, falling from 2014 to 2019, rising for the next two years, and then falling again from 2022 to 2024. (See Exhibit 1.) A number of positive and negative factors affected how shipping companies managed their costs. Some, such as inflationary pressures and freight rate cycles, were systemic; others, notably the COVID-19 pandemic, were one-off impacts.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.942,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.94,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.858,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.128,
+                0.889,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.228,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.939,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.205,
+                0.868,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.222,
+                0.941,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.936,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.195,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.296,
+                0.938,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.316,
+                0.902,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.936,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.354,
+                0.89,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.376,
+                0.935,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.485,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.482,
+                0.668,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.892,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.575,
+                0.93,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.594,
+                0.891,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.614,
+                0.939,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.633,
+                0.624,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.113,
+                0.284,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Inflation-adjusted opex per day (2020 $)"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.114,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.081,
+                0.725,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Shipping Industry Opex Has Varied Considerably over the Past Decade",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.122,
+                0.728,
+                0.292
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.304,
+                0.707,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Sources: International Monetary Fund; BCG Shipping Benchmark Initiative. Note: Opex calculated as the arithmetic mean of vessel-class average opex within each vessel type, neutralizing changes in fleet composition over time."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.429,
+                0.477,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Before the Pandemic"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.49,
+                0.943,
+                0.551
+            ],
+            "angle": 0,
+            "content": "A cost-cutting paradigm driven by low freight rates from 2015 onward defined the pre-COVID-19 era. From 2014 to 2019, inflation-adjusted opex fell by an average of \\(2.7\\%\\) annually, led by a \\(2.5\\%\\) drop in crew costs, which account for \\(50\\%\\) to \\(60\\%\\) of total costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.563,
+                0.954,
+                0.704
+            ],
+            "angle": 0,
+            "content": "This period's focused cost-cutting trend is evident in data for all vessel classes within containers, drybulks, and tankers, indicating a rigorous industry-wide commitment to cost discipline. From 2014 to 2019, the industry achieved a cumulative \\(13\\%\\) decrease in opex, adjusted for inflation. And the inflation-adjusted vessel opex as a share of charter rate—the daily amount paid to ship owners for the use of a vessel—was 5 percentage points lower than it would have been if opex had simply grown at the rate of inflation, making the industry more profitable overall. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.112,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.084,
+                0.722,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.428,
+                0.475,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.493,
+                0.927,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.512,
+                0.939,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.533,
+                0.627,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.567,
+                0.944,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.587,
+                0.916,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.607,
+                0.949,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.626,
+                0.887,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.646,
+                0.92,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.666,
+                0.949,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.684,
+                0.073,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.152,
+                0.163,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Decrease in opex (%)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.419,
+                0.151,
+                0.661,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Decrease in opex share of charter rates (pp)"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.727,
+                0.122
+            ],
+            "angle": 0,
+            "content": "Cost-Cutting Reduced Opex by 13% and Lowered Opex as a Share of Charter Rates by 5 Percentage Points",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.131,
+                0.393,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Cumulative inflation-adjusted Opex reductions since 2014"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.046,
+                0.151,
+                0.37,
+                0.316
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.417,
+                0.15,
+                0.731,
+                0.316
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.33,
+                0.729,
+                0.377
+            ],
+            "angle": 0,
+            "content": "Sources: Clarkson; International Monetary Fund; BCG Shipping Benchmark Initiative. Note: Charter rates are based on actual data as of August 2024 and reflect half-year and full-year rates. The charter rates are aggregated based on Clarkson's data on tanker, drybulk, and container segments, and are aggregated based on fleet-size-weighted averages to create an adapted benchmark similar to the ClarkSea Index and aligned with the opex methodology applied in the BCG Shipping Benchmarking Initiative. The baseline is assumed to grow in line with the IMF Consumer Price Index. pp = percentage points."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.409,
+                0.805,
+                0.444
+            ],
+            "angle": 0,
+            "content": "COVID-19 Upends the Cost Equation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.471,
+                0.952,
+                0.551
+            ],
+            "angle": 0,
+            "content": "The pandemic rewired income statements in ways that few shipping companies anticipated. From 2019 to 2021, even after being adjusted for inflation, opex rose by 2.5% annually across the industry, with the container and drybulk segments climbing especially quickly, at 3.6% and 4.0% per year, respectively. The cost increase was driven by two factors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.564,
+                0.932,
+                0.685
+            ],
+            "angle": 0,
+            "content": "First, as a direct result of the pandemic, two types of cost rose significantly. From 2019 to 2021, driven by travel restrictions, quarantining, and testing, crewing costs rose by 2.6% annually, adjusted for inflation, and freight forwarding costs increased by 11.6% annually, largely owing to pandemic-related disruptions to global supply chains. Despite representing just 60% of typical opex costs, crew and forwarding costs together caused 68% of the 2019-to-2021 rise in opex for drybulk ships and 87% of the 2019-to-2021 rise for tankers. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.113,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.724,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.103,
+                0.416,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.409,
+                0.804,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.475,
+                0.947,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.494,
+                0.887,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.512,
+                0.93,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.532,
+                0.658,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.566,
+                0.922,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.586,
+                0.892,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.605,
+                0.928,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.627,
+                0.922,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.646,
+                0.921,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.666,
+                0.733,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.711,
+                0.122
+            ],
+            "angle": 0,
+            "content": "Crewing and Freight Forwarding Drove More Than 50% of the Opex Increases During the Pandemic",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.13,
+                0.363,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Nominal opex per day by vessel type, 2021 vs 2019 ($)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.048,
+                0.151,
+                0.722,
+                0.387
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.395,
+                0.243,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Source: BCG Shipping Benchmark Initiative."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.402,
+                0.706,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Note: Opex calculated as the arithmetic mean of vessel-class average opex within each vessel type, neutralizing changes in fleet composition over time. Because of rounding, not all nominal daily opex totals for 2021 equal the sum of their reported segment totals."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.457,
+                0.953,
+                0.616
+            ],
+            "angle": 0,
+            "content": "In contrast, these costs were responsible for just 51% of the increase in opex for container ships. This difference was due largely to the second factor—the rapid increase in shipping revenues, which led to a relaxation of cost discipline, especially for container and drybulk vessels. By the end of 2021, the Containerized Freight Index had risen above 5,000 points, more than 400% above pre-COVID-19 levels. This trend encouraged companies to shift their strategic focus from cost minimization to revenue optimization. As the benchmark shows, container and drybulk vessels saw the greatest increases in revenue conditions and the largest increases in both pandemic-related costs and non-pandemic-related costs such as lube oil and insurance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.629,
+                0.935,
+                0.827
+            ],
+            "angle": 0,
+            "content": "The pandemic affected not only relative industry performance between companies, but also relative performance within a company’s fleet. Intrafleet variance, which measures the variation in opex performance across similar vessels under the same owner, is a key indicator of a fleet’s overall efficiency and of ship owners’ ability to predict their fleet’s performance. During the pandemic, this metric rose to its highest level since the benchmark’s inception, exposing many fleets’ lack of contingency plans in the face of disruptions. (See Exhibit 4.) It also revealed an inadequate level of sharing of effective cost-cutting practices—such as coordination of purchasing and crewing data—among ships within the same fleet. A high degree of intrafleet variance also correlates with opex underperformance across the entire fleet, an issue we examine in a forthcoming article.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.113,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.707,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.104,
+                0.355,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.459,
+                0.941,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.477,
+                0.915,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.498,
+                0.92,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.517,
+                0.952,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.91,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.557,
+                0.921,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.577,
+                0.913,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.596,
+                0.763,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.632,
+                0.9,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.652,
+                0.933,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.672,
+                0.924,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.69,
+                0.888,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.709,
+                0.923,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.731,
+                0.908,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.75,
+                0.849,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.769,
+                0.9,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.788,
+                0.869,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.808,
+                0.35,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.728,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Opex Variance Within Fleets Widened Significantly During the Pandemic",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.113,
+                0.214,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Intrafleet opex variance (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.131,
+                0.719,
+                0.288
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.301,
+                0.243,
+                0.313
+            ],
+            "angle": 0,
+            "content": "Source: BCG Shipping Benchmark Initiative."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.31,
+                0.725,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Note: Intrafleet opex variance is calculated as the arithmetic mean across firms in a given year. To ensure that results are not driven by changes in Shipping Benchmark Initiative participants, the analysis is adjusted to select recurring participants. At the firm level, intrafleet opex variance is calculated as the standard deviation of the deviation from a vessel's expected opex, based on its characteristics (including, among others, vessel class and age). pp = percentage points."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.381,
+                0.403,
+                0.414
+            ],
+            "angle": 0,
+            "content": "The New Normal"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.442,
+                0.954,
+                0.563
+            ],
+            "angle": 0,
+            "content": "The years following the pandemic pushed the industry back to inflation-adjusted cost decreases, in line with the pre-COVID-19 period. While consumables, lube oil, and maintenance and repair (M&R)—the line items most exposed to inflation—increased following the pandemic, total inflation-adjusted opex actually fell by 2.5%. This was largely because operators managed to keep crew spending flat relative to the exceptionally high levels of 2021 by pulling renewed crew optimization levers, notably nationality switching.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.575,
+                0.95,
+                0.657
+            ],
+            "angle": 0,
+            "content": "In the coming years, firms will find it necessary to be more cost disciplined than at any time since the onset of COVID-19. Geopolitical instability, for example, will continue to affect the industry, as the conflict in the Middle East makes all too clear. Firms' ability to perform in this challenging market will depend on their ability to remain cost disciplined and pull the right levers.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.726,
+                0.637,
+                0.769
+            ],
+            "angle": 0,
+            "content": "Pulling the Right Levers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.793,
+                0.952,
+                0.913
+            ],
+            "angle": 0,
+            "content": "As the past decade's benchmarking results show, cost competitiveness at both the firm level and the vessel level is especially responsive to two factors: effective application of historically proven cost levers, and the ability to adapt to a dynamic operating environment. Systematic identification and implementation of critical cost-cutting levers have led to improved opex performance, and the SBI benchmark clearly helps ensure an exhaustive, programmatic approach.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.068,
+                0.111,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.084,
+                0.725,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.381,
+                0.404,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.445,
+                0.936,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.465,
+                0.926,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.485,
+                0.887,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.504,
+                0.95,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.523,
+                0.891,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.543,
+                0.508,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.579,
+                0.945,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.598,
+                0.947,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.616,
+                0.913,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.637,
+                0.842,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.724,
+                0.639,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.944,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.816,
+                0.949,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.836,
+                0.828,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.855,
+                0.881,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.875,
+                0.861,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.893,
+                0.142,
+                0.912
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.958,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Although traditional levers such as crew nationality switching and e-auctions can be effective, our benchmark results indicate that shipping companies must look beyond them. Companies seeking to achieve cost leadership in the years ahead should consider three additional focal areas.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.154,
+                0.793,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Build Contingency Plans for “Known Unknowns”"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.251,
+                0.954,
+                0.372
+            ],
+            "angle": 0,
+            "content": "COVID-19-specific line items accounted for the vast majority of the 2021 cost increases, yielding a clear lesson: shippers should build contingency plans for “known unknowns” to avoid the risk of being swamped when the next shock hits. In volatile times, like the present, contingency plans must take into account a wide range of macro risks and provide levers that ensure both resilience (such as the dual sourcing of parts and consumables) and agility (such as framework agreements with drydocking yards across multiple countries).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.399,
+                0.635,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Focus on Crewing, M&R, and Drydocking"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.494,
+                0.951,
+                0.654
+            ],
+            "angle": 0,
+            "content": "The industry's overall lack of resilience and agility during the pandemic is evident in the absence of contingency plans to counter higher drydocking costs. On average, from 2020 to 2021, inflation-adjusted drydocking costs rose by \\(10\\%\\) to \\(12\\%\\), driven by a combination of the zero-COVID-19 policy in China, higher prices for energy and key materials such as steel, and supply bottlenecks in labor and infrastructure outside China. These costs will probably continue to rise faster than inflation in the coming years. This will exert further pressure on the industry to increase its resilience while also managing other opex costs such as crewing—an area that will be covered in more detail in an upcoming article.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.667,
+                0.953,
+                0.786
+            ],
+            "angle": 0,
+            "content": "Vessel fundamentals reinforce the challenging outlook on M&R and drydocking costs. Fleets have been aging over the course of a decade in which capacity grew by roughly one-third in the drybulk and tanker segments and by nearly three-quarters in container shipping. According to the UN Conference on Trade and Development, the average vessel age was 13 years in 2024, the highest average on record and two to three years higher than the average a decade ago, despite the order book's recent rise to its highest level since 2016.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.799,
+                0.936,
+                0.88
+            ],
+            "angle": 0,
+            "content": "This situation is likely to increase the importance of M&R and drydocking in the years ahead as average-age vessels enter their third drydocking cycle. To offset it, firms must rethink processes, including applying levers such as intelligent drydocking schedules, bundled repair campaigns, predictive maintenance, and data-driven spare-parts forecasting.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.944,
+                0.083
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.953,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.881,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.156,
+                0.793,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.191,
+                0.286,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.253,
+                0.947,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.273,
+                0.939,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.293,
+                0.924,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.314,
+                0.949,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.333,
+                0.942,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.352,
+                0.499,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.398,
+                0.635,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.432,
+                0.283,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.497,
+                0.943,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.516,
+                0.949,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.535,
+                0.907,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.555,
+                0.938,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.574,
+                0.927,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.594,
+                0.883,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.614,
+                0.941,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.636,
+                0.37,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.669,
+                0.952,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.69,
+                0.941,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.709,
+                0.913,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.726,
+                0.941,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.748,
+                0.943,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.767,
+                0.498,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.926,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.822,
+                0.932,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.841,
+                0.917,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.861,
+                0.647,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.068,
+                0.606,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Lead Technological Change"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.13,
+                0.955,
+                0.248
+            ],
+            "angle": 0,
+            "content": "To remain at the forefront of cost discipline and stay competitive, shipping firms must pursue both incremental and radical technological innovation. The advent of increasingly sophisticated, cost-efficient ships running on new, lower-cost systems that can operate profitably even at lower freight rates, such as the propulsion systems used by new liquefied natural gas carriers, has increased pressure on firms with older vessels to aggressively cut their opex to remain competitive.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.263,
+                0.952,
+                0.382
+            ],
+            "angle": 0,
+            "content": "A similar inflection point is emerging with AI and machine learning. A recent BCG survey indicates that companies across all industries plan to increase AI their investment in 2026, with average spending more than doubling relative to 2025 levels. Within the shipping industry, firms must explore capabilities such as big-data-based predictive maintenance to reduce M&R costs and downtime, semi-autonomous ships to lower crewing costs, and live fuel optimization through weather analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.453,
+                0.322,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Conclusion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.52,
+                0.943,
+                0.62
+            ],
+            "angle": 0,
+            "content": "As our SBI benchmark shows, the shipping industry has made considerable progress in controlling opex over the past ten years. Yet the voyage has been turbulent, as demonstrated by the increase in costs during the COVID-19 pandemic. Even so, the industry’s ability to refocus on cost discipline following the pandemic confirms its capacity to adjust priorities swiftly in the face of changing circumstances.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.634,
+                0.949,
+                0.714
+            ],
+            "angle": 0,
+            "content": "Shipping companies looking to remain competitive must continue to pull historical cost levers while also taking advantage of opportunities to lead through technological change, crewing, M&R, and drydocking. Equally important are the ability to adapt and the readiness to ride out the inevitable storms that will arise in our increasingly uncertain world.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.067,
+                0.604,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.131,
+                0.952,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.151,
+                0.939,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.172,
+                0.895,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.19,
+                0.892,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.21,
+                0.846,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.23,
+                0.162,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.266,
+                0.947,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.286,
+                0.92,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.306,
+                0.907,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.325,
+                0.911,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.345,
+                0.896,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.364,
+                0.209,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.45,
+                0.325,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.522,
+                0.848,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.543,
+                0.938,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.561,
+                0.935,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.582,
+                0.936,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.601,
+                0.298,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.637,
+                0.917,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.656,
+                0.946,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.677,
+                0.887,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.694,
+                0.67,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.186,
+                0.221,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.195,
+                0.398,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Ulrik Sanders"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.227,
+                0.437,
+                0.292
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nCopenhagen"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.535,
+                0.186,
+                0.681,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.706,
+                0.19,
+                0.922,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Christoffer Nielsen-\nfriis"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.244,
+                0.824,
+                0.295
+            ],
+            "angle": 0,
+            "content": "Student Analyst\nCopenhagen\n✉"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.389,
+                0.436,
+                0.409
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.425,
+                0.952,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.392,
+                0.433,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.427,
+                0.95,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.445,
+                0.901,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.466,
+                0.903,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.487,
+                0.912,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.506,
+                0.934,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.526,
+                0.593,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

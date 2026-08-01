@@ -1,0 +1,1498 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4d993bcf43359371e1f055406bdd1f9c6f8ce394445661114fbd1a443134f0b3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TRANSPORTATION AND LOGISTICS"
+                    }
+                ]
+            },
+            "bbox": [
+                52,
+                431,
+                292,
+                448
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How Shipping Companies Can Maintain their Focus on Opex"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                42,
+                478,
+                789,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Ulrik Sanders and Christoffer Nielsen-friis"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                706,
+                412,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE APRIL 28, 2026 8 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                750,
+                363,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To help shipping companies navigate the ever-shifting global seascape, BCG partners with global shipping companies through its Shipping Benchmark Initiative (SBI) to run class-by-class opex analyses and to help companies maintain cost excellence. Working directly with companies to collect granular opex data, SBI serves as a value-adding clearing-house that delivers customized, actionable insights. Upward of 60 global shipowners and managers participate in the benchmark annually; all shipping companies are invited to join."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                828,
+                952,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                46,
+                139,
+                74
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In a seascape regularly buffeted by external shocks—pandemics, inflationary pressures, volatile oil prices, and shifting trade-war dynamics—maintaining tight, disciplined control over operating expenses (opex) has long been a strategic imperative for shipping firms. That’s because managing costs is key to both short-term profitability and long-term competitive advantage across the industry."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                942,
+                165
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "From the cost-cutting imperative of 2014 to 2019, through the surge in costs driven by COVID-19, and on to the current period of restraint, the past ten years have witnessed considerable volatility. As circumstances changed, shipping companies have struggled at times to master their cost base and to fully understand the factors that matter most in managing their short-term and long-term costs."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                179,
+                942,
+                279
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Over the past 15 years, BCG's Shipping Benchmark Initiative (SBI) has worked with more than 60 shipping companies to capture spending data and analyze key trends that have affected the industry's opex. After examining the data, we seek to answer two critical questions in this article. What trends and factors affected the industry's opex and thus its profitability over the past decade? And which levers should shipping companies pull to maintain and strengthen their cost discipline and competitive advantage in future?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                293,
+                941,
+                413
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A Decade of Cost-Cutting"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                483,
+                668,
+                526
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Over the past decade, opex spending across the shipping industry has been highly variable, falling from 2014 to 2019, rising for the next two years, and then falling again from 2022 to 2024. (See Exhibit 1.) A number of positive and negative factors affected how shipping companies managed their costs. Some, such as inflationary pressures and freight rate cycles, were systemic; others, notably the COVID-19 pandemic, were one-off impacts."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                551,
+                942,
+                651
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inflation-adjusted opex per day (2020 $)"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                112,
+                282,
+                126
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                112,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shipping Industry Opex Has Varied Considerably over the Past Decade"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                723,
+                102
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e0b44eb9942df80c5bdd54f624e96c05adba84a986131d1b95e612b5e51db02a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: International Monetary Fund; BCG Shipping Benchmark Initiative. Note: Opex calculated as the arithmetic mean of vessel-class average opex within each vessel type, neutralizing changes in fleet composition over time."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                121,
+                727,
+                291
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Before the Pandemic"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                45,
+                428,
+                476,
+                462
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A cost-cutting paradigm driven by low freight rates from 2015 onward defined the pre-COVID-19 era. From 2014 to 2019, inflation-adjusted opex fell by an average of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " annually, led by a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " drop in crew costs, which account for  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "60\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of total costs."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                489,
+                942,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This period's focused cost-cutting trend is evident in data for all vessel classes within containers, drybulks, and tankers, indicating a rigorous industry-wide commitment to cost discipline. From 2014 to 2019, the industry achieved a cumulative  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "13\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " decrease in opex, adjusted for inflation. And the inflation-adjusted vessel opex as a share of charter rate—the daily amount paid to ship owners for the use of a vessel—was 5 percentage points lower than it would have been if opex had simply grown at the rate of inflation, making the industry more profitable overall. (See Exhibit 2.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                562,
+                952,
+                703
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Decrease in opex (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                151,
+                161,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Decrease in opex share of charter rates (pp)"
+                    }
+                ]
+            },
+            "bbox": [
+                417,
+                149,
+                659,
+                164
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cost-Cutting Reduced Opex by 13% and Lowered Opex as a Share of Charter Rates by 5 Percentage Points"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                725,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cumulative inflation-adjusted Opex reductions since 2014"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                130,
+                392,
+                143
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fac5b68e50277c99eddc9786fd888c66fce10bd49028bd97cd06f3089840b676.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                45,
+                149,
+                368,
+                315
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/43ec78292fe13e6fe4330770dce1298e1ada8a6da32fa18cde97d688352d94b0.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Clarkson; International Monetary Fund; BCG Shipping Benchmark Initiative. Note: Charter rates are based on actual data as of August 2024 and reflect half-year and full-year rates. The charter rates are aggregated based on Clarkson's data on tanker, drybulk, and container segments, and are aggregated based on fleet-size-weighted averages to create an adapted benchmark similar to the ClarkSea Index and aligned with the opex methodology applied in the BCG Shipping Benchmarking Initiative. The baseline is assumed to grow in line with the IMF Consumer Price Index. pp = percentage points."
+                    }
+                ]
+            },
+            "bbox": [
+                415,
+                149,
+                730,
+                315
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "COVID-19 Upends the Cost Equation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                407,
+                804,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The pandemic rewired income statements in ways that few shipping companies anticipated. From 2019 to 2021, even after being adjusted for inflation, opex rose by 2.5% annually across the industry, with the container and drybulk segments climbing especially quickly, at 3.6% and 4.0% per year, respectively. The cost increase was driven by two factors."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                470,
+                951,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First, as a direct result of the pandemic, two types of cost rose significantly. From 2019 to 2021, driven by travel restrictions, quarantining, and testing, crewing costs rose by 2.6% annually, adjusted for inflation, and freight forwarding costs increased by 11.6% annually, largely owing to pandemic-related disruptions to global supply chains. Despite representing just 60% of typical opex costs, crew and forwarding costs together caused 68% of the 2019-to-2021 rise in opex for drybulk ships and 87% of the 2019-to-2021 rise for tankers. (See Exhibit 3.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                563,
+                930,
+                684
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                971,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Crewing and Freight Forwarding Drove More Than 50% of the Opex Increases During the Pandemic"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                710,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nominal opex per day by vessel type, 2021 vs 2019 ($)"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                129,
+                361,
+                143
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8feeee6f188ecfa6349895b2b2e54cf916bd5a3d305cc751cfcf7fa27935ca3a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG Shipping Benchmark Initiative."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Opex calculated as the arithmetic mean of vessel-class average opex within each vessel type, neutralizing changes in fleet composition over time. Because of rounding, not all nominal daily opex totals for 2021 equal the sum of their reported segment totals."
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                149,
+                720,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In contrast, these costs were responsible for just 51% of the increase in opex for container ships. This difference was due largely to the second factor—the rapid increase in shipping revenues, which led to a relaxation of cost discipline, especially for container and drybulk vessels. By the end of 2021, the Containerized Freight Index had risen above 5,000 points, more than 400% above pre-COVID-19 levels. This trend encouraged companies to shift their strategic focus from cost minimization to revenue optimization. As the benchmark shows, container and drybulk vessels saw the greatest increases in revenue conditions and the largest increases in both pandemic-related costs and non-pandemic-related costs such as lube oil and insurance."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                456,
+                952,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The pandemic affected not only relative industry performance between companies, but also relative performance within a company’s fleet. Intrafleet variance, which measures the variation in opex performance across similar vessels under the same owner, is a key indicator of a fleet’s overall efficiency and of ship owners’ ability to predict their fleet’s performance. During the pandemic, this metric rose to its highest level since the benchmark’s inception, exposing many fleets’ lack of contingency plans in the face of disruptions. (See Exhibit 4.) It also revealed an inadequate level of sharing of effective cost-cutting practices—such as coordination of purchasing and crewing data—among ships within the same fleet. A high degree of intrafleet variance also correlates with opex underperformance across the entire fleet, an issue we examine in a forthcoming article."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                627,
+                934,
+                826
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 4"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Opex Variance Within Fleets Widened Significantly During the Pandemic"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                727,
+                102
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Intrafleet opex variance (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                112,
+                213,
+                126
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9d536ebd22132bcd7e3a86e007e793fd2fcc14ada39922ef596f64487caff2b0.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG Shipping Benchmark Initiative."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Intrafleet opex variance is calculated as the arithmetic mean across firms in a given year. To ensure that results are not driven by changes in Shipping Benchmark Initiative participants, the analysis is adjusted to select recurring participants. At the firm level, intrafleet opex variance is calculated as the standard deviation of the deviation from a vessel's expected opex, based on its characteristics (including, among others, vessel class and age). pp = percentage points."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                130,
+                718,
+                287
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The New Normal"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                380,
+                402,
+                413
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The years following the pandemic pushed the industry back to inflation-adjusted cost decreases, in line with the pre-COVID-19 period. While consumables, lube oil, and maintenance and repair (M&R)—the line items most exposed to inflation—increased following the pandemic, total inflation-adjusted opex actually fell by 2.5%. This was largely because operators managed to keep crew spending flat relative to the exceptionally high levels of 2021 by pulling renewed crew optimization levers, notably nationality switching."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                441,
+                952,
+                562
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the coming years, firms will find it necessary to be more cost disciplined than at any time since the onset of COVID-19. Geopolitical instability, for example, will continue to affect the industry, as the conflict in the Middle East makes all too clear. Firms' ability to perform in this challenging market will depend on their ability to remain cost disciplined and pull the right levers."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                574,
+                949,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pulling the Right Levers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                725,
+                636,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As the past decade's benchmarking results show, cost competitiveness at both the firm level and the vessel level is especially responsive to two factors: effective application of historically proven cost levers, and the ability to adapt to a dynamic operating environment. Systematic identification and implementation of critical cost-cutting levers have led to improved opex performance, and the SBI benchmark clearly helps ensure an exhaustive, programmatic approach."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                791,
+                951,
+                912
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although traditional levers such as crew nationality switching and e-auctions can be effective, our benchmark results indicate that shipping companies must look beyond them. Companies seeking to achieve cost leadership in the years ahead should consider three additional focal areas."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                957,
+                126
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Build Contingency Plans for “Known Unknowns”"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                153,
+                792,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "COVID-19-specific line items accounted for the vast majority of the 2021 cost increases, yielding a clear lesson: shippers should build contingency plans for “known unknowns” to avoid the risk of being swamped when the next shock hits. In volatile times, like the present, contingency plans must take into account a wide range of macro risks and provide levers that ensure both resilience (such as the dual sourcing of parts and consumables) and agility (such as framework agreements with drydocking yards across multiple countries)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                250,
+                952,
+                370
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Focus on Crewing, M&R, and Drydocking"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                398,
+                634,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The industry's overall lack of resilience and agility during the pandemic is evident in the absence of contingency plans to counter higher drydocking costs. On average, from 2020 to 2021, inflation-adjusted drydocking costs rose by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "10\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "12\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", driven by a combination of the zero-COVID-19 policy in China, higher prices for energy and key materials such as steel, and supply bottlenecks in labor and infrastructure outside China. These costs will probably continue to rise faster than inflation in the coming years. This will exert further pressure on the industry to increase its resilience while also managing other opex costs such as crewing—an area that will be covered in more detail in an upcoming article."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                493,
+                949,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vessel fundamentals reinforce the challenging outlook on M&R and drydocking costs. Fleets have been aging over the course of a decade in which capacity grew by roughly one-third in the drybulk and tanker segments and by nearly three-quarters in container shipping. According to the UN Conference on Trade and Development, the average vessel age was 13 years in 2024, the highest average on record and two to three years higher than the average a decade ago, despite the order book's recent rise to its highest level since 2016."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                665,
+                952,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This situation is likely to increase the importance of M&R and drydocking in the years ahead as average-age vessels enter their third drydocking cycle. To offset it, firms must rethink processes, including applying levers such as intelligent drydocking schedules, bundled repair campaigns, predictive maintenance, and data-driven spare-parts forecasting."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                797,
+                934,
+                879
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Lead Technological Change"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                45,
+                67,
+                604,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To remain at the forefront of cost discipline and stay competitive, shipping firms must pursue both incremental and radical technological innovation. The advent of increasingly sophisticated, cost-efficient ships running on new, lower-cost systems that can operate profitably even at lower freight rates, such as the propulsion systems used by new liquefied natural gas carriers, has increased pressure on firms with older vessels to aggressively cut their opex to remain competitive."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                129,
+                954,
+                247
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A similar inflection point is emerging with AI and machine learning. A recent BCG survey indicates that companies across all industries plan to increase AI their investment in 2026, with average spending more than doubling relative to 2025 levels. Within the shipping industry, firms must explore capabilities such as big-data-based predictive maintenance to reduce M&R costs and downtime, semi-autonomous ships to lower crewing costs, and live fuel optimization through weather analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                262,
+                951,
+                381
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                451,
+                321,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As our SBI benchmark shows, the shipping industry has made considerable progress in controlling opex over the past ten years. Yet the voyage has been turbulent, as demonstrated by the increase in costs during the COVID-19 pandemic. Even so, the industry’s ability to refocus on cost discipline following the pandemic confirms its capacity to adjust priorities swiftly in the face of changing circumstances."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                519,
+                942,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shipping companies looking to remain competitive must continue to pull historical cost levers while also taking advantage of opportunities to lead through technological change, crewing, M&R, and drydocking. Equally important are the ability to adapt and the readiness to ride out the inevitable storms that will arise in our increasingly uncertain world."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                633,
+                947,
+                713
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                104,
+                245,
+                141
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f05d804a5c4e775cd12a8db8d5c1bc2a38d50a44546c5b19cbd27c74de61f21e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Ulrik Sanders"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner\nCopenhagen"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                185,
+                220,
+                293
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6c7ad68ddbf5856815afda53f02dfee8c22329e4f7d546ad4984e61fa84154cd.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Christoffer Nielsen-\nfriis"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Student Analyst\nCopenhagen\n✉"
+                    }
+                ]
+            },
+            "bbox": [
+                533,
+                185,
+                680,
+                293
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                388,
+                434,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                424,
+                951,
+                545
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

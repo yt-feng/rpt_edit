@@ -1,0 +1,517 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "工业资产关停潮将至，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+      "cleaned_source_title": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0001BCGClosingIndustr",
+      "raw_candidates": [
+        "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+        "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+        "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+        "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+        "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放",
+        "波士顿咨询：0001BCGClosingIndustr",
+        "波士顿咨询：波士顿咨询（BCG）在2026年4月发布的一份报告中提出一"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：未来十年三分之一工业资产面临关闭决策",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：化工钢铁采矿行业资产退出密集周期与价值释放",
+          "reasons": [
+            "anchor_coverage=0.19",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0001BCGClosingIndustr",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：波士顿咨询（BCG）在2026年4月发布的一份报告中提出一",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：工业资产关闭不可避免但价值流失可控",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "航运公司成本控制：十",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：运输与供应链数据与主题变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+      "cleaned_source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0002BCGHowShippingCom",
+      "raw_candidates": [
+        "波士顿咨询：航运公司如何保持运营成本管控",
+        "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+        "波士顿咨询：航运成本管控与老龄船队维护策略"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：航运公司如何保持运营成本管控",
+        "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+        "波士顿咨询：航运成本管控与老龄船队维护策略",
+        "波士顿咨询：0002BCGHowShippingCom",
+        "波士顿咨询：1.疫情前五年行业实现累计13%的实际成本下降"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：航运业运营成本十年周期与下一阶段杠杆",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "波士顿咨询：航运成本管控与老龄船队维护策略",
+          "reasons": [
+            "anchor_coverage=0.31"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0002BCGHowShippingCom",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：1.疫情前五年行业实现累计13%的实际成本下降",
+          "reasons": [
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：运输与供应链数据与主题变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：航运公司如何保持运营成本管控",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：运输与供应链数据与主题变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "东南亚物流AI：单点",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资回报->回报表现 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+      "cleaned_source_title": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+      "institution_name": "波士顿咨询",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "波士顿咨询：AI0003BCGHowSoutheastAs",
+      "raw_candidates": [
+        "波士顿咨询：东南亚物流AI收益取决于链条互联",
+        "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+        "波士顿咨询：东南亚物流AI收益取决于链条互联-港口与货代数据策略"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：东南亚物流AI收益取决于链条互联",
+        "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+        "波士顿咨询：东南亚物流AI收益取决于链条互联-港口与货代数据策略",
+        "波士顿咨询：AI0003BCGHowSoutheastAs",
+        "波士顿咨询：数据显示，仅有13%的物流服务商报告了可衡量的AI财务影响"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：AI0003BCGHowSoutheastAs",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.07",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：数据显示，仅有13%的物流服务商报告了可衡量的AI财务影响",
+          "reasons": [
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+      "selection_reason": "supported_hook",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "13"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "经济降温期，反而是并",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x2",
+      "投资者->读者 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x3",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x5",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "金融机构->机构 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x3",
+      "投资者->读者 x1",
+      "宏观环境环境->宏观环境 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "波士顿咨询：2019年并购报告-宏观环境调整期交易回报更高",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5.pdf",
+      "cleaned_source_title": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0004BCGThe2019MARepor",
+      "raw_candidates": [
+        "波士顿咨询：2019年并购报告-宏观环境调整期交易回报更高",
+        "波士顿咨询：2019年并购报告-5.16万笔交易显示调整期回报高",
+        "波士顿咨询：2019年并购报告-调整期并购回报与交易量分析"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：2019年并购报告-宏观环境调整期交易回报更高",
+        "波士顿咨询：2019年并购报告-5.16万笔交易显示调整期回报高",
+        "波士顿咨询：2019年并购报告-调整期并购回报与交易量分析",
+        "波士顿咨询：0004BCGThe2019MARepor",
+        "波士顿咨询：这项结论基于对过去40年间超过5.16万笔交易的分析"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：2019年并购报告-5.16万笔交易显示调整期回报高",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "波士顿咨询：2019年并购报告-调整期并购回报与交易量分析",
+          "reasons": [
+            "anchor_coverage=0.57"
+          ]
+        },
+        {
+          "title": "波士顿咨询：0004BCGThe2019MARepor",
+          "reasons": [
+            "english_heavy_fragment",
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：这项结论基于对过去40年间超过5.16万笔交易的分析",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：2019年并购报告-宏观环境调整期交易回报更高",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "波士顿咨询：2019年并购报告-宏观环境调整期交易回报更高"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "工业技术赛道要换引擎",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x3",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:military_or_defense",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "波士顿咨询：技术应用与行业运营观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c.pdf",
+      "cleaned_source_title": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+      "institution_name": "波士顿咨询",
+      "required_terms": [],
+      "deterministic_fallback": "波士顿咨询：0005BCGYesterdays增长En",
+      "raw_candidates": [
+        "波士顿咨询：工业技术增长引擎转向防务与数据中心",
+        "波士顿咨询：工业技术增长引擎转向防务与数据中心，2030年新增需求1.1万亿美元",
+        "波士顿咨询：工业技术增长引擎转向防务与数据中心，覆盖158个细分市场"
+      ],
+      "cleaned_candidates": [
+        "波士顿咨询：工业技术增长引擎转向防务与数据中心",
+        "波士顿咨询：工业技术增长引擎转向防务与数据中心，覆盖158个细分市场",
+        "波士顿咨询：0005BCGYesterdays增长En",
+        "波士顿咨询：到2030年，这三个领域预计贡献约1.1万亿美元的增量需求"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "波士顿咨询：0005BCGYesterdays增长En",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "波士顿咨询：到2030年，这三个领域预计贡献约1.1万亿美元的增量需求",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "波士顿咨询：技术应用与行业运营观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "158"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "波士顿咨询：工业技术增长引擎转向防务与数据中心，覆盖158个细分市场",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:military_or_defense",
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "波士顿咨询：技术应用与行业运营观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

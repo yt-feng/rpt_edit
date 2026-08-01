@@ -1,0 +1,84 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "东南亚物流AI：单点",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+    "cleaned_source_title": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+    "institution_name": "波士顿咨询",
+    "required_terms": [
+      "AI"
+    ],
+    "deterministic_fallback": "波士顿咨询：AI0003BCGHowSoutheastAs",
+    "raw_candidates": [
+      "波士顿咨询：东南亚物流AI收益取决于链条互联",
+      "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+      "波士顿咨询：东南亚物流AI收益取决于链条互联-港口与货代数据策略"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：东南亚物流AI收益取决于链条互联",
+      "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+      "波士顿咨询：东南亚物流AI收益取决于链条互联-港口与货代数据策略",
+      "波士顿咨询：AI0003BCGHowSoutheastAs",
+      "波士顿咨询：数据显示，仅有13%的物流服务商报告了可衡量的AI财务影响"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：AI0003BCGHowSoutheastAs",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.07",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：数据显示，仅有13%的物流服务商报告了可衡量的AI财务影响",
+        "reasons": [
+          "anchor_coverage=0.13",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响",
+    "selection_reason": "supported_hook",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [
+        "13"
+      ],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "波士顿咨询：东南亚物流AI收益取决于链条互联-13%服务商报告财务影响"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

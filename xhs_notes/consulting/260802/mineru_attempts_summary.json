@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__1w_1hx3/pdfs/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
