@@ -1,0 +1,2959 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "table",
+                    "bbox": [
+                        380,
+                        76,
+                        572,
+                        210
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                380,
+                                76,
+                                572,
+                                210
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        380,
+                                        76,
+                                        572,
+                                        210
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                380,
+                                                76,
+                                                572,
+                                                210
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td colspan=\"2\">MS ASIA LIMITED</td></tr><tr><td colspan=\"2\">Robin Xing</td></tr><tr><td colspan=\"2\">Chief China Economist</td></tr><tr><td>Robin.Xing@morganstanley.com</td><td>+852 2848-6511</td></tr><tr><td colspan=\"2\">Jenny Zheng, CFA</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Jenny.L.Zheng@morganstanley.com</td><td>+852 3963-4015</td></tr><tr><td colspan=\"2\">Zhipeng Cai</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Zhipeng.Cai@morganstanley.com</td><td>+852 2239-7820</td></tr><tr><td colspan=\"2\">Harry Zhao</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Harry.Zhao@morganstanley.com</td><td>+852 2239-7229</td></tr></table>",
+                                            "image_path": "dfdfa4e7f2d1a3c81506c733938e19efccc85da6c53af2e3e0b3db5c448a7453.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        39,
+                        103,
+                        353,
+                        159
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                103,
+                                353,
+                                159
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        103,
+                                        353,
+                                        159
+                                    ],
+                                    "type": "text",
+                                    "content": "Politburo: Faster Fiscal Rollout, Not a Pivot Yet"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        42,
+                        178,
+                        124,
+                        194
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                178,
+                                124,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        178,
+                                        124,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "Key Takeaways"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        197,
+                        353,
+                        239
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                197,
+                                353,
+                                239
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        197,
+                                        353,
+                                        239
+                                    ],
+                                    "type": "text",
+                                    "content": "Fine-tune, not pivot: Beijing acknowledged mounting economic challenges and called for faster rollout of previously announced policies, not a new stimulus package."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        243,
+                        364,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                243,
+                                364,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        243,
+                                        364,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "Execution of ~RMB2tn in-budget fiscal impulse: Faster government bond issuance, use of new policy-based financial instruments, and broader interest rate subsidies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        289,
+                        359,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                289,
+                                359,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        289,
+                                        359,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "Still supply centric: Policy support remains focused on hard tech (\"Al+\") and infrastructure (\"Six Networks\"); no concrete measures specified on consumption or housing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        335,
+                        356,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                335,
+                                356,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        335,
+                                        356,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "Sept.-Oct. as the catalyst window: Beijing pledged to push out \"effective and practical new measures in time\", suggesting broader easing if Jul-Aug data miss."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        375,
+                        364,
+                        487
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                375,
+                                364,
+                                487
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        375,
+                                        364,
+                                        487
+                                    ],
+                                    "type": "text",
+                                    "content": "Budget rollout in focus: The July politburo echoed our preview: Growth concerns rose modestly, but this does not yet appear to be a pivot point. Faster budget execution is the priority, with Beijing still sitting on ~Rmb2trn of unused in-budget fiscal and quasi-fiscal impulse for 2H. The meeting urged accelerated government bond issuance and deployment, and called for stronger fiscal-monetary coordination, which could mean faster use of new policy-based financial instruments (Rmb800bn this year vs. Rmb500bn in 2025) and broader interest rate subsidies (though still within the Rmb100bn budgeted amount)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        495,
+                        357,
+                        551
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                495,
+                                357,
+                                551
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        495,
+                                        357,
+                                        551
+                                    ],
+                                    "type": "text",
+                                    "content": "Policy mix remains supply-centric: The meeting called for stronger infrastructure investment in the \"six networks\" and greater support for AI+ diffusion across emerging industries. Consumption, social welfare and the housing market were briefly mentioned, but without specified supporting measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        557,
+                        357,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                557,
+                                357,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        557,
+                                        357,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Sept.-Oct. is the potential catalyst window: The pledge to prepare practical, effective incremental measures in a timely manner preserves optionality – should July-August activity fails to firm up, the likelihood of additional easing in Sept.-Oct. would increase."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        383,
+                        217,
+                        569,
+                        265
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                383,
+                                217,
+                                569,
+                                265
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        383,
+                                        217,
+                                        569,
+                                        265
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                383,
+                                                217,
+                                                569,
+                                                265
+                                            ],
+                                            "type": "image",
+                                            "image_path": "599a8da0e9a5b380f3499c58c646c09820f04d311bbf26c0a915e4277235d686.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 12
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        381,
+                        329,
+                        569,
+                        417
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                381,
+                                301,
+                                542,
+                                327
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        381,
+                                        301,
+                                        542,
+                                        327
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                381,
+                                                301,
+                                                542,
+                                                327
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 1 : Comparison of July vs. April politburo meeting statements"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 13
+                        },
+                        {
+                            "bbox": [
+                                381,
+                                329,
+                                569,
+                                417
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        381,
+                                        329,
+                                        569,
+                                        417
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                381,
+                                                329,
+                                                569,
+                                                417
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">Politburo Meeting</td></tr><tr><td>Apr-26</td><td>Jul-26</td></tr><tr><td colspan=\"3\">What&#x27;s New</td></tr><tr><td>Economic Assessment</td><td>Economy off to a strong start, key indicators better than expected</td><td>More cautious tone: remain highly vigilant to economic challenges</td></tr><tr><td>Policy Stance</td><td>Targeted and effective policy implementation</td><td>Policy finetune, not pivot• Faster rollout of existing policies• Prepare practical and effective incremental measures• Enhance fiscal-monetary coordination</td></tr><tr><td colspan=\"3\">What&#x27;s Unchanged</td></tr><tr><td></td><td colspan=\"2\">√ Continued supply-centric framework:-A+ and other emerging frontiers-Six networks</td></tr><tr><td>Policy Priorities</td><td colspan=\"2\">Housing and consumption:-Stabilize housing market-Modest social welfare support</td></tr><tr><td></td><td colspan=\"2\">Continued local debt resolution and anti-involuation</td></tr></table>",
+                                            "image_path": "8813f559f2849294eeb74eaec79a014477300c149cc735f24741400deb0ed6b5.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                382,
+                                422,
+                                521,
+                                431
+                            ],
+                            "type": "table_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        382,
+                                        422,
+                                        521,
+                                        431
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                382,
+                                                422,
+                                                521,
+                                                431
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: Government website, MS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        38,
+                        35,
+                        233,
+                        95
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                35,
+                                233,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        35,
+                                        233,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "MS | RESEARCH July 30, 2026 10:04 AM GMT China Economics | Asia Pacific"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        523,
+                        39,
+                        570,
+                        53
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                523,
+                                39,
+                                570,
+                                53
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        523,
+                                        39,
+                                        570,
+                                        53
+                                    ],
+                                    "type": "text",
+                                    "content": "UPDATE"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        382,
+                        733,
+                        564,
+                        753
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                382,
+                                733,
+                                564,
+                                753
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        382,
+                                        733,
+                                        564,
+                                        753
+                                    ],
+                                    "type": "text",
+                                    "content": "For important disclosures, refer to the Disclosure Section, located at the end of this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "type": "table",
+                    "bbox": [
+                        380,
+                        76,
+                        572,
+                        210
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                380,
+                                76,
+                                572,
+                                210
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        380,
+                                        76,
+                                        572,
+                                        210
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                380,
+                                                76,
+                                                572,
+                                                210
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td colspan=\"2\">MS ASIA LIMITED</td></tr><tr><td colspan=\"2\">Robin Xing</td></tr><tr><td colspan=\"2\">Chief China Economist</td></tr><tr><td>Robin.Xing@morganstanley.com</td><td>+852 2848-6511</td></tr><tr><td colspan=\"2\">Jenny Zheng, CFA</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Jenny.L.Zheng@morganstanley.com</td><td>+852 3963-4015</td></tr><tr><td colspan=\"2\">Zhipeng Cai</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Zhipeng.Cai@morganstanley.com</td><td>+852 2239-7820</td></tr><tr><td colspan=\"2\">Harry Zhao</td></tr><tr><td colspan=\"2\">Economist</td></tr><tr><td>Harry.Zhao@morganstanley.com</td><td>+852 2239-7229</td></tr></table>",
+                                            "image_path": "dfdfa4e7f2d1a3c81506c733938e19efccc85da6c53af2e3e0b3db5c448a7453.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        39,
+                        103,
+                        353,
+                        159
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                103,
+                                353,
+                                159
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        103,
+                                        353,
+                                        159
+                                    ],
+                                    "type": "text",
+                                    "content": "Politburo: Faster Fiscal Rollout, Not a Pivot Yet"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        42,
+                        178,
+                        124,
+                        194
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                178,
+                                124,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        178,
+                                        124,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "Key Takeaways"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        197,
+                        353,
+                        239
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                197,
+                                353,
+                                239
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        197,
+                                        353,
+                                        239
+                                    ],
+                                    "type": "text",
+                                    "content": "Fine-tune, not pivot: Beijing acknowledged mounting economic challenges and called for faster rollout of previously announced policies, not a new stimulus package."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        243,
+                        364,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                243,
+                                364,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        243,
+                                        364,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "Execution of ~RMB2tn in-budget fiscal impulse: Faster government bond issuance, use of new policy-based financial instruments, and broader interest rate subsidies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        289,
+                        359,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                289,
+                                359,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        289,
+                                        359,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "Still supply centric: Policy support remains focused on hard tech (\"Al+\") and infrastructure (\"Six Networks\"); no concrete measures specified on consumption or housing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        335,
+                        356,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                335,
+                                356,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        335,
+                                        356,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "Sept.-Oct. as the catalyst window: Beijing pledged to push out \"effective and practical new measures in time\", suggesting broader easing if Jul-Aug data miss."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        375,
+                        364,
+                        487
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                375,
+                                364,
+                                487
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        375,
+                                        364,
+                                        487
+                                    ],
+                                    "type": "text",
+                                    "content": "Budget rollout in focus: The July politburo echoed our preview: Growth concerns rose modestly, but this does not yet appear to be a pivot point. Faster budget execution is the priority, with Beijing still sitting on ~Rmb2trn of unused in-budget fiscal and quasi-fiscal impulse for 2H. The meeting urged accelerated government bond issuance and deployment, and called for stronger fiscal-monetary coordination, which could mean faster use of new policy-based financial instruments (Rmb800bn this year vs. Rmb500bn in 2025) and broader interest rate subsidies (though still within the Rmb100bn budgeted amount)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        495,
+                        357,
+                        551
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                495,
+                                357,
+                                551
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        495,
+                                        357,
+                                        551
+                                    ],
+                                    "type": "text",
+                                    "content": "Policy mix remains supply-centric: The meeting called for stronger infrastructure investment in the \"six networks\" and greater support for AI+ diffusion across emerging industries. Consumption, social welfare and the housing market were briefly mentioned, but without specified supporting measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        557,
+                        357,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                557,
+                                357,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        557,
+                                        357,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Sept.-Oct. is the potential catalyst window: The pledge to prepare practical, effective incremental measures in a timely manner preserves optionality – should July-August activity fails to firm up, the likelihood of additional easing in Sept.-Oct. would increase."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        383,
+                        217,
+                        569,
+                        265
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                383,
+                                217,
+                                569,
+                                265
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        383,
+                                        217,
+                                        569,
+                                        265
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                383,
+                                                217,
+                                                569,
+                                                265
+                                            ],
+                                            "type": "image",
+                                            "image_path": "599a8da0e9a5b380f3499c58c646c09820f04d311bbf26c0a915e4277235d686.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 12
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        381,
+                        329,
+                        569,
+                        417
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                381,
+                                301,
+                                542,
+                                327
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        381,
+                                        301,
+                                        542,
+                                        327
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                381,
+                                                301,
+                                                542,
+                                                327
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 1 : Comparison of July vs. April politburo meeting statements"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 13
+                        },
+                        {
+                            "bbox": [
+                                381,
+                                329,
+                                569,
+                                417
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        381,
+                                        329,
+                                        569,
+                                        417
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                381,
+                                                329,
+                                                569,
+                                                417
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">Politburo Meeting</td></tr><tr><td>Apr-26</td><td>Jul-26</td></tr><tr><td colspan=\"3\">What&#x27;s New</td></tr><tr><td>Economic Assessment</td><td>Economy off to a strong start, key indicators better than expected</td><td>More cautious tone: remain highly vigilant to economic challenges</td></tr><tr><td>Policy Stance</td><td>Targeted and effective policy implementation</td><td>Policy finetune, not pivot• Faster rollout of existing policies• Prepare practical and effective incremental measures• Enhance fiscal-monetary coordination</td></tr><tr><td colspan=\"3\">What&#x27;s Unchanged</td></tr><tr><td></td><td colspan=\"2\">√ Continued supply-centric framework:-A+ and other emerging frontiers-Six networks</td></tr><tr><td>Policy Priorities</td><td colspan=\"2\">Housing and consumption:-Stabilize housing market-Modest social welfare support</td></tr><tr><td></td><td colspan=\"2\">Continued local debt resolution and anti-involuation</td></tr></table>",
+                                            "image_path": "8813f559f2849294eeb74eaec79a014477300c149cc735f24741400deb0ed6b5.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                382,
+                                422,
+                                521,
+                                431
+                            ],
+                            "type": "table_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        382,
+                                        422,
+                                        521,
+                                        431
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                382,
+                                                422,
+                                                521,
+                                                431
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: Government website, MS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        77,
+                        174,
+                        92
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                77,
+                                174,
+                                92
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        77,
+                                        174,
+                                        92
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure Section"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        94,
+                        572,
+                        258
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                94,
+                                572,
+                                258
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        94,
+                                        572,
+                                        258
+                                    ],
+                                    "type": "text",
+                                    "content": "Information and opinions in MS were prepared or are disseminated by one or more of the following, which accept responsibility for its contents: MS Asia Limited, and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        259,
+                        572,
+                        292
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                259,
+                                572,
+                                292
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        259,
+                                        572,
+                                        292
+                                    ],
+                                    "type": "text",
+                                    "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        297,
+                        237,
+                        309
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                297,
+                                237,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        297,
+                                        237,
+                                        309
+                                    ],
+                                    "type": "text",
+                                    "content": "Global Research Conflict Management Policy"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        310,
+                        572,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                310,
+                                572,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        310,
+                                        572,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        338,
+                        140,
+                        349
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                338,
+                                140,
+                                349
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        338,
+                                        140,
+                                        349
+                                    ],
+                                    "type": "text",
+                                    "content": "Important Disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        350,
+                        571,
+                        371
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                350,
+                                571,
+                                371
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        350,
+                                        571,
+                                        371
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        373,
+                        572,
+                        471
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                373,
+                                572,
+                                471
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        373,
+                                        572,
+                                        471
+                                    ],
+                                    "type": "text",
+                                    "content": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        471,
+                        572,
+                        514
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                471,
+                                572,
+                                514
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        471,
+                                        572,
+                                        514
+                                    ],
+                                    "type": "text",
+                                    "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        515,
+                        572,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                515,
+                                572,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        515,
+                                        572,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        559,
+                        383,
+                        569
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                559,
+                                383,
+                                569
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        559,
+                                        383,
+                                        569
+                                    ],
+                                    "type": "text",
+                                    "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        570,
+                        572,
+                        647
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                570,
+                                572,
+                                647
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        570,
+                                        572,
+                                        647
+                                    ],
+                                    "type": "text",
+                                    "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        647,
+                        572,
+                        690
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                647,
+                                572,
+                                690
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        647,
+                                        572,
+                                        690
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        691,
+                        572,
+                        746
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                691,
+                                572,
+                                746
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        691,
+                                        572,
+                                        746
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        36,
+                        153,
+                        49
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                36,
+                                153,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        36,
+                                        153,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "MS | RESEARCH"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        542,
+                        39,
+                        571,
+                        49
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                542,
+                                39,
+                                571,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        542,
+                                        39,
+                                        571,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "UPDATE"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        40,
+                        767,
+                        47,
+                        775
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                767,
+                                47,
+                                775
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        767,
+                                        47,
+                                        775
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        77,
+                        174,
+                        92
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                77,
+                                174,
+                                92
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        77,
+                                        174,
+                                        92
+                                    ],
+                                    "type": "text",
+                                    "content": "Disclosure Section"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        38,
+                        94,
+                        572,
+                        258
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                94,
+                                572,
+                                258
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        94,
+                                        572,
+                                        258
+                                    ],
+                                    "type": "text",
+                                    "content": "Information and opinions in MS were prepared or are disseminated by one or more of the following, which accept responsibility for its contents: MS Asia Limited, and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        259,
+                        572,
+                        292
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                259,
+                                572,
+                                292
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        259,
+                                        572,
+                                        292
+                                    ],
+                                    "type": "text",
+                                    "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        297,
+                        237,
+                        309
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                297,
+                                237,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        297,
+                                        237,
+                                        309
+                                    ],
+                                    "type": "text",
+                                    "content": "Global Research Conflict Management Policy"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        310,
+                        572,
+                        331
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                310,
+                                572,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        310,
+                                        572,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        338,
+                        140,
+                        349
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                338,
+                                140,
+                                349
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        338,
+                                        140,
+                                        349
+                                    ],
+                                    "type": "text",
+                                    "content": "Important Disclosures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        39,
+                        350,
+                        571,
+                        371
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                350,
+                                571,
+                                371
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        350,
+                                        571,
+                                        371
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        373,
+                        572,
+                        471
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                373,
+                                572,
+                                471
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        373,
+                                        572,
+                                        471
+                                    ],
+                                    "type": "text",
+                                    "content": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        471,
+                        572,
+                        514
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                471,
+                                572,
+                                514
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        471,
+                                        572,
+                                        514
+                                    ],
+                                    "type": "text",
+                                    "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        515,
+                        572,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                515,
+                                572,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        515,
+                                        572,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        559,
+                        383,
+                        569
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                559,
+                                383,
+                                569
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        559,
+                                        383,
+                                        569
+                                    ],
+                                    "type": "text",
+                                    "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        570,
+                        572,
+                        647
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                570,
+                                572,
+                                647
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        570,
+                                        572,
+                                        647
+                                    ],
+                                    "type": "text",
+                                    "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        647,
+                        572,
+                        690
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                647,
+                                572,
+                                690
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        647,
+                                        572,
+                                        690
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        38,
+                        691,
+                        572,
+                        746
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                691,
+                                572,
+                                746
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        691,
+                                        572,
+                                        746
+                                    ],
+                                    "type": "text",
+                                    "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        38,
+                        83,
+                        572,
+                        303
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                83,
+                                572,
+                                303
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        83,
+                                        572,
+                                        303
+                                    ],
+                                    "type": "text",
+                                    "content": "Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 14-9169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        303,
+                        571,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                303,
+                                571,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        303,
+                                        571,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        336,
+                        441,
+                        346
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                336,
+                                441,
+                                346
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        336,
+                                        441,
+                                        346
+                                    ],
+                                    "type": "text",
+                                    "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        346,
+                        536,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                346,
+                                536,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        346,
+                                        536,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        357,
+                        571,
+                        412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                357,
+                                571,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        357,
+                                        571,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        413,
+                        571,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                413,
+                                571,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        413,
+                                        571,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        435,
+                        572,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                435,
+                                572,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        435,
+                                        572,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        479,
+                        571,
+                        521
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                479,
+                                571,
+                                521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        479,
+                                        571,
+                                        521
+                                    ],
+                                    "type": "text",
+                                    "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        545,
+                        144,
+                        558
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                545,
+                                144,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        545,
+                                        144,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "© 2026 MS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        36,
+                        153,
+                        49
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                36,
+                                153,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        36,
+                                        153,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "MS | RESEARCH"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        542,
+                        39,
+                        571,
+                        49
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                542,
+                                39,
+                                571,
+                                49
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        542,
+                                        39,
+                                        571,
+                                        49
+                                    ],
+                                    "type": "text",
+                                    "content": "UPDATE"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        564,
+                        767,
+                        570,
+                        775
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                564,
+                                767,
+                                570,
+                                775
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        564,
+                                        767,
+                                        570,
+                                        775
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        40,
+                        766,
+                        148,
+                        776
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                40,
+                                766,
+                                148,
+                                776
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        766,
+                                        148,
+                                        776
+                                    ],
+                                    "type": "text",
+                                    "content": "MS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        38,
+                        83,
+                        572,
+                        303
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                38,
+                                83,
+                                572,
+                                303
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        83,
+                                        572,
+                                        303
+                                    ],
+                                    "type": "text",
+                                    "content": "Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 14-9169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        303,
+                        571,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                303,
+                                571,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        303,
+                                        571,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        336,
+                        441,
+                        346
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                336,
+                                441,
+                                346
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        336,
+                                        441,
+                                        346
+                                    ],
+                                    "type": "text",
+                                    "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        346,
+                        536,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                346,
+                                536,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        346,
+                                        536,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        357,
+                        571,
+                        412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                357,
+                                571,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        357,
+                                        571,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        413,
+                        571,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                413,
+                                571,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        413,
+                                        571,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        435,
+                        572,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                435,
+                                572,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        435,
+                                        572,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        479,
+                        571,
+                        521
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                479,
+                                571,
+                                521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        479,
+                                        571,
+                                        521
+                                    ],
+                                    "type": "text",
+                                    "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        39,
+                        545,
+                        144,
+                        558
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                545,
+                                144,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        545,
+                                        144,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "© 2026 MS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.4"
+}

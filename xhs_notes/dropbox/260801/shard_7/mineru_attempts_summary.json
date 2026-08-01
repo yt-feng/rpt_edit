@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_4",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0001-36-JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised to -150B- with Strong CY27 Se.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0002-37-JPM-Xiaomi -1810.HK- New Extended Range EV launched as expected- later delivery ramp implies FY26 EV delivery target is at risk-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0003-38-MS-China Equity Strategy-A-share Sentiment Edged Down on Lower Volume Turnover- Still Prefer HK-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0004-39-MS-China Economics-Politburo-Faster Fiscal Rollout- Not a Pivot Yet-260730.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0005-40-MS-China Financials Tracking industrial risks- Demand growth continued to notably outpace supply in June-good for risk reduction-260730.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

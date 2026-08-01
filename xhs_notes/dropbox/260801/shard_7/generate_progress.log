@@ -1,0 +1,37 @@
+Found 50 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kbw46sx6/pdfs/0001-36-J.P. Morgan-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised to -150B- with Strong CY27 Se.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kbw46sx6/pdfs/0002-37-J.P. Morgan-Xiaomi -1810.HK- New Extended Range EV launched as expected- later delivery ramp implies FY26 EV delivery target is at risk-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kbw46sx6/pdfs/0003-38-Morgan Stanley-China Equity Strategy-A-share Sentiment Edged Down on Lower Volume Turnover- Still Prefer HK-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kbw46sx6/pdfs/0004-39-Morgan Stanley-China Economics-Politburo-Faster Fiscal Rollout- Not a Pivot Yet-260730.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kbw46sx6/pdfs/0005-40-Morgan Stanley-China Financials Tracking industrial risks- Demand growth continued to notably outpace supply in June-good for risk reduction-260730.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=06194b51-f94a-4942-b927-72863aec9f43
+MinerU states: running, running, running, pending, pending
+MinerU states: running, done, running, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 0c5d26df9fd98a70361dd9715e09cec6b8d608c934c5f2a3bb8a3b1a58b6f92e.jpg: score=-100;too_small:448x162
+Skip non-chart visual asset 31bad002ebe940465da94137e8a3827a4c653c75a280ad79a7980f4d793496b9.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 709d363c21aa912a3ee0079269de8436128bb36027186c74bf8fd04b0b0b0617.jpg: score=0;square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset 1a91045bac4877ad39215de8f93d393feee45a6dbae3b152a1a6963a6b1d0165.jpg: score=-100;too_small:626x87
+Skip non-chart visual asset 908f74d9d8bdc34a014e445b49bbd7e0a2b53cb2a582a827ff2cf2d8ddb26282.jpg: score=1;chart_ratio
+Skip non-chart visual asset 572849cb302bfc1518dd75bb8c4bcee8e84bcbadcd7096b45b6a4cb6382c5012.jpg: score=-100;too_small:982x164
+Skip non-chart visual asset 745c78db19c55ceb63f7818e9639c05361561e5b2897a9773d8a6311ac8ec1b5.jpg: score=0;square_without_chart_hint,edge:0.32,contrast
+Skip non-chart visual asset b03ac82e67eff24d453318a45f439a77e3c53a3d2d069b527620474eab9e2420.jpg: score=-100;too_small:924x162
+Neutralized WeChat title while keeping the report: 摩根大通：小米增程SUV发布，全年交付目标面临节奏不确定性 -> 摩根大通：研究主题与行业变化观察
+Skip non-chart visual asset 69eef56fc5b59c73765729d9086fbe8405a0fc97db0510192f8e1f3a3e8f7591.jpg: score=-100;too_small:518x137
+Skip non-chart visual asset d5e77f3ca023ae99e9b9acdaa3fbe77ce2d9cf4b4cb869ad10d8f6fa26a1104b.jpg: score=1;large
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国市场策略-A股情绪因成交额下降而回落-仍偏好港股 -> 摩根士丹利：研究主题与行业变化观察
+Skip non-chart visual asset 599a8da0e9a5b380f3499c58c646c09820f04d311bbf26c0a915e4277235d686.jpg: score=-100;too_small:518x135
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国宏观环境-政治局会议-加快财政落地而非转向 -> 摩根士丹利：区域环境与行业变化观察
+Skip non-chart visual asset 7e9d8e1a168c8b97a9e882bc6cb0ec9472378aee2edfe4fdc5d60558869b566d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 4453c01b28a1c329747c727cf708443c06941c036a2ce8bc847611034fc50953.jpg: score=1;large
+Skip non-chart visual asset 694ef1ed012ecddeb8f14c064c7f8d0913941066c4aacea813e004eb32ce0524.jpg: score=-100;too_small:523x87
+Skip non-chart visual asset 72ee9c5df45287e6f9c91212baeea37c609cf1e2eb4f6a1ce4413ca315b0a1a3.jpg: score=-100;too_small:518x135
+Neutralized WeChat title while keeping the report: 摩根士丹利：中国资金业跟踪，工业风险与6月需求增速快于供给 -> 摩根士丹利：研究主题与行业变化观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

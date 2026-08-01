@@ -1,0 +1,621 @@
+[
+  {
+    "item": "0001-36-J.P.-Morgan-Lam-Research-LRCX.US--Beat-and-Raise-on-NAND-Reacceleration-",
+    "source_pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0001-36-JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised to -150B- with Strong CY27 Se.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "半导体设备龙头的“B",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：NAND与DRAM技术与相关数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-36-JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised to -150B- with Strong CY27 Se.pdf",
+      "cleaned_source_title": "JPM-Lam Research-LRCX.US- Beat-and-Raise on NAND Reacceleration and Continued Momentum on Leading-Edge F L and DRAM- CY26 WFE Raised to -150B- with Strong CY27 Se",
+      "institution_name": "JPM",
+      "required_terms": [
+        "NAND",
+        "DRAM"
+      ],
+      "deterministic_fallback": "JPM：NAND与DRAMLamResearchBeat",
+      "raw_candidates": [
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM领跑增长",
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM需求强劲",
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元",
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM需求强劲",
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM领跑增长"
+      ],
+      "cleaned_candidates": [
+        "JPM：LamResearch上调2026年WFE预期至1500亿美",
+        "JPM：NAND与DRAMLamResearchBeat",
+        "JPM：NAND与DRAM技术与相关数据观察"
+      ],
+      "faithful_candidate_missing_terms": [
+        "NAND",
+        "DRAM"
+      ],
+      "faithful_candidate_quality_issues": [
+        "long_untranslated_english"
+      ],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：LamResearch上调2026年WFE预期至1500亿美",
+          "reasons": [
+            "missing_required_terms=NAND,DRAM",
+            "long_untranslated_english",
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：NAND与DRAMLamResearchBeat",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.47"
+          ]
+        }
+      ],
+      "selected_title": "JPM：NAND与DRAM技术与相关数据观察",
+      "selection_reason": "evidence_or_emergency_fallback",
+      "selected_quality_issues": [],
+      "needs_model_repair": true,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": true,
+      "initial_selection": {
+        "title": "JPM：NAND与DRAM技术与相关数据观察",
+        "reason": "evidence_or_emergency_fallback",
+        "quality_issues": []
+      },
+      "repair_candidates": [
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM领跑增长",
+        "JPM：Lam Research上调2026年WFE预期至1500亿美元，NAND与DRAM需求强劲"
+      ],
+      "final_title_after_wording_guard": "JPM：NAND与DRAM技术与相关数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-37-J.P.-Morgan-Xiaomi--1810.HK--New-Extended-Range-EV-launched-as-expected-",
+    "source_pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0002-37-JPM-Xiaomi -1810.HK- New Extended Range EV launched as expected- later delivery ramp implies FY26 EV delivery target is at risk-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "小米新SUV发布，但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "负面->谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "疲弱|乏力|低迷->仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-37-JPM-Xiaomi -1810.HK- New Extended Range EV launched as expected- later delivery ramp implies FY26 EV delivery target is at risk-260731.pdf",
+      "cleaned_source_title": "JPM-Xiaomi -1810.HK- New Extended Range EV launched as expected- later delivery ramp implies FY26 EV delivery target is at risk",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Xiaomi",
+      "raw_candidates": [
+        "小米增程SUV发布，全年交付目标面临节奏不确定性",
+        "小米增程SUV发布，下半年月均交付需超6万辆",
+        "小米增程SUV发布，交付节奏与客户反馈待观察"
+      ],
+      "cleaned_candidates": [
+        "JPM：小米增程SUV发布，全年交付目标面临节奏不确定性",
+        "JPM：小米增程SUV发布，下半年月均交付需超6万辆",
+        "JPM：小米增程SUV发布，交付节奏与客户反馈待观察",
+        "JPM：Xiaomi",
+        "JPM：7月30日晚，小米发布全新品牌SkyNomad"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：小米增程SUV发布，下半年月均交付需超6万辆",
+          "reasons": [
+            "anchor_coverage=0.41",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：小米增程SUV发布，交付节奏与客户反馈待观察",
+          "reasons": [
+            "anchor_coverage=0.45",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Xiaomi",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：7月30日晚，小米发布全新品牌SkyNomad",
+          "reasons": [
+            "anchor_coverage=0.14",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：小米增程SUV发布，全年交付目标面临节奏不确定性",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-38-Morgan-Stanley-China-Equity-Strategy-A-share-Sentiment-Edged-Down-on-Low",
+    "source_pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0003-38-MS-China Equity Strategy-A-share Sentiment Edged Down on Lower Volume Turnover- Still Prefer HK-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "A股情绪降温，港股为",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x2",
+      "衰退|萎缩|收缩->调整 x1",
+      "拖累->影响 x1",
+      "市场市场->市场 x1",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x3",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x5",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "A股|港股->相关市场 x2",
+      "sanitize_wechat_stock_line",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-38-MS-China Equity Strategy-A-share Sentiment Edged Down on Lower Volume Turnover- Still Prefer HK-260730.pdf",
+      "cleaned_source_title": "MS-China Equity Strategy-A-share Sentiment Edged Down on Lower Volume Turnover- Still Prefer HK",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国Equity策略AshareSenti",
+      "raw_candidates": [
+        "中国股市策略-A股情绪因成交额下降而回落-仍偏好港股",
+        "中国股市策略-A股情绪回落至32%-成交额降幅21%至24%-仍偏好港股",
+        "中国股市策略-A股情绪因成交额下降而回落-短期配置偏好港股"
+      ],
+      "cleaned_candidates": [
+        "MS：中国市场策略-A股情绪因成交额下降而回落-仍偏好港股",
+        "MS：中国市场策略-A股情绪回落至32%",
+        "MS：中国市场策略-A股情绪因成交额下降而回落-短期配置偏好港股",
+        "MS：中国Equity策略AshareSenti",
+        "MS：MS最新一期相关市场情绪追踪显示，截至7月29日当周"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国市场策略-A股情绪回落至32%",
+          "reasons": [
+            "anchor_coverage=0.43",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国Equity策略AshareSenti",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.13",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：MS最新一期相关市场情绪追踪显示，截至7月29日当周",
+          "reasons": [
+            "anchor_coverage=0.09",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国市场策略-A股情绪因成交额下降而回落-仍偏好港股",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-39-Morgan-Stanley-China-Economics-Politburo-Faster-Fiscal-Rollout--Not-a-Pi",
+    "source_pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0004-39-MS-China Economics-Politburo-Faster Fiscal Rollout- Not a Pivot Yet-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "7月会议：微调，不是",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:politically_sensitive",
+      "neutralized:china_systemic_topic"
+    ],
+    "wechat_title": "MS：区域环境与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-39-MS-China Economics-Politburo-Faster Fiscal Rollout- Not a Pivot Yet-260730.pdf",
+      "cleaned_source_title": "MS-China Economics-Politburo-Faster Fiscal Rollout- Not a Pivot Yet",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国EconomicsPolitburoF",
+      "raw_candidates": [
+        "MS：中国宏观环境-政治局会议-加快财政落地而非转向",
+        "MS：7月政治局会议聚焦预算执行，下半年约2万亿元财政空间待用",
+        "MS：政治局会议加快财政落地，政策性资金工具使用节奏或提速"
+      ],
+      "cleaned_candidates": [
+        "MS：中国宏观环境-政治局会议-加快财政落地而非转向",
+        "MS：7月政治局会议聚焦预算执行，下半年约2万亿元财政空间待用",
+        "MS：政治局会议加快财政落地，政策性资金工具使用节奏或提速",
+        "MS：中国EconomicsPolitburoF",
+        "MS：与4月会议相比，7月通稿对宏观环境形势的措辞明显更谨慎"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：7月政治局会议聚焦预算执行，下半年约2万亿元财政空间待用",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：政治局会议加快财政落地，政策性资金工具使用节奏或提速",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：中国EconomicsPolitburoF",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：与4月会议相比，7月通稿对宏观环境形势的措辞明显更谨慎",
+          "reasons": [
+            "anchor_coverage=0.20",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：区域环境与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国宏观环境-政治局会议-加快财政落地而非转向",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:politically_sensitive",
+        "neutralized:china_systemic_topic"
+      ],
+      "final_title_after_wording_guard": "MS：区域环境与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-40-Morgan-Stanley-China-Financials-Tracking-industrial-risks--Demand-growth",
+    "source_pdf": "/tmp/pdf_batch_001_kbw46sx6/pdfs/0005-40-MS-China Financials Tracking industrial risks- Demand growth continued to notably outpace supply in June-good for risk reduction-260730.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "MS",
+    "cover_short_title": "制造业去产能到哪一步",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x1",
+      "金融->资金 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "恶化->出现变化 x2",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "金融->资金 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "MS：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-40-MS-China Financials Tracking industrial risks- Demand growth continued to notably outpace supply in June-good for risk reduction-260730.pdf",
+      "cleaned_source_title": "MS-China Financials Tracking industrial risks- Demand growth continued to notably outpace supply in June-good for risk reduction",
+      "institution_name": "MS",
+      "required_terms": [],
+      "deterministic_fallback": "MS：中国FinancialsTrackingi",
+      "raw_candidates": [
+        "中国金融业跟踪：工业风险与6月需求增速快于供给",
+        "中国金融业跟踪：6月工业增加值增7.2%且需求增速快于供给",
+        "中国金融业跟踪：制造业6月需求增速连续9个月快于供给"
+      ],
+      "cleaned_candidates": [
+        "MS：中国资金业跟踪，工业风险与6月需求增速快于供给",
+        "MS：中国资金业跟踪，6月工业增加值增7.2%且需求增速快于供给",
+        "MS：中国资金业跟踪，制造业6月需求增速连续9个月快于供给",
+        "MS：中国FinancialsTrackingi",
+        "MS：6月制造业利润同比增长20.1%，利润率改善明显"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "MS：中国资金业跟踪，6月工业增加值增7.2%且需求增速快于供给",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "MS：中国资金业跟踪，制造业6月需求增速连续9个月快于供给",
+          "reasons": [
+            "anchor_coverage=0.67"
+          ]
+        },
+        {
+          "title": "MS：中国FinancialsTrackingi",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "MS：6月制造业利润同比增长20.1%，利润率改善明显",
+          "reasons": [
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "MS：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "MS：中国资金业跟踪，工业风险与6月需求增速快于供给",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "MS：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
