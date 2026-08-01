@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 花旗：PCB、CCL技术与行业应用观察 AI服务器需求把铜箔基板（CCL）推到了近两年少见的紧平衡位置。Citi在7月底的台湾PCB与CCL行业报告中给出一个明确判断：CCL供应紧张将从2026年第三季度开始显现，并可能延续到2027年。报告覆盖的两家台厂——台光电子（EMC）和联茂电子（TUC）——二季度业绩均超预期，且管理层没有排除三季度继续调价的可能性。 这份报告最有信息量的地方不在于单季数字本身，而在于供需",
   "fingerprint": "aa12215d87e51dc6cf07c6f0e55a58c25e1e79acf2149e145f563ce454cae465",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-xhs_notes-aa12215d87e51dc6"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-xhs_notes-aa12215d87e51dc6",
+  "slug": "20260801-aa12215d87e51dc6",
   "source": "xhs_notes",
   "title": "花旗：PCB、CCL技术与行业应用观察"
 }

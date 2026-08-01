@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根大通：研究主题与行业变化观察 JPM在参加AMD年度Advancing AI活动后发布报告，认为该公司正在缩小与GPU竞争对手的差距，同时受益于CPU市场的加速趋势。报告中最关键的信号是AMD管理层连续大幅上调了AI加速器和数据中心CPU的市场总规模预期，这背后反映的是对智能体AI工作负载驱动下计算需求结构变化的判断。 AMD将AI加速器TAM预测从去年活动时的大于5000亿美元、去年11月分析师日的大于1万亿",
   "fingerprint": "604dec1f9e252123392fdbc3f04ed8b64d1ff7d722bca4fc7682cfe6f642e771",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-604dec1f9e252123"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-604dec1f9e252123",
+  "slug": "20260727-604dec1f9e252123",
   "source": "xhs_notes",
   "title": "摩根大通：研究主题与行业变化观察"
 }

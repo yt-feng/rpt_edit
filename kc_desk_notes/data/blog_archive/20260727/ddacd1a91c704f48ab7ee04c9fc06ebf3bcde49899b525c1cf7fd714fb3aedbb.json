@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：PayPal二季度业绩前战略选择与商户流失数据 PayPal 将在 7 月 28 日发布二季度财报。MS在最新报告中指出，市场关注的焦点已从短期业绩数字转向管理层对战略选项的表态——尤其是在 Stripe 收购传闻背景下，公司是否愿意出售，还是继续作为独立实体推进转型。报告同时提供了其自建的商户接受度追踪数据，显示 Venmo 按钮的商户流失率正在上升，而 Shop Pay 的粘性首次超过 PayPal",
   "fingerprint": "ddacd1a91c704f48ab7ee04c9fc06ebf3bcde49899b525c1cf7fd714fb3aedbb",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-ddacd1a91c704f48"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-ddacd1a91c704f48",
+  "slug": "20260727-ddacd1a91c704f48",
   "source": "xhs_notes",
   "title": "摩根士丹利：PayPal二季度业绩前战略选择与商户流失数据"
 }

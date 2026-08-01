@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 高盛：Vertex业务与季度数据观察 Vertex 报价年初至今跑输板块和标普500指数，主要原因是SION预计于8月公布的囊性纤维化（CF）领域二期数据构成压制。GS在7月发布的这份二季度业绩预览报告中指出，市场对SION数据的评估标准与Vertex自身的创新管线之间存在差异。SION将关键生物标志物汗液氯离子浓度降低10mmol/L视为成功门槛，但对于Vertex而言，这一门槛更高，需要放在其CF产品组合和持续",
   "fingerprint": "80b4f9a2fd0570c6cf25e57e27ad160cf3b242be75ba4e13bf97df53c10a69b8",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-xhs_notes-80b4f9a2fd0570c6"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-xhs_notes-80b4f9a2fd0570c6",
+  "slug": "20260728-80b4f9a2fd0570c6",
   "source": "xhs_notes",
   "title": "高盛：Vertex业务与季度数据观察"
 }

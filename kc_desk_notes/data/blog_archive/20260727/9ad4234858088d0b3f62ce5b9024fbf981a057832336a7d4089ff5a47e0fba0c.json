@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：SpaceX-Starlink与特斯拉机器人集群通信整合 在2026年第二季度财报沟通中，特斯拉确认Starlink正在被集成到Cybercab中，并计划逐步推广至所有在Starlink覆盖区域内的特斯拉车辆。这一决策的直接理由是：蜂窝网络覆盖存在持续缺口，自动驾驶车辆可能在通信“盲区”陷入失联状态。MS分析师Adam Jonas团队在7月24日发布的报告中指出，这一整合动作不仅是产品层面的技术升级，更",
   "fingerprint": "9ad4234858088d0b3f62ce5b9024fbf981a057832336a7d4089ff5a47e0fba0c",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-9ad4234858088d0b"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-9ad4234858088d0b",
+  "slug": "20260727-9ad4234858088d0b",
   "source": "xhs_notes",
   "title": "摩根士丹利：SpaceX-Starlink与特斯拉机器人集群通信整合"
 }

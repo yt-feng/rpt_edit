@@ -5,6 +5,9 @@
   "digest": "肯尼亚商业计划竞赛筛选与资金实验，多阶段筛选下的赠款效果在三年后仍持续。",
   "fingerprint": "9081abf1859d6775cd6f8907daad1c55c9eba07ca46a5f088c26c761569a2b98",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-institutions-9081abf1859d6775"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-institutions-9081abf1859d6775",
+  "slug": "20260728-9081abf1859d6775",
   "source": "institutions",
   "title": "世界银行：肯尼亚商业计划竞赛筛选与资金实验"
 }

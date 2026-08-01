@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：半导体行业数据与主题变化观察 半导体行业正在进入一个需求信号密集的财报窗口。MS在最新周报中覆盖了Amkor、Navitas、NXP、Skyworks、Qualcomm、Allegro和ON Semiconductor等多家公司，核心判断是：汽车半导体需求正在经历一轮由库存过低和终端需求共同推动的加速，而数据中心对功率半导体的拉动正在从概念走向可量化的收入贡献。这份报告的价值在于，它用大量来自TI和ST",
   "fingerprint": "569ea52fb855aeb81a7ce8fb7b43d5c64e2b8461f7863ed822d8397b6a667fb5",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-xhs_notes-569ea52fb855aeb8"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-xhs_notes-569ea52fb855aeb8",
+  "slug": "20260728-569ea52fb855aeb8",
   "source": "xhs_notes",
   "title": "摩根士丹利：半导体行业数据与主题变化观察"
 }

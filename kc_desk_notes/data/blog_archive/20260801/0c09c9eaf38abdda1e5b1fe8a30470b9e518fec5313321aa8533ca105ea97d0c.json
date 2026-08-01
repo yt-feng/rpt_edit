@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根大通：Teradyne在超大规模客户二供认证上取得进展 7月29日盘后，Teradyne公布4-6月季度业绩并召开说明会。截至说明会结束时，公司报价当日上涨11%，同期标普500基本持平。这份由JPM日本半导体团队发布的研究报告，核心判断并不在当季营收本身，而在于一个更长期的信号：Teradyne正在从一家GPU客户和一家超大规模云厂商那里获得第二供应商认证的进展。在SoC测试机领域长期以单一供应商采购为主的格",
   "fingerprint": "0c09c9eaf38abdda1e5b1fe8a30470b9e518fec5313321aa8533ca105ea97d0c",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-xhs_notes-0c09c9eaf38abdda"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-xhs_notes-0c09c9eaf38abdda",
+  "slug": "20260801-0c09c9eaf38abdda",
   "source": "xhs_notes",
   "title": "摩根大通：Teradyne在超大规模客户二供认证上取得进展"
 }

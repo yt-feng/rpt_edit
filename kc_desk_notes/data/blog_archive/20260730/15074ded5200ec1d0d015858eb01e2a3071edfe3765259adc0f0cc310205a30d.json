@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 野村：半导体行业数据与主题变化观察 英伟达下一代GPU的封装方案正在经历一次关键调整。NOM标的在最新研报中指出，行业普遍认为Rubin Ultra将从GTC 2025上公布的4芯片设计改为2芯片配置，同时Feynman可能采用2芯片3D堆叠结构。这一变化直接影响了GPU封装基板的价格预期和先进封装技术的商业化节奏。 NOM估算，2027财年第一季度（2026年1-3月）GPU封装基板的月均出货金额约为247亿日元",
   "fingerprint": "15074ded5200ec1d0d015858eb01e2a3071edfe3765259adc0f0cc310205a30d",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-xhs_notes-15074ded5200ec1d"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-xhs_notes-15074ded5200ec1d",
+  "slug": "20260730-15074ded5200ec1d",
   "source": "xhs_notes",
   "title": "野村：半导体行业数据与主题变化观察"
 }

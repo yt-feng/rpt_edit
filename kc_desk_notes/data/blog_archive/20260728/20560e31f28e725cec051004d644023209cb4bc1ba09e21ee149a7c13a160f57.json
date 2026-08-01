@@ -5,6 +5,9 @@
   "digest": "2026年二季度美国读者情绪调查，利率与通胀取代地缘政治成为首要宏观不确定性。",
   "fingerprint": "20560e31f28e725cec051004d644023209cb4bc1ba09e21ee149a7c13a160f57",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-consulting-20560e31f28e725c"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-consulting-20560e31f28e725c",
+  "slug": "20260728-20560e31f28e725c",
   "source": "consulting",
   "title": "波士顿咨询：2026年二季度美国读者情绪调查"
 }

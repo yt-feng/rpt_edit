@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：AI技术与行业应用观察 这份MS在2026年7月发布的研究报告，核心判断是Cloudflare正在从一家CDN和安全公司，演变为边缘AI推理基础设施的关键参与者。报告基于最新渠道调研和首次边缘AI调查，认为公司在分布式AI推理领域已建立明确的领先地位，这一结构性变化将支撑其下半年及之后的增长动能。 报告特别指出，虽然市场对Cloudflare的认知仍集中在安全与内容分发，但开发者平台和边缘AI相关产品正",
   "fingerprint": "4a6f96aab078e306d197437416fc206badbfca3e19bc32d827b41a62c26f1be6",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-xhs_notes-4a6f96aab078e306"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-xhs_notes-4a6f96aab078e306",
+  "slug": "20260731-4a6f96aab078e306",
   "source": "xhs_notes",
   "title": "摩根士丹利：AI技术与行业应用观察"
 }

@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 巴克莱：估算，Google向SPV出售每颗TPU的价格约为2万美 Google正在启动一项规模可能被市场低估的新业务模式：将TPU作为独立硬件销售给外部客户，而非仅通过Google Cloud Platform租赁。BARC在最新报告中拆解了这一模式的结构、激励逻辑与财务影响，认为到2028年，TPU即服务可能为Alphabet带来约2500亿美元的外部收入，相当于当前市场共识营收预期的36%以上。 这一判断的基础",
   "fingerprint": "c5bc2515d4ee9018068195b87ec9d008d6d8fa9954b46210a7052749598b2279",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-c5bc2515d4ee9018"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-c5bc2515d4ee9018",
+  "slug": "20260727-c5bc2515d4ee9018",
   "source": "xhs_notes",
   "title": "巴克莱：估算，Google向SPV出售每颗TPU的价格约为2万美"
 }

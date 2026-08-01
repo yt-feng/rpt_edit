@@ -5,6 +5,9 @@
   "digest": "南非欺诈与调查研讨会，研讨会聚焦区块链技术与跨机构协作调查方法。",
   "fingerprint": "86a2250d2aa37ddc2a708afe4d74b969fecd01760b30e81ea078dba680d83feb",
   "last_date": "2026-07-29",
+  "legacy_slugs": [
+    "20260729-institutions-86a2250d2aa37ddc"
+  ],
   "origins": [
     {
       "date": "2026-07-29",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260729-institutions-86a2250d2aa37ddc",
+  "slug": "20260729-86a2250d2aa37ddc",
   "source": "institutions",
   "title": "IMF：南非欺诈与调查研讨会，研讨会聚焦区块链技术与跨机构协作调查方法"
 }

@@ -5,6 +5,9 @@
   "digest": "2025年业务与近期数据观察，数据已嵌入每一个决策、互动和流程。",
   "fingerprint": "a447da1a25c8972d90612b15c4d81be45d169a6d1ca67b3596f8335b4edc020b",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-consulting-a447da1a25c8972d"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-consulting-a447da1a25c8972d",
+  "slug": "20260728-a447da1a25c8972d",
   "source": "consulting",
   "title": "麦肯锡：2025年业务与近期数据观察，数据已嵌入每一个决策、互动和流程"
 }

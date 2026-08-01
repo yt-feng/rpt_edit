@@ -5,6 +5,9 @@
   "digest": "乌克兰住宅价格指数编制与2026年发布计划。",
   "fingerprint": "11e3d5488c3d9991048ab7e9ec3e542f62c57900054892de797c3c5548346ec7",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-institutions-11e3d5488c3d9991"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-institutions-11e3d5488c3d9991",
+  "slug": "20260731-11e3d5488c3d9991",
   "source": "institutions",
   "title": "IMF：乌克兰住宅价格指数编制与2026年发布计划"
 }

@@ -5,6 +5,9 @@
   "digest": "医疗行业数据与主题变化观察，生物制药分拆面临四重结构性复杂性。",
   "fingerprint": "2276b8090be0103ce0898ca5c2feb8a4a9b41a0bab53855c7c6735491ae42495",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-consulting-2276b8090be0103c"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-consulting-2276b8090be0103c",
+  "slug": "20260731-2276b8090be0103c",
   "source": "consulting",
   "title": "波士顿咨询：医疗行业数据与主题变化观察，生物制药分拆面临四重结构性复杂"
 }

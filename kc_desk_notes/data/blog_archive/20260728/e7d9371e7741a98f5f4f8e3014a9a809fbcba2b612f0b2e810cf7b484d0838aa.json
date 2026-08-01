@@ -5,6 +5,9 @@
   "digest": "2026年智能城市指数-61城AI部署与居民满意度。",
   "fingerprint": "e7d9371e7741a98f5f4f8e3014a9a809fbcba2b612f0b2e810cf7b484d0838aa",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-consulting-e7d9371e7741a98f"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-consulting-e7d9371e7741a98f",
+  "slug": "20260728-e7d9371e7741a98f",
   "source": "consulting",
   "title": "波士顿咨询：2026年智能城市指数-61城AI部署与居民满意度"
 }

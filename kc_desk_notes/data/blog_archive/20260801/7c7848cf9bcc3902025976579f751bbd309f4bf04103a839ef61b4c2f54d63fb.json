@@ -5,6 +5,9 @@
   "digest": "研究主题与行业变化观察，买方在早期阶段需重做尽职调查并引入情景定价。",
   "fingerprint": "7c7848cf9bcc3902025976579f751bbd309f4bf04103a839ef61b4c2f54d63fb",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-consulting-7c7848cf9bcc3902"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-consulting-7c7848cf9bcc3902",
+  "slug": "20260801-7c7848cf9bcc3902",
   "source": "consulting",
   "title": "波士顿咨询：研究主题与行业变化观察，买方在早期阶段需重做尽职调查并引入"
 }

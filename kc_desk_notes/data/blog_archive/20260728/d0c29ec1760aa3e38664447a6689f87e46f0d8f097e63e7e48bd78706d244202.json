@@ -5,6 +5,9 @@
   "digest": "研究主题与行业变化观察，银行业创下多项纪录，但市场仍持怀疑态度。",
   "fingerprint": "d0c29ec1760aa3e38664447a6689f87e46f0d8f097e63e7e48bd78706d244202",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-consulting-d0c29ec1760aa3e3"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-consulting-d0c29ec1760aa3e3",
+  "slug": "20260728-d0c29ec1760aa3e3",
   "source": "consulting",
   "title": "麦肯锡：研究主题与行业变化观察"
 }

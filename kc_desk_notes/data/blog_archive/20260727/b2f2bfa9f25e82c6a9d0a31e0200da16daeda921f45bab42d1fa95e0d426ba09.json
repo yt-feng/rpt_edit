@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 德意志银行：SAP云积压订单增速超越云收入 SAP在2026年第二季度交出了一份关键指标超预期的成绩单。当前云积压订单（CCB）同比增长26%，高于DB预期的25%和彭博一致预期的24%。即使剔除并购带来的不到1个百分点的贡献，CCB增速仍较第一季度略有提升，并且已经高于第二季度云收入增速以及2026年全年云收入增长指引的中位数。 这份DB研报的核心判断是：CCB作为领先指标，其加速增长预示着2027年SAP集团整",
   "fingerprint": "b2f2bfa9f25e82c6a9d0a31e0200da16daeda921f45bab42d1fa95e0d426ba09",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-b2f2bfa9f25e82c6"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-b2f2bfa9f25e82c6",
+  "slug": "20260727-b2f2bfa9f25e82c6",
   "source": "xhs_notes",
   "title": "德意志银行：SAP云积压订单增速超越云收入"
 }

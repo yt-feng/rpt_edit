@@ -5,6 +5,9 @@
   "digest": "特斯拉AI算力通过Megapod与AI及近期数据观察。",
   "fingerprint": "77f16a61096be4ab483f0d6c416ea12efbce955634444f8c396c28e371675177",
   "last_date": "2026-07-29",
+  "legacy_slugs": [
+    "20260729-ark-77f16a61096be4ab"
+  ],
   "origins": [
     {
       "date": "2026-07-29",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260729-ark-77f16a61096be4ab",
+  "slug": "20260729-77f16a61096be4ab",
   "source": "ark",
   "title": "木头姐ARK：特斯拉AI算力通过Megapod与AI及近期数据观察"
 }

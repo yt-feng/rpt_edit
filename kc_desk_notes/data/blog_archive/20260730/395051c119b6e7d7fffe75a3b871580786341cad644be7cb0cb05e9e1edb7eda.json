@@ -5,6 +5,9 @@
   "digest": "2026年航空需求展望-收入与成本双升，单位成本增速持续超过单位收入。",
   "fingerprint": "395051c119b6e7d7fffe75a3b871580786341cad644be7cb0cb05e9e1edb7eda",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-consulting-395051c119b6e7d7"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-consulting-395051c119b6e7d7",
+  "slug": "20260730-395051c119b6e7d7",
   "source": "consulting",
   "title": "波士顿咨询：2026年航空需求展望-收入与成本双升"
 }

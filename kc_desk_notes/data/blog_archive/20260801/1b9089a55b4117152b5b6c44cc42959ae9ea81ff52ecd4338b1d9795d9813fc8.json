@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 高盛：1.M9CCL量产启动，3Q26营收环比增速至少15% GS在7月30日参加Elite Material（2383.TW）2Q26业绩后电话会后更新了判断。报告最核心的信息不是季度数字本身，而是公司给出的产品升级时间表：M9等级CCL已在3Q26进入量产，Nvidia HGX R200 UBB将成为首个采用M9 CCL的电路板；用于LPU的M9 CCL则预计从4Q26开始出货。与此同时，载板用CCL最早可能在",
   "fingerprint": "1b9089a55b4117152b5b6c44cc42959ae9ea81ff52ecd4338b1d9795d9813fc8",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-xhs_notes-1b9089a55b411715"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-xhs_notes-1b9089a55b411715",
+  "slug": "20260801-1b9089a55b411715",
   "source": "xhs_notes",
   "title": "高盛：1.M9CCL量产启动，3Q26营收环比增速至少15%"
 }

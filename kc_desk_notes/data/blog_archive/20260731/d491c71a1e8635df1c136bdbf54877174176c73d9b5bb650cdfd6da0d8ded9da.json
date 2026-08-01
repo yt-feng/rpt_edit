@@ -5,6 +5,9 @@
   "digest": "研究主题与行业变化观察，替代交易在动荡时期占比显著上升。",
   "fingerprint": "d491c71a1e8635df1c136bdbf54877174176c73d9b5bb650cdfd6da0d8ded9da",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-consulting-d491c71a1e8635df"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-consulting-d491c71a1e8635df",
+  "slug": "20260731-d491c71a1e8635df",
   "source": "consulting",
   "title": "波士顿咨询：研究主题与行业变化观察"
 }

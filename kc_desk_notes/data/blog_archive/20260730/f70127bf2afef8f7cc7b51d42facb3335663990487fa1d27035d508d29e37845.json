@@ -5,6 +5,9 @@
   "digest": "纳米比亚税务信息交换合规评估-2026年7月报告，受益所有权信息新规实施后。",
   "fingerprint": "f70127bf2afef8f7cc7b51d42facb3335663990487fa1d27035d508d29e37845",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-institutions-f70127bf2afef8f7"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-institutions-f70127bf2afef8f7",
+  "slug": "20260730-f70127bf2afef8f7",
   "source": "institutions",
   "title": "经合组织：纳米比亚税务信息交换合规评估-2026年7月报告"
 }

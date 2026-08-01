@@ -5,6 +5,9 @@
   "digest": "为AI设计公司而非为公司设计AI，欧洲能源企业以客户旅程为核心重构运营模式。",
   "fingerprint": "08b86964adfece1d8539a79aa10f2d2a816ee7edb1cbfea6034794964159f633",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-consulting-08b86964adfece1d"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-consulting-08b86964adfece1d",
+  "slug": "20260727-08b86964adfece1d",
   "source": "consulting",
   "title": "波士顿咨询：为AI设计公司而非为公司设计AI"
 }

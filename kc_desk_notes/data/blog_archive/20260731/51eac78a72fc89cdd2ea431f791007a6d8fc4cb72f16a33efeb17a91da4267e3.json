@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：微软北美业务与季度数据观察 微软F4Q26财报提供了三个关键验证点：Azure增速连续加速、M365 Copilot付费席位突破3000万、运营利润率在AI投入期仍同比扩张。这份财报的意义不在于单季超预期幅度，而在于将市场对微软AI变现的讨论从“能否发生”推进到“能持续多久”。 Azure在F4Q26实现43%的固定汇率增长，较上季加速4个百分点，超出管理层39-40%的指引区间上限3个百分点。更重要的",
   "fingerprint": "51eac78a72fc89cdd2ea431f791007a6d8fc4cb72f16a33efeb17a91da4267e3",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-xhs_notes-51eac78a72fc89cd"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-xhs_notes-51eac78a72fc89cd",
+  "slug": "20260731-51eac78a72fc89cd",
   "source": "xhs_notes",
   "title": "摩根士丹利：微软北美业务与季度数据观察"
 }

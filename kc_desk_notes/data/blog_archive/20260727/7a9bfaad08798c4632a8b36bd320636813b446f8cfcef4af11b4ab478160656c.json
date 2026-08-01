@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 摩根士丹利：AMDAI活动回顾与要点 AMD在2026年7月的AI活动上，将2030年服务器CPU市场总规模预测从1200亿美元上调至约2200亿美元，年复合增长率达到50%。这一数字在2025年10月的分析师日上仅为600亿美元，18个月内预测值翻了近4倍。MS在活动后发布的报告中指出，CPU需求增长的幅度是整场活动最乐观的数据点，也是AMD当前具有明确领先优势的领域。 与此同时，AMD正式推出Helios产品，",
   "fingerprint": "7a9bfaad08798c4632a8b36bd320636813b446f8cfcef4af11b4ab478160656c",
   "last_date": "2026-07-27",
+  "legacy_slugs": [
+    "20260727-xhs_notes-7a9bfaad08798c46"
+  ],
   "origins": [
     {
       "date": "2026-07-27",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260727-xhs_notes-7a9bfaad08798c46",
+  "slug": "20260727-7a9bfaad08798c46",
   "source": "xhs_notes",
   "title": "摩根士丹利：AMDAI活动回顾与要点"
 }

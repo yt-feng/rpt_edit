@@ -5,6 +5,9 @@
   "digest": "科索沃住宅价格指数计划2025年底发布，行政数据从2018年起具备可靠性。",
   "fingerprint": "fe5215798ba7586b74fd81f7cf73ded63f70c8a8fc476f76461b776656eb7e73",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-institutions-fe5215798ba7586b"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-institutions-fe5215798ba7586b",
+  "slug": "20260731-fe5215798ba7586b",
   "source": "institutions",
   "title": "IMF：科索沃住宅价格指数计划2025年底发布"
 }

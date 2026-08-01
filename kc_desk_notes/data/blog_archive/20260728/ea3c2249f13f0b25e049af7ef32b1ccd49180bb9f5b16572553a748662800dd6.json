@@ -5,6 +5,9 @@
   "digest": "绿色与蓝色债券通讯2026，绿色与蓝色债券框架覆盖多币种发行。",
   "fingerprint": "ea3c2249f13f0b25e049af7ef32b1ccd49180bb9f5b16572553a748662800dd6",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-institutions-ea3c2249f13f0b25"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-institutions-ea3c2249f13f0b25",
+  "slug": "20260728-ea3c2249f13f0b25",
   "source": "institutions",
   "title": "亚洲开发银行：绿色与蓝色债券通讯2026"
 }

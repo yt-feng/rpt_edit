@@ -5,6 +5,9 @@
   "digest": "AI优先现场服务运营，HVAC与航空等行业面临技师短缺与知识断层。",
   "fingerprint": "85ec76ee31bfe75858ac9f2e04465a6fa2b3e1753774b6c06f45097e35c9c79e",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-consulting-85ec76ee31bfe758"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-consulting-85ec76ee31bfe758",
+  "slug": "20260731-85ec76ee31bfe758",
   "source": "consulting",
   "title": "波士顿咨询：AI技术与行业应用观察"
 }

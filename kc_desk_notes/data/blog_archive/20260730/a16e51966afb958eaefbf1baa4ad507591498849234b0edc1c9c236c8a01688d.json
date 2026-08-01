@@ -5,6 +5,9 @@
   "digest": "行业规则与相关数据观察，法律框架存在提名持股与不记名公司权证的信息缺口。",
   "fingerprint": "a16e51966afb958eaefbf1baa4ad507591498849234b0edc1c9c236c8a01688d",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-institutions-a16e51966afb958e"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-institutions-a16e51966afb958e",
+  "slug": "20260730-a16e51966afb958e",
   "source": "institutions",
   "title": "经合组织：行业规则与相关数据观察，法律框架存在提名持股与不记名公司权证"
 }

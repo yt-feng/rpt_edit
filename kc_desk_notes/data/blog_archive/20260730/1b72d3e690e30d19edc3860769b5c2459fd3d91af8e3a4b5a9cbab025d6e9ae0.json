@@ -5,6 +5,9 @@
   "digest": "空气排放账户估算方法更新至1990年。",
   "fingerprint": "1b72d3e690e30d19edc3860769b5c2459fd3d91af8e3a4b5a9cbab025d6e9ae0",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-institutions-1b72d3e690e30d19"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-institutions-1b72d3e690e30d19",
+  "slug": "20260730-1b72d3e690e30d19",
   "source": "institutions",
   "title": "经合组织：空气排放账户估算方法更新至1990年"
 }

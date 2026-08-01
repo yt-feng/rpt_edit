@@ -5,6 +5,9 @@
   "digest": "行业规则与相关数据观察，受益所有权信息框架仍有缺口，部分实体类型缺乏覆盖。",
   "fingerprint": "4cbcb73951ee27f7909e438291def6a78490738a655835d189c2ea247ec613f5",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-institutions-4cbcb73951ee27f7"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-institutions-4cbcb73951ee27f7",
+  "slug": "20260730-4cbcb73951ee27f7",
   "source": "institutions",
   "title": "经合组织：研究主题与行业变化观察"
 }

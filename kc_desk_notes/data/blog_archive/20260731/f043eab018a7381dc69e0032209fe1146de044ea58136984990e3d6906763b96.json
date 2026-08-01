@@ -5,6 +5,9 @@
   "digest": "AI辅助分析泰国PISA2022数学能力，泰国学生在几何与概率内容上表现相对较强。",
   "fingerprint": "f043eab018a7381dc69e0032209fe1146de044ea58136984990e3d6906763b96",
   "last_date": "2026-07-31",
+  "legacy_slugs": [
+    "20260731-institutions-f043eab018a7381d"
+  ],
   "origins": [
     {
       "date": "2026-07-31",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260731-institutions-f043eab018a7381d",
+  "slug": "20260731-f043eab018a7381d",
   "source": "institutions",
   "title": "经合组织：AI辅助分析泰国PISA2022数学能力"
 }

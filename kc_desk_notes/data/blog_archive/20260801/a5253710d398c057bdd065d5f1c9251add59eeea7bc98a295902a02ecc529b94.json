@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 高盛：三星电机与AI、MLCC及季度数据观察 三星电机（Samsung Electro-Mechanics）2026年第二季度营业利润超出市场预期。GS在最新发布的业绩点评中认为，MLCC与FC-BGA两大核心业务的供需格局正在发生变化，AI服务器需求与全球大型科技公司的长期协议（LTA）请求构成后续增长的主要支撑。 这份报告的核心判断并不复杂：供应趋紧叠加AI服务器需求持续走强，公司MLCC和FC-BGA业务具备",
   "fingerprint": "a5253710d398c057bdd065d5f1c9251add59eeea7bc98a295902a02ecc529b94",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-xhs_notes-a5253710d398c057"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-xhs_notes-a5253710d398c057",
+  "slug": "20260801-a5253710d398c057",
   "source": "xhs_notes",
   "title": "高盛：三星电机与AI、MLCC及季度数据观察"
 }

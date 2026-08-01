@@ -5,6 +5,9 @@
   "digest": "KC桌面——外资精译 伯恩斯坦：Datadog，AWS二季度业绩对财报的参考 Datadog财报发布前一周，Bernstein更新了从AWS二季度业绩中读出的信号。这份报告的核心判断很直接：AWS剔除AI后的收入增速，是预判Datadog核心客户需求最有效的领先指标，而二季度AWS的数据指向Datadog核心收入增速将在本季度继续抬升约100个基点。 AWS二季度收入同比增长36.7%，高于上季度的28.4%。但Bernstein提醒，",
   "fingerprint": "be44f13c3c763aebd3d218106671741f8b9b32e58b5cfca1532687a438738a1d",
   "last_date": "2026-08-01",
+  "legacy_slugs": [
+    "20260801-xhs_notes-be44f13c3c763aeb"
+  ],
   "origins": [
     {
       "date": "2026-08-01",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260801-xhs_notes-be44f13c3c763aeb",
+  "slug": "20260801-be44f13c3c763aeb",
   "source": "xhs_notes",
   "title": "伯恩斯坦：Datadog，AWS二季度业绩对财报的参考"
 }

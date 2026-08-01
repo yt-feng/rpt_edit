@@ -5,6 +5,9 @@
   "digest": "行业规则与主题变化观察，房产税收入仅占GDP约0.3%。",
   "fingerprint": "acd99896be02babe53f4ad9e5f6d22c660256966fdc4132d744381e11f34f5ae",
   "last_date": "2026-07-28",
+  "legacy_slugs": [
+    "20260728-institutions-acd99896be02babe"
+  ],
   "origins": [
     {
       "date": "2026-07-28",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260728-institutions-acd99896be02babe",
+  "slug": "20260728-acd99896be02babe",
   "source": "institutions",
   "title": "IMF：行业规则与相关数据观察"
 }

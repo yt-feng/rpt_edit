@@ -5,6 +5,9 @@
   "digest": "全球主要参与者报告2026，主权产品设立加速，新产品更侧重战略研究与国内宏观环境影响。",
   "fingerprint": "81ad32475ad615895d3be41c6c754e2d12ea5485e36bd3a739cb7af13ad5c8ca",
   "last_date": "2026-07-30",
+  "legacy_slugs": [
+    "20260730-consulting-81ad32475ad61589"
+  ],
   "origins": [
     {
       "date": "2026-07-30",
@@ -12,7 +15,7 @@
     }
   ],
   "schema_version": 1,
-  "slug": "20260730-consulting-81ad32475ad61589",
+  "slug": "20260730-81ad32475ad61589",
   "source": "consulting",
   "title": "波士顿咨询：研究主题与行业变化观察"
 }
