@@ -1,0 +1,36 @@
+Found 50 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_4: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kudz47xg/pdfs/0001-16-Goldman Sachs-Apple Inc. -AAPL.US- F3Q26 review- Guidance miss on supply constraints - forex headwinds-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kudz47xg/pdfs/0002-17-Goldman Sachs-China Economic Activity and Policy Tracker- July 31-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kudz47xg/pdfs/0003-18-Goldman Sachs-Americas Technology- Hardware- AI Project Pulse- July 2026-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kudz47xg/pdfs/0004-19-Goldman Sachs-China Investment Dashboard- 2026Q2- Investment Momentum Weakened amid Fiscal Tightening-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_kudz47xg/pdfs/0005-20-Goldman Sachs-Kioxia Holdings -285A.T-Earnings Review- 1Q broadly in line- share buyback a surprise- sign of confidence in future earnings growth and cash flow genera.pdf
+MinerU attempt 1 using MINER_U_4 batch_id=17a0366a-f072-44b9-bf4c-e2dbce1bac1c
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: running, done, done, done, running
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 8f97857773e50a7454d52e65c6a97012378b05f4f074230a0ecb2cf4f67edc02.jpg: score=-100;too_small:481x107
+Skip non-chart visual asset 4e372d8f9b73d92ba90dd9e6579cb58f598bba4f8411cd6c100c59c750345674.jpg: score=-100;too_small:479x107
+Skip non-chart visual asset 57c978229686fd7f9ee8740b1cbfcd497e3a5e3537a64d17ceb75f79138847dd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset cf303a868fadbdbdd7335b085cf97d580273a9668d79bd0e15b06ac1ddc32ff0.jpg: score=0;square_without_chart_hint,edge:0.37,large
+Skip non-chart visual asset d96590d88bb8e341fcaeef9af3949ca8818a1d0274a36428bb2bdada163be542.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Neutralized WeChat title while keeping the report: 高盛：中国宏观环境活动与政策追踪-7月31日 -> 高盛：行业规则与主题变化观察
+Skip non-chart visual asset e893c3c465f30263a2cebf218d8e9f02d4b1ba487b7d96c54f5440ac2e04063d.jpg: score=-100;too_small:1156x107
+Skip non-chart visual asset 2cf53b97b39003386612dd62eda93a7d4d7da991726256f174efa98142e646c3.jpg: score=-100;too_small:282x123
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset 16fcdf31db07712251cd3adaf3248ce5eb2abd2a68bb3ba9c88cdf6bf1b71301.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset cb816f257f84162a3957366f76b886636048990612015dc3c6c553ba8da6e570.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,large
+Neutralized WeChat title while keeping the report: 高盛：中国研究追踪指标2026年二季度动能回落 -> 高盛：月度与季度数据变化观察
+Skip non-chart visual asset 2a9fc2a481b14c4714ff7515aa0f5b90a9b11022c1dccf1a8c8bafe5dd77120e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Skip non-chart visual asset a646fbeb416d4d7321ff5e9580c85d735ec4dec740a6a0db353cdeba6092fcdf.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
+Skip non-chart visual asset 95fcd1a864ba3c92cbbd55122ee3eebba58e69e4fe78e9c082553349bc76d3ed.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset b2dfbd8bb946de4dceaa9403b6ca6754705b1452e6d416ce25b06ec532784599.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

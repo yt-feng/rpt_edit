@@ -1,0 +1,2693 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Explore >"
+                    }
+                ]
+            },
+            "bbox": [
+                462,
+                223,
+                522,
+                237
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2cf53b97b39003386612dd62eda93a7d4d7da991726256f174efa98142e646c3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                532,
+                184,
+                698,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Michael Ng, CFA\n+1(212)902-8618 | michael.ng@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                722,
+                222,
+                916,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We summarize recent announcements and developments in the AI project space across neoclouds, sovereigns, and enterprise made in July 2026. This represents select project announcements and is not indicative of the total AI infrastructure opportunity."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                255,
+                700,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key highlights in July 2026 include:"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                339,
+                337,
+                357
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chipmakers like NVDA are providing its neocloud customers with a minimum revenue guarantee on underlying GPU capacity (in the event that the neocloud is unable to lease out its capacity to other customers) in exchange for a share of the neocloud's revenue above a certain level. These backstop programs should broaden out compute availability to end customers by supporting continued neocloud growth. NVDA highlighted sovereign neoclouds Firmus and Sharon AI as two early partners in its revenue-sharing and credit-support model. We view continued robust neocloud demand as positive for leading AI server vendors DELL and SMCI."
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                385,
+                696,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Expanding enterprise use case for AI (on-premise and in the cloud) at scale. For example, Starbucks is reported to be developing proprietary AI-assisted in-house tools for inventory tracking and maintenance management, with the intent to replace third-party software from Microsoft, IBM, and Oracle. Bloomberg reports that Starbucks' enterprise technology team is on track to reduce its budget by ~$30 mn including ~$10 mn in software spending. Separately, UK fintech Revolut pre-trained PRAGMA (the company's behavioral model for banking customers) on H1000 GPUs in the Nebius Cloud. Revolut's fraud, credit, marketing, and product teams now leverage this unified model for AI inference tasks, driving improved outcomes (e.g., 65% more fraud cases caught, 2.3x better accuracy at indentifying credit default risk, 41% more relevant product recommendations). Expanding enterprise AI adoption should benefit enterprise-oriented hardware OEMs (DELL, HPE) and IT distributors (SNX, INGM)."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                569,
+                691,
+                839
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                5,
+                300,
+                43
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research 31 July 2026 | 11:49AM EDT"
+                    }
+                ]
+            },
+            "bbox": [
+                709,
+                7,
+                922,
+                46
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware: AI Project Pulse: July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                76,
+                714,
+                105
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Project Pulse Monthly updates in the AI project space across neoclouds, sovereigns, and enterprise"
+                    }
+                ]
+            },
+            "bbox": [
+                98,
+                192,
+                344,
+                237
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Katherine Murphy\n+1(212)902-1151 |\nkatherine.a.murphy@gs.com\nGS & Co. LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                722,
+                175,
+                863,
+                217
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                878,
+                921,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Neoclouds, AI labs, and data center operators"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                42,
+                457,
+                63
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Headlines presented in reverse chronological order."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                89,
+                621,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Meta Announces New Strategic Venture with BlackRock to Develop Data Center in El Paso (7/28/26): Following a strategic venture agreement, Meta Platforms and BlackRock have partnered to develop and own a 1-gigawatt AI data center campus in El Paso, Texas, with BlackRock-managed funds taking an  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "80 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " stake and Meta retaining  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the $14 billion project slated to begin coming online in 2028."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                117,
+                921,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: El Paso, Texas"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                220,
+                483,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timing: Capacity online starting in 2028, lease term up to 20 years (4-year initial term with four 5-year options)"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                245,
+                891,
+                281
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IREN Signs $2.8bn in New Customer Contracts (7/20/26): IREN Limited has secured $2.8 billion in new customer contracts with leading AI developers and raised its 2026 annual recurring revenue target to over $4 billion"
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                295,
+                895,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Customers: Microsoft, NVIDIA, Perplexity, Figure AI, Together AI, Fluidstack, Fireworks AI, Fal AI, Hume AI"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                361,
+                860,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: U.S. and Canada"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                406,
+                501,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sharon AI signs $1.32bn cloud computing service agreement with unnamed AI lab (7/17/26): Following the signing of a five-year, $1.32 billion cloud computing contract with an undisclosed AI lab, Australian neocloud Sharon AI is deploying its first AI Factory across data center infrastructure in New Zealand, with revenue expected to commence in the first half of 2027."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                436,
+                914,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Details: AI Factory, 132MW total capacity (116MW contracted), more than 62,000 Nvidia GPUs expected by mid-2027, 72MW Australian capacity using Nvidia DSX AI factory design, up to 40,000 Grace Blackwell GPUs, 600PB Vast Data storage agreement"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                538,
+                913,
+                613
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Size: $1.32 billion contract value, $950 million cloud agreement, $1.25 billion capacity agreement, 132MW total capacity"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                621,
+                867,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: New Zealand"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                666,
+                477,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Timing: GPU deployment by mid-2027"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                691,
+                590,
+                706
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Previously Announced Partners: Cisco, NVIDIA, Vast Data"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                715,
+                734,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nebius introduces business model to scale AI cloud globally through infrastructure partnerships (7/15/26): Nebius launched an asset-light business model where the company is partnering with data center developers, infrastructure investors, and regional operators to deploy its full-stack AI cloud platform globally. This model will allow partners to finance and own the physical infrastructure while Nebius provides its systems architecture, software stack, and global sales organization to monetize the capacity."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                746,
+                911,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Size: Minimal incremental capital requirements for Nebius, with partners financing and owning the infrastructure, hardware, and data centers"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                885,
+                904,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                186,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                9,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timing: Model announced on July 15, 2026, with initial arrangements already entered into"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                41,
+                868,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Arcee AI Trains Frontier Open Model on NVIDIA Blackwell (7/14/26): Arcee AI (frontier open weight model builder) has trained its Trinity Large reasoning-optimized model on a cluster of 2,048 NVIDIA Blackwell Ultra GPUs, utilizing NVIDIA NeMo and Quantum InfiniBand networking to deliver a frontier-class open-weight model with significantly lower inference costs than closed alternatives. Trinity-Large-Thinking is the reasoning-optimized variant of Trinity Large, designed for long-running agents, robust tool calling, and multistep workflows."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                91,
+                916,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Details: Inference via Arcee's API costs around $0.90 per 1M output tokens, around 20x cheaper than leading closed reasoning models at comparable agentic quality. Trinity-Large-Preview crossed 3.37 trillion tokens served on OpenRouter in its first two months, becoming the most-used open model in the U.S. and fourth globally in the OpenClaw collection."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                229,
+                906,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Partners: NVIDIA and Prime Intellect"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                332,
+                608,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Galaxy Completes Phase I of Its Helios Data Center Campus, Delivering 133 Megawatts of Critical IT Load to CoreWeave (7/6/26): Following the on-schedule completion of Phase I of its Helios data center campus in West Texas, developer Galaxy Digital has delivered 133 megawatts of critical IT load to cloud provider CoreWeave under a 15-year lease agreement, with greenfield development already underway on the 260-megawatt Phase II expansion slated for delivery in the first half of 2027."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                363,
+                921,
+                472
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Details: 1.63 GW total approved power capacity (scalable to 3.6 GW), 2,200-acre campus"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                483,
+                845,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: West Texas"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                528,
+                463,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timing: Phase I rent commencement in Q2 2026, Phase II data hall deliveries expected in H1 2027"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                552,
+                863,
+                589
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sovereign"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                622,
+                165,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Headlines presented in reverse chronological order."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                667,
+                621,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Napster, DETASAD, and Lenovo Enable Sovereign AI Infrastructure to Support Local Deployment in Saudi Arabia (7/30/26): Napster, DETECON AL SAUDIA (DETASAD), and Lenovo have partnered to deliver sovereign AI infrastructure in the Kingdom of Saudi Arabia, pairing Saudi-based data center services with Napster's enterprise AI platform to provide a fully in-Kingdom, locally hosted path to deploy agentic AI in alignment with Vision 2030."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                698,
+                916,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Details: Sovereign AI infrastructure, locally hosted cloud services, Tier III/Tier IV data center capabilities, AI-ready infrastructure, managed operations, cybersecurity, networking, data residency, regulatory alignment, SLA-backed operations, platform licensing, tool customization, quality assurance, onboarding, technical training, and Lenovo's Solutions & Services Portfolio"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                817,
+                921,
+                913
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                186,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                9,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Partners: Napster, DETECON AL SAUDIA (DETASAD), Lenovo"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                42,
+                780,
+                58
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: Saudi Arabia (Riyadh, with planned expansion across the GCC)"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                65,
+                832,
+                83
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pantheon Atlas secures grid approval for 1GW Croatia data center (7/24/26):"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                272,
+                96,
+                860,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Following grid approval from Croatia's transmission system operator HOPS, developer Pantheon Atlas is advancing its €50 billion, 1-gigawatt hyperscale AI data center campus in Topusko, Croatia, which is designed to NVIDIA's GW-Scale AI Factory standards and scheduled for construction in early 2027 alongside partners like Končar Group and Greenvolt."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                114,
+                918,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Details: NVIDIA GW-Scale AI Factory standards, above Tier IV resilience, 800MW usable IT load, 280km of transmission and fiber-optic lines, 400kV substation"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                217,
+                862,
+                272
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Partners: Pantheon Atlas LLC, HOPS, Končar Group, Greenvolt, Dalekovod Projekt, Parsec Lab, Ministry of Economy of the Republic of Croatia, HEP Group"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                281,
+                880,
+                317
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Size: €50 billion total investment (€12 billion initial phase), 1GW total capacity, 310-acre campus (expandable to 450 acres)"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                325,
+                877,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: Topusko, Croatia"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                370,
+                504,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timing: Construction start in early 2027, operational by Q1 2029"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                394,
+                780,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Firmus to Build 170,000 GPU AI Factory Campus with NVIDIA for Global AI-Natives (7/1/26): Firmus has partnered with NVIDIA to develop a 360 MW AI factory campus in Batam, Indonesia, equipped with 170,000 NVIDIA accelerators across Grace- Blackwell, Vera-Rubin, and Vera"
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                425,
+                909,
+                496
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Details: NVIDIA and Firmus partnership with a revenue-sharing and credit-support model. Firmus will sell NVIDIA-powered cloud services, with NVIDIA earning both standard product revenue and a share of the cloud revenue on the supported capacity."
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                509,
+                911,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Partners: NVIDIA"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                593,
+                467,
+                608
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Size: 360 MW power capacity"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                617,
+                522,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Location: Batam, Indonesia"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                642,
+                516,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timing: 2027-2028"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                667,
+                452,
+                683
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Enterprise"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                717,
+                170,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Headlines presented in reverse chronological order."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                764,
+                622,
+                780
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Flow Traders Selects CoreWeave to Power Foundation Model Training for"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                272,
+                791,
+                834,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantitative Trading (7/28/26): Flow Traders has selected CoreWeave as the primary AI cloud platform provider for its newly announced AI and deep learning division, migrating its high-intensity foundation model training workloads to CoreWeave Cloud to secure dedicated compute capacity and multi-node performance at scale"
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                810,
+                916,
+                883
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Starbucks Taps AI to Reduce Reliance on Microsoft, IBM Software (7/9/26):"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                894,
+                845,
+                910
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Starbucks is reported to be developing proprietary AI-assisted in-house tools to replace third-party software from Microsoft, IBM, and Oracle as part of a broader effort to cut $2 billion in costs and improve operational efficiency for its baristas."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                912,
+                916,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                186,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                10,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                956,
+                159,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                270,
+                42,
+                906,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Details: AI-assisted coding for in-house inventory tracking and maintenance management platforms; replacement of Oracle Symphony point-of-sale system"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                90,
+                893,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Size: $400 million annual software spend; $30 million targeted technology budget reduction, including $10 mn in software spending and $13 mn in professional services"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                134,
+                901,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Timing: Potential rollout of some tools by the end of 2027"
+                    }
+                ]
+            },
+            "bbox": [
+                273,
+                198,
+                729,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Revolut Builds Transaction Foundation Model with NVIDIA (7/8/26): Revolut has developed PRAGMA, a family of transformer-based behavioral models trained on NVIDIA H100 GPUs via Nebius AI Cloud, to replace siloed machine learning pipelines with a unified intelligence layer that improves fraud detection accuracy and accelerates model development cycles by 3–5x. PRAGMA behavioral models interpret each customer's financial journey as a rich temporal signal, similar to how advanced language models interpret sequences of text."
+                    }
+                ]
+            },
+            "bbox": [
+                270,
+                228,
+                913,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Key Partners: NVIDIA and Nebius AI Cloud"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                366,
+                618,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Size: Pre-trained on 26 million user records across 111 countries (207 billion tokens)"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                392,
+                916,
+                408
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                186,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                10,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                41,
+                254,
+                63
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                83,
+                139,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Katherine Murphy, hereby certify that all of the views expressed in this report accurately reflect my personal views about the subject company or companies and its or their securities. I also certify that no part of my compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                105,
+                893,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                145,
+                890,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Katherine Murphy GS & Co. LLC, Michael Ng, CFA GS & Co. LLC."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                164,
+                703,
+                178
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                182,
+                900,
+                208
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Factor Profile"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                219,
+                209,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                232,
+                921,
+                291
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile)."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                295,
+                911,
+                365
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics)."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                369,
+                914,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                397,
+                706,
+                412
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "M&A Rank"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                423,
+                163,
+                437
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                436,
+                914,
+                506
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantum"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                516,
+                155,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                529,
+                893,
+                555
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                565,
+                170,
+                580
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of ratings/investment banking relationships"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                583,
+                504,
+                599
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Investment Research global Equity coverage universe"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                599,
+                467,
+                611
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e893c3c465f30263a2cebf218d8e9f02d4b1ba487b7d96c54f5440ac2e04063d.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>59%</td><td>43%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                618,
+                760,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See 'Ratings, Coverage universe and related definitions' below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                680,
+                918,
+                737
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                750,
+                252,
+                764
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                768,
+                518,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                782,
+                911,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                833,
+                918,
+                914
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                186,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                9,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States\nThe following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link: http://www.goldmansachs.com/worldwide/india/research-project-Japan.Southdown.Korea:This research, and any access to it is intended only for"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                42,
+                918,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                366,
+                919,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                583,
+                913,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                669,
+                919,
+                728
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ratings, coverage universe and related definitions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                737,
+                455,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                751,
+                922,
+                833
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                835,
+                896,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                877,
+                783,
+                901
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                906,
+                891,
+                932
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                7,
+                186,
+                20
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                10,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                77,
+                42,
+                918,
+                122
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                133,
+                354,
+                148
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                147,
+                914,
+                193
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                178,
+                921,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                276,
+                883,
+                299
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                304,
+                908,
+                352
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                364,
+                229,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                377,
+                919,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                439,
+                919,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                480,
+                921,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                521,
+                921,
+                578
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                583,
+                895,
+                608
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                613,
+                921,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                642,
+                916,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                671,
+                921,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                746,
+                911,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                808,
+                908,
+                912
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                916,
+                901,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                7,
+                186,
+                20
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                10,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                78,
+                42,
+                901,
+                78
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                83,
+                891,
+                105
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                112,
+                221,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                131,
+                916,
+                210
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                7,
+                186,
+                20
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Americas Technology: Hardware"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                10,
+                921,
+                24
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                956,
+                159,
+                968
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                957,
+                921,
+                968
+            ]
+        }
+    ]
+]
