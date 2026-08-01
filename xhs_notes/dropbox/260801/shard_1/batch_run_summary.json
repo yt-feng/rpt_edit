@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Bernstein-Eastroc Beverage Group Co Ltd（9980.HK）Eastroc Q2： Out of Energy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-Bernstein-Vertiv Holdings Co（VRT.US）VRT 2Q26 Earnings Review： Still a great stock but the halo effect is now gone. Reducing TP to $368.-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-Bernstein-Space Exploration Technologies Corporation（SPCX.US）SpaceX： The debates~Investor views and controversies as we head toward the first earnings report-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0003-08-Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report-260731.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-Bernstein-Weekend Healthcare Pulse： Is Japan the land of cheap executives？ Not a sign of frugality and some undesirable consequence perhaps-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0004-09-Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps-260731.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-Bofa-The Flow Show Credibility, Intervention & Liquidation-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0005-10-Bofa-The Flow Show Credibility- Intervention - Liquidation-260731.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

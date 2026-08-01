@@ -1,0 +1,116 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "好公司，但光环没了",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+    "cleaned_source_title": "Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：VertivHoldingsCoVRT2Q26",
+    "raw_candidates": [
+      "Bernstein：Vertiv二季度业绩回顾-光环效应消退，目标价下调至368",
+      "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+      "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+      "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+      "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后",
+      "Bernstein：VertivHoldingsCoVRT2Q26",
+      "Bernstein：Vertiv二季度收入33亿美元，有机增长18%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后",
+        "reasons": [
+          "anchor_coverage=0.67",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：VertivHoldingsCoVRT2Q26",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.28",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Vertiv二季度收入33亿美元，有机增长18%",
+        "reasons": [
+          "anchor_coverage=0.44",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：Vertiv二季度业绩回顾-光环效应消退"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "695",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0003-08-Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0004-09-Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0005-10-Bofa-The Flow Show Credibility- Intervention - Liquidation-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

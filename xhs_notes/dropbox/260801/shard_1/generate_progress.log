@@ -1,0 +1,99 @@
+Found 50 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vfddj0wn/pdfs/0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vfddj0wn/pdfs/0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vfddj0wn/pdfs/0003-08-Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vfddj0wn/pdfs/0004-09-Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vfddj0wn/pdfs/0005-10-Bofa-The Flow Show Credibility- Intervention - Liquidation-260731.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=043bb42f-8cfc-4455-bc32-55044b433478
+MinerU states: running, running, pending, pending, pending
+MinerU states: running, running, running, running, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 673b7247a174b5e4c1feaaeb62f452b54aa074e2386245a6c43e9c3503ff1a0f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,contrast
+Skip non-chart visual asset b4ef72ac8e0978500c188e1fa88fc566d7a35667fb12d5b206c8c10d5d4f886a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset 09d5d4963f8a34c9b1e95c2f4c008b86bf92a441682666b2c55dbf1d040105bc.jpg: score=1;odd_ratio:4.91,edge:0.23,contrast,large
+Skip non-chart visual asset e6f68f193a1ffc483e53d80e21951c8924f42ab22342cd43363c556f0d048019.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 010e11480a59e3b39392bba30e1cdad114776723cc28f685f08227330b54fb8e.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset ae4105ce289c5edc0e93a64f943cb553c0c3a8c0a277a864c7c83e4300b8ca1e.jpg: score=-100;too_small:559x121
+Skip non-chart visual asset 43b32dca8c7ea0eda34b99c285fd5f5bc243c2340594e5100d26af53140b1932.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.20
+Skip non-chart visual asset c1160e7ba8d45b9acad507b4e4768401c65b8559c5dfb6edc0a190c9e50c2655.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.32,contrast,large
+Skip non-chart visual asset b674bf8b8504f28d0104b81de3de72bb2f1544dc719e1f03328d04f84b6e1527.jpg: score=-100;too_small:468x201
+Skip non-chart visual asset 5a6a891f064b5ef24501eed82a3a67bd1656ecf98c622ca90b41745effd507f9.jpg: score=-100;too_small:93x95
+Skip non-chart visual asset 2d1c090b2a77319327fe2befd6c77aca4765f5c56f8825106a2a691698e9feee.jpg: score=-100;too_small:462x131
+Skip non-chart visual asset f1498bb860d3d77d825a95bae64f836adc25eb3be13559265e44e39d4c9b5a8b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset c5804e1823871b7f02495ec160b7c6e452e01e9527cd24af55e869ea71c4771b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset ca3564cf2d89fe88eafaa4b59513dfc51a4292b2707bb25daf9dc1e07d98a559.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.29,contrast
+Skip non-chart visual asset de4e80a648669630f8edf2240e257a7cb7ed7f2c4f8dfc1fc9fd281e68d83b22.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 942b260c8240466a65616cec67927e100b3e7d971d97c42548758228c54cca1b.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset bde305de4970f4c18c1389f95c1d7de75a1f4e9e75aed69e6d641e54ef108504.jpg: score=1;square_without_chart_hint,edge:0.26,contrast,large
+Skip non-chart visual asset fbb5624c1815262855b48df3fb8fe6437256581a09bc5c7b8f4ec4c2659dd7a9.jpg: score=0;square_without_chart_hint,edge:0.17,large
+Skip non-chart visual asset 1f0d908c6e0cd632a9ab88faddcab97c7a7de709d4a0fd057de8af5a1f09e78e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset 6261e8303fa2778255158346219a0db8aa96c47d2dc3c941f30afc1e8b9731e4.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.24
+Skip non-chart visual asset a1903557dc40048fc162ebb58546767c512b08f85c52a0e28da5e9ff9e8cd05f.jpg: score=-100;too_small:90x92
+Skip non-chart visual asset 22a787c198e6459773181193aca2910e41978f3e6f52251b05c035466792aabf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset 965d9faec68a3a7d36396f22b8ac58806fc55489779092090e826511a98495f0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,contrast
+Skip non-chart visual asset ec7255e3f458986a7cb95ce3a994747f6d86e76113cd60d53129e10a787b5274.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Neutralized WeChat title while keeping the report: 伯恩斯坦：东鹏饮料二季度能量饮料增速降至1%回购10%H股 -> 伯恩斯坦：东鹏饮料业务与季度数据观察
+Skip non-chart visual asset 9335b35ff92b98a739d0db10ced5e00ca9232756e6e969dd4b8e9673db87a7be.jpg: score=-100;too_small:240x295
+Skip non-chart visual asset 2dd46bda3d07ff1992e329a3e67269fec94beac18ba6846842028a5e95cd0354.jpg: score=-100;too_small:232x362
+Skip non-chart visual asset 372756a5e247e2916f252998e6508c600af72346d0627691dc8c93127a9b7d8f.jpg: score=-100;too_small:223x339
+Skip non-chart visual asset f4c4cd1f952e69c8edba418c04244255680a325ca3055ca231a9a630bcb13dbf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 33f7aa3792acc7d110fbaf3dd7ac4e916e70a4533efad508a4ba7d3fd1ff2eaa.jpg: score=0;square_without_chart_hint,edge:0.19,contrast
+Skip non-chart visual asset a42d552a853e52bdcee97f029cbdd5f22baa45e1768de9595ddf0696425e55e9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset c1acf14b0df0665dd9fb6ecc4c4f6b268dc67ff6304b9ee8902e3a5edaf6b9f6.jpg: score=-100;too_small:239x304
+Skip non-chart visual asset 70a9d1b015b1d40804e654cc04b5b71d036c94598b69d72b3bc2e92254bbaed1.jpg: score=-100;too_small:103x53
+Skip non-chart visual asset dc0ff6f3a181d62d63f29ae691f0b9f580715cdd10c8100221abad6a48d11a13.jpg: score=-100;too_small:96x96
+Skip non-chart visual asset 084665a1c03b46b2bcb0cd9755681b3234a2b702386d5030ccd659fa71c97879.jpg: score=1;square_without_chart_hint,edge:0.21,contrast,large
+Skip non-chart visual asset 4b18eafbb6474c48abda62e97f1b862094a12b9b544a9d5215d8e03246bb3ab0.jpg: score=-1;odd_ratio:6.62,edge:0.14
+Skip non-chart visual asset 4b39f21beb84b4aa7e35c31c2ee0a48b1ac17cbceb51770f67e8f1ad27748f2a.jpg: score=-100;too_small:223x276
+Skip non-chart visual asset 09de644492c6594212cd8a5e7f9c72508cefe1e14d904381282d2a9341a29d84.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.17,contrast
+Skip non-chart visual asset 8e7c0468e4d05cdd467ff4ca6173a4997649ebfcabb415b7b19f8f024e3f76d0.jpg: score=1;odd_ratio:4.93,edge:0.22,contrast,large
+Skip non-chart visual asset 62f50290eb9aa0e6fb1ab029d73a732204f1a301eb80b8f5c528aae8f8dfbef8.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,contrast
+Skip non-chart visual asset 734a949ab12dfac4d6bcb54fd9ac0f6373a2d34a88d594f02233fbb51d01328d.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,contrast
+Skip non-chart visual asset b94dccc32f3f14d8121e6d311440ebbffcbe0ac60d11999d3629b6dd968078ab.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,contrast
+Skip non-chart visual asset 70eb0d9a091123b38ca9f529e63322bea001467a245504c5df2e9a5b9dfbd179.jpg: score=-100;too_small:195x253
+Skip non-chart visual asset abb0df692ddc71d83e3258408ddc0c4db10ca61a1f54da014aa2f247264c9e6e.jpg: score=-100;too_small:118x37
+Skip non-chart visual asset 012d700553e3ef093b4c9179390647845a8a3fc72087d4545ca8387d46166754.jpg: score=-100;too_small:234x284
+Skip non-chart visual asset 52d05dac72ad34199dbaae661015c74f1ad64975b94a5615465972433a5332e0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset 95bcc67312019d8a57c1938792db254c65be2187f7208b4eb45cbd3aa104f139.jpg: score=-100;too_small:242x312
+Skip non-chart visual asset f36b46e70583871babca94d884bcc0decfb2ff3877738a5083fe0f0e4eb3ddaf.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.26,contrast
+Skip non-chart visual asset 8ae0154d59e34e5ed1bf8cdbf0a22be6a12e73afe07f9975c2aca493ee238726.jpg: score=-1;square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 5ce39d76cee460afe8637f89af4ca8de40741705a32a2649efac4b374b05995c.jpg: score=-100;too_small:223x295
+Skip non-chart visual asset 56daf628054053f138c69e4dd39165f3dd3b7490e9cccfa9f2a08103678b1ab1.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 07159172ecc7a7587a1a156fb6927b7fd56bd6444f039424aa56184717e81a87.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,contrast
+Skip non-chart visual asset 37af35aae2bfc8a95eceb6fffa52813837e31caf457258fa7a50bbf6e0de1dec.jpg: score=-100;too_small:398x251
+Skip non-chart visual asset 15fce92cca6dbb3807dc57fb693c9825c09a2cab0fde3aa23344f0db1dd66c03.jpg: score=-100;too_small:231x292
+Skip non-chart visual asset 1524db2bc030a5683ba68ef05ca3c4a0a5398531174a379a4b9cfd3a3ca58c12.jpg: score=-100;too_small:1451x126
+Skip non-chart visual asset d78a56879472b52db45cff0787f193ee5c7eaf16559e19509b4d4d11be90fca6.jpg: score=-100;too_small:171x48
+Skip non-chart visual asset 39a2cd70e90db35cf563e602139ae400a9ed602ebc9c525de40ab21e11d166e4.jpg: score=1;odd_ratio:4.93,edge:0.23,contrast,large
+Skip non-chart visual asset a42a8b40620056f609d3fb9191186c4dd05d024b57a497124fe1d77cdf561b7a.jpg: score=-100;too_small:884x101
+Skip non-chart visual asset 35fff38cba9df4d9e60ad97d92e7e4a86afb61657f5eccc4a65d95680ef8387f.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset 1da9fc3899d04141ef0debaacebace5d47444d54b620d088b8747be71bcda904.jpg: score=-100;too_small:1331x165
+Skip non-chart visual asset dc89a62fccaafd1d94b7c937f360fcbb8dedf41933a5751992926371a52607a0.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.42,contrast,large
+Skip non-chart visual asset 04e977211eb033150e734b1573fb27f667d5e5407463b0b756e24170e35f1db1.jpg: score=-100;too_small:87x95
+Skip non-chart visual asset cd532e78b970dac64f07664e57504ea73ca28a3d38643f7fbcbf8f4d3c5a2b27.jpg: score=-100;too_small:398x248
+Skip non-chart visual asset fd1bba3071174c195b671f925001d63f3a6ad5fa989d7da5ed57a538e6c064cf.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset ac115947408ccd401fba5f0c999b3c6b163fd9e53588217100822e10544cb0c4.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset eec29f2b65bf1443d95f6e9bdd27f8bb1b9ecf45129ec4180fdad384e1db76d6.jpg: score=-100;too_small:551x65
+Skip non-chart visual asset 7cba1913879e880017b12dbe0cffa81188d2d721c7cf82ec536bf2fdc63b6825.jpg: score=-100;too_small:598x34
+Skip non-chart visual asset d4256a373dd2c87295cb316ed65b6acc1c392c0be6ebbb94ca1ed515326bf073.jpg: score=-100;too_small:462x145
+Skip non-chart visual asset 5525408eeec45cdb901b3958b9176c126966324b85ff31d62bccb11ee2c98f74.jpg: score=-100;too_small:190x84
+Skip non-chart visual asset 9eed8a41f8f079ec23bbe0a06ea0080aa9ef6bce69dea312e72451aaa07c62a4.jpg: score=-100;too_small:401x123
+Skip non-chart visual asset 4f04e18920753f435f3c6cb2a0e97d9f2d4a3d54d756764284cf35bd771b9adb.jpg: score=-100;too_small:465x95
+Skip non-chart visual asset 627d72be123bb4e21d5981f37d471aa88da55562c5dbfdee661d0cf81dfbfebb.jpg: score=-100;too_small:212x46
+Skip non-chart visual asset 2a6d56c1f85fa8210d25a71e1da6ee3721fbceb0f0c21091e9da0915bfce9ca0.jpg: score=-100;too_small:334x51
+Skip non-chart visual asset 6dbc3aa33359af05df118d69f31d142e7f786c9b95ad1e0c4e74aacb36e280f3.jpg: score=-100;too_small:190x48
+Neutralized WeChat title while keeping the report: 伯恩斯坦：SpaceX首份财报前的四个核心争议 -> 伯恩斯坦：SpaceX首份业务与近期数据观察
+Skip non-chart visual asset df81f34118d5b40f82b3579f9b0692aa11de1ebf425e76108d895a7726d26719.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,contrast
+Skip non-chart visual asset b8cf76602bbbe9de3cd662307e4295b15597cb09eedae83b8c677c79620198bc.jpg: score=1;square_without_chart_hint,edge:0.19,contrast,large
+Skip non-chart visual asset 0c01635eadfac0a66f8ef48df481eaa3c33414b535c6d5d73988c6dd5bef4301.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.16,contrast,large
+Skip non-chart visual asset f1c1df64356a3b05d7bf5f398b42085e72b5396e31918f6a21864b8c1715a943.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.22,contrast,large
+Skip non-chart visual asset 1b63b475b5954e8b2734492606be1a6cd265fde2cd2f48075751121d369f4dc2.jpg: score=-100;too_small:467x204
+Skip non-chart visual asset 477a79715fc537aa5b83a0d8c99e26bca77dc3dbc9ece973a4bcdaf1a5b3b522.jpg: score=-100;too_small:404x232
+Skip non-chart visual asset 87e03185fbc9737785647963682033c6b4c220a8679b61badb7fee0b2b131b87.jpg: score=-100;too_small:104x146
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

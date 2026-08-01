@@ -1,0 +1,541 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "能量饮料龙头，Q2增",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "A股|港股->相关市场 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "A股|港股->相关市场 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：东鹏饮料业务与季度数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-06-Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy-260731.pdf",
+      "cleaned_source_title": "Bernstein-Eastroc Beverage Group Co Ltd-9980.HK-Eastroc Q2- Out of Energy",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：EastrocBeverageGroupCo",
+      "raw_candidates": [
+        "东鹏饮料二季度能量饮料增速降至1%",
+        "东鹏饮料二季度收入增11%能量饮料增速降至1%",
+        "东鹏饮料二季度能量饮料增速降至1%回购10%H股"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：东鹏饮料二季度能量饮料增速降至1%",
+        "Bernstein：东鹏饮料二季度收入增11%能量饮料增速降至1%",
+        "Bernstein：东鹏饮料二季度能量饮料增速降至1%回购10%H股",
+        "Bernstein：EastrocBeverageGroupCo"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：EastrocBeverageGroupCo",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：东鹏饮料业务与季度数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [
+          "10"
+        ],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：东鹏饮料二季度能量饮料增速降至1%回购10%H股",
+      "pre_neutralization_selection_reason": "supported_hook",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：东鹏饮料业务与季度数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "好公司，但光环没了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-07-Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.-260731.pdf",
+      "cleaned_source_title": "Bernstein-Vertiv Holdings Co-VRT.US-VRT 2Q26 Earnings Review- Still a great stock but the halo effect is now gone. Reducing TP to -368.",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：VertivHoldingsCoVRT2Q26",
+      "raw_candidates": [
+        "Bernstein：Vertiv二季度业绩回顾-光环效应消退，目标价下调至368",
+        "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+        "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+        "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+        "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后",
+        "Bernstein：VertivHoldingsCoVRT2Q26",
+        "Bernstein：Vertiv二季度收入33亿美元，有机增长18%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：Vertiv二季度有机增长18%低于预期，估值降至27倍",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Vertiv二季度业绩回顾-供应链与800V技术进展落后",
+          "reasons": [
+            "anchor_coverage=0.67",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：VertivHoldingsCoVRT2Q26",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.28",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Vertiv二季度收入33亿美元，有机增长18%",
+          "reasons": [
+            "anchor_coverage=0.44",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：Vertiv二季度业绩回顾-光环效应消退",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：Vertiv二季度业绩回顾-光环效应消退"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0003-08-Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "星舰复用的关键一战",
+    "cover_subtitle": "轨道数据中心，先看这四件事",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：SpaceX首份业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-08-Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report-260731.pdf",
+      "cleaned_source_title": "Bernstein-Space Exploration Technologies Corporation-SPCX.US-SpaceX- The debates-Investor views and controversies as we head toward the first earnings report",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：SpaceExplorationTechno",
+      "raw_candidates": [
+        "Bernstein：SpaceX首份财报前的四个核心争议",
+        "Bernstein：SpaceX首份财报前四个争议与8月4日业绩",
+        "Bernstein：SpaceX首份财报前争议聚焦星舰复用与轨道数据中心"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：SpaceX首份财报前的四个核心争议",
+        "Bernstein：SpaceX首份财报前四个争议与8月4日业绩",
+        "Bernstein：SpaceX首份财报前争议聚焦星舰复用与轨道数据中心",
+        "Bernstein：SpaceExplorationTechno",
+        "Bernstein：SpaceX将于8月4日盘后公布上市以来的首份季度业绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：SpaceX首份财报前四个争议与8月4日业绩",
+          "reasons": [
+            "anchor_coverage=0.71"
+          ]
+        },
+        {
+          "title": "Bernstein：SpaceX首份财报前争议聚焦星舰复用与轨道数据中心",
+          "reasons": [
+            "anchor_coverage=0.65"
+          ]
+        },
+        {
+          "title": "Bernstein：SpaceExplorationTechno",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：SpaceX将于8月4日盘后公布上市以来的首份季度业绩",
+          "reasons": [
+            "anchor_coverage=0.35"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：SpaceX首份业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：SpaceX首份财报前的四个核心争议",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：SpaceX首份业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0004-09-Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "日本CEO薪酬只有欧",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x3",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "经济->宏观环境 x1",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：日本药企高管薪酬与全球同行相差约六倍",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-09-Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps-260731.pdf",
+      "cleaned_source_title": "Bernstein-Weekend Healthcare Pulse- Is Japan the land of cheap executives- Not a sign of frugality and some undesirable consequence perhaps",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：WeekendHealthcarePulse",
+      "raw_candidates": [
+        "Bernstein：日本药企高管薪酬与全球同行相差约六倍",
+        "Bernstein：日本药企高管薪酬约为美欧同行六分之一",
+        "Bernstein：日本药企高管薪酬差距与晋升路径观察"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：日本药企高管薪酬与全球同行相差约六倍",
+        "Bernstein：日本药企高管薪酬约为美欧同行六分之一",
+        "Bernstein：日本药企高管薪酬差距与晋升路径观察",
+        "Bernstein：WeekendHealthcarePulse",
+        "Bernstein：16年的差距反映的不是偶然"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：日本药企高管薪酬约为美欧同行六分之一",
+          "reasons": [
+            "anchor_coverage=0.47"
+          ]
+        },
+        {
+          "title": "Bernstein：日本药企高管薪酬差距与晋升路径观察",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.41"
+          ]
+        },
+        {
+          "title": "Bernstein：WeekendHealthcarePulse",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：16年的差距反映的不是偶然",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：日本药企高管薪酬与全球同行相差约六倍",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：日本药企高管薪酬与全球同行相差约六倍"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_vfddj0wn/pdfs/0005-10-Bofa-The Flow Show Credibility- Intervention - Liquidation-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "BofA",
+    "cover_short_title": "全球市场正在经历一场",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x3",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "股票市场|股市->市场 x1",
+      "收益率->回报表现 x1",
+      "崩盘|崩溃|暴跌->明显波动 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "证券->标的 x1",
+      "券商->机构 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "投资者->读者 x1",
+      "股票|个股->公司 x1",
+      "基金->产品 x2",
+      "sanitize_wechat_stock_line",
+      "基金->产品 x1",
+      "sanitize_wechat_stock_line",
+      "股票|个股->公司 x1",
+      "基金经理->组合负责人 x1",
+      "基金->产品 x1",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "增持->观点偏积极 x1",
+      "股票|个股->公司 x3",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x2",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "收益率->回报表现 x1",
+      "风险->不确定性 x1",
+      "压力->不确定性 x1"
+    ],
+    "wechat_title": "BofA：资金流向可信度、干预与清算",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-10-Bofa-The Flow Show Credibility- Intervention - Liquidation-260731.pdf",
+      "cleaned_source_title": "Bofa-The Flow Show Credibility- Intervention - Liquidation",
+      "institution_name": "BofA",
+      "required_terms": [],
+      "deterministic_fallback": "BofA：TheFlowShowCredibility",
+      "raw_candidates": [
+        "BofA：资金流向可信度、干预与清算",
+        "BofA：全球资金流入637亿美元与干预清算并存",
+        "BofA：资金流向周报-政策干预与市场清算"
+      ],
+      "cleaned_candidates": [
+        "BofA：资金流向可信度、干预与清算",
+        "BofA：全球资金流入637亿美元与干预清算并存",
+        "BofA：资金流向周报-政策干预与市场清算",
+        "BofA：TheFlowShowCredibility",
+        "BofA：这份BofA策略团队7月31日发布的周度资金流报告，核心判断并不复杂"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "BofA：全球资金流入637亿美元与干预清算并存",
+          "reasons": [
+            "anchor_coverage=0.36"
+          ]
+        },
+        {
+          "title": "BofA：资金流向周报-政策干预与市场清算",
+          "reasons": [
+            "generic_series_title",
+            "anchor_coverage=0.55"
+          ]
+        },
+        {
+          "title": "BofA：TheFlowShowCredibility",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "BofA：这份BofA策略团队7月31日发布的周度资金流报告，核心判断并不复杂",
+          "reasons": [
+            "anchor_coverage=0.18",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "BofA：资金流向可信度、干预与清算",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "BofA：资金流向可信度、干预与清算"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
