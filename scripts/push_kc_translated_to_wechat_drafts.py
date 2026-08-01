@@ -22,8 +22,9 @@ import struct
 import sys
 import time
 import zlib
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any
+from typing import Any, Union
 from urllib.parse import quote
 
 import requests
@@ -85,6 +86,10 @@ WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
 WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
 WECHAT_RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 WECHAT_RETRYABLE_ERRCODES = {-1}
+WECHAT_ACCESS_TOKEN_ERRCODES = {40014, 42001}
+WECHAT_ACCESS_TOKEN_DEFAULT_TTL_SECONDS = 7200.0
+WECHAT_ACCESS_TOKEN_REFRESH_MARGIN_SECONDS = 300.0
+WECHAT_ACCESS_TOKEN_QUERY_RE = re.compile(r"([?&]access_token=)[^&\s]+", re.I)
 MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
     r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
@@ -169,8 +174,16 @@ class WeChatError(RuntimeError):
         self.errmsg = errmsg
 
 
+class WeChatAccessTokenRefreshError(WeChatError):
+    """Token refresh failed, so callers must not continue with a stale token."""
+
+
 def log(message: str) -> None:
     print(message, flush=True)
+
+
+def safe_wechat_error(value: object) -> str:
+    return WECHAT_ACCESS_TOKEN_QUERY_RE.sub(r"\1***", str(value))
 
 
 def pacing_sleep(label: str, seconds: float, dry_run: bool = False) -> None:
@@ -1884,9 +1897,12 @@ def post_wechat_json(
                 timeout=timeout,
             )
         except requests.RequestException as exc:
+            error_text = safe_wechat_error(exc)
             if attempt >= max_attempts:
-                raise WeChatError(f"{label} request failed after {max_attempts} attempt(s): {exc}") from exc
-            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+                raise WeChatError(
+                    f"{label} request failed after {max_attempts} attempt(s): {error_text}"
+                ) from exc
+            sleep_before_wechat_retry(label, attempt, max_attempts, error_text)
             continue
 
         if is_retryable_wechat_response(response) and attempt < max_attempts:
@@ -1901,11 +1917,22 @@ def post_wechat_json(
     raise WeChatError(f"{label} request failed after {max_attempts} attempt(s)")
 
 
-def get_stable_access_token(session: requests.Session, appid: str, secret: str, timeout: int) -> str:
+def _fetch_stable_access_token(
+    session: requests.Session,
+    appid: str,
+    secret: str,
+    timeout: int,
+    force_refresh: bool = False,
+) -> tuple[str, float]:
     response = post_wechat_json(
         session,
         "https://api.weixin.qq.com/cgi-bin/stable_token",
-        {"grant_type": "client_credential", "appid": appid, "secret": secret, "force_refresh": False},
+        {
+            "grant_type": "client_credential",
+            "appid": appid,
+            "secret": secret,
+            "force_refresh": force_refresh,
+        },
         timeout,
         max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
     )
@@ -1913,7 +1940,124 @@ def get_stable_access_token(session: requests.Session, appid: str, secret: str, 
     token = data.get("access_token")
     if not token:
         raise WeChatError(f"stable_token did not return access_token: {data}")
-    return str(token)
+    try:
+        expires_in = float(data.get("expires_in") or WECHAT_ACCESS_TOKEN_DEFAULT_TTL_SECONDS)
+    except (TypeError, ValueError):
+        expires_in = WECHAT_ACCESS_TOKEN_DEFAULT_TTL_SECONDS
+    if expires_in <= 0:
+        expires_in = WECHAT_ACCESS_TOKEN_DEFAULT_TTL_SECONDS
+    return str(token), expires_in
+
+
+def get_stable_access_token(
+    session: requests.Session,
+    appid: str,
+    secret: str,
+    timeout: int,
+    force_refresh: bool = False,
+) -> str:
+    """Return a stable token while keeping the historical string-only API."""
+    token, _ = _fetch_stable_access_token(
+        session,
+        appid,
+        secret,
+        timeout,
+        force_refresh=force_refresh,
+    )
+    return token
+
+
+def is_access_token_error(exc: WeChatError) -> bool:
+    return (
+        isinstance(exc, WeChatAccessTokenRefreshError)
+        or exc.errcode in WECHAT_ACCESS_TOKEN_ERRCODES
+    )
+
+
+class WeChatAccessTokenManager:
+    """Cache a stable token and refresh one time around authentication failures."""
+
+    def __init__(
+        self,
+        session: requests.Session,
+        appid: str,
+        secret: str,
+        timeout: int,
+    ) -> None:
+        self.session = session
+        self.appid = appid
+        self.secret = secret
+        self.timeout = timeout
+        self._token = ""
+        self._refresh_at = 0.0
+
+    def refresh(self, force_refresh: bool = False) -> str:
+        try:
+            token, expires_in = _fetch_stable_access_token(
+                self.session,
+                self.appid,
+                self.secret,
+                self.timeout,
+                force_refresh=force_refresh,
+            )
+        except Exception as exc:
+            self._token = ""
+            self._refresh_at = 0.0
+            errcode = exc.errcode if isinstance(exc, WeChatError) else None
+            errmsg = exc.errmsg if isinstance(exc, WeChatError) else ""
+            raise WeChatAccessTokenRefreshError(
+                f"WeChat access token refresh failed: {safe_wechat_error(exc)}",
+                errcode=errcode,
+                errmsg=errmsg,
+            ) from exc
+        margin = min(
+            WECHAT_ACCESS_TOKEN_REFRESH_MARGIN_SECONDS,
+            max(1.0, expires_in * 0.1),
+        )
+        self._token = token
+        self._refresh_at = time.monotonic() + max(1.0, expires_in - margin)
+        return token
+
+    def current(self) -> str:
+        if not self._token:
+            return self.refresh(force_refresh=False)
+        if time.monotonic() >= self._refresh_at:
+            log("WeChat access token is near expiry; refreshing before the next API call")
+            return self.refresh(force_refresh=False)
+        return self._token
+
+    def run(self, label: str, operation: Callable[[str], Any]) -> Any:
+        token = self.current()
+        try:
+            return operation(token)
+        except WeChatError as exc:
+            if not is_access_token_error(exc):
+                raise
+            log(
+                f"{label}: access token rejected with errcode={exc.errcode}; "
+                "refreshing and retrying the same API call"
+            )
+            refreshed_token = self.refresh(force_refresh=False)
+            if refreshed_token == token:
+                log(
+                    f"{label}: stable_token returned the rejected token; "
+                    "forcing one token refresh"
+                )
+                refreshed_token = self.refresh(force_refresh=True)
+            return operation(refreshed_token)
+
+
+WeChatAccessToken = Union[str, WeChatAccessTokenManager]
+
+
+def run_with_wechat_access_token(
+    access_token: WeChatAccessToken,
+    label: str,
+    operation: Callable[[str], Any],
+) -> Any:
+    if isinstance(access_token, WeChatAccessTokenManager):
+        return access_token.run(label, operation)
+    return operation(access_token)
 
 
 def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]:
@@ -1974,11 +2118,12 @@ def upload_wechat_file(
             with path.open("rb") as handle:
                 response = session.post(url, files={"media": (path.name, handle, mime)}, timeout=timeout)
         except requests.RequestException as exc:
+            error_text = safe_wechat_error(exc)
             if attempt >= max_attempts:
                 raise WeChatError(
-                    f"{label} upload failed after {max_attempts} attempt(s) for {path}: {exc}"
+                    f"{label} upload failed after {max_attempts} attempt(s) for {path}: {error_text}"
                 ) from exc
-            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+            sleep_before_wechat_retry(label, attempt, max_attempts, error_text)
             continue
 
         if is_retryable_wechat_response(response) and attempt < max_attempts:
@@ -1996,22 +2141,42 @@ def upload_wechat_file(
     raise WeChatError(f"{label} upload failed after {max_attempts} attempt(s) for {path}")
 
 
-def upload_article_image(session: requests.Session, access_token: str, path: Path, timeout: int) -> str:
+def upload_article_image(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    path: Path,
+    timeout: int,
+) -> str:
     if path.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
         raise WeChatError(f"Article image must be jpg/png for uploadimg: {path}")
     if path.stat().st_size >= 1024 * 1024:
         raise WeChatError(f"Article image exceeds uploadimg 1MB limit: {path}")
-    url = f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={access_token}"
-    data = upload_wechat_file(session, url, path, "uploadimg", timeout)
+
+    def upload(token: str) -> dict[str, Any]:
+        url = f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={token}"
+        return upload_wechat_file(session, url, path, "uploadimg", timeout)
+
+    data = run_with_wechat_access_token(access_token, "uploadimg", upload)
     image_url = data.get("url")
     if not image_url:
         raise WeChatError(f"uploadimg did not return url for {path}: {data}")
     return str(image_url)
 
 
-def upload_cover_material(session: requests.Session, access_token: str, path: Path, timeout: int) -> str:
-    url = f"https://api.weixin.qq.com/cgi-bin/material/add_material?access_token={access_token}&type=image"
-    data = upload_wechat_file(session, url, path, "add_material", timeout)
+def upload_cover_material(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    path: Path,
+    timeout: int,
+) -> str:
+    def upload(token: str) -> dict[str, Any]:
+        url = (
+            "https://api.weixin.qq.com/cgi-bin/material/add_material"
+            f"?access_token={token}&type=image"
+        )
+        return upload_wechat_file(session, url, path, "add_material", timeout)
+
+    data = run_with_wechat_access_token(access_token, "add_material", upload)
     media_id = data.get("media_id")
     if not media_id:
         raise WeChatError(f"add_material did not return media_id for {path}: {data}")
@@ -2038,18 +2203,28 @@ def draft_news_items(container: dict[str, Any]) -> list[dict[str, Any]]:
     return []
 
 
-def batchget_recent_drafts(session: requests.Session, access_token: str, timeout: int, limit: int = 100) -> list[dict[str, Any]]:
+def batchget_recent_drafts(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    timeout: int,
+    limit: int = 100,
+) -> list[dict[str, Any]]:
     drafts: list[dict[str, Any]] = []
     page_size = 20
     for offset in range(0, max(1, limit), page_size):
-        response = post_wechat_json(
-            session,
-            f"https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={access_token}",
-            {"offset": offset, "count": min(page_size, limit - offset), "no_content": 0},
-            timeout,
-            max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
-        )
-        data = parse_wechat_json(response, "draft/batchget")
+        payload = {"offset": offset, "count": min(page_size, limit - offset), "no_content": 0}
+
+        def fetch_page(token: str) -> dict[str, Any]:
+            response = post_wechat_json(
+                session,
+                f"https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={token}",
+                payload,
+                timeout,
+                max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+            )
+            return parse_wechat_json(response, "draft/batchget")
+
+        data = run_with_wechat_access_token(access_token, "draft/batchget", fetch_page)
         items = data.get("item")
         if not isinstance(items, list) or not items:
             break
@@ -2064,7 +2239,7 @@ def batchget_recent_drafts(session: requests.Session, access_token: str, timeout
 
 def find_recent_draft_by_titles(
     session: requests.Session,
-    access_token: str,
+    access_token: WeChatAccessToken,
     expected_titles: list[str],
     timeout: int,
     limit: int = 100,
@@ -2075,6 +2250,8 @@ def find_recent_draft_by_titles(
     try:
         recent_items = batchget_recent_drafts(session, access_token, timeout, limit=limit)
     except WeChatError as exc:
+        if is_access_token_error(exc):
+            raise
         log(f"Could not batchget recent drafts while recovering draft/add: {exc}")
         return ""
     for item in recent_items:
@@ -2091,7 +2268,7 @@ def find_recent_draft_by_titles(
 
 def recover_draft_after_ambiguous_add(
     session: requests.Session,
-    access_token: str,
+    access_token: WeChatAccessToken,
     articles: list[dict[str, Any]],
     timeout: int,
 ) -> str:
@@ -2105,40 +2282,66 @@ def recover_draft_after_ambiguous_add(
     return ""
 
 
-def add_draft(session: requests.Session, access_token: str, articles: list[dict[str, Any]], timeout: int) -> str:
-    url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}"
+def add_draft(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    articles: list[dict[str, Any]],
+    timeout: int,
+) -> str:
     payload = {"articles": articles}
     max_attempts = WECHAT_REQUEST_MAX_ATTEMPTS
+
+    def add_once(token: str) -> str:
+        response = post_wechat_json(
+            session,
+            f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={token}",
+            payload,
+            timeout,
+            max_attempts=1,
+        )
+        data = parse_wechat_json(response, "draft/add")
+        media_id = data.get("media_id")
+        if not media_id:
+            raise WeChatError(f"draft/add did not return media_id: {data}")
+        return str(media_id)
+
     for attempt in range(1, max_attempts + 1):
         try:
-            response = post_wechat_json(session, url, payload, timeout, max_attempts=1)
-            data = parse_wechat_json(response, "draft/add")
-            media_id = data.get("media_id")
-            if not media_id:
-                raise WeChatError(f"draft/add did not return media_id: {data}")
-            return str(media_id)
+            return run_with_wechat_access_token(access_token, "draft/add", add_once)
         except WeChatError as exc:
-            if "non-JSON response" in str(exc):
+            ambiguous_response = (
+                "non-JSON response" in str(exc)
+                or "request failed" in str(exc)
+            )
+            if ambiguous_response:
                 media_id = recover_draft_after_ambiguous_add(session, access_token, articles, timeout)
                 if media_id:
                     return media_id
             if is_article_size_error(exc) or attempt >= max_attempts:
                 raise
-            if exc.errcode not in WECHAT_RETRYABLE_ERRCODES and "request failed" not in str(exc) and "non-JSON response" not in str(exc):
+            if exc.errcode not in WECHAT_RETRYABLE_ERRCODES and not ambiguous_response:
                 raise
             sleep_before_wechat_retry("draft/add", attempt, max_attempts, exc.errmsg or str(exc))
     raise WeChatError(f"draft/add failed after {max_attempts} attempt(s)")
 
 
-def get_draft(session: requests.Session, access_token: str, media_id: str, timeout: int) -> dict[str, Any]:
-    response = post_wechat_json(
-        session,
-        f"https://api.weixin.qq.com/cgi-bin/draft/get?access_token={access_token}",
-        {"media_id": media_id},
-        timeout,
-        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
-    )
-    return parse_wechat_json(response, "draft/get")
+def get_draft(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    media_id: str,
+    timeout: int,
+) -> dict[str, Any]:
+    def fetch(token: str) -> dict[str, Any]:
+        response = post_wechat_json(
+            session,
+            f"https://api.weixin.qq.com/cgi-bin/draft/get?access_token={token}",
+            {"media_id": media_id},
+            timeout,
+            max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+        )
+        return parse_wechat_json(response, "draft/get")
+
+    return run_with_wechat_access_token(access_token, "draft/get", fetch)
 
 
 def summarize_draft_get_response(data: dict[str, Any], expected_article_count: int) -> dict[str, Any]:
@@ -2167,7 +2370,7 @@ def summarize_draft_get_response(data: dict[str, Any], expected_article_count: i
 
 def verify_draft_get(
     session: requests.Session,
-    access_token: str,
+    access_token: WeChatAccessToken,
     media_id: str,
     timeout: int,
     expected_article_count: int,
@@ -2178,6 +2381,8 @@ def verify_draft_get(
             expected_article_count,
         )
     except WeChatError as exc:
+        if is_access_token_error(exc):
+            raise
         summary = {
             "ok": False,
             "expected_article_count": expected_article_count,
@@ -2195,15 +2400,23 @@ def verify_draft_get(
     return summary
 
 
-def submit_publish(session: requests.Session, access_token: str, media_id: str, timeout: int) -> str:
-    response = post_wechat_json(
-        session,
-        f"https://api.weixin.qq.com/cgi-bin/freepublish/submit?access_token={access_token}",
-        {"media_id": media_id},
-        timeout,
-        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
-    )
-    data = parse_wechat_json(response, "freepublish/submit")
+def submit_publish(
+    session: requests.Session,
+    access_token: WeChatAccessToken,
+    media_id: str,
+    timeout: int,
+) -> str:
+    def submit(token: str) -> dict[str, Any]:
+        response = post_wechat_json(
+            session,
+            f"https://api.weixin.qq.com/cgi-bin/freepublish/submit?access_token={token}",
+            {"media_id": media_id},
+            timeout,
+            max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+        )
+        return parse_wechat_json(response, "freepublish/submit")
+
+    data = run_with_wechat_access_token(access_token, "freepublish/submit", submit)
     publish_id = data.get("publish_id")
     if not publish_id:
         raise WeChatError(f"freepublish/submit did not return publish_id: {data}")
@@ -2330,7 +2543,7 @@ def build_article(
     index: int,
     args: argparse.Namespace,
     session: requests.Session | None,
-    access_token: str | None,
+    access_token: WeChatAccessToken | None,
     output_dir: Path,
     trailing_image_url: str,
 ) -> dict[str, Any]:
@@ -2575,7 +2788,7 @@ def is_cover_crop_error(exc: WeChatError) -> bool:
 
 def replacement_cover_media_id(
     session: requests.Session,
-    access_token: str,
+    access_token: WeChatAccessToken,
     output_dir: Path,
     draft_index: int,
     timeout: int,
@@ -2709,10 +2922,16 @@ def main() -> int:
     )
 
     session: requests.Session | None = None
-    access_token: str | None = None
+    access_token: WeChatAccessToken | None = None
     if not args.dry_run:
         session = requests.Session()
-        access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
+        access_token = WeChatAccessTokenManager(
+            session,
+            args.wechat_appid,
+            args.wechat_secret,
+            args.timeout,
+        )
+        access_token.current()
         log("Fetched WeChat access token")
 
     trailing_image_url = ""
@@ -2768,6 +2987,7 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
+            pacing_sleep(f"Before creating WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
             log(f"Checking recent drafts before creating WeChat draft {draft_index}")
             existing_media_id = find_recent_draft_by_titles(
                 session,
@@ -2783,7 +3003,6 @@ def main() -> int:
                 reused_existing = False
                 try:
                     log(f"Creating WeChat draft {draft_index}")
-                    pacing_sleep(f"Before creating WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):

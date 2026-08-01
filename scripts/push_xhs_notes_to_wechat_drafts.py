@@ -34,6 +34,8 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     MD_IMAGE_RE,
     WECHAT_AUTHOR_MAX_BYTES,
     WECHAT_TITLE_MAX_CHARS,
+    WeChatAccessToken,
+    WeChatAccessTokenManager,
     WeChatError,
     add_draft,
     article_payload,
@@ -41,7 +43,6 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     digest_from_markdown,
     download_pollinations_image,
     fake_static_image_url,
-    get_stable_access_token,
     find_recent_draft_by_titles,
     is_article_size_error,
     log,
@@ -314,7 +315,7 @@ def upload_or_fake_article_image(
     index: int,
     args: argparse.Namespace,
     session: requests.Session | None,
-    access_token: str | None,
+    access_token: WeChatAccessToken | None,
     output_dir: Path,
 ) -> tuple[str, str]:
     if args.dry_run:
@@ -330,7 +331,7 @@ def build_article(
     index: int,
     args: argparse.Namespace,
     session: requests.Session | None,
-    access_token: str | None,
+    access_token: WeChatAccessToken | None,
     output_dir: Path,
     trailing_image_url: str,
 ) -> dict[str, Any]:
@@ -708,10 +709,16 @@ def main() -> int:
     )
 
     session: requests.Session | None = None
-    access_token: str | None = None
+    access_token: WeChatAccessToken | None = None
     if not args.dry_run:
         session = requests.Session()
-        access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
+        access_token = WeChatAccessTokenManager(
+            session,
+            args.wechat_appid,
+            args.wechat_secret,
+            args.timeout,
+        )
+        access_token.current()
         log("Fetched WeChat access token")
 
     trailing_image_url = ""
@@ -748,6 +755,11 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
+            pacing_sleep(
+                f"Before creating WeChat draft {len(drafts) + 1}",
+                args.draft_delay_seconds,
+                args.dry_run,
+            )
             existing_media_id = find_recent_draft_by_titles(
                 session,
                 access_token,
@@ -762,11 +774,6 @@ def main() -> int:
                 reused_existing = False
                 try:
                     log(f"Creating WeChat draft {len(drafts) + 1}")
-                    pacing_sleep(
-                        f"Before creating WeChat draft {len(drafts) + 1}",
-                        args.draft_delay_seconds,
-                        args.dry_run,
-                    )
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_article_size_error(exc) and len(group) > 1:
