@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-NOM-China sportswear：Read~across from adidas’ 2Q26 results-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w41voif8/pdfs/0001-46-NOM-China sportswear-Read-across from adidas- 2Q26 results-260731.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/47-NOM-Asia Chart Alert：China： Developers’ contract sales value worsened further in July-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w41voif8/pdfs/0002-47-NOM-Asia Chart Alert-China- Developers- contract sales value worsened further in July-260731.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/48-NOM-Asia Insights：China： A shock absorber for global oil markets amid the Iran war （for now）-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w41voif8/pdfs/0003-48-NOM-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now--260731.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/49-NOM-US Economic Weekly：Markets play the ball-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w41voif8/pdfs/0004-49-NOM-US Economic Weekly-Markets play the ball-260731.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/50-NOM-Zhongji InnoLight（300308.SZ）Multiple growth engines ahead； leadership intact-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_w41voif8/pdfs/0005-50-NOM-Zhongji InnoLight-300308.SZ-Multiple growth engines ahead- leadership intact-260731.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

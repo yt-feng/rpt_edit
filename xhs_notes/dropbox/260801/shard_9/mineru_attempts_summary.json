@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_w41voif8/pdfs/0001-46-NOM-China sportswear-Read-across from adidas- 2Q26 results-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w41voif8/pdfs/0002-47-NOM-Asia Chart Alert-China- Developers- contract sales value worsened further in July-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w41voif8/pdfs/0003-48-NOM-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now--260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w41voif8/pdfs/0004-49-NOM-US Economic Weekly-Markets play the ball-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w41voif8/pdfs/0005-50-NOM-Zhongji InnoLight-300308.SZ-Multiple growth engines ahead- leadership intact-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

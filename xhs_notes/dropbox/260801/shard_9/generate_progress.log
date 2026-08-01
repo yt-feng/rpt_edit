@@ -1,0 +1,51 @@
+Found 50 total PDFs; shard 9/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_w41voif8/pdfs/0001-46-Nomura-China sportswear-Read-across from adidas- 2Q26 results-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_w41voif8/pdfs/0002-47-Nomura-Asia Chart Alert-China- Developers- contract sales value worsened further in July-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_w41voif8/pdfs/0003-48-Nomura-Asia Insights-China- A shock absorber for global oil markets amid the Iran war -for now--260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_w41voif8/pdfs/0004-49-Nomura-US Economic Weekly-Markets play the ball-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_w41voif8/pdfs/0005-50-Nomura-Zhongji InnoLight-300308.SZ-Multiple growth engines ahead- leadership intact-260731.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=40b5991d-01f7-45f3-b347-a569640fdb50
+MinerU states: done, done, running, running, pending
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Skip non-chart visual asset 73aad28b8126b38dc0a17b4f6fc8c28baf4c50901d427339af96e8305b9ddf7f.jpg: score=-100;too_small:1409x84
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset ee4f7d043b7c36c738e3b103da31018db65eb5ae33df72da10b9e878f77b75f6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Neutralized WeChat title while keeping the report: 野村：7月百强房企合同销售额同比降18.3% -> 野村：研究主题与行业变化观察
+Skip non-chart visual asset afa4225045433dc6064ec721221708a2eb687711f7cf6720ab38cc4c70d84077.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.17,contrast,large
+Skip non-chart visual asset 7fdab03fdd3832e65c5b35ddc8e7e4c82e6b2a330ed36657255d4a3cc05be301.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skip non-chart visual asset 1bbd97b265120dcd028ff441b5144dbb2b316fd65f233e7b29da6963e1ee76e3.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.28,contrast,large
+Skip non-chart visual asset 5881bc6394dfafef1336f91c7a79ac1b7b0e3d3b02d8c54df8799c8bd60686a6.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.25,contrast,large
+Skip non-chart visual asset 682b2f109b4e6791f332b3add2cf36cf1ce9e6ae02882ba403f24ebd20e197c0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 3399dd5d0d2cde7624ac5bb422cef49d44ab6d9c3194fe511926758efee84463.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset e72944a9bd09298e1c5b7dc71b6da6f029ae7efe7e234cccb6c690fac1e8bcd9.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.33,contrast,large
+Skip non-chart visual asset 80a4df933a48f9c1b438c090afc2b4bccf0fd15d6ae4a2c7d588be558e73f123.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.30,contrast,large
+Skip non-chart visual asset 1f7e4be2b3a5c3dbd2340abfc948989a858728187da84693a8f4fc903ff8ab8a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset fbd087ca3140d139d66897e578d8649be3165f09800ebaf757915566d0452661.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.32,contrast,large
+Skip non-chart visual asset 30fc4d1e1a37f50e52a44839c741e1443529d4d3f8838d53af46df402d5c2c17.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.32,contrast,large
+Skip non-chart visual asset 8a5e95e1703e56e5e684309f496b9a0506dea45cac9a53774da6f5eec47ba08c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset 91d979f8156ff5e1f45e1eba18eed88f80caf52235cc0378fe4d6e7921de1ecd.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.23,contrast,large
+Skip non-chart visual asset 29f919c99df90cf7e865e9b056745901546be5f0049a3ccd846478e9a7fc747c.jpg: score=-2;square_without_chart_hint,large
+Skip non-chart visual asset f0ab52becf91e21dc832fb846df3b2dfb3fc3d83655e5807ffad54e880c47afa.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.21,contrast,large
+Neutralized WeChat title while keeping the report: 野村：美国宏观环境周报，6月核心PCE环比上涨0.132% -> 野村：研究主题与行业变化观察
+Skip non-chart visual asset f97a98a2e8b9c0af7e01774dbbe392a55092145774529841852e6601f6d0ea82.jpg: score=-100;too_small:726x131
+Skip non-chart visual asset 10d9a6dcc398b6de9e8600fb45c0cbd860d7fdebd124075290df71fa34b664bf.jpg: score=-100;too_small:259x498
+Skip non-chart visual asset c38d317be907dc7386ca605e3e412d5de143af93a0285b1beb79790b14df1894.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.24,contrast,large
+Skip non-chart visual asset f73de63f1d8ee5826fa354919f8b172dc3ffc49b16ca666a2ff57d22de4e73e4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.49,contrast
+Skip non-chart visual asset 6f65f58a63bb7d3f27719e2533f11171983c28d550468604aa4b6a56a7292a9b.jpg: score=-100;too_small:431x43
+Skip non-chart visual asset 23747e29b15d1cece805a251c0236b59f4dfc92cb2dd71ed80147e1647a35bce.jpg: score=0;odd_ratio:7.41,edge:0.45,contrast
+Skip non-chart visual asset a9fa345c24be2ff5dacdb8da1f22af08f04f4437c347a52e5f23625cb3c52787.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,contrast
+Skip non-chart visual asset 4a54f3f9d1ccd697f84ceaed2e68e38828bb0791f59100947af0073dea025450.jpg: score=-100;too_small:284x504
+Skip non-chart visual asset 473858a576c4f3e080271086d72bc8eb51421b7f69b173ca8abf17689d5b063f.jpg: score=-100;too_small:226x504
+Skip non-chart visual asset c25a19708954b7e997b5f18f921d1f00fe3d679259b3fc2ed144b62db081d244.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.56,contrast,large
+Skip non-chart visual asset 1dccc16db6d3e33cc59bb662fd1db6a3d0f4f273f6da7c81e5d6b6f96c7d040e.jpg: score=-100;too_small:1409x81
+Skip non-chart visual asset fdced3ffea4778106c2bdaac306d69358cea02ed8a567c3b0325c3f72b99f0c9.jpg: score=-100;too_small:431x73
+Neutralized WeChat title while keeping the report: 野村：中际旭创多增长引擎与领导地位，2027年2.4T启动 -> 野村：中际旭创多业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_9; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

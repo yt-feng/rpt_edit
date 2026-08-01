@@ -1,0 +1,1502 @@
+[
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x10",
+      "after_deepseek:适合投资->适合研究 x1",
+      "after_deepseek:买入评级->报告评级 x3",
+      "after_deepseek:卖出评级->报告评级 x1",
+      "after_deepseek:收益率->回报表现 x4",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x17"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "market",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": ".com/",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "http://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "eve",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "UR",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "titor",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "中华",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0001-46-NOM-China-sportswear-Read-across-from-adidas--2Q26-results-260731/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "中华",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "运营",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x6",
+      "after_deepseek:适合投资->适合研究 x1",
+      "after_deepseek:收益率->回报表现 x4",
+      "after_deepseek:投资->研究 x20"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "space",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "http://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "Gm",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/note.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政治局",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "政治局",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资->研究 x4"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "space",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "making",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政治局",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0002-47-NOM-Asia-Chart-Alert-China--Developers--contract-sales-value-worsened/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "销售",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "刺激",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "放在",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:投资建议->研究交流 x3",
+      "after_deepseek:投资者->读者 x6",
+      "after_deepseek:适合投资->适合研究 x1",
+      "after_deepseek:收益率->回报表现 x4",
+      "after_deepseek:唯一->相对少见 x1",
+      "after_deepseek:绝对->相对 x3",
+      "after_deepseek:投资->研究 x20"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "market",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "drop",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "sm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/note.md",
+    "changed": true,
+    "local_changes": [
+      "暴跌->明显回落 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "色",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "绝对->相对 x2",
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "共和",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:暴跌->明显回落 x2",
+      "after_deepseek:唯一->相对少见 x1",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x1"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "market",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "au",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "色",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0003-48-NOM-Asia-Insights-China--A-shock-absorber-for-global-oil-markets-amid/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "暴跌->明显回落 x1",
+      "绝对->相对 x3"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "政府",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "限制",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "色",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:收益率->回报表现 x3",
+      "after_deepseek:投资->研究 x11"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "tw",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/note.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x4",
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "逼",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "鸽派",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "鸽派",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "SM",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "鸽派",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:投资者->读者 x1",
+      "after_deepseek:收益率->回报表现 x6",
+      "after_deepseek:唯一->相对少见 x2",
+      "after_deepseek:投资->研究 x8"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "Test",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "gn",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "au",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "gth",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "原版->电子版 x1",
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0004-49-NOM-US-Economic-Weekly-Markets-play-the-ball-260731/zhihu_article.md",
+    "changed": true,
+    "local_changes": [
+      "收益率->回报表现 x5"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "鸽派",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "操",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "制造",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "被迫",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "放在",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/mineru_raw/full.md",
+    "changed": true,
+    "local_changes": [
+      "after_deepseek:收益率->回报表现 x2",
+      "after_deepseek:绝对->相对 x2",
+      "after_deepseek:投资->研究 x6"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "GY",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "bt",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "4f",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 11,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "96",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "64",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "BI",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ma",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "64",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_xhs_note_tags"
+    ],
+    "api_hit": false,
+    "api_hits": [],
+    "api_errors": [
+      "Expecting value: line 1 column 1 (char 0)"
+    ],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/wechat_article.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "系统",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "https://",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/wechat_article_en.md",
+    "changed": true,
+    "local_changes": [
+      "sanitize_wechat_stock_line",
+      "after_deepseek:绝对->相对 x1",
+      "after_deepseek:投资->研究 x2"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 4,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 5,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 6,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 7,
+        "ci": "anal",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 8,
+        "ci": "tel",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 9,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 10,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 12,
+        "ci": "gm",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 13,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 14,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 15,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 16,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 17,
+        "ci": "ur",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 18,
+        "ci": "ro",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 19,
+        "ci": "gy",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 20,
+        "ci": "au",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/xianyu_note.md",
+    "changed": true,
+    "local_changes": [
+      "normalize_existing_xianyu_hashtag_line",
+      "normalize_xianyu_note"
+    ],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "调整",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  },
+  {
+    "path": "xhs_notes/dropbox/260801/shard_9/0005-50-NOM-Zhongji-InnoLight-300308.SZ-Multiple-growth-engines-ahead--leader/zhihu_article.md",
+    "changed": true,
+    "local_changes": [],
+    "api_hit": true,
+    "api_hits": [
+      {
+        "chunk_index": 1,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 2,
+        "ci": "靠",
+        "desc": "存在敏感词"
+      },
+      {
+        "chunk_index": 3,
+        "ci": "持续",
+        "desc": "存在敏感词"
+      }
+    ],
+    "api_errors": [],
+    "rewrite_error": ""
+  }
+]

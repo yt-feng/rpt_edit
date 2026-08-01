@@ -1,0 +1,3080 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics - North America"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                139,
+                229,
+                152
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Markets play the ball"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                173,
+                323,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The FOMC held rates steady, in line with our expectation. Chair Warsh's continued dovishness, coupled with a muddled explanation of the Fed's reaction function raised concerns around the Fed's inflation credibility. Paradoxically, Warsh's excessive dovishness likely raises the risk of a hike if inflation data reaccelerate."
+                    }
+                ]
+            },
+            "bbox": [
+                74,
+                214,
+                672,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- We expect headline NFP accelerated to 130k in July from 57k in June. The unemployment rate likely remained sideways at  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", while average hourly earnings (AHE) growth slowed to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " m-o-m. Overall, a resilient labor market is likely to keep the Fed focused on inflation risks."
+                    }
+                ]
+            },
+            "bbox": [
+                74,
+                279,
+                674,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Inflation data released this week supported the Fed's wait-and-see approach. Core PCE inflation slowed sharply to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.132\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " m-o-m in June. Despite an upside surprise in headline Q2 ECI, the continued moderation in private services ECI was encouraging and point to limited risk of a renewed pickup in services inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                74,
+                344,
+                672,
+                405
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FOMC holds steady, but Kashkari's dissent surprises"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                419,
+                460,
+                433
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The FOMC kept rates on hold at its July meeting, in line with our expectation. The meeting statement was essentially unchanged. There were three dissents in favor of a hike, from presidents Logan, Hammack, and Kashkari. While we had expected dissents from Logan and Hammack, Kashkari's was a surprise. Kashkari's post-meeting statement suggested he is increasingly concerned that a series of supply shocks could entrench elevated inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                434,
+                677,
+                521
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "No clarity on inflation framework"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                527,
+                311,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Warsh opened by reiterating the Fed's commitment to price stability and its low tolerance for inflation above  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", echoing recent public remarks. He also emphasized that inflation and the appropriate policy response were key topics of discussion."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                541,
+                671,
+                588
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite this, Warsh again declined to clarify his inflation framework. He repeated his distinction between “inflation” and “price increases,” implying that AI-related demand and supply shocks may not warrant tighter policy. He also downplayed the need to finetune aggregate demand against supply, implicitly expressing confidence in AI-driven disinflation, while suggesting some inflation may reflect past balance sheet policy rather than accommodative rates."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                592,
+                667,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Warsh did not offer forward guidance and remained vague on the reaction function. He said June's downside inflation surprise had little influence on the July decision, while only noting that persistently elevated inflation would make him more inclined to raise rates, adding that \"interest rates could well be part of that solution.\""
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                685,
+                672,
+                745
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Markets unfiltered"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                750,
+                205,
+                763
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A second dovish development was Warsh's suggestion that higher market yields could substitute for Fed rate hikes. Warsh highlighted the recent sell-off in nominal and real yields in his opening remarks, flagging the increases as “among the most significant in the last two decades.” He was more explicit later in the press conference, tying the market move to the Fed's decision to keep rates unchanged. In response to being asked why the Fed had not hiked rates, Warsh replied that rates were higher."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                764,
+                679,
+                854
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In our view, this appears inconsistent with some of Warsh's past remarks, where he argued that markets anticipate Fed policy rather than substitute for it. For instance, recently at the ECB's Sintra forum, Warsh pointed to a rate rally and falling inflation expectations as indications that markets understood the Fed's reaction function."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                858,
+                635,
+                918
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Warsh did not directly endorse any market moves in this press conference, but he did suggest that intermeeting price dynamics may be a benefit of less Fed forward guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                921,
+                671,
+                953
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Research Analysts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                699,
+                165,
+                851,
+                182
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "North America Economics"
+                    }
+                ]
+            },
+            "bbox": [
+                699,
+                185,
+                893,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aichi Amemiya - NSI\naichi.amemiya@NOM.com\n+1 212 667 9347"
+                    }
+                ]
+            },
+            "bbox": [
+                699,
+                201,
+                873,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jeremy Schwartz - NSI\njeremy.schwartz@NOM.com\n+1 212 667 9637"
+                    }
+                ]
+            },
+            "bbox": [
+                699,
+                245,
+                883,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ruchir Sharma - NSI  \nruchir.sharma@NOM.com  \n+1 212 667 9186"
+                    }
+                ]
+            },
+            "bbox": [
+                699,
+                288,
+                870,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Production Complete: 2026-07-31 19:22 UTC"
+                    }
+                ]
+            },
+            "bbox": [
+                748,
+                938,
+                959,
+                951
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                3,
+                296,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": []
+            },
+            "bbox": [
+                674,
+                0,
+                957,
+                89
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                99,
+                460,
+                129
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Research"
+                    }
+                ]
+            },
+            "bbox": [
+                741,
+                91,
+                957,
+                108
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                844,
+                111,
+                957,
+                129
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                975,
+                812,
+                992
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "He claimed that an “unfiltered” signal from markets would be more useful to policymakers, adding that market participants are “learning to play the ball, not the referee.” He appeared to stick to his belief that forward guidance is not needed, saying that he will talk about a big theme at his upcoming Jackson Hole speech as opposed to discussing the near-term policy outlook."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                27,
+                681,
+                100
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/91d979f8156ff5e1f45e1eba18eed88f80caf52235cc0378fe4d6e7921de1ecd.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 1: We expect subdued core PCE prints in the coming months are likely to support the Fed's patient approach Monthly core PCE inflation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BLS, BEA, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                163,
+                504,
+                420
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8a5e95e1703e56e5e684309f496b9a0506dea45cac9a53774da6f5eec47ba08c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 2: Market-implied long-term inflation expectations jumped in reaction to the July FOMC meeting  \n5yr5yr forward breakeven inflation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                169,
+                956,
+                414
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Growing market credibility challenge poses a hawkish risk"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                464,
+                497,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We continue to expect core PCE inflation to gradually decelerate in coming months (Fig. 1) due to easing tariff effects, residual seasonality, moderating wage growth, and the upcoming BEA methodological revisions, which will likely quell concerns over inflation risks as well as the Fed's credibility as an inflation fighter."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                480,
+                679,
+                539
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "That said, risks are increasingly skewed toward a hike. Warsh's dovish tone, combined with an unclear reaction function and ambiguity over whether market moves are an input to or output of policy, appears to have weakened the Fed's inflation credibility. Markets reacted sharply, with breakeven inflation rising and 30yr Treasury yields moving notably higher (Fig. 2). Rising breakevens increase the risk that long-term inflation expectations become unanchored, a key concern for some policymakers like Governor Waller. Under this environment, even modest evidence of firmer inflation or stalled disinflation could trigger a sharper market reaction to concerns over the Fed's credibility and more importantly, prompt the Committee to tighten policy."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                544,
+                667,
+                677
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Employment growth likely picked up in July"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                681,
+                391,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect headline payrolls picked up to 130k in July from 57k in June, a modest acceleration from the ytd average of 92k. Private payrolls picked up sharply in the month, and breadth of job gains likely remained robust, pointing to resilient labor markets."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                696,
+                672,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Labor market data have surprised to the downside in July over the past two years, leading to sharp market repricing and Fed “insurance” cuts."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                746,
+                677,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite similar timing for the 2024 (when the u-rate jumped, triggering the Sahm rule) and 2025 (which saw an unprecedented negative revision to NFP for May and June) slowdown scares, we do not see strong evidence for residual seasonality in the unemployment rate or NFP. Additionally, the broader context matters, and unlike recent years, there are currently few signs of broader labor weakness going into the July employment report."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                780,
+                681,
+                855
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/30fc4d1e1a37f50e52a44839c741e1443529d4d3f8838d53af46df402d5c2c17.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 3: Employment indices across major regional and national surveys improved in July"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Regional Federal Reserve Banks, ISM, S&P Global, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                84,
+                502,
+                343
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f0ab52becf91e21dc832fb846df3b2dfb3fc3d83655e5807ffad54e880c47afa.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 4: Continuing jobless claims declined through the July survey reference week"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Markers refer to NFP survey reference week  \nSource: DOL, BLS, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                532,
+                73,
+                942,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Lead indicators such as service sector surveys, and continuing claims have improved in July (Fig. 3 & Fig. 4). Weekly ADP data also point to continued headcount expansion in private sector. In addition, we believe some temporary factors that weighed on hiring in June likely reversed in July."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                392,
+                667,
+                452
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect the unemployment rate remained unchanged at  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in July. The decline in last month's report appeared to be driven by noisy data, but fundamentals have subsequently improved. Layoffs have remained subdued, and initial claims have trended down to multiyear lows (Fig. 5). Although measures of labor demand have been mixed, we see tentative signs of improvement."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                457,
+                667,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect AHE growth slowed to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " m-o-m from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " m-o-m in June, consistent with recent softening in alternative wage indicators (Fig. 6). A negative calendar effect and risks of an uptick in the average workweek support our forecast. Overall, we believe resilient labor markets are likely to keep the Fed focused on inflation risks."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                535,
+                667,
+                595
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fbd087ca3140d139d66897e578d8649be3165f09800ebaf757915566d0452661.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 5: Measures of layoffs, particularly initial claims, have remained subdued"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BLS, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                663,
+                502,
+                907
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/80a4df933a48f9c1b438c090afc2b4bccf0fd15d6ae4a2c7d588be558e73f123.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 6: We expect AHE growth slowed in July, consistent with recent softening in alternative wage indicators Measures of wage growth"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Atlanta Fed, ADP, BLS, NBER, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                531,
+                659,
+                956,
+                915
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                955,
+                929,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Core PCE inflation slowed along with continued moderation in service sector wage growth"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                47,
+                672,
+                72
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Core PCE inflation came in softer than expected, rising only by 0.132% m-o-m in June (Consensus: 0.2%, NOM: 0.175%). In details, more than half of our 4bp forecast miss was attributable to final consumption expenditures of nonprofit institutions serving households (NPISH). NPISH prices dropped more sharply than our expectation, declining by 1.3% m-o-m, which marked the largest monthly decrease since October 2017. The weaker-than-expected June reading pushed down y-o-y core PCE inflation to 3.287% in the month, slightly below our forecast of 3.321% (Consensus: 3.3%). We continue to believe that y-o-y core PCE inflation has already peaked in May and will gradually moderate in H2 this year."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                73,
+                674,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Employment Cost Index (ECI), the Fed's preferred wage metric, surprised to the upside, rising by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " q-o-q % in Q2 (NOM:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", Consensus:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "). The unexpected strength was led by goods-producing industries (construction and manufacturing industries) (Fig. 7). This is an early sign that strong capex demand may be starting to impact the labor market and wages. That said, the near-term read-through for inflation is dovish as wage growth in the private service sector slightly decelerated (Fig. 8)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                209,
+                674,
+                299
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e72944a9bd09298e1c5b7dc71b6da6f029ae7efe7e234cccb6c690fac1e8bcd9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 7: ECI private wage growth accelerated in Q2 due to unexpected strength in goods-producing industries Decomposition of q-o-q ECI private wage growth"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BLS, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                364,
+                504,
+                619
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1f7e4be2b3a5c3dbd2340abfc948989a858728187da84693a8f4fc903ff8ab8a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 8: ECI data suggests that strength in lodging-away-from-home prices in H1 this year is not sustainable  \nECI private wage for accommodation & food services vs. CPI's other lodging-away-from-home prices"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BLS, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                531,
+                370,
+                952,
+                630
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic activity remained strong"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                679,
+                325,
+                692
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Real GDP growth slowed to 1.5% q-o-q ar (NOM: 1.8%, Consensus: 2.0%) from 2.1% q-o-q ar as volatile components such as government spending and net exports weighed on GDP growth. That said, real final sales to private domestic purchasers (the sum of consumer spending and gross private fixed investment i.e., a proxy for domestic final demand) accelerated sharply to 3.9% q-o-q ar (NOM: 3.4%) from 1.7% in Q1."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                693,
+                667,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In details, personal consumption remained robust, driven by a broad increase in goods and services. Fixed investment also rose as strength in equipment and intellectual property products more than offset weakness in private inventory investment and nonresidential structures. The BEA noted that strength in equipment investment was widespread, adding to evidence that capex is broadening beyond tech/AI. Residential investment grew for the first time since Q4 2024, in line with our expectation."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                772,
+                655,
+                861
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                846,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Data Preview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                69,
+                30,
+                254,
+                50
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The week ahead"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                60,
+                229,
+                77
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect employment growth picked up to 130k, while the unemployment rate remained sideways at 4.2%."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                83,
+                608,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ISM manufacturing (Monday): We expect the ISM Manufacturing Index ticked up to 53.8 in July from 53.3 in June, in line with other regional surveys. New orders likely ticked down, but remained above 50. Production likely remained resilient, and we expect the employment index improved in the month. The prices index likely remained elevated, while delivery times likely lengthened as hostilities in the Middle East resumed in the month."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                118,
+                672,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Vehicle sales (Monday): The pace of vehicle sales likely accelerated to 16.7mn saar in July from 16.5mn saar. Lower financing costs and higher incentive spending by dealers likely outweighed headwinds from elevated uncertainty."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                211,
+                667,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Trade balance (Tuesday): We expect the trade deficit narrowed to $73bn in June from $77.6bn in May. The advance goods trade report suggested that imports fell sharply in the month, while goods exports declined modestly."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                261,
+                677,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JOLTS job openings (Tuesday): We expect JOLTS job openings fell to 7400k in June from 7594k in May. Our forecast suggests the V-U ratio remained unchanged at 1.04, while the job openings rate declined to 4.4% from 4.6% previously. Note, JOLTS data have been volatile lately, outperforming alternative labor demand indicators such as Indeed and Lightcast, which also suggest that data for May could be revised lower."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                311,
+                666,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ISM services (Wednesday): We expect the ISM Services index rose to 54.8 in July from 54.0 in June. National and regional service sector surveys were broadly positive in the month. We expect business activity and new orders remained resilient. The employment index likely remained in expansionary territory."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                389,
+                672,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jobless claims (Thursday): Both initial and continuing claims remained subdued this week, adding to evidence of limited layoffs and resilient labor markets."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                453,
+                655,
+                484
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Employment report (Friday): We expect headline payroll growth accelerated to 130k in July from 57k in June. Service sector surveys have improved, while continuing claims trended lower through the survey reference week, pointing to firmer hiring."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                489,
+                672,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect the unemployment rate remained unchanged at 4.2%, with risks skewed to the upside. Although the June decline in unemployment was noisy, labor market fundamentals appeared somewhat stronger through the July reference week as layoffs fell to multi-year lows."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                539,
+                674,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect average hourly earnings (AHE) growth slowed to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " m-o-m from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in June. A negative calendar effect and potential pickup in the average workweek support our forecast."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                602,
+                657,
+                647
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although July labor market data have surprised to the downside in the past two years, we do not see strong evidence of residual seasonality in payrolls or the unemployment rate. Unlike recent years, there are few signs of broader labor market weakness heading into this month's report."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                653,
+                672,
+                711
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/36dfd2701b46cf7a51dec377951e06bccb781021528b062f31d440ad95dd087a.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 9: Forecasts for economic indicators released during the week of 3 August"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Haver, Bloomberg, NOM"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Eastern Daylight Time (EDT). All NOM forecasts are modal."
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"2\">Monday 3 August</td><td>Units</td><td>Period</td><td>Prev 2</td><td>Prev 1</td><td>Last</td><td>NOM</td><td>Consensus</td></tr><tr><td>9.45</td><td>S&amp;P manufacturing PMI</td><td>Index</td><td>Jul-Fin</td><td>55.1</td><td>53.9</td><td>53.8</td><td>n.a.</td><td>n.a.</td></tr><tr><td>10.00</td><td>ISM manufacturing</td><td>Index</td><td>Jul</td><td>52.7</td><td>54.0</td><td>53.3</td><td>53.8</td><td>54.0</td></tr><tr><td>10.00</td><td>Construction spending</td><td>% m-o-m</td><td>Jun</td><td>0.4</td><td>0.3</td><td>0.1</td><td>n.a.</td><td>n.a.</td></tr><tr><td></td><td>Total vehicle sales</td><td>mn saar</td><td>Jul</td><td>15.9</td><td>16.1</td><td>16.5</td><td>16.7</td><td>16.5</td></tr><tr><td colspan=\"9\">Tuesday 4 August</td></tr><tr><td>8.30</td><td>Trade balance</td><td>$bn</td><td>Jun</td><td>-56.6</td><td>-55.9</td><td>-77.6</td><td>-73.0</td><td>-73.0</td></tr><tr><td>10.00</td><td>Factory orders</td><td>% m-o-m</td><td>Jun</td><td>1.8</td><td>5.3</td><td>-1.3</td><td>n.a.</td><td>0.5</td></tr><tr><td>10.00</td><td>JOLTS job openings</td><td>000s</td><td>Jun</td><td>6887</td><td>7585</td><td>7594</td><td>7400</td><td>n.a.</td></tr><tr><td colspan=\"9\">Wednesday 5 August</td></tr><tr><td>7.00</td><td>Mortgage applications</td><td>% w-o-w</td><td>31-Jul</td><td>-2.7</td><td>1.9</td><td>-6.4</td><td>n.a.</td><td>n.a.</td></tr><tr><td>8.15</td><td>ADP private employment</td><td>000s</td><td>Jul</td><td>105</td><td>122</td><td>98</td><td>n.a.</td><td>75</td></tr><tr><td>9.45</td><td>S&amp;P services PMI</td><td>Index</td><td>Jul</td><td>51</td><td>50.7</td><td>51.2</td><td>n.a.</td><td>n.a.</td></tr><tr><td>10.00</td><td>ISM services</td><td>Index</td><td>Jul</td><td>53.6</td><td>54.5</td><td>54.0</td><td>54.8</td><td>54.3</td></tr><tr><td colspan=\"9\">Thursday 6 August</td></tr><tr><td>8.30</td><td>Initial jobless claims</td><td>000s</td><td>1-Aug</td><td>209</td><td>188</td><td>197</td><td>n.a.</td><td>218</td></tr><tr><td>8.30</td><td>Continuing jobless claims</td><td>000s</td><td>25-Jul</td><td>1798</td><td>1789</td><td>1782</td><td>n.a.</td><td>1820</td></tr><tr><td>8.30</td><td>Nonfarm productivity</td><td>% q-o-q ar</td><td>Q2-1st</td><td>5.2</td><td>1.6</td><td>0.3</td><td>n.a.</td><td>n.a.</td></tr><tr><td>8.30</td><td>Unit labor costs</td><td>% q-o-q ar</td><td>Q2-1st</td><td>1.0</td><td>2.1</td><td>1.8</td><td>n.a.</td><td>n.a.</td></tr><tr><td colspan=\"9\">Friday 7 August</td></tr><tr><td>8.30</td><td>Nonfarm payrolls</td><td>000s</td><td>Jul</td><td>148</td><td>129</td><td>57</td><td>130</td><td>93</td></tr><tr><td>8.30</td><td>Private payrolls</td><td>000s</td><td>Jul</td><td>150</td><td>97</td><td>49</td><td>120</td><td>93</td></tr><tr><td>8.30</td><td>Unemployment rate</td><td>%</td><td>Jul</td><td>4.3</td><td>4.3</td><td>4.2</td><td>4.2</td><td>4.2</td></tr><tr><td>8.30</td><td>Average hourly earnings</td><td>% m-o-m</td><td>Jul</td><td>0.2</td><td>0.3</td><td>0.3</td><td>0.2</td><td>0.3</td></tr><tr><td>8.30</td><td>Average weekly hours</td><td>Level</td><td>Jul</td><td>34.3</td><td>34.3</td><td>34.3</td><td>34.3</td><td>34.3</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                47,
+                935,
+                378
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                956,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economic Outlook"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                46,
+                372,
+                69
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect the Fed to stay on hold indefinitely (with risks skewed towards hikes) due to persistent price pressures, stable labor markets and waning political pressure."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                77,
+                664,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic activity: Growth has remained robust lately, supported by easing tariff uncertainty, fiscal stimulus from the One Big Beautiful Bill Act and the lagged impact of Fed rate cuts amid easy financial conditions. Business investment appears to be broadening beyond the AI sector. Despite higher energy prices stemming from the Iran war, consumption has held up, partly due to higher tax refunds and strong payroll income growth. NFPs have been volatile, but an array of indicators point to stabilization and tentative signs of reacceleration in the labor market. While the recent decline in the unemployment rate was due to a one-off factor, we expect the unemployment rate to eventually edge lower to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " by year-end. The US economy remains relatively insulated from the crude oil price shock due to the Iran war, owing to the small share of energy-goods consumption in household spending, as well as domestic energy production."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                113,
+                676,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inflation: Core inflation remains well above the Fed's  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " target, and risks appear skewed to the upside. We forecast Q4 2026 core PCE inflation of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y, but the BEA's planned methodological changes to certain PCE price components could reduce core PCE inflation by about 20bp to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y in Q4 2026. Tariff-related price pressures are abating, but new AI-related price pressures from robust demand and supply shortages could push up goods inflation. Overall, we expect core PCE inflation to decelerate in coming months on residual seasonality and moderating wage growth."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                279,
+                679,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy: We expect the Fed to remain on hold indefinitely. Fed Chair Warsh likely remains motivated to ease, but elevated inflation and hawkish Fedspeak suggest he may not be able to convince the majority to support cuts. In addition, he is likely to encourage the committee to keep policy rates steady until recently announced task forces make recommendations on different aspects of data and monetary policy. The balance of risks tilts towards tightening, specifically as Warsh's dovishness has fueled market concerns around Fed's inflation fighting credibility."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                387,
+                672,
+                490
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks: Further escalation of geopolitical risks could lead to a tightening of financial conditions and a worsening of the fiscal outlook. Increased political pressures on FOMC participants could undermine the Fed's credibility and cause sharp market reactions. An AI bust could lead to material corrections in asset valuations and reduced business investment. A continued shortage of memory chips and supply-chain disruptions due to a protracted Iran war could lead to a second round effects on inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                493,
+                672,
+                583
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/35173f8c59c81a6ff493b7bac8015c6cfa954f775e67ab17f776d15b438fe3c7.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 10: United States: Details of the forecast"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">%</td><td rowspan=\"2\"></td><td rowspan=\"2\">1Q25</td><td rowspan=\"2\">2Q25</td><td rowspan=\"2\">3Q25</td><td rowspan=\"2\">4Q25</td><td rowspan=\"2\">1Q26</td><td rowspan=\"2\">2Q26</td><td rowspan=\"2\">3Q26</td><td rowspan=\"2\">4Q26</td><td rowspan=\"2\">1Q27</td><td rowspan=\"2\">2Q27</td><td rowspan=\"2\">3Q27</td><td rowspan=\"2\">4Q27</td><td colspan=\"3\">% y-o-y</td><td colspan=\"3\">% Q4/Q4</td></tr><tr><td>2025</td><td>2026</td><td>2027</td><td>2025</td><td>2026</td><td>2027</td></tr><tr><td></td><td>q-o-q</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"2\">Real GDP</td><td>(%, a.r.)</td><td>-0.6</td><td>3.8</td><td>4.4</td><td>0.5</td><td>2.1</td><td>1.5</td><td>2.1</td><td>1.9</td><td>1.9</td><td>1.9</td><td>1.7</td><td>1.6</td><td>2.1</td><td>2.1</td><td>1.9</td><td>2.0</td><td>1.9</td><td>1.8</td></tr><tr><td>(%)</td><td>-0.2</td><td>0.9</td><td>1.1</td><td>0.1</td><td>0.5</td><td>0.4</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.4</td><td>0.4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Personal consumption</td><td>(%, a.r.)</td><td>0.6</td><td>2.5</td><td>3.5</td><td>1.9</td><td>0.5</td><td>3.2</td><td>1.8</td><td>1.8</td><td>1.8</td><td>1.7</td><td>1.5</td><td>1.5</td><td>2.6</td><td>2.0</td><td>1.8</td><td>2.1</td><td>1.8</td><td>2.1</td></tr><tr><td>Nonresidential fixed invest</td><td>(%, a.r.)</td><td>9.5</td><td>7.3</td><td>3.2</td><td>2.4</td><td>10.6</td><td>8.4</td><td>4.5</td><td>3.6</td><td>3.4</td><td>3.1</td><td>2.5</td><td>2.5</td><td>4.1</td><td>6.3</td><td>3.6</td><td>5.6</td><td>6.7</td><td>5.0</td></tr><tr><td>Residential fixed invest</td><td>(%, a.r.)</td><td>-1.0</td><td>-5.1</td><td>-7.1</td><td>-1.7</td><td>-7.8</td><td>1.5</td><td>3.2</td><td>3.0</td><td>2.8</td><td>2.8</td><td>2.5</td><td>2.5</td><td>-2.2</td><td>-2.7</td><td>2.7</td><td>-3.8</td><td>-0.1</td><td>2.6</td></tr><tr><td>Government expenditure</td><td>(%, a.r.)</td><td>-1.0</td><td>-0.1</td><td>2.2</td><td>-5.6</td><td>4.4</td><td>-0.8</td><td>0.9</td><td>0.9</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.1</td><td>0.3</td><td>0.8</td><td>-1.2</td><td>1.4</td><td>0.5</td></tr><tr><td>Exports</td><td>(%, a.r.)</td><td>0.2</td><td>-1.8</td><td>9.6</td><td>-3.2</td><td>10.9</td><td>4.5</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.2</td><td>2.1</td><td>1.6</td><td>4.3</td><td>2.4</td><td>1.1</td><td>4.9</td><td>2.8</td></tr><tr><td>Imports</td><td>(%, a.r.)</td><td>38.0</td><td>-29.3</td><td>-4.4</td><td>-1.0</td><td>11.8</td><td>11.5</td><td>3.5</td><td>3.3</td><td>2.8</td><td>2.5</td><td>2.3</td><td>2.0</td><td>2.7</td><td>2.5</td><td>3.3</td><td>-1.9</td><td>7.4</td><td>5.2</td></tr><tr><td>Contributions to GDP:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Final sales</td><td>(pp., a.r.)</td><td>-3.2</td><td>7.3</td><td>4.5</td><td>0.3</td><td>1.9</td><td>2.2</td><td>1.9</td><td>1.8</td><td>1.8</td><td>1.8</td><td>1.6</td><td>1.6</td><td>2.2</td><td>2.3</td><td>1.8</td><td>2.1</td><td>2.0</td><td>1.7</td></tr><tr><td>Net trade</td><td>(pp., a.r.)</td><td>-4.7</td><td>4.8</td><td>1.6</td><td>-0.2</td><td>-0.4</td><td>-1.0</td><td>-0.2</td><td>-0.2</td><td>-0.1</td><td>-0.1</td><td>0.0</td><td>0.0</td><td>-0.2</td><td>0.1</td><td>-0.2</td><td>0.4</td><td>-0.4</td><td>0.0</td></tr><tr><td>Inventories</td><td>(pp., a.r.)</td><td>2.6</td><td>-3.4</td><td>-0.1</td><td>0.1</td><td>0.2</td><td>-0.7</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.0</td><td>-0.1</td><td>-0.3</td><td>0.1</td><td>-0.1</td><td>-0.1</td><td>0.1</td></tr><tr><td></td><td>As noted</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Unemployment rate</td><td>(%)</td><td>4.1</td><td>4.2</td><td>4.3</td><td>4.5</td><td>4.3</td><td>4.3</td><td>4.2</td><td>4.1</td><td>4.0</td><td>3.9</td><td>3.9</td><td>3.9</td><td>4.3</td><td>4.2</td><td>3.9</td><td></td><td></td><td></td></tr><tr><td>Nonfarm payrolls</td><td>(000s)</td><td>20</td><td>34</td><td>23</td><td>-39</td><td>73</td><td>111</td><td>90</td><td>120</td><td>100</td><td>90</td><td>90</td><td>90</td><td>10</td><td>99</td><td>90</td><td></td><td></td><td></td></tr><tr><td>Housing starts</td><td>(000s, a.r.)</td><td>1397</td><td>1356</td><td>1347</td><td>1323</td><td>1418</td><td>1347</td><td>1430</td><td>1420</td><td>1400</td><td>1390</td><td>1390</td><td>1380</td><td>1356</td><td>1404</td><td>1390</td><td></td><td></td><td></td></tr><tr><td>Consumer prices</td><td>(%, y-o-y)</td><td>2.7</td><td>2.5</td><td>2.9</td><td>2.7</td><td>2.7</td><td>3.8</td><td>3.4</td><td>3.4</td><td>3.0</td><td>1.8</td><td>2.0</td><td>1.9</td><td>2.7</td><td>3.3</td><td>2.2</td><td></td><td></td><td></td></tr><tr><td>Core CPI</td><td>(%, y-o-y)</td><td>3.1</td><td>2.8</td><td>3.1</td><td>2.7</td><td>2.5</td><td>2.7</td><td>2.4</td><td>2.6</td><td>2.6</td><td>2.4</td><td>2.5</td><td>2.4</td><td>2.9</td><td>2.6</td><td>2.5</td><td></td><td></td><td></td></tr><tr><td>PCE Deflator</td><td>(%, y-o-y)</td><td>2.6</td><td>2.4</td><td>2.7</td><td>2.8</td><td>3.1</td><td>3.8</td><td>3.6</td><td>3.5</td><td>3.0</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.6</td><td>3.5</td><td>2.4</td><td></td><td></td><td></td></tr><tr><td>Core PCE</td><td>(%, y-o-y)</td><td>2.8</td><td>2.7</td><td>2.9</td><td>2.9</td><td>3.1</td><td>3.3</td><td>3.2</td><td>3.2</td><td>2.8</td><td>2.5</td><td>2.5</td><td>2.4</td><td>2.8</td><td>3.2</td><td>2.6</td><td></td><td></td><td></td></tr><tr><td>Federal budget</td><td>(% GDP)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-5.8</td><td>-6.4</td><td>-6.4</td><td></td><td></td><td></td></tr><tr><td>Current account balance</td><td>(% GDP)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-3.7</td><td>-3.1</td><td>-2.0</td><td></td><td></td><td></td></tr><tr><td>Fed securities portfolio</td><td>($trn)</td><td>6.32</td><td>6.24</td><td>6.19</td><td>6.15</td><td>6.27</td><td>6.34</td><td>6.42</td><td>6.48</td><td>6.54</td><td>6.60</td><td>6.66</td><td>6.72</td><td>6.15</td><td>6.48</td><td>6.72</td><td></td><td></td><td></td></tr><tr><td>Fed funds target midpoint</td><td>(%)</td><td>4.375</td><td>4.375</td><td>4.125</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td></td><td></td><td></td></tr><tr><td>TSY 2-year note</td><td>(%)</td><td>3.89</td><td>3.72</td><td>3.60</td><td>3.47</td><td>3.79</td><td>4.14</td><td>4.15</td><td>4.10</td><td>4.10</td><td>4.05</td><td>4.00</td><td>3.95</td><td>3.47</td><td>4.10</td><td>3.95</td><td></td><td></td><td></td></tr><tr><td>TSY 5-year note</td><td>(%)</td><td>3.96</td><td>3.79</td><td>3.74</td><td>3.73</td><td>3.92</td><td>4.19</td><td>4.30</td><td>4.25</td><td>4.25</td><td>4.25</td><td>4.20</td><td>4.20</td><td>3.73</td><td>4.25</td><td>4.20</td><td></td><td></td><td></td></tr><tr><td>TSY 10-year note</td><td>(%)</td><td>4.23</td><td>4.24</td><td>4.16</td><td>4.18</td><td>4.30</td><td>4.44</td><td>4.60</td><td>4.60</td><td>4.60</td><td>4.60</td><td>4.55</td><td>4.50</td><td>4.18</td><td>4.60</td><td>4.50</td><td></td><td></td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                613,
+                935,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note: The unemployment rate is a quarterly average as a percentage of the labor force. Nonfarm payrolls are average monthly changes during the period. Inflation measures and calendar year GDP are year-over-year percent changes. The Fed securities portfolio is end-of-period. The annual interest rate forecasts are end-of-period. Housing starts are period averages. Numbers in bold are actual values. Table reflects data available as of 31 July 2026. All NOM forecasts are modal Source: BEA, BLS, Census Bureau, FRB, Haver, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                851,
+                937,
+                892
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                846,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Week in Review"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                31,
+                291,
+                53
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/58b005b3af96ec1000c9ce2c93a59275241324d80bb18e445a0c0d3edb247e01.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 11: Weekly data tracker and its decomposition"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                86,
+                108,
+                905,
+                331
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note: We estimate a latent factor that contributes the most to the total variance of 13 daily and weekly US indicators covering industrial and consumer sectors via principal component analysis (i.e., the first principal component). We calibrate this factor to track four-quarter changes in real GDP.  \nSource: AAR, Baker Hughes, DOL, EIA, EEI, MBA, PolicyUncertainty, Redbook Research, SF Fed, Haver Analytics, NOM"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                341,
+                900,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic Insights - US: July Employment Preview"
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                374,
+                416,
+                389
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Watch - July FOMC Recap"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                394,
+                301,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic Insights - US labor market seasonality: avoiding another cruel summer"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                415,
+                618,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic Insights - US: Will AI-driven productivity lead to disinflation?"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                435,
+                546,
+                450
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/29f919c99df90cf7e865e9b056745901546be5f0049a3ccd846478e9a7fc747c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 12: Economic Data Calendar"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Reuters, NOM Global Economics."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>Mon 3 August</td><td>Tue 4 August</td><td>Wed 5 August</td><td>Thu 6 August</td><td>Fri 7 August</td></tr><tr><td rowspan=\"3\">North America</td><td>USISM manufacturing (Jul)Index 53.3, 53.8, 54.0</td><td>USTrade balance (Jun)$bn -77.6, -73.0, -73.0</td><td>USADP private employment (Jul)000s 98, n.a., 75</td><td>USNonfarm productivity (Q2-1st)% q-o-q ar 0.3, n.a., n.a.</td><td>USNonfarm payrolls (Jul)000s 57, 130, 93</td></tr><tr><td>USConstruction spending (Jun)% m-o-m 0.1, n.a., n.a.</td><td>USFactory orders (Jun)% m-o-m -1.3, n.a., 0.5</td><td>USS&amp;P services PMI (Jul)Index 51.2, n.a., n.a.</td><td>USUnit labor costs (Q2-1st)% q-o-q ar 1.8, n.a., n.a.</td><td>USUnemployment rate (Jul)% 4.2, 4.2, 4.2</td></tr><tr><td>USTotal vehicle sales (Jul)mn saar 16.5, 16.7, 16.5</td><td>USJOLTS job openings (Jun)000s 7594, 7400, n.a.</td><td>USISM services (Jul)Index 54.0, 54.8, 54.3</td><td></td><td>CANUnemployment rate (Jul)% 6.5, 6.5, n.a.</td></tr><tr><td rowspan=\"5\">Europe (ex-UK)</td><td>SWI CPI (Jul)% y-o-y 0.5, 0.5, n.a.</td><td>ITA Retail sales (Jun)% m-o-m 0.2, n.a., n.a.</td><td>EUR Producer prices (Jun)% m-o-m 0.2, 0.2, n.a.</td><td>SWE CPIF (Jul P)% y-o-y 1.3, 0.7, n.a.</td><td>GER Industrial output (Jun)% m-o-m 0.9, 1.0, n.a.</td></tr><tr><td>SWI CPI Core (Jul)% y-o-y 0.3, 0.4, n.a.</td><td></td><td>FRA Industrial output (Jun)% m-o-m -0.1, 0.8, n.a.</td><td>SWE CPIF ex-energy (Jul P)% y-o-y 0.4, 0.2, n.a.</td><td>Swedish Housing Px DataFrom Maklarstatistik</td></tr><tr><td>SWE PMI Mfg. (Jul)Index 58.3, n.a., n.a.</td><td></td><td>ITA PMI Composite (Jul)Index 50.8, n.a., n.a.</td><td>GER Factory orders (Jun)% m-o-m 1.9, 1.0, n.a.</td><td></td></tr><tr><td>SPA PMI Mfg. (Jul)Index 49.7, n.a., n.a.</td><td></td><td>SPA PMI Composite (Jul)Index 53.3, n.a., n.a.</td><td>EUR Retail sales (Jun)% m-o-m 0.2, 0.5, n.a.</td><td></td></tr><tr><td>ITA PMI Mfg. (Jul)Index 52.2, n.a., n.a.</td><td></td><td>SWE PMI Composite (Jul)Index 57.1, n.a., n.a.</td><td>FRA Wages (2Q P)% q-o-q 0.7, n.a., n.a.</td><td></td></tr><tr><td>United Kingdom</td><td></td><td></td><td></td><td>UK PMI Construction (Jul)</td><td></td></tr><tr><td rowspan=\"5\">CEEMEA</td><td>TürkiyeManufacturing PMI (Jul)Index 47.1, n.a., n.a.</td><td></td><td>Czech R.CPI (Jul P)%y-o-y 1.5, n.a., 1.8</td><td>Czech R.Base Rate% 3.75, n.a., 3.75</td><td>HungaryCPI (Jul)%y-o-y 1.7, n.a., 1.5</td></tr><tr><td>TürkiyeCPI (Jul)%y-o-y 32.1, 31.9, 32.0</td><td></td><td>S. AfricapMI (Jul)Index 50.5, n.a, n.a</td><td></td><td>TürkiyeCash Budget Balance (Jul)TRYbn 50.8, n.a., n.a.</td></tr><tr><td>TürkiyeCPI Core (Jul)%y-o-y 29.8, 30.4, 30.5</td><td></td><td>HungaryCentral bank minutes</td><td></td><td></td></tr><tr><td>TürkiyePPI (Jul)%y-o-y 28.1, 27.8, n.a.</td><td></td><td></td><td></td><td></td></tr><tr><td>Czech R.Budget Balance (Jul)CZKbn -183.6, n.a., n.a.</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"2\">Japan</td><td></td><td></td><td>Total cash earnings (Jun)(per-capita nominal wages)% y-o-y 3.3, 3.5, n.a.</td><td></td><td>Consumer spending (Jun)% y-o-y -0.4, -3.3, n.a.</td></tr><tr><td></td><td></td><td>BOJ MPM Minutes (15-16 Jun)</td><td></td><td>Economic coincident index(Jun)Index 117.9, n.a., n.a.</td></tr><tr><td rowspan=\"4\">Asia ex-Japan</td><td>ChinaRatingDog manufacturing PMI (Jul)Index 51.7, 51.5, 52.0</td><td>S. KoreaCPI (Jul)% y-o-y 3.2, 3.2, 3.0</td><td>PhilippinesCPI (Jul)% y-o-y 6.4, 6.6, 6.4</td><td>S. KoreaCurrent account balance (Jun)USD bn 38.6, 42.0, n.a.</td><td>ChinaExports% y-o-y 27.0, 22.9, 23.7</td></tr><tr><td>IndonesiaCPI (Jul)% y-o-y 3.34, 3.07, 3.18</td><td></td><td>IndonesiaReal GDP (Q2)% y-o-y 5.61, 5.20, 5.00</td><td>ThailandCPI (Jul)% y-o-y 2.42, 1.76, 2.64</td><td>PhilippinesReal GDP% y-o-y 2.8, 3.2, n.a.</td></tr><tr><td>IndonesiaExports (Jun)% y-o-y -5.73, -4.16, 0.20</td><td></td><td>IndiaRBI policy meeting, repo rate% 5.25, 5.25, 5.25</td><td>TaiwanCPI (Jul)% y-o-y 2.6, 2.3, 2.5</td><td>TaiwanExports% y-o-y 40.3, 49.2, 39.4</td></tr><tr><td></td><td></td><td>SingaporeRetail sales (value)% y-o-y 3.0,4.3, n.a.</td><td></td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                62,
+                935,
+                860
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                955,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix A-1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                39,
+                268,
+                62
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been produced by NOM Securities International, Inc.(NSI), US."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                75,
+                558,
+                89
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See Disclaimers for NOM Group entity details."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                90,
+                367,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                117,
+                269,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We, Aichi Amemiya, Jeremy Schwartz and Ruchir Sharma, hereby certify (1) that the views expressed in this Research report accurately reflect our personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of our compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of our compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                150,
+                927,
+                223
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                234,
+                269,
+                251
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Online availability of research and conflict-of-interest disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                263,
+                546,
+                276
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                286,
+                741,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                301,
+                927,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                345,
+                927,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                417,
+                932,
+                461
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                474,
+                168,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                500,
+                934,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                719,
+                907,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia."
+                    }
+                ]
+            },
+            "bbox": [
+                64,
+                808,
+                934,
+                953
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                9
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                956,
+                937,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                65,
+                25,
+                927,
+                52
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                53,
+                930,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                127,
+                932,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                228,
+                932,
+                314
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                315,
+                929,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                404,
+                932,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                708,
+                932,
+                765
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                766,
+                932,
+                823
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                825,
+                932,
+                924
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                926,
+                927,
+                953
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                956,
+                935,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                65,
+                26,
+                905,
+                96
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                98,
+                927,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                171,
+                925,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                228,
+                917,
+                314
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (\"NFPE\"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                315,
+                925,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                374,
+                922,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                418,
+                846,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has also been approved for distribution in Malaysia by NSM."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                432,
+                526,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                447,
+                930,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia ('Saudi Arabia') or a 'Market Counterparty' or a 'Professional Client' (as defined by the Dubai Financial Services Authority) in the United Arab Emirates ('UAE') or a 'Market Counterparty' or a 'Business Customer' (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar ('Qatar') by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a 'Market Counterparty' or a 'Professional Client' in the UAE or a 'Market Counterparty' or a 'Business Customer' in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                665,
+                934,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                796,
+                686,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                809,
+                927,
+                926
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                926,
+                934,
+                955
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                956,
+                937,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                65,
+                26,
+                903,
+                67
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                67,
+                932,
+                228
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM Securities Co., Ltd."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                240,
+                271,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial instruments firm registered with the Kanto Local Finance Bureau (registration No. 142)"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                265,
+                647,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Member associations: Japan Securities Dealers Association; Investment Management Association of Japan; The Financial Futures Association of Japan; Type II Financial Instruments Firms Association; and Japan Security Token Offering Association."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                279,
+                925,
+                308
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                323,
+                925,
+                365
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                366,
+                929,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "http://go.NOMnow.com/research/m/Disclosures"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                411,
+                372,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright © 2026 NOM Securities International, Inc., US. All rights reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                424,
+                546,
+                438
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | US Economic Weekly"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                225,
+                9
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "31 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                0,
+                920,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                917,
+                955,
+                937,
+                967
+            ]
+        }
+    ]
+]
