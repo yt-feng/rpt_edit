@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/mineru_raw/images/ab3a7160fdaf1190a25943e4eaace5e03c3640def8dc79099df2a9ac7d189c68.jpg",
+    "path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.15,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/mineru_raw/images/2d4a407bf20f1603f44c7de3d2afd39e93b2cde4ad9e868985a7021d065bd329.jpg",
+    "path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.19,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/mineru_raw/images/5197711c4ad2e1e7a6ec17b7444f56cc749a5c04d17c303e4e88fc860a352b7b.jpg",
+    "path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.25,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/mineru_raw/images/1d5f428a1d20c266b1786cdb7e68aa551d0270983d7f07d9e696c687503611ca.jpg",
+    "path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.23,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/mineru_raw/images/b24bb556a8338543f58f80fbf3fc85f563bcbe24f19219d2c2c8a0d5b53a991b.jpg",
+    "path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.27,contrast,large"
+  }
+]

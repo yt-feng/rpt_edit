@@ -1,0 +1,66 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+  "title": "波士顿咨询：资金结构与相关数据观察",
+  "source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+    "cleaned_source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0002BCGHowShippingCom",
+    "raw_candidates": [
+      "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆",
+      "波士顿咨询：0002BCGHowShippingCom",
+      "波士顿咨询：最新分析显示，从2022年到2024年"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：0002BCGHowShippingCom",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：最新分析显示，从2022年到2024年",
+        "reasons": [
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：资金结构与相关数据观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：资金结构与相关数据观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_02.pdf",
+  "figure_count": 5,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,371 @@
+{
+  "date_folder": "260802",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "title_neutralized_count": 4,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260802/0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+      "title": "波士顿咨询：工业资产关停与价值管理框架",
+      "source_title": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+        "cleaned_source_title": "0001-BCG_Closing-Industrial-Assets-Is-Inevitable.-Losing-Value-Isn-t_29b06fa7",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0001BCGClosingIndustr",
+        "raw_candidates": [
+          "波士顿咨询：工业资产关停与价值管理框架",
+          "波士顿咨询：工业资产关停决策与价值管理框架",
+          "波士顿咨询：工业资产关停的价值管理框架"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：工业资产关停与价值管理框架",
+          "波士顿咨询：工业资产关停决策与价值管理框架",
+          "波士顿咨询：工业资产关停的价值管理框架",
+          "波士顿咨询：0001BCGClosingIndustr"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0001BCGClosingIndustr",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：工业资产关停与价值管理框架",
+        "selection_reason": "faithful_filename_anchor",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "final_title_after_wording_guard": "波士顿咨询：工业资产关停与价值管理框架"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 1,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260802/01-0001-BCG_Closing-Industrial-Assets-Is-Inevitable",
+      "pdf_path": "kc_translated_reports/consulting/260802/01-0001-BCG_Closing-Industrial-Assets-Is-Inevitable/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+      "title": "波士顿咨询：资金结构与相关数据观察",
+      "source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+        "cleaned_source_title": "0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0002BCGHowShippingCom",
+        "raw_candidates": [
+          "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆",
+          "波士顿咨询：0002BCGHowShippingCom",
+          "波士顿咨询：最新分析显示，从2022年到2024年"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0002BCGHowShippingCom",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：最新分析显示，从2022年到2024年",
+            "reasons": [
+              "anchor_coverage=0.00",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：资金结构与相关数据观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：航运公司运营成本管控的十年周期与未来杠杆",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：资金结构与相关数据观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 5,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35",
+      "pdf_path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260802/0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+      "title": "波士顿咨询：AI技术与行业应用观察",
+      "source_title": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+        "cleaned_source_title": "0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+        "institution_name": "波士顿咨询",
+        "required_terms": [
+          "AI"
+        ],
+        "deterministic_fallback": "波士顿咨询：AI0003BCGHowSoutheastAs",
+        "raw_candidates": [
+          "波士顿咨询：东南亚物流聚合AI机会",
+          "波士顿咨询：东南亚物流聚合AI机会-180家调查",
+          "波士顿咨询：东南亚物流聚合AI机会-港口货代末端"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：东南亚物流聚合AI机会",
+          "波士顿咨询：东南亚物流聚合AI机会-180家调查",
+          "波士顿咨询：东南亚物流聚合AI机会-港口货代末端",
+          "波士顿咨询：AI0003BCGHowSoutheastAs",
+          "波士顿咨询：仅13%的物流服务商报告AI带来可测量的财务影响"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：AI0003BCGHowSoutheastAs",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.10",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：仅13%的物流服务商报告AI带来可测量的财务影响",
+            "reasons": [
+              "anchor_coverage=0.20",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：AI技术与行业应用观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [
+            "180"
+          ],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：东南亚物流聚合AI机会-180家调查",
+        "pre_neutralization_selection_reason": "supported_hook",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：AI技术与行业应用观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260802/03-0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203",
+      "pdf_path": "kc_translated_reports/consulting/260802/03-0003-BCG_How-Southeast-Asia-Logistics-Gain-from-Aggregating-AI-Opport_0dd43203/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260802/0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+      "title": "波士顿咨询：研究主题与行业变化观察",
+      "source_title": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+        "cleaned_source_title": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0004BCGThe2019MARepor",
+        "raw_candidates": [
+          "波士顿咨询：2019年并购报告-下行期是交易好时机",
+          "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+          "波士顿咨询：2019年并购报告-5.16万笔交易样本分析"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：2019年并购报告-下行期是交易好时机",
+          "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+          "波士顿咨询：2019年并购报告-5.16万笔交易样本分析",
+          "波士顿咨询：0004BCGThe2019MARepor",
+          "波士顿咨询：2018年全球并购交易总额约3.58万亿美元，同比增长7%"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+            "reasons": [
+              "anchor_coverage=0.53",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：2019年并购报告-5.16万笔交易样本分析",
+            "reasons": [
+              "anchor_coverage=0.53",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：0004BCGThe2019MARepor",
+            "reasons": [
+              "english_heavy_fragment",
+              "anchor_coverage=0.18",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：2018年全球并购交易总额约3.58万亿美元，同比增长7%",
+            "reasons": [
+              "anchor_coverage=0.24",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：研究主题与行业变化观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：2019年并购报告-下行期是交易好时机",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 16,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260802/04-0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+      "pdf_path": "kc_translated_reports/consulting/260802/04-0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+      "title": "波士顿咨询：技术应用与行业运营观察",
+      "source_title": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "wechat_title_decision": {
+        "source_filename": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+        "cleaned_source_title": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+        "institution_name": "波士顿咨询",
+        "required_terms": [],
+        "deterministic_fallback": "波士顿咨询：0005BCGYesterdays增长En",
+        "raw_candidates": [
+          "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+          "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建，2030年市场规模约5.8万亿美元",
+          "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建，覆盖工厂设备至发电设施"
+        ],
+        "cleaned_candidates": [
+          "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+          "波士顿咨询：0005BCGYesterdays增长En",
+          "波士顿咨询：波士顿咨询在分析280家工业技术公司超过3000场业绩电话"
+        ],
+        "faithful_candidate_missing_terms": [],
+        "faithful_candidate_quality_issues": [],
+        "generic_series_source": false,
+        "rejected_candidates": [
+          {
+            "title": "波士顿咨询：0005BCGYesterdays增长En",
+            "reasons": [
+              "long_untranslated_english",
+              "english_heavy_fragment",
+              "anchor_coverage=0.06",
+              "missing_anchor_segment"
+            ]
+          },
+          {
+            "title": "波士顿咨询：波士顿咨询在分析280家工业技术公司超过3000场业绩电话",
+            "reasons": [
+              "anchor_coverage=0.17",
+              "missing_anchor_segment"
+            ]
+          }
+        ],
+        "selected_title": "波士顿咨询：技术应用与行业运营观察",
+        "selection_reason": "deterministic_neutralization",
+        "selected_quality_issues": [],
+        "needs_model_repair": false,
+        "hook_signals": {
+          "added_numbers": [],
+          "added_contrarian_terms": [],
+          "added_big_names": []
+        },
+        "removed_generic_labels": [],
+        "repair_attempted": false,
+        "pre_neutralization_title": "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+        "pre_neutralization_selection_reason": "faithful_filename_anchor",
+        "neutralization_changes": [
+          "neutralized:military_or_defense",
+          "neutralized:evaluative_or_adversarial_wording"
+        ],
+        "final_title_after_wording_guard": "波士顿咨询：技术应用与行业运营观察"
+      },
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 5,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+      "pdf_path": "kc_translated_reports/consulting/260802/05-0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c/kc_translated_report_05.pdf"
+    }
+  ]
+}

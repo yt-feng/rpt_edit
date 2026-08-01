@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/mineru_raw/images/e0b44eb9942df80c5bdd54f624e96c05adba84a986131d1b95e612b5e51db02a.jpg",
+    "path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.10,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/mineru_raw/images/fac5b68e50277c99eddc9786fd888c66fce10bd49028bd97cd06f3089840b676.jpg",
+    "path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=7;chart_context,chart_ratio"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/mineru_raw/images/43ec78292fe13e6fe4330770dce1298e1ada8a6da32fa18cde97d688352d94b0.jpg",
+    "path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.10"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/mineru_raw/images/8feeee6f188ecfa6349895b2b2e54cf916bd5a3d305cc751cfcf7fa27935ca3a.jpg",
+    "path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.28,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260802/0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/mineru_raw/images/9d536ebd22132bcd7e3a86e007e793fd2fcc14ada39922ef596f64487caff2b0.jpg",
+    "path": "kc_translated_reports/consulting/260802/02-0002-BCG_How-Shipping-Companies-Can-Maintain-Their-Focus-on-Opex_d60a9e35/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  }
+]

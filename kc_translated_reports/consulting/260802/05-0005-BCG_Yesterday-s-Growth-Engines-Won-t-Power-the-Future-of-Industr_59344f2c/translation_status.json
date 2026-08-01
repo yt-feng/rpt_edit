@@ -1,0 +1,69 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260802/0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+  "title": "波士顿咨询：技术应用与行业运营观察",
+  "source_title": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+    "cleaned_source_title": "0005-BCG_Yesterday-s-Growth-Engines-Won-t-Power-the-Future-of-Industr_59344f2c",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0005BCGYesterdays增长En",
+    "raw_candidates": [
+      "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+      "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建，2030年市场规模约5.8万亿美元",
+      "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建，覆盖工厂设备至发电设施"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+      "波士顿咨询：0005BCGYesterdays增长En",
+      "波士顿咨询：波士顿咨询在分析280家工业技术公司超过3000场业绩电话"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：0005BCGYesterdays增长En",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.06",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：波士顿咨询在分析280家工业技术公司超过3000场业绩电话",
+        "reasons": [
+          "anchor_coverage=0.17",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：技术应用与行业运营观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：工业技术增长引擎转向防务、数据中心与基建",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:military_or_defense",
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：技术应用与行业运营观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_05.pdf",
+  "figure_count": 5,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}

@@ -1,0 +1,83 @@
+{
+  "source_report_dir": "xhs_notes/consulting/260802/0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+  "title": "波士顿咨询：研究主题与行业变化观察",
+  "source_title": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+    "cleaned_source_title": "0004-BCG_The-2019-M-A-Report-Downturns-Are-a-Better-Time-for-Deal-Hun_ef1e9fa5",
+    "institution_name": "波士顿咨询",
+    "required_terms": [],
+    "deterministic_fallback": "波士顿咨询：0004BCGThe2019MARepor",
+    "raw_candidates": [
+      "波士顿咨询：2019年并购报告-下行期是交易好时机",
+      "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+      "波士顿咨询：2019年并购报告-5.16万笔交易样本分析"
+    ],
+    "cleaned_candidates": [
+      "波士顿咨询：2019年并购报告-下行期是交易好时机",
+      "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+      "波士顿咨询：2019年并购报告-5.16万笔交易样本分析",
+      "波士顿咨询：0004BCGThe2019MARepor",
+      "波士顿咨询：2018年全球并购交易总额约3.58万亿美元，同比增长7%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "波士顿咨询：2019年并购报告-弱周期交易两年回报高9个百分点",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：2019年并购报告-5.16万笔交易样本分析",
+        "reasons": [
+          "anchor_coverage=0.53",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：0004BCGThe2019MARepor",
+        "reasons": [
+          "english_heavy_fragment",
+          "anchor_coverage=0.18",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "波士顿咨询：2018年全球并购交易总额约3.58万亿美元，同比增长7%",
+        "reasons": [
+          "anchor_coverage=0.24",
+          "missing_anchor_segment"
+        ]
+      }
+    ],
+    "selected_title": "波士顿咨询：研究主题与行业变化观察",
+    "selection_reason": "deterministic_neutralization",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "pre_neutralization_title": "波士顿咨询：2019年并购报告-下行期是交易好时机",
+    "pre_neutralization_selection_reason": "faithful_filename_anchor",
+    "neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "final_title_after_wording_guard": "波士顿咨询：研究主题与行业变化观察"
+  },
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_04.pdf",
+  "figure_count": 16,
+  "institution_name": "波士顿咨询",
+  "article_style": true,
+  "stock_language_sanitized": []
+}
