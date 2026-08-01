@@ -1,0 +1,26 @@
+EN_A: So I just read this report about perovskite solar technology, and it seems like it could be the next big thing in solar. What did you make of it?
+EN_B: Yeah, I went through it too. The big takeaway is that perovskite has real potential, but commercial scale-up probably won't happen until around 2028.
+EN_A: 2028, that's still a few years out. What makes it so promising in the first place?
+EN_B: It's a material that absorbs sunlight much more efficiently than the silicon panels we use today. The report gives a quick comparison — perovskite can hit around 30 percent efficiency in the lab, while crystalline silicon is around 25 and cadmium telluride is around 20.
+EN_A: So higher efficiency means more power from the same area?
+EN_B: Exactly. And that directly drives down the cost of electricity. You need less land, fewer panels, less labor. So even if the panel itself costs a bit more, the overall project can still be cheaper.
+EN_A: Sounds great. So why isn't everyone using it already?
+EN_B: That's the catch. Perovskite is chemically fragile. It degrades when exposed to moisture and heat, so performance drops over time. The report uses the term "bankability" — a utility project needs to be financed for 25 or 30 years, but this technology only started commercial shipments in 2024. There just isn't enough field data to prove it can last that long.
+EN_A: So it's a case of "high efficiency, uncertain lifespan"?
+EN_B: Right, that's the core issue. The companies are targeting a 20-year warranty by 2027 or 2028, but the data doesn't exist yet to back that up.
+EN_A: Who are the main players working on this?
+EN_B: The report splits them into two camps. There's the "two-terminal" monolithic tandem approach, where perovskite is deposited directly on top of a silicon cell. Oxford PV, LONGi, and most Chinese companies are going that route. Then there's the "four-terminal" design, where the perovskite layer and the silicon cell are made separately and then stacked together. Tandem PV, a US company, is the main name there.
+EN_A: What's the real difference between those two approaches?
+EN_B: The two-terminal is more integrated, but the two layers are electrically coupled, so manufacturing yield risk is concentrated. The four-terminal approach is more flexible — you can pair the perovskite layer with any silicon cell technology, whether it's TOPCon, HJT, or PERC. You're not locked into one silicon roadmap.
+EN_A: Does the report take a view on any specific companies?
+EN_B: Yes. They're underperform on First Solar, with a price target of 197 dollars. Their logic is that First Solar took a license from Oxford PV in early 2026, and that looks like a defensive move. It suggests their internal perovskite R&D may not have hit the milestones they wanted. If perovskite scales up by 2028, First Solar's cadmium telluride franchise could face a real substitution threat.
+EN_A: So it's like "if you can't beat them, join them"?
+EN_B: Sort of, but it's more like buying insurance. They also cover a company called T1 Energy, rated market-perform with a nine dollar target. They do US-based silicon manufacturing, so not a direct competitor. But the report thinks they could eventually partner with a perovskite developer as the technology matures.
+EN_A: What was the most interesting insight for you?
+EN_B: I think the section on constrained sites. Places where land is limited or grid interconnection is scarce — there, higher efficiency panels are extremely valuable. You can charge a premium and still be cheaper overall because you're generating more power per acre. Data center rooftops are another example. Those high-value applications might adopt perovskite well before it reaches cost parity with silicon.
+EN_A: Are there questions the report doesn't fully answer?
+EN_B: Definitely. One is the lead toxicity issue. The high-efficiency recipes all use lead, and if panels crack or aren't sealed properly, lead can leach out. The report mentions lead-free alternatives like tin or bismuth, but says they're far behind on efficiency and stability. It doesn't fully address how big that risk really is.
+EN_A: That sounds like something worth digging into.
+EN_B: Another one is manufacturing yield. The report suggests the reason mass production keeps getting delayed might not be chemistry, but uniformity — making a consistent high-quality film over large areas is really hard. But they don't give a clear view on when that problem gets solved.
+EN_A: So there's definitely more to explore in the full report. Thanks for walking me through it.
+EN_B: Anytime. We'll pick it up again soon.

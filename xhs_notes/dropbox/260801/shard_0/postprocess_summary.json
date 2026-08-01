@@ -1,0 +1,522 @@
+[
+  {
+    "item": "0001-01-Bernstein-Apple-Inc-AAPL.US-AAPL-FQ3-26--Memflation-takes-a-bite-out-of-",
+    "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0001-01-Bernstein-Apple Inc-AAPL.US-AAPL FQ3-26- Memflation takes a bite out of the Apple-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "苹果的好日子，被存储",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x2",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-01-Bernstein-Apple Inc-AAPL.US-AAPL FQ3-26- Memflation takes a bite out of the Apple-260731.pdf",
+      "cleaned_source_title": "Bernstein-Apple Inc-AAPL.US-AAPL FQ3-26- Memflation takes a bite out of the Apple",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：AppleIncAAPLFQ326",
+      "raw_candidates": [
+        "苹果公司内存成本上升与份额增长并行",
+        "苹果公司6月财季营收1094亿美元与内存成本上升",
+        "苹果公司内存成本上升与iPhone和Mac份额增长"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：苹果公司内存成本上升与份额增长并行",
+        "Bernstein：苹果公司6月财季营收1094亿美元与内存成本上升",
+        "Bernstein：苹果公司内存成本上升与iPhone和Mac份额增长",
+        "Bernstein：AppleIncAAPLFQ326",
+        "Bernstein：营收1094亿美元，同比增长16.4%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：苹果公司6月财季营收1094亿美元与内存成本上升",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "Bernstein：AppleIncAAPLFQ326",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：营收1094亿美元，同比增长16.4%",
+          "reasons": [
+            "anchor_coverage=0.06",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：苹果公司内存成本上升与份额增长并行",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-02-Bernstein-Asian-Industrial-Tech--The-Barometer--June-July-2026--260731",
+    "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0002-02-Bernstein-Asian Industrial Tech- The Barometer -June July 2026--260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "中国工业自动化，正在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-02-Bernstein-Asian Industrial Tech- The Barometer -June July 2026--260731.pdf",
+      "cleaned_source_title": "Bernstein-Asian Industrial Tech- The Barometer -June July 2026",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：AsianIndustrialTech",
+      "raw_candidates": [
+        "亚洲工业技术景气度6至7月延续扩张",
+        "亚洲工业技术景气度6至7月延续扩张：中国高技术制造PMI 53.3",
+        "亚洲工业技术景气度6至7月延续扩张：日本机床订单增长52.7%"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：亚洲工业技术景气度6至7月延续扩张",
+        "Bernstein：AsianIndustrialTech",
+        "Bernstein：亚洲工业技术景气度在6至7月延续扩张"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：AsianIndustrialTech",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：亚洲工业技术景气度6至7月延续扩张",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-03-Bernstein-Americas-Energy---Transition-Americas-Power-and-Energy-Transit",
+    "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0003-03-Bernstein-Americas Energy - Transition-Americas Power and Energy Transition- Crystal Clear-Perovskite-Next Solar Promise--260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "钙钛矿，下一代光伏的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：美洲能源转型-钙钛矿太阳能前景",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-03-Bernstein-Americas Energy - Transition-Americas Power and Energy Transition- Crystal Clear-Perovskite-Next Solar Promise--260731.pdf",
+      "cleaned_source_title": "Bernstein-Americas Energy - Transition-Americas Power and Energy Transition- Crystal Clear-Perovskite-Next Solar Promise",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：Americas能源TransitionAm",
+      "raw_candidates": [
+        "Bernstein：美洲能源转型-钙钛矿太阳能前景",
+        "Bernstein：钙钛矿商业化窗口指向2028年",
+        "Bernstein：钙钛矿叠层技术路线与量产时间表"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：美洲能源转型-钙钛矿太阳能前景",
+        "Bernstein：钙钛矿商业化窗口指向2028年",
+        "Bernstein：钙钛矿叠层技术路线与量产时间表",
+        "Bernstein：Americas能源TransitionAm",
+        "Bernstein：晶硅约25%、碲化镉约20%、钙钛矿约30%——这是报告给出"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：钙钛矿商业化窗口指向2028年",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：钙钛矿叠层技术路线与量产时间表",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Americas能源TransitionAm",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.08",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：晶硅约25%、碲化镉约20%、钙钛矿约30%——这是报告给出",
+          "reasons": [
+            "anchor_coverage=0.15",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：美洲能源转型-钙钛矿太阳能前景",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：美洲能源转型-钙钛矿太阳能前景"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-04-Bernstein-Konami-Group-Corporation-9766.JP-Konami-Q1-Football-won-eFootb",
+    "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0004-04-Bernstein-Konami Group Corporation-9766.JP-Konami Q1-Football won-eFootball won too-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "世界杯带飞了科乐美的",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "买入->观点偏积极 x1",
+      "卖出->观点偏谨慎 x1",
+      "投资者->读者 x1",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "股价->报价 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "Bernstein：研究主题与行业变化观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-04-Bernstein-Konami Group Corporation-9766.JP-Konami Q1-Football won-eFootball won too-260731.pdf",
+      "cleaned_source_title": "Bernstein-Konami Group Corporation-9766.JP-Konami Q1-Football won-eFootball won too",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：KonamiGroupCorporationKonamiQ1",
+      "raw_candidates": [
+        "科乐美第一财季：eFootball收入增长78%",
+        "科乐美第一财季：eFootball收入增长78%，营业利润453亿日元",
+        "科乐美第一财季：世界杯周期带动eFootball收入增长78%"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：科乐美第一财季，eFootball收入增长78%",
+        "Bernstein：科乐美第一财季",
+        "Bernstein：KonamiGroupCorporationKonamiQ1",
+        "Bernstein：Bernstein在7月31日发布的更新报告中给出判断"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：科乐美第一财季",
+          "reasons": [
+            "body_too_short",
+            "anchor_coverage=0.29",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：KonamiGroupCorporationKonamiQ1",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Bernstein在7月31日发布的更新报告中给出判断",
+          "reasons": [
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：研究主题与行业变化观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "Bernstein：科乐美第一财季，eFootball收入增长78%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "Bernstein：研究主题与行业变化观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-05-Bernstein-Global-Retail-Japan-x-European-Retail--Inditex-vs.-Fast-Retail",
+    "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0005-05-Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "Zara和优衣库，谁",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "Bernstein：Inditex与优衣库的服装零售路径对比",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-05-Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara-260731.pdf",
+      "cleaned_source_title": "Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara",
+      "institution_name": "Bernstein",
+      "required_terms": [],
+      "deterministic_fallback": "Bernstein：全球Retail日本xEuropeanRetail",
+      "raw_candidates": [
+        "Bernstein：Inditex与优衣库的服装零售路径对比",
+        "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+        "Bernstein：Inditex与优衣库的SKU策略与增长路径"
+      ],
+      "cleaned_candidates": [
+        "Bernstein：Inditex与优衣库的服装零售路径对比",
+        "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+        "Bernstein：Inditex与优衣库的SKU策略与增长路径",
+        "Bernstein：全球Retail日本xEuropeanRetail",
+        "Bernstein：Inditex的毛利率为58%，EBIT利润率20%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "Bernstein：Inditex与优衣库的SKU策略与增长路径",
+          "reasons": [
+            "anchor_coverage=0.63"
+          ]
+        },
+        {
+          "title": "Bernstein：全球Retail日本xEuropeanRetail",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "Bernstein：Inditex的毛利率为58%，EBIT利润率20%",
+          "reasons": [
+            "anchor_coverage=0.32"
+          ]
+        }
+      ],
+      "selected_title": "Bernstein：Inditex与优衣库的服装零售路径对比",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "Bernstein：Inditex与优衣库的服装零售路径对比"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

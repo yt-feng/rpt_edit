@@ -1,0 +1,103 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_urapo3j6/pdfs/0005-05-Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara-260731.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Bernstein",
+  "cover_short_title": "Zara和优衣库，谁",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Bernstein：Inditex与优衣库的服装零售路径对比",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "wechat_title_decision": {
+    "source_filename": "0005-05-Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara-260731.pdf",
+    "cleaned_source_title": "Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara",
+    "institution_name": "Bernstein",
+    "required_terms": [],
+    "deterministic_fallback": "Bernstein：全球Retail日本xEuropeanRetail",
+    "raw_candidates": [
+      "Bernstein：Inditex与优衣库的服装零售路径对比",
+      "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+      "Bernstein：Inditex与优衣库的SKU策略与增长路径"
+    ],
+    "cleaned_candidates": [
+      "Bernstein：Inditex与优衣库的服装零售路径对比",
+      "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+      "Bernstein：Inditex与优衣库的SKU策略与增长路径",
+      "Bernstein：全球Retail日本xEuropeanRetail",
+      "Bernstein：Inditex的毛利率为58%，EBIT利润率20%"
+    ],
+    "faithful_candidate_missing_terms": [],
+    "faithful_candidate_quality_issues": [],
+    "generic_series_source": false,
+    "rejected_candidates": [
+      {
+        "title": "Bernstein：Inditex与优衣库的毛利率与ROIC对比",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      },
+      {
+        "title": "Bernstein：Inditex与优衣库的SKU策略与增长路径",
+        "reasons": [
+          "anchor_coverage=0.63"
+        ]
+      },
+      {
+        "title": "Bernstein：全球Retail日本xEuropeanRetail",
+        "reasons": [
+          "long_untranslated_english",
+          "english_heavy_fragment",
+          "anchor_coverage=0.00",
+          "missing_anchor_segment"
+        ]
+      },
+      {
+        "title": "Bernstein：Inditex的毛利率为58%，EBIT利润率20%",
+        "reasons": [
+          "anchor_coverage=0.32"
+        ]
+      }
+    ],
+    "selected_title": "Bernstein：Inditex与优衣库的服装零售路径对比",
+    "selection_reason": "faithful_filename_anchor",
+    "selected_quality_issues": [],
+    "needs_model_repair": false,
+    "hook_signals": {
+      "added_numbers": [],
+      "added_contrarian_terms": [],
+      "added_big_names": []
+    },
+    "removed_generic_labels": [],
+    "repair_attempted": false,
+    "final_title_after_wording_guard": "Bernstein：Inditex与优衣库的服装零售路径对比"
+  },
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "747",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

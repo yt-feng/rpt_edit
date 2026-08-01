@@ -1,0 +1,91 @@
+Found 50 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_urapo3j6/pdfs/0001-01-Bernstein-Apple Inc-AAPL.US-AAPL FQ3-26- Memflation takes a bite out of the Apple-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_urapo3j6/pdfs/0002-02-Bernstein-Asian Industrial Tech- The Barometer -June July 2026--260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_urapo3j6/pdfs/0003-03-Bernstein-Americas Energy - Transition-Americas Power and Energy Transition- Crystal Clear-Perovskite-Next Solar Promise--260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_urapo3j6/pdfs/0004-04-Bernstein-Konami Group Corporation-9766.JP-Konami Q1-Football won-eFootball won too-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_urapo3j6/pdfs/0005-05-Bernstein-Global Retail-Japan x European Retail- Inditex vs. Fast Retailing-The Devil Wears Uniqlo and Zara-260731.pdf
+MinerU attempt 1 using MINER_U batch_id=beaedaa8-66c9-4878-ae4f-81cfae9fc268
+MinerU states: running, running, running, running, pending
+MinerU states: running, running, done, running, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset ea8f6321e46411d73f366ee6f1556ab7354f25b76d582b851bb02a697c2a74cf.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset 51781d6eb56d5a19d020debb7e16eb99a0e4f179536f6dfdc1cf2692145feb4b.jpg: score=-100;too_small:462x131
+Skip non-chart visual asset 0d4471f2091ea5575965d2e264031231ca52eea9e5bde067a7ff71b78dec14ec.jpg: score=-100;too_small:398x251
+Skip non-chart visual asset 3921a0b555b3fac9570ac419ec3fd9eb1754b4036ad0bde0eacf718740d84b6d.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset e22e8b5936e226711479071d3828b76488ce0f3499a406977416abd55010714e.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.38,contrast,large
+Skip non-chart visual asset 5cc1e7ccd2fba8c797f537150316292e8b6731c605b7d635c6b9aea5f4b997ec.jpg: score=-100;too_small:462x117
+Skip non-chart visual asset 5722df7829294c04b5e6c50a074ba452d10eb85b9914a51ad7dcf034e10f91f8.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 1b772808b464fd5ac09d7d52194ae6394cdc8d6d46a16d2292fd53615fc601c9.jpg: score=1;odd_ratio:4.91,edge:0.21,contrast,large
+Skip non-chart visual asset 4431223b16b6d5d4767d57f81148a70002a73f8dacba5f6bda5e619aaf4efa8d.jpg: score=-100;too_small:401x201
+Skip non-chart visual asset 0a43bc9feadb36253f20faf1f4ddde4992c33f4a9ef19819ffaccd798ed91b31.jpg: score=-1;odd_ratio:6.62,edge:0.14
+Neutralized WeChat title while keeping the report: 伯恩斯坦：苹果公司内存成本上升与份额增长并行 -> 伯恩斯坦：研究主题与行业变化观察
+Skip non-chart visual asset de81513032f7bceb1b060a72d3162e55f2cd3d275ca028d16fb5fc85509e0865.jpg: score=-1;square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 08fcb0b07a3c45ddfb820e6a602d2690d901434378557c26bd63b24bf7d21326.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.29
+Skip non-chart visual asset ea5c564c1cd756dbda2788ffa0f959978d01fbfdd7943a6692e13992907ad639.jpg: score=1;square_without_chart_hint,edge:0.34,contrast,large
+Skip non-chart visual asset f0458f4e6a6592aefddd7068f414eeade2209490c41c14ec0357c1bcc4bb4fbd.jpg: score=-100;too_small:93x92
+Skip non-chart visual asset c0de960ff49a7c2ae00855d205710885544ca9a77a6646f8bce15f5082c1f67a.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.31,contrast,large
+Skip non-chart visual asset ca9514c04dc328648a273e96e714a6ae9222aa8147b86cab15f4f8a37a636743.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.20
+Skip non-chart visual asset a02d17cfcac914e242ad081e2d1940633d626a5532468b0678ddca56a758e387.jpg: score=-100;too_small:96x93
+Skip non-chart visual asset d75da970d3286be66de467fca85c1a077efc26201d727f517f069385aa0d6b92.jpg: score=-100;too_small:1193x68
+Skip non-chart visual asset 0101bf4eb4d6e6cb34f9b2a8432c8de3bdcfda890baf1117b2a16bf2363fb1c8.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
+Skip non-chart visual asset 4b78470c4b77bcfa106d3089c75db1af4710ae8c8115cc81fd7bbb0c80de128d.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.23
+Skip non-chart visual asset 638a319645eead486d5f19fa3eec70db9dd6339ea7a6ce300e95b3a8cf77540b.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.37,contrast,large
+Skip non-chart visual asset 042a19261a1d09b419d49e262a0d44597e50c25b5d26e38ec684abec4df5dcde.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 6c4ca9c1d03d3268d413281eb190d9a829b919840878cabf8a9fef9d9ca38780.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 82b6e93fa5fd74669eca44c40344894053e2ff9552ca492600edca414d745aeb.jpg: score=1;odd_ratio:4.97,edge:0.24,contrast,large
+Skip non-chart visual asset 2bb2e96cf2c21e1c8848b9c769d2f5ccb944e80df9abc82e2975f86a1181d3b0.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.24
+Skip non-chart visual asset ccc3484d900987b6e7c066af88eb0dfb1bacccb3666d1de25b6ab33292e94f1c.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.25
+Skip non-chart visual asset 92606d5ecc4e39520e0a5517f92276e7e585d7b19a765f6361e1dbe603a5620a.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
+Skip non-chart visual asset 0c1de8aff0ec4718f21f32abb7888fd7c0ded22f881044f0e471b87add71b898.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,large
+Skip non-chart visual asset d39904da9495a5800fcab9e37aa5194cef0c52428c3ba78ff2af03ca8ab5e5df.jpg: score=-100;too_small:90x93
+Neutralized WeChat title while keeping the report: 伯恩斯坦：亚洲工业技术景气度6至7月延续扩张 -> 伯恩斯坦：研究主题与行业变化观察
+Skip non-chart visual asset dfa913f5dd3d8724f48a05cdf03dad56cc943260dece1003dbb259b7a055d2f3.jpg: score=-1;square_without_chart_hint,edge:0.16
+Skip non-chart visual asset 21c3ee9cb9158f6850f6ff273303422639d2091276f8dbe027c164018b551db0.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset b7e8762219e5e8226a172572414639ea67a4e2961df9fdc688aec763bd92964e.jpg: score=1;odd_ratio:4.99,edge:0.25,contrast,large
+Skip non-chart visual asset 7945207eaa36aa1eb88b033e776b3bb9177d729f93a306152aefc8e3d4cb8eac.jpg: score=-100;too_small:96x96
+Skip non-chart visual asset bb1d6b0714eb8348d28a59591d0509cce3d682dfd050cf9dabcc9333a456fa37.jpg: score=-1;odd_ratio:6.72,edge:0.17
+Skip non-chart visual asset 54ec762e89d95a1fedfb42ab086100510adce9fab0a1e893570437bd80b660fd.jpg: score=-100;too_small:93x95
+Skip non-chart visual asset 9b86fab25675aa9d32b8a355ec73e8dbe4e102370437603c21ecd688e06f64c1.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.13
+Skip non-chart visual asset b93bfd82e3c00f160755977b50d7d6127b781626fbd7e69e356470723f3670cf.jpg: score=-100;too_small:90x95
+Skip non-chart visual asset 11ccdaa3ad155e55e8ac07a5ac8b6dd5c66bb7fbce60b4876f833128f767d805.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.45,contrast
+Skip non-chart visual asset b996e8b9162c1e759e53c458ce1e7cafd8f0645cf01fac36047484d0f20fcc91.jpg: score=-100;too_small:462x117
+Skip non-chart visual asset a9500cf40c2e11fb7c93319d55612fe503628e98fe228a504158f0a0870620a5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.38,contrast
+Skip non-chart visual asset f59d511fa858032aed441373b8226c5b41258bfa0540a91b1fa4cc30aab633ab.jpg: score=-100;too_small:96x92
+Skip non-chart visual asset 12146bd4390a303ecf146efa7e1159c4f85f2c6384dce117d471bcb8b2ac0759.jpg: score=0;square_without_chart_hint,edge:0.45,contrast
+Skip non-chart visual asset 01c761fb77c0fb3945047a70a259e9016a80a53e6847d364ddf4651527beb327.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.40,contrast
+Skip non-chart visual asset 8b4e598d1d27111260c4057d4deaa3c51a1904cc3a45fbb726f17cc76ea23911.jpg: score=1;square_without_chart_hint,edge:0.51,contrast,large
+Skip non-chart visual asset f41ec9d17f4ca52a74ef347e08dd86c20d87a1fe0a0f268739f1cc0b141b63e5.jpg: score=-100;too_small:462x131
+Skip non-chart visual asset e6bdd5b035022d2b5ed4ac7827282114242f304ceb6efc5893b447790e5a3a09.jpg: score=-100;too_small:93x93
+Skip non-chart visual asset 6e6079b78d3f5820edfdebf5f7d239d298a34526af6987663b5f22cee937d1b4.jpg: score=0;odd_ratio:5.12,edge:0.27,contrast
+Skip non-chart visual asset c55b6902525fd2511a186e30f586d79b67d7fb822763918b04a93589d52ac9e9.jpg: score=-100;too_small:401x159
+Skip non-chart visual asset 3df6b773a781b9bb72544481cb1904bd948d64108f9b28ee0c9a794957e3abac.jpg: score=-1;odd_ratio:6.62,edge:0.15
+Skip non-chart visual asset 474ddd9c360a241651546e1568686a75166f6b029baa6a95f77717fc16691cfd.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.46,contrast
+Skip non-chart visual asset 140535629b25b0790025cc6e50827c5776bc132b270ad4dabef7da4d42f739bc.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.46,contrast
+Skip non-chart visual asset 4ebac30b692f4c1104d80198f58a0bbe94ba48163ba1ee3543981cef3625025a.jpg: score=1;odd_ratio:4.93,edge:0.22,contrast,large
+Skip non-chart visual asset 8f8dee40843280e60e2586f656269d0022724c201c0ed0dc0ba0f77504dcc147.jpg: score=-100;too_small:90x87
+Neutralized WeChat title while keeping the report: 伯恩斯坦：科乐美第一财季，eFootball收入增长78% -> 伯恩斯坦：研究主题与行业变化观察
+Skip non-chart visual asset ba125d9292156354a823a3e85e7981f63b48a330e9038237c66136bbf4422284.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.20,contrast,large
+Skip non-chart visual asset ca9af8d5d5ef681012557f64d22a5e1402d37a94852de08c7e6c5aabf37d91b4.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 12a3ba3a40a392add9f2a438a067693e46e5706d149fd31ecca103c82a6cd809.jpg: score=-100;too_small:96x90
+Skip non-chart visual asset 5229c7e2459f4f60c5c67e7744e7735c681d59cf0a11463ff77317158822ee05.jpg: score=-100;too_small:96x95
+Skip non-chart visual asset 278260c74eb8b3f5e294b4f3eea4618f5410fa34a9fa4410401ff66eb2feae35.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,contrast
+Skip non-chart visual asset 9dc25f88af970ab5ed29883b4fa5d4f92689066658c0ce8782ce67e0d487443f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset a467281b867c535a7c51e297630fd610b39c980d5135add8885a8e7cc813dd7d.jpg: score=-100;too_small:96x89
+Skip non-chart visual asset 72d68d444e0a9c05c19b1d4951b6f390d469d296fba4e31346cfe6626b30dc7d.jpg: score=-100;too_small:96x90
+Skip non-chart visual asset 094e2d2ccf51973642fee84c547e737d25b4aa1d666d5287eb91172a2ee3cceb.jpg: score=-100;too_small:93x93
+Skip non-chart visual asset 42df974f9bcfcf8532bfc8d051841815b4c2b07383174fe83005035a2bf44bfd.jpg: score=1;odd_ratio:4.99,edge:0.21,contrast,large
+Skip non-chart visual asset e5f8f42765b1970dffc188964d6dafd048d2374b460ac84587911d613c6313fb.jpg: score=-1;odd_ratio:5.76,edge:0.16
+Skip non-chart visual asset e5d988c5496c6e6760ecbcb3eca08ff6ac2f07b79787170003fdbd190452d030.jpg: score=0;odd_ratio:4.88,edge:0.29,contrast
+Skip non-chart visual asset 6e060bdcd816e035d166bade035579f7bd8bdcd49254f02a1f893f233ed1b5a9.jpg: score=-100;too_small:93x92
+Skip non-chart visual asset ee844ba4c97383ba588756a9280b7dc90fb4104eba81c65cd47d158be85a50bb.jpg: score=-100;too_small:96x98
+Skip non-chart visual asset 741ef3ccf6373fd89fbcfa36ff6e227aebb0405c9285f4be46871503c24052c3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,contrast
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
