@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-GS-MARUWA （5344.T）： Results briefing： Prospects for upside to new guidance for AI semiconductor applications； Buy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0001-21-GS-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy-260731.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-Reddit Inc. （RDDT.US） Q2’26 Review： Operating Momentum （Revenue and Margins） Sustain； Investments & Mgmt Focused on User Growth and Engagement-26073.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0002-22-GS-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-GS-Panasonic HD （6752.T）： Group CFO operating company CEO meetings： Forming structure to win with competitive generative AI products； Buy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0003-23-GS-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy-260731.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-Meitu （1357.HK）： New AI products features to drive ARR growth； 1H26 productivity leisure tools rev +40% 32% YoY； Buy-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0004-24-GS-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy-260731.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-JPM-Apple Supply Chain：Implications： Resilient iPhone and Mac demand， but continued rising memory cost likely weighing on supply chain-260731.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0005-25-JPM-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain-260731.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

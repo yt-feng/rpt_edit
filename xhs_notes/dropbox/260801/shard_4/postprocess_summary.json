@@ -1,0 +1,526 @@
+[
+  {
+    "item": "0001-21-Goldman-Sachs-MARUWA--5344.T---Results-briefing--Prospects-for-upside-to",
+    "source_pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0001-21-GS-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "AI应用指引大幅上调",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "投资->研究 x1",
+      "股价->报价 x1",
+      "风险->不确定性 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：MARUWA与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0001-21-GS-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy-260731.pdf",
+      "cleaned_source_title": "GS-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIMARUWAResultsbriefingPro",
+      "raw_candidates": [
+        "MARUWA业绩说明会：AI应用销售指引上调至增长110%",
+        "MARUWA上调AI应用指引至增长110%，CPO产品四季度导入",
+        "MARUWA上调AI应用指引至110%，半导体应用上调至20%"
+      ],
+      "cleaned_candidates": [
+        "GS：MARUWA业绩说明会，AI应用销售指引上调至增长110%",
+        "GS：MARUWA上调AI应用指引至增长110%，CPO产品四季度导入",
+        "GS：MARUWA上调AI应用指引至110%，半导体应用上调至20%",
+        "GS：AIMARUWAResultsbriefingPro",
+        "GS：1.AI应用指引上调至110%，CPO产品四季度开始导入"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：MARUWA上调AI应用指引至增长110%，CPO产品四季度导入",
+          "reasons": [
+            "anchor_coverage=0.58"
+          ]
+        },
+        {
+          "title": "GS：MARUWA上调AI应用指引至110%，半导体应用上调至20%",
+          "reasons": [
+            "anchor_coverage=0.50"
+          ]
+        },
+        {
+          "title": "GS：AIMARUWAResultsbriefingPro",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.23",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：1.AI应用指引上调至110%，CPO产品四季度开始导入",
+          "reasons": [
+            "anchor_coverage=0.35",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：MARUWA与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：MARUWA业绩说明会，AI应用销售指引上调至增长110%",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：MARUWA与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-22-Goldman-Sachs-Reddit-Inc.--RDDT.US--Q2-26-Review--Operating-Momentum--Re",
+    "source_pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0002-22-GS-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "Reddit 这份财",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "推荐->提到 x1",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "投资者->读者 x1",
+      "sanitize_wechat_stock_line",
+      "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：Reddit二季度业绩回顾-运营动能与收入利润率持续",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0002-22-GS-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073.pdf",
+      "cleaned_source_title": "GS-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073",
+      "institution_name": "GS",
+      "required_terms": [],
+      "deterministic_fallback": "GS：RedditInc.",
+      "raw_candidates": [
+        "GS：Reddit二季度业绩回顾-运营动能与收入利润率持续",
+        "GS：Reddit二季度收入8.05亿美元-利润率42.6%回顾",
+        "GS：Reddit二季度回顾-广告收入与用户增长投入方向"
+      ],
+      "cleaned_candidates": [
+        "GS：Reddit二季度业绩回顾-运营动能与收入利润率持续",
+        "GS：Reddit二季度收入8.05亿美元-利润率42.6%回顾",
+        "GS：Reddit二季度回顾-广告收入与用户增长投入方向",
+        "GS：RedditInc.",
+        "GS：二季度总收入8.05亿美元，同比增长61%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：Reddit二季度收入8.05亿美元-利润率42.6%回顾",
+          "reasons": [
+            "anchor_coverage=0.50",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：Reddit二季度回顾-广告收入与用户增长投入方向",
+          "reasons": [
+            "anchor_coverage=0.42",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：RedditInc.",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：二季度总收入8.05亿美元，同比增长61%",
+          "reasons": [
+            "anchor_coverage=0.12",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：Reddit二季度业绩回顾-运营动能与收入利润率持续",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：Reddit二季度业绩回顾-运营动能与收入利润率持续"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-23-Goldman-Sachs-Panasonic-HD--6752.T---Group-CFO-operating-company-CEO-mee",
+    "source_pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0003-23-GS-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "松下终于想通了：用A",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "投资->研究 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "投资->研究 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：松下控股与运营公司CEO会议-生成式AI产品竞争结构",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0003-23-GS-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy-260731.pdf",
+      "cleaned_source_title": "GS-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：AIPanasonicHDGroupCFOopera",
+      "raw_candidates": [
+        "GS：松下控股与运营公司CEO会议-生成式AI产品竞争结构",
+        "GS：松下控股生成式AI产品竞争结构-FY3/27 EBITDA贡献约20%",
+        "GS：松下控股生成式AI产品竞争结构-MEGTRON与电池备份单元"
+      ],
+      "cleaned_candidates": [
+        "GS：松下控股与运营公司CEO会议-生成式AI产品竞争结构",
+        "GS：27EBITDA贡献约20%",
+        "GS：松下控股生成式AI产品竞争结构-MEGTRON与电池备份单元",
+        "GS：AIPanasonicHDGroupCFOopera",
+        "GS：27，生成式AI相关产品对EBITDA的贡献可能升至约20%"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：27EBITDA贡献约20%",
+          "reasons": [
+            "missing_required_terms=AI",
+            "anchor_coverage=0.00",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：松下控股生成式AI产品竞争结构-MEGTRON与电池备份单元",
+          "reasons": [
+            "anchor_coverage=0.54",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：AIPanasonicHDGroupCFOopera",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：27，生成式AI相关产品对EBITDA的贡献可能升至约20%",
+          "reasons": [
+            "anchor_coverage=0.21",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：松下控股与运营公司CEO会议-生成式AI产品竞争结构",
+      "selection_reason": "faithful_filename_anchor",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "final_title_after_wording_guard": "GS：松下控股与运营公司CEO会议-生成式AI产品竞争结构"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-24-Goldman-Sachs-Meitu--1357.HK---New-AI-products-features-to-drive-ARR-gro",
+    "source_pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0004-24-GS-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美图AI新招：付费用",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "恶化->出现变化 x1",
+      "sanitize_wechat_stock_line",
+      "风险->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "GS：美图AI与AI及近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0004-24-GS-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy-260731.pdf",
+      "cleaned_source_title": "GS-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy",
+      "institution_name": "GS",
+      "required_terms": [
+        "AI"
+      ],
+      "deterministic_fallback": "GS：MeituNewAIproductsfeatur",
+      "raw_candidates": [
+        "GS：美图AI产品带动订阅增长，ARR保持48%同比增速",
+        "GS：美图AI产品带动订阅增长，ARR同比增48%至6.2亿元",
+        "GS：美图AI生产力工具ARR增48%，影像设计收入增31%"
+      ],
+      "cleaned_candidates": [
+        "GS：美图AI产品带动订阅增长，ARR保持48%同比增速",
+        "GS：美图AI产品带动订阅增长，ARR同比增48%至6.2亿元",
+        "GS：美图AI生产力工具ARR增48%，影像设计收入增31%",
+        "GS：MeituNewAIproductsfeatur"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "GS：美图AI生产力工具ARR增48%，影像设计收入增31%",
+          "reasons": [
+            "anchor_coverage=0.27",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "GS：MeituNewAIproductsfeatur",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.05",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "GS：美图AI与AI及近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "GS：美图AI产品带动订阅增长，ARR保持48%同比增速",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "GS：美图AI与AI及近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-25-J.P.-Morgan-Apple-Supply-Chain-Implications--Resilient-iPhone-and-Mac-de",
+    "source_pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0005-25-JPM-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain-260731.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "苹果这季度，需求扛住",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x2",
+      "sanitize_wechat_stock_line",
+      "压力->不确定性 x1",
+      "sanitize_wechat_stock_line",
+      "下行|放缓->节奏变化 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title_neutralization_changes": [
+      "neutralized:evaluative_or_adversarial_wording"
+    ],
+    "wechat_title": "JPM：苹果业务与近期数据观察",
+    "wechat_title_source": "source_filename_weighted_finetune",
+    "wechat_title_decision": {
+      "source_filename": "0005-25-JPM-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain-260731.pdf",
+      "cleaned_source_title": "JPM-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain",
+      "institution_name": "JPM",
+      "required_terms": [],
+      "deterministic_fallback": "JPM：Apple供应链Implications",
+      "raw_candidates": [
+        "苹果供应链：iPhone与Mac需求坚挺，内存成本上升",
+        "苹果供应链：六月季度营收1094亿美元，内存涨价影响成本"
+      ],
+      "cleaned_candidates": [
+        "JPM：苹果供应链，iPhone与Mac需求坚挺，内存成本上升",
+        "JPM：苹果供应链，六月季度营收1094亿美元，内存涨价影响成本",
+        "JPM：Apple供应链Implications",
+        "JPM：苹果六月季度财报交出营收1094亿美元、同比增长16%的成绩"
+      ],
+      "faithful_candidate_missing_terms": [],
+      "faithful_candidate_quality_issues": [],
+      "generic_series_source": false,
+      "rejected_candidates": [
+        {
+          "title": "JPM：苹果供应链，六月季度营收1094亿美元，内存涨价影响成本",
+          "reasons": [
+            "anchor_coverage=0.25",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：Apple供应链Implications",
+          "reasons": [
+            "long_untranslated_english",
+            "english_heavy_fragment",
+            "anchor_coverage=0.17",
+            "missing_anchor_segment"
+          ]
+        },
+        {
+          "title": "JPM：苹果六月季度财报交出营收1094亿美元、同比增长16%的成绩",
+          "reasons": [
+            "anchor_coverage=0.04",
+            "missing_anchor_segment"
+          ]
+        }
+      ],
+      "selected_title": "JPM：苹果业务与近期数据观察",
+      "selection_reason": "deterministic_neutralization",
+      "selected_quality_issues": [],
+      "needs_model_repair": false,
+      "hook_signals": {
+        "added_numbers": [],
+        "added_contrarian_terms": [],
+        "added_big_names": []
+      },
+      "removed_generic_labels": [],
+      "repair_attempted": false,
+      "pre_neutralization_title": "JPM：苹果供应链，iPhone与Mac需求坚挺，内存成本上升",
+      "pre_neutralization_selection_reason": "faithful_filename_anchor",
+      "neutralization_changes": [
+        "neutralized:evaluative_or_adversarial_wording"
+      ],
+      "final_title_after_wording_guard": "JPM：苹果业务与近期数据观察"
+    },
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

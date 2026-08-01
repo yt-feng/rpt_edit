@@ -1,0 +1,38 @@
+Found 50 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=4.
+MinerU attempt 1/4 using MINER_U: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qacoj5d7/pdfs/0001-21-Goldman Sachs-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qacoj5d7/pdfs/0002-22-Goldman Sachs-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qacoj5d7/pdfs/0003-23-Goldman Sachs-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qacoj5d7/pdfs/0004-24-Goldman Sachs-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy-260731.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qacoj5d7/pdfs/0005-25-J.P. Morgan-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain-260731.pdf
+MinerU attempt 1 using MINER_U batch_id=a4013837-69c5-4616-90fb-273f0c3910ef
+MinerU states: done, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:307: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset a493d0d639d50d945038f553fcaeda6eed07f7198c472c616c908292b67d98b5.jpg: score=-100;too_small:1159x110
+Skip non-chart visual asset da8165c4553d7659e3e81c91c3039c847c108d8ecbc720b74221796f596b7cf3.jpg: score=2;edge:0.33
+Neutralized WeChat title while keeping the report: 高盛：MARUWA业绩说明会，AI应用销售指引上调至增长110% -> 高盛：MARUWA与AI及近期数据观察
+Skip non-chart visual asset f76a96f5e35523ff5cbd59c0b27604680ea7b8bf65de4873deabee2748375192.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 9d281d41919c9d98ec01394126364e7adf74d09befe192a4cf1f6e679cda809d.jpg: score=0;square_without_chart_hint,edge:0.30,large
+Skip non-chart visual asset 3a6b18e77a8cc1fa29ca056b8489c7f468dff587e92edf9e2694731e3734663a.jpg: score=0;odd_ratio:4.84,edge:0.32,large
+Skip non-chart visual asset dd8e455895968fd6456c2efeb3b0f99ab9025d70a452582b535a4adf298e27c5.jpg: score=-1;square_without_chart_hint,edge:0.29
+Skip non-chart visual asset e87c87fcef3261d5ea28b1a604b32b68600bba78b28b863d282c806120aa9714.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.40,contrast,large
+Skip non-chart visual asset e7d92fc84e4a67f4c3b62cc9f8c8d740bb1b406357af5d7237f1cdcee660e1a5.jpg: score=-100;too_small:481x106
+Skip non-chart visual asset c5e865d9c501d587ee426769df52be9c6e69e03d51272aabddbf11aa678b6b9a.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset f8e087857af8011a69d5de17addb377321bb6f58f919fdf40fb61e055f756cd9.jpg: score=-100;too_small:704x81
+Skip non-chart visual asset 4680728531b0b49863b1b610904ddf6cab99ef6a06e57f822adf6a99b115c51d.jpg: score=-100;too_small:484x106
+Skip non-chart visual asset 3af3bcd089445087c264f928df480d5c1a6f9c12f4158c315eebdb4f35902f62.jpg: score=-100;too_small:1159x109
+Skip non-chart visual asset 6f40174972f6ad6c7b5737749201d5614150c4bd77d90c4b1c6acb8c3a9a6fea.jpg: score=2;edge:0.29
+Skip non-chart visual asset 59becf2bf60386ff82051c75b009ed5011999ce519bdbf99c1b16a44d6c83b27.jpg: score=-100;too_small:1159x107
+Neutralized WeChat title while keeping the report: 高盛：美图AI产品带动订阅增长，ARR保持48%同比增速 -> 高盛：美图AI与AI及近期数据观察
+Skip non-chart visual asset 3985cb497328500bad41b5109dc43165c9a837d47e6fd0baf7d5b1b6a2f40630.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.31
+Skip non-chart visual asset d9a7c7d0044c010babe374de59095fc19680e87265d6bc05b3ca507355c16c11.jpg: score=0;square_without_chart_hint,edge:0.31,large
+Skip non-chart visual asset b886c35162eb09b910824a68e0c6075cf8d0cfa16a4e577c2c8bc25db707666f.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,contrast
+Skip non-chart visual asset 9eca4fed3851db54a6cce37c87b8e13c2e93a822fa0a1a0e66f652cd43f6584d.jpg: score=1;odd_ratio:4.82,edge:0.27,contrast,large
+Skip non-chart visual asset 8f3f6d56e212784d5471da64fb913f648a81bed4386ed6814bc977053e2b8ea1.jpg: score=-100;too_small:982x170
+Neutralized WeChat title while keeping the report: 摩根大通：苹果供应链，iPhone与Mac需求坚挺，内存成本上升 -> 摩根大通：苹果业务与近期数据观察
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260801/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

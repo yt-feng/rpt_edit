@@ -1,0 +1,182 @@
+You are a senior financial newsletter editor with a consulting-style strategy lens. You turn research-report material into a long-form English article that is structured, insightful, and suitable for a serious business audience.
+
+Objective:
+- Write an English Markdown article based on the report parsing below.
+- Target length: around 2200 words, plus or minus 15%.
+- Tone: serious, analytical, strategic, and readable.
+- The article should not feel like a summary. It should make an argument.
+- You may extend the report's logic into reasonable second-order implications, but do not invent data, company actions, or quotes.
+- Do not disclose every detail. Keep the article concise and end after the last substantive point.
+
+McKinsey-style writing principles:
+1. Answer first: open with the controlling idea, not background.
+2. Governing thought: every section must support the main answer.
+3. Mutually exclusive, collectively exhaustive logic: avoid overlapping sections.
+4. So what: every section must explain why the point matters.
+5. Synthesis over summary: do not list facts; interpret what the pattern means.
+6. Action titles: section headings must be complete, insight-bearing sentences. Do not use generic headings such as "Key Takeaways", "Market Background", "Core View", or "Reader Implications".
+7. Source specificity: ground every interpretation in a concrete number, named mechanism, comparison, or causal relationship from the report.
+
+Required Markdown structure:
+- `# Title`: make it a direct argument, not a topic label.
+- Opening: 4-6 short paragraphs that state the main thesis and why now matters.
+- 4-6 `##` sections. Each `##` heading must be an action title: a sentence that tells the reader the insight.
+- One section should translate the report into a decision framework for readers.
+- Never create a section about unresolved questions, what the report failed to answer, research gaps, limitations, further reading, or community access. If the source explicitly states a limitation, mention it once inside the relevant analytical paragraph.
+- End with the final substantive paragraph. Do not add a CTA, promotional invitation, website, community reference, summary, or rhetorical question.
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
+
+Content boundaries:
+- Do not mention specific investment bank names such as GS. Use "a global investment bank report" if needed.
+- Do not use emoji.
+- Do not write like a viral post.
+- Open with the most specific fact, contrast, or tension in the source. Avoid generic openings such as "Against this backdrop", "In recent years", or "As the market evolves".
+- Vary sentence and paragraph length naturally. Do not repeat stock transitions such as "This means", "In other words", or "What matters most".
+- Do not invent a personal voice, interview, or first-hand experience. Editorial character must come from evidence selection and precise phrasing.
+- Do not output your reasoning process.
+- Do not generate image Markdown; the system will insert original MinerU images afterward.
+
+Report parsing:
+"""
+# MARUWA (5344.T): Results briefing: Prospects for upside to new guidance for AI/semiconductor applications; Buy
+
+MARUWA held its 1Q3/27 results briefing at 10am JST on July 31 at which it explained 1Q results by application and the outlook from 2Q onward. Key points were: (1) Full-year sales guidance for AI applications was raised significantly to +110%, from +50% previously. The company expects the Seto No. 2 plant to start mass production and contribute to sales from 3Q. Given strong near-term demand, management intends to take steps to bring forward production at the No. 3 plant. (2) The company confirmed the launch of products for CPO applications from 4Q, and this was a factor behind the upward revision to AI applications. (3) Full-year sales growth (yoy) for semiconductor applications was revised up to +20%, from +14%, but the company's tone suggested upside is possible given the current strength of inquiries. In light of this strong demand, MARUWA plans to bring forward the start-up of two new buildings at the Miharu plant to 2Q, from the previously scheduled 2H.
+
+We view the briefing as positive, reinforcing our view that there is potential upside to guidance for AI/semiconductor applications. We reiterate our Buy rating, based on a structural growth story centered on AI applications. For details on 1Q results by segment, new full-year guidance, our impressions, and key points from investor feedback, please refer to our reports published on the day of the earnings announcement (LINK, LINK).
+
+Key points from the results briefing are as follows (company commentary unless otherwise noted)
+
+(1) Telecommunications: 1Q sales were ¥9.2 bn. Full-year sales guidance for AI applications was raised substantially to +110%, from +50% previously. The upward revision was driven by improved visibility as strong forecasts at the start of the fiscal year translated into confirmed orders. Management's tone suggested that near-term inquiries are strong and it expects further sales growth. The company assumes mass production and a sales contribution from the Seto No. 2 plant from 3Q, and while the quarterly schedule for the No. 3 plant, which is scheduled for completion and start-up in FY3/28, is undecided, it intends to take steps to bring forward production given the strong demand. Guidance for full-year sales growth (yoy) for the segment was revised up to +48%, from +23%.
+
+(2) CPO-related products: A launch from 4Q was confirmed, and was a factor behind the upward revision to AI applications. Orders are already large, with mass production scheduled for FY3/28.
+
+Mitsuhiro Icho
++81(3)4587-9836 |
+mitsuhiro.x.icho@gs.com
+GS Japan Co., Ltd.
+
+Daiki Takayama
++81(3)4587-9870 |
+daiki.takayama@gs.com
+GS Japan Co., Ltd.
+
+(3) Automotive: 1Q sales were ¥3.5 bn. Sales for xEV applications remained solid. Inquiries from major existing customers are increasing, and MARUWA expects sales growth in differentiated products. Guidance for full-year sales growth (yoy) for the segment was revised up to +6%, from +2%.
+
+(4) Semiconductors: 1Q sales were ¥2.2 bn. The company expects sales of c.¥3 bn in 2Q, and over ¥3 bn in 2H (3Q/4Q). Guidance for full-year sales growth (yoy) for the segment was revised up to +20%, from +14%, but management's tone suggested upside is possible given the current strength of inquiries. In light of this strong demand, MARUWA plans to bring forward the start-up of two new buildings at the Miharu plant to 2Q, from the previously scheduled 2H, increasing production capacity by (at least) +50% from the previous level. This will lead to a production system capable of meeting future increases in demand.
+
+(5) 1Q operating profits: 1Q results were in line with company expectations. The main reason for the qoq decline in the operating margin was the 1Q shipment of work-in-progress inventory produced in 4Q, when yield issues occurred for new products. Shipments of this low-margin inventory were fully completed within 1Q, and thus management expects margins to improve from 2Q.
+
+## Earnings revisions, target price
+
+We leave our FY3/27-FY3/29 operating profit estimates unchanged, but revise our quarterly breakdown and make minor tweaks to our EPS and net profit estimates (less than 1%). We leave our 12-month target price unchanged at ¥89,000, and we maintain our Buy rating.
+
+## MARUWA
+
+## Investment Thesis - MARUWA
+
+As a ceramics supplier, MARUWA's history dates back nearly 200 years. The company provides a wide range of ceramic products mainly for applications in fields such as (1) telecommunications, (2) autos, (3) semiconductors, and (4) industrial equipment. MARUWA has been transforming its business portfolio since the mid-2000s, shifting its focus from highly commoditized and cyclical products that face intense price-based competition to high-margin products for niche markets that require customization. Margins have improved sharply as a result, and MARUWA has won high share in niche markets with strong growth potential. It has established a structural competitive advantage enabling high growth, customization, margins, and market share. In FY3/27-FY3/29, we expect earnings growth to be driven mainly by heat-dissipation substrates for optical transceivers, as well as xEVs and quartz/SiC products for semiconductor production equipment. We are Buy rated on the stock, as we think earnings growth potential from FY3/27 is not fully factored into the current share price.
+
+## Price Target Risks and Methodology - MARUWA
+
+We are Buy rated on MARUWA. Our 12-month target price is ¥89,000 (implies FY27/28E P/E of 29x/23x). Our target price is based on FY28E EBITDA, and we derive the applied multiple of 12.5x from the historical correlation between the EBITDA margin and the
+
+EV/EBITDA multiple. Key risks include lower investment in applications that support final demand (including AI/general-purpose servers, xEV, SPE), lower demand for end products due to supply chain disruptions and inventory adjustments, and the emergence of alternative technology.
+
+<table><tr><td>5344.T</td><td>12m Price Target: ¥89,000</td><td colspan="2">Price: ¥52,860</td><td colspan="2">Upside: 68.4%</td></tr><tr><td>Buy</td><td>GS Forecast</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>3/26</td><td>3/27E</td><td>3/28E</td><td>3/29E</td></tr><tr><td>Market cap: ¥652.2bn / $4.1bn</td><td>Revenue (¥ bn)</td><td>74.5</td><td>93.3</td><td>114.0</td><td>132.5</td></tr><tr><td>Enterprise value: ¥567.3bn / $3.6bn</td><td>Op. profit (¥ bn) New</td><td>25.0</td><td>35.0</td><td>52.0</td><td>67.0</td></tr><tr><td>3m ADTV: ¥12.1bn / $75.8mn</td><td>Op. profit (¥ bn) Old</td><td>25.0</td><td>35.0</td><td>52.0</td><td>67.0</td></tr><tr><td>Japan</td><td>Op. profit CoE (¥ bn)</td><td>27.0</td><td>33.7</td><td>-</td><td>-</td></tr><tr><td rowspan="4">Japan Electronic Components/Semiconductors M&amp;A Rank: 3</td><td>EPS (¥) New</td><td>1,471.9</td><td>2,041.6</td><td>3,074.8</td><td>3,921.7</td></tr><tr><td>EPS (¥) Old</td><td>1,471.9</td><td>2,043.8</td><td>3,077.0</td><td>3,923.9</td></tr><tr><td>P/E (X)</td><td>29.0</td><td>25.9</td><td>17.2</td><td>13.5</td></tr><tr><td>P/B (X)</td><td>3.6</td><td>3.8</td><td>3.2</td><td>2.6</td></tr><tr><td>Leases incl. in net debt &amp; EV?: Yes</td><td>CROCI (%)</td><td>18.3</td><td>23.5</td><td>29.9</td><td>33.0</td></tr><tr><td></td><td></td><td>6/26</td><td>9/26E</td><td>12/26E</td><td>3/27E</td></tr><tr><td></td><td>EPS (¥)</td><td>361.9</td><td>456.6</td><td>558.7</td><td>629.0</td></tr></table>
+
+Source: Company data, GS estimates, FactSet. Price as of 30 Jul 2026 close.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Mitsuhiro Icho and Daiki Takayama, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Mitsuhiro Icho GS Japan Co., Ltd., Daiki Takayama GS Japan Co., Ltd..
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+The rating(s) for MARUWA is/are relative to the other companies in its/their coverage universe: Alps Alpine, Dai Nippon Printing, Hirose Electric, IRISO Electronics, Ibiden, Japan Aviation Electronics Industry, Kohoku Kogyo, Kyocera, MARUWA, Mabuchi Motor, Maxell Ltd., MinebeaMitsumi Inc., Murata Mfg., NGK Corp., Nichicon, Nidec, Nippon Ceramic, Niterra, Nitto Denko, Renesas Electronics, Rohm, TDK, TOPPAN Holdings, Taiyo Yuden
+
+## Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the month end preceding this report: MARUWA (¥52,860)
+
+Distribution of ratings/investment banking relationships
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>59%</td><td>43%</td></tr></table>
+
+As of July 1, 2026, GS Global Investment Research had investment ratings on 3,104 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+## Price target and rating history chart(s)
+
+![](images/3a2ac2522a8e307db2bcaa02c7a7850f699326d256e7cbd98c6a7d107568abb9.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s)
+MARUWA (5344.T)
+
+<table><tr><td>Date of report</td><td>Target price (¥)</td><td>Closing price (¥)</td></tr><tr><td>08-Jun-26</td><td>89,000</td><td>67,750</td></tr><tr><td>08-May-26</td><td>70,000</td><td>68,930</td></tr><tr><td>16-Apr-26</td><td>72,000</td><td>69,200</td></tr><tr><td>23-Mar-26</td><td>67,000</td><td>53,790</td></tr><tr><td>03-Feb-26</td><td>55,000</td><td>51,620</td></tr><tr><td>12-Jan-26</td><td>54,000</td><td>44,550</td></tr><tr><td>02-Oct-25</td><td>48,000</td><td>38,170</td></tr><tr><td>24-Jul-25</td><td>45,000</td><td>46,930</td></tr><tr><td>07-Jul-25</td><td>46,000</td><td>40,020</td></tr><tr><td>08-May-25</td><td>44,000</td><td>32,210</td></tr><tr><td>25-Apr-25</td><td>42,000</td><td>29,375</td></tr><tr><td>31-Mar-25</td><td>47,000</td><td>30,320</td></tr><tr><td>01-Feb-25</td><td>55,000</td><td>38,320</td></tr><tr><td>31-Jan-25</td><td>54,000</td><td>38,320</td></tr><tr><td>29-Jan-25</td><td>55,000</td><td>40,900</td></tr><tr><td>22-Jan-25</td><td>58,000</td><td>50,150</td></tr><tr><td>29-Oct-24</td><td>51,000</td><td>41,650</td></tr><tr><td>01-Oct-24</td><td>53,000</td><td>43,300</td></tr><tr><td>29-Jul-24</td><td>49,000</td><td>40,500</td></tr><tr><td>02-Jul-24</td><td>45,000</td><td>38,300</td></tr><tr><td>25-Apr-24</td><td>39,000</td><td>33,300</td></tr><tr><td>03-Apr-24</td><td>40,000</td><td>32,350</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Au
+
+[中间内容因长度限制已省略]
+
+m impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""

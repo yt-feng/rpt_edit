@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0001-21-GS-MARUWA -5344.T-- Results briefing- Prospects for upside to new guidance for AI semiconductor applications- Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0002-22-GS-Reddit Inc. -RDDT.US- Q2-26 Review- Operating Momentum -Revenue and Margins- Sustain- Investments - Mgmt Focused on User Growth and Engagement-26073.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0003-23-GS-Panasonic HD -6752.T-- Group CFO operating company CEO meetings- Forming structure to win with competitive generative AI products- Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0004-24-GS-Meitu -1357.HK-- New AI products features to drive ARR growth- 1H26 productivity leisure tools rev -40- 32- YoY- Buy-260731.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qacoj5d7/pdfs/0005-25-JPM-Apple Supply Chain-Implications- Resilient iPhone and Mac demand- but continued rising memory cost likely weighing on supply chain-260731.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
